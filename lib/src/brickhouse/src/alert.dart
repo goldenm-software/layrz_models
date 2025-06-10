@@ -236,6 +236,10 @@ abstract class BrickhouseAlert with _$BrickhouseAlert {
 
     /// isDisabled
     @Default(false) bool? isDisabled,
+
+    /// triggerId
+    /// triggerId of the alert
+    String? triggerId,
   }) = _BrickhouseAlert;
 
   /// from json

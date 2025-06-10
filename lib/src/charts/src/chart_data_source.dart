@@ -1,5 +1,6 @@
 part of '../charts.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum ChartDataSource {
   @JsonValue('MESSAGES')
   messages,

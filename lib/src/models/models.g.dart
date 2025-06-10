@@ -6,7 +6,7 @@ part of 'models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
+_Model _$ModelFromJson(Map<String, dynamic> json) => _Model(
       id: json['id'] as String,
       name: json['name'] as String,
       flespiId: json['flespiId'] as String?,
@@ -39,8 +39,7 @@ _$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
           const [],
     );
 
-Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'flespiId': instance.flespiId,
@@ -64,8 +63,7 @@ const _$ConfIoTLayoutEnumMap = {
   ConfIoTLayout.sdmMonitor: 'SDM_MONITOR',
 };
 
-_$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
-    _$ModelInputImpl(
+_ModelInput _$ModelInputFromJson(Map<String, dynamic> json) => _ModelInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       flespiId: json['flespiId'] as String?,
@@ -92,7 +90,7 @@ _$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
           json['peripheralParserSpec'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
+Map<String, dynamic> _$ModelInputToJson(_ModelInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -110,8 +108,7 @@ Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
       'peripheralParserSpec': instance.peripheralParserSpec,
     };
 
-_$HwModelImpl _$$HwModelImplFromJson(Map<String, dynamic> json) =>
-    _$HwModelImpl(
+_HwModel _$HwModelFromJson(Map<String, dynamic> json) => _HwModel(
       id: json['id'] as String,
       name: json['name'] as String,
       modelsIds: (json['modelsIds'] as List<dynamic>?)
@@ -124,16 +121,15 @@ _$HwModelImpl _$$HwModelImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$HwModelImplToJson(_$HwModelImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$HwModelToJson(_HwModel instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'modelsIds': instance.modelsIds,
       'models': instance.models.map((e) => e.toJson()).toList(),
     };
 
-_$HwModelInputImpl _$$HwModelInputImplFromJson(Map<String, dynamic> json) =>
-    _$HwModelInputImpl(
+_HwModelInput _$HwModelInputFromJson(Map<String, dynamic> json) =>
+    _HwModelInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       modelsIds: (json['modelsIds'] as List<dynamic>?)
@@ -142,15 +138,15 @@ _$HwModelInputImpl _$$HwModelInputImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$HwModelInputImplToJson(_$HwModelInputImpl instance) =>
+Map<String, dynamic> _$HwModelInputToJson(_HwModelInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'modelsIds': instance.modelsIds,
     };
 
-_$FirmwareBuildImpl _$$FirmwareBuildImplFromJson(Map<String, dynamic> json) =>
-    _$FirmwareBuildImpl(
+_FirmwareBuild _$FirmwareBuildFromJson(Map<String, dynamic> json) =>
+    _FirmwareBuild(
       id: json['id'] as String,
       buildName: json['buildName'] as String,
       buildNumber: (json['buildNumber'] as num).toInt(),
@@ -164,7 +160,7 @@ _$FirmwareBuildImpl _$$FirmwareBuildImplFromJson(Map<String, dynamic> json) =>
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
     );
 
-Map<String, dynamic> _$$FirmwareBuildImplToJson(_$FirmwareBuildImpl instance) =>
+Map<String, dynamic> _$FirmwareBuildToJson(_FirmwareBuild instance) =>
     <String, dynamic>{
       'id': instance.id,
       'buildName': instance.buildName,

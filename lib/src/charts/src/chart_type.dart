@@ -1,5 +1,6 @@
 part of '../charts.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum ChartType {
   /// Pie chart
   @JsonValue('PIE')

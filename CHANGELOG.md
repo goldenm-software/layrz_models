@@ -1,5 +1,51 @@
 # Changelog
 
+## 3.4.7
+
+- Added `CaclEntity` to `ats` models
+- Added `CaclEquipmentEntity` to `ats` models
+- Added `EquipmentMeasurementEntity` to `ats` models
+- Added `MeasurementEntity` to `ats` models
+- Added `CaclMeasurementOutput` to `ats` models
+- Added `MeasurementsEntity` to `ats` models
+- Added `ResultsEntity` to `ats` models
+- Added `VolumeMovedEntity` to `ats` models
+- Added `CaclEquipmentInput` to `ats` models
+- Added `CaclInput` to `ats` models
+- Added `EquipmentMeasurementInput` to `ats` models
+- Added `MeasurementInput` to `ats` models
+- Added `CaclMeasurement` to `ats` models
+- Added `MeasurementsInput` to `ats` models
+- Added `ResultsInput` to `ats` models
+- Added `VolumeMovedInput` to `ats` models
+- Added `unloadingFuelInterrupted` and `destinationBerthExit` values in `AtsPurchaseOrderStatus` enum
+- Updated `caclForms` and added `caclFormsIds` values in `AtsOperation` model
+
+## 3.4.6
+
+- Added `triggerId` to `BrickhouseAlert` model
+
+## 3.4.5
+
+- Migrated Report input submodels to models.
+
+## 3.4.4
+
+- Migrated CareProtocol input submodels to models.
+
+## 3.4.3
+
+- Added `Manifest` and `ManifestInput` models to handle manifest data.
+- Added `TankMeasurement` and `TankMeasurementInput` models to handle tank measurements.
+- Added `ManifestKind` enum to define the kind of manifest.
+
+## 3.4.2
+
+- Re-defined the `Trigger` model as a submodule to code separation.
+- Added new `manualAction` to `TriggerType` enum.
+- Added `manualActionFields` to `Trigger` and `TriggerInput` models.
+- Re-defined the `CareProtocol` model as a submodule to code separation.
+
 ## 3.4.0
 
 - Upgraded `freezed` to `3.0.0` version and their dependencies.

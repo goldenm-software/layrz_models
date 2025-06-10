@@ -1,17 +1,45 @@
 part of '../reports.dart';
 
 @freezed
-abstract class ReportPage with _$ReportPage {
-  const factory ReportPage({
-    /// [name] is the name of the report page.
-    required String name,
+abstract class ReportTemplatePage with _$ReportTemplatePage {
+  const ReportTemplatePage._();
 
-    /// [rows] is the rows inside of the report
-    @Default([]) List<ReportRow> rows,
+  const factory ReportTemplatePage({
+    /// Is the page title
+    required String title,
 
-    /// [headers] is the headers of the report
-    @Default([]) List<ReportHeader> headers,
-  }) = _ReportPage;
+    /// Is the page source
+    @JsonKey(unknownEnumValue: ReportTemplateSource.messages) required ReportTemplateSource source,
 
-  factory ReportPage.fromJson(Map<String, dynamic> json) => _$ReportPageFromJson(json);
+    /// Is the algorithm used to generate the page data.
+    @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+    @Default(ReportTemplateAlgorithm.auto)
+    ReportTemplateAlgorithm algorithm,
+
+    /// Is the page data, aka, the cols. Only used when [algorithm] is [ReportTemplateAlgorithm.auto]
+    List<ReportTemplateCol>? cols,
+
+    /// Is the script in Python to generate the page data. Only used when [algorithm] is [ReportTemplateAlgorithm.python]
+    String? script,
+  }) = _ReportTemplatePage;
+
+  factory ReportTemplatePage.fromJson(Map<String, dynamic> json) => _$ReportTemplatePageFromJson(json);
+}
+
+@unfreezed
+abstract class ReportTemplatePageInput with _$ReportTemplatePageInput {
+  const ReportTemplatePageInput._();
+  factory ReportTemplatePageInput({
+    @Default('Page') String title,
+    @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+    @Default(ReportTemplateSource.messages)
+    ReportTemplateSource source,
+    @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+    @Default(ReportTemplateAlgorithm.auto)
+    ReportTemplateAlgorithm algorithm,
+    @Default([]) List<ReportTemplateColInput> cols,
+    @Default('') String script,
+  }) = _ReportTemplatePageInput;
+
+  factory ReportTemplatePageInput.fromJson(Map<String, dynamic> json) => _$ReportTemplatePageInputFromJson(json);
 }

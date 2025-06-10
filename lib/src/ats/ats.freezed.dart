@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,175 +10,116 @@ part of 'ats.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AtsReceptionProduct _$AtsReceptionProductFromJson(Map<String, dynamic> json) {
-  return _AtsReceptionProduct.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AtsReceptionProduct {
   /// ID of the reception product. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// ID of the asset.
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// Fuel type enum. Check its possible values in the enum documentation.
   @AtsFuelTypeOrNullConverter()
-  AtsFuelType? get fuelType => throw _privateConstructorUsedError;
+  AtsFuelType? get fuelType;
 
   /// Fuel subTuype represent the fuel subtype of the product
   @AtsFuelSubTypeOrNullConverter()
-  AtsFuelSubType? get fuelSubtype => throw _privateConstructorUsedError;
+  AtsFuelSubType? get fuelSubtype;
 
   /// Fuel density expressed in gr/cc.
-  double? get density => throw _privateConstructorUsedError;
+  double? get density;
 
   /// Fuel temperature expressed in degrees Celsius.
-  double? get temperature => throw _privateConstructorUsedError;
+  double? get temperature;
 
   /// Volume received in purchased order (Expressed in Litters).
-  double? get volumeBought => throw _privateConstructorUsedError;
+  double? get volumeBought;
 
   /// Total volume received, based on fuel type, density and temperature.
-  double? get realVolume => throw _privateConstructorUsedError;
+  double? get realVolume;
 
   /// Reception date and time expressed in unix timestamp.
   @TimestampOrNullConverter()
-  DateTime? get receivedAt => throw _privateConstructorUsedError;
+  DateTime? get receivedAt;
 
   /// Seller / provider name
-  String? get provider => throw _privateConstructorUsedError;
+  String? get provider;
 
   /// List of tank images
-  List<String> get tanksImages => throw _privateConstructorUsedError;
+  List<String> get tanksImages;
 
   /// `price` of the product
-  double? get price => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsReceptionProduct to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  double? get price;
 
   /// Create a copy of AtsReceptionProduct
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsReceptionProductCopyWith<AtsReceptionProduct> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsReceptionProductCopyWith<$Res> {
-  factory $AtsReceptionProductCopyWith(
-          AtsReceptionProduct value, $Res Function(AtsReceptionProduct) then) =
-      _$AtsReceptionProductCopyWithImpl<$Res, AtsReceptionProduct>;
-  @useResult
-  $Res call(
-      {String? id,
-      String? assetId,
-      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-      @AtsFuelSubTypeOrNullConverter() AtsFuelSubType? fuelSubtype,
-      double? density,
-      double? temperature,
-      double? volumeBought,
-      double? realVolume,
-      @TimestampOrNullConverter() DateTime? receivedAt,
-      String? provider,
-      List<String> tanksImages,
-      double? price});
-}
-
-/// @nodoc
-class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
-    implements $AtsReceptionProductCopyWith<$Res> {
-  _$AtsReceptionProductCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsReceptionProduct
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsReceptionProductCopyWith<AtsReceptionProduct> get copyWith =>
+      _$AtsReceptionProductCopyWithImpl<AtsReceptionProduct>(
+          this as AtsReceptionProduct, _$identity);
+
+  /// Serializes this AtsReceptionProduct to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? assetId = freezed,
-    Object? fuelType = freezed,
-    Object? fuelSubtype = freezed,
-    Object? density = freezed,
-    Object? temperature = freezed,
-    Object? volumeBought = freezed,
-    Object? realVolume = freezed,
-    Object? receivedAt = freezed,
-    Object? provider = freezed,
-    Object? tanksImages = null,
-    Object? price = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as AtsFuelType?,
-      fuelSubtype: freezed == fuelSubtype
-          ? _value.fuelSubtype
-          : fuelSubtype // ignore: cast_nullable_to_non_nullable
-              as AtsFuelSubType?,
-      density: freezed == density
-          ? _value.density
-          : density // ignore: cast_nullable_to_non_nullable
-              as double?,
-      temperature: freezed == temperature
-          ? _value.temperature
-          : temperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      volumeBought: freezed == volumeBought
-          ? _value.volumeBought
-          : volumeBought // ignore: cast_nullable_to_non_nullable
-              as double?,
-      realVolume: freezed == realVolume
-          ? _value.realVolume
-          : realVolume // ignore: cast_nullable_to_non_nullable
-              as double?,
-      receivedAt: freezed == receivedAt
-          ? _value.receivedAt
-          : receivedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      provider: freezed == provider
-          ? _value.provider
-          : provider // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tanksImages: null == tanksImages
-          ? _value.tanksImages
-          : tanksImages // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      price: freezed == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsReceptionProduct &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
+            (identical(other.density, density) || other.density == density) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.volumeBought, volumeBought) ||
+                other.volumeBought == volumeBought) &&
+            (identical(other.realVolume, realVolume) ||
+                other.realVolume == realVolume) &&
+            (identical(other.receivedAt, receivedAt) ||
+                other.receivedAt == receivedAt) &&
+            (identical(other.provider, provider) ||
+                other.provider == provider) &&
+            const DeepCollectionEquality()
+                .equals(other.tanksImages, tanksImages) &&
+            (identical(other.price, price) || other.price == price));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      fuelType,
+      fuelSubtype,
+      density,
+      temperature,
+      volumeBought,
+      realVolume,
+      receivedAt,
+      provider,
+      const DeepCollectionEquality().hash(tanksImages),
+      price);
+
+  @override
+  String toString() {
+    return 'AtsReceptionProduct(id: $id, assetId: $assetId, fuelType: $fuelType, fuelSubtype: $fuelSubtype, density: $density, temperature: $temperature, volumeBought: $volumeBought, realVolume: $realVolume, receivedAt: $receivedAt, provider: $provider, tanksImages: $tanksImages, price: $price)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsReceptionProductImplCopyWith<$Res>
-    implements $AtsReceptionProductCopyWith<$Res> {
-  factory _$$AtsReceptionProductImplCopyWith(_$AtsReceptionProductImpl value,
-          $Res Function(_$AtsReceptionProductImpl) then) =
-      __$$AtsReceptionProductImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsReceptionProductCopyWith<$Res> {
+  factory $AtsReceptionProductCopyWith(
+          AtsReceptionProduct value, $Res Function(AtsReceptionProduct) _then) =
+      _$AtsReceptionProductCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -195,12 +137,12 @@ abstract class _$$AtsReceptionProductImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsReceptionProductImplCopyWithImpl<$Res>
-    extends _$AtsReceptionProductCopyWithImpl<$Res, _$AtsReceptionProductImpl>
-    implements _$$AtsReceptionProductImplCopyWith<$Res> {
-  __$$AtsReceptionProductImplCopyWithImpl(_$AtsReceptionProductImpl _value,
-      $Res Function(_$AtsReceptionProductImpl) _then)
-      : super(_value, _then);
+class _$AtsReceptionProductCopyWithImpl<$Res>
+    implements $AtsReceptionProductCopyWith<$Res> {
+  _$AtsReceptionProductCopyWithImpl(this._self, this._then);
+
+  final AtsReceptionProduct _self;
+  final $Res Function(AtsReceptionProduct) _then;
 
   /// Create a copy of AtsReceptionProduct
   /// with the given fields replaced by the non-null parameter values.
@@ -220,53 +162,53 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
     Object? tanksImages = null,
     Object? price = freezed,
   }) {
-    return _then(_$AtsReceptionProductImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       fuelType: freezed == fuelType
-          ? _value.fuelType
+          ? _self.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as AtsFuelType?,
       fuelSubtype: freezed == fuelSubtype
-          ? _value.fuelSubtype
+          ? _self.fuelSubtype
           : fuelSubtype // ignore: cast_nullable_to_non_nullable
               as AtsFuelSubType?,
       density: freezed == density
-          ? _value.density
+          ? _self.density
           : density // ignore: cast_nullable_to_non_nullable
               as double?,
       temperature: freezed == temperature
-          ? _value.temperature
+          ? _self.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
               as double?,
       volumeBought: freezed == volumeBought
-          ? _value.volumeBought
+          ? _self.volumeBought
           : volumeBought // ignore: cast_nullable_to_non_nullable
               as double?,
       realVolume: freezed == realVolume
-          ? _value.realVolume
+          ? _self.realVolume
           : realVolume // ignore: cast_nullable_to_non_nullable
               as double?,
       receivedAt: freezed == receivedAt
-          ? _value.receivedAt
+          ? _self.receivedAt
           : receivedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       provider: freezed == provider
-          ? _value.provider
+          ? _self.provider
           : provider // ignore: cast_nullable_to_non_nullable
               as String?,
       tanksImages: null == tanksImages
-          ? _value._tanksImages
+          ? _self.tanksImages
           : tanksImages // ignore: cast_nullable_to_non_nullable
               as List<String>,
       price: freezed == price
-          ? _value.price
+          ? _self.price
           : price // ignore: cast_nullable_to_non_nullable
               as double?,
     ));
@@ -275,8 +217,8 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
-  const _$AtsReceptionProductImpl(
+class _AtsReceptionProduct implements AtsReceptionProduct {
+  const _AtsReceptionProduct(
       {this.id,
       this.assetId,
       @AtsFuelTypeOrNullConverter() this.fuelType,
@@ -290,9 +232,8 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
       final List<String> tanksImages = const [],
       this.price})
       : _tanksImages = tanksImages;
-
-  factory _$AtsReceptionProductImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsReceptionProductImplFromJson(json);
+  factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) =>
+      _$AtsReceptionProductFromJson(json);
 
   /// ID of the reception product. This ID is unique.
   @override
@@ -353,16 +294,27 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
   @override
   final double? price;
 
+  /// Create a copy of AtsReceptionProduct
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsReceptionProduct(id: $id, assetId: $assetId, fuelType: $fuelType, fuelSubtype: $fuelSubtype, density: $density, temperature: $temperature, volumeBought: $volumeBought, realVolume: $realVolume, receivedAt: $receivedAt, provider: $provider, tanksImages: $tanksImages, price: $price)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsReceptionProductCopyWith<_AtsReceptionProduct> get copyWith =>
+      __$AtsReceptionProductCopyWithImpl<_AtsReceptionProduct>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsReceptionProductToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsReceptionProductImpl &&
+            other is _AtsReceptionProduct &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.fuelType, fuelType) ||
@@ -402,191 +354,161 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
       const DeepCollectionEquality().hash(_tanksImages),
       price);
 
-  /// Create a copy of AtsReceptionProduct
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsReceptionProductImplCopyWith<_$AtsReceptionProductImpl> get copyWith =>
-      __$$AtsReceptionProductImplCopyWithImpl<_$AtsReceptionProductImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsReceptionProductImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsReceptionProduct(id: $id, assetId: $assetId, fuelType: $fuelType, fuelSubtype: $fuelSubtype, density: $density, temperature: $temperature, volumeBought: $volumeBought, realVolume: $realVolume, receivedAt: $receivedAt, provider: $provider, tanksImages: $tanksImages, price: $price)';
   }
 }
 
-abstract class _AtsReceptionProduct implements AtsReceptionProduct {
-  const factory _AtsReceptionProduct(
-      {final String? id,
-      final String? assetId,
-      @AtsFuelTypeOrNullConverter() final AtsFuelType? fuelType,
-      @AtsFuelSubTypeOrNullConverter() final AtsFuelSubType? fuelSubtype,
-      final double? density,
-      final double? temperature,
-      final double? volumeBought,
-      final double? realVolume,
-      @TimestampOrNullConverter() final DateTime? receivedAt,
-      final String? provider,
-      final List<String> tanksImages,
-      final double? price}) = _$AtsReceptionProductImpl;
-
-  factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) =
-      _$AtsReceptionProductImpl.fromJson;
-
-  /// ID of the reception product. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsReceptionProductCopyWith<$Res>
+    implements $AtsReceptionProductCopyWith<$Res> {
+  factory _$AtsReceptionProductCopyWith(_AtsReceptionProduct value,
+          $Res Function(_AtsReceptionProduct) _then) =
+      __$AtsReceptionProductCopyWithImpl;
   @override
-  String? get id;
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+      @AtsFuelSubTypeOrNullConverter() AtsFuelSubType? fuelSubtype,
+      double? density,
+      double? temperature,
+      double? volumeBought,
+      double? realVolume,
+      @TimestampOrNullConverter() DateTime? receivedAt,
+      String? provider,
+      List<String> tanksImages,
+      double? price});
+}
 
-  /// ID of the asset.
-  @override
-  String? get assetId;
+/// @nodoc
+class __$AtsReceptionProductCopyWithImpl<$Res>
+    implements _$AtsReceptionProductCopyWith<$Res> {
+  __$AtsReceptionProductCopyWithImpl(this._self, this._then);
 
-  /// Fuel type enum. Check its possible values in the enum documentation.
-  @override
-  @AtsFuelTypeOrNullConverter()
-  AtsFuelType? get fuelType;
-
-  /// Fuel subTuype represent the fuel subtype of the product
-  @override
-  @AtsFuelSubTypeOrNullConverter()
-  AtsFuelSubType? get fuelSubtype;
-
-  /// Fuel density expressed in gr/cc.
-  @override
-  double? get density;
-
-  /// Fuel temperature expressed in degrees Celsius.
-  @override
-  double? get temperature;
-
-  /// Volume received in purchased order (Expressed in Litters).
-  @override
-  double? get volumeBought;
-
-  /// Total volume received, based on fuel type, density and temperature.
-  @override
-  double? get realVolume;
-
-  /// Reception date and time expressed in unix timestamp.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get receivedAt;
-
-  /// Seller / provider name
-  @override
-  String? get provider;
-
-  /// List of tank images
-  @override
-  List<String> get tanksImages;
-
-  /// `price` of the product
-  @override
-  double? get price;
+  final _AtsReceptionProduct _self;
+  final $Res Function(_AtsReceptionProduct) _then;
 
   /// Create a copy of AtsReceptionProduct
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsReceptionProductImplCopyWith<_$AtsReceptionProductImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsReceptionProductInput _$AtsReceptionProductInputFromJson(
-    Map<String, dynamic> json) {
-  return _AtsReceptionProductInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? fuelType = freezed,
+    Object? fuelSubtype = freezed,
+    Object? density = freezed,
+    Object? temperature = freezed,
+    Object? volumeBought = freezed,
+    Object? realVolume = freezed,
+    Object? receivedAt = freezed,
+    Object? provider = freezed,
+    Object? tanksImages = null,
+    Object? price = freezed,
+  }) {
+    return _then(_AtsReceptionProduct(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fuelType: freezed == fuelType
+          ? _self.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as AtsFuelType?,
+      fuelSubtype: freezed == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as AtsFuelSubType?,
+      density: freezed == density
+          ? _self.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volumeBought: freezed == volumeBought
+          ? _self.volumeBought
+          : volumeBought // ignore: cast_nullable_to_non_nullable
+              as double?,
+      realVolume: freezed == realVolume
+          ? _self.realVolume
+          : realVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      receivedAt: freezed == receivedAt
+          ? _self.receivedAt
+          : receivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      provider: freezed == provider
+          ? _self.provider
+          : provider // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tanksImages: null == tanksImages
+          ? _self._tanksImages
+          : tanksImages // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      price: freezed == price
+          ? _self.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsReceptionProductInput {
   /// Fuel ANP category code
-  String? get fuelAnp => throw _privateConstructorUsedError;
+  String? get fuelAnp;
 
   /// Fuel ANP category code
-  set fuelAnp(String? value) => throw _privateConstructorUsedError;
+  set fuelAnp(String? value);
 
   /// List of tank photos
-  List<String>? get tanksImages => throw _privateConstructorUsedError;
+  List<String>? get tanksImages;
 
   /// List of tank photos
-  set tanksImages(List<String>? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsReceptionProductInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set tanksImages(List<String>? value);
 
   /// Create a copy of AtsReceptionProductInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsReceptionProductInputCopyWith<AtsReceptionProductInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsReceptionProductInputCopyWith<$Res> {
-  factory $AtsReceptionProductInputCopyWith(AtsReceptionProductInput value,
-          $Res Function(AtsReceptionProductInput) then) =
-      _$AtsReceptionProductInputCopyWithImpl<$Res, AtsReceptionProductInput>;
-  @useResult
-  $Res call({String? fuelAnp, List<String>? tanksImages});
-}
-
-/// @nodoc
-class _$AtsReceptionProductInputCopyWithImpl<$Res,
-        $Val extends AtsReceptionProductInput>
-    implements $AtsReceptionProductInputCopyWith<$Res> {
-  _$AtsReceptionProductInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsReceptionProductInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsReceptionProductInputCopyWith<AtsReceptionProductInput> get copyWith =>
+      _$AtsReceptionProductInputCopyWithImpl<AtsReceptionProductInput>(
+          this as AtsReceptionProductInput, _$identity);
+
+  /// Serializes this AtsReceptionProductInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? fuelAnp = freezed,
-    Object? tanksImages = freezed,
-  }) {
-    return _then(_value.copyWith(
-      fuelAnp: freezed == fuelAnp
-          ? _value.fuelAnp
-          : fuelAnp // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tanksImages: freezed == tanksImages
-          ? _value.tanksImages
-          : tanksImages // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ) as $Val);
+  String toString() {
+    return 'AtsReceptionProductInput(fuelAnp: $fuelAnp, tanksImages: $tanksImages)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsReceptionProductInputImplCopyWith<$Res>
-    implements $AtsReceptionProductInputCopyWith<$Res> {
-  factory _$$AtsReceptionProductInputImplCopyWith(
-          _$AtsReceptionProductInputImpl value,
-          $Res Function(_$AtsReceptionProductInputImpl) then) =
-      __$$AtsReceptionProductInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsReceptionProductInputCopyWith<$Res> {
+  factory $AtsReceptionProductInputCopyWith(AtsReceptionProductInput value,
+          $Res Function(AtsReceptionProductInput) _then) =
+      _$AtsReceptionProductInputCopyWithImpl;
   @useResult
   $Res call({String? fuelAnp, List<String>? tanksImages});
 }
 
 /// @nodoc
-class __$$AtsReceptionProductInputImplCopyWithImpl<$Res>
-    extends _$AtsReceptionProductInputCopyWithImpl<$Res,
-        _$AtsReceptionProductInputImpl>
-    implements _$$AtsReceptionProductInputImplCopyWith<$Res> {
-  __$$AtsReceptionProductInputImplCopyWithImpl(
-      _$AtsReceptionProductInputImpl _value,
-      $Res Function(_$AtsReceptionProductInputImpl) _then)
-      : super(_value, _then);
+class _$AtsReceptionProductInputCopyWithImpl<$Res>
+    implements $AtsReceptionProductInputCopyWith<$Res> {
+  _$AtsReceptionProductInputCopyWithImpl(this._self, this._then);
+
+  final AtsReceptionProductInput _self;
+  final $Res Function(AtsReceptionProductInput) _then;
 
   /// Create a copy of AtsReceptionProductInput
   /// with the given fields replaced by the non-null parameter values.
@@ -596,13 +518,13 @@ class __$$AtsReceptionProductInputImplCopyWithImpl<$Res>
     Object? fuelAnp = freezed,
     Object? tanksImages = freezed,
   }) {
-    return _then(_$AtsReceptionProductInputImpl(
+    return _then(_self.copyWith(
       fuelAnp: freezed == fuelAnp
-          ? _value.fuelAnp
+          ? _self.fuelAnp
           : fuelAnp // ignore: cast_nullable_to_non_nullable
               as String?,
       tanksImages: freezed == tanksImages
-          ? _value.tanksImages
+          ? _self.tanksImages
           : tanksImages // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -611,11 +533,10 @@ class __$$AtsReceptionProductInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsReceptionProductInputImpl implements _AtsReceptionProductInput {
-  _$AtsReceptionProductInputImpl({this.fuelAnp, this.tanksImages});
-
-  factory _$AtsReceptionProductInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsReceptionProductInputImplFromJson(json);
+class _AtsReceptionProductInput implements AtsReceptionProductInput {
+  _AtsReceptionProductInput({this.fuelAnp, this.tanksImages});
+  factory _AtsReceptionProductInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsReceptionProductInputFromJson(json);
 
   /// Fuel ANP category code
   @override
@@ -625,189 +546,132 @@ class _$AtsReceptionProductInputImpl implements _AtsReceptionProductInput {
   @override
   List<String>? tanksImages;
 
+  /// Create a copy of AtsReceptionProductInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsReceptionProductInputCopyWith<_AtsReceptionProductInput> get copyWith =>
+      __$AtsReceptionProductInputCopyWithImpl<_AtsReceptionProductInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsReceptionProductInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'AtsReceptionProductInput(fuelAnp: $fuelAnp, tanksImages: $tanksImages)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$AtsReceptionProductInputCopyWith<$Res>
+    implements $AtsReceptionProductInputCopyWith<$Res> {
+  factory _$AtsReceptionProductInputCopyWith(_AtsReceptionProductInput value,
+          $Res Function(_AtsReceptionProductInput) _then) =
+      __$AtsReceptionProductInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? fuelAnp, List<String>? tanksImages});
+}
+
+/// @nodoc
+class __$AtsReceptionProductInputCopyWithImpl<$Res>
+    implements _$AtsReceptionProductInputCopyWith<$Res> {
+  __$AtsReceptionProductInputCopyWithImpl(this._self, this._then);
+
+  final _AtsReceptionProductInput _self;
+  final $Res Function(_AtsReceptionProductInput) _then;
 
   /// Create a copy of AtsReceptionProductInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AtsReceptionProductInputImplCopyWith<_$AtsReceptionProductInputImpl>
-      get copyWith => __$$AtsReceptionProductInputImplCopyWithImpl<
-          _$AtsReceptionProductInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsReceptionProductInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? fuelAnp = freezed,
+    Object? tanksImages = freezed,
+  }) {
+    return _then(_AtsReceptionProductInput(
+      fuelAnp: freezed == fuelAnp
+          ? _self.fuelAnp
+          : fuelAnp // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tanksImages: freezed == tanksImages
+          ? _self.tanksImages
+          : tanksImages // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
   }
-}
-
-abstract class _AtsReceptionProductInput implements AtsReceptionProductInput {
-  factory _AtsReceptionProductInput(
-      {String? fuelAnp,
-      List<String>? tanksImages}) = _$AtsReceptionProductInputImpl;
-
-  factory _AtsReceptionProductInput.fromJson(Map<String, dynamic> json) =
-      _$AtsReceptionProductInputImpl.fromJson;
-
-  /// Fuel ANP category code
-  @override
-  String? get fuelAnp;
-
-  /// Fuel ANP category code
-  set fuelAnp(String? value);
-
-  /// List of tank photos
-  @override
-  List<String>? get tanksImages;
-
-  /// List of tank photos
-  set tanksImages(List<String>? value);
-
-  /// Create a copy of AtsReceptionProductInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsReceptionProductInputImplCopyWith<_$AtsReceptionProductInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-AtsReceptionInput _$AtsReceptionInputFromJson(Map<String, dynamic> json) {
-  return _AtsReceptionInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$AtsReceptionInput {
   ///ID of the [AtsReception]. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   ///ID of the [AtsReception]. This ID is unique.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// List of [AtsPurchaseOrder] IDs.
-  List<String>? get ordersIds => throw _privateConstructorUsedError;
+  List<String>? get ordersIds;
 
   /// List of [AtsPurchaseOrder] IDs.
-  set ordersIds(List<String>? value) => throw _privateConstructorUsedError;
+  set ordersIds(List<String>? value);
 
   /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
-  List<AtsReceptionProductInput>? get products =>
-      throw _privateConstructorUsedError;
+  List<AtsReceptionProductInput>? get products;
 
   /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
-  set products(List<AtsReceptionProductInput>? value) =>
-      throw _privateConstructorUsedError;
+  set products(List<AtsReceptionProductInput>? value);
 
   /// ID of the [Asset] supply point
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// ID of the [Asset] supply point
-  set assetId(String? value) => throw _privateConstructorUsedError;
+  set assetId(String? value);
 
   /// [AtsReception] operation time
   @DurationOrNullConverter()
-  Duration? get operationTime => throw _privateConstructorUsedError;
+  Duration? get operationTime;
 
   /// [AtsReception] operation time
   @DurationOrNullConverter()
-  set operationTime(Duration? value) => throw _privateConstructorUsedError;
+  set operationTime(Duration? value);
 
   /// App used to create the [AtsReception].
   @AtsFromAppOrNullConverter()
-  AtsFromApp? get app => throw _privateConstructorUsedError;
+  AtsFromApp? get app;
 
   /// App used to create the [AtsReception].
   @AtsFromAppOrNullConverter()
-  set app(AtsFromApp? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsReceptionInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set app(AtsFromApp? value);
 
   /// Create a copy of AtsReceptionInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsReceptionInputCopyWith<AtsReceptionInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsReceptionInputCopyWith<$Res> {
-  factory $AtsReceptionInputCopyWith(
-          AtsReceptionInput value, $Res Function(AtsReceptionInput) then) =
-      _$AtsReceptionInputCopyWithImpl<$Res, AtsReceptionInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      List<String>? ordersIds,
-      List<AtsReceptionProductInput>? products,
-      String? assetId,
-      @DurationOrNullConverter() Duration? operationTime,
-      @AtsFromAppOrNullConverter() AtsFromApp? app});
-}
-
-/// @nodoc
-class _$AtsReceptionInputCopyWithImpl<$Res, $Val extends AtsReceptionInput>
-    implements $AtsReceptionInputCopyWith<$Res> {
-  _$AtsReceptionInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsReceptionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsReceptionInputCopyWith<AtsReceptionInput> get copyWith =>
+      _$AtsReceptionInputCopyWithImpl<AtsReceptionInput>(
+          this as AtsReceptionInput, _$identity);
+
+  /// Serializes this AtsReceptionInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? ordersIds = freezed,
-    Object? products = freezed,
-    Object? assetId = freezed,
-    Object? operationTime = freezed,
-    Object? app = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ordersIds: freezed == ordersIds
-          ? _value.ordersIds
-          : ordersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      products: freezed == products
-          ? _value.products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<AtsReceptionProductInput>?,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operationTime: freezed == operationTime
-          ? _value.operationTime
-          : operationTime // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-      app: freezed == app
-          ? _value.app
-          : app // ignore: cast_nullable_to_non_nullable
-              as AtsFromApp?,
-    ) as $Val);
+  String toString() {
+    return 'AtsReceptionInput(id: $id, ordersIds: $ordersIds, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsReceptionInputImplCopyWith<$Res>
-    implements $AtsReceptionInputCopyWith<$Res> {
-  factory _$$AtsReceptionInputImplCopyWith(_$AtsReceptionInputImpl value,
-          $Res Function(_$AtsReceptionInputImpl) then) =
-      __$$AtsReceptionInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsReceptionInputCopyWith<$Res> {
+  factory $AtsReceptionInputCopyWith(
+          AtsReceptionInput value, $Res Function(AtsReceptionInput) _then) =
+      _$AtsReceptionInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -819,12 +683,12 @@ abstract class _$$AtsReceptionInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsReceptionInputImplCopyWithImpl<$Res>
-    extends _$AtsReceptionInputCopyWithImpl<$Res, _$AtsReceptionInputImpl>
-    implements _$$AtsReceptionInputImplCopyWith<$Res> {
-  __$$AtsReceptionInputImplCopyWithImpl(_$AtsReceptionInputImpl _value,
-      $Res Function(_$AtsReceptionInputImpl) _then)
-      : super(_value, _then);
+class _$AtsReceptionInputCopyWithImpl<$Res>
+    implements $AtsReceptionInputCopyWith<$Res> {
+  _$AtsReceptionInputCopyWithImpl(this._self, this._then);
+
+  final AtsReceptionInput _self;
+  final $Res Function(AtsReceptionInput) _then;
 
   /// Create a copy of AtsReceptionInput
   /// with the given fields replaced by the non-null parameter values.
@@ -838,29 +702,29 @@ class __$$AtsReceptionInputImplCopyWithImpl<$Res>
     Object? operationTime = freezed,
     Object? app = freezed,
   }) {
-    return _then(_$AtsReceptionInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       ordersIds: freezed == ordersIds
-          ? _value.ordersIds
+          ? _self.ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       products: freezed == products
-          ? _value.products
+          ? _self.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<AtsReceptionProductInput>?,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       operationTime: freezed == operationTime
-          ? _value.operationTime
+          ? _self.operationTime
           : operationTime // ignore: cast_nullable_to_non_nullable
               as Duration?,
       app: freezed == app
-          ? _value.app
+          ? _self.app
           : app // ignore: cast_nullable_to_non_nullable
               as AtsFromApp?,
     ));
@@ -869,17 +733,16 @@ class __$$AtsReceptionInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsReceptionInputImpl implements _AtsReceptionInput {
-  _$AtsReceptionInputImpl(
+class _AtsReceptionInput implements AtsReceptionInput {
+  _AtsReceptionInput(
       {this.id,
       this.ordersIds,
       this.products,
       this.assetId,
       @DurationOrNullConverter() this.operationTime,
       @AtsFromAppOrNullConverter() this.app});
-
-  factory _$AtsReceptionInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsReceptionInputImplFromJson(json);
+  factory _AtsReceptionInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsReceptionInputFromJson(json);
 
   ///ID of the [AtsReception]. This ID is unique.
   @override
@@ -907,134 +770,154 @@ class _$AtsReceptionInputImpl implements _AtsReceptionInput {
   @AtsFromAppOrNullConverter()
   AtsFromApp? app;
 
+  /// Create a copy of AtsReceptionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsReceptionInputCopyWith<_AtsReceptionInput> get copyWith =>
+      __$AtsReceptionInputCopyWithImpl<_AtsReceptionInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsReceptionInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'AtsReceptionInput(id: $id, ordersIds: $ordersIds, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app)';
   }
-
-  /// Create a copy of AtsReceptionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AtsReceptionInputImplCopyWith<_$AtsReceptionInputImpl> get copyWith =>
-      __$$AtsReceptionInputImplCopyWithImpl<_$AtsReceptionInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsReceptionInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _AtsReceptionInput implements AtsReceptionInput {
-  factory _AtsReceptionInput(
+/// @nodoc
+abstract mixin class _$AtsReceptionInputCopyWith<$Res>
+    implements $AtsReceptionInputCopyWith<$Res> {
+  factory _$AtsReceptionInputCopyWith(
+          _AtsReceptionInput value, $Res Function(_AtsReceptionInput) _then) =
+      __$AtsReceptionInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       List<String>? ordersIds,
       List<AtsReceptionProductInput>? products,
       String? assetId,
       @DurationOrNullConverter() Duration? operationTime,
-      @AtsFromAppOrNullConverter() AtsFromApp? app}) = _$AtsReceptionInputImpl;
+      @AtsFromAppOrNullConverter() AtsFromApp? app});
+}
 
-  factory _AtsReceptionInput.fromJson(Map<String, dynamic> json) =
-      _$AtsReceptionInputImpl.fromJson;
+/// @nodoc
+class __$AtsReceptionInputCopyWithImpl<$Res>
+    implements _$AtsReceptionInputCopyWith<$Res> {
+  __$AtsReceptionInputCopyWithImpl(this._self, this._then);
 
-  ///ID of the [AtsReception]. This ID is unique.
-  @override
-  String? get id;
-
-  ///ID of the [AtsReception]. This ID is unique.
-  set id(String? value);
-
-  /// List of [AtsPurchaseOrder] IDs.
-  @override
-  List<String>? get ordersIds;
-
-  /// List of [AtsPurchaseOrder] IDs.
-  set ordersIds(List<String>? value);
-
-  /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
-  @override
-  List<AtsReceptionProductInput>? get products;
-
-  /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
-  set products(List<AtsReceptionProductInput>? value);
-
-  /// ID of the [Asset] supply point
-  @override
-  String? get assetId;
-
-  /// ID of the [Asset] supply point
-  set assetId(String? value);
-
-  /// [AtsReception] operation time
-  @override
-  @DurationOrNullConverter()
-  Duration? get operationTime;
-
-  /// [AtsReception] operation time
-  @DurationOrNullConverter()
-  set operationTime(Duration? value);
-
-  /// App used to create the [AtsReception].
-  @override
-  @AtsFromAppOrNullConverter()
-  AtsFromApp? get app;
-
-  /// App used to create the [AtsReception].
-  @AtsFromAppOrNullConverter()
-  set app(AtsFromApp? value);
+  final _AtsReceptionInput _self;
+  final $Res Function(_AtsReceptionInput) _then;
 
   /// Create a copy of AtsReceptionInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsReceptionInputImplCopyWith<_$AtsReceptionInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsAuthenticationIdentifier _$AtsAuthenticationIdentifierFromJson(
-    Map<String, dynamic> json) {
-  return _AtsAuthenticationIdentifier.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? ordersIds = freezed,
+    Object? products = freezed,
+    Object? assetId = freezed,
+    Object? operationTime = freezed,
+    Object? app = freezed,
+  }) {
+    return _then(_AtsReceptionInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ordersIds: freezed == ordersIds
+          ? _self.ordersIds
+          : ordersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      products: freezed == products
+          ? _self.products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<AtsReceptionProductInput>?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operationTime: freezed == operationTime
+          ? _self.operationTime
+          : operationTime // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      app: freezed == app
+          ? _self.app
+          : app // ignore: cast_nullable_to_non_nullable
+              as AtsFromApp?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsAuthenticationIdentifier {
   /// ID of the [AtsAuthenticationIdentifier]. This ID is unique'
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// [AtsAuthenticationIdentifier] identifier category, It is a Enum from [AtsAuthenticationCategory]
   @AtsAuthenticationCategoryOrNullConverter()
-  AtsAuthenticationCategory? get category => throw _privateConstructorUsedError;
+  AtsAuthenticationCategory? get category;
 
   /// [AtsAuthenticationIdentifier] card ID
-  String? get cardId => throw _privateConstructorUsedError;
+  String? get cardId;
 
   /// [AtsAuthenticationCard] linked to this identifier. See AuthenticationCard for more information
-  AtsAuthenticationCard? get card => throw _privateConstructorUsedError;
+  AtsAuthenticationCard? get card;
 
   /// Authentication identifier NFC identifier
-  String? get nfcIdentifier => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsAuthenticationIdentifier to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get nfcIdentifier;
 
   /// Create a copy of AtsAuthenticationIdentifier
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsAuthenticationIdentifierCopyWith<AtsAuthenticationIdentifier>
-      get copyWith => throw _privateConstructorUsedError;
+      get copyWith => _$AtsAuthenticationIdentifierCopyWithImpl<
+              AtsAuthenticationIdentifier>(
+          this as AtsAuthenticationIdentifier, _$identity);
+
+  /// Serializes this AtsAuthenticationIdentifier to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsAuthenticationIdentifier &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.cardId, cardId) || other.cardId == cardId) &&
+            (identical(other.card, card) || other.card == card) &&
+            (identical(other.nfcIdentifier, nfcIdentifier) ||
+                other.nfcIdentifier == nfcIdentifier));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, category, cardId, card, nfcIdentifier);
+
+  @override
+  String toString() {
+    return 'AtsAuthenticationIdentifier(id: $id, category: $category, cardId: $cardId, card: $card, nfcIdentifier: $nfcIdentifier)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsAuthenticationIdentifierCopyWith<$Res> {
+abstract mixin class $AtsAuthenticationIdentifierCopyWith<$Res> {
   factory $AtsAuthenticationIdentifierCopyWith(
           AtsAuthenticationIdentifier value,
-          $Res Function(AtsAuthenticationIdentifier) then) =
-      _$AtsAuthenticationIdentifierCopyWithImpl<$Res,
-          AtsAuthenticationIdentifier>;
+          $Res Function(AtsAuthenticationIdentifier) _then) =
+      _$AtsAuthenticationIdentifierCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -1048,15 +931,12 @@ abstract class $AtsAuthenticationIdentifierCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsAuthenticationIdentifierCopyWithImpl<$Res,
-        $Val extends AtsAuthenticationIdentifier>
+class _$AtsAuthenticationIdentifierCopyWithImpl<$Res>
     implements $AtsAuthenticationIdentifierCopyWith<$Res> {
-  _$AtsAuthenticationIdentifierCopyWithImpl(this._value, this._then);
+  _$AtsAuthenticationIdentifierCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsAuthenticationIdentifier _self;
+  final $Res Function(AtsAuthenticationIdentifier) _then;
 
   /// Create a copy of AtsAuthenticationIdentifier
   /// with the given fields replaced by the non-null parameter values.
@@ -1069,28 +949,28 @@ class _$AtsAuthenticationIdentifierCopyWithImpl<$Res,
     Object? card = freezed,
     Object? nfcIdentifier = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       category: freezed == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as AtsAuthenticationCategory?,
       cardId: freezed == cardId
-          ? _value.cardId
+          ? _self.cardId
           : cardId // ignore: cast_nullable_to_non_nullable
               as String?,
       card: freezed == card
-          ? _value.card
+          ? _self.card
           : card // ignore: cast_nullable_to_non_nullable
               as AtsAuthenticationCard?,
       nfcIdentifier: freezed == nfcIdentifier
-          ? _value.nfcIdentifier
+          ? _self.nfcIdentifier
           : nfcIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsAuthenticationIdentifier
@@ -1098,97 +978,27 @@ class _$AtsAuthenticationIdentifierCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AtsAuthenticationCardCopyWith<$Res>? get card {
-    if (_value.card == null) {
+    if (_self.card == null) {
       return null;
     }
 
-    return $AtsAuthenticationCardCopyWith<$Res>(_value.card!, (value) {
-      return _then(_value.copyWith(card: value) as $Val);
+    return $AtsAuthenticationCardCopyWith<$Res>(_self.card!, (value) {
+      return _then(_self.copyWith(card: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsAuthenticationIdentifierImplCopyWith<$Res>
-    implements $AtsAuthenticationIdentifierCopyWith<$Res> {
-  factory _$$AtsAuthenticationIdentifierImplCopyWith(
-          _$AtsAuthenticationIdentifierImpl value,
-          $Res Function(_$AtsAuthenticationIdentifierImpl) then) =
-      __$$AtsAuthenticationIdentifierImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      @AtsAuthenticationCategoryOrNullConverter()
-      AtsAuthenticationCategory? category,
-      String? cardId,
-      AtsAuthenticationCard? card,
-      String? nfcIdentifier});
-
-  @override
-  $AtsAuthenticationCardCopyWith<$Res>? get card;
-}
-
-/// @nodoc
-class __$$AtsAuthenticationIdentifierImplCopyWithImpl<$Res>
-    extends _$AtsAuthenticationIdentifierCopyWithImpl<$Res,
-        _$AtsAuthenticationIdentifierImpl>
-    implements _$$AtsAuthenticationIdentifierImplCopyWith<$Res> {
-  __$$AtsAuthenticationIdentifierImplCopyWithImpl(
-      _$AtsAuthenticationIdentifierImpl _value,
-      $Res Function(_$AtsAuthenticationIdentifierImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsAuthenticationIdentifier
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? category = freezed,
-    Object? cardId = freezed,
-    Object? card = freezed,
-    Object? nfcIdentifier = freezed,
-  }) {
-    return _then(_$AtsAuthenticationIdentifierImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as AtsAuthenticationCategory?,
-      cardId: freezed == cardId
-          ? _value.cardId
-          : cardId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      card: freezed == card
-          ? _value.card
-          : card // ignore: cast_nullable_to_non_nullable
-              as AtsAuthenticationCard?,
-      nfcIdentifier: freezed == nfcIdentifier
-          ? _value.nfcIdentifier
-          : nfcIdentifier // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsAuthenticationIdentifierImpl
-    implements _AtsAuthenticationIdentifier {
-  const _$AtsAuthenticationIdentifierImpl(
+class _AtsAuthenticationIdentifier implements AtsAuthenticationIdentifier {
+  const _AtsAuthenticationIdentifier(
       {this.id,
       @AtsAuthenticationCategoryOrNullConverter() this.category,
       this.cardId,
       this.card,
       this.nfcIdentifier});
-
-  factory _$AtsAuthenticationIdentifierImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$AtsAuthenticationIdentifierImplFromJson(json);
+  factory _AtsAuthenticationIdentifier.fromJson(Map<String, dynamic> json) =>
+      _$AtsAuthenticationIdentifierFromJson(json);
 
   /// ID of the [AtsAuthenticationIdentifier]. This ID is unique'
   @override
@@ -1211,16 +1021,27 @@ class _$AtsAuthenticationIdentifierImpl
   @override
   final String? nfcIdentifier;
 
+  /// Create a copy of AtsAuthenticationIdentifier
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsAuthenticationIdentifier(id: $id, category: $category, cardId: $cardId, card: $card, nfcIdentifier: $nfcIdentifier)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsAuthenticationIdentifierCopyWith<_AtsAuthenticationIdentifier>
+      get copyWith => __$AtsAuthenticationIdentifierCopyWithImpl<
+          _AtsAuthenticationIdentifier>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsAuthenticationIdentifierToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsAuthenticationIdentifierImpl &&
+            other is _AtsAuthenticationIdentifier &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.category, category) ||
                 other.category == category) &&
@@ -1235,120 +1056,183 @@ class _$AtsAuthenticationIdentifierImpl
   int get hashCode =>
       Object.hash(runtimeType, id, category, cardId, card, nfcIdentifier);
 
-  /// Create a copy of AtsAuthenticationIdentifier
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsAuthenticationIdentifierImplCopyWith<_$AtsAuthenticationIdentifierImpl>
-      get copyWith => __$$AtsAuthenticationIdentifierImplCopyWithImpl<
-          _$AtsAuthenticationIdentifierImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsAuthenticationIdentifierImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsAuthenticationIdentifier(id: $id, category: $category, cardId: $cardId, card: $card, nfcIdentifier: $nfcIdentifier)';
   }
 }
 
-abstract class _AtsAuthenticationIdentifier
-    implements AtsAuthenticationIdentifier {
-  const factory _AtsAuthenticationIdentifier(
-      {final String? id,
+/// @nodoc
+abstract mixin class _$AtsAuthenticationIdentifierCopyWith<$Res>
+    implements $AtsAuthenticationIdentifierCopyWith<$Res> {
+  factory _$AtsAuthenticationIdentifierCopyWith(
+          _AtsAuthenticationIdentifier value,
+          $Res Function(_AtsAuthenticationIdentifier) _then) =
+      __$AtsAuthenticationIdentifierCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
       @AtsAuthenticationCategoryOrNullConverter()
-      final AtsAuthenticationCategory? category,
-      final String? cardId,
-      final AtsAuthenticationCard? card,
-      final String? nfcIdentifier}) = _$AtsAuthenticationIdentifierImpl;
+      AtsAuthenticationCategory? category,
+      String? cardId,
+      AtsAuthenticationCard? card,
+      String? nfcIdentifier});
 
-  factory _AtsAuthenticationIdentifier.fromJson(Map<String, dynamic> json) =
-      _$AtsAuthenticationIdentifierImpl.fromJson;
-
-  /// ID of the [AtsAuthenticationIdentifier]. This ID is unique'
   @override
-  String? get id;
+  $AtsAuthenticationCardCopyWith<$Res>? get card;
+}
 
-  /// [AtsAuthenticationIdentifier] identifier category, It is a Enum from [AtsAuthenticationCategory]
-  @override
-  @AtsAuthenticationCategoryOrNullConverter()
-  AtsAuthenticationCategory? get category;
+/// @nodoc
+class __$AtsAuthenticationIdentifierCopyWithImpl<$Res>
+    implements _$AtsAuthenticationIdentifierCopyWith<$Res> {
+  __$AtsAuthenticationIdentifierCopyWithImpl(this._self, this._then);
 
-  /// [AtsAuthenticationIdentifier] card ID
-  @override
-  String? get cardId;
-
-  /// [AtsAuthenticationCard] linked to this identifier. See AuthenticationCard for more information
-  @override
-  AtsAuthenticationCard? get card;
-
-  /// Authentication identifier NFC identifier
-  @override
-  String? get nfcIdentifier;
+  final _AtsAuthenticationIdentifier _self;
+  final $Res Function(_AtsAuthenticationIdentifier) _then;
 
   /// Create a copy of AtsAuthenticationIdentifier
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsAuthenticationIdentifierImplCopyWith<_$AtsAuthenticationIdentifierImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? category = freezed,
+    Object? cardId = freezed,
+    Object? card = freezed,
+    Object? nfcIdentifier = freezed,
+  }) {
+    return _then(_AtsAuthenticationIdentifier(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCategory?,
+      cardId: freezed == cardId
+          ? _self.cardId
+          : cardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      card: freezed == card
+          ? _self.card
+          : card // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCard?,
+      nfcIdentifier: freezed == nfcIdentifier
+          ? _self.nfcIdentifier
+          : nfcIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 
-AtsAuthenticationCard _$AtsAuthenticationCardFromJson(
-    Map<String, dynamic> json) {
-  return _AtsAuthenticationCard.fromJson(json);
+  /// Create a copy of AtsAuthenticationIdentifier
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsAuthenticationCardCopyWith<$Res>? get card {
+    if (_self.card == null) {
+      return null;
+    }
+
+    return $AtsAuthenticationCardCopyWith<$Res>(_self.card!, (value) {
+      return _then(_self.copyWith(card: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsAuthenticationCard {
   /// [id] represents the unique identifier of the card.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// [number] represents the number printed in the card
-  int get number => throw _privateConstructorUsedError;
+  int get number;
 
   /// [externalIdentifier] is the external identifier of the card. Defined in decimal format.
-  int get externalIdentifier => throw _privateConstructorUsedError;
+  int get externalIdentifier;
 
   /// [externalIdentifierHex] is the external identifier of the card. Defined in hexadecimal format.
-  String get externalIdentifierHex => throw _privateConstructorUsedError;
+  String get externalIdentifierHex;
 
   /// [asset] is the linked asset to this card.
-  Asset? get asset => throw _privateConstructorUsedError;
+  Asset? get asset;
 
   /// [owner] is the owner of this card.
-  User? get owner => throw _privateConstructorUsedError;
+  User? get owner;
 
   /// [isSuspended] is true if the card is suspended.
-  bool? get isSuspended => throw _privateConstructorUsedError;
+  bool? get isSuspended;
 
   /// [typeId] type id of the card.
   @AtsSelectCardConverter()
-  AtsSelectCard get typeId => throw _privateConstructorUsedError;
+  AtsSelectCard get typeId;
 
   /// [history] is the history of this card.
-  List<AtsHistoryAuthenticationCard>? get history =>
-      throw _privateConstructorUsedError;
+  List<AtsHistoryAuthenticationCard>? get history;
 
   /// [createdAt] is the date when the card was created.
   @TimestampOrNullConverter()
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsAuthenticationCard to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime? get createdAt;
 
   /// Create a copy of AtsAuthenticationCard
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsAuthenticationCardCopyWith<AtsAuthenticationCard> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsAuthenticationCardCopyWithImpl<AtsAuthenticationCard>(
+          this as AtsAuthenticationCard, _$identity);
+
+  /// Serializes this AtsAuthenticationCard to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsAuthenticationCard &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.externalIdentifier, externalIdentifier) ||
+                other.externalIdentifier == externalIdentifier) &&
+            (identical(other.externalIdentifierHex, externalIdentifierHex) ||
+                other.externalIdentifierHex == externalIdentifierHex) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended) &&
+            (identical(other.typeId, typeId) || other.typeId == typeId) &&
+            const DeepCollectionEquality().equals(other.history, history) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      number,
+      externalIdentifier,
+      externalIdentifierHex,
+      asset,
+      owner,
+      isSuspended,
+      typeId,
+      const DeepCollectionEquality().hash(history),
+      createdAt);
+
+  @override
+  String toString() {
+    return 'AtsAuthenticationCard(id: $id, number: $number, externalIdentifier: $externalIdentifier, externalIdentifierHex: $externalIdentifierHex, asset: $asset, owner: $owner, isSuspended: $isSuspended, typeId: $typeId, history: $history, createdAt: $createdAt)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsAuthenticationCardCopyWith<$Res> {
+abstract mixin class $AtsAuthenticationCardCopyWith<$Res> {
   factory $AtsAuthenticationCardCopyWith(AtsAuthenticationCard value,
-          $Res Function(AtsAuthenticationCard) then) =
-      _$AtsAuthenticationCardCopyWithImpl<$Res, AtsAuthenticationCard>;
+          $Res Function(AtsAuthenticationCard) _then) =
+      _$AtsAuthenticationCardCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1367,15 +1251,12 @@ abstract class $AtsAuthenticationCardCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsAuthenticationCardCopyWithImpl<$Res,
-        $Val extends AtsAuthenticationCard>
+class _$AtsAuthenticationCardCopyWithImpl<$Res>
     implements $AtsAuthenticationCardCopyWith<$Res> {
-  _$AtsAuthenticationCardCopyWithImpl(this._value, this._then);
+  _$AtsAuthenticationCardCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsAuthenticationCard _self;
+  final $Res Function(AtsAuthenticationCard) _then;
 
   /// Create a copy of AtsAuthenticationCard
   /// with the given fields replaced by the non-null parameter values.
@@ -1393,48 +1274,48 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res,
     Object? history = freezed,
     Object? createdAt = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       number: null == number
-          ? _value.number
+          ? _self.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
       externalIdentifier: null == externalIdentifier
-          ? _value.externalIdentifier
+          ? _self.externalIdentifier
           : externalIdentifier // ignore: cast_nullable_to_non_nullable
               as int,
       externalIdentifierHex: null == externalIdentifierHex
-          ? _value.externalIdentifierHex
+          ? _self.externalIdentifierHex
           : externalIdentifierHex // ignore: cast_nullable_to_non_nullable
               as String,
       asset: freezed == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       owner: freezed == owner
-          ? _value.owner
+          ? _self.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
       isSuspended: freezed == isSuspended
-          ? _value.isSuspended
+          ? _self.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool?,
       typeId: null == typeId
-          ? _value.typeId
+          ? _self.typeId
           : typeId // ignore: cast_nullable_to_non_nullable
               as AtsSelectCard,
       history: freezed == history
-          ? _value.history
+          ? _self.history
           : history // ignore: cast_nullable_to_non_nullable
               as List<AtsHistoryAuthenticationCard>?,
       createdAt: freezed == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsAuthenticationCard
@@ -1442,12 +1323,12 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
-    if (_value.asset == null) {
+    if (_self.asset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
     });
   }
 
@@ -1456,117 +1337,20 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get owner {
-    if (_value.owner == null) {
+    if (_self.owner == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.owner!, (value) {
-      return _then(_value.copyWith(owner: value) as $Val);
+    return $UserCopyWith<$Res>(_self.owner!, (value) {
+      return _then(_self.copyWith(owner: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsAuthenticationCardImplCopyWith<$Res>
-    implements $AtsAuthenticationCardCopyWith<$Res> {
-  factory _$$AtsAuthenticationCardImplCopyWith(
-          _$AtsAuthenticationCardImpl value,
-          $Res Function(_$AtsAuthenticationCardImpl) then) =
-      __$$AtsAuthenticationCardImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      int number,
-      int externalIdentifier,
-      String externalIdentifierHex,
-      Asset? asset,
-      User? owner,
-      bool? isSuspended,
-      @AtsSelectCardConverter() AtsSelectCard typeId,
-      List<AtsHistoryAuthenticationCard>? history,
-      @TimestampOrNullConverter() DateTime? createdAt});
-
-  @override
-  $AssetCopyWith<$Res>? get asset;
-  @override
-  $UserCopyWith<$Res>? get owner;
-}
-
-/// @nodoc
-class __$$AtsAuthenticationCardImplCopyWithImpl<$Res>
-    extends _$AtsAuthenticationCardCopyWithImpl<$Res,
-        _$AtsAuthenticationCardImpl>
-    implements _$$AtsAuthenticationCardImplCopyWith<$Res> {
-  __$$AtsAuthenticationCardImplCopyWithImpl(_$AtsAuthenticationCardImpl _value,
-      $Res Function(_$AtsAuthenticationCardImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? number = null,
-    Object? externalIdentifier = null,
-    Object? externalIdentifierHex = null,
-    Object? asset = freezed,
-    Object? owner = freezed,
-    Object? isSuspended = freezed,
-    Object? typeId = null,
-    Object? history = freezed,
-    Object? createdAt = freezed,
-  }) {
-    return _then(_$AtsAuthenticationCardImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      number: null == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int,
-      externalIdentifier: null == externalIdentifier
-          ? _value.externalIdentifier
-          : externalIdentifier // ignore: cast_nullable_to_non_nullable
-              as int,
-      externalIdentifierHex: null == externalIdentifierHex
-          ? _value.externalIdentifierHex
-          : externalIdentifierHex // ignore: cast_nullable_to_non_nullable
-              as String,
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      owner: freezed == owner
-          ? _value.owner
-          : owner // ignore: cast_nullable_to_non_nullable
-              as User?,
-      isSuspended: freezed == isSuspended
-          ? _value.isSuspended
-          : isSuspended // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      typeId: null == typeId
-          ? _value.typeId
-          : typeId // ignore: cast_nullable_to_non_nullable
-              as AtsSelectCard,
-      history: freezed == history
-          ? _value._history
-          : history // ignore: cast_nullable_to_non_nullable
-              as List<AtsHistoryAuthenticationCard>?,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
-  const _$AtsAuthenticationCardImpl(
+class _AtsAuthenticationCard implements AtsAuthenticationCard {
+  const _AtsAuthenticationCard(
       {required this.id,
       required this.number,
       required this.externalIdentifier,
@@ -1578,9 +1362,8 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
       final List<AtsHistoryAuthenticationCard>? history,
       @TimestampOrNullConverter() this.createdAt})
       : _history = history;
-
-  factory _$AtsAuthenticationCardImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsAuthenticationCardImplFromJson(json);
+  factory _AtsAuthenticationCard.fromJson(Map<String, dynamic> json) =>
+      _$AtsAuthenticationCardFromJson(json);
 
   /// [id] represents the unique identifier of the card.
   @override
@@ -1633,16 +1416,27 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
   @TimestampOrNullConverter()
   final DateTime? createdAt;
 
+  /// Create a copy of AtsAuthenticationCard
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsAuthenticationCard(id: $id, number: $number, externalIdentifier: $externalIdentifier, externalIdentifierHex: $externalIdentifierHex, asset: $asset, owner: $owner, isSuspended: $isSuspended, typeId: $typeId, history: $history, createdAt: $createdAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsAuthenticationCardCopyWith<_AtsAuthenticationCard> get copyWith =>
+      __$AtsAuthenticationCardCopyWithImpl<_AtsAuthenticationCard>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsAuthenticationCardToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsAuthenticationCardImpl &&
+            other is _AtsAuthenticationCard &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.externalIdentifier, externalIdentifier) ||
@@ -1674,135 +1468,202 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
       const DeepCollectionEquality().hash(_history),
       createdAt);
 
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsAuthenticationCardImplCopyWith<_$AtsAuthenticationCardImpl>
-      get copyWith => __$$AtsAuthenticationCardImplCopyWithImpl<
-          _$AtsAuthenticationCardImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsAuthenticationCardImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsAuthenticationCard(id: $id, number: $number, externalIdentifier: $externalIdentifier, externalIdentifierHex: $externalIdentifierHex, asset: $asset, owner: $owner, isSuspended: $isSuspended, typeId: $typeId, history: $history, createdAt: $createdAt)';
   }
 }
 
-abstract class _AtsAuthenticationCard implements AtsAuthenticationCard {
-  const factory _AtsAuthenticationCard(
-          {required final String id,
-          required final int number,
-          required final int externalIdentifier,
-          required final String externalIdentifierHex,
-          final Asset? asset,
-          final User? owner,
-          final bool? isSuspended,
-          @AtsSelectCardConverter() required final AtsSelectCard typeId,
-          final List<AtsHistoryAuthenticationCard>? history,
-          @TimestampOrNullConverter() final DateTime? createdAt}) =
-      _$AtsAuthenticationCardImpl;
-
-  factory _AtsAuthenticationCard.fromJson(Map<String, dynamic> json) =
-      _$AtsAuthenticationCardImpl.fromJson;
-
-  /// [id] represents the unique identifier of the card.
+/// @nodoc
+abstract mixin class _$AtsAuthenticationCardCopyWith<$Res>
+    implements $AtsAuthenticationCardCopyWith<$Res> {
+  factory _$AtsAuthenticationCardCopyWith(_AtsAuthenticationCard value,
+          $Res Function(_AtsAuthenticationCard) _then) =
+      __$AtsAuthenticationCardCopyWithImpl;
   @override
-  String get id;
+  @useResult
+  $Res call(
+      {String id,
+      int number,
+      int externalIdentifier,
+      String externalIdentifierHex,
+      Asset? asset,
+      User? owner,
+      bool? isSuspended,
+      @AtsSelectCardConverter() AtsSelectCard typeId,
+      List<AtsHistoryAuthenticationCard>? history,
+      @TimestampOrNullConverter() DateTime? createdAt});
 
-  /// [number] represents the number printed in the card
   @override
-  int get number;
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $UserCopyWith<$Res>? get owner;
+}
 
-  /// [externalIdentifier] is the external identifier of the card. Defined in decimal format.
-  @override
-  int get externalIdentifier;
+/// @nodoc
+class __$AtsAuthenticationCardCopyWithImpl<$Res>
+    implements _$AtsAuthenticationCardCopyWith<$Res> {
+  __$AtsAuthenticationCardCopyWithImpl(this._self, this._then);
 
-  /// [externalIdentifierHex] is the external identifier of the card. Defined in hexadecimal format.
-  @override
-  String get externalIdentifierHex;
-
-  /// [asset] is the linked asset to this card.
-  @override
-  Asset? get asset;
-
-  /// [owner] is the owner of this card.
-  @override
-  User? get owner;
-
-  /// [isSuspended] is true if the card is suspended.
-  @override
-  bool? get isSuspended;
-
-  /// [typeId] type id of the card.
-  @override
-  @AtsSelectCardConverter()
-  AtsSelectCard get typeId;
-
-  /// [history] is the history of this card.
-  @override
-  List<AtsHistoryAuthenticationCard>? get history;
-
-  /// [createdAt] is the date when the card was created.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get createdAt;
+  final _AtsAuthenticationCard _self;
+  final $Res Function(_AtsAuthenticationCard) _then;
 
   /// Create a copy of AtsAuthenticationCard
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsAuthenticationCardImplCopyWith<_$AtsAuthenticationCardImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? number = null,
+    Object? externalIdentifier = null,
+    Object? externalIdentifierHex = null,
+    Object? asset = freezed,
+    Object? owner = freezed,
+    Object? isSuspended = freezed,
+    Object? typeId = null,
+    Object? history = freezed,
+    Object? createdAt = freezed,
+  }) {
+    return _then(_AtsAuthenticationCard(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      number: null == number
+          ? _self.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
+      externalIdentifier: null == externalIdentifier
+          ? _self.externalIdentifier
+          : externalIdentifier // ignore: cast_nullable_to_non_nullable
+              as int,
+      externalIdentifierHex: null == externalIdentifierHex
+          ? _self.externalIdentifierHex
+          : externalIdentifierHex // ignore: cast_nullable_to_non_nullable
+              as String,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      owner: freezed == owner
+          ? _self.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
+      isSuspended: freezed == isSuspended
+          ? _self.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      typeId: null == typeId
+          ? _self.typeId
+          : typeId // ignore: cast_nullable_to_non_nullable
+              as AtsSelectCard,
+      history: freezed == history
+          ? _self._history
+          : history // ignore: cast_nullable_to_non_nullable
+              as List<AtsHistoryAuthenticationCard>?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 
-AtsHistoryAuthenticationCard _$AtsHistoryAuthenticationCardFromJson(
-    Map<String, dynamic> json) {
-  return _AtsHistoryAuthenticationCard.fromJson(json);
+  /// Create a copy of AtsAuthenticationCard
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of AtsAuthenticationCard
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get owner {
+    if (_self.owner == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.owner!, (value) {
+      return _then(_self.copyWith(owner: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsHistoryAuthenticationCard {
   /// [id] represents the unique identifier of the history operation of the card.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// [operation] represents the operation performed in the card.
   @AtsHistoryAuthenticationCardOperationConverter()
-  AtsHistoryAuthenticationCardOperation get operation =>
-      throw _privateConstructorUsedError;
+  AtsHistoryAuthenticationCardOperation get operation;
 
   /// [asset] is the linked asset to this card.
-  Asset? get asset => throw _privateConstructorUsedError;
+  Asset? get asset;
 
   /// [owner] is the owner of this card.
-  User? get owner => throw _privateConstructorUsedError;
+  User? get owner;
 
   /// [createdBy] is the user who performed the operation.
-  User get createdBy => throw _privateConstructorUsedError;
+  User get createdBy;
 
   /// [createdAt] is the date when the card was created.
   @TimestampConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsHistoryAuthenticationCard to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime get createdAt;
 
   /// Create a copy of AtsHistoryAuthenticationCard
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsHistoryAuthenticationCardCopyWith<AtsHistoryAuthenticationCard>
-      get copyWith => throw _privateConstructorUsedError;
+      get copyWith => _$AtsHistoryAuthenticationCardCopyWithImpl<
+              AtsHistoryAuthenticationCard>(
+          this as AtsHistoryAuthenticationCard, _$identity);
+
+  /// Serializes this AtsHistoryAuthenticationCard to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsHistoryAuthenticationCard &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, operation, asset, owner, createdBy, createdAt);
+
+  @override
+  String toString() {
+    return 'AtsHistoryAuthenticationCard(id: $id, operation: $operation, asset: $asset, owner: $owner, createdBy: $createdBy, createdAt: $createdAt)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsHistoryAuthenticationCardCopyWith<$Res> {
+abstract mixin class $AtsHistoryAuthenticationCardCopyWith<$Res> {
   factory $AtsHistoryAuthenticationCardCopyWith(
           AtsHistoryAuthenticationCard value,
-          $Res Function(AtsHistoryAuthenticationCard) then) =
-      _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
-          AtsHistoryAuthenticationCard>;
+          $Res Function(AtsHistoryAuthenticationCard) _then) =
+      _$AtsHistoryAuthenticationCardCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1819,15 +1680,12 @@ abstract class $AtsHistoryAuthenticationCardCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
-        $Val extends AtsHistoryAuthenticationCard>
+class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res>
     implements $AtsHistoryAuthenticationCardCopyWith<$Res> {
-  _$AtsHistoryAuthenticationCardCopyWithImpl(this._value, this._then);
+  _$AtsHistoryAuthenticationCardCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsHistoryAuthenticationCard _self;
+  final $Res Function(AtsHistoryAuthenticationCard) _then;
 
   /// Create a copy of AtsHistoryAuthenticationCard
   /// with the given fields replaced by the non-null parameter values.
@@ -1841,32 +1699,32 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
     Object? createdBy = null,
     Object? createdAt = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       operation: null == operation
-          ? _value.operation
+          ? _self.operation
           : operation // ignore: cast_nullable_to_non_nullable
               as AtsHistoryAuthenticationCardOperation,
       asset: freezed == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       owner: freezed == owner
-          ? _value.owner
+          ? _self.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
       createdBy: null == createdBy
-          ? _value.createdBy
+          ? _self.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as User,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsHistoryAuthenticationCard
@@ -1874,12 +1732,12 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
-    if (_value.asset == null) {
+    if (_self.asset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
     });
   }
 
@@ -1888,12 +1746,12 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get owner {
-    if (_value.owner == null) {
+    if (_self.owner == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.owner!, (value) {
-      return _then(_value.copyWith(owner: value) as $Val);
+    return $UserCopyWith<$Res>(_self.owner!, (value) {
+      return _then(_self.copyWith(owner: value));
     });
   }
 
@@ -1902,104 +1760,24 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get createdBy {
-    return $UserCopyWith<$Res>(_value.createdBy, (value) {
-      return _then(_value.copyWith(createdBy: value) as $Val);
+    return $UserCopyWith<$Res>(_self.createdBy, (value) {
+      return _then(_self.copyWith(createdBy: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsHistoryAuthenticationCardImplCopyWith<$Res>
-    implements $AtsHistoryAuthenticationCardCopyWith<$Res> {
-  factory _$$AtsHistoryAuthenticationCardImplCopyWith(
-          _$AtsHistoryAuthenticationCardImpl value,
-          $Res Function(_$AtsHistoryAuthenticationCardImpl) then) =
-      __$$AtsHistoryAuthenticationCardImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @AtsHistoryAuthenticationCardOperationConverter()
-      AtsHistoryAuthenticationCardOperation operation,
-      Asset? asset,
-      User? owner,
-      User createdBy,
-      @TimestampConverter() DateTime createdAt});
-
-  @override
-  $AssetCopyWith<$Res>? get asset;
-  @override
-  $UserCopyWith<$Res>? get owner;
-  @override
-  $UserCopyWith<$Res> get createdBy;
-}
-
-/// @nodoc
-class __$$AtsHistoryAuthenticationCardImplCopyWithImpl<$Res>
-    extends _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
-        _$AtsHistoryAuthenticationCardImpl>
-    implements _$$AtsHistoryAuthenticationCardImplCopyWith<$Res> {
-  __$$AtsHistoryAuthenticationCardImplCopyWithImpl(
-      _$AtsHistoryAuthenticationCardImpl _value,
-      $Res Function(_$AtsHistoryAuthenticationCardImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? operation = null,
-    Object? asset = freezed,
-    Object? owner = freezed,
-    Object? createdBy = null,
-    Object? createdAt = null,
-  }) {
-    return _then(_$AtsHistoryAuthenticationCardImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      operation: null == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as AtsHistoryAuthenticationCardOperation,
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      owner: freezed == owner
-          ? _value.owner
-          : owner // ignore: cast_nullable_to_non_nullable
-              as User?,
-      createdBy: null == createdBy
-          ? _value.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as User,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsHistoryAuthenticationCardImpl
-    implements _AtsHistoryAuthenticationCard {
-  const _$AtsHistoryAuthenticationCardImpl(
+class _AtsHistoryAuthenticationCard implements AtsHistoryAuthenticationCard {
+  const _AtsHistoryAuthenticationCard(
       {required this.id,
       @AtsHistoryAuthenticationCardOperationConverter() required this.operation,
       this.asset,
       this.owner,
       required this.createdBy,
       @TimestampConverter() required this.createdAt});
-
-  factory _$AtsHistoryAuthenticationCardImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$AtsHistoryAuthenticationCardImplFromJson(json);
+  factory _AtsHistoryAuthenticationCard.fromJson(Map<String, dynamic> json) =>
+      _$AtsHistoryAuthenticationCardFromJson(json);
 
   /// [id] represents the unique identifier of the history operation of the card.
   @override
@@ -2027,16 +1805,27 @@ class _$AtsHistoryAuthenticationCardImpl
   @TimestampConverter()
   final DateTime createdAt;
 
+  /// Create a copy of AtsHistoryAuthenticationCard
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsHistoryAuthenticationCard(id: $id, operation: $operation, asset: $asset, owner: $owner, createdBy: $createdBy, createdAt: $createdAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsHistoryAuthenticationCardCopyWith<_AtsHistoryAuthenticationCard>
+      get copyWith => __$AtsHistoryAuthenticationCardCopyWithImpl<
+          _AtsHistoryAuthenticationCard>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsHistoryAuthenticationCardToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsHistoryAuthenticationCardImpl &&
+            other is _AtsHistoryAuthenticationCard &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.operation, operation) ||
                 other.operation == operation) &&
@@ -2053,118 +1842,191 @@ class _$AtsHistoryAuthenticationCardImpl
   int get hashCode => Object.hash(
       runtimeType, id, operation, asset, owner, createdBy, createdAt);
 
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsHistoryAuthenticationCardImplCopyWith<
-          _$AtsHistoryAuthenticationCardImpl>
-      get copyWith => __$$AtsHistoryAuthenticationCardImplCopyWithImpl<
-          _$AtsHistoryAuthenticationCardImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsHistoryAuthenticationCardImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsHistoryAuthenticationCard(id: $id, operation: $operation, asset: $asset, owner: $owner, createdBy: $createdBy, createdAt: $createdAt)';
   }
 }
 
-abstract class _AtsHistoryAuthenticationCard
-    implements AtsHistoryAuthenticationCard {
-  const factory _AtsHistoryAuthenticationCard(
-          {required final String id,
-          @AtsHistoryAuthenticationCardOperationConverter()
-          required final AtsHistoryAuthenticationCardOperation operation,
-          final Asset? asset,
-          final User? owner,
-          required final User createdBy,
-          @TimestampConverter() required final DateTime createdAt}) =
-      _$AtsHistoryAuthenticationCardImpl;
-
-  factory _AtsHistoryAuthenticationCard.fromJson(Map<String, dynamic> json) =
-      _$AtsHistoryAuthenticationCardImpl.fromJson;
-
-  /// [id] represents the unique identifier of the history operation of the card.
+/// @nodoc
+abstract mixin class _$AtsHistoryAuthenticationCardCopyWith<$Res>
+    implements $AtsHistoryAuthenticationCardCopyWith<$Res> {
+  factory _$AtsHistoryAuthenticationCardCopyWith(
+          _AtsHistoryAuthenticationCard value,
+          $Res Function(_AtsHistoryAuthenticationCard) _then) =
+      __$AtsHistoryAuthenticationCardCopyWithImpl;
   @override
-  String get id;
+  @useResult
+  $Res call(
+      {String id,
+      @AtsHistoryAuthenticationCardOperationConverter()
+      AtsHistoryAuthenticationCardOperation operation,
+      Asset? asset,
+      User? owner,
+      User createdBy,
+      @TimestampConverter() DateTime createdAt});
 
-  /// [operation] represents the operation performed in the card.
   @override
-  @AtsHistoryAuthenticationCardOperationConverter()
-  AtsHistoryAuthenticationCardOperation get operation;
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $UserCopyWith<$Res>? get owner;
+  @override
+  $UserCopyWith<$Res> get createdBy;
+}
 
-  /// [asset] is the linked asset to this card.
-  @override
-  Asset? get asset;
+/// @nodoc
+class __$AtsHistoryAuthenticationCardCopyWithImpl<$Res>
+    implements _$AtsHistoryAuthenticationCardCopyWith<$Res> {
+  __$AtsHistoryAuthenticationCardCopyWithImpl(this._self, this._then);
 
-  /// [owner] is the owner of this card.
-  @override
-  User? get owner;
-
-  /// [createdBy] is the user who performed the operation.
-  @override
-  User get createdBy;
-
-  /// [createdAt] is the date when the card was created.
-  @override
-  @TimestampConverter()
-  DateTime get createdAt;
+  final _AtsHistoryAuthenticationCard _self;
+  final $Res Function(_AtsHistoryAuthenticationCard) _then;
 
   /// Create a copy of AtsHistoryAuthenticationCard
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsHistoryAuthenticationCardImplCopyWith<
-          _$AtsHistoryAuthenticationCardImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? operation = null,
+    Object? asset = freezed,
+    Object? owner = freezed,
+    Object? createdBy = null,
+    Object? createdAt = null,
+  }) {
+    return _then(_AtsHistoryAuthenticationCard(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      operation: null == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as AtsHistoryAuthenticationCardOperation,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      owner: freezed == owner
+          ? _self.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
+      createdBy: null == createdBy
+          ? _self.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as User,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
 
-AtsFeedbackMessege _$AtsFeedbackMessegeFromJson(Map<String, dynamic> json) {
-  return _AtsFeedbackMessege.fromJson(json);
+  /// Create a copy of AtsHistoryAuthenticationCard
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of AtsHistoryAuthenticationCard
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get owner {
+    if (_self.owner == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.owner!, (value) {
+      return _then(_self.copyWith(owner: value));
+    });
+  }
+
+  /// Create a copy of AtsHistoryAuthenticationCard
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get createdBy {
+    return $UserCopyWith<$Res>(_self.createdBy, (value) {
+      return _then(_self.copyWith(createdBy: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsFeedbackMessege {
   /// [id] of the asset entity. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// [content] sent from the [User].
-  String? get content => throw _privateConstructorUsedError;
+  String? get content;
 
   /// [creator] Owner or submitter.
-  User? get creator => throw _privateConstructorUsedError;
+  User? get creator;
 
   /// [at] Date of creation in UNIX Timestamp.
   @TimestampOrNullConverter()
-  DateTime? get at => throw _privateConstructorUsedError;
+  DateTime? get at;
 
   /// [app] object from comming feedback message, only will return when FeedbackMessage.source = FeedbackSource.APP
-  RegisteredApp? get app => throw _privateConstructorUsedError;
+  RegisteredApp? get app;
 
   /// [source] Source of the feedback message.
   @FeedbackSourceOrNullConverter()
-  FeedbackSource? get source => throw _privateConstructorUsedError;
+  FeedbackSource? get source;
 
   /// [isRead] Is read indicator.
-  bool? get isRead => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsFeedbackMessege to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get isRead;
 
   /// Create a copy of AtsFeedbackMessege
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsFeedbackMessegeCopyWith<AtsFeedbackMessege> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsFeedbackMessegeCopyWithImpl<AtsFeedbackMessege>(
+          this as AtsFeedbackMessege, _$identity);
+
+  /// Serializes this AtsFeedbackMessege to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsFeedbackMessege &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.creator, creator) || other.creator == creator) &&
+            (identical(other.at, at) || other.at == at) &&
+            (identical(other.app, app) || other.app == app) &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.isRead, isRead) || other.isRead == isRead));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, content, creator, at, app, source, isRead);
+
+  @override
+  String toString() {
+    return 'AtsFeedbackMessege(id: $id, content: $content, creator: $creator, at: $at, app: $app, source: $source, isRead: $isRead)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsFeedbackMessegeCopyWith<$Res> {
+abstract mixin class $AtsFeedbackMessegeCopyWith<$Res> {
   factory $AtsFeedbackMessegeCopyWith(
-          AtsFeedbackMessege value, $Res Function(AtsFeedbackMessege) then) =
-      _$AtsFeedbackMessegeCopyWithImpl<$Res, AtsFeedbackMessege>;
+          AtsFeedbackMessege value, $Res Function(AtsFeedbackMessege) _then) =
+      _$AtsFeedbackMessegeCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -2180,14 +2042,12 @@ abstract class $AtsFeedbackMessegeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsFeedbackMessegeCopyWithImpl<$Res, $Val extends AtsFeedbackMessege>
+class _$AtsFeedbackMessegeCopyWithImpl<$Res>
     implements $AtsFeedbackMessegeCopyWith<$Res> {
-  _$AtsFeedbackMessegeCopyWithImpl(this._value, this._then);
+  _$AtsFeedbackMessegeCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsFeedbackMessege _self;
+  final $Res Function(AtsFeedbackMessege) _then;
 
   /// Create a copy of AtsFeedbackMessege
   /// with the given fields replaced by the non-null parameter values.
@@ -2202,36 +2062,36 @@ class _$AtsFeedbackMessegeCopyWithImpl<$Res, $Val extends AtsFeedbackMessege>
     Object? source = freezed,
     Object? isRead = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       content: freezed == content
-          ? _value.content
+          ? _self.content
           : content // ignore: cast_nullable_to_non_nullable
               as String?,
       creator: freezed == creator
-          ? _value.creator
+          ? _self.creator
           : creator // ignore: cast_nullable_to_non_nullable
               as User?,
       at: freezed == at
-          ? _value.at
+          ? _self.at
           : at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       app: freezed == app
-          ? _value.app
+          ? _self.app
           : app // ignore: cast_nullable_to_non_nullable
               as RegisteredApp?,
       source: freezed == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as FeedbackSource?,
       isRead: freezed == isRead
-          ? _value.isRead
+          ? _self.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsFeedbackMessege
@@ -2239,12 +2099,12 @@ class _$AtsFeedbackMessegeCopyWithImpl<$Res, $Val extends AtsFeedbackMessege>
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get creator {
-    if (_value.creator == null) {
+    if (_self.creator == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.creator!, (value) {
-      return _then(_value.copyWith(creator: value) as $Val);
+    return $UserCopyWith<$Res>(_self.creator!, (value) {
+      return _then(_self.copyWith(creator: value));
     });
   }
 
@@ -2253,97 +2113,20 @@ class _$AtsFeedbackMessegeCopyWithImpl<$Res, $Val extends AtsFeedbackMessege>
   @override
   @pragma('vm:prefer-inline')
   $RegisteredAppCopyWith<$Res>? get app {
-    if (_value.app == null) {
+    if (_self.app == null) {
       return null;
     }
 
-    return $RegisteredAppCopyWith<$Res>(_value.app!, (value) {
-      return _then(_value.copyWith(app: value) as $Val);
+    return $RegisteredAppCopyWith<$Res>(_self.app!, (value) {
+      return _then(_self.copyWith(app: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsFeedbackMessegeImplCopyWith<$Res>
-    implements $AtsFeedbackMessegeCopyWith<$Res> {
-  factory _$$AtsFeedbackMessegeImplCopyWith(_$AtsFeedbackMessegeImpl value,
-          $Res Function(_$AtsFeedbackMessegeImpl) then) =
-      __$$AtsFeedbackMessegeImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String? content,
-      User? creator,
-      @TimestampOrNullConverter() DateTime? at,
-      RegisteredApp? app,
-      @FeedbackSourceOrNullConverter() FeedbackSource? source,
-      bool? isRead});
-
-  @override
-  $UserCopyWith<$Res>? get creator;
-  @override
-  $RegisteredAppCopyWith<$Res>? get app;
-}
-
-/// @nodoc
-class __$$AtsFeedbackMessegeImplCopyWithImpl<$Res>
-    extends _$AtsFeedbackMessegeCopyWithImpl<$Res, _$AtsFeedbackMessegeImpl>
-    implements _$$AtsFeedbackMessegeImplCopyWith<$Res> {
-  __$$AtsFeedbackMessegeImplCopyWithImpl(_$AtsFeedbackMessegeImpl _value,
-      $Res Function(_$AtsFeedbackMessegeImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? content = freezed,
-    Object? creator = freezed,
-    Object? at = freezed,
-    Object? app = freezed,
-    Object? source = freezed,
-    Object? isRead = freezed,
-  }) {
-    return _then(_$AtsFeedbackMessegeImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      content: freezed == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String?,
-      creator: freezed == creator
-          ? _value.creator
-          : creator // ignore: cast_nullable_to_non_nullable
-              as User?,
-      at: freezed == at
-          ? _value.at
-          : at // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      app: freezed == app
-          ? _value.app
-          : app // ignore: cast_nullable_to_non_nullable
-              as RegisteredApp?,
-      source: freezed == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as FeedbackSource?,
-      isRead: freezed == isRead
-          ? _value.isRead
-          : isRead // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
-  const _$AtsFeedbackMessegeImpl(
+class _AtsFeedbackMessege implements AtsFeedbackMessege {
+  const _AtsFeedbackMessege(
       {this.id,
       this.content,
       this.creator,
@@ -2351,9 +2134,8 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
       this.app,
       @FeedbackSourceOrNullConverter() this.source,
       this.isRead});
-
-  factory _$AtsFeedbackMessegeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsFeedbackMessegeImplFromJson(json);
+  factory _AtsFeedbackMessege.fromJson(Map<String, dynamic> json) =>
+      _$AtsFeedbackMessegeFromJson(json);
 
   /// [id] of the asset entity. This ID is unique.
   @override
@@ -2385,16 +2167,26 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
   @override
   final bool? isRead;
 
+  /// Create a copy of AtsFeedbackMessege
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsFeedbackMessege(id: $id, content: $content, creator: $creator, at: $at, app: $app, source: $source, isRead: $isRead)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsFeedbackMessegeCopyWith<_AtsFeedbackMessege> get copyWith =>
+      __$AtsFeedbackMessegeCopyWithImpl<_AtsFeedbackMessege>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsFeedbackMessegeToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsFeedbackMessegeImpl &&
+            other is _AtsFeedbackMessege &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.creator, creator) || other.creator == creator) &&
@@ -2409,138 +2201,228 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
   int get hashCode =>
       Object.hash(runtimeType, id, content, creator, at, app, source, isRead);
 
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsFeedbackMessegeImplCopyWith<_$AtsFeedbackMessegeImpl> get copyWith =>
-      __$$AtsFeedbackMessegeImplCopyWithImpl<_$AtsFeedbackMessegeImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsFeedbackMessegeImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsFeedbackMessege(id: $id, content: $content, creator: $creator, at: $at, app: $app, source: $source, isRead: $isRead)';
   }
 }
 
-abstract class _AtsFeedbackMessege implements AtsFeedbackMessege {
-  const factory _AtsFeedbackMessege(
-      {final String? id,
-      final String? content,
-      final User? creator,
-      @TimestampOrNullConverter() final DateTime? at,
-      final RegisteredApp? app,
-      @FeedbackSourceOrNullConverter() final FeedbackSource? source,
-      final bool? isRead}) = _$AtsFeedbackMessegeImpl;
-
-  factory _AtsFeedbackMessege.fromJson(Map<String, dynamic> json) =
-      _$AtsFeedbackMessegeImpl.fromJson;
-
-  /// [id] of the asset entity. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsFeedbackMessegeCopyWith<$Res>
+    implements $AtsFeedbackMessegeCopyWith<$Res> {
+  factory _$AtsFeedbackMessegeCopyWith(
+          _AtsFeedbackMessege value, $Res Function(_AtsFeedbackMessege) _then) =
+      __$AtsFeedbackMessegeCopyWithImpl;
   @override
-  String? get id;
+  @useResult
+  $Res call(
+      {String? id,
+      String? content,
+      User? creator,
+      @TimestampOrNullConverter() DateTime? at,
+      RegisteredApp? app,
+      @FeedbackSourceOrNullConverter() FeedbackSource? source,
+      bool? isRead});
 
-  /// [content] sent from the [User].
   @override
-  String? get content;
+  $UserCopyWith<$Res>? get creator;
+  @override
+  $RegisteredAppCopyWith<$Res>? get app;
+}
 
-  /// [creator] Owner or submitter.
-  @override
-  User? get creator;
+/// @nodoc
+class __$AtsFeedbackMessegeCopyWithImpl<$Res>
+    implements _$AtsFeedbackMessegeCopyWith<$Res> {
+  __$AtsFeedbackMessegeCopyWithImpl(this._self, this._then);
 
-  /// [at] Date of creation in UNIX Timestamp.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get at;
-
-  /// [app] object from comming feedback message, only will return when FeedbackMessage.source = FeedbackSource.APP
-  @override
-  RegisteredApp? get app;
-
-  /// [source] Source of the feedback message.
-  @override
-  @FeedbackSourceOrNullConverter()
-  FeedbackSource? get source;
-
-  /// [isRead] Is read indicator.
-  @override
-  bool? get isRead;
+  final _AtsFeedbackMessege _self;
+  final $Res Function(_AtsFeedbackMessege) _then;
 
   /// Create a copy of AtsFeedbackMessege
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsFeedbackMessegeImplCopyWith<_$AtsFeedbackMessegeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? content = freezed,
+    Object? creator = freezed,
+    Object? at = freezed,
+    Object? app = freezed,
+    Object? source = freezed,
+    Object? isRead = freezed,
+  }) {
+    return _then(_AtsFeedbackMessege(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      content: freezed == content
+          ? _self.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creator: freezed == creator
+          ? _self.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as User?,
+      at: freezed == at
+          ? _self.at
+          : at // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      app: freezed == app
+          ? _self.app
+          : app // ignore: cast_nullable_to_non_nullable
+              as RegisteredApp?,
+      source: freezed == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as FeedbackSource?,
+      isRead: freezed == isRead
+          ? _self.isRead
+          : isRead // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
 
-AtsEvent _$AtsEventFromJson(Map<String, dynamic> json) {
-  return _AtsEvent.fromJson(json);
+  /// Create a copy of AtsFeedbackMessege
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get creator {
+    if (_self.creator == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.creator!, (value) {
+      return _then(_self.copyWith(creator: value));
+    });
+  }
+
+  /// Create a copy of AtsFeedbackMessege
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RegisteredAppCopyWith<$Res>? get app {
+    if (_self.app == null) {
+      return null;
+    }
+
+    return $RegisteredAppCopyWith<$Res>(_self.app!, (value) {
+      return _then(_self.copyWith(app: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsEvent {
   /// [id] of the asset entity. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// [operation] Operation linked to the [AtsEvent].
-  Operation? get operation => throw _privateConstructorUsedError;
+  Operation? get operation;
 
   /// [operationId] Operation linked to the [AtsEvent].
-  String? get operationId => throw _privateConstructorUsedError;
+  String? get operationId;
 
   /// [trigger] Trigger linked to the [AtsEvent].
-  Trigger? get trigger => throw _privateConstructorUsedError;
+  Trigger? get trigger;
 
   /// [triggerId] Trigger linked to the [AtsEvent].
-  String? get triggerId =>
-      throw _privateConstructorUsedError; // /// [function] Pitagoras function linked to the [AtsEvent].
+  String?
+      get triggerId; // /// [function] Pitagoras function linked to the [AtsEvent].
 // Function? function,
   /// [functionId] Pitagoras function ID linked to the [AtsEvent].
-  String? get functionId => throw _privateConstructorUsedError;
+  String? get functionId;
 
   /// [asset] Asset linked to the [AtsEvent].
-  Asset? get asset => throw _privateConstructorUsedError;
+  Asset? get asset;
 
   /// [assetId] Asset ID linked to the [AtsEvent].
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// [position] linked to the [AtsEvent].
-  TelemetryPosition? get position => throw _privateConstructorUsedError;
+  TelemetryPosition? get position;
 
   /// [payload] Raw received payload values list of the message.
-  List<TelemetrySensor>? get payload => throw _privateConstructorUsedError;
+  List<TelemetrySensor>? get payload;
 
   /// [sensors] values list of the message.
-  List<Sensor>? get sensors => throw _privateConstructorUsedError;
+  List<Sensor>? get sensors;
 
   /// [at] Unix timestamp representing the date of the event.
   @TimestampOrNullConverter()
-  DateTime? get at => throw _privateConstructorUsedError;
+  DateTime? get at;
 
   /// [isCheck] Flag to identify if the event has been checked.
-  bool? get isCheck => throw _privateConstructorUsedError;
+  bool? get isCheck;
 
   /// [comment] on closing event.
-  String? get comment => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get comment;
 
   /// Create a copy of AtsEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsEventCopyWith<AtsEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsEventCopyWithImpl<AtsEvent>(this as AtsEvent, _$identity);
+
+  /// Serializes this AtsEvent to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsEvent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.trigger, trigger) || other.trigger == trigger) &&
+            (identical(other.triggerId, triggerId) ||
+                other.triggerId == triggerId) &&
+            (identical(other.functionId, functionId) ||
+                other.functionId == functionId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
+            const DeepCollectionEquality().equals(other.payload, payload) &&
+            const DeepCollectionEquality().equals(other.sensors, sensors) &&
+            (identical(other.at, at) || other.at == at) &&
+            (identical(other.isCheck, isCheck) || other.isCheck == isCheck) &&
+            (identical(other.comment, comment) || other.comment == comment));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      operation,
+      operationId,
+      trigger,
+      triggerId,
+      functionId,
+      asset,
+      assetId,
+      position,
+      const DeepCollectionEquality().hash(payload),
+      const DeepCollectionEquality().hash(sensors),
+      at,
+      isCheck,
+      comment);
+
+  @override
+  String toString() {
+    return 'AtsEvent(id: $id, operation: $operation, operationId: $operationId, trigger: $trigger, triggerId: $triggerId, functionId: $functionId, asset: $asset, assetId: $assetId, position: $position, payload: $payload, sensors: $sensors, at: $at, isCheck: $isCheck, comment: $comment)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsEventCopyWith<$Res> {
-  factory $AtsEventCopyWith(AtsEvent value, $Res Function(AtsEvent) then) =
-      _$AtsEventCopyWithImpl<$Res, AtsEvent>;
+abstract mixin class $AtsEventCopyWith<$Res> {
+  factory $AtsEventCopyWith(AtsEvent value, $Res Function(AtsEvent) _then) =
+      _$AtsEventCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -2565,14 +2447,11 @@ abstract class $AtsEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
-    implements $AtsEventCopyWith<$Res> {
-  _$AtsEventCopyWithImpl(this._value, this._then);
+class _$AtsEventCopyWithImpl<$Res> implements $AtsEventCopyWith<$Res> {
+  _$AtsEventCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsEvent _self;
+  final $Res Function(AtsEvent) _then;
 
   /// Create a copy of AtsEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -2594,64 +2473,64 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
     Object? isCheck = freezed,
     Object? comment = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       operation: freezed == operation
-          ? _value.operation
+          ? _self.operation
           : operation // ignore: cast_nullable_to_non_nullable
               as Operation?,
       operationId: freezed == operationId
-          ? _value.operationId
+          ? _self.operationId
           : operationId // ignore: cast_nullable_to_non_nullable
               as String?,
       trigger: freezed == trigger
-          ? _value.trigger
+          ? _self.trigger
           : trigger // ignore: cast_nullable_to_non_nullable
               as Trigger?,
       triggerId: freezed == triggerId
-          ? _value.triggerId
+          ? _self.triggerId
           : triggerId // ignore: cast_nullable_to_non_nullable
               as String?,
       functionId: freezed == functionId
-          ? _value.functionId
+          ? _self.functionId
           : functionId // ignore: cast_nullable_to_non_nullable
               as String?,
       asset: freezed == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       position: freezed == position
-          ? _value.position
+          ? _self.position
           : position // ignore: cast_nullable_to_non_nullable
               as TelemetryPosition?,
       payload: freezed == payload
-          ? _value.payload
+          ? _self.payload
           : payload // ignore: cast_nullable_to_non_nullable
               as List<TelemetrySensor>?,
       sensors: freezed == sensors
-          ? _value.sensors
+          ? _self.sensors
           : sensors // ignore: cast_nullable_to_non_nullable
               as List<Sensor>?,
       at: freezed == at
-          ? _value.at
+          ? _self.at
           : at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       isCheck: freezed == isCheck
-          ? _value.isCheck
+          ? _self.isCheck
           : isCheck // ignore: cast_nullable_to_non_nullable
               as bool?,
       comment: freezed == comment
-          ? _value.comment
+          ? _self.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsEvent
@@ -2659,12 +2538,12 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get operation {
-    if (_value.operation == null) {
+    if (_self.operation == null) {
       return null;
     }
 
-    return $OperationCopyWith<$Res>(_value.operation!, (value) {
-      return _then(_value.copyWith(operation: value) as $Val);
+    return $OperationCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
     });
   }
 
@@ -2673,12 +2552,12 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
   @override
   @pragma('vm:prefer-inline')
   $TriggerCopyWith<$Res>? get trigger {
-    if (_value.trigger == null) {
+    if (_self.trigger == null) {
       return null;
     }
 
-    return $TriggerCopyWith<$Res>(_value.trigger!, (value) {
-      return _then(_value.copyWith(trigger: value) as $Val);
+    return $TriggerCopyWith<$Res>(_self.trigger!, (value) {
+      return _then(_self.copyWith(trigger: value));
     });
   }
 
@@ -2687,12 +2566,12 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
-    if (_value.asset == null) {
+    if (_self.asset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
     });
   }
 
@@ -2701,143 +2580,20 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
   @override
   @pragma('vm:prefer-inline')
   $TelemetryPositionCopyWith<$Res>? get position {
-    if (_value.position == null) {
+    if (_self.position == null) {
       return null;
     }
 
-    return $TelemetryPositionCopyWith<$Res>(_value.position!, (value) {
-      return _then(_value.copyWith(position: value) as $Val);
+    return $TelemetryPositionCopyWith<$Res>(_self.position!, (value) {
+      return _then(_self.copyWith(position: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsEventImplCopyWith<$Res>
-    implements $AtsEventCopyWith<$Res> {
-  factory _$$AtsEventImplCopyWith(
-          _$AtsEventImpl value, $Res Function(_$AtsEventImpl) then) =
-      __$$AtsEventImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      Operation? operation,
-      String? operationId,
-      Trigger? trigger,
-      String? triggerId,
-      String? functionId,
-      Asset? asset,
-      String? assetId,
-      TelemetryPosition? position,
-      List<TelemetrySensor>? payload,
-      List<Sensor>? sensors,
-      @TimestampOrNullConverter() DateTime? at,
-      bool? isCheck,
-      String? comment});
-
-  @override
-  $OperationCopyWith<$Res>? get operation;
-  @override
-  $TriggerCopyWith<$Res>? get trigger;
-  @override
-  $AssetCopyWith<$Res>? get asset;
-  @override
-  $TelemetryPositionCopyWith<$Res>? get position;
-}
-
-/// @nodoc
-class __$$AtsEventImplCopyWithImpl<$Res>
-    extends _$AtsEventCopyWithImpl<$Res, _$AtsEventImpl>
-    implements _$$AtsEventImplCopyWith<$Res> {
-  __$$AtsEventImplCopyWithImpl(
-      _$AtsEventImpl _value, $Res Function(_$AtsEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? operation = freezed,
-    Object? operationId = freezed,
-    Object? trigger = freezed,
-    Object? triggerId = freezed,
-    Object? functionId = freezed,
-    Object? asset = freezed,
-    Object? assetId = freezed,
-    Object? position = freezed,
-    Object? payload = freezed,
-    Object? sensors = freezed,
-    Object? at = freezed,
-    Object? isCheck = freezed,
-    Object? comment = freezed,
-  }) {
-    return _then(_$AtsEventImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operation: freezed == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      operationId: freezed == operationId
-          ? _value.operationId
-          : operationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      trigger: freezed == trigger
-          ? _value.trigger
-          : trigger // ignore: cast_nullable_to_non_nullable
-              as Trigger?,
-      triggerId: freezed == triggerId
-          ? _value.triggerId
-          : triggerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      functionId: freezed == functionId
-          ? _value.functionId
-          : functionId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      position: freezed == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as TelemetryPosition?,
-      payload: freezed == payload
-          ? _value._payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as List<TelemetrySensor>?,
-      sensors: freezed == sensors
-          ? _value._sensors
-          : sensors // ignore: cast_nullable_to_non_nullable
-              as List<Sensor>?,
-      at: freezed == at
-          ? _value.at
-          : at // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      isCheck: freezed == isCheck
-          ? _value.isCheck
-          : isCheck // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      comment: freezed == comment
-          ? _value.comment
-          : comment // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsEventImpl implements _AtsEvent {
-  const _$AtsEventImpl(
+class _AtsEvent implements AtsEvent {
+  const _AtsEvent(
       {this.id,
       this.operation,
       this.operationId,
@@ -2854,9 +2610,8 @@ class _$AtsEventImpl implements _AtsEvent {
       this.comment})
       : _payload = payload,
         _sensors = sensors;
-
-  factory _$AtsEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsEventImplFromJson(json);
+  factory _AtsEvent.fromJson(Map<String, dynamic> json) =>
+      _$AtsEventFromJson(json);
 
   /// [id] of the asset entity. This ID is unique.
   @override
@@ -2934,16 +2689,26 @@ class _$AtsEventImpl implements _AtsEvent {
   @override
   final String? comment;
 
+  /// Create a copy of AtsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsEvent(id: $id, operation: $operation, operationId: $operationId, trigger: $trigger, triggerId: $triggerId, functionId: $functionId, asset: $asset, assetId: $assetId, position: $position, payload: $payload, sensors: $sensors, at: $at, isCheck: $isCheck, comment: $comment)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsEventCopyWith<_AtsEvent> get copyWith =>
+      __$AtsEventCopyWithImpl<_AtsEvent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsEventToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsEventImpl &&
+            other is _AtsEvent &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.operation, operation) ||
                 other.operation == operation) &&
@@ -2984,215 +2749,252 @@ class _$AtsEventImpl implements _AtsEvent {
       isCheck,
       comment);
 
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsEventImplCopyWith<_$AtsEventImpl> get copyWith =>
-      __$$AtsEventImplCopyWithImpl<_$AtsEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsEvent(id: $id, operation: $operation, operationId: $operationId, trigger: $trigger, triggerId: $triggerId, functionId: $functionId, asset: $asset, assetId: $assetId, position: $position, payload: $payload, sensors: $sensors, at: $at, isCheck: $isCheck, comment: $comment)';
   }
 }
 
-abstract class _AtsEvent implements AtsEvent {
-  const factory _AtsEvent(
-      {final String? id,
-      final Operation? operation,
-      final String? operationId,
-      final Trigger? trigger,
-      final String? triggerId,
-      final String? functionId,
-      final Asset? asset,
-      final String? assetId,
-      final TelemetryPosition? position,
-      final List<TelemetrySensor>? payload,
-      final List<Sensor>? sensors,
-      @TimestampOrNullConverter() final DateTime? at,
-      final bool? isCheck,
-      final String? comment}) = _$AtsEventImpl;
-
-  factory _AtsEvent.fromJson(Map<String, dynamic> json) =
-      _$AtsEventImpl.fromJson;
-
-  /// [id] of the asset entity. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsEventCopyWith<$Res>
+    implements $AtsEventCopyWith<$Res> {
+  factory _$AtsEventCopyWith(_AtsEvent value, $Res Function(_AtsEvent) _then) =
+      __$AtsEventCopyWithImpl;
   @override
-  String? get id;
+  @useResult
+  $Res call(
+      {String? id,
+      Operation? operation,
+      String? operationId,
+      Trigger? trigger,
+      String? triggerId,
+      String? functionId,
+      Asset? asset,
+      String? assetId,
+      TelemetryPosition? position,
+      List<TelemetrySensor>? payload,
+      List<Sensor>? sensors,
+      @TimestampOrNullConverter() DateTime? at,
+      bool? isCheck,
+      String? comment});
 
-  /// [operation] Operation linked to the [AtsEvent].
   @override
-  Operation? get operation;
+  $OperationCopyWith<$Res>? get operation;
+  @override
+  $TriggerCopyWith<$Res>? get trigger;
+  @override
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $TelemetryPositionCopyWith<$Res>? get position;
+}
 
-  /// [operationId] Operation linked to the [AtsEvent].
-  @override
-  String? get operationId;
+/// @nodoc
+class __$AtsEventCopyWithImpl<$Res> implements _$AtsEventCopyWith<$Res> {
+  __$AtsEventCopyWithImpl(this._self, this._then);
 
-  /// [trigger] Trigger linked to the [AtsEvent].
-  @override
-  Trigger? get trigger;
-
-  /// [triggerId] Trigger linked to the [AtsEvent].
-  @override
-  String?
-      get triggerId; // /// [function] Pitagoras function linked to the [AtsEvent].
-// Function? function,
-  /// [functionId] Pitagoras function ID linked to the [AtsEvent].
-  @override
-  String? get functionId;
-
-  /// [asset] Asset linked to the [AtsEvent].
-  @override
-  Asset? get asset;
-
-  /// [assetId] Asset ID linked to the [AtsEvent].
-  @override
-  String? get assetId;
-
-  /// [position] linked to the [AtsEvent].
-  @override
-  TelemetryPosition? get position;
-
-  /// [payload] Raw received payload values list of the message.
-  @override
-  List<TelemetrySensor>? get payload;
-
-  /// [sensors] values list of the message.
-  @override
-  List<Sensor>? get sensors;
-
-  /// [at] Unix timestamp representing the date of the event.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get at;
-
-  /// [isCheck] Flag to identify if the event has been checked.
-  @override
-  bool? get isCheck;
-
-  /// [comment] on closing event.
-  @override
-  String? get comment;
+  final _AtsEvent _self;
+  final $Res Function(_AtsEvent) _then;
 
   /// Create a copy of AtsEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsEventImplCopyWith<_$AtsEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? operation = freezed,
+    Object? operationId = freezed,
+    Object? trigger = freezed,
+    Object? triggerId = freezed,
+    Object? functionId = freezed,
+    Object? asset = freezed,
+    Object? assetId = freezed,
+    Object? position = freezed,
+    Object? payload = freezed,
+    Object? sensors = freezed,
+    Object? at = freezed,
+    Object? isCheck = freezed,
+    Object? comment = freezed,
+  }) {
+    return _then(_AtsEvent(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operation: freezed == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as Operation?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      trigger: freezed == trigger
+          ? _self.trigger
+          : trigger // ignore: cast_nullable_to_non_nullable
+              as Trigger?,
+      triggerId: freezed == triggerId
+          ? _self.triggerId
+          : triggerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      functionId: freezed == functionId
+          ? _self.functionId
+          : functionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      position: freezed == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition?,
+      payload: freezed == payload
+          ? _self._payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as List<TelemetrySensor>?,
+      sensors: freezed == sensors
+          ? _self._sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
+      at: freezed == at
+          ? _self.at
+          : at // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      isCheck: freezed == isCheck
+          ? _self.isCheck
+          : isCheck // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      comment: freezed == comment
+          ? _self.comment
+          : comment // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 
-AtsNsAddress _$AtsNsAddressFromJson(Map<String, dynamic> json) {
-  return _AtsNsAddress.fromJson(json);
+  /// Create a copy of AtsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+      return null;
+    }
+
+    return $OperationCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
+    });
+  }
+
+  /// Create a copy of AtsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TriggerCopyWith<$Res>? get trigger {
+    if (_self.trigger == null) {
+      return null;
+    }
+
+    return $TriggerCopyWith<$Res>(_self.trigger!, (value) {
+      return _then(_self.copyWith(trigger: value));
+    });
+  }
+
+  /// Create a copy of AtsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of AtsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TelemetryPositionCopyWith<$Res>? get position {
+    if (_self.position == null) {
+      return null;
+    }
+
+    return $TelemetryPositionCopyWith<$Res>(_self.position!, (value) {
+      return _then(_self.copyWith(position: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsNsAddress {
   /// [address] represents the address of the address
-  String get address => throw _privateConstructorUsedError;
+  String get address;
 
   /// [number] represents the number of the address
-  String get number => throw _privateConstructorUsedError;
+  String get number;
 
   /// [district] represents the district of the address
-  String get district => throw _privateConstructorUsedError;
+  String get district;
 
   /// [zipCode] represents the zip code of the address
-  String get zipCode => throw _privateConstructorUsedError;
+  String get zipCode;
 
   /// [cityCode] represents the city code of the address
-  String get cityCode => throw _privateConstructorUsedError;
+  String get cityCode;
 
   /// [cityName] represents the city name of the address
-  String get cityName => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsNsAddress to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get cityName;
 
   /// Create a copy of AtsNsAddress
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsNsAddressCopyWith<AtsNsAddress> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsNsAddressCopyWith<$Res> {
-  factory $AtsNsAddressCopyWith(
-          AtsNsAddress value, $Res Function(AtsNsAddress) then) =
-      _$AtsNsAddressCopyWithImpl<$Res, AtsNsAddress>;
-  @useResult
-  $Res call(
-      {String address,
-      String number,
-      String district,
-      String zipCode,
-      String cityCode,
-      String cityName});
-}
-
-/// @nodoc
-class _$AtsNsAddressCopyWithImpl<$Res, $Val extends AtsNsAddress>
-    implements $AtsNsAddressCopyWith<$Res> {
-  _$AtsNsAddressCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsNsAddress
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsNsAddressCopyWith<AtsNsAddress> get copyWith =>
+      _$AtsNsAddressCopyWithImpl<AtsNsAddress>(
+          this as AtsNsAddress, _$identity);
+
+  /// Serializes this AtsNsAddress to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? address = null,
-    Object? number = null,
-    Object? district = null,
-    Object? zipCode = null,
-    Object? cityCode = null,
-    Object? cityName = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      number: null == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as String,
-      district: null == district
-          ? _value.district
-          : district // ignore: cast_nullable_to_non_nullable
-              as String,
-      zipCode: null == zipCode
-          ? _value.zipCode
-          : zipCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      cityCode: null == cityCode
-          ? _value.cityCode
-          : cityCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      cityName: null == cityName
-          ? _value.cityName
-          : cityName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsNsAddress &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.district, district) ||
+                other.district == district) &&
+            (identical(other.zipCode, zipCode) || other.zipCode == zipCode) &&
+            (identical(other.cityCode, cityCode) ||
+                other.cityCode == cityCode) &&
+            (identical(other.cityName, cityName) ||
+                other.cityName == cityName));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, address, number, district, zipCode, cityCode, cityName);
+
+  @override
+  String toString() {
+    return 'AtsNsAddress(address: $address, number: $number, district: $district, zipCode: $zipCode, cityCode: $cityCode, cityName: $cityName)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsNsAddressImplCopyWith<$Res>
-    implements $AtsNsAddressCopyWith<$Res> {
-  factory _$$AtsNsAddressImplCopyWith(
-          _$AtsNsAddressImpl value, $Res Function(_$AtsNsAddressImpl) then) =
-      __$$AtsNsAddressImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsNsAddressCopyWith<$Res> {
+  factory $AtsNsAddressCopyWith(
+          AtsNsAddress value, $Res Function(AtsNsAddress) _then) =
+      _$AtsNsAddressCopyWithImpl;
   @useResult
   $Res call(
       {String address,
@@ -3204,12 +3006,11 @@ abstract class _$$AtsNsAddressImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsNsAddressImplCopyWithImpl<$Res>
-    extends _$AtsNsAddressCopyWithImpl<$Res, _$AtsNsAddressImpl>
-    implements _$$AtsNsAddressImplCopyWith<$Res> {
-  __$$AtsNsAddressImplCopyWithImpl(
-      _$AtsNsAddressImpl _value, $Res Function(_$AtsNsAddressImpl) _then)
-      : super(_value, _then);
+class _$AtsNsAddressCopyWithImpl<$Res> implements $AtsNsAddressCopyWith<$Res> {
+  _$AtsNsAddressCopyWithImpl(this._self, this._then);
+
+  final AtsNsAddress _self;
+  final $Res Function(AtsNsAddress) _then;
 
   /// Create a copy of AtsNsAddress
   /// with the given fields replaced by the non-null parameter values.
@@ -3223,29 +3024,29 @@ class __$$AtsNsAddressImplCopyWithImpl<$Res>
     Object? cityCode = null,
     Object? cityName = null,
   }) {
-    return _then(_$AtsNsAddressImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
       number: null == number
-          ? _value.number
+          ? _self.number
           : number // ignore: cast_nullable_to_non_nullable
               as String,
       district: null == district
-          ? _value.district
+          ? _self.district
           : district // ignore: cast_nullable_to_non_nullable
               as String,
       zipCode: null == zipCode
-          ? _value.zipCode
+          ? _self.zipCode
           : zipCode // ignore: cast_nullable_to_non_nullable
               as String,
       cityCode: null == cityCode
-          ? _value.cityCode
+          ? _self.cityCode
           : cityCode // ignore: cast_nullable_to_non_nullable
               as String,
       cityName: null == cityName
-          ? _value.cityName
+          ? _self.cityName
           : cityName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -3254,17 +3055,16 @@ class __$$AtsNsAddressImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsNsAddressImpl implements _AtsNsAddress {
-  const _$AtsNsAddressImpl(
+class _AtsNsAddress implements AtsNsAddress {
+  const _AtsNsAddress(
       {required this.address,
       required this.number,
       required this.district,
       required this.zipCode,
       required this.cityCode,
       required this.cityName});
-
-  factory _$AtsNsAddressImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsNsAddressImplFromJson(json);
+  factory _AtsNsAddress.fromJson(Map<String, dynamic> json) =>
+      _$AtsNsAddressFromJson(json);
 
   /// [address] represents the address of the address
   @override
@@ -3290,16 +3090,26 @@ class _$AtsNsAddressImpl implements _AtsNsAddress {
   @override
   final String cityName;
 
+  /// Create a copy of AtsNsAddress
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsNsAddress(address: $address, number: $number, district: $district, zipCode: $zipCode, cityCode: $cityCode, cityName: $cityName)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsNsAddressCopyWith<_AtsNsAddress> get copyWith =>
+      __$AtsNsAddressCopyWithImpl<_AtsNsAddress>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsNsAddressToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsNsAddressImpl &&
+            other is _AtsNsAddress &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.district, district) ||
@@ -3316,267 +3126,210 @@ class _$AtsNsAddressImpl implements _AtsNsAddress {
   int get hashCode => Object.hash(
       runtimeType, address, number, district, zipCode, cityCode, cityName);
 
-  /// Create a copy of AtsNsAddress
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsNsAddressImplCopyWith<_$AtsNsAddressImpl> get copyWith =>
-      __$$AtsNsAddressImplCopyWithImpl<_$AtsNsAddressImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsNsAddressImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsNsAddress(address: $address, number: $number, district: $district, zipCode: $zipCode, cityCode: $cityCode, cityName: $cityName)';
   }
 }
 
-abstract class _AtsNsAddress implements AtsNsAddress {
-  const factory _AtsNsAddress(
-      {required final String address,
-      required final String number,
-      required final String district,
-      required final String zipCode,
-      required final String cityCode,
-      required final String cityName}) = _$AtsNsAddressImpl;
-
-  factory _AtsNsAddress.fromJson(Map<String, dynamic> json) =
-      _$AtsNsAddressImpl.fromJson;
-
-  /// [address] represents the address of the address
+/// @nodoc
+abstract mixin class _$AtsNsAddressCopyWith<$Res>
+    implements $AtsNsAddressCopyWith<$Res> {
+  factory _$AtsNsAddressCopyWith(
+          _AtsNsAddress value, $Res Function(_AtsNsAddress) _then) =
+      __$AtsNsAddressCopyWithImpl;
   @override
-  String get address;
+  @useResult
+  $Res call(
+      {String address,
+      String number,
+      String district,
+      String zipCode,
+      String cityCode,
+      String cityName});
+}
 
-  /// [number] represents the number of the address
-  @override
-  String get number;
+/// @nodoc
+class __$AtsNsAddressCopyWithImpl<$Res>
+    implements _$AtsNsAddressCopyWith<$Res> {
+  __$AtsNsAddressCopyWithImpl(this._self, this._then);
 
-  /// [district] represents the district of the address
-  @override
-  String get district;
-
-  /// [zipCode] represents the zip code of the address
-  @override
-  String get zipCode;
-
-  /// [cityCode] represents the city code of the address
-  @override
-  String get cityCode;
-
-  /// [cityName] represents the city name of the address
-  @override
-  String get cityName;
+  final _AtsNsAddress _self;
+  final $Res Function(_AtsNsAddress) _then;
 
   /// Create a copy of AtsNsAddress
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsNsAddressImplCopyWith<_$AtsNsAddressImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsNsLicense _$AtsNsLicenseFromJson(Map<String, dynamic> json) {
-  return _AtsNsLicense.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? number = null,
+    Object? district = null,
+    Object? zipCode = null,
+    Object? cityCode = null,
+    Object? cityName = null,
+  }) {
+    return _then(_AtsNsAddress(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      number: null == number
+          ? _self.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String,
+      district: null == district
+          ? _self.district
+          : district // ignore: cast_nullable_to_non_nullable
+              as String,
+      zipCode: null == zipCode
+          ? _self.zipCode
+          : zipCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      cityCode: null == cityCode
+          ? _self.cityCode
+          : cityCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      cityName: null == cityName
+          ? _self.cityName
+          : cityName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsNsLicense {
   /// [id] represents the unique identifier of the license
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// [status] represents the status of the license
   /// `0` means Testing environment
   /// `1` means Production environment
   /// `2` means Blocked license
   @AtsNsStatusConverter()
-  AtsNsStatus get status => throw _privateConstructorUsedError;
+  AtsNsStatus get status;
 
   /// [receive90Days] represents that the license can receive last 90 days of data.
   /// Also, is only available for [projectId] = `NS DDFe`.
-  bool? get receive90Days => throw _privateConstructorUsedError;
+  bool? get receive90Days;
 
   /// [projectId] represents the project id of the license
   @AtsNsProjectIdOrNullConverter()
-  AtsNsProjectId? get projectId => throw _privateConstructorUsedError;
+  AtsNsProjectId? get projectId;
 
   /// [certificate] represents the certificate of the license
   /// Is stored in base64 format
-  String? get certificate => throw _privateConstructorUsedError;
+  String? get certificate;
 
   /// [certificatePassword] represents the certificate password of the license
-  String? get certificatePassword => throw _privateConstructorUsedError;
+  String? get certificatePassword;
 
   /// [cnpj] represents the CNPJ of the license
   /// CNPJ is equivalent to a Taxpayer Identification Number (TIN) (RIF for Venecos)
-  String get cnpj => throw _privateConstructorUsedError;
+  String get cnpj;
 
   /// [inscriptionId] represents the state registration of the license
-  String? get inscriptionId => throw _privateConstructorUsedError;
+  String? get inscriptionId;
 
   /// [businessName] represents the business name of the license
-  String? get businessName => throw _privateConstructorUsedError;
+  String? get businessName;
 
   /// [companyName] represents the business trademark name of the license
-  String? get companyName => throw _privateConstructorUsedError;
+  String? get companyName;
 
   /// [icmsType] represents the ICMS type of the license
   @AtsIcmsTypeOrNullConverter()
-  AtsIcmsType? get icmsType => throw _privateConstructorUsedError;
+  AtsIcmsType? get icmsType;
 
   /// [emails] is a list of `String` that represents the emails of the license
-  List<String>? get emails => throw _privateConstructorUsedError;
+  List<String>? get emails;
 
   /// [phoneNumbers] is a list of `String` that represents the phone numbers of the license
-  List<String>? get phoneNumbers => throw _privateConstructorUsedError;
+  List<String>? get phoneNumbers;
 
   /// [addresses] is a list of [AtsNsAddress] that represents the addresses of the license
-  List<AtsNsAddress>? get addresses => throw _privateConstructorUsedError;
+  List<AtsNsAddress>? get addresses;
 
   /// [expirationDate] represents the expiration date of the license
   @JsonKey(name: 'expirationDateUnix')
   @TimestampOrNullConverter()
-  DateTime? get expirationDate => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsNsLicense to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime? get expirationDate;
 
   /// Create a copy of AtsNsLicense
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsNsLicenseCopyWith<AtsNsLicense> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsNsLicenseCopyWith<$Res> {
-  factory $AtsNsLicenseCopyWith(
-          AtsNsLicense value, $Res Function(AtsNsLicense) then) =
-      _$AtsNsLicenseCopyWithImpl<$Res, AtsNsLicense>;
-  @useResult
-  $Res call(
-      {String id,
-      @AtsNsStatusConverter() AtsNsStatus status,
-      bool? receive90Days,
-      @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
-      String? certificate,
-      String? certificatePassword,
-      String cnpj,
-      String? inscriptionId,
-      String? businessName,
-      String? companyName,
-      @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
-      List<String>? emails,
-      List<String>? phoneNumbers,
-      List<AtsNsAddress>? addresses,
-      @JsonKey(name: 'expirationDateUnix')
-      @TimestampOrNullConverter()
-      DateTime? expirationDate});
-}
-
-/// @nodoc
-class _$AtsNsLicenseCopyWithImpl<$Res, $Val extends AtsNsLicense>
-    implements $AtsNsLicenseCopyWith<$Res> {
-  _$AtsNsLicenseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsNsLicense
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsNsLicenseCopyWith<AtsNsLicense> get copyWith =>
+      _$AtsNsLicenseCopyWithImpl<AtsNsLicense>(
+          this as AtsNsLicense, _$identity);
+
+  /// Serializes this AtsNsLicense to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? status = null,
-    Object? receive90Days = freezed,
-    Object? projectId = freezed,
-    Object? certificate = freezed,
-    Object? certificatePassword = freezed,
-    Object? cnpj = null,
-    Object? inscriptionId = freezed,
-    Object? businessName = freezed,
-    Object? companyName = freezed,
-    Object? icmsType = freezed,
-    Object? emails = freezed,
-    Object? phoneNumbers = freezed,
-    Object? addresses = freezed,
-    Object? expirationDate = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AtsNsStatus,
-      receive90Days: freezed == receive90Days
-          ? _value.receive90Days
-          : receive90Days // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      projectId: freezed == projectId
-          ? _value.projectId
-          : projectId // ignore: cast_nullable_to_non_nullable
-              as AtsNsProjectId?,
-      certificate: freezed == certificate
-          ? _value.certificate
-          : certificate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      certificatePassword: freezed == certificatePassword
-          ? _value.certificatePassword
-          : certificatePassword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cnpj: null == cnpj
-          ? _value.cnpj
-          : cnpj // ignore: cast_nullable_to_non_nullable
-              as String,
-      inscriptionId: freezed == inscriptionId
-          ? _value.inscriptionId
-          : inscriptionId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      businessName: freezed == businessName
-          ? _value.businessName
-          : businessName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      companyName: freezed == companyName
-          ? _value.companyName
-          : companyName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      icmsType: freezed == icmsType
-          ? _value.icmsType
-          : icmsType // ignore: cast_nullable_to_non_nullable
-              as AtsIcmsType?,
-      emails: freezed == emails
-          ? _value.emails
-          : emails // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      phoneNumbers: freezed == phoneNumbers
-          ? _value.phoneNumbers
-          : phoneNumbers // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      addresses: freezed == addresses
-          ? _value.addresses
-          : addresses // ignore: cast_nullable_to_non_nullable
-              as List<AtsNsAddress>?,
-      expirationDate: freezed == expirationDate
-          ? _value.expirationDate
-          : expirationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsNsLicense &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.receive90Days, receive90Days) ||
+                other.receive90Days == receive90Days) &&
+            (identical(other.projectId, projectId) ||
+                other.projectId == projectId) &&
+            (identical(other.certificate, certificate) ||
+                other.certificate == certificate) &&
+            (identical(other.certificatePassword, certificatePassword) ||
+                other.certificatePassword == certificatePassword) &&
+            (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
+            (identical(other.inscriptionId, inscriptionId) ||
+                other.inscriptionId == inscriptionId) &&
+            (identical(other.businessName, businessName) ||
+                other.businessName == businessName) &&
+            (identical(other.companyName, companyName) ||
+                other.companyName == companyName) &&
+            (identical(other.icmsType, icmsType) ||
+                other.icmsType == icmsType) &&
+            const DeepCollectionEquality().equals(other.emails, emails) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumbers, phoneNumbers) &&
+            const DeepCollectionEquality().equals(other.addresses, addresses) &&
+            (identical(other.expirationDate, expirationDate) ||
+                other.expirationDate == expirationDate));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      status,
+      receive90Days,
+      projectId,
+      certificate,
+      certificatePassword,
+      cnpj,
+      inscriptionId,
+      businessName,
+      companyName,
+      icmsType,
+      const DeepCollectionEquality().hash(emails),
+      const DeepCollectionEquality().hash(phoneNumbers),
+      const DeepCollectionEquality().hash(addresses),
+      expirationDate);
+
+  @override
+  String toString() {
+    return 'AtsNsLicense(id: $id, status: $status, receive90Days: $receive90Days, projectId: $projectId, certificate: $certificate, certificatePassword: $certificatePassword, cnpj: $cnpj, inscriptionId: $inscriptionId, businessName: $businessName, companyName: $companyName, icmsType: $icmsType, emails: $emails, phoneNumbers: $phoneNumbers, addresses: $addresses, expirationDate: $expirationDate)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsNsLicenseImplCopyWith<$Res>
-    implements $AtsNsLicenseCopyWith<$Res> {
-  factory _$$AtsNsLicenseImplCopyWith(
-          _$AtsNsLicenseImpl value, $Res Function(_$AtsNsLicenseImpl) then) =
-      __$$AtsNsLicenseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsNsLicenseCopyWith<$Res> {
+  factory $AtsNsLicenseCopyWith(
+          AtsNsLicense value, $Res Function(AtsNsLicense) _then) =
+      _$AtsNsLicenseCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -3599,12 +3352,11 @@ abstract class _$$AtsNsLicenseImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsNsLicenseImplCopyWithImpl<$Res>
-    extends _$AtsNsLicenseCopyWithImpl<$Res, _$AtsNsLicenseImpl>
-    implements _$$AtsNsLicenseImplCopyWith<$Res> {
-  __$$AtsNsLicenseImplCopyWithImpl(
-      _$AtsNsLicenseImpl _value, $Res Function(_$AtsNsLicenseImpl) _then)
-      : super(_value, _then);
+class _$AtsNsLicenseCopyWithImpl<$Res> implements $AtsNsLicenseCopyWith<$Res> {
+  _$AtsNsLicenseCopyWithImpl(this._self, this._then);
+
+  final AtsNsLicense _self;
+  final $Res Function(AtsNsLicense) _then;
 
   /// Create a copy of AtsNsLicense
   /// with the given fields replaced by the non-null parameter values.
@@ -3627,65 +3379,65 @@ class __$$AtsNsLicenseImplCopyWithImpl<$Res>
     Object? addresses = freezed,
     Object? expirationDate = freezed,
   }) {
-    return _then(_$AtsNsLicenseImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as AtsNsStatus,
       receive90Days: freezed == receive90Days
-          ? _value.receive90Days
+          ? _self.receive90Days
           : receive90Days // ignore: cast_nullable_to_non_nullable
               as bool?,
       projectId: freezed == projectId
-          ? _value.projectId
+          ? _self.projectId
           : projectId // ignore: cast_nullable_to_non_nullable
               as AtsNsProjectId?,
       certificate: freezed == certificate
-          ? _value.certificate
+          ? _self.certificate
           : certificate // ignore: cast_nullable_to_non_nullable
               as String?,
       certificatePassword: freezed == certificatePassword
-          ? _value.certificatePassword
+          ? _self.certificatePassword
           : certificatePassword // ignore: cast_nullable_to_non_nullable
               as String?,
       cnpj: null == cnpj
-          ? _value.cnpj
+          ? _self.cnpj
           : cnpj // ignore: cast_nullable_to_non_nullable
               as String,
       inscriptionId: freezed == inscriptionId
-          ? _value.inscriptionId
+          ? _self.inscriptionId
           : inscriptionId // ignore: cast_nullable_to_non_nullable
               as String?,
       businessName: freezed == businessName
-          ? _value.businessName
+          ? _self.businessName
           : businessName // ignore: cast_nullable_to_non_nullable
               as String?,
       companyName: freezed == companyName
-          ? _value.companyName
+          ? _self.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
               as String?,
       icmsType: freezed == icmsType
-          ? _value.icmsType
+          ? _self.icmsType
           : icmsType // ignore: cast_nullable_to_non_nullable
               as AtsIcmsType?,
       emails: freezed == emails
-          ? _value._emails
+          ? _self.emails
           : emails // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       phoneNumbers: freezed == phoneNumbers
-          ? _value._phoneNumbers
+          ? _self.phoneNumbers
           : phoneNumbers // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       addresses: freezed == addresses
-          ? _value._addresses
+          ? _self.addresses
           : addresses // ignore: cast_nullable_to_non_nullable
               as List<AtsNsAddress>?,
       expirationDate: freezed == expirationDate
-          ? _value.expirationDate
+          ? _self.expirationDate
           : expirationDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
@@ -3694,8 +3446,8 @@ class __$$AtsNsLicenseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsNsLicenseImpl implements _AtsNsLicense {
-  const _$AtsNsLicenseImpl(
+class _AtsNsLicense implements AtsNsLicense {
+  const _AtsNsLicense(
       {required this.id,
       @AtsNsStatusConverter() required this.status,
       this.receive90Days,
@@ -3716,9 +3468,8 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
       : _emails = emails,
         _phoneNumbers = phoneNumbers,
         _addresses = addresses;
-
-  factory _$AtsNsLicenseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsNsLicenseImplFromJson(json);
+  factory _AtsNsLicense.fromJson(Map<String, dynamic> json) =>
+      _$AtsNsLicenseFromJson(json);
 
   /// [id] represents the unique identifier of the license
   @override
@@ -3818,16 +3569,26 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
   @TimestampOrNullConverter()
   final DateTime? expirationDate;
 
+  /// Create a copy of AtsNsLicense
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsNsLicense(id: $id, status: $status, receive90Days: $receive90Days, projectId: $projectId, certificate: $certificate, certificatePassword: $certificatePassword, cnpj: $cnpj, inscriptionId: $inscriptionId, businessName: $businessName, companyName: $companyName, icmsType: $icmsType, emails: $emails, phoneNumbers: $phoneNumbers, addresses: $addresses, expirationDate: $expirationDate)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsNsLicenseCopyWith<_AtsNsLicense> get copyWith =>
+      __$AtsNsLicenseCopyWithImpl<_AtsNsLicense>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsNsLicenseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsNsLicenseImpl &&
+            other is _AtsNsLicense &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.receive90Days, receive90Days) ||
@@ -3876,306 +3637,248 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
       const DeepCollectionEquality().hash(_addresses),
       expirationDate);
 
-  /// Create a copy of AtsNsLicense
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsNsLicenseImplCopyWith<_$AtsNsLicenseImpl> get copyWith =>
-      __$$AtsNsLicenseImplCopyWithImpl<_$AtsNsLicenseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsNsLicenseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsNsLicense(id: $id, status: $status, receive90Days: $receive90Days, projectId: $projectId, certificate: $certificate, certificatePassword: $certificatePassword, cnpj: $cnpj, inscriptionId: $inscriptionId, businessName: $businessName, companyName: $companyName, icmsType: $icmsType, emails: $emails, phoneNumbers: $phoneNumbers, addresses: $addresses, expirationDate: $expirationDate)';
   }
 }
 
-abstract class _AtsNsLicense implements AtsNsLicense {
-  const factory _AtsNsLicense(
-      {required final String id,
-      @AtsNsStatusConverter() required final AtsNsStatus status,
-      final bool? receive90Days,
-      @AtsNsProjectIdOrNullConverter() final AtsNsProjectId? projectId,
-      final String? certificate,
-      final String? certificatePassword,
-      required final String cnpj,
-      final String? inscriptionId,
-      final String? businessName,
-      final String? companyName,
-      @AtsIcmsTypeOrNullConverter() final AtsIcmsType? icmsType,
-      final List<String>? emails,
-      final List<String>? phoneNumbers,
-      final List<AtsNsAddress>? addresses,
+/// @nodoc
+abstract mixin class _$AtsNsLicenseCopyWith<$Res>
+    implements $AtsNsLicenseCopyWith<$Res> {
+  factory _$AtsNsLicenseCopyWith(
+          _AtsNsLicense value, $Res Function(_AtsNsLicense) _then) =
+      __$AtsNsLicenseCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @AtsNsStatusConverter() AtsNsStatus status,
+      bool? receive90Days,
+      @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
+      String? certificate,
+      String? certificatePassword,
+      String cnpj,
+      String? inscriptionId,
+      String? businessName,
+      String? companyName,
+      @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
+      List<String>? emails,
+      List<String>? phoneNumbers,
+      List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-      final DateTime? expirationDate}) = _$AtsNsLicenseImpl;
+      DateTime? expirationDate});
+}
 
-  factory _AtsNsLicense.fromJson(Map<String, dynamic> json) =
-      _$AtsNsLicenseImpl.fromJson;
+/// @nodoc
+class __$AtsNsLicenseCopyWithImpl<$Res>
+    implements _$AtsNsLicenseCopyWith<$Res> {
+  __$AtsNsLicenseCopyWithImpl(this._self, this._then);
 
-  /// [id] represents the unique identifier of the license
-  @override
-  String get id;
-
-  /// [status] represents the status of the license
-  /// `0` means Testing environment
-  /// `1` means Production environment
-  /// `2` means Blocked license
-  @override
-  @AtsNsStatusConverter()
-  AtsNsStatus get status;
-
-  /// [receive90Days] represents that the license can receive last 90 days of data.
-  /// Also, is only available for [projectId] = `NS DDFe`.
-  @override
-  bool? get receive90Days;
-
-  /// [projectId] represents the project id of the license
-  @override
-  @AtsNsProjectIdOrNullConverter()
-  AtsNsProjectId? get projectId;
-
-  /// [certificate] represents the certificate of the license
-  /// Is stored in base64 format
-  @override
-  String? get certificate;
-
-  /// [certificatePassword] represents the certificate password of the license
-  @override
-  String? get certificatePassword;
-
-  /// [cnpj] represents the CNPJ of the license
-  /// CNPJ is equivalent to a Taxpayer Identification Number (TIN) (RIF for Venecos)
-  @override
-  String get cnpj;
-
-  /// [inscriptionId] represents the state registration of the license
-  @override
-  String? get inscriptionId;
-
-  /// [businessName] represents the business name of the license
-  @override
-  String? get businessName;
-
-  /// [companyName] represents the business trademark name of the license
-  @override
-  String? get companyName;
-
-  /// [icmsType] represents the ICMS type of the license
-  @override
-  @AtsIcmsTypeOrNullConverter()
-  AtsIcmsType? get icmsType;
-
-  /// [emails] is a list of `String` that represents the emails of the license
-  @override
-  List<String>? get emails;
-
-  /// [phoneNumbers] is a list of `String` that represents the phone numbers of the license
-  @override
-  List<String>? get phoneNumbers;
-
-  /// [addresses] is a list of [AtsNsAddress] that represents the addresses of the license
-  @override
-  List<AtsNsAddress>? get addresses;
-
-  /// [expirationDate] represents the expiration date of the license
-  @override
-  @JsonKey(name: 'expirationDateUnix')
-  @TimestampOrNullConverter()
-  DateTime? get expirationDate;
+  final _AtsNsLicense _self;
+  final $Res Function(_AtsNsLicense) _then;
 
   /// Create a copy of AtsNsLicense
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsNsLicenseImplCopyWith<_$AtsNsLicenseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsTransportInformation _$AtsTransportInformationFromJson(
-    Map<String, dynamic> json) {
-  return _AtsTransportInformation.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? status = null,
+    Object? receive90Days = freezed,
+    Object? projectId = freezed,
+    Object? certificate = freezed,
+    Object? certificatePassword = freezed,
+    Object? cnpj = null,
+    Object? inscriptionId = freezed,
+    Object? businessName = freezed,
+    Object? companyName = freezed,
+    Object? icmsType = freezed,
+    Object? emails = freezed,
+    Object? phoneNumbers = freezed,
+    Object? addresses = freezed,
+    Object? expirationDate = freezed,
+  }) {
+    return _then(_AtsNsLicense(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AtsNsStatus,
+      receive90Days: freezed == receive90Days
+          ? _self.receive90Days
+          : receive90Days // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      projectId: freezed == projectId
+          ? _self.projectId
+          : projectId // ignore: cast_nullable_to_non_nullable
+              as AtsNsProjectId?,
+      certificate: freezed == certificate
+          ? _self.certificate
+          : certificate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      certificatePassword: freezed == certificatePassword
+          ? _self.certificatePassword
+          : certificatePassword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cnpj: null == cnpj
+          ? _self.cnpj
+          : cnpj // ignore: cast_nullable_to_non_nullable
+              as String,
+      inscriptionId: freezed == inscriptionId
+          ? _self.inscriptionId
+          : inscriptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      businessName: freezed == businessName
+          ? _self.businessName
+          : businessName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      companyName: freezed == companyName
+          ? _self.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      icmsType: freezed == icmsType
+          ? _self.icmsType
+          : icmsType // ignore: cast_nullable_to_non_nullable
+              as AtsIcmsType?,
+      emails: freezed == emails
+          ? _self._emails
+          : emails // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      phoneNumbers: freezed == phoneNumbers
+          ? _self._phoneNumbers
+          : phoneNumbers // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      addresses: freezed == addresses
+          ? _self._addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as List<AtsNsAddress>?,
+      expirationDate: freezed == expirationDate
+          ? _self.expirationDate
+          : expirationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsTransportInformation {
   /// Transport company CNPJ.
-  String? get cnpj => throw _privateConstructorUsedError;
+  String? get cnpj;
 
   /// Transport name / description.
-  String? get name => throw _privateConstructorUsedError;
+  String? get name;
 
   /// Transport address.
-  String? get address => throw _privateConstructorUsedError;
+  String? get address;
 
   /// Transport mun.
-  String? get mun => throw _privateConstructorUsedError;
+  String? get mun;
 
   /// Freight mod.
-  String? get freightMod => throw _privateConstructorUsedError;
+  String? get freightMod;
 
   /// Federal unit.
-  String? get federalUnit => throw _privateConstructorUsedError;
+  String? get federalUnit;
 
   /// Business number.
-  String? get businessNumber => throw _privateConstructorUsedError;
+  String? get businessNumber;
 
   /// Vehicle plate code.
-  String? get vehiclePlate => throw _privateConstructorUsedError;
+  String? get vehiclePlate;
 
   /// Vehicle federal unit.
-  String? get vehicleUf => throw _privateConstructorUsedError;
+  String? get vehicleUf;
 
   /// Vehicle name.
-  String? get vehicleName => throw _privateConstructorUsedError;
+  String? get vehicleName;
 
   /// destination
-  String? get destination => throw _privateConstructorUsedError;
+  String? get destination;
 
   /// Driver
-  String? get driver => throw _privateConstructorUsedError;
+  String? get driver;
 
   /// Origin
-  String? get origin => throw _privateConstructorUsedError;
+  String? get origin;
 
   /// State registration
-  String? get stateRegistration => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsTransportInformation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get stateRegistration;
 
   /// Create a copy of AtsTransportInformation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsTransportInformationCopyWith<AtsTransportInformation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsTransportInformationCopyWith<$Res> {
-  factory $AtsTransportInformationCopyWith(AtsTransportInformation value,
-          $Res Function(AtsTransportInformation) then) =
-      _$AtsTransportInformationCopyWithImpl<$Res, AtsTransportInformation>;
-  @useResult
-  $Res call(
-      {String? cnpj,
-      String? name,
-      String? address,
-      String? mun,
-      String? freightMod,
-      String? federalUnit,
-      String? businessNumber,
-      String? vehiclePlate,
-      String? vehicleUf,
-      String? vehicleName,
-      String? destination,
-      String? driver,
-      String? origin,
-      String? stateRegistration});
-}
-
-/// @nodoc
-class _$AtsTransportInformationCopyWithImpl<$Res,
-        $Val extends AtsTransportInformation>
-    implements $AtsTransportInformationCopyWith<$Res> {
-  _$AtsTransportInformationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsTransportInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsTransportInformationCopyWith<AtsTransportInformation> get copyWith =>
+      _$AtsTransportInformationCopyWithImpl<AtsTransportInformation>(
+          this as AtsTransportInformation, _$identity);
+
+  /// Serializes this AtsTransportInformation to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? cnpj = freezed,
-    Object? name = freezed,
-    Object? address = freezed,
-    Object? mun = freezed,
-    Object? freightMod = freezed,
-    Object? federalUnit = freezed,
-    Object? businessNumber = freezed,
-    Object? vehiclePlate = freezed,
-    Object? vehicleUf = freezed,
-    Object? vehicleName = freezed,
-    Object? destination = freezed,
-    Object? driver = freezed,
-    Object? origin = freezed,
-    Object? stateRegistration = freezed,
-  }) {
-    return _then(_value.copyWith(
-      cnpj: freezed == cnpj
-          ? _value.cnpj
-          : cnpj // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mun: freezed == mun
-          ? _value.mun
-          : mun // ignore: cast_nullable_to_non_nullable
-              as String?,
-      freightMod: freezed == freightMod
-          ? _value.freightMod
-          : freightMod // ignore: cast_nullable_to_non_nullable
-              as String?,
-      federalUnit: freezed == federalUnit
-          ? _value.federalUnit
-          : federalUnit // ignore: cast_nullable_to_non_nullable
-              as String?,
-      businessNumber: freezed == businessNumber
-          ? _value.businessNumber
-          : businessNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vehiclePlate: freezed == vehiclePlate
-          ? _value.vehiclePlate
-          : vehiclePlate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vehicleUf: freezed == vehicleUf
-          ? _value.vehicleUf
-          : vehicleUf // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vehicleName: freezed == vehicleName
-          ? _value.vehicleName
-          : vehicleName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      destination: freezed == destination
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as String?,
-      driver: freezed == driver
-          ? _value.driver
-          : driver // ignore: cast_nullable_to_non_nullable
-              as String?,
-      origin: freezed == origin
-          ? _value.origin
-          : origin // ignore: cast_nullable_to_non_nullable
-              as String?,
-      stateRegistration: freezed == stateRegistration
-          ? _value.stateRegistration
-          : stateRegistration // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsTransportInformation &&
+            (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.mun, mun) || other.mun == mun) &&
+            (identical(other.freightMod, freightMod) ||
+                other.freightMod == freightMod) &&
+            (identical(other.federalUnit, federalUnit) ||
+                other.federalUnit == federalUnit) &&
+            (identical(other.businessNumber, businessNumber) ||
+                other.businessNumber == businessNumber) &&
+            (identical(other.vehiclePlate, vehiclePlate) ||
+                other.vehiclePlate == vehiclePlate) &&
+            (identical(other.vehicleUf, vehicleUf) ||
+                other.vehicleUf == vehicleUf) &&
+            (identical(other.vehicleName, vehicleName) ||
+                other.vehicleName == vehicleName) &&
+            (identical(other.destination, destination) ||
+                other.destination == destination) &&
+            (identical(other.driver, driver) || other.driver == driver) &&
+            (identical(other.origin, origin) || other.origin == origin) &&
+            (identical(other.stateRegistration, stateRegistration) ||
+                other.stateRegistration == stateRegistration));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      cnpj,
+      name,
+      address,
+      mun,
+      freightMod,
+      federalUnit,
+      businessNumber,
+      vehiclePlate,
+      vehicleUf,
+      vehicleName,
+      destination,
+      driver,
+      origin,
+      stateRegistration);
+
+  @override
+  String toString() {
+    return 'AtsTransportInformation(cnpj: $cnpj, name: $name, address: $address, mun: $mun, freightMod: $freightMod, federalUnit: $federalUnit, businessNumber: $businessNumber, vehiclePlate: $vehiclePlate, vehicleUf: $vehicleUf, vehicleName: $vehicleName, destination: $destination, driver: $driver, origin: $origin, stateRegistration: $stateRegistration)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsTransportInformationImplCopyWith<$Res>
-    implements $AtsTransportInformationCopyWith<$Res> {
-  factory _$$AtsTransportInformationImplCopyWith(
-          _$AtsTransportInformationImpl value,
-          $Res Function(_$AtsTransportInformationImpl) then) =
-      __$$AtsTransportInformationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsTransportInformationCopyWith<$Res> {
+  factory $AtsTransportInformationCopyWith(AtsTransportInformation value,
+          $Res Function(AtsTransportInformation) _then) =
+      _$AtsTransportInformationCopyWithImpl;
   @useResult
   $Res call(
       {String? cnpj,
@@ -4195,14 +3898,12 @@ abstract class _$$AtsTransportInformationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsTransportInformationImplCopyWithImpl<$Res>
-    extends _$AtsTransportInformationCopyWithImpl<$Res,
-        _$AtsTransportInformationImpl>
-    implements _$$AtsTransportInformationImplCopyWith<$Res> {
-  __$$AtsTransportInformationImplCopyWithImpl(
-      _$AtsTransportInformationImpl _value,
-      $Res Function(_$AtsTransportInformationImpl) _then)
-      : super(_value, _then);
+class _$AtsTransportInformationCopyWithImpl<$Res>
+    implements $AtsTransportInformationCopyWith<$Res> {
+  _$AtsTransportInformationCopyWithImpl(this._self, this._then);
+
+  final AtsTransportInformation _self;
+  final $Res Function(AtsTransportInformation) _then;
 
   /// Create a copy of AtsTransportInformation
   /// with the given fields replaced by the non-null parameter values.
@@ -4224,61 +3925,61 @@ class __$$AtsTransportInformationImplCopyWithImpl<$Res>
     Object? origin = freezed,
     Object? stateRegistration = freezed,
   }) {
-    return _then(_$AtsTransportInformationImpl(
+    return _then(_self.copyWith(
       cnpj: freezed == cnpj
-          ? _value.cnpj
+          ? _self.cnpj
           : cnpj // ignore: cast_nullable_to_non_nullable
               as String?,
       name: freezed == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       address: freezed == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
       mun: freezed == mun
-          ? _value.mun
+          ? _self.mun
           : mun // ignore: cast_nullable_to_non_nullable
               as String?,
       freightMod: freezed == freightMod
-          ? _value.freightMod
+          ? _self.freightMod
           : freightMod // ignore: cast_nullable_to_non_nullable
               as String?,
       federalUnit: freezed == federalUnit
-          ? _value.federalUnit
+          ? _self.federalUnit
           : federalUnit // ignore: cast_nullable_to_non_nullable
               as String?,
       businessNumber: freezed == businessNumber
-          ? _value.businessNumber
+          ? _self.businessNumber
           : businessNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       vehiclePlate: freezed == vehiclePlate
-          ? _value.vehiclePlate
+          ? _self.vehiclePlate
           : vehiclePlate // ignore: cast_nullable_to_non_nullable
               as String?,
       vehicleUf: freezed == vehicleUf
-          ? _value.vehicleUf
+          ? _self.vehicleUf
           : vehicleUf // ignore: cast_nullable_to_non_nullable
               as String?,
       vehicleName: freezed == vehicleName
-          ? _value.vehicleName
+          ? _self.vehicleName
           : vehicleName // ignore: cast_nullable_to_non_nullable
               as String?,
       destination: freezed == destination
-          ? _value.destination
+          ? _self.destination
           : destination // ignore: cast_nullable_to_non_nullable
               as String?,
       driver: freezed == driver
-          ? _value.driver
+          ? _self.driver
           : driver // ignore: cast_nullable_to_non_nullable
               as String?,
       origin: freezed == origin
-          ? _value.origin
+          ? _self.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as String?,
       stateRegistration: freezed == stateRegistration
-          ? _value.stateRegistration
+          ? _self.stateRegistration
           : stateRegistration // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -4287,8 +3988,8 @@ class __$$AtsTransportInformationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsTransportInformationImpl implements _AtsTransportInformation {
-  _$AtsTransportInformationImpl(
+class _AtsTransportInformation implements AtsTransportInformation {
+  _AtsTransportInformation(
       {this.cnpj,
       this.name,
       this.address,
@@ -4303,9 +4004,8 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
       this.driver,
       this.origin,
       this.stateRegistration});
-
-  factory _$AtsTransportInformationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsTransportInformationImplFromJson(json);
+  factory _AtsTransportInformation.fromJson(Map<String, dynamic> json) =>
+      _$AtsTransportInformationFromJson(json);
 
   /// Transport company CNPJ.
   @override
@@ -4363,16 +4063,27 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
   @override
   final String? stateRegistration;
 
+  /// Create a copy of AtsTransportInformation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsTransportInformation(cnpj: $cnpj, name: $name, address: $address, mun: $mun, freightMod: $freightMod, federalUnit: $federalUnit, businessNumber: $businessNumber, vehiclePlate: $vehiclePlate, vehicleUf: $vehicleUf, vehicleName: $vehicleName, destination: $destination, driver: $driver, origin: $origin, stateRegistration: $stateRegistration)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsTransportInformationCopyWith<_AtsTransportInformation> get copyWith =>
+      __$AtsTransportInformationCopyWithImpl<_AtsTransportInformation>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsTransportInformationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsTransportInformationImpl &&
+            other is _AtsTransportInformation &&
             (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.address, address) || other.address == address) &&
@@ -4416,188 +4127,176 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
       origin,
       stateRegistration);
 
-  /// Create a copy of AtsTransportInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsTransportInformationImplCopyWith<_$AtsTransportInformationImpl>
-      get copyWith => __$$AtsTransportInformationImplCopyWithImpl<
-          _$AtsTransportInformationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsTransportInformationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsTransportInformation(cnpj: $cnpj, name: $name, address: $address, mun: $mun, freightMod: $freightMod, federalUnit: $federalUnit, businessNumber: $businessNumber, vehiclePlate: $vehiclePlate, vehicleUf: $vehicleUf, vehicleName: $vehicleName, destination: $destination, driver: $driver, origin: $origin, stateRegistration: $stateRegistration)';
   }
 }
 
-abstract class _AtsTransportInformation implements AtsTransportInformation {
-  factory _AtsTransportInformation(
-      {final String? cnpj,
-      final String? name,
-      final String? address,
-      final String? mun,
-      final String? freightMod,
-      final String? federalUnit,
-      final String? businessNumber,
-      final String? vehiclePlate,
-      final String? vehicleUf,
-      final String? vehicleName,
-      final String? destination,
-      final String? driver,
-      final String? origin,
-      final String? stateRegistration}) = _$AtsTransportInformationImpl;
-
-  factory _AtsTransportInformation.fromJson(Map<String, dynamic> json) =
-      _$AtsTransportInformationImpl.fromJson;
-
-  /// Transport company CNPJ.
+/// @nodoc
+abstract mixin class _$AtsTransportInformationCopyWith<$Res>
+    implements $AtsTransportInformationCopyWith<$Res> {
+  factory _$AtsTransportInformationCopyWith(_AtsTransportInformation value,
+          $Res Function(_AtsTransportInformation) _then) =
+      __$AtsTransportInformationCopyWithImpl;
   @override
-  String? get cnpj;
+  @useResult
+  $Res call(
+      {String? cnpj,
+      String? name,
+      String? address,
+      String? mun,
+      String? freightMod,
+      String? federalUnit,
+      String? businessNumber,
+      String? vehiclePlate,
+      String? vehicleUf,
+      String? vehicleName,
+      String? destination,
+      String? driver,
+      String? origin,
+      String? stateRegistration});
+}
 
-  /// Transport name / description.
-  @override
-  String? get name;
+/// @nodoc
+class __$AtsTransportInformationCopyWithImpl<$Res>
+    implements _$AtsTransportInformationCopyWith<$Res> {
+  __$AtsTransportInformationCopyWithImpl(this._self, this._then);
 
-  /// Transport address.
-  @override
-  String? get address;
-
-  /// Transport mun.
-  @override
-  String? get mun;
-
-  /// Freight mod.
-  @override
-  String? get freightMod;
-
-  /// Federal unit.
-  @override
-  String? get federalUnit;
-
-  /// Business number.
-  @override
-  String? get businessNumber;
-
-  /// Vehicle plate code.
-  @override
-  String? get vehiclePlate;
-
-  /// Vehicle federal unit.
-  @override
-  String? get vehicleUf;
-
-  /// Vehicle name.
-  @override
-  String? get vehicleName;
-
-  /// destination
-  @override
-  String? get destination;
-
-  /// Driver
-  @override
-  String? get driver;
-
-  /// Origin
-  @override
-  String? get origin;
-
-  /// State registration
-  @override
-  String? get stateRegistration;
+  final _AtsTransportInformation _self;
+  final $Res Function(_AtsTransportInformation) _then;
 
   /// Create a copy of AtsTransportInformation
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsTransportInformationImplCopyWith<_$AtsTransportInformationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-AtsCommandResult _$AtsCommandResultFromJson(Map<String, dynamic> json) {
-  return _AtsCommandResult.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? cnpj = freezed,
+    Object? name = freezed,
+    Object? address = freezed,
+    Object? mun = freezed,
+    Object? freightMod = freezed,
+    Object? federalUnit = freezed,
+    Object? businessNumber = freezed,
+    Object? vehiclePlate = freezed,
+    Object? vehicleUf = freezed,
+    Object? vehicleName = freezed,
+    Object? destination = freezed,
+    Object? driver = freezed,
+    Object? origin = freezed,
+    Object? stateRegistration = freezed,
+  }) {
+    return _then(_AtsTransportInformation(
+      cnpj: freezed == cnpj
+          ? _self.cnpj
+          : cnpj // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mun: freezed == mun
+          ? _self.mun
+          : mun // ignore: cast_nullable_to_non_nullable
+              as String?,
+      freightMod: freezed == freightMod
+          ? _self.freightMod
+          : freightMod // ignore: cast_nullable_to_non_nullable
+              as String?,
+      federalUnit: freezed == federalUnit
+          ? _self.federalUnit
+          : federalUnit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      businessNumber: freezed == businessNumber
+          ? _self.businessNumber
+          : businessNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vehiclePlate: freezed == vehiclePlate
+          ? _self.vehiclePlate
+          : vehiclePlate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vehicleUf: freezed == vehicleUf
+          ? _self.vehicleUf
+          : vehicleUf // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vehicleName: freezed == vehicleName
+          ? _self.vehicleName
+          : vehicleName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destination: freezed == destination
+          ? _self.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driver: freezed == driver
+          ? _self.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as String?,
+      origin: freezed == origin
+          ? _self.origin
+          : origin // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stateRegistration: freezed == stateRegistration
+          ? _self.stateRegistration
+          : stateRegistration // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsCommandResult {
   /// [String] Command sent to the device.
-  String? get request => throw _privateConstructorUsedError;
+  String? get request;
 
   /// [String] Command response.
-  String? get response => throw _privateConstructorUsedError;
+  String? get response;
 
   /// [DateTime] Command execution date.
   @TimestampOrNullConverter()
-  DateTime? get executedAt => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsCommandResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime? get executedAt;
 
   /// Create a copy of AtsCommandResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsCommandResultCopyWith<AtsCommandResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsCommandResultCopyWith<$Res> {
-  factory $AtsCommandResultCopyWith(
-          AtsCommandResult value, $Res Function(AtsCommandResult) then) =
-      _$AtsCommandResultCopyWithImpl<$Res, AtsCommandResult>;
-  @useResult
-  $Res call(
-      {String? request,
-      String? response,
-      @TimestampOrNullConverter() DateTime? executedAt});
-}
-
-/// @nodoc
-class _$AtsCommandResultCopyWithImpl<$Res, $Val extends AtsCommandResult>
-    implements $AtsCommandResultCopyWith<$Res> {
-  _$AtsCommandResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsCommandResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsCommandResultCopyWith<AtsCommandResult> get copyWith =>
+      _$AtsCommandResultCopyWithImpl<AtsCommandResult>(
+          this as AtsCommandResult, _$identity);
+
+  /// Serializes this AtsCommandResult to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? request = freezed,
-    Object? response = freezed,
-    Object? executedAt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      request: freezed == request
-          ? _value.request
-          : request // ignore: cast_nullable_to_non_nullable
-              as String?,
-      response: freezed == response
-          ? _value.response
-          : response // ignore: cast_nullable_to_non_nullable
-              as String?,
-      executedAt: freezed == executedAt
-          ? _value.executedAt
-          : executedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsCommandResult &&
+            (identical(other.request, request) || other.request == request) &&
+            (identical(other.response, response) ||
+                other.response == response) &&
+            (identical(other.executedAt, executedAt) ||
+                other.executedAt == executedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, request, response, executedAt);
+
+  @override
+  String toString() {
+    return 'AtsCommandResult(request: $request, response: $response, executedAt: $executedAt)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsCommandResultImplCopyWith<$Res>
-    implements $AtsCommandResultCopyWith<$Res> {
-  factory _$$AtsCommandResultImplCopyWith(_$AtsCommandResultImpl value,
-          $Res Function(_$AtsCommandResultImpl) then) =
-      __$$AtsCommandResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsCommandResultCopyWith<$Res> {
+  factory $AtsCommandResultCopyWith(
+          AtsCommandResult value, $Res Function(AtsCommandResult) _then) =
+      _$AtsCommandResultCopyWithImpl;
   @useResult
   $Res call(
       {String? request,
@@ -4606,12 +4305,12 @@ abstract class _$$AtsCommandResultImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsCommandResultImplCopyWithImpl<$Res>
-    extends _$AtsCommandResultCopyWithImpl<$Res, _$AtsCommandResultImpl>
-    implements _$$AtsCommandResultImplCopyWith<$Res> {
-  __$$AtsCommandResultImplCopyWithImpl(_$AtsCommandResultImpl _value,
-      $Res Function(_$AtsCommandResultImpl) _then)
-      : super(_value, _then);
+class _$AtsCommandResultCopyWithImpl<$Res>
+    implements $AtsCommandResultCopyWith<$Res> {
+  _$AtsCommandResultCopyWithImpl(this._self, this._then);
+
+  final AtsCommandResult _self;
+  final $Res Function(AtsCommandResult) _then;
 
   /// Create a copy of AtsCommandResult
   /// with the given fields replaced by the non-null parameter values.
@@ -4622,17 +4321,17 @@ class __$$AtsCommandResultImplCopyWithImpl<$Res>
     Object? response = freezed,
     Object? executedAt = freezed,
   }) {
-    return _then(_$AtsCommandResultImpl(
+    return _then(_self.copyWith(
       request: freezed == request
-          ? _value.request
+          ? _self.request
           : request // ignore: cast_nullable_to_non_nullable
               as String?,
       response: freezed == response
-          ? _value.response
+          ? _self.response
           : response // ignore: cast_nullable_to_non_nullable
               as String?,
       executedAt: freezed == executedAt
-          ? _value.executedAt
+          ? _self.executedAt
           : executedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
@@ -4641,14 +4340,13 @@ class __$$AtsCommandResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsCommandResultImpl implements _AtsCommandResult {
-  const _$AtsCommandResultImpl(
+class _AtsCommandResult implements AtsCommandResult {
+  const _AtsCommandResult(
       {this.request,
       this.response,
       @TimestampOrNullConverter() this.executedAt});
-
-  factory _$AtsCommandResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsCommandResultImplFromJson(json);
+  factory _AtsCommandResult.fromJson(Map<String, dynamic> json) =>
+      _$AtsCommandResultFromJson(json);
 
   /// [String] Command sent to the device.
   @override
@@ -4663,16 +4361,26 @@ class _$AtsCommandResultImpl implements _AtsCommandResult {
   @TimestampOrNullConverter()
   final DateTime? executedAt;
 
+  /// Create a copy of AtsCommandResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsCommandResult(request: $request, response: $response, executedAt: $executedAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsCommandResultCopyWith<_AtsCommandResult> get copyWith =>
+      __$AtsCommandResultCopyWithImpl<_AtsCommandResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsCommandResultToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsCommandResultImpl &&
+            other is _AtsCommandResult &&
             (identical(other.request, request) || other.request == request) &&
             (identical(other.response, response) ||
                 other.response == response) &&
@@ -4684,138 +4392,103 @@ class _$AtsCommandResultImpl implements _AtsCommandResult {
   @override
   int get hashCode => Object.hash(runtimeType, request, response, executedAt);
 
-  /// Create a copy of AtsCommandResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsCommandResultImplCopyWith<_$AtsCommandResultImpl> get copyWith =>
-      __$$AtsCommandResultImplCopyWithImpl<_$AtsCommandResultImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsCommandResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsCommandResult(request: $request, response: $response, executedAt: $executedAt)';
   }
 }
 
-abstract class _AtsCommandResult implements AtsCommandResult {
-  const factory _AtsCommandResult(
-          {final String? request,
-          final String? response,
-          @TimestampOrNullConverter() final DateTime? executedAt}) =
-      _$AtsCommandResultImpl;
-
-  factory _AtsCommandResult.fromJson(Map<String, dynamic> json) =
-      _$AtsCommandResultImpl.fromJson;
-
-  /// [String] Command sent to the device.
+/// @nodoc
+abstract mixin class _$AtsCommandResultCopyWith<$Res>
+    implements $AtsCommandResultCopyWith<$Res> {
+  factory _$AtsCommandResultCopyWith(
+          _AtsCommandResult value, $Res Function(_AtsCommandResult) _then) =
+      __$AtsCommandResultCopyWithImpl;
   @override
-  String? get request;
+  @useResult
+  $Res call(
+      {String? request,
+      String? response,
+      @TimestampOrNullConverter() DateTime? executedAt});
+}
 
-  /// [String] Command response.
-  @override
-  String? get response;
+/// @nodoc
+class __$AtsCommandResultCopyWithImpl<$Res>
+    implements _$AtsCommandResultCopyWith<$Res> {
+  __$AtsCommandResultCopyWithImpl(this._self, this._then);
 
-  /// [DateTime] Command execution date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get executedAt;
+  final _AtsCommandResult _self;
+  final $Res Function(_AtsCommandResult) _then;
 
   /// Create a copy of AtsCommandResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsCommandResultImplCopyWith<_$AtsCommandResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsExecuteLoadInput _$AtsExecuteLoadInputFromJson(Map<String, dynamic> json) {
-  return _AtsExecuteLoadInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? request = freezed,
+    Object? response = freezed,
+    Object? executedAt = freezed,
+  }) {
+    return _then(_AtsCommandResult(
+      request: freezed == request
+          ? _self.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as String?,
+      response: freezed == response
+          ? _self.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as String?,
+      executedAt: freezed == executedAt
+          ? _self.executedAt
+          : executedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsExecuteLoadInput {
   /// `fromAssetId` of the tank
-  String? get fromAssetId => throw _privateConstructorUsedError;
+  String? get fromAssetId;
 
   /// `fromAssetId` of the tank
-  set fromAssetId(String? value) =>
-      throw _privateConstructorUsedError; //// `toAssetId` of the convoy
-  String? get toAssetId =>
-      throw _privateConstructorUsedError; //// `toAssetId` of the convoy
-  set toAssetId(String? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsExecuteLoadInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set fromAssetId(String? value); //// `toAssetId` of the convoy
+  String? get toAssetId; //// `toAssetId` of the convoy
+  set toAssetId(String? value);
 
   /// Create a copy of AtsExecuteLoadInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsExecuteLoadInputCopyWith<AtsExecuteLoadInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsExecuteLoadInputCopyWith<$Res> {
-  factory $AtsExecuteLoadInputCopyWith(
-          AtsExecuteLoadInput value, $Res Function(AtsExecuteLoadInput) then) =
-      _$AtsExecuteLoadInputCopyWithImpl<$Res, AtsExecuteLoadInput>;
-  @useResult
-  $Res call({String? fromAssetId, String? toAssetId});
-}
-
-/// @nodoc
-class _$AtsExecuteLoadInputCopyWithImpl<$Res, $Val extends AtsExecuteLoadInput>
-    implements $AtsExecuteLoadInputCopyWith<$Res> {
-  _$AtsExecuteLoadInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsExecuteLoadInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsExecuteLoadInputCopyWith<AtsExecuteLoadInput> get copyWith =>
+      _$AtsExecuteLoadInputCopyWithImpl<AtsExecuteLoadInput>(
+          this as AtsExecuteLoadInput, _$identity);
+
+  /// Serializes this AtsExecuteLoadInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? fromAssetId = freezed,
-    Object? toAssetId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
-          : fromAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toAssetId: freezed == toAssetId
-          ? _value.toAssetId
-          : toAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'AtsExecuteLoadInput(fromAssetId: $fromAssetId, toAssetId: $toAssetId)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsExecuteLoadInputImplCopyWith<$Res>
-    implements $AtsExecuteLoadInputCopyWith<$Res> {
-  factory _$$AtsExecuteLoadInputImplCopyWith(_$AtsExecuteLoadInputImpl value,
-          $Res Function(_$AtsExecuteLoadInputImpl) then) =
-      __$$AtsExecuteLoadInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsExecuteLoadInputCopyWith<$Res> {
+  factory $AtsExecuteLoadInputCopyWith(
+          AtsExecuteLoadInput value, $Res Function(AtsExecuteLoadInput) _then) =
+      _$AtsExecuteLoadInputCopyWithImpl;
   @useResult
   $Res call({String? fromAssetId, String? toAssetId});
 }
 
 /// @nodoc
-class __$$AtsExecuteLoadInputImplCopyWithImpl<$Res>
-    extends _$AtsExecuteLoadInputCopyWithImpl<$Res, _$AtsExecuteLoadInputImpl>
-    implements _$$AtsExecuteLoadInputImplCopyWith<$Res> {
-  __$$AtsExecuteLoadInputImplCopyWithImpl(_$AtsExecuteLoadInputImpl _value,
-      $Res Function(_$AtsExecuteLoadInputImpl) _then)
-      : super(_value, _then);
+class _$AtsExecuteLoadInputCopyWithImpl<$Res>
+    implements $AtsExecuteLoadInputCopyWith<$Res> {
+  _$AtsExecuteLoadInputCopyWithImpl(this._self, this._then);
+
+  final AtsExecuteLoadInput _self;
+  final $Res Function(AtsExecuteLoadInput) _then;
 
   /// Create a copy of AtsExecuteLoadInput
   /// with the given fields replaced by the non-null parameter values.
@@ -4825,13 +4498,13 @@ class __$$AtsExecuteLoadInputImplCopyWithImpl<$Res>
     Object? fromAssetId = freezed,
     Object? toAssetId = freezed,
   }) {
-    return _then(_$AtsExecuteLoadInputImpl(
+    return _then(_self.copyWith(
       fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
+          ? _self.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       toAssetId: freezed == toAssetId
-          ? _value.toAssetId
+          ? _self.toAssetId
           : toAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -4840,11 +4513,10 @@ class __$$AtsExecuteLoadInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsExecuteLoadInputImpl implements _AtsExecuteLoadInput {
-  _$AtsExecuteLoadInputImpl({this.fromAssetId, this.toAssetId});
-
-  factory _$AtsExecuteLoadInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsExecuteLoadInputImplFromJson(json);
+class _AtsExecuteLoadInput implements AtsExecuteLoadInput {
+  _AtsExecuteLoadInput({this.fromAssetId, this.toAssetId});
+  factory _AtsExecuteLoadInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsExecuteLoadInputFromJson(json);
 
   /// `fromAssetId` of the tank
   @override
@@ -4853,154 +4525,125 @@ class _$AtsExecuteLoadInputImpl implements _AtsExecuteLoadInput {
   @override
   String? toAssetId;
 
-  @override
-  String toString() {
-    return 'AtsExecuteLoadInput(fromAssetId: $fromAssetId, toAssetId: $toAssetId)';
-  }
-
   /// Create a copy of AtsExecuteLoadInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$$AtsExecuteLoadInputImplCopyWith<_$AtsExecuteLoadInputImpl> get copyWith =>
-      __$$AtsExecuteLoadInputImplCopyWithImpl<_$AtsExecuteLoadInputImpl>(
+  _$AtsExecuteLoadInputCopyWith<_AtsExecuteLoadInput> get copyWith =>
+      __$AtsExecuteLoadInputCopyWithImpl<_AtsExecuteLoadInput>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AtsExecuteLoadInputImplToJson(
+    return _$AtsExecuteLoadInputToJson(
       this,
     );
   }
+
+  @override
+  String toString() {
+    return 'AtsExecuteLoadInput(fromAssetId: $fromAssetId, toAssetId: $toAssetId)';
+  }
 }
 
-abstract class _AtsExecuteLoadInput implements AtsExecuteLoadInput {
-  factory _AtsExecuteLoadInput({String? fromAssetId, String? toAssetId}) =
-      _$AtsExecuteLoadInputImpl;
-
-  factory _AtsExecuteLoadInput.fromJson(Map<String, dynamic> json) =
-      _$AtsExecuteLoadInputImpl.fromJson;
-
-  /// `fromAssetId` of the tank
+/// @nodoc
+abstract mixin class _$AtsExecuteLoadInputCopyWith<$Res>
+    implements $AtsExecuteLoadInputCopyWith<$Res> {
+  factory _$AtsExecuteLoadInputCopyWith(_AtsExecuteLoadInput value,
+          $Res Function(_AtsExecuteLoadInput) _then) =
+      __$AtsExecuteLoadInputCopyWithImpl;
   @override
-  String? get fromAssetId;
+  @useResult
+  $Res call({String? fromAssetId, String? toAssetId});
+}
 
-  /// `fromAssetId` of the tank
-  set fromAssetId(String? value); //// `toAssetId` of the convoy
-  @override
-  String? get toAssetId; //// `toAssetId` of the convoy
-  set toAssetId(String? value);
+/// @nodoc
+class __$AtsExecuteLoadInputCopyWithImpl<$Res>
+    implements _$AtsExecuteLoadInputCopyWith<$Res> {
+  __$AtsExecuteLoadInputCopyWithImpl(this._self, this._then);
+
+  final _AtsExecuteLoadInput _self;
+  final $Res Function(_AtsExecuteLoadInput) _then;
 
   /// Create a copy of AtsExecuteLoadInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsExecuteLoadInputImplCopyWith<_$AtsExecuteLoadInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsCompanyInformation _$AtsCompanyInformationFromJson(
-    Map<String, dynamic> json) {
-  return _AtsCompanyInformation.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? fromAssetId = freezed,
+    Object? toAssetId = freezed,
+  }) {
+    return _then(_AtsExecuteLoadInput(
+      fromAssetId: freezed == fromAssetId
+          ? _self.fromAssetId
+          : fromAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAssetId: freezed == toAssetId
+          ? _self.toAssetId
+          : toAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsCompanyInformation {
   /// Your company name, could be the legal name or commercial name. For example, Golden M is the commercial name of Golden M, Inc.
-  String? get name => throw _privateConstructorUsedError;
+  String? get name;
 
   /// Company National Registry of Legal Entities.
-  String? get cnpj => throw _privateConstructorUsedError;
+  String? get cnpj;
 
   /// Company Address
-  String? get address => throw _privateConstructorUsedError;
+  String? get address;
 
   /// Email Address
-  String? get email => throw _privateConstructorUsedError;
+  String? get email;
 
   /// State registration
-  String? get stateRegistration => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsCompanyInformation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get stateRegistration;
 
   /// Create a copy of AtsCompanyInformation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsCompanyInformationCopyWith<AtsCompanyInformation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsCompanyInformationCopyWith<$Res> {
-  factory $AtsCompanyInformationCopyWith(AtsCompanyInformation value,
-          $Res Function(AtsCompanyInformation) then) =
-      _$AtsCompanyInformationCopyWithImpl<$Res, AtsCompanyInformation>;
-  @useResult
-  $Res call(
-      {String? name,
-      String? cnpj,
-      String? address,
-      String? email,
-      String? stateRegistration});
-}
-
-/// @nodoc
-class _$AtsCompanyInformationCopyWithImpl<$Res,
-        $Val extends AtsCompanyInformation>
-    implements $AtsCompanyInformationCopyWith<$Res> {
-  _$AtsCompanyInformationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsCompanyInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsCompanyInformationCopyWith<AtsCompanyInformation> get copyWith =>
+      _$AtsCompanyInformationCopyWithImpl<AtsCompanyInformation>(
+          this as AtsCompanyInformation, _$identity);
+
+  /// Serializes this AtsCompanyInformation to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? cnpj = freezed,
-    Object? address = freezed,
-    Object? email = freezed,
-    Object? stateRegistration = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cnpj: freezed == cnpj
-          ? _value.cnpj
-          : cnpj // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      stateRegistration: freezed == stateRegistration
-          ? _value.stateRegistration
-          : stateRegistration // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsCompanyInformation &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.stateRegistration, stateRegistration) ||
+                other.stateRegistration == stateRegistration));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, name, cnpj, address, email, stateRegistration);
+
+  @override
+  String toString() {
+    return 'AtsCompanyInformation(name: $name, cnpj: $cnpj, address: $address, email: $email, stateRegistration: $stateRegistration)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsCompanyInformationImplCopyWith<$Res>
-    implements $AtsCompanyInformationCopyWith<$Res> {
-  factory _$$AtsCompanyInformationImplCopyWith(
-          _$AtsCompanyInformationImpl value,
-          $Res Function(_$AtsCompanyInformationImpl) then) =
-      __$$AtsCompanyInformationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsCompanyInformationCopyWith<$Res> {
+  factory $AtsCompanyInformationCopyWith(AtsCompanyInformation value,
+          $Res Function(AtsCompanyInformation) _then) =
+      _$AtsCompanyInformationCopyWithImpl;
   @useResult
   $Res call(
       {String? name,
@@ -5011,13 +4654,12 @@ abstract class _$$AtsCompanyInformationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsCompanyInformationImplCopyWithImpl<$Res>
-    extends _$AtsCompanyInformationCopyWithImpl<$Res,
-        _$AtsCompanyInformationImpl>
-    implements _$$AtsCompanyInformationImplCopyWith<$Res> {
-  __$$AtsCompanyInformationImplCopyWithImpl(_$AtsCompanyInformationImpl _value,
-      $Res Function(_$AtsCompanyInformationImpl) _then)
-      : super(_value, _then);
+class _$AtsCompanyInformationCopyWithImpl<$Res>
+    implements $AtsCompanyInformationCopyWith<$Res> {
+  _$AtsCompanyInformationCopyWithImpl(this._self, this._then);
+
+  final AtsCompanyInformation _self;
+  final $Res Function(AtsCompanyInformation) _then;
 
   /// Create a copy of AtsCompanyInformation
   /// with the given fields replaced by the non-null parameter values.
@@ -5030,25 +4672,25 @@ class __$$AtsCompanyInformationImplCopyWithImpl<$Res>
     Object? email = freezed,
     Object? stateRegistration = freezed,
   }) {
-    return _then(_$AtsCompanyInformationImpl(
+    return _then(_self.copyWith(
       name: freezed == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       cnpj: freezed == cnpj
-          ? _value.cnpj
+          ? _self.cnpj
           : cnpj // ignore: cast_nullable_to_non_nullable
               as String?,
       address: freezed == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       stateRegistration: freezed == stateRegistration
-          ? _value.stateRegistration
+          ? _self.stateRegistration
           : stateRegistration // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -5057,12 +4699,11 @@ class __$$AtsCompanyInformationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
-  _$AtsCompanyInformationImpl(
+class _AtsCompanyInformation implements AtsCompanyInformation {
+  _AtsCompanyInformation(
       {this.name, this.cnpj, this.address, this.email, this.stateRegistration});
-
-  factory _$AtsCompanyInformationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsCompanyInformationImplFromJson(json);
+  factory _AtsCompanyInformation.fromJson(Map<String, dynamic> json) =>
+      _$AtsCompanyInformationFromJson(json);
 
   /// Your company name, could be the legal name or commercial name. For example, Golden M is the commercial name of Golden M, Inc.
   @override
@@ -5084,16 +4725,27 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
   @override
   final String? stateRegistration;
 
+  /// Create a copy of AtsCompanyInformation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsCompanyInformation(name: $name, cnpj: $cnpj, address: $address, email: $email, stateRegistration: $stateRegistration)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsCompanyInformationCopyWith<_AtsCompanyInformation> get copyWith =>
+      __$AtsCompanyInformationCopyWithImpl<_AtsCompanyInformation>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsCompanyInformationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsCompanyInformationImpl &&
+            other is _AtsCompanyInformation &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
             (identical(other.address, address) || other.address == address) &&
@@ -5107,190 +4759,153 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
   int get hashCode =>
       Object.hash(runtimeType, name, cnpj, address, email, stateRegistration);
 
-  /// Create a copy of AtsCompanyInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsCompanyInformationImplCopyWith<_$AtsCompanyInformationImpl>
-      get copyWith => __$$AtsCompanyInformationImplCopyWithImpl<
-          _$AtsCompanyInformationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsCompanyInformationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsCompanyInformation(name: $name, cnpj: $cnpj, address: $address, email: $email, stateRegistration: $stateRegistration)';
   }
 }
 
-abstract class _AtsCompanyInformation implements AtsCompanyInformation {
-  factory _AtsCompanyInformation(
-      {final String? name,
-      final String? cnpj,
-      final String? address,
-      final String? email,
-      final String? stateRegistration}) = _$AtsCompanyInformationImpl;
-
-  factory _AtsCompanyInformation.fromJson(Map<String, dynamic> json) =
-      _$AtsCompanyInformationImpl.fromJson;
-
-  /// Your company name, could be the legal name or commercial name. For example, Golden M is the commercial name of Golden M, Inc.
+/// @nodoc
+abstract mixin class _$AtsCompanyInformationCopyWith<$Res>
+    implements $AtsCompanyInformationCopyWith<$Res> {
+  factory _$AtsCompanyInformationCopyWith(_AtsCompanyInformation value,
+          $Res Function(_AtsCompanyInformation) _then) =
+      __$AtsCompanyInformationCopyWithImpl;
   @override
-  String? get name;
+  @useResult
+  $Res call(
+      {String? name,
+      String? cnpj,
+      String? address,
+      String? email,
+      String? stateRegistration});
+}
 
-  /// Company National Registry of Legal Entities.
-  @override
-  String? get cnpj;
+/// @nodoc
+class __$AtsCompanyInformationCopyWithImpl<$Res>
+    implements _$AtsCompanyInformationCopyWith<$Res> {
+  __$AtsCompanyInformationCopyWithImpl(this._self, this._then);
 
-  /// Company Address
-  @override
-  String? get address;
-
-  /// Email Address
-  @override
-  String? get email;
-
-  /// State registration
-  @override
-  String? get stateRegistration;
+  final _AtsCompanyInformation _self;
+  final $Res Function(_AtsCompanyInformation) _then;
 
   /// Create a copy of AtsCompanyInformation
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsCompanyInformationImplCopyWith<_$AtsCompanyInformationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-AtsProductInformation _$AtsProductInformationFromJson(
-    Map<String, dynamic> json) {
-  return _AtsProductInformation.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = freezed,
+    Object? cnpj = freezed,
+    Object? address = freezed,
+    Object? email = freezed,
+    Object? stateRegistration = freezed,
+  }) {
+    return _then(_AtsCompanyInformation(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cnpj: freezed == cnpj
+          ? _self.cnpj
+          : cnpj // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stateRegistration: freezed == stateRegistration
+          ? _self.stateRegistration
+          : stateRegistration // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsProductInformation {
   /// Product code.
-  String? get ncm => throw _privateConstructorUsedError;
+  String? get ncm;
 
   /// Product name / description.
-  String? get name => throw _privateConstructorUsedError;
+  String? get name;
 
   /// Measure unit of the product.
-  String? get measureUnit => throw _privateConstructorUsedError;
+  String? get measureUnit;
 
   /// Quantity of the product it is of [AtsReceptionPructsInput] volumeBought.
-  double? get quantity => throw _privateConstructorUsedError;
+  double? get quantity;
 
   /// Unitary value of the product.
-  double? get unitValue => throw _privateConstructorUsedError;
+  double? get unitValue;
 
   /// Result of quantity + unit_value (From API)
-  double? get productValue => throw _privateConstructorUsedError;
+  double? get productValue;
 
   /// cfop of the product.
-  String? get cfop => throw _privateConstructorUsedError;
+  String? get cfop;
 
   /// Product sub category.
-  Map<String, dynamic>? get subcategory => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsProductInformation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get subcategory;
 
   /// Create a copy of AtsProductInformation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsProductInformationCopyWith<AtsProductInformation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsProductInformationCopyWith<$Res> {
-  factory $AtsProductInformationCopyWith(AtsProductInformation value,
-          $Res Function(AtsProductInformation) then) =
-      _$AtsProductInformationCopyWithImpl<$Res, AtsProductInformation>;
-  @useResult
-  $Res call(
-      {String? ncm,
-      String? name,
-      String? measureUnit,
-      double? quantity,
-      double? unitValue,
-      double? productValue,
-      String? cfop,
-      Map<String, dynamic>? subcategory});
-}
-
-/// @nodoc
-class _$AtsProductInformationCopyWithImpl<$Res,
-        $Val extends AtsProductInformation>
-    implements $AtsProductInformationCopyWith<$Res> {
-  _$AtsProductInformationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsProductInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsProductInformationCopyWith<AtsProductInformation> get copyWith =>
+      _$AtsProductInformationCopyWithImpl<AtsProductInformation>(
+          this as AtsProductInformation, _$identity);
+
+  /// Serializes this AtsProductInformation to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? ncm = freezed,
-    Object? name = freezed,
-    Object? measureUnit = freezed,
-    Object? quantity = freezed,
-    Object? unitValue = freezed,
-    Object? productValue = freezed,
-    Object? cfop = freezed,
-    Object? subcategory = freezed,
-  }) {
-    return _then(_value.copyWith(
-      ncm: freezed == ncm
-          ? _value.ncm
-          : ncm // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      measureUnit: freezed == measureUnit
-          ? _value.measureUnit
-          : measureUnit // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitValue: freezed == unitValue
-          ? _value.unitValue
-          : unitValue // ignore: cast_nullable_to_non_nullable
-              as double?,
-      productValue: freezed == productValue
-          ? _value.productValue
-          : productValue // ignore: cast_nullable_to_non_nullable
-              as double?,
-      cfop: freezed == cfop
-          ? _value.cfop
-          : cfop // ignore: cast_nullable_to_non_nullable
-              as String?,
-      subcategory: freezed == subcategory
-          ? _value.subcategory
-          : subcategory // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsProductInformation &&
+            (identical(other.ncm, ncm) || other.ncm == ncm) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.measureUnit, measureUnit) ||
+                other.measureUnit == measureUnit) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unitValue, unitValue) ||
+                other.unitValue == unitValue) &&
+            (identical(other.productValue, productValue) ||
+                other.productValue == productValue) &&
+            (identical(other.cfop, cfop) || other.cfop == cfop) &&
+            const DeepCollectionEquality()
+                .equals(other.subcategory, subcategory));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      ncm,
+      name,
+      measureUnit,
+      quantity,
+      unitValue,
+      productValue,
+      cfop,
+      const DeepCollectionEquality().hash(subcategory));
+
+  @override
+  String toString() {
+    return 'AtsProductInformation(ncm: $ncm, name: $name, measureUnit: $measureUnit, quantity: $quantity, unitValue: $unitValue, productValue: $productValue, cfop: $cfop, subcategory: $subcategory)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsProductInformationImplCopyWith<$Res>
-    implements $AtsProductInformationCopyWith<$Res> {
-  factory _$$AtsProductInformationImplCopyWith(
-          _$AtsProductInformationImpl value,
-          $Res Function(_$AtsProductInformationImpl) then) =
-      __$$AtsProductInformationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsProductInformationCopyWith<$Res> {
+  factory $AtsProductInformationCopyWith(AtsProductInformation value,
+          $Res Function(AtsProductInformation) _then) =
+      _$AtsProductInformationCopyWithImpl;
   @useResult
   $Res call(
       {String? ncm,
@@ -5304,13 +4919,12 @@ abstract class _$$AtsProductInformationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsProductInformationImplCopyWithImpl<$Res>
-    extends _$AtsProductInformationCopyWithImpl<$Res,
-        _$AtsProductInformationImpl>
-    implements _$$AtsProductInformationImplCopyWith<$Res> {
-  __$$AtsProductInformationImplCopyWithImpl(_$AtsProductInformationImpl _value,
-      $Res Function(_$AtsProductInformationImpl) _then)
-      : super(_value, _then);
+class _$AtsProductInformationCopyWithImpl<$Res>
+    implements $AtsProductInformationCopyWith<$Res> {
+  _$AtsProductInformationCopyWithImpl(this._self, this._then);
+
+  final AtsProductInformation _self;
+  final $Res Function(AtsProductInformation) _then;
 
   /// Create a copy of AtsProductInformation
   /// with the given fields replaced by the non-null parameter values.
@@ -5326,37 +4940,37 @@ class __$$AtsProductInformationImplCopyWithImpl<$Res>
     Object? cfop = freezed,
     Object? subcategory = freezed,
   }) {
-    return _then(_$AtsProductInformationImpl(
+    return _then(_self.copyWith(
       ncm: freezed == ncm
-          ? _value.ncm
+          ? _self.ncm
           : ncm // ignore: cast_nullable_to_non_nullable
               as String?,
       name: freezed == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       measureUnit: freezed == measureUnit
-          ? _value.measureUnit
+          ? _self.measureUnit
           : measureUnit // ignore: cast_nullable_to_non_nullable
               as String?,
       quantity: freezed == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double?,
       unitValue: freezed == unitValue
-          ? _value.unitValue
+          ? _self.unitValue
           : unitValue // ignore: cast_nullable_to_non_nullable
               as double?,
       productValue: freezed == productValue
-          ? _value.productValue
+          ? _self.productValue
           : productValue // ignore: cast_nullable_to_non_nullable
               as double?,
       cfop: freezed == cfop
-          ? _value.cfop
+          ? _self.cfop
           : cfop // ignore: cast_nullable_to_non_nullable
               as String?,
       subcategory: freezed == subcategory
-          ? _value._subcategory
+          ? _self.subcategory
           : subcategory // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -5365,8 +4979,8 @@ class __$$AtsProductInformationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsProductInformationImpl implements _AtsProductInformation {
-  _$AtsProductInformationImpl(
+class _AtsProductInformation implements AtsProductInformation {
+  _AtsProductInformation(
       {this.ncm,
       this.name,
       this.measureUnit,
@@ -5376,9 +4990,8 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
       this.cfop,
       final Map<String, dynamic>? subcategory})
       : _subcategory = subcategory;
-
-  factory _$AtsProductInformationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsProductInformationImplFromJson(json);
+  factory _AtsProductInformation.fromJson(Map<String, dynamic> json) =>
+      _$AtsProductInformationFromJson(json);
 
   /// Product code.
   @override
@@ -5421,16 +5034,27 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of AtsProductInformation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsProductInformation(ncm: $ncm, name: $name, measureUnit: $measureUnit, quantity: $quantity, unitValue: $unitValue, productValue: $productValue, cfop: $cfop, subcategory: $subcategory)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsProductInformationCopyWith<_AtsProductInformation> get copyWith =>
+      __$AtsProductInformationCopyWithImpl<_AtsProductInformation>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsProductInformationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsProductInformationImpl &&
+            other is _AtsProductInformation &&
             (identical(other.ncm, ncm) || other.ncm == ncm) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.measureUnit, measureUnit) ||
@@ -5459,215 +5083,329 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
       cfop,
       const DeepCollectionEquality().hash(_subcategory));
 
-  /// Create a copy of AtsProductInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsProductInformationImplCopyWith<_$AtsProductInformationImpl>
-      get copyWith => __$$AtsProductInformationImplCopyWithImpl<
-          _$AtsProductInformationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsProductInformationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsProductInformation(ncm: $ncm, name: $name, measureUnit: $measureUnit, quantity: $quantity, unitValue: $unitValue, productValue: $productValue, cfop: $cfop, subcategory: $subcategory)';
   }
 }
 
-abstract class _AtsProductInformation implements AtsProductInformation {
-  factory _AtsProductInformation(
-      {final String? ncm,
-      final String? name,
-      final String? measureUnit,
-      final double? quantity,
-      final double? unitValue,
-      final double? productValue,
-      final String? cfop,
-      final Map<String, dynamic>? subcategory}) = _$AtsProductInformationImpl;
-
-  factory _AtsProductInformation.fromJson(Map<String, dynamic> json) =
-      _$AtsProductInformationImpl.fromJson;
-
-  /// Product code.
+/// @nodoc
+abstract mixin class _$AtsProductInformationCopyWith<$Res>
+    implements $AtsProductInformationCopyWith<$Res> {
+  factory _$AtsProductInformationCopyWith(_AtsProductInformation value,
+          $Res Function(_AtsProductInformation) _then) =
+      __$AtsProductInformationCopyWithImpl;
   @override
-  String? get ncm;
+  @useResult
+  $Res call(
+      {String? ncm,
+      String? name,
+      String? measureUnit,
+      double? quantity,
+      double? unitValue,
+      double? productValue,
+      String? cfop,
+      Map<String, dynamic>? subcategory});
+}
 
-  /// Product name / description.
-  @override
-  String? get name;
+/// @nodoc
+class __$AtsProductInformationCopyWithImpl<$Res>
+    implements _$AtsProductInformationCopyWith<$Res> {
+  __$AtsProductInformationCopyWithImpl(this._self, this._then);
 
-  /// Measure unit of the product.
-  @override
-  String? get measureUnit;
-
-  /// Quantity of the product it is of [AtsReceptionPructsInput] volumeBought.
-  @override
-  double? get quantity;
-
-  /// Unitary value of the product.
-  @override
-  double? get unitValue;
-
-  /// Result of quantity + unit_value (From API)
-  @override
-  double? get productValue;
-
-  /// cfop of the product.
-  @override
-  String? get cfop;
-
-  /// Product sub category.
-  @override
-  Map<String, dynamic>? get subcategory;
+  final _AtsProductInformation _self;
+  final $Res Function(_AtsProductInformation) _then;
 
   /// Create a copy of AtsProductInformation
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsProductInformationImplCopyWith<_$AtsProductInformationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-AtsPurchaseOrder _$AtsPurchaseOrderFromJson(Map<String, dynamic> json) {
-  return _AtsPurchaseOrder.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? ncm = freezed,
+    Object? name = freezed,
+    Object? measureUnit = freezed,
+    Object? quantity = freezed,
+    Object? unitValue = freezed,
+    Object? productValue = freezed,
+    Object? cfop = freezed,
+    Object? subcategory = freezed,
+  }) {
+    return _then(_AtsProductInformation(
+      ncm: freezed == ncm
+          ? _self.ncm
+          : ncm // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measureUnit: freezed == measureUnit
+          ? _self.measureUnit
+          : measureUnit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: freezed == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      unitValue: freezed == unitValue
+          ? _self.unitValue
+          : unitValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      productValue: freezed == productValue
+          ? _self.productValue
+          : productValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      cfop: freezed == cfop
+          ? _self.cfop
+          : cfop // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subcategory: freezed == subcategory
+          ? _self._subcategory
+          : subcategory // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsPurchaseOrder {
   /// ID of the [Asset] entity. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// External API ID
-  String? get ownerId => throw _privateConstructorUsedError;
+  String? get ownerId;
 
   /// Order or invoice number.
-  String? get orderId => throw _privateConstructorUsedError;
+  String? get orderId;
 
   /// ID of the asset.
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// ID of the seller asset.
-  String? get sellerAssetId => throw _privateConstructorUsedError;
+  String? get sellerAssetId;
 
   /// ID of the transport asset.
-  String? get transportAssetId => throw _privateConstructorUsedError;
+  String? get transportAssetId;
 
   /// Unix of last [AtsReception] date.
   @TimestampOrNullConverter()
-  DateTime? get purchasedAt => throw _privateConstructorUsedError;
+  DateTime? get purchasedAt;
 
   /// Unix of last [AtsReception] date.
   @TimestampOrNullConverter()
-  DateTime? get receivedAt => throw _privateConstructorUsedError;
+  DateTime? get receivedAt;
 
   /// [Asset] linked to the [AtsPurchaseOrder].
-  Asset? get asset => throw _privateConstructorUsedError;
+  Asset? get asset;
 
   /// Legal information about the seller. Please read the comments of CompanyInformation definition for more information.
-  AtsCompanyInformation? get sellerInformation =>
-      throw _privateConstructorUsedError;
+  AtsCompanyInformation? get sellerInformation;
 
   /// Legal information about the receiver. Please read the comments of CompanyInformation definition for more information.
-  AtsCompanyInformation? get receiverInformation =>
-      throw _privateConstructorUsedError;
+  AtsCompanyInformation? get receiverInformation;
 
   /// List of products purchased. Please read the comments of ProductInformation definition for more information.
-  List<AtsProductInformation>? get productsInformation =>
-      throw _privateConstructorUsedError;
+  List<AtsProductInformation>? get productsInformation;
 
   /// Total information. Please read the comments of Total definition for more information.
-  AtsPurchaseTotal? get total => throw _privateConstructorUsedError;
+  AtsPurchaseTotal? get total;
 
   /// True if the purchase order was received.
-  bool? get isReceived => throw _privateConstructorUsedError;
+  bool? get isReceived;
 
   /// True is the purchase order has a reception
-  bool? get hasReception => throw _privateConstructorUsedError;
+  bool? get hasReception;
 
   /// Legal information about the transport. Please read the comments of TransportInformation definition for more information.
-  AtsTransportInformation? get transportInformation =>
-      throw _privateConstructorUsedError;
+  AtsTransportInformation? get transportInformation;
 
   /// True if the purchase order has a raw xml
-  bool? get hasRawXml => throw _privateConstructorUsedError;
+  bool? get hasRawXml;
 
   /// Invoice type (NFe, CTe)
-  String? get invoiceType => throw _privateConstructorUsedError;
+  String? get invoiceType;
 
   /// Parent invoice
-  AtsPurchaseOrder? get parentInvoice => throw _privateConstructorUsedError;
+  AtsPurchaseOrder? get parentInvoice;
 
   /// Ide information
-  AtsIdeInformation? get ideInformation => throw _privateConstructorUsedError;
+  AtsIdeInformation? get ideInformation;
 
   /// Unix of reception at.
   @TimestampOrNullConverter()
-  DateTime? get receptionAt => throw _privateConstructorUsedError;
+  DateTime? get receptionAt;
 
   /// Purchase order operation
   @PurchaseOrderOperationOrNullConverter()
-  PurchaseOrderOperation? get action => throw _privateConstructorUsedError;
+  PurchaseOrderOperation? get action;
 
   /// `transportAsset` represet the truck that will transport the product.
-  Asset? get transportAsset => throw _privateConstructorUsedError;
+  Asset? get transportAsset;
 
   /// `sellerAsset` represet the terminal that will sell the product.
-  Asset? get sellerAsset => throw _privateConstructorUsedError;
+  Asset? get sellerAsset;
 
   /// `orderStatus` defines the order status.
   @AtsPurchaseOrderStatusOrNullConverter()
-  AtsPurchaseOrderStatus? get orderStatus => throw _privateConstructorUsedError;
+  AtsPurchaseOrderStatus? get orderStatus;
 
   /// `inTransitAt` defines the in transit date.
   @TimestampOrNullConverter()
-  DateTime? get inTransitAt => throw _privateConstructorUsedError;
+  DateTime? get inTransitAt;
 
   /// `waitingToDispatchAt` defines the waiting to dispatch date.
   @TimestampOrNullConverter()
-  DateTime? get waitingToDispatchAt => throw _privateConstructorUsedError;
+  DateTime? get waitingToDispatchAt;
 
   /// `deliveredAt` defines the delivered date.
   @TimestampOrNullConverter()
-  DateTime? get deliveredAt => throw _privateConstructorUsedError;
+  DateTime? get deliveredAt;
 
   /// `deliverCategory` defines the delivery category.
   @AtsPurchaseOrderSubCategoriesOrNullConverter()
-  AtsPurchaseOrderSubCategories? get deliverCategory =>
-      throw _privateConstructorUsedError;
+  AtsPurchaseOrderSubCategories? get deliverCategory;
 
   /// `category` defines the category.
   @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-  AtsPurchaseOrderCategoriesEntity? get category =>
-      throw _privateConstructorUsedError;
+  AtsPurchaseOrderCategoriesEntity? get category;
 
   /// `operation` associated to the purchase order.
-  AtsOperation? get operation => throw _privateConstructorUsedError;
+  AtsOperation? get operation;
 
   /// [eta] defines the estimated time of arrival.
   @TimestampOrNullConverter()
-  DateTime? get eta => throw _privateConstructorUsedError;
+  DateTime? get eta;
 
   /// [etaUpdatedAt] defines the estimated time of arrival updated at.
   @TimestampOrNullConverter()
-  DateTime? get etaUpdatedAt => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsPurchaseOrder to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime? get etaUpdatedAt;
 
   /// Create a copy of AtsPurchaseOrder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsPurchaseOrderCopyWith<AtsPurchaseOrder> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsPurchaseOrderCopyWithImpl<AtsPurchaseOrder>(
+          this as AtsPurchaseOrder, _$identity);
+
+  /// Serializes this AtsPurchaseOrder to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsPurchaseOrder &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.sellerAssetId, sellerAssetId) ||
+                other.sellerAssetId == sellerAssetId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.purchasedAt, purchasedAt) ||
+                other.purchasedAt == purchasedAt) &&
+            (identical(other.receivedAt, receivedAt) ||
+                other.receivedAt == receivedAt) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.sellerInformation, sellerInformation) ||
+                other.sellerInformation == sellerInformation) &&
+            (identical(other.receiverInformation, receiverInformation) ||
+                other.receiverInformation == receiverInformation) &&
+            const DeepCollectionEquality()
+                .equals(other.productsInformation, productsInformation) &&
+            (identical(other.total, total) || other.total == total) &&
+            (identical(other.isReceived, isReceived) ||
+                other.isReceived == isReceived) &&
+            (identical(other.hasReception, hasReception) ||
+                other.hasReception == hasReception) &&
+            (identical(other.transportInformation, transportInformation) ||
+                other.transportInformation == transportInformation) &&
+            (identical(other.hasRawXml, hasRawXml) ||
+                other.hasRawXml == hasRawXml) &&
+            (identical(other.invoiceType, invoiceType) ||
+                other.invoiceType == invoiceType) &&
+            (identical(other.parentInvoice, parentInvoice) ||
+                other.parentInvoice == parentInvoice) &&
+            (identical(other.ideInformation, ideInformation) ||
+                other.ideInformation == ideInformation) &&
+            (identical(other.receptionAt, receptionAt) ||
+                other.receptionAt == receptionAt) &&
+            (identical(other.action, action) || other.action == action) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.sellerAsset, sellerAsset) ||
+                other.sellerAsset == sellerAsset) &&
+            (identical(other.orderStatus, orderStatus) ||
+                other.orderStatus == orderStatus) &&
+            (identical(other.inTransitAt, inTransitAt) ||
+                other.inTransitAt == inTransitAt) &&
+            (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
+                other.waitingToDispatchAt == waitingToDispatchAt) &&
+            (identical(other.deliveredAt, deliveredAt) ||
+                other.deliveredAt == deliveredAt) &&
+            (identical(other.deliverCategory, deliverCategory) ||
+                other.deliverCategory == deliverCategory) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.eta, eta) || other.eta == eta) &&
+            (identical(other.etaUpdatedAt, etaUpdatedAt) ||
+                other.etaUpdatedAt == etaUpdatedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        ownerId,
+        orderId,
+        assetId,
+        sellerAssetId,
+        transportAssetId,
+        purchasedAt,
+        receivedAt,
+        asset,
+        sellerInformation,
+        receiverInformation,
+        const DeepCollectionEquality().hash(productsInformation),
+        total,
+        isReceived,
+        hasReception,
+        transportInformation,
+        hasRawXml,
+        invoiceType,
+        parentInvoice,
+        ideInformation,
+        receptionAt,
+        action,
+        transportAsset,
+        sellerAsset,
+        orderStatus,
+        inTransitAt,
+        waitingToDispatchAt,
+        deliveredAt,
+        deliverCategory,
+        category,
+        operation,
+        eta,
+        etaUpdatedAt
+      ]);
+
+  @override
+  String toString() {
+    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, receptionAt: $receptionAt, action: $action, transportAsset: $transportAsset, sellerAsset: $sellerAsset, orderStatus: $orderStatus, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, deliverCategory: $deliverCategory, category: $category, operation: $operation, eta: $eta, etaUpdatedAt: $etaUpdatedAt)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsPurchaseOrderCopyWith<$Res> {
+abstract mixin class $AtsPurchaseOrderCopyWith<$Res> {
   factory $AtsPurchaseOrderCopyWith(
-          AtsPurchaseOrder value, $Res Function(AtsPurchaseOrder) then) =
-      _$AtsPurchaseOrderCopyWithImpl<$Res, AtsPurchaseOrder>;
+          AtsPurchaseOrder value, $Res Function(AtsPurchaseOrder) _then) =
+      _$AtsPurchaseOrderCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -5720,14 +5458,12 @@ abstract class $AtsPurchaseOrderCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
+class _$AtsPurchaseOrderCopyWithImpl<$Res>
     implements $AtsPurchaseOrderCopyWith<$Res> {
-  _$AtsPurchaseOrderCopyWithImpl(this._value, this._then);
+  _$AtsPurchaseOrderCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsPurchaseOrder _self;
+  final $Res Function(AtsPurchaseOrder) _then;
 
   /// Create a copy of AtsPurchaseOrder
   /// with the given fields replaced by the non-null parameter values.
@@ -5768,140 +5504,140 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     Object? eta = freezed,
     Object? etaUpdatedAt = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       ownerId: freezed == ownerId
-          ? _value.ownerId
+          ? _self.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String?,
       orderId: freezed == orderId
-          ? _value.orderId
+          ? _self.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as String?,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       sellerAssetId: freezed == sellerAssetId
-          ? _value.sellerAssetId
+          ? _self.sellerAssetId
           : sellerAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       transportAssetId: freezed == transportAssetId
-          ? _value.transportAssetId
+          ? _self.transportAssetId
           : transportAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       purchasedAt: freezed == purchasedAt
-          ? _value.purchasedAt
+          ? _self.purchasedAt
           : purchasedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       receivedAt: freezed == receivedAt
-          ? _value.receivedAt
+          ? _self.receivedAt
           : receivedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       asset: freezed == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       sellerInformation: freezed == sellerInformation
-          ? _value.sellerInformation
+          ? _self.sellerInformation
           : sellerInformation // ignore: cast_nullable_to_non_nullable
               as AtsCompanyInformation?,
       receiverInformation: freezed == receiverInformation
-          ? _value.receiverInformation
+          ? _self.receiverInformation
           : receiverInformation // ignore: cast_nullable_to_non_nullable
               as AtsCompanyInformation?,
       productsInformation: freezed == productsInformation
-          ? _value.productsInformation
+          ? _self.productsInformation
           : productsInformation // ignore: cast_nullable_to_non_nullable
               as List<AtsProductInformation>?,
       total: freezed == total
-          ? _value.total
+          ? _self.total
           : total // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseTotal?,
       isReceived: freezed == isReceived
-          ? _value.isReceived
+          ? _self.isReceived
           : isReceived // ignore: cast_nullable_to_non_nullable
               as bool?,
       hasReception: freezed == hasReception
-          ? _value.hasReception
+          ? _self.hasReception
           : hasReception // ignore: cast_nullable_to_non_nullable
               as bool?,
       transportInformation: freezed == transportInformation
-          ? _value.transportInformation
+          ? _self.transportInformation
           : transportInformation // ignore: cast_nullable_to_non_nullable
               as AtsTransportInformation?,
       hasRawXml: freezed == hasRawXml
-          ? _value.hasRawXml
+          ? _self.hasRawXml
           : hasRawXml // ignore: cast_nullable_to_non_nullable
               as bool?,
       invoiceType: freezed == invoiceType
-          ? _value.invoiceType
+          ? _self.invoiceType
           : invoiceType // ignore: cast_nullable_to_non_nullable
               as String?,
       parentInvoice: freezed == parentInvoice
-          ? _value.parentInvoice
+          ? _self.parentInvoice
           : parentInvoice // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrder?,
       ideInformation: freezed == ideInformation
-          ? _value.ideInformation
+          ? _self.ideInformation
           : ideInformation // ignore: cast_nullable_to_non_nullable
               as AtsIdeInformation?,
       receptionAt: freezed == receptionAt
-          ? _value.receptionAt
+          ? _self.receptionAt
           : receptionAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       action: freezed == action
-          ? _value.action
+          ? _self.action
           : action // ignore: cast_nullable_to_non_nullable
               as PurchaseOrderOperation?,
       transportAsset: freezed == transportAsset
-          ? _value.transportAsset
+          ? _self.transportAsset
           : transportAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       sellerAsset: freezed == sellerAsset
-          ? _value.sellerAsset
+          ? _self.sellerAsset
           : sellerAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       orderStatus: freezed == orderStatus
-          ? _value.orderStatus
+          ? _self.orderStatus
           : orderStatus // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrderStatus?,
       inTransitAt: freezed == inTransitAt
-          ? _value.inTransitAt
+          ? _self.inTransitAt
           : inTransitAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       waitingToDispatchAt: freezed == waitingToDispatchAt
-          ? _value.waitingToDispatchAt
+          ? _self.waitingToDispatchAt
           : waitingToDispatchAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       deliveredAt: freezed == deliveredAt
-          ? _value.deliveredAt
+          ? _self.deliveredAt
           : deliveredAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       deliverCategory: freezed == deliverCategory
-          ? _value.deliverCategory
+          ? _self.deliverCategory
           : deliverCategory // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrderSubCategories?,
       category: freezed == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrderCategoriesEntity?,
       operation: freezed == operation
-          ? _value.operation
+          ? _self.operation
           : operation // ignore: cast_nullable_to_non_nullable
               as AtsOperation?,
       eta: freezed == eta
-          ? _value.eta
+          ? _self.eta
           : eta // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       etaUpdatedAt: freezed == etaUpdatedAt
-          ? _value.etaUpdatedAt
+          ? _self.etaUpdatedAt
           : etaUpdatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsPurchaseOrder
@@ -5909,12 +5645,12 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
-    if (_value.asset == null) {
+    if (_self.asset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
     });
   }
 
@@ -5923,13 +5659,13 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation {
-    if (_value.sellerInformation == null) {
+    if (_self.sellerInformation == null) {
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_value.sellerInformation!,
+    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!,
         (value) {
-      return _then(_value.copyWith(sellerInformation: value) as $Val);
+      return _then(_self.copyWith(sellerInformation: value));
     });
   }
 
@@ -5938,13 +5674,13 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AtsCompanyInformationCopyWith<$Res>? get receiverInformation {
-    if (_value.receiverInformation == null) {
+    if (_self.receiverInformation == null) {
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_value.receiverInformation!,
+    return $AtsCompanyInformationCopyWith<$Res>(_self.receiverInformation!,
         (value) {
-      return _then(_value.copyWith(receiverInformation: value) as $Val);
+      return _then(_self.copyWith(receiverInformation: value));
     });
   }
 
@@ -5953,12 +5689,12 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AtsPurchaseTotalCopyWith<$Res>? get total {
-    if (_value.total == null) {
+    if (_self.total == null) {
       return null;
     }
 
-    return $AtsPurchaseTotalCopyWith<$Res>(_value.total!, (value) {
-      return _then(_value.copyWith(total: value) as $Val);
+    return $AtsPurchaseTotalCopyWith<$Res>(_self.total!, (value) {
+      return _then(_self.copyWith(total: value));
     });
   }
 
@@ -5967,13 +5703,13 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AtsTransportInformationCopyWith<$Res>? get transportInformation {
-    if (_value.transportInformation == null) {
+    if (_self.transportInformation == null) {
       return null;
     }
 
-    return $AtsTransportInformationCopyWith<$Res>(_value.transportInformation!,
+    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!,
         (value) {
-      return _then(_value.copyWith(transportInformation: value) as $Val);
+      return _then(_self.copyWith(transportInformation: value));
     });
   }
 
@@ -5982,12 +5718,12 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AtsPurchaseOrderCopyWith<$Res>? get parentInvoice {
-    if (_value.parentInvoice == null) {
+    if (_self.parentInvoice == null) {
       return null;
     }
 
-    return $AtsPurchaseOrderCopyWith<$Res>(_value.parentInvoice!, (value) {
-      return _then(_value.copyWith(parentInvoice: value) as $Val);
+    return $AtsPurchaseOrderCopyWith<$Res>(_self.parentInvoice!, (value) {
+      return _then(_self.copyWith(parentInvoice: value));
     });
   }
 
@@ -5996,12 +5732,12 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AtsIdeInformationCopyWith<$Res>? get ideInformation {
-    if (_value.ideInformation == null) {
+    if (_self.ideInformation == null) {
       return null;
     }
 
-    return $AtsIdeInformationCopyWith<$Res>(_value.ideInformation!, (value) {
-      return _then(_value.copyWith(ideInformation: value) as $Val);
+    return $AtsIdeInformationCopyWith<$Res>(_self.ideInformation!, (value) {
+      return _then(_self.copyWith(ideInformation: value));
     });
   }
 
@@ -6010,12 +5746,12 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get transportAsset {
-    if (_value.transportAsset == null) {
+    if (_self.transportAsset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.transportAsset!, (value) {
-      return _then(_value.copyWith(transportAsset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+      return _then(_self.copyWith(transportAsset: value));
     });
   }
 
@@ -6024,12 +5760,12 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get sellerAsset {
-    if (_value.sellerAsset == null) {
+    if (_self.sellerAsset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.sellerAsset!, (value) {
-      return _then(_value.copyWith(sellerAsset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.sellerAsset!, (value) {
+      return _then(_self.copyWith(sellerAsset: value));
     });
   }
 
@@ -6038,272 +5774,20 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   @override
   @pragma('vm:prefer-inline')
   $AtsOperationCopyWith<$Res>? get operation {
-    if (_value.operation == null) {
+    if (_self.operation == null) {
       return null;
     }
 
-    return $AtsOperationCopyWith<$Res>(_value.operation!, (value) {
-      return _then(_value.copyWith(operation: value) as $Val);
+    return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsPurchaseOrderImplCopyWith<$Res>
-    implements $AtsPurchaseOrderCopyWith<$Res> {
-  factory _$$AtsPurchaseOrderImplCopyWith(_$AtsPurchaseOrderImpl value,
-          $Res Function(_$AtsPurchaseOrderImpl) then) =
-      __$$AtsPurchaseOrderImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String? ownerId,
-      String? orderId,
-      String? assetId,
-      String? sellerAssetId,
-      String? transportAssetId,
-      @TimestampOrNullConverter() DateTime? purchasedAt,
-      @TimestampOrNullConverter() DateTime? receivedAt,
-      Asset? asset,
-      AtsCompanyInformation? sellerInformation,
-      AtsCompanyInformation? receiverInformation,
-      List<AtsProductInformation>? productsInformation,
-      AtsPurchaseTotal? total,
-      bool? isReceived,
-      bool? hasReception,
-      AtsTransportInformation? transportInformation,
-      bool? hasRawXml,
-      String? invoiceType,
-      AtsPurchaseOrder? parentInvoice,
-      AtsIdeInformation? ideInformation,
-      @TimestampOrNullConverter() DateTime? receptionAt,
-      @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? action,
-      Asset? transportAsset,
-      Asset? sellerAsset,
-      @AtsPurchaseOrderStatusOrNullConverter()
-      AtsPurchaseOrderStatus? orderStatus,
-      @TimestampOrNullConverter() DateTime? inTransitAt,
-      @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
-      @TimestampOrNullConverter() DateTime? deliveredAt,
-      @AtsPurchaseOrderSubCategoriesOrNullConverter()
-      AtsPurchaseOrderSubCategories? deliverCategory,
-      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-      AtsPurchaseOrderCategoriesEntity? category,
-      AtsOperation? operation,
-      @TimestampOrNullConverter() DateTime? eta,
-      @TimestampOrNullConverter() DateTime? etaUpdatedAt});
-
-  @override
-  $AssetCopyWith<$Res>? get asset;
-  @override
-  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
-  @override
-  $AtsCompanyInformationCopyWith<$Res>? get receiverInformation;
-  @override
-  $AtsPurchaseTotalCopyWith<$Res>? get total;
-  @override
-  $AtsTransportInformationCopyWith<$Res>? get transportInformation;
-  @override
-  $AtsPurchaseOrderCopyWith<$Res>? get parentInvoice;
-  @override
-  $AtsIdeInformationCopyWith<$Res>? get ideInformation;
-  @override
-  $AssetCopyWith<$Res>? get transportAsset;
-  @override
-  $AssetCopyWith<$Res>? get sellerAsset;
-  @override
-  $AtsOperationCopyWith<$Res>? get operation;
-}
-
-/// @nodoc
-class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
-    extends _$AtsPurchaseOrderCopyWithImpl<$Res, _$AtsPurchaseOrderImpl>
-    implements _$$AtsPurchaseOrderImplCopyWith<$Res> {
-  __$$AtsPurchaseOrderImplCopyWithImpl(_$AtsPurchaseOrderImpl _value,
-      $Res Function(_$AtsPurchaseOrderImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? ownerId = freezed,
-    Object? orderId = freezed,
-    Object? assetId = freezed,
-    Object? sellerAssetId = freezed,
-    Object? transportAssetId = freezed,
-    Object? purchasedAt = freezed,
-    Object? receivedAt = freezed,
-    Object? asset = freezed,
-    Object? sellerInformation = freezed,
-    Object? receiverInformation = freezed,
-    Object? productsInformation = freezed,
-    Object? total = freezed,
-    Object? isReceived = freezed,
-    Object? hasReception = freezed,
-    Object? transportInformation = freezed,
-    Object? hasRawXml = freezed,
-    Object? invoiceType = freezed,
-    Object? parentInvoice = freezed,
-    Object? ideInformation = freezed,
-    Object? receptionAt = freezed,
-    Object? action = freezed,
-    Object? transportAsset = freezed,
-    Object? sellerAsset = freezed,
-    Object? orderStatus = freezed,
-    Object? inTransitAt = freezed,
-    Object? waitingToDispatchAt = freezed,
-    Object? deliveredAt = freezed,
-    Object? deliverCategory = freezed,
-    Object? category = freezed,
-    Object? operation = freezed,
-    Object? eta = freezed,
-    Object? etaUpdatedAt = freezed,
-  }) {
-    return _then(_$AtsPurchaseOrderImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ownerId: freezed == ownerId
-          ? _value.ownerId
-          : ownerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      orderId: freezed == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sellerAssetId: freezed == sellerAssetId
-          ? _value.sellerAssetId
-          : sellerAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transportAssetId: freezed == transportAssetId
-          ? _value.transportAssetId
-          : transportAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      purchasedAt: freezed == purchasedAt
-          ? _value.purchasedAt
-          : purchasedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      receivedAt: freezed == receivedAt
-          ? _value.receivedAt
-          : receivedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      sellerInformation: freezed == sellerInformation
-          ? _value.sellerInformation
-          : sellerInformation // ignore: cast_nullable_to_non_nullable
-              as AtsCompanyInformation?,
-      receiverInformation: freezed == receiverInformation
-          ? _value.receiverInformation
-          : receiverInformation // ignore: cast_nullable_to_non_nullable
-              as AtsCompanyInformation?,
-      productsInformation: freezed == productsInformation
-          ? _value._productsInformation
-          : productsInformation // ignore: cast_nullable_to_non_nullable
-              as List<AtsProductInformation>?,
-      total: freezed == total
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseTotal?,
-      isReceived: freezed == isReceived
-          ? _value.isReceived
-          : isReceived // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      hasReception: freezed == hasReception
-          ? _value.hasReception
-          : hasReception // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      transportInformation: freezed == transportInformation
-          ? _value.transportInformation
-          : transportInformation // ignore: cast_nullable_to_non_nullable
-              as AtsTransportInformation?,
-      hasRawXml: freezed == hasRawXml
-          ? _value.hasRawXml
-          : hasRawXml // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      invoiceType: freezed == invoiceType
-          ? _value.invoiceType
-          : invoiceType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parentInvoice: freezed == parentInvoice
-          ? _value.parentInvoice
-          : parentInvoice // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseOrder?,
-      ideInformation: freezed == ideInformation
-          ? _value.ideInformation
-          : ideInformation // ignore: cast_nullable_to_non_nullable
-              as AtsIdeInformation?,
-      receptionAt: freezed == receptionAt
-          ? _value.receptionAt
-          : receptionAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      action: freezed == action
-          ? _value.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as PurchaseOrderOperation?,
-      transportAsset: freezed == transportAsset
-          ? _value.transportAsset
-          : transportAsset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      sellerAsset: freezed == sellerAsset
-          ? _value.sellerAsset
-          : sellerAsset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      orderStatus: freezed == orderStatus
-          ? _value.orderStatus
-          : orderStatus // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseOrderStatus?,
-      inTransitAt: freezed == inTransitAt
-          ? _value.inTransitAt
-          : inTransitAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      waitingToDispatchAt: freezed == waitingToDispatchAt
-          ? _value.waitingToDispatchAt
-          : waitingToDispatchAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      deliveredAt: freezed == deliveredAt
-          ? _value.deliveredAt
-          : deliveredAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      deliverCategory: freezed == deliverCategory
-          ? _value.deliverCategory
-          : deliverCategory // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseOrderSubCategories?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseOrderCategoriesEntity?,
-      operation: freezed == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as AtsOperation?,
-      eta: freezed == eta
-          ? _value.eta
-          : eta // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      etaUpdatedAt: freezed == etaUpdatedAt
-          ? _value.etaUpdatedAt
-          : etaUpdatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
-  _$AtsPurchaseOrderImpl(
+class _AtsPurchaseOrder implements AtsPurchaseOrder {
+  _AtsPurchaseOrder(
       {this.id,
       this.ownerId,
       this.orderId,
@@ -6338,9 +5822,8 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
       @TimestampOrNullConverter() this.eta,
       @TimestampOrNullConverter() this.etaUpdatedAt})
       : _productsInformation = productsInformation;
-
-  factory _$AtsPurchaseOrderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsPurchaseOrderImplFromJson(json);
+  factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) =>
+      _$AtsPurchaseOrderFromJson(json);
 
   /// ID of the [Asset] entity. This ID is unique.
   @override
@@ -6496,16 +5979,26 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   @TimestampOrNullConverter()
   final DateTime? etaUpdatedAt;
 
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, receptionAt: $receptionAt, action: $action, transportAsset: $transportAsset, sellerAsset: $sellerAsset, orderStatus: $orderStatus, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, deliverCategory: $deliverCategory, category: $category, operation: $operation, eta: $eta, etaUpdatedAt: $etaUpdatedAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsPurchaseOrderCopyWith<_AtsPurchaseOrder> get copyWith =>
+      __$AtsPurchaseOrderCopyWithImpl<_AtsPurchaseOrder>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsPurchaseOrderToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsPurchaseOrderImpl &&
+            other is _AtsPurchaseOrder &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
@@ -6605,362 +6098,502 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
         etaUpdatedAt
       ]);
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsPurchaseOrderImplCopyWith<_$AtsPurchaseOrderImpl> get copyWith =>
-      __$$AtsPurchaseOrderImplCopyWithImpl<_$AtsPurchaseOrderImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsPurchaseOrderImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, receptionAt: $receptionAt, action: $action, transportAsset: $transportAsset, sellerAsset: $sellerAsset, orderStatus: $orderStatus, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, deliverCategory: $deliverCategory, category: $category, operation: $operation, eta: $eta, etaUpdatedAt: $etaUpdatedAt)';
   }
 }
 
-abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
-  factory _AtsPurchaseOrder(
-          {final String? id,
-          final String? ownerId,
-          final String? orderId,
-          final String? assetId,
-          final String? sellerAssetId,
-          final String? transportAssetId,
-          @TimestampOrNullConverter() final DateTime? purchasedAt,
-          @TimestampOrNullConverter() final DateTime? receivedAt,
-          final Asset? asset,
-          final AtsCompanyInformation? sellerInformation,
-          final AtsCompanyInformation? receiverInformation,
-          final List<AtsProductInformation>? productsInformation,
-          final AtsPurchaseTotal? total,
-          final bool? isReceived,
-          final bool? hasReception,
-          final AtsTransportInformation? transportInformation,
-          final bool? hasRawXml,
-          final String? invoiceType,
-          final AtsPurchaseOrder? parentInvoice,
-          final AtsIdeInformation? ideInformation,
-          @TimestampOrNullConverter() final DateTime? receptionAt,
-          @PurchaseOrderOperationOrNullConverter()
-          final PurchaseOrderOperation? action,
-          final Asset? transportAsset,
-          final Asset? sellerAsset,
-          @AtsPurchaseOrderStatusOrNullConverter()
-          final AtsPurchaseOrderStatus? orderStatus,
-          @TimestampOrNullConverter() final DateTime? inTransitAt,
-          @TimestampOrNullConverter() final DateTime? waitingToDispatchAt,
-          @TimestampOrNullConverter() final DateTime? deliveredAt,
-          @AtsPurchaseOrderSubCategoriesOrNullConverter()
-          final AtsPurchaseOrderSubCategories? deliverCategory,
-          @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-          final AtsPurchaseOrderCategoriesEntity? category,
-          final AtsOperation? operation,
-          @TimestampOrNullConverter() final DateTime? eta,
-          @TimestampOrNullConverter() final DateTime? etaUpdatedAt}) =
-      _$AtsPurchaseOrderImpl;
-
-  factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) =
-      _$AtsPurchaseOrderImpl.fromJson;
-
-  /// ID of the [Asset] entity. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsPurchaseOrderCopyWith<$Res>
+    implements $AtsPurchaseOrderCopyWith<$Res> {
+  factory _$AtsPurchaseOrderCopyWith(
+          _AtsPurchaseOrder value, $Res Function(_AtsPurchaseOrder) _then) =
+      __$AtsPurchaseOrderCopyWithImpl;
   @override
-  String? get id;
+  @useResult
+  $Res call(
+      {String? id,
+      String? ownerId,
+      String? orderId,
+      String? assetId,
+      String? sellerAssetId,
+      String? transportAssetId,
+      @TimestampOrNullConverter() DateTime? purchasedAt,
+      @TimestampOrNullConverter() DateTime? receivedAt,
+      Asset? asset,
+      AtsCompanyInformation? sellerInformation,
+      AtsCompanyInformation? receiverInformation,
+      List<AtsProductInformation>? productsInformation,
+      AtsPurchaseTotal? total,
+      bool? isReceived,
+      bool? hasReception,
+      AtsTransportInformation? transportInformation,
+      bool? hasRawXml,
+      String? invoiceType,
+      AtsPurchaseOrder? parentInvoice,
+      AtsIdeInformation? ideInformation,
+      @TimestampOrNullConverter() DateTime? receptionAt,
+      @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? action,
+      Asset? transportAsset,
+      Asset? sellerAsset,
+      @AtsPurchaseOrderStatusOrNullConverter()
+      AtsPurchaseOrderStatus? orderStatus,
+      @TimestampOrNullConverter() DateTime? inTransitAt,
+      @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+      @TimestampOrNullConverter() DateTime? deliveredAt,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      AtsPurchaseOrderSubCategories? deliverCategory,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      AtsPurchaseOrderCategoriesEntity? category,
+      AtsOperation? operation,
+      @TimestampOrNullConverter() DateTime? eta,
+      @TimestampOrNullConverter() DateTime? etaUpdatedAt});
 
-  /// External API ID
   @override
-  String? get ownerId;
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
+  @override
+  $AtsCompanyInformationCopyWith<$Res>? get receiverInformation;
+  @override
+  $AtsPurchaseTotalCopyWith<$Res>? get total;
+  @override
+  $AtsTransportInformationCopyWith<$Res>? get transportInformation;
+  @override
+  $AtsPurchaseOrderCopyWith<$Res>? get parentInvoice;
+  @override
+  $AtsIdeInformationCopyWith<$Res>? get ideInformation;
+  @override
+  $AssetCopyWith<$Res>? get transportAsset;
+  @override
+  $AssetCopyWith<$Res>? get sellerAsset;
+  @override
+  $AtsOperationCopyWith<$Res>? get operation;
+}
 
-  /// Order or invoice number.
-  @override
-  String? get orderId;
+/// @nodoc
+class __$AtsPurchaseOrderCopyWithImpl<$Res>
+    implements _$AtsPurchaseOrderCopyWith<$Res> {
+  __$AtsPurchaseOrderCopyWithImpl(this._self, this._then);
 
-  /// ID of the asset.
-  @override
-  String? get assetId;
-
-  /// ID of the seller asset.
-  @override
-  String? get sellerAssetId;
-
-  /// ID of the transport asset.
-  @override
-  String? get transportAssetId;
-
-  /// Unix of last [AtsReception] date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get purchasedAt;
-
-  /// Unix of last [AtsReception] date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get receivedAt;
-
-  /// [Asset] linked to the [AtsPurchaseOrder].
-  @override
-  Asset? get asset;
-
-  /// Legal information about the seller. Please read the comments of CompanyInformation definition for more information.
-  @override
-  AtsCompanyInformation? get sellerInformation;
-
-  /// Legal information about the receiver. Please read the comments of CompanyInformation definition for more information.
-  @override
-  AtsCompanyInformation? get receiverInformation;
-
-  /// List of products purchased. Please read the comments of ProductInformation definition for more information.
-  @override
-  List<AtsProductInformation>? get productsInformation;
-
-  /// Total information. Please read the comments of Total definition for more information.
-  @override
-  AtsPurchaseTotal? get total;
-
-  /// True if the purchase order was received.
-  @override
-  bool? get isReceived;
-
-  /// True is the purchase order has a reception
-  @override
-  bool? get hasReception;
-
-  /// Legal information about the transport. Please read the comments of TransportInformation definition for more information.
-  @override
-  AtsTransportInformation? get transportInformation;
-
-  /// True if the purchase order has a raw xml
-  @override
-  bool? get hasRawXml;
-
-  /// Invoice type (NFe, CTe)
-  @override
-  String? get invoiceType;
-
-  /// Parent invoice
-  @override
-  AtsPurchaseOrder? get parentInvoice;
-
-  /// Ide information
-  @override
-  AtsIdeInformation? get ideInformation;
-
-  /// Unix of reception at.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get receptionAt;
-
-  /// Purchase order operation
-  @override
-  @PurchaseOrderOperationOrNullConverter()
-  PurchaseOrderOperation? get action;
-
-  /// `transportAsset` represet the truck that will transport the product.
-  @override
-  Asset? get transportAsset;
-
-  /// `sellerAsset` represet the terminal that will sell the product.
-  @override
-  Asset? get sellerAsset;
-
-  /// `orderStatus` defines the order status.
-  @override
-  @AtsPurchaseOrderStatusOrNullConverter()
-  AtsPurchaseOrderStatus? get orderStatus;
-
-  /// `inTransitAt` defines the in transit date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get inTransitAt;
-
-  /// `waitingToDispatchAt` defines the waiting to dispatch date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get waitingToDispatchAt;
-
-  /// `deliveredAt` defines the delivered date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get deliveredAt;
-
-  /// `deliverCategory` defines the delivery category.
-  @override
-  @AtsPurchaseOrderSubCategoriesOrNullConverter()
-  AtsPurchaseOrderSubCategories? get deliverCategory;
-
-  /// `category` defines the category.
-  @override
-  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-  AtsPurchaseOrderCategoriesEntity? get category;
-
-  /// `operation` associated to the purchase order.
-  @override
-  AtsOperation? get operation;
-
-  /// [eta] defines the estimated time of arrival.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get eta;
-
-  /// [etaUpdatedAt] defines the estimated time of arrival updated at.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get etaUpdatedAt;
+  final _AtsPurchaseOrder _self;
+  final $Res Function(_AtsPurchaseOrder) _then;
 
   /// Create a copy of AtsPurchaseOrder
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsPurchaseOrderImplCopyWith<_$AtsPurchaseOrderImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? ownerId = freezed,
+    Object? orderId = freezed,
+    Object? assetId = freezed,
+    Object? sellerAssetId = freezed,
+    Object? transportAssetId = freezed,
+    Object? purchasedAt = freezed,
+    Object? receivedAt = freezed,
+    Object? asset = freezed,
+    Object? sellerInformation = freezed,
+    Object? receiverInformation = freezed,
+    Object? productsInformation = freezed,
+    Object? total = freezed,
+    Object? isReceived = freezed,
+    Object? hasReception = freezed,
+    Object? transportInformation = freezed,
+    Object? hasRawXml = freezed,
+    Object? invoiceType = freezed,
+    Object? parentInvoice = freezed,
+    Object? ideInformation = freezed,
+    Object? receptionAt = freezed,
+    Object? action = freezed,
+    Object? transportAsset = freezed,
+    Object? sellerAsset = freezed,
+    Object? orderStatus = freezed,
+    Object? inTransitAt = freezed,
+    Object? waitingToDispatchAt = freezed,
+    Object? deliveredAt = freezed,
+    Object? deliverCategory = freezed,
+    Object? category = freezed,
+    Object? operation = freezed,
+    Object? eta = freezed,
+    Object? etaUpdatedAt = freezed,
+  }) {
+    return _then(_AtsPurchaseOrder(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ownerId: freezed == ownerId
+          ? _self.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      orderId: freezed == orderId
+          ? _self.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sellerAssetId: freezed == sellerAssetId
+          ? _self.sellerAssetId
+          : sellerAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAssetId: freezed == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      purchasedAt: freezed == purchasedAt
+          ? _self.purchasedAt
+          : purchasedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      receivedAt: freezed == receivedAt
+          ? _self.receivedAt
+          : receivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      sellerInformation: freezed == sellerInformation
+          ? _self.sellerInformation
+          : sellerInformation // ignore: cast_nullable_to_non_nullable
+              as AtsCompanyInformation?,
+      receiverInformation: freezed == receiverInformation
+          ? _self.receiverInformation
+          : receiverInformation // ignore: cast_nullable_to_non_nullable
+              as AtsCompanyInformation?,
+      productsInformation: freezed == productsInformation
+          ? _self._productsInformation
+          : productsInformation // ignore: cast_nullable_to_non_nullable
+              as List<AtsProductInformation>?,
+      total: freezed == total
+          ? _self.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseTotal?,
+      isReceived: freezed == isReceived
+          ? _self.isReceived
+          : isReceived // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasReception: freezed == hasReception
+          ? _self.hasReception
+          : hasReception // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      transportInformation: freezed == transportInformation
+          ? _self.transportInformation
+          : transportInformation // ignore: cast_nullable_to_non_nullable
+              as AtsTransportInformation?,
+      hasRawXml: freezed == hasRawXml
+          ? _self.hasRawXml
+          : hasRawXml // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      invoiceType: freezed == invoiceType
+          ? _self.invoiceType
+          : invoiceType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentInvoice: freezed == parentInvoice
+          ? _self.parentInvoice
+          : parentInvoice // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrder?,
+      ideInformation: freezed == ideInformation
+          ? _self.ideInformation
+          : ideInformation // ignore: cast_nullable_to_non_nullable
+              as AtsIdeInformation?,
+      receptionAt: freezed == receptionAt
+          ? _self.receptionAt
+          : receptionAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      action: freezed == action
+          ? _self.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as PurchaseOrderOperation?,
+      transportAsset: freezed == transportAsset
+          ? _self.transportAsset
+          : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      sellerAsset: freezed == sellerAsset
+          ? _self.sellerAsset
+          : sellerAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      orderStatus: freezed == orderStatus
+          ? _self.orderStatus
+          : orderStatus // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderStatus?,
+      inTransitAt: freezed == inTransitAt
+          ? _self.inTransitAt
+          : inTransitAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      waitingToDispatchAt: freezed == waitingToDispatchAt
+          ? _self.waitingToDispatchAt
+          : waitingToDispatchAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deliveredAt: freezed == deliveredAt
+          ? _self.deliveredAt
+          : deliveredAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deliverCategory: freezed == deliverCategory
+          ? _self.deliverCategory
+          : deliverCategory // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderSubCategories?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderCategoriesEntity?,
+      operation: freezed == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as AtsOperation?,
+      eta: freezed == eta
+          ? _self.eta
+          : eta // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      etaUpdatedAt: freezed == etaUpdatedAt
+          ? _self.etaUpdatedAt
+          : etaUpdatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 
-AtsPurchaseTotal _$AtsPurchaseTotalFromJson(Map<String, dynamic> json) {
-  return _AtsPurchaseTotal.fromJson(json);
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation {
+    if (_self.sellerInformation == null) {
+      return null;
+    }
+
+    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!,
+        (value) {
+      return _then(_self.copyWith(sellerInformation: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsCompanyInformationCopyWith<$Res>? get receiverInformation {
+    if (_self.receiverInformation == null) {
+      return null;
+    }
+
+    return $AtsCompanyInformationCopyWith<$Res>(_self.receiverInformation!,
+        (value) {
+      return _then(_self.copyWith(receiverInformation: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsPurchaseTotalCopyWith<$Res>? get total {
+    if (_self.total == null) {
+      return null;
+    }
+
+    return $AtsPurchaseTotalCopyWith<$Res>(_self.total!, (value) {
+      return _then(_self.copyWith(total: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsTransportInformationCopyWith<$Res>? get transportInformation {
+    if (_self.transportInformation == null) {
+      return null;
+    }
+
+    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!,
+        (value) {
+      return _then(_self.copyWith(transportInformation: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsPurchaseOrderCopyWith<$Res>? get parentInvoice {
+    if (_self.parentInvoice == null) {
+      return null;
+    }
+
+    return $AtsPurchaseOrderCopyWith<$Res>(_self.parentInvoice!, (value) {
+      return _then(_self.copyWith(parentInvoice: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsIdeInformationCopyWith<$Res>? get ideInformation {
+    if (_self.ideInformation == null) {
+      return null;
+    }
+
+    return $AtsIdeInformationCopyWith<$Res>(_self.ideInformation!, (value) {
+      return _then(_self.copyWith(ideInformation: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportAsset {
+    if (_self.transportAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+      return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get sellerAsset {
+    if (_self.sellerAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.sellerAsset!, (value) {
+      return _then(_self.copyWith(sellerAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsPurchaseOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+      return null;
+    }
+
+    return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsPurchaseTotal {
   /// Subtotal of the product.
-  double? get subtotal => throw _privateConstructorUsedError;
+  double? get subtotal;
 
   /// Net discount value (not %)
-  double? get discountValue => throw _privateConstructorUsedError;
+  double? get discountValue;
 
   /// Total value of the product with discount
-  double? get total => throw _privateConstructorUsedError;
+  double? get total;
 
   /// Total value of the product with discount and load
-  double? get totalLoad => throw _privateConstructorUsedError;
+  double? get totalLoad;
 
   /// Predominant product
-  String? get predominantProduct => throw _privateConstructorUsedError;
+  String? get predominantProduct;
 
   /// Total freight value
-  double? get totalFreight => throw _privateConstructorUsedError;
+  double? get totalFreight;
 
   /// Total received value
-  double? get totalReceived => throw _privateConstructorUsedError;
+  double? get totalReceived;
 
   /// Load quantity
-  double? get loadQuantity => throw _privateConstructorUsedError;
+  double? get loadQuantity;
 
   /// Load quantity measure
-  String? get loadQuantityMeasure => throw _privateConstructorUsedError;
+  String? get loadQuantityMeasure;
 
   /// Freight weight
-  double? get freightWeight => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsPurchaseTotal to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  double? get freightWeight;
 
   /// Create a copy of AtsPurchaseTotal
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsPurchaseTotalCopyWith<AtsPurchaseTotal> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsPurchaseTotalCopyWith<$Res> {
-  factory $AtsPurchaseTotalCopyWith(
-          AtsPurchaseTotal value, $Res Function(AtsPurchaseTotal) then) =
-      _$AtsPurchaseTotalCopyWithImpl<$Res, AtsPurchaseTotal>;
-  @useResult
-  $Res call(
-      {double? subtotal,
-      double? discountValue,
-      double? total,
-      double? totalLoad,
-      String? predominantProduct,
-      double? totalFreight,
-      double? totalReceived,
-      double? loadQuantity,
-      String? loadQuantityMeasure,
-      double? freightWeight});
-}
-
-/// @nodoc
-class _$AtsPurchaseTotalCopyWithImpl<$Res, $Val extends AtsPurchaseTotal>
-    implements $AtsPurchaseTotalCopyWith<$Res> {
-  _$AtsPurchaseTotalCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsPurchaseTotal
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsPurchaseTotalCopyWith<AtsPurchaseTotal> get copyWith =>
+      _$AtsPurchaseTotalCopyWithImpl<AtsPurchaseTotal>(
+          this as AtsPurchaseTotal, _$identity);
+
+  /// Serializes this AtsPurchaseTotal to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? subtotal = freezed,
-    Object? discountValue = freezed,
-    Object? total = freezed,
-    Object? totalLoad = freezed,
-    Object? predominantProduct = freezed,
-    Object? totalFreight = freezed,
-    Object? totalReceived = freezed,
-    Object? loadQuantity = freezed,
-    Object? loadQuantityMeasure = freezed,
-    Object? freightWeight = freezed,
-  }) {
-    return _then(_value.copyWith(
-      subtotal: freezed == subtotal
-          ? _value.subtotal
-          : subtotal // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountValue: freezed == discountValue
-          ? _value.discountValue
-          : discountValue // ignore: cast_nullable_to_non_nullable
-              as double?,
-      total: freezed == total
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
-              as double?,
-      totalLoad: freezed == totalLoad
-          ? _value.totalLoad
-          : totalLoad // ignore: cast_nullable_to_non_nullable
-              as double?,
-      predominantProduct: freezed == predominantProduct
-          ? _value.predominantProduct
-          : predominantProduct // ignore: cast_nullable_to_non_nullable
-              as String?,
-      totalFreight: freezed == totalFreight
-          ? _value.totalFreight
-          : totalFreight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      totalReceived: freezed == totalReceived
-          ? _value.totalReceived
-          : totalReceived // ignore: cast_nullable_to_non_nullable
-              as double?,
-      loadQuantity: freezed == loadQuantity
-          ? _value.loadQuantity
-          : loadQuantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      loadQuantityMeasure: freezed == loadQuantityMeasure
-          ? _value.loadQuantityMeasure
-          : loadQuantityMeasure // ignore: cast_nullable_to_non_nullable
-              as String?,
-      freightWeight: freezed == freightWeight
-          ? _value.freightWeight
-          : freightWeight // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsPurchaseTotal &&
+            (identical(other.subtotal, subtotal) ||
+                other.subtotal == subtotal) &&
+            (identical(other.discountValue, discountValue) ||
+                other.discountValue == discountValue) &&
+            (identical(other.total, total) || other.total == total) &&
+            (identical(other.totalLoad, totalLoad) ||
+                other.totalLoad == totalLoad) &&
+            (identical(other.predominantProduct, predominantProduct) ||
+                other.predominantProduct == predominantProduct) &&
+            (identical(other.totalFreight, totalFreight) ||
+                other.totalFreight == totalFreight) &&
+            (identical(other.totalReceived, totalReceived) ||
+                other.totalReceived == totalReceived) &&
+            (identical(other.loadQuantity, loadQuantity) ||
+                other.loadQuantity == loadQuantity) &&
+            (identical(other.loadQuantityMeasure, loadQuantityMeasure) ||
+                other.loadQuantityMeasure == loadQuantityMeasure) &&
+            (identical(other.freightWeight, freightWeight) ||
+                other.freightWeight == freightWeight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      subtotal,
+      discountValue,
+      total,
+      totalLoad,
+      predominantProduct,
+      totalFreight,
+      totalReceived,
+      loadQuantity,
+      loadQuantityMeasure,
+      freightWeight);
+
+  @override
+  String toString() {
+    return 'AtsPurchaseTotal(subtotal: $subtotal, discountValue: $discountValue, total: $total, totalLoad: $totalLoad, predominantProduct: $predominantProduct, totalFreight: $totalFreight, totalReceived: $totalReceived, loadQuantity: $loadQuantity, loadQuantityMeasure: $loadQuantityMeasure, freightWeight: $freightWeight)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsPurchaseTotalImplCopyWith<$Res>
-    implements $AtsPurchaseTotalCopyWith<$Res> {
-  factory _$$AtsPurchaseTotalImplCopyWith(_$AtsPurchaseTotalImpl value,
-          $Res Function(_$AtsPurchaseTotalImpl) then) =
-      __$$AtsPurchaseTotalImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsPurchaseTotalCopyWith<$Res> {
+  factory $AtsPurchaseTotalCopyWith(
+          AtsPurchaseTotal value, $Res Function(AtsPurchaseTotal) _then) =
+      _$AtsPurchaseTotalCopyWithImpl;
   @useResult
   $Res call(
       {double? subtotal,
@@ -6976,12 +6609,12 @@ abstract class _$$AtsPurchaseTotalImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsPurchaseTotalImplCopyWithImpl<$Res>
-    extends _$AtsPurchaseTotalCopyWithImpl<$Res, _$AtsPurchaseTotalImpl>
-    implements _$$AtsPurchaseTotalImplCopyWith<$Res> {
-  __$$AtsPurchaseTotalImplCopyWithImpl(_$AtsPurchaseTotalImpl _value,
-      $Res Function(_$AtsPurchaseTotalImpl) _then)
-      : super(_value, _then);
+class _$AtsPurchaseTotalCopyWithImpl<$Res>
+    implements $AtsPurchaseTotalCopyWith<$Res> {
+  _$AtsPurchaseTotalCopyWithImpl(this._self, this._then);
+
+  final AtsPurchaseTotal _self;
+  final $Res Function(AtsPurchaseTotal) _then;
 
   /// Create a copy of AtsPurchaseTotal
   /// with the given fields replaced by the non-null parameter values.
@@ -6999,45 +6632,45 @@ class __$$AtsPurchaseTotalImplCopyWithImpl<$Res>
     Object? loadQuantityMeasure = freezed,
     Object? freightWeight = freezed,
   }) {
-    return _then(_$AtsPurchaseTotalImpl(
+    return _then(_self.copyWith(
       subtotal: freezed == subtotal
-          ? _value.subtotal
+          ? _self.subtotal
           : subtotal // ignore: cast_nullable_to_non_nullable
               as double?,
       discountValue: freezed == discountValue
-          ? _value.discountValue
+          ? _self.discountValue
           : discountValue // ignore: cast_nullable_to_non_nullable
               as double?,
       total: freezed == total
-          ? _value.total
+          ? _self.total
           : total // ignore: cast_nullable_to_non_nullable
               as double?,
       totalLoad: freezed == totalLoad
-          ? _value.totalLoad
+          ? _self.totalLoad
           : totalLoad // ignore: cast_nullable_to_non_nullable
               as double?,
       predominantProduct: freezed == predominantProduct
-          ? _value.predominantProduct
+          ? _self.predominantProduct
           : predominantProduct // ignore: cast_nullable_to_non_nullable
               as String?,
       totalFreight: freezed == totalFreight
-          ? _value.totalFreight
+          ? _self.totalFreight
           : totalFreight // ignore: cast_nullable_to_non_nullable
               as double?,
       totalReceived: freezed == totalReceived
-          ? _value.totalReceived
+          ? _self.totalReceived
           : totalReceived // ignore: cast_nullable_to_non_nullable
               as double?,
       loadQuantity: freezed == loadQuantity
-          ? _value.loadQuantity
+          ? _self.loadQuantity
           : loadQuantity // ignore: cast_nullable_to_non_nullable
               as double?,
       loadQuantityMeasure: freezed == loadQuantityMeasure
-          ? _value.loadQuantityMeasure
+          ? _self.loadQuantityMeasure
           : loadQuantityMeasure // ignore: cast_nullable_to_non_nullable
               as String?,
       freightWeight: freezed == freightWeight
-          ? _value.freightWeight
+          ? _self.freightWeight
           : freightWeight // ignore: cast_nullable_to_non_nullable
               as double?,
     ));
@@ -7046,8 +6679,8 @@ class __$$AtsPurchaseTotalImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
-  _$AtsPurchaseTotalImpl(
+class _AtsPurchaseTotal implements AtsPurchaseTotal {
+  _AtsPurchaseTotal(
       {this.subtotal,
       this.discountValue,
       this.total,
@@ -7058,9 +6691,8 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
       this.loadQuantity,
       this.loadQuantityMeasure,
       this.freightWeight});
-
-  factory _$AtsPurchaseTotalImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsPurchaseTotalImplFromJson(json);
+  factory _AtsPurchaseTotal.fromJson(Map<String, dynamic> json) =>
+      _$AtsPurchaseTotalFromJson(json);
 
   /// Subtotal of the product.
   @override
@@ -7102,16 +6734,26 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
   @override
   final double? freightWeight;
 
+  /// Create a copy of AtsPurchaseTotal
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsPurchaseTotal(subtotal: $subtotal, discountValue: $discountValue, total: $total, totalLoad: $totalLoad, predominantProduct: $predominantProduct, totalFreight: $totalFreight, totalReceived: $totalReceived, loadQuantity: $loadQuantity, loadQuantityMeasure: $loadQuantityMeasure, freightWeight: $freightWeight)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsPurchaseTotalCopyWith<_AtsPurchaseTotal> get copyWith =>
+      __$AtsPurchaseTotalCopyWithImpl<_AtsPurchaseTotal>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsPurchaseTotalToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsPurchaseTotalImpl &&
+            other is _AtsPurchaseTotal &&
             (identical(other.subtotal, subtotal) ||
                 other.subtotal == subtotal) &&
             (identical(other.discountValue, discountValue) ||
@@ -7148,140 +6790,192 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
       loadQuantityMeasure,
       freightWeight);
 
-  /// Create a copy of AtsPurchaseTotal
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsPurchaseTotalImplCopyWith<_$AtsPurchaseTotalImpl> get copyWith =>
-      __$$AtsPurchaseTotalImplCopyWithImpl<_$AtsPurchaseTotalImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsPurchaseTotalImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsPurchaseTotal(subtotal: $subtotal, discountValue: $discountValue, total: $total, totalLoad: $totalLoad, predominantProduct: $predominantProduct, totalFreight: $totalFreight, totalReceived: $totalReceived, loadQuantity: $loadQuantity, loadQuantityMeasure: $loadQuantityMeasure, freightWeight: $freightWeight)';
   }
 }
 
-abstract class _AtsPurchaseTotal implements AtsPurchaseTotal {
-  factory _AtsPurchaseTotal(
-      {final double? subtotal,
-      final double? discountValue,
-      final double? total,
-      final double? totalLoad,
-      final String? predominantProduct,
-      final double? totalFreight,
-      final double? totalReceived,
-      final double? loadQuantity,
-      final String? loadQuantityMeasure,
-      final double? freightWeight}) = _$AtsPurchaseTotalImpl;
-
-  factory _AtsPurchaseTotal.fromJson(Map<String, dynamic> json) =
-      _$AtsPurchaseTotalImpl.fromJson;
-
-  /// Subtotal of the product.
+/// @nodoc
+abstract mixin class _$AtsPurchaseTotalCopyWith<$Res>
+    implements $AtsPurchaseTotalCopyWith<$Res> {
+  factory _$AtsPurchaseTotalCopyWith(
+          _AtsPurchaseTotal value, $Res Function(_AtsPurchaseTotal) _then) =
+      __$AtsPurchaseTotalCopyWithImpl;
   @override
-  double? get subtotal;
+  @useResult
+  $Res call(
+      {double? subtotal,
+      double? discountValue,
+      double? total,
+      double? totalLoad,
+      String? predominantProduct,
+      double? totalFreight,
+      double? totalReceived,
+      double? loadQuantity,
+      String? loadQuantityMeasure,
+      double? freightWeight});
+}
 
-  /// Net discount value (not %)
-  @override
-  double? get discountValue;
+/// @nodoc
+class __$AtsPurchaseTotalCopyWithImpl<$Res>
+    implements _$AtsPurchaseTotalCopyWith<$Res> {
+  __$AtsPurchaseTotalCopyWithImpl(this._self, this._then);
 
-  /// Total value of the product with discount
-  @override
-  double? get total;
-
-  /// Total value of the product with discount and load
-  @override
-  double? get totalLoad;
-
-  /// Predominant product
-  @override
-  String? get predominantProduct;
-
-  /// Total freight value
-  @override
-  double? get totalFreight;
-
-  /// Total received value
-  @override
-  double? get totalReceived;
-
-  /// Load quantity
-  @override
-  double? get loadQuantity;
-
-  /// Load quantity measure
-  @override
-  String? get loadQuantityMeasure;
-
-  /// Freight weight
-  @override
-  double? get freightWeight;
+  final _AtsPurchaseTotal _self;
+  final $Res Function(_AtsPurchaseTotal) _then;
 
   /// Create a copy of AtsPurchaseTotal
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsPurchaseTotalImplCopyWith<_$AtsPurchaseTotalImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsReception _$AtsReceptionFromJson(Map<String, dynamic> json) {
-  return _AtsReception.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? subtotal = freezed,
+    Object? discountValue = freezed,
+    Object? total = freezed,
+    Object? totalLoad = freezed,
+    Object? predominantProduct = freezed,
+    Object? totalFreight = freezed,
+    Object? totalReceived = freezed,
+    Object? loadQuantity = freezed,
+    Object? loadQuantityMeasure = freezed,
+    Object? freightWeight = freezed,
+  }) {
+    return _then(_AtsPurchaseTotal(
+      subtotal: freezed == subtotal
+          ? _self.subtotal
+          : subtotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountValue: freezed == discountValue
+          ? _self.discountValue
+          : discountValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      total: freezed == total
+          ? _self.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as double?,
+      totalLoad: freezed == totalLoad
+          ? _self.totalLoad
+          : totalLoad // ignore: cast_nullable_to_non_nullable
+              as double?,
+      predominantProduct: freezed == predominantProduct
+          ? _self.predominantProduct
+          : predominantProduct // ignore: cast_nullable_to_non_nullable
+              as String?,
+      totalFreight: freezed == totalFreight
+          ? _self.totalFreight
+          : totalFreight // ignore: cast_nullable_to_non_nullable
+              as double?,
+      totalReceived: freezed == totalReceived
+          ? _self.totalReceived
+          : totalReceived // ignore: cast_nullable_to_non_nullable
+              as double?,
+      loadQuantity: freezed == loadQuantity
+          ? _self.loadQuantity
+          : loadQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      loadQuantityMeasure: freezed == loadQuantityMeasure
+          ? _self.loadQuantityMeasure
+          : loadQuantityMeasure // ignore: cast_nullable_to_non_nullable
+              as String?,
+      freightWeight: freezed == freightWeight
+          ? _self.freightWeight
+          : freightWeight // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsReception {
   ///  ID of the [AtsReception]. This ID is unique.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// ID of the [AtsPurchaseOrder].
-  int? get orderId => throw _privateConstructorUsedError;
+  int? get orderId;
 
   /// `errorRate` Represents error percent between reception and sensor entry raw.
-  double? get errorRate => throw _privateConstructorUsedError;
+  double? get errorRate;
 
   /// `receptionStatus` represents the status of the reception.
   @AtsReceptionStatusConverter()
-  AtsReceptionStatus? get receptionStatus => throw _privateConstructorUsedError;
+  AtsReceptionStatus? get receptionStatus;
 
   /// [AtsPurchaseOrder] linked to the reception.
-  AtsPurchaseOrder? get order => throw _privateConstructorUsedError;
+  AtsPurchaseOrder? get order;
 
   /// List of [AtsPurchaseOrder]
-  List<AtsPurchaseOrder> get orders => throw _privateConstructorUsedError;
+  List<AtsPurchaseOrder> get orders;
 
   /// List of [AtsPurchaseOrder] IDs.
-  List<int> get ordersIds => throw _privateConstructorUsedError;
+  List<int> get ordersIds;
 
   /// [AtsEntry] linked to the [AtsReception].
-  AtsEntry? get entry => throw _privateConstructorUsedError;
+  AtsEntry? get entry;
 
   /// `loadingParameters` represents the loading parameters of the reception.
-  List<AtsLoadingParamsForm> get loadingParamsForm =>
-      throw _privateConstructorUsedError;
+  List<AtsLoadingParamsForm> get loadingParamsForm;
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
-  List<AtsReceptionProduct> get products => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsReception to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<AtsReceptionProduct> get products;
 
   /// Create a copy of AtsReception
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsReceptionCopyWith<AtsReception> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsReceptionCopyWithImpl<AtsReception>(
+          this as AtsReception, _$identity);
+
+  /// Serializes this AtsReception to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsReception &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.errorRate, errorRate) ||
+                other.errorRate == errorRate) &&
+            (identical(other.receptionStatus, receptionStatus) ||
+                other.receptionStatus == receptionStatus) &&
+            (identical(other.order, order) || other.order == order) &&
+            const DeepCollectionEquality().equals(other.orders, orders) &&
+            const DeepCollectionEquality().equals(other.ordersIds, ordersIds) &&
+            (identical(other.entry, entry) || other.entry == entry) &&
+            const DeepCollectionEquality()
+                .equals(other.loadingParamsForm, loadingParamsForm) &&
+            const DeepCollectionEquality().equals(other.products, products));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      orderId,
+      errorRate,
+      receptionStatus,
+      order,
+      const DeepCollectionEquality().hash(orders),
+      const DeepCollectionEquality().hash(ordersIds),
+      entry,
+      const DeepCollectionEquality().hash(loadingParamsForm),
+      const DeepCollectionEquality().hash(products));
+
+  @override
+  String toString() {
+    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, orders: $orders, ordersIds: $ordersIds, entry: $entry, loadingParamsForm: $loadingParamsForm, products: $products)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsReceptionCopyWith<$Res> {
+abstract mixin class $AtsReceptionCopyWith<$Res> {
   factory $AtsReceptionCopyWith(
-          AtsReception value, $Res Function(AtsReception) then) =
-      _$AtsReceptionCopyWithImpl<$Res, AtsReception>;
+          AtsReception value, $Res Function(AtsReception) _then) =
+      _$AtsReceptionCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -7300,14 +6994,11 @@ abstract class $AtsReceptionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
-    implements $AtsReceptionCopyWith<$Res> {
-  _$AtsReceptionCopyWithImpl(this._value, this._then);
+class _$AtsReceptionCopyWithImpl<$Res> implements $AtsReceptionCopyWith<$Res> {
+  _$AtsReceptionCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsReception _self;
+  final $Res Function(AtsReception) _then;
 
   /// Create a copy of AtsReception
   /// with the given fields replaced by the non-null parameter values.
@@ -7325,48 +7016,48 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
     Object? loadingParamsForm = null,
     Object? products = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       orderId: freezed == orderId
-          ? _value.orderId
+          ? _self.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int?,
       errorRate: freezed == errorRate
-          ? _value.errorRate
+          ? _self.errorRate
           : errorRate // ignore: cast_nullable_to_non_nullable
               as double?,
       receptionStatus: freezed == receptionStatus
-          ? _value.receptionStatus
+          ? _self.receptionStatus
           : receptionStatus // ignore: cast_nullable_to_non_nullable
               as AtsReceptionStatus?,
       order: freezed == order
-          ? _value.order
+          ? _self.order
           : order // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrder?,
       orders: null == orders
-          ? _value.orders
+          ? _self.orders
           : orders // ignore: cast_nullable_to_non_nullable
               as List<AtsPurchaseOrder>,
       ordersIds: null == ordersIds
-          ? _value.ordersIds
+          ? _self.ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
               as List<int>,
       entry: freezed == entry
-          ? _value.entry
+          ? _self.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
       loadingParamsForm: null == loadingParamsForm
-          ? _value.loadingParamsForm
+          ? _self.loadingParamsForm
           : loadingParamsForm // ignore: cast_nullable_to_non_nullable
               as List<AtsLoadingParamsForm>,
       products: null == products
-          ? _value.products
+          ? _self.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<AtsReceptionProduct>,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsReception
@@ -7374,12 +7065,12 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
   @override
   @pragma('vm:prefer-inline')
   $AtsPurchaseOrderCopyWith<$Res>? get order {
-    if (_value.order == null) {
+    if (_self.order == null) {
       return null;
     }
 
-    return $AtsPurchaseOrderCopyWith<$Res>(_value.order!, (value) {
-      return _then(_value.copyWith(order: value) as $Val);
+    return $AtsPurchaseOrderCopyWith<$Res>(_self.order!, (value) {
+      return _then(_self.copyWith(order: value));
     });
   }
 
@@ -7388,115 +7079,20 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
   @override
   @pragma('vm:prefer-inline')
   $AtsEntryCopyWith<$Res>? get entry {
-    if (_value.entry == null) {
+    if (_self.entry == null) {
       return null;
     }
 
-    return $AtsEntryCopyWith<$Res>(_value.entry!, (value) {
-      return _then(_value.copyWith(entry: value) as $Val);
+    return $AtsEntryCopyWith<$Res>(_self.entry!, (value) {
+      return _then(_self.copyWith(entry: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsReceptionImplCopyWith<$Res>
-    implements $AtsReceptionCopyWith<$Res> {
-  factory _$$AtsReceptionImplCopyWith(
-          _$AtsReceptionImpl value, $Res Function(_$AtsReceptionImpl) then) =
-      __$$AtsReceptionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      int? orderId,
-      double? errorRate,
-      @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
-      AtsPurchaseOrder? order,
-      List<AtsPurchaseOrder> orders,
-      List<int> ordersIds,
-      AtsEntry? entry,
-      List<AtsLoadingParamsForm> loadingParamsForm,
-      List<AtsReceptionProduct> products});
-
-  @override
-  $AtsPurchaseOrderCopyWith<$Res>? get order;
-  @override
-  $AtsEntryCopyWith<$Res>? get entry;
-}
-
-/// @nodoc
-class __$$AtsReceptionImplCopyWithImpl<$Res>
-    extends _$AtsReceptionCopyWithImpl<$Res, _$AtsReceptionImpl>
-    implements _$$AtsReceptionImplCopyWith<$Res> {
-  __$$AtsReceptionImplCopyWithImpl(
-      _$AtsReceptionImpl _value, $Res Function(_$AtsReceptionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? orderId = freezed,
-    Object? errorRate = freezed,
-    Object? receptionStatus = freezed,
-    Object? order = freezed,
-    Object? orders = null,
-    Object? ordersIds = null,
-    Object? entry = freezed,
-    Object? loadingParamsForm = null,
-    Object? products = null,
-  }) {
-    return _then(_$AtsReceptionImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      orderId: freezed == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      errorRate: freezed == errorRate
-          ? _value.errorRate
-          : errorRate // ignore: cast_nullable_to_non_nullable
-              as double?,
-      receptionStatus: freezed == receptionStatus
-          ? _value.receptionStatus
-          : receptionStatus // ignore: cast_nullable_to_non_nullable
-              as AtsReceptionStatus?,
-      order: freezed == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseOrder?,
-      orders: null == orders
-          ? _value._orders
-          : orders // ignore: cast_nullable_to_non_nullable
-              as List<AtsPurchaseOrder>,
-      ordersIds: null == ordersIds
-          ? _value._ordersIds
-          : ordersIds // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      entry: freezed == entry
-          ? _value.entry
-          : entry // ignore: cast_nullable_to_non_nullable
-              as AtsEntry?,
-      loadingParamsForm: null == loadingParamsForm
-          ? _value._loadingParamsForm
-          : loadingParamsForm // ignore: cast_nullable_to_non_nullable
-              as List<AtsLoadingParamsForm>,
-      products: null == products
-          ? _value._products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<AtsReceptionProduct>,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsReceptionImpl implements _AtsReception {
-  _$AtsReceptionImpl(
+class _AtsReception implements AtsReception {
+  _AtsReception(
       {required this.id,
       this.orderId,
       this.errorRate,
@@ -7511,9 +7107,8 @@ class _$AtsReceptionImpl implements _AtsReception {
         _ordersIds = ordersIds,
         _loadingParamsForm = loadingParamsForm,
         _products = products;
-
-  factory _$AtsReceptionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsReceptionImplFromJson(json);
+  factory _AtsReception.fromJson(Map<String, dynamic> json) =>
+      _$AtsReceptionFromJson(json);
 
   ///  ID of the [AtsReception]. This ID is unique.
   @override
@@ -7589,16 +7184,26 @@ class _$AtsReceptionImpl implements _AtsReception {
     return EqualUnmodifiableListView(_products);
   }
 
+  /// Create a copy of AtsReception
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, orders: $orders, ordersIds: $ordersIds, entry: $entry, loadingParamsForm: $loadingParamsForm, products: $products)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsReceptionCopyWith<_AtsReception> get copyWith =>
+      __$AtsReceptionCopyWithImpl<_AtsReception>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsReceptionToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsReceptionImpl &&
+            other is _AtsReception &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
             (identical(other.errorRate, errorRate) ||
@@ -7630,188 +7235,183 @@ class _$AtsReceptionImpl implements _AtsReception {
       const DeepCollectionEquality().hash(_loadingParamsForm),
       const DeepCollectionEquality().hash(_products));
 
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsReceptionImplCopyWith<_$AtsReceptionImpl> get copyWith =>
-      __$$AtsReceptionImplCopyWithImpl<_$AtsReceptionImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsReceptionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, orders: $orders, ordersIds: $ordersIds, entry: $entry, loadingParamsForm: $loadingParamsForm, products: $products)';
   }
 }
 
-abstract class _AtsReception implements AtsReception {
-  factory _AtsReception(
-      {required final String id,
-      final int? orderId,
-      final double? errorRate,
-      @AtsReceptionStatusConverter() final AtsReceptionStatus? receptionStatus,
-      final AtsPurchaseOrder? order,
-      final List<AtsPurchaseOrder> orders,
-      final List<int> ordersIds,
-      final AtsEntry? entry,
-      final List<AtsLoadingParamsForm> loadingParamsForm,
-      final List<AtsReceptionProduct> products}) = _$AtsReceptionImpl;
-
-  factory _AtsReception.fromJson(Map<String, dynamic> json) =
-      _$AtsReceptionImpl.fromJson;
-
-  ///  ID of the [AtsReception]. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsReceptionCopyWith<$Res>
+    implements $AtsReceptionCopyWith<$Res> {
+  factory _$AtsReceptionCopyWith(
+          _AtsReception value, $Res Function(_AtsReception) _then) =
+      __$AtsReceptionCopyWithImpl;
   @override
-  String get id;
+  @useResult
+  $Res call(
+      {String id,
+      int? orderId,
+      double? errorRate,
+      @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
+      AtsPurchaseOrder? order,
+      List<AtsPurchaseOrder> orders,
+      List<int> ordersIds,
+      AtsEntry? entry,
+      List<AtsLoadingParamsForm> loadingParamsForm,
+      List<AtsReceptionProduct> products});
 
-  /// ID of the [AtsPurchaseOrder].
   @override
-  int? get orderId;
+  $AtsPurchaseOrderCopyWith<$Res>? get order;
+  @override
+  $AtsEntryCopyWith<$Res>? get entry;
+}
 
-  /// `errorRate` Represents error percent between reception and sensor entry raw.
-  @override
-  double? get errorRate;
+/// @nodoc
+class __$AtsReceptionCopyWithImpl<$Res>
+    implements _$AtsReceptionCopyWith<$Res> {
+  __$AtsReceptionCopyWithImpl(this._self, this._then);
 
-  /// `receptionStatus` represents the status of the reception.
-  @override
-  @AtsReceptionStatusConverter()
-  AtsReceptionStatus? get receptionStatus;
-
-  /// [AtsPurchaseOrder] linked to the reception.
-  @override
-  AtsPurchaseOrder? get order;
-
-  /// List of [AtsPurchaseOrder]
-  @override
-  List<AtsPurchaseOrder> get orders;
-
-  /// List of [AtsPurchaseOrder] IDs.
-  @override
-  List<int> get ordersIds;
-
-  /// [AtsEntry] linked to the [AtsReception].
-  @override
-  AtsEntry? get entry;
-
-  /// `loadingParameters` represents the loading parameters of the reception.
-  @override
-  List<AtsLoadingParamsForm> get loadingParamsForm;
-
-  /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
-  @override
-  List<AtsReceptionProduct> get products;
+  final _AtsReception _self;
+  final $Res Function(_AtsReception) _then;
 
   /// Create a copy of AtsReception
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsReceptionImplCopyWith<_$AtsReceptionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? orderId = freezed,
+    Object? errorRate = freezed,
+    Object? receptionStatus = freezed,
+    Object? order = freezed,
+    Object? orders = null,
+    Object? ordersIds = null,
+    Object? entry = freezed,
+    Object? loadingParamsForm = null,
+    Object? products = null,
+  }) {
+    return _then(_AtsReception(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      orderId: freezed == orderId
+          ? _self.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      errorRate: freezed == errorRate
+          ? _self.errorRate
+          : errorRate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      receptionStatus: freezed == receptionStatus
+          ? _self.receptionStatus
+          : receptionStatus // ignore: cast_nullable_to_non_nullable
+              as AtsReceptionStatus?,
+      order: freezed == order
+          ? _self.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrder?,
+      orders: null == orders
+          ? _self._orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<AtsPurchaseOrder>,
+      ordersIds: null == ordersIds
+          ? _self._ordersIds
+          : ordersIds // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      entry: freezed == entry
+          ? _self.entry
+          : entry // ignore: cast_nullable_to_non_nullable
+              as AtsEntry?,
+      loadingParamsForm: null == loadingParamsForm
+          ? _self._loadingParamsForm
+          : loadingParamsForm // ignore: cast_nullable_to_non_nullable
+              as List<AtsLoadingParamsForm>,
+      products: null == products
+          ? _self._products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<AtsReceptionProduct>,
+    ));
+  }
 
-AtsEntryUnloadInput _$AtsEntryUnloadInputFromJson(Map<String, dynamic> json) {
-  return _AtsEntryUnloadInput.fromJson(json);
+  /// Create a copy of AtsReception
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsPurchaseOrderCopyWith<$Res>? get order {
+    if (_self.order == null) {
+      return null;
+    }
+
+    return $AtsPurchaseOrderCopyWith<$Res>(_self.order!, (value) {
+      return _then(_self.copyWith(order: value));
+    });
+  }
+
+  /// Create a copy of AtsReception
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsEntryCopyWith<$Res>? get entry {
+    if (_self.entry == null) {
+      return null;
+    }
+
+    return $AtsEntryCopyWith<$Res>(_self.entry!, (value) {
+      return _then(_self.copyWith(entry: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsEntryUnloadInput {
   /// `id` of the [AtsEntry] entity. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// `id` of the [AtsEntry] entity. This ID is unique.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// `fromAssetId` of the [Asset] entity. This ID is unique.
-  String? get fromAssetId => throw _privateConstructorUsedError;
+  String? get fromAssetId;
 
   /// `fromAssetId` of the [Asset] entity. This ID is unique.
-  set fromAssetId(String? value) => throw _privateConstructorUsedError;
+  set fromAssetId(String? value);
 
   /// `receptionId` of the [AtsReception] entity. This ID is unique.
-  String? get receptionId => throw _privateConstructorUsedError;
+  String? get receptionId;
 
   /// `receptionId` of the [AtsReception] entity. This ID is unique.
-  set receptionId(String? value) => throw _privateConstructorUsedError;
+  set receptionId(String? value);
 
   /// `isBluetooth` is a boolean value that indicates whether the entry is unloaded using Bluetooth.
-  bool? get isBluetooth => throw _privateConstructorUsedError;
+  bool? get isBluetooth;
 
   /// `isBluetooth` is a boolean value that indicates whether the entry is unloaded using Bluetooth.
-  set isBluetooth(bool? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsEntryUnloadInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set isBluetooth(bool? value);
 
   /// Create a copy of AtsEntryUnloadInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsEntryUnloadInputCopyWith<AtsEntryUnloadInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsEntryUnloadInputCopyWith<$Res> {
-  factory $AtsEntryUnloadInputCopyWith(
-          AtsEntryUnloadInput value, $Res Function(AtsEntryUnloadInput) then) =
-      _$AtsEntryUnloadInputCopyWithImpl<$Res, AtsEntryUnloadInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String? fromAssetId,
-      String? receptionId,
-      bool? isBluetooth});
-}
-
-/// @nodoc
-class _$AtsEntryUnloadInputCopyWithImpl<$Res, $Val extends AtsEntryUnloadInput>
-    implements $AtsEntryUnloadInputCopyWith<$Res> {
-  _$AtsEntryUnloadInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsEntryUnloadInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsEntryUnloadInputCopyWith<AtsEntryUnloadInput> get copyWith =>
+      _$AtsEntryUnloadInputCopyWithImpl<AtsEntryUnloadInput>(
+          this as AtsEntryUnloadInput, _$identity);
+
+  /// Serializes this AtsEntryUnloadInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? fromAssetId = freezed,
-    Object? receptionId = freezed,
-    Object? isBluetooth = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
-          : fromAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receptionId: freezed == receptionId
-          ? _value.receptionId
-          : receptionId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isBluetooth: freezed == isBluetooth
-          ? _value.isBluetooth
-          : isBluetooth // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  String toString() {
+    return 'AtsEntryUnloadInput(id: $id, fromAssetId: $fromAssetId, receptionId: $receptionId, isBluetooth: $isBluetooth)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsEntryUnloadInputImplCopyWith<$Res>
-    implements $AtsEntryUnloadInputCopyWith<$Res> {
-  factory _$$AtsEntryUnloadInputImplCopyWith(_$AtsEntryUnloadInputImpl value,
-          $Res Function(_$AtsEntryUnloadInputImpl) then) =
-      __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsEntryUnloadInputCopyWith<$Res> {
+  factory $AtsEntryUnloadInputCopyWith(
+          AtsEntryUnloadInput value, $Res Function(AtsEntryUnloadInput) _then) =
+      _$AtsEntryUnloadInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -7821,12 +7421,12 @@ abstract class _$$AtsEntryUnloadInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>
-    extends _$AtsEntryUnloadInputCopyWithImpl<$Res, _$AtsEntryUnloadInputImpl>
-    implements _$$AtsEntryUnloadInputImplCopyWith<$Res> {
-  __$$AtsEntryUnloadInputImplCopyWithImpl(_$AtsEntryUnloadInputImpl _value,
-      $Res Function(_$AtsEntryUnloadInputImpl) _then)
-      : super(_value, _then);
+class _$AtsEntryUnloadInputCopyWithImpl<$Res>
+    implements $AtsEntryUnloadInputCopyWith<$Res> {
+  _$AtsEntryUnloadInputCopyWithImpl(this._self, this._then);
+
+  final AtsEntryUnloadInput _self;
+  final $Res Function(AtsEntryUnloadInput) _then;
 
   /// Create a copy of AtsEntryUnloadInput
   /// with the given fields replaced by the non-null parameter values.
@@ -7838,21 +7438,21 @@ class __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>
     Object? receptionId = freezed,
     Object? isBluetooth = freezed,
   }) {
-    return _then(_$AtsEntryUnloadInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
+          ? _self.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       receptionId: freezed == receptionId
-          ? _value.receptionId
+          ? _self.receptionId
           : receptionId // ignore: cast_nullable_to_non_nullable
               as String?,
       isBluetooth: freezed == isBluetooth
-          ? _value.isBluetooth
+          ? _self.isBluetooth
           : isBluetooth // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -7861,12 +7461,11 @@ class __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsEntryUnloadInputImpl implements _AtsEntryUnloadInput {
-  _$AtsEntryUnloadInputImpl(
+class _AtsEntryUnloadInput implements AtsEntryUnloadInput {
+  _AtsEntryUnloadInput(
       {this.id, this.fromAssetId, this.receptionId, this.isBluetooth});
-
-  factory _$AtsEntryUnloadInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsEntryUnloadInputImplFromJson(json);
+  factory _AtsEntryUnloadInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsEntryUnloadInputFromJson(json);
 
   /// `id` of the [AtsEntry] entity. This ID is unique.
   @override
@@ -7884,170 +7483,137 @@ class _$AtsEntryUnloadInputImpl implements _AtsEntryUnloadInput {
   @override
   bool? isBluetooth;
 
-  @override
-  String toString() {
-    return 'AtsEntryUnloadInput(id: $id, fromAssetId: $fromAssetId, receptionId: $receptionId, isBluetooth: $isBluetooth)';
-  }
-
   /// Create a copy of AtsEntryUnloadInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$$AtsEntryUnloadInputImplCopyWith<_$AtsEntryUnloadInputImpl> get copyWith =>
-      __$$AtsEntryUnloadInputImplCopyWithImpl<_$AtsEntryUnloadInputImpl>(
+  _$AtsEntryUnloadInputCopyWith<_AtsEntryUnloadInput> get copyWith =>
+      __$AtsEntryUnloadInputCopyWithImpl<_AtsEntryUnloadInput>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AtsEntryUnloadInputImplToJson(
+    return _$AtsEntryUnloadInputToJson(
       this,
     );
   }
+
+  @override
+  String toString() {
+    return 'AtsEntryUnloadInput(id: $id, fromAssetId: $fromAssetId, receptionId: $receptionId, isBluetooth: $isBluetooth)';
+  }
 }
 
-abstract class _AtsEntryUnloadInput implements AtsEntryUnloadInput {
-  factory _AtsEntryUnloadInput(
+/// @nodoc
+abstract mixin class _$AtsEntryUnloadInputCopyWith<$Res>
+    implements $AtsEntryUnloadInputCopyWith<$Res> {
+  factory _$AtsEntryUnloadInputCopyWith(_AtsEntryUnloadInput value,
+          $Res Function(_AtsEntryUnloadInput) _then) =
+      __$AtsEntryUnloadInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String? fromAssetId,
       String? receptionId,
-      bool? isBluetooth}) = _$AtsEntryUnloadInputImpl;
+      bool? isBluetooth});
+}
 
-  factory _AtsEntryUnloadInput.fromJson(Map<String, dynamic> json) =
-      _$AtsEntryUnloadInputImpl.fromJson;
+/// @nodoc
+class __$AtsEntryUnloadInputCopyWithImpl<$Res>
+    implements _$AtsEntryUnloadInputCopyWith<$Res> {
+  __$AtsEntryUnloadInputCopyWithImpl(this._self, this._then);
 
-  /// `id` of the [AtsEntry] entity. This ID is unique.
-  @override
-  String? get id;
-
-  /// `id` of the [AtsEntry] entity. This ID is unique.
-  set id(String? value);
-
-  /// `fromAssetId` of the [Asset] entity. This ID is unique.
-  @override
-  String? get fromAssetId;
-
-  /// `fromAssetId` of the [Asset] entity. This ID is unique.
-  set fromAssetId(String? value);
-
-  /// `receptionId` of the [AtsReception] entity. This ID is unique.
-  @override
-  String? get receptionId;
-
-  /// `receptionId` of the [AtsReception] entity. This ID is unique.
-  set receptionId(String? value);
-
-  /// `isBluetooth` is a boolean value that indicates whether the entry is unloaded using Bluetooth.
-  @override
-  bool? get isBluetooth;
-
-  /// `isBluetooth` is a boolean value that indicates whether the entry is unloaded using Bluetooth.
-  set isBluetooth(bool? value);
+  final _AtsEntryUnloadInput _self;
+  final $Res Function(_AtsEntryUnloadInput) _then;
 
   /// Create a copy of AtsEntryUnloadInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsEntryUnloadInputImplCopyWith<_$AtsEntryUnloadInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsIdeInformation _$AtsIdeInformationFromJson(Map<String, dynamic> json) {
-  return _AtsIdeInformation.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? fromAssetId = freezed,
+    Object? receptionId = freezed,
+    Object? isBluetooth = freezed,
+  }) {
+    return _then(_AtsEntryUnloadInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromAssetId: freezed == fromAssetId
+          ? _self.fromAssetId
+          : fromAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receptionId: freezed == receptionId
+          ? _self.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isBluetooth: freezed == isBluetooth
+          ? _self.isBluetooth
+          : isBluetooth // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsIdeInformation {
   /// Ide type
-  String? get ideType => throw _privateConstructorUsedError;
+  String? get ideType;
 
   /// Serie
-  String? get serie => throw _privateConstructorUsedError;
+  String? get serie;
 
   /// Model
-  String? get model => throw _privateConstructorUsedError;
+  String? get model;
 
   /// CFOP
-  String? get cfop => throw _privateConstructorUsedError;
-  String? get operationType => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsIdeInformation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get cfop;
+  String? get operationType;
 
   /// Create a copy of AtsIdeInformation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsIdeInformationCopyWith<AtsIdeInformation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsIdeInformationCopyWith<$Res> {
-  factory $AtsIdeInformationCopyWith(
-          AtsIdeInformation value, $Res Function(AtsIdeInformation) then) =
-      _$AtsIdeInformationCopyWithImpl<$Res, AtsIdeInformation>;
-  @useResult
-  $Res call(
-      {String? ideType,
-      String? serie,
-      String? model,
-      String? cfop,
-      String? operationType});
-}
-
-/// @nodoc
-class _$AtsIdeInformationCopyWithImpl<$Res, $Val extends AtsIdeInformation>
-    implements $AtsIdeInformationCopyWith<$Res> {
-  _$AtsIdeInformationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsIdeInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsIdeInformationCopyWith<AtsIdeInformation> get copyWith =>
+      _$AtsIdeInformationCopyWithImpl<AtsIdeInformation>(
+          this as AtsIdeInformation, _$identity);
+
+  /// Serializes this AtsIdeInformation to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? ideType = freezed,
-    Object? serie = freezed,
-    Object? model = freezed,
-    Object? cfop = freezed,
-    Object? operationType = freezed,
-  }) {
-    return _then(_value.copyWith(
-      ideType: freezed == ideType
-          ? _value.ideType
-          : ideType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serie: freezed == serie
-          ? _value.serie
-          : serie // ignore: cast_nullable_to_non_nullable
-              as String?,
-      model: freezed == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cfop: freezed == cfop
-          ? _value.cfop
-          : cfop // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operationType: freezed == operationType
-          ? _value.operationType
-          : operationType // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsIdeInformation &&
+            (identical(other.ideType, ideType) || other.ideType == ideType) &&
+            (identical(other.serie, serie) || other.serie == serie) &&
+            (identical(other.model, model) || other.model == model) &&
+            (identical(other.cfop, cfop) || other.cfop == cfop) &&
+            (identical(other.operationType, operationType) ||
+                other.operationType == operationType));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, ideType, serie, model, cfop, operationType);
+
+  @override
+  String toString() {
+    return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsIdeInformationImplCopyWith<$Res>
-    implements $AtsIdeInformationCopyWith<$Res> {
-  factory _$$AtsIdeInformationImplCopyWith(_$AtsIdeInformationImpl value,
-          $Res Function(_$AtsIdeInformationImpl) then) =
-      __$$AtsIdeInformationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsIdeInformationCopyWith<$Res> {
+  factory $AtsIdeInformationCopyWith(
+          AtsIdeInformation value, $Res Function(AtsIdeInformation) _then) =
+      _$AtsIdeInformationCopyWithImpl;
   @useResult
   $Res call(
       {String? ideType,
@@ -8058,12 +7624,12 @@ abstract class _$$AtsIdeInformationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsIdeInformationImplCopyWithImpl<$Res>
-    extends _$AtsIdeInformationCopyWithImpl<$Res, _$AtsIdeInformationImpl>
-    implements _$$AtsIdeInformationImplCopyWith<$Res> {
-  __$$AtsIdeInformationImplCopyWithImpl(_$AtsIdeInformationImpl _value,
-      $Res Function(_$AtsIdeInformationImpl) _then)
-      : super(_value, _then);
+class _$AtsIdeInformationCopyWithImpl<$Res>
+    implements $AtsIdeInformationCopyWith<$Res> {
+  _$AtsIdeInformationCopyWithImpl(this._self, this._then);
+
+  final AtsIdeInformation _self;
+  final $Res Function(AtsIdeInformation) _then;
 
   /// Create a copy of AtsIdeInformation
   /// with the given fields replaced by the non-null parameter values.
@@ -8076,25 +7642,25 @@ class __$$AtsIdeInformationImplCopyWithImpl<$Res>
     Object? cfop = freezed,
     Object? operationType = freezed,
   }) {
-    return _then(_$AtsIdeInformationImpl(
+    return _then(_self.copyWith(
       ideType: freezed == ideType
-          ? _value.ideType
+          ? _self.ideType
           : ideType // ignore: cast_nullable_to_non_nullable
               as String?,
       serie: freezed == serie
-          ? _value.serie
+          ? _self.serie
           : serie // ignore: cast_nullable_to_non_nullable
               as String?,
       model: freezed == model
-          ? _value.model
+          ? _self.model
           : model // ignore: cast_nullable_to_non_nullable
               as String?,
       cfop: freezed == cfop
-          ? _value.cfop
+          ? _self.cfop
           : cfop // ignore: cast_nullable_to_non_nullable
               as String?,
       operationType: freezed == operationType
-          ? _value.operationType
+          ? _self.operationType
           : operationType // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -8103,12 +7669,11 @@ class __$$AtsIdeInformationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsIdeInformationImpl implements _AtsIdeInformation {
-  _$AtsIdeInformationImpl(
+class _AtsIdeInformation implements AtsIdeInformation {
+  _AtsIdeInformation(
       {this.ideType, this.serie, this.model, this.cfop, this.operationType});
-
-  factory _$AtsIdeInformationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsIdeInformationImplFromJson(json);
+  factory _AtsIdeInformation.fromJson(Map<String, dynamic> json) =>
+      _$AtsIdeInformationFromJson(json);
 
   /// Ide type
   @override
@@ -8128,16 +7693,26 @@ class _$AtsIdeInformationImpl implements _AtsIdeInformation {
   @override
   final String? operationType;
 
+  /// Create a copy of AtsIdeInformation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsIdeInformationCopyWith<_AtsIdeInformation> get copyWith =>
+      __$AtsIdeInformationCopyWithImpl<_AtsIdeInformation>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsIdeInformationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsIdeInformationImpl &&
+            other is _AtsIdeInformation &&
             (identical(other.ideType, ideType) || other.ideType == ideType) &&
             (identical(other.serie, serie) || other.serie == serie) &&
             (identical(other.model, model) || other.model == model) &&
@@ -8151,154 +7726,130 @@ class _$AtsIdeInformationImpl implements _AtsIdeInformation {
   int get hashCode =>
       Object.hash(runtimeType, ideType, serie, model, cfop, operationType);
 
-  /// Create a copy of AtsIdeInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsIdeInformationImplCopyWith<_$AtsIdeInformationImpl> get copyWith =>
-      __$$AtsIdeInformationImplCopyWithImpl<_$AtsIdeInformationImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsIdeInformationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType)';
   }
 }
 
-abstract class _AtsIdeInformation implements AtsIdeInformation {
-  factory _AtsIdeInformation(
-      {final String? ideType,
-      final String? serie,
-      final String? model,
-      final String? cfop,
-      final String? operationType}) = _$AtsIdeInformationImpl;
-
-  factory _AtsIdeInformation.fromJson(Map<String, dynamic> json) =
-      _$AtsIdeInformationImpl.fromJson;
-
-  /// Ide type
+/// @nodoc
+abstract mixin class _$AtsIdeInformationCopyWith<$Res>
+    implements $AtsIdeInformationCopyWith<$Res> {
+  factory _$AtsIdeInformationCopyWith(
+          _AtsIdeInformation value, $Res Function(_AtsIdeInformation) _then) =
+      __$AtsIdeInformationCopyWithImpl;
   @override
-  String? get ideType;
+  @useResult
+  $Res call(
+      {String? ideType,
+      String? serie,
+      String? model,
+      String? cfop,
+      String? operationType});
+}
 
-  /// Serie
-  @override
-  String? get serie;
+/// @nodoc
+class __$AtsIdeInformationCopyWithImpl<$Res>
+    implements _$AtsIdeInformationCopyWith<$Res> {
+  __$AtsIdeInformationCopyWithImpl(this._self, this._then);
 
-  /// Model
-  @override
-  String? get model;
-
-  /// CFOP
-  @override
-  String? get cfop;
-  @override
-  String? get operationType;
+  final _AtsIdeInformation _self;
+  final $Res Function(_AtsIdeInformation) _then;
 
   /// Create a copy of AtsIdeInformation
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsIdeInformationImplCopyWith<_$AtsIdeInformationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-OperationProductInformation _$OperationProductInformationFromJson(
-    Map<String, dynamic> json) {
-  return _OperationProductInformation.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? ideType = freezed,
+    Object? serie = freezed,
+    Object? model = freezed,
+    Object? cfop = freezed,
+    Object? operationType = freezed,
+  }) {
+    return _then(_AtsIdeInformation(
+      ideType: freezed == ideType
+          ? _self.ideType
+          : ideType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serie: freezed == serie
+          ? _self.serie
+          : serie // ignore: cast_nullable_to_non_nullable
+              as String?,
+      model: freezed == model
+          ? _self.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cfop: freezed == cfop
+          ? _self.cfop
+          : cfop // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operationType: freezed == operationType
+          ? _self.operationType
+          : operationType // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$OperationProductInformation {
   /// category of the product.
-  String? get category => throw _privateConstructorUsedError;
+  String? get category;
 
   /// quantity of the product.
-  double? get quantity => throw _privateConstructorUsedError;
+  double? get quantity;
 
   /// subcategory of the product.
-  String? get subcategory => throw _privateConstructorUsedError;
+  String? get subcategory;
 
   /// fuel type of the product.
-  String? get fuelType => throw _privateConstructorUsedError;
-
-  /// Serializes this OperationProductInformation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get fuelType;
 
   /// Create a copy of OperationProductInformation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $OperationProductInformationCopyWith<OperationProductInformation>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $OperationProductInformationCopyWith<$Res> {
-  factory $OperationProductInformationCopyWith(
-          OperationProductInformation value,
-          $Res Function(OperationProductInformation) then) =
-      _$OperationProductInformationCopyWithImpl<$Res,
-          OperationProductInformation>;
-  @useResult
-  $Res call(
-      {String? category,
-      double? quantity,
-      String? subcategory,
-      String? fuelType});
-}
-
-/// @nodoc
-class _$OperationProductInformationCopyWithImpl<$Res,
-        $Val extends OperationProductInformation>
-    implements $OperationProductInformationCopyWith<$Res> {
-  _$OperationProductInformationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of OperationProductInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $OperationProductInformationCopyWith<OperationProductInformation>
+      get copyWith => _$OperationProductInformationCopyWithImpl<
+              OperationProductInformation>(
+          this as OperationProductInformation, _$identity);
+
+  /// Serializes this OperationProductInformation to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? category = freezed,
-    Object? quantity = freezed,
-    Object? subcategory = freezed,
-    Object? fuelType = freezed,
-  }) {
-    return _then(_value.copyWith(
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      subcategory: freezed == subcategory
-          ? _value.subcategory
-          : subcategory // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is OperationProductInformation &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.subcategory, subcategory) ||
+                other.subcategory == subcategory) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, category, quantity, subcategory, fuelType);
+
+  @override
+  String toString() {
+    return 'OperationProductInformation(category: $category, quantity: $quantity, subcategory: $subcategory, fuelType: $fuelType)';
   }
 }
 
 /// @nodoc
-abstract class _$$OperationProductInformationImplCopyWith<$Res>
-    implements $OperationProductInformationCopyWith<$Res> {
-  factory _$$OperationProductInformationImplCopyWith(
-          _$OperationProductInformationImpl value,
-          $Res Function(_$OperationProductInformationImpl) then) =
-      __$$OperationProductInformationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $OperationProductInformationCopyWith<$Res> {
+  factory $OperationProductInformationCopyWith(
+          OperationProductInformation value,
+          $Res Function(OperationProductInformation) _then) =
+      _$OperationProductInformationCopyWithImpl;
   @useResult
   $Res call(
       {String? category,
@@ -8308,14 +7859,12 @@ abstract class _$$OperationProductInformationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$OperationProductInformationImplCopyWithImpl<$Res>
-    extends _$OperationProductInformationCopyWithImpl<$Res,
-        _$OperationProductInformationImpl>
-    implements _$$OperationProductInformationImplCopyWith<$Res> {
-  __$$OperationProductInformationImplCopyWithImpl(
-      _$OperationProductInformationImpl _value,
-      $Res Function(_$OperationProductInformationImpl) _then)
-      : super(_value, _then);
+class _$OperationProductInformationCopyWithImpl<$Res>
+    implements $OperationProductInformationCopyWith<$Res> {
+  _$OperationProductInformationCopyWithImpl(this._self, this._then);
+
+  final OperationProductInformation _self;
+  final $Res Function(OperationProductInformation) _then;
 
   /// Create a copy of OperationProductInformation
   /// with the given fields replaced by the non-null parameter values.
@@ -8327,21 +7876,21 @@ class __$$OperationProductInformationImplCopyWithImpl<$Res>
     Object? subcategory = freezed,
     Object? fuelType = freezed,
   }) {
-    return _then(_$OperationProductInformationImpl(
+    return _then(_self.copyWith(
       category: freezed == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as String?,
       quantity: freezed == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double?,
       subcategory: freezed == subcategory
-          ? _value.subcategory
+          ? _self.subcategory
           : subcategory // ignore: cast_nullable_to_non_nullable
               as String?,
       fuelType: freezed == fuelType
-          ? _value.fuelType
+          ? _self.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -8350,14 +7899,11 @@ class __$$OperationProductInformationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OperationProductInformationImpl
-    implements _OperationProductInformation {
-  _$OperationProductInformationImpl(
+class _OperationProductInformation implements OperationProductInformation {
+  _OperationProductInformation(
       {this.category, this.quantity, this.subcategory, this.fuelType});
-
-  factory _$OperationProductInformationImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$OperationProductInformationImplFromJson(json);
+  factory _OperationProductInformation.fromJson(Map<String, dynamic> json) =>
+      _$OperationProductInformationFromJson(json);
 
   /// category of the product.
   @override
@@ -8375,16 +7921,27 @@ class _$OperationProductInformationImpl
   @override
   final String? fuelType;
 
+  /// Create a copy of OperationProductInformation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'OperationProductInformation(category: $category, quantity: $quantity, subcategory: $subcategory, fuelType: $fuelType)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$OperationProductInformationCopyWith<_OperationProductInformation>
+      get copyWith => __$OperationProductInformationCopyWithImpl<
+          _OperationProductInformation>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$OperationProductInformationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OperationProductInformationImpl &&
+            other is _OperationProductInformation &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.quantity, quantity) ||
@@ -8400,238 +7957,153 @@ class _$OperationProductInformationImpl
   int get hashCode =>
       Object.hash(runtimeType, category, quantity, subcategory, fuelType);
 
-  /// Create a copy of OperationProductInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$OperationProductInformationImplCopyWith<_$OperationProductInformationImpl>
-      get copyWith => __$$OperationProductInformationImplCopyWithImpl<
-          _$OperationProductInformationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OperationProductInformationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'OperationProductInformation(category: $category, quantity: $quantity, subcategory: $subcategory, fuelType: $fuelType)';
   }
 }
 
-abstract class _OperationProductInformation
-    implements OperationProductInformation {
-  factory _OperationProductInformation(
-      {final String? category,
-      final double? quantity,
-      final String? subcategory,
-      final String? fuelType}) = _$OperationProductInformationImpl;
-
-  factory _OperationProductInformation.fromJson(Map<String, dynamic> json) =
-      _$OperationProductInformationImpl.fromJson;
-
-  /// category of the product.
+/// @nodoc
+abstract mixin class _$OperationProductInformationCopyWith<$Res>
+    implements $OperationProductInformationCopyWith<$Res> {
+  factory _$OperationProductInformationCopyWith(
+          _OperationProductInformation value,
+          $Res Function(_OperationProductInformation) _then) =
+      __$OperationProductInformationCopyWithImpl;
   @override
-  String? get category;
+  @useResult
+  $Res call(
+      {String? category,
+      double? quantity,
+      String? subcategory,
+      String? fuelType});
+}
 
-  /// quantity of the product.
-  @override
-  double? get quantity;
+/// @nodoc
+class __$OperationProductInformationCopyWithImpl<$Res>
+    implements _$OperationProductInformationCopyWith<$Res> {
+  __$OperationProductInformationCopyWithImpl(this._self, this._then);
 
-  /// subcategory of the product.
-  @override
-  String? get subcategory;
-
-  /// fuel type of the product.
-  @override
-  String? get fuelType;
+  final _OperationProductInformation _self;
+  final $Res Function(_OperationProductInformation) _then;
 
   /// Create a copy of OperationProductInformation
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OperationProductInformationImplCopyWith<_$OperationProductInformationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
-    Map<String, dynamic> json) {
-  return _AtsLoadingParamsFormInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? category = freezed,
+    Object? quantity = freezed,
+    Object? subcategory = freezed,
+    Object? fuelType = freezed,
+  }) {
+    return _then(_OperationProductInformation(
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: freezed == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      subcategory: freezed == subcategory
+          ? _self.subcategory
+          : subcategory // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fuelType: freezed == fuelType
+          ? _self.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsLoadingParamsFormInput {
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// `assetId` What asset is linked to loading params form (Truck).
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// `assetId` What asset is linked to loading params form (Truck).
-  set assetId(String? value) => throw _privateConstructorUsedError;
+  set assetId(String? value);
 
   /// `receptionId` linked to loading params form.
-  String? get receptionId => throw _privateConstructorUsedError;
+  String? get receptionId;
 
   /// `receptionId` linked to loading params form.
-  set receptionId(String? value) => throw _privateConstructorUsedError;
+  set receptionId(String? value);
 
   /// `driver` name
-  String? get driver => throw _privateConstructorUsedError;
+  String? get driver;
 
   /// `driver` name
-  set driver(String? value) => throw _privateConstructorUsedError;
+  set driver(String? value);
 
   /// `sampleDensity` is loading params form density
-  double? get sampleDensity => throw _privateConstructorUsedError;
+  double? get sampleDensity;
 
   /// `sampleDensity` is loading params form density
-  set sampleDensity(double? value) => throw _privateConstructorUsedError;
+  set sampleDensity(double? value);
 
   /// `sampleTemperature` is loading params form temperature
-  double? get sampleTemperature => throw _privateConstructorUsedError;
+  double? get sampleTemperature;
 
   /// `sampleTemperature` is loading params form temperature
-  set sampleTemperature(double? value) => throw _privateConstructorUsedError;
+  set sampleTemperature(double? value);
 
   /// `assetTemperature` represent the asset temperature
-  double? get assetTemperature => throw _privateConstructorUsedError;
+  double? get assetTemperature;
 
   /// `assetTemperature` represent the asset temperature
-  set assetTemperature(double? value) => throw _privateConstructorUsedError;
+  set assetTemperature(double? value);
 
   ///  `analyzedAt` represent when the asset density in UNIX
-  double? get analyzedAt => throw _privateConstructorUsedError;
+  double? get analyzedAt;
 
   ///  `analyzedAt` represent when the asset density in UNIX
-  set analyzedAt(double? value) => throw _privateConstructorUsedError;
+  set analyzedAt(double? value);
 
   /// `sampleType` represent the loading params sample type
   @AtsLoadingParamsSampleOrNullConverter()
-  AtsLoadingParamsSample? get sampleType => throw _privateConstructorUsedError;
+  AtsLoadingParamsSample? get sampleType;
 
   /// `sampleType` represent the loading params sample type
   @AtsLoadingParamsSampleOrNullConverter()
-  set sampleType(AtsLoadingParamsSample? value) =>
-      throw _privateConstructorUsedError;
+  set sampleType(AtsLoadingParamsSample? value);
 
   /// `formNumber` Loading params form number
-  String? get formNumber => throw _privateConstructorUsedError;
+  String? get formNumber;
 
   /// `formNumber` Loading params form number
-  set formNumber(String? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsLoadingParamsFormInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set formNumber(String? value);
 
   /// Create a copy of AtsLoadingParamsFormInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsLoadingParamsFormInputCopyWith<AtsLoadingParamsFormInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsLoadingParamsFormInputCopyWith<$Res> {
-  factory $AtsLoadingParamsFormInputCopyWith(AtsLoadingParamsFormInput value,
-          $Res Function(AtsLoadingParamsFormInput) then) =
-      _$AtsLoadingParamsFormInputCopyWithImpl<$Res, AtsLoadingParamsFormInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String? assetId,
-      String? receptionId,
-      String? driver,
-      double? sampleDensity,
-      double? sampleTemperature,
-      double? assetTemperature,
-      double? analyzedAt,
-      @AtsLoadingParamsSampleOrNullConverter()
-      AtsLoadingParamsSample? sampleType,
-      String? formNumber});
-}
-
-/// @nodoc
-class _$AtsLoadingParamsFormInputCopyWithImpl<$Res,
-        $Val extends AtsLoadingParamsFormInput>
-    implements $AtsLoadingParamsFormInputCopyWith<$Res> {
-  _$AtsLoadingParamsFormInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsLoadingParamsFormInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsLoadingParamsFormInputCopyWith<AtsLoadingParamsFormInput> get copyWith =>
+      _$AtsLoadingParamsFormInputCopyWithImpl<AtsLoadingParamsFormInput>(
+          this as AtsLoadingParamsFormInput, _$identity);
+
+  /// Serializes this AtsLoadingParamsFormInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? assetId = freezed,
-    Object? receptionId = freezed,
-    Object? driver = freezed,
-    Object? sampleDensity = freezed,
-    Object? sampleTemperature = freezed,
-    Object? assetTemperature = freezed,
-    Object? analyzedAt = freezed,
-    Object? sampleType = freezed,
-    Object? formNumber = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receptionId: freezed == receptionId
-          ? _value.receptionId
-          : receptionId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      driver: freezed == driver
-          ? _value.driver
-          : driver // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sampleDensity: freezed == sampleDensity
-          ? _value.sampleDensity
-          : sampleDensity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sampleTemperature: freezed == sampleTemperature
-          ? _value.sampleTemperature
-          : sampleTemperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      assetTemperature: freezed == assetTemperature
-          ? _value.assetTemperature
-          : assetTemperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      analyzedAt: freezed == analyzedAt
-          ? _value.analyzedAt
-          : analyzedAt // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sampleType: freezed == sampleType
-          ? _value.sampleType
-          : sampleType // ignore: cast_nullable_to_non_nullable
-              as AtsLoadingParamsSample?,
-      formNumber: freezed == formNumber
-          ? _value.formNumber
-          : formNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'AtsLoadingParamsFormInput(id: $id, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, formNumber: $formNumber)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsLoadingParamsFormInputImplCopyWith<$Res>
-    implements $AtsLoadingParamsFormInputCopyWith<$Res> {
-  factory _$$AtsLoadingParamsFormInputImplCopyWith(
-          _$AtsLoadingParamsFormInputImpl value,
-          $Res Function(_$AtsLoadingParamsFormInputImpl) then) =
-      __$$AtsLoadingParamsFormInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsLoadingParamsFormInputCopyWith<$Res> {
+  factory $AtsLoadingParamsFormInputCopyWith(AtsLoadingParamsFormInput value,
+          $Res Function(AtsLoadingParamsFormInput) _then) =
+      _$AtsLoadingParamsFormInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -8648,14 +8120,12 @@ abstract class _$$AtsLoadingParamsFormInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsLoadingParamsFormInputImplCopyWithImpl<$Res>
-    extends _$AtsLoadingParamsFormInputCopyWithImpl<$Res,
-        _$AtsLoadingParamsFormInputImpl>
-    implements _$$AtsLoadingParamsFormInputImplCopyWith<$Res> {
-  __$$AtsLoadingParamsFormInputImplCopyWithImpl(
-      _$AtsLoadingParamsFormInputImpl _value,
-      $Res Function(_$AtsLoadingParamsFormInputImpl) _then)
-      : super(_value, _then);
+class _$AtsLoadingParamsFormInputCopyWithImpl<$Res>
+    implements $AtsLoadingParamsFormInputCopyWith<$Res> {
+  _$AtsLoadingParamsFormInputCopyWithImpl(this._self, this._then);
+
+  final AtsLoadingParamsFormInput _self;
+  final $Res Function(AtsLoadingParamsFormInput) _then;
 
   /// Create a copy of AtsLoadingParamsFormInput
   /// with the given fields replaced by the non-null parameter values.
@@ -8673,45 +8143,45 @@ class __$$AtsLoadingParamsFormInputImplCopyWithImpl<$Res>
     Object? sampleType = freezed,
     Object? formNumber = freezed,
   }) {
-    return _then(_$AtsLoadingParamsFormInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       receptionId: freezed == receptionId
-          ? _value.receptionId
+          ? _self.receptionId
           : receptionId // ignore: cast_nullable_to_non_nullable
               as String?,
       driver: freezed == driver
-          ? _value.driver
+          ? _self.driver
           : driver // ignore: cast_nullable_to_non_nullable
               as String?,
       sampleDensity: freezed == sampleDensity
-          ? _value.sampleDensity
+          ? _self.sampleDensity
           : sampleDensity // ignore: cast_nullable_to_non_nullable
               as double?,
       sampleTemperature: freezed == sampleTemperature
-          ? _value.sampleTemperature
+          ? _self.sampleTemperature
           : sampleTemperature // ignore: cast_nullable_to_non_nullable
               as double?,
       assetTemperature: freezed == assetTemperature
-          ? _value.assetTemperature
+          ? _self.assetTemperature
           : assetTemperature // ignore: cast_nullable_to_non_nullable
               as double?,
       analyzedAt: freezed == analyzedAt
-          ? _value.analyzedAt
+          ? _self.analyzedAt
           : analyzedAt // ignore: cast_nullable_to_non_nullable
               as double?,
       sampleType: freezed == sampleType
-          ? _value.sampleType
+          ? _self.sampleType
           : sampleType // ignore: cast_nullable_to_non_nullable
               as AtsLoadingParamsSample?,
       formNumber: freezed == formNumber
-          ? _value.formNumber
+          ? _self.formNumber
           : formNumber // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -8720,8 +8190,8 @@ class __$$AtsLoadingParamsFormInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsLoadingParamsFormInputImpl implements _AtsLoadingParamsFormInput {
-  _$AtsLoadingParamsFormInputImpl(
+class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
+  _AtsLoadingParamsFormInput(
       {this.id,
       this.assetId,
       this.receptionId,
@@ -8732,9 +8202,8 @@ class _$AtsLoadingParamsFormInputImpl implements _AtsLoadingParamsFormInput {
       this.analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
       this.formNumber});
-
-  factory _$AtsLoadingParamsFormInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsLoadingParamsFormInputImplFromJson(json);
+  factory _AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsLoadingParamsFormInputFromJson(json);
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
@@ -8777,30 +8246,38 @@ class _$AtsLoadingParamsFormInputImpl implements _AtsLoadingParamsFormInput {
   @override
   String? formNumber;
 
+  /// Create a copy of AtsLoadingParamsFormInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsLoadingParamsFormInputCopyWith<_AtsLoadingParamsFormInput>
+      get copyWith =>
+          __$AtsLoadingParamsFormInputCopyWithImpl<_AtsLoadingParamsFormInput>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsLoadingParamsFormInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'AtsLoadingParamsFormInput(id: $id, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, formNumber: $formNumber)';
   }
-
-  /// Create a copy of AtsLoadingParamsFormInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AtsLoadingParamsFormInputImplCopyWith<_$AtsLoadingParamsFormInputImpl>
-      get copyWith => __$$AtsLoadingParamsFormInputImplCopyWithImpl<
-          _$AtsLoadingParamsFormInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsLoadingParamsFormInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
-  factory _AtsLoadingParamsFormInput(
+/// @nodoc
+abstract mixin class _$AtsLoadingParamsFormInputCopyWith<$Res>
+    implements $AtsLoadingParamsFormInputCopyWith<$Res> {
+  factory _$AtsLoadingParamsFormInputCopyWith(_AtsLoadingParamsFormInput value,
+          $Res Function(_AtsLoadingParamsFormInput) _then) =
+      __$AtsLoadingParamsFormInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String? assetId,
       String? receptionId,
@@ -8811,154 +8288,191 @@ abstract class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
       double? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
       AtsLoadingParamsSample? sampleType,
-      String? formNumber}) = _$AtsLoadingParamsFormInputImpl;
+      String? formNumber});
+}
 
-  factory _AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) =
-      _$AtsLoadingParamsFormInputImpl.fromJson;
+/// @nodoc
+class __$AtsLoadingParamsFormInputCopyWithImpl<$Res>
+    implements _$AtsLoadingParamsFormInputCopyWith<$Res> {
+  __$AtsLoadingParamsFormInputCopyWithImpl(this._self, this._then);
 
-  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
-  @override
-  String? get id;
-
-  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
-  set id(String? value);
-
-  /// `assetId` What asset is linked to loading params form (Truck).
-  @override
-  String? get assetId;
-
-  /// `assetId` What asset is linked to loading params form (Truck).
-  set assetId(String? value);
-
-  /// `receptionId` linked to loading params form.
-  @override
-  String? get receptionId;
-
-  /// `receptionId` linked to loading params form.
-  set receptionId(String? value);
-
-  /// `driver` name
-  @override
-  String? get driver;
-
-  /// `driver` name
-  set driver(String? value);
-
-  /// `sampleDensity` is loading params form density
-  @override
-  double? get sampleDensity;
-
-  /// `sampleDensity` is loading params form density
-  set sampleDensity(double? value);
-
-  /// `sampleTemperature` is loading params form temperature
-  @override
-  double? get sampleTemperature;
-
-  /// `sampleTemperature` is loading params form temperature
-  set sampleTemperature(double? value);
-
-  /// `assetTemperature` represent the asset temperature
-  @override
-  double? get assetTemperature;
-
-  /// `assetTemperature` represent the asset temperature
-  set assetTemperature(double? value);
-
-  ///  `analyzedAt` represent when the asset density in UNIX
-  @override
-  double? get analyzedAt;
-
-  ///  `analyzedAt` represent when the asset density in UNIX
-  set analyzedAt(double? value);
-
-  /// `sampleType` represent the loading params sample type
-  @override
-  @AtsLoadingParamsSampleOrNullConverter()
-  AtsLoadingParamsSample? get sampleType;
-
-  /// `sampleType` represent the loading params sample type
-  @AtsLoadingParamsSampleOrNullConverter()
-  set sampleType(AtsLoadingParamsSample? value);
-
-  /// `formNumber` Loading params form number
-  @override
-  String? get formNumber;
-
-  /// `formNumber` Loading params form number
-  set formNumber(String? value);
+  final _AtsLoadingParamsFormInput _self;
+  final $Res Function(_AtsLoadingParamsFormInput) _then;
 
   /// Create a copy of AtsLoadingParamsFormInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsLoadingParamsFormInputImplCopyWith<_$AtsLoadingParamsFormInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-AtsLoadingParamsForm _$AtsLoadingParamsFormFromJson(Map<String, dynamic> json) {
-  return _AtsLoadingParamsForm.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? receptionId = freezed,
+    Object? driver = freezed,
+    Object? sampleDensity = freezed,
+    Object? sampleTemperature = freezed,
+    Object? assetTemperature = freezed,
+    Object? analyzedAt = freezed,
+    Object? sampleType = freezed,
+    Object? formNumber = freezed,
+  }) {
+    return _then(_AtsLoadingParamsFormInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receptionId: freezed == receptionId
+          ? _self.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driver: freezed == driver
+          ? _self.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sampleDensity: freezed == sampleDensity
+          ? _self.sampleDensity
+          : sampleDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleTemperature: freezed == sampleTemperature
+          ? _self.sampleTemperature
+          : sampleTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      assetTemperature: freezed == assetTemperature
+          ? _self.assetTemperature
+          : assetTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      analyzedAt: freezed == analyzedAt
+          ? _self.analyzedAt
+          : analyzedAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleType: freezed == sampleType
+          ? _self.sampleType
+          : sampleType // ignore: cast_nullable_to_non_nullable
+              as AtsLoadingParamsSample?,
+      formNumber: freezed == formNumber
+          ? _self.formNumber
+          : formNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsLoadingParamsForm {
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// `assetId` What asset is linked to loading params form (Truck).
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// `asset` What asset is linked to loading params form (Truck).
-  Asset? get asset => throw _privateConstructorUsedError;
+  Asset? get asset;
 
   /// `receptionId` linked to loading params form.
-  String? get receptionId => throw _privateConstructorUsedError;
+  String? get receptionId;
 
   /// `reception` linked to loading params form.
-  AtsReception? get reception => throw _privateConstructorUsedError;
+  AtsReception? get reception;
 
   /// `driver` name
-  String? get driver => throw _privateConstructorUsedError;
+  String? get driver;
 
   /// `sampleDensity` is loading params form density
-  double? get sampleDensity => throw _privateConstructorUsedError;
+  double? get sampleDensity;
 
   /// `sampleTemperature` is loading params form temperature
-  double? get sampleTemperature => throw _privateConstructorUsedError;
+  double? get sampleTemperature;
 
   /// `assetTemperature` represent the asset temperature
-  double? get assetTemperature => throw _privateConstructorUsedError;
+  double? get assetTemperature;
 
   ///  `analyzedAt` represent when the asset density in UNIX
   @TimestampOrNullConverter()
-  DateTime? get analyzedAt => throw _privateConstructorUsedError;
+  DateTime? get analyzedAt;
 
   /// `sampleType` represent the loading params sample type
   @AtsLoadingParamsSampleOrNullConverter()
-  AtsLoadingParamsSample? get sampleType => throw _privateConstructorUsedError;
+  AtsLoadingParamsSample? get sampleType;
 
   /// `fuelType` is the fuel type of the entry.
   @AtsFuelTypeOrNullConverter()
-  AtsFuelType? get fuelType => throw _privateConstructorUsedError;
+  AtsFuelType? get fuelType;
 
   /// `formNumber` Loading params form number
-  String? get formNumber => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsLoadingParamsForm to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get formNumber;
 
   /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsLoadingParamsFormCopyWith<AtsLoadingParamsForm> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsLoadingParamsFormCopyWithImpl<AtsLoadingParamsForm>(
+          this as AtsLoadingParamsForm, _$identity);
+
+  /// Serializes this AtsLoadingParamsForm to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsLoadingParamsForm &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.receptionId, receptionId) ||
+                other.receptionId == receptionId) &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
+            (identical(other.driver, driver) || other.driver == driver) &&
+            (identical(other.sampleDensity, sampleDensity) ||
+                other.sampleDensity == sampleDensity) &&
+            (identical(other.sampleTemperature, sampleTemperature) ||
+                other.sampleTemperature == sampleTemperature) &&
+            (identical(other.assetTemperature, assetTemperature) ||
+                other.assetTemperature == assetTemperature) &&
+            (identical(other.analyzedAt, analyzedAt) ||
+                other.analyzedAt == analyzedAt) &&
+            (identical(other.sampleType, sampleType) ||
+                other.sampleType == sampleType) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.formNumber, formNumber) ||
+                other.formNumber == formNumber));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      receptionId,
+      reception,
+      driver,
+      sampleDensity,
+      sampleTemperature,
+      assetTemperature,
+      analyzedAt,
+      sampleType,
+      fuelType,
+      formNumber);
+
+  @override
+  String toString() {
+    return 'AtsLoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsLoadingParamsFormCopyWith<$Res> {
+abstract mixin class $AtsLoadingParamsFormCopyWith<$Res> {
   factory $AtsLoadingParamsFormCopyWith(AtsLoadingParamsForm value,
-          $Res Function(AtsLoadingParamsForm) then) =
-      _$AtsLoadingParamsFormCopyWithImpl<$Res, AtsLoadingParamsForm>;
+          $Res Function(AtsLoadingParamsForm) _then) =
+      _$AtsLoadingParamsFormCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -8981,15 +8495,12 @@ abstract class $AtsLoadingParamsFormCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsLoadingParamsFormCopyWithImpl<$Res,
-        $Val extends AtsLoadingParamsForm>
+class _$AtsLoadingParamsFormCopyWithImpl<$Res>
     implements $AtsLoadingParamsFormCopyWith<$Res> {
-  _$AtsLoadingParamsFormCopyWithImpl(this._value, this._then);
+  _$AtsLoadingParamsFormCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsLoadingParamsForm _self;
+  final $Res Function(AtsLoadingParamsForm) _then;
 
   /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
@@ -9010,60 +8521,60 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res,
     Object? fuelType = freezed,
     Object? formNumber = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       asset: freezed == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       receptionId: freezed == receptionId
-          ? _value.receptionId
+          ? _self.receptionId
           : receptionId // ignore: cast_nullable_to_non_nullable
               as String?,
       reception: freezed == reception
-          ? _value.reception
+          ? _self.reception
           : reception // ignore: cast_nullable_to_non_nullable
               as AtsReception?,
       driver: freezed == driver
-          ? _value.driver
+          ? _self.driver
           : driver // ignore: cast_nullable_to_non_nullable
               as String?,
       sampleDensity: freezed == sampleDensity
-          ? _value.sampleDensity
+          ? _self.sampleDensity
           : sampleDensity // ignore: cast_nullable_to_non_nullable
               as double?,
       sampleTemperature: freezed == sampleTemperature
-          ? _value.sampleTemperature
+          ? _self.sampleTemperature
           : sampleTemperature // ignore: cast_nullable_to_non_nullable
               as double?,
       assetTemperature: freezed == assetTemperature
-          ? _value.assetTemperature
+          ? _self.assetTemperature
           : assetTemperature // ignore: cast_nullable_to_non_nullable
               as double?,
       analyzedAt: freezed == analyzedAt
-          ? _value.analyzedAt
+          ? _self.analyzedAt
           : analyzedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       sampleType: freezed == sampleType
-          ? _value.sampleType
+          ? _self.sampleType
           : sampleType // ignore: cast_nullable_to_non_nullable
               as AtsLoadingParamsSample?,
       fuelType: freezed == fuelType
-          ? _value.fuelType
+          ? _self.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as AtsFuelType?,
       formNumber: freezed == formNumber
-          ? _value.formNumber
+          ? _self.formNumber
           : formNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsLoadingParamsForm
@@ -9071,12 +8582,12 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
-    if (_value.asset == null) {
+    if (_self.asset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
     });
   }
 
@@ -9085,134 +8596,20 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AtsReceptionCopyWith<$Res>? get reception {
-    if (_value.reception == null) {
+    if (_self.reception == null) {
       return null;
     }
 
-    return $AtsReceptionCopyWith<$Res>(_value.reception!, (value) {
-      return _then(_value.copyWith(reception: value) as $Val);
+    return $AtsReceptionCopyWith<$Res>(_self.reception!, (value) {
+      return _then(_self.copyWith(reception: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsLoadingParamsFormImplCopyWith<$Res>
-    implements $AtsLoadingParamsFormCopyWith<$Res> {
-  factory _$$AtsLoadingParamsFormImplCopyWith(_$AtsLoadingParamsFormImpl value,
-          $Res Function(_$AtsLoadingParamsFormImpl) then) =
-      __$$AtsLoadingParamsFormImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String? assetId,
-      Asset? asset,
-      String? receptionId,
-      AtsReception? reception,
-      String? driver,
-      double? sampleDensity,
-      double? sampleTemperature,
-      double? assetTemperature,
-      @TimestampOrNullConverter() DateTime? analyzedAt,
-      @AtsLoadingParamsSampleOrNullConverter()
-      AtsLoadingParamsSample? sampleType,
-      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-      String? formNumber});
-
-  @override
-  $AssetCopyWith<$Res>? get asset;
-  @override
-  $AtsReceptionCopyWith<$Res>? get reception;
-}
-
-/// @nodoc
-class __$$AtsLoadingParamsFormImplCopyWithImpl<$Res>
-    extends _$AtsLoadingParamsFormCopyWithImpl<$Res, _$AtsLoadingParamsFormImpl>
-    implements _$$AtsLoadingParamsFormImplCopyWith<$Res> {
-  __$$AtsLoadingParamsFormImplCopyWithImpl(_$AtsLoadingParamsFormImpl _value,
-      $Res Function(_$AtsLoadingParamsFormImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? assetId = freezed,
-    Object? asset = freezed,
-    Object? receptionId = freezed,
-    Object? reception = freezed,
-    Object? driver = freezed,
-    Object? sampleDensity = freezed,
-    Object? sampleTemperature = freezed,
-    Object? assetTemperature = freezed,
-    Object? analyzedAt = freezed,
-    Object? sampleType = freezed,
-    Object? fuelType = freezed,
-    Object? formNumber = freezed,
-  }) {
-    return _then(_$AtsLoadingParamsFormImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      receptionId: freezed == receptionId
-          ? _value.receptionId
-          : receptionId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reception: freezed == reception
-          ? _value.reception
-          : reception // ignore: cast_nullable_to_non_nullable
-              as AtsReception?,
-      driver: freezed == driver
-          ? _value.driver
-          : driver // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sampleDensity: freezed == sampleDensity
-          ? _value.sampleDensity
-          : sampleDensity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sampleTemperature: freezed == sampleTemperature
-          ? _value.sampleTemperature
-          : sampleTemperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      assetTemperature: freezed == assetTemperature
-          ? _value.assetTemperature
-          : assetTemperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      analyzedAt: freezed == analyzedAt
-          ? _value.analyzedAt
-          : analyzedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      sampleType: freezed == sampleType
-          ? _value.sampleType
-          : sampleType // ignore: cast_nullable_to_non_nullable
-              as AtsLoadingParamsSample?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as AtsFuelType?,
-      formNumber: freezed == formNumber
-          ? _value.formNumber
-          : formNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
-  _$AtsLoadingParamsFormImpl(
+class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
+  _AtsLoadingParamsForm(
       {this.id,
       this.assetId,
       this.asset,
@@ -9226,9 +8623,8 @@ class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
       @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
       @AtsFuelTypeOrNullConverter() this.fuelType,
       this.formNumber});
-
-  factory _$AtsLoadingParamsFormImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsLoadingParamsFormImplFromJson(json);
+  factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) =>
+      _$AtsLoadingParamsFormFromJson(json);
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
@@ -9285,16 +8681,27 @@ class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
   @override
   final String? formNumber;
 
+  /// Create a copy of AtsLoadingParamsForm
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsLoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsLoadingParamsFormCopyWith<_AtsLoadingParamsForm> get copyWith =>
+      __$AtsLoadingParamsFormCopyWithImpl<_AtsLoadingParamsForm>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsLoadingParamsFormToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsLoadingParamsFormImpl &&
+            other is _AtsLoadingParamsForm &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
@@ -9337,188 +8744,209 @@ class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
       fuelType,
       formNumber);
 
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsLoadingParamsFormImplCopyWith<_$AtsLoadingParamsFormImpl>
-      get copyWith =>
-          __$$AtsLoadingParamsFormImplCopyWithImpl<_$AtsLoadingParamsFormImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsLoadingParamsFormImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsLoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber)';
   }
 }
 
-abstract class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
-  factory _AtsLoadingParamsForm(
-      {final String? id,
-      final String? assetId,
-      final Asset? asset,
-      final String? receptionId,
-      final AtsReception? reception,
-      final String? driver,
-      final double? sampleDensity,
-      final double? sampleTemperature,
-      final double? assetTemperature,
-      @TimestampOrNullConverter() final DateTime? analyzedAt,
+/// @nodoc
+abstract mixin class _$AtsLoadingParamsFormCopyWith<$Res>
+    implements $AtsLoadingParamsFormCopyWith<$Res> {
+  factory _$AtsLoadingParamsFormCopyWith(_AtsLoadingParamsForm value,
+          $Res Function(_AtsLoadingParamsForm) _then) =
+      __$AtsLoadingParamsFormCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      Asset? asset,
+      String? receptionId,
+      AtsReception? reception,
+      String? driver,
+      double? sampleDensity,
+      double? sampleTemperature,
+      double? assetTemperature,
+      @TimestampOrNullConverter() DateTime? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
-      final AtsLoadingParamsSample? sampleType,
-      @AtsFuelTypeOrNullConverter() final AtsFuelType? fuelType,
-      final String? formNumber}) = _$AtsLoadingParamsFormImpl;
+      AtsLoadingParamsSample? sampleType,
+      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+      String? formNumber});
 
-  factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) =
-      _$AtsLoadingParamsFormImpl.fromJson;
-
-  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
-  String? get id;
-
-  /// `assetId` What asset is linked to loading params form (Truck).
+  $AssetCopyWith<$Res>? get asset;
   @override
-  String? get assetId;
+  $AtsReceptionCopyWith<$Res>? get reception;
+}
 
-  /// `asset` What asset is linked to loading params form (Truck).
-  @override
-  Asset? get asset;
+/// @nodoc
+class __$AtsLoadingParamsFormCopyWithImpl<$Res>
+    implements _$AtsLoadingParamsFormCopyWith<$Res> {
+  __$AtsLoadingParamsFormCopyWithImpl(this._self, this._then);
 
-  /// `receptionId` linked to loading params form.
-  @override
-  String? get receptionId;
-
-  /// `reception` linked to loading params form.
-  @override
-  AtsReception? get reception;
-
-  /// `driver` name
-  @override
-  String? get driver;
-
-  /// `sampleDensity` is loading params form density
-  @override
-  double? get sampleDensity;
-
-  /// `sampleTemperature` is loading params form temperature
-  @override
-  double? get sampleTemperature;
-
-  /// `assetTemperature` represent the asset temperature
-  @override
-  double? get assetTemperature;
-
-  ///  `analyzedAt` represent when the asset density in UNIX
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get analyzedAt;
-
-  /// `sampleType` represent the loading params sample type
-  @override
-  @AtsLoadingParamsSampleOrNullConverter()
-  AtsLoadingParamsSample? get sampleType;
-
-  /// `fuelType` is the fuel type of the entry.
-  @override
-  @AtsFuelTypeOrNullConverter()
-  AtsFuelType? get fuelType;
-
-  /// `formNumber` Loading params form number
-  @override
-  String? get formNumber;
+  final _AtsLoadingParamsForm _self;
+  final $Res Function(_AtsLoadingParamsForm) _then;
 
   /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsLoadingParamsFormImplCopyWith<_$AtsLoadingParamsFormImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? receptionId = freezed,
+    Object? reception = freezed,
+    Object? driver = freezed,
+    Object? sampleDensity = freezed,
+    Object? sampleTemperature = freezed,
+    Object? assetTemperature = freezed,
+    Object? analyzedAt = freezed,
+    Object? sampleType = freezed,
+    Object? fuelType = freezed,
+    Object? formNumber = freezed,
+  }) {
+    return _then(_AtsLoadingParamsForm(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      receptionId: freezed == receptionId
+          ? _self.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reception: freezed == reception
+          ? _self.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as AtsReception?,
+      driver: freezed == driver
+          ? _self.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sampleDensity: freezed == sampleDensity
+          ? _self.sampleDensity
+          : sampleDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleTemperature: freezed == sampleTemperature
+          ? _self.sampleTemperature
+          : sampleTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      assetTemperature: freezed == assetTemperature
+          ? _self.assetTemperature
+          : assetTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      analyzedAt: freezed == analyzedAt
+          ? _self.analyzedAt
+          : analyzedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      sampleType: freezed == sampleType
+          ? _self.sampleType
+          : sampleType // ignore: cast_nullable_to_non_nullable
+              as AtsLoadingParamsSample?,
+      fuelType: freezed == fuelType
+          ? _self.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as AtsFuelType?,
+      formNumber: freezed == formNumber
+          ? _self.formNumber
+          : formNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 
-AtsExitStatus _$AtsExitStatusFromJson(Map<String, dynamic> json) {
-  return _AtsExitStatus.fromJson(json);
+  /// Create a copy of AtsLoadingParamsForm
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of AtsLoadingParamsForm
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsReceptionCopyWith<$Res>? get reception {
+    if (_self.reception == null) {
+      return null;
+    }
+
+    return $AtsReceptionCopyWith<$Res>(_self.reception!, (value) {
+      return _then(_self.copyWith(reception: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsExitStatus {
   /// Date of the [AtsExit]
   @TimestampOrNullConverter()
-  DateTime? get date => throw _privateConstructorUsedError;
+  DateTime? get date;
 
   /// Validation between total liters by fluxometers and to total liters by exits records..
-  bool? get status => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsExitStatus to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get status;
 
   /// Create a copy of AtsExitStatus
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsExitStatusCopyWith<AtsExitStatus> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsExitStatusCopyWith<$Res> {
-  factory $AtsExitStatusCopyWith(
-          AtsExitStatus value, $Res Function(AtsExitStatus) then) =
-      _$AtsExitStatusCopyWithImpl<$Res, AtsExitStatus>;
-  @useResult
-  $Res call({@TimestampOrNullConverter() DateTime? date, bool? status});
-}
-
-/// @nodoc
-class _$AtsExitStatusCopyWithImpl<$Res, $Val extends AtsExitStatus>
-    implements $AtsExitStatusCopyWith<$Res> {
-  _$AtsExitStatusCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsExitStatus
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsExitStatusCopyWith<AtsExitStatus> get copyWith =>
+      _$AtsExitStatusCopyWithImpl<AtsExitStatus>(
+          this as AtsExitStatus, _$identity);
+
+  /// Serializes this AtsExitStatus to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? date = freezed,
-    Object? status = freezed,
-  }) {
-    return _then(_value.copyWith(
-      date: freezed == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsExitStatus &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, date, status);
+
+  @override
+  String toString() {
+    return 'AtsExitStatus(date: $date, status: $status)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsExitStatusImplCopyWith<$Res>
-    implements $AtsExitStatusCopyWith<$Res> {
-  factory _$$AtsExitStatusImplCopyWith(
-          _$AtsExitStatusImpl value, $Res Function(_$AtsExitStatusImpl) then) =
-      __$$AtsExitStatusImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsExitStatusCopyWith<$Res> {
+  factory $AtsExitStatusCopyWith(
+          AtsExitStatus value, $Res Function(AtsExitStatus) _then) =
+      _$AtsExitStatusCopyWithImpl;
   @useResult
   $Res call({@TimestampOrNullConverter() DateTime? date, bool? status});
 }
 
 /// @nodoc
-class __$$AtsExitStatusImplCopyWithImpl<$Res>
-    extends _$AtsExitStatusCopyWithImpl<$Res, _$AtsExitStatusImpl>
-    implements _$$AtsExitStatusImplCopyWith<$Res> {
-  __$$AtsExitStatusImplCopyWithImpl(
-      _$AtsExitStatusImpl _value, $Res Function(_$AtsExitStatusImpl) _then)
-      : super(_value, _then);
+class _$AtsExitStatusCopyWithImpl<$Res>
+    implements $AtsExitStatusCopyWith<$Res> {
+  _$AtsExitStatusCopyWithImpl(this._self, this._then);
+
+  final AtsExitStatus _self;
+  final $Res Function(AtsExitStatus) _then;
 
   /// Create a copy of AtsExitStatus
   /// with the given fields replaced by the non-null parameter values.
@@ -9528,13 +8956,13 @@ class __$$AtsExitStatusImplCopyWithImpl<$Res>
     Object? date = freezed,
     Object? status = freezed,
   }) {
-    return _then(_$AtsExitStatusImpl(
+    return _then(_self.copyWith(
       date: freezed == date
-          ? _value.date
+          ? _self.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -9543,12 +8971,10 @@ class __$$AtsExitStatusImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsExitStatusImpl implements _AtsExitStatus {
-  const _$AtsExitStatusImpl(
-      {@TimestampOrNullConverter() this.date, this.status});
-
-  factory _$AtsExitStatusImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsExitStatusImplFromJson(json);
+class _AtsExitStatus implements AtsExitStatus {
+  const _AtsExitStatus({@TimestampOrNullConverter() this.date, this.status});
+  factory _AtsExitStatus.fromJson(Map<String, dynamic> json) =>
+      _$AtsExitStatusFromJson(json);
 
   /// Date of the [AtsExit]
   @override
@@ -9559,16 +8985,26 @@ class _$AtsExitStatusImpl implements _AtsExitStatus {
   @override
   final bool? status;
 
+  /// Create a copy of AtsExitStatus
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsExitStatus(date: $date, status: $status)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsExitStatusCopyWith<_AtsExitStatus> get copyWith =>
+      __$AtsExitStatusCopyWithImpl<_AtsExitStatus>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsExitStatusToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsExitStatusImpl &&
+            other is _AtsExitStatus &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.status, status) || other.status == status));
   }
@@ -9577,129 +9013,205 @@ class _$AtsExitStatusImpl implements _AtsExitStatus {
   @override
   int get hashCode => Object.hash(runtimeType, date, status);
 
-  /// Create a copy of AtsExitStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsExitStatusImplCopyWith<_$AtsExitStatusImpl> get copyWith =>
-      __$$AtsExitStatusImplCopyWithImpl<_$AtsExitStatusImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsExitStatusImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsExitStatus(date: $date, status: $status)';
   }
 }
 
-abstract class _AtsExitStatus implements AtsExitStatus {
-  const factory _AtsExitStatus(
-      {@TimestampOrNullConverter() final DateTime? date,
-      final bool? status}) = _$AtsExitStatusImpl;
-
-  factory _AtsExitStatus.fromJson(Map<String, dynamic> json) =
-      _$AtsExitStatusImpl.fromJson;
-
-  /// Date of the [AtsExit]
+/// @nodoc
+abstract mixin class _$AtsExitStatusCopyWith<$Res>
+    implements $AtsExitStatusCopyWith<$Res> {
+  factory _$AtsExitStatusCopyWith(
+          _AtsExitStatus value, $Res Function(_AtsExitStatus) _then) =
+      __$AtsExitStatusCopyWithImpl;
   @override
-  @TimestampOrNullConverter()
-  DateTime? get date;
+  @useResult
+  $Res call({@TimestampOrNullConverter() DateTime? date, bool? status});
+}
 
-  /// Validation between total liters by fluxometers and to total liters by exits records..
-  @override
-  bool? get status;
+/// @nodoc
+class __$AtsExitStatusCopyWithImpl<$Res>
+    implements _$AtsExitStatusCopyWith<$Res> {
+  __$AtsExitStatusCopyWithImpl(this._self, this._then);
+
+  final _AtsExitStatus _self;
+  final $Res Function(_AtsExitStatus) _then;
 
   /// Create a copy of AtsExitStatus
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsExitStatusImplCopyWith<_$AtsExitStatusImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsExit _$AtsExitFromJson(Map<String, dynamic> json) {
-  return _AtsExit.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? date = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_AtsExitStatus(
+      date: freezed == date
+          ? _self.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsExit {
   /// `id` of the volume. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// `identifier` is the exit identifier.
-  int? get identifier => throw _privateConstructorUsedError;
+  int? get identifier;
 
   /// `fromAssetId` is the [Asset] kind pump to generate the exit.
-  String? get fromAssetId => throw _privateConstructorUsedError;
+  String? get fromAssetId;
 
   /// `fromAsset` is the id [Asset] kind pump to generate the exit.
-  Asset? get fromAsset => throw _privateConstructorUsedError;
+  Asset? get fromAsset;
 
   /// `toAssetId` is the id [Asset] that receive the fuel (Receive the exit).
-  String? get toAssetId => throw _privateConstructorUsedError;
+  String? get toAssetId;
 
   /// `toAsset` is the [Asset] that receive the fuel (Receive the exit).
-  Asset? get toAsset => throw _privateConstructorUsedError;
+  Asset? get toAsset;
 
   /// `errorPercent` is the errror percent between reception and sensor entry.
-  double? get errorPercent => throw _privateConstructorUsedError;
+  double? get errorPercent;
 
   /// `totalLiters` is the total liters of the exit.
-  double? get totalLiters => throw _privateConstructorUsedError;
+  double? get totalLiters;
 
   /// `toAssetMileage` is the Odometer of the asset mileage registered.
-  double? get toAssetMileage => throw _privateConstructorUsedError;
+  double? get toAssetMileage;
 
   /// `startAt` is the start exit date.
   @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
+  DateTime? get startAt;
 
   /// `endAt` is the end exit date.
   @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
+  DateTime? get endAt;
 
   /// `totalTime` is the total exit time.
-  String? get totalTime => throw _privateConstructorUsedError;
+  String? get totalTime;
 
   /// `totalTimeDuration` is the duration in seconds of the exit.
   @DurationOrNullConverter()
-  Duration? get totalTimeDuration => throw _privateConstructorUsedError;
+  Duration? get totalTimeDuration;
 
   /// `initialFluxometer` is the initial fluxometer of the day.
-  double? get initialFluxometer => throw _privateConstructorUsedError;
+  double? get initialFluxometer;
 
   /// `finalFluxometer` is the final fluxometer of the day.
-  double? get finalFluxometer => throw _privateConstructorUsedError;
+  double? get finalFluxometer;
 
   /// `initialTankVolume` is the initial tank volume of the day.
-  double? get initialTankVolume => throw _privateConstructorUsedError;
+  double? get initialTankVolume;
 
   /// `finalTankVolume` is the final tank volume of the day.
-  double? get finalTankVolume => throw _privateConstructorUsedError;
+  double? get finalTankVolume;
 
   /// `price` is the unit price per liter of exit.
-  double? get price => throw _privateConstructorUsedError;
+  double? get price;
 
   /// `attendantName` is the attendant name.
-  String? get attendantName => throw _privateConstructorUsedError;
+  String? get attendantName;
 
   /// `attendantId` is the attendant id.
-  String? get attendantId => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsExit to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get attendantId;
 
   /// Create a copy of AtsExit
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsExitCopyWith<AtsExit> get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $AtsExitCopyWith<AtsExit> get copyWith =>
+      _$AtsExitCopyWithImpl<AtsExit>(this as AtsExit, _$identity);
+
+  /// Serializes this AtsExit to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsExit &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.identifier, identifier) ||
+                other.identifier == identifier) &&
+            (identical(other.fromAssetId, fromAssetId) ||
+                other.fromAssetId == fromAssetId) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
+            (identical(other.toAssetId, toAssetId) ||
+                other.toAssetId == toAssetId) &&
+            (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
+            (identical(other.errorPercent, errorPercent) ||
+                other.errorPercent == errorPercent) &&
+            (identical(other.totalLiters, totalLiters) ||
+                other.totalLiters == totalLiters) &&
+            (identical(other.toAssetMileage, toAssetMileage) ||
+                other.toAssetMileage == toAssetMileage) &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt) &&
+            (identical(other.totalTime, totalTime) ||
+                other.totalTime == totalTime) &&
+            (identical(other.totalTimeDuration, totalTimeDuration) ||
+                other.totalTimeDuration == totalTimeDuration) &&
+            (identical(other.initialFluxometer, initialFluxometer) ||
+                other.initialFluxometer == initialFluxometer) &&
+            (identical(other.finalFluxometer, finalFluxometer) ||
+                other.finalFluxometer == finalFluxometer) &&
+            (identical(other.initialTankVolume, initialTankVolume) ||
+                other.initialTankVolume == initialTankVolume) &&
+            (identical(other.finalTankVolume, finalTankVolume) ||
+                other.finalTankVolume == finalTankVolume) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.attendantName, attendantName) ||
+                other.attendantName == attendantName) &&
+            (identical(other.attendantId, attendantId) ||
+                other.attendantId == attendantId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        identifier,
+        fromAssetId,
+        fromAsset,
+        toAssetId,
+        toAsset,
+        errorPercent,
+        totalLiters,
+        toAssetMileage,
+        startAt,
+        endAt,
+        totalTime,
+        totalTimeDuration,
+        initialFluxometer,
+        finalFluxometer,
+        initialTankVolume,
+        finalTankVolume,
+        price,
+        attendantName,
+        attendantId
+      ]);
+
+  @override
+  String toString() {
+    return 'AtsExit(id: $id, identifier: $identifier, fromAssetId: $fromAssetId, fromAsset: $fromAsset, toAssetId: $toAssetId, toAsset: $toAsset, errorPercent: $errorPercent, totalLiters: $totalLiters, toAssetMileage: $toAssetMileage, startAt: $startAt, endAt: $endAt, totalTime: $totalTime, totalTimeDuration: $totalTimeDuration, initialFluxometer: $initialFluxometer, finalFluxometer: $finalFluxometer, initialTankVolume: $initialTankVolume, finalTankVolume: $finalTankVolume, price: $price, attendantName: $attendantName, attendantId: $attendantId)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsExitCopyWith<$Res> {
-  factory $AtsExitCopyWith(AtsExit value, $Res Function(AtsExit) then) =
-      _$AtsExitCopyWithImpl<$Res, AtsExit>;
+abstract mixin class $AtsExitCopyWith<$Res> {
+  factory $AtsExitCopyWith(AtsExit value, $Res Function(AtsExit) _then) =
+      _$AtsExitCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -9728,14 +9240,11 @@ abstract class $AtsExitCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
-    implements $AtsExitCopyWith<$Res> {
-  _$AtsExitCopyWithImpl(this._value, this._then);
+class _$AtsExitCopyWithImpl<$Res> implements $AtsExitCopyWith<$Res> {
+  _$AtsExitCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsExit _self;
+  final $Res Function(AtsExit) _then;
 
   /// Create a copy of AtsExit
   /// with the given fields replaced by the non-null parameter values.
@@ -9763,88 +9272,88 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
     Object? attendantName = freezed,
     Object? attendantId = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       identifier: freezed == identifier
-          ? _value.identifier
+          ? _self.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as int?,
       fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
+          ? _self.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       fromAsset: freezed == fromAsset
-          ? _value.fromAsset
+          ? _self.fromAsset
           : fromAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       toAssetId: freezed == toAssetId
-          ? _value.toAssetId
+          ? _self.toAssetId
           : toAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       toAsset: freezed == toAsset
-          ? _value.toAsset
+          ? _self.toAsset
           : toAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       errorPercent: freezed == errorPercent
-          ? _value.errorPercent
+          ? _self.errorPercent
           : errorPercent // ignore: cast_nullable_to_non_nullable
               as double?,
       totalLiters: freezed == totalLiters
-          ? _value.totalLiters
+          ? _self.totalLiters
           : totalLiters // ignore: cast_nullable_to_non_nullable
               as double?,
       toAssetMileage: freezed == toAssetMileage
-          ? _value.toAssetMileage
+          ? _self.toAssetMileage
           : toAssetMileage // ignore: cast_nullable_to_non_nullable
               as double?,
       startAt: freezed == startAt
-          ? _value.startAt
+          ? _self.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       endAt: freezed == endAt
-          ? _value.endAt
+          ? _self.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       totalTime: freezed == totalTime
-          ? _value.totalTime
+          ? _self.totalTime
           : totalTime // ignore: cast_nullable_to_non_nullable
               as String?,
       totalTimeDuration: freezed == totalTimeDuration
-          ? _value.totalTimeDuration
+          ? _self.totalTimeDuration
           : totalTimeDuration // ignore: cast_nullable_to_non_nullable
               as Duration?,
       initialFluxometer: freezed == initialFluxometer
-          ? _value.initialFluxometer
+          ? _self.initialFluxometer
           : initialFluxometer // ignore: cast_nullable_to_non_nullable
               as double?,
       finalFluxometer: freezed == finalFluxometer
-          ? _value.finalFluxometer
+          ? _self.finalFluxometer
           : finalFluxometer // ignore: cast_nullable_to_non_nullable
               as double?,
       initialTankVolume: freezed == initialTankVolume
-          ? _value.initialTankVolume
+          ? _self.initialTankVolume
           : initialTankVolume // ignore: cast_nullable_to_non_nullable
               as double?,
       finalTankVolume: freezed == finalTankVolume
-          ? _value.finalTankVolume
+          ? _self.finalTankVolume
           : finalTankVolume // ignore: cast_nullable_to_non_nullable
               as double?,
       price: freezed == price
-          ? _value.price
+          ? _self.price
           : price // ignore: cast_nullable_to_non_nullable
               as double?,
       attendantName: freezed == attendantName
-          ? _value.attendantName
+          ? _self.attendantName
           : attendantName // ignore: cast_nullable_to_non_nullable
               as String?,
       attendantId: freezed == attendantId
-          ? _value.attendantId
+          ? _self.attendantId
           : attendantId // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsExit
@@ -9852,12 +9361,12 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get fromAsset {
-    if (_value.fromAsset == null) {
+    if (_self.fromAsset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.fromAsset!, (value) {
-      return _then(_value.copyWith(fromAsset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.fromAsset!, (value) {
+      return _then(_self.copyWith(fromAsset: value));
     });
   }
 
@@ -9866,174 +9375,20 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get toAsset {
-    if (_value.toAsset == null) {
+    if (_self.toAsset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.toAsset!, (value) {
-      return _then(_value.copyWith(toAsset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.toAsset!, (value) {
+      return _then(_self.copyWith(toAsset: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsExitImplCopyWith<$Res> implements $AtsExitCopyWith<$Res> {
-  factory _$$AtsExitImplCopyWith(
-          _$AtsExitImpl value, $Res Function(_$AtsExitImpl) then) =
-      __$$AtsExitImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      int? identifier,
-      String? fromAssetId,
-      Asset? fromAsset,
-      String? toAssetId,
-      Asset? toAsset,
-      double? errorPercent,
-      double? totalLiters,
-      double? toAssetMileage,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      String? totalTime,
-      @DurationOrNullConverter() Duration? totalTimeDuration,
-      double? initialFluxometer,
-      double? finalFluxometer,
-      double? initialTankVolume,
-      double? finalTankVolume,
-      double? price,
-      String? attendantName,
-      String? attendantId});
-
-  @override
-  $AssetCopyWith<$Res>? get fromAsset;
-  @override
-  $AssetCopyWith<$Res>? get toAsset;
-}
-
-/// @nodoc
-class __$$AtsExitImplCopyWithImpl<$Res>
-    extends _$AtsExitCopyWithImpl<$Res, _$AtsExitImpl>
-    implements _$$AtsExitImplCopyWith<$Res> {
-  __$$AtsExitImplCopyWithImpl(
-      _$AtsExitImpl _value, $Res Function(_$AtsExitImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? identifier = freezed,
-    Object? fromAssetId = freezed,
-    Object? fromAsset = freezed,
-    Object? toAssetId = freezed,
-    Object? toAsset = freezed,
-    Object? errorPercent = freezed,
-    Object? totalLiters = freezed,
-    Object? toAssetMileage = freezed,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-    Object? totalTime = freezed,
-    Object? totalTimeDuration = freezed,
-    Object? initialFluxometer = freezed,
-    Object? finalFluxometer = freezed,
-    Object? initialTankVolume = freezed,
-    Object? finalTankVolume = freezed,
-    Object? price = freezed,
-    Object? attendantName = freezed,
-    Object? attendantId = freezed,
-  }) {
-    return _then(_$AtsExitImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      identifier: freezed == identifier
-          ? _value.identifier
-          : identifier // ignore: cast_nullable_to_non_nullable
-              as int?,
-      fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
-          : fromAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromAsset: freezed == fromAsset
-          ? _value.fromAsset
-          : fromAsset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      toAssetId: freezed == toAssetId
-          ? _value.toAssetId
-          : toAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toAsset: freezed == toAsset
-          ? _value.toAsset
-          : toAsset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      errorPercent: freezed == errorPercent
-          ? _value.errorPercent
-          : errorPercent // ignore: cast_nullable_to_non_nullable
-              as double?,
-      totalLiters: freezed == totalLiters
-          ? _value.totalLiters
-          : totalLiters // ignore: cast_nullable_to_non_nullable
-              as double?,
-      toAssetMileage: freezed == toAssetMileage
-          ? _value.toAssetMileage
-          : toAssetMileage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      totalTime: freezed == totalTime
-          ? _value.totalTime
-          : totalTime // ignore: cast_nullable_to_non_nullable
-              as String?,
-      totalTimeDuration: freezed == totalTimeDuration
-          ? _value.totalTimeDuration
-          : totalTimeDuration // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-      initialFluxometer: freezed == initialFluxometer
-          ? _value.initialFluxometer
-          : initialFluxometer // ignore: cast_nullable_to_non_nullable
-              as double?,
-      finalFluxometer: freezed == finalFluxometer
-          ? _value.finalFluxometer
-          : finalFluxometer // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialTankVolume: freezed == initialTankVolume
-          ? _value.initialTankVolume
-          : initialTankVolume // ignore: cast_nullable_to_non_nullable
-              as double?,
-      finalTankVolume: freezed == finalTankVolume
-          ? _value.finalTankVolume
-          : finalTankVolume // ignore: cast_nullable_to_non_nullable
-              as double?,
-      price: freezed == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      attendantName: freezed == attendantName
-          ? _value.attendantName
-          : attendantName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attendantId: freezed == attendantId
-          ? _value.attendantId
-          : attendantId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsExitImpl implements _AtsExit {
-  const _$AtsExitImpl(
+class _AtsExit implements AtsExit {
+  const _AtsExit(
       {this.id,
       this.identifier,
       this.fromAssetId,
@@ -10054,9 +9409,8 @@ class _$AtsExitImpl implements _AtsExit {
       this.price,
       this.attendantName,
       this.attendantId});
-
-  factory _$AtsExitImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsExitImplFromJson(json);
+  factory _AtsExit.fromJson(Map<String, dynamic> json) =>
+      _$AtsExitFromJson(json);
 
   /// `id` of the volume. This ID is unique.
   @override
@@ -10141,16 +9495,26 @@ class _$AtsExitImpl implements _AtsExit {
   @override
   final String? attendantId;
 
+  /// Create a copy of AtsExit
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsExit(id: $id, identifier: $identifier, fromAssetId: $fromAssetId, fromAsset: $fromAsset, toAssetId: $toAssetId, toAsset: $toAsset, errorPercent: $errorPercent, totalLiters: $totalLiters, toAssetMileage: $toAssetMileage, startAt: $startAt, endAt: $endAt, totalTime: $totalTime, totalTimeDuration: $totalTimeDuration, initialFluxometer: $initialFluxometer, finalFluxometer: $finalFluxometer, initialTankVolume: $initialTankVolume, finalTankVolume: $finalTankVolume, price: $price, attendantName: $attendantName, attendantId: $attendantId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsExitCopyWith<_AtsExit> get copyWith =>
+      __$AtsExitCopyWithImpl<_AtsExit>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsExitToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsExitImpl &&
+            other is _AtsExit &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.identifier, identifier) ||
                 other.identifier == identifier) &&
@@ -10214,200 +9578,302 @@ class _$AtsExitImpl implements _AtsExit {
         attendantId
       ]);
 
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsExitImplCopyWith<_$AtsExitImpl> get copyWith =>
-      __$$AtsExitImplCopyWithImpl<_$AtsExitImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsExitImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsExit(id: $id, identifier: $identifier, fromAssetId: $fromAssetId, fromAsset: $fromAsset, toAssetId: $toAssetId, toAsset: $toAsset, errorPercent: $errorPercent, totalLiters: $totalLiters, toAssetMileage: $toAssetMileage, startAt: $startAt, endAt: $endAt, totalTime: $totalTime, totalTimeDuration: $totalTimeDuration, initialFluxometer: $initialFluxometer, finalFluxometer: $finalFluxometer, initialTankVolume: $initialTankVolume, finalTankVolume: $finalTankVolume, price: $price, attendantName: $attendantName, attendantId: $attendantId)';
   }
 }
 
-abstract class _AtsExit implements AtsExit {
-  const factory _AtsExit(
-      {final String? id,
-      final int? identifier,
-      final String? fromAssetId,
-      final Asset? fromAsset,
-      final String? toAssetId,
-      final Asset? toAsset,
-      final double? errorPercent,
-      final double? totalLiters,
-      final double? toAssetMileage,
-      @TimestampOrNullConverter() final DateTime? startAt,
-      @TimestampOrNullConverter() final DateTime? endAt,
-      final String? totalTime,
-      @DurationOrNullConverter() final Duration? totalTimeDuration,
-      final double? initialFluxometer,
-      final double? finalFluxometer,
-      final double? initialTankVolume,
-      final double? finalTankVolume,
-      final double? price,
-      final String? attendantName,
-      final String? attendantId}) = _$AtsExitImpl;
-
-  factory _AtsExit.fromJson(Map<String, dynamic> json) = _$AtsExitImpl.fromJson;
-
-  /// `id` of the volume. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsExitCopyWith<$Res> implements $AtsExitCopyWith<$Res> {
+  factory _$AtsExitCopyWith(_AtsExit value, $Res Function(_AtsExit) _then) =
+      __$AtsExitCopyWithImpl;
   @override
-  String? get id;
+  @useResult
+  $Res call(
+      {String? id,
+      int? identifier,
+      String? fromAssetId,
+      Asset? fromAsset,
+      String? toAssetId,
+      Asset? toAsset,
+      double? errorPercent,
+      double? totalLiters,
+      double? toAssetMileage,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      String? totalTime,
+      @DurationOrNullConverter() Duration? totalTimeDuration,
+      double? initialFluxometer,
+      double? finalFluxometer,
+      double? initialTankVolume,
+      double? finalTankVolume,
+      double? price,
+      String? attendantName,
+      String? attendantId});
 
-  /// `identifier` is the exit identifier.
   @override
-  int? get identifier;
+  $AssetCopyWith<$Res>? get fromAsset;
+  @override
+  $AssetCopyWith<$Res>? get toAsset;
+}
 
-  /// `fromAssetId` is the [Asset] kind pump to generate the exit.
-  @override
-  String? get fromAssetId;
+/// @nodoc
+class __$AtsExitCopyWithImpl<$Res> implements _$AtsExitCopyWith<$Res> {
+  __$AtsExitCopyWithImpl(this._self, this._then);
 
-  /// `fromAsset` is the id [Asset] kind pump to generate the exit.
-  @override
-  Asset? get fromAsset;
-
-  /// `toAssetId` is the id [Asset] that receive the fuel (Receive the exit).
-  @override
-  String? get toAssetId;
-
-  /// `toAsset` is the [Asset] that receive the fuel (Receive the exit).
-  @override
-  Asset? get toAsset;
-
-  /// `errorPercent` is the errror percent between reception and sensor entry.
-  @override
-  double? get errorPercent;
-
-  /// `totalLiters` is the total liters of the exit.
-  @override
-  double? get totalLiters;
-
-  /// `toAssetMileage` is the Odometer of the asset mileage registered.
-  @override
-  double? get toAssetMileage;
-
-  /// `startAt` is the start exit date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
-
-  /// `endAt` is the end exit date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
-
-  /// `totalTime` is the total exit time.
-  @override
-  String? get totalTime;
-
-  /// `totalTimeDuration` is the duration in seconds of the exit.
-  @override
-  @DurationOrNullConverter()
-  Duration? get totalTimeDuration;
-
-  /// `initialFluxometer` is the initial fluxometer of the day.
-  @override
-  double? get initialFluxometer;
-
-  /// `finalFluxometer` is the final fluxometer of the day.
-  @override
-  double? get finalFluxometer;
-
-  /// `initialTankVolume` is the initial tank volume of the day.
-  @override
-  double? get initialTankVolume;
-
-  /// `finalTankVolume` is the final tank volume of the day.
-  @override
-  double? get finalTankVolume;
-
-  /// `price` is the unit price per liter of exit.
-  @override
-  double? get price;
-
-  /// `attendantName` is the attendant name.
-  @override
-  String? get attendantName;
-
-  /// `attendantId` is the attendant id.
-  @override
-  String? get attendantId;
+  final _AtsExit _self;
+  final $Res Function(_AtsExit) _then;
 
   /// Create a copy of AtsExit
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsExitImplCopyWith<_$AtsExitImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? identifier = freezed,
+    Object? fromAssetId = freezed,
+    Object? fromAsset = freezed,
+    Object? toAssetId = freezed,
+    Object? toAsset = freezed,
+    Object? errorPercent = freezed,
+    Object? totalLiters = freezed,
+    Object? toAssetMileage = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? totalTime = freezed,
+    Object? totalTimeDuration = freezed,
+    Object? initialFluxometer = freezed,
+    Object? finalFluxometer = freezed,
+    Object? initialTankVolume = freezed,
+    Object? finalTankVolume = freezed,
+    Object? price = freezed,
+    Object? attendantName = freezed,
+    Object? attendantId = freezed,
+  }) {
+    return _then(_AtsExit(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      identifier: freezed == identifier
+          ? _self.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as int?,
+      fromAssetId: freezed == fromAssetId
+          ? _self.fromAssetId
+          : fromAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromAsset: freezed == fromAsset
+          ? _self.fromAsset
+          : fromAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      toAssetId: freezed == toAssetId
+          ? _self.toAssetId
+          : toAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAsset: freezed == toAsset
+          ? _self.toAsset
+          : toAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      errorPercent: freezed == errorPercent
+          ? _self.errorPercent
+          : errorPercent // ignore: cast_nullable_to_non_nullable
+              as double?,
+      totalLiters: freezed == totalLiters
+          ? _self.totalLiters
+          : totalLiters // ignore: cast_nullable_to_non_nullable
+              as double?,
+      toAssetMileage: freezed == toAssetMileage
+          ? _self.toAssetMileage
+          : toAssetMileage // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startAt: freezed == startAt
+          ? _self.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _self.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      totalTime: freezed == totalTime
+          ? _self.totalTime
+          : totalTime // ignore: cast_nullable_to_non_nullable
+              as String?,
+      totalTimeDuration: freezed == totalTimeDuration
+          ? _self.totalTimeDuration
+          : totalTimeDuration // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      initialFluxometer: freezed == initialFluxometer
+          ? _self.initialFluxometer
+          : initialFluxometer // ignore: cast_nullable_to_non_nullable
+              as double?,
+      finalFluxometer: freezed == finalFluxometer
+          ? _self.finalFluxometer
+          : finalFluxometer // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialTankVolume: freezed == initialTankVolume
+          ? _self.initialTankVolume
+          : initialTankVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      finalTankVolume: freezed == finalTankVolume
+          ? _self.finalTankVolume
+          : finalTankVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      price: freezed == price
+          ? _self.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attendantName: freezed == attendantName
+          ? _self.attendantName
+          : attendantName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attendantId: freezed == attendantId
+          ? _self.attendantId
+          : attendantId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 
-AtsPossibleExit _$AtsPossibleExitFromJson(Map<String, dynamic> json) {
-  return _AtsPossibleExit.fromJson(json);
+  /// Create a copy of AtsExit
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get fromAsset {
+    if (_self.fromAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.fromAsset!, (value) {
+      return _then(_self.copyWith(fromAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsExit
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get toAsset {
+    if (_self.toAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.toAsset!, (value) {
+      return _then(_self.copyWith(toAsset: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsPossibleExit {
   /// ID of the possible exit. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// ID of the Asset
-  String? get fromAssetId => throw _privateConstructorUsedError;
+  String? get fromAssetId;
 
   /// Asset linked to exit.
-  Asset? get fromAsset => throw _privateConstructorUsedError;
+  Asset? get fromAsset;
 
   /// ID of the Sensor
-  String? get sensorId => throw _privateConstructorUsedError;
+  String? get sensorId;
 
   /// Sensor linked to exit.
-  Sensor? get sensor => throw _privateConstructorUsedError;
+  Sensor? get sensor;
 
   /// ID of the Asset
-  String? get toAssetId => throw _privateConstructorUsedError;
+  String? get toAssetId;
 
   /// Asset linked to exit.
-  Asset? get toAsset => throw _privateConstructorUsedError;
+  Asset? get toAsset;
 
   /// Total liters of the exit.
-  double? get totalLiters => throw _privateConstructorUsedError;
+  double? get totalLiters;
 
   /// Date of the start of the exit.
   @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
+  DateTime? get startAt;
 
   /// Date of the end of the exit.
   @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
+  DateTime? get endAt;
 
   /// This flag defines if the possible exit was finished.
-  bool? get isReady => throw _privateConstructorUsedError;
+  bool? get isReady;
 
   /// This flag defines if the possible exit was started but not finished.
-  bool? get inProgress => throw _privateConstructorUsedError;
+  bool? get inProgress;
 
   /// This flag defines if the possible exit is authenticated.
-  bool? get isValidated => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsPossibleExit to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get isValidated;
 
   /// Create a copy of AtsPossibleExit
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsPossibleExitCopyWith<AtsPossibleExit> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsPossibleExitCopyWithImpl<AtsPossibleExit>(
+          this as AtsPossibleExit, _$identity);
+
+  /// Serializes this AtsPossibleExit to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsPossibleExit &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.fromAssetId, fromAssetId) ||
+                other.fromAssetId == fromAssetId) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
+            (identical(other.sensorId, sensorId) ||
+                other.sensorId == sensorId) &&
+            (identical(other.sensor, sensor) || other.sensor == sensor) &&
+            (identical(other.toAssetId, toAssetId) ||
+                other.toAssetId == toAssetId) &&
+            (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
+            (identical(other.totalLiters, totalLiters) ||
+                other.totalLiters == totalLiters) &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt) &&
+            (identical(other.isReady, isReady) || other.isReady == isReady) &&
+            (identical(other.inProgress, inProgress) ||
+                other.inProgress == inProgress) &&
+            (identical(other.isValidated, isValidated) ||
+                other.isValidated == isValidated));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      fromAssetId,
+      fromAsset,
+      sensorId,
+      sensor,
+      toAssetId,
+      toAsset,
+      totalLiters,
+      startAt,
+      endAt,
+      isReady,
+      inProgress,
+      isValidated);
+
+  @override
+  String toString() {
+    return 'AtsPossibleExit(id: $id, fromAssetId: $fromAssetId, fromAsset: $fromAsset, sensorId: $sensorId, sensor: $sensor, toAssetId: $toAssetId, toAsset: $toAsset, totalLiters: $totalLiters, startAt: $startAt, endAt: $endAt, isReady: $isReady, inProgress: $inProgress, isValidated: $isValidated)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsPossibleExitCopyWith<$Res> {
+abstract mixin class $AtsPossibleExitCopyWith<$Res> {
   factory $AtsPossibleExitCopyWith(
-          AtsPossibleExit value, $Res Function(AtsPossibleExit) then) =
-      _$AtsPossibleExitCopyWithImpl<$Res, AtsPossibleExit>;
+          AtsPossibleExit value, $Res Function(AtsPossibleExit) _then) =
+      _$AtsPossibleExitCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -10430,14 +9896,12 @@ abstract class $AtsPossibleExitCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
+class _$AtsPossibleExitCopyWithImpl<$Res>
     implements $AtsPossibleExitCopyWith<$Res> {
-  _$AtsPossibleExitCopyWithImpl(this._value, this._then);
+  _$AtsPossibleExitCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsPossibleExit _self;
+  final $Res Function(AtsPossibleExit) _then;
 
   /// Create a copy of AtsPossibleExit
   /// with the given fields replaced by the non-null parameter values.
@@ -10458,60 +9922,60 @@ class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
     Object? inProgress = freezed,
     Object? isValidated = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
+          ? _self.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       fromAsset: freezed == fromAsset
-          ? _value.fromAsset
+          ? _self.fromAsset
           : fromAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       sensorId: freezed == sensorId
-          ? _value.sensorId
+          ? _self.sensorId
           : sensorId // ignore: cast_nullable_to_non_nullable
               as String?,
       sensor: freezed == sensor
-          ? _value.sensor
+          ? _self.sensor
           : sensor // ignore: cast_nullable_to_non_nullable
               as Sensor?,
       toAssetId: freezed == toAssetId
-          ? _value.toAssetId
+          ? _self.toAssetId
           : toAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       toAsset: freezed == toAsset
-          ? _value.toAsset
+          ? _self.toAsset
           : toAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       totalLiters: freezed == totalLiters
-          ? _value.totalLiters
+          ? _self.totalLiters
           : totalLiters // ignore: cast_nullable_to_non_nullable
               as double?,
       startAt: freezed == startAt
-          ? _value.startAt
+          ? _self.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       endAt: freezed == endAt
-          ? _value.endAt
+          ? _self.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       isReady: freezed == isReady
-          ? _value.isReady
+          ? _self.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
               as bool?,
       inProgress: freezed == inProgress
-          ? _value.inProgress
+          ? _self.inProgress
           : inProgress // ignore: cast_nullable_to_non_nullable
               as bool?,
       isValidated: freezed == isValidated
-          ? _value.isValidated
+          ? _self.isValidated
           : isValidated // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsPossibleExit
@@ -10519,12 +9983,12 @@ class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get fromAsset {
-    if (_value.fromAsset == null) {
+    if (_self.fromAsset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.fromAsset!, (value) {
-      return _then(_value.copyWith(fromAsset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.fromAsset!, (value) {
+      return _then(_self.copyWith(fromAsset: value));
     });
   }
 
@@ -10533,12 +9997,12 @@ class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
   @override
   @pragma('vm:prefer-inline')
   $SensorCopyWith<$Res>? get sensor {
-    if (_value.sensor == null) {
+    if (_self.sensor == null) {
       return null;
     }
 
-    return $SensorCopyWith<$Res>(_value.sensor!, (value) {
-      return _then(_value.copyWith(sensor: value) as $Val);
+    return $SensorCopyWith<$Res>(_self.sensor!, (value) {
+      return _then(_self.copyWith(sensor: value));
     });
   }
 
@@ -10547,135 +10011,20 @@ class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get toAsset {
-    if (_value.toAsset == null) {
+    if (_self.toAsset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.toAsset!, (value) {
-      return _then(_value.copyWith(toAsset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.toAsset!, (value) {
+      return _then(_self.copyWith(toAsset: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsPossibleExitImplCopyWith<$Res>
-    implements $AtsPossibleExitCopyWith<$Res> {
-  factory _$$AtsPossibleExitImplCopyWith(_$AtsPossibleExitImpl value,
-          $Res Function(_$AtsPossibleExitImpl) then) =
-      __$$AtsPossibleExitImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String? fromAssetId,
-      Asset? fromAsset,
-      String? sensorId,
-      Sensor? sensor,
-      String? toAssetId,
-      Asset? toAsset,
-      double? totalLiters,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      bool? isReady,
-      bool? inProgress,
-      bool? isValidated});
-
-  @override
-  $AssetCopyWith<$Res>? get fromAsset;
-  @override
-  $SensorCopyWith<$Res>? get sensor;
-  @override
-  $AssetCopyWith<$Res>? get toAsset;
-}
-
-/// @nodoc
-class __$$AtsPossibleExitImplCopyWithImpl<$Res>
-    extends _$AtsPossibleExitCopyWithImpl<$Res, _$AtsPossibleExitImpl>
-    implements _$$AtsPossibleExitImplCopyWith<$Res> {
-  __$$AtsPossibleExitImplCopyWithImpl(
-      _$AtsPossibleExitImpl _value, $Res Function(_$AtsPossibleExitImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? fromAssetId = freezed,
-    Object? fromAsset = freezed,
-    Object? sensorId = freezed,
-    Object? sensor = freezed,
-    Object? toAssetId = freezed,
-    Object? toAsset = freezed,
-    Object? totalLiters = freezed,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-    Object? isReady = freezed,
-    Object? inProgress = freezed,
-    Object? isValidated = freezed,
-  }) {
-    return _then(_$AtsPossibleExitImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
-          : fromAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromAsset: freezed == fromAsset
-          ? _value.fromAsset
-          : fromAsset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      sensorId: freezed == sensorId
-          ? _value.sensorId
-          : sensorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sensor: freezed == sensor
-          ? _value.sensor
-          : sensor // ignore: cast_nullable_to_non_nullable
-              as Sensor?,
-      toAssetId: freezed == toAssetId
-          ? _value.toAssetId
-          : toAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toAsset: freezed == toAsset
-          ? _value.toAsset
-          : toAsset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      totalLiters: freezed == totalLiters
-          ? _value.totalLiters
-          : totalLiters // ignore: cast_nullable_to_non_nullable
-              as double?,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      isReady: freezed == isReady
-          ? _value.isReady
-          : isReady // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      inProgress: freezed == inProgress
-          ? _value.inProgress
-          : inProgress // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isValidated: freezed == isValidated
-          ? _value.isValidated
-          : isValidated // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsPossibleExitImpl implements _AtsPossibleExit {
-  _$AtsPossibleExitImpl(
+class _AtsPossibleExit implements AtsPossibleExit {
+  _AtsPossibleExit(
       {this.id,
       this.fromAssetId,
       this.fromAsset,
@@ -10689,9 +10038,8 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
       this.isReady,
       this.inProgress,
       this.isValidated});
-
-  factory _$AtsPossibleExitImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsPossibleExitImplFromJson(json);
+  factory _AtsPossibleExit.fromJson(Map<String, dynamic> json) =>
+      _$AtsPossibleExitFromJson(json);
 
   /// ID of the possible exit. This ID is unique.
   @override
@@ -10747,16 +10095,26 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
   @override
   final bool? isValidated;
 
+  /// Create a copy of AtsPossibleExit
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsPossibleExit(id: $id, fromAssetId: $fromAssetId, fromAsset: $fromAsset, sensorId: $sensorId, sensor: $sensor, toAssetId: $toAssetId, toAsset: $toAsset, totalLiters: $totalLiters, startAt: $startAt, endAt: $endAt, isReady: $isReady, inProgress: $inProgress, isValidated: $isValidated)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsPossibleExitCopyWith<_AtsPossibleExit> get copyWith =>
+      __$AtsPossibleExitCopyWithImpl<_AtsPossibleExit>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsPossibleExitToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsPossibleExitImpl &&
+            other is _AtsPossibleExit &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.fromAssetId, fromAssetId) ||
                 other.fromAssetId == fromAssetId) &&
@@ -10797,231 +10155,231 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
       inProgress,
       isValidated);
 
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsPossibleExitImplCopyWith<_$AtsPossibleExitImpl> get copyWith =>
-      __$$AtsPossibleExitImplCopyWithImpl<_$AtsPossibleExitImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsPossibleExitImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsPossibleExit(id: $id, fromAssetId: $fromAssetId, fromAsset: $fromAsset, sensorId: $sensorId, sensor: $sensor, toAssetId: $toAssetId, toAsset: $toAsset, totalLiters: $totalLiters, startAt: $startAt, endAt: $endAt, isReady: $isReady, inProgress: $inProgress, isValidated: $isValidated)';
   }
 }
 
-abstract class _AtsPossibleExit implements AtsPossibleExit {
-  factory _AtsPossibleExit(
-      {final String? id,
-      final String? fromAssetId,
-      final Asset? fromAsset,
-      final String? sensorId,
-      final Sensor? sensor,
-      final String? toAssetId,
-      final Asset? toAsset,
-      final double? totalLiters,
-      @TimestampOrNullConverter() final DateTime? startAt,
-      @TimestampOrNullConverter() final DateTime? endAt,
-      final bool? isReady,
-      final bool? inProgress,
-      final bool? isValidated}) = _$AtsPossibleExitImpl;
-
-  factory _AtsPossibleExit.fromJson(Map<String, dynamic> json) =
-      _$AtsPossibleExitImpl.fromJson;
-
-  /// ID of the possible exit. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsPossibleExitCopyWith<$Res>
+    implements $AtsPossibleExitCopyWith<$Res> {
+  factory _$AtsPossibleExitCopyWith(
+          _AtsPossibleExit value, $Res Function(_AtsPossibleExit) _then) =
+      __$AtsPossibleExitCopyWithImpl;
   @override
-  String? get id;
+  @useResult
+  $Res call(
+      {String? id,
+      String? fromAssetId,
+      Asset? fromAsset,
+      String? sensorId,
+      Sensor? sensor,
+      String? toAssetId,
+      Asset? toAsset,
+      double? totalLiters,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      bool? isReady,
+      bool? inProgress,
+      bool? isValidated});
 
-  /// ID of the Asset
   @override
-  String? get fromAssetId;
+  $AssetCopyWith<$Res>? get fromAsset;
+  @override
+  $SensorCopyWith<$Res>? get sensor;
+  @override
+  $AssetCopyWith<$Res>? get toAsset;
+}
 
-  /// Asset linked to exit.
-  @override
-  Asset? get fromAsset;
+/// @nodoc
+class __$AtsPossibleExitCopyWithImpl<$Res>
+    implements _$AtsPossibleExitCopyWith<$Res> {
+  __$AtsPossibleExitCopyWithImpl(this._self, this._then);
 
-  /// ID of the Sensor
-  @override
-  String? get sensorId;
-
-  /// Sensor linked to exit.
-  @override
-  Sensor? get sensor;
-
-  /// ID of the Asset
-  @override
-  String? get toAssetId;
-
-  /// Asset linked to exit.
-  @override
-  Asset? get toAsset;
-
-  /// Total liters of the exit.
-  @override
-  double? get totalLiters;
-
-  /// Date of the start of the exit.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
-
-  /// Date of the end of the exit.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
-
-  /// This flag defines if the possible exit was finished.
-  @override
-  bool? get isReady;
-
-  /// This flag defines if the possible exit was started but not finished.
-  @override
-  bool? get inProgress;
-
-  /// This flag defines if the possible exit is authenticated.
-  @override
-  bool? get isValidated;
+  final _AtsPossibleExit _self;
+  final $Res Function(_AtsPossibleExit) _then;
 
   /// Create a copy of AtsPossibleExit
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsPossibleExitImplCopyWith<_$AtsPossibleExitImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? fromAssetId = freezed,
+    Object? fromAsset = freezed,
+    Object? sensorId = freezed,
+    Object? sensor = freezed,
+    Object? toAssetId = freezed,
+    Object? toAsset = freezed,
+    Object? totalLiters = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? isReady = freezed,
+    Object? inProgress = freezed,
+    Object? isValidated = freezed,
+  }) {
+    return _then(_AtsPossibleExit(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromAssetId: freezed == fromAssetId
+          ? _self.fromAssetId
+          : fromAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromAsset: freezed == fromAsset
+          ? _self.fromAsset
+          : fromAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      sensorId: freezed == sensorId
+          ? _self.sensorId
+          : sensorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sensor: freezed == sensor
+          ? _self.sensor
+          : sensor // ignore: cast_nullable_to_non_nullable
+              as Sensor?,
+      toAssetId: freezed == toAssetId
+          ? _self.toAssetId
+          : toAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAsset: freezed == toAsset
+          ? _self.toAsset
+          : toAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      totalLiters: freezed == totalLiters
+          ? _self.totalLiters
+          : totalLiters // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startAt: freezed == startAt
+          ? _self.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _self.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      isReady: freezed == isReady
+          ? _self.isReady
+          : isReady // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      inProgress: freezed == inProgress
+          ? _self.inProgress
+          : inProgress // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isValidated: freezed == isValidated
+          ? _self.isValidated
+          : isValidated // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
 
-AtsExecuteExitInput _$AtsExecuteExitInputFromJson(Map<String, dynamic> json) {
-  return _AtsExecuteExitInput.fromJson(json);
+  /// Create a copy of AtsPossibleExit
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get fromAsset {
+    if (_self.fromAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.fromAsset!, (value) {
+      return _then(_self.copyWith(fromAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsPossibleExit
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SensorCopyWith<$Res>? get sensor {
+    if (_self.sensor == null) {
+      return null;
+    }
+
+    return $SensorCopyWith<$Res>(_self.sensor!, (value) {
+      return _then(_self.copyWith(sensor: value));
+    });
+  }
+
+  /// Create a copy of AtsPossibleExit
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get toAsset {
+    if (_self.toAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.toAsset!, (value) {
+      return _then(_self.copyWith(toAsset: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsExecuteExitInput {
   /// [fromAssetId] ID of the bomb [Asset].
-  String? get fromAssetId => throw _privateConstructorUsedError;
+  String? get fromAssetId;
 
   /// [fromAssetId] ID of the bomb [Asset].
-  set fromAssetId(String? value) => throw _privateConstructorUsedError;
+  set fromAssetId(String? value);
 
   /// [sensorId] ID of [Sensor] bomb.
-  String? get sensorId => throw _privateConstructorUsedError;
+  String? get sensorId;
 
   /// [sensorId] ID of [Sensor] bomb.
-  set sensorId(String? value) => throw _privateConstructorUsedError;
+  set sensorId(String? value);
 
   /// [presetValue] Total liters limit allowed for exit execution
-  int? get presetValue => throw _privateConstructorUsedError;
+  int? get presetValue;
 
   /// [presetValue] Total liters limit allowed for exit execution
-  set presetValue(int? value) => throw _privateConstructorUsedError;
+  set presetValue(int? value);
 
   /// [toAssetID] ID of the [Asset] validated.
-  String? get toAssetId => throw _privateConstructorUsedError;
+  String? get toAssetId;
 
   /// [toAssetID] ID of the [Asset] validated.
-  set toAssetId(String? value) => throw _privateConstructorUsedError;
+  set toAssetId(String? value);
 
   /// [toAssetMileage] Mileage of the [Asset]
-  double? get toAssetMileage => throw _privateConstructorUsedError;
+  double? get toAssetMileage;
 
   /// [toAssetMileage] Mileage of the [Asset]
-  set toAssetMileage(double? value) => throw _privateConstructorUsedError;
+  set toAssetMileage(double? value);
 
   /// [fromApp] Exit execution enum definition
   @AtsFromAppOrNullConverter()
-  AtsFromApp? get fromApp => throw _privateConstructorUsedError;
+  AtsFromApp? get fromApp;
 
   /// [fromApp] Exit execution enum definition
   @AtsFromAppOrNullConverter()
-  set fromApp(AtsFromApp? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsExecuteExitInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set fromApp(AtsFromApp? value);
 
   /// Create a copy of AtsExecuteExitInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsExecuteExitInputCopyWith<AtsExecuteExitInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsExecuteExitInputCopyWith<$Res> {
-  factory $AtsExecuteExitInputCopyWith(
-          AtsExecuteExitInput value, $Res Function(AtsExecuteExitInput) then) =
-      _$AtsExecuteExitInputCopyWithImpl<$Res, AtsExecuteExitInput>;
-  @useResult
-  $Res call(
-      {String? fromAssetId,
-      String? sensorId,
-      int? presetValue,
-      String? toAssetId,
-      double? toAssetMileage,
-      @AtsFromAppOrNullConverter() AtsFromApp? fromApp});
-}
-
-/// @nodoc
-class _$AtsExecuteExitInputCopyWithImpl<$Res, $Val extends AtsExecuteExitInput>
-    implements $AtsExecuteExitInputCopyWith<$Res> {
-  _$AtsExecuteExitInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsExecuteExitInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsExecuteExitInputCopyWith<AtsExecuteExitInput> get copyWith =>
+      _$AtsExecuteExitInputCopyWithImpl<AtsExecuteExitInput>(
+          this as AtsExecuteExitInput, _$identity);
+
+  /// Serializes this AtsExecuteExitInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? fromAssetId = freezed,
-    Object? sensorId = freezed,
-    Object? presetValue = freezed,
-    Object? toAssetId = freezed,
-    Object? toAssetMileage = freezed,
-    Object? fromApp = freezed,
-  }) {
-    return _then(_value.copyWith(
-      fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
-          : fromAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sensorId: freezed == sensorId
-          ? _value.sensorId
-          : sensorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      presetValue: freezed == presetValue
-          ? _value.presetValue
-          : presetValue // ignore: cast_nullable_to_non_nullable
-              as int?,
-      toAssetId: freezed == toAssetId
-          ? _value.toAssetId
-          : toAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toAssetMileage: freezed == toAssetMileage
-          ? _value.toAssetMileage
-          : toAssetMileage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      fromApp: freezed == fromApp
-          ? _value.fromApp
-          : fromApp // ignore: cast_nullable_to_non_nullable
-              as AtsFromApp?,
-    ) as $Val);
+  String toString() {
+    return 'AtsExecuteExitInput(fromAssetId: $fromAssetId, sensorId: $sensorId, presetValue: $presetValue, toAssetId: $toAssetId, toAssetMileage: $toAssetMileage, fromApp: $fromApp)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsExecuteExitInputImplCopyWith<$Res>
-    implements $AtsExecuteExitInputCopyWith<$Res> {
-  factory _$$AtsExecuteExitInputImplCopyWith(_$AtsExecuteExitInputImpl value,
-          $Res Function(_$AtsExecuteExitInputImpl) then) =
-      __$$AtsExecuteExitInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsExecuteExitInputCopyWith<$Res> {
+  factory $AtsExecuteExitInputCopyWith(
+          AtsExecuteExitInput value, $Res Function(AtsExecuteExitInput) _then) =
+      _$AtsExecuteExitInputCopyWithImpl;
   @useResult
   $Res call(
       {String? fromAssetId,
@@ -11033,12 +10391,12 @@ abstract class _$$AtsExecuteExitInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsExecuteExitInputImplCopyWithImpl<$Res>
-    extends _$AtsExecuteExitInputCopyWithImpl<$Res, _$AtsExecuteExitInputImpl>
-    implements _$$AtsExecuteExitInputImplCopyWith<$Res> {
-  __$$AtsExecuteExitInputImplCopyWithImpl(_$AtsExecuteExitInputImpl _value,
-      $Res Function(_$AtsExecuteExitInputImpl) _then)
-      : super(_value, _then);
+class _$AtsExecuteExitInputCopyWithImpl<$Res>
+    implements $AtsExecuteExitInputCopyWith<$Res> {
+  _$AtsExecuteExitInputCopyWithImpl(this._self, this._then);
+
+  final AtsExecuteExitInput _self;
+  final $Res Function(AtsExecuteExitInput) _then;
 
   /// Create a copy of AtsExecuteExitInput
   /// with the given fields replaced by the non-null parameter values.
@@ -11052,29 +10410,29 @@ class __$$AtsExecuteExitInputImplCopyWithImpl<$Res>
     Object? toAssetMileage = freezed,
     Object? fromApp = freezed,
   }) {
-    return _then(_$AtsExecuteExitInputImpl(
+    return _then(_self.copyWith(
       fromAssetId: freezed == fromAssetId
-          ? _value.fromAssetId
+          ? _self.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       sensorId: freezed == sensorId
-          ? _value.sensorId
+          ? _self.sensorId
           : sensorId // ignore: cast_nullable_to_non_nullable
               as String?,
       presetValue: freezed == presetValue
-          ? _value.presetValue
+          ? _self.presetValue
           : presetValue // ignore: cast_nullable_to_non_nullable
               as int?,
       toAssetId: freezed == toAssetId
-          ? _value.toAssetId
+          ? _self.toAssetId
           : toAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       toAssetMileage: freezed == toAssetMileage
-          ? _value.toAssetMileage
+          ? _self.toAssetMileage
           : toAssetMileage // ignore: cast_nullable_to_non_nullable
               as double?,
       fromApp: freezed == fromApp
-          ? _value.fromApp
+          ? _self.fromApp
           : fromApp // ignore: cast_nullable_to_non_nullable
               as AtsFromApp?,
     ));
@@ -11083,17 +10441,16 @@ class __$$AtsExecuteExitInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsExecuteExitInputImpl implements _AtsExecuteExitInput {
-  _$AtsExecuteExitInputImpl(
+class _AtsExecuteExitInput implements AtsExecuteExitInput {
+  _AtsExecuteExitInput(
       {this.fromAssetId,
       this.sensorId,
       this.presetValue,
       this.toAssetId,
       this.toAssetMileage,
       @AtsFromAppOrNullConverter() this.fromApp});
-
-  factory _$AtsExecuteExitInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsExecuteExitInputImplFromJson(json);
+  factory _AtsExecuteExitInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsExecuteExitInputFromJson(json);
 
   /// [fromAssetId] ID of the bomb [Asset].
   @override
@@ -11120,214 +10477,164 @@ class _$AtsExecuteExitInputImpl implements _AtsExecuteExitInput {
   @AtsFromAppOrNullConverter()
   AtsFromApp? fromApp;
 
-  @override
-  String toString() {
-    return 'AtsExecuteExitInput(fromAssetId: $fromAssetId, sensorId: $sensorId, presetValue: $presetValue, toAssetId: $toAssetId, toAssetMileage: $toAssetMileage, fromApp: $fromApp)';
-  }
-
   /// Create a copy of AtsExecuteExitInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$$AtsExecuteExitInputImplCopyWith<_$AtsExecuteExitInputImpl> get copyWith =>
-      __$$AtsExecuteExitInputImplCopyWithImpl<_$AtsExecuteExitInputImpl>(
+  _$AtsExecuteExitInputCopyWith<_AtsExecuteExitInput> get copyWith =>
+      __$AtsExecuteExitInputCopyWithImpl<_AtsExecuteExitInput>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AtsExecuteExitInputImplToJson(
+    return _$AtsExecuteExitInputToJson(
       this,
     );
   }
+
+  @override
+  String toString() {
+    return 'AtsExecuteExitInput(fromAssetId: $fromAssetId, sensorId: $sensorId, presetValue: $presetValue, toAssetId: $toAssetId, toAssetMileage: $toAssetMileage, fromApp: $fromApp)';
+  }
 }
 
-abstract class _AtsExecuteExitInput implements AtsExecuteExitInput {
-  factory _AtsExecuteExitInput(
-          {String? fromAssetId,
-          String? sensorId,
-          int? presetValue,
-          String? toAssetId,
-          double? toAssetMileage,
-          @AtsFromAppOrNullConverter() AtsFromApp? fromApp}) =
-      _$AtsExecuteExitInputImpl;
-
-  factory _AtsExecuteExitInput.fromJson(Map<String, dynamic> json) =
-      _$AtsExecuteExitInputImpl.fromJson;
-
-  /// [fromAssetId] ID of the bomb [Asset].
+/// @nodoc
+abstract mixin class _$AtsExecuteExitInputCopyWith<$Res>
+    implements $AtsExecuteExitInputCopyWith<$Res> {
+  factory _$AtsExecuteExitInputCopyWith(_AtsExecuteExitInput value,
+          $Res Function(_AtsExecuteExitInput) _then) =
+      __$AtsExecuteExitInputCopyWithImpl;
   @override
-  String? get fromAssetId;
+  @useResult
+  $Res call(
+      {String? fromAssetId,
+      String? sensorId,
+      int? presetValue,
+      String? toAssetId,
+      double? toAssetMileage,
+      @AtsFromAppOrNullConverter() AtsFromApp? fromApp});
+}
 
-  /// [fromAssetId] ID of the bomb [Asset].
-  set fromAssetId(String? value);
+/// @nodoc
+class __$AtsExecuteExitInputCopyWithImpl<$Res>
+    implements _$AtsExecuteExitInputCopyWith<$Res> {
+  __$AtsExecuteExitInputCopyWithImpl(this._self, this._then);
 
-  /// [sensorId] ID of [Sensor] bomb.
-  @override
-  String? get sensorId;
-
-  /// [sensorId] ID of [Sensor] bomb.
-  set sensorId(String? value);
-
-  /// [presetValue] Total liters limit allowed for exit execution
-  @override
-  int? get presetValue;
-
-  /// [presetValue] Total liters limit allowed for exit execution
-  set presetValue(int? value);
-
-  /// [toAssetID] ID of the [Asset] validated.
-  @override
-  String? get toAssetId;
-
-  /// [toAssetID] ID of the [Asset] validated.
-  set toAssetId(String? value);
-
-  /// [toAssetMileage] Mileage of the [Asset]
-  @override
-  double? get toAssetMileage;
-
-  /// [toAssetMileage] Mileage of the [Asset]
-  set toAssetMileage(double? value);
-
-  /// [fromApp] Exit execution enum definition
-  @override
-  @AtsFromAppOrNullConverter()
-  AtsFromApp? get fromApp;
-
-  /// [fromApp] Exit execution enum definition
-  @AtsFromAppOrNullConverter()
-  set fromApp(AtsFromApp? value);
+  final _AtsExecuteExitInput _self;
+  final $Res Function(_AtsExecuteExitInput) _then;
 
   /// Create a copy of AtsExecuteExitInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsExecuteExitInputImplCopyWith<_$AtsExecuteExitInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsExecuteExitHistory _$AtsExecuteExitHistoryFromJson(
-    Map<String, dynamic> json) {
-  return _AtsExecuteExitHistory.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? fromAssetId = freezed,
+    Object? sensorId = freezed,
+    Object? presetValue = freezed,
+    Object? toAssetId = freezed,
+    Object? toAssetMileage = freezed,
+    Object? fromApp = freezed,
+  }) {
+    return _then(_AtsExecuteExitInput(
+      fromAssetId: freezed == fromAssetId
+          ? _self.fromAssetId
+          : fromAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sensorId: freezed == sensorId
+          ? _self.sensorId
+          : sensorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      presetValue: freezed == presetValue
+          ? _self.presetValue
+          : presetValue // ignore: cast_nullable_to_non_nullable
+              as int?,
+      toAssetId: freezed == toAssetId
+          ? _self.toAssetId
+          : toAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAssetMileage: freezed == toAssetMileage
+          ? _self.toAssetMileage
+          : toAssetMileage // ignore: cast_nullable_to_non_nullable
+              as double?,
+      fromApp: freezed == fromApp
+          ? _self.fromApp
+          : fromApp // ignore: cast_nullable_to_non_nullable
+              as AtsFromApp?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsExecuteExitHistory {
   /// ID of the recalculation entity. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// User NAME who execute the exit
-  String? get generatedBy => throw _privateConstructorUsedError;
+  String? get generatedBy;
 
   /// Pump asset name
-  String? get fromAsset => throw _privateConstructorUsedError;
+  String? get fromAsset;
 
   /// Vehicle asset name
-  String? get toAsset => throw _privateConstructorUsedError;
+  String? get toAsset;
 
   /// Date of execution
   @TimestampOrNullConverter()
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt;
 
   /// Reason of any error in execution
-  String? get errorResponse => throw _privateConstructorUsedError;
+  String? get errorResponse;
 
   /// Execution status to know the process
   @AtsExitExecuteStatusOrNullConverter()
-  AtsExitExecuteStatus? get status => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsExecuteExitHistory to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  AtsExitExecuteStatus? get status;
 
   /// Create a copy of AtsExecuteExitHistory
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsExecuteExitHistoryCopyWith<AtsExecuteExitHistory> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsExecuteExitHistoryCopyWith<$Res> {
-  factory $AtsExecuteExitHistoryCopyWith(AtsExecuteExitHistory value,
-          $Res Function(AtsExecuteExitHistory) then) =
-      _$AtsExecuteExitHistoryCopyWithImpl<$Res, AtsExecuteExitHistory>;
-  @useResult
-  $Res call(
-      {String? id,
-      String? generatedBy,
-      String? fromAsset,
-      String? toAsset,
-      @TimestampOrNullConverter() DateTime? createdAt,
-      String? errorResponse,
-      @AtsExitExecuteStatusOrNullConverter() AtsExitExecuteStatus? status});
-}
-
-/// @nodoc
-class _$AtsExecuteExitHistoryCopyWithImpl<$Res,
-        $Val extends AtsExecuteExitHistory>
-    implements $AtsExecuteExitHistoryCopyWith<$Res> {
-  _$AtsExecuteExitHistoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsExecuteExitHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsExecuteExitHistoryCopyWith<AtsExecuteExitHistory> get copyWith =>
+      _$AtsExecuteExitHistoryCopyWithImpl<AtsExecuteExitHistory>(
+          this as AtsExecuteExitHistory, _$identity);
+
+  /// Serializes this AtsExecuteExitHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? generatedBy = freezed,
-    Object? fromAsset = freezed,
-    Object? toAsset = freezed,
-    Object? createdAt = freezed,
-    Object? errorResponse = freezed,
-    Object? status = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      generatedBy: freezed == generatedBy
-          ? _value.generatedBy
-          : generatedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromAsset: freezed == fromAsset
-          ? _value.fromAsset
-          : fromAsset // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toAsset: freezed == toAsset
-          ? _value.toAsset
-          : toAsset // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      errorResponse: freezed == errorResponse
-          ? _value.errorResponse
-          : errorResponse // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AtsExitExecuteStatus?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsExecuteExitHistory &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.generatedBy, generatedBy) ||
+                other.generatedBy == generatedBy) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
+            (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.errorResponse, errorResponse) ||
+                other.errorResponse == errorResponse) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, generatedBy, fromAsset,
+      toAsset, createdAt, errorResponse, status);
+
+  @override
+  String toString() {
+    return 'AtsExecuteExitHistory(id: $id, generatedBy: $generatedBy, fromAsset: $fromAsset, toAsset: $toAsset, createdAt: $createdAt, errorResponse: $errorResponse, status: $status)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsExecuteExitHistoryImplCopyWith<$Res>
-    implements $AtsExecuteExitHistoryCopyWith<$Res> {
-  factory _$$AtsExecuteExitHistoryImplCopyWith(
-          _$AtsExecuteExitHistoryImpl value,
-          $Res Function(_$AtsExecuteExitHistoryImpl) then) =
-      __$$AtsExecuteExitHistoryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsExecuteExitHistoryCopyWith<$Res> {
+  factory $AtsExecuteExitHistoryCopyWith(AtsExecuteExitHistory value,
+          $Res Function(AtsExecuteExitHistory) _then) =
+      _$AtsExecuteExitHistoryCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -11340,13 +10647,12 @@ abstract class _$$AtsExecuteExitHistoryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsExecuteExitHistoryImplCopyWithImpl<$Res>
-    extends _$AtsExecuteExitHistoryCopyWithImpl<$Res,
-        _$AtsExecuteExitHistoryImpl>
-    implements _$$AtsExecuteExitHistoryImplCopyWith<$Res> {
-  __$$AtsExecuteExitHistoryImplCopyWithImpl(_$AtsExecuteExitHistoryImpl _value,
-      $Res Function(_$AtsExecuteExitHistoryImpl) _then)
-      : super(_value, _then);
+class _$AtsExecuteExitHistoryCopyWithImpl<$Res>
+    implements $AtsExecuteExitHistoryCopyWith<$Res> {
+  _$AtsExecuteExitHistoryCopyWithImpl(this._self, this._then);
+
+  final AtsExecuteExitHistory _self;
+  final $Res Function(AtsExecuteExitHistory) _then;
 
   /// Create a copy of AtsExecuteExitHistory
   /// with the given fields replaced by the non-null parameter values.
@@ -11361,33 +10667,33 @@ class __$$AtsExecuteExitHistoryImplCopyWithImpl<$Res>
     Object? errorResponse = freezed,
     Object? status = freezed,
   }) {
-    return _then(_$AtsExecuteExitHistoryImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       generatedBy: freezed == generatedBy
-          ? _value.generatedBy
+          ? _self.generatedBy
           : generatedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       fromAsset: freezed == fromAsset
-          ? _value.fromAsset
+          ? _self.fromAsset
           : fromAsset // ignore: cast_nullable_to_non_nullable
               as String?,
       toAsset: freezed == toAsset
-          ? _value.toAsset
+          ? _self.toAsset
           : toAsset // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAt: freezed == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       errorResponse: freezed == errorResponse
-          ? _value.errorResponse
+          ? _self.errorResponse
           : errorResponse // ignore: cast_nullable_to_non_nullable
               as String?,
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as AtsExitExecuteStatus?,
     ));
@@ -11396,8 +10702,8 @@ class __$$AtsExecuteExitHistoryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
-  _$AtsExecuteExitHistoryImpl(
+class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
+  _AtsExecuteExitHistory(
       {this.id,
       this.generatedBy,
       this.fromAsset,
@@ -11405,9 +10711,8 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
       @TimestampOrNullConverter() this.createdAt,
       this.errorResponse,
       @AtsExitExecuteStatusOrNullConverter() this.status});
-
-  factory _$AtsExecuteExitHistoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsExecuteExitHistoryImplFromJson(json);
+  factory _AtsExecuteExitHistory.fromJson(Map<String, dynamic> json) =>
+      _$AtsExecuteExitHistoryFromJson(json);
 
   /// ID of the recalculation entity. This ID is unique.
   @override
@@ -11439,16 +10744,27 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
   @AtsExitExecuteStatusOrNullConverter()
   final AtsExitExecuteStatus? status;
 
+  /// Create a copy of AtsExecuteExitHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsExecuteExitHistory(id: $id, generatedBy: $generatedBy, fromAsset: $fromAsset, toAsset: $toAsset, createdAt: $createdAt, errorResponse: $errorResponse, status: $status)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsExecuteExitHistoryCopyWith<_AtsExecuteExitHistory> get copyWith =>
+      __$AtsExecuteExitHistoryCopyWithImpl<_AtsExecuteExitHistory>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsExecuteExitHistoryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsExecuteExitHistoryImpl &&
+            other is _AtsExecuteExitHistory &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.generatedBy, generatedBy) ||
                 other.generatedBy == generatedBy) &&
@@ -11467,200 +10783,144 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
   int get hashCode => Object.hash(runtimeType, id, generatedBy, fromAsset,
       toAsset, createdAt, errorResponse, status);
 
-  /// Create a copy of AtsExecuteExitHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsExecuteExitHistoryImplCopyWith<_$AtsExecuteExitHistoryImpl>
-      get copyWith => __$$AtsExecuteExitHistoryImplCopyWithImpl<
-          _$AtsExecuteExitHistoryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsExecuteExitHistoryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsExecuteExitHistory(id: $id, generatedBy: $generatedBy, fromAsset: $fromAsset, toAsset: $toAsset, createdAt: $createdAt, errorResponse: $errorResponse, status: $status)';
   }
 }
 
-abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
-  factory _AtsExecuteExitHistory(
-      {final String? id,
-      final String? generatedBy,
-      final String? fromAsset,
-      final String? toAsset,
-      @TimestampOrNullConverter() final DateTime? createdAt,
-      final String? errorResponse,
-      @AtsExitExecuteStatusOrNullConverter()
-      final AtsExitExecuteStatus? status}) = _$AtsExecuteExitHistoryImpl;
-
-  factory _AtsExecuteExitHistory.fromJson(Map<String, dynamic> json) =
-      _$AtsExecuteExitHistoryImpl.fromJson;
-
-  /// ID of the recalculation entity. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsExecuteExitHistoryCopyWith<$Res>
+    implements $AtsExecuteExitHistoryCopyWith<$Res> {
+  factory _$AtsExecuteExitHistoryCopyWith(_AtsExecuteExitHistory value,
+          $Res Function(_AtsExecuteExitHistory) _then) =
+      __$AtsExecuteExitHistoryCopyWithImpl;
   @override
-  String? get id;
+  @useResult
+  $Res call(
+      {String? id,
+      String? generatedBy,
+      String? fromAsset,
+      String? toAsset,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      String? errorResponse,
+      @AtsExitExecuteStatusOrNullConverter() AtsExitExecuteStatus? status});
+}
 
-  /// User NAME who execute the exit
-  @override
-  String? get generatedBy;
+/// @nodoc
+class __$AtsExecuteExitHistoryCopyWithImpl<$Res>
+    implements _$AtsExecuteExitHistoryCopyWith<$Res> {
+  __$AtsExecuteExitHistoryCopyWithImpl(this._self, this._then);
 
-  /// Pump asset name
-  @override
-  String? get fromAsset;
-
-  /// Vehicle asset name
-  @override
-  String? get toAsset;
-
-  /// Date of execution
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get createdAt;
-
-  /// Reason of any error in execution
-  @override
-  String? get errorResponse;
-
-  /// Execution status to know the process
-  @override
-  @AtsExitExecuteStatusOrNullConverter()
-  AtsExitExecuteStatus? get status;
+  final _AtsExecuteExitHistory _self;
+  final $Res Function(_AtsExecuteExitHistory) _then;
 
   /// Create a copy of AtsExecuteExitHistory
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsExecuteExitHistoryImplCopyWith<_$AtsExecuteExitHistoryImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-AtsExitInput _$AtsExitInputFromJson(Map<String, dynamic> json) {
-  return _AtsExitInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? generatedBy = freezed,
+    Object? fromAsset = freezed,
+    Object? toAsset = freezed,
+    Object? createdAt = freezed,
+    Object? errorResponse = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_AtsExecuteExitHistory(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      generatedBy: freezed == generatedBy
+          ? _self.generatedBy
+          : generatedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromAsset: freezed == fromAsset
+          ? _self.fromAsset
+          : fromAsset // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAsset: freezed == toAsset
+          ? _self.toAsset
+          : toAsset // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      errorResponse: freezed == errorResponse
+          ? _self.errorResponse
+          : errorResponse // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AtsExitExecuteStatus?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsExitInput {
   /// The [id] of the exit. Ignore it if you are using the "addExit" mutation.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// The [id] of the exit. Ignore it if you are using the "addExit" mutation.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// The [assetId] of the associated asset.
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// The [assetId] of the associated asset.
-  set assetId(String? value) => throw _privateConstructorUsedError;
+  set assetId(String? value);
 
   /// The [liters] of fuel in the exit.
-  double? get liters => throw _privateConstructorUsedError;
+  double? get liters;
 
   /// The [liters] of fuel in the exit.
-  set liters(double? value) => throw _privateConstructorUsedError;
+  set liters(double? value);
 
   /// The [toAssetMileage] of the exit.
-  double? get toAssetMileage => throw _privateConstructorUsedError;
+  double? get toAssetMileage;
 
   /// The [toAssetMileage] of the exit.
-  set toAssetMileage(double? value) => throw _privateConstructorUsedError;
+  set toAssetMileage(double? value);
 
   /// The [identifier] of the exit.
-  int? get identifier => throw _privateConstructorUsedError;
+  int? get identifier;
 
   /// The [identifier] of the exit.
-  set identifier(int? value) => throw _privateConstructorUsedError;
+  set identifier(int? value);
 
   /// The [attendantId] of the exit.
-  String? get attendantId => throw _privateConstructorUsedError;
+  String? get attendantId;
 
   /// The [attendantId] of the exit.
-  set attendantId(String? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsExitInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set attendantId(String? value);
 
   /// Create a copy of AtsExitInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsExitInputCopyWith<AtsExitInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsExitInputCopyWith<$Res> {
-  factory $AtsExitInputCopyWith(
-          AtsExitInput value, $Res Function(AtsExitInput) then) =
-      _$AtsExitInputCopyWithImpl<$Res, AtsExitInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String? assetId,
-      double? liters,
-      double? toAssetMileage,
-      int? identifier,
-      String? attendantId});
-}
-
-/// @nodoc
-class _$AtsExitInputCopyWithImpl<$Res, $Val extends AtsExitInput>
-    implements $AtsExitInputCopyWith<$Res> {
-  _$AtsExitInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsExitInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsExitInputCopyWith<AtsExitInput> get copyWith =>
+      _$AtsExitInputCopyWithImpl<AtsExitInput>(
+          this as AtsExitInput, _$identity);
+
+  /// Serializes this AtsExitInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? assetId = freezed,
-    Object? liters = freezed,
-    Object? toAssetMileage = freezed,
-    Object? identifier = freezed,
-    Object? attendantId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      liters: freezed == liters
-          ? _value.liters
-          : liters // ignore: cast_nullable_to_non_nullable
-              as double?,
-      toAssetMileage: freezed == toAssetMileage
-          ? _value.toAssetMileage
-          : toAssetMileage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      identifier: freezed == identifier
-          ? _value.identifier
-          : identifier // ignore: cast_nullable_to_non_nullable
-              as int?,
-      attendantId: freezed == attendantId
-          ? _value.attendantId
-          : attendantId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'AtsExitInput(id: $id, assetId: $assetId, liters: $liters, toAssetMileage: $toAssetMileage, identifier: $identifier, attendantId: $attendantId)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsExitInputImplCopyWith<$Res>
-    implements $AtsExitInputCopyWith<$Res> {
-  factory _$$AtsExitInputImplCopyWith(
-          _$AtsExitInputImpl value, $Res Function(_$AtsExitInputImpl) then) =
-      __$$AtsExitInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsExitInputCopyWith<$Res> {
+  factory $AtsExitInputCopyWith(
+          AtsExitInput value, $Res Function(AtsExitInput) _then) =
+      _$AtsExitInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -11672,12 +10932,11 @@ abstract class _$$AtsExitInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsExitInputImplCopyWithImpl<$Res>
-    extends _$AtsExitInputCopyWithImpl<$Res, _$AtsExitInputImpl>
-    implements _$$AtsExitInputImplCopyWith<$Res> {
-  __$$AtsExitInputImplCopyWithImpl(
-      _$AtsExitInputImpl _value, $Res Function(_$AtsExitInputImpl) _then)
-      : super(_value, _then);
+class _$AtsExitInputCopyWithImpl<$Res> implements $AtsExitInputCopyWith<$Res> {
+  _$AtsExitInputCopyWithImpl(this._self, this._then);
+
+  final AtsExitInput _self;
+  final $Res Function(AtsExitInput) _then;
 
   /// Create a copy of AtsExitInput
   /// with the given fields replaced by the non-null parameter values.
@@ -11691,29 +10950,29 @@ class __$$AtsExitInputImplCopyWithImpl<$Res>
     Object? identifier = freezed,
     Object? attendantId = freezed,
   }) {
-    return _then(_$AtsExitInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       liters: freezed == liters
-          ? _value.liters
+          ? _self.liters
           : liters // ignore: cast_nullable_to_non_nullable
               as double?,
       toAssetMileage: freezed == toAssetMileage
-          ? _value.toAssetMileage
+          ? _self.toAssetMileage
           : toAssetMileage // ignore: cast_nullable_to_non_nullable
               as double?,
       identifier: freezed == identifier
-          ? _value.identifier
+          ? _self.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as int?,
       attendantId: freezed == attendantId
-          ? _value.attendantId
+          ? _self.attendantId
           : attendantId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -11722,17 +10981,16 @@ class __$$AtsExitInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsExitInputImpl implements _AtsExitInput {
-  _$AtsExitInputImpl(
+class _AtsExitInput implements AtsExitInput {
+  _AtsExitInput(
       {this.id,
       this.assetId,
       this.liters,
       this.toAssetMileage,
       this.identifier,
       this.attendantId});
-
-  factory _$AtsExitInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsExitInputImplFromJson(json);
+  factory _AtsExitInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsExitInputFromJson(json);
 
   /// The [id] of the exit. Ignore it if you are using the "addExit" mutation.
   @override
@@ -11758,187 +11016,270 @@ class _$AtsExitInputImpl implements _AtsExitInput {
   @override
   String? attendantId;
 
+  /// Create a copy of AtsExitInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsExitInputCopyWith<_AtsExitInput> get copyWith =>
+      __$AtsExitInputCopyWithImpl<_AtsExitInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsExitInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'AtsExitInput(id: $id, assetId: $assetId, liters: $liters, toAssetMileage: $toAssetMileage, identifier: $identifier, attendantId: $attendantId)';
   }
-
-  /// Create a copy of AtsExitInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AtsExitInputImplCopyWith<_$AtsExitInputImpl> get copyWith =>
-      __$$AtsExitInputImplCopyWithImpl<_$AtsExitInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsExitInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _AtsExitInput implements AtsExitInput {
-  factory _AtsExitInput(
+/// @nodoc
+abstract mixin class _$AtsExitInputCopyWith<$Res>
+    implements $AtsExitInputCopyWith<$Res> {
+  factory _$AtsExitInputCopyWith(
+          _AtsExitInput value, $Res Function(_AtsExitInput) _then) =
+      __$AtsExitInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String? assetId,
       double? liters,
       double? toAssetMileage,
       int? identifier,
-      String? attendantId}) = _$AtsExitInputImpl;
+      String? attendantId});
+}
 
-  factory _AtsExitInput.fromJson(Map<String, dynamic> json) =
-      _$AtsExitInputImpl.fromJson;
+/// @nodoc
+class __$AtsExitInputCopyWithImpl<$Res>
+    implements _$AtsExitInputCopyWith<$Res> {
+  __$AtsExitInputCopyWithImpl(this._self, this._then);
 
-  /// The [id] of the exit. Ignore it if you are using the "addExit" mutation.
-  @override
-  String? get id;
-
-  /// The [id] of the exit. Ignore it if you are using the "addExit" mutation.
-  set id(String? value);
-
-  /// The [assetId] of the associated asset.
-  @override
-  String? get assetId;
-
-  /// The [assetId] of the associated asset.
-  set assetId(String? value);
-
-  /// The [liters] of fuel in the exit.
-  @override
-  double? get liters;
-
-  /// The [liters] of fuel in the exit.
-  set liters(double? value);
-
-  /// The [toAssetMileage] of the exit.
-  @override
-  double? get toAssetMileage;
-
-  /// The [toAssetMileage] of the exit.
-  set toAssetMileage(double? value);
-
-  /// The [identifier] of the exit.
-  @override
-  int? get identifier;
-
-  /// The [identifier] of the exit.
-  set identifier(int? value);
-
-  /// The [attendantId] of the exit.
-  @override
-  String? get attendantId;
-
-  /// The [attendantId] of the exit.
-  set attendantId(String? value);
+  final _AtsExitInput _self;
+  final $Res Function(_AtsExitInput) _then;
 
   /// Create a copy of AtsExitInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsExitInputImplCopyWith<_$AtsExitInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) {
-  return _AtsEntry.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? liters = freezed,
+    Object? toAssetMileage = freezed,
+    Object? identifier = freezed,
+    Object? attendantId = freezed,
+  }) {
+    return _then(_AtsExitInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      liters: freezed == liters
+          ? _self.liters
+          : liters // ignore: cast_nullable_to_non_nullable
+              as double?,
+      toAssetMileage: freezed == toAssetMileage
+          ? _self.toAssetMileage
+          : toAssetMileage // ignore: cast_nullable_to_non_nullable
+              as double?,
+      identifier: freezed == identifier
+          ? _self.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as int?,
+      attendantId: freezed == attendantId
+          ? _self.attendantId
+          : attendantId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsEntry {
   /// `id` is the unique ID of the entry.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// `assetId` is the ID of the associated asset.
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// `asset` is the associated asset.
-  Asset? get asset => throw _privateConstructorUsedError;
+  Asset? get asset;
 
   /// `oldTankLevel` is the tank level at the start of the entry.
-  double? get oldTankLevel => throw _privateConstructorUsedError;
+  double? get oldTankLevel;
 
   /// `newTankLevel` is the tank level at the end of the entry.
-  double? get newTankLevel => throw _privateConstructorUsedError;
+  double? get newTankLevel;
 
   /// `startAt` is the start date of the entry.
   @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
+  DateTime? get startAt;
 
   /// `endAt` is the end date of the entry.
   @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
+  DateTime? get endAt;
 
   /// `errorPercent` is the error percent between reception and sensor entry.
-  double? get errorPercent => throw _privateConstructorUsedError;
+  double? get errorPercent;
 
   /// `reception` is the associated reception.
-  AtsReception? get reception => throw _privateConstructorUsedError;
+  AtsReception? get reception;
 
   /// `receptions` is a list of receptions associated with the entry.
-  List<AtsReception>? get receptions => throw _privateConstructorUsedError;
+  List<AtsReception>? get receptions;
 
   /// `isLinked` indicates whether the entry is linked to a purchase order.
-  bool? get isLinked => throw _privateConstructorUsedError;
+  bool? get isLinked;
 
   /// `fuelType` is the fuel type of the entry.
   @Deprecated(
       "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
-  String? get fuelType => throw _privateConstructorUsedError;
+  String? get fuelType;
 
   /// `fuelSubtype` is the fuel subtype of the entry.
   @Deprecated(
       "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
-  String? get fuelSubtype => throw _privateConstructorUsedError;
+  String? get fuelSubtype;
 
   /// `temperature` is the temperature of the entry.
-  double? get temperature => throw _privateConstructorUsedError;
+  double? get temperature;
 
   /// `initialTemperature` is the initial temperature of the entry.
-  double? get initialTemperature => throw _privateConstructorUsedError;
+  double? get initialTemperature;
 
   /// `density` is the density of the entry.
-  double? get density => throw _privateConstructorUsedError;
+  double? get density;
 
   /// `initialDensity` is the initial density of the entry.
-  double? get initialDensity => throw _privateConstructorUsedError;
+  double? get initialDensity;
 
   /// `waterLevel` is the water level of the entry.
-  double? get waterLevel => throw _privateConstructorUsedError;
+  double? get waterLevel;
 
   /// `initialWaterLevel` is the initial water level of the entry.
-  double? get initialWaterLevel => throw _privateConstructorUsedError;
+  double? get initialWaterLevel;
 
   /// `volumenHistory` is the volumen history of the entry.
-  List<AtsVolume> get volumeHistory => throw _privateConstructorUsedError;
+  List<AtsVolume> get volumeHistory;
 
   /// `fuelAnp` is the fuel anp of the entry.
-  String? get fuelAnp => throw _privateConstructorUsedError;
+  String? get fuelAnp;
 
   /// `height` represent a sensor height of the tank.
-  double? get height => throw _privateConstructorUsedError;
+  double? get height;
 
   /// `initialHeight` represent a sensor height of the tank.
-  double? get initialHeight => throw _privateConstructorUsedError;
+  double? get initialHeight;
 
   /// `operationId` is the operation ID of the entry.
-  String? get operationId => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsEntry to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get operationId;
 
   /// Create a copy of AtsEntry
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsEntryCopyWith<AtsEntry> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsEntryCopyWithImpl<AtsEntry>(this as AtsEntry, _$identity);
+
+  /// Serializes this AtsEntry to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsEntry &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.oldTankLevel, oldTankLevel) ||
+                other.oldTankLevel == oldTankLevel) &&
+            (identical(other.newTankLevel, newTankLevel) ||
+                other.newTankLevel == newTankLevel) &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt) &&
+            (identical(other.errorPercent, errorPercent) ||
+                other.errorPercent == errorPercent) &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
+            const DeepCollectionEquality()
+                .equals(other.receptions, receptions) &&
+            (identical(other.isLinked, isLinked) ||
+                other.isLinked == isLinked) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.initialTemperature, initialTemperature) ||
+                other.initialTemperature == initialTemperature) &&
+            (identical(other.density, density) || other.density == density) &&
+            (identical(other.initialDensity, initialDensity) ||
+                other.initialDensity == initialDensity) &&
+            (identical(other.waterLevel, waterLevel) ||
+                other.waterLevel == waterLevel) &&
+            (identical(other.initialWaterLevel, initialWaterLevel) ||
+                other.initialWaterLevel == initialWaterLevel) &&
+            const DeepCollectionEquality()
+                .equals(other.volumeHistory, volumeHistory) &&
+            (identical(other.fuelAnp, fuelAnp) || other.fuelAnp == fuelAnp) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.initialHeight, initialHeight) ||
+                other.initialHeight == initialHeight) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        assetId,
+        asset,
+        oldTankLevel,
+        newTankLevel,
+        startAt,
+        endAt,
+        errorPercent,
+        reception,
+        const DeepCollectionEquality().hash(receptions),
+        isLinked,
+        fuelType,
+        fuelSubtype,
+        temperature,
+        initialTemperature,
+        density,
+        initialDensity,
+        waterLevel,
+        initialWaterLevel,
+        const DeepCollectionEquality().hash(volumeHistory),
+        fuelAnp,
+        height,
+        initialHeight,
+        operationId
+      ]);
+
+  @override
+  String toString() {
+    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, fuelSubtype: $fuelSubtype, temperature: $temperature, initialTemperature: $initialTemperature, density: $density, initialDensity: $initialDensity, waterLevel: $waterLevel, initialWaterLevel: $initialWaterLevel, volumeHistory: $volumeHistory, fuelAnp: $fuelAnp, height: $height, initialHeight: $initialHeight, operationId: $operationId)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsEntryCopyWith<$Res> {
-  factory $AtsEntryCopyWith(AtsEntry value, $Res Function(AtsEntry) then) =
-      _$AtsEntryCopyWithImpl<$Res, AtsEntry>;
+abstract mixin class $AtsEntryCopyWith<$Res> {
+  factory $AtsEntryCopyWith(AtsEntry value, $Res Function(AtsEntry) _then) =
+      _$AtsEntryCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -11975,14 +11316,11 @@ abstract class $AtsEntryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
-    implements $AtsEntryCopyWith<$Res> {
-  _$AtsEntryCopyWithImpl(this._value, this._then);
+class _$AtsEntryCopyWithImpl<$Res> implements $AtsEntryCopyWith<$Res> {
+  _$AtsEntryCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsEntry _self;
+  final $Res Function(AtsEntry) _then;
 
   /// Create a copy of AtsEntry
   /// with the given fields replaced by the non-null parameter values.
@@ -12014,104 +11352,104 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
     Object? initialHeight = freezed,
     Object? operationId = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       asset: freezed == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       oldTankLevel: freezed == oldTankLevel
-          ? _value.oldTankLevel
+          ? _self.oldTankLevel
           : oldTankLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       newTankLevel: freezed == newTankLevel
-          ? _value.newTankLevel
+          ? _self.newTankLevel
           : newTankLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       startAt: freezed == startAt
-          ? _value.startAt
+          ? _self.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       endAt: freezed == endAt
-          ? _value.endAt
+          ? _self.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       errorPercent: freezed == errorPercent
-          ? _value.errorPercent
+          ? _self.errorPercent
           : errorPercent // ignore: cast_nullable_to_non_nullable
               as double?,
       reception: freezed == reception
-          ? _value.reception
+          ? _self.reception
           : reception // ignore: cast_nullable_to_non_nullable
               as AtsReception?,
       receptions: freezed == receptions
-          ? _value.receptions
+          ? _self.receptions
           : receptions // ignore: cast_nullable_to_non_nullable
               as List<AtsReception>?,
       isLinked: freezed == isLinked
-          ? _value.isLinked
+          ? _self.isLinked
           : isLinked // ignore: cast_nullable_to_non_nullable
               as bool?,
       fuelType: freezed == fuelType
-          ? _value.fuelType
+          ? _self.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as String?,
       fuelSubtype: freezed == fuelSubtype
-          ? _value.fuelSubtype
+          ? _self.fuelSubtype
           : fuelSubtype // ignore: cast_nullable_to_non_nullable
               as String?,
       temperature: freezed == temperature
-          ? _value.temperature
+          ? _self.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
               as double?,
       initialTemperature: freezed == initialTemperature
-          ? _value.initialTemperature
+          ? _self.initialTemperature
           : initialTemperature // ignore: cast_nullable_to_non_nullable
               as double?,
       density: freezed == density
-          ? _value.density
+          ? _self.density
           : density // ignore: cast_nullable_to_non_nullable
               as double?,
       initialDensity: freezed == initialDensity
-          ? _value.initialDensity
+          ? _self.initialDensity
           : initialDensity // ignore: cast_nullable_to_non_nullable
               as double?,
       waterLevel: freezed == waterLevel
-          ? _value.waterLevel
+          ? _self.waterLevel
           : waterLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       initialWaterLevel: freezed == initialWaterLevel
-          ? _value.initialWaterLevel
+          ? _self.initialWaterLevel
           : initialWaterLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       volumeHistory: null == volumeHistory
-          ? _value.volumeHistory
+          ? _self.volumeHistory
           : volumeHistory // ignore: cast_nullable_to_non_nullable
               as List<AtsVolume>,
       fuelAnp: freezed == fuelAnp
-          ? _value.fuelAnp
+          ? _self.fuelAnp
           : fuelAnp // ignore: cast_nullable_to_non_nullable
               as String?,
       height: freezed == height
-          ? _value.height
+          ? _self.height
           : height // ignore: cast_nullable_to_non_nullable
               as double?,
       initialHeight: freezed == initialHeight
-          ? _value.initialHeight
+          ? _self.initialHeight
           : initialHeight // ignore: cast_nullable_to_non_nullable
               as double?,
       operationId: freezed == operationId
-          ? _value.operationId
+          ? _self.operationId
           : operationId // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsEntry
@@ -12119,12 +11457,12 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
-    if (_value.asset == null) {
+    if (_self.asset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
     });
   }
 
@@ -12133,203 +11471,20 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
   @override
   @pragma('vm:prefer-inline')
   $AtsReceptionCopyWith<$Res>? get reception {
-    if (_value.reception == null) {
+    if (_self.reception == null) {
       return null;
     }
 
-    return $AtsReceptionCopyWith<$Res>(_value.reception!, (value) {
-      return _then(_value.copyWith(reception: value) as $Val);
+    return $AtsReceptionCopyWith<$Res>(_self.reception!, (value) {
+      return _then(_self.copyWith(reception: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsEntryImplCopyWith<$Res>
-    implements $AtsEntryCopyWith<$Res> {
-  factory _$$AtsEntryImplCopyWith(
-          _$AtsEntryImpl value, $Res Function(_$AtsEntryImpl) then) =
-      __$$AtsEntryImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String? assetId,
-      Asset? asset,
-      double? oldTankLevel,
-      double? newTankLevel,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      double? errorPercent,
-      AtsReception? reception,
-      List<AtsReception>? receptions,
-      bool? isLinked,
-      @Deprecated(
-          "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
-      String? fuelType,
-      @Deprecated(
-          "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
-      String? fuelSubtype,
-      double? temperature,
-      double? initialTemperature,
-      double? density,
-      double? initialDensity,
-      double? waterLevel,
-      double? initialWaterLevel,
-      List<AtsVolume> volumeHistory,
-      String? fuelAnp,
-      double? height,
-      double? initialHeight,
-      String? operationId});
-
-  @override
-  $AssetCopyWith<$Res>? get asset;
-  @override
-  $AtsReceptionCopyWith<$Res>? get reception;
-}
-
-/// @nodoc
-class __$$AtsEntryImplCopyWithImpl<$Res>
-    extends _$AtsEntryCopyWithImpl<$Res, _$AtsEntryImpl>
-    implements _$$AtsEntryImplCopyWith<$Res> {
-  __$$AtsEntryImplCopyWithImpl(
-      _$AtsEntryImpl _value, $Res Function(_$AtsEntryImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? assetId = freezed,
-    Object? asset = freezed,
-    Object? oldTankLevel = freezed,
-    Object? newTankLevel = freezed,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-    Object? errorPercent = freezed,
-    Object? reception = freezed,
-    Object? receptions = freezed,
-    Object? isLinked = freezed,
-    Object? fuelType = freezed,
-    Object? fuelSubtype = freezed,
-    Object? temperature = freezed,
-    Object? initialTemperature = freezed,
-    Object? density = freezed,
-    Object? initialDensity = freezed,
-    Object? waterLevel = freezed,
-    Object? initialWaterLevel = freezed,
-    Object? volumeHistory = null,
-    Object? fuelAnp = freezed,
-    Object? height = freezed,
-    Object? initialHeight = freezed,
-    Object? operationId = freezed,
-  }) {
-    return _then(_$AtsEntryImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      oldTankLevel: freezed == oldTankLevel
-          ? _value.oldTankLevel
-          : oldTankLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      newTankLevel: freezed == newTankLevel
-          ? _value.newTankLevel
-          : newTankLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      errorPercent: freezed == errorPercent
-          ? _value.errorPercent
-          : errorPercent // ignore: cast_nullable_to_non_nullable
-              as double?,
-      reception: freezed == reception
-          ? _value.reception
-          : reception // ignore: cast_nullable_to_non_nullable
-              as AtsReception?,
-      receptions: freezed == receptions
-          ? _value._receptions
-          : receptions // ignore: cast_nullable_to_non_nullable
-              as List<AtsReception>?,
-      isLinked: freezed == isLinked
-          ? _value.isLinked
-          : isLinked // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fuelSubtype: freezed == fuelSubtype
-          ? _value.fuelSubtype
-          : fuelSubtype // ignore: cast_nullable_to_non_nullable
-              as String?,
-      temperature: freezed == temperature
-          ? _value.temperature
-          : temperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialTemperature: freezed == initialTemperature
-          ? _value.initialTemperature
-          : initialTemperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      density: freezed == density
-          ? _value.density
-          : density // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialDensity: freezed == initialDensity
-          ? _value.initialDensity
-          : initialDensity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      waterLevel: freezed == waterLevel
-          ? _value.waterLevel
-          : waterLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialWaterLevel: freezed == initialWaterLevel
-          ? _value.initialWaterLevel
-          : initialWaterLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      volumeHistory: null == volumeHistory
-          ? _value._volumeHistory
-          : volumeHistory // ignore: cast_nullable_to_non_nullable
-              as List<AtsVolume>,
-      fuelAnp: freezed == fuelAnp
-          ? _value.fuelAnp
-          : fuelAnp // ignore: cast_nullable_to_non_nullable
-              as String?,
-      height: freezed == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialHeight: freezed == initialHeight
-          ? _value.initialHeight
-          : initialHeight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      operationId: freezed == operationId
-          ? _value.operationId
-          : operationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsEntryImpl implements _AtsEntry {
-  const _$AtsEntryImpl(
+class _AtsEntry implements AtsEntry {
+  const _AtsEntry(
       {required this.id,
       this.assetId,
       this.asset,
@@ -12360,9 +11515,8 @@ class _$AtsEntryImpl implements _AtsEntry {
       this.operationId})
       : _receptions = receptions,
         _volumeHistory = volumeHistory;
-
-  factory _$AtsEntryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsEntryImplFromJson(json);
+  factory _AtsEntry.fromJson(Map<String, dynamic> json) =>
+      _$AtsEntryFromJson(json);
 
   /// `id` is the unique ID of the entry.
   @override
@@ -12483,16 +11637,26 @@ class _$AtsEntryImpl implements _AtsEntry {
   @override
   final String? operationId;
 
+  /// Create a copy of AtsEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, fuelSubtype: $fuelSubtype, temperature: $temperature, initialTemperature: $initialTemperature, density: $density, initialDensity: $initialDensity, waterLevel: $waterLevel, initialWaterLevel: $initialWaterLevel, volumeHistory: $volumeHistory, fuelAnp: $fuelAnp, height: $height, initialHeight: $initialHeight, operationId: $operationId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsEntryCopyWith<_AtsEntry> get copyWith =>
+      __$AtsEntryCopyWithImpl<_AtsEntry>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsEntryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsEntryImpl &&
+            other is _AtsEntry &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
@@ -12565,246 +11729,268 @@ class _$AtsEntryImpl implements _AtsEntry {
         operationId
       ]);
 
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
-      __$$AtsEntryImplCopyWithImpl<_$AtsEntryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsEntryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, fuelSubtype: $fuelSubtype, temperature: $temperature, initialTemperature: $initialTemperature, density: $density, initialDensity: $initialDensity, waterLevel: $waterLevel, initialWaterLevel: $initialWaterLevel, volumeHistory: $volumeHistory, fuelAnp: $fuelAnp, height: $height, initialHeight: $initialHeight, operationId: $operationId)';
   }
 }
 
-abstract class _AtsEntry implements AtsEntry {
-  const factory _AtsEntry(
-      {required final String id,
-      final String? assetId,
-      final Asset? asset,
-      final double? oldTankLevel,
-      final double? newTankLevel,
-      @TimestampOrNullConverter() final DateTime? startAt,
-      @TimestampOrNullConverter() final DateTime? endAt,
-      final double? errorPercent,
-      final AtsReception? reception,
-      final List<AtsReception>? receptions,
-      final bool? isLinked,
+/// @nodoc
+abstract mixin class _$AtsEntryCopyWith<$Res>
+    implements $AtsEntryCopyWith<$Res> {
+  factory _$AtsEntryCopyWith(_AtsEntry value, $Res Function(_AtsEntry) _then) =
+      __$AtsEntryCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String? assetId,
+      Asset? asset,
+      double? oldTankLevel,
+      double? newTankLevel,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      double? errorPercent,
+      AtsReception? reception,
+      List<AtsReception>? receptions,
+      bool? isLinked,
       @Deprecated(
           "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
-      final String? fuelType,
+      String? fuelType,
       @Deprecated(
           "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
-      final String? fuelSubtype,
-      final double? temperature,
-      final double? initialTemperature,
-      final double? density,
-      final double? initialDensity,
-      final double? waterLevel,
-      final double? initialWaterLevel,
-      final List<AtsVolume> volumeHistory,
-      final String? fuelAnp,
-      final double? height,
-      final double? initialHeight,
-      final String? operationId}) = _$AtsEntryImpl;
+      String? fuelSubtype,
+      double? temperature,
+      double? initialTemperature,
+      double? density,
+      double? initialDensity,
+      double? waterLevel,
+      double? initialWaterLevel,
+      List<AtsVolume> volumeHistory,
+      String? fuelAnp,
+      double? height,
+      double? initialHeight,
+      String? operationId});
 
-  factory _AtsEntry.fromJson(Map<String, dynamic> json) =
-      _$AtsEntryImpl.fromJson;
-
-  /// `id` is the unique ID of the entry.
   @override
-  String get id;
-
-  /// `assetId` is the ID of the associated asset.
+  $AssetCopyWith<$Res>? get asset;
   @override
-  String? get assetId;
+  $AtsReceptionCopyWith<$Res>? get reception;
+}
 
-  /// `asset` is the associated asset.
-  @override
-  Asset? get asset;
+/// @nodoc
+class __$AtsEntryCopyWithImpl<$Res> implements _$AtsEntryCopyWith<$Res> {
+  __$AtsEntryCopyWithImpl(this._self, this._then);
 
-  /// `oldTankLevel` is the tank level at the start of the entry.
-  @override
-  double? get oldTankLevel;
-
-  /// `newTankLevel` is the tank level at the end of the entry.
-  @override
-  double? get newTankLevel;
-
-  /// `startAt` is the start date of the entry.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
-
-  /// `endAt` is the end date of the entry.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
-
-  /// `errorPercent` is the error percent between reception and sensor entry.
-  @override
-  double? get errorPercent;
-
-  /// `reception` is the associated reception.
-  @override
-  AtsReception? get reception;
-
-  /// `receptions` is a list of receptions associated with the entry.
-  @override
-  List<AtsReception>? get receptions;
-
-  /// `isLinked` indicates whether the entry is linked to a purchase order.
-  @override
-  bool? get isLinked;
-
-  /// `fuelType` is the fuel type of the entry.
-  @override
-  @Deprecated(
-      "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
-  String? get fuelType;
-
-  /// `fuelSubtype` is the fuel subtype of the entry.
-  @override
-  @Deprecated(
-      "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
-  String? get fuelSubtype;
-
-  /// `temperature` is the temperature of the entry.
-  @override
-  double? get temperature;
-
-  /// `initialTemperature` is the initial temperature of the entry.
-  @override
-  double? get initialTemperature;
-
-  /// `density` is the density of the entry.
-  @override
-  double? get density;
-
-  /// `initialDensity` is the initial density of the entry.
-  @override
-  double? get initialDensity;
-
-  /// `waterLevel` is the water level of the entry.
-  @override
-  double? get waterLevel;
-
-  /// `initialWaterLevel` is the initial water level of the entry.
-  @override
-  double? get initialWaterLevel;
-
-  /// `volumenHistory` is the volumen history of the entry.
-  @override
-  List<AtsVolume> get volumeHistory;
-
-  /// `fuelAnp` is the fuel anp of the entry.
-  @override
-  String? get fuelAnp;
-
-  /// `height` represent a sensor height of the tank.
-  @override
-  double? get height;
-
-  /// `initialHeight` represent a sensor height of the tank.
-  @override
-  double? get initialHeight;
-
-  /// `operationId` is the operation ID of the entry.
-  @override
-  String? get operationId;
+  final _AtsEntry _self;
+  final $Res Function(_AtsEntry) _then;
 
   /// Create a copy of AtsEntry
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? oldTankLevel = freezed,
+    Object? newTankLevel = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? errorPercent = freezed,
+    Object? reception = freezed,
+    Object? receptions = freezed,
+    Object? isLinked = freezed,
+    Object? fuelType = freezed,
+    Object? fuelSubtype = freezed,
+    Object? temperature = freezed,
+    Object? initialTemperature = freezed,
+    Object? density = freezed,
+    Object? initialDensity = freezed,
+    Object? waterLevel = freezed,
+    Object? initialWaterLevel = freezed,
+    Object? volumeHistory = null,
+    Object? fuelAnp = freezed,
+    Object? height = freezed,
+    Object? initialHeight = freezed,
+    Object? operationId = freezed,
+  }) {
+    return _then(_AtsEntry(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      oldTankLevel: freezed == oldTankLevel
+          ? _self.oldTankLevel
+          : oldTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      newTankLevel: freezed == newTankLevel
+          ? _self.newTankLevel
+          : newTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startAt: freezed == startAt
+          ? _self.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _self.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      errorPercent: freezed == errorPercent
+          ? _self.errorPercent
+          : errorPercent // ignore: cast_nullable_to_non_nullable
+              as double?,
+      reception: freezed == reception
+          ? _self.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as AtsReception?,
+      receptions: freezed == receptions
+          ? _self._receptions
+          : receptions // ignore: cast_nullable_to_non_nullable
+              as List<AtsReception>?,
+      isLinked: freezed == isLinked
+          ? _self.isLinked
+          : isLinked // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      fuelType: freezed == fuelType
+          ? _self.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fuelSubtype: freezed == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String?,
+      temperature: freezed == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialTemperature: freezed == initialTemperature
+          ? _self.initialTemperature
+          : initialTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      density: freezed == density
+          ? _self.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialDensity: freezed == initialDensity
+          ? _self.initialDensity
+          : initialDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      waterLevel: freezed == waterLevel
+          ? _self.waterLevel
+          : waterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialWaterLevel: freezed == initialWaterLevel
+          ? _self.initialWaterLevel
+          : initialWaterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volumeHistory: null == volumeHistory
+          ? _self._volumeHistory
+          : volumeHistory // ignore: cast_nullable_to_non_nullable
+              as List<AtsVolume>,
+      fuelAnp: freezed == fuelAnp
+          ? _self.fuelAnp
+          : fuelAnp // ignore: cast_nullable_to_non_nullable
+              as String?,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialHeight: freezed == initialHeight
+          ? _self.initialHeight
+          : initialHeight // ignore: cast_nullable_to_non_nullable
+              as double?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 
-AtsVolume _$AtsVolumeFromJson(Map<String, dynamic> json) {
-  return _AtsVolume.fromJson(json);
+  /// Create a copy of AtsEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of AtsEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsReceptionCopyWith<$Res>? get reception {
+    if (_self.reception == null) {
+      return null;
+    }
+
+    return $AtsReceptionCopyWith<$Res>(_self.reception!, (value) {
+      return _then(_self.copyWith(reception: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsVolume {
   /// `assetId` is the ID of the associated asset.
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// `procedureResult` represent the volumen calculated
-  double? get procedureResult => throw _privateConstructorUsedError;
+  double? get procedureResult;
 
   /// `at` is the date and time of the volumen calculation.
   @TimestampOrNullConverter()
-  DateTime? get at => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsVolume to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime? get at;
 
   /// Create a copy of AtsVolume
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsVolumeCopyWith<AtsVolume> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsVolumeCopyWith<$Res> {
-  factory $AtsVolumeCopyWith(AtsVolume value, $Res Function(AtsVolume) then) =
-      _$AtsVolumeCopyWithImpl<$Res, AtsVolume>;
-  @useResult
-  $Res call(
-      {String? assetId,
-      double? procedureResult,
-      @TimestampOrNullConverter() DateTime? at});
-}
-
-/// @nodoc
-class _$AtsVolumeCopyWithImpl<$Res, $Val extends AtsVolume>
-    implements $AtsVolumeCopyWith<$Res> {
-  _$AtsVolumeCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsVolume
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsVolumeCopyWith<AtsVolume> get copyWith =>
+      _$AtsVolumeCopyWithImpl<AtsVolume>(this as AtsVolume, _$identity);
+
+  /// Serializes this AtsVolume to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? assetId = freezed,
-    Object? procedureResult = freezed,
-    Object? at = freezed,
-  }) {
-    return _then(_value.copyWith(
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      procedureResult: freezed == procedureResult
-          ? _value.procedureResult
-          : procedureResult // ignore: cast_nullable_to_non_nullable
-              as double?,
-      at: freezed == at
-          ? _value.at
-          : at // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsVolume &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.procedureResult, procedureResult) ||
+                other.procedureResult == procedureResult) &&
+            (identical(other.at, at) || other.at == at));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, assetId, procedureResult, at);
+
+  @override
+  String toString() {
+    return 'AtsVolume(assetId: $assetId, procedureResult: $procedureResult, at: $at)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsVolumeImplCopyWith<$Res>
-    implements $AtsVolumeCopyWith<$Res> {
-  factory _$$AtsVolumeImplCopyWith(
-          _$AtsVolumeImpl value, $Res Function(_$AtsVolumeImpl) then) =
-      __$$AtsVolumeImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsVolumeCopyWith<$Res> {
+  factory $AtsVolumeCopyWith(AtsVolume value, $Res Function(AtsVolume) _then) =
+      _$AtsVolumeCopyWithImpl;
   @useResult
   $Res call(
       {String? assetId,
@@ -12813,12 +11999,11 @@ abstract class _$$AtsVolumeImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsVolumeImplCopyWithImpl<$Res>
-    extends _$AtsVolumeCopyWithImpl<$Res, _$AtsVolumeImpl>
-    implements _$$AtsVolumeImplCopyWith<$Res> {
-  __$$AtsVolumeImplCopyWithImpl(
-      _$AtsVolumeImpl _value, $Res Function(_$AtsVolumeImpl) _then)
-      : super(_value, _then);
+class _$AtsVolumeCopyWithImpl<$Res> implements $AtsVolumeCopyWith<$Res> {
+  _$AtsVolumeCopyWithImpl(this._self, this._then);
+
+  final AtsVolume _self;
+  final $Res Function(AtsVolume) _then;
 
   /// Create a copy of AtsVolume
   /// with the given fields replaced by the non-null parameter values.
@@ -12829,17 +12014,17 @@ class __$$AtsVolumeImplCopyWithImpl<$Res>
     Object? procedureResult = freezed,
     Object? at = freezed,
   }) {
-    return _then(_$AtsVolumeImpl(
+    return _then(_self.copyWith(
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       procedureResult: freezed == procedureResult
-          ? _value.procedureResult
+          ? _self.procedureResult
           : procedureResult // ignore: cast_nullable_to_non_nullable
               as double?,
       at: freezed == at
-          ? _value.at
+          ? _self.at
           : at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
@@ -12848,14 +12033,13 @@ class __$$AtsVolumeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsVolumeImpl implements _AtsVolume {
-  const _$AtsVolumeImpl(
+class _AtsVolume implements AtsVolume {
+  const _AtsVolume(
       {this.assetId,
       this.procedureResult,
       @TimestampOrNullConverter() this.at});
-
-  factory _$AtsVolumeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsVolumeImplFromJson(json);
+  factory _AtsVolume.fromJson(Map<String, dynamic> json) =>
+      _$AtsVolumeFromJson(json);
 
   /// `assetId` is the ID of the associated asset.
   @override
@@ -12870,16 +12054,26 @@ class _$AtsVolumeImpl implements _AtsVolume {
   @TimestampOrNullConverter()
   final DateTime? at;
 
+  /// Create a copy of AtsVolume
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsVolume(assetId: $assetId, procedureResult: $procedureResult, at: $at)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsVolumeCopyWith<_AtsVolume> get copyWith =>
+      __$AtsVolumeCopyWithImpl<_AtsVolume>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsVolumeToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsVolumeImpl &&
+            other is _AtsVolume &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.procedureResult, procedureResult) ||
                 other.procedureResult == procedureResult) &&
@@ -12890,288 +12084,175 @@ class _$AtsVolumeImpl implements _AtsVolume {
   @override
   int get hashCode => Object.hash(runtimeType, assetId, procedureResult, at);
 
-  /// Create a copy of AtsVolume
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsVolumeImplCopyWith<_$AtsVolumeImpl> get copyWith =>
-      __$$AtsVolumeImplCopyWithImpl<_$AtsVolumeImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsVolumeImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsVolume(assetId: $assetId, procedureResult: $procedureResult, at: $at)';
   }
 }
 
-abstract class _AtsVolume implements AtsVolume {
-  const factory _AtsVolume(
-      {final String? assetId,
-      final double? procedureResult,
-      @TimestampOrNullConverter() final DateTime? at}) = _$AtsVolumeImpl;
-
-  factory _AtsVolume.fromJson(Map<String, dynamic> json) =
-      _$AtsVolumeImpl.fromJson;
-
-  /// `assetId` is the ID of the associated asset.
+/// @nodoc
+abstract mixin class _$AtsVolumeCopyWith<$Res>
+    implements $AtsVolumeCopyWith<$Res> {
+  factory _$AtsVolumeCopyWith(
+          _AtsVolume value, $Res Function(_AtsVolume) _then) =
+      __$AtsVolumeCopyWithImpl;
   @override
-  String? get assetId;
+  @useResult
+  $Res call(
+      {String? assetId,
+      double? procedureResult,
+      @TimestampOrNullConverter() DateTime? at});
+}
 
-  /// `procedureResult` represent the volumen calculated
-  @override
-  double? get procedureResult;
+/// @nodoc
+class __$AtsVolumeCopyWithImpl<$Res> implements _$AtsVolumeCopyWith<$Res> {
+  __$AtsVolumeCopyWithImpl(this._self, this._then);
 
-  /// `at` is the date and time of the volumen calculation.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get at;
+  final _AtsVolume _self;
+  final $Res Function(_AtsVolume) _then;
 
   /// Create a copy of AtsVolume
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsVolumeImplCopyWith<_$AtsVolumeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AtsEntryInput _$AtsEntryInputFromJson(Map<String, dynamic> json) {
-  return _AtsEntryInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? assetId = freezed,
+    Object? procedureResult = freezed,
+    Object? at = freezed,
+  }) {
+    return _then(_AtsVolume(
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      procedureResult: freezed == procedureResult
+          ? _self.procedureResult
+          : procedureResult // ignore: cast_nullable_to_non_nullable
+              as double?,
+      at: freezed == at
+          ? _self.at
+          : at // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AtsEntryInput {
   /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// ID of the associated asset.
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// ID of the associated asset.
-  set assetId(String? value) => throw _privateConstructorUsedError;
+  set assetId(String? value);
 
   /// Initial tank level in the entry.
-  double? get oldTankLevel => throw _privateConstructorUsedError;
+  double? get oldTankLevel;
 
   /// Initial tank level in the entry.
-  set oldTankLevel(double? value) => throw _privateConstructorUsedError;
+  set oldTankLevel(double? value);
 
   /// Last tank level in the entry.
-  double? get newTankLevel => throw _privateConstructorUsedError;
+  double? get newTankLevel;
 
   /// Last tank level in the entry.
-  set newTankLevel(double? value) => throw _privateConstructorUsedError;
+  set newTankLevel(double? value);
 
   /// Initial density of the fuel.
-  double? get initialDensity => throw _privateConstructorUsedError;
+  double? get initialDensity;
 
   /// Initial density of the fuel.
-  set initialDensity(double? value) => throw _privateConstructorUsedError;
+  set initialDensity(double? value);
 
   /// Entry density of the fuel.
-  double? get density => throw _privateConstructorUsedError;
+  double? get density;
 
   /// Entry density of the fuel.
-  set density(double? value) => throw _privateConstructorUsedError;
+  set density(double? value);
 
   /// Initial temperature of the fuel.
-  double? get initialTemperature => throw _privateConstructorUsedError;
+  double? get initialTemperature;
 
   /// Initial temperature of the fuel.
-  set initialTemperature(double? value) => throw _privateConstructorUsedError;
+  set initialTemperature(double? value);
 
   /// Entry temperature of the fuel.
-  double? get temperature => throw _privateConstructorUsedError;
+  double? get temperature;
 
   /// Entry temperature of the fuel.
-  set temperature(double? value) => throw _privateConstructorUsedError;
+  set temperature(double? value);
 
   /// Initial water level in the tank.
-  double? get initialWaterLevel => throw _privateConstructorUsedError;
+  double? get initialWaterLevel;
 
   /// Initial water level in the tank.
-  set initialWaterLevel(double? value) => throw _privateConstructorUsedError;
+  set initialWaterLevel(double? value);
 
   /// Entry water level in the tank.
-  double? get waterLevel => throw _privateConstructorUsedError;
+  double? get waterLevel;
 
   /// Entry water level in the tank.
-  set waterLevel(double? value) => throw _privateConstructorUsedError;
+  set waterLevel(double? value);
 
   /// Start date of the entry (Unix timestamp).
-  double? get startAt => throw _privateConstructorUsedError;
+  double? get startAt;
 
   /// Start date of the entry (Unix timestamp).
-  set startAt(double? value) => throw _privateConstructorUsedError;
+  set startAt(double? value);
 
   /// End date of the entry (Unix timestamp).
-  double? get endAt => throw _privateConstructorUsedError;
+  double? get endAt;
 
   /// End date of the entry (Unix timestamp).
-  set endAt(double? value) => throw _privateConstructorUsedError;
+  set endAt(double? value);
 
   /// Initial height of the fuel in the tank.
-  double? get initialHeight => throw _privateConstructorUsedError;
+  double? get initialHeight;
 
   /// Initial height of the fuel in the tank.
-  set initialHeight(double? value) => throw _privateConstructorUsedError;
+  set initialHeight(double? value);
 
   /// Entry height of the fuel in the tank.
-  double? get height => throw _privateConstructorUsedError;
+  double? get height;
 
   /// Entry height of the fuel in the tank.
-  set height(double? value) => throw _privateConstructorUsedError;
+  set height(double? value);
 
   /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
   @Deprecated("Dont use it, Api search fuelType from assetId")
-  String? get fuelType => throw _privateConstructorUsedError;
+  String? get fuelType;
 
   /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
   @Deprecated("Dont use it, Api search fuelType from assetId")
-  set fuelType(String? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsEntryInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set fuelType(String? value);
 
   /// Create a copy of AtsEntryInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AtsEntryInputCopyWith<AtsEntryInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsEntryInputCopyWith<$Res> {
-  factory $AtsEntryInputCopyWith(
-          AtsEntryInput value, $Res Function(AtsEntryInput) then) =
-      _$AtsEntryInputCopyWithImpl<$Res, AtsEntryInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String? assetId,
-      double? oldTankLevel,
-      double? newTankLevel,
-      double? initialDensity,
-      double? density,
-      double? initialTemperature,
-      double? temperature,
-      double? initialWaterLevel,
-      double? waterLevel,
-      double? startAt,
-      double? endAt,
-      double? initialHeight,
-      double? height,
-      @Deprecated("Dont use it, Api search fuelType from assetId")
-      String? fuelType});
-}
-
-/// @nodoc
-class _$AtsEntryInputCopyWithImpl<$Res, $Val extends AtsEntryInput>
-    implements $AtsEntryInputCopyWith<$Res> {
-  _$AtsEntryInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AtsEntryInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AtsEntryInputCopyWith<AtsEntryInput> get copyWith =>
+      _$AtsEntryInputCopyWithImpl<AtsEntryInput>(
+          this as AtsEntryInput, _$identity);
+
+  /// Serializes this AtsEntryInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? assetId = freezed,
-    Object? oldTankLevel = freezed,
-    Object? newTankLevel = freezed,
-    Object? initialDensity = freezed,
-    Object? density = freezed,
-    Object? initialTemperature = freezed,
-    Object? temperature = freezed,
-    Object? initialWaterLevel = freezed,
-    Object? waterLevel = freezed,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-    Object? initialHeight = freezed,
-    Object? height = freezed,
-    Object? fuelType = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      oldTankLevel: freezed == oldTankLevel
-          ? _value.oldTankLevel
-          : oldTankLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      newTankLevel: freezed == newTankLevel
-          ? _value.newTankLevel
-          : newTankLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialDensity: freezed == initialDensity
-          ? _value.initialDensity
-          : initialDensity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      density: freezed == density
-          ? _value.density
-          : density // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialTemperature: freezed == initialTemperature
-          ? _value.initialTemperature
-          : initialTemperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      temperature: freezed == temperature
-          ? _value.temperature
-          : temperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialWaterLevel: freezed == initialWaterLevel
-          ? _value.initialWaterLevel
-          : initialWaterLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      waterLevel: freezed == waterLevel
-          ? _value.waterLevel
-          : waterLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as double?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as double?,
-      initialHeight: freezed == initialHeight
-          ? _value.initialHeight
-          : initialHeight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      height: freezed == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as double?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'AtsEntryInput(id: $id, assetId: $assetId, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, initialDensity: $initialDensity, density: $density, initialTemperature: $initialTemperature, temperature: $temperature, initialWaterLevel: $initialWaterLevel, waterLevel: $waterLevel, startAt: $startAt, endAt: $endAt, initialHeight: $initialHeight, height: $height, fuelType: $fuelType)';
   }
 }
 
 /// @nodoc
-abstract class _$$AtsEntryInputImplCopyWith<$Res>
-    implements $AtsEntryInputCopyWith<$Res> {
-  factory _$$AtsEntryInputImplCopyWith(
-          _$AtsEntryInputImpl value, $Res Function(_$AtsEntryInputImpl) then) =
-      __$$AtsEntryInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AtsEntryInputCopyWith<$Res> {
+  factory $AtsEntryInputCopyWith(
+          AtsEntryInput value, $Res Function(AtsEntryInput) _then) =
+      _$AtsEntryInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -13193,12 +12274,12 @@ abstract class _$$AtsEntryInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AtsEntryInputImplCopyWithImpl<$Res>
-    extends _$AtsEntryInputCopyWithImpl<$Res, _$AtsEntryInputImpl>
-    implements _$$AtsEntryInputImplCopyWith<$Res> {
-  __$$AtsEntryInputImplCopyWithImpl(
-      _$AtsEntryInputImpl _value, $Res Function(_$AtsEntryInputImpl) _then)
-      : super(_value, _then);
+class _$AtsEntryInputCopyWithImpl<$Res>
+    implements $AtsEntryInputCopyWith<$Res> {
+  _$AtsEntryInputCopyWithImpl(this._self, this._then);
+
+  final AtsEntryInput _self;
+  final $Res Function(AtsEntryInput) _then;
 
   /// Create a copy of AtsEntryInput
   /// with the given fields replaced by the non-null parameter values.
@@ -13221,65 +12302,65 @@ class __$$AtsEntryInputImplCopyWithImpl<$Res>
     Object? height = freezed,
     Object? fuelType = freezed,
   }) {
-    return _then(_$AtsEntryInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       oldTankLevel: freezed == oldTankLevel
-          ? _value.oldTankLevel
+          ? _self.oldTankLevel
           : oldTankLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       newTankLevel: freezed == newTankLevel
-          ? _value.newTankLevel
+          ? _self.newTankLevel
           : newTankLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       initialDensity: freezed == initialDensity
-          ? _value.initialDensity
+          ? _self.initialDensity
           : initialDensity // ignore: cast_nullable_to_non_nullable
               as double?,
       density: freezed == density
-          ? _value.density
+          ? _self.density
           : density // ignore: cast_nullable_to_non_nullable
               as double?,
       initialTemperature: freezed == initialTemperature
-          ? _value.initialTemperature
+          ? _self.initialTemperature
           : initialTemperature // ignore: cast_nullable_to_non_nullable
               as double?,
       temperature: freezed == temperature
-          ? _value.temperature
+          ? _self.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
               as double?,
       initialWaterLevel: freezed == initialWaterLevel
-          ? _value.initialWaterLevel
+          ? _self.initialWaterLevel
           : initialWaterLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       waterLevel: freezed == waterLevel
-          ? _value.waterLevel
+          ? _self.waterLevel
           : waterLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       startAt: freezed == startAt
-          ? _value.startAt
+          ? _self.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
               as double?,
       endAt: freezed == endAt
-          ? _value.endAt
+          ? _self.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
               as double?,
       initialHeight: freezed == initialHeight
-          ? _value.initialHeight
+          ? _self.initialHeight
           : initialHeight // ignore: cast_nullable_to_non_nullable
               as double?,
       height: freezed == height
-          ? _value.height
+          ? _self.height
           : height // ignore: cast_nullable_to_non_nullable
               as double?,
       fuelType: freezed == fuelType
-          ? _value.fuelType
+          ? _self.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -13288,8 +12369,8 @@ class __$$AtsEntryInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AtsEntryInputImpl implements _AtsEntryInput {
-  _$AtsEntryInputImpl(
+class _AtsEntryInput implements AtsEntryInput {
+  _AtsEntryInput(
       {this.id,
       this.assetId,
       this.oldTankLevel,
@@ -13306,9 +12387,8 @@ class _$AtsEntryInputImpl implements _AtsEntryInput {
       this.height,
       @Deprecated("Dont use it, Api search fuelType from assetId")
       this.fuelType});
-
-  factory _$AtsEntryInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsEntryInputImplFromJson(json);
+  factory _AtsEntryInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsEntryInputFromJson(json);
 
   /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
   @override
@@ -13371,29 +12451,36 @@ class _$AtsEntryInputImpl implements _AtsEntryInput {
   @Deprecated("Dont use it, Api search fuelType from assetId")
   String? fuelType;
 
+  /// Create a copy of AtsEntryInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsEntryInputCopyWith<_AtsEntryInput> get copyWith =>
+      __$AtsEntryInputCopyWithImpl<_AtsEntryInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsEntryInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'AtsEntryInput(id: $id, assetId: $assetId, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, initialDensity: $initialDensity, density: $density, initialTemperature: $initialTemperature, temperature: $temperature, initialWaterLevel: $initialWaterLevel, waterLevel: $waterLevel, startAt: $startAt, endAt: $endAt, initialHeight: $initialHeight, height: $height, fuelType: $fuelType)';
   }
-
-  /// Create a copy of AtsEntryInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AtsEntryInputImplCopyWith<_$AtsEntryInputImpl> get copyWith =>
-      __$$AtsEntryInputImplCopyWithImpl<_$AtsEntryInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsEntryInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _AtsEntryInput implements AtsEntryInput {
-  factory _AtsEntryInput(
+/// @nodoc
+abstract mixin class _$AtsEntryInputCopyWith<$Res>
+    implements $AtsEntryInputCopyWith<$Res> {
+  factory _$AtsEntryInputCopyWith(
+          _AtsEntryInput value, $Res Function(_AtsEntryInput) _then) =
+      __$AtsEntryInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String? assetId,
       double? oldTankLevel,
@@ -13409,223 +12496,543 @@ abstract class _AtsEntryInput implements AtsEntryInput {
       double? initialHeight,
       double? height,
       @Deprecated("Dont use it, Api search fuelType from assetId")
-      String? fuelType}) = _$AtsEntryInputImpl;
+      String? fuelType});
+}
 
-  factory _AtsEntryInput.fromJson(Map<String, dynamic> json) =
-      _$AtsEntryInputImpl.fromJson;
+/// @nodoc
+class __$AtsEntryInputCopyWithImpl<$Res>
+    implements _$AtsEntryInputCopyWith<$Res> {
+  __$AtsEntryInputCopyWithImpl(this._self, this._then);
 
-  /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
-  @override
-  String? get id;
-
-  /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
-  set id(String? value);
-
-  /// ID of the associated asset.
-  @override
-  String? get assetId;
-
-  /// ID of the associated asset.
-  set assetId(String? value);
-
-  /// Initial tank level in the entry.
-  @override
-  double? get oldTankLevel;
-
-  /// Initial tank level in the entry.
-  set oldTankLevel(double? value);
-
-  /// Last tank level in the entry.
-  @override
-  double? get newTankLevel;
-
-  /// Last tank level in the entry.
-  set newTankLevel(double? value);
-
-  /// Initial density of the fuel.
-  @override
-  double? get initialDensity;
-
-  /// Initial density of the fuel.
-  set initialDensity(double? value);
-
-  /// Entry density of the fuel.
-  @override
-  double? get density;
-
-  /// Entry density of the fuel.
-  set density(double? value);
-
-  /// Initial temperature of the fuel.
-  @override
-  double? get initialTemperature;
-
-  /// Initial temperature of the fuel.
-  set initialTemperature(double? value);
-
-  /// Entry temperature of the fuel.
-  @override
-  double? get temperature;
-
-  /// Entry temperature of the fuel.
-  set temperature(double? value);
-
-  /// Initial water level in the tank.
-  @override
-  double? get initialWaterLevel;
-
-  /// Initial water level in the tank.
-  set initialWaterLevel(double? value);
-
-  /// Entry water level in the tank.
-  @override
-  double? get waterLevel;
-
-  /// Entry water level in the tank.
-  set waterLevel(double? value);
-
-  /// Start date of the entry (Unix timestamp).
-  @override
-  double? get startAt;
-
-  /// Start date of the entry (Unix timestamp).
-  set startAt(double? value);
-
-  /// End date of the entry (Unix timestamp).
-  @override
-  double? get endAt;
-
-  /// End date of the entry (Unix timestamp).
-  set endAt(double? value);
-
-  /// Initial height of the fuel in the tank.
-  @override
-  double? get initialHeight;
-
-  /// Initial height of the fuel in the tank.
-  set initialHeight(double? value);
-
-  /// Entry height of the fuel in the tank.
-  @override
-  double? get height;
-
-  /// Entry height of the fuel in the tank.
-  set height(double? value);
-
-  /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
-  @override
-  @Deprecated("Dont use it, Api search fuelType from assetId")
-  String? get fuelType;
-
-  /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
-  @Deprecated("Dont use it, Api search fuelType from assetId")
-  set fuelType(String? value);
+  final _AtsEntryInput _self;
+  final $Res Function(_AtsEntryInput) _then;
 
   /// Create a copy of AtsEntryInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsEntryInputImplCopyWith<_$AtsEntryInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? oldTankLevel = freezed,
+    Object? newTankLevel = freezed,
+    Object? initialDensity = freezed,
+    Object? density = freezed,
+    Object? initialTemperature = freezed,
+    Object? temperature = freezed,
+    Object? initialWaterLevel = freezed,
+    Object? waterLevel = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? initialHeight = freezed,
+    Object? height = freezed,
+    Object? fuelType = freezed,
+  }) {
+    return _then(_AtsEntryInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oldTankLevel: freezed == oldTankLevel
+          ? _self.oldTankLevel
+          : oldTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      newTankLevel: freezed == newTankLevel
+          ? _self.newTankLevel
+          : newTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialDensity: freezed == initialDensity
+          ? _self.initialDensity
+          : initialDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      density: freezed == density
+          ? _self.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialTemperature: freezed == initialTemperature
+          ? _self.initialTemperature
+          : initialTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialWaterLevel: freezed == initialWaterLevel
+          ? _self.initialWaterLevel
+          : initialWaterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      waterLevel: freezed == waterLevel
+          ? _self.waterLevel
+          : waterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startAt: freezed == startAt
+          ? _self.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      endAt: freezed == endAt
+          ? _self.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialHeight: freezed == initialHeight
+          ? _self.initialHeight
+          : initialHeight // ignore: cast_nullable_to_non_nullable
+              as double?,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      fuelType: freezed == fuelType
+          ? _self.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
-AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) {
-  return _AtsOperation.fromJson(json);
+/// @nodoc
+mixin _$AtsOperationHistory {
+  /// [status] is the status of of the operation.
+  @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+  AtsPurchaseOrderStatus get status;
+
+  /// [createdAt] is the date of the status change.
+  @TimestampConverter()
+  DateTime get createdAt;
+
+  /// [asset] is the asset of the operation. Can be null.
+  Asset? get asset;
+
+  /// [assetId] is the asset ID of the operation. Can be null.
+  String? get assetId;
+
+  /// Create a copy of AtsOperationHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AtsOperationHistoryCopyWith<AtsOperationHistory> get copyWith =>
+      _$AtsOperationHistoryCopyWithImpl<AtsOperationHistory>(
+          this as AtsOperationHistory, _$identity);
+
+  /// Serializes this AtsOperationHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsOperationHistory &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, status, createdAt, asset, assetId);
+
+  @override
+  String toString() {
+    return 'AtsOperationHistory(status: $status, createdAt: $createdAt, asset: $asset, assetId: $assetId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AtsOperationHistoryCopyWith<$Res> {
+  factory $AtsOperationHistoryCopyWith(
+          AtsOperationHistory value, $Res Function(AtsOperationHistory) _then) =
+      _$AtsOperationHistoryCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      AtsPurchaseOrderStatus status,
+      @TimestampConverter() DateTime createdAt,
+      Asset? asset,
+      String? assetId});
+
+  $AssetCopyWith<$Res>? get asset;
+}
+
+/// @nodoc
+class _$AtsOperationHistoryCopyWithImpl<$Res>
+    implements $AtsOperationHistoryCopyWith<$Res> {
+  _$AtsOperationHistoryCopyWithImpl(this._self, this._then);
+
+  final AtsOperationHistory _self;
+  final $Res Function(AtsOperationHistory) _then;
+
+  /// Create a copy of AtsOperationHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? createdAt = null,
+    Object? asset = freezed,
+    Object? assetId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderStatus,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of AtsOperationHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AtsOperationHistory implements AtsOperationHistory {
+  const _AtsOperationHistory(
+      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      required this.status,
+      @TimestampConverter() required this.createdAt,
+      this.asset,
+      this.assetId});
+  factory _AtsOperationHistory.fromJson(Map<String, dynamic> json) =>
+      _$AtsOperationHistoryFromJson(json);
+
+  /// [status] is the status of of the operation.
+  @override
+  @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+  final AtsPurchaseOrderStatus status;
+
+  /// [createdAt] is the date of the status change.
+  @override
+  @TimestampConverter()
+  final DateTime createdAt;
+
+  /// [asset] is the asset of the operation. Can be null.
+  @override
+  final Asset? asset;
+
+  /// [assetId] is the asset ID of the operation. Can be null.
+  @override
+  final String? assetId;
+
+  /// Create a copy of AtsOperationHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsOperationHistoryCopyWith<_AtsOperationHistory> get copyWith =>
+      __$AtsOperationHistoryCopyWithImpl<_AtsOperationHistory>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsOperationHistoryToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AtsOperationHistory &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, status, createdAt, asset, assetId);
+
+  @override
+  String toString() {
+    return 'AtsOperationHistory(status: $status, createdAt: $createdAt, asset: $asset, assetId: $assetId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AtsOperationHistoryCopyWith<$Res>
+    implements $AtsOperationHistoryCopyWith<$Res> {
+  factory _$AtsOperationHistoryCopyWith(_AtsOperationHistory value,
+          $Res Function(_AtsOperationHistory) _then) =
+      __$AtsOperationHistoryCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      AtsPurchaseOrderStatus status,
+      @TimestampConverter() DateTime createdAt,
+      Asset? asset,
+      String? assetId});
+
+  @override
+  $AssetCopyWith<$Res>? get asset;
+}
+
+/// @nodoc
+class __$AtsOperationHistoryCopyWithImpl<$Res>
+    implements _$AtsOperationHistoryCopyWith<$Res> {
+  __$AtsOperationHistoryCopyWithImpl(this._self, this._then);
+
+  final _AtsOperationHistory _self;
+  final $Res Function(_AtsOperationHistory) _then;
+
+  /// Create a copy of AtsOperationHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? status = null,
+    Object? createdAt = null,
+    Object? asset = freezed,
+    Object? assetId = freezed,
+  }) {
+    return _then(_AtsOperationHistory(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderStatus,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of AtsOperationHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsOperation {
   /// `id` of the asset entity. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// `sellerAssetId` is the ID of the seller asset.
-  String? get sellerAssetId => throw _privateConstructorUsedError;
+  String? get sellerAssetId;
 
   /// `transportAssetId` is the ID of the transport asset.
-  String? get transportAssetId => throw _privateConstructorUsedError;
+  String? get transportAssetId;
 
   /// `purchasedAt` is the Unix timestamp of the last reception date.
   @TimestampOrNullConverter()
-  DateTime? get purchasedAt => throw _privateConstructorUsedError;
+  DateTime? get purchasedAt;
 
   /// `createdAt` is the Unix timestamp of the creation date.
   @TimestampOrNullConverter()
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt;
 
   /// `finishedAt` is the Unix timestamp of the finished date.
   @TimestampOrNullConverter()
-  DateTime? get finishedAt => throw _privateConstructorUsedError;
+  DateTime? get finishedAt;
 
   /// `pendingToReview` indicates if it's pending to review.
-  bool? get pendingToReview => throw _privateConstructorUsedError;
+  bool? get pendingToReview;
 
   /// `ordersIds` is a list of purchase orders linked to the operation.
-  List<String>? get ordersIds => throw _privateConstructorUsedError;
+  List<String>? get ordersIds;
 
   /// `sellerAsset` is the seller Asset linked to the purchase order.
-  Asset? get sellerAsset => throw _privateConstructorUsedError;
+  Asset? get sellerAsset;
 
   /// `transportAsset` is the transport Asset linked to the purchase order.
-  Asset? get transportAsset => throw _privateConstructorUsedError;
+  Asset? get transportAsset;
 
   /// `sellerInformation` is the legal information about the seller.
-  AtsCompanyInformation? get sellerInformation =>
-      throw _privateConstructorUsedError;
+  AtsCompanyInformation? get sellerInformation;
 
   /// `transportInformation` is the legal information about the transport.
-  AtsTransportInformation? get transportInformation =>
-      throw _privateConstructorUsedError;
+  AtsTransportInformation? get transportInformation;
 
   /// `orderStatus` is the status of the order.
-  @AtsPurchaseOrderStatusOrNullConverter()
-  AtsPurchaseOrderStatus? get orderStatus => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+  AtsPurchaseOrderStatus? get orderStatus;
 
   /// `category` is the category of the purchase order.
-  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-  AtsPurchaseOrderCategoriesEntity? get category =>
-      throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
+  AtsPurchaseOrderCategoriesEntity? get category;
 
   /// `deliverCategory` is the deliver category of the purchase order.
-  @AtsPurchaseOrderSubCategoriesOrNullConverter()
-  AtsPurchaseOrderSubCategories? get deliverCategory =>
-      throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
+  AtsPurchaseOrderSubCategories? get deliverCategory;
 
   /// `purchaseOrders` are the purchase orders linked to the operation.
-  List<AtsPurchaseOrder>? get purchaseOrders =>
-      throw _privateConstructorUsedError;
+  List<AtsPurchaseOrder>? get purchaseOrders;
 
   /// `statuses` are the statuses of the operation.
-  List<AtsOperationStatuses>? get statuses =>
-      throw _privateConstructorUsedError;
+  List<AtsOperationStatuses>? get statuses;
 
   /// `totalQuantity` total quantity of the purchase order.
-  double? get totalQuantity => throw _privateConstructorUsedError;
+  double? get totalQuantity;
 
   /// `productsInformation` is the list of products information.
-  List<OperationProductInformation>? get productsInformation =>
-      throw _privateConstructorUsedError;
+  List<OperationProductInformation>? get productsInformation;
 
   /// `ctes` is the list of CTEs.
-  List<String>? get ctes => throw _privateConstructorUsedError;
+  List<String>? get ctes;
+
+  /// `caclFormsIds` is the list of CACL forms IDs linked to the operation.
+  List<String>? get caclFormsIds;
 
   /// `caclForms` is the list of CACL forms.
-  List<String>? get caclForms => throw _privateConstructorUsedError;
+  List<CaclEntity>? get caclForms;
 
-  /// Serializes this AtsOperation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  /// [manifests] is the list of manifests linked to the operation.
+  List<Manifest>? get manifests;
+
+  /// [history] is the list of history linked to the operation.
+  List<AtsOperationHistory>? get history;
 
   /// Create a copy of AtsOperation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsOperationCopyWith<AtsOperation> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsOperationCopyWithImpl<AtsOperation>(
+          this as AtsOperation, _$identity);
+
+  /// Serializes this AtsOperation to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsOperation &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.sellerAssetId, sellerAssetId) ||
+                other.sellerAssetId == sellerAssetId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.purchasedAt, purchasedAt) ||
+                other.purchasedAt == purchasedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
+            (identical(other.pendingToReview, pendingToReview) ||
+                other.pendingToReview == pendingToReview) &&
+            const DeepCollectionEquality().equals(other.ordersIds, ordersIds) &&
+            (identical(other.sellerAsset, sellerAsset) ||
+                other.sellerAsset == sellerAsset) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.sellerInformation, sellerInformation) ||
+                other.sellerInformation == sellerInformation) &&
+            (identical(other.transportInformation, transportInformation) ||
+                other.transportInformation == transportInformation) &&
+            (identical(other.orderStatus, orderStatus) ||
+                other.orderStatus == orderStatus) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.deliverCategory, deliverCategory) ||
+                other.deliverCategory == deliverCategory) &&
+            const DeepCollectionEquality()
+                .equals(other.purchaseOrders, purchaseOrders) &&
+            const DeepCollectionEquality().equals(other.statuses, statuses) &&
+            (identical(other.totalQuantity, totalQuantity) ||
+                other.totalQuantity == totalQuantity) &&
+            const DeepCollectionEquality()
+                .equals(other.productsInformation, productsInformation) &&
+            const DeepCollectionEquality().equals(other.ctes, ctes) &&
+            const DeepCollectionEquality()
+                .equals(other.caclFormsIds, caclFormsIds) &&
+            const DeepCollectionEquality().equals(other.caclForms, caclForms) &&
+            const DeepCollectionEquality().equals(other.manifests, manifests) &&
+            const DeepCollectionEquality().equals(other.history, history));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        sellerAssetId,
+        transportAssetId,
+        purchasedAt,
+        createdAt,
+        finishedAt,
+        pendingToReview,
+        const DeepCollectionEquality().hash(ordersIds),
+        sellerAsset,
+        transportAsset,
+        sellerInformation,
+        transportInformation,
+        orderStatus,
+        category,
+        deliverCategory,
+        const DeepCollectionEquality().hash(purchaseOrders),
+        const DeepCollectionEquality().hash(statuses),
+        totalQuantity,
+        const DeepCollectionEquality().hash(productsInformation),
+        const DeepCollectionEquality().hash(ctes),
+        const DeepCollectionEquality().hash(caclFormsIds),
+        const DeepCollectionEquality().hash(caclForms),
+        const DeepCollectionEquality().hash(manifests),
+        const DeepCollectionEquality().hash(history)
+      ]);
+
+  @override
+  String toString() {
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsOperationCopyWith<$Res> {
+abstract mixin class $AtsOperationCopyWith<$Res> {
   factory $AtsOperationCopyWith(
-          AtsOperation value, $Res Function(AtsOperation) then) =
-      _$AtsOperationCopyWithImpl<$Res, AtsOperation>;
+          AtsOperation value, $Res Function(AtsOperation) _then) =
+      _$AtsOperationCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -13640,18 +13047,21 @@ abstract class $AtsOperationCopyWith<$Res> {
       Asset? transportAsset,
       AtsCompanyInformation? sellerInformation,
       AtsTransportInformation? transportInformation,
-      @AtsPurchaseOrderStatusOrNullConverter()
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
       AtsPurchaseOrderStatus? orderStatus,
-      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
       AtsPurchaseOrderCategoriesEntity? category,
-      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
       AtsPurchaseOrderSubCategories? deliverCategory,
       List<AtsPurchaseOrder>? purchaseOrders,
       List<AtsOperationStatuses>? statuses,
       double? totalQuantity,
       List<OperationProductInformation>? productsInformation,
       List<String>? ctes,
-      List<String>? caclForms});
+      List<String>? caclFormsIds,
+      List<CaclEntity>? caclForms,
+      List<Manifest>? manifests,
+      List<AtsOperationHistory>? history});
 
   $AssetCopyWith<$Res>? get sellerAsset;
   $AssetCopyWith<$Res>? get transportAsset;
@@ -13660,14 +13070,11 @@ abstract class $AtsOperationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
-    implements $AtsOperationCopyWith<$Res> {
-  _$AtsOperationCopyWithImpl(this._value, this._then);
+class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
+  _$AtsOperationCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsOperation _self;
+  final $Res Function(AtsOperation) _then;
 
   /// Create a copy of AtsOperation
   /// with the given fields replaced by the non-null parameter values.
@@ -13694,94 +13101,109 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     Object? totalQuantity = freezed,
     Object? productsInformation = freezed,
     Object? ctes = freezed,
+    Object? caclFormsIds = freezed,
     Object? caclForms = freezed,
+    Object? manifests = freezed,
+    Object? history = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       sellerAssetId: freezed == sellerAssetId
-          ? _value.sellerAssetId
+          ? _self.sellerAssetId
           : sellerAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       transportAssetId: freezed == transportAssetId
-          ? _value.transportAssetId
+          ? _self.transportAssetId
           : transportAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       purchasedAt: freezed == purchasedAt
-          ? _value.purchasedAt
+          ? _self.purchasedAt
           : purchasedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdAt: freezed == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       finishedAt: freezed == finishedAt
-          ? _value.finishedAt
+          ? _self.finishedAt
           : finishedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       pendingToReview: freezed == pendingToReview
-          ? _value.pendingToReview
+          ? _self.pendingToReview
           : pendingToReview // ignore: cast_nullable_to_non_nullable
               as bool?,
       ordersIds: freezed == ordersIds
-          ? _value.ordersIds
+          ? _self.ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       sellerAsset: freezed == sellerAsset
-          ? _value.sellerAsset
+          ? _self.sellerAsset
           : sellerAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       transportAsset: freezed == transportAsset
-          ? _value.transportAsset
+          ? _self.transportAsset
           : transportAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       sellerInformation: freezed == sellerInformation
-          ? _value.sellerInformation
+          ? _self.sellerInformation
           : sellerInformation // ignore: cast_nullable_to_non_nullable
               as AtsCompanyInformation?,
       transportInformation: freezed == transportInformation
-          ? _value.transportInformation
+          ? _self.transportInformation
           : transportInformation // ignore: cast_nullable_to_non_nullable
               as AtsTransportInformation?,
       orderStatus: freezed == orderStatus
-          ? _value.orderStatus
+          ? _self.orderStatus
           : orderStatus // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrderStatus?,
       category: freezed == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrderCategoriesEntity?,
       deliverCategory: freezed == deliverCategory
-          ? _value.deliverCategory
+          ? _self.deliverCategory
           : deliverCategory // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrderSubCategories?,
       purchaseOrders: freezed == purchaseOrders
-          ? _value.purchaseOrders
+          ? _self.purchaseOrders
           : purchaseOrders // ignore: cast_nullable_to_non_nullable
               as List<AtsPurchaseOrder>?,
       statuses: freezed == statuses
-          ? _value.statuses
+          ? _self.statuses
           : statuses // ignore: cast_nullable_to_non_nullable
               as List<AtsOperationStatuses>?,
       totalQuantity: freezed == totalQuantity
-          ? _value.totalQuantity
+          ? _self.totalQuantity
           : totalQuantity // ignore: cast_nullable_to_non_nullable
               as double?,
       productsInformation: freezed == productsInformation
-          ? _value.productsInformation
+          ? _self.productsInformation
           : productsInformation // ignore: cast_nullable_to_non_nullable
               as List<OperationProductInformation>?,
       ctes: freezed == ctes
-          ? _value.ctes
+          ? _self.ctes
           : ctes // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      caclForms: freezed == caclForms
-          ? _value.caclForms
-          : caclForms // ignore: cast_nullable_to_non_nullable
+      caclFormsIds: freezed == caclFormsIds
+          ? _self.caclFormsIds
+          : caclFormsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-    ) as $Val);
+      caclForms: freezed == caclForms
+          ? _self.caclForms
+          : caclForms // ignore: cast_nullable_to_non_nullable
+              as List<CaclEntity>?,
+      manifests: freezed == manifests
+          ? _self.manifests
+          : manifests // ignore: cast_nullable_to_non_nullable
+              as List<Manifest>?,
+      history: freezed == history
+          ? _self.history
+          : history // ignore: cast_nullable_to_non_nullable
+              as List<AtsOperationHistory>?,
+    ));
   }
 
   /// Create a copy of AtsOperation
@@ -13789,12 +13211,12 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get sellerAsset {
-    if (_value.sellerAsset == null) {
+    if (_self.sellerAsset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.sellerAsset!, (value) {
-      return _then(_value.copyWith(sellerAsset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.sellerAsset!, (value) {
+      return _then(_self.copyWith(sellerAsset: value));
     });
   }
 
@@ -13803,12 +13225,12 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get transportAsset {
-    if (_value.transportAsset == null) {
+    if (_self.transportAsset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.transportAsset!, (value) {
-      return _then(_value.copyWith(transportAsset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+      return _then(_self.copyWith(transportAsset: value));
     });
   }
 
@@ -13817,13 +13239,13 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
   @override
   @pragma('vm:prefer-inline')
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation {
-    if (_value.sellerInformation == null) {
+    if (_self.sellerInformation == null) {
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_value.sellerInformation!,
+    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!,
         (value) {
-      return _then(_value.copyWith(sellerInformation: value) as $Val);
+      return _then(_self.copyWith(sellerInformation: value));
     });
   }
 
@@ -13832,189 +13254,21 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
   @override
   @pragma('vm:prefer-inline')
   $AtsTransportInformationCopyWith<$Res>? get transportInformation {
-    if (_value.transportInformation == null) {
+    if (_self.transportInformation == null) {
       return null;
     }
 
-    return $AtsTransportInformationCopyWith<$Res>(_value.transportInformation!,
+    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!,
         (value) {
-      return _then(_value.copyWith(transportInformation: value) as $Val);
+      return _then(_self.copyWith(transportInformation: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsOperationImplCopyWith<$Res>
-    implements $AtsOperationCopyWith<$Res> {
-  factory _$$AtsOperationImplCopyWith(
-          _$AtsOperationImpl value, $Res Function(_$AtsOperationImpl) then) =
-      __$$AtsOperationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String? sellerAssetId,
-      String? transportAssetId,
-      @TimestampOrNullConverter() DateTime? purchasedAt,
-      @TimestampOrNullConverter() DateTime? createdAt,
-      @TimestampOrNullConverter() DateTime? finishedAt,
-      bool? pendingToReview,
-      List<String>? ordersIds,
-      Asset? sellerAsset,
-      Asset? transportAsset,
-      AtsCompanyInformation? sellerInformation,
-      AtsTransportInformation? transportInformation,
-      @AtsPurchaseOrderStatusOrNullConverter()
-      AtsPurchaseOrderStatus? orderStatus,
-      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-      AtsPurchaseOrderCategoriesEntity? category,
-      @AtsPurchaseOrderSubCategoriesOrNullConverter()
-      AtsPurchaseOrderSubCategories? deliverCategory,
-      List<AtsPurchaseOrder>? purchaseOrders,
-      List<AtsOperationStatuses>? statuses,
-      double? totalQuantity,
-      List<OperationProductInformation>? productsInformation,
-      List<String>? ctes,
-      List<String>? caclForms});
-
-  @override
-  $AssetCopyWith<$Res>? get sellerAsset;
-  @override
-  $AssetCopyWith<$Res>? get transportAsset;
-  @override
-  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
-  @override
-  $AtsTransportInformationCopyWith<$Res>? get transportInformation;
-}
-
-/// @nodoc
-class __$$AtsOperationImplCopyWithImpl<$Res>
-    extends _$AtsOperationCopyWithImpl<$Res, _$AtsOperationImpl>
-    implements _$$AtsOperationImplCopyWith<$Res> {
-  __$$AtsOperationImplCopyWithImpl(
-      _$AtsOperationImpl _value, $Res Function(_$AtsOperationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? sellerAssetId = freezed,
-    Object? transportAssetId = freezed,
-    Object? purchasedAt = freezed,
-    Object? createdAt = freezed,
-    Object? finishedAt = freezed,
-    Object? pendingToReview = freezed,
-    Object? ordersIds = freezed,
-    Object? sellerAsset = freezed,
-    Object? transportAsset = freezed,
-    Object? sellerInformation = freezed,
-    Object? transportInformation = freezed,
-    Object? orderStatus = freezed,
-    Object? category = freezed,
-    Object? deliverCategory = freezed,
-    Object? purchaseOrders = freezed,
-    Object? statuses = freezed,
-    Object? totalQuantity = freezed,
-    Object? productsInformation = freezed,
-    Object? ctes = freezed,
-    Object? caclForms = freezed,
-  }) {
-    return _then(_$AtsOperationImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sellerAssetId: freezed == sellerAssetId
-          ? _value.sellerAssetId
-          : sellerAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transportAssetId: freezed == transportAssetId
-          ? _value.transportAssetId
-          : transportAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      purchasedAt: freezed == purchasedAt
-          ? _value.purchasedAt
-          : purchasedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      finishedAt: freezed == finishedAt
-          ? _value.finishedAt
-          : finishedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      pendingToReview: freezed == pendingToReview
-          ? _value.pendingToReview
-          : pendingToReview // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ordersIds: freezed == ordersIds
-          ? _value._ordersIds
-          : ordersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      sellerAsset: freezed == sellerAsset
-          ? _value.sellerAsset
-          : sellerAsset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      transportAsset: freezed == transportAsset
-          ? _value.transportAsset
-          : transportAsset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      sellerInformation: freezed == sellerInformation
-          ? _value.sellerInformation
-          : sellerInformation // ignore: cast_nullable_to_non_nullable
-              as AtsCompanyInformation?,
-      transportInformation: freezed == transportInformation
-          ? _value.transportInformation
-          : transportInformation // ignore: cast_nullable_to_non_nullable
-              as AtsTransportInformation?,
-      orderStatus: freezed == orderStatus
-          ? _value.orderStatus
-          : orderStatus // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseOrderStatus?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseOrderCategoriesEntity?,
-      deliverCategory: freezed == deliverCategory
-          ? _value.deliverCategory
-          : deliverCategory // ignore: cast_nullable_to_non_nullable
-              as AtsPurchaseOrderSubCategories?,
-      purchaseOrders: freezed == purchaseOrders
-          ? _value._purchaseOrders
-          : purchaseOrders // ignore: cast_nullable_to_non_nullable
-              as List<AtsPurchaseOrder>?,
-      statuses: freezed == statuses
-          ? _value._statuses
-          : statuses // ignore: cast_nullable_to_non_nullable
-              as List<AtsOperationStatuses>?,
-      totalQuantity: freezed == totalQuantity
-          ? _value.totalQuantity
-          : totalQuantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      productsInformation: freezed == productsInformation
-          ? _value._productsInformation
-          : productsInformation // ignore: cast_nullable_to_non_nullable
-              as List<OperationProductInformation>?,
-      ctes: freezed == ctes
-          ? _value._ctes
-          : ctes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      caclForms: freezed == caclForms
-          ? _value._caclForms
-          : caclForms // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsOperationImpl implements _AtsOperation {
-  const _$AtsOperationImpl(
+class _AtsOperation implements AtsOperation {
+  const _AtsOperation(
       {this.id,
       this.sellerAssetId,
       this.transportAssetId,
@@ -14027,24 +13281,32 @@ class _$AtsOperationImpl implements _AtsOperation {
       this.transportAsset,
       this.sellerInformation,
       this.transportInformation,
-      @AtsPurchaseOrderStatusOrNullConverter() this.orderStatus,
-      @AtsPurchaseOrderCategoriesEntityOrNullConverter() this.category,
-      @AtsPurchaseOrderSubCategoriesOrNullConverter() this.deliverCategory,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      this.orderStatus,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
+      this.category,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
+      this.deliverCategory,
       final List<AtsPurchaseOrder>? purchaseOrders,
       final List<AtsOperationStatuses>? statuses,
       this.totalQuantity,
       final List<OperationProductInformation>? productsInformation,
       final List<String>? ctes,
-      final List<String>? caclForms})
+      final List<String>? caclFormsIds,
+      final List<CaclEntity>? caclForms,
+      final List<Manifest>? manifests,
+      final List<AtsOperationHistory>? history})
       : _ordersIds = ordersIds,
         _purchaseOrders = purchaseOrders,
         _statuses = statuses,
         _productsInformation = productsInformation,
         _ctes = ctes,
-        _caclForms = caclForms;
-
-  factory _$AtsOperationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsOperationImplFromJson(json);
+        _caclFormsIds = caclFormsIds,
+        _caclForms = caclForms,
+        _manifests = manifests,
+        _history = history;
+  factory _AtsOperation.fromJson(Map<String, dynamic> json) =>
+      _$AtsOperationFromJson(json);
 
   /// `id` of the asset entity. This ID is unique.
   @override
@@ -14108,17 +13370,17 @@ class _$AtsOperationImpl implements _AtsOperation {
 
   /// `orderStatus` is the status of the order.
   @override
-  @AtsPurchaseOrderStatusOrNullConverter()
+  @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
   final AtsPurchaseOrderStatus? orderStatus;
 
   /// `category` is the category of the purchase order.
   @override
-  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+  @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
   final AtsPurchaseOrderCategoriesEntity? category;
 
   /// `deliverCategory` is the deliver category of the purchase order.
   @override
-  @AtsPurchaseOrderSubCategoriesOrNullConverter()
+  @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
   final AtsPurchaseOrderSubCategories? deliverCategory;
 
   /// `purchaseOrders` are the purchase orders linked to the operation.
@@ -14178,12 +13440,25 @@ class _$AtsOperationImpl implements _AtsOperation {
     return EqualUnmodifiableListView(value);
   }
 
+  /// `caclFormsIds` is the list of CACL forms IDs linked to the operation.
+  final List<String>? _caclFormsIds;
+
+  /// `caclFormsIds` is the list of CACL forms IDs linked to the operation.
+  @override
+  List<String>? get caclFormsIds {
+    final value = _caclFormsIds;
+    if (value == null) return null;
+    if (_caclFormsIds is EqualUnmodifiableListView) return _caclFormsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// `caclForms` is the list of CACL forms.
-  final List<String>? _caclForms;
+  final List<CaclEntity>? _caclForms;
 
   /// `caclForms` is the list of CACL forms.
   @override
-  List<String>? get caclForms {
+  List<CaclEntity>? get caclForms {
     final value = _caclForms;
     if (value == null) return null;
     if (_caclForms is EqualUnmodifiableListView) return _caclForms;
@@ -14191,16 +13466,52 @@ class _$AtsOperationImpl implements _AtsOperation {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [manifests] is the list of manifests linked to the operation.
+  final List<Manifest>? _manifests;
+
+  /// [manifests] is the list of manifests linked to the operation.
   @override
-  String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclForms: $caclForms)';
+  List<Manifest>? get manifests {
+    final value = _manifests;
+    if (value == null) return null;
+    if (_manifests is EqualUnmodifiableListView) return _manifests;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [history] is the list of history linked to the operation.
+  final List<AtsOperationHistory>? _history;
+
+  /// [history] is the list of history linked to the operation.
+  @override
+  List<AtsOperationHistory>? get history {
+    final value = _history;
+    if (value == null) return null;
+    if (_history is EqualUnmodifiableListView) return _history;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsOperationCopyWith<_AtsOperation> get copyWith =>
+      __$AtsOperationCopyWithImpl<_AtsOperation>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsOperationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsOperationImpl &&
+            other is _AtsOperation &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.sellerAssetId, sellerAssetId) ||
                 other.sellerAssetId == sellerAssetId) &&
@@ -14239,7 +13550,12 @@ class _$AtsOperationImpl implements _AtsOperation {
                 .equals(other._productsInformation, _productsInformation) &&
             const DeepCollectionEquality().equals(other._ctes, _ctes) &&
             const DeepCollectionEquality()
-                .equals(other._caclForms, _caclForms));
+                .equals(other._caclFormsIds, _caclFormsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._caclForms, _caclForms) &&
+            const DeepCollectionEquality()
+                .equals(other._manifests, _manifests) &&
+            const DeepCollectionEquality().equals(other._history, _history));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -14266,201 +13582,344 @@ class _$AtsOperationImpl implements _AtsOperation {
         totalQuantity,
         const DeepCollectionEquality().hash(_productsInformation),
         const DeepCollectionEquality().hash(_ctes),
-        const DeepCollectionEquality().hash(_caclForms)
+        const DeepCollectionEquality().hash(_caclFormsIds),
+        const DeepCollectionEquality().hash(_caclForms),
+        const DeepCollectionEquality().hash(_manifests),
+        const DeepCollectionEquality().hash(_history)
       ]);
 
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>
-      __$$AtsOperationImplCopyWithImpl<_$AtsOperationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsOperationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
   }
 }
 
-abstract class _AtsOperation implements AtsOperation {
-  const factory _AtsOperation(
-      {final String? id,
-      final String? sellerAssetId,
-      final String? transportAssetId,
-      @TimestampOrNullConverter() final DateTime? purchasedAt,
-      @TimestampOrNullConverter() final DateTime? createdAt,
-      @TimestampOrNullConverter() final DateTime? finishedAt,
-      final bool? pendingToReview,
-      final List<String>? ordersIds,
-      final Asset? sellerAsset,
-      final Asset? transportAsset,
-      final AtsCompanyInformation? sellerInformation,
-      final AtsTransportInformation? transportInformation,
-      @AtsPurchaseOrderStatusOrNullConverter()
-      final AtsPurchaseOrderStatus? orderStatus,
-      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-      final AtsPurchaseOrderCategoriesEntity? category,
-      @AtsPurchaseOrderSubCategoriesOrNullConverter()
-      final AtsPurchaseOrderSubCategories? deliverCategory,
-      final List<AtsPurchaseOrder>? purchaseOrders,
-      final List<AtsOperationStatuses>? statuses,
-      final double? totalQuantity,
-      final List<OperationProductInformation>? productsInformation,
-      final List<String>? ctes,
-      final List<String>? caclForms}) = _$AtsOperationImpl;
-
-  factory _AtsOperation.fromJson(Map<String, dynamic> json) =
-      _$AtsOperationImpl.fromJson;
-
-  /// `id` of the asset entity. This ID is unique.
+/// @nodoc
+abstract mixin class _$AtsOperationCopyWith<$Res>
+    implements $AtsOperationCopyWith<$Res> {
+  factory _$AtsOperationCopyWith(
+          _AtsOperation value, $Res Function(_AtsOperation) _then) =
+      __$AtsOperationCopyWithImpl;
   @override
-  String? get id;
+  @useResult
+  $Res call(
+      {String? id,
+      String? sellerAssetId,
+      String? transportAssetId,
+      @TimestampOrNullConverter() DateTime? purchasedAt,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
+      bool? pendingToReview,
+      List<String>? ordersIds,
+      Asset? sellerAsset,
+      Asset? transportAsset,
+      AtsCompanyInformation? sellerInformation,
+      AtsTransportInformation? transportInformation,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      AtsPurchaseOrderStatus? orderStatus,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
+      AtsPurchaseOrderCategoriesEntity? category,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
+      AtsPurchaseOrderSubCategories? deliverCategory,
+      List<AtsPurchaseOrder>? purchaseOrders,
+      List<AtsOperationStatuses>? statuses,
+      double? totalQuantity,
+      List<OperationProductInformation>? productsInformation,
+      List<String>? ctes,
+      List<String>? caclFormsIds,
+      List<CaclEntity>? caclForms,
+      List<Manifest>? manifests,
+      List<AtsOperationHistory>? history});
 
-  /// `sellerAssetId` is the ID of the seller asset.
   @override
-  String? get sellerAssetId;
+  $AssetCopyWith<$Res>? get sellerAsset;
+  @override
+  $AssetCopyWith<$Res>? get transportAsset;
+  @override
+  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
+  @override
+  $AtsTransportInformationCopyWith<$Res>? get transportInformation;
+}
 
-  /// `transportAssetId` is the ID of the transport asset.
-  @override
-  String? get transportAssetId;
+/// @nodoc
+class __$AtsOperationCopyWithImpl<$Res>
+    implements _$AtsOperationCopyWith<$Res> {
+  __$AtsOperationCopyWithImpl(this._self, this._then);
 
-  /// `purchasedAt` is the Unix timestamp of the last reception date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get purchasedAt;
-
-  /// `createdAt` is the Unix timestamp of the creation date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get createdAt;
-
-  /// `finishedAt` is the Unix timestamp of the finished date.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get finishedAt;
-
-  /// `pendingToReview` indicates if it's pending to review.
-  @override
-  bool? get pendingToReview;
-
-  /// `ordersIds` is a list of purchase orders linked to the operation.
-  @override
-  List<String>? get ordersIds;
-
-  /// `sellerAsset` is the seller Asset linked to the purchase order.
-  @override
-  Asset? get sellerAsset;
-
-  /// `transportAsset` is the transport Asset linked to the purchase order.
-  @override
-  Asset? get transportAsset;
-
-  /// `sellerInformation` is the legal information about the seller.
-  @override
-  AtsCompanyInformation? get sellerInformation;
-
-  /// `transportInformation` is the legal information about the transport.
-  @override
-  AtsTransportInformation? get transportInformation;
-
-  /// `orderStatus` is the status of the order.
-  @override
-  @AtsPurchaseOrderStatusOrNullConverter()
-  AtsPurchaseOrderStatus? get orderStatus;
-
-  /// `category` is the category of the purchase order.
-  @override
-  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-  AtsPurchaseOrderCategoriesEntity? get category;
-
-  /// `deliverCategory` is the deliver category of the purchase order.
-  @override
-  @AtsPurchaseOrderSubCategoriesOrNullConverter()
-  AtsPurchaseOrderSubCategories? get deliverCategory;
-
-  /// `purchaseOrders` are the purchase orders linked to the operation.
-  @override
-  List<AtsPurchaseOrder>? get purchaseOrders;
-
-  /// `statuses` are the statuses of the operation.
-  @override
-  List<AtsOperationStatuses>? get statuses;
-
-  /// `totalQuantity` total quantity of the purchase order.
-  @override
-  double? get totalQuantity;
-
-  /// `productsInformation` is the list of products information.
-  @override
-  List<OperationProductInformation>? get productsInformation;
-
-  /// `ctes` is the list of CTEs.
-  @override
-  List<String>? get ctes;
-
-  /// `caclForms` is the list of CACL forms.
-  @override
-  List<String>? get caclForms;
+  final _AtsOperation _self;
+  final $Res Function(_AtsOperation) _then;
 
   /// Create a copy of AtsOperation
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? sellerAssetId = freezed,
+    Object? transportAssetId = freezed,
+    Object? purchasedAt = freezed,
+    Object? createdAt = freezed,
+    Object? finishedAt = freezed,
+    Object? pendingToReview = freezed,
+    Object? ordersIds = freezed,
+    Object? sellerAsset = freezed,
+    Object? transportAsset = freezed,
+    Object? sellerInformation = freezed,
+    Object? transportInformation = freezed,
+    Object? orderStatus = freezed,
+    Object? category = freezed,
+    Object? deliverCategory = freezed,
+    Object? purchaseOrders = freezed,
+    Object? statuses = freezed,
+    Object? totalQuantity = freezed,
+    Object? productsInformation = freezed,
+    Object? ctes = freezed,
+    Object? caclFormsIds = freezed,
+    Object? caclForms = freezed,
+    Object? manifests = freezed,
+    Object? history = freezed,
+  }) {
+    return _then(_AtsOperation(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sellerAssetId: freezed == sellerAssetId
+          ? _self.sellerAssetId
+          : sellerAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAssetId: freezed == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      purchasedAt: freezed == purchasedAt
+          ? _self.purchasedAt
+          : purchasedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _self.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      pendingToReview: freezed == pendingToReview
+          ? _self.pendingToReview
+          : pendingToReview // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      ordersIds: freezed == ordersIds
+          ? _self._ordersIds
+          : ordersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      sellerAsset: freezed == sellerAsset
+          ? _self.sellerAsset
+          : sellerAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportAsset: freezed == transportAsset
+          ? _self.transportAsset
+          : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      sellerInformation: freezed == sellerInformation
+          ? _self.sellerInformation
+          : sellerInformation // ignore: cast_nullable_to_non_nullable
+              as AtsCompanyInformation?,
+      transportInformation: freezed == transportInformation
+          ? _self.transportInformation
+          : transportInformation // ignore: cast_nullable_to_non_nullable
+              as AtsTransportInformation?,
+      orderStatus: freezed == orderStatus
+          ? _self.orderStatus
+          : orderStatus // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderStatus?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderCategoriesEntity?,
+      deliverCategory: freezed == deliverCategory
+          ? _self.deliverCategory
+          : deliverCategory // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderSubCategories?,
+      purchaseOrders: freezed == purchaseOrders
+          ? _self._purchaseOrders
+          : purchaseOrders // ignore: cast_nullable_to_non_nullable
+              as List<AtsPurchaseOrder>?,
+      statuses: freezed == statuses
+          ? _self._statuses
+          : statuses // ignore: cast_nullable_to_non_nullable
+              as List<AtsOperationStatuses>?,
+      totalQuantity: freezed == totalQuantity
+          ? _self.totalQuantity
+          : totalQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      productsInformation: freezed == productsInformation
+          ? _self._productsInformation
+          : productsInformation // ignore: cast_nullable_to_non_nullable
+              as List<OperationProductInformation>?,
+      ctes: freezed == ctes
+          ? _self._ctes
+          : ctes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      caclFormsIds: freezed == caclFormsIds
+          ? _self._caclFormsIds
+          : caclFormsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      caclForms: freezed == caclForms
+          ? _self._caclForms
+          : caclForms // ignore: cast_nullable_to_non_nullable
+              as List<CaclEntity>?,
+      manifests: freezed == manifests
+          ? _self._manifests
+          : manifests // ignore: cast_nullable_to_non_nullable
+              as List<Manifest>?,
+      history: freezed == history
+          ? _self._history
+          : history // ignore: cast_nullable_to_non_nullable
+              as List<AtsOperationHistory>?,
+    ));
+  }
 
-AtsOperationStatuses _$AtsOperationStatusesFromJson(Map<String, dynamic> json) {
-  return _AtsOperationStatuses.fromJson(json);
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get sellerAsset {
+    if (_self.sellerAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.sellerAsset!, (value) {
+      return _then(_self.copyWith(sellerAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportAsset {
+    if (_self.transportAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+      return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation {
+    if (_self.sellerInformation == null) {
+      return null;
+    }
+
+    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!,
+        (value) {
+      return _then(_self.copyWith(sellerInformation: value));
+    });
+  }
+
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsTransportInformationCopyWith<$Res>? get transportInformation {
+    if (_self.transportInformation == null) {
+      return null;
+    }
+
+    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!,
+        (value) {
+      return _then(_self.copyWith(transportInformation: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AtsOperationStatuses {
   /// `asset` is the Asset linked to the operation.
-  Asset? get asset => throw _privateConstructorUsedError;
+  Asset? get asset;
 
   /// `inTransitAt` is the Unix timestamp of when the asset was in transit.
   @TimestampOrNullConverter()
-  DateTime? get inTransitAt => throw _privateConstructorUsedError;
+  DateTime? get inTransitAt;
 
   /// `waitingToDispatchAt` is the Unix timestamp of when the asset was waiting to dispatch.
   @TimestampOrNullConverter()
-  DateTime? get waitingToDispatchAt => throw _privateConstructorUsedError;
+  DateTime? get waitingToDispatchAt;
 
   /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
   @TimestampOrNullConverter()
-  DateTime? get deliveredAt => throw _privateConstructorUsedError;
+  DateTime? get deliveredAt;
 
   /// `unloadingOperationAt` is the Unix timestamp of when the asset was unloading operation.
   @TimestampOrNullConverter()
-  DateTime? get unloadingOperationAt => throw _privateConstructorUsedError;
+  DateTime? get unloadingOperationAt;
 
   /// `readyToOperateAt` is the Unix timestamp of when the asset was ready to operate.
   @TimestampOrNullConverter()
-  DateTime? get readyToOperateAt => throw _privateConstructorUsedError;
+  DateTime? get readyToOperateAt;
 
   /// `eta` is the estimated time of arrival in Unix timestamp.
   @TimestampOrNullConverter()
-  DateTime? get eta => throw _privateConstructorUsedError;
-
-  /// Serializes this AtsOperationStatuses to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime? get eta;
 
   /// Create a copy of AtsOperationStatuses
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AtsOperationStatusesCopyWith<AtsOperationStatuses> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AtsOperationStatusesCopyWithImpl<AtsOperationStatuses>(
+          this as AtsOperationStatuses, _$identity);
+
+  /// Serializes this AtsOperationStatuses to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsOperationStatuses &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.inTransitAt, inTransitAt) ||
+                other.inTransitAt == inTransitAt) &&
+            (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
+                other.waitingToDispatchAt == waitingToDispatchAt) &&
+            (identical(other.deliveredAt, deliveredAt) ||
+                other.deliveredAt == deliveredAt) &&
+            (identical(other.unloadingOperationAt, unloadingOperationAt) ||
+                other.unloadingOperationAt == unloadingOperationAt) &&
+            (identical(other.readyToOperateAt, readyToOperateAt) ||
+                other.readyToOperateAt == readyToOperateAt) &&
+            (identical(other.eta, eta) || other.eta == eta));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      asset,
+      inTransitAt,
+      waitingToDispatchAt,
+      deliveredAt,
+      unloadingOperationAt,
+      readyToOperateAt,
+      eta);
+
+  @override
+  String toString() {
+    return 'AtsOperationStatuses(asset: $asset, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, unloadingOperationAt: $unloadingOperationAt, readyToOperateAt: $readyToOperateAt, eta: $eta)';
+  }
 }
 
 /// @nodoc
-abstract class $AtsOperationStatusesCopyWith<$Res> {
+abstract mixin class $AtsOperationStatusesCopyWith<$Res> {
   factory $AtsOperationStatusesCopyWith(AtsOperationStatuses value,
-          $Res Function(AtsOperationStatuses) then) =
-      _$AtsOperationStatusesCopyWithImpl<$Res, AtsOperationStatuses>;
+          $Res Function(AtsOperationStatuses) _then) =
+      _$AtsOperationStatusesCopyWithImpl;
   @useResult
   $Res call(
       {Asset? asset,
@@ -14475,15 +13934,12 @@ abstract class $AtsOperationStatusesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsOperationStatusesCopyWithImpl<$Res,
-        $Val extends AtsOperationStatuses>
+class _$AtsOperationStatusesCopyWithImpl<$Res>
     implements $AtsOperationStatusesCopyWith<$Res> {
-  _$AtsOperationStatusesCopyWithImpl(this._value, this._then);
+  _$AtsOperationStatusesCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AtsOperationStatuses _self;
+  final $Res Function(AtsOperationStatuses) _then;
 
   /// Create a copy of AtsOperationStatuses
   /// with the given fields replaced by the non-null parameter values.
@@ -14498,36 +13954,36 @@ class _$AtsOperationStatusesCopyWithImpl<$Res,
     Object? readyToOperateAt = freezed,
     Object? eta = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       asset: freezed == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       inTransitAt: freezed == inTransitAt
-          ? _value.inTransitAt
+          ? _self.inTransitAt
           : inTransitAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       waitingToDispatchAt: freezed == waitingToDispatchAt
-          ? _value.waitingToDispatchAt
+          ? _self.waitingToDispatchAt
           : waitingToDispatchAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       deliveredAt: freezed == deliveredAt
-          ? _value.deliveredAt
+          ? _self.deliveredAt
           : deliveredAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       unloadingOperationAt: freezed == unloadingOperationAt
-          ? _value.unloadingOperationAt
+          ? _self.unloadingOperationAt
           : unloadingOperationAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       readyToOperateAt: freezed == readyToOperateAt
-          ? _value.readyToOperateAt
+          ? _self.readyToOperateAt
           : readyToOperateAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       eta: freezed == eta
-          ? _value.eta
+          ? _self.eta
           : eta // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AtsOperationStatuses
@@ -14535,95 +13991,20 @@ class _$AtsOperationStatusesCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
-    if (_value.asset == null) {
+    if (_self.asset == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AtsOperationStatusesImplCopyWith<$Res>
-    implements $AtsOperationStatusesCopyWith<$Res> {
-  factory _$$AtsOperationStatusesImplCopyWith(_$AtsOperationStatusesImpl value,
-          $Res Function(_$AtsOperationStatusesImpl) then) =
-      __$$AtsOperationStatusesImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {Asset? asset,
-      @TimestampOrNullConverter() DateTime? inTransitAt,
-      @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
-      @TimestampOrNullConverter() DateTime? deliveredAt,
-      @TimestampOrNullConverter() DateTime? unloadingOperationAt,
-      @TimestampOrNullConverter() DateTime? readyToOperateAt,
-      @TimestampOrNullConverter() DateTime? eta});
-
-  @override
-  $AssetCopyWith<$Res>? get asset;
-}
-
-/// @nodoc
-class __$$AtsOperationStatusesImplCopyWithImpl<$Res>
-    extends _$AtsOperationStatusesCopyWithImpl<$Res, _$AtsOperationStatusesImpl>
-    implements _$$AtsOperationStatusesImplCopyWith<$Res> {
-  __$$AtsOperationStatusesImplCopyWithImpl(_$AtsOperationStatusesImpl _value,
-      $Res Function(_$AtsOperationStatusesImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AtsOperationStatuses
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? asset = freezed,
-    Object? inTransitAt = freezed,
-    Object? waitingToDispatchAt = freezed,
-    Object? deliveredAt = freezed,
-    Object? unloadingOperationAt = freezed,
-    Object? readyToOperateAt = freezed,
-    Object? eta = freezed,
-  }) {
-    return _then(_$AtsOperationStatusesImpl(
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      inTransitAt: freezed == inTransitAt
-          ? _value.inTransitAt
-          : inTransitAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      waitingToDispatchAt: freezed == waitingToDispatchAt
-          ? _value.waitingToDispatchAt
-          : waitingToDispatchAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      deliveredAt: freezed == deliveredAt
-          ? _value.deliveredAt
-          : deliveredAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      unloadingOperationAt: freezed == unloadingOperationAt
-          ? _value.unloadingOperationAt
-          : unloadingOperationAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      readyToOperateAt: freezed == readyToOperateAt
-          ? _value.readyToOperateAt
-          : readyToOperateAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      eta: freezed == eta
-          ? _value.eta
-          : eta // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
-  const _$AtsOperationStatusesImpl(
+class _AtsOperationStatuses implements AtsOperationStatuses {
+  const _AtsOperationStatuses(
       {this.asset,
       @TimestampOrNullConverter() this.inTransitAt,
       @TimestampOrNullConverter() this.waitingToDispatchAt,
@@ -14631,9 +14012,8 @@ class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
       @TimestampOrNullConverter() this.unloadingOperationAt,
       @TimestampOrNullConverter() this.readyToOperateAt,
       @TimestampOrNullConverter() this.eta});
-
-  factory _$AtsOperationStatusesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsOperationStatusesImplFromJson(json);
+  factory _AtsOperationStatuses.fromJson(Map<String, dynamic> json) =>
+      _$AtsOperationStatusesFromJson(json);
 
   /// `asset` is the Asset linked to the operation.
   @override
@@ -14669,16 +14049,27 @@ class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
   @TimestampOrNullConverter()
   final DateTime? eta;
 
+  /// Create a copy of AtsOperationStatuses
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AtsOperationStatuses(asset: $asset, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, unloadingOperationAt: $unloadingOperationAt, readyToOperateAt: $readyToOperateAt, eta: $eta)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsOperationStatusesCopyWith<_AtsOperationStatuses> get copyWith =>
+      __$AtsOperationStatusesCopyWithImpl<_AtsOperationStatuses>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsOperationStatusesToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtsOperationStatusesImpl &&
+            other is _AtsOperationStatuses &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.inTransitAt, inTransitAt) ||
                 other.inTransitAt == inTransitAt) &&
@@ -14705,76 +14096,7925 @@ class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
       readyToOperateAt,
       eta);
 
+  @override
+  String toString() {
+    return 'AtsOperationStatuses(asset: $asset, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, unloadingOperationAt: $unloadingOperationAt, readyToOperateAt: $readyToOperateAt, eta: $eta)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AtsOperationStatusesCopyWith<$Res>
+    implements $AtsOperationStatusesCopyWith<$Res> {
+  factory _$AtsOperationStatusesCopyWith(_AtsOperationStatuses value,
+          $Res Function(_AtsOperationStatuses) _then) =
+      __$AtsOperationStatusesCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {Asset? asset,
+      @TimestampOrNullConverter() DateTime? inTransitAt,
+      @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+      @TimestampOrNullConverter() DateTime? deliveredAt,
+      @TimestampOrNullConverter() DateTime? unloadingOperationAt,
+      @TimestampOrNullConverter() DateTime? readyToOperateAt,
+      @TimestampOrNullConverter() DateTime? eta});
+
+  @override
+  $AssetCopyWith<$Res>? get asset;
+}
+
+/// @nodoc
+class __$AtsOperationStatusesCopyWithImpl<$Res>
+    implements _$AtsOperationStatusesCopyWith<$Res> {
+  __$AtsOperationStatusesCopyWithImpl(this._self, this._then);
+
+  final _AtsOperationStatuses _self;
+  final $Res Function(_AtsOperationStatuses) _then;
+
   /// Create a copy of AtsOperationStatuses
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AtsOperationStatusesImplCopyWith<_$AtsOperationStatusesImpl>
+  $Res call({
+    Object? asset = freezed,
+    Object? inTransitAt = freezed,
+    Object? waitingToDispatchAt = freezed,
+    Object? deliveredAt = freezed,
+    Object? unloadingOperationAt = freezed,
+    Object? readyToOperateAt = freezed,
+    Object? eta = freezed,
+  }) {
+    return _then(_AtsOperationStatuses(
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      inTransitAt: freezed == inTransitAt
+          ? _self.inTransitAt
+          : inTransitAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      waitingToDispatchAt: freezed == waitingToDispatchAt
+          ? _self.waitingToDispatchAt
+          : waitingToDispatchAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deliveredAt: freezed == deliveredAt
+          ? _self.deliveredAt
+          : deliveredAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      unloadingOperationAt: freezed == unloadingOperationAt
+          ? _self.unloadingOperationAt
+          : unloadingOperationAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      readyToOperateAt: freezed == readyToOperateAt
+          ? _self.readyToOperateAt
+          : readyToOperateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      eta: freezed == eta
+          ? _self.eta
+          : eta // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+
+  /// Create a copy of AtsOperationStatuses
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$Manifest {
+  /// The [id] parameter is the id of the manifest entity.
+  String? get id;
+
+  /// The [assetId] parameter is the assetId of the manifest entity.
+  String? get assetId;
+
+  /// The [asset] parameter is the asset of the manifest entity.
+  Asset? get asset;
+
+  /// [terminalId] is the terminalId of the manifest entity.
+  String? get terminalId;
+
+  /// [terminal] is the terminal of the manifest entity.
+  Asset? get terminal;
+
+  /// The [totalVolume] parameter is the totalVolume of the manifest entity.
+  double? get totalVolume;
+
+  /// The [totalConvertedVolume] parameter is the totalConvertedVolume of the manifest entity.
+  double? get totalConvertedVolume;
+
+  /// The [operationId] parameter is the operationId of the manifest entity.
+  String? get operationId;
+
+  /// The [operation] parameter is the operation of the manifest entity.
+  AtsOperation? get operation;
+
+  /// The [createdAt] parameter is the date of the manifest entity.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+
+  /// The [trim] parameter is the trim of the manifest entity.
+  double? get trim;
+
+  /// The [banda] parameter is the banda of the manifest entity.
+  double? get banda;
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  List<TankMeasurement>? get tankMeasurements;
+
+  /// The [kind] parameter is the kind of the manifest entity.
+  @JsonKey(unknownEnumValue: ManifestKind.manual)
+  ManifestKind? get kind;
+
+  /// [position] is the position of the manifest entity.
+  TelemetryPosition? get position;
+
+  /// [sensors] is the list of sensors associated with the manifest entity.
+  List<TelemetrySensor>? get sensors;
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ManifestCopyWith<Manifest> get copyWith =>
+      _$ManifestCopyWithImpl<Manifest>(this as Manifest, _$identity);
+
+  /// Serializes this Manifest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Manifest &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.terminalId, terminalId) ||
+                other.terminalId == terminalId) &&
+            (identical(other.terminal, terminal) ||
+                other.terminal == terminal) &&
+            (identical(other.totalVolume, totalVolume) ||
+                other.totalVolume == totalVolume) &&
+            (identical(other.totalConvertedVolume, totalConvertedVolume) ||
+                other.totalConvertedVolume == totalConvertedVolume) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.trim, trim) || other.trim == trim) &&
+            (identical(other.banda, banda) || other.banda == banda) &&
+            const DeepCollectionEquality()
+                .equals(other.tankMeasurements, tankMeasurements) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
+            const DeepCollectionEquality().equals(other.sensors, sensors));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      terminalId,
+      terminal,
+      totalVolume,
+      totalConvertedVolume,
+      operationId,
+      operation,
+      createdAt,
+      trim,
+      banda,
+      const DeepCollectionEquality().hash(tankMeasurements),
+      kind,
+      position,
+      const DeepCollectionEquality().hash(sensors));
+
+  @override
+  String toString() {
+    return 'Manifest(id: $id, assetId: $assetId, asset: $asset, terminalId: $terminalId, terminal: $terminal, totalVolume: $totalVolume, totalConvertedVolume: $totalConvertedVolume, operationId: $operationId, operation: $operation, createdAt: $createdAt, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, kind: $kind, position: $position, sensors: $sensors)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ManifestCopyWith<$Res> {
+  factory $ManifestCopyWith(Manifest value, $Res Function(Manifest) _then) =
+      _$ManifestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      Asset? asset,
+      String? terminalId,
+      Asset? terminal,
+      double? totalVolume,
+      double? totalConvertedVolume,
+      String? operationId,
+      AtsOperation? operation,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      double? trim,
+      double? banda,
+      List<TankMeasurement>? tankMeasurements,
+      @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind,
+      TelemetryPosition? position,
+      List<TelemetrySensor>? sensors});
+
+  $AssetCopyWith<$Res>? get asset;
+  $AssetCopyWith<$Res>? get terminal;
+  $AtsOperationCopyWith<$Res>? get operation;
+  $TelemetryPositionCopyWith<$Res>? get position;
+}
+
+/// @nodoc
+class _$ManifestCopyWithImpl<$Res> implements $ManifestCopyWith<$Res> {
+  _$ManifestCopyWithImpl(this._self, this._then);
+
+  final Manifest _self;
+  final $Res Function(Manifest) _then;
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? terminalId = freezed,
+    Object? terminal = freezed,
+    Object? totalVolume = freezed,
+    Object? totalConvertedVolume = freezed,
+    Object? operationId = freezed,
+    Object? operation = freezed,
+    Object? createdAt = freezed,
+    Object? trim = freezed,
+    Object? banda = freezed,
+    Object? tankMeasurements = freezed,
+    Object? kind = freezed,
+    Object? position = freezed,
+    Object? sensors = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      terminalId: freezed == terminalId
+          ? _self.terminalId
+          : terminalId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      terminal: freezed == terminal
+          ? _self.terminal
+          : terminal // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      totalVolume: freezed == totalVolume
+          ? _self.totalVolume
+          : totalVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      totalConvertedVolume: freezed == totalConvertedVolume
+          ? _self.totalConvertedVolume
+          : totalConvertedVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operation: freezed == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as AtsOperation?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      trim: freezed == trim
+          ? _self.trim
+          : trim // ignore: cast_nullable_to_non_nullable
+              as double?,
+      banda: freezed == banda
+          ? _self.banda
+          : banda // ignore: cast_nullable_to_non_nullable
+              as double?,
+      tankMeasurements: freezed == tankMeasurements
+          ? _self.tankMeasurements
+          : tankMeasurements // ignore: cast_nullable_to_non_nullable
+              as List<TankMeasurement>?,
+      kind: freezed == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ManifestKind?,
+      position: freezed == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition?,
+      sensors: freezed == sensors
+          ? _self.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<TelemetrySensor>?,
+    ));
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get terminal {
+    if (_self.terminal == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.terminal!, (value) {
+      return _then(_self.copyWith(terminal: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+      return null;
+    }
+
+    return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TelemetryPositionCopyWith<$Res>? get position {
+    if (_self.position == null) {
+      return null;
+    }
+
+    return $TelemetryPositionCopyWith<$Res>(_self.position!, (value) {
+      return _then(_self.copyWith(position: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _Manifest extends Manifest {
+  _Manifest(
+      {this.id,
+      this.assetId,
+      this.asset,
+      this.terminalId,
+      this.terminal,
+      this.totalVolume,
+      this.totalConvertedVolume,
+      this.operationId,
+      this.operation,
+      @TimestampOrNullConverter() this.createdAt,
+      this.trim,
+      this.banda,
+      final List<TankMeasurement>? tankMeasurements,
+      @JsonKey(unknownEnumValue: ManifestKind.manual) this.kind,
+      this.position,
+      final List<TelemetrySensor>? sensors})
+      : _tankMeasurements = tankMeasurements,
+        _sensors = sensors,
+        super._();
+  factory _Manifest.fromJson(Map<String, dynamic> json) =>
+      _$ManifestFromJson(json);
+
+  /// The [id] parameter is the id of the manifest entity.
+  @override
+  final String? id;
+
+  /// The [assetId] parameter is the assetId of the manifest entity.
+  @override
+  final String? assetId;
+
+  /// The [asset] parameter is the asset of the manifest entity.
+  @override
+  final Asset? asset;
+
+  /// [terminalId] is the terminalId of the manifest entity.
+  @override
+  final String? terminalId;
+
+  /// [terminal] is the terminal of the manifest entity.
+  @override
+  final Asset? terminal;
+
+  /// The [totalVolume] parameter is the totalVolume of the manifest entity.
+  @override
+  final double? totalVolume;
+
+  /// The [totalConvertedVolume] parameter is the totalConvertedVolume of the manifest entity.
+  @override
+  final double? totalConvertedVolume;
+
+  /// The [operationId] parameter is the operationId of the manifest entity.
+  @override
+  final String? operationId;
+
+  /// The [operation] parameter is the operation of the manifest entity.
+  @override
+  final AtsOperation? operation;
+
+  /// The [createdAt] parameter is the date of the manifest entity.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? createdAt;
+
+  /// The [trim] parameter is the trim of the manifest entity.
+  @override
+  final double? trim;
+
+  /// The [banda] parameter is the banda of the manifest entity.
+  @override
+  final double? banda;
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  final List<TankMeasurement>? _tankMeasurements;
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  @override
+  List<TankMeasurement>? get tankMeasurements {
+    final value = _tankMeasurements;
+    if (value == null) return null;
+    if (_tankMeasurements is EqualUnmodifiableListView)
+      return _tankMeasurements;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// The [kind] parameter is the kind of the manifest entity.
+  @override
+  @JsonKey(unknownEnumValue: ManifestKind.manual)
+  final ManifestKind? kind;
+
+  /// [position] is the position of the manifest entity.
+  @override
+  final TelemetryPosition? position;
+
+  /// [sensors] is the list of sensors associated with the manifest entity.
+  final List<TelemetrySensor>? _sensors;
+
+  /// [sensors] is the list of sensors associated with the manifest entity.
+  @override
+  List<TelemetrySensor>? get sensors {
+    final value = _sensors;
+    if (value == null) return null;
+    if (_sensors is EqualUnmodifiableListView) return _sensors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ManifestCopyWith<_Manifest> get copyWith =>
+      __$ManifestCopyWithImpl<_Manifest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ManifestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Manifest &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.terminalId, terminalId) ||
+                other.terminalId == terminalId) &&
+            (identical(other.terminal, terminal) ||
+                other.terminal == terminal) &&
+            (identical(other.totalVolume, totalVolume) ||
+                other.totalVolume == totalVolume) &&
+            (identical(other.totalConvertedVolume, totalConvertedVolume) ||
+                other.totalConvertedVolume == totalConvertedVolume) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.trim, trim) || other.trim == trim) &&
+            (identical(other.banda, banda) || other.banda == banda) &&
+            const DeepCollectionEquality()
+                .equals(other._tankMeasurements, _tankMeasurements) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
+            const DeepCollectionEquality().equals(other._sensors, _sensors));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      terminalId,
+      terminal,
+      totalVolume,
+      totalConvertedVolume,
+      operationId,
+      operation,
+      createdAt,
+      trim,
+      banda,
+      const DeepCollectionEquality().hash(_tankMeasurements),
+      kind,
+      position,
+      const DeepCollectionEquality().hash(_sensors));
+
+  @override
+  String toString() {
+    return 'Manifest(id: $id, assetId: $assetId, asset: $asset, terminalId: $terminalId, terminal: $terminal, totalVolume: $totalVolume, totalConvertedVolume: $totalConvertedVolume, operationId: $operationId, operation: $operation, createdAt: $createdAt, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, kind: $kind, position: $position, sensors: $sensors)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ManifestCopyWith<$Res>
+    implements $ManifestCopyWith<$Res> {
+  factory _$ManifestCopyWith(_Manifest value, $Res Function(_Manifest) _then) =
+      __$ManifestCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      Asset? asset,
+      String? terminalId,
+      Asset? terminal,
+      double? totalVolume,
+      double? totalConvertedVolume,
+      String? operationId,
+      AtsOperation? operation,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      double? trim,
+      double? banda,
+      List<TankMeasurement>? tankMeasurements,
+      @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind,
+      TelemetryPosition? position,
+      List<TelemetrySensor>? sensors});
+
+  @override
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $AssetCopyWith<$Res>? get terminal;
+  @override
+  $AtsOperationCopyWith<$Res>? get operation;
+  @override
+  $TelemetryPositionCopyWith<$Res>? get position;
+}
+
+/// @nodoc
+class __$ManifestCopyWithImpl<$Res> implements _$ManifestCopyWith<$Res> {
+  __$ManifestCopyWithImpl(this._self, this._then);
+
+  final _Manifest _self;
+  final $Res Function(_Manifest) _then;
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? terminalId = freezed,
+    Object? terminal = freezed,
+    Object? totalVolume = freezed,
+    Object? totalConvertedVolume = freezed,
+    Object? operationId = freezed,
+    Object? operation = freezed,
+    Object? createdAt = freezed,
+    Object? trim = freezed,
+    Object? banda = freezed,
+    Object? tankMeasurements = freezed,
+    Object? kind = freezed,
+    Object? position = freezed,
+    Object? sensors = freezed,
+  }) {
+    return _then(_Manifest(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      terminalId: freezed == terminalId
+          ? _self.terminalId
+          : terminalId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      terminal: freezed == terminal
+          ? _self.terminal
+          : terminal // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      totalVolume: freezed == totalVolume
+          ? _self.totalVolume
+          : totalVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      totalConvertedVolume: freezed == totalConvertedVolume
+          ? _self.totalConvertedVolume
+          : totalConvertedVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operation: freezed == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as AtsOperation?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      trim: freezed == trim
+          ? _self.trim
+          : trim // ignore: cast_nullable_to_non_nullable
+              as double?,
+      banda: freezed == banda
+          ? _self.banda
+          : banda // ignore: cast_nullable_to_non_nullable
+              as double?,
+      tankMeasurements: freezed == tankMeasurements
+          ? _self._tankMeasurements
+          : tankMeasurements // ignore: cast_nullable_to_non_nullable
+              as List<TankMeasurement>?,
+      kind: freezed == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ManifestKind?,
+      position: freezed == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition?,
+      sensors: freezed == sensors
+          ? _self._sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<TelemetrySensor>?,
+    ));
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get terminal {
+    if (_self.terminal == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.terminal!, (value) {
+      return _then(_self.copyWith(terminal: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+      return null;
+    }
+
+    return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TelemetryPositionCopyWith<$Res>? get position {
+    if (_self.position == null) {
+      return null;
+    }
+
+    return $TelemetryPositionCopyWith<$Res>(_self.position!, (value) {
+      return _then(_self.copyWith(position: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$ManifestInput {
+  /// The [id] parameter is the id of the manifest entity.
+  String? get id;
+
+  /// The [id] parameter is the id of the manifest entity.
+  set id(String? value);
+
+  /// The [assetId] parameter is the assetId of the manifest entity.
+  String? get assetId;
+
+  /// The [assetId] parameter is the assetId of the manifest entity.
+  set assetId(String? value);
+
+  /// The [operationId] parameter is the operationId of the manifest entity.
+  String? get operationId;
+
+  /// The [operationId] parameter is the operationId of the manifest entity.
+  set operationId(String? value);
+
+  /// The [trim] parameter is the trim of the manifest entity.
+  double? get trim;
+
+  /// The [trim] parameter is the trim of the manifest entity.
+  set trim(double? value);
+
+  /// The [banda] parameter is the banda of the manifest entity.
+  double? get banda;
+
+  /// The [banda] parameter is the banda of the manifest entity.
+  set banda(double? value);
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  List<TankMeasurementInput> get tankMeasurements;
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  set tankMeasurements(List<TankMeasurementInput> value);
+
+  /// Create a copy of ManifestInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ManifestInputCopyWith<ManifestInput> get copyWith =>
+      _$ManifestInputCopyWithImpl<ManifestInput>(
+          this as ManifestInput, _$identity);
+
+  /// Serializes this ManifestInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ManifestInputCopyWith<$Res> {
+  factory $ManifestInputCopyWith(
+          ManifestInput value, $Res Function(ManifestInput) _then) =
+      _$ManifestInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      String? operationId,
+      double? trim,
+      double? banda,
+      List<TankMeasurementInput> tankMeasurements});
+}
+
+/// @nodoc
+class _$ManifestInputCopyWithImpl<$Res>
+    implements $ManifestInputCopyWith<$Res> {
+  _$ManifestInputCopyWithImpl(this._self, this._then);
+
+  final ManifestInput _self;
+  final $Res Function(ManifestInput) _then;
+
+  /// Create a copy of ManifestInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? operationId = freezed,
+    Object? trim = freezed,
+    Object? banda = freezed,
+    Object? tankMeasurements = null,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      trim: freezed == trim
+          ? _self.trim
+          : trim // ignore: cast_nullable_to_non_nullable
+              as double?,
+      banda: freezed == banda
+          ? _self.banda
+          : banda // ignore: cast_nullable_to_non_nullable
+              as double?,
+      tankMeasurements: null == tankMeasurements
+          ? _self.tankMeasurements
+          : tankMeasurements // ignore: cast_nullable_to_non_nullable
+              as List<TankMeasurementInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ManifestInput extends ManifestInput {
+  _ManifestInput(
+      {this.id,
+      this.assetId,
+      this.operationId,
+      this.trim,
+      this.banda,
+      this.tankMeasurements = const []})
+      : super._();
+  factory _ManifestInput.fromJson(Map<String, dynamic> json) =>
+      _$ManifestInputFromJson(json);
+
+  /// The [id] parameter is the id of the manifest entity.
+  @override
+  String? id;
+
+  /// The [assetId] parameter is the assetId of the manifest entity.
+  @override
+  String? assetId;
+
+  /// The [operationId] parameter is the operationId of the manifest entity.
+  @override
+  String? operationId;
+
+  /// The [trim] parameter is the trim of the manifest entity.
+  @override
+  double? trim;
+
+  /// The [banda] parameter is the banda of the manifest entity.
+  @override
+  double? banda;
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  @override
+  @JsonKey()
+  List<TankMeasurementInput> tankMeasurements;
+
+  /// Create a copy of ManifestInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ManifestInputCopyWith<_ManifestInput> get copyWith =>
+      __$ManifestInputCopyWithImpl<_ManifestInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ManifestInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ManifestInputCopyWith<$Res>
+    implements $ManifestInputCopyWith<$Res> {
+  factory _$ManifestInputCopyWith(
+          _ManifestInput value, $Res Function(_ManifestInput) _then) =
+      __$ManifestInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      String? operationId,
+      double? trim,
+      double? banda,
+      List<TankMeasurementInput> tankMeasurements});
+}
+
+/// @nodoc
+class __$ManifestInputCopyWithImpl<$Res>
+    implements _$ManifestInputCopyWith<$Res> {
+  __$ManifestInputCopyWithImpl(this._self, this._then);
+
+  final _ManifestInput _self;
+  final $Res Function(_ManifestInput) _then;
+
+  /// Create a copy of ManifestInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? operationId = freezed,
+    Object? trim = freezed,
+    Object? banda = freezed,
+    Object? tankMeasurements = null,
+  }) {
+    return _then(_ManifestInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      trim: freezed == trim
+          ? _self.trim
+          : trim // ignore: cast_nullable_to_non_nullable
+              as double?,
+      banda: freezed == banda
+          ? _self.banda
+          : banda // ignore: cast_nullable_to_non_nullable
+              as double?,
+      tankMeasurements: null == tankMeasurements
+          ? _self.tankMeasurements
+          : tankMeasurements // ignore: cast_nullable_to_non_nullable
+              as List<TankMeasurementInput>,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$TankMeasurement {
+  /// The [tankSlug] parameter is the tank slug.
+  String? get tankSlug;
+
+  /// The [fuelSubtype] parameter is the fuel subtype.
+  String? get fuelSubtype;
+
+  /// The [height] parameter is the height of the tank measurement.
+  double? get height;
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  double? get temperature;
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  double? get volume;
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  double? get fuelDensity;
+
+  /// The [conversionFactor] parameter is the conversion factor of the tank measurement.
+  double? get conversionFactor;
+
+  /// The [convertedDensity] parameter is the converted density of the tank measurement.
+  double? get convertedDensity;
+
+  /// The [convertedVolume] parameter is the converted volume of the tank measurement.
+  double? get convertedVolume;
+
+  /// Create a copy of TankMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TankMeasurementCopyWith<TankMeasurement> get copyWith =>
+      _$TankMeasurementCopyWithImpl<TankMeasurement>(
+          this as TankMeasurement, _$identity);
+
+  /// Serializes this TankMeasurement to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TankMeasurement &&
+            (identical(other.tankSlug, tankSlug) ||
+                other.tankSlug == tankSlug) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.volume, volume) || other.volume == volume) &&
+            (identical(other.fuelDensity, fuelDensity) ||
+                other.fuelDensity == fuelDensity) &&
+            (identical(other.conversionFactor, conversionFactor) ||
+                other.conversionFactor == conversionFactor) &&
+            (identical(other.convertedDensity, convertedDensity) ||
+                other.convertedDensity == convertedDensity) &&
+            (identical(other.convertedVolume, convertedVolume) ||
+                other.convertedVolume == convertedVolume));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      tankSlug,
+      fuelSubtype,
+      height,
+      temperature,
+      volume,
+      fuelDensity,
+      conversionFactor,
+      convertedDensity,
+      convertedVolume);
+
+  @override
+  String toString() {
+    return 'TankMeasurement(tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity, conversionFactor: $conversionFactor, convertedDensity: $convertedDensity, convertedVolume: $convertedVolume)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TankMeasurementCopyWith<$Res> {
+  factory $TankMeasurementCopyWith(
+          TankMeasurement value, $Res Function(TankMeasurement) _then) =
+      _$TankMeasurementCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? tankSlug,
+      String? fuelSubtype,
+      double? height,
+      double? temperature,
+      double? volume,
+      double? fuelDensity,
+      double? conversionFactor,
+      double? convertedDensity,
+      double? convertedVolume});
+}
+
+/// @nodoc
+class _$TankMeasurementCopyWithImpl<$Res>
+    implements $TankMeasurementCopyWith<$Res> {
+  _$TankMeasurementCopyWithImpl(this._self, this._then);
+
+  final TankMeasurement _self;
+  final $Res Function(TankMeasurement) _then;
+
+  /// Create a copy of TankMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tankSlug = freezed,
+    Object? fuelSubtype = freezed,
+    Object? height = freezed,
+    Object? temperature = freezed,
+    Object? volume = freezed,
+    Object? fuelDensity = freezed,
+    Object? conversionFactor = freezed,
+    Object? convertedDensity = freezed,
+    Object? convertedVolume = freezed,
+  }) {
+    return _then(_self.copyWith(
+      tankSlug: freezed == tankSlug
+          ? _self.tankSlug
+          : tankSlug // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fuelSubtype: freezed == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String?,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volume: freezed == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      fuelDensity: freezed == fuelDensity
+          ? _self.fuelDensity
+          : fuelDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      conversionFactor: freezed == conversionFactor
+          ? _self.conversionFactor
+          : conversionFactor // ignore: cast_nullable_to_non_nullable
+              as double?,
+      convertedDensity: freezed == convertedDensity
+          ? _self.convertedDensity
+          : convertedDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      convertedVolume: freezed == convertedVolume
+          ? _self.convertedVolume
+          : convertedVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TankMeasurement extends TankMeasurement {
+  const _TankMeasurement(
+      {this.tankSlug,
+      this.fuelSubtype,
+      this.height,
+      this.temperature,
+      this.volume,
+      this.fuelDensity,
+      this.conversionFactor,
+      this.convertedDensity,
+      this.convertedVolume})
+      : super._();
+  factory _TankMeasurement.fromJson(Map<String, dynamic> json) =>
+      _$TankMeasurementFromJson(json);
+
+  /// The [tankSlug] parameter is the tank slug.
+  @override
+  final String? tankSlug;
+
+  /// The [fuelSubtype] parameter is the fuel subtype.
+  @override
+  final String? fuelSubtype;
+
+  /// The [height] parameter is the height of the tank measurement.
+  @override
+  final double? height;
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  @override
+  final double? temperature;
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  @override
+  final double? volume;
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  @override
+  final double? fuelDensity;
+
+  /// The [conversionFactor] parameter is the conversion factor of the tank measurement.
+  @override
+  final double? conversionFactor;
+
+  /// The [convertedDensity] parameter is the converted density of the tank measurement.
+  @override
+  final double? convertedDensity;
+
+  /// The [convertedVolume] parameter is the converted volume of the tank measurement.
+  @override
+  final double? convertedVolume;
+
+  /// Create a copy of TankMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TankMeasurementCopyWith<_TankMeasurement> get copyWith =>
+      __$TankMeasurementCopyWithImpl<_TankMeasurement>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TankMeasurementToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TankMeasurement &&
+            (identical(other.tankSlug, tankSlug) ||
+                other.tankSlug == tankSlug) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.volume, volume) || other.volume == volume) &&
+            (identical(other.fuelDensity, fuelDensity) ||
+                other.fuelDensity == fuelDensity) &&
+            (identical(other.conversionFactor, conversionFactor) ||
+                other.conversionFactor == conversionFactor) &&
+            (identical(other.convertedDensity, convertedDensity) ||
+                other.convertedDensity == convertedDensity) &&
+            (identical(other.convertedVolume, convertedVolume) ||
+                other.convertedVolume == convertedVolume));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      tankSlug,
+      fuelSubtype,
+      height,
+      temperature,
+      volume,
+      fuelDensity,
+      conversionFactor,
+      convertedDensity,
+      convertedVolume);
+
+  @override
+  String toString() {
+    return 'TankMeasurement(tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity, conversionFactor: $conversionFactor, convertedDensity: $convertedDensity, convertedVolume: $convertedVolume)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$TankMeasurementCopyWith<$Res>
+    implements $TankMeasurementCopyWith<$Res> {
+  factory _$TankMeasurementCopyWith(
+          _TankMeasurement value, $Res Function(_TankMeasurement) _then) =
+      __$TankMeasurementCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? tankSlug,
+      String? fuelSubtype,
+      double? height,
+      double? temperature,
+      double? volume,
+      double? fuelDensity,
+      double? conversionFactor,
+      double? convertedDensity,
+      double? convertedVolume});
+}
+
+/// @nodoc
+class __$TankMeasurementCopyWithImpl<$Res>
+    implements _$TankMeasurementCopyWith<$Res> {
+  __$TankMeasurementCopyWithImpl(this._self, this._then);
+
+  final _TankMeasurement _self;
+  final $Res Function(_TankMeasurement) _then;
+
+  /// Create a copy of TankMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? tankSlug = freezed,
+    Object? fuelSubtype = freezed,
+    Object? height = freezed,
+    Object? temperature = freezed,
+    Object? volume = freezed,
+    Object? fuelDensity = freezed,
+    Object? conversionFactor = freezed,
+    Object? convertedDensity = freezed,
+    Object? convertedVolume = freezed,
+  }) {
+    return _then(_TankMeasurement(
+      tankSlug: freezed == tankSlug
+          ? _self.tankSlug
+          : tankSlug // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fuelSubtype: freezed == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String?,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volume: freezed == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      fuelDensity: freezed == fuelDensity
+          ? _self.fuelDensity
+          : fuelDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      conversionFactor: freezed == conversionFactor
+          ? _self.conversionFactor
+          : conversionFactor // ignore: cast_nullable_to_non_nullable
+              as double?,
+      convertedDensity: freezed == convertedDensity
+          ? _self.convertedDensity
+          : convertedDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      convertedVolume: freezed == convertedVolume
+          ? _self.convertedVolume
+          : convertedVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$TankMeasurementInput {
+  /// The [tankSlug] parameter is the tank slug.
+  String get tankSlug;
+
+  /// The [tankSlug] parameter is the tank slug.
+  set tankSlug(String value);
+
+  /// The [fuelSubtype] parameter is the fuel subtype (ANP code).
+  String get fuelSubtype;
+
+  /// The [fuelSubtype] parameter is the fuel subtype (ANP code).
+  set fuelSubtype(String value);
+
+  /// The [height] parameter is the height of the tank measurement.
+  double get height;
+
+  /// The [height] parameter is the height of the tank measurement.
+  set height(double value);
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  double get temperature;
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  set temperature(double value);
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  double get volume;
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  set volume(double value);
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  double get fuelDensity;
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  set fuelDensity(double value);
+
+  /// Create a copy of TankMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TankMeasurementInputCopyWith<TankMeasurementInput> get copyWith =>
+      _$TankMeasurementInputCopyWithImpl<TankMeasurementInput>(
+          this as TankMeasurementInput, _$identity);
+
+  /// Serializes this TankMeasurementInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'TankMeasurementInput(tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TankMeasurementInputCopyWith<$Res> {
+  factory $TankMeasurementInputCopyWith(TankMeasurementInput value,
+          $Res Function(TankMeasurementInput) _then) =
+      _$TankMeasurementInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String tankSlug,
+      String fuelSubtype,
+      double height,
+      double temperature,
+      double volume,
+      double fuelDensity});
+}
+
+/// @nodoc
+class _$TankMeasurementInputCopyWithImpl<$Res>
+    implements $TankMeasurementInputCopyWith<$Res> {
+  _$TankMeasurementInputCopyWithImpl(this._self, this._then);
+
+  final TankMeasurementInput _self;
+  final $Res Function(TankMeasurementInput) _then;
+
+  /// Create a copy of TankMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tankSlug = null,
+    Object? fuelSubtype = null,
+    Object? height = null,
+    Object? temperature = null,
+    Object? volume = null,
+    Object? fuelDensity = null,
+  }) {
+    return _then(_self.copyWith(
+      tankSlug: null == tankSlug
+          ? _self.tankSlug
+          : tankSlug // ignore: cast_nullable_to_non_nullable
+              as String,
+      fuelSubtype: null == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      temperature: null == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double,
+      volume: null == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      fuelDensity: null == fuelDensity
+          ? _self.fuelDensity
+          : fuelDensity // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TankMeasurementInput extends TankMeasurementInput {
+  _TankMeasurementInput(
+      {this.tankSlug = '',
+      this.fuelSubtype = '',
+      this.height = 0.0,
+      this.temperature = 0.0,
+      this.volume = 0.0,
+      this.fuelDensity = 0.0})
+      : super._();
+  factory _TankMeasurementInput.fromJson(Map<String, dynamic> json) =>
+      _$TankMeasurementInputFromJson(json);
+
+  /// The [tankSlug] parameter is the tank slug.
+  @override
+  @JsonKey()
+  String tankSlug;
+
+  /// The [fuelSubtype] parameter is the fuel subtype (ANP code).
+  @override
+  @JsonKey()
+  String fuelSubtype;
+
+  /// The [height] parameter is the height of the tank measurement.
+  @override
+  @JsonKey()
+  double height;
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  @override
+  @JsonKey()
+  double temperature;
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  @override
+  @JsonKey()
+  double volume;
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  @override
+  @JsonKey()
+  double fuelDensity;
+
+  /// Create a copy of TankMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TankMeasurementInputCopyWith<_TankMeasurementInput> get copyWith =>
+      __$TankMeasurementInputCopyWithImpl<_TankMeasurementInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TankMeasurementInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'TankMeasurementInput(tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$TankMeasurementInputCopyWith<$Res>
+    implements $TankMeasurementInputCopyWith<$Res> {
+  factory _$TankMeasurementInputCopyWith(_TankMeasurementInput value,
+          $Res Function(_TankMeasurementInput) _then) =
+      __$TankMeasurementInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String tankSlug,
+      String fuelSubtype,
+      double height,
+      double temperature,
+      double volume,
+      double fuelDensity});
+}
+
+/// @nodoc
+class __$TankMeasurementInputCopyWithImpl<$Res>
+    implements _$TankMeasurementInputCopyWith<$Res> {
+  __$TankMeasurementInputCopyWithImpl(this._self, this._then);
+
+  final _TankMeasurementInput _self;
+  final $Res Function(_TankMeasurementInput) _then;
+
+  /// Create a copy of TankMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? tankSlug = null,
+    Object? fuelSubtype = null,
+    Object? height = null,
+    Object? temperature = null,
+    Object? volume = null,
+    Object? fuelDensity = null,
+  }) {
+    return _then(_TankMeasurementInput(
+      tankSlug: null == tankSlug
+          ? _self.tankSlug
+          : tankSlug // ignore: cast_nullable_to_non_nullable
+              as String,
+      fuelSubtype: null == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      temperature: null == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double,
+      volume: null == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      fuelDensity: null == fuelDensity
+          ? _self.fuelDensity
+          : fuelDensity // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$CaclEntity {
+  /// The [id] parameter is the id of the cacl entity.
+  String? get id;
+
+  /// The [assetId] parameter is the assetId of the cacl entity.
+  String? get assetId;
+
+  /// The [asset] parameter is the asset of the cacl entity.
+  Asset? get asset;
+
+  /// The [transportAssetId] parameter is the transportAssetId of the cacl entity.
+  String? get transportAssetId;
+
+  /// The [transportAsset] parameter is the transportAsset of the cacl entity.
+  Asset? get transportAsset;
+
+  /// The [transportUserId] parameter is the transportUserId of the cacl entity.
+  String? get transportUserId;
+
+  /// The [transportUser] parameter is the transportUser of the cacl entity.
+  User? get transportUser;
+
+  /// The [caclNumber] parameter is the caclNumber of the cacl entity.
+  String? get caclNumber;
+
+  /// The [category] parameter is the category of the cacl entity.
+  String? get category;
+
+  /// The [product] parameter is the product of the cacl entity.
+  String? get product;
+
+  /// The [clientAssetId] parameter is the clientAssetId of the cacl entity.
+  String? get clientAssetId;
+
+  /// The [clientAsset] parameter is the clientAsset of the cacl entity.
+  Asset? get clientAsset;
+
+  /// The [origin] parameter is the origin of the cacl entity.
+  String? get origin;
+
+  /// The [tankNumber] parameter is the tankNumber of the cacl entity.
+  String? get tankNumber;
+
+  /// The [transport] parameter is the transport of the cacl entity.
+  String? get transport;
+
+  /// The [equipments] parameter is the equipments of the cacl entity.
+  CaclEquipmentEntity? get equipments;
+
+  /// The [measurements] parameter is the measurements of the cacl entity.
+  MeasurementsEntity? get measurements;
+
+  /// The [results] parameter is the results of the cacl entity.
+  ResultsEntity? get results;
+
+  /// The [measurer01] parameter is the measurer01 of the cacl entity.
+  CaclMeasurementOutput? get measurer01;
+
+  /// The [measurer02] parameter is the measurer02 of the cacl entity.
+  CaclMeasurementOutput? get measurer02;
+
+  /// The [volumeMoved] parameter is the volumeMoved of the cacl entity.
+  VolumeMovedEntity? get volumeMoved;
+
+  /// The [observations] parameter is the observations of the cacl entity.
+  String? get observations;
+
+  /// The [startedAt] parameter is the startedAt of the cacl entity.
+  @TimestampOrNullConverter()
+  DateTime? get startedAt;
+
+  /// The [finishedAt] parameter is the finishedAt of the cacl entity.
+  @TimestampOrNullConverter()
+  DateTime? get finishedAt;
+
+  /// The [operationId] parameter is the operationId of the cacl entity.
+  String? get operationId;
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CaclEntityCopyWith<CaclEntity> get copyWith =>
+      _$CaclEntityCopyWithImpl<CaclEntity>(this as CaclEntity, _$identity);
+
+  /// Serializes this CaclEntity to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CaclEntity &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.transportUserId, transportUserId) ||
+                other.transportUserId == transportUserId) &&
+            (identical(other.transportUser, transportUser) ||
+                other.transportUser == transportUser) &&
+            (identical(other.caclNumber, caclNumber) ||
+                other.caclNumber == caclNumber) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.product, product) || other.product == product) &&
+            (identical(other.clientAssetId, clientAssetId) ||
+                other.clientAssetId == clientAssetId) &&
+            (identical(other.clientAsset, clientAsset) ||
+                other.clientAsset == clientAsset) &&
+            (identical(other.origin, origin) || other.origin == origin) &&
+            (identical(other.tankNumber, tankNumber) ||
+                other.tankNumber == tankNumber) &&
+            (identical(other.transport, transport) ||
+                other.transport == transport) &&
+            (identical(other.equipments, equipments) ||
+                other.equipments == equipments) &&
+            (identical(other.measurements, measurements) ||
+                other.measurements == measurements) &&
+            (identical(other.results, results) || other.results == results) &&
+            (identical(other.measurer01, measurer01) ||
+                other.measurer01 == measurer01) &&
+            (identical(other.measurer02, measurer02) ||
+                other.measurer02 == measurer02) &&
+            (identical(other.volumeMoved, volumeMoved) ||
+                other.volumeMoved == volumeMoved) &&
+            (identical(other.observations, observations) ||
+                other.observations == observations) &&
+            (identical(other.startedAt, startedAt) ||
+                other.startedAt == startedAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        assetId,
+        asset,
+        transportAssetId,
+        transportAsset,
+        transportUserId,
+        transportUser,
+        caclNumber,
+        category,
+        product,
+        clientAssetId,
+        clientAsset,
+        origin,
+        tankNumber,
+        transport,
+        equipments,
+        measurements,
+        results,
+        measurer01,
+        measurer02,
+        volumeMoved,
+        observations,
+        startedAt,
+        finishedAt,
+        operationId
+      ]);
+
+  @override
+  String toString() {
+    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CaclEntityCopyWith<$Res> {
+  factory $CaclEntityCopyWith(
+          CaclEntity value, $Res Function(CaclEntity) _then) =
+      _$CaclEntityCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      Asset? asset,
+      String? transportAssetId,
+      Asset? transportAsset,
+      String? transportUserId,
+      User? transportUser,
+      String? caclNumber,
+      String? category,
+      String? product,
+      String? clientAssetId,
+      Asset? clientAsset,
+      String? origin,
+      String? tankNumber,
+      String? transport,
+      CaclEquipmentEntity? equipments,
+      MeasurementsEntity? measurements,
+      ResultsEntity? results,
+      CaclMeasurementOutput? measurer01,
+      CaclMeasurementOutput? measurer02,
+      VolumeMovedEntity? volumeMoved,
+      String? observations,
+      @TimestampOrNullConverter() DateTime? startedAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
+      String? operationId});
+
+  $AssetCopyWith<$Res>? get asset;
+  $AssetCopyWith<$Res>? get transportAsset;
+  $UserCopyWith<$Res>? get transportUser;
+  $AssetCopyWith<$Res>? get clientAsset;
+  $CaclEquipmentEntityCopyWith<$Res>? get equipments;
+  $MeasurementsEntityCopyWith<$Res>? get measurements;
+  $ResultsEntityCopyWith<$Res>? get results;
+  $CaclMeasurementOutputCopyWith<$Res>? get measurer01;
+  $CaclMeasurementOutputCopyWith<$Res>? get measurer02;
+  $VolumeMovedEntityCopyWith<$Res>? get volumeMoved;
+}
+
+/// @nodoc
+class _$CaclEntityCopyWithImpl<$Res> implements $CaclEntityCopyWith<$Res> {
+  _$CaclEntityCopyWithImpl(this._self, this._then);
+
+  final CaclEntity _self;
+  final $Res Function(CaclEntity) _then;
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? transportAssetId = freezed,
+    Object? transportAsset = freezed,
+    Object? transportUserId = freezed,
+    Object? transportUser = freezed,
+    Object? caclNumber = freezed,
+    Object? category = freezed,
+    Object? product = freezed,
+    Object? clientAssetId = freezed,
+    Object? clientAsset = freezed,
+    Object? origin = freezed,
+    Object? tankNumber = freezed,
+    Object? transport = freezed,
+    Object? equipments = freezed,
+    Object? measurements = freezed,
+    Object? results = freezed,
+    Object? measurer01 = freezed,
+    Object? measurer02 = freezed,
+    Object? volumeMoved = freezed,
+    Object? observations = freezed,
+    Object? startedAt = freezed,
+    Object? finishedAt = freezed,
+    Object? operationId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportAssetId: freezed == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAsset: freezed == transportAsset
+          ? _self.transportAsset
+          : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportUserId: freezed == transportUserId
+          ? _self.transportUserId
+          : transportUserId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportUser: freezed == transportUser
+          ? _self.transportUser
+          : transportUser // ignore: cast_nullable_to_non_nullable
+              as User?,
+      caclNumber: freezed == caclNumber
+          ? _self.caclNumber
+          : caclNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      product: freezed == product
+          ? _self.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientAssetId: freezed == clientAssetId
+          ? _self.clientAssetId
+          : clientAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientAsset: freezed == clientAsset
+          ? _self.clientAsset
+          : clientAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      origin: freezed == origin
+          ? _self.origin
+          : origin // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankNumber: freezed == tankNumber
+          ? _self.tankNumber
+          : tankNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transport: freezed == transport
+          ? _self.transport
+          : transport // ignore: cast_nullable_to_non_nullable
+              as String?,
+      equipments: freezed == equipments
+          ? _self.equipments
+          : equipments // ignore: cast_nullable_to_non_nullable
+              as CaclEquipmentEntity?,
+      measurements: freezed == measurements
+          ? _self.measurements
+          : measurements // ignore: cast_nullable_to_non_nullable
+              as MeasurementsEntity?,
+      results: freezed == results
+          ? _self.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as ResultsEntity?,
+      measurer01: freezed == measurer01
+          ? _self.measurer01
+          : measurer01 // ignore: cast_nullable_to_non_nullable
+              as CaclMeasurementOutput?,
+      measurer02: freezed == measurer02
+          ? _self.measurer02
+          : measurer02 // ignore: cast_nullable_to_non_nullable
+              as CaclMeasurementOutput?,
+      volumeMoved: freezed == volumeMoved
+          ? _self.volumeMoved
+          : volumeMoved // ignore: cast_nullable_to_non_nullable
+              as VolumeMovedEntity?,
+      observations: freezed == observations
+          ? _self.observations
+          : observations // ignore: cast_nullable_to_non_nullable
+              as String?,
+      startedAt: freezed == startedAt
+          ? _self.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _self.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportAsset {
+    if (_self.transportAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+      return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get transportUser {
+    if (_self.transportUser == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.transportUser!, (value) {
+      return _then(_self.copyWith(transportUser: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get clientAsset {
+    if (_self.clientAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.clientAsset!, (value) {
+      return _then(_self.copyWith(clientAsset: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclEquipmentEntityCopyWith<$Res>? get equipments {
+    if (_self.equipments == null) {
+      return null;
+    }
+
+    return $CaclEquipmentEntityCopyWith<$Res>(_self.equipments!, (value) {
+      return _then(_self.copyWith(equipments: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementsEntityCopyWith<$Res>? get measurements {
+    if (_self.measurements == null) {
+      return null;
+    }
+
+    return $MeasurementsEntityCopyWith<$Res>(_self.measurements!, (value) {
+      return _then(_self.copyWith(measurements: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ResultsEntityCopyWith<$Res>? get results {
+    if (_self.results == null) {
+      return null;
+    }
+
+    return $ResultsEntityCopyWith<$Res>(_self.results!, (value) {
+      return _then(_self.copyWith(results: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementOutputCopyWith<$Res>? get measurer01 {
+    if (_self.measurer01 == null) {
+      return null;
+    }
+
+    return $CaclMeasurementOutputCopyWith<$Res>(_self.measurer01!, (value) {
+      return _then(_self.copyWith(measurer01: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementOutputCopyWith<$Res>? get measurer02 {
+    if (_self.measurer02 == null) {
+      return null;
+    }
+
+    return $CaclMeasurementOutputCopyWith<$Res>(_self.measurer02!, (value) {
+      return _then(_self.copyWith(measurer02: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $VolumeMovedEntityCopyWith<$Res>? get volumeMoved {
+    if (_self.volumeMoved == null) {
+      return null;
+    }
+
+    return $VolumeMovedEntityCopyWith<$Res>(_self.volumeMoved!, (value) {
+      return _then(_self.copyWith(volumeMoved: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CaclEntity implements CaclEntity {
+  _CaclEntity(
+      {this.id,
+      this.assetId,
+      this.asset,
+      this.transportAssetId,
+      this.transportAsset,
+      this.transportUserId,
+      this.transportUser,
+      this.caclNumber,
+      this.category,
+      this.product,
+      this.clientAssetId,
+      this.clientAsset,
+      this.origin,
+      this.tankNumber,
+      this.transport,
+      this.equipments,
+      this.measurements,
+      this.results,
+      this.measurer01,
+      this.measurer02,
+      this.volumeMoved,
+      this.observations,
+      @TimestampOrNullConverter() this.startedAt,
+      @TimestampOrNullConverter() this.finishedAt,
+      this.operationId});
+  factory _CaclEntity.fromJson(Map<String, dynamic> json) =>
+      _$CaclEntityFromJson(json);
+
+  /// The [id] parameter is the id of the cacl entity.
+  @override
+  final String? id;
+
+  /// The [assetId] parameter is the assetId of the cacl entity.
+  @override
+  final String? assetId;
+
+  /// The [asset] parameter is the asset of the cacl entity.
+  @override
+  final Asset? asset;
+
+  /// The [transportAssetId] parameter is the transportAssetId of the cacl entity.
+  @override
+  final String? transportAssetId;
+
+  /// The [transportAsset] parameter is the transportAsset of the cacl entity.
+  @override
+  final Asset? transportAsset;
+
+  /// The [transportUserId] parameter is the transportUserId of the cacl entity.
+  @override
+  final String? transportUserId;
+
+  /// The [transportUser] parameter is the transportUser of the cacl entity.
+  @override
+  final User? transportUser;
+
+  /// The [caclNumber] parameter is the caclNumber of the cacl entity.
+  @override
+  final String? caclNumber;
+
+  /// The [category] parameter is the category of the cacl entity.
+  @override
+  final String? category;
+
+  /// The [product] parameter is the product of the cacl entity.
+  @override
+  final String? product;
+
+  /// The [clientAssetId] parameter is the clientAssetId of the cacl entity.
+  @override
+  final String? clientAssetId;
+
+  /// The [clientAsset] parameter is the clientAsset of the cacl entity.
+  @override
+  final Asset? clientAsset;
+
+  /// The [origin] parameter is the origin of the cacl entity.
+  @override
+  final String? origin;
+
+  /// The [tankNumber] parameter is the tankNumber of the cacl entity.
+  @override
+  final String? tankNumber;
+
+  /// The [transport] parameter is the transport of the cacl entity.
+  @override
+  final String? transport;
+
+  /// The [equipments] parameter is the equipments of the cacl entity.
+  @override
+  final CaclEquipmentEntity? equipments;
+
+  /// The [measurements] parameter is the measurements of the cacl entity.
+  @override
+  final MeasurementsEntity? measurements;
+
+  /// The [results] parameter is the results of the cacl entity.
+  @override
+  final ResultsEntity? results;
+
+  /// The [measurer01] parameter is the measurer01 of the cacl entity.
+  @override
+  final CaclMeasurementOutput? measurer01;
+
+  /// The [measurer02] parameter is the measurer02 of the cacl entity.
+  @override
+  final CaclMeasurementOutput? measurer02;
+
+  /// The [volumeMoved] parameter is the volumeMoved of the cacl entity.
+  @override
+  final VolumeMovedEntity? volumeMoved;
+
+  /// The [observations] parameter is the observations of the cacl entity.
+  @override
+  final String? observations;
+
+  /// The [startedAt] parameter is the startedAt of the cacl entity.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? startedAt;
+
+  /// The [finishedAt] parameter is the finishedAt of the cacl entity.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? finishedAt;
+
+  /// The [operationId] parameter is the operationId of the cacl entity.
+  @override
+  final String? operationId;
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CaclEntityCopyWith<_CaclEntity> get copyWith =>
+      __$CaclEntityCopyWithImpl<_CaclEntity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CaclEntityToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CaclEntity &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.transportUserId, transportUserId) ||
+                other.transportUserId == transportUserId) &&
+            (identical(other.transportUser, transportUser) ||
+                other.transportUser == transportUser) &&
+            (identical(other.caclNumber, caclNumber) ||
+                other.caclNumber == caclNumber) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.product, product) || other.product == product) &&
+            (identical(other.clientAssetId, clientAssetId) ||
+                other.clientAssetId == clientAssetId) &&
+            (identical(other.clientAsset, clientAsset) ||
+                other.clientAsset == clientAsset) &&
+            (identical(other.origin, origin) || other.origin == origin) &&
+            (identical(other.tankNumber, tankNumber) ||
+                other.tankNumber == tankNumber) &&
+            (identical(other.transport, transport) ||
+                other.transport == transport) &&
+            (identical(other.equipments, equipments) ||
+                other.equipments == equipments) &&
+            (identical(other.measurements, measurements) ||
+                other.measurements == measurements) &&
+            (identical(other.results, results) || other.results == results) &&
+            (identical(other.measurer01, measurer01) ||
+                other.measurer01 == measurer01) &&
+            (identical(other.measurer02, measurer02) ||
+                other.measurer02 == measurer02) &&
+            (identical(other.volumeMoved, volumeMoved) ||
+                other.volumeMoved == volumeMoved) &&
+            (identical(other.observations, observations) ||
+                other.observations == observations) &&
+            (identical(other.startedAt, startedAt) ||
+                other.startedAt == startedAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        assetId,
+        asset,
+        transportAssetId,
+        transportAsset,
+        transportUserId,
+        transportUser,
+        caclNumber,
+        category,
+        product,
+        clientAssetId,
+        clientAsset,
+        origin,
+        tankNumber,
+        transport,
+        equipments,
+        measurements,
+        results,
+        measurer01,
+        measurer02,
+        volumeMoved,
+        observations,
+        startedAt,
+        finishedAt,
+        operationId
+      ]);
+
+  @override
+  String toString() {
+    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CaclEntityCopyWith<$Res>
+    implements $CaclEntityCopyWith<$Res> {
+  factory _$CaclEntityCopyWith(
+          _CaclEntity value, $Res Function(_CaclEntity) _then) =
+      __$CaclEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      Asset? asset,
+      String? transportAssetId,
+      Asset? transportAsset,
+      String? transportUserId,
+      User? transportUser,
+      String? caclNumber,
+      String? category,
+      String? product,
+      String? clientAssetId,
+      Asset? clientAsset,
+      String? origin,
+      String? tankNumber,
+      String? transport,
+      CaclEquipmentEntity? equipments,
+      MeasurementsEntity? measurements,
+      ResultsEntity? results,
+      CaclMeasurementOutput? measurer01,
+      CaclMeasurementOutput? measurer02,
+      VolumeMovedEntity? volumeMoved,
+      String? observations,
+      @TimestampOrNullConverter() DateTime? startedAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
+      String? operationId});
+
+  @override
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $AssetCopyWith<$Res>? get transportAsset;
+  @override
+  $UserCopyWith<$Res>? get transportUser;
+  @override
+  $AssetCopyWith<$Res>? get clientAsset;
+  @override
+  $CaclEquipmentEntityCopyWith<$Res>? get equipments;
+  @override
+  $MeasurementsEntityCopyWith<$Res>? get measurements;
+  @override
+  $ResultsEntityCopyWith<$Res>? get results;
+  @override
+  $CaclMeasurementOutputCopyWith<$Res>? get measurer01;
+  @override
+  $CaclMeasurementOutputCopyWith<$Res>? get measurer02;
+  @override
+  $VolumeMovedEntityCopyWith<$Res>? get volumeMoved;
+}
+
+/// @nodoc
+class __$CaclEntityCopyWithImpl<$Res> implements _$CaclEntityCopyWith<$Res> {
+  __$CaclEntityCopyWithImpl(this._self, this._then);
+
+  final _CaclEntity _self;
+  final $Res Function(_CaclEntity) _then;
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? transportAssetId = freezed,
+    Object? transportAsset = freezed,
+    Object? transportUserId = freezed,
+    Object? transportUser = freezed,
+    Object? caclNumber = freezed,
+    Object? category = freezed,
+    Object? product = freezed,
+    Object? clientAssetId = freezed,
+    Object? clientAsset = freezed,
+    Object? origin = freezed,
+    Object? tankNumber = freezed,
+    Object? transport = freezed,
+    Object? equipments = freezed,
+    Object? measurements = freezed,
+    Object? results = freezed,
+    Object? measurer01 = freezed,
+    Object? measurer02 = freezed,
+    Object? volumeMoved = freezed,
+    Object? observations = freezed,
+    Object? startedAt = freezed,
+    Object? finishedAt = freezed,
+    Object? operationId = freezed,
+  }) {
+    return _then(_CaclEntity(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportAssetId: freezed == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAsset: freezed == transportAsset
+          ? _self.transportAsset
+          : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportUserId: freezed == transportUserId
+          ? _self.transportUserId
+          : transportUserId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportUser: freezed == transportUser
+          ? _self.transportUser
+          : transportUser // ignore: cast_nullable_to_non_nullable
+              as User?,
+      caclNumber: freezed == caclNumber
+          ? _self.caclNumber
+          : caclNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      product: freezed == product
+          ? _self.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientAssetId: freezed == clientAssetId
+          ? _self.clientAssetId
+          : clientAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientAsset: freezed == clientAsset
+          ? _self.clientAsset
+          : clientAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      origin: freezed == origin
+          ? _self.origin
+          : origin // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankNumber: freezed == tankNumber
+          ? _self.tankNumber
+          : tankNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transport: freezed == transport
+          ? _self.transport
+          : transport // ignore: cast_nullable_to_non_nullable
+              as String?,
+      equipments: freezed == equipments
+          ? _self.equipments
+          : equipments // ignore: cast_nullable_to_non_nullable
+              as CaclEquipmentEntity?,
+      measurements: freezed == measurements
+          ? _self.measurements
+          : measurements // ignore: cast_nullable_to_non_nullable
+              as MeasurementsEntity?,
+      results: freezed == results
+          ? _self.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as ResultsEntity?,
+      measurer01: freezed == measurer01
+          ? _self.measurer01
+          : measurer01 // ignore: cast_nullable_to_non_nullable
+              as CaclMeasurementOutput?,
+      measurer02: freezed == measurer02
+          ? _self.measurer02
+          : measurer02 // ignore: cast_nullable_to_non_nullable
+              as CaclMeasurementOutput?,
+      volumeMoved: freezed == volumeMoved
+          ? _self.volumeMoved
+          : volumeMoved // ignore: cast_nullable_to_non_nullable
+              as VolumeMovedEntity?,
+      observations: freezed == observations
+          ? _self.observations
+          : observations // ignore: cast_nullable_to_non_nullable
+              as String?,
+      startedAt: freezed == startedAt
+          ? _self.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _self.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportAsset {
+    if (_self.transportAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+      return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get transportUser {
+    if (_self.transportUser == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.transportUser!, (value) {
+      return _then(_self.copyWith(transportUser: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get clientAsset {
+    if (_self.clientAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.clientAsset!, (value) {
+      return _then(_self.copyWith(clientAsset: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclEquipmentEntityCopyWith<$Res>? get equipments {
+    if (_self.equipments == null) {
+      return null;
+    }
+
+    return $CaclEquipmentEntityCopyWith<$Res>(_self.equipments!, (value) {
+      return _then(_self.copyWith(equipments: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementsEntityCopyWith<$Res>? get measurements {
+    if (_self.measurements == null) {
+      return null;
+    }
+
+    return $MeasurementsEntityCopyWith<$Res>(_self.measurements!, (value) {
+      return _then(_self.copyWith(measurements: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ResultsEntityCopyWith<$Res>? get results {
+    if (_self.results == null) {
+      return null;
+    }
+
+    return $ResultsEntityCopyWith<$Res>(_self.results!, (value) {
+      return _then(_self.copyWith(results: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementOutputCopyWith<$Res>? get measurer01 {
+    if (_self.measurer01 == null) {
+      return null;
+    }
+
+    return $CaclMeasurementOutputCopyWith<$Res>(_self.measurer01!, (value) {
+      return _then(_self.copyWith(measurer01: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementOutputCopyWith<$Res>? get measurer02 {
+    if (_self.measurer02 == null) {
+      return null;
+    }
+
+    return $CaclMeasurementOutputCopyWith<$Res>(_self.measurer02!, (value) {
+      return _then(_self.copyWith(measurer02: value));
+    });
+  }
+
+  /// Create a copy of CaclEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $VolumeMovedEntityCopyWith<$Res>? get volumeMoved {
+    if (_self.volumeMoved == null) {
+      return null;
+    }
+
+    return $VolumeMovedEntityCopyWith<$Res>(_self.volumeMoved!, (value) {
+      return _then(_self.copyWith(volumeMoved: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$CaclEquipmentEntity {
+  /// The [measuringTape] parameter is the measuringTape of the cacl equipment entity.
+  EquipmentMeasurementEntity? get measuringTape;
+
+  /// The [densimeter] parameter is the densimeter of the cacl equipment entity.
+  EquipmentMeasurementEntity? get densimeter;
+
+  /// The [thermometer] parameter is the thermometer of the cacl equipment entity.
+  EquipmentMeasurementEntity? get thermometer;
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CaclEquipmentEntityCopyWith<CaclEquipmentEntity> get copyWith =>
+      _$CaclEquipmentEntityCopyWithImpl<CaclEquipmentEntity>(
+          this as CaclEquipmentEntity, _$identity);
+
+  /// Serializes this CaclEquipmentEntity to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CaclEquipmentEntity &&
+            (identical(other.measuringTape, measuringTape) ||
+                other.measuringTape == measuringTape) &&
+            (identical(other.densimeter, densimeter) ||
+                other.densimeter == densimeter) &&
+            (identical(other.thermometer, thermometer) ||
+                other.thermometer == thermometer));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, measuringTape, densimeter, thermometer);
+
+  @override
+  String toString() {
+    return 'CaclEquipmentEntity(measuringTape: $measuringTape, densimeter: $densimeter, thermometer: $thermometer)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CaclEquipmentEntityCopyWith<$Res> {
+  factory $CaclEquipmentEntityCopyWith(
+          CaclEquipmentEntity value, $Res Function(CaclEquipmentEntity) _then) =
+      _$CaclEquipmentEntityCopyWithImpl;
+  @useResult
+  $Res call(
+      {EquipmentMeasurementEntity? measuringTape,
+      EquipmentMeasurementEntity? densimeter,
+      EquipmentMeasurementEntity? thermometer});
+
+  $EquipmentMeasurementEntityCopyWith<$Res>? get measuringTape;
+  $EquipmentMeasurementEntityCopyWith<$Res>? get densimeter;
+  $EquipmentMeasurementEntityCopyWith<$Res>? get thermometer;
+}
+
+/// @nodoc
+class _$CaclEquipmentEntityCopyWithImpl<$Res>
+    implements $CaclEquipmentEntityCopyWith<$Res> {
+  _$CaclEquipmentEntityCopyWithImpl(this._self, this._then);
+
+  final CaclEquipmentEntity _self;
+  final $Res Function(CaclEquipmentEntity) _then;
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? measuringTape = freezed,
+    Object? densimeter = freezed,
+    Object? thermometer = freezed,
+  }) {
+    return _then(_self.copyWith(
+      measuringTape: freezed == measuringTape
+          ? _self.measuringTape
+          : measuringTape // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementEntity?,
+      densimeter: freezed == densimeter
+          ? _self.densimeter
+          : densimeter // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementEntity?,
+      thermometer: freezed == thermometer
+          ? _self.thermometer
+          : thermometer // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementEntity?,
+    ));
+  }
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementEntityCopyWith<$Res>? get measuringTape {
+    if (_self.measuringTape == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.measuringTape!,
+        (value) {
+      return _then(_self.copyWith(measuringTape: value));
+    });
+  }
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementEntityCopyWith<$Res>? get densimeter {
+    if (_self.densimeter == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.densimeter!,
+        (value) {
+      return _then(_self.copyWith(densimeter: value));
+    });
+  }
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementEntityCopyWith<$Res>? get thermometer {
+    if (_self.thermometer == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.thermometer!,
+        (value) {
+      return _then(_self.copyWith(thermometer: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CaclEquipmentEntity implements CaclEquipmentEntity {
+  _CaclEquipmentEntity({this.measuringTape, this.densimeter, this.thermometer});
+  factory _CaclEquipmentEntity.fromJson(Map<String, dynamic> json) =>
+      _$CaclEquipmentEntityFromJson(json);
+
+  /// The [measuringTape] parameter is the measuringTape of the cacl equipment entity.
+  @override
+  final EquipmentMeasurementEntity? measuringTape;
+
+  /// The [densimeter] parameter is the densimeter of the cacl equipment entity.
+  @override
+  final EquipmentMeasurementEntity? densimeter;
+
+  /// The [thermometer] parameter is the thermometer of the cacl equipment entity.
+  @override
+  final EquipmentMeasurementEntity? thermometer;
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CaclEquipmentEntityCopyWith<_CaclEquipmentEntity> get copyWith =>
+      __$CaclEquipmentEntityCopyWithImpl<_CaclEquipmentEntity>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CaclEquipmentEntityToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CaclEquipmentEntity &&
+            (identical(other.measuringTape, measuringTape) ||
+                other.measuringTape == measuringTape) &&
+            (identical(other.densimeter, densimeter) ||
+                other.densimeter == densimeter) &&
+            (identical(other.thermometer, thermometer) ||
+                other.thermometer == thermometer));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, measuringTape, densimeter, thermometer);
+
+  @override
+  String toString() {
+    return 'CaclEquipmentEntity(measuringTape: $measuringTape, densimeter: $densimeter, thermometer: $thermometer)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CaclEquipmentEntityCopyWith<$Res>
+    implements $CaclEquipmentEntityCopyWith<$Res> {
+  factory _$CaclEquipmentEntityCopyWith(_CaclEquipmentEntity value,
+          $Res Function(_CaclEquipmentEntity) _then) =
+      __$CaclEquipmentEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {EquipmentMeasurementEntity? measuringTape,
+      EquipmentMeasurementEntity? densimeter,
+      EquipmentMeasurementEntity? thermometer});
+
+  @override
+  $EquipmentMeasurementEntityCopyWith<$Res>? get measuringTape;
+  @override
+  $EquipmentMeasurementEntityCopyWith<$Res>? get densimeter;
+  @override
+  $EquipmentMeasurementEntityCopyWith<$Res>? get thermometer;
+}
+
+/// @nodoc
+class __$CaclEquipmentEntityCopyWithImpl<$Res>
+    implements _$CaclEquipmentEntityCopyWith<$Res> {
+  __$CaclEquipmentEntityCopyWithImpl(this._self, this._then);
+
+  final _CaclEquipmentEntity _self;
+  final $Res Function(_CaclEquipmentEntity) _then;
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? measuringTape = freezed,
+    Object? densimeter = freezed,
+    Object? thermometer = freezed,
+  }) {
+    return _then(_CaclEquipmentEntity(
+      measuringTape: freezed == measuringTape
+          ? _self.measuringTape
+          : measuringTape // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementEntity?,
+      densimeter: freezed == densimeter
+          ? _self.densimeter
+          : densimeter // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementEntity?,
+      thermometer: freezed == thermometer
+          ? _self.thermometer
+          : thermometer // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementEntity?,
+    ));
+  }
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementEntityCopyWith<$Res>? get measuringTape {
+    if (_self.measuringTape == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.measuringTape!,
+        (value) {
+      return _then(_self.copyWith(measuringTape: value));
+    });
+  }
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementEntityCopyWith<$Res>? get densimeter {
+    if (_self.densimeter == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.densimeter!,
+        (value) {
+      return _then(_self.copyWith(densimeter: value));
+    });
+  }
+
+  /// Create a copy of CaclEquipmentEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementEntityCopyWith<$Res>? get thermometer {
+    if (_self.thermometer == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.thermometer!,
+        (value) {
+      return _then(_self.copyWith(thermometer: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$MeasurementsEntity {
+  /// The [referenceHeight] parameter is the referenceHeight of the measurements entity.
+  MeasurementEntity? get referenceHeight;
+
+  /// The [productLevelHeight] parameter is the productLevelHeight of the measurements entity.
+  MeasurementEntity? get productLevelHeight;
+
+  /// The [correctedLevelHeight] parameter is the correctedLevelHeight of the measurements entity.
+  MeasurementEntity? get correctedLevelHeight;
+
+  /// The [waterHeight] parameter is the waterHeight of the measurements entity.
+  MeasurementEntity? get waterHeight;
+
+  /// The [ambientLineVolume] parameter is the ambientLineVolume of the measurements entity.
+  MeasurementEntity? get ambientLineVolume;
+
+  /// The [ambientDensity] parameter is the ambientDensity of the measurements entity.
+  MeasurementEntity? get ambientDensity;
+
+  /// The [ambientTemperature] parameter is the ambientTemperature of the measurements entity.
+  MeasurementEntity? get ambientTemperature;
+
+  /// The [averageTankTemperature] parameter is the averageTankTemperature of the measurements entity.
+  MeasurementEntity? get averageTankTemperature;
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MeasurementsEntityCopyWith<MeasurementsEntity> get copyWith =>
+      _$MeasurementsEntityCopyWithImpl<MeasurementsEntity>(
+          this as MeasurementsEntity, _$identity);
+
+  /// Serializes this MeasurementsEntity to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MeasurementsEntity &&
+            (identical(other.referenceHeight, referenceHeight) ||
+                other.referenceHeight == referenceHeight) &&
+            (identical(other.productLevelHeight, productLevelHeight) ||
+                other.productLevelHeight == productLevelHeight) &&
+            (identical(other.correctedLevelHeight, correctedLevelHeight) ||
+                other.correctedLevelHeight == correctedLevelHeight) &&
+            (identical(other.waterHeight, waterHeight) ||
+                other.waterHeight == waterHeight) &&
+            (identical(other.ambientLineVolume, ambientLineVolume) ||
+                other.ambientLineVolume == ambientLineVolume) &&
+            (identical(other.ambientDensity, ambientDensity) ||
+                other.ambientDensity == ambientDensity) &&
+            (identical(other.ambientTemperature, ambientTemperature) ||
+                other.ambientTemperature == ambientTemperature) &&
+            (identical(other.averageTankTemperature, averageTankTemperature) ||
+                other.averageTankTemperature == averageTankTemperature));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      referenceHeight,
+      productLevelHeight,
+      correctedLevelHeight,
+      waterHeight,
+      ambientLineVolume,
+      ambientDensity,
+      ambientTemperature,
+      averageTankTemperature);
+
+  @override
+  String toString() {
+    return 'MeasurementsEntity(referenceHeight: $referenceHeight, productLevelHeight: $productLevelHeight, correctedLevelHeight: $correctedLevelHeight, waterHeight: $waterHeight, ambientLineVolume: $ambientLineVolume, ambientDensity: $ambientDensity, ambientTemperature: $ambientTemperature, averageTankTemperature: $averageTankTemperature)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MeasurementsEntityCopyWith<$Res> {
+  factory $MeasurementsEntityCopyWith(
+          MeasurementsEntity value, $Res Function(MeasurementsEntity) _then) =
+      _$MeasurementsEntityCopyWithImpl;
+  @useResult
+  $Res call(
+      {MeasurementEntity? referenceHeight,
+      MeasurementEntity? productLevelHeight,
+      MeasurementEntity? correctedLevelHeight,
+      MeasurementEntity? waterHeight,
+      MeasurementEntity? ambientLineVolume,
+      MeasurementEntity? ambientDensity,
+      MeasurementEntity? ambientTemperature,
+      MeasurementEntity? averageTankTemperature});
+
+  $MeasurementEntityCopyWith<$Res>? get referenceHeight;
+  $MeasurementEntityCopyWith<$Res>? get productLevelHeight;
+  $MeasurementEntityCopyWith<$Res>? get correctedLevelHeight;
+  $MeasurementEntityCopyWith<$Res>? get waterHeight;
+  $MeasurementEntityCopyWith<$Res>? get ambientLineVolume;
+  $MeasurementEntityCopyWith<$Res>? get ambientDensity;
+  $MeasurementEntityCopyWith<$Res>? get ambientTemperature;
+  $MeasurementEntityCopyWith<$Res>? get averageTankTemperature;
+}
+
+/// @nodoc
+class _$MeasurementsEntityCopyWithImpl<$Res>
+    implements $MeasurementsEntityCopyWith<$Res> {
+  _$MeasurementsEntityCopyWithImpl(this._self, this._then);
+
+  final MeasurementsEntity _self;
+  final $Res Function(MeasurementsEntity) _then;
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? referenceHeight = freezed,
+    Object? productLevelHeight = freezed,
+    Object? correctedLevelHeight = freezed,
+    Object? waterHeight = freezed,
+    Object? ambientLineVolume = freezed,
+    Object? ambientDensity = freezed,
+    Object? ambientTemperature = freezed,
+    Object? averageTankTemperature = freezed,
+  }) {
+    return _then(_self.copyWith(
+      referenceHeight: freezed == referenceHeight
+          ? _self.referenceHeight
+          : referenceHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      productLevelHeight: freezed == productLevelHeight
+          ? _self.productLevelHeight
+          : productLevelHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      correctedLevelHeight: freezed == correctedLevelHeight
+          ? _self.correctedLevelHeight
+          : correctedLevelHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      waterHeight: freezed == waterHeight
+          ? _self.waterHeight
+          : waterHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      ambientLineVolume: freezed == ambientLineVolume
+          ? _self.ambientLineVolume
+          : ambientLineVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      ambientDensity: freezed == ambientDensity
+          ? _self.ambientDensity
+          : ambientDensity // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      ambientTemperature: freezed == ambientTemperature
+          ? _self.ambientTemperature
+          : ambientTemperature // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      averageTankTemperature: freezed == averageTankTemperature
+          ? _self.averageTankTemperature
+          : averageTankTemperature // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+    ));
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get referenceHeight {
+    if (_self.referenceHeight == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.referenceHeight!, (value) {
+      return _then(_self.copyWith(referenceHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get productLevelHeight {
+    if (_self.productLevelHeight == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.productLevelHeight!, (value) {
+      return _then(_self.copyWith(productLevelHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get correctedLevelHeight {
+    if (_self.correctedLevelHeight == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.correctedLevelHeight!,
+        (value) {
+      return _then(_self.copyWith(correctedLevelHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get waterHeight {
+    if (_self.waterHeight == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.waterHeight!, (value) {
+      return _then(_self.copyWith(waterHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get ambientLineVolume {
+    if (_self.ambientLineVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.ambientLineVolume!, (value) {
+      return _then(_self.copyWith(ambientLineVolume: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get ambientDensity {
+    if (_self.ambientDensity == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.ambientDensity!, (value) {
+      return _then(_self.copyWith(ambientDensity: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get ambientTemperature {
+    if (_self.ambientTemperature == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.ambientTemperature!, (value) {
+      return _then(_self.copyWith(ambientTemperature: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get averageTankTemperature {
+    if (_self.averageTankTemperature == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.averageTankTemperature!,
+        (value) {
+      return _then(_self.copyWith(averageTankTemperature: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _MeasurementsEntity implements MeasurementsEntity {
+  _MeasurementsEntity(
+      {this.referenceHeight,
+      this.productLevelHeight,
+      this.correctedLevelHeight,
+      this.waterHeight,
+      this.ambientLineVolume,
+      this.ambientDensity,
+      this.ambientTemperature,
+      this.averageTankTemperature});
+  factory _MeasurementsEntity.fromJson(Map<String, dynamic> json) =>
+      _$MeasurementsEntityFromJson(json);
+
+  /// The [referenceHeight] parameter is the referenceHeight of the measurements entity.
+  @override
+  final MeasurementEntity? referenceHeight;
+
+  /// The [productLevelHeight] parameter is the productLevelHeight of the measurements entity.
+  @override
+  final MeasurementEntity? productLevelHeight;
+
+  /// The [correctedLevelHeight] parameter is the correctedLevelHeight of the measurements entity.
+  @override
+  final MeasurementEntity? correctedLevelHeight;
+
+  /// The [waterHeight] parameter is the waterHeight of the measurements entity.
+  @override
+  final MeasurementEntity? waterHeight;
+
+  /// The [ambientLineVolume] parameter is the ambientLineVolume of the measurements entity.
+  @override
+  final MeasurementEntity? ambientLineVolume;
+
+  /// The [ambientDensity] parameter is the ambientDensity of the measurements entity.
+  @override
+  final MeasurementEntity? ambientDensity;
+
+  /// The [ambientTemperature] parameter is the ambientTemperature of the measurements entity.
+  @override
+  final MeasurementEntity? ambientTemperature;
+
+  /// The [averageTankTemperature] parameter is the averageTankTemperature of the measurements entity.
+  @override
+  final MeasurementEntity? averageTankTemperature;
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MeasurementsEntityCopyWith<_MeasurementsEntity> get copyWith =>
+      __$MeasurementsEntityCopyWithImpl<_MeasurementsEntity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MeasurementsEntityToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MeasurementsEntity &&
+            (identical(other.referenceHeight, referenceHeight) ||
+                other.referenceHeight == referenceHeight) &&
+            (identical(other.productLevelHeight, productLevelHeight) ||
+                other.productLevelHeight == productLevelHeight) &&
+            (identical(other.correctedLevelHeight, correctedLevelHeight) ||
+                other.correctedLevelHeight == correctedLevelHeight) &&
+            (identical(other.waterHeight, waterHeight) ||
+                other.waterHeight == waterHeight) &&
+            (identical(other.ambientLineVolume, ambientLineVolume) ||
+                other.ambientLineVolume == ambientLineVolume) &&
+            (identical(other.ambientDensity, ambientDensity) ||
+                other.ambientDensity == ambientDensity) &&
+            (identical(other.ambientTemperature, ambientTemperature) ||
+                other.ambientTemperature == ambientTemperature) &&
+            (identical(other.averageTankTemperature, averageTankTemperature) ||
+                other.averageTankTemperature == averageTankTemperature));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      referenceHeight,
+      productLevelHeight,
+      correctedLevelHeight,
+      waterHeight,
+      ambientLineVolume,
+      ambientDensity,
+      ambientTemperature,
+      averageTankTemperature);
+
+  @override
+  String toString() {
+    return 'MeasurementsEntity(referenceHeight: $referenceHeight, productLevelHeight: $productLevelHeight, correctedLevelHeight: $correctedLevelHeight, waterHeight: $waterHeight, ambientLineVolume: $ambientLineVolume, ambientDensity: $ambientDensity, ambientTemperature: $ambientTemperature, averageTankTemperature: $averageTankTemperature)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MeasurementsEntityCopyWith<$Res>
+    implements $MeasurementsEntityCopyWith<$Res> {
+  factory _$MeasurementsEntityCopyWith(
+          _MeasurementsEntity value, $Res Function(_MeasurementsEntity) _then) =
+      __$MeasurementsEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {MeasurementEntity? referenceHeight,
+      MeasurementEntity? productLevelHeight,
+      MeasurementEntity? correctedLevelHeight,
+      MeasurementEntity? waterHeight,
+      MeasurementEntity? ambientLineVolume,
+      MeasurementEntity? ambientDensity,
+      MeasurementEntity? ambientTemperature,
+      MeasurementEntity? averageTankTemperature});
+
+  @override
+  $MeasurementEntityCopyWith<$Res>? get referenceHeight;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get productLevelHeight;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get correctedLevelHeight;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get waterHeight;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get ambientLineVolume;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get ambientDensity;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get ambientTemperature;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get averageTankTemperature;
+}
+
+/// @nodoc
+class __$MeasurementsEntityCopyWithImpl<$Res>
+    implements _$MeasurementsEntityCopyWith<$Res> {
+  __$MeasurementsEntityCopyWithImpl(this._self, this._then);
+
+  final _MeasurementsEntity _self;
+  final $Res Function(_MeasurementsEntity) _then;
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? referenceHeight = freezed,
+    Object? productLevelHeight = freezed,
+    Object? correctedLevelHeight = freezed,
+    Object? waterHeight = freezed,
+    Object? ambientLineVolume = freezed,
+    Object? ambientDensity = freezed,
+    Object? ambientTemperature = freezed,
+    Object? averageTankTemperature = freezed,
+  }) {
+    return _then(_MeasurementsEntity(
+      referenceHeight: freezed == referenceHeight
+          ? _self.referenceHeight
+          : referenceHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      productLevelHeight: freezed == productLevelHeight
+          ? _self.productLevelHeight
+          : productLevelHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      correctedLevelHeight: freezed == correctedLevelHeight
+          ? _self.correctedLevelHeight
+          : correctedLevelHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      waterHeight: freezed == waterHeight
+          ? _self.waterHeight
+          : waterHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      ambientLineVolume: freezed == ambientLineVolume
+          ? _self.ambientLineVolume
+          : ambientLineVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      ambientDensity: freezed == ambientDensity
+          ? _self.ambientDensity
+          : ambientDensity // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      ambientTemperature: freezed == ambientTemperature
+          ? _self.ambientTemperature
+          : ambientTemperature // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      averageTankTemperature: freezed == averageTankTemperature
+          ? _self.averageTankTemperature
+          : averageTankTemperature // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+    ));
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get referenceHeight {
+    if (_self.referenceHeight == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.referenceHeight!, (value) {
+      return _then(_self.copyWith(referenceHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get productLevelHeight {
+    if (_self.productLevelHeight == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.productLevelHeight!, (value) {
+      return _then(_self.copyWith(productLevelHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get correctedLevelHeight {
+    if (_self.correctedLevelHeight == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.correctedLevelHeight!,
+        (value) {
+      return _then(_self.copyWith(correctedLevelHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get waterHeight {
+    if (_self.waterHeight == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.waterHeight!, (value) {
+      return _then(_self.copyWith(waterHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get ambientLineVolume {
+    if (_self.ambientLineVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.ambientLineVolume!, (value) {
+      return _then(_self.copyWith(ambientLineVolume: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get ambientDensity {
+    if (_self.ambientDensity == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.ambientDensity!, (value) {
+      return _then(_self.copyWith(ambientDensity: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get ambientTemperature {
+    if (_self.ambientTemperature == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.ambientTemperature!, (value) {
+      return _then(_self.copyWith(ambientTemperature: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get averageTankTemperature {
+    if (_self.averageTankTemperature == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.averageTankTemperature!,
+        (value) {
+      return _then(_self.copyWith(averageTankTemperature: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$ResultsEntity {
+  /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results entity.
+  MeasurementEntity? get environmentalTankVolume;
+
+  /// The [waterVolume] parameter is the waterVolume of the results entity.
+  MeasurementEntity? get waterVolume;
+
+  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results entity.
+  MeasurementEntity? get ambientProductVolume;
+
+  /// The [densityAt20] parameter is the densityAt20 of the results entity.
+  MeasurementEntity? get densityAt20;
+
+  /// The [volumeCorrectionFactor] parameter is the volumeCorrectionFactor of the results entity.
+  MeasurementEntity? get volumeCorrectionFactor;
+
+  /// The [alcoholicContent] parameter is the alcoholicContent of the results entity.
+  MeasurementEntity? get alcoholicContent;
+
+  /// The [environmentalVolume] parameter is the environmentalVolume of the results entity.
+  MeasurementEntity? get environmentalVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the results entity.
+  MeasurementEntity? get volumeAt20;
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the results entity.
+  MeasurementEntity? get kilogramsAt20;
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ResultsEntityCopyWith<ResultsEntity> get copyWith =>
+      _$ResultsEntityCopyWithImpl<ResultsEntity>(
+          this as ResultsEntity, _$identity);
+
+  /// Serializes this ResultsEntity to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ResultsEntity &&
+            (identical(
+                    other.environmentalTankVolume, environmentalTankVolume) ||
+                other.environmentalTankVolume == environmentalTankVolume) &&
+            (identical(other.waterVolume, waterVolume) ||
+                other.waterVolume == waterVolume) &&
+            (identical(other.ambientProductVolume, ambientProductVolume) ||
+                other.ambientProductVolume == ambientProductVolume) &&
+            (identical(other.densityAt20, densityAt20) ||
+                other.densityAt20 == densityAt20) &&
+            (identical(other.volumeCorrectionFactor, volumeCorrectionFactor) ||
+                other.volumeCorrectionFactor == volumeCorrectionFactor) &&
+            (identical(other.alcoholicContent, alcoholicContent) ||
+                other.alcoholicContent == alcoholicContent) &&
+            (identical(other.environmentalVolume, environmentalVolume) ||
+                other.environmentalVolume == environmentalVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.kilogramsAt20, kilogramsAt20) ||
+                other.kilogramsAt20 == kilogramsAt20));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      environmentalTankVolume,
+      waterVolume,
+      ambientProductVolume,
+      densityAt20,
+      volumeCorrectionFactor,
+      alcoholicContent,
+      environmentalVolume,
+      volumeAt20,
+      kilogramsAt20);
+
+  @override
+  String toString() {
+    return 'ResultsEntity(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, ambientProductVolume: $ambientProductVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ResultsEntityCopyWith<$Res> {
+  factory $ResultsEntityCopyWith(
+          ResultsEntity value, $Res Function(ResultsEntity) _then) =
+      _$ResultsEntityCopyWithImpl;
+  @useResult
+  $Res call(
+      {MeasurementEntity? environmentalTankVolume,
+      MeasurementEntity? waterVolume,
+      MeasurementEntity? ambientProductVolume,
+      MeasurementEntity? densityAt20,
+      MeasurementEntity? volumeCorrectionFactor,
+      MeasurementEntity? alcoholicContent,
+      MeasurementEntity? environmentalVolume,
+      MeasurementEntity? volumeAt20,
+      MeasurementEntity? kilogramsAt20});
+
+  $MeasurementEntityCopyWith<$Res>? get environmentalTankVolume;
+  $MeasurementEntityCopyWith<$Res>? get waterVolume;
+  $MeasurementEntityCopyWith<$Res>? get ambientProductVolume;
+  $MeasurementEntityCopyWith<$Res>? get densityAt20;
+  $MeasurementEntityCopyWith<$Res>? get volumeCorrectionFactor;
+  $MeasurementEntityCopyWith<$Res>? get alcoholicContent;
+  $MeasurementEntityCopyWith<$Res>? get environmentalVolume;
+  $MeasurementEntityCopyWith<$Res>? get volumeAt20;
+  $MeasurementEntityCopyWith<$Res>? get kilogramsAt20;
+}
+
+/// @nodoc
+class _$ResultsEntityCopyWithImpl<$Res>
+    implements $ResultsEntityCopyWith<$Res> {
+  _$ResultsEntityCopyWithImpl(this._self, this._then);
+
+  final ResultsEntity _self;
+  final $Res Function(ResultsEntity) _then;
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? environmentalTankVolume = freezed,
+    Object? waterVolume = freezed,
+    Object? ambientProductVolume = freezed,
+    Object? densityAt20 = freezed,
+    Object? volumeCorrectionFactor = freezed,
+    Object? alcoholicContent = freezed,
+    Object? environmentalVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? kilogramsAt20 = freezed,
+  }) {
+    return _then(_self.copyWith(
+      environmentalTankVolume: freezed == environmentalTankVolume
+          ? _self.environmentalTankVolume
+          : environmentalTankVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      waterVolume: freezed == waterVolume
+          ? _self.waterVolume
+          : waterVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      ambientProductVolume: freezed == ambientProductVolume
+          ? _self.ambientProductVolume
+          : ambientProductVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      densityAt20: freezed == densityAt20
+          ? _self.densityAt20
+          : densityAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      volumeCorrectionFactor: freezed == volumeCorrectionFactor
+          ? _self.volumeCorrectionFactor
+          : volumeCorrectionFactor // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      alcoholicContent: freezed == alcoholicContent
+          ? _self.alcoholicContent
+          : alcoholicContent // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      environmentalVolume: freezed == environmentalVolume
+          ? _self.environmentalVolume
+          : environmentalVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      kilogramsAt20: freezed == kilogramsAt20
+          ? _self.kilogramsAt20
+          : kilogramsAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+    ));
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get environmentalTankVolume {
+    if (_self.environmentalTankVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.environmentalTankVolume!,
+        (value) {
+      return _then(_self.copyWith(environmentalTankVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get waterVolume {
+    if (_self.waterVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.waterVolume!, (value) {
+      return _then(_self.copyWith(waterVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get ambientProductVolume {
+    if (_self.ambientProductVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.ambientProductVolume!,
+        (value) {
+      return _then(_self.copyWith(ambientProductVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get densityAt20 {
+    if (_self.densityAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.densityAt20!, (value) {
+      return _then(_self.copyWith(densityAt20: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get volumeCorrectionFactor {
+    if (_self.volumeCorrectionFactor == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.volumeCorrectionFactor!,
+        (value) {
+      return _then(_self.copyWith(volumeCorrectionFactor: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get alcoholicContent {
+    if (_self.alcoholicContent == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.alcoholicContent!, (value) {
+      return _then(_self.copyWith(alcoholicContent: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get environmentalVolume {
+    if (_self.environmentalVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.environmentalVolume!,
+        (value) {
+      return _then(_self.copyWith(environmentalVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get volumeAt20 {
+    if (_self.volumeAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.volumeAt20!, (value) {
+      return _then(_self.copyWith(volumeAt20: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get kilogramsAt20 {
+    if (_self.kilogramsAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.kilogramsAt20!, (value) {
+      return _then(_self.copyWith(kilogramsAt20: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ResultsEntity implements ResultsEntity {
+  _ResultsEntity(
+      {this.environmentalTankVolume,
+      this.waterVolume,
+      this.ambientProductVolume,
+      this.densityAt20,
+      this.volumeCorrectionFactor,
+      this.alcoholicContent,
+      this.environmentalVolume,
+      this.volumeAt20,
+      this.kilogramsAt20});
+  factory _ResultsEntity.fromJson(Map<String, dynamic> json) =>
+      _$ResultsEntityFromJson(json);
+
+  /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results entity.
+  @override
+  final MeasurementEntity? environmentalTankVolume;
+
+  /// The [waterVolume] parameter is the waterVolume of the results entity.
+  @override
+  final MeasurementEntity? waterVolume;
+
+  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results entity.
+  @override
+  final MeasurementEntity? ambientProductVolume;
+
+  /// The [densityAt20] parameter is the densityAt20 of the results entity.
+  @override
+  final MeasurementEntity? densityAt20;
+
+  /// The [volumeCorrectionFactor] parameter is the volumeCorrectionFactor of the results entity.
+  @override
+  final MeasurementEntity? volumeCorrectionFactor;
+
+  /// The [alcoholicContent] parameter is the alcoholicContent of the results entity.
+  @override
+  final MeasurementEntity? alcoholicContent;
+
+  /// The [environmentalVolume] parameter is the environmentalVolume of the results entity.
+  @override
+  final MeasurementEntity? environmentalVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the results entity.
+  @override
+  final MeasurementEntity? volumeAt20;
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the results entity.
+  @override
+  final MeasurementEntity? kilogramsAt20;
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ResultsEntityCopyWith<_ResultsEntity> get copyWith =>
+      __$ResultsEntityCopyWithImpl<_ResultsEntity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ResultsEntityToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ResultsEntity &&
+            (identical(
+                    other.environmentalTankVolume, environmentalTankVolume) ||
+                other.environmentalTankVolume == environmentalTankVolume) &&
+            (identical(other.waterVolume, waterVolume) ||
+                other.waterVolume == waterVolume) &&
+            (identical(other.ambientProductVolume, ambientProductVolume) ||
+                other.ambientProductVolume == ambientProductVolume) &&
+            (identical(other.densityAt20, densityAt20) ||
+                other.densityAt20 == densityAt20) &&
+            (identical(other.volumeCorrectionFactor, volumeCorrectionFactor) ||
+                other.volumeCorrectionFactor == volumeCorrectionFactor) &&
+            (identical(other.alcoholicContent, alcoholicContent) ||
+                other.alcoholicContent == alcoholicContent) &&
+            (identical(other.environmentalVolume, environmentalVolume) ||
+                other.environmentalVolume == environmentalVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.kilogramsAt20, kilogramsAt20) ||
+                other.kilogramsAt20 == kilogramsAt20));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      environmentalTankVolume,
+      waterVolume,
+      ambientProductVolume,
+      densityAt20,
+      volumeCorrectionFactor,
+      alcoholicContent,
+      environmentalVolume,
+      volumeAt20,
+      kilogramsAt20);
+
+  @override
+  String toString() {
+    return 'ResultsEntity(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, ambientProductVolume: $ambientProductVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ResultsEntityCopyWith<$Res>
+    implements $ResultsEntityCopyWith<$Res> {
+  factory _$ResultsEntityCopyWith(
+          _ResultsEntity value, $Res Function(_ResultsEntity) _then) =
+      __$ResultsEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {MeasurementEntity? environmentalTankVolume,
+      MeasurementEntity? waterVolume,
+      MeasurementEntity? ambientProductVolume,
+      MeasurementEntity? densityAt20,
+      MeasurementEntity? volumeCorrectionFactor,
+      MeasurementEntity? alcoholicContent,
+      MeasurementEntity? environmentalVolume,
+      MeasurementEntity? volumeAt20,
+      MeasurementEntity? kilogramsAt20});
+
+  @override
+  $MeasurementEntityCopyWith<$Res>? get environmentalTankVolume;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get waterVolume;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get ambientProductVolume;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get densityAt20;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get volumeCorrectionFactor;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get alcoholicContent;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get environmentalVolume;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get volumeAt20;
+  @override
+  $MeasurementEntityCopyWith<$Res>? get kilogramsAt20;
+}
+
+/// @nodoc
+class __$ResultsEntityCopyWithImpl<$Res>
+    implements _$ResultsEntityCopyWith<$Res> {
+  __$ResultsEntityCopyWithImpl(this._self, this._then);
+
+  final _ResultsEntity _self;
+  final $Res Function(_ResultsEntity) _then;
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? environmentalTankVolume = freezed,
+    Object? waterVolume = freezed,
+    Object? ambientProductVolume = freezed,
+    Object? densityAt20 = freezed,
+    Object? volumeCorrectionFactor = freezed,
+    Object? alcoholicContent = freezed,
+    Object? environmentalVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? kilogramsAt20 = freezed,
+  }) {
+    return _then(_ResultsEntity(
+      environmentalTankVolume: freezed == environmentalTankVolume
+          ? _self.environmentalTankVolume
+          : environmentalTankVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      waterVolume: freezed == waterVolume
+          ? _self.waterVolume
+          : waterVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      ambientProductVolume: freezed == ambientProductVolume
+          ? _self.ambientProductVolume
+          : ambientProductVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      densityAt20: freezed == densityAt20
+          ? _self.densityAt20
+          : densityAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      volumeCorrectionFactor: freezed == volumeCorrectionFactor
+          ? _self.volumeCorrectionFactor
+          : volumeCorrectionFactor // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      alcoholicContent: freezed == alcoholicContent
+          ? _self.alcoholicContent
+          : alcoholicContent // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      environmentalVolume: freezed == environmentalVolume
+          ? _self.environmentalVolume
+          : environmentalVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+      kilogramsAt20: freezed == kilogramsAt20
+          ? _self.kilogramsAt20
+          : kilogramsAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementEntity?,
+    ));
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get environmentalTankVolume {
+    if (_self.environmentalTankVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.environmentalTankVolume!,
+        (value) {
+      return _then(_self.copyWith(environmentalTankVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get waterVolume {
+    if (_self.waterVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.waterVolume!, (value) {
+      return _then(_self.copyWith(waterVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get ambientProductVolume {
+    if (_self.ambientProductVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.ambientProductVolume!,
+        (value) {
+      return _then(_self.copyWith(ambientProductVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get densityAt20 {
+    if (_self.densityAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.densityAt20!, (value) {
+      return _then(_self.copyWith(densityAt20: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get volumeCorrectionFactor {
+    if (_self.volumeCorrectionFactor == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.volumeCorrectionFactor!,
+        (value) {
+      return _then(_self.copyWith(volumeCorrectionFactor: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get alcoholicContent {
+    if (_self.alcoholicContent == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.alcoholicContent!, (value) {
+      return _then(_self.copyWith(alcoholicContent: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get environmentalVolume {
+    if (_self.environmentalVolume == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.environmentalVolume!,
+        (value) {
+      return _then(_self.copyWith(environmentalVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get volumeAt20 {
+    if (_self.volumeAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.volumeAt20!, (value) {
+      return _then(_self.copyWith(volumeAt20: value));
+    });
+  }
+
+  /// Create a copy of ResultsEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<$Res>? get kilogramsAt20 {
+    if (_self.kilogramsAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementEntityCopyWith<$Res>(_self.kilogramsAt20!, (value) {
+      return _then(_self.copyWith(kilogramsAt20: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$MeasurementEntity {
+  /// The [start] parameter is the start of the measurement entity.
+  double? get start;
+
+  /// The [end] parameter is the end of the measurement entity.
+  double? get end;
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement entity.
+  double? get differenceOrTotal;
+
+  /// Create a copy of MeasurementEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MeasurementEntityCopyWith<MeasurementEntity> get copyWith =>
+      _$MeasurementEntityCopyWithImpl<MeasurementEntity>(
+          this as MeasurementEntity, _$identity);
+
+  /// Serializes this MeasurementEntity to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MeasurementEntity &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.differenceOrTotal, differenceOrTotal) ||
+                other.differenceOrTotal == differenceOrTotal));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, start, end, differenceOrTotal);
+
+  @override
+  String toString() {
+    return 'MeasurementEntity(start: $start, end: $end, differenceOrTotal: $differenceOrTotal)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MeasurementEntityCopyWith<$Res> {
+  factory $MeasurementEntityCopyWith(
+          MeasurementEntity value, $Res Function(MeasurementEntity) _then) =
+      _$MeasurementEntityCopyWithImpl;
+  @useResult
+  $Res call({double? start, double? end, double? differenceOrTotal});
+}
+
+/// @nodoc
+class _$MeasurementEntityCopyWithImpl<$Res>
+    implements $MeasurementEntityCopyWith<$Res> {
+  _$MeasurementEntityCopyWithImpl(this._self, this._then);
+
+  final MeasurementEntity _self;
+  final $Res Function(MeasurementEntity) _then;
+
+  /// Create a copy of MeasurementEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? differenceOrTotal = freezed,
+  }) {
+    return _then(_self.copyWith(
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as double?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as double?,
+      differenceOrTotal: freezed == differenceOrTotal
+          ? _self.differenceOrTotal
+          : differenceOrTotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _MeasurementEntity implements MeasurementEntity {
+  _MeasurementEntity({this.start, this.end, this.differenceOrTotal});
+  factory _MeasurementEntity.fromJson(Map<String, dynamic> json) =>
+      _$MeasurementEntityFromJson(json);
+
+  /// The [start] parameter is the start of the measurement entity.
+  @override
+  final double? start;
+
+  /// The [end] parameter is the end of the measurement entity.
+  @override
+  final double? end;
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement entity.
+  @override
+  final double? differenceOrTotal;
+
+  /// Create a copy of MeasurementEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MeasurementEntityCopyWith<_MeasurementEntity> get copyWith =>
+      __$MeasurementEntityCopyWithImpl<_MeasurementEntity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MeasurementEntityToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MeasurementEntity &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.differenceOrTotal, differenceOrTotal) ||
+                other.differenceOrTotal == differenceOrTotal));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, start, end, differenceOrTotal);
+
+  @override
+  String toString() {
+    return 'MeasurementEntity(start: $start, end: $end, differenceOrTotal: $differenceOrTotal)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MeasurementEntityCopyWith<$Res>
+    implements $MeasurementEntityCopyWith<$Res> {
+  factory _$MeasurementEntityCopyWith(
+          _MeasurementEntity value, $Res Function(_MeasurementEntity) _then) =
+      __$MeasurementEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call({double? start, double? end, double? differenceOrTotal});
+}
+
+/// @nodoc
+class __$MeasurementEntityCopyWithImpl<$Res>
+    implements _$MeasurementEntityCopyWith<$Res> {
+  __$MeasurementEntityCopyWithImpl(this._self, this._then);
+
+  final _MeasurementEntity _self;
+  final $Res Function(_MeasurementEntity) _then;
+
+  /// Create a copy of MeasurementEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? differenceOrTotal = freezed,
+  }) {
+    return _then(_MeasurementEntity(
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as double?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as double?,
+      differenceOrTotal: freezed == differenceOrTotal
+          ? _self.differenceOrTotal
+          : differenceOrTotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$CaclMeasurementOutput {
+  /// The [start] parameter is the start of the measurement output.
+  double? get start;
+
+  /// The [end] parameter is the end of the measurement output.
+  double? get end;
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement output.
+  double? get differenceOrTotal;
+
+  /// The [invoicedVolume] parameter is the invoicedVolume of the measurement output.
+  int? get invoicedVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the measurement output.
+  int? get volumeAt20;
+
+  /// The [massAt20] parameter is the massAt20 of the measurement output.
+  int? get massAt20;
+
+  /// Create a copy of CaclMeasurementOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementOutputCopyWith<CaclMeasurementOutput> get copyWith =>
+      _$CaclMeasurementOutputCopyWithImpl<CaclMeasurementOutput>(
+          this as CaclMeasurementOutput, _$identity);
+
+  /// Serializes this CaclMeasurementOutput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CaclMeasurementOutput &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.differenceOrTotal, differenceOrTotal) ||
+                other.differenceOrTotal == differenceOrTotal) &&
+            (identical(other.invoicedVolume, invoicedVolume) ||
+                other.invoicedVolume == invoicedVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.massAt20, massAt20) ||
+                other.massAt20 == massAt20));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, start, end, differenceOrTotal,
+      invoicedVolume, volumeAt20, massAt20);
+
+  @override
+  String toString() {
+    return 'CaclMeasurementOutput(start: $start, end: $end, differenceOrTotal: $differenceOrTotal, invoicedVolume: $invoicedVolume, volumeAt20: $volumeAt20, massAt20: $massAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CaclMeasurementOutputCopyWith<$Res> {
+  factory $CaclMeasurementOutputCopyWith(CaclMeasurementOutput value,
+          $Res Function(CaclMeasurementOutput) _then) =
+      _$CaclMeasurementOutputCopyWithImpl;
+  @useResult
+  $Res call(
+      {double? start,
+      double? end,
+      double? differenceOrTotal,
+      int? invoicedVolume,
+      int? volumeAt20,
+      int? massAt20});
+}
+
+/// @nodoc
+class _$CaclMeasurementOutputCopyWithImpl<$Res>
+    implements $CaclMeasurementOutputCopyWith<$Res> {
+  _$CaclMeasurementOutputCopyWithImpl(this._self, this._then);
+
+  final CaclMeasurementOutput _self;
+  final $Res Function(CaclMeasurementOutput) _then;
+
+  /// Create a copy of CaclMeasurementOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? differenceOrTotal = freezed,
+    Object? invoicedVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? massAt20 = freezed,
+  }) {
+    return _then(_self.copyWith(
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as double?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as double?,
+      differenceOrTotal: freezed == differenceOrTotal
+          ? _self.differenceOrTotal
+          : differenceOrTotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+      invoicedVolume: freezed == invoicedVolume
+          ? _self.invoicedVolume
+          : invoicedVolume // ignore: cast_nullable_to_non_nullable
+              as int?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as int?,
+      massAt20: freezed == massAt20
+          ? _self.massAt20
+          : massAt20 // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CaclMeasurementOutput implements CaclMeasurementOutput {
+  _CaclMeasurementOutput(
+      {this.start,
+      this.end,
+      this.differenceOrTotal,
+      this.invoicedVolume,
+      this.volumeAt20,
+      this.massAt20});
+  factory _CaclMeasurementOutput.fromJson(Map<String, dynamic> json) =>
+      _$CaclMeasurementOutputFromJson(json);
+
+  /// The [start] parameter is the start of the measurement output.
+  @override
+  final double? start;
+
+  /// The [end] parameter is the end of the measurement output.
+  @override
+  final double? end;
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement output.
+  @override
+  final double? differenceOrTotal;
+
+  /// The [invoicedVolume] parameter is the invoicedVolume of the measurement output.
+  @override
+  final int? invoicedVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the measurement output.
+  @override
+  final int? volumeAt20;
+
+  /// The [massAt20] parameter is the massAt20 of the measurement output.
+  @override
+  final int? massAt20;
+
+  /// Create a copy of CaclMeasurementOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CaclMeasurementOutputCopyWith<_CaclMeasurementOutput> get copyWith =>
+      __$CaclMeasurementOutputCopyWithImpl<_CaclMeasurementOutput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CaclMeasurementOutputToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CaclMeasurementOutput &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.differenceOrTotal, differenceOrTotal) ||
+                other.differenceOrTotal == differenceOrTotal) &&
+            (identical(other.invoicedVolume, invoicedVolume) ||
+                other.invoicedVolume == invoicedVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.massAt20, massAt20) ||
+                other.massAt20 == massAt20));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, start, end, differenceOrTotal,
+      invoicedVolume, volumeAt20, massAt20);
+
+  @override
+  String toString() {
+    return 'CaclMeasurementOutput(start: $start, end: $end, differenceOrTotal: $differenceOrTotal, invoicedVolume: $invoicedVolume, volumeAt20: $volumeAt20, massAt20: $massAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CaclMeasurementOutputCopyWith<$Res>
+    implements $CaclMeasurementOutputCopyWith<$Res> {
+  factory _$CaclMeasurementOutputCopyWith(_CaclMeasurementOutput value,
+          $Res Function(_CaclMeasurementOutput) _then) =
+      __$CaclMeasurementOutputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {double? start,
+      double? end,
+      double? differenceOrTotal,
+      int? invoicedVolume,
+      int? volumeAt20,
+      int? massAt20});
+}
+
+/// @nodoc
+class __$CaclMeasurementOutputCopyWithImpl<$Res>
+    implements _$CaclMeasurementOutputCopyWith<$Res> {
+  __$CaclMeasurementOutputCopyWithImpl(this._self, this._then);
+
+  final _CaclMeasurementOutput _self;
+  final $Res Function(_CaclMeasurementOutput) _then;
+
+  /// Create a copy of CaclMeasurementOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? differenceOrTotal = freezed,
+    Object? invoicedVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? massAt20 = freezed,
+  }) {
+    return _then(_CaclMeasurementOutput(
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as double?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as double?,
+      differenceOrTotal: freezed == differenceOrTotal
+          ? _self.differenceOrTotal
+          : differenceOrTotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+      invoicedVolume: freezed == invoicedVolume
+          ? _self.invoicedVolume
+          : invoicedVolume // ignore: cast_nullable_to_non_nullable
+              as int?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as int?,
+      massAt20: freezed == massAt20
+          ? _self.massAt20
+          : massAt20 // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$VolumeMovedEntity {
+  /// The [ambientVolume] parameter is the ambientVolume of the volume moved entity.
+  double? get ambientVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the volume moved entity.
+  double? get volumeAt20;
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the volume moved entity.
+  double? get kilogramsAt20;
+
+  /// Create a copy of VolumeMovedEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $VolumeMovedEntityCopyWith<VolumeMovedEntity> get copyWith =>
+      _$VolumeMovedEntityCopyWithImpl<VolumeMovedEntity>(
+          this as VolumeMovedEntity, _$identity);
+
+  /// Serializes this VolumeMovedEntity to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is VolumeMovedEntity &&
+            (identical(other.ambientVolume, ambientVolume) ||
+                other.ambientVolume == ambientVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.kilogramsAt20, kilogramsAt20) ||
+                other.kilogramsAt20 == kilogramsAt20));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, ambientVolume, volumeAt20, kilogramsAt20);
+
+  @override
+  String toString() {
+    return 'VolumeMovedEntity(ambientVolume: $ambientVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $VolumeMovedEntityCopyWith<$Res> {
+  factory $VolumeMovedEntityCopyWith(
+          VolumeMovedEntity value, $Res Function(VolumeMovedEntity) _then) =
+      _$VolumeMovedEntityCopyWithImpl;
+  @useResult
+  $Res call({double? ambientVolume, double? volumeAt20, double? kilogramsAt20});
+}
+
+/// @nodoc
+class _$VolumeMovedEntityCopyWithImpl<$Res>
+    implements $VolumeMovedEntityCopyWith<$Res> {
+  _$VolumeMovedEntityCopyWithImpl(this._self, this._then);
+
+  final VolumeMovedEntity _self;
+  final $Res Function(VolumeMovedEntity) _then;
+
+  /// Create a copy of VolumeMovedEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ambientVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? kilogramsAt20 = freezed,
+  }) {
+    return _then(_self.copyWith(
+      ambientVolume: freezed == ambientVolume
+          ? _self.ambientVolume
+          : ambientVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as double?,
+      kilogramsAt20: freezed == kilogramsAt20
+          ? _self.kilogramsAt20
+          : kilogramsAt20 // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _VolumeMovedEntity implements VolumeMovedEntity {
+  _VolumeMovedEntity({this.ambientVolume, this.volumeAt20, this.kilogramsAt20});
+  factory _VolumeMovedEntity.fromJson(Map<String, dynamic> json) =>
+      _$VolumeMovedEntityFromJson(json);
+
+  /// The [ambientVolume] parameter is the ambientVolume of the volume moved entity.
+  @override
+  final double? ambientVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the volume moved entity.
+  @override
+  final double? volumeAt20;
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the volume moved entity.
+  @override
+  final double? kilogramsAt20;
+
+  /// Create a copy of VolumeMovedEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$VolumeMovedEntityCopyWith<_VolumeMovedEntity> get copyWith =>
+      __$VolumeMovedEntityCopyWithImpl<_VolumeMovedEntity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$VolumeMovedEntityToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _VolumeMovedEntity &&
+            (identical(other.ambientVolume, ambientVolume) ||
+                other.ambientVolume == ambientVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.kilogramsAt20, kilogramsAt20) ||
+                other.kilogramsAt20 == kilogramsAt20));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, ambientVolume, volumeAt20, kilogramsAt20);
+
+  @override
+  String toString() {
+    return 'VolumeMovedEntity(ambientVolume: $ambientVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$VolumeMovedEntityCopyWith<$Res>
+    implements $VolumeMovedEntityCopyWith<$Res> {
+  factory _$VolumeMovedEntityCopyWith(
+          _VolumeMovedEntity value, $Res Function(_VolumeMovedEntity) _then) =
+      __$VolumeMovedEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call({double? ambientVolume, double? volumeAt20, double? kilogramsAt20});
+}
+
+/// @nodoc
+class __$VolumeMovedEntityCopyWithImpl<$Res>
+    implements _$VolumeMovedEntityCopyWith<$Res> {
+  __$VolumeMovedEntityCopyWithImpl(this._self, this._then);
+
+  final _VolumeMovedEntity _self;
+  final $Res Function(_VolumeMovedEntity) _then;
+
+  /// Create a copy of VolumeMovedEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? ambientVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? kilogramsAt20 = freezed,
+  }) {
+    return _then(_VolumeMovedEntity(
+      ambientVolume: freezed == ambientVolume
+          ? _self.ambientVolume
+          : ambientVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as double?,
+      kilogramsAt20: freezed == kilogramsAt20
+          ? _self.kilogramsAt20
+          : kilogramsAt20 // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$EquipmentMeasurementEntity {
+  /// The [serialNumber] parameter is the start of the equipment measurement entity.
+  String? get serialNumber;
+
+  /// Create a copy of EquipmentMeasurementEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementEntityCopyWith<EquipmentMeasurementEntity>
       get copyWith =>
-          __$$AtsOperationStatusesImplCopyWithImpl<_$AtsOperationStatusesImpl>(
+          _$EquipmentMeasurementEntityCopyWithImpl<EquipmentMeasurementEntity>(
+              this as EquipmentMeasurementEntity, _$identity);
+
+  /// Serializes this EquipmentMeasurementEntity to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is EquipmentMeasurementEntity &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, serialNumber);
+
+  @override
+  String toString() {
+    return 'EquipmentMeasurementEntity(serialNumber: $serialNumber)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $EquipmentMeasurementEntityCopyWith<$Res> {
+  factory $EquipmentMeasurementEntityCopyWith(EquipmentMeasurementEntity value,
+          $Res Function(EquipmentMeasurementEntity) _then) =
+      _$EquipmentMeasurementEntityCopyWithImpl;
+  @useResult
+  $Res call({String? serialNumber});
+}
+
+/// @nodoc
+class _$EquipmentMeasurementEntityCopyWithImpl<$Res>
+    implements $EquipmentMeasurementEntityCopyWith<$Res> {
+  _$EquipmentMeasurementEntityCopyWithImpl(this._self, this._then);
+
+  final EquipmentMeasurementEntity _self;
+  final $Res Function(EquipmentMeasurementEntity) _then;
+
+  /// Create a copy of EquipmentMeasurementEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? serialNumber = freezed,
+  }) {
+    return _then(_self.copyWith(
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _EquipmentMeasurementEntity implements EquipmentMeasurementEntity {
+  _EquipmentMeasurementEntity({this.serialNumber});
+  factory _EquipmentMeasurementEntity.fromJson(Map<String, dynamic> json) =>
+      _$EquipmentMeasurementEntityFromJson(json);
+
+  /// The [serialNumber] parameter is the start of the equipment measurement entity.
+  @override
+  final String? serialNumber;
+
+  /// Create a copy of EquipmentMeasurementEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EquipmentMeasurementEntityCopyWith<_EquipmentMeasurementEntity>
+      get copyWith => __$EquipmentMeasurementEntityCopyWithImpl<
+          _EquipmentMeasurementEntity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EquipmentMeasurementEntityToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _EquipmentMeasurementEntity &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, serialNumber);
+
+  @override
+  String toString() {
+    return 'EquipmentMeasurementEntity(serialNumber: $serialNumber)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$EquipmentMeasurementEntityCopyWith<$Res>
+    implements $EquipmentMeasurementEntityCopyWith<$Res> {
+  factory _$EquipmentMeasurementEntityCopyWith(
+          _EquipmentMeasurementEntity value,
+          $Res Function(_EquipmentMeasurementEntity) _then) =
+      __$EquipmentMeasurementEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? serialNumber});
+}
+
+/// @nodoc
+class __$EquipmentMeasurementEntityCopyWithImpl<$Res>
+    implements _$EquipmentMeasurementEntityCopyWith<$Res> {
+  __$EquipmentMeasurementEntityCopyWithImpl(this._self, this._then);
+
+  final _EquipmentMeasurementEntity _self;
+  final $Res Function(_EquipmentMeasurementEntity) _then;
+
+  /// Create a copy of EquipmentMeasurementEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? serialNumber = freezed,
+  }) {
+    return _then(_EquipmentMeasurementEntity(
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$CaclInput {
+  /// The [id] parameter is the id of the cacl input.
+  String? get id;
+
+  /// The [id] parameter is the id of the cacl input.
+  set id(String? value);
+
+  /// The [assetId] parameter is the assetId of the cacl input.
+  String? get assetId;
+
+  /// The [assetId] parameter is the assetId of the cacl input.
+  set assetId(String? value);
+
+  /// The [transportAssetId] parameter is the transportAssetId of the cacl input.
+  String? get transportAssetId;
+
+  /// The [transportAssetId] parameter is the transportAssetId of the cacl input.
+  set transportAssetId(String? value);
+
+  /// The [transportUserId] parameter is the transportUserId of the cacl input.
+  String? get transportUserId;
+
+  /// The [transportUserId] parameter is the transportUserId of the cacl input.
+  set transportUserId(String? value);
+
+  /// The [caclNumber] parameter is the caclNumber of the cacl input.
+  String? get caclNumber;
+
+  /// The [caclNumber] parameter is the caclNumber of the cacl input.
+  set caclNumber(String? value);
+
+  /// The [category] parameter is the category of the cacl input.
+  String? get category;
+
+  /// The [category] parameter is the category of the cacl input.
+  set category(String? value);
+
+  /// The [product] parameter is the product of the cacl input.
+  String? get product;
+
+  /// The [product] parameter is the product of the cacl input.
+  set product(String? value);
+
+  /// The [clientAssetId] parameter is the clientAssetId of the cacl input.
+  String? get clientAssetId;
+
+  /// The [clientAssetId] parameter is the clientAssetId of the cacl input.
+  set clientAssetId(String? value);
+
+  /// The [tankNumber] parameter is the tankNumber of the cacl input.
+  String? get tankNumber;
+
+  /// The [tankNumber] parameter is the tankNumber of the cacl input.
+  set tankNumber(String? value);
+
+  /// The [transport] parameter is the transport of the cacl input.
+  String? get transport;
+
+  /// The [transport] parameter is the transport of the cacl input.
+  set transport(String? value);
+
+  /// The [equipments] parameter is the equipments of the cacl input.
+  CaclEquipmentInput? get equipments;
+
+  /// The [equipments] parameter is the equipments of the cacl input.
+  set equipments(CaclEquipmentInput? value);
+
+  /// The [measurements] parameter is the measurements of the cacl input.
+  MeasurementsInput? get measurements;
+
+  /// The [measurements] parameter is the measurements of the cacl input.
+  set measurements(MeasurementsInput? value);
+
+  /// The [results] parameter is the results of the cacl input.
+  ResultsInput? get results;
+
+  /// The [results] parameter is the results of the cacl input.
+  set results(ResultsInput? value);
+
+  /// The [measurer01] parameter is the measurer01 of the cacl input.
+  CaclMeasurement? get measurer01;
+
+  /// The [measurer01] parameter is the measurer01 of the cacl input.
+  set measurer01(CaclMeasurement? value);
+
+  /// The [measurer02] parameter is the measurer02 of the cacl input.
+  CaclMeasurement? get measurer02;
+
+  /// The [measurer02] parameter is the measurer02 of the cacl input.
+  set measurer02(CaclMeasurement? value);
+
+  /// The [volumeMoved] parameter is the volumeMoved of the cacl input.
+  VolumeMovedInput? get volumeMoved;
+
+  /// The [volumeMoved] parameter is the volumeMoved of the cacl input.
+  set volumeMoved(VolumeMovedInput? value);
+
+  /// The [observations] parameter is the observations of the cacl input.
+  String? get observations;
+
+  /// The [observations] parameter is the observations of the cacl input.
+  set observations(String? value);
+
+  /// The [startedAt] parameter is the startedAt of the cacl input.
+  @TimestampOrNullConverter()
+  DateTime? get startedAt;
+
+  /// The [startedAt] parameter is the startedAt of the cacl input.
+  @TimestampOrNullConverter()
+  set startedAt(DateTime? value);
+
+  /// The [finishedAt] parameter is the finishedAt of the cacl input.
+  @TimestampOrNullConverter()
+  DateTime? get finishedAt;
+
+  /// The [finishedAt] parameter is the finishedAt of the cacl input.
+  @TimestampOrNullConverter()
+  set finishedAt(DateTime? value);
+
+  /// The [operationId] parameter is the operationId of the cacl entity.
+  String? get operationId;
+
+  /// The [operationId] parameter is the operationId of the cacl entity.
+  set operationId(String? value);
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CaclInputCopyWith<CaclInput> get copyWith =>
+      _$CaclInputCopyWithImpl<CaclInput>(this as CaclInput, _$identity);
+
+  /// Serializes this CaclInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CaclInputCopyWith<$Res> {
+  factory $CaclInputCopyWith(CaclInput value, $Res Function(CaclInput) _then) =
+      _$CaclInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      String? transportAssetId,
+      String? transportUserId,
+      String? caclNumber,
+      String? category,
+      String? product,
+      String? clientAssetId,
+      String? tankNumber,
+      String? transport,
+      CaclEquipmentInput? equipments,
+      MeasurementsInput? measurements,
+      ResultsInput? results,
+      CaclMeasurement? measurer01,
+      CaclMeasurement? measurer02,
+      VolumeMovedInput? volumeMoved,
+      String? observations,
+      @TimestampOrNullConverter() DateTime? startedAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
+      String? operationId});
+
+  $CaclEquipmentInputCopyWith<$Res>? get equipments;
+  $MeasurementsInputCopyWith<$Res>? get measurements;
+  $ResultsInputCopyWith<$Res>? get results;
+  $CaclMeasurementCopyWith<$Res>? get measurer01;
+  $CaclMeasurementCopyWith<$Res>? get measurer02;
+  $VolumeMovedInputCopyWith<$Res>? get volumeMoved;
+}
+
+/// @nodoc
+class _$CaclInputCopyWithImpl<$Res> implements $CaclInputCopyWith<$Res> {
+  _$CaclInputCopyWithImpl(this._self, this._then);
+
+  final CaclInput _self;
+  final $Res Function(CaclInput) _then;
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? transportAssetId = freezed,
+    Object? transportUserId = freezed,
+    Object? caclNumber = freezed,
+    Object? category = freezed,
+    Object? product = freezed,
+    Object? clientAssetId = freezed,
+    Object? tankNumber = freezed,
+    Object? transport = freezed,
+    Object? equipments = freezed,
+    Object? measurements = freezed,
+    Object? results = freezed,
+    Object? measurer01 = freezed,
+    Object? measurer02 = freezed,
+    Object? volumeMoved = freezed,
+    Object? observations = freezed,
+    Object? startedAt = freezed,
+    Object? finishedAt = freezed,
+    Object? operationId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAssetId: freezed == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportUserId: freezed == transportUserId
+          ? _self.transportUserId
+          : transportUserId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      caclNumber: freezed == caclNumber
+          ? _self.caclNumber
+          : caclNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      product: freezed == product
+          ? _self.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientAssetId: freezed == clientAssetId
+          ? _self.clientAssetId
+          : clientAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankNumber: freezed == tankNumber
+          ? _self.tankNumber
+          : tankNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transport: freezed == transport
+          ? _self.transport
+          : transport // ignore: cast_nullable_to_non_nullable
+              as String?,
+      equipments: freezed == equipments
+          ? _self.equipments
+          : equipments // ignore: cast_nullable_to_non_nullable
+              as CaclEquipmentInput?,
+      measurements: freezed == measurements
+          ? _self.measurements
+          : measurements // ignore: cast_nullable_to_non_nullable
+              as MeasurementsInput?,
+      results: freezed == results
+          ? _self.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as ResultsInput?,
+      measurer01: freezed == measurer01
+          ? _self.measurer01
+          : measurer01 // ignore: cast_nullable_to_non_nullable
+              as CaclMeasurement?,
+      measurer02: freezed == measurer02
+          ? _self.measurer02
+          : measurer02 // ignore: cast_nullable_to_non_nullable
+              as CaclMeasurement?,
+      volumeMoved: freezed == volumeMoved
+          ? _self.volumeMoved
+          : volumeMoved // ignore: cast_nullable_to_non_nullable
+              as VolumeMovedInput?,
+      observations: freezed == observations
+          ? _self.observations
+          : observations // ignore: cast_nullable_to_non_nullable
+              as String?,
+      startedAt: freezed == startedAt
+          ? _self.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _self.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclEquipmentInputCopyWith<$Res>? get equipments {
+    if (_self.equipments == null) {
+      return null;
+    }
+
+    return $CaclEquipmentInputCopyWith<$Res>(_self.equipments!, (value) {
+      return _then(_self.copyWith(equipments: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementsInputCopyWith<$Res>? get measurements {
+    if (_self.measurements == null) {
+      return null;
+    }
+
+    return $MeasurementsInputCopyWith<$Res>(_self.measurements!, (value) {
+      return _then(_self.copyWith(measurements: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ResultsInputCopyWith<$Res>? get results {
+    if (_self.results == null) {
+      return null;
+    }
+
+    return $ResultsInputCopyWith<$Res>(_self.results!, (value) {
+      return _then(_self.copyWith(results: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementCopyWith<$Res>? get measurer01 {
+    if (_self.measurer01 == null) {
+      return null;
+    }
+
+    return $CaclMeasurementCopyWith<$Res>(_self.measurer01!, (value) {
+      return _then(_self.copyWith(measurer01: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementCopyWith<$Res>? get measurer02 {
+    if (_self.measurer02 == null) {
+      return null;
+    }
+
+    return $CaclMeasurementCopyWith<$Res>(_self.measurer02!, (value) {
+      return _then(_self.copyWith(measurer02: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $VolumeMovedInputCopyWith<$Res>? get volumeMoved {
+    if (_self.volumeMoved == null) {
+      return null;
+    }
+
+    return $VolumeMovedInputCopyWith<$Res>(_self.volumeMoved!, (value) {
+      return _then(_self.copyWith(volumeMoved: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CaclInput implements CaclInput {
+  _CaclInput(
+      {this.id,
+      this.assetId,
+      this.transportAssetId,
+      this.transportUserId,
+      this.caclNumber,
+      this.category,
+      this.product,
+      this.clientAssetId,
+      this.tankNumber,
+      this.transport,
+      this.equipments,
+      this.measurements,
+      this.results,
+      this.measurer01,
+      this.measurer02,
+      this.volumeMoved,
+      this.observations,
+      @TimestampOrNullConverter() this.startedAt,
+      @TimestampOrNullConverter() this.finishedAt,
+      this.operationId});
+  factory _CaclInput.fromJson(Map<String, dynamic> json) =>
+      _$CaclInputFromJson(json);
+
+  /// The [id] parameter is the id of the cacl input.
+  @override
+  String? id;
+
+  /// The [assetId] parameter is the assetId of the cacl input.
+  @override
+  String? assetId;
+
+  /// The [transportAssetId] parameter is the transportAssetId of the cacl input.
+  @override
+  String? transportAssetId;
+
+  /// The [transportUserId] parameter is the transportUserId of the cacl input.
+  @override
+  String? transportUserId;
+
+  /// The [caclNumber] parameter is the caclNumber of the cacl input.
+  @override
+  String? caclNumber;
+
+  /// The [category] parameter is the category of the cacl input.
+  @override
+  String? category;
+
+  /// The [product] parameter is the product of the cacl input.
+  @override
+  String? product;
+
+  /// The [clientAssetId] parameter is the clientAssetId of the cacl input.
+  @override
+  String? clientAssetId;
+
+  /// The [tankNumber] parameter is the tankNumber of the cacl input.
+  @override
+  String? tankNumber;
+
+  /// The [transport] parameter is the transport of the cacl input.
+  @override
+  String? transport;
+
+  /// The [equipments] parameter is the equipments of the cacl input.
+  @override
+  CaclEquipmentInput? equipments;
+
+  /// The [measurements] parameter is the measurements of the cacl input.
+  @override
+  MeasurementsInput? measurements;
+
+  /// The [results] parameter is the results of the cacl input.
+  @override
+  ResultsInput? results;
+
+  /// The [measurer01] parameter is the measurer01 of the cacl input.
+  @override
+  CaclMeasurement? measurer01;
+
+  /// The [measurer02] parameter is the measurer02 of the cacl input.
+  @override
+  CaclMeasurement? measurer02;
+
+  /// The [volumeMoved] parameter is the volumeMoved of the cacl input.
+  @override
+  VolumeMovedInput? volumeMoved;
+
+  /// The [observations] parameter is the observations of the cacl input.
+  @override
+  String? observations;
+
+  /// The [startedAt] parameter is the startedAt of the cacl input.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? startedAt;
+
+  /// The [finishedAt] parameter is the finishedAt of the cacl input.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? finishedAt;
+
+  /// The [operationId] parameter is the operationId of the cacl entity.
+  @override
+  String? operationId;
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CaclInputCopyWith<_CaclInput> get copyWith =>
+      __$CaclInputCopyWithImpl<_CaclInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CaclInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CaclInputCopyWith<$Res>
+    implements $CaclInputCopyWith<$Res> {
+  factory _$CaclInputCopyWith(
+          _CaclInput value, $Res Function(_CaclInput) _then) =
+      __$CaclInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      String? transportAssetId,
+      String? transportUserId,
+      String? caclNumber,
+      String? category,
+      String? product,
+      String? clientAssetId,
+      String? tankNumber,
+      String? transport,
+      CaclEquipmentInput? equipments,
+      MeasurementsInput? measurements,
+      ResultsInput? results,
+      CaclMeasurement? measurer01,
+      CaclMeasurement? measurer02,
+      VolumeMovedInput? volumeMoved,
+      String? observations,
+      @TimestampOrNullConverter() DateTime? startedAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
+      String? operationId});
+
+  @override
+  $CaclEquipmentInputCopyWith<$Res>? get equipments;
+  @override
+  $MeasurementsInputCopyWith<$Res>? get measurements;
+  @override
+  $ResultsInputCopyWith<$Res>? get results;
+  @override
+  $CaclMeasurementCopyWith<$Res>? get measurer01;
+  @override
+  $CaclMeasurementCopyWith<$Res>? get measurer02;
+  @override
+  $VolumeMovedInputCopyWith<$Res>? get volumeMoved;
+}
+
+/// @nodoc
+class __$CaclInputCopyWithImpl<$Res> implements _$CaclInputCopyWith<$Res> {
+  __$CaclInputCopyWithImpl(this._self, this._then);
+
+  final _CaclInput _self;
+  final $Res Function(_CaclInput) _then;
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? transportAssetId = freezed,
+    Object? transportUserId = freezed,
+    Object? caclNumber = freezed,
+    Object? category = freezed,
+    Object? product = freezed,
+    Object? clientAssetId = freezed,
+    Object? tankNumber = freezed,
+    Object? transport = freezed,
+    Object? equipments = freezed,
+    Object? measurements = freezed,
+    Object? results = freezed,
+    Object? measurer01 = freezed,
+    Object? measurer02 = freezed,
+    Object? volumeMoved = freezed,
+    Object? observations = freezed,
+    Object? startedAt = freezed,
+    Object? finishedAt = freezed,
+    Object? operationId = freezed,
+  }) {
+    return _then(_CaclInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAssetId: freezed == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportUserId: freezed == transportUserId
+          ? _self.transportUserId
+          : transportUserId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      caclNumber: freezed == caclNumber
+          ? _self.caclNumber
+          : caclNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      product: freezed == product
+          ? _self.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientAssetId: freezed == clientAssetId
+          ? _self.clientAssetId
+          : clientAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankNumber: freezed == tankNumber
+          ? _self.tankNumber
+          : tankNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transport: freezed == transport
+          ? _self.transport
+          : transport // ignore: cast_nullable_to_non_nullable
+              as String?,
+      equipments: freezed == equipments
+          ? _self.equipments
+          : equipments // ignore: cast_nullable_to_non_nullable
+              as CaclEquipmentInput?,
+      measurements: freezed == measurements
+          ? _self.measurements
+          : measurements // ignore: cast_nullable_to_non_nullable
+              as MeasurementsInput?,
+      results: freezed == results
+          ? _self.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as ResultsInput?,
+      measurer01: freezed == measurer01
+          ? _self.measurer01
+          : measurer01 // ignore: cast_nullable_to_non_nullable
+              as CaclMeasurement?,
+      measurer02: freezed == measurer02
+          ? _self.measurer02
+          : measurer02 // ignore: cast_nullable_to_non_nullable
+              as CaclMeasurement?,
+      volumeMoved: freezed == volumeMoved
+          ? _self.volumeMoved
+          : volumeMoved // ignore: cast_nullable_to_non_nullable
+              as VolumeMovedInput?,
+      observations: freezed == observations
+          ? _self.observations
+          : observations // ignore: cast_nullable_to_non_nullable
+              as String?,
+      startedAt: freezed == startedAt
+          ? _self.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _self.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclEquipmentInputCopyWith<$Res>? get equipments {
+    if (_self.equipments == null) {
+      return null;
+    }
+
+    return $CaclEquipmentInputCopyWith<$Res>(_self.equipments!, (value) {
+      return _then(_self.copyWith(equipments: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementsInputCopyWith<$Res>? get measurements {
+    if (_self.measurements == null) {
+      return null;
+    }
+
+    return $MeasurementsInputCopyWith<$Res>(_self.measurements!, (value) {
+      return _then(_self.copyWith(measurements: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ResultsInputCopyWith<$Res>? get results {
+    if (_self.results == null) {
+      return null;
+    }
+
+    return $ResultsInputCopyWith<$Res>(_self.results!, (value) {
+      return _then(_self.copyWith(results: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementCopyWith<$Res>? get measurer01 {
+    if (_self.measurer01 == null) {
+      return null;
+    }
+
+    return $CaclMeasurementCopyWith<$Res>(_self.measurer01!, (value) {
+      return _then(_self.copyWith(measurer01: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementCopyWith<$Res>? get measurer02 {
+    if (_self.measurer02 == null) {
+      return null;
+    }
+
+    return $CaclMeasurementCopyWith<$Res>(_self.measurer02!, (value) {
+      return _then(_self.copyWith(measurer02: value));
+    });
+  }
+
+  /// Create a copy of CaclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $VolumeMovedInputCopyWith<$Res>? get volumeMoved {
+    if (_self.volumeMoved == null) {
+      return null;
+    }
+
+    return $VolumeMovedInputCopyWith<$Res>(_self.volumeMoved!, (value) {
+      return _then(_self.copyWith(volumeMoved: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$CaclEquipmentInput {
+  /// The [measuringTape] parameter is the measuringTape of the cacl equipment input.
+  EquipmentMeasurementInput? get measuringTape;
+
+  /// The [measuringTape] parameter is the measuringTape of the cacl equipment input.
+  set measuringTape(EquipmentMeasurementInput? value);
+
+  /// The [densimeter] parameter is the densimeter of the cacl equipment input.
+  EquipmentMeasurementInput? get densimeter;
+
+  /// The [densimeter] parameter is the densimeter of the cacl equipment input.
+  set densimeter(EquipmentMeasurementInput? value);
+
+  /// The [thermometer] parameter is the thermometer of the cacl equipment input.
+  EquipmentMeasurementInput? get thermometer;
+
+  /// The [thermometer] parameter is the thermometer of the cacl equipment input.
+  set thermometer(EquipmentMeasurementInput? value);
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CaclEquipmentInputCopyWith<CaclEquipmentInput> get copyWith =>
+      _$CaclEquipmentInputCopyWithImpl<CaclEquipmentInput>(
+          this as CaclEquipmentInput, _$identity);
+
+  /// Serializes this CaclEquipmentInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'CaclEquipmentInput(measuringTape: $measuringTape, densimeter: $densimeter, thermometer: $thermometer)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CaclEquipmentInputCopyWith<$Res> {
+  factory $CaclEquipmentInputCopyWith(
+          CaclEquipmentInput value, $Res Function(CaclEquipmentInput) _then) =
+      _$CaclEquipmentInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {EquipmentMeasurementInput? measuringTape,
+      EquipmentMeasurementInput? densimeter,
+      EquipmentMeasurementInput? thermometer});
+
+  $EquipmentMeasurementInputCopyWith<$Res>? get measuringTape;
+  $EquipmentMeasurementInputCopyWith<$Res>? get densimeter;
+  $EquipmentMeasurementInputCopyWith<$Res>? get thermometer;
+}
+
+/// @nodoc
+class _$CaclEquipmentInputCopyWithImpl<$Res>
+    implements $CaclEquipmentInputCopyWith<$Res> {
+  _$CaclEquipmentInputCopyWithImpl(this._self, this._then);
+
+  final CaclEquipmentInput _self;
+  final $Res Function(CaclEquipmentInput) _then;
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? measuringTape = freezed,
+    Object? densimeter = freezed,
+    Object? thermometer = freezed,
+  }) {
+    return _then(_self.copyWith(
+      measuringTape: freezed == measuringTape
+          ? _self.measuringTape
+          : measuringTape // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementInput?,
+      densimeter: freezed == densimeter
+          ? _self.densimeter
+          : densimeter // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementInput?,
+      thermometer: freezed == thermometer
+          ? _self.thermometer
+          : thermometer // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementInput?,
+    ));
+  }
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementInputCopyWith<$Res>? get measuringTape {
+    if (_self.measuringTape == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.measuringTape!,
+        (value) {
+      return _then(_self.copyWith(measuringTape: value));
+    });
+  }
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementInputCopyWith<$Res>? get densimeter {
+    if (_self.densimeter == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.densimeter!, (value) {
+      return _then(_self.copyWith(densimeter: value));
+    });
+  }
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementInputCopyWith<$Res>? get thermometer {
+    if (_self.thermometer == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.thermometer!,
+        (value) {
+      return _then(_self.copyWith(thermometer: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CaclEquipmentInput implements CaclEquipmentInput {
+  _CaclEquipmentInput({this.measuringTape, this.densimeter, this.thermometer});
+  factory _CaclEquipmentInput.fromJson(Map<String, dynamic> json) =>
+      _$CaclEquipmentInputFromJson(json);
+
+  /// The [measuringTape] parameter is the measuringTape of the cacl equipment input.
+  @override
+  EquipmentMeasurementInput? measuringTape;
+
+  /// The [densimeter] parameter is the densimeter of the cacl equipment input.
+  @override
+  EquipmentMeasurementInput? densimeter;
+
+  /// The [thermometer] parameter is the thermometer of the cacl equipment input.
+  @override
+  EquipmentMeasurementInput? thermometer;
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CaclEquipmentInputCopyWith<_CaclEquipmentInput> get copyWith =>
+      __$CaclEquipmentInputCopyWithImpl<_CaclEquipmentInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CaclEquipmentInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'CaclEquipmentInput(measuringTape: $measuringTape, densimeter: $densimeter, thermometer: $thermometer)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CaclEquipmentInputCopyWith<$Res>
+    implements $CaclEquipmentInputCopyWith<$Res> {
+  factory _$CaclEquipmentInputCopyWith(
+          _CaclEquipmentInput value, $Res Function(_CaclEquipmentInput) _then) =
+      __$CaclEquipmentInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {EquipmentMeasurementInput? measuringTape,
+      EquipmentMeasurementInput? densimeter,
+      EquipmentMeasurementInput? thermometer});
+
+  @override
+  $EquipmentMeasurementInputCopyWith<$Res>? get measuringTape;
+  @override
+  $EquipmentMeasurementInputCopyWith<$Res>? get densimeter;
+  @override
+  $EquipmentMeasurementInputCopyWith<$Res>? get thermometer;
+}
+
+/// @nodoc
+class __$CaclEquipmentInputCopyWithImpl<$Res>
+    implements _$CaclEquipmentInputCopyWith<$Res> {
+  __$CaclEquipmentInputCopyWithImpl(this._self, this._then);
+
+  final _CaclEquipmentInput _self;
+  final $Res Function(_CaclEquipmentInput) _then;
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? measuringTape = freezed,
+    Object? densimeter = freezed,
+    Object? thermometer = freezed,
+  }) {
+    return _then(_CaclEquipmentInput(
+      measuringTape: freezed == measuringTape
+          ? _self.measuringTape
+          : measuringTape // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementInput?,
+      densimeter: freezed == densimeter
+          ? _self.densimeter
+          : densimeter // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementInput?,
+      thermometer: freezed == thermometer
+          ? _self.thermometer
+          : thermometer // ignore: cast_nullable_to_non_nullable
+              as EquipmentMeasurementInput?,
+    ));
+  }
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementInputCopyWith<$Res>? get measuringTape {
+    if (_self.measuringTape == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.measuringTape!,
+        (value) {
+      return _then(_self.copyWith(measuringTape: value));
+    });
+  }
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementInputCopyWith<$Res>? get densimeter {
+    if (_self.densimeter == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.densimeter!, (value) {
+      return _then(_self.copyWith(densimeter: value));
+    });
+  }
+
+  /// Create a copy of CaclEquipmentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementInputCopyWith<$Res>? get thermometer {
+    if (_self.thermometer == null) {
+      return null;
+    }
+
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.thermometer!,
+        (value) {
+      return _then(_self.copyWith(thermometer: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$MeasurementsInput {
+  /// The [referenceHeight] parameter is the referenceHeight of the measurements input.
+  MeasurementInput? get referenceHeight;
+
+  /// The [referenceHeight] parameter is the referenceHeight of the measurements input.
+  set referenceHeight(MeasurementInput? value);
+
+  /// The [productLevelHeight] parameter is the productLevelHeight of the measurements input.
+  MeasurementInput? get productLevelHeight;
+
+  /// The [productLevelHeight] parameter is the productLevelHeight of the measurements input.
+  set productLevelHeight(MeasurementInput? value);
+
+  /// The [correctedLevelHeight] parameter is the correctedLevelHeight of the measurements input.
+  MeasurementInput? get correctedLevelHeight;
+
+  /// The [correctedLevelHeight] parameter is the correctedLevelHeight of the measurements input.
+  set correctedLevelHeight(MeasurementInput? value);
+
+  /// The [waterHeight] parameter is the waterHeight of the measurements input.
+  MeasurementInput? get waterHeight;
+
+  /// The [waterHeight] parameter is the waterHeight of the measurements input.
+  set waterHeight(MeasurementInput? value);
+
+  /// The [ambientLineVolume] parameter is the ambientLineVolume of the measurements input.
+  MeasurementInput? get ambientLineVolume;
+
+  /// The [ambientLineVolume] parameter is the ambientLineVolume of the measurements input.
+  set ambientLineVolume(MeasurementInput? value);
+
+  /// The [ambientDensity] parameter is the ambientDensity of the measurements input.
+  MeasurementInput? get ambientDensity;
+
+  /// The [ambientDensity] parameter is the ambientDensity of the measurements input.
+  set ambientDensity(MeasurementInput? value);
+
+  /// The [ambientTemperature] parameter is the ambientTemperature of the measurements input.
+  MeasurementInput? get ambientTemperature;
+
+  /// The [ambientTemperature] parameter is the ambientTemperature of the measurements input.
+  set ambientTemperature(MeasurementInput? value);
+
+  /// The [averageTankTemperature] parameter is the averageTankTemperature of the measurements input.
+  MeasurementInput? get averageTankTemperature;
+
+  /// The [averageTankTemperature] parameter is the averageTankTemperature of the measurements input.
+  set averageTankTemperature(MeasurementInput? value);
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MeasurementsInputCopyWith<MeasurementsInput> get copyWith =>
+      _$MeasurementsInputCopyWithImpl<MeasurementsInput>(
+          this as MeasurementsInput, _$identity);
+
+  /// Serializes this MeasurementsInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'MeasurementsInput(referenceHeight: $referenceHeight, productLevelHeight: $productLevelHeight, correctedLevelHeight: $correctedLevelHeight, waterHeight: $waterHeight, ambientLineVolume: $ambientLineVolume, ambientDensity: $ambientDensity, ambientTemperature: $ambientTemperature, averageTankTemperature: $averageTankTemperature)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MeasurementsInputCopyWith<$Res> {
+  factory $MeasurementsInputCopyWith(
+          MeasurementsInput value, $Res Function(MeasurementsInput) _then) =
+      _$MeasurementsInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {MeasurementInput? referenceHeight,
+      MeasurementInput? productLevelHeight,
+      MeasurementInput? correctedLevelHeight,
+      MeasurementInput? waterHeight,
+      MeasurementInput? ambientLineVolume,
+      MeasurementInput? ambientDensity,
+      MeasurementInput? ambientTemperature,
+      MeasurementInput? averageTankTemperature});
+
+  $MeasurementInputCopyWith<$Res>? get referenceHeight;
+  $MeasurementInputCopyWith<$Res>? get productLevelHeight;
+  $MeasurementInputCopyWith<$Res>? get correctedLevelHeight;
+  $MeasurementInputCopyWith<$Res>? get waterHeight;
+  $MeasurementInputCopyWith<$Res>? get ambientLineVolume;
+  $MeasurementInputCopyWith<$Res>? get ambientDensity;
+  $MeasurementInputCopyWith<$Res>? get ambientTemperature;
+  $MeasurementInputCopyWith<$Res>? get averageTankTemperature;
+}
+
+/// @nodoc
+class _$MeasurementsInputCopyWithImpl<$Res>
+    implements $MeasurementsInputCopyWith<$Res> {
+  _$MeasurementsInputCopyWithImpl(this._self, this._then);
+
+  final MeasurementsInput _self;
+  final $Res Function(MeasurementsInput) _then;
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? referenceHeight = freezed,
+    Object? productLevelHeight = freezed,
+    Object? correctedLevelHeight = freezed,
+    Object? waterHeight = freezed,
+    Object? ambientLineVolume = freezed,
+    Object? ambientDensity = freezed,
+    Object? ambientTemperature = freezed,
+    Object? averageTankTemperature = freezed,
+  }) {
+    return _then(_self.copyWith(
+      referenceHeight: freezed == referenceHeight
+          ? _self.referenceHeight
+          : referenceHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      productLevelHeight: freezed == productLevelHeight
+          ? _self.productLevelHeight
+          : productLevelHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      correctedLevelHeight: freezed == correctedLevelHeight
+          ? _self.correctedLevelHeight
+          : correctedLevelHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      waterHeight: freezed == waterHeight
+          ? _self.waterHeight
+          : waterHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      ambientLineVolume: freezed == ambientLineVolume
+          ? _self.ambientLineVolume
+          : ambientLineVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      ambientDensity: freezed == ambientDensity
+          ? _self.ambientDensity
+          : ambientDensity // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      ambientTemperature: freezed == ambientTemperature
+          ? _self.ambientTemperature
+          : ambientTemperature // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      averageTankTemperature: freezed == averageTankTemperature
+          ? _self.averageTankTemperature
+          : averageTankTemperature // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+    ));
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get referenceHeight {
+    if (_self.referenceHeight == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.referenceHeight!, (value) {
+      return _then(_self.copyWith(referenceHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get productLevelHeight {
+    if (_self.productLevelHeight == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.productLevelHeight!, (value) {
+      return _then(_self.copyWith(productLevelHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get correctedLevelHeight {
+    if (_self.correctedLevelHeight == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.correctedLevelHeight!,
+        (value) {
+      return _then(_self.copyWith(correctedLevelHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get waterHeight {
+    if (_self.waterHeight == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.waterHeight!, (value) {
+      return _then(_self.copyWith(waterHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get ambientLineVolume {
+    if (_self.ambientLineVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.ambientLineVolume!, (value) {
+      return _then(_self.copyWith(ambientLineVolume: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get ambientDensity {
+    if (_self.ambientDensity == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.ambientDensity!, (value) {
+      return _then(_self.copyWith(ambientDensity: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get ambientTemperature {
+    if (_self.ambientTemperature == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.ambientTemperature!, (value) {
+      return _then(_self.copyWith(ambientTemperature: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get averageTankTemperature {
+    if (_self.averageTankTemperature == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.averageTankTemperature!,
+        (value) {
+      return _then(_self.copyWith(averageTankTemperature: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _MeasurementsInput implements MeasurementsInput {
+  _MeasurementsInput(
+      {this.referenceHeight,
+      this.productLevelHeight,
+      this.correctedLevelHeight,
+      this.waterHeight,
+      this.ambientLineVolume,
+      this.ambientDensity,
+      this.ambientTemperature,
+      this.averageTankTemperature});
+  factory _MeasurementsInput.fromJson(Map<String, dynamic> json) =>
+      _$MeasurementsInputFromJson(json);
+
+  /// The [referenceHeight] parameter is the referenceHeight of the measurements input.
+  @override
+  MeasurementInput? referenceHeight;
+
+  /// The [productLevelHeight] parameter is the productLevelHeight of the measurements input.
+  @override
+  MeasurementInput? productLevelHeight;
+
+  /// The [correctedLevelHeight] parameter is the correctedLevelHeight of the measurements input.
+  @override
+  MeasurementInput? correctedLevelHeight;
+
+  /// The [waterHeight] parameter is the waterHeight of the measurements input.
+  @override
+  MeasurementInput? waterHeight;
+
+  /// The [ambientLineVolume] parameter is the ambientLineVolume of the measurements input.
+  @override
+  MeasurementInput? ambientLineVolume;
+
+  /// The [ambientDensity] parameter is the ambientDensity of the measurements input.
+  @override
+  MeasurementInput? ambientDensity;
+
+  /// The [ambientTemperature] parameter is the ambientTemperature of the measurements input.
+  @override
+  MeasurementInput? ambientTemperature;
+
+  /// The [averageTankTemperature] parameter is the averageTankTemperature of the measurements input.
+  @override
+  MeasurementInput? averageTankTemperature;
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MeasurementsInputCopyWith<_MeasurementsInput> get copyWith =>
+      __$MeasurementsInputCopyWithImpl<_MeasurementsInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MeasurementsInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'MeasurementsInput(referenceHeight: $referenceHeight, productLevelHeight: $productLevelHeight, correctedLevelHeight: $correctedLevelHeight, waterHeight: $waterHeight, ambientLineVolume: $ambientLineVolume, ambientDensity: $ambientDensity, ambientTemperature: $ambientTemperature, averageTankTemperature: $averageTankTemperature)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MeasurementsInputCopyWith<$Res>
+    implements $MeasurementsInputCopyWith<$Res> {
+  factory _$MeasurementsInputCopyWith(
+          _MeasurementsInput value, $Res Function(_MeasurementsInput) _then) =
+      __$MeasurementsInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {MeasurementInput? referenceHeight,
+      MeasurementInput? productLevelHeight,
+      MeasurementInput? correctedLevelHeight,
+      MeasurementInput? waterHeight,
+      MeasurementInput? ambientLineVolume,
+      MeasurementInput? ambientDensity,
+      MeasurementInput? ambientTemperature,
+      MeasurementInput? averageTankTemperature});
+
+  @override
+  $MeasurementInputCopyWith<$Res>? get referenceHeight;
+  @override
+  $MeasurementInputCopyWith<$Res>? get productLevelHeight;
+  @override
+  $MeasurementInputCopyWith<$Res>? get correctedLevelHeight;
+  @override
+  $MeasurementInputCopyWith<$Res>? get waterHeight;
+  @override
+  $MeasurementInputCopyWith<$Res>? get ambientLineVolume;
+  @override
+  $MeasurementInputCopyWith<$Res>? get ambientDensity;
+  @override
+  $MeasurementInputCopyWith<$Res>? get ambientTemperature;
+  @override
+  $MeasurementInputCopyWith<$Res>? get averageTankTemperature;
+}
+
+/// @nodoc
+class __$MeasurementsInputCopyWithImpl<$Res>
+    implements _$MeasurementsInputCopyWith<$Res> {
+  __$MeasurementsInputCopyWithImpl(this._self, this._then);
+
+  final _MeasurementsInput _self;
+  final $Res Function(_MeasurementsInput) _then;
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? referenceHeight = freezed,
+    Object? productLevelHeight = freezed,
+    Object? correctedLevelHeight = freezed,
+    Object? waterHeight = freezed,
+    Object? ambientLineVolume = freezed,
+    Object? ambientDensity = freezed,
+    Object? ambientTemperature = freezed,
+    Object? averageTankTemperature = freezed,
+  }) {
+    return _then(_MeasurementsInput(
+      referenceHeight: freezed == referenceHeight
+          ? _self.referenceHeight
+          : referenceHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      productLevelHeight: freezed == productLevelHeight
+          ? _self.productLevelHeight
+          : productLevelHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      correctedLevelHeight: freezed == correctedLevelHeight
+          ? _self.correctedLevelHeight
+          : correctedLevelHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      waterHeight: freezed == waterHeight
+          ? _self.waterHeight
+          : waterHeight // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      ambientLineVolume: freezed == ambientLineVolume
+          ? _self.ambientLineVolume
+          : ambientLineVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      ambientDensity: freezed == ambientDensity
+          ? _self.ambientDensity
+          : ambientDensity // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      ambientTemperature: freezed == ambientTemperature
+          ? _self.ambientTemperature
+          : ambientTemperature // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      averageTankTemperature: freezed == averageTankTemperature
+          ? _self.averageTankTemperature
+          : averageTankTemperature // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+    ));
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get referenceHeight {
+    if (_self.referenceHeight == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.referenceHeight!, (value) {
+      return _then(_self.copyWith(referenceHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get productLevelHeight {
+    if (_self.productLevelHeight == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.productLevelHeight!, (value) {
+      return _then(_self.copyWith(productLevelHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get correctedLevelHeight {
+    if (_self.correctedLevelHeight == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.correctedLevelHeight!,
+        (value) {
+      return _then(_self.copyWith(correctedLevelHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get waterHeight {
+    if (_self.waterHeight == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.waterHeight!, (value) {
+      return _then(_self.copyWith(waterHeight: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get ambientLineVolume {
+    if (_self.ambientLineVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.ambientLineVolume!, (value) {
+      return _then(_self.copyWith(ambientLineVolume: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get ambientDensity {
+    if (_self.ambientDensity == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.ambientDensity!, (value) {
+      return _then(_self.copyWith(ambientDensity: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get ambientTemperature {
+    if (_self.ambientTemperature == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.ambientTemperature!, (value) {
+      return _then(_self.copyWith(ambientTemperature: value));
+    });
+  }
+
+  /// Create a copy of MeasurementsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get averageTankTemperature {
+    if (_self.averageTankTemperature == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.averageTankTemperature!,
+        (value) {
+      return _then(_self.copyWith(averageTankTemperature: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$ResultsInput {
+  /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results input.
+  MeasurementInput? get environmentalTankVolume;
+
+  /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results input.
+  set environmentalTankVolume(MeasurementInput? value);
+
+  /// The [waterVolume] parameter is the waterVolume of the results input.
+  MeasurementInput? get waterVolume;
+
+  /// The [waterVolume] parameter is the waterVolume of the results input.
+  set waterVolume(MeasurementInput? value);
+
+  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results input.
+  MeasurementInput? get ambientProductVolume;
+
+  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results input.
+  set ambientProductVolume(MeasurementInput? value);
+
+  /// The [densityAt20] parameter is the densityAt20 of the results input.
+  MeasurementInput? get densityAt20;
+
+  /// The [densityAt20] parameter is the densityAt20 of the results input.
+  set densityAt20(MeasurementInput? value);
+
+  /// The [volumeCorrectionFactor] parameter is the volumeCorrectionFactor of the results input.
+  MeasurementInput? get volumeCorrectionFactor;
+
+  /// The [volumeCorrectionFactor] parameter is the volumeCorrectionFactor of the results input.
+  set volumeCorrectionFactor(MeasurementInput? value);
+
+  /// The [alcoholicContent] parameter is the alcoholicContent of the results input.
+  MeasurementInput? get alcoholicContent;
+
+  /// The [alcoholicContent] parameter is the alcoholicContent of the results input.
+  set alcoholicContent(MeasurementInput? value);
+
+  /// The [environmentalVolume] parameter is the environmentalVolume of the results input.
+  MeasurementInput? get environmentalVolume;
+
+  /// The [environmentalVolume] parameter is the environmentalVolume of the results input.
+  set environmentalVolume(MeasurementInput? value);
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the results input.
+  MeasurementInput? get volumeAt20;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the results input.
+  set volumeAt20(MeasurementInput? value);
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the results input.
+  MeasurementInput? get kilogramsAt20;
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the results input.
+  set kilogramsAt20(MeasurementInput? value);
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ResultsInputCopyWith<ResultsInput> get copyWith =>
+      _$ResultsInputCopyWithImpl<ResultsInput>(
+          this as ResultsInput, _$identity);
+
+  /// Serializes this ResultsInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ResultsInput(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, ambientProductVolume: $ambientProductVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ResultsInputCopyWith<$Res> {
+  factory $ResultsInputCopyWith(
+          ResultsInput value, $Res Function(ResultsInput) _then) =
+      _$ResultsInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {MeasurementInput? environmentalTankVolume,
+      MeasurementInput? waterVolume,
+      MeasurementInput? ambientProductVolume,
+      MeasurementInput? densityAt20,
+      MeasurementInput? volumeCorrectionFactor,
+      MeasurementInput? alcoholicContent,
+      MeasurementInput? environmentalVolume,
+      MeasurementInput? volumeAt20,
+      MeasurementInput? kilogramsAt20});
+
+  $MeasurementInputCopyWith<$Res>? get environmentalTankVolume;
+  $MeasurementInputCopyWith<$Res>? get waterVolume;
+  $MeasurementInputCopyWith<$Res>? get ambientProductVolume;
+  $MeasurementInputCopyWith<$Res>? get densityAt20;
+  $MeasurementInputCopyWith<$Res>? get volumeCorrectionFactor;
+  $MeasurementInputCopyWith<$Res>? get alcoholicContent;
+  $MeasurementInputCopyWith<$Res>? get environmentalVolume;
+  $MeasurementInputCopyWith<$Res>? get volumeAt20;
+  $MeasurementInputCopyWith<$Res>? get kilogramsAt20;
+}
+
+/// @nodoc
+class _$ResultsInputCopyWithImpl<$Res> implements $ResultsInputCopyWith<$Res> {
+  _$ResultsInputCopyWithImpl(this._self, this._then);
+
+  final ResultsInput _self;
+  final $Res Function(ResultsInput) _then;
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? environmentalTankVolume = freezed,
+    Object? waterVolume = freezed,
+    Object? ambientProductVolume = freezed,
+    Object? densityAt20 = freezed,
+    Object? volumeCorrectionFactor = freezed,
+    Object? alcoholicContent = freezed,
+    Object? environmentalVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? kilogramsAt20 = freezed,
+  }) {
+    return _then(_self.copyWith(
+      environmentalTankVolume: freezed == environmentalTankVolume
+          ? _self.environmentalTankVolume
+          : environmentalTankVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      waterVolume: freezed == waterVolume
+          ? _self.waterVolume
+          : waterVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      ambientProductVolume: freezed == ambientProductVolume
+          ? _self.ambientProductVolume
+          : ambientProductVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      densityAt20: freezed == densityAt20
+          ? _self.densityAt20
+          : densityAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      volumeCorrectionFactor: freezed == volumeCorrectionFactor
+          ? _self.volumeCorrectionFactor
+          : volumeCorrectionFactor // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      alcoholicContent: freezed == alcoholicContent
+          ? _self.alcoholicContent
+          : alcoholicContent // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      environmentalVolume: freezed == environmentalVolume
+          ? _self.environmentalVolume
+          : environmentalVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      kilogramsAt20: freezed == kilogramsAt20
+          ? _self.kilogramsAt20
+          : kilogramsAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+    ));
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get environmentalTankVolume {
+    if (_self.environmentalTankVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.environmentalTankVolume!,
+        (value) {
+      return _then(_self.copyWith(environmentalTankVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get waterVolume {
+    if (_self.waterVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.waterVolume!, (value) {
+      return _then(_self.copyWith(waterVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get ambientProductVolume {
+    if (_self.ambientProductVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.ambientProductVolume!,
+        (value) {
+      return _then(_self.copyWith(ambientProductVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get densityAt20 {
+    if (_self.densityAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.densityAt20!, (value) {
+      return _then(_self.copyWith(densityAt20: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get volumeCorrectionFactor {
+    if (_self.volumeCorrectionFactor == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.volumeCorrectionFactor!,
+        (value) {
+      return _then(_self.copyWith(volumeCorrectionFactor: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get alcoholicContent {
+    if (_self.alcoholicContent == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.alcoholicContent!, (value) {
+      return _then(_self.copyWith(alcoholicContent: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get environmentalVolume {
+    if (_self.environmentalVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.environmentalVolume!, (value) {
+      return _then(_self.copyWith(environmentalVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get volumeAt20 {
+    if (_self.volumeAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.volumeAt20!, (value) {
+      return _then(_self.copyWith(volumeAt20: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get kilogramsAt20 {
+    if (_self.kilogramsAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.kilogramsAt20!, (value) {
+      return _then(_self.copyWith(kilogramsAt20: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ResultsInput implements ResultsInput {
+  _ResultsInput(
+      {this.environmentalTankVolume,
+      this.waterVolume,
+      this.ambientProductVolume,
+      this.densityAt20,
+      this.volumeCorrectionFactor,
+      this.alcoholicContent,
+      this.environmentalVolume,
+      this.volumeAt20,
+      this.kilogramsAt20});
+  factory _ResultsInput.fromJson(Map<String, dynamic> json) =>
+      _$ResultsInputFromJson(json);
+
+  /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results input.
+  @override
+  MeasurementInput? environmentalTankVolume;
+
+  /// The [waterVolume] parameter is the waterVolume of the results input.
+  @override
+  MeasurementInput? waterVolume;
+
+  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results input.
+  @override
+  MeasurementInput? ambientProductVolume;
+
+  /// The [densityAt20] parameter is the densityAt20 of the results input.
+  @override
+  MeasurementInput? densityAt20;
+
+  /// The [volumeCorrectionFactor] parameter is the volumeCorrectionFactor of the results input.
+  @override
+  MeasurementInput? volumeCorrectionFactor;
+
+  /// The [alcoholicContent] parameter is the alcoholicContent of the results input.
+  @override
+  MeasurementInput? alcoholicContent;
+
+  /// The [environmentalVolume] parameter is the environmentalVolume of the results input.
+  @override
+  MeasurementInput? environmentalVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the results input.
+  @override
+  MeasurementInput? volumeAt20;
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the results input.
+  @override
+  MeasurementInput? kilogramsAt20;
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ResultsInputCopyWith<_ResultsInput> get copyWith =>
+      __$ResultsInputCopyWithImpl<_ResultsInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ResultsInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ResultsInput(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, ambientProductVolume: $ambientProductVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ResultsInputCopyWith<$Res>
+    implements $ResultsInputCopyWith<$Res> {
+  factory _$ResultsInputCopyWith(
+          _ResultsInput value, $Res Function(_ResultsInput) _then) =
+      __$ResultsInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {MeasurementInput? environmentalTankVolume,
+      MeasurementInput? waterVolume,
+      MeasurementInput? ambientProductVolume,
+      MeasurementInput? densityAt20,
+      MeasurementInput? volumeCorrectionFactor,
+      MeasurementInput? alcoholicContent,
+      MeasurementInput? environmentalVolume,
+      MeasurementInput? volumeAt20,
+      MeasurementInput? kilogramsAt20});
+
+  @override
+  $MeasurementInputCopyWith<$Res>? get environmentalTankVolume;
+  @override
+  $MeasurementInputCopyWith<$Res>? get waterVolume;
+  @override
+  $MeasurementInputCopyWith<$Res>? get ambientProductVolume;
+  @override
+  $MeasurementInputCopyWith<$Res>? get densityAt20;
+  @override
+  $MeasurementInputCopyWith<$Res>? get volumeCorrectionFactor;
+  @override
+  $MeasurementInputCopyWith<$Res>? get alcoholicContent;
+  @override
+  $MeasurementInputCopyWith<$Res>? get environmentalVolume;
+  @override
+  $MeasurementInputCopyWith<$Res>? get volumeAt20;
+  @override
+  $MeasurementInputCopyWith<$Res>? get kilogramsAt20;
+}
+
+/// @nodoc
+class __$ResultsInputCopyWithImpl<$Res>
+    implements _$ResultsInputCopyWith<$Res> {
+  __$ResultsInputCopyWithImpl(this._self, this._then);
+
+  final _ResultsInput _self;
+  final $Res Function(_ResultsInput) _then;
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? environmentalTankVolume = freezed,
+    Object? waterVolume = freezed,
+    Object? ambientProductVolume = freezed,
+    Object? densityAt20 = freezed,
+    Object? volumeCorrectionFactor = freezed,
+    Object? alcoholicContent = freezed,
+    Object? environmentalVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? kilogramsAt20 = freezed,
+  }) {
+    return _then(_ResultsInput(
+      environmentalTankVolume: freezed == environmentalTankVolume
+          ? _self.environmentalTankVolume
+          : environmentalTankVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      waterVolume: freezed == waterVolume
+          ? _self.waterVolume
+          : waterVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      ambientProductVolume: freezed == ambientProductVolume
+          ? _self.ambientProductVolume
+          : ambientProductVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      densityAt20: freezed == densityAt20
+          ? _self.densityAt20
+          : densityAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      volumeCorrectionFactor: freezed == volumeCorrectionFactor
+          ? _self.volumeCorrectionFactor
+          : volumeCorrectionFactor // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      alcoholicContent: freezed == alcoholicContent
+          ? _self.alcoholicContent
+          : alcoholicContent // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      environmentalVolume: freezed == environmentalVolume
+          ? _self.environmentalVolume
+          : environmentalVolume // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+      kilogramsAt20: freezed == kilogramsAt20
+          ? _self.kilogramsAt20
+          : kilogramsAt20 // ignore: cast_nullable_to_non_nullable
+              as MeasurementInput?,
+    ));
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get environmentalTankVolume {
+    if (_self.environmentalTankVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.environmentalTankVolume!,
+        (value) {
+      return _then(_self.copyWith(environmentalTankVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get waterVolume {
+    if (_self.waterVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.waterVolume!, (value) {
+      return _then(_self.copyWith(waterVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get ambientProductVolume {
+    if (_self.ambientProductVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.ambientProductVolume!,
+        (value) {
+      return _then(_self.copyWith(ambientProductVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get densityAt20 {
+    if (_self.densityAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.densityAt20!, (value) {
+      return _then(_self.copyWith(densityAt20: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get volumeCorrectionFactor {
+    if (_self.volumeCorrectionFactor == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.volumeCorrectionFactor!,
+        (value) {
+      return _then(_self.copyWith(volumeCorrectionFactor: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get alcoholicContent {
+    if (_self.alcoholicContent == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.alcoholicContent!, (value) {
+      return _then(_self.copyWith(alcoholicContent: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get environmentalVolume {
+    if (_self.environmentalVolume == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.environmentalVolume!, (value) {
+      return _then(_self.copyWith(environmentalVolume: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get volumeAt20 {
+    if (_self.volumeAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.volumeAt20!, (value) {
+      return _then(_self.copyWith(volumeAt20: value));
+    });
+  }
+
+  /// Create a copy of ResultsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<$Res>? get kilogramsAt20 {
+    if (_self.kilogramsAt20 == null) {
+      return null;
+    }
+
+    return $MeasurementInputCopyWith<$Res>(_self.kilogramsAt20!, (value) {
+      return _then(_self.copyWith(kilogramsAt20: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$MeasurementInput {
+  /// The [start] parameter is the start of the measurement input.
+  double? get start;
+
+  /// The [start] parameter is the start of the measurement input.
+  set start(double? value);
+
+  /// The [end] parameter is the end of the measurement input.
+  double? get end;
+
+  /// The [end] parameter is the end of the measurement input.
+  set end(double? value);
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement input.
+  double? get differenceOrTotal;
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement input.
+  set differenceOrTotal(double? value);
+
+  /// Create a copy of MeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MeasurementInputCopyWith<MeasurementInput> get copyWith =>
+      _$MeasurementInputCopyWithImpl<MeasurementInput>(
+          this as MeasurementInput, _$identity);
+
+  /// Serializes this MeasurementInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'MeasurementInput(start: $start, end: $end, differenceOrTotal: $differenceOrTotal)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MeasurementInputCopyWith<$Res> {
+  factory $MeasurementInputCopyWith(
+          MeasurementInput value, $Res Function(MeasurementInput) _then) =
+      _$MeasurementInputCopyWithImpl;
+  @useResult
+  $Res call({double? start, double? end, double? differenceOrTotal});
+}
+
+/// @nodoc
+class _$MeasurementInputCopyWithImpl<$Res>
+    implements $MeasurementInputCopyWith<$Res> {
+  _$MeasurementInputCopyWithImpl(this._self, this._then);
+
+  final MeasurementInput _self;
+  final $Res Function(MeasurementInput) _then;
+
+  /// Create a copy of MeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? differenceOrTotal = freezed,
+  }) {
+    return _then(_self.copyWith(
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as double?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as double?,
+      differenceOrTotal: freezed == differenceOrTotal
+          ? _self.differenceOrTotal
+          : differenceOrTotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _MeasurementInput implements MeasurementInput {
+  _MeasurementInput({this.start, this.end, this.differenceOrTotal});
+  factory _MeasurementInput.fromJson(Map<String, dynamic> json) =>
+      _$MeasurementInputFromJson(json);
+
+  /// The [start] parameter is the start of the measurement input.
+  @override
+  double? start;
+
+  /// The [end] parameter is the end of the measurement input.
+  @override
+  double? end;
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement input.
+  @override
+  double? differenceOrTotal;
+
+  /// Create a copy of MeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MeasurementInputCopyWith<_MeasurementInput> get copyWith =>
+      __$MeasurementInputCopyWithImpl<_MeasurementInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MeasurementInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'MeasurementInput(start: $start, end: $end, differenceOrTotal: $differenceOrTotal)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MeasurementInputCopyWith<$Res>
+    implements $MeasurementInputCopyWith<$Res> {
+  factory _$MeasurementInputCopyWith(
+          _MeasurementInput value, $Res Function(_MeasurementInput) _then) =
+      __$MeasurementInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({double? start, double? end, double? differenceOrTotal});
+}
+
+/// @nodoc
+class __$MeasurementInputCopyWithImpl<$Res>
+    implements _$MeasurementInputCopyWith<$Res> {
+  __$MeasurementInputCopyWithImpl(this._self, this._then);
+
+  final _MeasurementInput _self;
+  final $Res Function(_MeasurementInput) _then;
+
+  /// Create a copy of MeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? differenceOrTotal = freezed,
+  }) {
+    return _then(_MeasurementInput(
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as double?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as double?,
+      differenceOrTotal: freezed == differenceOrTotal
+          ? _self.differenceOrTotal
+          : differenceOrTotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$CaclMeasurement {
+  /// The [start] parameter is the start of the measurement input.
+  double? get start;
+
+  /// The [start] parameter is the start of the measurement input.
+  set start(double? value);
+
+  /// The [end] parameter is the end of the measurement input.
+  double? get end;
+
+  /// The [end] parameter is the end of the measurement input.
+  set end(double? value);
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement input.
+  double? get differenceOrTotal;
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement input.
+  set differenceOrTotal(double? value);
+
+  /// The [invoicedVolume] parameter is the invoicedVolume of the measurement input.
+  int? get invoicedVolume;
+
+  /// The [invoicedVolume] parameter is the invoicedVolume of the measurement input.
+  set invoicedVolume(int? value);
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the measurement input.
+  int? get volumeAt20;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the measurement input.
+  set volumeAt20(int? value);
+
+  /// The [massAt20] parameter is the massAt20 of the measurement input.
+  int? get massAt20;
+
+  /// The [massAt20] parameter is the massAt20 of the measurement input.
+  set massAt20(int? value);
+
+  /// Create a copy of CaclMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CaclMeasurementCopyWith<CaclMeasurement> get copyWith =>
+      _$CaclMeasurementCopyWithImpl<CaclMeasurement>(
+          this as CaclMeasurement, _$identity);
+
+  /// Serializes this CaclMeasurement to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'CaclMeasurement(start: $start, end: $end, differenceOrTotal: $differenceOrTotal, invoicedVolume: $invoicedVolume, volumeAt20: $volumeAt20, massAt20: $massAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CaclMeasurementCopyWith<$Res> {
+  factory $CaclMeasurementCopyWith(
+          CaclMeasurement value, $Res Function(CaclMeasurement) _then) =
+      _$CaclMeasurementCopyWithImpl;
+  @useResult
+  $Res call(
+      {double? start,
+      double? end,
+      double? differenceOrTotal,
+      int? invoicedVolume,
+      int? volumeAt20,
+      int? massAt20});
+}
+
+/// @nodoc
+class _$CaclMeasurementCopyWithImpl<$Res>
+    implements $CaclMeasurementCopyWith<$Res> {
+  _$CaclMeasurementCopyWithImpl(this._self, this._then);
+
+  final CaclMeasurement _self;
+  final $Res Function(CaclMeasurement) _then;
+
+  /// Create a copy of CaclMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? differenceOrTotal = freezed,
+    Object? invoicedVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? massAt20 = freezed,
+  }) {
+    return _then(_self.copyWith(
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as double?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as double?,
+      differenceOrTotal: freezed == differenceOrTotal
+          ? _self.differenceOrTotal
+          : differenceOrTotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+      invoicedVolume: freezed == invoicedVolume
+          ? _self.invoicedVolume
+          : invoicedVolume // ignore: cast_nullable_to_non_nullable
+              as int?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as int?,
+      massAt20: freezed == massAt20
+          ? _self.massAt20
+          : massAt20 // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CaclMeasurement implements CaclMeasurement {
+  _CaclMeasurement(
+      {this.start,
+      this.end,
+      this.differenceOrTotal,
+      this.invoicedVolume,
+      this.volumeAt20,
+      this.massAt20});
+  factory _CaclMeasurement.fromJson(Map<String, dynamic> json) =>
+      _$CaclMeasurementFromJson(json);
+
+  /// The [start] parameter is the start of the measurement input.
+  @override
+  double? start;
+
+  /// The [end] parameter is the end of the measurement input.
+  @override
+  double? end;
+
+  /// The [differenceOrTotal] parameter is the differenceOrTotal of the measurement input.
+  @override
+  double? differenceOrTotal;
+
+  /// The [invoicedVolume] parameter is the invoicedVolume of the measurement input.
+  @override
+  int? invoicedVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the measurement input.
+  @override
+  int? volumeAt20;
+
+  /// The [massAt20] parameter is the massAt20 of the measurement input.
+  @override
+  int? massAt20;
+
+  /// Create a copy of CaclMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CaclMeasurementCopyWith<_CaclMeasurement> get copyWith =>
+      __$CaclMeasurementCopyWithImpl<_CaclMeasurement>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CaclMeasurementToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'CaclMeasurement(start: $start, end: $end, differenceOrTotal: $differenceOrTotal, invoicedVolume: $invoicedVolume, volumeAt20: $volumeAt20, massAt20: $massAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CaclMeasurementCopyWith<$Res>
+    implements $CaclMeasurementCopyWith<$Res> {
+  factory _$CaclMeasurementCopyWith(
+          _CaclMeasurement value, $Res Function(_CaclMeasurement) _then) =
+      __$CaclMeasurementCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {double? start,
+      double? end,
+      double? differenceOrTotal,
+      int? invoicedVolume,
+      int? volumeAt20,
+      int? massAt20});
+}
+
+/// @nodoc
+class __$CaclMeasurementCopyWithImpl<$Res>
+    implements _$CaclMeasurementCopyWith<$Res> {
+  __$CaclMeasurementCopyWithImpl(this._self, this._then);
+
+  final _CaclMeasurement _self;
+  final $Res Function(_CaclMeasurement) _then;
+
+  /// Create a copy of CaclMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? differenceOrTotal = freezed,
+    Object? invoicedVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? massAt20 = freezed,
+  }) {
+    return _then(_CaclMeasurement(
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as double?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as double?,
+      differenceOrTotal: freezed == differenceOrTotal
+          ? _self.differenceOrTotal
+          : differenceOrTotal // ignore: cast_nullable_to_non_nullable
+              as double?,
+      invoicedVolume: freezed == invoicedVolume
+          ? _self.invoicedVolume
+          : invoicedVolume // ignore: cast_nullable_to_non_nullable
+              as int?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as int?,
+      massAt20: freezed == massAt20
+          ? _self.massAt20
+          : massAt20 // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$VolumeMovedInput {
+  /// The [ambientVolume] parameter is the ambientVolume of the volume moved input.
+  double? get ambientVolume;
+
+  /// The [ambientVolume] parameter is the ambientVolume of the volume moved input.
+  set ambientVolume(double? value);
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the volume moved input.
+  double? get volumeAt20;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the volume moved input.
+  set volumeAt20(double? value);
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the volume moved input.
+  double? get kilogramsAt20;
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the volume moved input.
+  set kilogramsAt20(double? value);
+
+  /// Create a copy of VolumeMovedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $VolumeMovedInputCopyWith<VolumeMovedInput> get copyWith =>
+      _$VolumeMovedInputCopyWithImpl<VolumeMovedInput>(
+          this as VolumeMovedInput, _$identity);
+
+  /// Serializes this VolumeMovedInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'VolumeMovedInput(ambientVolume: $ambientVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $VolumeMovedInputCopyWith<$Res> {
+  factory $VolumeMovedInputCopyWith(
+          VolumeMovedInput value, $Res Function(VolumeMovedInput) _then) =
+      _$VolumeMovedInputCopyWithImpl;
+  @useResult
+  $Res call({double? ambientVolume, double? volumeAt20, double? kilogramsAt20});
+}
+
+/// @nodoc
+class _$VolumeMovedInputCopyWithImpl<$Res>
+    implements $VolumeMovedInputCopyWith<$Res> {
+  _$VolumeMovedInputCopyWithImpl(this._self, this._then);
+
+  final VolumeMovedInput _self;
+  final $Res Function(VolumeMovedInput) _then;
+
+  /// Create a copy of VolumeMovedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ambientVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? kilogramsAt20 = freezed,
+  }) {
+    return _then(_self.copyWith(
+      ambientVolume: freezed == ambientVolume
+          ? _self.ambientVolume
+          : ambientVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as double?,
+      kilogramsAt20: freezed == kilogramsAt20
+          ? _self.kilogramsAt20
+          : kilogramsAt20 // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _VolumeMovedInput implements VolumeMovedInput {
+  _VolumeMovedInput({this.ambientVolume, this.volumeAt20, this.kilogramsAt20});
+  factory _VolumeMovedInput.fromJson(Map<String, dynamic> json) =>
+      _$VolumeMovedInputFromJson(json);
+
+  /// The [ambientVolume] parameter is the ambientVolume of the volume moved input.
+  @override
+  double? ambientVolume;
+
+  /// The [volumeAt20] parameter is the volumeAt20 of the volume moved input.
+  @override
+  double? volumeAt20;
+
+  /// The [kilogramsAt20] parameter is the kilogramsAt20 of the volume moved input.
+  @override
+  double? kilogramsAt20;
+
+  /// Create a copy of VolumeMovedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$VolumeMovedInputCopyWith<_VolumeMovedInput> get copyWith =>
+      __$VolumeMovedInputCopyWithImpl<_VolumeMovedInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$VolumeMovedInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'VolumeMovedInput(ambientVolume: $ambientVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$VolumeMovedInputCopyWith<$Res>
+    implements $VolumeMovedInputCopyWith<$Res> {
+  factory _$VolumeMovedInputCopyWith(
+          _VolumeMovedInput value, $Res Function(_VolumeMovedInput) _then) =
+      __$VolumeMovedInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({double? ambientVolume, double? volumeAt20, double? kilogramsAt20});
+}
+
+/// @nodoc
+class __$VolumeMovedInputCopyWithImpl<$Res>
+    implements _$VolumeMovedInputCopyWith<$Res> {
+  __$VolumeMovedInputCopyWithImpl(this._self, this._then);
+
+  final _VolumeMovedInput _self;
+  final $Res Function(_VolumeMovedInput) _then;
+
+  /// Create a copy of VolumeMovedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? ambientVolume = freezed,
+    Object? volumeAt20 = freezed,
+    Object? kilogramsAt20 = freezed,
+  }) {
+    return _then(_VolumeMovedInput(
+      ambientVolume: freezed == ambientVolume
+          ? _self.ambientVolume
+          : ambientVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volumeAt20: freezed == volumeAt20
+          ? _self.volumeAt20
+          : volumeAt20 // ignore: cast_nullable_to_non_nullable
+              as double?,
+      kilogramsAt20: freezed == kilogramsAt20
+          ? _self.kilogramsAt20
+          : kilogramsAt20 // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$EquipmentMeasurementInput {
+  /// The [serialNumber] parameter is the start of the equipment measurement input.
+  String? get serialNumber;
+
+  /// The [serialNumber] parameter is the start of the equipment measurement input.
+  set serialNumber(String? value);
+
+  /// Create a copy of EquipmentMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $EquipmentMeasurementInputCopyWith<EquipmentMeasurementInput> get copyWith =>
+      _$EquipmentMeasurementInputCopyWithImpl<EquipmentMeasurementInput>(
+          this as EquipmentMeasurementInput, _$identity);
+
+  /// Serializes this EquipmentMeasurementInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'EquipmentMeasurementInput(serialNumber: $serialNumber)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $EquipmentMeasurementInputCopyWith<$Res> {
+  factory $EquipmentMeasurementInputCopyWith(EquipmentMeasurementInput value,
+          $Res Function(EquipmentMeasurementInput) _then) =
+      _$EquipmentMeasurementInputCopyWithImpl;
+  @useResult
+  $Res call({String? serialNumber});
+}
+
+/// @nodoc
+class _$EquipmentMeasurementInputCopyWithImpl<$Res>
+    implements $EquipmentMeasurementInputCopyWith<$Res> {
+  _$EquipmentMeasurementInputCopyWithImpl(this._self, this._then);
+
+  final EquipmentMeasurementInput _self;
+  final $Res Function(EquipmentMeasurementInput) _then;
+
+  /// Create a copy of EquipmentMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? serialNumber = freezed,
+  }) {
+    return _then(_self.copyWith(
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _EquipmentMeasurementInput implements EquipmentMeasurementInput {
+  _EquipmentMeasurementInput({this.serialNumber});
+  factory _EquipmentMeasurementInput.fromJson(Map<String, dynamic> json) =>
+      _$EquipmentMeasurementInputFromJson(json);
+
+  /// The [serialNumber] parameter is the start of the equipment measurement input.
+  @override
+  String? serialNumber;
+
+  /// Create a copy of EquipmentMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EquipmentMeasurementInputCopyWith<_EquipmentMeasurementInput>
+      get copyWith =>
+          __$EquipmentMeasurementInputCopyWithImpl<_EquipmentMeasurementInput>(
               this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AtsOperationStatusesImplToJson(
+    return _$EquipmentMeasurementInputToJson(
       this,
     );
   }
+
+  @override
+  String toString() {
+    return 'EquipmentMeasurementInput(serialNumber: $serialNumber)';
+  }
 }
 
-abstract class _AtsOperationStatuses implements AtsOperationStatuses {
-  const factory _AtsOperationStatuses(
-          {final Asset? asset,
-          @TimestampOrNullConverter() final DateTime? inTransitAt,
-          @TimestampOrNullConverter() final DateTime? waitingToDispatchAt,
-          @TimestampOrNullConverter() final DateTime? deliveredAt,
-          @TimestampOrNullConverter() final DateTime? unloadingOperationAt,
-          @TimestampOrNullConverter() final DateTime? readyToOperateAt,
-          @TimestampOrNullConverter() final DateTime? eta}) =
-      _$AtsOperationStatusesImpl;
-
-  factory _AtsOperationStatuses.fromJson(Map<String, dynamic> json) =
-      _$AtsOperationStatusesImpl.fromJson;
-
-  /// `asset` is the Asset linked to the operation.
+/// @nodoc
+abstract mixin class _$EquipmentMeasurementInputCopyWith<$Res>
+    implements $EquipmentMeasurementInputCopyWith<$Res> {
+  factory _$EquipmentMeasurementInputCopyWith(_EquipmentMeasurementInput value,
+          $Res Function(_EquipmentMeasurementInput) _then) =
+      __$EquipmentMeasurementInputCopyWithImpl;
   @override
-  Asset? get asset;
+  @useResult
+  $Res call({String? serialNumber});
+}
 
-  /// `inTransitAt` is the Unix timestamp of when the asset was in transit.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get inTransitAt;
+/// @nodoc
+class __$EquipmentMeasurementInputCopyWithImpl<$Res>
+    implements _$EquipmentMeasurementInputCopyWith<$Res> {
+  __$EquipmentMeasurementInputCopyWithImpl(this._self, this._then);
 
-  /// `waitingToDispatchAt` is the Unix timestamp of when the asset was waiting to dispatch.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get waitingToDispatchAt;
+  final _EquipmentMeasurementInput _self;
+  final $Res Function(_EquipmentMeasurementInput) _then;
 
-  /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get deliveredAt;
-
-  /// `unloadingOperationAt` is the Unix timestamp of when the asset was unloading operation.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get unloadingOperationAt;
-
-  /// `readyToOperateAt` is the Unix timestamp of when the asset was ready to operate.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get readyToOperateAt;
-
-  /// `eta` is the estimated time of arrival in Unix timestamp.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get eta;
-
-  /// Create a copy of AtsOperationStatuses
+  /// Create a copy of EquipmentMeasurementInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AtsOperationStatusesImplCopyWith<_$AtsOperationStatusesImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? serialNumber = freezed,
+  }) {
+    return _then(_EquipmentMeasurementInput(
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
+
+// dart format on

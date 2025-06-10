@@ -6,8 +6,7 @@ part of 'map.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MapLayerImpl _$$MapLayerImplFromJson(Map<String, dynamic> json) =>
-    _$MapLayerImpl(
+_MapLayer _$MapLayerFromJson(Map<String, dynamic> json) => _MapLayer(
       id: json['id'] as String,
       name: json['name'] as String,
       source: $enumDecode(_$MapSourceEnumMap, json['source'],
@@ -42,8 +41,7 @@ _$MapLayerImpl _$$MapLayerImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$MapLayerImplToJson(_$MapLayerImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$MapLayerToJson(_MapLayer instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'source': instance.source.toJson(),
@@ -97,8 +95,8 @@ const _$HereStyleEnumMap = {
   HereStyle.logistics: 'LOGISTICS',
 };
 
-_$MapLayerInputImpl _$$MapLayerInputImplFromJson(Map<String, dynamic> json) =>
-    _$MapLayerInputImpl(
+_MapLayerInput _$MapLayerInputFromJson(Map<String, dynamic> json) =>
+    _MapLayerInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       source: $enumDecodeNullable(_$MapSourceEnumMap, json['source'],
@@ -134,7 +132,7 @@ _$MapLayerInputImpl _$$MapLayerInputImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$MapLayerInputImplToJson(_$MapLayerInputImpl instance) =>
+Map<String, dynamic> _$MapLayerInputToJson(_MapLayerInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

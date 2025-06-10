@@ -1,7 +1,9 @@
 part of '../../ats.dart';
 
+@Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
 class AtsPurchaseOrderCategoriesEntityOrNullConverter
     implements JsonConverter<AtsPurchaseOrderCategoriesEntity?, String?> {
+  @Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
   const AtsPurchaseOrderCategoriesEntityOrNullConverter();
 
   @override

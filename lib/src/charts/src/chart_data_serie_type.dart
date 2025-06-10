@@ -1,5 +1,6 @@
 part of '../charts.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum ChartDataSerieType {
   /// Line chart
   @JsonValue('LINE')

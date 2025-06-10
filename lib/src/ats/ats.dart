@@ -2,6 +2,7 @@ library;
 
 import 'dart:ui';
 
+import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_models/layrz_models.dart';
 
@@ -69,3 +70,28 @@ part 'src/enums/purchase_order_status.dart';
 part 'src/enums/purchase_order_sub_categories.dart';
 part 'src/enums/cf_fuel_type.dart';
 part 'src/enums/reception_status.dart';
+
+// Manifests
+part 'src/manifest/kind.dart';
+part 'src/manifest/entity/manifest.dart';
+part 'src/manifest/input/manifest.dart';
+part 'src/manifest/entity/tank_measurement.dart';
+part 'src/manifest/input/tank_measurement.dart';
+
+// CACL
+part 'src/cacl/entity/cacl_entity.dart';
+part 'src/cacl/entity/cacl_equipment_entity.dart';
+part 'src/cacl/entity/measurements_entity.dart';
+part 'src/cacl/entity/results_entity.dart';
+part 'src/cacl/entity/measurement_entity.dart';
+part 'src/cacl/entity/measurement.dart';
+part 'src/cacl/entity/volume_moved_entity.dart';
+part 'src/cacl/entity/equipment_measurement_entity.dart';
+part 'src/cacl/input/cacl_input.dart';
+part 'src/cacl/input/cacl_equipment_input.dart';
+part 'src/cacl/input/measurements_input.dart';
+part 'src/cacl/input/results_input.dart';
+part 'src/cacl/input/measurement_input.dart';
+part 'src/cacl/input/measurement.dart';
+part 'src/cacl/input/volume_moved_input.dart';
+part 'src/cacl/input/equipment_measurement_input.dart';
