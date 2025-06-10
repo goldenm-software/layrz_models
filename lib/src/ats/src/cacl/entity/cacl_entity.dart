@@ -77,6 +77,9 @@ abstract class CaclEntity with _$CaclEntity {
     /// The [finishedAt] parameter is the finishedAt of the cacl entity.
     @TimestampOrNullConverter() DateTime? finishedAt,
 
+    /// The [createdAt] parameter is the createdAt of the cacl entity.
+    @TimestampOrNullConverter() DateTime? createdAt,
+
     /// The [operationId] parameter is the operationId of the cacl entity.
     String? operationId,
   }) = _CaclEntity;

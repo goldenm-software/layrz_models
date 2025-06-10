@@ -14,6 +14,8 @@ enum AtsPurchaseOrderStatus {
   readyToOperate,
   @JsonValue('UNLOADING_OPERATION')
   unloadingOperation,
+  @JsonValue('UNLOADING_FUEL')
+  unloadingFuel,
   @JsonValue('UNLOADING_FUEL_INTERRUPTED')
   unloadingFuelInterrupted,
   @JsonValue('DESTINATION_BERTH_EXIT')

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.8
+
+- Added `createdAt` to `CaclEntity` models
+- Fix `AtsPurchaseOrderStatus` missing `unloadingFuel` value
+
 ## 3.4.7
 
 - Added `CaclEntity` to `ats` models

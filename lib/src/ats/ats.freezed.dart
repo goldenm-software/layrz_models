@@ -15801,6 +15801,10 @@ mixin _$CaclEntity {
   @TimestampOrNullConverter()
   DateTime? get finishedAt;
 
+  /// The [createdAt] parameter is the createdAt of the cacl entity.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+
   /// The [operationId] parameter is the operationId of the cacl entity.
   String? get operationId;
 
@@ -15861,6 +15865,8 @@ mixin _$CaclEntity {
                 other.startedAt == startedAt) &&
             (identical(other.finishedAt, finishedAt) ||
                 other.finishedAt == finishedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.operationId, operationId) ||
                 other.operationId == operationId));
   }
@@ -15893,12 +15899,13 @@ mixin _$CaclEntity {
         observations,
         startedAt,
         finishedAt,
+        createdAt,
         operationId
       ]);
 
   @override
   String toString() {
-    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId)';
+    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId)';
   }
 }
 
@@ -15933,6 +15940,7 @@ abstract mixin class $CaclEntityCopyWith<$Res> {
       String? observations,
       @TimestampOrNullConverter() DateTime? startedAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
+      @TimestampOrNullConverter() DateTime? createdAt,
       String? operationId});
 
   $AssetCopyWith<$Res>? get asset;
@@ -15983,6 +15991,7 @@ class _$CaclEntityCopyWithImpl<$Res> implements $CaclEntityCopyWith<$Res> {
     Object? observations = freezed,
     Object? startedAt = freezed,
     Object? finishedAt = freezed,
+    Object? createdAt = freezed,
     Object? operationId = freezed,
   }) {
     return _then(_self.copyWith(
@@ -16081,6 +16090,10 @@ class _$CaclEntityCopyWithImpl<$Res> implements $CaclEntityCopyWith<$Res> {
       finishedAt: freezed == finishedAt
           ? _self.finishedAt
           : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       operationId: freezed == operationId
           ? _self.operationId
@@ -16258,6 +16271,7 @@ class _CaclEntity implements CaclEntity {
       this.observations,
       @TimestampOrNullConverter() this.startedAt,
       @TimestampOrNullConverter() this.finishedAt,
+      @TimestampOrNullConverter() this.createdAt,
       this.operationId});
   factory _CaclEntity.fromJson(Map<String, dynamic> json) =>
       _$CaclEntityFromJson(json);
@@ -16360,6 +16374,11 @@ class _CaclEntity implements CaclEntity {
   @TimestampOrNullConverter()
   final DateTime? finishedAt;
 
+  /// The [createdAt] parameter is the createdAt of the cacl entity.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? createdAt;
+
   /// The [operationId] parameter is the operationId of the cacl entity.
   @override
   final String? operationId;
@@ -16426,6 +16445,8 @@ class _CaclEntity implements CaclEntity {
                 other.startedAt == startedAt) &&
             (identical(other.finishedAt, finishedAt) ||
                 other.finishedAt == finishedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.operationId, operationId) ||
                 other.operationId == operationId));
   }
@@ -16458,12 +16479,13 @@ class _CaclEntity implements CaclEntity {
         observations,
         startedAt,
         finishedAt,
+        createdAt,
         operationId
       ]);
 
   @override
   String toString() {
-    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId)';
+    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId)';
   }
 }
 
@@ -16500,6 +16522,7 @@ abstract mixin class _$CaclEntityCopyWith<$Res>
       String? observations,
       @TimestampOrNullConverter() DateTime? startedAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
+      @TimestampOrNullConverter() DateTime? createdAt,
       String? operationId});
 
   @override
@@ -16560,6 +16583,7 @@ class __$CaclEntityCopyWithImpl<$Res> implements _$CaclEntityCopyWith<$Res> {
     Object? observations = freezed,
     Object? startedAt = freezed,
     Object? finishedAt = freezed,
+    Object? createdAt = freezed,
     Object? operationId = freezed,
   }) {
     return _then(_CaclEntity(
@@ -16658,6 +16682,10 @@ class __$CaclEntityCopyWithImpl<$Res> implements _$CaclEntityCopyWith<$Res> {
       finishedAt: freezed == finishedAt
           ? _self.finishedAt
           : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       operationId: freezed == operationId
           ? _self.operationId

@@ -1098,6 +1098,7 @@ const _$AtsPurchaseOrderStatusEnumMap = {
   AtsPurchaseOrderStatus.delivered: 'DELIVERED',
   AtsPurchaseOrderStatus.readyToOperate: 'READY_TO_OPERATE',
   AtsPurchaseOrderStatus.unloadingOperation: 'UNLOADING_OPERATION',
+  AtsPurchaseOrderStatus.unloadingFuel: 'UNLOADING_FUEL',
   AtsPurchaseOrderStatus.unloadingFuelInterrupted: 'UNLOADING_FUEL_INTERRUPTED',
   AtsPurchaseOrderStatus.destinationBerthExit: 'DESTINATION_BERTH_EXIT',
 };
@@ -1438,6 +1439,8 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
           const TimestampOrNullConverter().fromJson(json['startedAt'] as num?),
       finishedAt:
           const TimestampOrNullConverter().fromJson(json['finishedAt'] as num?),
+      createdAt:
+          const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
       operationId: json['operationId'] as String?,
     );
 
@@ -1468,6 +1471,7 @@ Map<String, dynamic> _$CaclEntityToJson(_CaclEntity instance) =>
       'startedAt': const TimestampOrNullConverter().toJson(instance.startedAt),
       'finishedAt':
           const TimestampOrNullConverter().toJson(instance.finishedAt),
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'operationId': instance.operationId,
     };
 
