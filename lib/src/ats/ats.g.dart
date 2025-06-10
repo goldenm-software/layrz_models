@@ -1098,7 +1098,8 @@ const _$AtsPurchaseOrderStatusEnumMap = {
   AtsPurchaseOrderStatus.delivered: 'DELIVERED',
   AtsPurchaseOrderStatus.readyToOperate: 'READY_TO_OPERATE',
   AtsPurchaseOrderStatus.unloadingOperation: 'UNLOADING_OPERATION',
-  AtsPurchaseOrderStatus.unloadingFuel: 'UNLOADING_FUEL',
+  AtsPurchaseOrderStatus.unloadingFuelInterrupted: 'UNLOADING_FUEL_INTERRUPTED',
+  AtsPurchaseOrderStatus.destinationBerthExit: 'DESTINATION_BERTH_EXIT',
 };
 
 _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
@@ -1151,8 +1152,11 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
               OperationProductInformation.fromJson(e as Map<String, dynamic>))
           .toList(),
       ctes: (json['ctes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      caclForms: (json['caclForms'] as List<dynamic>?)
+      caclFormsIds: (json['caclFormsIds'] as List<dynamic>?)
           ?.map((e) => e as String)
+          .toList(),
+      caclForms: (json['caclForms'] as List<dynamic>?)
+          ?.map((e) => CaclEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
       manifests: (json['manifests'] as List<dynamic>?)
           ?.map((e) => Manifest.fromJson(e as Map<String, dynamic>))
@@ -1188,7 +1192,8 @@ Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
       'productsInformation':
           instance.productsInformation?.map((e) => e.toJson()).toList(),
       'ctes': instance.ctes,
-      'caclForms': instance.caclForms,
+      'caclFormsIds': instance.caclFormsIds,
+      'caclForms': instance.caclForms?.map((e) => e.toJson()).toList(),
       'manifests': instance.manifests?.map((e) => e.toJson()).toList(),
       'history': instance.history?.map((e) => e.toJson()).toList(),
     };
@@ -1379,4 +1384,527 @@ Map<String, dynamic> _$TankMeasurementInputToJson(
       'temperature': instance.temperature,
       'volume': instance.volume,
       'fuelDensity': instance.fuelDensity,
+    };
+
+_CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
+      id: json['id'] as String?,
+      assetId: json['assetId'] as String?,
+      asset: json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      transportAssetId: json['transportAssetId'] as String?,
+      transportAsset: json['transportAsset'] == null
+          ? null
+          : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
+      transportUserId: json['transportUserId'] as String?,
+      transportUser: json['transportUser'] == null
+          ? null
+          : User.fromJson(json['transportUser'] as Map<String, dynamic>),
+      caclNumber: json['caclNumber'] as String?,
+      category: json['category'] as String?,
+      product: json['product'] as String?,
+      clientAssetId: json['clientAssetId'] as String?,
+      clientAsset: json['clientAsset'] == null
+          ? null
+          : Asset.fromJson(json['clientAsset'] as Map<String, dynamic>),
+      origin: json['origin'] as String?,
+      tankNumber: json['tankNumber'] as String?,
+      transport: json['transport'] as String?,
+      equipments: json['equipments'] == null
+          ? null
+          : CaclEquipmentEntity.fromJson(
+              json['equipments'] as Map<String, dynamic>),
+      measurements: json['measurements'] == null
+          ? null
+          : MeasurementsEntity.fromJson(
+              json['measurements'] as Map<String, dynamic>),
+      results: json['results'] == null
+          ? null
+          : ResultsEntity.fromJson(json['results'] as Map<String, dynamic>),
+      measurer01: json['measurer01'] == null
+          ? null
+          : CaclMeasurementOutput.fromJson(
+              json['measurer01'] as Map<String, dynamic>),
+      measurer02: json['measurer02'] == null
+          ? null
+          : CaclMeasurementOutput.fromJson(
+              json['measurer02'] as Map<String, dynamic>),
+      volumeMoved: json['volumeMoved'] == null
+          ? null
+          : VolumeMovedEntity.fromJson(
+              json['volumeMoved'] as Map<String, dynamic>),
+      observations: json['observations'] as String?,
+      startedAt:
+          const TimestampOrNullConverter().fromJson(json['startedAt'] as num?),
+      finishedAt:
+          const TimestampOrNullConverter().fromJson(json['finishedAt'] as num?),
+      operationId: json['operationId'] as String?,
+    );
+
+Map<String, dynamic> _$CaclEntityToJson(_CaclEntity instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'asset': instance.asset?.toJson(),
+      'transportAssetId': instance.transportAssetId,
+      'transportAsset': instance.transportAsset?.toJson(),
+      'transportUserId': instance.transportUserId,
+      'transportUser': instance.transportUser?.toJson(),
+      'caclNumber': instance.caclNumber,
+      'category': instance.category,
+      'product': instance.product,
+      'clientAssetId': instance.clientAssetId,
+      'clientAsset': instance.clientAsset?.toJson(),
+      'origin': instance.origin,
+      'tankNumber': instance.tankNumber,
+      'transport': instance.transport,
+      'equipments': instance.equipments?.toJson(),
+      'measurements': instance.measurements?.toJson(),
+      'results': instance.results?.toJson(),
+      'measurer01': instance.measurer01?.toJson(),
+      'measurer02': instance.measurer02?.toJson(),
+      'volumeMoved': instance.volumeMoved?.toJson(),
+      'observations': instance.observations,
+      'startedAt': const TimestampOrNullConverter().toJson(instance.startedAt),
+      'finishedAt':
+          const TimestampOrNullConverter().toJson(instance.finishedAt),
+      'operationId': instance.operationId,
+    };
+
+_CaclEquipmentEntity _$CaclEquipmentEntityFromJson(Map<String, dynamic> json) =>
+    _CaclEquipmentEntity(
+      measuringTape: json['measuringTape'] == null
+          ? null
+          : EquipmentMeasurementEntity.fromJson(
+              json['measuringTape'] as Map<String, dynamic>),
+      densimeter: json['densimeter'] == null
+          ? null
+          : EquipmentMeasurementEntity.fromJson(
+              json['densimeter'] as Map<String, dynamic>),
+      thermometer: json['thermometer'] == null
+          ? null
+          : EquipmentMeasurementEntity.fromJson(
+              json['thermometer'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$CaclEquipmentEntityToJson(
+        _CaclEquipmentEntity instance) =>
+    <String, dynamic>{
+      'measuringTape': instance.measuringTape?.toJson(),
+      'densimeter': instance.densimeter?.toJson(),
+      'thermometer': instance.thermometer?.toJson(),
+    };
+
+_MeasurementsEntity _$MeasurementsEntityFromJson(Map<String, dynamic> json) =>
+    _MeasurementsEntity(
+      referenceHeight: json['referenceHeight'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['referenceHeight'] as Map<String, dynamic>),
+      productLevelHeight: json['productLevelHeight'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['productLevelHeight'] as Map<String, dynamic>),
+      correctedLevelHeight: json['correctedLevelHeight'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['correctedLevelHeight'] as Map<String, dynamic>),
+      waterHeight: json['waterHeight'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['waterHeight'] as Map<String, dynamic>),
+      ambientLineVolume: json['ambientLineVolume'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['ambientLineVolume'] as Map<String, dynamic>),
+      ambientDensity: json['ambientDensity'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['ambientDensity'] as Map<String, dynamic>),
+      ambientTemperature: json['ambientTemperature'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['ambientTemperature'] as Map<String, dynamic>),
+      averageTankTemperature: json['averageTankTemperature'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['averageTankTemperature'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$MeasurementsEntityToJson(_MeasurementsEntity instance) =>
+    <String, dynamic>{
+      'referenceHeight': instance.referenceHeight?.toJson(),
+      'productLevelHeight': instance.productLevelHeight?.toJson(),
+      'correctedLevelHeight': instance.correctedLevelHeight?.toJson(),
+      'waterHeight': instance.waterHeight?.toJson(),
+      'ambientLineVolume': instance.ambientLineVolume?.toJson(),
+      'ambientDensity': instance.ambientDensity?.toJson(),
+      'ambientTemperature': instance.ambientTemperature?.toJson(),
+      'averageTankTemperature': instance.averageTankTemperature?.toJson(),
+    };
+
+_ResultsEntity _$ResultsEntityFromJson(Map<String, dynamic> json) =>
+    _ResultsEntity(
+      environmentalTankVolume: json['environmentalTankVolume'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['environmentalTankVolume'] as Map<String, dynamic>),
+      waterVolume: json['waterVolume'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['waterVolume'] as Map<String, dynamic>),
+      ambientProductVolume: json['ambientProductVolume'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['ambientProductVolume'] as Map<String, dynamic>),
+      densityAt20: json['densityAt20'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['densityAt20'] as Map<String, dynamic>),
+      volumeCorrectionFactor: json['volumeCorrectionFactor'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['volumeCorrectionFactor'] as Map<String, dynamic>),
+      alcoholicContent: json['alcoholicContent'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['alcoholicContent'] as Map<String, dynamic>),
+      environmentalVolume: json['environmentalVolume'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['environmentalVolume'] as Map<String, dynamic>),
+      volumeAt20: json['volumeAt20'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['volumeAt20'] as Map<String, dynamic>),
+      kilogramsAt20: json['kilogramsAt20'] == null
+          ? null
+          : MeasurementEntity.fromJson(
+              json['kilogramsAt20'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$ResultsEntityToJson(_ResultsEntity instance) =>
+    <String, dynamic>{
+      'environmentalTankVolume': instance.environmentalTankVolume?.toJson(),
+      'waterVolume': instance.waterVolume?.toJson(),
+      'ambientProductVolume': instance.ambientProductVolume?.toJson(),
+      'densityAt20': instance.densityAt20?.toJson(),
+      'volumeCorrectionFactor': instance.volumeCorrectionFactor?.toJson(),
+      'alcoholicContent': instance.alcoholicContent?.toJson(),
+      'environmentalVolume': instance.environmentalVolume?.toJson(),
+      'volumeAt20': instance.volumeAt20?.toJson(),
+      'kilogramsAt20': instance.kilogramsAt20?.toJson(),
+    };
+
+_MeasurementEntity _$MeasurementEntityFromJson(Map<String, dynamic> json) =>
+    _MeasurementEntity(
+      start: (json['start'] as num?)?.toDouble(),
+      end: (json['end'] as num?)?.toDouble(),
+      differenceOrTotal: (json['differenceOrTotal'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$MeasurementEntityToJson(_MeasurementEntity instance) =>
+    <String, dynamic>{
+      'start': instance.start,
+      'end': instance.end,
+      'differenceOrTotal': instance.differenceOrTotal,
+    };
+
+_CaclMeasurementOutput _$CaclMeasurementOutputFromJson(
+        Map<String, dynamic> json) =>
+    _CaclMeasurementOutput(
+      start: (json['start'] as num?)?.toDouble(),
+      end: (json['end'] as num?)?.toDouble(),
+      differenceOrTotal: (json['differenceOrTotal'] as num?)?.toDouble(),
+      invoicedVolume: (json['invoicedVolume'] as num?)?.toInt(),
+      volumeAt20: (json['volumeAt20'] as num?)?.toInt(),
+      massAt20: (json['massAt20'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$CaclMeasurementOutputToJson(
+        _CaclMeasurementOutput instance) =>
+    <String, dynamic>{
+      'start': instance.start,
+      'end': instance.end,
+      'differenceOrTotal': instance.differenceOrTotal,
+      'invoicedVolume': instance.invoicedVolume,
+      'volumeAt20': instance.volumeAt20,
+      'massAt20': instance.massAt20,
+    };
+
+_VolumeMovedEntity _$VolumeMovedEntityFromJson(Map<String, dynamic> json) =>
+    _VolumeMovedEntity(
+      ambientVolume: (json['ambientVolume'] as num?)?.toDouble(),
+      volumeAt20: (json['volumeAt20'] as num?)?.toDouble(),
+      kilogramsAt20: (json['kilogramsAt20'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$VolumeMovedEntityToJson(_VolumeMovedEntity instance) =>
+    <String, dynamic>{
+      'ambientVolume': instance.ambientVolume,
+      'volumeAt20': instance.volumeAt20,
+      'kilogramsAt20': instance.kilogramsAt20,
+    };
+
+_EquipmentMeasurementEntity _$EquipmentMeasurementEntityFromJson(
+        Map<String, dynamic> json) =>
+    _EquipmentMeasurementEntity(
+      serialNumber: json['serialNumber'] as String?,
+    );
+
+Map<String, dynamic> _$EquipmentMeasurementEntityToJson(
+        _EquipmentMeasurementEntity instance) =>
+    <String, dynamic>{
+      'serialNumber': instance.serialNumber,
+    };
+
+_CaclInput _$CaclInputFromJson(Map<String, dynamic> json) => _CaclInput(
+      id: json['id'] as String?,
+      assetId: json['assetId'] as String?,
+      transportAssetId: json['transportAssetId'] as String?,
+      transportUserId: json['transportUserId'] as String?,
+      caclNumber: json['caclNumber'] as String?,
+      category: json['category'] as String?,
+      product: json['product'] as String?,
+      clientAssetId: json['clientAssetId'] as String?,
+      tankNumber: json['tankNumber'] as String?,
+      transport: json['transport'] as String?,
+      equipments: json['equipments'] == null
+          ? null
+          : CaclEquipmentInput.fromJson(
+              json['equipments'] as Map<String, dynamic>),
+      measurements: json['measurements'] == null
+          ? null
+          : MeasurementsInput.fromJson(
+              json['measurements'] as Map<String, dynamic>),
+      results: json['results'] == null
+          ? null
+          : ResultsInput.fromJson(json['results'] as Map<String, dynamic>),
+      measurer01: json['measurer01'] == null
+          ? null
+          : CaclMeasurement.fromJson(
+              json['measurer01'] as Map<String, dynamic>),
+      measurer02: json['measurer02'] == null
+          ? null
+          : CaclMeasurement.fromJson(
+              json['measurer02'] as Map<String, dynamic>),
+      volumeMoved: json['volumeMoved'] == null
+          ? null
+          : VolumeMovedInput.fromJson(
+              json['volumeMoved'] as Map<String, dynamic>),
+      observations: json['observations'] as String?,
+      startedAt:
+          const TimestampOrNullConverter().fromJson(json['startedAt'] as num?),
+      finishedAt:
+          const TimestampOrNullConverter().fromJson(json['finishedAt'] as num?),
+      operationId: json['operationId'] as String?,
+    );
+
+Map<String, dynamic> _$CaclInputToJson(_CaclInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'transportAssetId': instance.transportAssetId,
+      'transportUserId': instance.transportUserId,
+      'caclNumber': instance.caclNumber,
+      'category': instance.category,
+      'product': instance.product,
+      'clientAssetId': instance.clientAssetId,
+      'tankNumber': instance.tankNumber,
+      'transport': instance.transport,
+      'equipments': instance.equipments?.toJson(),
+      'measurements': instance.measurements?.toJson(),
+      'results': instance.results?.toJson(),
+      'measurer01': instance.measurer01?.toJson(),
+      'measurer02': instance.measurer02?.toJson(),
+      'volumeMoved': instance.volumeMoved?.toJson(),
+      'observations': instance.observations,
+      'startedAt': const TimestampOrNullConverter().toJson(instance.startedAt),
+      'finishedAt':
+          const TimestampOrNullConverter().toJson(instance.finishedAt),
+      'operationId': instance.operationId,
+    };
+
+_CaclEquipmentInput _$CaclEquipmentInputFromJson(Map<String, dynamic> json) =>
+    _CaclEquipmentInput(
+      measuringTape: json['measuringTape'] == null
+          ? null
+          : EquipmentMeasurementInput.fromJson(
+              json['measuringTape'] as Map<String, dynamic>),
+      densimeter: json['densimeter'] == null
+          ? null
+          : EquipmentMeasurementInput.fromJson(
+              json['densimeter'] as Map<String, dynamic>),
+      thermometer: json['thermometer'] == null
+          ? null
+          : EquipmentMeasurementInput.fromJson(
+              json['thermometer'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$CaclEquipmentInputToJson(_CaclEquipmentInput instance) =>
+    <String, dynamic>{
+      'measuringTape': instance.measuringTape?.toJson(),
+      'densimeter': instance.densimeter?.toJson(),
+      'thermometer': instance.thermometer?.toJson(),
+    };
+
+_MeasurementsInput _$MeasurementsInputFromJson(Map<String, dynamic> json) =>
+    _MeasurementsInput(
+      referenceHeight: json['referenceHeight'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['referenceHeight'] as Map<String, dynamic>),
+      productLevelHeight: json['productLevelHeight'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['productLevelHeight'] as Map<String, dynamic>),
+      correctedLevelHeight: json['correctedLevelHeight'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['correctedLevelHeight'] as Map<String, dynamic>),
+      waterHeight: json['waterHeight'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['waterHeight'] as Map<String, dynamic>),
+      ambientLineVolume: json['ambientLineVolume'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['ambientLineVolume'] as Map<String, dynamic>),
+      ambientDensity: json['ambientDensity'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['ambientDensity'] as Map<String, dynamic>),
+      ambientTemperature: json['ambientTemperature'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['ambientTemperature'] as Map<String, dynamic>),
+      averageTankTemperature: json['averageTankTemperature'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['averageTankTemperature'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$MeasurementsInputToJson(_MeasurementsInput instance) =>
+    <String, dynamic>{
+      'referenceHeight': instance.referenceHeight?.toJson(),
+      'productLevelHeight': instance.productLevelHeight?.toJson(),
+      'correctedLevelHeight': instance.correctedLevelHeight?.toJson(),
+      'waterHeight': instance.waterHeight?.toJson(),
+      'ambientLineVolume': instance.ambientLineVolume?.toJson(),
+      'ambientDensity': instance.ambientDensity?.toJson(),
+      'ambientTemperature': instance.ambientTemperature?.toJson(),
+      'averageTankTemperature': instance.averageTankTemperature?.toJson(),
+    };
+
+_ResultsInput _$ResultsInputFromJson(Map<String, dynamic> json) =>
+    _ResultsInput(
+      environmentalTankVolume: json['environmentalTankVolume'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['environmentalTankVolume'] as Map<String, dynamic>),
+      waterVolume: json['waterVolume'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['waterVolume'] as Map<String, dynamic>),
+      ambientProductVolume: json['ambientProductVolume'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['ambientProductVolume'] as Map<String, dynamic>),
+      densityAt20: json['densityAt20'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['densityAt20'] as Map<String, dynamic>),
+      volumeCorrectionFactor: json['volumeCorrectionFactor'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['volumeCorrectionFactor'] as Map<String, dynamic>),
+      alcoholicContent: json['alcoholicContent'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['alcoholicContent'] as Map<String, dynamic>),
+      environmentalVolume: json['environmentalVolume'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['environmentalVolume'] as Map<String, dynamic>),
+      volumeAt20: json['volumeAt20'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['volumeAt20'] as Map<String, dynamic>),
+      kilogramsAt20: json['kilogramsAt20'] == null
+          ? null
+          : MeasurementInput.fromJson(
+              json['kilogramsAt20'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$ResultsInputToJson(_ResultsInput instance) =>
+    <String, dynamic>{
+      'environmentalTankVolume': instance.environmentalTankVolume?.toJson(),
+      'waterVolume': instance.waterVolume?.toJson(),
+      'ambientProductVolume': instance.ambientProductVolume?.toJson(),
+      'densityAt20': instance.densityAt20?.toJson(),
+      'volumeCorrectionFactor': instance.volumeCorrectionFactor?.toJson(),
+      'alcoholicContent': instance.alcoholicContent?.toJson(),
+      'environmentalVolume': instance.environmentalVolume?.toJson(),
+      'volumeAt20': instance.volumeAt20?.toJson(),
+      'kilogramsAt20': instance.kilogramsAt20?.toJson(),
+    };
+
+_MeasurementInput _$MeasurementInputFromJson(Map<String, dynamic> json) =>
+    _MeasurementInput(
+      start: (json['start'] as num?)?.toDouble(),
+      end: (json['end'] as num?)?.toDouble(),
+      differenceOrTotal: (json['differenceOrTotal'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$MeasurementInputToJson(_MeasurementInput instance) =>
+    <String, dynamic>{
+      'start': instance.start,
+      'end': instance.end,
+      'differenceOrTotal': instance.differenceOrTotal,
+    };
+
+_CaclMeasurement _$CaclMeasurementFromJson(Map<String, dynamic> json) =>
+    _CaclMeasurement(
+      start: (json['start'] as num?)?.toDouble(),
+      end: (json['end'] as num?)?.toDouble(),
+      differenceOrTotal: (json['differenceOrTotal'] as num?)?.toDouble(),
+      invoicedVolume: (json['invoicedVolume'] as num?)?.toInt(),
+      volumeAt20: (json['volumeAt20'] as num?)?.toInt(),
+      massAt20: (json['massAt20'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$CaclMeasurementToJson(_CaclMeasurement instance) =>
+    <String, dynamic>{
+      'start': instance.start,
+      'end': instance.end,
+      'differenceOrTotal': instance.differenceOrTotal,
+      'invoicedVolume': instance.invoicedVolume,
+      'volumeAt20': instance.volumeAt20,
+      'massAt20': instance.massAt20,
+    };
+
+_VolumeMovedInput _$VolumeMovedInputFromJson(Map<String, dynamic> json) =>
+    _VolumeMovedInput(
+      ambientVolume: (json['ambientVolume'] as num?)?.toDouble(),
+      volumeAt20: (json['volumeAt20'] as num?)?.toDouble(),
+      kilogramsAt20: (json['kilogramsAt20'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$VolumeMovedInputToJson(_VolumeMovedInput instance) =>
+    <String, dynamic>{
+      'ambientVolume': instance.ambientVolume,
+      'volumeAt20': instance.volumeAt20,
+      'kilogramsAt20': instance.kilogramsAt20,
+    };
+
+_EquipmentMeasurementInput _$EquipmentMeasurementInputFromJson(
+        Map<String, dynamic> json) =>
+    _EquipmentMeasurementInput(
+      serialNumber: json['serialNumber'] as String?,
+    );
+
+Map<String, dynamic> _$EquipmentMeasurementInputToJson(
+        _EquipmentMeasurementInput instance) =>
+    <String, dynamic>{
+      'serialNumber': instance.serialNumber,
     };

@@ -1,6 +1,28 @@
 # Changelog
 
+## 3.4.7
+
+- Added `CaclEntity` to `ats` models
+- Added `CaclEquipmentEntity` to `ats` models
+- Added `EquipmentMeasurementEntity` to `ats` models
+- Added `MeasurementEntity` to `ats` models
+- Added `CaclMeasurementOutput` to `ats` models
+- Added `MeasurementsEntity` to `ats` models
+- Added `ResultsEntity` to `ats` models
+- Added `VolumeMovedEntity` to `ats` models
+- Added `CaclEquipmentInput` to `ats` models
+- Added `CaclInput` to `ats` models
+- Added `EquipmentMeasurementInput` to `ats` models
+- Added `MeasurementInput` to `ats` models
+- Added `CaclMeasurement` to `ats` models
+- Added `MeasurementsInput` to `ats` models
+- Added `ResultsInput` to `ats` models
+- Added `VolumeMovedInput` to `ats` models
+- Added `unloadingFuelInterrupted` and `destinationBerthExit` values in `AtsPurchaseOrderStatus` enum
+- Updated `caclForms` and added `caclFormsIds` values in `AtsOperation` model
+
 ## 3.4.6
+
 - Added `triggerId` to `BrickhouseAlert` model
 
 ## 3.4.5

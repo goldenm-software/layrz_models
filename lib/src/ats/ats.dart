@@ -77,3 +77,21 @@ part 'src/manifest/entity/manifest.dart';
 part 'src/manifest/input/manifest.dart';
 part 'src/manifest/entity/tank_measurement.dart';
 part 'src/manifest/input/tank_measurement.dart';
+
+// CACL
+part 'src/cacl/entity/cacl_entity.dart';
+part 'src/cacl/entity/cacl_equipment_entity.dart';
+part 'src/cacl/entity/measurements_entity.dart';
+part 'src/cacl/entity/results_entity.dart';
+part 'src/cacl/entity/measurement_entity.dart';
+part 'src/cacl/entity/measurement.dart';
+part 'src/cacl/entity/volume_moved_entity.dart';
+part 'src/cacl/entity/equipment_measurement_entity.dart';
+part 'src/cacl/input/cacl_input.dart';
+part 'src/cacl/input/cacl_equipment_input.dart';
+part 'src/cacl/input/measurements_input.dart';
+part 'src/cacl/input/results_input.dart';
+part 'src/cacl/input/measurement_input.dart';
+part 'src/cacl/input/measurement.dart';
+part 'src/cacl/input/volume_moved_input.dart';
+part 'src/cacl/input/equipment_measurement_input.dart';
