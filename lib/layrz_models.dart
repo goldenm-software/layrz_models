@@ -110,6 +110,7 @@ part 'src/token.dart';
 part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
 part 'src/weekdays.dart';
+part 'src/registered_logs.dart';
 
 // Helper enums
 enum LayrzListingFormat {
