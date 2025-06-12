@@ -18684,4 +18684,506 @@ class __$ConciergeFormCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
+mixin _$RegisteredLogs {
+  /// Is the ID of the RegisteredLogs.
+  String? get id;
+
+  /// Is the user name of the RegisteredLogs.
+  String? get userName;
+
+  /// Is the app name of the RegisteredLogs.
+  String? get appName;
+
+  /// Is the list of rows in the RegisteredLogs.
+  List<RegisteredLogsRow> get rows;
+
+  /// platform of the RegisteredLogs.
+  String? get platform;
+
+  /// version of the RegisteredLogs.
+  String? get version;
+
+  /// createdAt of the RegisteredLogs.
+  @TimestampConverter()
+  DateTime get createdAt;
+
+  /// Create a copy of RegisteredLogs
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RegisteredLogsCopyWith<RegisteredLogs> get copyWith =>
+      _$RegisteredLogsCopyWithImpl<RegisteredLogs>(
+          this as RegisteredLogs, _$identity);
+
+  /// Serializes this RegisteredLogs to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RegisteredLogs &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.appName, appName) || other.appName == appName) &&
+            const DeepCollectionEquality().equals(other.rows, rows) &&
+            (identical(other.platform, platform) ||
+                other.platform == platform) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, userName, appName,
+      const DeepCollectionEquality().hash(rows), platform, version, createdAt);
+
+  @override
+  String toString() {
+    return 'RegisteredLogs(id: $id, userName: $userName, appName: $appName, rows: $rows, platform: $platform, version: $version, createdAt: $createdAt)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RegisteredLogsCopyWith<$Res> {
+  factory $RegisteredLogsCopyWith(
+          RegisteredLogs value, $Res Function(RegisteredLogs) _then) =
+      _$RegisteredLogsCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? userName,
+      String? appName,
+      List<RegisteredLogsRow> rows,
+      String? platform,
+      String? version,
+      @TimestampConverter() DateTime createdAt});
+}
+
+/// @nodoc
+class _$RegisteredLogsCopyWithImpl<$Res>
+    implements $RegisteredLogsCopyWith<$Res> {
+  _$RegisteredLogsCopyWithImpl(this._self, this._then);
+
+  final RegisteredLogs _self;
+  final $Res Function(RegisteredLogs) _then;
+
+  /// Create a copy of RegisteredLogs
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? userName = freezed,
+    Object? appName = freezed,
+    Object? rows = null,
+    Object? platform = freezed,
+    Object? version = freezed,
+    Object? createdAt = null,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userName: freezed == userName
+          ? _self.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      appName: freezed == appName
+          ? _self.appName
+          : appName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rows: null == rows
+          ? _self.rows
+          : rows // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredLogsRow>,
+      platform: freezed == platform
+          ? _self.platform
+          : platform // ignore: cast_nullable_to_non_nullable
+              as String?,
+      version: freezed == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _RegisteredLogs implements RegisteredLogs {
+  const _RegisteredLogs(
+      {this.id,
+      this.userName,
+      this.appName,
+      final List<RegisteredLogsRow> rows = const [],
+      this.platform,
+      this.version,
+      @TimestampConverter() required this.createdAt})
+      : _rows = rows;
+  factory _RegisteredLogs.fromJson(Map<String, dynamic> json) =>
+      _$RegisteredLogsFromJson(json);
+
+  /// Is the ID of the RegisteredLogs.
+  @override
+  final String? id;
+
+  /// Is the user name of the RegisteredLogs.
+  @override
+  final String? userName;
+
+  /// Is the app name of the RegisteredLogs.
+  @override
+  final String? appName;
+
+  /// Is the list of rows in the RegisteredLogs.
+  final List<RegisteredLogsRow> _rows;
+
+  /// Is the list of rows in the RegisteredLogs.
+  @override
+  @JsonKey()
+  List<RegisteredLogsRow> get rows {
+    if (_rows is EqualUnmodifiableListView) return _rows;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rows);
+  }
+
+  /// platform of the RegisteredLogs.
+  @override
+  final String? platform;
+
+  /// version of the RegisteredLogs.
+  @override
+  final String? version;
+
+  /// createdAt of the RegisteredLogs.
+  @override
+  @TimestampConverter()
+  final DateTime createdAt;
+
+  /// Create a copy of RegisteredLogs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RegisteredLogsCopyWith<_RegisteredLogs> get copyWith =>
+      __$RegisteredLogsCopyWithImpl<_RegisteredLogs>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RegisteredLogsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RegisteredLogs &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.appName, appName) || other.appName == appName) &&
+            const DeepCollectionEquality().equals(other._rows, _rows) &&
+            (identical(other.platform, platform) ||
+                other.platform == platform) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, userName, appName,
+      const DeepCollectionEquality().hash(_rows), platform, version, createdAt);
+
+  @override
+  String toString() {
+    return 'RegisteredLogs(id: $id, userName: $userName, appName: $appName, rows: $rows, platform: $platform, version: $version, createdAt: $createdAt)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RegisteredLogsCopyWith<$Res>
+    implements $RegisteredLogsCopyWith<$Res> {
+  factory _$RegisteredLogsCopyWith(
+          _RegisteredLogs value, $Res Function(_RegisteredLogs) _then) =
+      __$RegisteredLogsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? userName,
+      String? appName,
+      List<RegisteredLogsRow> rows,
+      String? platform,
+      String? version,
+      @TimestampConverter() DateTime createdAt});
+}
+
+/// @nodoc
+class __$RegisteredLogsCopyWithImpl<$Res>
+    implements _$RegisteredLogsCopyWith<$Res> {
+  __$RegisteredLogsCopyWithImpl(this._self, this._then);
+
+  final _RegisteredLogs _self;
+  final $Res Function(_RegisteredLogs) _then;
+
+  /// Create a copy of RegisteredLogs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? userName = freezed,
+    Object? appName = freezed,
+    Object? rows = null,
+    Object? platform = freezed,
+    Object? version = freezed,
+    Object? createdAt = null,
+  }) {
+    return _then(_RegisteredLogs(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userName: freezed == userName
+          ? _self.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      appName: freezed == appName
+          ? _self.appName
+          : appName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rows: null == rows
+          ? _self._rows
+          : rows // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredLogsRow>,
+      platform: freezed == platform
+          ? _self.platform
+          : platform // ignore: cast_nullable_to_non_nullable
+              as String?,
+      version: freezed == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$RegisteredLogsRow {
+  /// Timestamp of the log entry.
+  @TimestampConverter()
+  DateTime get timestamp;
+
+  /// Log message.
+  @JsonKey(unknownEnumValue: RegisteredLogLevel.unknown)
+  RegisteredLogLevel get level;
+
+  /// Log level.
+  String? get message;
+
+  /// Create a copy of RegisteredLogsRow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RegisteredLogsRowCopyWith<RegisteredLogsRow> get copyWith =>
+      _$RegisteredLogsRowCopyWithImpl<RegisteredLogsRow>(
+          this as RegisteredLogsRow, _$identity);
+
+  /// Serializes this RegisteredLogsRow to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RegisteredLogsRow &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
+            (identical(other.level, level) || other.level == level) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, timestamp, level, message);
+
+  @override
+  String toString() {
+    return 'RegisteredLogsRow(timestamp: $timestamp, level: $level, message: $message)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RegisteredLogsRowCopyWith<$Res> {
+  factory $RegisteredLogsRowCopyWith(
+          RegisteredLogsRow value, $Res Function(RegisteredLogsRow) _then) =
+      _$RegisteredLogsRowCopyWithImpl;
+  @useResult
+  $Res call(
+      {@TimestampConverter() DateTime timestamp,
+      @JsonKey(unknownEnumValue: RegisteredLogLevel.unknown)
+      RegisteredLogLevel level,
+      String? message});
+}
+
+/// @nodoc
+class _$RegisteredLogsRowCopyWithImpl<$Res>
+    implements $RegisteredLogsRowCopyWith<$Res> {
+  _$RegisteredLogsRowCopyWithImpl(this._self, this._then);
+
+  final RegisteredLogsRow _self;
+  final $Res Function(RegisteredLogsRow) _then;
+
+  /// Create a copy of RegisteredLogsRow
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? timestamp = null,
+    Object? level = null,
+    Object? message = freezed,
+  }) {
+    return _then(_self.copyWith(
+      timestamp: null == timestamp
+          ? _self.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as RegisteredLogLevel,
+      message: freezed == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _RegisteredLogsRow implements RegisteredLogsRow {
+  const _RegisteredLogsRow(
+      {@TimestampConverter() required this.timestamp,
+      @JsonKey(unknownEnumValue: RegisteredLogLevel.unknown)
+      this.level = RegisteredLogLevel.unknown,
+      this.message});
+  factory _RegisteredLogsRow.fromJson(Map<String, dynamic> json) =>
+      _$RegisteredLogsRowFromJson(json);
+
+  /// Timestamp of the log entry.
+  @override
+  @TimestampConverter()
+  final DateTime timestamp;
+
+  /// Log message.
+  @override
+  @JsonKey(unknownEnumValue: RegisteredLogLevel.unknown)
+  final RegisteredLogLevel level;
+
+  /// Log level.
+  @override
+  final String? message;
+
+  /// Create a copy of RegisteredLogsRow
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RegisteredLogsRowCopyWith<_RegisteredLogsRow> get copyWith =>
+      __$RegisteredLogsRowCopyWithImpl<_RegisteredLogsRow>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RegisteredLogsRowToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RegisteredLogsRow &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
+            (identical(other.level, level) || other.level == level) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, timestamp, level, message);
+
+  @override
+  String toString() {
+    return 'RegisteredLogsRow(timestamp: $timestamp, level: $level, message: $message)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RegisteredLogsRowCopyWith<$Res>
+    implements $RegisteredLogsRowCopyWith<$Res> {
+  factory _$RegisteredLogsRowCopyWith(
+          _RegisteredLogsRow value, $Res Function(_RegisteredLogsRow) _then) =
+      __$RegisteredLogsRowCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@TimestampConverter() DateTime timestamp,
+      @JsonKey(unknownEnumValue: RegisteredLogLevel.unknown)
+      RegisteredLogLevel level,
+      String? message});
+}
+
+/// @nodoc
+class __$RegisteredLogsRowCopyWithImpl<$Res>
+    implements _$RegisteredLogsRowCopyWith<$Res> {
+  __$RegisteredLogsRowCopyWithImpl(this._self, this._then);
+
+  final _RegisteredLogsRow _self;
+  final $Res Function(_RegisteredLogsRow) _then;
+
+  /// Create a copy of RegisteredLogsRow
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? timestamp = null,
+    Object? level = null,
+    Object? message = freezed,
+  }) {
+    return _then(_RegisteredLogsRow(
+      timestamp: null == timestamp
+          ? _self.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as RegisteredLogLevel,
+      message: freezed == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
 // dart format on

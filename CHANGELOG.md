@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.9
+-Added `RegisteredLogs`and `RegisteredLogsRow`models
+
 ## 3.4.8
 
 - Added `createdAt` to `CaclEntity` models

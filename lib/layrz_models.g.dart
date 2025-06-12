@@ -1681,6 +1681,57 @@ Map<String, dynamic> _$ConciergeFormToJson(_ConciergeForm instance) =>
       'name': instance.name,
     };
 
+_RegisteredLogs _$RegisteredLogsFromJson(Map<String, dynamic> json) =>
+    _RegisteredLogs(
+      id: json['id'] as String?,
+      userName: json['userName'] as String?,
+      appName: json['appName'] as String?,
+      rows: (json['rows'] as List<dynamic>?)
+              ?.map(
+                  (e) => RegisteredLogsRow.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      platform: json['platform'] as String?,
+      version: json['version'] as String?,
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+    );
+
+Map<String, dynamic> _$RegisteredLogsToJson(_RegisteredLogs instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'userName': instance.userName,
+      'appName': instance.appName,
+      'rows': instance.rows.map((e) => e.toJson()).toList(),
+      'platform': instance.platform,
+      'version': instance.version,
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
+    };
+
+_RegisteredLogsRow _$RegisteredLogsRowFromJson(Map<String, dynamic> json) =>
+    _RegisteredLogsRow(
+      timestamp: const TimestampConverter().fromJson(json['timestamp'] as num),
+      level: $enumDecodeNullable(_$RegisteredLogLevelEnumMap, json['level'],
+              unknownValue: RegisteredLogLevel.unknown) ??
+          RegisteredLogLevel.unknown,
+      message: json['message'] as String?,
+    );
+
+Map<String, dynamic> _$RegisteredLogsRowToJson(_RegisteredLogsRow instance) =>
+    <String, dynamic>{
+      'timestamp': const TimestampConverter().toJson(instance.timestamp),
+      'level': instance.level.toJson(),
+      'message': instance.message,
+    };
+
+const _$RegisteredLogLevelEnumMap = {
+  RegisteredLogLevel.debug: 'DEBUG',
+  RegisteredLogLevel.info: 'INFO',
+  RegisteredLogLevel.warning: 'WARNING',
+  RegisteredLogLevel.error: 'ERROR',
+  RegisteredLogLevel.critical: 'CRITICAL',
+  RegisteredLogLevel.unknown: 'UNKNOWN',
+};
+
 const _$WeekdayEnumMap = {
   Weekday.monday: 'MON',
   Weekday.tuesday: 'TUE',
