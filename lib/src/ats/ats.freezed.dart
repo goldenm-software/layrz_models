@@ -17734,9 +17734,6 @@ mixin _$ResultsEntity {
   /// The [waterVolume] parameter is the waterVolume of the results entity.
   MeasurementEntity? get waterVolume;
 
-  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results entity.
-  MeasurementEntity? get ambientProductVolume;
-
   /// The [densityAt20] parameter is the densityAt20 of the results entity.
   MeasurementEntity? get densityAt20;
 
@@ -17776,8 +17773,6 @@ mixin _$ResultsEntity {
                 other.environmentalTankVolume == environmentalTankVolume) &&
             (identical(other.waterVolume, waterVolume) ||
                 other.waterVolume == waterVolume) &&
-            (identical(other.ambientProductVolume, ambientProductVolume) ||
-                other.ambientProductVolume == ambientProductVolume) &&
             (identical(other.densityAt20, densityAt20) ||
                 other.densityAt20 == densityAt20) &&
             (identical(other.volumeCorrectionFactor, volumeCorrectionFactor) ||
@@ -17798,7 +17793,6 @@ mixin _$ResultsEntity {
       runtimeType,
       environmentalTankVolume,
       waterVolume,
-      ambientProductVolume,
       densityAt20,
       volumeCorrectionFactor,
       alcoholicContent,
@@ -17808,7 +17802,7 @@ mixin _$ResultsEntity {
 
   @override
   String toString() {
-    return 'ResultsEntity(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, ambientProductVolume: $ambientProductVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+    return 'ResultsEntity(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
   }
 }
 
@@ -17821,7 +17815,6 @@ abstract mixin class $ResultsEntityCopyWith<$Res> {
   $Res call(
       {MeasurementEntity? environmentalTankVolume,
       MeasurementEntity? waterVolume,
-      MeasurementEntity? ambientProductVolume,
       MeasurementEntity? densityAt20,
       MeasurementEntity? volumeCorrectionFactor,
       MeasurementEntity? alcoholicContent,
@@ -17831,7 +17824,6 @@ abstract mixin class $ResultsEntityCopyWith<$Res> {
 
   $MeasurementEntityCopyWith<$Res>? get environmentalTankVolume;
   $MeasurementEntityCopyWith<$Res>? get waterVolume;
-  $MeasurementEntityCopyWith<$Res>? get ambientProductVolume;
   $MeasurementEntityCopyWith<$Res>? get densityAt20;
   $MeasurementEntityCopyWith<$Res>? get volumeCorrectionFactor;
   $MeasurementEntityCopyWith<$Res>? get alcoholicContent;
@@ -17855,7 +17847,6 @@ class _$ResultsEntityCopyWithImpl<$Res>
   $Res call({
     Object? environmentalTankVolume = freezed,
     Object? waterVolume = freezed,
-    Object? ambientProductVolume = freezed,
     Object? densityAt20 = freezed,
     Object? volumeCorrectionFactor = freezed,
     Object? alcoholicContent = freezed,
@@ -17871,10 +17862,6 @@ class _$ResultsEntityCopyWithImpl<$Res>
       waterVolume: freezed == waterVolume
           ? _self.waterVolume
           : waterVolume // ignore: cast_nullable_to_non_nullable
-              as MeasurementEntity?,
-      ambientProductVolume: freezed == ambientProductVolume
-          ? _self.ambientProductVolume
-          : ambientProductVolume // ignore: cast_nullable_to_non_nullable
               as MeasurementEntity?,
       densityAt20: freezed == densityAt20
           ? _self.densityAt20
@@ -17929,21 +17916,6 @@ class _$ResultsEntityCopyWithImpl<$Res>
 
     return $MeasurementEntityCopyWith<$Res>(_self.waterVolume!, (value) {
       return _then(_self.copyWith(waterVolume: value));
-    });
-  }
-
-  /// Create a copy of ResultsEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $MeasurementEntityCopyWith<$Res>? get ambientProductVolume {
-    if (_self.ambientProductVolume == null) {
-      return null;
-    }
-
-    return $MeasurementEntityCopyWith<$Res>(_self.ambientProductVolume!,
-        (value) {
-      return _then(_self.copyWith(ambientProductVolume: value));
     });
   }
 
@@ -18040,7 +18012,6 @@ class _ResultsEntity implements ResultsEntity {
   _ResultsEntity(
       {this.environmentalTankVolume,
       this.waterVolume,
-      this.ambientProductVolume,
       this.densityAt20,
       this.volumeCorrectionFactor,
       this.alcoholicContent,
@@ -18057,10 +18028,6 @@ class _ResultsEntity implements ResultsEntity {
   /// The [waterVolume] parameter is the waterVolume of the results entity.
   @override
   final MeasurementEntity? waterVolume;
-
-  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results entity.
-  @override
-  final MeasurementEntity? ambientProductVolume;
 
   /// The [densityAt20] parameter is the densityAt20 of the results entity.
   @override
@@ -18111,8 +18078,6 @@ class _ResultsEntity implements ResultsEntity {
                 other.environmentalTankVolume == environmentalTankVolume) &&
             (identical(other.waterVolume, waterVolume) ||
                 other.waterVolume == waterVolume) &&
-            (identical(other.ambientProductVolume, ambientProductVolume) ||
-                other.ambientProductVolume == ambientProductVolume) &&
             (identical(other.densityAt20, densityAt20) ||
                 other.densityAt20 == densityAt20) &&
             (identical(other.volumeCorrectionFactor, volumeCorrectionFactor) ||
@@ -18133,7 +18098,6 @@ class _ResultsEntity implements ResultsEntity {
       runtimeType,
       environmentalTankVolume,
       waterVolume,
-      ambientProductVolume,
       densityAt20,
       volumeCorrectionFactor,
       alcoholicContent,
@@ -18143,7 +18107,7 @@ class _ResultsEntity implements ResultsEntity {
 
   @override
   String toString() {
-    return 'ResultsEntity(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, ambientProductVolume: $ambientProductVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+    return 'ResultsEntity(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
   }
 }
 
@@ -18158,7 +18122,6 @@ abstract mixin class _$ResultsEntityCopyWith<$Res>
   $Res call(
       {MeasurementEntity? environmentalTankVolume,
       MeasurementEntity? waterVolume,
-      MeasurementEntity? ambientProductVolume,
       MeasurementEntity? densityAt20,
       MeasurementEntity? volumeCorrectionFactor,
       MeasurementEntity? alcoholicContent,
@@ -18170,8 +18133,6 @@ abstract mixin class _$ResultsEntityCopyWith<$Res>
   $MeasurementEntityCopyWith<$Res>? get environmentalTankVolume;
   @override
   $MeasurementEntityCopyWith<$Res>? get waterVolume;
-  @override
-  $MeasurementEntityCopyWith<$Res>? get ambientProductVolume;
   @override
   $MeasurementEntityCopyWith<$Res>? get densityAt20;
   @override
@@ -18201,7 +18162,6 @@ class __$ResultsEntityCopyWithImpl<$Res>
   $Res call({
     Object? environmentalTankVolume = freezed,
     Object? waterVolume = freezed,
-    Object? ambientProductVolume = freezed,
     Object? densityAt20 = freezed,
     Object? volumeCorrectionFactor = freezed,
     Object? alcoholicContent = freezed,
@@ -18217,10 +18177,6 @@ class __$ResultsEntityCopyWithImpl<$Res>
       waterVolume: freezed == waterVolume
           ? _self.waterVolume
           : waterVolume // ignore: cast_nullable_to_non_nullable
-              as MeasurementEntity?,
-      ambientProductVolume: freezed == ambientProductVolume
-          ? _self.ambientProductVolume
-          : ambientProductVolume // ignore: cast_nullable_to_non_nullable
               as MeasurementEntity?,
       densityAt20: freezed == densityAt20
           ? _self.densityAt20
@@ -18275,21 +18231,6 @@ class __$ResultsEntityCopyWithImpl<$Res>
 
     return $MeasurementEntityCopyWith<$Res>(_self.waterVolume!, (value) {
       return _then(_self.copyWith(waterVolume: value));
-    });
-  }
-
-  /// Create a copy of ResultsEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $MeasurementEntityCopyWith<$Res>? get ambientProductVolume {
-    if (_self.ambientProductVolume == null) {
-      return null;
-    }
-
-    return $MeasurementEntityCopyWith<$Res>(_self.ambientProductVolume!,
-        (value) {
-      return _then(_self.copyWith(ambientProductVolume: value));
     });
   }
 
@@ -20761,12 +20702,6 @@ mixin _$ResultsInput {
   /// The [waterVolume] parameter is the waterVolume of the results input.
   set waterVolume(MeasurementInput? value);
 
-  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results input.
-  MeasurementInput? get ambientProductVolume;
-
-  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results input.
-  set ambientProductVolume(MeasurementInput? value);
-
   /// The [densityAt20] parameter is the densityAt20 of the results input.
   MeasurementInput? get densityAt20;
 
@@ -20816,7 +20751,7 @@ mixin _$ResultsInput {
 
   @override
   String toString() {
-    return 'ResultsInput(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, ambientProductVolume: $ambientProductVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+    return 'ResultsInput(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
   }
 }
 
@@ -20829,7 +20764,6 @@ abstract mixin class $ResultsInputCopyWith<$Res> {
   $Res call(
       {MeasurementInput? environmentalTankVolume,
       MeasurementInput? waterVolume,
-      MeasurementInput? ambientProductVolume,
       MeasurementInput? densityAt20,
       MeasurementInput? volumeCorrectionFactor,
       MeasurementInput? alcoholicContent,
@@ -20839,7 +20773,6 @@ abstract mixin class $ResultsInputCopyWith<$Res> {
 
   $MeasurementInputCopyWith<$Res>? get environmentalTankVolume;
   $MeasurementInputCopyWith<$Res>? get waterVolume;
-  $MeasurementInputCopyWith<$Res>? get ambientProductVolume;
   $MeasurementInputCopyWith<$Res>? get densityAt20;
   $MeasurementInputCopyWith<$Res>? get volumeCorrectionFactor;
   $MeasurementInputCopyWith<$Res>? get alcoholicContent;
@@ -20862,7 +20795,6 @@ class _$ResultsInputCopyWithImpl<$Res> implements $ResultsInputCopyWith<$Res> {
   $Res call({
     Object? environmentalTankVolume = freezed,
     Object? waterVolume = freezed,
-    Object? ambientProductVolume = freezed,
     Object? densityAt20 = freezed,
     Object? volumeCorrectionFactor = freezed,
     Object? alcoholicContent = freezed,
@@ -20878,10 +20810,6 @@ class _$ResultsInputCopyWithImpl<$Res> implements $ResultsInputCopyWith<$Res> {
       waterVolume: freezed == waterVolume
           ? _self.waterVolume
           : waterVolume // ignore: cast_nullable_to_non_nullable
-              as MeasurementInput?,
-      ambientProductVolume: freezed == ambientProductVolume
-          ? _self.ambientProductVolume
-          : ambientProductVolume // ignore: cast_nullable_to_non_nullable
               as MeasurementInput?,
       densityAt20: freezed == densityAt20
           ? _self.densityAt20
@@ -20936,21 +20864,6 @@ class _$ResultsInputCopyWithImpl<$Res> implements $ResultsInputCopyWith<$Res> {
 
     return $MeasurementInputCopyWith<$Res>(_self.waterVolume!, (value) {
       return _then(_self.copyWith(waterVolume: value));
-    });
-  }
-
-  /// Create a copy of ResultsInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $MeasurementInputCopyWith<$Res>? get ambientProductVolume {
-    if (_self.ambientProductVolume == null) {
-      return null;
-    }
-
-    return $MeasurementInputCopyWith<$Res>(_self.ambientProductVolume!,
-        (value) {
-      return _then(_self.copyWith(ambientProductVolume: value));
     });
   }
 
@@ -21046,7 +20959,6 @@ class _ResultsInput implements ResultsInput {
   _ResultsInput(
       {this.environmentalTankVolume,
       this.waterVolume,
-      this.ambientProductVolume,
       this.densityAt20,
       this.volumeCorrectionFactor,
       this.alcoholicContent,
@@ -21063,10 +20975,6 @@ class _ResultsInput implements ResultsInput {
   /// The [waterVolume] parameter is the waterVolume of the results input.
   @override
   MeasurementInput? waterVolume;
-
-  /// The [ambientProductVolume] parameter is the ambientProductVolume of the results input.
-  @override
-  MeasurementInput? ambientProductVolume;
 
   /// The [densityAt20] parameter is the densityAt20 of the results input.
   @override
@@ -21109,7 +21017,7 @@ class _ResultsInput implements ResultsInput {
 
   @override
   String toString() {
-    return 'ResultsInput(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, ambientProductVolume: $ambientProductVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
+    return 'ResultsInput(environmentalTankVolume: $environmentalTankVolume, waterVolume: $waterVolume, densityAt20: $densityAt20, volumeCorrectionFactor: $volumeCorrectionFactor, alcoholicContent: $alcoholicContent, environmentalVolume: $environmentalVolume, volumeAt20: $volumeAt20, kilogramsAt20: $kilogramsAt20)';
   }
 }
 
@@ -21124,7 +21032,6 @@ abstract mixin class _$ResultsInputCopyWith<$Res>
   $Res call(
       {MeasurementInput? environmentalTankVolume,
       MeasurementInput? waterVolume,
-      MeasurementInput? ambientProductVolume,
       MeasurementInput? densityAt20,
       MeasurementInput? volumeCorrectionFactor,
       MeasurementInput? alcoholicContent,
@@ -21136,8 +21043,6 @@ abstract mixin class _$ResultsInputCopyWith<$Res>
   $MeasurementInputCopyWith<$Res>? get environmentalTankVolume;
   @override
   $MeasurementInputCopyWith<$Res>? get waterVolume;
-  @override
-  $MeasurementInputCopyWith<$Res>? get ambientProductVolume;
   @override
   $MeasurementInputCopyWith<$Res>? get densityAt20;
   @override
@@ -21167,7 +21072,6 @@ class __$ResultsInputCopyWithImpl<$Res>
   $Res call({
     Object? environmentalTankVolume = freezed,
     Object? waterVolume = freezed,
-    Object? ambientProductVolume = freezed,
     Object? densityAt20 = freezed,
     Object? volumeCorrectionFactor = freezed,
     Object? alcoholicContent = freezed,
@@ -21183,10 +21087,6 @@ class __$ResultsInputCopyWithImpl<$Res>
       waterVolume: freezed == waterVolume
           ? _self.waterVolume
           : waterVolume // ignore: cast_nullable_to_non_nullable
-              as MeasurementInput?,
-      ambientProductVolume: freezed == ambientProductVolume
-          ? _self.ambientProductVolume
-          : ambientProductVolume // ignore: cast_nullable_to_non_nullable
               as MeasurementInput?,
       densityAt20: freezed == densityAt20
           ? _self.densityAt20
@@ -21241,21 +21141,6 @@ class __$ResultsInputCopyWithImpl<$Res>
 
     return $MeasurementInputCopyWith<$Res>(_self.waterVolume!, (value) {
       return _then(_self.copyWith(waterVolume: value));
-    });
-  }
-
-  /// Create a copy of ResultsInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $MeasurementInputCopyWith<$Res>? get ambientProductVolume {
-    if (_self.ambientProductVolume == null) {
-      return null;
-    }
-
-    return $MeasurementInputCopyWith<$Res>(_self.ambientProductVolume!,
-        (value) {
-      return _then(_self.copyWith(ambientProductVolume: value));
     });
   }
 

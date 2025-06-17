@@ -1557,10 +1557,6 @@ _ResultsEntity _$ResultsEntityFromJson(Map<String, dynamic> json) =>
           ? null
           : MeasurementEntity.fromJson(
               json['waterVolume'] as Map<String, dynamic>),
-      ambientProductVolume: json['ambientProductVolume'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['ambientProductVolume'] as Map<String, dynamic>),
       densityAt20: json['densityAt20'] == null
           ? null
           : MeasurementEntity.fromJson(
@@ -1591,7 +1587,6 @@ Map<String, dynamic> _$ResultsEntityToJson(_ResultsEntity instance) =>
     <String, dynamic>{
       'environmentalTankVolume': instance.environmentalTankVolume?.toJson(),
       'waterVolume': instance.waterVolume?.toJson(),
-      'ambientProductVolume': instance.ambientProductVolume?.toJson(),
       'densityAt20': instance.densityAt20?.toJson(),
       'volumeCorrectionFactor': instance.volumeCorrectionFactor?.toJson(),
       'alcoholicContent': instance.alcoholicContent?.toJson(),
@@ -1810,10 +1805,6 @@ _ResultsInput _$ResultsInputFromJson(Map<String, dynamic> json) =>
           ? null
           : MeasurementInput.fromJson(
               json['waterVolume'] as Map<String, dynamic>),
-      ambientProductVolume: json['ambientProductVolume'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['ambientProductVolume'] as Map<String, dynamic>),
       densityAt20: json['densityAt20'] == null
           ? null
           : MeasurementInput.fromJson(
@@ -1844,7 +1835,6 @@ Map<String, dynamic> _$ResultsInputToJson(_ResultsInput instance) =>
     <String, dynamic>{
       'environmentalTankVolume': instance.environmentalTankVolume?.toJson(),
       'waterVolume': instance.waterVolume?.toJson(),
-      'ambientProductVolume': instance.ambientProductVolume?.toJson(),
       'densityAt20': instance.densityAt20?.toJson(),
       'volumeCorrectionFactor': instance.volumeCorrectionFactor?.toJson(),
       'alcoholicContent': instance.alcoholicContent?.toJson(),

@@ -1,6 +1,11 @@
 # Changelog
 
+## 3.4.10
+
+- Removed `ambientProductVolume` from `ResultsInput` and `ResultsEntity` models
+
 ## 3.4.9
+
 -Added `RegisteredLogs`and `RegisteredLogsRow`models
 
 ## 3.4.8

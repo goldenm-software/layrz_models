@@ -11,9 +11,6 @@ abstract class ResultsInput with _$ResultsInput {
     /// The [waterVolume] parameter is the waterVolume of the results input.
     MeasurementInput? waterVolume,
 
-    /// The [ambientProductVolume] parameter is the ambientProductVolume of the results input.
-    MeasurementInput? ambientProductVolume,
-
     /// The [densityAt20] parameter is the densityAt20 of the results input.
     MeasurementInput? densityAt20,
 
@@ -36,6 +33,5 @@ abstract class ResultsInput with _$ResultsInput {
   /// Creates a new [ResultsInput] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory ResultsInput.fromJson(Map<String, dynamic> json) =>
-      _$ResultsInputFromJson(json);
+  factory ResultsInput.fromJson(Map<String, dynamic> json) => _$ResultsInputFromJson(json);
 }
