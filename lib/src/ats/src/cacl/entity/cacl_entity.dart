@@ -82,11 +82,16 @@ abstract class CaclEntity with _$CaclEntity {
 
     /// The [operationId] parameter is the operationId of the cacl entity.
     String? operationId,
+
+    /// [localDateStart] is the local date start of the cacl entity.
+    @TimestampOrNullConverter() DateTime? localDateStart,
+
+    /// [localDateEnd] is the local date end of the cacl entity.
+    @TimestampOrNullConverter() DateTime? localDateEnd,
   }) = _CaclEntity;
 
   /// Creates a new [CaclEntity] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory CaclEntity.fromJson(Map<String, dynamic> json) =>
-      _$CaclEntityFromJson(json);
+  factory CaclEntity.fromJson(Map<String, dynamic> json) => _$CaclEntityFromJson(json);
 }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.11
+
+- Added `createdAt` to `ManifestInput` model
+- Added `localDateStart` and `localDateEnd` to `CaclInput` and `CaclEntity` models
+
 ## 3.4.10
 
 - Removed `ambientProductVolume` from `ResultsInput` and `ResultsEntity` models

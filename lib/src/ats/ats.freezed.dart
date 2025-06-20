@@ -14907,6 +14907,14 @@ mixin _$ManifestInput {
   /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
   set tankMeasurements(List<TankMeasurementInput> value);
 
+  /// [createdAt] is the timestamp when the manifest was created.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+
+  /// [createdAt] is the timestamp when the manifest was created.
+  @TimestampOrNullConverter()
+  set createdAt(DateTime? value);
+
   /// Create a copy of ManifestInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -14920,7 +14928,7 @@ mixin _$ManifestInput {
 
   @override
   String toString() {
-    return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements)';
+    return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, createdAt: $createdAt)';
   }
 }
 
@@ -14936,7 +14944,8 @@ abstract mixin class $ManifestInputCopyWith<$Res> {
       String? operationId,
       double? trim,
       double? banda,
-      List<TankMeasurementInput> tankMeasurements});
+      List<TankMeasurementInput> tankMeasurements,
+      @TimestampOrNullConverter() DateTime? createdAt});
 }
 
 /// @nodoc
@@ -14958,6 +14967,7 @@ class _$ManifestInputCopyWithImpl<$Res>
     Object? trim = freezed,
     Object? banda = freezed,
     Object? tankMeasurements = null,
+    Object? createdAt = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -14984,6 +14994,10 @@ class _$ManifestInputCopyWithImpl<$Res>
           ? _self.tankMeasurements
           : tankMeasurements // ignore: cast_nullable_to_non_nullable
               as List<TankMeasurementInput>,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -14997,7 +15011,8 @@ class _ManifestInput extends ManifestInput {
       this.operationId,
       this.trim,
       this.banda,
-      this.tankMeasurements = const []})
+      this.tankMeasurements = const [],
+      @TimestampOrNullConverter() this.createdAt})
       : super._();
   factory _ManifestInput.fromJson(Map<String, dynamic> json) =>
       _$ManifestInputFromJson(json);
@@ -15027,6 +15042,11 @@ class _ManifestInput extends ManifestInput {
   @JsonKey()
   List<TankMeasurementInput> tankMeasurements;
 
+  /// [createdAt] is the timestamp when the manifest was created.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? createdAt;
+
   /// Create a copy of ManifestInput
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -15044,7 +15064,7 @@ class _ManifestInput extends ManifestInput {
 
   @override
   String toString() {
-    return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements)';
+    return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, createdAt: $createdAt)';
   }
 }
 
@@ -15062,7 +15082,8 @@ abstract mixin class _$ManifestInputCopyWith<$Res>
       String? operationId,
       double? trim,
       double? banda,
-      List<TankMeasurementInput> tankMeasurements});
+      List<TankMeasurementInput> tankMeasurements,
+      @TimestampOrNullConverter() DateTime? createdAt});
 }
 
 /// @nodoc
@@ -15084,6 +15105,7 @@ class __$ManifestInputCopyWithImpl<$Res>
     Object? trim = freezed,
     Object? banda = freezed,
     Object? tankMeasurements = null,
+    Object? createdAt = freezed,
   }) {
     return _then(_ManifestInput(
       id: freezed == id
@@ -15110,6 +15132,10 @@ class __$ManifestInputCopyWithImpl<$Res>
           ? _self.tankMeasurements
           : tankMeasurements // ignore: cast_nullable_to_non_nullable
               as List<TankMeasurementInput>,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -15808,6 +15834,14 @@ mixin _$CaclEntity {
   /// The [operationId] parameter is the operationId of the cacl entity.
   String? get operationId;
 
+  /// [localDateStart] is the local date start of the cacl entity.
+  @TimestampOrNullConverter()
+  DateTime? get localDateStart;
+
+  /// [localDateEnd] is the local date end of the cacl entity.
+  @TimestampOrNullConverter()
+  DateTime? get localDateEnd;
+
   /// Create a copy of CaclEntity
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -15868,7 +15902,11 @@ mixin _$CaclEntity {
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.operationId, operationId) ||
-                other.operationId == operationId));
+                other.operationId == operationId) &&
+            (identical(other.localDateStart, localDateStart) ||
+                other.localDateStart == localDateStart) &&
+            (identical(other.localDateEnd, localDateEnd) ||
+                other.localDateEnd == localDateEnd));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -15900,12 +15938,14 @@ mixin _$CaclEntity {
         startedAt,
         finishedAt,
         createdAt,
-        operationId
+        operationId,
+        localDateStart,
+        localDateEnd
       ]);
 
   @override
   String toString() {
-    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId)';
+    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd)';
   }
 }
 
@@ -15941,7 +15981,9 @@ abstract mixin class $CaclEntityCopyWith<$Res> {
       @TimestampOrNullConverter() DateTime? startedAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
-      String? operationId});
+      String? operationId,
+      @TimestampOrNullConverter() DateTime? localDateStart,
+      @TimestampOrNullConverter() DateTime? localDateEnd});
 
   $AssetCopyWith<$Res>? get asset;
   $AssetCopyWith<$Res>? get transportAsset;
@@ -15993,6 +16035,8 @@ class _$CaclEntityCopyWithImpl<$Res> implements $CaclEntityCopyWith<$Res> {
     Object? finishedAt = freezed,
     Object? createdAt = freezed,
     Object? operationId = freezed,
+    Object? localDateStart = freezed,
+    Object? localDateEnd = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -16099,6 +16143,14 @@ class _$CaclEntityCopyWithImpl<$Res> implements $CaclEntityCopyWith<$Res> {
           ? _self.operationId
           : operationId // ignore: cast_nullable_to_non_nullable
               as String?,
+      localDateStart: freezed == localDateStart
+          ? _self.localDateStart
+          : localDateStart // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      localDateEnd: freezed == localDateEnd
+          ? _self.localDateEnd
+          : localDateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 
@@ -16272,7 +16324,9 @@ class _CaclEntity implements CaclEntity {
       @TimestampOrNullConverter() this.startedAt,
       @TimestampOrNullConverter() this.finishedAt,
       @TimestampOrNullConverter() this.createdAt,
-      this.operationId});
+      this.operationId,
+      @TimestampOrNullConverter() this.localDateStart,
+      @TimestampOrNullConverter() this.localDateEnd});
   factory _CaclEntity.fromJson(Map<String, dynamic> json) =>
       _$CaclEntityFromJson(json);
 
@@ -16383,6 +16437,16 @@ class _CaclEntity implements CaclEntity {
   @override
   final String? operationId;
 
+  /// [localDateStart] is the local date start of the cacl entity.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? localDateStart;
+
+  /// [localDateEnd] is the local date end of the cacl entity.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? localDateEnd;
+
   /// Create a copy of CaclEntity
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -16448,7 +16512,11 @@ class _CaclEntity implements CaclEntity {
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.operationId, operationId) ||
-                other.operationId == operationId));
+                other.operationId == operationId) &&
+            (identical(other.localDateStart, localDateStart) ||
+                other.localDateStart == localDateStart) &&
+            (identical(other.localDateEnd, localDateEnd) ||
+                other.localDateEnd == localDateEnd));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -16480,12 +16548,14 @@ class _CaclEntity implements CaclEntity {
         startedAt,
         finishedAt,
         createdAt,
-        operationId
+        operationId,
+        localDateStart,
+        localDateEnd
       ]);
 
   @override
   String toString() {
-    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId)';
+    return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd)';
   }
 }
 
@@ -16523,7 +16593,9 @@ abstract mixin class _$CaclEntityCopyWith<$Res>
       @TimestampOrNullConverter() DateTime? startedAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
-      String? operationId});
+      String? operationId,
+      @TimestampOrNullConverter() DateTime? localDateStart,
+      @TimestampOrNullConverter() DateTime? localDateEnd});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -16585,6 +16657,8 @@ class __$CaclEntityCopyWithImpl<$Res> implements _$CaclEntityCopyWith<$Res> {
     Object? finishedAt = freezed,
     Object? createdAt = freezed,
     Object? operationId = freezed,
+    Object? localDateStart = freezed,
+    Object? localDateEnd = freezed,
   }) {
     return _then(_CaclEntity(
       id: freezed == id
@@ -16691,6 +16765,14 @@ class __$CaclEntityCopyWithImpl<$Res> implements _$CaclEntityCopyWith<$Res> {
           ? _self.operationId
           : operationId // ignore: cast_nullable_to_non_nullable
               as String?,
+      localDateStart: freezed == localDateStart
+          ? _self.localDateStart
+          : localDateStart // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      localDateEnd: freezed == localDateEnd
+          ? _self.localDateEnd
+          : localDateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 
@@ -19246,6 +19328,22 @@ mixin _$CaclInput {
   /// The [operationId] parameter is the operationId of the cacl entity.
   set operationId(String? value);
 
+  /// [localDateStart] is the local date start of the cacl input.
+  @TimestampOrNullConverter()
+  DateTime? get localDateStart;
+
+  /// [localDateStart] is the local date start of the cacl input.
+  @TimestampOrNullConverter()
+  set localDateStart(DateTime? value);
+
+  /// [localDateEnd] is the local date end of the cacl input.
+  @TimestampOrNullConverter()
+  DateTime? get localDateEnd;
+
+  /// [localDateEnd] is the local date end of the cacl input.
+  @TimestampOrNullConverter()
+  set localDateEnd(DateTime? value);
+
   /// Create a copy of CaclInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -19258,7 +19356,7 @@ mixin _$CaclInput {
 
   @override
   String toString() {
-    return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId)';
+    return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd)';
   }
 }
 
@@ -19287,7 +19385,9 @@ abstract mixin class $CaclInputCopyWith<$Res> {
       String? observations,
       @TimestampOrNullConverter() DateTime? startedAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
-      String? operationId});
+      String? operationId,
+      @TimestampOrNullConverter() DateTime? localDateStart,
+      @TimestampOrNullConverter() DateTime? localDateEnd});
 
   $CaclEquipmentInputCopyWith<$Res>? get equipments;
   $MeasurementsInputCopyWith<$Res>? get measurements;
@@ -19329,6 +19429,8 @@ class _$CaclInputCopyWithImpl<$Res> implements $CaclInputCopyWith<$Res> {
     Object? startedAt = freezed,
     Object? finishedAt = freezed,
     Object? operationId = freezed,
+    Object? localDateStart = freezed,
+    Object? localDateEnd = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -19411,6 +19513,14 @@ class _$CaclInputCopyWithImpl<$Res> implements $CaclInputCopyWith<$Res> {
           ? _self.operationId
           : operationId // ignore: cast_nullable_to_non_nullable
               as String?,
+      localDateStart: freezed == localDateStart
+          ? _self.localDateStart
+          : localDateStart // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      localDateEnd: freezed == localDateEnd
+          ? _self.localDateEnd
+          : localDateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 
@@ -19522,7 +19632,9 @@ class _CaclInput implements CaclInput {
       this.observations,
       @TimestampOrNullConverter() this.startedAt,
       @TimestampOrNullConverter() this.finishedAt,
-      this.operationId});
+      this.operationId,
+      @TimestampOrNullConverter() this.localDateStart,
+      @TimestampOrNullConverter() this.localDateEnd});
   factory _CaclInput.fromJson(Map<String, dynamic> json) =>
       _$CaclInputFromJson(json);
 
@@ -19608,6 +19720,16 @@ class _CaclInput implements CaclInput {
   @override
   String? operationId;
 
+  /// [localDateStart] is the local date start of the cacl input.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? localDateStart;
+
+  /// [localDateEnd] is the local date end of the cacl input.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? localDateEnd;
+
   /// Create a copy of CaclInput
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -19625,7 +19747,7 @@ class _CaclInput implements CaclInput {
 
   @override
   String toString() {
-    return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId)';
+    return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd)';
   }
 }
 
@@ -19657,7 +19779,9 @@ abstract mixin class _$CaclInputCopyWith<$Res>
       String? observations,
       @TimestampOrNullConverter() DateTime? startedAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
-      String? operationId});
+      String? operationId,
+      @TimestampOrNullConverter() DateTime? localDateStart,
+      @TimestampOrNullConverter() DateTime? localDateEnd});
 
   @override
   $CaclEquipmentInputCopyWith<$Res>? get equipments;
@@ -19705,6 +19829,8 @@ class __$CaclInputCopyWithImpl<$Res> implements _$CaclInputCopyWith<$Res> {
     Object? startedAt = freezed,
     Object? finishedAt = freezed,
     Object? operationId = freezed,
+    Object? localDateStart = freezed,
+    Object? localDateEnd = freezed,
   }) {
     return _then(_CaclInput(
       id: freezed == id
@@ -19787,6 +19913,14 @@ class __$CaclInputCopyWithImpl<$Res> implements _$CaclInputCopyWith<$Res> {
           ? _self.operationId
           : operationId // ignore: cast_nullable_to_non_nullable
               as String?,
+      localDateStart: freezed == localDateStart
+          ? _self.localDateStart
+          : localDateStart // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      localDateEnd: freezed == localDateEnd
+          ? _self.localDateEnd
+          : localDateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 
