@@ -64,11 +64,16 @@ abstract class CaclInput with _$CaclInput {
 
     /// The [operationId] parameter is the operationId of the cacl entity.
     String? operationId,
+
+    /// [localDateStart] is the local date start of the cacl input.
+    @TimestampOrNullConverter() DateTime? localDateStart,
+
+    /// [localDateEnd] is the local date end of the cacl input.
+    @TimestampOrNullConverter() DateTime? localDateEnd,
   }) = _CaclInput;
 
   /// Creates a new [CaclInput] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory CaclInput.fromJson(Map<String, dynamic> json) =>
-      _$CaclInputFromJson(json);
+  factory CaclInput.fromJson(Map<String, dynamic> json) => _$CaclInputFromJson(json);
 }

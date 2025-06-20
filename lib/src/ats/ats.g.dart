@@ -1326,6 +1326,8 @@ _ManifestInput _$ManifestInputFromJson(Map<String, dynamic> json) =>
                   TankMeasurementInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      createdAt:
+          const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
     );
 
 Map<String, dynamic> _$ManifestInputToJson(_ManifestInput instance) =>
@@ -1337,6 +1339,7 @@ Map<String, dynamic> _$ManifestInputToJson(_ManifestInput instance) =>
       'banda': instance.banda,
       'tankMeasurements':
           instance.tankMeasurements.map((e) => e.toJson()).toList(),
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
     };
 
 _TankMeasurement _$TankMeasurementFromJson(Map<String, dynamic> json) =>
@@ -1442,6 +1445,10 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
       createdAt:
           const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
       operationId: json['operationId'] as String?,
+      localDateStart: const TimestampOrNullConverter()
+          .fromJson(json['localDateStart'] as num?),
+      localDateEnd: const TimestampOrNullConverter()
+          .fromJson(json['localDateEnd'] as num?),
     );
 
 Map<String, dynamic> _$CaclEntityToJson(_CaclEntity instance) =>
@@ -1473,6 +1480,10 @@ Map<String, dynamic> _$CaclEntityToJson(_CaclEntity instance) =>
           const TimestampOrNullConverter().toJson(instance.finishedAt),
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'operationId': instance.operationId,
+      'localDateStart':
+          const TimestampOrNullConverter().toJson(instance.localDateStart),
+      'localDateEnd':
+          const TimestampOrNullConverter().toJson(instance.localDateEnd),
     };
 
 _CaclEquipmentEntity _$CaclEquipmentEntityFromJson(Map<String, dynamic> json) =>
@@ -1697,6 +1708,10 @@ _CaclInput _$CaclInputFromJson(Map<String, dynamic> json) => _CaclInput(
       finishedAt:
           const TimestampOrNullConverter().fromJson(json['finishedAt'] as num?),
       operationId: json['operationId'] as String?,
+      localDateStart: const TimestampOrNullConverter()
+          .fromJson(json['localDateStart'] as num?),
+      localDateEnd: const TimestampOrNullConverter()
+          .fromJson(json['localDateEnd'] as num?),
     );
 
 Map<String, dynamic> _$CaclInputToJson(_CaclInput instance) =>
@@ -1722,6 +1737,10 @@ Map<String, dynamic> _$CaclInputToJson(_CaclInput instance) =>
       'finishedAt':
           const TimestampOrNullConverter().toJson(instance.finishedAt),
       'operationId': instance.operationId,
+      'localDateStart':
+          const TimestampOrNullConverter().toJson(instance.localDateStart),
+      'localDateEnd':
+          const TimestampOrNullConverter().toJson(instance.localDateEnd),
     };
 
 _CaclEquipmentInput _$CaclEquipmentInputFromJson(Map<String, dynamic> json) =>
