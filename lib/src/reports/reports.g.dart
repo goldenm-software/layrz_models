@@ -278,3 +278,132 @@ Map<String, dynamic> _$ReportTemplatePageInputToJson(
       'cols': instance.cols.map((e) => e.toJson()).toList(),
       'script': instance.script,
     };
+
+_ReportScheduler _$ReportSchedulerFromJson(Map<String, dynamic> json) =>
+    _ReportScheduler(
+      id: json['id'] as String,
+      ownerId: json['ownerId'] as String?,
+      assetIds: (json['assetIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      outboundServiceIds: (json['outboundServiceIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      templateCode: json['templateCode'] as String? ?? '',
+      templateId: json['templateId'] as String?,
+      relativeTime: $enumDecodeNullable(
+              _$RelativeChoicesEnumMap, json['relativeTime'],
+              unknownValue: RelativeChoices.unknown) ??
+          RelativeChoices.unknown,
+      sendTo: (json['sendTo'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      execWeekdays: (json['execWeekdays'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      execTime: const TimeOfDayOrNullConverter()
+          .fromJson(json['execTime'] as String?),
+      execTz: json['execTz'] as String? ?? 'UTC',
+      updatedAt: _$JsonConverterFromJson<num, DateTime>(
+          json['updatedAt'], const TimestampConverter().fromJson),
+      updatedById: json['updatedById'] as String?,
+      createdAt: _$JsonConverterFromJson<num, DateTime>(
+          json['createdAt'], const TimestampConverter().fromJson),
+      createdById: json['createdById'] as String?,
+    );
+
+Map<String, dynamic> _$ReportSchedulerToJson(_ReportScheduler instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ownerId': instance.ownerId,
+      'assetIds': instance.assetIds,
+      'outboundServiceIds': instance.outboundServiceIds,
+      'templateCode': instance.templateCode,
+      'templateId': instance.templateId,
+      'relativeTime': instance.relativeTime.toJson(),
+      'sendTo': instance.sendTo,
+      'execWeekdays': instance.execWeekdays,
+      'execTime': const TimeOfDayOrNullConverter().toJson(instance.execTime),
+      'execTz': instance.execTz,
+      'updatedAt': _$JsonConverterToJson<num, DateTime>(
+          instance.updatedAt, const TimestampConverter().toJson),
+      'updatedById': instance.updatedById,
+      'createdAt': _$JsonConverterToJson<num, DateTime>(
+          instance.createdAt, const TimestampConverter().toJson),
+      'createdById': instance.createdById,
+    };
+
+const _$RelativeChoicesEnumMap = {
+  RelativeChoices.yesterday: 'YESTERDAY',
+  RelativeChoices.last24Hours: 'LAST_24_HOURS',
+  RelativeChoices.last48Hours: 'LAST_48_HOURS',
+  RelativeChoices.last7Days: 'LAST_7_DAYS',
+  RelativeChoices.last30Days: 'LAST_30_DAYS',
+  RelativeChoices.unknown: 'UNKNOWN',
+};
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
+
+_ReportSchedulerInput _$ReportSchedulerInputFromJson(
+        Map<String, dynamic> json) =>
+    _ReportSchedulerInput(
+      id: json['id'] as String?,
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      templateCode: json['templateCode'] as String?,
+      templateId: json['templateId'] as String?,
+      relativeTime: $enumDecodeNullable(
+              _$RelativeChoicesEnumMap, json['relativeTime'],
+              unknownValue: RelativeChoices.unknown) ??
+          RelativeChoices.unknown,
+      sendTo: (json['sendTo'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      execWeekdays: (json['execWeekdays'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      execTime: const TimeOfDayOrNullConverter()
+          .fromJson(json['execTime'] as String?),
+      execTz: json['execTz'] as String? ?? 'UTC',
+      enabled: json['enabled'] as bool? ?? true,
+      subject: json['subject'] as String?,
+    );
+
+Map<String, dynamic> _$ReportSchedulerInputToJson(
+        _ReportSchedulerInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetsIds': instance.assetsIds,
+      'outboundServicesIds': instance.outboundServicesIds,
+      'templateCode': instance.templateCode,
+      'templateId': instance.templateId,
+      'relativeTime': instance.relativeTime.toJson(),
+      'sendTo': instance.sendTo,
+      'execWeekdays': instance.execWeekdays,
+      'execTime': const TimeOfDayOrNullConverter().toJson(instance.execTime),
+      'execTz': instance.execTz,
+      'enabled': instance.enabled,
+      'subject': instance.subject,
+    };

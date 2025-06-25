@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.12
+- Added `ReportScheduler` and `ReportSchedulerInput`
+
 ## 3.4.11
 
 - Added `createdAt` to `ManifestInput` model
