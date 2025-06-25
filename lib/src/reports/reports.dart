@@ -26,10 +26,12 @@ part 'src/legacy_converters.dart';
 part 'src/col.dart';
 part 'src/custom_report.dart';
 part 'src/page.dart';
+part 'src/reports_scheduler.dart';
 
 // Enums
 part 'src/enums/source.dart';
 part 'src/enums/algorithm.dart';
+part 'src/enums/relative_choices.dart';
 
 const Map<ReportTemplateSource, List<String>> kDefaultFieldsPerModule = {
   ReportTemplateSource.messages: [

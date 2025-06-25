@@ -2670,4 +2670,961 @@ class __$ReportTemplatePageInputCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
+mixin _$ReportScheduler {
+  /// ID of the report scheduler.
+  String get id;
+
+  /// Owner user of the report scheduler.
+  String? get ownerId;
+
+  /// List of asset IDs associated with the report scheduler.
+  List<String> get assetIds;
+
+  /// List of outbound service IDs associated with the report scheduler.
+  List<String> get outboundServiceIds;
+
+  /// Code of the report template used for this report scheduler.
+  String get templateCode;
+
+  /// ID of the report template used for this report scheduler.
+  String? get templateId;
+
+  /// Relative time for the report, used to determine the time range for the report.
+  @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+  RelativeChoices get relativeTime;
+
+  /// List of emails to which the report should be sent.
+  List<String> get sendTo;
+
+  /// Days of the week when the report should be executed.
+  List<String> get execWeekdays;
+
+  /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get execTime;
+
+  /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
+  String get execTz;
+
+  /// Date of last update.
+  @TimestampConverter()
+  DateTime? get updatedAt;
+
+  /// User who last updated the report scheduler.
+  String? get updatedById;
+
+  /// Date of creation.
+  @TimestampConverter()
+  DateTime? get createdAt;
+
+  /// User who created the report scheduler.
+  String? get createdById;
+
+  /// Create a copy of ReportScheduler
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReportSchedulerCopyWith<ReportScheduler> get copyWith =>
+      _$ReportSchedulerCopyWithImpl<ReportScheduler>(
+          this as ReportScheduler, _$identity);
+
+  /// Serializes this ReportScheduler to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ReportScheduler &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            const DeepCollectionEquality().equals(other.assetIds, assetIds) &&
+            const DeepCollectionEquality()
+                .equals(other.outboundServiceIds, outboundServiceIds) &&
+            (identical(other.templateCode, templateCode) ||
+                other.templateCode == templateCode) &&
+            (identical(other.templateId, templateId) ||
+                other.templateId == templateId) &&
+            (identical(other.relativeTime, relativeTime) ||
+                other.relativeTime == relativeTime) &&
+            const DeepCollectionEquality().equals(other.sendTo, sendTo) &&
+            const DeepCollectionEquality()
+                .equals(other.execWeekdays, execWeekdays) &&
+            (identical(other.execTime, execTime) ||
+                other.execTime == execTime) &&
+            (identical(other.execTz, execTz) || other.execTz == execTz) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.updatedById, updatedById) ||
+                other.updatedById == updatedById) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.createdById, createdById) ||
+                other.createdById == createdById));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      ownerId,
+      const DeepCollectionEquality().hash(assetIds),
+      const DeepCollectionEquality().hash(outboundServiceIds),
+      templateCode,
+      templateId,
+      relativeTime,
+      const DeepCollectionEquality().hash(sendTo),
+      const DeepCollectionEquality().hash(execWeekdays),
+      execTime,
+      execTz,
+      updatedAt,
+      updatedById,
+      createdAt,
+      createdById);
+
+  @override
+  String toString() {
+    return 'ReportScheduler(id: $id, ownerId: $ownerId, assetIds: $assetIds, outboundServiceIds: $outboundServiceIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, createdAt: $createdAt, createdById: $createdById)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReportSchedulerCopyWith<$Res> {
+  factory $ReportSchedulerCopyWith(
+          ReportScheduler value, $Res Function(ReportScheduler) _then) =
+      _$ReportSchedulerCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String? ownerId,
+      List<String> assetIds,
+      List<String> outboundServiceIds,
+      String templateCode,
+      String? templateId,
+      @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+      RelativeChoices relativeTime,
+      List<String> sendTo,
+      List<String> execWeekdays,
+      @TimeOfDayOrNullConverter() TimeOfDay? execTime,
+      String execTz,
+      @TimestampConverter() DateTime? updatedAt,
+      String? updatedById,
+      @TimestampConverter() DateTime? createdAt,
+      String? createdById});
+}
+
+/// @nodoc
+class _$ReportSchedulerCopyWithImpl<$Res>
+    implements $ReportSchedulerCopyWith<$Res> {
+  _$ReportSchedulerCopyWithImpl(this._self, this._then);
+
+  final ReportScheduler _self;
+  final $Res Function(ReportScheduler) _then;
+
+  /// Create a copy of ReportScheduler
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? ownerId = freezed,
+    Object? assetIds = null,
+    Object? outboundServiceIds = null,
+    Object? templateCode = null,
+    Object? templateId = freezed,
+    Object? relativeTime = null,
+    Object? sendTo = null,
+    Object? execWeekdays = null,
+    Object? execTime = freezed,
+    Object? execTz = null,
+    Object? updatedAt = freezed,
+    Object? updatedById = freezed,
+    Object? createdAt = freezed,
+    Object? createdById = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId: freezed == ownerId
+          ? _self.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetIds: null == assetIds
+          ? _self.assetIds
+          : assetIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      outboundServiceIds: null == outboundServiceIds
+          ? _self.outboundServiceIds
+          : outboundServiceIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      templateCode: null == templateCode
+          ? _self.templateCode
+          : templateCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      templateId: freezed == templateId
+          ? _self.templateId
+          : templateId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      relativeTime: null == relativeTime
+          ? _self.relativeTime
+          : relativeTime // ignore: cast_nullable_to_non_nullable
+              as RelativeChoices,
+      sendTo: null == sendTo
+          ? _self.sendTo
+          : sendTo // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      execWeekdays: null == execWeekdays
+          ? _self.execWeekdays
+          : execWeekdays // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      execTime: freezed == execTime
+          ? _self.execTime
+          : execTime // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay?,
+      execTz: null == execTz
+          ? _self.execTz
+          : execTz // ignore: cast_nullable_to_non_nullable
+              as String,
+      updatedAt: freezed == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedById: freezed == updatedById
+          ? _self.updatedById
+          : updatedById // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdById: freezed == createdById
+          ? _self.createdById
+          : createdById // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ReportScheduler implements ReportScheduler {
+  const _ReportScheduler(
+      {required this.id,
+      this.ownerId,
+      final List<String> assetIds = const [],
+      final List<String> outboundServiceIds = const [],
+      this.templateCode = '',
+      this.templateId,
+      @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+      this.relativeTime = RelativeChoices.unknown,
+      final List<String> sendTo = const [],
+      final List<String> execWeekdays = const [],
+      @TimeOfDayOrNullConverter() this.execTime,
+      this.execTz = 'UTC',
+      @TimestampConverter() this.updatedAt,
+      this.updatedById,
+      @TimestampConverter() this.createdAt,
+      this.createdById})
+      : _assetIds = assetIds,
+        _outboundServiceIds = outboundServiceIds,
+        _sendTo = sendTo,
+        _execWeekdays = execWeekdays;
+  factory _ReportScheduler.fromJson(Map<String, dynamic> json) =>
+      _$ReportSchedulerFromJson(json);
+
+  /// ID of the report scheduler.
+  @override
+  final String id;
+
+  /// Owner user of the report scheduler.
+  @override
+  final String? ownerId;
+
+  /// List of asset IDs associated with the report scheduler.
+  final List<String> _assetIds;
+
+  /// List of asset IDs associated with the report scheduler.
+  @override
+  @JsonKey()
+  List<String> get assetIds {
+    if (_assetIds is EqualUnmodifiableListView) return _assetIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_assetIds);
+  }
+
+  /// List of outbound service IDs associated with the report scheduler.
+  final List<String> _outboundServiceIds;
+
+  /// List of outbound service IDs associated with the report scheduler.
+  @override
+  @JsonKey()
+  List<String> get outboundServiceIds {
+    if (_outboundServiceIds is EqualUnmodifiableListView)
+      return _outboundServiceIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_outboundServiceIds);
+  }
+
+  /// Code of the report template used for this report scheduler.
+  @override
+  @JsonKey()
+  final String templateCode;
+
+  /// ID of the report template used for this report scheduler.
+  @override
+  final String? templateId;
+
+  /// Relative time for the report, used to determine the time range for the report.
+  @override
+  @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+  final RelativeChoices relativeTime;
+
+  /// List of emails to which the report should be sent.
+  final List<String> _sendTo;
+
+  /// List of emails to which the report should be sent.
+  @override
+  @JsonKey()
+  List<String> get sendTo {
+    if (_sendTo is EqualUnmodifiableListView) return _sendTo;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sendTo);
+  }
+
+  /// Days of the week when the report should be executed.
+  final List<String> _execWeekdays;
+
+  /// Days of the week when the report should be executed.
+  @override
+  @JsonKey()
+  List<String> get execWeekdays {
+    if (_execWeekdays is EqualUnmodifiableListView) return _execWeekdays;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_execWeekdays);
+  }
+
+  /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
+  @override
+  @TimeOfDayOrNullConverter()
+  final TimeOfDay? execTime;
+
+  /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
+  @override
+  @JsonKey()
+  final String execTz;
+
+  /// Date of last update.
+  @override
+  @TimestampConverter()
+  final DateTime? updatedAt;
+
+  /// User who last updated the report scheduler.
+  @override
+  final String? updatedById;
+
+  /// Date of creation.
+  @override
+  @TimestampConverter()
+  final DateTime? createdAt;
+
+  /// User who created the report scheduler.
+  @override
+  final String? createdById;
+
+  /// Create a copy of ReportScheduler
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReportSchedulerCopyWith<_ReportScheduler> get copyWith =>
+      __$ReportSchedulerCopyWithImpl<_ReportScheduler>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReportSchedulerToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ReportScheduler &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            const DeepCollectionEquality().equals(other._assetIds, _assetIds) &&
+            const DeepCollectionEquality()
+                .equals(other._outboundServiceIds, _outboundServiceIds) &&
+            (identical(other.templateCode, templateCode) ||
+                other.templateCode == templateCode) &&
+            (identical(other.templateId, templateId) ||
+                other.templateId == templateId) &&
+            (identical(other.relativeTime, relativeTime) ||
+                other.relativeTime == relativeTime) &&
+            const DeepCollectionEquality().equals(other._sendTo, _sendTo) &&
+            const DeepCollectionEquality()
+                .equals(other._execWeekdays, _execWeekdays) &&
+            (identical(other.execTime, execTime) ||
+                other.execTime == execTime) &&
+            (identical(other.execTz, execTz) || other.execTz == execTz) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.updatedById, updatedById) ||
+                other.updatedById == updatedById) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.createdById, createdById) ||
+                other.createdById == createdById));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      ownerId,
+      const DeepCollectionEquality().hash(_assetIds),
+      const DeepCollectionEquality().hash(_outboundServiceIds),
+      templateCode,
+      templateId,
+      relativeTime,
+      const DeepCollectionEquality().hash(_sendTo),
+      const DeepCollectionEquality().hash(_execWeekdays),
+      execTime,
+      execTz,
+      updatedAt,
+      updatedById,
+      createdAt,
+      createdById);
+
+  @override
+  String toString() {
+    return 'ReportScheduler(id: $id, ownerId: $ownerId, assetIds: $assetIds, outboundServiceIds: $outboundServiceIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, createdAt: $createdAt, createdById: $createdById)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ReportSchedulerCopyWith<$Res>
+    implements $ReportSchedulerCopyWith<$Res> {
+  factory _$ReportSchedulerCopyWith(
+          _ReportScheduler value, $Res Function(_ReportScheduler) _then) =
+      __$ReportSchedulerCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String? ownerId,
+      List<String> assetIds,
+      List<String> outboundServiceIds,
+      String templateCode,
+      String? templateId,
+      @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+      RelativeChoices relativeTime,
+      List<String> sendTo,
+      List<String> execWeekdays,
+      @TimeOfDayOrNullConverter() TimeOfDay? execTime,
+      String execTz,
+      @TimestampConverter() DateTime? updatedAt,
+      String? updatedById,
+      @TimestampConverter() DateTime? createdAt,
+      String? createdById});
+}
+
+/// @nodoc
+class __$ReportSchedulerCopyWithImpl<$Res>
+    implements _$ReportSchedulerCopyWith<$Res> {
+  __$ReportSchedulerCopyWithImpl(this._self, this._then);
+
+  final _ReportScheduler _self;
+  final $Res Function(_ReportScheduler) _then;
+
+  /// Create a copy of ReportScheduler
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? ownerId = freezed,
+    Object? assetIds = null,
+    Object? outboundServiceIds = null,
+    Object? templateCode = null,
+    Object? templateId = freezed,
+    Object? relativeTime = null,
+    Object? sendTo = null,
+    Object? execWeekdays = null,
+    Object? execTime = freezed,
+    Object? execTz = null,
+    Object? updatedAt = freezed,
+    Object? updatedById = freezed,
+    Object? createdAt = freezed,
+    Object? createdById = freezed,
+  }) {
+    return _then(_ReportScheduler(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId: freezed == ownerId
+          ? _self.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetIds: null == assetIds
+          ? _self._assetIds
+          : assetIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      outboundServiceIds: null == outboundServiceIds
+          ? _self._outboundServiceIds
+          : outboundServiceIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      templateCode: null == templateCode
+          ? _self.templateCode
+          : templateCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      templateId: freezed == templateId
+          ? _self.templateId
+          : templateId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      relativeTime: null == relativeTime
+          ? _self.relativeTime
+          : relativeTime // ignore: cast_nullable_to_non_nullable
+              as RelativeChoices,
+      sendTo: null == sendTo
+          ? _self._sendTo
+          : sendTo // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      execWeekdays: null == execWeekdays
+          ? _self._execWeekdays
+          : execWeekdays // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      execTime: freezed == execTime
+          ? _self.execTime
+          : execTime // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay?,
+      execTz: null == execTz
+          ? _self.execTz
+          : execTz // ignore: cast_nullable_to_non_nullable
+              as String,
+      updatedAt: freezed == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedById: freezed == updatedById
+          ? _self.updatedById
+          : updatedById // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdById: freezed == createdById
+          ? _self.createdById
+          : createdById // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ReportSchedulerInput {
+  /// ID of the report scheduler.
+  String? get id;
+
+  /// ID of the report scheduler.
+  set id(String? value);
+
+  /// List of asset IDs associated with the report scheduler.
+  List<String> get assetsIds;
+
+  /// List of asset IDs associated with the report scheduler.
+  set assetsIds(List<String> value);
+
+  /// List of outbound service IDs associated with the report scheduler.
+  List<String> get outboundServicesIds;
+
+  /// List of outbound service IDs associated with the report scheduler.
+  set outboundServicesIds(List<String> value);
+
+  /// Code of the report template used for this report scheduler.
+  String? get templateCode;
+
+  /// Code of the report template used for this report scheduler.
+  set templateCode(String? value);
+
+  /// ID of the report template used for this report scheduler. If provided, templateCode must not be provided.
+  String? get templateId;
+
+  /// ID of the report template used for this report scheduler. If provided, templateCode must not be provided.
+  set templateId(String? value);
+
+  /// Relative time for the report, used to determine the time range for the report.
+  @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+  RelativeChoices get relativeTime;
+
+  /// Relative time for the report, used to determine the time range for the report.
+  @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+  set relativeTime(RelativeChoices value);
+
+  /// List of emails to which the report should be sent.
+  List<String> get sendTo;
+
+  /// List of emails to which the report should be sent.
+  set sendTo(List<String> value);
+
+  /// Days of the week when the report should be executed.
+  List<String> get execWeekdays;
+
+  /// Days of the week when the report should be executed.
+  set execWeekdays(List<String> value);
+
+  /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get execTime;
+
+  /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
+  @TimeOfDayOrNullConverter()
+  set execTime(TimeOfDay? value);
+
+  /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
+  String get execTz;
+
+  /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
+  set execTz(String value);
+
+  /// Indicates whether the report scheduler is enabled or not.
+  bool get enabled;
+
+  /// Indicates whether the report scheduler is enabled or not.
+  set enabled(bool value);
+
+  /// Subject of the report email.
+  String? get subject;
+
+  /// Subject of the report email.
+  set subject(String? value);
+
+  /// Create a copy of ReportSchedulerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReportSchedulerInputCopyWith<ReportSchedulerInput> get copyWith =>
+      _$ReportSchedulerInputCopyWithImpl<ReportSchedulerInput>(
+          this as ReportSchedulerInput, _$identity);
+
+  /// Serializes this ReportSchedulerInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ReportSchedulerInput(id: $id, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, enabled: $enabled, subject: $subject)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReportSchedulerInputCopyWith<$Res> {
+  factory $ReportSchedulerInputCopyWith(ReportSchedulerInput value,
+          $Res Function(ReportSchedulerInput) _then) =
+      _$ReportSchedulerInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      List<String> assetsIds,
+      List<String> outboundServicesIds,
+      String? templateCode,
+      String? templateId,
+      @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+      RelativeChoices relativeTime,
+      List<String> sendTo,
+      List<String> execWeekdays,
+      @TimeOfDayOrNullConverter() TimeOfDay? execTime,
+      String execTz,
+      bool enabled,
+      String? subject});
+}
+
+/// @nodoc
+class _$ReportSchedulerInputCopyWithImpl<$Res>
+    implements $ReportSchedulerInputCopyWith<$Res> {
+  _$ReportSchedulerInputCopyWithImpl(this._self, this._then);
+
+  final ReportSchedulerInput _self;
+  final $Res Function(ReportSchedulerInput) _then;
+
+  /// Create a copy of ReportSchedulerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetsIds = null,
+    Object? outboundServicesIds = null,
+    Object? templateCode = freezed,
+    Object? templateId = freezed,
+    Object? relativeTime = null,
+    Object? sendTo = null,
+    Object? execWeekdays = null,
+    Object? execTime = freezed,
+    Object? execTz = null,
+    Object? enabled = null,
+    Object? subject = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetsIds: null == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      outboundServicesIds: null == outboundServicesIds
+          ? _self.outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      templateCode: freezed == templateCode
+          ? _self.templateCode
+          : templateCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      templateId: freezed == templateId
+          ? _self.templateId
+          : templateId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      relativeTime: null == relativeTime
+          ? _self.relativeTime
+          : relativeTime // ignore: cast_nullable_to_non_nullable
+              as RelativeChoices,
+      sendTo: null == sendTo
+          ? _self.sendTo
+          : sendTo // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      execWeekdays: null == execWeekdays
+          ? _self.execWeekdays
+          : execWeekdays // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      execTime: freezed == execTime
+          ? _self.execTime
+          : execTime // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay?,
+      execTz: null == execTz
+          ? _self.execTz
+          : execTz // ignore: cast_nullable_to_non_nullable
+              as String,
+      enabled: null == enabled
+          ? _self.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      subject: freezed == subject
+          ? _self.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ReportSchedulerInput extends ReportSchedulerInput {
+  _ReportSchedulerInput(
+      {this.id,
+      this.assetsIds = const [],
+      this.outboundServicesIds = const [],
+      this.templateCode,
+      this.templateId,
+      @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+      this.relativeTime = RelativeChoices.unknown,
+      this.sendTo = const [],
+      this.execWeekdays = const [],
+      @TimeOfDayOrNullConverter() this.execTime,
+      this.execTz = 'UTC',
+      this.enabled = true,
+      this.subject})
+      : super._();
+  factory _ReportSchedulerInput.fromJson(Map<String, dynamic> json) =>
+      _$ReportSchedulerInputFromJson(json);
+
+  /// ID of the report scheduler.
+  @override
+  String? id;
+
+  /// List of asset IDs associated with the report scheduler.
+  @override
+  @JsonKey()
+  List<String> assetsIds;
+
+  /// List of outbound service IDs associated with the report scheduler.
+  @override
+  @JsonKey()
+  List<String> outboundServicesIds;
+
+  /// Code of the report template used for this report scheduler.
+  @override
+  String? templateCode;
+
+  /// ID of the report template used for this report scheduler. If provided, templateCode must not be provided.
+  @override
+  String? templateId;
+
+  /// Relative time for the report, used to determine the time range for the report.
+  @override
+  @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+  RelativeChoices relativeTime;
+
+  /// List of emails to which the report should be sent.
+  @override
+  @JsonKey()
+  List<String> sendTo;
+
+  /// Days of the week when the report should be executed.
+  @override
+  @JsonKey()
+  List<String> execWeekdays;
+
+  /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
+  @override
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? execTime;
+
+  /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
+  @override
+  @JsonKey()
+  String execTz;
+
+  /// Indicates whether the report scheduler is enabled or not.
+  @override
+  @JsonKey()
+  bool enabled;
+
+  /// Subject of the report email.
+  @override
+  String? subject;
+
+  /// Create a copy of ReportSchedulerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReportSchedulerInputCopyWith<_ReportSchedulerInput> get copyWith =>
+      __$ReportSchedulerInputCopyWithImpl<_ReportSchedulerInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReportSchedulerInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ReportSchedulerInput(id: $id, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, enabled: $enabled, subject: $subject)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ReportSchedulerInputCopyWith<$Res>
+    implements $ReportSchedulerInputCopyWith<$Res> {
+  factory _$ReportSchedulerInputCopyWith(_ReportSchedulerInput value,
+          $Res Function(_ReportSchedulerInput) _then) =
+      __$ReportSchedulerInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      List<String> assetsIds,
+      List<String> outboundServicesIds,
+      String? templateCode,
+      String? templateId,
+      @JsonKey(unknownEnumValue: RelativeChoices.unknown)
+      RelativeChoices relativeTime,
+      List<String> sendTo,
+      List<String> execWeekdays,
+      @TimeOfDayOrNullConverter() TimeOfDay? execTime,
+      String execTz,
+      bool enabled,
+      String? subject});
+}
+
+/// @nodoc
+class __$ReportSchedulerInputCopyWithImpl<$Res>
+    implements _$ReportSchedulerInputCopyWith<$Res> {
+  __$ReportSchedulerInputCopyWithImpl(this._self, this._then);
+
+  final _ReportSchedulerInput _self;
+  final $Res Function(_ReportSchedulerInput) _then;
+
+  /// Create a copy of ReportSchedulerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? assetsIds = null,
+    Object? outboundServicesIds = null,
+    Object? templateCode = freezed,
+    Object? templateId = freezed,
+    Object? relativeTime = null,
+    Object? sendTo = null,
+    Object? execWeekdays = null,
+    Object? execTime = freezed,
+    Object? execTz = null,
+    Object? enabled = null,
+    Object? subject = freezed,
+  }) {
+    return _then(_ReportSchedulerInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetsIds: null == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      outboundServicesIds: null == outboundServicesIds
+          ? _self.outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      templateCode: freezed == templateCode
+          ? _self.templateCode
+          : templateCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      templateId: freezed == templateId
+          ? _self.templateId
+          : templateId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      relativeTime: null == relativeTime
+          ? _self.relativeTime
+          : relativeTime // ignore: cast_nullable_to_non_nullable
+              as RelativeChoices,
+      sendTo: null == sendTo
+          ? _self.sendTo
+          : sendTo // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      execWeekdays: null == execWeekdays
+          ? _self.execWeekdays
+          : execWeekdays // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      execTime: freezed == execTime
+          ? _self.execTime
+          : execTime // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay?,
+      execTz: null == execTz
+          ? _self.execTz
+          : execTz // ignore: cast_nullable_to_non_nullable
+              as String,
+      enabled: null == enabled
+          ? _self.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      subject: freezed == subject
+          ? _self.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
 // dart format on
