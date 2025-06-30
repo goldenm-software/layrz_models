@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.13
+
+- added `localIpAddress` in `Device` and `DeviceInput
+
 ## 3.4.12
 - Added `ReportScheduler` and `ReportSchedulerInput`
 

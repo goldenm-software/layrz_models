@@ -80,6 +80,9 @@ abstract class Device with _$Device {
     /// [peripherals] is the list of peripherals of the device. Only used when
     /// [protocol.operationMode] is [OperationMode.peripheral].
     List<Device>? peripherals,
+
+    /// [localIpAddress] is the local IP address of the device, used for local communication.
+    String? localIpAddress,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
@@ -122,6 +125,9 @@ abstract class DeviceInput with _$DeviceInput {
     /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
     /// threshold of the indicator displayed on Layrz Vision app.
     @DurationConverter() Duration? visionCaptureThreshold,
+
+    /// [localIpAddress] is the local IP address of the device, used for local communication.
+    String? localIpAddress,
   }) = _DeviceInput;
 
   factory DeviceInput.fromJson(Map<String, dynamic> json) => _$DeviceInputFromJson(json);

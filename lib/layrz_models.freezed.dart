@@ -8351,6 +8351,9 @@ mixin _$Device {
   /// [protocol.operationMode] is [OperationMode.peripheral].
   List<Device>? get peripherals;
 
+  /// [localIpAddress] is the local IP address of the device, used for local communication.
+  String? get localIpAddress;
+
   /// Create a copy of Device
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -8403,7 +8406,9 @@ mixin _$Device {
             (identical(other.visionCaptureThreshold, visionCaptureThreshold) ||
                 other.visionCaptureThreshold == visionCaptureThreshold) &&
             const DeepCollectionEquality()
-                .equals(other.peripherals, peripherals));
+                .equals(other.peripherals, peripherals) &&
+            (identical(other.localIpAddress, localIpAddress) ||
+                other.localIpAddress == localIpAddress));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -8434,12 +8439,13 @@ mixin _$Device {
         macAddress,
         const DeepCollectionEquality().hash(configParams),
         visionCaptureThreshold,
-        const DeepCollectionEquality().hash(peripherals)
+        const DeepCollectionEquality().hash(peripherals),
+        localIpAddress
       ]);
 
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress)';
   }
 }
 
@@ -8473,7 +8479,8 @@ abstract mixin class $DeviceCopyWith<$Res> {
       String? macAddress,
       Map<String, dynamic>? configParams,
       @DurationConverter() Duration? visionCaptureThreshold,
-      List<Device>? peripherals});
+      List<Device>? peripherals,
+      String? localIpAddress});
 
   $ModelCopyWith<$Res>? get model;
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -8521,6 +8528,7 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
     Object? configParams = freezed,
     Object? visionCaptureThreshold = freezed,
     Object? peripherals = freezed,
+    Object? localIpAddress = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -8623,6 +8631,10 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
           ? _self.peripherals
           : peripherals // ignore: cast_nullable_to_non_nullable
               as List<Device>?,
+      localIpAddress: freezed == localIpAddress
+          ? _self.localIpAddress
+          : localIpAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -8753,7 +8765,8 @@ class _Device implements Device {
       this.macAddress,
       final Map<String, dynamic>? configParams,
       @DurationConverter() this.visionCaptureThreshold,
-      final List<Device>? peripherals})
+      final List<Device>? peripherals,
+      this.localIpAddress})
       : _additionalFields = additionalFields,
         _commands = commands,
         _access = access,
@@ -8912,6 +8925,10 @@ class _Device implements Device {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [localIpAddress] is the local IP address of the device, used for local communication.
+  @override
+  final String? localIpAddress;
+
   /// Create a copy of Device
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -8969,7 +8986,9 @@ class _Device implements Device {
             (identical(other.visionCaptureThreshold, visionCaptureThreshold) ||
                 other.visionCaptureThreshold == visionCaptureThreshold) &&
             const DeepCollectionEquality()
-                .equals(other._peripherals, _peripherals));
+                .equals(other._peripherals, _peripherals) &&
+            (identical(other.localIpAddress, localIpAddress) ||
+                other.localIpAddress == localIpAddress));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -9000,12 +9019,13 @@ class _Device implements Device {
         macAddress,
         const DeepCollectionEquality().hash(_configParams),
         visionCaptureThreshold,
-        const DeepCollectionEquality().hash(_peripherals)
+        const DeepCollectionEquality().hash(_peripherals),
+        localIpAddress
       ]);
 
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress)';
   }
 }
 
@@ -9040,7 +9060,8 @@ abstract mixin class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       String? macAddress,
       Map<String, dynamic>? configParams,
       @DurationConverter() Duration? visionCaptureThreshold,
-      List<Device>? peripherals});
+      List<Device>? peripherals,
+      String? localIpAddress});
 
   @override
   $ModelCopyWith<$Res>? get model;
@@ -9095,6 +9116,7 @@ class __$DeviceCopyWithImpl<$Res> implements _$DeviceCopyWith<$Res> {
     Object? configParams = freezed,
     Object? visionCaptureThreshold = freezed,
     Object? peripherals = freezed,
+    Object? localIpAddress = freezed,
   }) {
     return _then(_Device(
       id: null == id
@@ -9197,6 +9219,10 @@ class __$DeviceCopyWithImpl<$Res> implements _$DeviceCopyWith<$Res> {
           ? _self._peripherals
           : peripherals // ignore: cast_nullable_to_non_nullable
               as List<Device>?,
+      localIpAddress: freezed == localIpAddress
+          ? _self.localIpAddress
+          : localIpAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -9373,6 +9399,12 @@ mixin _$DeviceInput {
   @DurationConverter()
   set visionCaptureThreshold(Duration? value);
 
+  /// [localIpAddress] is the local IP address of the device, used for local communication.
+  String? get localIpAddress;
+
+  /// [localIpAddress] is the local IP address of the device, used for local communication.
+  set localIpAddress(String? value);
+
   /// Create a copy of DeviceInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -9385,7 +9417,7 @@ mixin _$DeviceInput {
 
   @override
   String toString() {
-    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress, hwModelId: $hwModelId, visionCaptureThreshold: $visionCaptureThreshold)';
+    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress, hwModelId: $hwModelId, visionCaptureThreshold: $visionCaptureThreshold, localIpAddress: $localIpAddress)';
   }
 }
 
@@ -9406,7 +9438,8 @@ abstract mixin class $DeviceInputCopyWith<$Res> {
       ModbusConfigInput? modbus,
       String? macAddress,
       String? hwModelId,
-      @DurationConverter() Duration? visionCaptureThreshold});
+      @DurationConverter() Duration? visionCaptureThreshold,
+      String? localIpAddress});
 
   $PhoneNumberInputCopyWith<$Res>? get phone;
   $ModbusConfigInputCopyWith<$Res>? get modbus;
@@ -9435,6 +9468,7 @@ class _$DeviceInputCopyWithImpl<$Res> implements $DeviceInputCopyWith<$Res> {
     Object? macAddress = freezed,
     Object? hwModelId = freezed,
     Object? visionCaptureThreshold = freezed,
+    Object? localIpAddress = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -9481,6 +9515,10 @@ class _$DeviceInputCopyWithImpl<$Res> implements $DeviceInputCopyWith<$Res> {
           ? _self.visionCaptureThreshold
           : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
               as Duration?,
+      localIpAddress: freezed == localIpAddress
+          ? _self.localIpAddress
+          : localIpAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -9527,7 +9565,8 @@ class _DeviceInput implements DeviceInput {
       this.modbus,
       this.macAddress,
       this.hwModelId,
-      @DurationConverter() this.visionCaptureThreshold});
+      @DurationConverter() this.visionCaptureThreshold,
+      this.localIpAddress});
   factory _DeviceInput.fromJson(Map<String, dynamic> json) =>
       _$DeviceInputFromJson(json);
 
@@ -9580,6 +9619,10 @@ class _DeviceInput implements DeviceInput {
   @DurationConverter()
   Duration? visionCaptureThreshold;
 
+  /// [localIpAddress] is the local IP address of the device, used for local communication.
+  @override
+  String? localIpAddress;
+
   /// Create a copy of DeviceInput
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -9597,7 +9640,7 @@ class _DeviceInput implements DeviceInput {
 
   @override
   String toString() {
-    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress, hwModelId: $hwModelId, visionCaptureThreshold: $visionCaptureThreshold)';
+    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress, hwModelId: $hwModelId, visionCaptureThreshold: $visionCaptureThreshold, localIpAddress: $localIpAddress)';
   }
 }
 
@@ -9620,7 +9663,8 @@ abstract mixin class _$DeviceInputCopyWith<$Res>
       ModbusConfigInput? modbus,
       String? macAddress,
       String? hwModelId,
-      @DurationConverter() Duration? visionCaptureThreshold});
+      @DurationConverter() Duration? visionCaptureThreshold,
+      String? localIpAddress});
 
   @override
   $PhoneNumberInputCopyWith<$Res>? get phone;
@@ -9651,6 +9695,7 @@ class __$DeviceInputCopyWithImpl<$Res> implements _$DeviceInputCopyWith<$Res> {
     Object? macAddress = freezed,
     Object? hwModelId = freezed,
     Object? visionCaptureThreshold = freezed,
+    Object? localIpAddress = freezed,
   }) {
     return _then(_DeviceInput(
       id: freezed == id
@@ -9697,6 +9742,10 @@ class __$DeviceInputCopyWithImpl<$Res> implements _$DeviceInputCopyWith<$Res> {
           ? _self.visionCaptureThreshold
           : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
               as Duration?,
+      localIpAddress: freezed == localIpAddress
+          ? _self.localIpAddress
+          : localIpAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
