@@ -828,6 +828,7 @@ _Device _$DeviceFromJson(Map<String, dynamic> json) => _Device(
       peripherals: (json['peripherals'] as List<dynamic>?)
           ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
           .toList(),
+      localIpAddress: json['localIpAddress'] as String?,
     );
 
 Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
@@ -857,6 +858,7 @@ Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
       'visionCaptureThreshold': _$JsonConverterToJson<num, Duration>(
           instance.visionCaptureThreshold, const DurationConverter().toJson),
       'peripherals': instance.peripherals?.map((e) => e.toJson()).toList(),
+      'localIpAddress': instance.localIpAddress,
     };
 
 _DeviceInput _$DeviceInputFromJson(Map<String, dynamic> json) => _DeviceInput(
@@ -876,6 +878,7 @@ _DeviceInput _$DeviceInputFromJson(Map<String, dynamic> json) => _DeviceInput(
       hwModelId: json['hwModelId'] as String?,
       visionCaptureThreshold: _$JsonConverterFromJson<num, Duration>(
           json['visionCaptureThreshold'], const DurationConverter().fromJson),
+      localIpAddress: json['localIpAddress'] as String?,
     );
 
 Map<String, dynamic> _$DeviceInputToJson(_DeviceInput instance) =>
@@ -892,6 +895,7 @@ Map<String, dynamic> _$DeviceInputToJson(_DeviceInput instance) =>
       'hwModelId': instance.hwModelId,
       'visionCaptureThreshold': _$JsonConverterToJson<num, Duration>(
           instance.visionCaptureThreshold, const DurationConverter().toJson),
+      'localIpAddress': instance.localIpAddress,
     };
 
 _EmailTemplate _$EmailTemplateFromJson(Map<String, dynamic> json) =>
