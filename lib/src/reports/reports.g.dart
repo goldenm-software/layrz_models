@@ -292,7 +292,7 @@ _ReportScheduler _$ReportSchedulerFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      templateCode: json['templateCode'] as String? ?? '',
+      templateCode: json['templateCode'] as String?,
       templateId: json['templateId'] as String?,
       relativeTime: $enumDecodeNullable(
               _$RelativeChoicesEnumMap, json['relativeTime'],

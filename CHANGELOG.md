@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.15
+- Remove `@Default` from `templateCode` in `ReportScheduler`
+
 ## 3.4.14
 - `Weekday` add `toInt()` converter
 - Rework `ReportScheduler` and `ReportSchedulerInput`
