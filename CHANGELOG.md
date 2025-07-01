@@ -1,8 +1,12 @@
 # Changelog
 
+## 3.4.14
+- `Weekday` add `toInt()` converter
+- Rework `ReportScheduler` and `ReportSchedulerInput`
+
 ## 3.4.13
 
-- added `localIpAddress` in `Device` and `DeviceInput
+- Added `localIpAddress` in `Device` and `DeviceInput
 
 ## 3.4.12
 - Added `ReportScheduler` and `ReportSchedulerInput`
