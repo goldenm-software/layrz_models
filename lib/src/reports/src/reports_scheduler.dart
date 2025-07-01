@@ -6,14 +6,17 @@ abstract class ReportScheduler with _$ReportScheduler {
     /// ID of the report scheduler.
     required String id,
 
+    /// Name of the report scheduler.
+    String? name,
+
     /// Owner user of the report scheduler.
     String? ownerId,
 
     /// List of asset IDs associated with the report scheduler.
-    @Default([]) List<String> assetIds,
+    @Default([]) List<String> assetsIds,
 
     /// List of outbound service IDs associated with the report scheduler.
-    @Default([]) List<String> outboundServiceIds,
+    @Default([]) List<String> outboundServicesIds,
 
     /// Code of the report template used for this report scheduler.
     @Default('') String templateCode,
@@ -28,7 +31,7 @@ abstract class ReportScheduler with _$ReportScheduler {
     @Default([]) List<String> sendTo,
 
     /// Days of the week when the report should be executed.
-    @Default([]) List<String> execWeekdays,
+    @JsonKey(unknownEnumValue: Weekday.monday) @Default([]) List<Weekday> execWeekdays,
 
     /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
     @TimeOfDayOrNullConverter() TimeOfDay? execTime,
@@ -39,14 +42,23 @@ abstract class ReportScheduler with _$ReportScheduler {
     /// Date of last update.
     @TimestampConverter() DateTime? updatedAt,
 
-    /// User who last updated the report scheduler.
+    /// User id who last updated the report scheduler.
     String? updatedById,
+
+    /// User last updated the report scheduler.
+    User? updatedBy,
 
     /// Date of creation.
     @TimestampConverter() DateTime? createdAt,
 
     /// User who created the report scheduler.
     String? createdById,
+
+    /// User who created the report scheduler.
+    User? createdBy,
+
+    /// Subject of the report email
+    String? subject,
   }) = _ReportScheduler;
 
   factory ReportScheduler.fromJson(Map<String, dynamic> json) => _$ReportSchedulerFromJson(json);
@@ -58,6 +70,9 @@ abstract class ReportSchedulerInput with _$ReportSchedulerInput {
   factory ReportSchedulerInput({
     /// ID of the report scheduler.
     String? id,
+
+    /// Name of the report scheduler.
+    String? name,
 
     /// List of asset IDs associated with the report scheduler.
     @Default([]) List<String> assetsIds,
@@ -75,10 +90,10 @@ abstract class ReportSchedulerInput with _$ReportSchedulerInput {
     @JsonKey(unknownEnumValue: RelativeChoices.unknown) @Default(RelativeChoices.unknown) RelativeChoices relativeTime,
 
     /// List of emails to which the report should be sent.
-    @Default([]) List<String> sendTo,
+    @Default([""]) List<String> sendTo,
 
     /// Days of the week when the report should be executed.
-    @Default([]) List<String> execWeekdays,
+    @JsonKey(unknownEnumValue: Weekday.monday) @Default([]) List<Weekday> execWeekdays,
 
     /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
     @TimeOfDayOrNullConverter() TimeOfDay? execTime,

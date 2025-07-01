@@ -3,11 +3,7 @@ library;
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:collection/collection.dart';
-import 'package:layrz_models/layrz_models.dart' show Access;
-import 'package:layrz_models/src/app/app.dart';
-import 'package:layrz_models/src/assets/assets.dart';
-import 'package:layrz_models/src/converters/converters.dart';
-import 'package:layrz_models/src/outbound/outbound.dart';
+import 'package:layrz_models/layrz_models.dart';
 
 // Freezed
 part 'reports.freezed.dart';
