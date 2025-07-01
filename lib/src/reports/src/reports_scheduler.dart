@@ -19,7 +19,7 @@ abstract class ReportScheduler with _$ReportScheduler {
     @Default([]) List<String> outboundServicesIds,
 
     /// Code of the report template used for this report scheduler.
-    @Default('') String templateCode,
+    String? templateCode,
 
     /// ID of the report template used for this report scheduler.
     String? templateId,

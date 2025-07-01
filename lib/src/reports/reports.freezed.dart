@@ -2688,7 +2688,7 @@ mixin _$ReportScheduler {
   List<String> get outboundServicesIds;
 
   /// Code of the report template used for this report scheduler.
-  String get templateCode;
+  String? get templateCode;
 
   /// ID of the report template used for this report scheduler.
   String? get templateId;
@@ -2826,7 +2826,7 @@ abstract mixin class $ReportSchedulerCopyWith<$Res> {
       String? ownerId,
       List<String> assetsIds,
       List<String> outboundServicesIds,
-      String templateCode,
+      String? templateCode,
       String? templateId,
       @JsonKey(unknownEnumValue: RelativeChoices.unknown)
       RelativeChoices relativeTime,
@@ -2864,7 +2864,7 @@ class _$ReportSchedulerCopyWithImpl<$Res>
     Object? ownerId = freezed,
     Object? assetsIds = null,
     Object? outboundServicesIds = null,
-    Object? templateCode = null,
+    Object? templateCode = freezed,
     Object? templateId = freezed,
     Object? relativeTime = null,
     Object? sendTo = null,
@@ -2900,10 +2900,10 @@ class _$ReportSchedulerCopyWithImpl<$Res>
           ? _self.outboundServicesIds
           : outboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      templateCode: null == templateCode
+      templateCode: freezed == templateCode
           ? _self.templateCode
           : templateCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       templateId: freezed == templateId
           ? _self.templateId
           : templateId // ignore: cast_nullable_to_non_nullable
@@ -2997,7 +2997,7 @@ class _ReportScheduler implements ReportScheduler {
       this.ownerId,
       final List<String> assetsIds = const [],
       final List<String> outboundServicesIds = const [],
-      this.templateCode = '',
+      this.templateCode,
       this.templateId,
       @JsonKey(unknownEnumValue: RelativeChoices.unknown)
       this.relativeTime = RelativeChoices.unknown,
@@ -3059,8 +3059,7 @@ class _ReportScheduler implements ReportScheduler {
 
   /// Code of the report template used for this report scheduler.
   @override
-  @JsonKey()
-  final String templateCode;
+  final String? templateCode;
 
   /// ID of the report template used for this report scheduler.
   @override
@@ -3234,7 +3233,7 @@ abstract mixin class _$ReportSchedulerCopyWith<$Res>
       String? ownerId,
       List<String> assetsIds,
       List<String> outboundServicesIds,
-      String templateCode,
+      String? templateCode,
       String? templateId,
       @JsonKey(unknownEnumValue: RelativeChoices.unknown)
       RelativeChoices relativeTime,
@@ -3274,7 +3273,7 @@ class __$ReportSchedulerCopyWithImpl<$Res>
     Object? ownerId = freezed,
     Object? assetsIds = null,
     Object? outboundServicesIds = null,
-    Object? templateCode = null,
+    Object? templateCode = freezed,
     Object? templateId = freezed,
     Object? relativeTime = null,
     Object? sendTo = null,
@@ -3310,10 +3309,10 @@ class __$ReportSchedulerCopyWithImpl<$Res>
           ? _self._outboundServicesIds
           : outboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      templateCode: null == templateCode
+      templateCode: freezed == templateCode
           ? _self.templateCode
           : templateCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       templateId: freezed == templateId
           ? _self.templateId
           : templateId // ignore: cast_nullable_to_non_nullable
