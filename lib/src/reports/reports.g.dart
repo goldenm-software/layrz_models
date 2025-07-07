@@ -326,6 +326,7 @@ _ReportScheduler _$ReportSchedulerFromJson(Map<String, dynamic> json) =>
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
+      enabled: json['enabled'] as bool?,
     );
 
 Map<String, dynamic> _$ReportSchedulerToJson(_ReportScheduler instance) =>
@@ -351,7 +352,11 @@ Map<String, dynamic> _$ReportSchedulerToJson(_ReportScheduler instance) =>
       'createdById': instance.createdById,
       'createdBy': instance.createdBy?.toJson(),
       'subject': instance.subject,
+<<<<<<< HEAD
       'access': instance.access?.map((e) => e.toJson()).toList(),
+=======
+      'enabled': instance.enabled,
+>>>>>>> be29b53c50b608ba339053378fe6db8820473a50
     };
 
 const _$RelativeChoicesEnumMap = {
@@ -407,7 +412,7 @@ _ReportSchedulerInput _$ReportSchedulerInputFromJson(
       sendTo: (json['sendTo'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
-          const [""],
+          const [],
       execWeekdays: (json['execWeekdays'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$WeekdayEnumMap, e,
                   unknownValue: Weekday.monday))

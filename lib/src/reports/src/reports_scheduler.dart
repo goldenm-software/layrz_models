@@ -62,6 +62,9 @@ abstract class ReportScheduler with _$ReportScheduler {
 
     /// List of custom [access] permissions.
     List<Access>? access,
+
+    /// Indicates whether the report scheduler is enabled or not.
+    bool? enabled,
   }) = _ReportScheduler;
 
   factory ReportScheduler.fromJson(Map<String, dynamic> json) => _$ReportSchedulerFromJson(json);
@@ -93,7 +96,7 @@ abstract class ReportSchedulerInput with _$ReportSchedulerInput {
     @JsonKey(unknownEnumValue: RelativeChoices.unknown) @Default(RelativeChoices.unknown) RelativeChoices relativeTime,
 
     /// List of emails to which the report should be sent.
-    @Default([""]) List<String> sendTo,
+    @Default([]) List<String> sendTo,
 
     /// Days of the week when the report should be executed.
     @JsonKey(unknownEnumValue: Weekday.monday) @Default([]) List<Weekday> execWeekdays,

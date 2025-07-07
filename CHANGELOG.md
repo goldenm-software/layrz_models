@@ -1,7 +1,13 @@
 # Changelog
 
-## 3.4.16
+## 3.4.18
 - Add `access` in `ReportScheduler`
+## 3.4.17
+- Added `enabled` in `ReportScheduler`
+- Added `REPORT_SCHEDULERS` in `AccessModule`
+
+## 3.4.16
+- Change `@Default([''])` to `@Default([])` in `ReportScheduler`
 
 ## 3.4.15
 - Remove `@Default` from `templateCode` in `ReportScheduler`

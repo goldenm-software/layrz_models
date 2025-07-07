@@ -156,6 +156,11 @@ enum AccessModule {
   @JsonValue('EXCHANGE_SERVICES')
   exchangeServices,
 
+  /// Acces to reports scheduler module
+  /// Layrz API Definition: `REPORTS_SCHEDULER`
+  @JsonValue('REPORT_SCHEDULERS')
+  reportSchedulers,
+
   /// Unknown access module
   @JsonValue('UNKNOWN')
   unknown,
