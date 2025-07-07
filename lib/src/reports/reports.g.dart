@@ -323,6 +323,7 @@ _ReportScheduler _$ReportSchedulerFromJson(Map<String, dynamic> json) =>
           ? null
           : User.fromJson(json['createdBy'] as Map<String, dynamic>),
       subject: json['subject'] as String?,
+      enabled: json['enabled'] as bool?,
     );
 
 Map<String, dynamic> _$ReportSchedulerToJson(_ReportScheduler instance) =>
@@ -348,6 +349,7 @@ Map<String, dynamic> _$ReportSchedulerToJson(_ReportScheduler instance) =>
       'createdById': instance.createdById,
       'createdBy': instance.createdBy?.toJson(),
       'subject': instance.subject,
+      'enabled': instance.enabled,
     };
 
 const _$RelativeChoicesEnumMap = {

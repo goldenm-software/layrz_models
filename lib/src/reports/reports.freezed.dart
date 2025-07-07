@@ -2734,6 +2734,9 @@ mixin _$ReportScheduler {
   /// Subject of the report email
   String? get subject;
 
+  /// Indicates whether the report scheduler is enabled or not.
+  bool? get enabled;
+
   /// Create a copy of ReportScheduler
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2780,7 +2783,8 @@ mixin _$ReportScheduler {
                 other.createdById == createdById) &&
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
-            (identical(other.subject, subject) || other.subject == subject));
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.enabled, enabled) || other.enabled == enabled));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2805,12 +2809,13 @@ mixin _$ReportScheduler {
         createdAt,
         createdById,
         createdBy,
-        subject
+        subject,
+        enabled
       ]);
 
   @override
   String toString() {
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject)';
+    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, enabled: $enabled)';
   }
 }
 
@@ -2840,7 +2845,8 @@ abstract mixin class $ReportSchedulerCopyWith<$Res> {
       @TimestampConverter() DateTime? createdAt,
       String? createdById,
       User? createdBy,
-      String? subject});
+      String? subject,
+      bool? enabled});
 
   $UserCopyWith<$Res>? get updatedBy;
   $UserCopyWith<$Res>? get createdBy;
@@ -2878,6 +2884,7 @@ class _$ReportSchedulerCopyWithImpl<$Res>
     Object? createdById = freezed,
     Object? createdBy = freezed,
     Object? subject = freezed,
+    Object? enabled = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -2956,6 +2963,10 @@ class _$ReportSchedulerCopyWithImpl<$Res>
           ? _self.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
+      enabled: freezed == enabled
+          ? _self.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 
@@ -3012,7 +3023,8 @@ class _ReportScheduler implements ReportScheduler {
       @TimestampConverter() this.createdAt,
       this.createdById,
       this.createdBy,
-      this.subject})
+      this.subject,
+      this.enabled})
       : _assetsIds = assetsIds,
         _outboundServicesIds = outboundServicesIds,
         _sendTo = sendTo,
@@ -3134,6 +3146,10 @@ class _ReportScheduler implements ReportScheduler {
   @override
   final String? subject;
 
+  /// Indicates whether the report scheduler is enabled or not.
+  @override
+  final bool? enabled;
+
   /// Create a copy of ReportScheduler
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -3185,7 +3201,8 @@ class _ReportScheduler implements ReportScheduler {
                 other.createdById == createdById) &&
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
-            (identical(other.subject, subject) || other.subject == subject));
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.enabled, enabled) || other.enabled == enabled));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3210,12 +3227,13 @@ class _ReportScheduler implements ReportScheduler {
         createdAt,
         createdById,
         createdBy,
-        subject
+        subject,
+        enabled
       ]);
 
   @override
   String toString() {
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject)';
+    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, enabled: $enabled)';
   }
 }
 
@@ -3247,7 +3265,8 @@ abstract mixin class _$ReportSchedulerCopyWith<$Res>
       @TimestampConverter() DateTime? createdAt,
       String? createdById,
       User? createdBy,
-      String? subject});
+      String? subject,
+      bool? enabled});
 
   @override
   $UserCopyWith<$Res>? get updatedBy;
@@ -3287,6 +3306,7 @@ class __$ReportSchedulerCopyWithImpl<$Res>
     Object? createdById = freezed,
     Object? createdBy = freezed,
     Object? subject = freezed,
+    Object? enabled = freezed,
   }) {
     return _then(_ReportScheduler(
       id: null == id
@@ -3365,6 +3385,10 @@ class __$ReportSchedulerCopyWithImpl<$Res>
           ? _self.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
+      enabled: freezed == enabled
+          ? _self.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 

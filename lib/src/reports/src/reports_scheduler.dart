@@ -59,6 +59,9 @@ abstract class ReportScheduler with _$ReportScheduler {
 
     /// Subject of the report email
     String? subject,
+
+    /// Indicates whether the report scheduler is enabled or not.
+    bool? enabled,
   }) = _ReportScheduler;
 
   factory ReportScheduler.fromJson(Map<String, dynamic> json) => _$ReportSchedulerFromJson(json);
