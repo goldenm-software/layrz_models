@@ -403,7 +403,7 @@ _ReportSchedulerInput _$ReportSchedulerInputFromJson(
       sendTo: (json['sendTo'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
-          const [""],
+          const [],
       execWeekdays: (json['execWeekdays'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$WeekdayEnumMap, e,
                   unknownValue: Weekday.monday))

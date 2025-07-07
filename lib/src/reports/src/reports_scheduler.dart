@@ -90,7 +90,7 @@ abstract class ReportSchedulerInput with _$ReportSchedulerInput {
     @JsonKey(unknownEnumValue: RelativeChoices.unknown) @Default(RelativeChoices.unknown) RelativeChoices relativeTime,
 
     /// List of emails to which the report should be sent.
-    @Default([""]) List<String> sendTo,
+    @Default([]) List<String> sendTo,
 
     /// Days of the week when the report should be executed.
     @JsonKey(unknownEnumValue: Weekday.monday) @Default([]) List<Weekday> execWeekdays,
