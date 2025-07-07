@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.16
+- Change `@Default([''])` to `@Default([])` in `ReportScheduler`
+
 ## 3.4.15
 - Remove `@Default` from `templateCode` in `ReportScheduler`
 

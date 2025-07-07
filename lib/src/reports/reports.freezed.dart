@@ -3619,7 +3619,7 @@ class _ReportSchedulerInput extends ReportSchedulerInput {
       this.templateId,
       @JsonKey(unknownEnumValue: RelativeChoices.unknown)
       this.relativeTime = RelativeChoices.unknown,
-      this.sendTo = const [""],
+      this.sendTo = const [],
       @JsonKey(unknownEnumValue: Weekday.monday) this.execWeekdays = const [],
       @TimeOfDayOrNullConverter() this.execTime,
       this.execTz = 'UTC',
