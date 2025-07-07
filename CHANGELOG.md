@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.18
+- Add `access` in `ReportScheduler`
+
 ## 3.4.17
 - Added `enabled` in `ReportScheduler`
 - Added `REPORT_SCHEDULERS` in `AccessModule`

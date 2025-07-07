@@ -60,6 +60,9 @@ abstract class ReportScheduler with _$ReportScheduler {
     /// Subject of the report email
     String? subject,
 
+    /// List of custom [access] permissions.
+    List<Access>? access,
+
     /// Indicates whether the report scheduler is enabled or not.
     bool? enabled,
   }) = _ReportScheduler;

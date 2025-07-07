@@ -2734,6 +2734,9 @@ mixin _$ReportScheduler {
   /// Subject of the report email
   String? get subject;
 
+  /// List of custom [access] permissions.
+  List<Access>? get access;
+
   /// Indicates whether the report scheduler is enabled or not.
   bool? get enabled;
 
@@ -2784,6 +2787,7 @@ mixin _$ReportScheduler {
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
             (identical(other.subject, subject) || other.subject == subject) &&
+            const DeepCollectionEquality().equals(other.access, access) &&
             (identical(other.enabled, enabled) || other.enabled == enabled));
   }
 
@@ -2810,12 +2814,13 @@ mixin _$ReportScheduler {
         createdById,
         createdBy,
         subject,
+        const DeepCollectionEquality().hash(access),
         enabled
       ]);
 
   @override
   String toString() {
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, enabled: $enabled)';
+    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, access: $access, enabled: $enabled)';
   }
 }
 
@@ -2846,6 +2851,7 @@ abstract mixin class $ReportSchedulerCopyWith<$Res> {
       String? createdById,
       User? createdBy,
       String? subject,
+      List<Access>? access,
       bool? enabled});
 
   $UserCopyWith<$Res>? get updatedBy;
@@ -2884,6 +2890,7 @@ class _$ReportSchedulerCopyWithImpl<$Res>
     Object? createdById = freezed,
     Object? createdBy = freezed,
     Object? subject = freezed,
+    Object? access = freezed,
     Object? enabled = freezed,
   }) {
     return _then(_self.copyWith(
@@ -2963,6 +2970,10 @@ class _$ReportSchedulerCopyWithImpl<$Res>
           ? _self.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
+      access: freezed == access
+          ? _self.access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
       enabled: freezed == enabled
           ? _self.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
@@ -3024,11 +3035,13 @@ class _ReportScheduler implements ReportScheduler {
       this.createdById,
       this.createdBy,
       this.subject,
+      final List<Access>? access,
       this.enabled})
       : _assetsIds = assetsIds,
         _outboundServicesIds = outboundServicesIds,
         _sendTo = sendTo,
-        _execWeekdays = execWeekdays;
+        _execWeekdays = execWeekdays,
+        _access = access;
   factory _ReportScheduler.fromJson(Map<String, dynamic> json) =>
       _$ReportSchedulerFromJson(json);
 
@@ -3146,6 +3159,19 @@ class _ReportScheduler implements ReportScheduler {
   @override
   final String? subject;
 
+  /// List of custom [access] permissions.
+  final List<Access>? _access;
+
+  /// List of custom [access] permissions.
+  @override
+  List<Access>? get access {
+    final value = _access;
+    if (value == null) return null;
+    if (_access is EqualUnmodifiableListView) return _access;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// Indicates whether the report scheduler is enabled or not.
   @override
   final bool? enabled;
@@ -3202,6 +3228,7 @@ class _ReportScheduler implements ReportScheduler {
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
             (identical(other.subject, subject) || other.subject == subject) &&
+            const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.enabled, enabled) || other.enabled == enabled));
   }
 
@@ -3228,12 +3255,13 @@ class _ReportScheduler implements ReportScheduler {
         createdById,
         createdBy,
         subject,
+        const DeepCollectionEquality().hash(_access),
         enabled
       ]);
 
   @override
   String toString() {
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, enabled: $enabled)';
+    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, access: $access, enabled: $enabled)';
   }
 }
 
@@ -3266,6 +3294,7 @@ abstract mixin class _$ReportSchedulerCopyWith<$Res>
       String? createdById,
       User? createdBy,
       String? subject,
+      List<Access>? access,
       bool? enabled});
 
   @override
@@ -3306,6 +3335,7 @@ class __$ReportSchedulerCopyWithImpl<$Res>
     Object? createdById = freezed,
     Object? createdBy = freezed,
     Object? subject = freezed,
+    Object? access = freezed,
     Object? enabled = freezed,
   }) {
     return _then(_ReportScheduler(
@@ -3385,6 +3415,10 @@ class __$ReportSchedulerCopyWithImpl<$Res>
           ? _self.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
+      access: freezed == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
       enabled: freezed == enabled
           ? _self.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
