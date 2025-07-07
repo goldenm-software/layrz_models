@@ -2734,13 +2734,11 @@ mixin _$ReportScheduler {
   /// Subject of the report email
   String? get subject;
 
-<<<<<<< HEAD
   /// List of custom [access] permissions.
   List<Access>? get access;
-=======
+
   /// Indicates whether the report scheduler is enabled or not.
   bool? get enabled;
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
 
   /// Create a copy of ReportScheduler
   /// with the given fields replaced by the non-null parameter values.
@@ -2789,11 +2787,8 @@ mixin _$ReportScheduler {
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
             (identical(other.subject, subject) || other.subject == subject) &&
-<<<<<<< HEAD
-            const DeepCollectionEquality().equals(other.access, access));
-=======
+            const DeepCollectionEquality().equals(other.access, access) &&
             (identical(other.enabled, enabled) || other.enabled == enabled));
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2819,20 +2814,13 @@ mixin _$ReportScheduler {
         createdById,
         createdBy,
         subject,
-<<<<<<< HEAD
-        const DeepCollectionEquality().hash(access)
-=======
+        const DeepCollectionEquality().hash(access),
         enabled
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
       ]);
 
   @override
   String toString() {
-<<<<<<< HEAD
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, access: $access)';
-=======
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, enabled: $enabled)';
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
+    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, access: $access, enabled: $enabled)';
   }
 }
 
@@ -2863,11 +2851,8 @@ abstract mixin class $ReportSchedulerCopyWith<$Res> {
       String? createdById,
       User? createdBy,
       String? subject,
-<<<<<<< HEAD
-      List<Access>? access});
-=======
+      List<Access>? access,
       bool? enabled});
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
 
   $UserCopyWith<$Res>? get updatedBy;
   $UserCopyWith<$Res>? get createdBy;
@@ -2905,11 +2890,8 @@ class _$ReportSchedulerCopyWithImpl<$Res>
     Object? createdById = freezed,
     Object? createdBy = freezed,
     Object? subject = freezed,
-<<<<<<< HEAD
     Object? access = freezed,
-=======
     Object? enabled = freezed,
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -2988,17 +2970,14 @@ class _$ReportSchedulerCopyWithImpl<$Res>
           ? _self.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-<<<<<<< HEAD
       access: freezed == access
           ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
-=======
       enabled: freezed == enabled
           ? _self.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool?,
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
     ));
   }
 
@@ -3056,11 +3035,8 @@ class _ReportScheduler implements ReportScheduler {
       this.createdById,
       this.createdBy,
       this.subject,
-<<<<<<< HEAD
-      final List<Access>? access})
-=======
+      final List<Access>? access,
       this.enabled})
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
       : _assetsIds = assetsIds,
         _outboundServicesIds = outboundServicesIds,
         _sendTo = sendTo,
@@ -3183,7 +3159,6 @@ class _ReportScheduler implements ReportScheduler {
   @override
   final String? subject;
 
-<<<<<<< HEAD
   /// List of custom [access] permissions.
   final List<Access>? _access;
 
@@ -3196,11 +3171,10 @@ class _ReportScheduler implements ReportScheduler {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
-=======
+
   /// Indicates whether the report scheduler is enabled or not.
   @override
   final bool? enabled;
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
 
   /// Create a copy of ReportScheduler
   /// with the given fields replaced by the non-null parameter values.
@@ -3254,11 +3228,8 @@ class _ReportScheduler implements ReportScheduler {
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
             (identical(other.subject, subject) || other.subject == subject) &&
-<<<<<<< HEAD
-            const DeepCollectionEquality().equals(other._access, _access));
-=======
+            const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.enabled, enabled) || other.enabled == enabled));
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3284,20 +3255,13 @@ class _ReportScheduler implements ReportScheduler {
         createdById,
         createdBy,
         subject,
-<<<<<<< HEAD
-        const DeepCollectionEquality().hash(_access)
-=======
+        const DeepCollectionEquality().hash(_access),
         enabled
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
       ]);
 
   @override
   String toString() {
-<<<<<<< HEAD
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, access: $access)';
-=======
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, enabled: $enabled)';
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
+    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, access: $access, enabled: $enabled)';
   }
 }
 
@@ -3330,11 +3294,8 @@ abstract mixin class _$ReportSchedulerCopyWith<$Res>
       String? createdById,
       User? createdBy,
       String? subject,
-<<<<<<< HEAD
-      List<Access>? access});
-=======
+      List<Access>? access,
       bool? enabled});
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
 
   @override
   $UserCopyWith<$Res>? get updatedBy;
@@ -3374,11 +3335,8 @@ class __$ReportSchedulerCopyWithImpl<$Res>
     Object? createdById = freezed,
     Object? createdBy = freezed,
     Object? subject = freezed,
-<<<<<<< HEAD
     Object? access = freezed,
-=======
     Object? enabled = freezed,
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
   }) {
     return _then(_ReportScheduler(
       id: null == id
@@ -3457,17 +3415,14 @@ class __$ReportSchedulerCopyWithImpl<$Res>
           ? _self.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-<<<<<<< HEAD
       access: freezed == access
           ? _self._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
-=======
       enabled: freezed == enabled
           ? _self.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool?,
->>>>>>> be29b53c50b608ba339053378fe6db8820473a50
     ));
   }
 
