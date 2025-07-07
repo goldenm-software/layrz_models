@@ -59,6 +59,9 @@ abstract class ReportScheduler with _$ReportScheduler {
 
     /// Subject of the report email
     String? subject,
+
+    /// List of custom [access] permissions.
+    List<Access>? access,
   }) = _ReportScheduler;
 
   factory ReportScheduler.fromJson(Map<String, dynamic> json) => _$ReportSchedulerFromJson(json);

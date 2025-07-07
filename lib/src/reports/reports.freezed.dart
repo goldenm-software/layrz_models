@@ -2734,6 +2734,9 @@ mixin _$ReportScheduler {
   /// Subject of the report email
   String? get subject;
 
+  /// List of custom [access] permissions.
+  List<Access>? get access;
+
   /// Create a copy of ReportScheduler
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2780,7 +2783,8 @@ mixin _$ReportScheduler {
                 other.createdById == createdById) &&
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
-            (identical(other.subject, subject) || other.subject == subject));
+            (identical(other.subject, subject) || other.subject == subject) &&
+            const DeepCollectionEquality().equals(other.access, access));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2805,12 +2809,13 @@ mixin _$ReportScheduler {
         createdAt,
         createdById,
         createdBy,
-        subject
+        subject,
+        const DeepCollectionEquality().hash(access)
       ]);
 
   @override
   String toString() {
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject)';
+    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, access: $access)';
   }
 }
 
@@ -2840,7 +2845,8 @@ abstract mixin class $ReportSchedulerCopyWith<$Res> {
       @TimestampConverter() DateTime? createdAt,
       String? createdById,
       User? createdBy,
-      String? subject});
+      String? subject,
+      List<Access>? access});
 
   $UserCopyWith<$Res>? get updatedBy;
   $UserCopyWith<$Res>? get createdBy;
@@ -2878,6 +2884,7 @@ class _$ReportSchedulerCopyWithImpl<$Res>
     Object? createdById = freezed,
     Object? createdBy = freezed,
     Object? subject = freezed,
+    Object? access = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -2956,6 +2963,10 @@ class _$ReportSchedulerCopyWithImpl<$Res>
           ? _self.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
+      access: freezed == access
+          ? _self.access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
     ));
   }
 
@@ -3012,11 +3023,13 @@ class _ReportScheduler implements ReportScheduler {
       @TimestampConverter() this.createdAt,
       this.createdById,
       this.createdBy,
-      this.subject})
+      this.subject,
+      final List<Access>? access})
       : _assetsIds = assetsIds,
         _outboundServicesIds = outboundServicesIds,
         _sendTo = sendTo,
-        _execWeekdays = execWeekdays;
+        _execWeekdays = execWeekdays,
+        _access = access;
   factory _ReportScheduler.fromJson(Map<String, dynamic> json) =>
       _$ReportSchedulerFromJson(json);
 
@@ -3134,6 +3147,19 @@ class _ReportScheduler implements ReportScheduler {
   @override
   final String? subject;
 
+  /// List of custom [access] permissions.
+  final List<Access>? _access;
+
+  /// List of custom [access] permissions.
+  @override
+  List<Access>? get access {
+    final value = _access;
+    if (value == null) return null;
+    if (_access is EqualUnmodifiableListView) return _access;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// Create a copy of ReportScheduler
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -3185,7 +3211,8 @@ class _ReportScheduler implements ReportScheduler {
                 other.createdById == createdById) &&
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
-            (identical(other.subject, subject) || other.subject == subject));
+            (identical(other.subject, subject) || other.subject == subject) &&
+            const DeepCollectionEquality().equals(other._access, _access));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3210,12 +3237,13 @@ class _ReportScheduler implements ReportScheduler {
         createdAt,
         createdById,
         createdBy,
-        subject
+        subject,
+        const DeepCollectionEquality().hash(_access)
       ]);
 
   @override
   String toString() {
-    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject)';
+    return 'ReportScheduler(id: $id, name: $name, ownerId: $ownerId, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, templateCode: $templateCode, templateId: $templateId, relativeTime: $relativeTime, sendTo: $sendTo, execWeekdays: $execWeekdays, execTime: $execTime, execTz: $execTz, updatedAt: $updatedAt, updatedById: $updatedById, updatedBy: $updatedBy, createdAt: $createdAt, createdById: $createdById, createdBy: $createdBy, subject: $subject, access: $access)';
   }
 }
 
@@ -3247,7 +3275,8 @@ abstract mixin class _$ReportSchedulerCopyWith<$Res>
       @TimestampConverter() DateTime? createdAt,
       String? createdById,
       User? createdBy,
-      String? subject});
+      String? subject,
+      List<Access>? access});
 
   @override
   $UserCopyWith<$Res>? get updatedBy;
@@ -3287,6 +3316,7 @@ class __$ReportSchedulerCopyWithImpl<$Res>
     Object? createdById = freezed,
     Object? createdBy = freezed,
     Object? subject = freezed,
+    Object? access = freezed,
   }) {
     return _then(_ReportScheduler(
       id: null == id
@@ -3365,6 +3395,10 @@ class __$ReportSchedulerCopyWithImpl<$Res>
           ? _self.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
+      access: freezed == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
     ));
   }
 

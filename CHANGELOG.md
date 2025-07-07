@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.16
+- Add `access` in `ReportScheduler`
+
 ## 3.4.15
 - Remove `@Default` from `templateCode` in `ReportScheduler`
 
