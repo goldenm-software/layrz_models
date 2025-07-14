@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.19
+- Added `atsRecalculateOperationButton` in `ReferenceCategory`
+
 ## 3.4.18
 - Add `access` in `ReportScheduler`
 
