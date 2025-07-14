@@ -221,6 +221,13 @@ enum ReferenceCategory {
   @JsonValue('ATS_SEND_ODOMETER_IN_EXECUTE_EXITS')
   atsSendOdometerInExecuteExits,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to the recalculate operation button
+  /// ATS_RECALCULATE_OPERATION_BUTTON
+
+  @JsonValue('ATS_RECALCULATE_OPERATION_BUTTON')
+  atsRecalculateOperationButton,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR
