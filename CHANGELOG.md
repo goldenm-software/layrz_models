@@ -1,7 +1,13 @@
 # Changelog
 
+## 3.4.21
+- Deprecated `authenticationCard` and `authenticationCardId` from `Asset`
+- Added `authenticationCardCardboardId` , `authenticationCardTagId`, `authenticationCardNfcId`, `authenticationCardboard` `authenticationCardTag` adn `authenticationCardNfc` in `Asset`
+- Added `authenticationCardCardboardId` , `authenticationCardTagId` and `authenticationCardNfcId` in `AssetInput`
+
 ## 3.4.20
 - Added `assetId` in `Geofence` and `GeofenceInput`
+
 ## 3.4.19
 - Added `atsRecalculateOperationButton` in `ReferenceCategory`
 

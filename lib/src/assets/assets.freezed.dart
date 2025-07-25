@@ -778,10 +778,14 @@ mixin _$Asset {
 
   /// [authenticationCard] refers to the authentication card of the asset.
   /// Only used in ATS apps.
+  @Deprecated(
+      'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
   AtsAuthenticationCard? get authenticationCard;
 
   /// [authenticationCardId] refers to the authentication card ID of the asset.
   /// Only used in ATS apps.
+  @Deprecated(
+      'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
   String? get authenticationCardId;
 
   /// [nfcIdentifier] refers to the NFC identifier of the asset.
@@ -827,6 +831,24 @@ mixin _$Asset {
 
   /// [isSuspended] if the asset is suspended.
   bool? get isSuspended;
+
+  /// [authenticationCardCardboardId] is the cardboard ID of the authentication card id.
+  String? get authenticationCardCardboardId;
+
+  /// [authenticationCardTag] is the tag of the authentication card id.
+  String? get authenticationCardTagId;
+
+  /// [authenticationCardNfc] is the NFC of the authentication card id.
+  String? get authenticationCardNfcId;
+
+  /// [authenticationCardboard] is the cardboard ID of the authentication card id.
+  AtsAuthenticationCard? get authenticationCardboard;
+
+  /// [authenticationCardTag] is the tag of the authentication card id.
+  AtsAuthenticationCard? get authenticationCardTag;
+
+  /// [authenticationCardNfc] is the NFC of the authentication card id.
+  AtsAuthenticationCard? get authenticationCardNfc;
 
   /// Create a copy of Asset
   /// with the given fields replaced by the non-null parameter values.
@@ -920,7 +942,23 @@ mixin _$Asset {
             const DeepCollectionEquality().equals(
                 other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds) &&
             (identical(other.isSuspended, isSuspended) ||
-                other.isSuspended == isSuspended));
+                other.isSuspended == isSuspended) &&
+            (identical(other.authenticationCardCardboardId,
+                    authenticationCardCardboardId) ||
+                other.authenticationCardCardboardId ==
+                    authenticationCardCardboardId) &&
+            (identical(other.authenticationCardTagId, authenticationCardTagId) ||
+                other.authenticationCardTagId == authenticationCardTagId) &&
+            (identical(
+                    other.authenticationCardNfcId, authenticationCardNfcId) ||
+                other.authenticationCardNfcId == authenticationCardNfcId) &&
+            (identical(
+                    other.authenticationCardboard, authenticationCardboard) ||
+                other.authenticationCardboard == authenticationCardboard) &&
+            (identical(other.authenticationCardTag, authenticationCardTag) ||
+                other.authenticationCardTag == authenticationCardTag) &&
+            (identical(other.authenticationCardNfc, authenticationCardNfc) ||
+                other.authenticationCardNfc == authenticationCardNfc));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -975,12 +1013,18 @@ mixin _$Asset {
         mappitLaborEndTime,
         const DeepCollectionEquality().hash(geofences),
         const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),
-        isSuspended
+        isSuspended,
+        authenticationCardCardboardId,
+        authenticationCardTagId,
+        authenticationCardNfcId,
+        authenticationCardboard,
+        authenticationCardTag,
+        authenticationCardNfc
       ]);
 
   @override
   String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended)';
+    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended, authenticationCardCardboardId: $authenticationCardCardboardId, authenticationCardTagId: $authenticationCardTagId, authenticationCardNfcId: $authenticationCardNfcId, authenticationCardboard: $authenticationCardboard, authenticationCardTag: $authenticationCardTag, authenticationCardNfc: $authenticationCardNfc)';
   }
 }
 
@@ -1025,7 +1069,11 @@ abstract mixin class $AssetCopyWith<$Res> {
       List<MappitLaborHour>? mappitLaborHours,
       String? ownerId,
       AssetLoginInfo? loginInfo,
+      @Deprecated(
+          'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
       AtsAuthenticationCard? authenticationCard,
+      @Deprecated(
+          'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
       String? authenticationCardId,
       String? nfcIdentifier,
       List<Asset>? linkedSupplyPointAssets,
@@ -1038,7 +1086,13 @@ abstract mixin class $AssetCopyWith<$Res> {
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
       List<Geofence>? geofences,
       List<String>? mappitSecondaryRoutesIds,
-      bool? isSuspended});
+      bool? isSuspended,
+      String? authenticationCardCardboardId,
+      String? authenticationCardTagId,
+      String? authenticationCardNfcId,
+      AtsAuthenticationCard? authenticationCardboard,
+      AtsAuthenticationCard? authenticationCardTag,
+      AtsAuthenticationCard? authenticationCardNfc});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $CategoryCopyWith<$Res>? get kind;
@@ -1048,6 +1102,9 @@ abstract mixin class $AssetCopyWith<$Res> {
   $AssetLoginInfoCopyWith<$Res>? get loginInfo;
   $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard;
   $StaticPositionCopyWith<$Res>? get staticPosition;
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardboard;
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardTag;
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardNfc;
 }
 
 /// @nodoc
@@ -1111,6 +1168,12 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
     Object? geofences = freezed,
     Object? mappitSecondaryRoutesIds = freezed,
     Object? isSuspended = freezed,
+    Object? authenticationCardCardboardId = freezed,
+    Object? authenticationCardTagId = freezed,
+    Object? authenticationCardNfcId = freezed,
+    Object? authenticationCardboard = freezed,
+    Object? authenticationCardTag = freezed,
+    Object? authenticationCardNfc = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -1309,6 +1372,30 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
           ? _self.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool?,
+      authenticationCardCardboardId: freezed == authenticationCardCardboardId
+          ? _self.authenticationCardCardboardId
+          : authenticationCardCardboardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardTagId: freezed == authenticationCardTagId
+          ? _self.authenticationCardTagId
+          : authenticationCardTagId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardNfcId: freezed == authenticationCardNfcId
+          ? _self.authenticationCardNfcId
+          : authenticationCardNfcId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardboard: freezed == authenticationCardboard
+          ? _self.authenticationCardboard
+          : authenticationCardboard // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCard?,
+      authenticationCardTag: freezed == authenticationCardTag
+          ? _self.authenticationCardTag
+          : authenticationCardTag // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCard?,
+      authenticationCardNfc: freezed == authenticationCardNfc
+          ? _self.authenticationCardNfc
+          : authenticationCardNfc // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCard?,
     ));
   }
 
@@ -1424,6 +1511,51 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
       return _then(_self.copyWith(staticPosition: value));
     });
   }
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardboard {
+    if (_self.authenticationCardboard == null) {
+      return null;
+    }
+
+    return $AtsAuthenticationCardCopyWith<$Res>(_self.authenticationCardboard!,
+        (value) {
+      return _then(_self.copyWith(authenticationCardboard: value));
+    });
+  }
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardTag {
+    if (_self.authenticationCardTag == null) {
+      return null;
+    }
+
+    return $AtsAuthenticationCardCopyWith<$Res>(_self.authenticationCardTag!,
+        (value) {
+      return _then(_self.copyWith(authenticationCardTag: value));
+    });
+  }
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardNfc {
+    if (_self.authenticationCardNfc == null) {
+      return null;
+    }
+
+    return $AtsAuthenticationCardCopyWith<$Res>(_self.authenticationCardNfc!,
+        (value) {
+      return _then(_self.copyWith(authenticationCardNfc: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -1465,7 +1597,11 @@ class _Asset extends Asset {
       final List<MappitLaborHour>? mappitLaborHours,
       this.ownerId,
       this.loginInfo,
+      @Deprecated(
+          'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
       this.authenticationCard,
+      @Deprecated(
+          'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
       this.authenticationCardId,
       this.nfcIdentifier,
       final List<Asset>? linkedSupplyPointAssets,
@@ -1478,7 +1614,13 @@ class _Asset extends Asset {
       @TimeOfDayOrNullConverter() this.mappitLaborEndTime,
       final List<Geofence>? geofences,
       final List<String>? mappitSecondaryRoutesIds,
-      this.isSuspended})
+      this.isSuspended,
+      this.authenticationCardCardboardId,
+      this.authenticationCardTagId,
+      this.authenticationCardNfcId,
+      this.authenticationCardboard,
+      this.authenticationCardTag,
+      this.authenticationCardNfc})
       : _childrenIds = childrenIds,
         _children = children,
         _commands = commands,
@@ -1839,11 +1981,15 @@ class _Asset extends Asset {
   /// [authenticationCard] refers to the authentication card of the asset.
   /// Only used in ATS apps.
   @override
+  @Deprecated(
+      'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
   final AtsAuthenticationCard? authenticationCard;
 
   /// [authenticationCardId] refers to the authentication card ID of the asset.
   /// Only used in ATS apps.
   @override
+  @Deprecated(
+      'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
   final String? authenticationCardId;
 
   /// [nfcIdentifier] refers to the NFC identifier of the asset.
@@ -1971,6 +2117,30 @@ class _Asset extends Asset {
   @override
   final bool? isSuspended;
 
+  /// [authenticationCardCardboardId] is the cardboard ID of the authentication card id.
+  @override
+  final String? authenticationCardCardboardId;
+
+  /// [authenticationCardTag] is the tag of the authentication card id.
+  @override
+  final String? authenticationCardTagId;
+
+  /// [authenticationCardNfc] is the NFC of the authentication card id.
+  @override
+  final String? authenticationCardNfcId;
+
+  /// [authenticationCardboard] is the cardboard ID of the authentication card id.
+  @override
+  final AtsAuthenticationCard? authenticationCardboard;
+
+  /// [authenticationCardTag] is the tag of the authentication card id.
+  @override
+  final AtsAuthenticationCard? authenticationCardTag;
+
+  /// [authenticationCardNfc] is the NFC of the authentication card id.
+  @override
+  final AtsAuthenticationCard? authenticationCardNfc;
+
   /// Create a copy of Asset
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -2071,7 +2241,21 @@ class _Asset extends Asset {
             const DeepCollectionEquality().equals(
                 other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds) &&
             (identical(other.isSuspended, isSuspended) ||
-                other.isSuspended == isSuspended));
+                other.isSuspended == isSuspended) &&
+            (identical(other.authenticationCardCardboardId,
+                    authenticationCardCardboardId) ||
+                other.authenticationCardCardboardId ==
+                    authenticationCardCardboardId) &&
+            (identical(other.authenticationCardTagId, authenticationCardTagId) ||
+                other.authenticationCardTagId == authenticationCardTagId) &&
+            (identical(other.authenticationCardNfcId, authenticationCardNfcId) ||
+                other.authenticationCardNfcId == authenticationCardNfcId) &&
+            (identical(other.authenticationCardboard, authenticationCardboard) ||
+                other.authenticationCardboard == authenticationCardboard) &&
+            (identical(other.authenticationCardTag, authenticationCardTag) ||
+                other.authenticationCardTag == authenticationCardTag) &&
+            (identical(other.authenticationCardNfc, authenticationCardNfc) ||
+                other.authenticationCardNfc == authenticationCardNfc));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2126,12 +2310,18 @@ class _Asset extends Asset {
         mappitLaborEndTime,
         const DeepCollectionEquality().hash(_geofences),
         const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),
-        isSuspended
+        isSuspended,
+        authenticationCardCardboardId,
+        authenticationCardTagId,
+        authenticationCardNfcId,
+        authenticationCardboard,
+        authenticationCardTag,
+        authenticationCardNfc
       ]);
 
   @override
   String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended)';
+    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended, authenticationCardCardboardId: $authenticationCardCardboardId, authenticationCardTagId: $authenticationCardTagId, authenticationCardNfcId: $authenticationCardNfcId, authenticationCardboard: $authenticationCardboard, authenticationCardTag: $authenticationCardTag, authenticationCardNfc: $authenticationCardNfc)';
   }
 }
 
@@ -2177,7 +2367,11 @@ abstract mixin class _$AssetCopyWith<$Res> implements $AssetCopyWith<$Res> {
       List<MappitLaborHour>? mappitLaborHours,
       String? ownerId,
       AssetLoginInfo? loginInfo,
+      @Deprecated(
+          'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
       AtsAuthenticationCard? authenticationCard,
+      @Deprecated(
+          'Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
       String? authenticationCardId,
       String? nfcIdentifier,
       List<Asset>? linkedSupplyPointAssets,
@@ -2190,7 +2384,13 @@ abstract mixin class _$AssetCopyWith<$Res> implements $AssetCopyWith<$Res> {
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
       List<Geofence>? geofences,
       List<String>? mappitSecondaryRoutesIds,
-      bool? isSuspended});
+      bool? isSuspended,
+      String? authenticationCardCardboardId,
+      String? authenticationCardTagId,
+      String? authenticationCardNfcId,
+      AtsAuthenticationCard? authenticationCardboard,
+      AtsAuthenticationCard? authenticationCardTag,
+      AtsAuthenticationCard? authenticationCardNfc});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -2208,6 +2408,12 @@ abstract mixin class _$AssetCopyWith<$Res> implements $AssetCopyWith<$Res> {
   $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard;
   @override
   $StaticPositionCopyWith<$Res>? get staticPosition;
+  @override
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardboard;
+  @override
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardTag;
+  @override
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardNfc;
 }
 
 /// @nodoc
@@ -2271,6 +2477,12 @@ class __$AssetCopyWithImpl<$Res> implements _$AssetCopyWith<$Res> {
     Object? geofences = freezed,
     Object? mappitSecondaryRoutesIds = freezed,
     Object? isSuspended = freezed,
+    Object? authenticationCardCardboardId = freezed,
+    Object? authenticationCardTagId = freezed,
+    Object? authenticationCardNfcId = freezed,
+    Object? authenticationCardboard = freezed,
+    Object? authenticationCardTag = freezed,
+    Object? authenticationCardNfc = freezed,
   }) {
     return _then(_Asset(
       id: null == id
@@ -2469,6 +2681,30 @@ class __$AssetCopyWithImpl<$Res> implements _$AssetCopyWith<$Res> {
           ? _self.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool?,
+      authenticationCardCardboardId: freezed == authenticationCardCardboardId
+          ? _self.authenticationCardCardboardId
+          : authenticationCardCardboardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardTagId: freezed == authenticationCardTagId
+          ? _self.authenticationCardTagId
+          : authenticationCardTagId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardNfcId: freezed == authenticationCardNfcId
+          ? _self.authenticationCardNfcId
+          : authenticationCardNfcId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardboard: freezed == authenticationCardboard
+          ? _self.authenticationCardboard
+          : authenticationCardboard // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCard?,
+      authenticationCardTag: freezed == authenticationCardTag
+          ? _self.authenticationCardTag
+          : authenticationCardTag // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCard?,
+      authenticationCardNfc: freezed == authenticationCardNfc
+          ? _self.authenticationCardNfc
+          : authenticationCardNfc // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCard?,
     ));
   }
 
@@ -2584,6 +2820,51 @@ class __$AssetCopyWithImpl<$Res> implements _$AssetCopyWith<$Res> {
       return _then(_self.copyWith(staticPosition: value));
     });
   }
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardboard {
+    if (_self.authenticationCardboard == null) {
+      return null;
+    }
+
+    return $AtsAuthenticationCardCopyWith<$Res>(_self.authenticationCardboard!,
+        (value) {
+      return _then(_self.copyWith(authenticationCardboard: value));
+    });
+  }
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardTag {
+    if (_self.authenticationCardTag == null) {
+      return null;
+    }
+
+    return $AtsAuthenticationCardCopyWith<$Res>(_self.authenticationCardTag!,
+        (value) {
+      return _then(_self.copyWith(authenticationCardTag: value));
+    });
+  }
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCardNfc {
+    if (_self.authenticationCardNfc == null) {
+      return null;
+    }
+
+    return $AtsAuthenticationCardCopyWith<$Res>(_self.authenticationCardNfc!,
+        (value) {
+      return _then(_self.copyWith(authenticationCardNfc: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -2639,7 +2920,13 @@ mixin _$AssetInput {
   List<String> get linkedSupplyPointAssetsIds;
   set linkedSupplyPointAssetsIds(List<String> value);
   List<String> get geofencesIds;
-  set geofencesIds(List<String> value); // Mapppit specific fields
+  set geofencesIds(List<String> value);
+  String? get authenticationCardCardboardId;
+  set authenticationCardCardboardId(String? value);
+  String? get authenticationCardTagId;
+  set authenticationCardTagId(String? value);
+  String? get authenticationCardNfcId;
+  set authenticationCardNfcId(String? value); // Mapppit specific fields
   List<MappitLaborHourInput> get mappitLaborHours; // Mapppit specific fields
   set mappitLaborHours(List<MappitLaborHourInput> value);
   @TimeOfDayConverter()
@@ -2665,7 +2952,7 @@ mixin _$AssetInput {
 
   @override
   String toString() {
-    return 'AssetInput(id: $id, name: $name, kindId: $kindId, plate: $plate, vin: $vin, contacts: $contacts, connection: $connection, mode: $mode, primaryId: $primaryId, authenticatedUsersIds: $authenticatedUsersIds, authenticatedAssetsIds: $authenticatedAssetsIds, externalIdentifiers: $externalIdentifiers, devicesIds: $devicesIds, childrenIds: $childrenIds, referencesIds: $referencesIds, customFields: $customFields, sensors: $sensors, dynamicIcon: $dynamicIcon, staticPosition: $staticPosition, loginInfo: $loginInfo, points: $points, nfcIdentifier: $nfcIdentifier, authenticationCardId: $authenticationCardId, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, geofencesIds: $geofencesIds, mappitLaborHours: $mappitLaborHours, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
+    return 'AssetInput(id: $id, name: $name, kindId: $kindId, plate: $plate, vin: $vin, contacts: $contacts, connection: $connection, mode: $mode, primaryId: $primaryId, authenticatedUsersIds: $authenticatedUsersIds, authenticatedAssetsIds: $authenticatedAssetsIds, externalIdentifiers: $externalIdentifiers, devicesIds: $devicesIds, childrenIds: $childrenIds, referencesIds: $referencesIds, customFields: $customFields, sensors: $sensors, dynamicIcon: $dynamicIcon, staticPosition: $staticPosition, loginInfo: $loginInfo, points: $points, nfcIdentifier: $nfcIdentifier, authenticationCardId: $authenticationCardId, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, geofencesIds: $geofencesIds, authenticationCardCardboardId: $authenticationCardCardboardId, authenticationCardTagId: $authenticationCardTagId, authenticationCardNfcId: $authenticationCardNfcId, mappitLaborHours: $mappitLaborHours, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
   }
 }
 
@@ -2701,6 +2988,9 @@ abstract mixin class $AssetInputCopyWith<$Res> {
       String? authenticationCardId,
       List<String> linkedSupplyPointAssetsIds,
       List<String> geofencesIds,
+      String? authenticationCardCardboardId,
+      String? authenticationCardTagId,
+      String? authenticationCardNfcId,
       List<MappitLaborHourInput> mappitLaborHours,
       @TimeOfDayConverter() TimeOfDay mappitLaborStartTime,
       @TimeOfDayConverter() TimeOfDay mappitLaborEndTime,
@@ -2749,6 +3039,9 @@ class _$AssetInputCopyWithImpl<$Res> implements $AssetInputCopyWith<$Res> {
     Object? authenticationCardId = freezed,
     Object? linkedSupplyPointAssetsIds = null,
     Object? geofencesIds = null,
+    Object? authenticationCardCardboardId = freezed,
+    Object? authenticationCardTagId = freezed,
+    Object? authenticationCardNfcId = freezed,
     Object? mappitLaborHours = null,
     Object? mappitLaborStartTime = null,
     Object? mappitLaborEndTime = null,
@@ -2855,6 +3148,18 @@ class _$AssetInputCopyWithImpl<$Res> implements $AssetInputCopyWith<$Res> {
           ? _self.geofencesIds
           : geofencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      authenticationCardCardboardId: freezed == authenticationCardCardboardId
+          ? _self.authenticationCardCardboardId
+          : authenticationCardCardboardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardTagId: freezed == authenticationCardTagId
+          ? _self.authenticationCardTagId
+          : authenticationCardTagId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardNfcId: freezed == authenticationCardNfcId
+          ? _self.authenticationCardNfcId
+          : authenticationCardNfcId // ignore: cast_nullable_to_non_nullable
+              as String?,
       mappitLaborHours: null == mappitLaborHours
           ? _self.mappitLaborHours
           : mappitLaborHours // ignore: cast_nullable_to_non_nullable
@@ -2956,6 +3261,9 @@ class _AssetInput extends AssetInput {
       this.authenticationCardId,
       this.linkedSupplyPointAssetsIds = const [],
       this.geofencesIds = const [],
+      this.authenticationCardCardboardId,
+      this.authenticationCardTagId,
+      this.authenticationCardNfcId,
       this.mappitLaborHours = const [],
       @TimeOfDayConverter()
       this.mappitLaborStartTime = const TimeOfDay(hour: 9, minute: 0),
@@ -3034,6 +3342,12 @@ class _AssetInput extends AssetInput {
   @override
   @JsonKey()
   List<String> geofencesIds;
+  @override
+  String? authenticationCardCardboardId;
+  @override
+  String? authenticationCardTagId;
+  @override
+  String? authenticationCardNfcId;
 // Mapppit specific fields
   @override
   @JsonKey()
@@ -3067,7 +3381,7 @@ class _AssetInput extends AssetInput {
 
   @override
   String toString() {
-    return 'AssetInput(id: $id, name: $name, kindId: $kindId, plate: $plate, vin: $vin, contacts: $contacts, connection: $connection, mode: $mode, primaryId: $primaryId, authenticatedUsersIds: $authenticatedUsersIds, authenticatedAssetsIds: $authenticatedAssetsIds, externalIdentifiers: $externalIdentifiers, devicesIds: $devicesIds, childrenIds: $childrenIds, referencesIds: $referencesIds, customFields: $customFields, sensors: $sensors, dynamicIcon: $dynamicIcon, staticPosition: $staticPosition, loginInfo: $loginInfo, points: $points, nfcIdentifier: $nfcIdentifier, authenticationCardId: $authenticationCardId, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, geofencesIds: $geofencesIds, mappitLaborHours: $mappitLaborHours, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
+    return 'AssetInput(id: $id, name: $name, kindId: $kindId, plate: $plate, vin: $vin, contacts: $contacts, connection: $connection, mode: $mode, primaryId: $primaryId, authenticatedUsersIds: $authenticatedUsersIds, authenticatedAssetsIds: $authenticatedAssetsIds, externalIdentifiers: $externalIdentifiers, devicesIds: $devicesIds, childrenIds: $childrenIds, referencesIds: $referencesIds, customFields: $customFields, sensors: $sensors, dynamicIcon: $dynamicIcon, staticPosition: $staticPosition, loginInfo: $loginInfo, points: $points, nfcIdentifier: $nfcIdentifier, authenticationCardId: $authenticationCardId, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, geofencesIds: $geofencesIds, authenticationCardCardboardId: $authenticationCardCardboardId, authenticationCardTagId: $authenticationCardTagId, authenticationCardNfcId: $authenticationCardNfcId, mappitLaborHours: $mappitLaborHours, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
   }
 }
 
@@ -3105,6 +3419,9 @@ abstract mixin class _$AssetInputCopyWith<$Res>
       String? authenticationCardId,
       List<String> linkedSupplyPointAssetsIds,
       List<String> geofencesIds,
+      String? authenticationCardCardboardId,
+      String? authenticationCardTagId,
+      String? authenticationCardNfcId,
       List<MappitLaborHourInput> mappitLaborHours,
       @TimeOfDayConverter() TimeOfDay mappitLaborStartTime,
       @TimeOfDayConverter() TimeOfDay mappitLaborEndTime,
@@ -3157,6 +3474,9 @@ class __$AssetInputCopyWithImpl<$Res> implements _$AssetInputCopyWith<$Res> {
     Object? authenticationCardId = freezed,
     Object? linkedSupplyPointAssetsIds = null,
     Object? geofencesIds = null,
+    Object? authenticationCardCardboardId = freezed,
+    Object? authenticationCardTagId = freezed,
+    Object? authenticationCardNfcId = freezed,
     Object? mappitLaborHours = null,
     Object? mappitLaborStartTime = null,
     Object? mappitLaborEndTime = null,
@@ -3263,6 +3583,18 @@ class __$AssetInputCopyWithImpl<$Res> implements _$AssetInputCopyWith<$Res> {
           ? _self.geofencesIds
           : geofencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      authenticationCardCardboardId: freezed == authenticationCardCardboardId
+          ? _self.authenticationCardCardboardId
+          : authenticationCardCardboardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardTagId: freezed == authenticationCardTagId
+          ? _self.authenticationCardTagId
+          : authenticationCardTagId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticationCardNfcId: freezed == authenticationCardNfcId
+          ? _self.authenticationCardNfcId
+          : authenticationCardNfcId // ignore: cast_nullable_to_non_nullable
+              as String?,
       mappitLaborHours: null == mappitLaborHours
           ? _self.mappitLaborHours
           : mappitLaborHours // ignore: cast_nullable_to_non_nullable

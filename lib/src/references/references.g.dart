@@ -72,6 +72,8 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.atsPaLoadComboio: 'ATS_PA_LOAD_COMBOIO',
   ReferenceCategory.atsSendOdometerInExecuteExits:
       'ATS_SEND_ODOMETER_IN_EXECUTE_EXITS',
+  ReferenceCategory.atsRecalculateOperationButton:
+      'ATS_RECALCULATE_OPERATION_BUTTON',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',
