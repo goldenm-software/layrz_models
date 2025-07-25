@@ -45,6 +45,7 @@ _Geofence _$GeofenceFromJson(Map<String, dynamic> json) => _Geofence(
       mappitRouteIds: (json['mappitRouteIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      assetId: json['assetId'] as String?,
     );
 
 Map<String, dynamic> _$GeofenceToJson(_Geofence instance) => <String, dynamic>{
@@ -66,6 +67,7 @@ Map<String, dynamic> _$GeofenceToJson(_Geofence instance) => <String, dynamic>{
       'owner': instance.owner?.toJson(),
       'mappitRoutes': instance.mappitRoutes?.map((e) => e.toJson()).toList(),
       'mappitRouteIds': instance.mappitRouteIds,
+      'assetId': instance.assetId,
     };
 
 const _$GeofenceCategoryEnumMap = {
@@ -107,6 +109,7 @@ _GeofenceInput _$GeofenceInputFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CustomFieldInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      assetId: json['assetId'] as String?,
     );
 
 Map<String, dynamic> _$GeofenceInputToJson(_GeofenceInput instance) =>
@@ -121,6 +124,7 @@ Map<String, dynamic> _$GeofenceInputToJson(_GeofenceInput instance) =>
       'category': instance.category.toJson(),
       'childrenIds': instance.childrenIds,
       'customFields': instance.customFields.map((e) => e.toJson()).toList(),
+      'assetId': instance.assetId,
     };
 
 _GeofencePoint _$GeofencePointFromJson(Map<String, dynamic> json) =>

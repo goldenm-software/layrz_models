@@ -74,6 +74,9 @@ mixin _$Geofence {
   /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
   List<String>? get mappitRouteIds;
 
+  /// [assetId] refers to the asset to which the geofence is linked.
+  String? get assetId;
+
   /// Create a copy of Geofence
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -114,35 +117,38 @@ mixin _$Geofence {
             const DeepCollectionEquality()
                 .equals(other.mappitRoutes, mappitRoutes) &&
             const DeepCollectionEquality()
-                .equals(other.mappitRouteIds, mappitRouteIds));
+                .equals(other.mappitRouteIds, mappitRouteIds) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      mode,
-      description,
-      color,
-      const DeepCollectionEquality().hash(path),
-      radius,
-      resourceId,
-      const DeepCollectionEquality().hash(assetsInside),
-      category,
-      const DeepCollectionEquality().hash(childrenIds),
-      const DeepCollectionEquality().hash(children),
-      const DeepCollectionEquality().hash(access),
-      const DeepCollectionEquality().hash(customFields),
-      ownerId,
-      owner,
-      const DeepCollectionEquality().hash(mappitRoutes),
-      const DeepCollectionEquality().hash(mappitRouteIds));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        mode,
+        description,
+        color,
+        const DeepCollectionEquality().hash(path),
+        radius,
+        resourceId,
+        const DeepCollectionEquality().hash(assetsInside),
+        category,
+        const DeepCollectionEquality().hash(childrenIds),
+        const DeepCollectionEquality().hash(children),
+        const DeepCollectionEquality().hash(access),
+        const DeepCollectionEquality().hash(customFields),
+        ownerId,
+        owner,
+        const DeepCollectionEquality().hash(mappitRoutes),
+        const DeepCollectionEquality().hash(mappitRouteIds),
+        assetId
+      ]);
 
   @override
   String toString() {
-    return 'Geofence(id: $id, name: $name, mode: $mode, description: $description, color: $color, path: $path, radius: $radius, resourceId: $resourceId, assetsInside: $assetsInside, category: $category, childrenIds: $childrenIds, children: $children, access: $access, customFields: $customFields, ownerId: $ownerId, owner: $owner, mappitRoutes: $mappitRoutes, mappitRouteIds: $mappitRouteIds)';
+    return 'Geofence(id: $id, name: $name, mode: $mode, description: $description, color: $color, path: $path, radius: $radius, resourceId: $resourceId, assetsInside: $assetsInside, category: $category, childrenIds: $childrenIds, children: $children, access: $access, customFields: $customFields, ownerId: $ownerId, owner: $owner, mappitRoutes: $mappitRoutes, mappitRouteIds: $mappitRouteIds, assetId: $assetId)';
   }
 }
 
@@ -170,7 +176,8 @@ abstract mixin class $GeofenceCopyWith<$Res> {
       String? ownerId,
       User? owner,
       List<MappitRoute>? mappitRoutes,
-      List<String>? mappitRouteIds});
+      List<String>? mappitRouteIds,
+      String? assetId});
 
   $UserCopyWith<$Res>? get owner;
 }
@@ -205,6 +212,7 @@ class _$GeofenceCopyWithImpl<$Res> implements $GeofenceCopyWith<$Res> {
     Object? owner = freezed,
     Object? mappitRoutes = freezed,
     Object? mappitRouteIds = freezed,
+    Object? assetId = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -279,6 +287,10 @@ class _$GeofenceCopyWithImpl<$Res> implements $GeofenceCopyWith<$Res> {
           ? _self.mappitRouteIds
           : mappitRouteIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -319,7 +331,8 @@ class _Geofence implements Geofence {
       this.ownerId,
       this.owner,
       final List<MappitRoute>? mappitRoutes,
-      final List<String>? mappitRouteIds})
+      final List<String>? mappitRouteIds,
+      this.assetId})
       : _path = path,
         _assetsInside = assetsInside,
         _childrenIds = childrenIds,
@@ -481,6 +494,10 @@ class _Geofence implements Geofence {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [assetId] refers to the asset to which the geofence is linked.
+  @override
+  final String? assetId;
+
   /// Create a copy of Geofence
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -526,35 +543,38 @@ class _Geofence implements Geofence {
             const DeepCollectionEquality()
                 .equals(other._mappitRoutes, _mappitRoutes) &&
             const DeepCollectionEquality()
-                .equals(other._mappitRouteIds, _mappitRouteIds));
+                .equals(other._mappitRouteIds, _mappitRouteIds) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      mode,
-      description,
-      color,
-      const DeepCollectionEquality().hash(_path),
-      radius,
-      resourceId,
-      const DeepCollectionEquality().hash(_assetsInside),
-      category,
-      const DeepCollectionEquality().hash(_childrenIds),
-      const DeepCollectionEquality().hash(_children),
-      const DeepCollectionEquality().hash(_access),
-      const DeepCollectionEquality().hash(_customFields),
-      ownerId,
-      owner,
-      const DeepCollectionEquality().hash(_mappitRoutes),
-      const DeepCollectionEquality().hash(_mappitRouteIds));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        mode,
+        description,
+        color,
+        const DeepCollectionEquality().hash(_path),
+        radius,
+        resourceId,
+        const DeepCollectionEquality().hash(_assetsInside),
+        category,
+        const DeepCollectionEquality().hash(_childrenIds),
+        const DeepCollectionEquality().hash(_children),
+        const DeepCollectionEquality().hash(_access),
+        const DeepCollectionEquality().hash(_customFields),
+        ownerId,
+        owner,
+        const DeepCollectionEquality().hash(_mappitRoutes),
+        const DeepCollectionEquality().hash(_mappitRouteIds),
+        assetId
+      ]);
 
   @override
   String toString() {
-    return 'Geofence(id: $id, name: $name, mode: $mode, description: $description, color: $color, path: $path, radius: $radius, resourceId: $resourceId, assetsInside: $assetsInside, category: $category, childrenIds: $childrenIds, children: $children, access: $access, customFields: $customFields, ownerId: $ownerId, owner: $owner, mappitRoutes: $mappitRoutes, mappitRouteIds: $mappitRouteIds)';
+    return 'Geofence(id: $id, name: $name, mode: $mode, description: $description, color: $color, path: $path, radius: $radius, resourceId: $resourceId, assetsInside: $assetsInside, category: $category, childrenIds: $childrenIds, children: $children, access: $access, customFields: $customFields, ownerId: $ownerId, owner: $owner, mappitRoutes: $mappitRoutes, mappitRouteIds: $mappitRouteIds, assetId: $assetId)';
   }
 }
 
@@ -584,7 +604,8 @@ abstract mixin class _$GeofenceCopyWith<$Res>
       String? ownerId,
       User? owner,
       List<MappitRoute>? mappitRoutes,
-      List<String>? mappitRouteIds});
+      List<String>? mappitRouteIds,
+      String? assetId});
 
   @override
   $UserCopyWith<$Res>? get owner;
@@ -620,6 +641,7 @@ class __$GeofenceCopyWithImpl<$Res> implements _$GeofenceCopyWith<$Res> {
     Object? owner = freezed,
     Object? mappitRoutes = freezed,
     Object? mappitRouteIds = freezed,
+    Object? assetId = freezed,
   }) {
     return _then(_Geofence(
       id: null == id
@@ -694,6 +716,10 @@ class __$GeofenceCopyWithImpl<$Res> implements _$GeofenceCopyWith<$Res> {
           ? _self._mappitRouteIds
           : mappitRouteIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -714,32 +740,77 @@ class __$GeofenceCopyWithImpl<$Res> implements _$GeofenceCopyWith<$Res> {
 
 /// @nodoc
 mixin _$GeofenceInput {
+  /// ID of the geofence entity. This ID is unique.
   String? get id;
+
+  /// ID of the geofence entity. This ID is unique.
   set id(String? value);
+
+  /// Name of the geofence.
   String get name;
+
+  /// Name of the geofence.
   set name(String value);
+
+  /// Description of the geofence.
   String get description;
+
+  /// Description of the geofence.
   set description(String value);
+
+  /// Color of the geofence in hexadecimal code.
   @ColorConverter()
   Color get color;
+
+  /// Color of the geofence in hexadecimal code.
   @ColorConverter()
   set color(Color value);
+
+  /// Mode of geofence, check the documentation of GeofenceMode for more information.
   @GeofenceModeConverter()
   GeofenceMode get mode;
+
+  /// Mode of geofence, check the documentation of GeofenceMode for more information.
   @GeofenceModeConverter()
   set mode(GeofenceMode value);
+
+  /// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
   double get radius;
+
+  /// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
   set radius(double value);
+
+  /// External resource ID, only for external geofences.
   List<GeofencePointInput> get path;
+
+  /// External resource ID, only for external geofences.
   set path(List<GeofencePointInput> value);
+
+  /// List of assets inside the geofence.
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category;
+
+  /// List of assets inside the geofence.
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
   set category(GeofenceCategory value);
+
+  /// List of children id geofences.
   List<String> get childrenIds;
+
+  /// List of children id geofences.
   set childrenIds(List<String> value);
+
+  /// List of custom fields.
   List<CustomFieldInput> get customFields;
+
+  /// List of custom fields.
   set customFields(List<CustomFieldInput> value);
+
+  /// Asset to which the geofence is linked.
+  String? get assetId;
+
+  /// Asset to which the geofence is linked.
+  set assetId(String? value);
 
   /// Create a copy of GeofenceInput
   /// with the given fields replaced by the non-null parameter values.
@@ -754,7 +825,7 @@ mixin _$GeofenceInput {
 
   @override
   String toString() {
-    return 'GeofenceInput(id: $id, name: $name, description: $description, color: $color, mode: $mode, radius: $radius, path: $path, category: $category, childrenIds: $childrenIds, customFields: $customFields)';
+    return 'GeofenceInput(id: $id, name: $name, description: $description, color: $color, mode: $mode, radius: $radius, path: $path, category: $category, childrenIds: $childrenIds, customFields: $customFields, assetId: $assetId)';
   }
 }
 
@@ -775,7 +846,8 @@ abstract mixin class $GeofenceInputCopyWith<$Res> {
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
       GeofenceCategory category,
       List<String> childrenIds,
-      List<CustomFieldInput> customFields});
+      List<CustomFieldInput> customFields,
+      String? assetId});
 }
 
 /// @nodoc
@@ -801,6 +873,7 @@ class _$GeofenceInputCopyWithImpl<$Res>
     Object? category = null,
     Object? childrenIds = null,
     Object? customFields = null,
+    Object? assetId = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -843,6 +916,10 @@ class _$GeofenceInputCopyWithImpl<$Res>
           ? _self.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomFieldInput>,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -861,41 +938,65 @@ class _GeofenceInput implements GeofenceInput {
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
       this.category = GeofenceCategory.none,
       this.childrenIds = const [],
-      this.customFields = const []});
+      this.customFields = const [],
+      this.assetId});
   factory _GeofenceInput.fromJson(Map<String, dynamic> json) =>
       _$GeofenceInputFromJson(json);
 
+  /// ID of the geofence entity. This ID is unique.
   @override
   String? id;
+
+  /// Name of the geofence.
   @override
   @JsonKey()
   String name;
+
+  /// Description of the geofence.
   @override
   @JsonKey()
   String description;
+
+  /// Color of the geofence in hexadecimal code.
   @override
   @JsonKey()
   @ColorConverter()
   Color color;
+
+  /// Mode of geofence, check the documentation of GeofenceMode for more information.
   @override
   @JsonKey()
   @GeofenceModeConverter()
   GeofenceMode mode;
+
+  /// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
   @override
   @JsonKey()
   double radius;
+
+  /// External resource ID, only for external geofences.
   @override
   @JsonKey()
   List<GeofencePointInput> path;
+
+  /// List of assets inside the geofence.
   @override
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory category;
+
+  /// List of children id geofences.
   @override
   @JsonKey()
   List<String> childrenIds;
+
+  /// List of custom fields.
   @override
   @JsonKey()
   List<CustomFieldInput> customFields;
+
+  /// Asset to which the geofence is linked.
+  @override
+  String? assetId;
 
   /// Create a copy of GeofenceInput
   /// with the given fields replaced by the non-null parameter values.
@@ -914,7 +1015,7 @@ class _GeofenceInput implements GeofenceInput {
 
   @override
   String toString() {
-    return 'GeofenceInput(id: $id, name: $name, description: $description, color: $color, mode: $mode, radius: $radius, path: $path, category: $category, childrenIds: $childrenIds, customFields: $customFields)';
+    return 'GeofenceInput(id: $id, name: $name, description: $description, color: $color, mode: $mode, radius: $radius, path: $path, category: $category, childrenIds: $childrenIds, customFields: $customFields, assetId: $assetId)';
   }
 }
 
@@ -937,7 +1038,8 @@ abstract mixin class _$GeofenceInputCopyWith<$Res>
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
       GeofenceCategory category,
       List<String> childrenIds,
-      List<CustomFieldInput> customFields});
+      List<CustomFieldInput> customFields,
+      String? assetId});
 }
 
 /// @nodoc
@@ -963,6 +1065,7 @@ class __$GeofenceInputCopyWithImpl<$Res>
     Object? category = null,
     Object? childrenIds = null,
     Object? customFields = null,
+    Object? assetId = freezed,
   }) {
     return _then(_GeofenceInput(
       id: freezed == id
@@ -1005,6 +1108,10 @@ class __$GeofenceInputCopyWithImpl<$Res>
           ? _self.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomFieldInput>,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
