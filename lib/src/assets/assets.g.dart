@@ -188,6 +188,22 @@ _Asset _$AssetFromJson(Map<String, dynamic> json) => _Asset(
               ?.map((e) => e as String)
               .toList(),
       isSuspended: json['isSuspended'] as bool?,
+      authenticationCardCardboardId:
+          json['authenticationCardCardboardId'] as String?,
+      authenticationCardTagId: json['authenticationCardTagId'] as String?,
+      authenticationCardNfcId: json['authenticationCardNfcId'] as String?,
+      authenticationCardboard: json['authenticationCardboard'] == null
+          ? null
+          : AtsAuthenticationCard.fromJson(
+              json['authenticationCardboard'] as Map<String, dynamic>),
+      authenticationCardTag: json['authenticationCardTag'] == null
+          ? null
+          : AtsAuthenticationCard.fromJson(
+              json['authenticationCardTag'] as Map<String, dynamic>),
+      authenticationCardNfc: json['authenticationCardNfc'] == null
+          ? null
+          : AtsAuthenticationCard.fromJson(
+              json['authenticationCardNfc'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
@@ -246,6 +262,12 @@ Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
       'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
       'mappitSecondaryRoutesIds': instance.mappitSecondaryRoutesIds,
       'isSuspended': instance.isSuspended,
+      'authenticationCardCardboardId': instance.authenticationCardCardboardId,
+      'authenticationCardTagId': instance.authenticationCardTagId,
+      'authenticationCardNfcId': instance.authenticationCardNfcId,
+      'authenticationCardboard': instance.authenticationCardboard?.toJson(),
+      'authenticationCardTag': instance.authenticationCardTag?.toJson(),
+      'authenticationCardNfc': instance.authenticationCardNfc?.toJson(),
     };
 
 _AssetInput _$AssetInputFromJson(Map<String, dynamic> json) => _AssetInput(
@@ -321,6 +343,10 @@ _AssetInput _$AssetInputFromJson(Map<String, dynamic> json) => _AssetInput(
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      authenticationCardCardboardId:
+          json['authenticationCardCardboardId'] as String?,
+      authenticationCardTagId: json['authenticationCardTagId'] as String?,
+      authenticationCardNfcId: json['authenticationCardNfcId'] as String?,
       mappitLaborHours: (json['mappitLaborHours'] as List<dynamic>?)
               ?.map((e) =>
                   MappitLaborHourInput.fromJson(e as Map<String, dynamic>))
@@ -368,6 +394,9 @@ Map<String, dynamic> _$AssetInputToJson(_AssetInput instance) =>
       'authenticationCardId': instance.authenticationCardId,
       'linkedSupplyPointAssetsIds': instance.linkedSupplyPointAssetsIds,
       'geofencesIds': instance.geofencesIds,
+      'authenticationCardCardboardId': instance.authenticationCardCardboardId,
+      'authenticationCardTagId': instance.authenticationCardTagId,
+      'authenticationCardNfcId': instance.authenticationCardNfcId,
       'mappitLaborHours':
           instance.mappitLaborHours.map((e) => e.toJson()).toList(),
       'mappitLaborStartTime':

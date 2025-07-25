@@ -118,10 +118,12 @@ abstract class Asset with _$Asset {
 
     /// [authenticationCard] refers to the authentication card of the asset.
     /// Only used in ATS apps.
+    @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
     AtsAuthenticationCard? authenticationCard,
 
     /// [authenticationCardId] refers to the authentication card ID of the asset.
     /// Only used in ATS apps.
+    @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')
     String? authenticationCardId,
 
     /// [nfcIdentifier] refers to the NFC identifier of the asset.
@@ -165,6 +167,24 @@ abstract class Asset with _$Asset {
 
     /// [isSuspended] if the asset is suspended.
     bool? isSuspended,
+
+    /// [authenticationCardCardboardId] is the cardboard ID of the authentication card id.
+    String? authenticationCardCardboardId,
+
+    /// [authenticationCardTag] is the tag of the authentication card id.
+    String? authenticationCardTagId,
+
+    /// [authenticationCardNfc] is the NFC of the authentication card id.
+    String? authenticationCardNfcId,
+
+    /// [authenticationCardboard] is the cardboard ID of the authentication card id.
+    AtsAuthenticationCard? authenticationCardboard,
+
+    /// [authenticationCardTag] is the tag of the authentication card id.
+    AtsAuthenticationCard? authenticationCardTag,
+
+    /// [authenticationCardNfc] is the NFC of the authentication card id.
+    AtsAuthenticationCard? authenticationCardNfc,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
@@ -204,6 +224,9 @@ abstract class AssetInput with _$AssetInput {
     String? authenticationCardId,
     @Default([]) List<String> linkedSupplyPointAssetsIds,
     @Default([]) List<String> geofencesIds,
+    String? authenticationCardCardboardId,
+    String? authenticationCardTagId,
+    String? authenticationCardNfcId,
 
     // Mapppit specific fields
     @Default([]) List<MappitLaborHourInput> mappitLaborHours,
