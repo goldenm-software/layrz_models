@@ -1,5 +1,7 @@
 # Changelog
 
+## 3.4.20
+- Added `assetId` in `Geofence` and `GeofenceInput`
 ## 3.4.19
 - Added `atsRecalculateOperationButton` in `ReferenceCategory`
 
