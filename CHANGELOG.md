@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.23
+
+- Added `searchTimeDelta` to `Trigger` and `TriggerInput` models
+
 ## 3.4.22
 
 - Added `children` and `childrenIds` to `Trigger` and `TriggerInput` models

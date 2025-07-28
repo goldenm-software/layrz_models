@@ -76,6 +76,8 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
       childrenIds: (json['childrenIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      searchTimeDelta: const DurationOrNullConverter()
+          .fromJson(json['searchTimeDelta'] as num?),
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -116,6 +118,8 @@ Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
           instance.manualActionFields?.map((e) => e.toJson()).toList(),
       'children': instance.children?.map((e) => e.toJson()).toList(),
       'childrenIds': instance.childrenIds,
+      'searchTimeDelta':
+          const DurationOrNullConverter().toJson(instance.searchTimeDelta),
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
@@ -246,6 +250,8 @@ _TriggerInput _$TriggerInputFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      searchTimeDelta: const DurationOrNullConverter()
+          .fromJson(json['searchTimeDelta'] as num?),
       cooldownTime: json['cooldownTime'] == null
           ? const Duration(minutes: 1)
           : const DurationConverter().fromJson(json['cooldownTime'] as num),
@@ -283,6 +289,8 @@ Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
       'manualActionFields':
           instance.manualActionFields?.map((e) => e.toJson()).toList(),
       'childrenIds': instance.childrenIds,
+      'searchTimeDelta':
+          const DurationOrNullConverter().toJson(instance.searchTimeDelta),
       'cooldownTime': const DurationConverter().toJson(instance.cooldownTime),
     };
 

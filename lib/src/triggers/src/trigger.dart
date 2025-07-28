@@ -116,6 +116,9 @@ abstract class Trigger with _$Trigger {
     /// [childrenIds] represents the list of ID's of the children triggers.
     List<String>? childrenIds,
 
+    /// [searchTimeDelta] represents the search time delta of the trigger.
+    @DurationOrNullConverter() Duration? searchTimeDelta,
+
     /// [access] represents the list of accesses to the trigger.
     List<Access>? access,
   }) = _Trigger;
