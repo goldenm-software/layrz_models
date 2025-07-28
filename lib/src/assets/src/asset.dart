@@ -178,7 +178,7 @@ abstract class Asset with _$Asset {
     String? authenticationCardNfcId,
 
     /// [authenticationCardboard] is the cardboard ID of the authentication card id.
-    AtsAuthenticationCard? authenticationCardboard,
+    AtsAuthenticationCard? authenticationCardCardboard,
 
     /// [authenticationCardTag] is the tag of the authentication card id.
     AtsAuthenticationCard? authenticationCardTag,

@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.24
+- Fix prop name `authenticationCardBoard` to `authenticationCardCardboard` in ASset
+
 ## 3.4.23
 
 - Added `searchTimeDelta` to `Trigger` and `TriggerInput` models

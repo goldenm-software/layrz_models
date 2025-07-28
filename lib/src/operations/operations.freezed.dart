@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -454,6 +453,349 @@ class _$OperationCopyWithImpl<$Res> implements $OperationCopyWith<$Res> {
     return $TimezoneCopyWith<$Res>(_self.timezone!, (value) {
       return _then(_self.copyWith(timezone: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [Operation].
+extension OperationPatterns on Operation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Operation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Operation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Operation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Operation():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Operation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Operation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            @JsonKey(unknownEnumValue: OperationType.unknown)
+            OperationType operationType,
+            @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
+            HttpRequestType? requestType,
+            String? url,
+            List<HttpHeader>? headers,
+            String? payload,
+            String? languageId,
+            Timezone? timezone,
+            String? timezoneId,
+            List<String>? receptionEmails,
+            String? emailSubject,
+            @ColorOrNullConverter() Color? color,
+            @ColorOrNullConverter() Color? textColor,
+            List<PhoneNumber>? destinationPhones,
+            @JsonKey(unknownEnumValue: NotificationType.unknown)
+            NotificationType? notificationType,
+            String? externalAccountId,
+            List<Access>? access,
+            List<Trigger>? triggers,
+            bool? useAssetContactsInstead,
+            bool? attachImage,
+            String? emailTemplateId,
+            @JsonKey(unknownEnumValue: AppPlatform.web)
+            List<AppPlatform>? pushPlatforms,
+            String? pushTitle,
+            @JsonKey(unknownEnumValue: SoundEffect.none)
+            SoundEffect soundEffect,
+            String? soundEffectUri,
+            @IconOrNullConverter() LayrzIcon? icon,
+            @DurationOrNullConverter() Duration? duration)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Operation() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.operationType,
+            _that.requestType,
+            _that.url,
+            _that.headers,
+            _that.payload,
+            _that.languageId,
+            _that.timezone,
+            _that.timezoneId,
+            _that.receptionEmails,
+            _that.emailSubject,
+            _that.color,
+            _that.textColor,
+            _that.destinationPhones,
+            _that.notificationType,
+            _that.externalAccountId,
+            _that.access,
+            _that.triggers,
+            _that.useAssetContactsInstead,
+            _that.attachImage,
+            _that.emailTemplateId,
+            _that.pushPlatforms,
+            _that.pushTitle,
+            _that.soundEffect,
+            _that.soundEffectUri,
+            _that.icon,
+            _that.duration);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            @JsonKey(unknownEnumValue: OperationType.unknown)
+            OperationType operationType,
+            @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
+            HttpRequestType? requestType,
+            String? url,
+            List<HttpHeader>? headers,
+            String? payload,
+            String? languageId,
+            Timezone? timezone,
+            String? timezoneId,
+            List<String>? receptionEmails,
+            String? emailSubject,
+            @ColorOrNullConverter() Color? color,
+            @ColorOrNullConverter() Color? textColor,
+            List<PhoneNumber>? destinationPhones,
+            @JsonKey(unknownEnumValue: NotificationType.unknown)
+            NotificationType? notificationType,
+            String? externalAccountId,
+            List<Access>? access,
+            List<Trigger>? triggers,
+            bool? useAssetContactsInstead,
+            bool? attachImage,
+            String? emailTemplateId,
+            @JsonKey(unknownEnumValue: AppPlatform.web)
+            List<AppPlatform>? pushPlatforms,
+            String? pushTitle,
+            @JsonKey(unknownEnumValue: SoundEffect.none)
+            SoundEffect soundEffect,
+            String? soundEffectUri,
+            @IconOrNullConverter() LayrzIcon? icon,
+            @DurationOrNullConverter() Duration? duration)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Operation():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.operationType,
+            _that.requestType,
+            _that.url,
+            _that.headers,
+            _that.payload,
+            _that.languageId,
+            _that.timezone,
+            _that.timezoneId,
+            _that.receptionEmails,
+            _that.emailSubject,
+            _that.color,
+            _that.textColor,
+            _that.destinationPhones,
+            _that.notificationType,
+            _that.externalAccountId,
+            _that.access,
+            _that.triggers,
+            _that.useAssetContactsInstead,
+            _that.attachImage,
+            _that.emailTemplateId,
+            _that.pushPlatforms,
+            _that.pushTitle,
+            _that.soundEffect,
+            _that.soundEffectUri,
+            _that.icon,
+            _that.duration);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            @JsonKey(unknownEnumValue: OperationType.unknown)
+            OperationType operationType,
+            @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
+            HttpRequestType? requestType,
+            String? url,
+            List<HttpHeader>? headers,
+            String? payload,
+            String? languageId,
+            Timezone? timezone,
+            String? timezoneId,
+            List<String>? receptionEmails,
+            String? emailSubject,
+            @ColorOrNullConverter() Color? color,
+            @ColorOrNullConverter() Color? textColor,
+            List<PhoneNumber>? destinationPhones,
+            @JsonKey(unknownEnumValue: NotificationType.unknown)
+            NotificationType? notificationType,
+            String? externalAccountId,
+            List<Access>? access,
+            List<Trigger>? triggers,
+            bool? useAssetContactsInstead,
+            bool? attachImage,
+            String? emailTemplateId,
+            @JsonKey(unknownEnumValue: AppPlatform.web)
+            List<AppPlatform>? pushPlatforms,
+            String? pushTitle,
+            @JsonKey(unknownEnumValue: SoundEffect.none)
+            SoundEffect soundEffect,
+            String? soundEffectUri,
+            @IconOrNullConverter() LayrzIcon? icon,
+            @DurationOrNullConverter() Duration? duration)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Operation() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.operationType,
+            _that.requestType,
+            _that.url,
+            _that.headers,
+            _that.payload,
+            _that.languageId,
+            _that.timezone,
+            _that.timezoneId,
+            _that.receptionEmails,
+            _that.emailSubject,
+            _that.color,
+            _that.textColor,
+            _that.destinationPhones,
+            _that.notificationType,
+            _that.externalAccountId,
+            _that.access,
+            _that.triggers,
+            _that.useAssetContactsInstead,
+            _that.attachImage,
+            _that.emailTemplateId,
+            _that.pushPlatforms,
+            _that.pushTitle,
+            _that.soundEffect,
+            _that.soundEffectUri,
+            _that.icon,
+            _that.duration);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1476,6 +1818,331 @@ class _$OperationInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [OperationInput].
+extension OperationInputPatterns on OperationInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_OperationInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _OperationInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_OperationInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _OperationInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_OperationInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _OperationInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String name,
+            @JsonKey(unknownEnumValue: OperationType.unknown)
+            OperationType operationType,
+            @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
+            HttpRequestType? requestType,
+            String? url,
+            List<HttpHeaderInput> headers,
+            String? payload,
+            String? languageId,
+            String? timezoneId,
+            List<String> receptionEmails,
+            String emailSubject,
+            @ColorOrNullConverter() Color? color,
+            @ColorOrNullConverter() Color? textColor,
+            List<PhoneNumberInput> destinationPhones,
+            @JsonKey(unknownEnumValue: NotificationType.unknown)
+            NotificationType? notificationType,
+            String? externalAccountId,
+            bool useAssetContactsInstead,
+            bool attachImage,
+            String? emailTemplateId,
+            @JsonKey(unknownEnumValue: AppPlatform.web)
+            List<AppPlatform>? pushPlatforms,
+            String? pushTitle,
+            @JsonKey(unknownEnumValue: SoundEffect.none)
+            SoundEffect soundEffect,
+            String? soundEffectUri,
+            @IconOrNullConverter() LayrzIcon? icon,
+            @DurationConverter() Duration duration)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _OperationInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.operationType,
+            _that.requestType,
+            _that.url,
+            _that.headers,
+            _that.payload,
+            _that.languageId,
+            _that.timezoneId,
+            _that.receptionEmails,
+            _that.emailSubject,
+            _that.color,
+            _that.textColor,
+            _that.destinationPhones,
+            _that.notificationType,
+            _that.externalAccountId,
+            _that.useAssetContactsInstead,
+            _that.attachImage,
+            _that.emailTemplateId,
+            _that.pushPlatforms,
+            _that.pushTitle,
+            _that.soundEffect,
+            _that.soundEffectUri,
+            _that.icon,
+            _that.duration);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String name,
+            @JsonKey(unknownEnumValue: OperationType.unknown)
+            OperationType operationType,
+            @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
+            HttpRequestType? requestType,
+            String? url,
+            List<HttpHeaderInput> headers,
+            String? payload,
+            String? languageId,
+            String? timezoneId,
+            List<String> receptionEmails,
+            String emailSubject,
+            @ColorOrNullConverter() Color? color,
+            @ColorOrNullConverter() Color? textColor,
+            List<PhoneNumberInput> destinationPhones,
+            @JsonKey(unknownEnumValue: NotificationType.unknown)
+            NotificationType? notificationType,
+            String? externalAccountId,
+            bool useAssetContactsInstead,
+            bool attachImage,
+            String? emailTemplateId,
+            @JsonKey(unknownEnumValue: AppPlatform.web)
+            List<AppPlatform>? pushPlatforms,
+            String? pushTitle,
+            @JsonKey(unknownEnumValue: SoundEffect.none)
+            SoundEffect soundEffect,
+            String? soundEffectUri,
+            @IconOrNullConverter() LayrzIcon? icon,
+            @DurationConverter() Duration duration)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _OperationInput():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.operationType,
+            _that.requestType,
+            _that.url,
+            _that.headers,
+            _that.payload,
+            _that.languageId,
+            _that.timezoneId,
+            _that.receptionEmails,
+            _that.emailSubject,
+            _that.color,
+            _that.textColor,
+            _that.destinationPhones,
+            _that.notificationType,
+            _that.externalAccountId,
+            _that.useAssetContactsInstead,
+            _that.attachImage,
+            _that.emailTemplateId,
+            _that.pushPlatforms,
+            _that.pushTitle,
+            _that.soundEffect,
+            _that.soundEffectUri,
+            _that.icon,
+            _that.duration);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String name,
+            @JsonKey(unknownEnumValue: OperationType.unknown)
+            OperationType operationType,
+            @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
+            HttpRequestType? requestType,
+            String? url,
+            List<HttpHeaderInput> headers,
+            String? payload,
+            String? languageId,
+            String? timezoneId,
+            List<String> receptionEmails,
+            String emailSubject,
+            @ColorOrNullConverter() Color? color,
+            @ColorOrNullConverter() Color? textColor,
+            List<PhoneNumberInput> destinationPhones,
+            @JsonKey(unknownEnumValue: NotificationType.unknown)
+            NotificationType? notificationType,
+            String? externalAccountId,
+            bool useAssetContactsInstead,
+            bool attachImage,
+            String? emailTemplateId,
+            @JsonKey(unknownEnumValue: AppPlatform.web)
+            List<AppPlatform>? pushPlatforms,
+            String? pushTitle,
+            @JsonKey(unknownEnumValue: SoundEffect.none)
+            SoundEffect soundEffect,
+            String? soundEffectUri,
+            @IconOrNullConverter() LayrzIcon? icon,
+            @DurationConverter() Duration duration)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _OperationInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.operationType,
+            _that.requestType,
+            _that.url,
+            _that.headers,
+            _that.payload,
+            _that.languageId,
+            _that.timezoneId,
+            _that.receptionEmails,
+            _that.emailSubject,
+            _that.color,
+            _that.textColor,
+            _that.destinationPhones,
+            _that.notificationType,
+            _that.externalAccountId,
+            _that.useAssetContactsInstead,
+            _that.attachImage,
+            _that.emailTemplateId,
+            _that.pushPlatforms,
+            _that.pushTitle,
+            _that.soundEffect,
+            _that.soundEffectUri,
+            _that.icon,
+            _that.duration);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _OperationInput implements OperationInput {
@@ -1934,6 +2601,163 @@ class _$HttpHeaderCopyWithImpl<$Res> implements $HttpHeaderCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [HttpHeader].
+extension HttpHeaderPatterns on HttpHeader {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_HttpHeader value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeader() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_HttpHeader value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeader():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_HttpHeader value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeader() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String name, String value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeader() when $default != null:
+        return $default(_that.name, _that.value);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String name, String value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeader():
+        return $default(_that.name, _that.value);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String name, String value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeader() when $default != null:
+        return $default(_that.name, _that.value);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _HttpHeader extends HttpHeader {
@@ -2078,6 +2902,163 @@ class _$HttpHeaderInputCopyWithImpl<$Res>
           : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [HttpHeaderInput].
+extension HttpHeaderInputPatterns on HttpHeaderInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_HttpHeaderInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeaderInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_HttpHeaderInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeaderInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_HttpHeaderInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeaderInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String name, String value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeaderInput() when $default != null:
+        return $default(_that.name, _that.value);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String name, String value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeaderInput():
+        return $default(_that.name, _that.value);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String name, String value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _HttpHeaderInput() when $default != null:
+        return $default(_that.name, _that.value);
+      case _:
+        return null;
+    }
   }
 }
 

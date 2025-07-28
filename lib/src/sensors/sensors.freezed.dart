@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -495,6 +494,367 @@ class _$SensorCopyWithImpl<$Res> implements $SensorCopyWith<$Res> {
     return $AtsExitCopyWith<$Res>(_self.lastExit!, (value) {
       return _then(_self.copyWith(lastExit: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [Sensor].
+extension SensorPatterns on Sensor {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Sensor value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Sensor() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Sensor value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Sensor():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Sensor value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Sensor() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            int? iterationCycle,
+            String slug,
+            bool? isInstant,
+            @IconOrNullConverter() LayrzIcon? icon,
+            String? measuringUnit,
+            @JsonKey(unknownEnumValue: SensorType.constant) SensorType? type,
+            @JsonKey(unknownEnumValue: SensorSubType.raw)
+            SensorSubType? subtype,
+            String? parameter,
+            List<String>? externalIdentifiers,
+            String? formula,
+            String? script,
+            bool? hasHeaders,
+            List<String>? csvHeaders,
+            String? csvSeparator,
+            List<SensorRange>? ranges,
+            List<MaskPoint>? mask,
+            bool? hasValidator,
+            double? minValue,
+            double? maxValue,
+            String? contentType,
+            String? parentId,
+            Sensor? parent,
+            String? functionId,
+            AtsExit? lastExit,
+            String? qrCode,
+            List<String>? assignedAssetsIds,
+            List<Asset>? assignedAssets,
+            bool? isTemplate,
+            bool isGlobal,
+            List<Access>? access,
+            @DurationOrNullConverter() Duration? maxHistorySearch)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Sensor() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.iterationCycle,
+            _that.slug,
+            _that.isInstant,
+            _that.icon,
+            _that.measuringUnit,
+            _that.type,
+            _that.subtype,
+            _that.parameter,
+            _that.externalIdentifiers,
+            _that.formula,
+            _that.script,
+            _that.hasHeaders,
+            _that.csvHeaders,
+            _that.csvSeparator,
+            _that.ranges,
+            _that.mask,
+            _that.hasValidator,
+            _that.minValue,
+            _that.maxValue,
+            _that.contentType,
+            _that.parentId,
+            _that.parent,
+            _that.functionId,
+            _that.lastExit,
+            _that.qrCode,
+            _that.assignedAssetsIds,
+            _that.assignedAssets,
+            _that.isTemplate,
+            _that.isGlobal,
+            _that.access,
+            _that.maxHistorySearch);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            int? iterationCycle,
+            String slug,
+            bool? isInstant,
+            @IconOrNullConverter() LayrzIcon? icon,
+            String? measuringUnit,
+            @JsonKey(unknownEnumValue: SensorType.constant) SensorType? type,
+            @JsonKey(unknownEnumValue: SensorSubType.raw)
+            SensorSubType? subtype,
+            String? parameter,
+            List<String>? externalIdentifiers,
+            String? formula,
+            String? script,
+            bool? hasHeaders,
+            List<String>? csvHeaders,
+            String? csvSeparator,
+            List<SensorRange>? ranges,
+            List<MaskPoint>? mask,
+            bool? hasValidator,
+            double? minValue,
+            double? maxValue,
+            String? contentType,
+            String? parentId,
+            Sensor? parent,
+            String? functionId,
+            AtsExit? lastExit,
+            String? qrCode,
+            List<String>? assignedAssetsIds,
+            List<Asset>? assignedAssets,
+            bool? isTemplate,
+            bool isGlobal,
+            List<Access>? access,
+            @DurationOrNullConverter() Duration? maxHistorySearch)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Sensor():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.iterationCycle,
+            _that.slug,
+            _that.isInstant,
+            _that.icon,
+            _that.measuringUnit,
+            _that.type,
+            _that.subtype,
+            _that.parameter,
+            _that.externalIdentifiers,
+            _that.formula,
+            _that.script,
+            _that.hasHeaders,
+            _that.csvHeaders,
+            _that.csvSeparator,
+            _that.ranges,
+            _that.mask,
+            _that.hasValidator,
+            _that.minValue,
+            _that.maxValue,
+            _that.contentType,
+            _that.parentId,
+            _that.parent,
+            _that.functionId,
+            _that.lastExit,
+            _that.qrCode,
+            _that.assignedAssetsIds,
+            _that.assignedAssets,
+            _that.isTemplate,
+            _that.isGlobal,
+            _that.access,
+            _that.maxHistorySearch);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            int? iterationCycle,
+            String slug,
+            bool? isInstant,
+            @IconOrNullConverter() LayrzIcon? icon,
+            String? measuringUnit,
+            @JsonKey(unknownEnumValue: SensorType.constant) SensorType? type,
+            @JsonKey(unknownEnumValue: SensorSubType.raw)
+            SensorSubType? subtype,
+            String? parameter,
+            List<String>? externalIdentifiers,
+            String? formula,
+            String? script,
+            bool? hasHeaders,
+            List<String>? csvHeaders,
+            String? csvSeparator,
+            List<SensorRange>? ranges,
+            List<MaskPoint>? mask,
+            bool? hasValidator,
+            double? minValue,
+            double? maxValue,
+            String? contentType,
+            String? parentId,
+            Sensor? parent,
+            String? functionId,
+            AtsExit? lastExit,
+            String? qrCode,
+            List<String>? assignedAssetsIds,
+            List<Asset>? assignedAssets,
+            bool? isTemplate,
+            bool isGlobal,
+            List<Access>? access,
+            @DurationOrNullConverter() Duration? maxHistorySearch)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Sensor() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.iterationCycle,
+            _that.slug,
+            _that.isInstant,
+            _that.icon,
+            _that.measuringUnit,
+            _that.type,
+            _that.subtype,
+            _that.parameter,
+            _that.externalIdentifiers,
+            _that.formula,
+            _that.script,
+            _that.hasHeaders,
+            _that.csvHeaders,
+            _that.csvSeparator,
+            _that.ranges,
+            _that.mask,
+            _that.hasValidator,
+            _that.minValue,
+            _that.maxValue,
+            _that.contentType,
+            _that.parentId,
+            _that.parent,
+            _that.functionId,
+            _that.lastExit,
+            _that.qrCode,
+            _that.assignedAssetsIds,
+            _that.assignedAssets,
+            _that.isTemplate,
+            _that.isGlobal,
+            _that.access,
+            _that.maxHistorySearch);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1395,6 +1755,322 @@ class _$SensorInputCopyWithImpl<$Res> implements $SensorInputCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [SensorInput].
+extension SensorInputPatterns on SensorInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SensorInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SensorInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SensorInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SensorInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            String name,
+            String slug,
+            String measuringUnit,
+            @JsonKey(unknownEnumValue: SensorType.constant) SensorType type,
+            @JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType subtype,
+            String parameter,
+            int iterationCycle,
+            String formula,
+            String script,
+            @IconOrNullConverter() LayrzIcon? icon,
+            String? contentType,
+            List<SensorRangeInput> ranges,
+            List<MaskPointInput> mask,
+            String? parentId,
+            bool isInstant,
+            bool hasValidator,
+            double? minValue,
+            double? maxValue,
+            bool hasHeaders,
+            String csvSeparator,
+            List<String> csvHeaders,
+            String? functionId,
+            List<String> assignedAssetsIds,
+            @DurationOrNullConverter() Duration? maxHistorySearch)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SensorInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.name,
+            _that.slug,
+            _that.measuringUnit,
+            _that.type,
+            _that.subtype,
+            _that.parameter,
+            _that.iterationCycle,
+            _that.formula,
+            _that.script,
+            _that.icon,
+            _that.contentType,
+            _that.ranges,
+            _that.mask,
+            _that.parentId,
+            _that.isInstant,
+            _that.hasValidator,
+            _that.minValue,
+            _that.maxValue,
+            _that.hasHeaders,
+            _that.csvSeparator,
+            _that.csvHeaders,
+            _that.functionId,
+            _that.assignedAssetsIds,
+            _that.maxHistorySearch);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            String name,
+            String slug,
+            String measuringUnit,
+            @JsonKey(unknownEnumValue: SensorType.constant) SensorType type,
+            @JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType subtype,
+            String parameter,
+            int iterationCycle,
+            String formula,
+            String script,
+            @IconOrNullConverter() LayrzIcon? icon,
+            String? contentType,
+            List<SensorRangeInput> ranges,
+            List<MaskPointInput> mask,
+            String? parentId,
+            bool isInstant,
+            bool hasValidator,
+            double? minValue,
+            double? maxValue,
+            bool hasHeaders,
+            String csvSeparator,
+            List<String> csvHeaders,
+            String? functionId,
+            List<String> assignedAssetsIds,
+            @DurationOrNullConverter() Duration? maxHistorySearch)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorInput():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.name,
+            _that.slug,
+            _that.measuringUnit,
+            _that.type,
+            _that.subtype,
+            _that.parameter,
+            _that.iterationCycle,
+            _that.formula,
+            _that.script,
+            _that.icon,
+            _that.contentType,
+            _that.ranges,
+            _that.mask,
+            _that.parentId,
+            _that.isInstant,
+            _that.hasValidator,
+            _that.minValue,
+            _that.maxValue,
+            _that.hasHeaders,
+            _that.csvSeparator,
+            _that.csvHeaders,
+            _that.functionId,
+            _that.assignedAssetsIds,
+            _that.maxHistorySearch);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            String name,
+            String slug,
+            String measuringUnit,
+            @JsonKey(unknownEnumValue: SensorType.constant) SensorType type,
+            @JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType subtype,
+            String parameter,
+            int iterationCycle,
+            String formula,
+            String script,
+            @IconOrNullConverter() LayrzIcon? icon,
+            String? contentType,
+            List<SensorRangeInput> ranges,
+            List<MaskPointInput> mask,
+            String? parentId,
+            bool isInstant,
+            bool hasValidator,
+            double? minValue,
+            double? maxValue,
+            bool hasHeaders,
+            String csvSeparator,
+            List<String> csvHeaders,
+            String? functionId,
+            List<String> assignedAssetsIds,
+            @DurationOrNullConverter() Duration? maxHistorySearch)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.name,
+            _that.slug,
+            _that.measuringUnit,
+            _that.type,
+            _that.subtype,
+            _that.parameter,
+            _that.iterationCycle,
+            _that.formula,
+            _that.script,
+            _that.icon,
+            _that.contentType,
+            _that.ranges,
+            _that.mask,
+            _that.parentId,
+            _that.isInstant,
+            _that.hasValidator,
+            _that.minValue,
+            _that.maxValue,
+            _that.hasHeaders,
+            _that.csvSeparator,
+            _that.csvHeaders,
+            _that.functionId,
+            _that.assignedAssetsIds,
+            _that.maxHistorySearch);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _SensorInput implements SensorInput {
@@ -1770,6 +2446,163 @@ class _$SensorRangeInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [SensorRangeInput].
+extension SensorRangeInputPatterns on SensorRangeInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SensorRangeInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRangeInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SensorRangeInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRangeInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SensorRangeInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRangeInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double x, double y)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRangeInput() when $default != null:
+        return $default(_that.x, _that.y);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double x, double y) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRangeInput():
+        return $default(_that.x, _that.y);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double x, double y)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRangeInput() when $default != null:
+        return $default(_that.x, _that.y);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _SensorRangeInput implements SensorRangeInput {
@@ -1916,6 +2749,163 @@ class _$SensorRangeCopyWithImpl<$Res> implements $SensorRangeCopyWith<$Res> {
           : y // ignore: cast_nullable_to_non_nullable
               as double,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [SensorRange].
+extension SensorRangePatterns on SensorRange {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SensorRange value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRange() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SensorRange value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRange():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SensorRange value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRange() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double x, double y)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRange() when $default != null:
+        return $default(_that.x, _that.y);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double x, double y) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRange():
+        return $default(_that.x, _that.y);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double x, double y)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SensorRange() when $default != null:
+        return $default(_that.x, _that.y);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -2102,6 +3092,169 @@ class _$MaskPointCopyWithImpl<$Res> implements $MaskPointCopyWith<$Res> {
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [MaskPoint].
+extension MaskPointPatterns on MaskPoint {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MaskPoint value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPoint() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MaskPoint value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPoint():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MaskPoint value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPoint() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(@ColorOrNullConverter() Color? color, String? text,
+            String value, @IconOrNullConverter() LayrzIcon? icon)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPoint() when $default != null:
+        return $default(_that.color, _that.text, _that.value, _that.icon);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(@ColorOrNullConverter() Color? color, String? text,
+            String value, @IconOrNullConverter() LayrzIcon? icon)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPoint():
+        return $default(_that.color, _that.text, _that.value, _that.icon);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(@ColorOrNullConverter() Color? color, String? text,
+            String value, @IconOrNullConverter() LayrzIcon? icon)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPoint() when $default != null:
+        return $default(_that.color, _that.text, _that.value, _that.icon);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -2305,6 +3458,169 @@ class _$MaskPointInputCopyWithImpl<$Res>
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [MaskPointInput].
+extension MaskPointInputPatterns on MaskPointInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MaskPointInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPointInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MaskPointInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPointInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MaskPointInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPointInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(@ColorOrNullConverter() Color? color, String? text,
+            String? value, @IconOrNullConverter() LayrzIcon? icon)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPointInput() when $default != null:
+        return $default(_that.color, _that.text, _that.value, _that.icon);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(@ColorOrNullConverter() Color? color, String? text,
+            String? value, @IconOrNullConverter() LayrzIcon? icon)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPointInput():
+        return $default(_that.color, _that.text, _that.value, _that.icon);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(@ColorOrNullConverter() Color? color, String? text,
+            String? value, @IconOrNullConverter() LayrzIcon? icon)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MaskPointInput() when $default != null:
+        return $default(_that.color, _that.text, _that.value, _that.icon);
+      case _:
+        return null;
+    }
   }
 }
 
