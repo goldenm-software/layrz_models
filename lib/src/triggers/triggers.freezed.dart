@@ -128,6 +128,12 @@ mixin _$Trigger {
   /// [manualActionFields] represents the list of fields to use for the manual action.
   List<CareTask>? get manualActionFields;
 
+  /// [children] represents the list of children triggers.
+  List<Trigger>? get children;
+
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  List<String>? get childrenIds;
+
   /// [access] represents the list of accesses to the trigger.
   List<Access>? get access;
 
@@ -198,6 +204,9 @@ mixin _$Trigger {
                 other.cooldownTime == cooldownTime) &&
             const DeepCollectionEquality()
                 .equals(other.manualActionFields, manualActionFields) &&
+            const DeepCollectionEquality().equals(other.children, children) &&
+            const DeepCollectionEquality()
+                .equals(other.childrenIds, childrenIds) &&
             const DeepCollectionEquality().equals(other.access, access));
   }
 
@@ -235,12 +244,14 @@ mixin _$Trigger {
         caseCommentPatternValue,
         cooldownTime,
         const DeepCollectionEquality().hash(manualActionFields),
+        const DeepCollectionEquality().hash(children),
+        const DeepCollectionEquality().hash(childrenIds),
         const DeepCollectionEquality().hash(access)
       ]);
 
   @override
   String toString() {
-    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, access: $access)';
+    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, access: $access)';
   }
 }
 
@@ -284,6 +295,8 @@ abstract mixin class $TriggerCopyWith<$Res> {
       String? caseCommentPatternValue,
       @DurationOrNullConverter() Duration? cooldownTime,
       List<CareTask>? manualActionFields,
+      List<Trigger>? children,
+      List<String>? childrenIds,
       List<Access>? access});
 
   $CareProtocolCopyWith<$Res>? get careProtocol;
@@ -331,6 +344,8 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
     Object? caseCommentPatternValue = freezed,
     Object? cooldownTime = freezed,
     Object? manualActionFields = freezed,
+    Object? children = freezed,
+    Object? childrenIds = freezed,
     Object? access = freezed,
   }) {
     return _then(_self.copyWith(
@@ -454,6 +469,14 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
           ? _self.manualActionFields
           : manualActionFields // ignore: cast_nullable_to_non_nullable
               as List<CareTask>?,
+      children: freezed == children
+          ? _self.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<Trigger>?,
+      childrenIds: freezed == childrenIds
+          ? _self.childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       access: freezed == access
           ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
@@ -513,6 +536,8 @@ class _Trigger implements Trigger {
       this.caseCommentPatternValue,
       @DurationOrNullConverter() this.cooldownTime,
       final List<CareTask>? manualActionFields,
+      final List<Trigger>? children,
+      final List<String>? childrenIds,
       final List<Access>? access})
       : _geofencesIds = geofencesIds,
         _tagsGeofencesIds = tagsGeofencesIds,
@@ -524,6 +549,8 @@ class _Trigger implements Trigger {
         _authTagsIds = authTagsIds,
         _weekdays = weekdays,
         _manualActionFields = manualActionFields,
+        _children = children,
+        _childrenIds = childrenIds,
         _access = access;
   factory _Trigger.fromJson(Map<String, dynamic> json) =>
       _$TriggerFromJson(json);
@@ -764,6 +791,32 @@ class _Trigger implements Trigger {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [children] represents the list of children triggers.
+  final List<Trigger>? _children;
+
+  /// [children] represents the list of children triggers.
+  @override
+  List<Trigger>? get children {
+    final value = _children;
+    if (value == null) return null;
+    if (_children is EqualUnmodifiableListView) return _children;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  final List<String>? _childrenIds;
+
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  @override
+  List<String>? get childrenIds {
+    final value = _childrenIds;
+    if (value == null) return null;
+    if (_childrenIds is EqualUnmodifiableListView) return _childrenIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// [access] represents the list of accesses to the trigger.
   final List<Access>? _access;
 
@@ -850,6 +903,9 @@ class _Trigger implements Trigger {
                 other.cooldownTime == cooldownTime) &&
             const DeepCollectionEquality()
                 .equals(other._manualActionFields, _manualActionFields) &&
+            const DeepCollectionEquality().equals(other._children, _children) &&
+            const DeepCollectionEquality()
+                .equals(other._childrenIds, _childrenIds) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
@@ -887,12 +943,14 @@ class _Trigger implements Trigger {
         caseCommentPatternValue,
         cooldownTime,
         const DeepCollectionEquality().hash(_manualActionFields),
+        const DeepCollectionEquality().hash(_children),
+        const DeepCollectionEquality().hash(_childrenIds),
         const DeepCollectionEquality().hash(_access)
       ]);
 
   @override
   String toString() {
-    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, access: $access)';
+    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, access: $access)';
   }
 }
 
@@ -937,6 +995,8 @@ abstract mixin class _$TriggerCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       String? caseCommentPatternValue,
       @DurationOrNullConverter() Duration? cooldownTime,
       List<CareTask>? manualActionFields,
+      List<Trigger>? children,
+      List<String>? childrenIds,
       List<Access>? access});
 
   @override
@@ -985,6 +1045,8 @@ class __$TriggerCopyWithImpl<$Res> implements _$TriggerCopyWith<$Res> {
     Object? caseCommentPatternValue = freezed,
     Object? cooldownTime = freezed,
     Object? manualActionFields = freezed,
+    Object? children = freezed,
+    Object? childrenIds = freezed,
     Object? access = freezed,
   }) {
     return _then(_Trigger(
@@ -1108,6 +1170,14 @@ class __$TriggerCopyWithImpl<$Res> implements _$TriggerCopyWith<$Res> {
           ? _self._manualActionFields
           : manualActionFields // ignore: cast_nullable_to_non_nullable
               as List<CareTask>?,
+      children: freezed == children
+          ? _self._children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<Trigger>?,
+      childrenIds: freezed == childrenIds
+          ? _self._childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       access: freezed == access
           ? _self._access
           : access // ignore: cast_nullable_to_non_nullable
@@ -1316,6 +1386,12 @@ mixin _$TriggerInput {
   /// [manualActionFields] represents the list of fields to use for the manual action.
   set manualActionFields(List<CareTaskInput>? value);
 
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  List<String> get childrenIds;
+
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  set childrenIds(List<String> value);
+
   /// Cooldown time of the trigger.
   @DurationConverter()
   Duration get cooldownTime;
@@ -1337,7 +1413,7 @@ mixin _$TriggerInput {
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, cooldownTime: $cooldownTime)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, cooldownTime: $cooldownTime)';
   }
 }
 
@@ -1379,6 +1455,7 @@ abstract mixin class $TriggerInputCopyWith<$Res> {
       List<String>? authTagsIds,
       List<String>? parameters,
       List<CareTaskInput>? manualActionFields,
+      List<String> childrenIds,
       @DurationConverter() Duration cooldownTime});
 }
 
@@ -1422,6 +1499,7 @@ class _$TriggerInputCopyWithImpl<$Res> implements $TriggerInputCopyWith<$Res> {
     Object? authTagsIds = freezed,
     Object? parameters = freezed,
     Object? manualActionFields = freezed,
+    Object? childrenIds = null,
     Object? cooldownTime = null,
   }) {
     return _then(_self.copyWith(
@@ -1537,6 +1615,10 @@ class _$TriggerInputCopyWithImpl<$Res> implements $TriggerInputCopyWith<$Res> {
           ? _self.manualActionFields
           : manualActionFields // ignore: cast_nullable_to_non_nullable
               as List<CareTaskInput>?,
+      childrenIds: null == childrenIds
+          ? _self.childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       cooldownTime: null == cooldownTime
           ? _self.cooldownTime
           : cooldownTime // ignore: cast_nullable_to_non_nullable
@@ -1581,6 +1663,7 @@ class _TriggerInput implements TriggerInput {
       this.authTagsIds = const [],
       this.parameters = const [],
       this.manualActionFields = const [],
+      this.childrenIds = const [],
       @DurationConverter() this.cooldownTime = const Duration(minutes: 1)});
   factory _TriggerInput.fromJson(Map<String, dynamic> json) =>
       _$TriggerInputFromJson(json);
@@ -1717,6 +1800,11 @@ class _TriggerInput implements TriggerInput {
   @JsonKey()
   List<CareTaskInput>? manualActionFields;
 
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  @override
+  @JsonKey()
+  List<String> childrenIds;
+
   /// Cooldown time of the trigger.
   @override
   @JsonKey()
@@ -1740,7 +1828,7 @@ class _TriggerInput implements TriggerInput {
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, cooldownTime: $cooldownTime)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, cooldownTime: $cooldownTime)';
   }
 }
 
@@ -1784,6 +1872,7 @@ abstract mixin class _$TriggerInputCopyWith<$Res>
       List<String>? authTagsIds,
       List<String>? parameters,
       List<CareTaskInput>? manualActionFields,
+      List<String> childrenIds,
       @DurationConverter() Duration cooldownTime});
 }
 
@@ -1828,6 +1917,7 @@ class __$TriggerInputCopyWithImpl<$Res>
     Object? authTagsIds = freezed,
     Object? parameters = freezed,
     Object? manualActionFields = freezed,
+    Object? childrenIds = null,
     Object? cooldownTime = null,
   }) {
     return _then(_TriggerInput(
@@ -1943,6 +2033,10 @@ class __$TriggerInputCopyWithImpl<$Res>
           ? _self.manualActionFields
           : manualActionFields // ignore: cast_nullable_to_non_nullable
               as List<CareTaskInput>?,
+      childrenIds: null == childrenIds
+          ? _self.childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       cooldownTime: null == cooldownTime
           ? _self.cooldownTime
           : cooldownTime // ignore: cast_nullable_to_non_nullable

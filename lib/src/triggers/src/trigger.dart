@@ -110,6 +110,12 @@ abstract class Trigger with _$Trigger {
     /// [manualActionFields] represents the list of fields to use for the manual action.
     List<CareTask>? manualActionFields,
 
+    /// [children] represents the list of children triggers.
+    List<Trigger>? children,
+
+    /// [childrenIds] represents the list of ID's of the children triggers.
+    List<String>? childrenIds,
+
     /// [access] represents the list of accesses to the trigger.
     List<Access>? access,
   }) = _Trigger;

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.22
+
+- Added `children` and `childrenIds` to `Trigger` and `TriggerInput` models
+- Added `TriggerType.nested` to `TriggerType` enum
+
 ## 3.4.21
 - Deprecated `authenticationCard` and `authenticationCardId` from `Asset`
 - Added `authenticationCardCardboardId` , `authenticationCardTagId`, `authenticationCardNfcId`, `authenticationCardboard` `authenticationCardTag` adn `authenticationCardNfc` in `Asset`

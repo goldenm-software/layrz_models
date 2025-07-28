@@ -57,6 +57,12 @@ enum TriggerType {
   /// API Reference: `MANUAL_ACTION`
   @JsonValue('MANUAL_ACTION')
   manualAction,
+
+  /// [nested] is triggered when a user enters or exits a geofence.
+  ///
+  /// API Reference: `NESTED_TRIGGERS`
+  @JsonValue('NESTED_TRIGGERS')
+  nested,
   ;
 
   @override
