@@ -944,6 +944,8 @@ _AtsExitInput _$AtsExitInputFromJson(Map<String, dynamic> json) =>
       toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
       identifier: (json['identifier'] as num?)?.toInt(),
       attendantId: json['attendantId'] as String?,
+      startAt: (json['startAt'] as num?)?.toDouble(),
+      endAt: (json['endAt'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$AtsExitInputToJson(_AtsExitInput instance) =>
@@ -954,6 +956,8 @@ Map<String, dynamic> _$AtsExitInputToJson(_AtsExitInput instance) =>
       'toAssetMileage': instance.toAssetMileage,
       'identifier': instance.identifier,
       'attendantId': instance.attendantId,
+      'startAt': instance.startAt,
+      'endAt': instance.endAt,
     };
 
 _AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) => _AtsEntry(

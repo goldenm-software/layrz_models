@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -128,6 +127,16 @@ mixin _$Trigger {
   /// [manualActionFields] represents the list of fields to use for the manual action.
   List<CareTask>? get manualActionFields;
 
+  /// [children] represents the list of children triggers.
+  List<Trigger>? get children;
+
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  List<String>? get childrenIds;
+
+  /// [searchTimeDelta] represents the search time delta of the trigger.
+  @DurationOrNullConverter()
+  Duration? get searchTimeDelta;
+
   /// [access] represents the list of accesses to the trigger.
   List<Access>? get access;
 
@@ -198,6 +207,11 @@ mixin _$Trigger {
                 other.cooldownTime == cooldownTime) &&
             const DeepCollectionEquality()
                 .equals(other.manualActionFields, manualActionFields) &&
+            const DeepCollectionEquality().equals(other.children, children) &&
+            const DeepCollectionEquality()
+                .equals(other.childrenIds, childrenIds) &&
+            (identical(other.searchTimeDelta, searchTimeDelta) ||
+                other.searchTimeDelta == searchTimeDelta) &&
             const DeepCollectionEquality().equals(other.access, access));
   }
 
@@ -235,12 +249,15 @@ mixin _$Trigger {
         caseCommentPatternValue,
         cooldownTime,
         const DeepCollectionEquality().hash(manualActionFields),
+        const DeepCollectionEquality().hash(children),
+        const DeepCollectionEquality().hash(childrenIds),
+        searchTimeDelta,
         const DeepCollectionEquality().hash(access)
       ]);
 
   @override
   String toString() {
-    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, access: $access)';
+    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access)';
   }
 }
 
@@ -284,6 +301,9 @@ abstract mixin class $TriggerCopyWith<$Res> {
       String? caseCommentPatternValue,
       @DurationOrNullConverter() Duration? cooldownTime,
       List<CareTask>? manualActionFields,
+      List<Trigger>? children,
+      List<String>? childrenIds,
+      @DurationOrNullConverter() Duration? searchTimeDelta,
       List<Access>? access});
 
   $CareProtocolCopyWith<$Res>? get careProtocol;
@@ -331,6 +351,9 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
     Object? caseCommentPatternValue = freezed,
     Object? cooldownTime = freezed,
     Object? manualActionFields = freezed,
+    Object? children = freezed,
+    Object? childrenIds = freezed,
+    Object? searchTimeDelta = freezed,
     Object? access = freezed,
   }) {
     return _then(_self.copyWith(
@@ -454,6 +477,18 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
           ? _self.manualActionFields
           : manualActionFields // ignore: cast_nullable_to_non_nullable
               as List<CareTask>?,
+      children: freezed == children
+          ? _self.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<Trigger>?,
+      childrenIds: freezed == childrenIds
+          ? _self.childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      searchTimeDelta: freezed == searchTimeDelta
+          ? _self.searchTimeDelta
+          : searchTimeDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
       access: freezed == access
           ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
@@ -473,6 +508,382 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
     return $CareProtocolCopyWith<$Res>(_self.careProtocol!, (value) {
       return _then(_self.copyWith(careProtocol: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [Trigger].
+extension TriggerPatterns on Trigger {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Trigger value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Trigger() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Trigger value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Trigger():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Trigger value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Trigger() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String code,
+            List<String>? geofencesIds,
+            List<String>? tagsGeofencesIds,
+            List<String>? assetsIds,
+            List<String>? tagsAssetsIds,
+            List<String>? parameters,
+            List<String>? authAssetsIds,
+            List<String>? authUsersIds,
+            List<String>? authTagsIds,
+            @JsonKey(unknownEnumValue: TriggerType.presenceInGeofences)
+            TriggerType kind,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.both)
+            TriggerGeofenceDetectionMode? geofenceKind,
+            String? formula,
+            String? script,
+            @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+            String? crontabFormat,
+            @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? weekdays,
+            bool? isPlainCrontab,
+            String? timezoneId,
+            int? priority,
+            @ColorOrNullConverter() Color? color,
+            @JsonKey(unknownEnumValue: CaseEventEffect.none)
+            CaseEventEffect? visualEventEffect,
+            String? careProtocolId,
+            CareProtocol? careProtocol,
+            @JsonKey(unknownEnumValue: CaseType.onFollow) CaseType? caseKind,
+            @JsonKey(unknownEnumValue: CaseCommentPattern.contains)
+            CaseCommentPattern? caseCommentPattern,
+            String? caseCommentPatternValue,
+            @DurationOrNullConverter() Duration? cooldownTime,
+            List<CareTask>? manualActionFields,
+            List<Trigger>? children,
+            List<String>? childrenIds,
+            @DurationOrNullConverter() Duration? searchTimeDelta,
+            List<Access>? access)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Trigger() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.geofencesIds,
+            _that.tagsGeofencesIds,
+            _that.assetsIds,
+            _that.tagsAssetsIds,
+            _that.parameters,
+            _that.authAssetsIds,
+            _that.authUsersIds,
+            _that.authTagsIds,
+            _that.kind,
+            _that.geofenceKind,
+            _that.formula,
+            _that.script,
+            _that.exactHour,
+            _that.crontabFormat,
+            _that.weekdays,
+            _that.isPlainCrontab,
+            _that.timezoneId,
+            _that.priority,
+            _that.color,
+            _that.visualEventEffect,
+            _that.careProtocolId,
+            _that.careProtocol,
+            _that.caseKind,
+            _that.caseCommentPattern,
+            _that.caseCommentPatternValue,
+            _that.cooldownTime,
+            _that.manualActionFields,
+            _that.children,
+            _that.childrenIds,
+            _that.searchTimeDelta,
+            _that.access);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String code,
+            List<String>? geofencesIds,
+            List<String>? tagsGeofencesIds,
+            List<String>? assetsIds,
+            List<String>? tagsAssetsIds,
+            List<String>? parameters,
+            List<String>? authAssetsIds,
+            List<String>? authUsersIds,
+            List<String>? authTagsIds,
+            @JsonKey(unknownEnumValue: TriggerType.presenceInGeofences)
+            TriggerType kind,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.both)
+            TriggerGeofenceDetectionMode? geofenceKind,
+            String? formula,
+            String? script,
+            @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+            String? crontabFormat,
+            @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? weekdays,
+            bool? isPlainCrontab,
+            String? timezoneId,
+            int? priority,
+            @ColorOrNullConverter() Color? color,
+            @JsonKey(unknownEnumValue: CaseEventEffect.none)
+            CaseEventEffect? visualEventEffect,
+            String? careProtocolId,
+            CareProtocol? careProtocol,
+            @JsonKey(unknownEnumValue: CaseType.onFollow) CaseType? caseKind,
+            @JsonKey(unknownEnumValue: CaseCommentPattern.contains)
+            CaseCommentPattern? caseCommentPattern,
+            String? caseCommentPatternValue,
+            @DurationOrNullConverter() Duration? cooldownTime,
+            List<CareTask>? manualActionFields,
+            List<Trigger>? children,
+            List<String>? childrenIds,
+            @DurationOrNullConverter() Duration? searchTimeDelta,
+            List<Access>? access)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Trigger():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.geofencesIds,
+            _that.tagsGeofencesIds,
+            _that.assetsIds,
+            _that.tagsAssetsIds,
+            _that.parameters,
+            _that.authAssetsIds,
+            _that.authUsersIds,
+            _that.authTagsIds,
+            _that.kind,
+            _that.geofenceKind,
+            _that.formula,
+            _that.script,
+            _that.exactHour,
+            _that.crontabFormat,
+            _that.weekdays,
+            _that.isPlainCrontab,
+            _that.timezoneId,
+            _that.priority,
+            _that.color,
+            _that.visualEventEffect,
+            _that.careProtocolId,
+            _that.careProtocol,
+            _that.caseKind,
+            _that.caseCommentPattern,
+            _that.caseCommentPatternValue,
+            _that.cooldownTime,
+            _that.manualActionFields,
+            _that.children,
+            _that.childrenIds,
+            _that.searchTimeDelta,
+            _that.access);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String code,
+            List<String>? geofencesIds,
+            List<String>? tagsGeofencesIds,
+            List<String>? assetsIds,
+            List<String>? tagsAssetsIds,
+            List<String>? parameters,
+            List<String>? authAssetsIds,
+            List<String>? authUsersIds,
+            List<String>? authTagsIds,
+            @JsonKey(unknownEnumValue: TriggerType.presenceInGeofences)
+            TriggerType kind,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.both)
+            TriggerGeofenceDetectionMode? geofenceKind,
+            String? formula,
+            String? script,
+            @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+            String? crontabFormat,
+            @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? weekdays,
+            bool? isPlainCrontab,
+            String? timezoneId,
+            int? priority,
+            @ColorOrNullConverter() Color? color,
+            @JsonKey(unknownEnumValue: CaseEventEffect.none)
+            CaseEventEffect? visualEventEffect,
+            String? careProtocolId,
+            CareProtocol? careProtocol,
+            @JsonKey(unknownEnumValue: CaseType.onFollow) CaseType? caseKind,
+            @JsonKey(unknownEnumValue: CaseCommentPattern.contains)
+            CaseCommentPattern? caseCommentPattern,
+            String? caseCommentPatternValue,
+            @DurationOrNullConverter() Duration? cooldownTime,
+            List<CareTask>? manualActionFields,
+            List<Trigger>? children,
+            List<String>? childrenIds,
+            @DurationOrNullConverter() Duration? searchTimeDelta,
+            List<Access>? access)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Trigger() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.geofencesIds,
+            _that.tagsGeofencesIds,
+            _that.assetsIds,
+            _that.tagsAssetsIds,
+            _that.parameters,
+            _that.authAssetsIds,
+            _that.authUsersIds,
+            _that.authTagsIds,
+            _that.kind,
+            _that.geofenceKind,
+            _that.formula,
+            _that.script,
+            _that.exactHour,
+            _that.crontabFormat,
+            _that.weekdays,
+            _that.isPlainCrontab,
+            _that.timezoneId,
+            _that.priority,
+            _that.color,
+            _that.visualEventEffect,
+            _that.careProtocolId,
+            _that.careProtocol,
+            _that.caseKind,
+            _that.caseCommentPattern,
+            _that.caseCommentPatternValue,
+            _that.cooldownTime,
+            _that.manualActionFields,
+            _that.children,
+            _that.childrenIds,
+            _that.searchTimeDelta,
+            _that.access);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -513,6 +924,9 @@ class _Trigger implements Trigger {
       this.caseCommentPatternValue,
       @DurationOrNullConverter() this.cooldownTime,
       final List<CareTask>? manualActionFields,
+      final List<Trigger>? children,
+      final List<String>? childrenIds,
+      @DurationOrNullConverter() this.searchTimeDelta,
       final List<Access>? access})
       : _geofencesIds = geofencesIds,
         _tagsGeofencesIds = tagsGeofencesIds,
@@ -524,6 +938,8 @@ class _Trigger implements Trigger {
         _authTagsIds = authTagsIds,
         _weekdays = weekdays,
         _manualActionFields = manualActionFields,
+        _children = children,
+        _childrenIds = childrenIds,
         _access = access;
   factory _Trigger.fromJson(Map<String, dynamic> json) =>
       _$TriggerFromJson(json);
@@ -764,6 +1180,37 @@ class _Trigger implements Trigger {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [children] represents the list of children triggers.
+  final List<Trigger>? _children;
+
+  /// [children] represents the list of children triggers.
+  @override
+  List<Trigger>? get children {
+    final value = _children;
+    if (value == null) return null;
+    if (_children is EqualUnmodifiableListView) return _children;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  final List<String>? _childrenIds;
+
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  @override
+  List<String>? get childrenIds {
+    final value = _childrenIds;
+    if (value == null) return null;
+    if (_childrenIds is EqualUnmodifiableListView) return _childrenIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [searchTimeDelta] represents the search time delta of the trigger.
+  @override
+  @DurationOrNullConverter()
+  final Duration? searchTimeDelta;
+
   /// [access] represents the list of accesses to the trigger.
   final List<Access>? _access;
 
@@ -850,6 +1297,11 @@ class _Trigger implements Trigger {
                 other.cooldownTime == cooldownTime) &&
             const DeepCollectionEquality()
                 .equals(other._manualActionFields, _manualActionFields) &&
+            const DeepCollectionEquality().equals(other._children, _children) &&
+            const DeepCollectionEquality()
+                .equals(other._childrenIds, _childrenIds) &&
+            (identical(other.searchTimeDelta, searchTimeDelta) ||
+                other.searchTimeDelta == searchTimeDelta) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
@@ -887,12 +1339,15 @@ class _Trigger implements Trigger {
         caseCommentPatternValue,
         cooldownTime,
         const DeepCollectionEquality().hash(_manualActionFields),
+        const DeepCollectionEquality().hash(_children),
+        const DeepCollectionEquality().hash(_childrenIds),
+        searchTimeDelta,
         const DeepCollectionEquality().hash(_access)
       ]);
 
   @override
   String toString() {
-    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, access: $access)';
+    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access)';
   }
 }
 
@@ -937,6 +1392,9 @@ abstract mixin class _$TriggerCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       String? caseCommentPatternValue,
       @DurationOrNullConverter() Duration? cooldownTime,
       List<CareTask>? manualActionFields,
+      List<Trigger>? children,
+      List<String>? childrenIds,
+      @DurationOrNullConverter() Duration? searchTimeDelta,
       List<Access>? access});
 
   @override
@@ -985,6 +1443,9 @@ class __$TriggerCopyWithImpl<$Res> implements _$TriggerCopyWith<$Res> {
     Object? caseCommentPatternValue = freezed,
     Object? cooldownTime = freezed,
     Object? manualActionFields = freezed,
+    Object? children = freezed,
+    Object? childrenIds = freezed,
+    Object? searchTimeDelta = freezed,
     Object? access = freezed,
   }) {
     return _then(_Trigger(
@@ -1108,6 +1569,18 @@ class __$TriggerCopyWithImpl<$Res> implements _$TriggerCopyWith<$Res> {
           ? _self._manualActionFields
           : manualActionFields // ignore: cast_nullable_to_non_nullable
               as List<CareTask>?,
+      children: freezed == children
+          ? _self._children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<Trigger>?,
+      childrenIds: freezed == childrenIds
+          ? _self._childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      searchTimeDelta: freezed == searchTimeDelta
+          ? _self.searchTimeDelta
+          : searchTimeDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
       access: freezed == access
           ? _self._access
           : access // ignore: cast_nullable_to_non_nullable
@@ -1316,6 +1789,20 @@ mixin _$TriggerInput {
   /// [manualActionFields] represents the list of fields to use for the manual action.
   set manualActionFields(List<CareTaskInput>? value);
 
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  List<String> get childrenIds;
+
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  set childrenIds(List<String> value);
+
+  /// [searchTimeDelta] represents the search time delta of the trigger.
+  @DurationOrNullConverter()
+  Duration? get searchTimeDelta;
+
+  /// [searchTimeDelta] represents the search time delta of the trigger.
+  @DurationOrNullConverter()
+  set searchTimeDelta(Duration? value);
+
   /// Cooldown time of the trigger.
   @DurationConverter()
   Duration get cooldownTime;
@@ -1337,7 +1824,7 @@ mixin _$TriggerInput {
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, cooldownTime: $cooldownTime)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime)';
   }
 }
 
@@ -1379,6 +1866,8 @@ abstract mixin class $TriggerInputCopyWith<$Res> {
       List<String>? authTagsIds,
       List<String>? parameters,
       List<CareTaskInput>? manualActionFields,
+      List<String> childrenIds,
+      @DurationOrNullConverter() Duration? searchTimeDelta,
       @DurationConverter() Duration cooldownTime});
 }
 
@@ -1422,6 +1911,8 @@ class _$TriggerInputCopyWithImpl<$Res> implements $TriggerInputCopyWith<$Res> {
     Object? authTagsIds = freezed,
     Object? parameters = freezed,
     Object? manualActionFields = freezed,
+    Object? childrenIds = null,
+    Object? searchTimeDelta = freezed,
     Object? cooldownTime = null,
   }) {
     return _then(_self.copyWith(
@@ -1537,11 +2028,374 @@ class _$TriggerInputCopyWithImpl<$Res> implements $TriggerInputCopyWith<$Res> {
           ? _self.manualActionFields
           : manualActionFields // ignore: cast_nullable_to_non_nullable
               as List<CareTaskInput>?,
+      childrenIds: null == childrenIds
+          ? _self.childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      searchTimeDelta: freezed == searchTimeDelta
+          ? _self.searchTimeDelta
+          : searchTimeDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
       cooldownTime: null == cooldownTime
           ? _self.cooldownTime
           : cooldownTime // ignore: cast_nullable_to_non_nullable
               as Duration,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TriggerInput].
+extension TriggerInputPatterns on TriggerInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TriggerInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TriggerInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TriggerInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? name,
+            String? code,
+            String? timezoneId,
+            @JsonKey(unknownEnumValue: TriggerType.formula) TriggerType kind,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.both)
+            TriggerGeofenceDetectionMode? geofenceKind,
+            @JsonKey(unknownEnumValue: CaseType.onFollow) CaseType? caseKind,
+            @JsonKey(unknownEnumValue: CaseCommentPattern.contains)
+            CaseCommentPattern? caseCommentPattern,
+            String? caseCommentPatternValue,
+            @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+            String? crontabFormat,
+            bool isPlainCrontab,
+            @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> weekdays,
+            String? formula,
+            String? script,
+            int priority,
+            @ColorConverter() Color color,
+            @JsonKey(unknownEnumValue: CaseEventEffect.none)
+            CaseEventEffect visualEventEffect,
+            String? careProtocolId,
+            List<String>? assetsIds,
+            List<String>? tagsAssetsIds,
+            List<String>? geofencesIds,
+            List<String>? tagsGeofencesIds,
+            List<String>? authAssetsIds,
+            List<String>? authUsersIds,
+            List<String>? authTagsIds,
+            List<String>? parameters,
+            List<CareTaskInput>? manualActionFields,
+            List<String> childrenIds,
+            @DurationOrNullConverter() Duration? searchTimeDelta,
+            @DurationConverter() Duration cooldownTime)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.timezoneId,
+            _that.kind,
+            _that.geofenceKind,
+            _that.caseKind,
+            _that.caseCommentPattern,
+            _that.caseCommentPatternValue,
+            _that.exactHour,
+            _that.crontabFormat,
+            _that.isPlainCrontab,
+            _that.weekdays,
+            _that.formula,
+            _that.script,
+            _that.priority,
+            _that.color,
+            _that.visualEventEffect,
+            _that.careProtocolId,
+            _that.assetsIds,
+            _that.tagsAssetsIds,
+            _that.geofencesIds,
+            _that.tagsGeofencesIds,
+            _that.authAssetsIds,
+            _that.authUsersIds,
+            _that.authTagsIds,
+            _that.parameters,
+            _that.manualActionFields,
+            _that.childrenIds,
+            _that.searchTimeDelta,
+            _that.cooldownTime);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? name,
+            String? code,
+            String? timezoneId,
+            @JsonKey(unknownEnumValue: TriggerType.formula) TriggerType kind,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.both)
+            TriggerGeofenceDetectionMode? geofenceKind,
+            @JsonKey(unknownEnumValue: CaseType.onFollow) CaseType? caseKind,
+            @JsonKey(unknownEnumValue: CaseCommentPattern.contains)
+            CaseCommentPattern? caseCommentPattern,
+            String? caseCommentPatternValue,
+            @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+            String? crontabFormat,
+            bool isPlainCrontab,
+            @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> weekdays,
+            String? formula,
+            String? script,
+            int priority,
+            @ColorConverter() Color color,
+            @JsonKey(unknownEnumValue: CaseEventEffect.none)
+            CaseEventEffect visualEventEffect,
+            String? careProtocolId,
+            List<String>? assetsIds,
+            List<String>? tagsAssetsIds,
+            List<String>? geofencesIds,
+            List<String>? tagsGeofencesIds,
+            List<String>? authAssetsIds,
+            List<String>? authUsersIds,
+            List<String>? authTagsIds,
+            List<String>? parameters,
+            List<CareTaskInput>? manualActionFields,
+            List<String> childrenIds,
+            @DurationOrNullConverter() Duration? searchTimeDelta,
+            @DurationConverter() Duration cooldownTime)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerInput():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.timezoneId,
+            _that.kind,
+            _that.geofenceKind,
+            _that.caseKind,
+            _that.caseCommentPattern,
+            _that.caseCommentPatternValue,
+            _that.exactHour,
+            _that.crontabFormat,
+            _that.isPlainCrontab,
+            _that.weekdays,
+            _that.formula,
+            _that.script,
+            _that.priority,
+            _that.color,
+            _that.visualEventEffect,
+            _that.careProtocolId,
+            _that.assetsIds,
+            _that.tagsAssetsIds,
+            _that.geofencesIds,
+            _that.tagsGeofencesIds,
+            _that.authAssetsIds,
+            _that.authUsersIds,
+            _that.authTagsIds,
+            _that.parameters,
+            _that.manualActionFields,
+            _that.childrenIds,
+            _that.searchTimeDelta,
+            _that.cooldownTime);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? name,
+            String? code,
+            String? timezoneId,
+            @JsonKey(unknownEnumValue: TriggerType.formula) TriggerType kind,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.both)
+            TriggerGeofenceDetectionMode? geofenceKind,
+            @JsonKey(unknownEnumValue: CaseType.onFollow) CaseType? caseKind,
+            @JsonKey(unknownEnumValue: CaseCommentPattern.contains)
+            CaseCommentPattern? caseCommentPattern,
+            String? caseCommentPatternValue,
+            @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+            String? crontabFormat,
+            bool isPlainCrontab,
+            @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> weekdays,
+            String? formula,
+            String? script,
+            int priority,
+            @ColorConverter() Color color,
+            @JsonKey(unknownEnumValue: CaseEventEffect.none)
+            CaseEventEffect visualEventEffect,
+            String? careProtocolId,
+            List<String>? assetsIds,
+            List<String>? tagsAssetsIds,
+            List<String>? geofencesIds,
+            List<String>? tagsGeofencesIds,
+            List<String>? authAssetsIds,
+            List<String>? authUsersIds,
+            List<String>? authTagsIds,
+            List<String>? parameters,
+            List<CareTaskInput>? manualActionFields,
+            List<String> childrenIds,
+            @DurationOrNullConverter() Duration? searchTimeDelta,
+            @DurationConverter() Duration cooldownTime)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.timezoneId,
+            _that.kind,
+            _that.geofenceKind,
+            _that.caseKind,
+            _that.caseCommentPattern,
+            _that.caseCommentPatternValue,
+            _that.exactHour,
+            _that.crontabFormat,
+            _that.isPlainCrontab,
+            _that.weekdays,
+            _that.formula,
+            _that.script,
+            _that.priority,
+            _that.color,
+            _that.visualEventEffect,
+            _that.careProtocolId,
+            _that.assetsIds,
+            _that.tagsAssetsIds,
+            _that.geofencesIds,
+            _that.tagsGeofencesIds,
+            _that.authAssetsIds,
+            _that.authUsersIds,
+            _that.authTagsIds,
+            _that.parameters,
+            _that.manualActionFields,
+            _that.childrenIds,
+            _that.searchTimeDelta,
+            _that.cooldownTime);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1581,6 +2435,8 @@ class _TriggerInput implements TriggerInput {
       this.authTagsIds = const [],
       this.parameters = const [],
       this.manualActionFields = const [],
+      this.childrenIds = const [],
+      @DurationOrNullConverter() this.searchTimeDelta,
       @DurationConverter() this.cooldownTime = const Duration(minutes: 1)});
   factory _TriggerInput.fromJson(Map<String, dynamic> json) =>
       _$TriggerInputFromJson(json);
@@ -1717,6 +2573,16 @@ class _TriggerInput implements TriggerInput {
   @JsonKey()
   List<CareTaskInput>? manualActionFields;
 
+  /// [childrenIds] represents the list of ID's of the children triggers.
+  @override
+  @JsonKey()
+  List<String> childrenIds;
+
+  /// [searchTimeDelta] represents the search time delta of the trigger.
+  @override
+  @DurationOrNullConverter()
+  Duration? searchTimeDelta;
+
   /// Cooldown time of the trigger.
   @override
   @JsonKey()
@@ -1740,7 +2606,7 @@ class _TriggerInput implements TriggerInput {
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, cooldownTime: $cooldownTime)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime)';
   }
 }
 
@@ -1784,6 +2650,8 @@ abstract mixin class _$TriggerInputCopyWith<$Res>
       List<String>? authTagsIds,
       List<String>? parameters,
       List<CareTaskInput>? manualActionFields,
+      List<String> childrenIds,
+      @DurationOrNullConverter() Duration? searchTimeDelta,
       @DurationConverter() Duration cooldownTime});
 }
 
@@ -1828,6 +2696,8 @@ class __$TriggerInputCopyWithImpl<$Res>
     Object? authTagsIds = freezed,
     Object? parameters = freezed,
     Object? manualActionFields = freezed,
+    Object? childrenIds = null,
+    Object? searchTimeDelta = freezed,
     Object? cooldownTime = null,
   }) {
     return _then(_TriggerInput(
@@ -1943,6 +2813,14 @@ class __$TriggerInputCopyWithImpl<$Res>
           ? _self.manualActionFields
           : manualActionFields // ignore: cast_nullable_to_non_nullable
               as List<CareTaskInput>?,
+      childrenIds: null == childrenIds
+          ? _self.childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      searchTimeDelta: freezed == searchTimeDelta
+          ? _self.searchTimeDelta
+          : searchTimeDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
       cooldownTime: null == cooldownTime
           ? _self.cooldownTime
           : cooldownTime // ignore: cast_nullable_to_non_nullable
@@ -2125,6 +3003,193 @@ class _$TriggerActivationCopyWithImpl<$Res>
     return $TelemetryPositionCopyWith<$Res>(_self.position!, (value) {
       return _then(_self.copyWith(position: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [TriggerActivation].
+extension TriggerActivationPatterns on TriggerActivation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TriggerActivation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerActivation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TriggerActivation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerActivation():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TriggerActivation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerActivation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            Asset asset,
+            Trigger? trigger,
+            TelemetryPosition? position,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.entrance)
+            TriggerGeofenceDetectionMode? presenceType,
+            List<TelemetrySensor>? sensors,
+            @JsonKey(name: 'at') @TimestampConverter() DateTime date)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerActivation() when $default != null:
+        return $default(_that.id, _that.asset, _that.trigger, _that.position,
+            _that.presenceType, _that.sensors, _that.date);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            Asset asset,
+            Trigger? trigger,
+            TelemetryPosition? position,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.entrance)
+            TriggerGeofenceDetectionMode? presenceType,
+            List<TelemetrySensor>? sensors,
+            @JsonKey(name: 'at') @TimestampConverter() DateTime date)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerActivation():
+        return $default(_that.id, _that.asset, _that.trigger, _that.position,
+            _that.presenceType, _that.sensors, _that.date);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            Asset asset,
+            Trigger? trigger,
+            TelemetryPosition? position,
+            @JsonKey(unknownEnumValue: TriggerGeofenceDetectionMode.entrance)
+            TriggerGeofenceDetectionMode? presenceType,
+            List<TelemetrySensor>? sensors,
+            @JsonKey(name: 'at') @TimestampConverter() DateTime date)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TriggerActivation() when $default != null:
+        return $default(_that.id, _that.asset, _that.trigger, _that.position,
+            _that.presenceType, _that.sensors, _that.date);
+      case _:
+        return null;
+    }
   }
 }
 

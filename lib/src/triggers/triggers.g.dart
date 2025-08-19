@@ -70,6 +70,14 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
       manualActionFields: (json['manualActionFields'] as List<dynamic>?)
           ?.map((e) => CareTask.fromJson(e as Map<String, dynamic>))
           .toList(),
+      children: (json['children'] as List<dynamic>?)
+          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      childrenIds: (json['childrenIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      searchTimeDelta: const DurationOrNullConverter()
+          .fromJson(json['searchTimeDelta'] as num?),
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -108,6 +116,10 @@ Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
           const DurationOrNullConverter().toJson(instance.cooldownTime),
       'manualActionFields':
           instance.manualActionFields?.map((e) => e.toJson()).toList(),
+      'children': instance.children?.map((e) => e.toJson()).toList(),
+      'childrenIds': instance.childrenIds,
+      'searchTimeDelta':
+          const DurationOrNullConverter().toJson(instance.searchTimeDelta),
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
@@ -121,6 +133,7 @@ const _$TriggerTypeEnumMap = {
   TriggerType.bhsSpeeding: 'BHS_SPEEDING',
   TriggerType.bhsPresence: 'BHS_PRESENCE',
   TriggerType.manualAction: 'MANUAL_ACTION',
+  TriggerType.nested: 'NESTED_TRIGGERS',
 };
 
 const _$TriggerGeofenceDetectionModeEnumMap = {
@@ -233,6 +246,12 @@ _TriggerInput _$TriggerInputFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CareTaskInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      childrenIds: (json['childrenIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      searchTimeDelta: const DurationOrNullConverter()
+          .fromJson(json['searchTimeDelta'] as num?),
       cooldownTime: json['cooldownTime'] == null
           ? const Duration(minutes: 1)
           : const DurationConverter().fromJson(json['cooldownTime'] as num),
@@ -269,6 +288,9 @@ Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
       'parameters': instance.parameters,
       'manualActionFields':
           instance.manualActionFields?.map((e) => e.toJson()).toList(),
+      'childrenIds': instance.childrenIds,
+      'searchTimeDelta':
+          const DurationOrNullConverter().toJson(instance.searchTimeDelta),
       'cooldownTime': const DurationConverter().toJson(instance.cooldownTime),
     };
 

@@ -1,5 +1,27 @@
 # Changelog
 
+## 3.4.27
+- Update Changelog and Readme
+
+## 3.4.26
+- Added `BlockInput`, `BoolBlockInput`, `MathBlockInput`, `ConditionType` `ExceptionType` `MathType` and `BlockType`
+- Added `startAt` and `endAt` in `AtsExitInput`
+
+## 3.4.25
+- Update README
+
+## 3.4.24
+- Fix prop name `authenticationCardBoard` to `authenticationCardCardboard` in ASset
+
+## 3.4.23
+
+- Added `searchTimeDelta` to `Trigger` and `TriggerInput` models
+
+## 3.4.22
+
+- Added `children` and `childrenIds` to `Trigger` and `TriggerInput` models
+- Added `TriggerType.nested` to `TriggerType` enum
+
 ## 3.4.21
 - Deprecated `authenticationCard` and `authenticationCardId` from `Asset`
 - Added `authenticationCardCardboardId` , `authenticationCardTagId`, `authenticationCardNfcId`, `authenticationCardboard` `authenticationCardTag` adn `authenticationCardNfc` in `Asset`

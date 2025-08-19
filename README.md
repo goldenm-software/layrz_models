@@ -29,3 +29,14 @@ This project is maintained by [Golden M](https://goldenm.com) with authorization
 ## Who are you? / Want to work with us?
 
 <b>Golden M</b> is a software and hardware development company what is working on a new, innovative and disruptive technologies. For more information, contact us at [sales@goldenm.com](mailto:sales@goldenm.com) or via WhatsApp at [+(507)-6979-3073](https://wa.me/50769793073?text="From%20layrz_models%20flutter%20library.%20Hello").
+
+## How to deploy
+- Add every change in CHANGELOG.md
+- Set `git push`
+- Set in the terminal `git tag v{version}`
+- Set `git push origin {tag_name}`
+
+# Example of how to deploy
+- git tag v3.4.24
+- git push origin v3.4.24
+- Done!

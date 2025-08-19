@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -87,6 +86,163 @@ class _$ConciergeFormPageCopyWithImpl<$Res>
           : blocks // ignore: cast_nullable_to_non_nullable
               as List<ConciergeFormBlock>,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ConciergeFormPage].
+extension ConciergeFormPagePatterns on ConciergeFormPage {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ConciergeFormPage value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPage() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ConciergeFormPage value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPage():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ConciergeFormPage value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPage() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String title, List<ConciergeFormBlock> blocks)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPage() when $default != null:
+        return $default(_that.title, _that.blocks);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String title, List<ConciergeFormBlock> blocks) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPage():
+        return $default(_that.title, _that.blocks);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String title, List<ConciergeFormBlock> blocks)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPage() when $default != null:
+        return $default(_that.title, _that.blocks);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -251,6 +407,164 @@ class _$ConciergeFormPageInputCopyWithImpl<$Res>
           : blocks // ignore: cast_nullable_to_non_nullable
               as List<ConciergeBlockInput>,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ConciergeFormPageInput].
+extension ConciergeFormPageInputPatterns on ConciergeFormPageInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ConciergeFormPageInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPageInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ConciergeFormPageInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPageInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ConciergeFormPageInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPageInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String title, List<ConciergeBlockInput> blocks)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPageInput() when $default != null:
+        return $default(_that.title, _that.blocks);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String title, List<ConciergeBlockInput> blocks) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPageInput():
+        return $default(_that.title, _that.blocks);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String title, List<ConciergeBlockInput> blocks)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormPageInput() when $default != null:
+        return $default(_that.title, _that.blocks);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -464,6 +778,184 @@ class _$ConciergeFormBlockCopyWithImpl<$Res>
     return $ConciergeFormBlockValidatorCopyWith<$Res>(_self.showWhen!, (value) {
       return _then(_self.copyWith(showWhen: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [ConciergeFormBlock].
+extension ConciergeFormBlockPatterns on ConciergeFormBlock {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlock value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlock() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlock value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlock():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ConciergeFormBlock value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlock() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+            ConciergeFormBlockType blockType,
+            String name,
+            ConciergeFormBlockConfiguration? configuration,
+            ConciergeFormBlockValidator? showWhen)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlock() when $default != null:
+        return $default(
+            _that.blockType, _that.name, _that.configuration, _that.showWhen);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+            ConciergeFormBlockType blockType,
+            String name,
+            ConciergeFormBlockConfiguration? configuration,
+            ConciergeFormBlockValidator? showWhen)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlock():
+        return $default(
+            _that.blockType, _that.name, _that.configuration, _that.showWhen);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+            ConciergeFormBlockType blockType,
+            String name,
+            ConciergeFormBlockConfiguration? configuration,
+            ConciergeFormBlockValidator? showWhen)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlock() when $default != null:
+        return $default(
+            _that.blockType, _that.name, _that.configuration, _that.showWhen);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -742,6 +1234,184 @@ class _$ConciergeBlockInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [ConciergeBlockInput].
+extension ConciergeBlockInputPatterns on ConciergeBlockInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ConciergeBlockInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeBlockInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ConciergeBlockInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeBlockInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ConciergeBlockInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeBlockInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String name,
+            @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+            ConciergeFormBlockType blockType,
+            ConciergeFormBlockDisplayConditionInput? showWhen,
+            ConciergeFormBlockConfigurationInput? configuration)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeBlockInput() when $default != null:
+        return $default(
+            _that.name, _that.blockType, _that.showWhen, _that.configuration);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String name,
+            @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+            ConciergeFormBlockType blockType,
+            ConciergeFormBlockDisplayConditionInput? showWhen,
+            ConciergeFormBlockConfigurationInput? configuration)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeBlockInput():
+        return $default(
+            _that.name, _that.blockType, _that.showWhen, _that.configuration);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String name,
+            @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+            ConciergeFormBlockType blockType,
+            ConciergeFormBlockDisplayConditionInput? showWhen,
+            ConciergeFormBlockConfigurationInput? configuration)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeBlockInput() when $default != null:
+        return $default(
+            _that.name, _that.blockType, _that.showWhen, _that.configuration);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ConciergeBlockInput extends ConciergeBlockInput {
@@ -999,6 +1669,173 @@ class _$ConciergeFormBlockConfigurationCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [ConciergeFormBlockConfiguration].
+extension ConciergeFormBlockConfigurationPatterns
+    on ConciergeFormBlockConfiguration {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlockConfiguration value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfiguration() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlockConfiguration value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfiguration():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ConciergeFormBlockConfiguration value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfiguration() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(bool allowEmpty, bool? isInt, bool? isMultiple,
+            double? max, double? min, List<String> choices)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfiguration() when $default != null:
+        return $default(_that.allowEmpty, _that.isInt, _that.isMultiple,
+            _that.max, _that.min, _that.choices);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(bool allowEmpty, bool? isInt, bool? isMultiple,
+            double? max, double? min, List<String> choices)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfiguration():
+        return $default(_that.allowEmpty, _that.isInt, _that.isMultiple,
+            _that.max, _that.min, _that.choices);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(bool allowEmpty, bool? isInt, bool? isMultiple,
+            double? max, double? min, List<String> choices)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfiguration() when $default != null:
+        return $default(_that.allowEmpty, _that.isInt, _that.isMultiple,
+            _that.max, _that.min, _that.choices);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ConciergeFormBlockConfiguration extends ConciergeFormBlockConfiguration {
@@ -1253,6 +2090,173 @@ class _$ConciergeFormBlockConfigurationInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [ConciergeFormBlockConfigurationInput].
+extension ConciergeFormBlockConfigurationInputPatterns
+    on ConciergeFormBlockConfigurationInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlockConfigurationInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfigurationInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlockConfigurationInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfigurationInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ConciergeFormBlockConfigurationInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfigurationInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(bool? allowEmpty, bool? isMultiple, double? min,
+            double? max, bool? asInt, List<String>? choices)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfigurationInput() when $default != null:
+        return $default(_that.allowEmpty, _that.isMultiple, _that.min,
+            _that.max, _that.asInt, _that.choices);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(bool? allowEmpty, bool? isMultiple, double? min,
+            double? max, bool? asInt, List<String>? choices)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfigurationInput():
+        return $default(_that.allowEmpty, _that.isMultiple, _that.min,
+            _that.max, _that.asInt, _that.choices);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(bool? allowEmpty, bool? isMultiple, double? min,
+            double? max, bool? asInt, List<String>? choices)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockConfigurationInput() when $default != null:
+        return $default(_that.allowEmpty, _that.isMultiple, _that.min,
+            _that.max, _that.asInt, _that.choices);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ConciergeFormBlockConfigurationInput
@@ -1494,6 +2498,199 @@ class _$ConciergeFormBlockValidatorCopyWithImpl<$Res>
           : validatorOperator // ignore: cast_nullable_to_non_nullable
               as ConciergeFormDisplayConditionOperator?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ConciergeFormBlockValidator].
+extension ConciergeFormBlockValidatorPatterns on ConciergeFormBlockValidator {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlockValidator value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockValidator() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlockValidator value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockValidator():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ConciergeFormBlockValidator value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockValidator() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            int? blockId,
+            double? max,
+            double? min,
+            String? value,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+            ConciergeFormDisplayConditionValidator validator,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+            ConciergeFormDisplayConditionOperator? validatorOperator)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockValidator() when $default != null:
+        return $default(_that.blockId, _that.max, _that.min, _that.value,
+            _that.validator, _that.validatorOperator);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            int? blockId,
+            double? max,
+            double? min,
+            String? value,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+            ConciergeFormDisplayConditionValidator validator,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+            ConciergeFormDisplayConditionOperator? validatorOperator)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockValidator():
+        return $default(_that.blockId, _that.max, _that.min, _that.value,
+            _that.validator, _that.validatorOperator);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            int? blockId,
+            double? max,
+            double? min,
+            String? value,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+            ConciergeFormDisplayConditionValidator validator,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+            ConciergeFormDisplayConditionOperator? validatorOperator)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockValidator() when $default != null:
+        return $default(_that.blockId, _that.max, _that.min, _that.value,
+            _that.validator, _that.validatorOperator);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1750,6 +2947,201 @@ class _$ConciergeFormBlockDisplayConditionInputCopyWithImpl<$Res>
           : validatorOperator // ignore: cast_nullable_to_non_nullable
               as ConciergeFormDisplayConditionOperator?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ConciergeFormBlockDisplayConditionInput].
+extension ConciergeFormBlockDisplayConditionInputPatterns
+    on ConciergeFormBlockDisplayConditionInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlockDisplayConditionInput value)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockDisplayConditionInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ConciergeFormBlockDisplayConditionInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockDisplayConditionInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ConciergeFormBlockDisplayConditionInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockDisplayConditionInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            int? blockId,
+            double? min,
+            double? max,
+            String? value,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+            ConciergeFormDisplayConditionValidator validator,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+            ConciergeFormDisplayConditionOperator? validatorOperator)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockDisplayConditionInput() when $default != null:
+        return $default(_that.blockId, _that.min, _that.max, _that.value,
+            _that.validator, _that.validatorOperator);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            int? blockId,
+            double? min,
+            double? max,
+            String? value,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+            ConciergeFormDisplayConditionValidator validator,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+            ConciergeFormDisplayConditionOperator? validatorOperator)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockDisplayConditionInput():
+        return $default(_that.blockId, _that.min, _that.max, _that.value,
+            _that.validator, _that.validatorOperator);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            int? blockId,
+            double? min,
+            double? max,
+            String? value,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+            ConciergeFormDisplayConditionValidator validator,
+            @JsonKey(
+                unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+            ConciergeFormDisplayConditionOperator? validatorOperator)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ConciergeFormBlockDisplayConditionInput() when $default != null:
+        return $default(_that.blockId, _that.min, _that.max, _that.value,
+            _that.validator, _that.validatorOperator);
+      case _:
+        return null;
+    }
   }
 }
 

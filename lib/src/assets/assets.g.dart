@@ -192,10 +192,10 @@ _Asset _$AssetFromJson(Map<String, dynamic> json) => _Asset(
           json['authenticationCardCardboardId'] as String?,
       authenticationCardTagId: json['authenticationCardTagId'] as String?,
       authenticationCardNfcId: json['authenticationCardNfcId'] as String?,
-      authenticationCardboard: json['authenticationCardboard'] == null
+      authenticationCardCardboard: json['authenticationCardCardboard'] == null
           ? null
           : AtsAuthenticationCard.fromJson(
-              json['authenticationCardboard'] as Map<String, dynamic>),
+              json['authenticationCardCardboard'] as Map<String, dynamic>),
       authenticationCardTag: json['authenticationCardTag'] == null
           ? null
           : AtsAuthenticationCard.fromJson(
@@ -265,7 +265,8 @@ Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
       'authenticationCardCardboardId': instance.authenticationCardCardboardId,
       'authenticationCardTagId': instance.authenticationCardTagId,
       'authenticationCardNfcId': instance.authenticationCardNfcId,
-      'authenticationCardboard': instance.authenticationCardboard?.toJson(),
+      'authenticationCardCardboard':
+          instance.authenticationCardCardboard?.toJson(),
       'authenticationCardTag': instance.authenticationCardTag?.toJson(),
       'authenticationCardNfc': instance.authenticationCardNfc?.toJson(),
     };

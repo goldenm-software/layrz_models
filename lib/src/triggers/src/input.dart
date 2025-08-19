@@ -158,6 +158,12 @@ abstract class TriggerInput with _$TriggerInput {
     /// [manualActionFields] represents the list of fields to use for the manual action.
     @Default([]) List<CareTaskInput>? manualActionFields,
 
+    /// [childrenIds] represents the list of ID's of the children triggers.
+    @Default([]) List<String> childrenIds,
+
+    /// [searchTimeDelta] represents the search time delta of the trigger.
+    @DurationOrNullConverter() Duration? searchTimeDelta,
+
     /// Cooldown time of the trigger.
     @DurationConverter() @Default(Duration(minutes: 1)) Duration cooldownTime,
   }) = _TriggerInput;
