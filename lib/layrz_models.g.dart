@@ -1737,6 +1737,103 @@ const _$RegisteredLogLevelEnumMap = {
   RegisteredLogLevel.unknown: 'UNKNOWN',
 };
 
+_BlockInput _$BlockInputFromJson(Map<String, dynamic> json) => _BlockInput(
+      parameter: json['parameter'] as String?,
+      type: $enumDecodeNullable(_$BlockTypeEnumMap, json['type']),
+      result: json['result'],
+      lastValue: json['lastValue'],
+      boolObject: json['boolObject'] == null
+          ? null
+          : BoolBlockInput.fromJson(json['boolObject'] as Map<String, dynamic>),
+      mathObject: json['mathObject'] == null
+          ? null
+          : MathBlockInput.fromJson(json['mathObject'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$BlockInputToJson(_BlockInput instance) =>
+    <String, dynamic>{
+      'parameter': instance.parameter,
+      'type': _$BlockTypeEnumMap[instance.type],
+      'result': instance.result,
+      'lastValue': instance.lastValue,
+      'boolObject': instance.boolObject?.toJson(),
+      'mathObject': instance.mathObject?.toJson(),
+    };
+
+const _$BlockTypeEnumMap = {
+  BlockType.bool: 'bool',
+  BlockType.math: 'math',
+  BlockType.getValue: 'getValue',
+};
+
+_BoolBlockInput _$BoolBlockInputFromJson(Map<String, dynamic> json) =>
+    _BoolBlockInput(
+      type: $enumDecodeNullable(_$ConditionTypeEnumMap, json['type']),
+      number1: json['number1'] as num?,
+      number2: json['number2'] as num?,
+      initialValue: json['initialValue'],
+      exceptionType:
+          $enumDecodeNullable(_$ExceptionTypeEnumMap, json['exceptionType']),
+      exceptionValue: json['exceptionValue'],
+    );
+
+Map<String, dynamic> _$BoolBlockInputToJson(_BoolBlockInput instance) =>
+    <String, dynamic>{
+      'type': _$ConditionTypeEnumMap[instance.type],
+      'number1': instance.number1,
+      'number2': instance.number2,
+      'initialValue': instance.initialValue,
+      'exceptionType': _$ExceptionTypeEnumMap[instance.exceptionType],
+      'exceptionValue': instance.exceptionValue,
+    };
+
+const _$ConditionTypeEnumMap = {
+  ConditionType.equal: 'equal',
+  ConditionType.notEqual: 'notEqual',
+  ConditionType.greaterThan: 'greaterThan',
+  ConditionType.lessThan: 'lessThan',
+  ConditionType.greaterThanOrEqual: 'greaterThanOrEqual',
+  ConditionType.lessThanOrEqual: 'lessThanOrEqual',
+  ConditionType.between: 'between',
+  ConditionType.outside: 'outside',
+};
+
+const _$ExceptionTypeEnumMap = {
+  ExceptionType.lastValue: 'lastValue',
+  ExceptionType.fixedValue: 'fixedValue',
+  ExceptionType.parameter: 'parameter',
+  ExceptionType.notValue: 'notValue',
+};
+
+_MathBlockInput _$MathBlockInputFromJson(Map<String, dynamic> json) =>
+    _MathBlockInput(
+      type: $enumDecodeNullable(_$MathTypeEnumMap, json['type']),
+      numbers:
+          (json['numbers'] as List<dynamic>?)?.map((e) => e as num).toList() ??
+              const [],
+      initialValue: json['initialValue'],
+      exceptionType:
+          $enumDecodeNullable(_$ExceptionTypeEnumMap, json['exceptionType']),
+      exceptionValue: json['exceptionValue'],
+    );
+
+Map<String, dynamic> _$MathBlockInputToJson(_MathBlockInput instance) =>
+    <String, dynamic>{
+      'type': _$MathTypeEnumMap[instance.type],
+      'numbers': instance.numbers,
+      'initialValue': instance.initialValue,
+      'exceptionType': _$ExceptionTypeEnumMap[instance.exceptionType],
+      'exceptionValue': instance.exceptionValue,
+    };
+
+const _$MathTypeEnumMap = {
+  MathType.add: 'add',
+  MathType.subtract: 'subtract',
+  MathType.multiply: 'multiply',
+  MathType.divide: 'divide',
+  MathType.power: 'power',
+};
+
 const _$WeekdayEnumMap = {
   Weekday.monday: 'MON',
   Weekday.tuesday: 'TUE',

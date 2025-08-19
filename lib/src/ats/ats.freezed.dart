@@ -16658,6 +16658,18 @@ mixin _$AtsExitInput {
   /// The [attendantId] of the exit.
   set attendantId(String? value);
 
+  /// The [startAt] of the exit.
+  double? get startAt;
+
+  /// The [startAt] of the exit.
+  set startAt(double? value);
+
+  /// The [endAt] of the exit.
+  double? get endAt;
+
+  /// The [endAt] of the exit.
+  set endAt(double? value);
+
   /// Create a copy of AtsExitInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -16671,7 +16683,7 @@ mixin _$AtsExitInput {
 
   @override
   String toString() {
-    return 'AtsExitInput(id: $id, assetId: $assetId, liters: $liters, toAssetMileage: $toAssetMileage, identifier: $identifier, attendantId: $attendantId)';
+    return 'AtsExitInput(id: $id, assetId: $assetId, liters: $liters, toAssetMileage: $toAssetMileage, identifier: $identifier, attendantId: $attendantId, startAt: $startAt, endAt: $endAt)';
   }
 }
 
@@ -16687,7 +16699,9 @@ abstract mixin class $AtsExitInputCopyWith<$Res> {
       double? liters,
       double? toAssetMileage,
       int? identifier,
-      String? attendantId});
+      String? attendantId,
+      double? startAt,
+      double? endAt});
 }
 
 /// @nodoc
@@ -16708,6 +16722,8 @@ class _$AtsExitInputCopyWithImpl<$Res> implements $AtsExitInputCopyWith<$Res> {
     Object? toAssetMileage = freezed,
     Object? identifier = freezed,
     Object? attendantId = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -16734,6 +16750,14 @@ class _$AtsExitInputCopyWithImpl<$Res> implements $AtsExitInputCopyWith<$Res> {
           ? _self.attendantId
           : attendantId // ignore: cast_nullable_to_non_nullable
               as String?,
+      startAt: freezed == startAt
+          ? _self.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      endAt: freezed == endAt
+          ? _self.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -16831,16 +16855,30 @@ extension AtsExitInputPatterns on AtsExitInput {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? id, String? assetId, double? liters,
-            double? toAssetMileage, int? identifier, String? attendantId)?
+    TResult Function(
+            String? id,
+            String? assetId,
+            double? liters,
+            double? toAssetMileage,
+            int? identifier,
+            String? attendantId,
+            double? startAt,
+            double? endAt)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _AtsExitInput() when $default != null:
-        return $default(_that.id, _that.assetId, _that.liters,
-            _that.toAssetMileage, _that.identifier, _that.attendantId);
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.liters,
+            _that.toAssetMileage,
+            _that.identifier,
+            _that.attendantId,
+            _that.startAt,
+            _that.endAt);
       case _:
         return orElse();
     }
@@ -16861,15 +16899,29 @@ extension AtsExitInputPatterns on AtsExitInput {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? id, String? assetId, double? liters,
-            double? toAssetMileage, int? identifier, String? attendantId)
+    TResult Function(
+            String? id,
+            String? assetId,
+            double? liters,
+            double? toAssetMileage,
+            int? identifier,
+            String? attendantId,
+            double? startAt,
+            double? endAt)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AtsExitInput():
-        return $default(_that.id, _that.assetId, _that.liters,
-            _that.toAssetMileage, _that.identifier, _that.attendantId);
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.liters,
+            _that.toAssetMileage,
+            _that.identifier,
+            _that.attendantId,
+            _that.startAt,
+            _that.endAt);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -16889,15 +16941,29 @@ extension AtsExitInputPatterns on AtsExitInput {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? id, String? assetId, double? liters,
-            double? toAssetMileage, int? identifier, String? attendantId)?
+    TResult? Function(
+            String? id,
+            String? assetId,
+            double? liters,
+            double? toAssetMileage,
+            int? identifier,
+            String? attendantId,
+            double? startAt,
+            double? endAt)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AtsExitInput() when $default != null:
-        return $default(_that.id, _that.assetId, _that.liters,
-            _that.toAssetMileage, _that.identifier, _that.attendantId);
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.liters,
+            _that.toAssetMileage,
+            _that.identifier,
+            _that.attendantId,
+            _that.startAt,
+            _that.endAt);
       case _:
         return null;
     }
@@ -16913,7 +16979,9 @@ class _AtsExitInput implements AtsExitInput {
       this.liters,
       this.toAssetMileage,
       this.identifier,
-      this.attendantId});
+      this.attendantId,
+      this.startAt,
+      this.endAt});
   factory _AtsExitInput.fromJson(Map<String, dynamic> json) =>
       _$AtsExitInputFromJson(json);
 
@@ -16941,6 +17009,14 @@ class _AtsExitInput implements AtsExitInput {
   @override
   String? attendantId;
 
+  /// The [startAt] of the exit.
+  @override
+  double? startAt;
+
+  /// The [endAt] of the exit.
+  @override
+  double? endAt;
+
   /// Create a copy of AtsExitInput
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -16958,7 +17034,7 @@ class _AtsExitInput implements AtsExitInput {
 
   @override
   String toString() {
-    return 'AtsExitInput(id: $id, assetId: $assetId, liters: $liters, toAssetMileage: $toAssetMileage, identifier: $identifier, attendantId: $attendantId)';
+    return 'AtsExitInput(id: $id, assetId: $assetId, liters: $liters, toAssetMileage: $toAssetMileage, identifier: $identifier, attendantId: $attendantId, startAt: $startAt, endAt: $endAt)';
   }
 }
 
@@ -16976,7 +17052,9 @@ abstract mixin class _$AtsExitInputCopyWith<$Res>
       double? liters,
       double? toAssetMileage,
       int? identifier,
-      String? attendantId});
+      String? attendantId,
+      double? startAt,
+      double? endAt});
 }
 
 /// @nodoc
@@ -16998,6 +17076,8 @@ class __$AtsExitInputCopyWithImpl<$Res>
     Object? toAssetMileage = freezed,
     Object? identifier = freezed,
     Object? attendantId = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
   }) {
     return _then(_AtsExitInput(
       id: freezed == id
@@ -17024,6 +17104,14 @@ class __$AtsExitInputCopyWithImpl<$Res>
           ? _self.attendantId
           : attendantId // ignore: cast_nullable_to_non_nullable
               as String?,
+      startAt: freezed == startAt
+          ? _self.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      endAt: freezed == endAt
+          ? _self.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }

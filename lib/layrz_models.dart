@@ -9,7 +9,7 @@ import 'package:layrz_icons/layrz_icons.dart';
 
 import 'src/actions/actions.dart';
 // Internal imports
-import 'src/app/app.dart';
+// import 'src/app/app.dart';
 import 'src/assets/assets.dart';
 // import 'src/brickhouse/brickhouse.dart';
 import 'src/charts/charts.dart';
@@ -111,6 +111,12 @@ part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
 part 'src/weekdays.dart';
 part 'src/registered_logs.dart';
+
+part 'src/block/block.dart';
+part 'src/block/enums/condition_type.dart';
+part 'src/block/enums/type.dart';
+part 'src/block/enums/exception_type.dart';
+part 'src/block/enums/math_type.dart';
 
 // Helper enums
 enum LayrzListingFormat {

@@ -22,6 +22,12 @@ abstract class AtsExitInput with _$AtsExitInput {
 
     /// The [attendantId] of the exit.
     String? attendantId,
+
+    /// The [startAt] of the exit.
+    double? startAt,
+
+    /// The [endAt] of the exit.
+    double? endAt,
   }) = _AtsExitInput;
 
   /// Creates a new `AtsExitInput` from a JSON object.

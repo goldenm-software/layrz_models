@@ -30145,4 +30145,1204 @@ class __$RegisteredLogsRowCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
+mixin _$BlockInput {
+  String? get parameter;
+  set parameter(String? value);
+  BlockType? get type;
+  set type(BlockType? value);
+  dynamic get result;
+  set result(dynamic value);
+  dynamic get lastValue;
+  set lastValue(dynamic value);
+  BoolBlockInput? get boolObject;
+  set boolObject(BoolBlockInput? value);
+  MathBlockInput? get mathObject;
+  set mathObject(MathBlockInput? value);
+
+  /// Create a copy of BlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $BlockInputCopyWith<BlockInput> get copyWith =>
+      _$BlockInputCopyWithImpl<BlockInput>(this as BlockInput, _$identity);
+
+  /// Serializes this BlockInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'BlockInput(parameter: $parameter, type: $type, result: $result, lastValue: $lastValue, boolObject: $boolObject, mathObject: $mathObject)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $BlockInputCopyWith<$Res> {
+  factory $BlockInputCopyWith(
+          BlockInput value, $Res Function(BlockInput) _then) =
+      _$BlockInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? parameter,
+      BlockType? type,
+      dynamic result,
+      dynamic lastValue,
+      BoolBlockInput? boolObject,
+      MathBlockInput? mathObject});
+
+  $BoolBlockInputCopyWith<$Res>? get boolObject;
+  $MathBlockInputCopyWith<$Res>? get mathObject;
+}
+
+/// @nodoc
+class _$BlockInputCopyWithImpl<$Res> implements $BlockInputCopyWith<$Res> {
+  _$BlockInputCopyWithImpl(this._self, this._then);
+
+  final BlockInput _self;
+  final $Res Function(BlockInput) _then;
+
+  /// Create a copy of BlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? parameter = freezed,
+    Object? type = freezed,
+    Object? result = freezed,
+    Object? lastValue = freezed,
+    Object? boolObject = freezed,
+    Object? mathObject = freezed,
+  }) {
+    return _then(_self.copyWith(
+      parameter: freezed == parameter
+          ? _self.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as BlockType?,
+      result: freezed == result
+          ? _self.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      lastValue: freezed == lastValue
+          ? _self.lastValue
+          : lastValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      boolObject: freezed == boolObject
+          ? _self.boolObject
+          : boolObject // ignore: cast_nullable_to_non_nullable
+              as BoolBlockInput?,
+      mathObject: freezed == mathObject
+          ? _self.mathObject
+          : mathObject // ignore: cast_nullable_to_non_nullable
+              as MathBlockInput?,
+    ));
+  }
+
+  /// Create a copy of BlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BoolBlockInputCopyWith<$Res>? get boolObject {
+    if (_self.boolObject == null) {
+      return null;
+    }
+
+    return $BoolBlockInputCopyWith<$Res>(_self.boolObject!, (value) {
+      return _then(_self.copyWith(boolObject: value));
+    });
+  }
+
+  /// Create a copy of BlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MathBlockInputCopyWith<$Res>? get mathObject {
+    if (_self.mathObject == null) {
+      return null;
+    }
+
+    return $MathBlockInputCopyWith<$Res>(_self.mathObject!, (value) {
+      return _then(_self.copyWith(mathObject: value));
+    });
+  }
+}
+
+/// Adds pattern-matching-related methods to [BlockInput].
+extension BlockInputPatterns on BlockInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BlockInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BlockInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BlockInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BlockInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BlockInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BlockInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? parameter,
+            BlockType? type,
+            dynamic result,
+            dynamic lastValue,
+            BoolBlockInput? boolObject,
+            MathBlockInput? mathObject)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BlockInput() when $default != null:
+        return $default(_that.parameter, _that.type, _that.result,
+            _that.lastValue, _that.boolObject, _that.mathObject);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? parameter,
+            BlockType? type,
+            dynamic result,
+            dynamic lastValue,
+            BoolBlockInput? boolObject,
+            MathBlockInput? mathObject)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BlockInput():
+        return $default(_that.parameter, _that.type, _that.result,
+            _that.lastValue, _that.boolObject, _that.mathObject);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? parameter,
+            BlockType? type,
+            dynamic result,
+            dynamic lastValue,
+            BoolBlockInput? boolObject,
+            MathBlockInput? mathObject)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BlockInput() when $default != null:
+        return $default(_that.parameter, _that.type, _that.result,
+            _that.lastValue, _that.boolObject, _that.mathObject);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _BlockInput implements BlockInput {
+  _BlockInput(
+      {this.parameter,
+      this.type,
+      this.result,
+      this.lastValue,
+      this.boolObject,
+      this.mathObject});
+  factory _BlockInput.fromJson(Map<String, dynamic> json) =>
+      _$BlockInputFromJson(json);
+
+  @override
+  String? parameter;
+  @override
+  BlockType? type;
+  @override
+  dynamic result;
+  @override
+  dynamic lastValue;
+  @override
+  BoolBlockInput? boolObject;
+  @override
+  MathBlockInput? mathObject;
+
+  /// Create a copy of BlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BlockInputCopyWith<_BlockInput> get copyWith =>
+      __$BlockInputCopyWithImpl<_BlockInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BlockInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'BlockInput(parameter: $parameter, type: $type, result: $result, lastValue: $lastValue, boolObject: $boolObject, mathObject: $mathObject)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$BlockInputCopyWith<$Res>
+    implements $BlockInputCopyWith<$Res> {
+  factory _$BlockInputCopyWith(
+          _BlockInput value, $Res Function(_BlockInput) _then) =
+      __$BlockInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? parameter,
+      BlockType? type,
+      dynamic result,
+      dynamic lastValue,
+      BoolBlockInput? boolObject,
+      MathBlockInput? mathObject});
+
+  @override
+  $BoolBlockInputCopyWith<$Res>? get boolObject;
+  @override
+  $MathBlockInputCopyWith<$Res>? get mathObject;
+}
+
+/// @nodoc
+class __$BlockInputCopyWithImpl<$Res> implements _$BlockInputCopyWith<$Res> {
+  __$BlockInputCopyWithImpl(this._self, this._then);
+
+  final _BlockInput _self;
+  final $Res Function(_BlockInput) _then;
+
+  /// Create a copy of BlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? parameter = freezed,
+    Object? type = freezed,
+    Object? result = freezed,
+    Object? lastValue = freezed,
+    Object? boolObject = freezed,
+    Object? mathObject = freezed,
+  }) {
+    return _then(_BlockInput(
+      parameter: freezed == parameter
+          ? _self.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as BlockType?,
+      result: freezed == result
+          ? _self.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      lastValue: freezed == lastValue
+          ? _self.lastValue
+          : lastValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      boolObject: freezed == boolObject
+          ? _self.boolObject
+          : boolObject // ignore: cast_nullable_to_non_nullable
+              as BoolBlockInput?,
+      mathObject: freezed == mathObject
+          ? _self.mathObject
+          : mathObject // ignore: cast_nullable_to_non_nullable
+              as MathBlockInput?,
+    ));
+  }
+
+  /// Create a copy of BlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BoolBlockInputCopyWith<$Res>? get boolObject {
+    if (_self.boolObject == null) {
+      return null;
+    }
+
+    return $BoolBlockInputCopyWith<$Res>(_self.boolObject!, (value) {
+      return _then(_self.copyWith(boolObject: value));
+    });
+  }
+
+  /// Create a copy of BlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MathBlockInputCopyWith<$Res>? get mathObject {
+    if (_self.mathObject == null) {
+      return null;
+    }
+
+    return $MathBlockInputCopyWith<$Res>(_self.mathObject!, (value) {
+      return _then(_self.copyWith(mathObject: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$BoolBlockInput {
+  ConditionType? get type;
+  set type(ConditionType? value);
+  num? get number1;
+  set number1(num? value);
+  num? get number2;
+  set number2(num? value);
+  dynamic get initialValue;
+  set initialValue(dynamic value);
+  ExceptionType? get exceptionType;
+  set exceptionType(ExceptionType? value);
+  dynamic get exceptionValue;
+  set exceptionValue(dynamic value);
+
+  /// Create a copy of BoolBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $BoolBlockInputCopyWith<BoolBlockInput> get copyWith =>
+      _$BoolBlockInputCopyWithImpl<BoolBlockInput>(
+          this as BoolBlockInput, _$identity);
+
+  /// Serializes this BoolBlockInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'BoolBlockInput(type: $type, number1: $number1, number2: $number2, initialValue: $initialValue, exceptionType: $exceptionType, exceptionValue: $exceptionValue)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $BoolBlockInputCopyWith<$Res> {
+  factory $BoolBlockInputCopyWith(
+          BoolBlockInput value, $Res Function(BoolBlockInput) _then) =
+      _$BoolBlockInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {ConditionType? type,
+      num? number1,
+      num? number2,
+      dynamic initialValue,
+      ExceptionType? exceptionType,
+      dynamic exceptionValue});
+}
+
+/// @nodoc
+class _$BoolBlockInputCopyWithImpl<$Res>
+    implements $BoolBlockInputCopyWith<$Res> {
+  _$BoolBlockInputCopyWithImpl(this._self, this._then);
+
+  final BoolBlockInput _self;
+  final $Res Function(BoolBlockInput) _then;
+
+  /// Create a copy of BoolBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = freezed,
+    Object? number1 = freezed,
+    Object? number2 = freezed,
+    Object? initialValue = freezed,
+    Object? exceptionType = freezed,
+    Object? exceptionValue = freezed,
+  }) {
+    return _then(_self.copyWith(
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ConditionType?,
+      number1: freezed == number1
+          ? _self.number1
+          : number1 // ignore: cast_nullable_to_non_nullable
+              as num?,
+      number2: freezed == number2
+          ? _self.number2
+          : number2 // ignore: cast_nullable_to_non_nullable
+              as num?,
+      initialValue: freezed == initialValue
+          ? _self.initialValue
+          : initialValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      exceptionType: freezed == exceptionType
+          ? _self.exceptionType
+          : exceptionType // ignore: cast_nullable_to_non_nullable
+              as ExceptionType?,
+      exceptionValue: freezed == exceptionValue
+          ? _self.exceptionValue
+          : exceptionValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [BoolBlockInput].
+extension BoolBlockInputPatterns on BoolBlockInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BoolBlockInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BoolBlockInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BoolBlockInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BoolBlockInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BoolBlockInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BoolBlockInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            ConditionType? type,
+            num? number1,
+            num? number2,
+            dynamic initialValue,
+            ExceptionType? exceptionType,
+            dynamic exceptionValue)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BoolBlockInput() when $default != null:
+        return $default(_that.type, _that.number1, _that.number2,
+            _that.initialValue, _that.exceptionType, _that.exceptionValue);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            ConditionType? type,
+            num? number1,
+            num? number2,
+            dynamic initialValue,
+            ExceptionType? exceptionType,
+            dynamic exceptionValue)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BoolBlockInput():
+        return $default(_that.type, _that.number1, _that.number2,
+            _that.initialValue, _that.exceptionType, _that.exceptionValue);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            ConditionType? type,
+            num? number1,
+            num? number2,
+            dynamic initialValue,
+            ExceptionType? exceptionType,
+            dynamic exceptionValue)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BoolBlockInput() when $default != null:
+        return $default(_that.type, _that.number1, _that.number2,
+            _that.initialValue, _that.exceptionType, _that.exceptionValue);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _BoolBlockInput implements BoolBlockInput {
+  _BoolBlockInput(
+      {this.type,
+      this.number1,
+      this.number2,
+      this.initialValue,
+      this.exceptionType,
+      this.exceptionValue});
+  factory _BoolBlockInput.fromJson(Map<String, dynamic> json) =>
+      _$BoolBlockInputFromJson(json);
+
+  @override
+  ConditionType? type;
+  @override
+  num? number1;
+  @override
+  num? number2;
+  @override
+  dynamic initialValue;
+  @override
+  ExceptionType? exceptionType;
+  @override
+  dynamic exceptionValue;
+
+  /// Create a copy of BoolBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BoolBlockInputCopyWith<_BoolBlockInput> get copyWith =>
+      __$BoolBlockInputCopyWithImpl<_BoolBlockInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BoolBlockInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'BoolBlockInput(type: $type, number1: $number1, number2: $number2, initialValue: $initialValue, exceptionType: $exceptionType, exceptionValue: $exceptionValue)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$BoolBlockInputCopyWith<$Res>
+    implements $BoolBlockInputCopyWith<$Res> {
+  factory _$BoolBlockInputCopyWith(
+          _BoolBlockInput value, $Res Function(_BoolBlockInput) _then) =
+      __$BoolBlockInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {ConditionType? type,
+      num? number1,
+      num? number2,
+      dynamic initialValue,
+      ExceptionType? exceptionType,
+      dynamic exceptionValue});
+}
+
+/// @nodoc
+class __$BoolBlockInputCopyWithImpl<$Res>
+    implements _$BoolBlockInputCopyWith<$Res> {
+  __$BoolBlockInputCopyWithImpl(this._self, this._then);
+
+  final _BoolBlockInput _self;
+  final $Res Function(_BoolBlockInput) _then;
+
+  /// Create a copy of BoolBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? type = freezed,
+    Object? number1 = freezed,
+    Object? number2 = freezed,
+    Object? initialValue = freezed,
+    Object? exceptionType = freezed,
+    Object? exceptionValue = freezed,
+  }) {
+    return _then(_BoolBlockInput(
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ConditionType?,
+      number1: freezed == number1
+          ? _self.number1
+          : number1 // ignore: cast_nullable_to_non_nullable
+              as num?,
+      number2: freezed == number2
+          ? _self.number2
+          : number2 // ignore: cast_nullable_to_non_nullable
+              as num?,
+      initialValue: freezed == initialValue
+          ? _self.initialValue
+          : initialValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      exceptionType: freezed == exceptionType
+          ? _self.exceptionType
+          : exceptionType // ignore: cast_nullable_to_non_nullable
+              as ExceptionType?,
+      exceptionValue: freezed == exceptionValue
+          ? _self.exceptionValue
+          : exceptionValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$MathBlockInput {
+  MathType? get type;
+  set type(MathType? value);
+  List<num> get numbers;
+  set numbers(List<num> value);
+  dynamic get initialValue;
+  set initialValue(dynamic value);
+  ExceptionType? get exceptionType;
+  set exceptionType(ExceptionType? value);
+  dynamic get exceptionValue;
+  set exceptionValue(dynamic value);
+
+  /// Create a copy of MathBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MathBlockInputCopyWith<MathBlockInput> get copyWith =>
+      _$MathBlockInputCopyWithImpl<MathBlockInput>(
+          this as MathBlockInput, _$identity);
+
+  /// Serializes this MathBlockInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'MathBlockInput(type: $type, numbers: $numbers, initialValue: $initialValue, exceptionType: $exceptionType, exceptionValue: $exceptionValue)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MathBlockInputCopyWith<$Res> {
+  factory $MathBlockInputCopyWith(
+          MathBlockInput value, $Res Function(MathBlockInput) _then) =
+      _$MathBlockInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {MathType? type,
+      List<num> numbers,
+      dynamic initialValue,
+      ExceptionType? exceptionType,
+      dynamic exceptionValue});
+}
+
+/// @nodoc
+class _$MathBlockInputCopyWithImpl<$Res>
+    implements $MathBlockInputCopyWith<$Res> {
+  _$MathBlockInputCopyWithImpl(this._self, this._then);
+
+  final MathBlockInput _self;
+  final $Res Function(MathBlockInput) _then;
+
+  /// Create a copy of MathBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = freezed,
+    Object? numbers = null,
+    Object? initialValue = freezed,
+    Object? exceptionType = freezed,
+    Object? exceptionValue = freezed,
+  }) {
+    return _then(_self.copyWith(
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as MathType?,
+      numbers: null == numbers
+          ? _self.numbers
+          : numbers // ignore: cast_nullable_to_non_nullable
+              as List<num>,
+      initialValue: freezed == initialValue
+          ? _self.initialValue
+          : initialValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      exceptionType: freezed == exceptionType
+          ? _self.exceptionType
+          : exceptionType // ignore: cast_nullable_to_non_nullable
+              as ExceptionType?,
+      exceptionValue: freezed == exceptionValue
+          ? _self.exceptionValue
+          : exceptionValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [MathBlockInput].
+extension MathBlockInputPatterns on MathBlockInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MathBlockInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MathBlockInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MathBlockInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MathBlockInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MathBlockInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MathBlockInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(MathType? type, List<num> numbers, dynamic initialValue,
+            ExceptionType? exceptionType, dynamic exceptionValue)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MathBlockInput() when $default != null:
+        return $default(_that.type, _that.numbers, _that.initialValue,
+            _that.exceptionType, _that.exceptionValue);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(MathType? type, List<num> numbers, dynamic initialValue,
+            ExceptionType? exceptionType, dynamic exceptionValue)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MathBlockInput():
+        return $default(_that.type, _that.numbers, _that.initialValue,
+            _that.exceptionType, _that.exceptionValue);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(MathType? type, List<num> numbers, dynamic initialValue,
+            ExceptionType? exceptionType, dynamic exceptionValue)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MathBlockInput() when $default != null:
+        return $default(_that.type, _that.numbers, _that.initialValue,
+            _that.exceptionType, _that.exceptionValue);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _MathBlockInput implements MathBlockInput {
+  _MathBlockInput(
+      {this.type,
+      this.numbers = const [],
+      this.initialValue,
+      this.exceptionType,
+      this.exceptionValue});
+  factory _MathBlockInput.fromJson(Map<String, dynamic> json) =>
+      _$MathBlockInputFromJson(json);
+
+  @override
+  MathType? type;
+  @override
+  @JsonKey()
+  List<num> numbers;
+  @override
+  dynamic initialValue;
+  @override
+  ExceptionType? exceptionType;
+  @override
+  dynamic exceptionValue;
+
+  /// Create a copy of MathBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MathBlockInputCopyWith<_MathBlockInput> get copyWith =>
+      __$MathBlockInputCopyWithImpl<_MathBlockInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MathBlockInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'MathBlockInput(type: $type, numbers: $numbers, initialValue: $initialValue, exceptionType: $exceptionType, exceptionValue: $exceptionValue)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MathBlockInputCopyWith<$Res>
+    implements $MathBlockInputCopyWith<$Res> {
+  factory _$MathBlockInputCopyWith(
+          _MathBlockInput value, $Res Function(_MathBlockInput) _then) =
+      __$MathBlockInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {MathType? type,
+      List<num> numbers,
+      dynamic initialValue,
+      ExceptionType? exceptionType,
+      dynamic exceptionValue});
+}
+
+/// @nodoc
+class __$MathBlockInputCopyWithImpl<$Res>
+    implements _$MathBlockInputCopyWith<$Res> {
+  __$MathBlockInputCopyWithImpl(this._self, this._then);
+
+  final _MathBlockInput _self;
+  final $Res Function(_MathBlockInput) _then;
+
+  /// Create a copy of MathBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? type = freezed,
+    Object? numbers = null,
+    Object? initialValue = freezed,
+    Object? exceptionType = freezed,
+    Object? exceptionValue = freezed,
+  }) {
+    return _then(_MathBlockInput(
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as MathType?,
+      numbers: null == numbers
+          ? _self.numbers
+          : numbers // ignore: cast_nullable_to_non_nullable
+              as List<num>,
+      initialValue: freezed == initialValue
+          ? _self.initialValue
+          : initialValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      exceptionType: freezed == exceptionType
+          ? _self.exceptionType
+          : exceptionType // ignore: cast_nullable_to_non_nullable
+              as ExceptionType?,
+      exceptionValue: freezed == exceptionValue
+          ? _self.exceptionValue
+          : exceptionValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
 // dart format on
