@@ -32,6 +32,7 @@ This project is maintained by [Golden M](https://goldenm.com) with authorization
 
 ## How to deploy
 - Add every change in CHANGELOG.md
+- Set `git push`
 - Set in the terminal `git tag v{version}`
 - Set `git push origin {tag_name}`
 

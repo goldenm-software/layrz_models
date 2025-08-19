@@ -1,8 +1,14 @@
 # Changelog
 
-## 3.4.25
+## 3.4.27
+- Update Changelog and Readme
+
+## 3.4.26
 - Added `BlockInput`, `BoolBlockInput`, `MathBlockInput`, `ConditionType` `ExceptionType` `MathType` and `BlockType`
 - Added `startAt` and `endAt` in `AtsExitInput`
+
+## 3.4.25
+- Update README
 
 ## 3.4.24
 - Fix prop name `authenticationCardBoard` to `authenticationCardCardboard` in ASset
