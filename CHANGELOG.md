@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.4.29
+
+- Added `progress` to `MappitRecalculate` model
+
+## 3.4.28
+
+- Added `MappitRecalculate` model
+
 ## 3.4.27
 - Update Changelog and Readme
 

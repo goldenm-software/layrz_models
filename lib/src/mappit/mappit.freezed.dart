@@ -1,5 +1,6 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -151,184 +152,6 @@ class _$MappitRouteLinkingHistoryCopyWithImpl<$Res>
     return $UserCopyWith<$Res>(_self.performedBy, (value) {
       return _then(_self.copyWith(performedBy: value));
     });
-  }
-}
-
-/// Adds pattern-matching-related methods to [MappitRouteLinkingHistory].
-extension MappitRouteLinkingHistoryPatterns on MappitRouteLinkingHistory {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitRouteLinkingHistory value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRouteLinkingHistory() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitRouteLinkingHistory value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRouteLinkingHistory():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitRouteLinkingHistory value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRouteLinkingHistory() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            Asset? currentSeller,
-            String? currentSellerId,
-            User performedBy,
-            String performedById,
-            @TimestampConverter() DateTime performedAt)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRouteLinkingHistory() when $default != null:
-        return $default(_that.currentSeller, _that.currentSellerId,
-            _that.performedBy, _that.performedById, _that.performedAt);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            Asset? currentSeller,
-            String? currentSellerId,
-            User performedBy,
-            String performedById,
-            @TimestampConverter() DateTime performedAt)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRouteLinkingHistory():
-        return $default(_that.currentSeller, _that.currentSellerId,
-            _that.performedBy, _that.performedById, _that.performedAt);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            Asset? currentSeller,
-            String? currentSellerId,
-            User performedBy,
-            String performedById,
-            @TimestampConverter() DateTime performedAt)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRouteLinkingHistory() when $default != null:
-        return $default(_that.currentSeller, _that.currentSellerId,
-            _that.performedBy, _that.performedById, _that.performedAt);
-      case _:
-        return null;
-    }
   }
 }
 
@@ -711,232 +534,6 @@ class _$MappitRouteCopyWithImpl<$Res> implements $MappitRouteCopyWith<$Res> {
     return $UserCopyWith<$Res>(_self.owner!, (value) {
       return _then(_self.copyWith(owner: value));
     });
-  }
-}
-
-/// Adds pattern-matching-related methods to [MappitRoute].
-extension MappitRoutePatterns on MappitRoute {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitRoute value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRoute() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitRoute value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRoute():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitRoute value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRoute() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String name,
-            Asset? currentSeller,
-            String? currentSellerId,
-            List<Geofence>? geofences,
-            List<String>? geofencesIds,
-            List<MappitRouteLinkingHistory>? assignmentsHistory,
-            String? ownerId,
-            User? owner,
-            List<Asset>? secondarySellers,
-            List<String>? secondarySellersIds)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRoute() when $default != null:
-        return $default(
-            _that.id,
-            _that.name,
-            _that.currentSeller,
-            _that.currentSellerId,
-            _that.geofences,
-            _that.geofencesIds,
-            _that.assignmentsHistory,
-            _that.ownerId,
-            _that.owner,
-            _that.secondarySellers,
-            _that.secondarySellersIds);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String name,
-            Asset? currentSeller,
-            String? currentSellerId,
-            List<Geofence>? geofences,
-            List<String>? geofencesIds,
-            List<MappitRouteLinkingHistory>? assignmentsHistory,
-            String? ownerId,
-            User? owner,
-            List<Asset>? secondarySellers,
-            List<String>? secondarySellersIds)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRoute():
-        return $default(
-            _that.id,
-            _that.name,
-            _that.currentSeller,
-            _that.currentSellerId,
-            _that.geofences,
-            _that.geofencesIds,
-            _that.assignmentsHistory,
-            _that.ownerId,
-            _that.owner,
-            _that.secondarySellers,
-            _that.secondarySellersIds);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String name,
-            Asset? currentSeller,
-            String? currentSellerId,
-            List<Geofence>? geofences,
-            List<String>? geofencesIds,
-            List<MappitRouteLinkingHistory>? assignmentsHistory,
-            String? ownerId,
-            User? owner,
-            List<Asset>? secondarySellers,
-            List<String>? secondarySellersIds)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitRoute() when $default != null:
-        return $default(
-            _that.id,
-            _that.name,
-            _that.currentSeller,
-            _that.currentSellerId,
-            _that.geofences,
-            _that.geofencesIds,
-            _that.assignmentsHistory,
-            _that.ownerId,
-            _that.owner,
-            _that.secondarySellers,
-            _that.secondarySellersIds);
-      case _:
-        return null;
-    }
   }
 }
 
@@ -1359,184 +956,6 @@ class _$MappitLaborHourCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitLaborHour].
-extension MappitLaborHourPatterns on MappitLaborHour {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitLaborHour value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHour() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitLaborHour value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHour():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitLaborHour value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHour() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
-            @DurationConverter() Duration administrative,
-            @DurationConverter() Duration f2f,
-            @DurationConverter() Duration other)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHour() when $default != null:
-        return $default(_that.id, _that.weekday, _that.administrative,
-            _that.f2f, _that.other);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
-            @DurationConverter() Duration administrative,
-            @DurationConverter() Duration f2f,
-            @DurationConverter() Duration other)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHour():
-        return $default(_that.id, _that.weekday, _that.administrative,
-            _that.f2f, _that.other);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
-            @DurationConverter() Duration administrative,
-            @DurationConverter() Duration f2f,
-            @DurationConverter() Duration other)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHour() when $default != null:
-        return $default(_that.id, _that.weekday, _that.administrative,
-            _that.f2f, _that.other);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitLaborHour implements MappitLaborHour {
@@ -1787,184 +1206,6 @@ class _$MappitLaborHourInputCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitLaborHourInput].
-extension MappitLaborHourInputPatterns on MappitLaborHourInput {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitLaborHourInput value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHourInput() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitLaborHourInput value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHourInput():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitLaborHourInput value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHourInput() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String? id,
-            @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
-            @DurationConverter() Duration administrative,
-            @DurationConverter() Duration f2f,
-            @DurationConverter() Duration other)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHourInput() when $default != null:
-        return $default(_that.id, _that.weekday, _that.administrative,
-            _that.f2f, _that.other);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String? id,
-            @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
-            @DurationConverter() Duration administrative,
-            @DurationConverter() Duration f2f,
-            @DurationConverter() Duration other)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHourInput():
-        return $default(_that.id, _that.weekday, _that.administrative,
-            _that.f2f, _that.other);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String? id,
-            @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
-            @DurationConverter() Duration administrative,
-            @DurationConverter() Duration f2f,
-            @DurationConverter() Duration other)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitLaborHourInput() when $default != null:
-        return $default(_that.id, _that.weekday, _that.administrative,
-            _that.f2f, _that.other);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitLaborHourInput implements MappitLaborHourInput {
@@ -2194,169 +1435,6 @@ class _$MappitProfileGeofenceCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitProfileGeofence].
-extension MappitProfileGeofencePatterns on MappitProfileGeofence {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitProfileGeofence value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfileGeofence() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitProfileGeofence value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfileGeofence():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitProfileGeofence value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfileGeofence() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String geofenceId, Geofence? geofence,
-            @ColorOrNullConverter() Color? color)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfileGeofence() when $default != null:
-        return $default(_that.geofenceId, _that.geofence, _that.color);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String geofenceId, Geofence? geofence,
-            @ColorOrNullConverter() Color? color)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfileGeofence():
-        return $default(_that.geofenceId, _that.geofence, _that.color);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String geofenceId, Geofence? geofence,
-            @ColorOrNullConverter() Color? color)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfileGeofence() when $default != null:
-        return $default(_that.geofenceId, _that.geofence, _that.color);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitProfileGeofence implements MappitProfileGeofence {
@@ -2570,169 +1648,6 @@ class _$MappitProfileCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitProfile].
-extension MappitProfilePatterns on MappitProfile {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitProfile value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfile() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitProfile value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfile():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitProfile value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfile() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id, String name, List<MappitProfileGeofence> geofences)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfile() when $default != null:
-        return $default(_that.id, _that.name, _that.geofences);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id, String name, List<MappitProfileGeofence> geofences)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfile():
-        return $default(_that.id, _that.name, _that.geofences);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id, String name, List<MappitProfileGeofence> geofences)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitProfile() when $default != null:
-        return $default(_that.id, _that.name, _that.geofences);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitProfile implements MappitProfile {
@@ -2936,169 +1851,6 @@ class _$MappitDurationRangeCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitDurationRange].
-extension MappitDurationRangePatterns on MappitDurationRange {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitDurationRange value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDurationRange() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitDurationRange value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDurationRange():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitDurationRange value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDurationRange() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(@DurationConverter() Duration min,
-            @DurationConverter() Duration max, @ColorConverter() Color color)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDurationRange() when $default != null:
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(@DurationConverter() Duration min,
-            @DurationConverter() Duration max, @ColorConverter() Color color)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDurationRange():
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(@DurationConverter() Duration min,
-            @DurationConverter() Duration max, @ColorConverter() Color color)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDurationRange() when $default != null:
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitDurationRange implements MappitDurationRange {
@@ -3297,165 +2049,6 @@ class _$MappitIntRangeCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitIntRange].
-extension MappitIntRangePatterns on MappitIntRange {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitIntRange value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitIntRange() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitIntRange value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitIntRange():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitIntRange value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitIntRange() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int min, int max, @ColorConverter() Color color)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitIntRange() when $default != null:
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(int min, int max, @ColorConverter() Color color) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitIntRange():
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int min, int max, @ColorConverter() Color color)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitIntRange() when $default != null:
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitIntRange implements MappitIntRange {
@@ -3643,166 +2236,6 @@ class _$MappitDoubleRangeCopyWithImpl<$Res>
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
     ));
-  }
-}
-
-/// Adds pattern-matching-related methods to [MappitDoubleRange].
-extension MappitDoubleRangePatterns on MappitDoubleRange {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitDoubleRange value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDoubleRange() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitDoubleRange value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDoubleRange():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitDoubleRange value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDoubleRange() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(double min, double max, @ColorConverter() Color color)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDoubleRange() when $default != null:
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(double min, double max, @ColorConverter() Color color)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDoubleRange():
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(double min, double max, @ColorConverter() Color color)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitDoubleRange() when $default != null:
-        return $default(_that.min, _that.max, _that.color);
-      case _:
-        return null;
-    }
   }
 }
 
@@ -4014,181 +2447,6 @@ class _$MappitHomeConfigCopyWithImpl<$Res>
           : dailyDistance // ignore: cast_nullable_to_non_nullable
               as List<MappitDoubleRange>,
     ));
-  }
-}
-
-/// Adds pattern-matching-related methods to [MappitHomeConfig].
-extension MappitHomeConfigPatterns on MappitHomeConfig {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitHomeConfig value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitHomeConfig() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitHomeConfig value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitHomeConfig():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitHomeConfig value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitHomeConfig() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            List<MappitDurationRange> firstVisit,
-            List<MappitDurationRange> avgTimePerVisit,
-            List<MappitIntRange> customersVisited,
-            List<MappitDoubleRange> dailyDistance)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitHomeConfig() when $default != null:
-        return $default(_that.firstVisit, _that.avgTimePerVisit,
-            _that.customersVisited, _that.dailyDistance);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            List<MappitDurationRange> firstVisit,
-            List<MappitDurationRange> avgTimePerVisit,
-            List<MappitIntRange> customersVisited,
-            List<MappitDoubleRange> dailyDistance)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitHomeConfig():
-        return $default(_that.firstVisit, _that.avgTimePerVisit,
-            _that.customersVisited, _that.dailyDistance);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            List<MappitDurationRange> firstVisit,
-            List<MappitDurationRange> avgTimePerVisit,
-            List<MappitIntRange> customersVisited,
-            List<MappitDoubleRange> dailyDistance)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitHomeConfig() when $default != null:
-        return $default(_that.firstVisit, _that.avgTimePerVisit,
-            _that.customersVisited, _that.dailyDistance);
-      case _:
-        return null;
-    }
   }
 }
 
@@ -4470,172 +2728,6 @@ class _$MappitFreeDayCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitFreeDay].
-extension MappitFreeDayPatterns on MappitFreeDay {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitFreeDay value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitFreeDay() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitFreeDay value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitFreeDay():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitFreeDay value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitFreeDay() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, String name, @DateConverter() DateTime date,
-            List<Asset>? assets, List<String>? assetsIds)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitFreeDay() when $default != null:
-        return $default(
-            _that.id, _that.name, _that.date, _that.assets, _that.assetsIds);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String id, String name, @DateConverter() DateTime date,
-            List<Asset>? assets, List<String>? assetsIds)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitFreeDay():
-        return $default(
-            _that.id, _that.name, _that.date, _that.assets, _that.assetsIds);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, String name, @DateConverter() DateTime date,
-            List<Asset>? assets, List<String>? assetsIds)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitFreeDay() when $default != null:
-        return $default(
-            _that.id, _that.name, _that.date, _that.assets, _that.assetsIds);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitFreeDay implements MappitFreeDay {
@@ -4880,169 +2972,6 @@ class _$PolygonDetailsCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [PolygonDetails].
-extension PolygonDetailsPatterns on PolygonDetails {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_PolygonDetails value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _PolygonDetails() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_PolygonDetails value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _PolygonDetails():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_PolygonDetails value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _PolygonDetails() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            Geofence polygon, List<ContainedRouteCategory> containedRoutes)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _PolygonDetails() when $default != null:
-        return $default(_that.polygon, _that.containedRoutes);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            Geofence polygon, List<ContainedRouteCategory> containedRoutes)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _PolygonDetails():
-        return $default(_that.polygon, _that.containedRoutes);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            Geofence polygon, List<ContainedRouteCategory> containedRoutes)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _PolygonDetails() when $default != null:
-        return $default(_that.polygon, _that.containedRoutes);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _PolygonDetails implements PolygonDetails {
@@ -5243,178 +3172,6 @@ class _$ContainedRouteCategoryCopyWithImpl<$Res>
           : geofenceCount // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
-  }
-}
-
-/// Adds pattern-matching-related methods to [ContainedRouteCategory].
-extension ContainedRouteCategoryPatterns on ContainedRouteCategory {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ContainedRouteCategory value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _ContainedRouteCategory() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ContainedRouteCategory value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _ContainedRouteCategory():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_ContainedRouteCategory value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _ContainedRouteCategory() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            @JsonKey(unknownEnumValue: GeofenceCategory.none)
-            GeofenceCategory category,
-            List<MappitRoute> routes,
-            int? geofenceCount)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _ContainedRouteCategory() when $default != null:
-        return $default(_that.category, _that.routes, _that.geofenceCount);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            @JsonKey(unknownEnumValue: GeofenceCategory.none)
-            GeofenceCategory category,
-            List<MappitRoute> routes,
-            int? geofenceCount)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _ContainedRouteCategory():
-        return $default(_that.category, _that.routes, _that.geofenceCount);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            @JsonKey(unknownEnumValue: GeofenceCategory.none)
-            GeofenceCategory category,
-            List<MappitRoute> routes,
-            int? geofenceCount)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _ContainedRouteCategory() when $default != null:
-        return $default(_that.category, _that.routes, _that.geofenceCount);
-      case _:
-        return null;
-    }
   }
 }
 
@@ -5637,181 +3394,6 @@ class _$MappitReportInputMultiCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitReportInputMulti].
-extension MappitReportInputMultiPatterns on MappitReportInputMulti {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitReportInputMulti value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInputMulti() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitReportInputMulti value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInputMulti():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitReportInputMulti value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInputMulti() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            double? startAt,
-            double? endAt,
-            @DurationOrNullConverter() Duration? timeFilter,
-            List<String>? sellerIds)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInputMulti() when $default != null:
-        return $default(
-            _that.startAt, _that.endAt, _that.timeFilter, _that.sellerIds);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            double? startAt,
-            double? endAt,
-            @DurationOrNullConverter() Duration? timeFilter,
-            List<String>? sellerIds)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInputMulti():
-        return $default(
-            _that.startAt, _that.endAt, _that.timeFilter, _that.sellerIds);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            double? startAt,
-            double? endAt,
-            @DurationOrNullConverter() Duration? timeFilter,
-            List<String>? sellerIds)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInputMulti() when $default != null:
-        return $default(
-            _that.startAt, _that.endAt, _that.timeFilter, _that.sellerIds);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitReportInputMulti implements MappitReportInputMulti {
@@ -6013,172 +3595,6 @@ class _$MappitReportInputCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [MappitReportInput].
-extension MappitReportInputPatterns on MappitReportInput {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MappitReportInput value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInput() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MappitReportInput value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInput():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_MappitReportInput value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInput() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(double? startAt, double? endAt,
-            @DurationOrNullConverter() Duration? timeFilter, String? sellerId)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInput() when $default != null:
-        return $default(
-            _that.startAt, _that.endAt, _that.timeFilter, _that.sellerId);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(double? startAt, double? endAt,
-            @DurationOrNullConverter() Duration? timeFilter, String? sellerId)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInput():
-        return $default(
-            _that.startAt, _that.endAt, _that.timeFilter, _that.sellerId);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(double? startAt, double? endAt,
-            @DurationOrNullConverter() Duration? timeFilter, String? sellerId)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _MappitReportInput() when $default != null:
-        return $default(
-            _that.startAt, _that.endAt, _that.timeFilter, _that.sellerId);
-      case _:
-        return null;
-    }
-  }
-}
-
 /// @nodoc
 @JsonSerializable()
 class _MappitReportInput implements MappitReportInput {
@@ -6279,6 +3695,489 @@ class __$MappitReportInputCopyWithImpl<$Res>
           : sellerId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+}
+
+/// @nodoc
+mixin _$MappitRecalculate {
+  /// [id] represents the ID of the recalculate request. In UUIDv4 format.
+  String get id;
+
+  /// [assetId] represents the ID of the asset to recalculate.
+  String get assetId;
+
+  /// [asset] represents the asset to recalculate.
+  Asset? get asset;
+
+  /// [requestedById] represents the ID of the user who requested the recalculate.
+  String get requestedById;
+
+  /// [requestedBy] represents the user who requested the recalculate.
+  User? get requestedBy;
+
+  /// [requestedByIp] represents the IP address of the user who requested the recalculate.
+  String get requestedByIp;
+
+  /// [progress] represents the progress of the recalculate request, from 0 to 100.
+  double get progress;
+
+  /// [requestedAt] represents the date and time when the recalculate was requested.
+  @TimestampConverter()
+  DateTime get requestedAt;
+
+  /// [recalcStartAt] represents the date and time when the recalculate started.
+  @TimestampConverter()
+  DateTime get recalcStartAt;
+
+  /// [recalcEndAt] represents the date and time when the recalculate ended.
+  @TimestampConverter()
+  DateTime get recalcEndAt;
+
+  /// [status] represents the status of the recalculate request.
+  @JsonKey(unknownEnumValue: MappitRecalculateStatus.scheduled)
+  MappitRecalculateStatus get status;
+
+  /// Create a copy of MappitRecalculate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MappitRecalculateCopyWith<MappitRecalculate> get copyWith =>
+      _$MappitRecalculateCopyWithImpl<MappitRecalculate>(
+          this as MappitRecalculate, _$identity);
+
+  /// Serializes this MappitRecalculate to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MappitRecalculate &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.requestedById, requestedById) ||
+                other.requestedById == requestedById) &&
+            (identical(other.requestedBy, requestedBy) ||
+                other.requestedBy == requestedBy) &&
+            (identical(other.requestedByIp, requestedByIp) ||
+                other.requestedByIp == requestedByIp) &&
+            (identical(other.progress, progress) ||
+                other.progress == progress) &&
+            (identical(other.requestedAt, requestedAt) ||
+                other.requestedAt == requestedAt) &&
+            (identical(other.recalcStartAt, recalcStartAt) ||
+                other.recalcStartAt == recalcStartAt) &&
+            (identical(other.recalcEndAt, recalcEndAt) ||
+                other.recalcEndAt == recalcEndAt) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      requestedById,
+      requestedBy,
+      requestedByIp,
+      progress,
+      requestedAt,
+      recalcStartAt,
+      recalcEndAt,
+      status);
+
+  @override
+  String toString() {
+    return 'MappitRecalculate(id: $id, assetId: $assetId, asset: $asset, requestedById: $requestedById, requestedBy: $requestedBy, requestedByIp: $requestedByIp, progress: $progress, requestedAt: $requestedAt, recalcStartAt: $recalcStartAt, recalcEndAt: $recalcEndAt, status: $status)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MappitRecalculateCopyWith<$Res> {
+  factory $MappitRecalculateCopyWith(
+          MappitRecalculate value, $Res Function(MappitRecalculate) _then) =
+      _$MappitRecalculateCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String assetId,
+      Asset? asset,
+      String requestedById,
+      User? requestedBy,
+      String requestedByIp,
+      double progress,
+      @TimestampConverter() DateTime requestedAt,
+      @TimestampConverter() DateTime recalcStartAt,
+      @TimestampConverter() DateTime recalcEndAt,
+      @JsonKey(unknownEnumValue: MappitRecalculateStatus.scheduled)
+      MappitRecalculateStatus status});
+
+  $AssetCopyWith<$Res>? get asset;
+  $UserCopyWith<$Res>? get requestedBy;
+}
+
+/// @nodoc
+class _$MappitRecalculateCopyWithImpl<$Res>
+    implements $MappitRecalculateCopyWith<$Res> {
+  _$MappitRecalculateCopyWithImpl(this._self, this._then);
+
+  final MappitRecalculate _self;
+  final $Res Function(MappitRecalculate) _then;
+
+  /// Create a copy of MappitRecalculate
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? assetId = null,
+    Object? asset = freezed,
+    Object? requestedById = null,
+    Object? requestedBy = freezed,
+    Object? requestedByIp = null,
+    Object? progress = null,
+    Object? requestedAt = null,
+    Object? recalcStartAt = null,
+    Object? recalcEndAt = null,
+    Object? status = null,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetId: null == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      requestedById: null == requestedById
+          ? _self.requestedById
+          : requestedById // ignore: cast_nullable_to_non_nullable
+              as String,
+      requestedBy: freezed == requestedBy
+          ? _self.requestedBy
+          : requestedBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      requestedByIp: null == requestedByIp
+          ? _self.requestedByIp
+          : requestedByIp // ignore: cast_nullable_to_non_nullable
+              as String,
+      progress: null == progress
+          ? _self.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as double,
+      requestedAt: null == requestedAt
+          ? _self.requestedAt
+          : requestedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      recalcStartAt: null == recalcStartAt
+          ? _self.recalcStartAt
+          : recalcStartAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      recalcEndAt: null == recalcEndAt
+          ? _self.recalcEndAt
+          : recalcEndAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as MappitRecalculateStatus,
+    ));
+  }
+
+  /// Create a copy of MappitRecalculate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of MappitRecalculate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get requestedBy {
+    if (_self.requestedBy == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.requestedBy!, (value) {
+      return _then(_self.copyWith(requestedBy: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _MappitRecalculate implements MappitRecalculate {
+  const _MappitRecalculate(
+      {required this.id,
+      required this.assetId,
+      this.asset,
+      required this.requestedById,
+      this.requestedBy,
+      required this.requestedByIp,
+      this.progress = 0,
+      @TimestampConverter() required this.requestedAt,
+      @TimestampConverter() required this.recalcStartAt,
+      @TimestampConverter() required this.recalcEndAt,
+      @JsonKey(unknownEnumValue: MappitRecalculateStatus.scheduled)
+      required this.status});
+  factory _MappitRecalculate.fromJson(Map<String, dynamic> json) =>
+      _$MappitRecalculateFromJson(json);
+
+  /// [id] represents the ID of the recalculate request. In UUIDv4 format.
+  @override
+  final String id;
+
+  /// [assetId] represents the ID of the asset to recalculate.
+  @override
+  final String assetId;
+
+  /// [asset] represents the asset to recalculate.
+  @override
+  final Asset? asset;
+
+  /// [requestedById] represents the ID of the user who requested the recalculate.
+  @override
+  final String requestedById;
+
+  /// [requestedBy] represents the user who requested the recalculate.
+  @override
+  final User? requestedBy;
+
+  /// [requestedByIp] represents the IP address of the user who requested the recalculate.
+  @override
+  final String requestedByIp;
+
+  /// [progress] represents the progress of the recalculate request, from 0 to 100.
+  @override
+  @JsonKey()
+  final double progress;
+
+  /// [requestedAt] represents the date and time when the recalculate was requested.
+  @override
+  @TimestampConverter()
+  final DateTime requestedAt;
+
+  /// [recalcStartAt] represents the date and time when the recalculate started.
+  @override
+  @TimestampConverter()
+  final DateTime recalcStartAt;
+
+  /// [recalcEndAt] represents the date and time when the recalculate ended.
+  @override
+  @TimestampConverter()
+  final DateTime recalcEndAt;
+
+  /// [status] represents the status of the recalculate request.
+  @override
+  @JsonKey(unknownEnumValue: MappitRecalculateStatus.scheduled)
+  final MappitRecalculateStatus status;
+
+  /// Create a copy of MappitRecalculate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MappitRecalculateCopyWith<_MappitRecalculate> get copyWith =>
+      __$MappitRecalculateCopyWithImpl<_MappitRecalculate>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MappitRecalculateToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MappitRecalculate &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.requestedById, requestedById) ||
+                other.requestedById == requestedById) &&
+            (identical(other.requestedBy, requestedBy) ||
+                other.requestedBy == requestedBy) &&
+            (identical(other.requestedByIp, requestedByIp) ||
+                other.requestedByIp == requestedByIp) &&
+            (identical(other.progress, progress) ||
+                other.progress == progress) &&
+            (identical(other.requestedAt, requestedAt) ||
+                other.requestedAt == requestedAt) &&
+            (identical(other.recalcStartAt, recalcStartAt) ||
+                other.recalcStartAt == recalcStartAt) &&
+            (identical(other.recalcEndAt, recalcEndAt) ||
+                other.recalcEndAt == recalcEndAt) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      requestedById,
+      requestedBy,
+      requestedByIp,
+      progress,
+      requestedAt,
+      recalcStartAt,
+      recalcEndAt,
+      status);
+
+  @override
+  String toString() {
+    return 'MappitRecalculate(id: $id, assetId: $assetId, asset: $asset, requestedById: $requestedById, requestedBy: $requestedBy, requestedByIp: $requestedByIp, progress: $progress, requestedAt: $requestedAt, recalcStartAt: $recalcStartAt, recalcEndAt: $recalcEndAt, status: $status)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MappitRecalculateCopyWith<$Res>
+    implements $MappitRecalculateCopyWith<$Res> {
+  factory _$MappitRecalculateCopyWith(
+          _MappitRecalculate value, $Res Function(_MappitRecalculate) _then) =
+      __$MappitRecalculateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String assetId,
+      Asset? asset,
+      String requestedById,
+      User? requestedBy,
+      String requestedByIp,
+      double progress,
+      @TimestampConverter() DateTime requestedAt,
+      @TimestampConverter() DateTime recalcStartAt,
+      @TimestampConverter() DateTime recalcEndAt,
+      @JsonKey(unknownEnumValue: MappitRecalculateStatus.scheduled)
+      MappitRecalculateStatus status});
+
+  @override
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $UserCopyWith<$Res>? get requestedBy;
+}
+
+/// @nodoc
+class __$MappitRecalculateCopyWithImpl<$Res>
+    implements _$MappitRecalculateCopyWith<$Res> {
+  __$MappitRecalculateCopyWithImpl(this._self, this._then);
+
+  final _MappitRecalculate _self;
+  final $Res Function(_MappitRecalculate) _then;
+
+  /// Create a copy of MappitRecalculate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? assetId = null,
+    Object? asset = freezed,
+    Object? requestedById = null,
+    Object? requestedBy = freezed,
+    Object? requestedByIp = null,
+    Object? progress = null,
+    Object? requestedAt = null,
+    Object? recalcStartAt = null,
+    Object? recalcEndAt = null,
+    Object? status = null,
+  }) {
+    return _then(_MappitRecalculate(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetId: null == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      asset: freezed == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      requestedById: null == requestedById
+          ? _self.requestedById
+          : requestedById // ignore: cast_nullable_to_non_nullable
+              as String,
+      requestedBy: freezed == requestedBy
+          ? _self.requestedBy
+          : requestedBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      requestedByIp: null == requestedByIp
+          ? _self.requestedByIp
+          : requestedByIp // ignore: cast_nullable_to_non_nullable
+              as String,
+      progress: null == progress
+          ? _self.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as double,
+      requestedAt: null == requestedAt
+          ? _self.requestedAt
+          : requestedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      recalcStartAt: null == recalcStartAt
+          ? _self.recalcStartAt
+          : recalcStartAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      recalcEndAt: null == recalcEndAt
+          ? _self.recalcEndAt
+          : recalcEndAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as MappitRecalculateStatus,
+    ));
+  }
+
+  /// Create a copy of MappitRecalculate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.asset!, (value) {
+      return _then(_self.copyWith(asset: value));
+    });
+  }
+
+  /// Create a copy of MappitRecalculate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get requestedBy {
+    if (_self.requestedBy == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.requestedBy!, (value) {
+      return _then(_self.copyWith(requestedBy: value));
+    });
   }
 }
 
