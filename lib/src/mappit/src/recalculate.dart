@@ -21,6 +21,9 @@ abstract class MappitRecalculate with _$MappitRecalculate {
     /// [requestedByIp] represents the IP address of the user who requested the recalculate.
     required String requestedByIp,
 
+    /// [progress] represents the progress of the recalculate request, from 0 to 100.
+    @Default(0) double progress,
+
     /// [requestedAt] represents the date and time when the recalculate was requested.
     @TimestampConverter() required DateTime requestedAt,
 
@@ -48,7 +51,7 @@ enum MappitRecalculateStatus {
   pending,
 
   /// [processing] represents a recalculate request that is currently being processed.
-  @JsonValue('PROCESSING')
+  @JsonValue('RUNNING')
   processing,
 
   /// [completed] represents a recalculate request that has been completed.

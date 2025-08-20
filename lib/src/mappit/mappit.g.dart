@@ -374,6 +374,7 @@ _MappitRecalculate _$MappitRecalculateFromJson(Map<String, dynamic> json) =>
           ? null
           : User.fromJson(json['requestedBy'] as Map<String, dynamic>),
       requestedByIp: json['requestedByIp'] as String,
+      progress: (json['progress'] as num?)?.toDouble() ?? 0,
       requestedAt:
           const TimestampConverter().fromJson(json['requestedAt'] as num),
       recalcStartAt:
@@ -392,16 +393,17 @@ Map<String, dynamic> _$MappitRecalculateToJson(_MappitRecalculate instance) =>
       'requestedById': instance.requestedById,
       'requestedBy': instance.requestedBy?.toJson(),
       'requestedByIp': instance.requestedByIp,
+      'progress': instance.progress,
       'requestedAt': const TimestampConverter().toJson(instance.requestedAt),
       'recalcStartAt':
           const TimestampConverter().toJson(instance.recalcStartAt),
       'recalcEndAt': const TimestampConverter().toJson(instance.recalcEndAt),
-      'status': _$MappitRecalculateStatusEnumMap[instance.status]!,
+      'status': instance.status.toJson(),
     };
 
 const _$MappitRecalculateStatusEnumMap = {
   MappitRecalculateStatus.scheduled: 'SCHEDULED',
   MappitRecalculateStatus.pending: 'PENDING',
-  MappitRecalculateStatus.processing: 'PROCESSING',
-  MappitRecalculateStatus.completed: 'COMPLETED',
+  MappitRecalculateStatus.processing: 'RUNNING',
+  MappitRecalculateStatus.completed: 'FINISHED',
 };

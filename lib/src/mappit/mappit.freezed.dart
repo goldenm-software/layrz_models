@@ -3718,6 +3718,9 @@ mixin _$MappitRecalculate {
   /// [requestedByIp] represents the IP address of the user who requested the recalculate.
   String get requestedByIp;
 
+  /// [progress] represents the progress of the recalculate request, from 0 to 100.
+  double get progress;
+
   /// [requestedAt] represents the date and time when the recalculate was requested.
   @TimestampConverter()
   DateTime get requestedAt;
@@ -3759,6 +3762,8 @@ mixin _$MappitRecalculate {
                 other.requestedBy == requestedBy) &&
             (identical(other.requestedByIp, requestedByIp) ||
                 other.requestedByIp == requestedByIp) &&
+            (identical(other.progress, progress) ||
+                other.progress == progress) &&
             (identical(other.requestedAt, requestedAt) ||
                 other.requestedAt == requestedAt) &&
             (identical(other.recalcStartAt, recalcStartAt) ||
@@ -3778,6 +3783,7 @@ mixin _$MappitRecalculate {
       requestedById,
       requestedBy,
       requestedByIp,
+      progress,
       requestedAt,
       recalcStartAt,
       recalcEndAt,
@@ -3785,7 +3791,7 @@ mixin _$MappitRecalculate {
 
   @override
   String toString() {
-    return 'MappitRecalculate(id: $id, assetId: $assetId, asset: $asset, requestedById: $requestedById, requestedBy: $requestedBy, requestedByIp: $requestedByIp, requestedAt: $requestedAt, recalcStartAt: $recalcStartAt, recalcEndAt: $recalcEndAt, status: $status)';
+    return 'MappitRecalculate(id: $id, assetId: $assetId, asset: $asset, requestedById: $requestedById, requestedBy: $requestedBy, requestedByIp: $requestedByIp, progress: $progress, requestedAt: $requestedAt, recalcStartAt: $recalcStartAt, recalcEndAt: $recalcEndAt, status: $status)';
   }
 }
 
@@ -3802,6 +3808,7 @@ abstract mixin class $MappitRecalculateCopyWith<$Res> {
       String requestedById,
       User? requestedBy,
       String requestedByIp,
+      double progress,
       @TimestampConverter() DateTime requestedAt,
       @TimestampConverter() DateTime recalcStartAt,
       @TimestampConverter() DateTime recalcEndAt,
@@ -3831,6 +3838,7 @@ class _$MappitRecalculateCopyWithImpl<$Res>
     Object? requestedById = null,
     Object? requestedBy = freezed,
     Object? requestedByIp = null,
+    Object? progress = null,
     Object? requestedAt = null,
     Object? recalcStartAt = null,
     Object? recalcEndAt = null,
@@ -3861,6 +3869,10 @@ class _$MappitRecalculateCopyWithImpl<$Res>
           ? _self.requestedByIp
           : requestedByIp // ignore: cast_nullable_to_non_nullable
               as String,
+      progress: null == progress
+          ? _self.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as double,
       requestedAt: null == requestedAt
           ? _self.requestedAt
           : requestedAt // ignore: cast_nullable_to_non_nullable
@@ -3919,6 +3931,7 @@ class _MappitRecalculate implements MappitRecalculate {
       required this.requestedById,
       this.requestedBy,
       required this.requestedByIp,
+      this.progress = 0,
       @TimestampConverter() required this.requestedAt,
       @TimestampConverter() required this.recalcStartAt,
       @TimestampConverter() required this.recalcEndAt,
@@ -3950,6 +3963,11 @@ class _MappitRecalculate implements MappitRecalculate {
   /// [requestedByIp] represents the IP address of the user who requested the recalculate.
   @override
   final String requestedByIp;
+
+  /// [progress] represents the progress of the recalculate request, from 0 to 100.
+  @override
+  @JsonKey()
+  final double progress;
 
   /// [requestedAt] represents the date and time when the recalculate was requested.
   @override
@@ -4000,6 +4018,8 @@ class _MappitRecalculate implements MappitRecalculate {
                 other.requestedBy == requestedBy) &&
             (identical(other.requestedByIp, requestedByIp) ||
                 other.requestedByIp == requestedByIp) &&
+            (identical(other.progress, progress) ||
+                other.progress == progress) &&
             (identical(other.requestedAt, requestedAt) ||
                 other.requestedAt == requestedAt) &&
             (identical(other.recalcStartAt, recalcStartAt) ||
@@ -4019,6 +4039,7 @@ class _MappitRecalculate implements MappitRecalculate {
       requestedById,
       requestedBy,
       requestedByIp,
+      progress,
       requestedAt,
       recalcStartAt,
       recalcEndAt,
@@ -4026,7 +4047,7 @@ class _MappitRecalculate implements MappitRecalculate {
 
   @override
   String toString() {
-    return 'MappitRecalculate(id: $id, assetId: $assetId, asset: $asset, requestedById: $requestedById, requestedBy: $requestedBy, requestedByIp: $requestedByIp, requestedAt: $requestedAt, recalcStartAt: $recalcStartAt, recalcEndAt: $recalcEndAt, status: $status)';
+    return 'MappitRecalculate(id: $id, assetId: $assetId, asset: $asset, requestedById: $requestedById, requestedBy: $requestedBy, requestedByIp: $requestedByIp, progress: $progress, requestedAt: $requestedAt, recalcStartAt: $recalcStartAt, recalcEndAt: $recalcEndAt, status: $status)';
   }
 }
 
@@ -4045,6 +4066,7 @@ abstract mixin class _$MappitRecalculateCopyWith<$Res>
       String requestedById,
       User? requestedBy,
       String requestedByIp,
+      double progress,
       @TimestampConverter() DateTime requestedAt,
       @TimestampConverter() DateTime recalcStartAt,
       @TimestampConverter() DateTime recalcEndAt,
@@ -4076,6 +4098,7 @@ class __$MappitRecalculateCopyWithImpl<$Res>
     Object? requestedById = null,
     Object? requestedBy = freezed,
     Object? requestedByIp = null,
+    Object? progress = null,
     Object? requestedAt = null,
     Object? recalcStartAt = null,
     Object? recalcEndAt = null,
@@ -4106,6 +4129,10 @@ class __$MappitRecalculateCopyWithImpl<$Res>
           ? _self.requestedByIp
           : requestedByIp // ignore: cast_nullable_to_non_nullable
               as String,
+      progress: null == progress
+          ? _self.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as double,
       requestedAt: null == requestedAt
           ? _self.requestedAt
           : requestedAt // ignore: cast_nullable_to_non_nullable
