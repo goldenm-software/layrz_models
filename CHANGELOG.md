@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.28
+- `startAt` and `endAt` now are `DateTime` in `AtsExitInput`.
+-  Create Ats monitor things to monitor entities
+
 ## 3.4.27
 - Update Changelog and Readme
 

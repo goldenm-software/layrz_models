@@ -24,10 +24,10 @@ abstract class AtsExitInput with _$AtsExitInput {
     String? attendantId,
 
     /// The [startAt] of the exit.
-    double? startAt,
+    @TimestampConverter() DateTime? startAt,
 
     /// The [endAt] of the exit.
-    double? endAt,
+    @TimestampConverter() DateTime? endAt,
   }) = _AtsExitInput;
 
   /// Creates a new `AtsExitInput` from a JSON object.

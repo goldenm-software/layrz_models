@@ -3,7 +3,9 @@ library;
 import 'dart:ui';
 
 import 'package:collection/collection.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_icons/layrz_icons.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 // Freezed
@@ -70,6 +72,7 @@ part 'src/enums/purchase_order_status.dart';
 part 'src/enums/purchase_order_sub_categories.dart';
 part 'src/enums/cf_fuel_type.dart';
 part 'src/enums/reception_status.dart';
+part 'src/enums/monitor_card_type.dart';
 
 // Manifests
 part 'src/manifest/kind.dart';
@@ -95,3 +98,8 @@ part 'src/cacl/input/measurement_input.dart';
 part 'src/cacl/input/measurement.dart';
 part 'src/cacl/input/volume_moved_input.dart';
 part 'src/cacl/input/equipment_measurement_input.dart';
+
+// Monitor Entity
+part 'src/monitor/monitor.dart';
+part 'src/monitor/grid_item_input.dart';
+part 'src/monitor/grid_dimension_input.dart';
