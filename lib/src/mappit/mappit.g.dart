@@ -361,3 +361,49 @@ Map<String, dynamic> _$MappitReportInputToJson(_MappitReportInput instance) =>
       'timeFilter': const DurationOrNullConverter().toJson(instance.timeFilter),
       'sellerId': instance.sellerId,
     };
+
+_MappitRecalculate _$MappitRecalculateFromJson(Map<String, dynamic> json) =>
+    _MappitRecalculate(
+      id: json['id'] as String,
+      assetId: json['assetId'] as String,
+      asset: json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      requestedById: json['requestedById'] as String,
+      requestedBy: json['requestedBy'] == null
+          ? null
+          : User.fromJson(json['requestedBy'] as Map<String, dynamic>),
+      requestedByIp: json['requestedByIp'] as String,
+      progress: (json['progress'] as num?)?.toDouble() ?? 0,
+      requestedAt:
+          const TimestampConverter().fromJson(json['requestedAt'] as num),
+      recalcStartAt:
+          const TimestampConverter().fromJson(json['recalcStartAt'] as num),
+      recalcEndAt:
+          const TimestampConverter().fromJson(json['recalcEndAt'] as num),
+      status: $enumDecode(_$MappitRecalculateStatusEnumMap, json['status'],
+          unknownValue: MappitRecalculateStatus.scheduled),
+    );
+
+Map<String, dynamic> _$MappitRecalculateToJson(_MappitRecalculate instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'asset': instance.asset?.toJson(),
+      'requestedById': instance.requestedById,
+      'requestedBy': instance.requestedBy?.toJson(),
+      'requestedByIp': instance.requestedByIp,
+      'progress': instance.progress,
+      'requestedAt': const TimestampConverter().toJson(instance.requestedAt),
+      'recalcStartAt':
+          const TimestampConverter().toJson(instance.recalcStartAt),
+      'recalcEndAt': const TimestampConverter().toJson(instance.recalcEndAt),
+      'status': instance.status.toJson(),
+    };
+
+const _$MappitRecalculateStatusEnumMap = {
+  MappitRecalculateStatus.scheduled: 'SCHEDULED',
+  MappitRecalculateStatus.pending: 'PENDING',
+  MappitRecalculateStatus.processing: 'RUNNING',
+  MappitRecalculateStatus.completed: 'FINISHED',
+};
