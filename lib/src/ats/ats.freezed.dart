@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -59,7 +58,8 @@ mixin _$AtsReceptionProduct {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsReceptionProductCopyWith<AtsReceptionProduct> get copyWith =>
-      _$AtsReceptionProductCopyWithImpl<AtsReceptionProduct>(this as AtsReceptionProduct, _$identity);
+      _$AtsReceptionProductCopyWithImpl<AtsReceptionProduct>(
+          this as AtsReceptionProduct, _$identity);
 
   /// Serializes this AtsReceptionProduct to a JSON map.
   Map<String, dynamic> toJson();
@@ -71,22 +71,42 @@ mixin _$AtsReceptionProduct {
             other is AtsReceptionProduct &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.fuelType, fuelType) || other.fuelType == fuelType) &&
-            (identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
             (identical(other.density, density) || other.density == density) &&
-            (identical(other.temperature, temperature) || other.temperature == temperature) &&
-            (identical(other.volumeBought, volumeBought) || other.volumeBought == volumeBought) &&
-            (identical(other.realVolume, realVolume) || other.realVolume == realVolume) &&
-            (identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt) &&
-            (identical(other.provider, provider) || other.provider == provider) &&
-            const DeepCollectionEquality().equals(other.tanksImages, tanksImages) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.volumeBought, volumeBought) ||
+                other.volumeBought == volumeBought) &&
+            (identical(other.realVolume, realVolume) ||
+                other.realVolume == realVolume) &&
+            (identical(other.receivedAt, receivedAt) ||
+                other.receivedAt == receivedAt) &&
+            (identical(other.provider, provider) ||
+                other.provider == provider) &&
+            const DeepCollectionEquality()
+                .equals(other.tanksImages, tanksImages) &&
             (identical(other.price, price) || other.price == price));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, assetId, fuelType, fuelSubtype, density, temperature, volumeBought,
-      realVolume, receivedAt, provider, const DeepCollectionEquality().hash(tanksImages), price);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      fuelType,
+      fuelSubtype,
+      density,
+      temperature,
+      volumeBought,
+      realVolume,
+      receivedAt,
+      provider,
+      const DeepCollectionEquality().hash(tanksImages),
+      price);
 
   @override
   String toString() {
@@ -96,7 +116,8 @@ mixin _$AtsReceptionProduct {
 
 /// @nodoc
 abstract mixin class $AtsReceptionProductCopyWith<$Res> {
-  factory $AtsReceptionProductCopyWith(AtsReceptionProduct value, $Res Function(AtsReceptionProduct) _then) =
+  factory $AtsReceptionProductCopyWith(
+          AtsReceptionProduct value, $Res Function(AtsReceptionProduct) _then) =
       _$AtsReceptionProductCopyWithImpl;
   @useResult
   $Res call(
@@ -115,7 +136,8 @@ abstract mixin class $AtsReceptionProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsReceptionProductCopyWithImpl<$Res> implements $AtsReceptionProductCopyWith<$Res> {
+class _$AtsReceptionProductCopyWithImpl<$Res>
+    implements $AtsReceptionProductCopyWith<$Res> {
   _$AtsReceptionProductCopyWithImpl(this._self, this._then);
 
   final AtsReceptionProduct _self;
@@ -192,6 +214,238 @@ class _$AtsReceptionProductCopyWithImpl<$Res> implements $AtsReceptionProductCop
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsReceptionProduct].
+extension AtsReceptionProductPatterns on AtsReceptionProduct {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsReceptionProduct value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProduct() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsReceptionProduct value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProduct():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsReceptionProduct value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProduct() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+            @AtsFuelSubTypeOrNullConverter() AtsFuelSubType? fuelSubtype,
+            double? density,
+            double? temperature,
+            double? volumeBought,
+            double? realVolume,
+            @TimestampOrNullConverter() DateTime? receivedAt,
+            String? provider,
+            List<String> tanksImages,
+            double? price)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProduct() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.fuelType,
+            _that.fuelSubtype,
+            _that.density,
+            _that.temperature,
+            _that.volumeBought,
+            _that.realVolume,
+            _that.receivedAt,
+            _that.provider,
+            _that.tanksImages,
+            _that.price);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+            @AtsFuelSubTypeOrNullConverter() AtsFuelSubType? fuelSubtype,
+            double? density,
+            double? temperature,
+            double? volumeBought,
+            double? realVolume,
+            @TimestampOrNullConverter() DateTime? receivedAt,
+            String? provider,
+            List<String> tanksImages,
+            double? price)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProduct():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.fuelType,
+            _that.fuelSubtype,
+            _that.density,
+            _that.temperature,
+            _that.volumeBought,
+            _that.realVolume,
+            _that.receivedAt,
+            _that.provider,
+            _that.tanksImages,
+            _that.price);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+            @AtsFuelSubTypeOrNullConverter() AtsFuelSubType? fuelSubtype,
+            double? density,
+            double? temperature,
+            double? volumeBought,
+            double? realVolume,
+            @TimestampOrNullConverter() DateTime? receivedAt,
+            String? provider,
+            List<String> tanksImages,
+            double? price)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProduct() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.fuelType,
+            _that.fuelSubtype,
+            _that.density,
+            _that.temperature,
+            _that.volumeBought,
+            _that.realVolume,
+            _that.receivedAt,
+            _that.provider,
+            _that.tanksImages,
+            _that.price);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsReceptionProduct implements AtsReceptionProduct {
@@ -209,7 +463,8 @@ class _AtsReceptionProduct implements AtsReceptionProduct {
       final List<String> tanksImages = const [],
       this.price})
       : _tanksImages = tanksImages;
-  factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) => _$AtsReceptionProductFromJson(json);
+  factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) =>
+      _$AtsReceptionProductFromJson(json);
 
   /// ID of the reception product. This ID is unique.
   @override
@@ -276,7 +531,8 @@ class _AtsReceptionProduct implements AtsReceptionProduct {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsReceptionProductCopyWith<_AtsReceptionProduct> get copyWith =>
-      __$AtsReceptionProductCopyWithImpl<_AtsReceptionProduct>(this, _$identity);
+      __$AtsReceptionProductCopyWithImpl<_AtsReceptionProduct>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -292,22 +548,42 @@ class _AtsReceptionProduct implements AtsReceptionProduct {
             other is _AtsReceptionProduct &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.fuelType, fuelType) || other.fuelType == fuelType) &&
-            (identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
             (identical(other.density, density) || other.density == density) &&
-            (identical(other.temperature, temperature) || other.temperature == temperature) &&
-            (identical(other.volumeBought, volumeBought) || other.volumeBought == volumeBought) &&
-            (identical(other.realVolume, realVolume) || other.realVolume == realVolume) &&
-            (identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt) &&
-            (identical(other.provider, provider) || other.provider == provider) &&
-            const DeepCollectionEquality().equals(other._tanksImages, _tanksImages) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.volumeBought, volumeBought) ||
+                other.volumeBought == volumeBought) &&
+            (identical(other.realVolume, realVolume) ||
+                other.realVolume == realVolume) &&
+            (identical(other.receivedAt, receivedAt) ||
+                other.receivedAt == receivedAt) &&
+            (identical(other.provider, provider) ||
+                other.provider == provider) &&
+            const DeepCollectionEquality()
+                .equals(other._tanksImages, _tanksImages) &&
             (identical(other.price, price) || other.price == price));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, assetId, fuelType, fuelSubtype, density, temperature, volumeBought,
-      realVolume, receivedAt, provider, const DeepCollectionEquality().hash(_tanksImages), price);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      fuelType,
+      fuelSubtype,
+      density,
+      temperature,
+      volumeBought,
+      realVolume,
+      receivedAt,
+      provider,
+      const DeepCollectionEquality().hash(_tanksImages),
+      price);
 
   @override
   String toString() {
@@ -316,8 +592,10 @@ class _AtsReceptionProduct implements AtsReceptionProduct {
 }
 
 /// @nodoc
-abstract mixin class _$AtsReceptionProductCopyWith<$Res> implements $AtsReceptionProductCopyWith<$Res> {
-  factory _$AtsReceptionProductCopyWith(_AtsReceptionProduct value, $Res Function(_AtsReceptionProduct) _then) =
+abstract mixin class _$AtsReceptionProductCopyWith<$Res>
+    implements $AtsReceptionProductCopyWith<$Res> {
+  factory _$AtsReceptionProductCopyWith(_AtsReceptionProduct value,
+          $Res Function(_AtsReceptionProduct) _then) =
       __$AtsReceptionProductCopyWithImpl;
   @override
   @useResult
@@ -337,7 +615,8 @@ abstract mixin class _$AtsReceptionProductCopyWith<$Res> implements $AtsReceptio
 }
 
 /// @nodoc
-class __$AtsReceptionProductCopyWithImpl<$Res> implements _$AtsReceptionProductCopyWith<$Res> {
+class __$AtsReceptionProductCopyWithImpl<$Res>
+    implements _$AtsReceptionProductCopyWith<$Res> {
   __$AtsReceptionProductCopyWithImpl(this._self, this._then);
 
   final _AtsReceptionProduct _self;
@@ -433,7 +712,8 @@ mixin _$AtsReceptionProductInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsReceptionProductInputCopyWith<AtsReceptionProductInput> get copyWith =>
-      _$AtsReceptionProductInputCopyWithImpl<AtsReceptionProductInput>(this as AtsReceptionProductInput, _$identity);
+      _$AtsReceptionProductInputCopyWithImpl<AtsReceptionProductInput>(
+          this as AtsReceptionProductInput, _$identity);
 
   /// Serializes this AtsReceptionProductInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -446,15 +726,16 @@ mixin _$AtsReceptionProductInput {
 
 /// @nodoc
 abstract mixin class $AtsReceptionProductInputCopyWith<$Res> {
-  factory $AtsReceptionProductInputCopyWith(
-          AtsReceptionProductInput value, $Res Function(AtsReceptionProductInput) _then) =
+  factory $AtsReceptionProductInputCopyWith(AtsReceptionProductInput value,
+          $Res Function(AtsReceptionProductInput) _then) =
       _$AtsReceptionProductInputCopyWithImpl;
   @useResult
   $Res call({String? fuelAnp, List<String>? tanksImages});
 }
 
 /// @nodoc
-class _$AtsReceptionProductInputCopyWithImpl<$Res> implements $AtsReceptionProductInputCopyWith<$Res> {
+class _$AtsReceptionProductInputCopyWithImpl<$Res>
+    implements $AtsReceptionProductInputCopyWith<$Res> {
   _$AtsReceptionProductInputCopyWithImpl(this._self, this._then);
 
   final AtsReceptionProductInput _self;
@@ -481,11 +762,169 @@ class _$AtsReceptionProductInputCopyWithImpl<$Res> implements $AtsReceptionProdu
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsReceptionProductInput].
+extension AtsReceptionProductInputPatterns on AtsReceptionProductInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsReceptionProductInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProductInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsReceptionProductInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProductInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsReceptionProductInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProductInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? fuelAnp, List<String>? tanksImages)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProductInput() when $default != null:
+        return $default(_that.fuelAnp, _that.tanksImages);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? fuelAnp, List<String>? tanksImages) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProductInput():
+        return $default(_that.fuelAnp, _that.tanksImages);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? fuelAnp, List<String>? tanksImages)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionProductInput() when $default != null:
+        return $default(_that.fuelAnp, _that.tanksImages);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsReceptionProductInput implements AtsReceptionProductInput {
   _AtsReceptionProductInput({this.fuelAnp, this.tanksImages});
-  factory _AtsReceptionProductInput.fromJson(Map<String, dynamic> json) => _$AtsReceptionProductInputFromJson(json);
+  factory _AtsReceptionProductInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsReceptionProductInputFromJson(json);
 
   /// Fuel ANP category code
   @override
@@ -501,7 +940,8 @@ class _AtsReceptionProductInput implements AtsReceptionProductInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsReceptionProductInputCopyWith<_AtsReceptionProductInput> get copyWith =>
-      __$AtsReceptionProductInputCopyWithImpl<_AtsReceptionProductInput>(this, _$identity);
+      __$AtsReceptionProductInputCopyWithImpl<_AtsReceptionProductInput>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -517,9 +957,10 @@ class _AtsReceptionProductInput implements AtsReceptionProductInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsReceptionProductInputCopyWith<$Res> implements $AtsReceptionProductInputCopyWith<$Res> {
-  factory _$AtsReceptionProductInputCopyWith(
-          _AtsReceptionProductInput value, $Res Function(_AtsReceptionProductInput) _then) =
+abstract mixin class _$AtsReceptionProductInputCopyWith<$Res>
+    implements $AtsReceptionProductInputCopyWith<$Res> {
+  factory _$AtsReceptionProductInputCopyWith(_AtsReceptionProductInput value,
+          $Res Function(_AtsReceptionProductInput) _then) =
       __$AtsReceptionProductInputCopyWithImpl;
   @override
   @useResult
@@ -527,7 +968,8 @@ abstract mixin class _$AtsReceptionProductInputCopyWith<$Res> implements $AtsRec
 }
 
 /// @nodoc
-class __$AtsReceptionProductInputCopyWithImpl<$Res> implements _$AtsReceptionProductInputCopyWith<$Res> {
+class __$AtsReceptionProductInputCopyWithImpl<$Res>
+    implements _$AtsReceptionProductInputCopyWith<$Res> {
   __$AtsReceptionProductInputCopyWithImpl(this._self, this._then);
 
   final _AtsReceptionProductInput _self;
@@ -601,7 +1043,8 @@ mixin _$AtsReceptionInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsReceptionInputCopyWith<AtsReceptionInput> get copyWith =>
-      _$AtsReceptionInputCopyWithImpl<AtsReceptionInput>(this as AtsReceptionInput, _$identity);
+      _$AtsReceptionInputCopyWithImpl<AtsReceptionInput>(
+          this as AtsReceptionInput, _$identity);
 
   /// Serializes this AtsReceptionInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -614,7 +1057,8 @@ mixin _$AtsReceptionInput {
 
 /// @nodoc
 abstract mixin class $AtsReceptionInputCopyWith<$Res> {
-  factory $AtsReceptionInputCopyWith(AtsReceptionInput value, $Res Function(AtsReceptionInput) _then) =
+  factory $AtsReceptionInputCopyWith(
+          AtsReceptionInput value, $Res Function(AtsReceptionInput) _then) =
       _$AtsReceptionInputCopyWithImpl;
   @useResult
   $Res call(
@@ -627,7 +1071,8 @@ abstract mixin class $AtsReceptionInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsReceptionInputCopyWithImpl<$Res> implements $AtsReceptionInputCopyWith<$Res> {
+class _$AtsReceptionInputCopyWithImpl<$Res>
+    implements $AtsReceptionInputCopyWith<$Res> {
   _$AtsReceptionInputCopyWithImpl(this._self, this._then);
 
   final AtsReceptionInput _self;
@@ -674,6 +1119,187 @@ class _$AtsReceptionInputCopyWithImpl<$Res> implements $AtsReceptionInputCopyWit
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsReceptionInput].
+extension AtsReceptionInputPatterns on AtsReceptionInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsReceptionInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsReceptionInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsReceptionInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            List<String>? ordersIds,
+            List<AtsReceptionProductInput>? products,
+            String? assetId,
+            @DurationOrNullConverter() Duration? operationTime,
+            @AtsFromAppOrNullConverter() AtsFromApp? app)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionInput() when $default != null:
+        return $default(_that.id, _that.ordersIds, _that.products,
+            _that.assetId, _that.operationTime, _that.app);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            List<String>? ordersIds,
+            List<AtsReceptionProductInput>? products,
+            String? assetId,
+            @DurationOrNullConverter() Duration? operationTime,
+            @AtsFromAppOrNullConverter() AtsFromApp? app)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionInput():
+        return $default(_that.id, _that.ordersIds, _that.products,
+            _that.assetId, _that.operationTime, _that.app);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            List<String>? ordersIds,
+            List<AtsReceptionProductInput>? products,
+            String? assetId,
+            @DurationOrNullConverter() Duration? operationTime,
+            @AtsFromAppOrNullConverter() AtsFromApp? app)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReceptionInput() when $default != null:
+        return $default(_that.id, _that.ordersIds, _that.products,
+            _that.assetId, _that.operationTime, _that.app);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsReceptionInput implements AtsReceptionInput {
@@ -684,7 +1310,8 @@ class _AtsReceptionInput implements AtsReceptionInput {
       this.assetId,
       @DurationOrNullConverter() this.operationTime,
       @AtsFromAppOrNullConverter() this.app});
-  factory _AtsReceptionInput.fromJson(Map<String, dynamic> json) => _$AtsReceptionInputFromJson(json);
+  factory _AtsReceptionInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsReceptionInputFromJson(json);
 
   ///ID of the [AtsReception]. This ID is unique.
   @override
@@ -734,8 +1361,10 @@ class _AtsReceptionInput implements AtsReceptionInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsReceptionInputCopyWith<$Res> implements $AtsReceptionInputCopyWith<$Res> {
-  factory _$AtsReceptionInputCopyWith(_AtsReceptionInput value, $Res Function(_AtsReceptionInput) _then) =
+abstract mixin class _$AtsReceptionInputCopyWith<$Res>
+    implements $AtsReceptionInputCopyWith<$Res> {
+  factory _$AtsReceptionInputCopyWith(
+          _AtsReceptionInput value, $Res Function(_AtsReceptionInput) _then) =
       __$AtsReceptionInputCopyWithImpl;
   @override
   @useResult
@@ -749,7 +1378,8 @@ abstract mixin class _$AtsReceptionInputCopyWith<$Res> implements $AtsReceptionI
 }
 
 /// @nodoc
-class __$AtsReceptionInputCopyWithImpl<$Res> implements _$AtsReceptionInputCopyWith<$Res> {
+class __$AtsReceptionInputCopyWithImpl<$Res>
+    implements _$AtsReceptionInputCopyWith<$Res> {
   __$AtsReceptionInputCopyWithImpl(this._self, this._then);
 
   final _AtsReceptionInput _self;
@@ -818,8 +1448,9 @@ mixin _$AtsAuthenticationIdentifier {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AtsAuthenticationIdentifierCopyWith<AtsAuthenticationIdentifier> get copyWith =>
-      _$AtsAuthenticationIdentifierCopyWithImpl<AtsAuthenticationIdentifier>(
+  $AtsAuthenticationIdentifierCopyWith<AtsAuthenticationIdentifier>
+      get copyWith => _$AtsAuthenticationIdentifierCopyWithImpl<
+              AtsAuthenticationIdentifier>(
           this as AtsAuthenticationIdentifier, _$identity);
 
   /// Serializes this AtsAuthenticationIdentifier to a JSON map.
@@ -831,15 +1462,18 @@ mixin _$AtsAuthenticationIdentifier {
         (other.runtimeType == runtimeType &&
             other is AtsAuthenticationIdentifier &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.category, category) || other.category == category) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
             (identical(other.cardId, cardId) || other.cardId == cardId) &&
             (identical(other.card, card) || other.card == card) &&
-            (identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier));
+            (identical(other.nfcIdentifier, nfcIdentifier) ||
+                other.nfcIdentifier == nfcIdentifier));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, category, cardId, card, nfcIdentifier);
+  int get hashCode =>
+      Object.hash(runtimeType, id, category, cardId, card, nfcIdentifier);
 
   @override
   String toString() {
@@ -850,12 +1484,14 @@ mixin _$AtsAuthenticationIdentifier {
 /// @nodoc
 abstract mixin class $AtsAuthenticationIdentifierCopyWith<$Res> {
   factory $AtsAuthenticationIdentifierCopyWith(
-          AtsAuthenticationIdentifier value, $Res Function(AtsAuthenticationIdentifier) _then) =
+          AtsAuthenticationIdentifier value,
+          $Res Function(AtsAuthenticationIdentifier) _then) =
       _$AtsAuthenticationIdentifierCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
-      @AtsAuthenticationCategoryOrNullConverter() AtsAuthenticationCategory? category,
+      @AtsAuthenticationCategoryOrNullConverter()
+      AtsAuthenticationCategory? category,
       String? cardId,
       AtsAuthenticationCard? card,
       String? nfcIdentifier});
@@ -864,7 +1500,8 @@ abstract mixin class $AtsAuthenticationIdentifierCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsAuthenticationIdentifierCopyWithImpl<$Res> implements $AtsAuthenticationIdentifierCopyWith<$Res> {
+class _$AtsAuthenticationIdentifierCopyWithImpl<$Res>
+    implements $AtsAuthenticationIdentifierCopyWith<$Res> {
   _$AtsAuthenticationIdentifierCopyWithImpl(this._self, this._then);
 
   final AtsAuthenticationIdentifier _self;
@@ -920,11 +1557,196 @@ class _$AtsAuthenticationIdentifierCopyWithImpl<$Res> implements $AtsAuthenticat
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsAuthenticationIdentifier].
+extension AtsAuthenticationIdentifierPatterns on AtsAuthenticationIdentifier {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsAuthenticationIdentifier value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationIdentifier() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsAuthenticationIdentifier value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationIdentifier():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsAuthenticationIdentifier value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationIdentifier() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            @AtsAuthenticationCategoryOrNullConverter()
+            AtsAuthenticationCategory? category,
+            String? cardId,
+            AtsAuthenticationCard? card,
+            String? nfcIdentifier)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationIdentifier() when $default != null:
+        return $default(_that.id, _that.category, _that.cardId, _that.card,
+            _that.nfcIdentifier);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            @AtsAuthenticationCategoryOrNullConverter()
+            AtsAuthenticationCategory? category,
+            String? cardId,
+            AtsAuthenticationCard? card,
+            String? nfcIdentifier)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationIdentifier():
+        return $default(_that.id, _that.category, _that.cardId, _that.card,
+            _that.nfcIdentifier);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            @AtsAuthenticationCategoryOrNullConverter()
+            AtsAuthenticationCategory? category,
+            String? cardId,
+            AtsAuthenticationCard? card,
+            String? nfcIdentifier)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationIdentifier() when $default != null:
+        return $default(_that.id, _that.category, _that.cardId, _that.card,
+            _that.nfcIdentifier);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsAuthenticationIdentifier implements AtsAuthenticationIdentifier {
   const _AtsAuthenticationIdentifier(
-      {this.id, @AtsAuthenticationCategoryOrNullConverter() this.category, this.cardId, this.card, this.nfcIdentifier});
+      {this.id,
+      @AtsAuthenticationCategoryOrNullConverter() this.category,
+      this.cardId,
+      this.card,
+      this.nfcIdentifier});
   factory _AtsAuthenticationIdentifier.fromJson(Map<String, dynamic> json) =>
       _$AtsAuthenticationIdentifierFromJson(json);
 
@@ -954,8 +1776,9 @@ class _AtsAuthenticationIdentifier implements AtsAuthenticationIdentifier {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsAuthenticationIdentifierCopyWith<_AtsAuthenticationIdentifier> get copyWith =>
-      __$AtsAuthenticationIdentifierCopyWithImpl<_AtsAuthenticationIdentifier>(this, _$identity);
+  _$AtsAuthenticationIdentifierCopyWith<_AtsAuthenticationIdentifier>
+      get copyWith => __$AtsAuthenticationIdentifierCopyWithImpl<
+          _AtsAuthenticationIdentifier>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -970,15 +1793,18 @@ class _AtsAuthenticationIdentifier implements AtsAuthenticationIdentifier {
         (other.runtimeType == runtimeType &&
             other is _AtsAuthenticationIdentifier &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.category, category) || other.category == category) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
             (identical(other.cardId, cardId) || other.cardId == cardId) &&
             (identical(other.card, card) || other.card == card) &&
-            (identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier));
+            (identical(other.nfcIdentifier, nfcIdentifier) ||
+                other.nfcIdentifier == nfcIdentifier));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, category, cardId, card, nfcIdentifier);
+  int get hashCode =>
+      Object.hash(runtimeType, id, category, cardId, card, nfcIdentifier);
 
   @override
   String toString() {
@@ -987,15 +1813,18 @@ class _AtsAuthenticationIdentifier implements AtsAuthenticationIdentifier {
 }
 
 /// @nodoc
-abstract mixin class _$AtsAuthenticationIdentifierCopyWith<$Res> implements $AtsAuthenticationIdentifierCopyWith<$Res> {
+abstract mixin class _$AtsAuthenticationIdentifierCopyWith<$Res>
+    implements $AtsAuthenticationIdentifierCopyWith<$Res> {
   factory _$AtsAuthenticationIdentifierCopyWith(
-          _AtsAuthenticationIdentifier value, $Res Function(_AtsAuthenticationIdentifier) _then) =
+          _AtsAuthenticationIdentifier value,
+          $Res Function(_AtsAuthenticationIdentifier) _then) =
       __$AtsAuthenticationIdentifierCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String? id,
-      @AtsAuthenticationCategoryOrNullConverter() AtsAuthenticationCategory? category,
+      @AtsAuthenticationCategoryOrNullConverter()
+      AtsAuthenticationCategory? category,
       String? cardId,
       AtsAuthenticationCard? card,
       String? nfcIdentifier});
@@ -1005,7 +1834,8 @@ abstract mixin class _$AtsAuthenticationIdentifierCopyWith<$Res> implements $Ats
 }
 
 /// @nodoc
-class __$AtsAuthenticationIdentifierCopyWithImpl<$Res> implements _$AtsAuthenticationIdentifierCopyWith<$Res> {
+class __$AtsAuthenticationIdentifierCopyWithImpl<$Res>
+    implements _$AtsAuthenticationIdentifierCopyWith<$Res> {
   __$AtsAuthenticationIdentifierCopyWithImpl(this._self, this._then);
 
   final _AtsAuthenticationIdentifier _self;
@@ -1100,7 +1930,8 @@ mixin _$AtsAuthenticationCard {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsAuthenticationCardCopyWith<AtsAuthenticationCard> get copyWith =>
-      _$AtsAuthenticationCardCopyWithImpl<AtsAuthenticationCard>(this as AtsAuthenticationCard, _$identity);
+      _$AtsAuthenticationCardCopyWithImpl<AtsAuthenticationCard>(
+          this as AtsAuthenticationCard, _$identity);
 
   /// Serializes this AtsAuthenticationCard to a JSON map.
   Map<String, dynamic> toJson();
@@ -1118,16 +1949,28 @@ mixin _$AtsAuthenticationCard {
                 other.externalIdentifierHex == externalIdentifierHex) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended) &&
             (identical(other.typeId, typeId) || other.typeId == typeId) &&
             const DeepCollectionEquality().equals(other.history, history) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, number, externalIdentifier, externalIdentifierHex, asset, owner,
-      isSuspended, typeId, const DeepCollectionEquality().hash(history), createdAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      number,
+      externalIdentifier,
+      externalIdentifierHex,
+      asset,
+      owner,
+      isSuspended,
+      typeId,
+      const DeepCollectionEquality().hash(history),
+      createdAt);
 
   @override
   String toString() {
@@ -1137,7 +1980,8 @@ mixin _$AtsAuthenticationCard {
 
 /// @nodoc
 abstract mixin class $AtsAuthenticationCardCopyWith<$Res> {
-  factory $AtsAuthenticationCardCopyWith(AtsAuthenticationCard value, $Res Function(AtsAuthenticationCard) _then) =
+  factory $AtsAuthenticationCardCopyWith(AtsAuthenticationCard value,
+          $Res Function(AtsAuthenticationCard) _then) =
       _$AtsAuthenticationCardCopyWithImpl;
   @useResult
   $Res call(
@@ -1157,7 +2001,8 @@ abstract mixin class $AtsAuthenticationCardCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsAuthenticationCardCopyWithImpl<$Res> implements $AtsAuthenticationCardCopyWith<$Res> {
+class _$AtsAuthenticationCardCopyWithImpl<$Res>
+    implements $AtsAuthenticationCardCopyWith<$Res> {
   _$AtsAuthenticationCardCopyWithImpl(this._self, this._then);
 
   final AtsAuthenticationCard _self;
@@ -1252,6 +2097,226 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res> implements $AtsAuthenticationCar
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsAuthenticationCard].
+extension AtsAuthenticationCardPatterns on AtsAuthenticationCard {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsAuthenticationCard value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationCard() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsAuthenticationCard value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationCard():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsAuthenticationCard value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationCard() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            int number,
+            int externalIdentifier,
+            String externalIdentifierHex,
+            Asset? asset,
+            User? owner,
+            bool? isSuspended,
+            @AtsSelectCardConverter() AtsSelectCard typeId,
+            List<AtsHistoryAuthenticationCard>? history,
+            @TimestampOrNullConverter() DateTime? createdAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationCard() when $default != null:
+        return $default(
+            _that.id,
+            _that.number,
+            _that.externalIdentifier,
+            _that.externalIdentifierHex,
+            _that.asset,
+            _that.owner,
+            _that.isSuspended,
+            _that.typeId,
+            _that.history,
+            _that.createdAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            int number,
+            int externalIdentifier,
+            String externalIdentifierHex,
+            Asset? asset,
+            User? owner,
+            bool? isSuspended,
+            @AtsSelectCardConverter() AtsSelectCard typeId,
+            List<AtsHistoryAuthenticationCard>? history,
+            @TimestampOrNullConverter() DateTime? createdAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationCard():
+        return $default(
+            _that.id,
+            _that.number,
+            _that.externalIdentifier,
+            _that.externalIdentifierHex,
+            _that.asset,
+            _that.owner,
+            _that.isSuspended,
+            _that.typeId,
+            _that.history,
+            _that.createdAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            int number,
+            int externalIdentifier,
+            String externalIdentifierHex,
+            Asset? asset,
+            User? owner,
+            bool? isSuspended,
+            @AtsSelectCardConverter() AtsSelectCard typeId,
+            List<AtsHistoryAuthenticationCard>? history,
+            @TimestampOrNullConverter() DateTime? createdAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsAuthenticationCard() when $default != null:
+        return $default(
+            _that.id,
+            _that.number,
+            _that.externalIdentifier,
+            _that.externalIdentifierHex,
+            _that.asset,
+            _that.owner,
+            _that.isSuspended,
+            _that.typeId,
+            _that.history,
+            _that.createdAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsAuthenticationCard implements AtsAuthenticationCard {
@@ -1267,7 +2332,8 @@ class _AtsAuthenticationCard implements AtsAuthenticationCard {
       final List<AtsHistoryAuthenticationCard>? history,
       @TimestampOrNullConverter() this.createdAt})
       : _history = history;
-  factory _AtsAuthenticationCard.fromJson(Map<String, dynamic> json) => _$AtsAuthenticationCardFromJson(json);
+  factory _AtsAuthenticationCard.fromJson(Map<String, dynamic> json) =>
+      _$AtsAuthenticationCardFromJson(json);
 
   /// [id] represents the unique identifier of the card.
   @override
@@ -1326,7 +2392,8 @@ class _AtsAuthenticationCard implements AtsAuthenticationCard {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsAuthenticationCardCopyWith<_AtsAuthenticationCard> get copyWith =>
-      __$AtsAuthenticationCardCopyWithImpl<_AtsAuthenticationCard>(this, _$identity);
+      __$AtsAuthenticationCardCopyWithImpl<_AtsAuthenticationCard>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1348,16 +2415,28 @@ class _AtsAuthenticationCard implements AtsAuthenticationCard {
                 other.externalIdentifierHex == externalIdentifierHex) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended) &&
             (identical(other.typeId, typeId) || other.typeId == typeId) &&
             const DeepCollectionEquality().equals(other._history, _history) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, number, externalIdentifier, externalIdentifierHex, asset, owner,
-      isSuspended, typeId, const DeepCollectionEquality().hash(_history), createdAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      number,
+      externalIdentifier,
+      externalIdentifierHex,
+      asset,
+      owner,
+      isSuspended,
+      typeId,
+      const DeepCollectionEquality().hash(_history),
+      createdAt);
 
   @override
   String toString() {
@@ -1366,8 +2445,10 @@ class _AtsAuthenticationCard implements AtsAuthenticationCard {
 }
 
 /// @nodoc
-abstract mixin class _$AtsAuthenticationCardCopyWith<$Res> implements $AtsAuthenticationCardCopyWith<$Res> {
-  factory _$AtsAuthenticationCardCopyWith(_AtsAuthenticationCard value, $Res Function(_AtsAuthenticationCard) _then) =
+abstract mixin class _$AtsAuthenticationCardCopyWith<$Res>
+    implements $AtsAuthenticationCardCopyWith<$Res> {
+  factory _$AtsAuthenticationCardCopyWith(_AtsAuthenticationCard value,
+          $Res Function(_AtsAuthenticationCard) _then) =
       __$AtsAuthenticationCardCopyWithImpl;
   @override
   @useResult
@@ -1390,7 +2471,8 @@ abstract mixin class _$AtsAuthenticationCardCopyWith<$Res> implements $AtsAuthen
 }
 
 /// @nodoc
-class __$AtsAuthenticationCardCopyWithImpl<$Res> implements _$AtsAuthenticationCardCopyWith<$Res> {
+class __$AtsAuthenticationCardCopyWithImpl<$Res>
+    implements _$AtsAuthenticationCardCopyWith<$Res> {
   __$AtsAuthenticationCardCopyWithImpl(this._self, this._then);
 
   final _AtsAuthenticationCard _self;
@@ -1511,8 +2593,9 @@ mixin _$AtsHistoryAuthenticationCard {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AtsHistoryAuthenticationCardCopyWith<AtsHistoryAuthenticationCard> get copyWith =>
-      _$AtsHistoryAuthenticationCardCopyWithImpl<AtsHistoryAuthenticationCard>(
+  $AtsHistoryAuthenticationCardCopyWith<AtsHistoryAuthenticationCard>
+      get copyWith => _$AtsHistoryAuthenticationCardCopyWithImpl<
+              AtsHistoryAuthenticationCard>(
           this as AtsHistoryAuthenticationCard, _$identity);
 
   /// Serializes this AtsHistoryAuthenticationCard to a JSON map.
@@ -1524,16 +2607,20 @@ mixin _$AtsHistoryAuthenticationCard {
         (other.runtimeType == runtimeType &&
             other is AtsHistoryAuthenticationCard &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.operation, operation) || other.operation == operation) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.createdBy, createdBy) || other.createdBy == createdBy) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, operation, asset, owner, createdBy, createdAt);
+  int get hashCode => Object.hash(
+      runtimeType, id, operation, asset, owner, createdBy, createdAt);
 
   @override
   String toString() {
@@ -1544,12 +2631,14 @@ mixin _$AtsHistoryAuthenticationCard {
 /// @nodoc
 abstract mixin class $AtsHistoryAuthenticationCardCopyWith<$Res> {
   factory $AtsHistoryAuthenticationCardCopyWith(
-          AtsHistoryAuthenticationCard value, $Res Function(AtsHistoryAuthenticationCard) _then) =
+          AtsHistoryAuthenticationCard value,
+          $Res Function(AtsHistoryAuthenticationCard) _then) =
       _$AtsHistoryAuthenticationCardCopyWithImpl;
   @useResult
   $Res call(
       {String id,
-      @AtsHistoryAuthenticationCardOperationConverter() AtsHistoryAuthenticationCardOperation operation,
+      @AtsHistoryAuthenticationCardOperationConverter()
+      AtsHistoryAuthenticationCardOperation operation,
       Asset? asset,
       User? owner,
       User createdBy,
@@ -1561,7 +2650,8 @@ abstract mixin class $AtsHistoryAuthenticationCardCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res> implements $AtsHistoryAuthenticationCardCopyWith<$Res> {
+class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res>
+    implements $AtsHistoryAuthenticationCardCopyWith<$Res> {
   _$AtsHistoryAuthenticationCardCopyWithImpl(this._self, this._then);
 
   final AtsHistoryAuthenticationCard _self;
@@ -1646,6 +2736,190 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res> implements $AtsHistoryAut
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsHistoryAuthenticationCard].
+extension AtsHistoryAuthenticationCardPatterns on AtsHistoryAuthenticationCard {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsHistoryAuthenticationCard value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsHistoryAuthenticationCard() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsHistoryAuthenticationCard value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsHistoryAuthenticationCard():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsHistoryAuthenticationCard value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsHistoryAuthenticationCard() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            @AtsHistoryAuthenticationCardOperationConverter()
+            AtsHistoryAuthenticationCardOperation operation,
+            Asset? asset,
+            User? owner,
+            User createdBy,
+            @TimestampConverter() DateTime createdAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsHistoryAuthenticationCard() when $default != null:
+        return $default(_that.id, _that.operation, _that.asset, _that.owner,
+            _that.createdBy, _that.createdAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            @AtsHistoryAuthenticationCardOperationConverter()
+            AtsHistoryAuthenticationCardOperation operation,
+            Asset? asset,
+            User? owner,
+            User createdBy,
+            @TimestampConverter() DateTime createdAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsHistoryAuthenticationCard():
+        return $default(_that.id, _that.operation, _that.asset, _that.owner,
+            _that.createdBy, _that.createdAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            @AtsHistoryAuthenticationCardOperationConverter()
+            AtsHistoryAuthenticationCardOperation operation,
+            Asset? asset,
+            User? owner,
+            User createdBy,
+            @TimestampConverter() DateTime createdAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsHistoryAuthenticationCard() when $default != null:
+        return $default(_that.id, _that.operation, _that.asset, _that.owner,
+            _that.createdBy, _that.createdAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsHistoryAuthenticationCard implements AtsHistoryAuthenticationCard {
@@ -1690,8 +2964,9 @@ class _AtsHistoryAuthenticationCard implements AtsHistoryAuthenticationCard {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsHistoryAuthenticationCardCopyWith<_AtsHistoryAuthenticationCard> get copyWith =>
-      __$AtsHistoryAuthenticationCardCopyWithImpl<_AtsHistoryAuthenticationCard>(this, _$identity);
+  _$AtsHistoryAuthenticationCardCopyWith<_AtsHistoryAuthenticationCard>
+      get copyWith => __$AtsHistoryAuthenticationCardCopyWithImpl<
+          _AtsHistoryAuthenticationCard>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1706,16 +2981,20 @@ class _AtsHistoryAuthenticationCard implements AtsHistoryAuthenticationCard {
         (other.runtimeType == runtimeType &&
             other is _AtsHistoryAuthenticationCard &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.operation, operation) || other.operation == operation) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.createdBy, createdBy) || other.createdBy == createdBy) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, operation, asset, owner, createdBy, createdAt);
+  int get hashCode => Object.hash(
+      runtimeType, id, operation, asset, owner, createdBy, createdAt);
 
   @override
   String toString() {
@@ -1727,13 +3006,15 @@ class _AtsHistoryAuthenticationCard implements AtsHistoryAuthenticationCard {
 abstract mixin class _$AtsHistoryAuthenticationCardCopyWith<$Res>
     implements $AtsHistoryAuthenticationCardCopyWith<$Res> {
   factory _$AtsHistoryAuthenticationCardCopyWith(
-          _AtsHistoryAuthenticationCard value, $Res Function(_AtsHistoryAuthenticationCard) _then) =
+          _AtsHistoryAuthenticationCard value,
+          $Res Function(_AtsHistoryAuthenticationCard) _then) =
       __$AtsHistoryAuthenticationCardCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
-      @AtsHistoryAuthenticationCardOperationConverter() AtsHistoryAuthenticationCardOperation operation,
+      @AtsHistoryAuthenticationCardOperationConverter()
+      AtsHistoryAuthenticationCardOperation operation,
       Asset? asset,
       User? owner,
       User createdBy,
@@ -1748,7 +3029,8 @@ abstract mixin class _$AtsHistoryAuthenticationCardCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AtsHistoryAuthenticationCardCopyWithImpl<$Res> implements _$AtsHistoryAuthenticationCardCopyWith<$Res> {
+class __$AtsHistoryAuthenticationCardCopyWithImpl<$Res>
+    implements _$AtsHistoryAuthenticationCardCopyWith<$Res> {
   __$AtsHistoryAuthenticationCardCopyWithImpl(this._self, this._then);
 
   final _AtsHistoryAuthenticationCard _self;
@@ -1863,7 +3145,8 @@ mixin _$AtsFeedbackMessege {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsFeedbackMessegeCopyWith<AtsFeedbackMessege> get copyWith =>
-      _$AtsFeedbackMessegeCopyWithImpl<AtsFeedbackMessege>(this as AtsFeedbackMessege, _$identity);
+      _$AtsFeedbackMessegeCopyWithImpl<AtsFeedbackMessege>(
+          this as AtsFeedbackMessege, _$identity);
 
   /// Serializes this AtsFeedbackMessege to a JSON map.
   Map<String, dynamic> toJson();
@@ -1884,7 +3167,8 @@ mixin _$AtsFeedbackMessege {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, content, creator, at, app, source, isRead);
+  int get hashCode =>
+      Object.hash(runtimeType, id, content, creator, at, app, source, isRead);
 
   @override
   String toString() {
@@ -1894,7 +3178,8 @@ mixin _$AtsFeedbackMessege {
 
 /// @nodoc
 abstract mixin class $AtsFeedbackMessegeCopyWith<$Res> {
-  factory $AtsFeedbackMessegeCopyWith(AtsFeedbackMessege value, $Res Function(AtsFeedbackMessege) _then) =
+  factory $AtsFeedbackMessegeCopyWith(
+          AtsFeedbackMessege value, $Res Function(AtsFeedbackMessege) _then) =
       _$AtsFeedbackMessegeCopyWithImpl;
   @useResult
   $Res call(
@@ -1911,7 +3196,8 @@ abstract mixin class $AtsFeedbackMessegeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsFeedbackMessegeCopyWithImpl<$Res> implements $AtsFeedbackMessegeCopyWith<$Res> {
+class _$AtsFeedbackMessegeCopyWithImpl<$Res>
+    implements $AtsFeedbackMessegeCopyWith<$Res> {
   _$AtsFeedbackMessegeCopyWithImpl(this._self, this._then);
 
   final AtsFeedbackMessege _self;
@@ -1991,6 +3277,190 @@ class _$AtsFeedbackMessegeCopyWithImpl<$Res> implements $AtsFeedbackMessegeCopyW
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsFeedbackMessege].
+extension AtsFeedbackMessegePatterns on AtsFeedbackMessege {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsFeedbackMessege value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsFeedbackMessege() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsFeedbackMessege value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsFeedbackMessege():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsFeedbackMessege value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsFeedbackMessege() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? content,
+            User? creator,
+            @TimestampOrNullConverter() DateTime? at,
+            RegisteredApp? app,
+            @FeedbackSourceOrNullConverter() FeedbackSource? source,
+            bool? isRead)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsFeedbackMessege() when $default != null:
+        return $default(_that.id, _that.content, _that.creator, _that.at,
+            _that.app, _that.source, _that.isRead);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? content,
+            User? creator,
+            @TimestampOrNullConverter() DateTime? at,
+            RegisteredApp? app,
+            @FeedbackSourceOrNullConverter() FeedbackSource? source,
+            bool? isRead)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsFeedbackMessege():
+        return $default(_that.id, _that.content, _that.creator, _that.at,
+            _that.app, _that.source, _that.isRead);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? content,
+            User? creator,
+            @TimestampOrNullConverter() DateTime? at,
+            RegisteredApp? app,
+            @FeedbackSourceOrNullConverter() FeedbackSource? source,
+            bool? isRead)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsFeedbackMessege() when $default != null:
+        return $default(_that.id, _that.content, _that.creator, _that.at,
+            _that.app, _that.source, _that.isRead);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsFeedbackMessege implements AtsFeedbackMessege {
@@ -2002,7 +3472,8 @@ class _AtsFeedbackMessege implements AtsFeedbackMessege {
       this.app,
       @FeedbackSourceOrNullConverter() this.source,
       this.isRead});
-  factory _AtsFeedbackMessege.fromJson(Map<String, dynamic> json) => _$AtsFeedbackMessegeFromJson(json);
+  factory _AtsFeedbackMessege.fromJson(Map<String, dynamic> json) =>
+      _$AtsFeedbackMessegeFromJson(json);
 
   /// [id] of the asset entity. This ID is unique.
   @override
@@ -2065,7 +3536,8 @@ class _AtsFeedbackMessege implements AtsFeedbackMessege {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, content, creator, at, app, source, isRead);
+  int get hashCode =>
+      Object.hash(runtimeType, id, content, creator, at, app, source, isRead);
 
   @override
   String toString() {
@@ -2074,8 +3546,10 @@ class _AtsFeedbackMessege implements AtsFeedbackMessege {
 }
 
 /// @nodoc
-abstract mixin class _$AtsFeedbackMessegeCopyWith<$Res> implements $AtsFeedbackMessegeCopyWith<$Res> {
-  factory _$AtsFeedbackMessegeCopyWith(_AtsFeedbackMessege value, $Res Function(_AtsFeedbackMessege) _then) =
+abstract mixin class _$AtsFeedbackMessegeCopyWith<$Res>
+    implements $AtsFeedbackMessegeCopyWith<$Res> {
+  factory _$AtsFeedbackMessegeCopyWith(
+          _AtsFeedbackMessege value, $Res Function(_AtsFeedbackMessege) _then) =
       __$AtsFeedbackMessegeCopyWithImpl;
   @override
   @useResult
@@ -2095,7 +3569,8 @@ abstract mixin class _$AtsFeedbackMessegeCopyWith<$Res> implements $AtsFeedbackM
 }
 
 /// @nodoc
-class __$AtsFeedbackMessegeCopyWithImpl<$Res> implements _$AtsFeedbackMessegeCopyWith<$Res> {
+class __$AtsFeedbackMessegeCopyWithImpl<$Res>
+    implements _$AtsFeedbackMessegeCopyWith<$Res> {
   __$AtsFeedbackMessegeCopyWithImpl(this._self, this._then);
 
   final _AtsFeedbackMessege _self;
@@ -2190,7 +3665,8 @@ mixin _$AtsEvent {
   Trigger? get trigger;
 
   /// [triggerId] Trigger linked to the [AtsEvent].
-  String? get triggerId; // /// [function] Pitagoras function linked to the [AtsEvent].
+  String?
+      get triggerId; // /// [function] Pitagoras function linked to the [AtsEvent].
 // Function? function,
   /// [functionId] Pitagoras function ID linked to the [AtsEvent].
   String? get functionId;
@@ -2224,7 +3700,8 @@ mixin _$AtsEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AtsEventCopyWith<AtsEvent> get copyWith => _$AtsEventCopyWithImpl<AtsEvent>(this as AtsEvent, _$identity);
+  $AtsEventCopyWith<AtsEvent> get copyWith =>
+      _$AtsEventCopyWithImpl<AtsEvent>(this as AtsEvent, _$identity);
 
   /// Serializes this AtsEvent to a JSON map.
   Map<String, dynamic> toJson();
@@ -2235,14 +3712,19 @@ mixin _$AtsEvent {
         (other.runtimeType == runtimeType &&
             other is AtsEvent &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.operation, operation) || other.operation == operation) &&
-            (identical(other.operationId, operationId) || other.operationId == operationId) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
             (identical(other.trigger, trigger) || other.trigger == trigger) &&
-            (identical(other.triggerId, triggerId) || other.triggerId == triggerId) &&
-            (identical(other.functionId, functionId) || other.functionId == functionId) &&
+            (identical(other.triggerId, triggerId) ||
+                other.triggerId == triggerId) &&
+            (identical(other.functionId, functionId) ||
+                other.functionId == functionId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.position, position) || other.position == position) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
             const DeepCollectionEquality().equals(other.payload, payload) &&
             const DeepCollectionEquality().equals(other.sensors, sensors) &&
             (identical(other.at, at) || other.at == at) &&
@@ -2277,7 +3759,8 @@ mixin _$AtsEvent {
 
 /// @nodoc
 abstract mixin class $AtsEventCopyWith<$Res> {
-  factory $AtsEventCopyWith(AtsEvent value, $Res Function(AtsEvent) _then) = _$AtsEventCopyWithImpl;
+  factory $AtsEventCopyWith(AtsEvent value, $Res Function(AtsEvent) _then) =
+      _$AtsEventCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -2445,6 +3928,250 @@ class _$AtsEventCopyWithImpl<$Res> implements $AtsEventCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsEvent].
+extension AtsEventPatterns on AtsEvent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsEvent value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEvent() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsEvent value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEvent():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsEvent value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEvent() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            Operation? operation,
+            String? operationId,
+            Trigger? trigger,
+            String? triggerId,
+            String? functionId,
+            Asset? asset,
+            String? assetId,
+            TelemetryPosition? position,
+            List<TelemetrySensor>? payload,
+            List<Sensor>? sensors,
+            @TimestampOrNullConverter() DateTime? at,
+            bool? isCheck,
+            String? comment)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEvent() when $default != null:
+        return $default(
+            _that.id,
+            _that.operation,
+            _that.operationId,
+            _that.trigger,
+            _that.triggerId,
+            _that.functionId,
+            _that.asset,
+            _that.assetId,
+            _that.position,
+            _that.payload,
+            _that.sensors,
+            _that.at,
+            _that.isCheck,
+            _that.comment);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            Operation? operation,
+            String? operationId,
+            Trigger? trigger,
+            String? triggerId,
+            String? functionId,
+            Asset? asset,
+            String? assetId,
+            TelemetryPosition? position,
+            List<TelemetrySensor>? payload,
+            List<Sensor>? sensors,
+            @TimestampOrNullConverter() DateTime? at,
+            bool? isCheck,
+            String? comment)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEvent():
+        return $default(
+            _that.id,
+            _that.operation,
+            _that.operationId,
+            _that.trigger,
+            _that.triggerId,
+            _that.functionId,
+            _that.asset,
+            _that.assetId,
+            _that.position,
+            _that.payload,
+            _that.sensors,
+            _that.at,
+            _that.isCheck,
+            _that.comment);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            Operation? operation,
+            String? operationId,
+            Trigger? trigger,
+            String? triggerId,
+            String? functionId,
+            Asset? asset,
+            String? assetId,
+            TelemetryPosition? position,
+            List<TelemetrySensor>? payload,
+            List<Sensor>? sensors,
+            @TimestampOrNullConverter() DateTime? at,
+            bool? isCheck,
+            String? comment)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEvent() when $default != null:
+        return $default(
+            _that.id,
+            _that.operation,
+            _that.operationId,
+            _that.trigger,
+            _that.triggerId,
+            _that.functionId,
+            _that.asset,
+            _that.assetId,
+            _that.position,
+            _that.payload,
+            _that.sensors,
+            _that.at,
+            _that.isCheck,
+            _that.comment);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsEvent implements AtsEvent {
@@ -2465,7 +4192,8 @@ class _AtsEvent implements AtsEvent {
       this.comment})
       : _payload = payload,
         _sensors = sensors;
-  factory _AtsEvent.fromJson(Map<String, dynamic> json) => _$AtsEventFromJson(json);
+  factory _AtsEvent.fromJson(Map<String, dynamic> json) =>
+      _$AtsEventFromJson(json);
 
   /// [id] of the asset entity. This ID is unique.
   @override
@@ -2548,7 +4276,8 @@ class _AtsEvent implements AtsEvent {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsEventCopyWith<_AtsEvent> get copyWith => __$AtsEventCopyWithImpl<_AtsEvent>(this, _$identity);
+  _$AtsEventCopyWith<_AtsEvent> get copyWith =>
+      __$AtsEventCopyWithImpl<_AtsEvent>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -2563,14 +4292,19 @@ class _AtsEvent implements AtsEvent {
         (other.runtimeType == runtimeType &&
             other is _AtsEvent &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.operation, operation) || other.operation == operation) &&
-            (identical(other.operationId, operationId) || other.operationId == operationId) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
             (identical(other.trigger, trigger) || other.trigger == trigger) &&
-            (identical(other.triggerId, triggerId) || other.triggerId == triggerId) &&
-            (identical(other.functionId, functionId) || other.functionId == functionId) &&
+            (identical(other.triggerId, triggerId) ||
+                other.triggerId == triggerId) &&
+            (identical(other.functionId, functionId) ||
+                other.functionId == functionId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.position, position) || other.position == position) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
             const DeepCollectionEquality().equals(other._payload, _payload) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors) &&
             (identical(other.at, at) || other.at == at) &&
@@ -2604,8 +4338,10 @@ class _AtsEvent implements AtsEvent {
 }
 
 /// @nodoc
-abstract mixin class _$AtsEventCopyWith<$Res> implements $AtsEventCopyWith<$Res> {
-  factory _$AtsEventCopyWith(_AtsEvent value, $Res Function(_AtsEvent) _then) = __$AtsEventCopyWithImpl;
+abstract mixin class _$AtsEventCopyWith<$Res>
+    implements $AtsEventCopyWith<$Res> {
+  factory _$AtsEventCopyWith(_AtsEvent value, $Res Function(_AtsEvent) _then) =
+      __$AtsEventCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -2803,7 +4539,8 @@ mixin _$AtsNsAddress {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsNsAddressCopyWith<AtsNsAddress> get copyWith =>
-      _$AtsNsAddressCopyWithImpl<AtsNsAddress>(this as AtsNsAddress, _$identity);
+      _$AtsNsAddressCopyWithImpl<AtsNsAddress>(
+          this as AtsNsAddress, _$identity);
 
   /// Serializes this AtsNsAddress to a JSON map.
   Map<String, dynamic> toJson();
@@ -2815,15 +4552,19 @@ mixin _$AtsNsAddress {
             other is AtsNsAddress &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.number, number) || other.number == number) &&
-            (identical(other.district, district) || other.district == district) &&
+            (identical(other.district, district) ||
+                other.district == district) &&
             (identical(other.zipCode, zipCode) || other.zipCode == zipCode) &&
-            (identical(other.cityCode, cityCode) || other.cityCode == cityCode) &&
-            (identical(other.cityName, cityName) || other.cityName == cityName));
+            (identical(other.cityCode, cityCode) ||
+                other.cityCode == cityCode) &&
+            (identical(other.cityName, cityName) ||
+                other.cityName == cityName));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, address, number, district, zipCode, cityCode, cityName);
+  int get hashCode => Object.hash(
+      runtimeType, address, number, district, zipCode, cityCode, cityName);
 
   @override
   String toString() {
@@ -2833,9 +4574,17 @@ mixin _$AtsNsAddress {
 
 /// @nodoc
 abstract mixin class $AtsNsAddressCopyWith<$Res> {
-  factory $AtsNsAddressCopyWith(AtsNsAddress value, $Res Function(AtsNsAddress) _then) = _$AtsNsAddressCopyWithImpl;
+  factory $AtsNsAddressCopyWith(
+          AtsNsAddress value, $Res Function(AtsNsAddress) _then) =
+      _$AtsNsAddressCopyWithImpl;
   @useResult
-  $Res call({String address, String number, String district, String zipCode, String cityCode, String cityName});
+  $Res call(
+      {String address,
+      String number,
+      String district,
+      String zipCode,
+      String cityCode,
+      String cityName});
 }
 
 /// @nodoc
@@ -2886,6 +4635,172 @@ class _$AtsNsAddressCopyWithImpl<$Res> implements $AtsNsAddressCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsNsAddress].
+extension AtsNsAddressPatterns on AtsNsAddress {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsNsAddress value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsAddress() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsNsAddress value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsAddress():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsNsAddress value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsAddress() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String address, String number, String district,
+            String zipCode, String cityCode, String cityName)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsAddress() when $default != null:
+        return $default(_that.address, _that.number, _that.district,
+            _that.zipCode, _that.cityCode, _that.cityName);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String address, String number, String district,
+            String zipCode, String cityCode, String cityName)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsAddress():
+        return $default(_that.address, _that.number, _that.district,
+            _that.zipCode, _that.cityCode, _that.cityName);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String address, String number, String district,
+            String zipCode, String cityCode, String cityName)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsAddress() when $default != null:
+        return $default(_that.address, _that.number, _that.district,
+            _that.zipCode, _that.cityCode, _that.cityName);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsNsAddress implements AtsNsAddress {
@@ -2896,7 +4811,8 @@ class _AtsNsAddress implements AtsNsAddress {
       required this.zipCode,
       required this.cityCode,
       required this.cityName});
-  factory _AtsNsAddress.fromJson(Map<String, dynamic> json) => _$AtsNsAddressFromJson(json);
+  factory _AtsNsAddress.fromJson(Map<String, dynamic> json) =>
+      _$AtsNsAddressFromJson(json);
 
   /// [address] represents the address of the address
   @override
@@ -2927,7 +4843,8 @@ class _AtsNsAddress implements AtsNsAddress {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsNsAddressCopyWith<_AtsNsAddress> get copyWith => __$AtsNsAddressCopyWithImpl<_AtsNsAddress>(this, _$identity);
+  _$AtsNsAddressCopyWith<_AtsNsAddress> get copyWith =>
+      __$AtsNsAddressCopyWithImpl<_AtsNsAddress>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -2943,15 +4860,19 @@ class _AtsNsAddress implements AtsNsAddress {
             other is _AtsNsAddress &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.number, number) || other.number == number) &&
-            (identical(other.district, district) || other.district == district) &&
+            (identical(other.district, district) ||
+                other.district == district) &&
             (identical(other.zipCode, zipCode) || other.zipCode == zipCode) &&
-            (identical(other.cityCode, cityCode) || other.cityCode == cityCode) &&
-            (identical(other.cityName, cityName) || other.cityName == cityName));
+            (identical(other.cityCode, cityCode) ||
+                other.cityCode == cityCode) &&
+            (identical(other.cityName, cityName) ||
+                other.cityName == cityName));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, address, number, district, zipCode, cityCode, cityName);
+  int get hashCode => Object.hash(
+      runtimeType, address, number, district, zipCode, cityCode, cityName);
 
   @override
   String toString() {
@@ -2960,15 +4881,25 @@ class _AtsNsAddress implements AtsNsAddress {
 }
 
 /// @nodoc
-abstract mixin class _$AtsNsAddressCopyWith<$Res> implements $AtsNsAddressCopyWith<$Res> {
-  factory _$AtsNsAddressCopyWith(_AtsNsAddress value, $Res Function(_AtsNsAddress) _then) = __$AtsNsAddressCopyWithImpl;
+abstract mixin class _$AtsNsAddressCopyWith<$Res>
+    implements $AtsNsAddressCopyWith<$Res> {
+  factory _$AtsNsAddressCopyWith(
+          _AtsNsAddress value, $Res Function(_AtsNsAddress) _then) =
+      __$AtsNsAddressCopyWithImpl;
   @override
   @useResult
-  $Res call({String address, String number, String district, String zipCode, String cityCode, String cityName});
+  $Res call(
+      {String address,
+      String number,
+      String district,
+      String zipCode,
+      String cityCode,
+      String cityName});
 }
 
 /// @nodoc
-class __$AtsNsAddressCopyWithImpl<$Res> implements _$AtsNsAddressCopyWith<$Res> {
+class __$AtsNsAddressCopyWithImpl<$Res>
+    implements _$AtsNsAddressCopyWith<$Res> {
   __$AtsNsAddressCopyWithImpl(this._self, this._then);
 
   final _AtsNsAddress _self;
@@ -3078,7 +5009,8 @@ mixin _$AtsNsLicense {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsNsLicenseCopyWith<AtsNsLicense> get copyWith =>
-      _$AtsNsLicenseCopyWithImpl<AtsNsLicense>(this as AtsNsLicense, _$identity);
+      _$AtsNsLicenseCopyWithImpl<AtsNsLicense>(
+          this as AtsNsLicense, _$identity);
 
   /// Serializes this AtsNsLicense to a JSON map.
   Map<String, dynamic> toJson();
@@ -3090,20 +5022,29 @@ mixin _$AtsNsLicense {
             other is AtsNsLicense &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.receive90Days, receive90Days) || other.receive90Days == receive90Days) &&
-            (identical(other.projectId, projectId) || other.projectId == projectId) &&
-            (identical(other.certificate, certificate) || other.certificate == certificate) &&
+            (identical(other.receive90Days, receive90Days) ||
+                other.receive90Days == receive90Days) &&
+            (identical(other.projectId, projectId) ||
+                other.projectId == projectId) &&
+            (identical(other.certificate, certificate) ||
+                other.certificate == certificate) &&
             (identical(other.certificatePassword, certificatePassword) ||
                 other.certificatePassword == certificatePassword) &&
             (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
-            (identical(other.inscriptionId, inscriptionId) || other.inscriptionId == inscriptionId) &&
-            (identical(other.businessName, businessName) || other.businessName == businessName) &&
-            (identical(other.companyName, companyName) || other.companyName == companyName) &&
-            (identical(other.icmsType, icmsType) || other.icmsType == icmsType) &&
+            (identical(other.inscriptionId, inscriptionId) ||
+                other.inscriptionId == inscriptionId) &&
+            (identical(other.businessName, businessName) ||
+                other.businessName == businessName) &&
+            (identical(other.companyName, companyName) ||
+                other.companyName == companyName) &&
+            (identical(other.icmsType, icmsType) ||
+                other.icmsType == icmsType) &&
             const DeepCollectionEquality().equals(other.emails, emails) &&
-            const DeepCollectionEquality().equals(other.phoneNumbers, phoneNumbers) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumbers, phoneNumbers) &&
             const DeepCollectionEquality().equals(other.addresses, addresses) &&
-            (identical(other.expirationDate, expirationDate) || other.expirationDate == expirationDate));
+            (identical(other.expirationDate, expirationDate) ||
+                other.expirationDate == expirationDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3134,7 +5075,9 @@ mixin _$AtsNsLicense {
 
 /// @nodoc
 abstract mixin class $AtsNsLicenseCopyWith<$Res> {
-  factory $AtsNsLicenseCopyWith(AtsNsLicense value, $Res Function(AtsNsLicense) _then) = _$AtsNsLicenseCopyWithImpl;
+  factory $AtsNsLicenseCopyWith(
+          AtsNsLicense value, $Res Function(AtsNsLicense) _then) =
+      _$AtsNsLicenseCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -3151,7 +5094,9 @@ abstract mixin class $AtsNsLicenseCopyWith<$Res> {
       List<String>? emails,
       List<String>? phoneNumbers,
       List<AtsNsAddress>? addresses,
-      @JsonKey(name: 'expirationDateUnix') @TimestampOrNullConverter() DateTime? expirationDate});
+      @JsonKey(name: 'expirationDateUnix')
+      @TimestampOrNullConverter()
+      DateTime? expirationDate});
 }
 
 /// @nodoc
@@ -3247,6 +5192,262 @@ class _$AtsNsLicenseCopyWithImpl<$Res> implements $AtsNsLicenseCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsNsLicense].
+extension AtsNsLicensePatterns on AtsNsLicense {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsNsLicense value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsLicense() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsNsLicense value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsLicense():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsNsLicense value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsLicense() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            @AtsNsStatusConverter() AtsNsStatus status,
+            bool? receive90Days,
+            @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
+            String? certificate,
+            String? certificatePassword,
+            String cnpj,
+            String? inscriptionId,
+            String? businessName,
+            String? companyName,
+            @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
+            List<String>? emails,
+            List<String>? phoneNumbers,
+            List<AtsNsAddress>? addresses,
+            @JsonKey(name: 'expirationDateUnix')
+            @TimestampOrNullConverter()
+            DateTime? expirationDate)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsLicense() when $default != null:
+        return $default(
+            _that.id,
+            _that.status,
+            _that.receive90Days,
+            _that.projectId,
+            _that.certificate,
+            _that.certificatePassword,
+            _that.cnpj,
+            _that.inscriptionId,
+            _that.businessName,
+            _that.companyName,
+            _that.icmsType,
+            _that.emails,
+            _that.phoneNumbers,
+            _that.addresses,
+            _that.expirationDate);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            @AtsNsStatusConverter() AtsNsStatus status,
+            bool? receive90Days,
+            @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
+            String? certificate,
+            String? certificatePassword,
+            String cnpj,
+            String? inscriptionId,
+            String? businessName,
+            String? companyName,
+            @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
+            List<String>? emails,
+            List<String>? phoneNumbers,
+            List<AtsNsAddress>? addresses,
+            @JsonKey(name: 'expirationDateUnix')
+            @TimestampOrNullConverter()
+            DateTime? expirationDate)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsLicense():
+        return $default(
+            _that.id,
+            _that.status,
+            _that.receive90Days,
+            _that.projectId,
+            _that.certificate,
+            _that.certificatePassword,
+            _that.cnpj,
+            _that.inscriptionId,
+            _that.businessName,
+            _that.companyName,
+            _that.icmsType,
+            _that.emails,
+            _that.phoneNumbers,
+            _that.addresses,
+            _that.expirationDate);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            @AtsNsStatusConverter() AtsNsStatus status,
+            bool? receive90Days,
+            @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
+            String? certificate,
+            String? certificatePassword,
+            String cnpj,
+            String? inscriptionId,
+            String? businessName,
+            String? companyName,
+            @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
+            List<String>? emails,
+            List<String>? phoneNumbers,
+            List<AtsNsAddress>? addresses,
+            @JsonKey(name: 'expirationDateUnix')
+            @TimestampOrNullConverter()
+            DateTime? expirationDate)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsNsLicense() when $default != null:
+        return $default(
+            _that.id,
+            _that.status,
+            _that.receive90Days,
+            _that.projectId,
+            _that.certificate,
+            _that.certificatePassword,
+            _that.cnpj,
+            _that.inscriptionId,
+            _that.businessName,
+            _that.companyName,
+            _that.icmsType,
+            _that.emails,
+            _that.phoneNumbers,
+            _that.addresses,
+            _that.expirationDate);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsNsLicense implements AtsNsLicense {
@@ -3265,11 +5466,14 @@ class _AtsNsLicense implements AtsNsLicense {
       final List<String>? emails,
       final List<String>? phoneNumbers,
       final List<AtsNsAddress>? addresses,
-      @JsonKey(name: 'expirationDateUnix') @TimestampOrNullConverter() this.expirationDate})
+      @JsonKey(name: 'expirationDateUnix')
+      @TimestampOrNullConverter()
+      this.expirationDate})
       : _emails = emails,
         _phoneNumbers = phoneNumbers,
         _addresses = addresses;
-  factory _AtsNsLicense.fromJson(Map<String, dynamic> json) => _$AtsNsLicenseFromJson(json);
+  factory _AtsNsLicense.fromJson(Map<String, dynamic> json) =>
+      _$AtsNsLicenseFromJson(json);
 
   /// [id] represents the unique identifier of the license
   @override
@@ -3374,7 +5578,8 @@ class _AtsNsLicense implements AtsNsLicense {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsNsLicenseCopyWith<_AtsNsLicense> get copyWith => __$AtsNsLicenseCopyWithImpl<_AtsNsLicense>(this, _$identity);
+  _$AtsNsLicenseCopyWith<_AtsNsLicense> get copyWith =>
+      __$AtsNsLicenseCopyWithImpl<_AtsNsLicense>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -3390,20 +5595,30 @@ class _AtsNsLicense implements AtsNsLicense {
             other is _AtsNsLicense &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.receive90Days, receive90Days) || other.receive90Days == receive90Days) &&
-            (identical(other.projectId, projectId) || other.projectId == projectId) &&
-            (identical(other.certificate, certificate) || other.certificate == certificate) &&
+            (identical(other.receive90Days, receive90Days) ||
+                other.receive90Days == receive90Days) &&
+            (identical(other.projectId, projectId) ||
+                other.projectId == projectId) &&
+            (identical(other.certificate, certificate) ||
+                other.certificate == certificate) &&
             (identical(other.certificatePassword, certificatePassword) ||
                 other.certificatePassword == certificatePassword) &&
             (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
-            (identical(other.inscriptionId, inscriptionId) || other.inscriptionId == inscriptionId) &&
-            (identical(other.businessName, businessName) || other.businessName == businessName) &&
-            (identical(other.companyName, companyName) || other.companyName == companyName) &&
-            (identical(other.icmsType, icmsType) || other.icmsType == icmsType) &&
+            (identical(other.inscriptionId, inscriptionId) ||
+                other.inscriptionId == inscriptionId) &&
+            (identical(other.businessName, businessName) ||
+                other.businessName == businessName) &&
+            (identical(other.companyName, companyName) ||
+                other.companyName == companyName) &&
+            (identical(other.icmsType, icmsType) ||
+                other.icmsType == icmsType) &&
             const DeepCollectionEquality().equals(other._emails, _emails) &&
-            const DeepCollectionEquality().equals(other._phoneNumbers, _phoneNumbers) &&
-            const DeepCollectionEquality().equals(other._addresses, _addresses) &&
-            (identical(other.expirationDate, expirationDate) || other.expirationDate == expirationDate));
+            const DeepCollectionEquality()
+                .equals(other._phoneNumbers, _phoneNumbers) &&
+            const DeepCollectionEquality()
+                .equals(other._addresses, _addresses) &&
+            (identical(other.expirationDate, expirationDate) ||
+                other.expirationDate == expirationDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3433,8 +5648,11 @@ class _AtsNsLicense implements AtsNsLicense {
 }
 
 /// @nodoc
-abstract mixin class _$AtsNsLicenseCopyWith<$Res> implements $AtsNsLicenseCopyWith<$Res> {
-  factory _$AtsNsLicenseCopyWith(_AtsNsLicense value, $Res Function(_AtsNsLicense) _then) = __$AtsNsLicenseCopyWithImpl;
+abstract mixin class _$AtsNsLicenseCopyWith<$Res>
+    implements $AtsNsLicenseCopyWith<$Res> {
+  factory _$AtsNsLicenseCopyWith(
+          _AtsNsLicense value, $Res Function(_AtsNsLicense) _then) =
+      __$AtsNsLicenseCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -3452,11 +5670,14 @@ abstract mixin class _$AtsNsLicenseCopyWith<$Res> implements $AtsNsLicenseCopyWi
       List<String>? emails,
       List<String>? phoneNumbers,
       List<AtsNsAddress>? addresses,
-      @JsonKey(name: 'expirationDateUnix') @TimestampOrNullConverter() DateTime? expirationDate});
+      @JsonKey(name: 'expirationDateUnix')
+      @TimestampOrNullConverter()
+      DateTime? expirationDate});
 }
 
 /// @nodoc
-class __$AtsNsLicenseCopyWithImpl<$Res> implements _$AtsNsLicenseCopyWith<$Res> {
+class __$AtsNsLicenseCopyWithImpl<$Res>
+    implements _$AtsNsLicenseCopyWith<$Res> {
   __$AtsNsLicenseCopyWithImpl(this._self, this._then);
 
   final _AtsNsLicense _self;
@@ -3597,7 +5818,8 @@ mixin _$AtsTransportInformation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsTransportInformationCopyWith<AtsTransportInformation> get copyWith =>
-      _$AtsTransportInformationCopyWithImpl<AtsTransportInformation>(this as AtsTransportInformation, _$identity);
+      _$AtsTransportInformationCopyWithImpl<AtsTransportInformation>(
+          this as AtsTransportInformation, _$identity);
 
   /// Serializes this AtsTransportInformation to a JSON map.
   Map<String, dynamic> toJson();
@@ -3611,22 +5833,44 @@ mixin _$AtsTransportInformation {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.mun, mun) || other.mun == mun) &&
-            (identical(other.freightMod, freightMod) || other.freightMod == freightMod) &&
-            (identical(other.federalUnit, federalUnit) || other.federalUnit == federalUnit) &&
-            (identical(other.businessNumber, businessNumber) || other.businessNumber == businessNumber) &&
-            (identical(other.vehiclePlate, vehiclePlate) || other.vehiclePlate == vehiclePlate) &&
-            (identical(other.vehicleUf, vehicleUf) || other.vehicleUf == vehicleUf) &&
-            (identical(other.vehicleName, vehicleName) || other.vehicleName == vehicleName) &&
-            (identical(other.destination, destination) || other.destination == destination) &&
+            (identical(other.freightMod, freightMod) ||
+                other.freightMod == freightMod) &&
+            (identical(other.federalUnit, federalUnit) ||
+                other.federalUnit == federalUnit) &&
+            (identical(other.businessNumber, businessNumber) ||
+                other.businessNumber == businessNumber) &&
+            (identical(other.vehiclePlate, vehiclePlate) ||
+                other.vehiclePlate == vehiclePlate) &&
+            (identical(other.vehicleUf, vehicleUf) ||
+                other.vehicleUf == vehicleUf) &&
+            (identical(other.vehicleName, vehicleName) ||
+                other.vehicleName == vehicleName) &&
+            (identical(other.destination, destination) ||
+                other.destination == destination) &&
             (identical(other.driver, driver) || other.driver == driver) &&
             (identical(other.origin, origin) || other.origin == origin) &&
-            (identical(other.stateRegistration, stateRegistration) || other.stateRegistration == stateRegistration));
+            (identical(other.stateRegistration, stateRegistration) ||
+                other.stateRegistration == stateRegistration));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, cnpj, name, address, mun, freightMod, federalUnit, businessNumber,
-      vehiclePlate, vehicleUf, vehicleName, destination, driver, origin, stateRegistration);
+  int get hashCode => Object.hash(
+      runtimeType,
+      cnpj,
+      name,
+      address,
+      mun,
+      freightMod,
+      federalUnit,
+      businessNumber,
+      vehiclePlate,
+      vehicleUf,
+      vehicleName,
+      destination,
+      driver,
+      origin,
+      stateRegistration);
 
   @override
   String toString() {
@@ -3636,8 +5880,8 @@ mixin _$AtsTransportInformation {
 
 /// @nodoc
 abstract mixin class $AtsTransportInformationCopyWith<$Res> {
-  factory $AtsTransportInformationCopyWith(
-          AtsTransportInformation value, $Res Function(AtsTransportInformation) _then) =
+  factory $AtsTransportInformationCopyWith(AtsTransportInformation value,
+          $Res Function(AtsTransportInformation) _then) =
       _$AtsTransportInformationCopyWithImpl;
   @useResult
   $Res call(
@@ -3658,7 +5902,8 @@ abstract mixin class $AtsTransportInformationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsTransportInformationCopyWithImpl<$Res> implements $AtsTransportInformationCopyWith<$Res> {
+class _$AtsTransportInformationCopyWithImpl<$Res>
+    implements $AtsTransportInformationCopyWith<$Res> {
   _$AtsTransportInformationCopyWithImpl(this._self, this._then);
 
   final AtsTransportInformation _self;
@@ -3745,6 +5990,250 @@ class _$AtsTransportInformationCopyWithImpl<$Res> implements $AtsTransportInform
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsTransportInformation].
+extension AtsTransportInformationPatterns on AtsTransportInformation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsTransportInformation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsTransportInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsTransportInformation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsTransportInformation():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsTransportInformation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsTransportInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? cnpj,
+            String? name,
+            String? address,
+            String? mun,
+            String? freightMod,
+            String? federalUnit,
+            String? businessNumber,
+            String? vehiclePlate,
+            String? vehicleUf,
+            String? vehicleName,
+            String? destination,
+            String? driver,
+            String? origin,
+            String? stateRegistration)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsTransportInformation() when $default != null:
+        return $default(
+            _that.cnpj,
+            _that.name,
+            _that.address,
+            _that.mun,
+            _that.freightMod,
+            _that.federalUnit,
+            _that.businessNumber,
+            _that.vehiclePlate,
+            _that.vehicleUf,
+            _that.vehicleName,
+            _that.destination,
+            _that.driver,
+            _that.origin,
+            _that.stateRegistration);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? cnpj,
+            String? name,
+            String? address,
+            String? mun,
+            String? freightMod,
+            String? federalUnit,
+            String? businessNumber,
+            String? vehiclePlate,
+            String? vehicleUf,
+            String? vehicleName,
+            String? destination,
+            String? driver,
+            String? origin,
+            String? stateRegistration)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsTransportInformation():
+        return $default(
+            _that.cnpj,
+            _that.name,
+            _that.address,
+            _that.mun,
+            _that.freightMod,
+            _that.federalUnit,
+            _that.businessNumber,
+            _that.vehiclePlate,
+            _that.vehicleUf,
+            _that.vehicleName,
+            _that.destination,
+            _that.driver,
+            _that.origin,
+            _that.stateRegistration);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? cnpj,
+            String? name,
+            String? address,
+            String? mun,
+            String? freightMod,
+            String? federalUnit,
+            String? businessNumber,
+            String? vehiclePlate,
+            String? vehicleUf,
+            String? vehicleName,
+            String? destination,
+            String? driver,
+            String? origin,
+            String? stateRegistration)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsTransportInformation() when $default != null:
+        return $default(
+            _that.cnpj,
+            _that.name,
+            _that.address,
+            _that.mun,
+            _that.freightMod,
+            _that.federalUnit,
+            _that.businessNumber,
+            _that.vehiclePlate,
+            _that.vehicleUf,
+            _that.vehicleName,
+            _that.destination,
+            _that.driver,
+            _that.origin,
+            _that.stateRegistration);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsTransportInformation implements AtsTransportInformation {
@@ -3763,7 +6252,8 @@ class _AtsTransportInformation implements AtsTransportInformation {
       this.driver,
       this.origin,
       this.stateRegistration});
-  factory _AtsTransportInformation.fromJson(Map<String, dynamic> json) => _$AtsTransportInformationFromJson(json);
+  factory _AtsTransportInformation.fromJson(Map<String, dynamic> json) =>
+      _$AtsTransportInformationFromJson(json);
 
   /// Transport company CNPJ.
   @override
@@ -3827,7 +6317,8 @@ class _AtsTransportInformation implements AtsTransportInformation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsTransportInformationCopyWith<_AtsTransportInformation> get copyWith =>
-      __$AtsTransportInformationCopyWithImpl<_AtsTransportInformation>(this, _$identity);
+      __$AtsTransportInformationCopyWithImpl<_AtsTransportInformation>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -3845,22 +6336,44 @@ class _AtsTransportInformation implements AtsTransportInformation {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.mun, mun) || other.mun == mun) &&
-            (identical(other.freightMod, freightMod) || other.freightMod == freightMod) &&
-            (identical(other.federalUnit, federalUnit) || other.federalUnit == federalUnit) &&
-            (identical(other.businessNumber, businessNumber) || other.businessNumber == businessNumber) &&
-            (identical(other.vehiclePlate, vehiclePlate) || other.vehiclePlate == vehiclePlate) &&
-            (identical(other.vehicleUf, vehicleUf) || other.vehicleUf == vehicleUf) &&
-            (identical(other.vehicleName, vehicleName) || other.vehicleName == vehicleName) &&
-            (identical(other.destination, destination) || other.destination == destination) &&
+            (identical(other.freightMod, freightMod) ||
+                other.freightMod == freightMod) &&
+            (identical(other.federalUnit, federalUnit) ||
+                other.federalUnit == federalUnit) &&
+            (identical(other.businessNumber, businessNumber) ||
+                other.businessNumber == businessNumber) &&
+            (identical(other.vehiclePlate, vehiclePlate) ||
+                other.vehiclePlate == vehiclePlate) &&
+            (identical(other.vehicleUf, vehicleUf) ||
+                other.vehicleUf == vehicleUf) &&
+            (identical(other.vehicleName, vehicleName) ||
+                other.vehicleName == vehicleName) &&
+            (identical(other.destination, destination) ||
+                other.destination == destination) &&
             (identical(other.driver, driver) || other.driver == driver) &&
             (identical(other.origin, origin) || other.origin == origin) &&
-            (identical(other.stateRegistration, stateRegistration) || other.stateRegistration == stateRegistration));
+            (identical(other.stateRegistration, stateRegistration) ||
+                other.stateRegistration == stateRegistration));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, cnpj, name, address, mun, freightMod, federalUnit, businessNumber,
-      vehiclePlate, vehicleUf, vehicleName, destination, driver, origin, stateRegistration);
+  int get hashCode => Object.hash(
+      runtimeType,
+      cnpj,
+      name,
+      address,
+      mun,
+      freightMod,
+      federalUnit,
+      businessNumber,
+      vehiclePlate,
+      vehicleUf,
+      vehicleName,
+      destination,
+      driver,
+      origin,
+      stateRegistration);
 
   @override
   String toString() {
@@ -3869,9 +6382,10 @@ class _AtsTransportInformation implements AtsTransportInformation {
 }
 
 /// @nodoc
-abstract mixin class _$AtsTransportInformationCopyWith<$Res> implements $AtsTransportInformationCopyWith<$Res> {
-  factory _$AtsTransportInformationCopyWith(
-          _AtsTransportInformation value, $Res Function(_AtsTransportInformation) _then) =
+abstract mixin class _$AtsTransportInformationCopyWith<$Res>
+    implements $AtsTransportInformationCopyWith<$Res> {
+  factory _$AtsTransportInformationCopyWith(_AtsTransportInformation value,
+          $Res Function(_AtsTransportInformation) _then) =
       __$AtsTransportInformationCopyWithImpl;
   @override
   @useResult
@@ -3893,7 +6407,8 @@ abstract mixin class _$AtsTransportInformationCopyWith<$Res> implements $AtsTran
 }
 
 /// @nodoc
-class __$AtsTransportInformationCopyWithImpl<$Res> implements _$AtsTransportInformationCopyWith<$Res> {
+class __$AtsTransportInformationCopyWithImpl<$Res>
+    implements _$AtsTransportInformationCopyWith<$Res> {
   __$AtsTransportInformationCopyWithImpl(this._self, this._then);
 
   final _AtsTransportInformation _self;
@@ -3997,7 +6512,8 @@ mixin _$AtsCommandResult {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsCommandResultCopyWith<AtsCommandResult> get copyWith =>
-      _$AtsCommandResultCopyWithImpl<AtsCommandResult>(this as AtsCommandResult, _$identity);
+      _$AtsCommandResultCopyWithImpl<AtsCommandResult>(
+          this as AtsCommandResult, _$identity);
 
   /// Serializes this AtsCommandResult to a JSON map.
   Map<String, dynamic> toJson();
@@ -4008,8 +6524,10 @@ mixin _$AtsCommandResult {
         (other.runtimeType == runtimeType &&
             other is AtsCommandResult &&
             (identical(other.request, request) || other.request == request) &&
-            (identical(other.response, response) || other.response == response) &&
-            (identical(other.executedAt, executedAt) || other.executedAt == executedAt));
+            (identical(other.response, response) ||
+                other.response == response) &&
+            (identical(other.executedAt, executedAt) ||
+                other.executedAt == executedAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -4024,14 +6542,19 @@ mixin _$AtsCommandResult {
 
 /// @nodoc
 abstract mixin class $AtsCommandResultCopyWith<$Res> {
-  factory $AtsCommandResultCopyWith(AtsCommandResult value, $Res Function(AtsCommandResult) _then) =
+  factory $AtsCommandResultCopyWith(
+          AtsCommandResult value, $Res Function(AtsCommandResult) _then) =
       _$AtsCommandResultCopyWithImpl;
   @useResult
-  $Res call({String? request, String? response, @TimestampOrNullConverter() DateTime? executedAt});
+  $Res call(
+      {String? request,
+      String? response,
+      @TimestampOrNullConverter() DateTime? executedAt});
 }
 
 /// @nodoc
-class _$AtsCommandResultCopyWithImpl<$Res> implements $AtsCommandResultCopyWith<$Res> {
+class _$AtsCommandResultCopyWithImpl<$Res>
+    implements $AtsCommandResultCopyWith<$Res> {
   _$AtsCommandResultCopyWithImpl(this._self, this._then);
 
   final AtsCommandResult _self;
@@ -4063,11 +6586,178 @@ class _$AtsCommandResultCopyWithImpl<$Res> implements $AtsCommandResultCopyWith<
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsCommandResult].
+extension AtsCommandResultPatterns on AtsCommandResult {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsCommandResult value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCommandResult() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsCommandResult value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCommandResult():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsCommandResult value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCommandResult() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? request, String? response,
+            @TimestampOrNullConverter() DateTime? executedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCommandResult() when $default != null:
+        return $default(_that.request, _that.response, _that.executedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? request, String? response,
+            @TimestampOrNullConverter() DateTime? executedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCommandResult():
+        return $default(_that.request, _that.response, _that.executedAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? request, String? response,
+            @TimestampOrNullConverter() DateTime? executedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCommandResult() when $default != null:
+        return $default(_that.request, _that.response, _that.executedAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsCommandResult implements AtsCommandResult {
-  const _AtsCommandResult({this.request, this.response, @TimestampOrNullConverter() this.executedAt});
-  factory _AtsCommandResult.fromJson(Map<String, dynamic> json) => _$AtsCommandResultFromJson(json);
+  const _AtsCommandResult(
+      {this.request,
+      this.response,
+      @TimestampOrNullConverter() this.executedAt});
+  factory _AtsCommandResult.fromJson(Map<String, dynamic> json) =>
+      _$AtsCommandResultFromJson(json);
 
   /// [String] Command sent to the device.
   @override
@@ -4103,8 +6793,10 @@ class _AtsCommandResult implements AtsCommandResult {
         (other.runtimeType == runtimeType &&
             other is _AtsCommandResult &&
             (identical(other.request, request) || other.request == request) &&
-            (identical(other.response, response) || other.response == response) &&
-            (identical(other.executedAt, executedAt) || other.executedAt == executedAt));
+            (identical(other.response, response) ||
+                other.response == response) &&
+            (identical(other.executedAt, executedAt) ||
+                other.executedAt == executedAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -4118,16 +6810,22 @@ class _AtsCommandResult implements AtsCommandResult {
 }
 
 /// @nodoc
-abstract mixin class _$AtsCommandResultCopyWith<$Res> implements $AtsCommandResultCopyWith<$Res> {
-  factory _$AtsCommandResultCopyWith(_AtsCommandResult value, $Res Function(_AtsCommandResult) _then) =
+abstract mixin class _$AtsCommandResultCopyWith<$Res>
+    implements $AtsCommandResultCopyWith<$Res> {
+  factory _$AtsCommandResultCopyWith(
+          _AtsCommandResult value, $Res Function(_AtsCommandResult) _then) =
       __$AtsCommandResultCopyWithImpl;
   @override
   @useResult
-  $Res call({String? request, String? response, @TimestampOrNullConverter() DateTime? executedAt});
+  $Res call(
+      {String? request,
+      String? response,
+      @TimestampOrNullConverter() DateTime? executedAt});
 }
 
 /// @nodoc
-class __$AtsCommandResultCopyWithImpl<$Res> implements _$AtsCommandResultCopyWith<$Res> {
+class __$AtsCommandResultCopyWithImpl<$Res>
+    implements _$AtsCommandResultCopyWith<$Res> {
   __$AtsCommandResultCopyWithImpl(this._self, this._then);
 
   final _AtsCommandResult _self;
@@ -4174,7 +6872,8 @@ mixin _$AtsExecuteLoadInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsExecuteLoadInputCopyWith<AtsExecuteLoadInput> get copyWith =>
-      _$AtsExecuteLoadInputCopyWithImpl<AtsExecuteLoadInput>(this as AtsExecuteLoadInput, _$identity);
+      _$AtsExecuteLoadInputCopyWithImpl<AtsExecuteLoadInput>(
+          this as AtsExecuteLoadInput, _$identity);
 
   /// Serializes this AtsExecuteLoadInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -4187,14 +6886,16 @@ mixin _$AtsExecuteLoadInput {
 
 /// @nodoc
 abstract mixin class $AtsExecuteLoadInputCopyWith<$Res> {
-  factory $AtsExecuteLoadInputCopyWith(AtsExecuteLoadInput value, $Res Function(AtsExecuteLoadInput) _then) =
+  factory $AtsExecuteLoadInputCopyWith(
+          AtsExecuteLoadInput value, $Res Function(AtsExecuteLoadInput) _then) =
       _$AtsExecuteLoadInputCopyWithImpl;
   @useResult
   $Res call({String? fromAssetId, String? toAssetId});
 }
 
 /// @nodoc
-class _$AtsExecuteLoadInputCopyWithImpl<$Res> implements $AtsExecuteLoadInputCopyWith<$Res> {
+class _$AtsExecuteLoadInputCopyWithImpl<$Res>
+    implements $AtsExecuteLoadInputCopyWith<$Res> {
   _$AtsExecuteLoadInputCopyWithImpl(this._self, this._then);
 
   final AtsExecuteLoadInput _self;
@@ -4221,11 +6922,169 @@ class _$AtsExecuteLoadInputCopyWithImpl<$Res> implements $AtsExecuteLoadInputCop
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsExecuteLoadInput].
+extension AtsExecuteLoadInputPatterns on AtsExecuteLoadInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsExecuteLoadInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteLoadInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsExecuteLoadInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteLoadInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsExecuteLoadInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteLoadInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? fromAssetId, String? toAssetId)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteLoadInput() when $default != null:
+        return $default(_that.fromAssetId, _that.toAssetId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? fromAssetId, String? toAssetId) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteLoadInput():
+        return $default(_that.fromAssetId, _that.toAssetId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? fromAssetId, String? toAssetId)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteLoadInput() when $default != null:
+        return $default(_that.fromAssetId, _that.toAssetId);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsExecuteLoadInput implements AtsExecuteLoadInput {
   _AtsExecuteLoadInput({this.fromAssetId, this.toAssetId});
-  factory _AtsExecuteLoadInput.fromJson(Map<String, dynamic> json) => _$AtsExecuteLoadInputFromJson(json);
+  factory _AtsExecuteLoadInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsExecuteLoadInputFromJson(json);
 
   /// `fromAssetId` of the tank
   @override
@@ -4240,7 +7099,8 @@ class _AtsExecuteLoadInput implements AtsExecuteLoadInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsExecuteLoadInputCopyWith<_AtsExecuteLoadInput> get copyWith =>
-      __$AtsExecuteLoadInputCopyWithImpl<_AtsExecuteLoadInput>(this, _$identity);
+      __$AtsExecuteLoadInputCopyWithImpl<_AtsExecuteLoadInput>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -4256,8 +7116,10 @@ class _AtsExecuteLoadInput implements AtsExecuteLoadInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsExecuteLoadInputCopyWith<$Res> implements $AtsExecuteLoadInputCopyWith<$Res> {
-  factory _$AtsExecuteLoadInputCopyWith(_AtsExecuteLoadInput value, $Res Function(_AtsExecuteLoadInput) _then) =
+abstract mixin class _$AtsExecuteLoadInputCopyWith<$Res>
+    implements $AtsExecuteLoadInputCopyWith<$Res> {
+  factory _$AtsExecuteLoadInputCopyWith(_AtsExecuteLoadInput value,
+          $Res Function(_AtsExecuteLoadInput) _then) =
       __$AtsExecuteLoadInputCopyWithImpl;
   @override
   @useResult
@@ -4265,7 +7127,8 @@ abstract mixin class _$AtsExecuteLoadInputCopyWith<$Res> implements $AtsExecuteL
 }
 
 /// @nodoc
-class __$AtsExecuteLoadInputCopyWithImpl<$Res> implements _$AtsExecuteLoadInputCopyWith<$Res> {
+class __$AtsExecuteLoadInputCopyWithImpl<$Res>
+    implements _$AtsExecuteLoadInputCopyWith<$Res> {
   __$AtsExecuteLoadInputCopyWithImpl(this._self, this._then);
 
   final _AtsExecuteLoadInput _self;
@@ -4314,7 +7177,8 @@ mixin _$AtsCompanyInformation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsCompanyInformationCopyWith<AtsCompanyInformation> get copyWith =>
-      _$AtsCompanyInformationCopyWithImpl<AtsCompanyInformation>(this as AtsCompanyInformation, _$identity);
+      _$AtsCompanyInformationCopyWithImpl<AtsCompanyInformation>(
+          this as AtsCompanyInformation, _$identity);
 
   /// Serializes this AtsCompanyInformation to a JSON map.
   Map<String, dynamic> toJson();
@@ -4328,12 +7192,14 @@ mixin _$AtsCompanyInformation {
             (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.stateRegistration, stateRegistration) || other.stateRegistration == stateRegistration));
+            (identical(other.stateRegistration, stateRegistration) ||
+                other.stateRegistration == stateRegistration));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, cnpj, address, email, stateRegistration);
+  int get hashCode =>
+      Object.hash(runtimeType, name, cnpj, address, email, stateRegistration);
 
   @override
   String toString() {
@@ -4343,14 +7209,21 @@ mixin _$AtsCompanyInformation {
 
 /// @nodoc
 abstract mixin class $AtsCompanyInformationCopyWith<$Res> {
-  factory $AtsCompanyInformationCopyWith(AtsCompanyInformation value, $Res Function(AtsCompanyInformation) _then) =
+  factory $AtsCompanyInformationCopyWith(AtsCompanyInformation value,
+          $Res Function(AtsCompanyInformation) _then) =
       _$AtsCompanyInformationCopyWithImpl;
   @useResult
-  $Res call({String? name, String? cnpj, String? address, String? email, String? stateRegistration});
+  $Res call(
+      {String? name,
+      String? cnpj,
+      String? address,
+      String? email,
+      String? stateRegistration});
 }
 
 /// @nodoc
-class _$AtsCompanyInformationCopyWithImpl<$Res> implements $AtsCompanyInformationCopyWith<$Res> {
+class _$AtsCompanyInformationCopyWithImpl<$Res>
+    implements $AtsCompanyInformationCopyWith<$Res> {
   _$AtsCompanyInformationCopyWithImpl(this._self, this._then);
 
   final AtsCompanyInformation _self;
@@ -4392,11 +7265,179 @@ class _$AtsCompanyInformationCopyWithImpl<$Res> implements $AtsCompanyInformatio
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsCompanyInformation].
+extension AtsCompanyInformationPatterns on AtsCompanyInformation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsCompanyInformation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCompanyInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsCompanyInformation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCompanyInformation():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsCompanyInformation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCompanyInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? name, String? cnpj, String? address, String? email,
+            String? stateRegistration)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCompanyInformation() when $default != null:
+        return $default(_that.name, _that.cnpj, _that.address, _that.email,
+            _that.stateRegistration);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? name, String? cnpj, String? address, String? email,
+            String? stateRegistration)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCompanyInformation():
+        return $default(_that.name, _that.cnpj, _that.address, _that.email,
+            _that.stateRegistration);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? name, String? cnpj, String? address,
+            String? email, String? stateRegistration)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsCompanyInformation() when $default != null:
+        return $default(_that.name, _that.cnpj, _that.address, _that.email,
+            _that.stateRegistration);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsCompanyInformation implements AtsCompanyInformation {
-  _AtsCompanyInformation({this.name, this.cnpj, this.address, this.email, this.stateRegistration});
-  factory _AtsCompanyInformation.fromJson(Map<String, dynamic> json) => _$AtsCompanyInformationFromJson(json);
+  _AtsCompanyInformation(
+      {this.name, this.cnpj, this.address, this.email, this.stateRegistration});
+  factory _AtsCompanyInformation.fromJson(Map<String, dynamic> json) =>
+      _$AtsCompanyInformationFromJson(json);
 
   /// Your company name, could be the legal name or commercial name. For example, Golden M is the commercial name of Golden M, Inc.
   @override
@@ -4424,7 +7465,8 @@ class _AtsCompanyInformation implements AtsCompanyInformation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsCompanyInformationCopyWith<_AtsCompanyInformation> get copyWith =>
-      __$AtsCompanyInformationCopyWithImpl<_AtsCompanyInformation>(this, _$identity);
+      __$AtsCompanyInformationCopyWithImpl<_AtsCompanyInformation>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -4442,12 +7484,14 @@ class _AtsCompanyInformation implements AtsCompanyInformation {
             (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.stateRegistration, stateRegistration) || other.stateRegistration == stateRegistration));
+            (identical(other.stateRegistration, stateRegistration) ||
+                other.stateRegistration == stateRegistration));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, cnpj, address, email, stateRegistration);
+  int get hashCode =>
+      Object.hash(runtimeType, name, cnpj, address, email, stateRegistration);
 
   @override
   String toString() {
@@ -4456,16 +7500,24 @@ class _AtsCompanyInformation implements AtsCompanyInformation {
 }
 
 /// @nodoc
-abstract mixin class _$AtsCompanyInformationCopyWith<$Res> implements $AtsCompanyInformationCopyWith<$Res> {
-  factory _$AtsCompanyInformationCopyWith(_AtsCompanyInformation value, $Res Function(_AtsCompanyInformation) _then) =
+abstract mixin class _$AtsCompanyInformationCopyWith<$Res>
+    implements $AtsCompanyInformationCopyWith<$Res> {
+  factory _$AtsCompanyInformationCopyWith(_AtsCompanyInformation value,
+          $Res Function(_AtsCompanyInformation) _then) =
       __$AtsCompanyInformationCopyWithImpl;
   @override
   @useResult
-  $Res call({String? name, String? cnpj, String? address, String? email, String? stateRegistration});
+  $Res call(
+      {String? name,
+      String? cnpj,
+      String? address,
+      String? email,
+      String? stateRegistration});
 }
 
 /// @nodoc
-class __$AtsCompanyInformationCopyWithImpl<$Res> implements _$AtsCompanyInformationCopyWith<$Res> {
+class __$AtsCompanyInformationCopyWithImpl<$Res>
+    implements _$AtsCompanyInformationCopyWith<$Res> {
   __$AtsCompanyInformationCopyWithImpl(this._self, this._then);
 
   final _AtsCompanyInformation _self;
@@ -4538,7 +7590,8 @@ mixin _$AtsProductInformation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsProductInformationCopyWith<AtsProductInformation> get copyWith =>
-      _$AtsProductInformationCopyWithImpl<AtsProductInformation>(this as AtsProductInformation, _$identity);
+      _$AtsProductInformationCopyWithImpl<AtsProductInformation>(
+          this as AtsProductInformation, _$identity);
 
   /// Serializes this AtsProductInformation to a JSON map.
   Map<String, dynamic> toJson();
@@ -4550,17 +7603,30 @@ mixin _$AtsProductInformation {
             other is AtsProductInformation &&
             (identical(other.ncm, ncm) || other.ncm == ncm) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.measureUnit, measureUnit) || other.measureUnit == measureUnit) &&
-            (identical(other.quantity, quantity) || other.quantity == quantity) &&
-            (identical(other.unitValue, unitValue) || other.unitValue == unitValue) &&
-            (identical(other.productValue, productValue) || other.productValue == productValue) &&
+            (identical(other.measureUnit, measureUnit) ||
+                other.measureUnit == measureUnit) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unitValue, unitValue) ||
+                other.unitValue == unitValue) &&
+            (identical(other.productValue, productValue) ||
+                other.productValue == productValue) &&
             (identical(other.cfop, cfop) || other.cfop == cfop) &&
-            const DeepCollectionEquality().equals(other.subcategory, subcategory));
+            const DeepCollectionEquality()
+                .equals(other.subcategory, subcategory));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, ncm, name, measureUnit, quantity, unitValue, productValue, cfop,
+  int get hashCode => Object.hash(
+      runtimeType,
+      ncm,
+      name,
+      measureUnit,
+      quantity,
+      unitValue,
+      productValue,
+      cfop,
       const DeepCollectionEquality().hash(subcategory));
 
   @override
@@ -4571,7 +7637,8 @@ mixin _$AtsProductInformation {
 
 /// @nodoc
 abstract mixin class $AtsProductInformationCopyWith<$Res> {
-  factory $AtsProductInformationCopyWith(AtsProductInformation value, $Res Function(AtsProductInformation) _then) =
+  factory $AtsProductInformationCopyWith(AtsProductInformation value,
+          $Res Function(AtsProductInformation) _then) =
       _$AtsProductInformationCopyWithImpl;
   @useResult
   $Res call(
@@ -4586,7 +7653,8 @@ abstract mixin class $AtsProductInformationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsProductInformationCopyWithImpl<$Res> implements $AtsProductInformationCopyWith<$Res> {
+class _$AtsProductInformationCopyWithImpl<$Res>
+    implements $AtsProductInformationCopyWith<$Res> {
   _$AtsProductInformationCopyWithImpl(this._self, this._then);
 
   final AtsProductInformation _self;
@@ -4643,6 +7711,214 @@ class _$AtsProductInformationCopyWithImpl<$Res> implements $AtsProductInformatio
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsProductInformation].
+extension AtsProductInformationPatterns on AtsProductInformation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsProductInformation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsProductInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsProductInformation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsProductInformation():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsProductInformation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsProductInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? ncm,
+            String? name,
+            String? measureUnit,
+            double? quantity,
+            double? unitValue,
+            double? productValue,
+            String? cfop,
+            Map<String, dynamic>? subcategory)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsProductInformation() when $default != null:
+        return $default(
+            _that.ncm,
+            _that.name,
+            _that.measureUnit,
+            _that.quantity,
+            _that.unitValue,
+            _that.productValue,
+            _that.cfop,
+            _that.subcategory);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? ncm,
+            String? name,
+            String? measureUnit,
+            double? quantity,
+            double? unitValue,
+            double? productValue,
+            String? cfop,
+            Map<String, dynamic>? subcategory)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsProductInformation():
+        return $default(
+            _that.ncm,
+            _that.name,
+            _that.measureUnit,
+            _that.quantity,
+            _that.unitValue,
+            _that.productValue,
+            _that.cfop,
+            _that.subcategory);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? ncm,
+            String? name,
+            String? measureUnit,
+            double? quantity,
+            double? unitValue,
+            double? productValue,
+            String? cfop,
+            Map<String, dynamic>? subcategory)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsProductInformation() when $default != null:
+        return $default(
+            _that.ncm,
+            _that.name,
+            _that.measureUnit,
+            _that.quantity,
+            _that.unitValue,
+            _that.productValue,
+            _that.cfop,
+            _that.subcategory);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsProductInformation implements AtsProductInformation {
@@ -4656,7 +7932,8 @@ class _AtsProductInformation implements AtsProductInformation {
       this.cfop,
       final Map<String, dynamic>? subcategory})
       : _subcategory = subcategory;
-  factory _AtsProductInformation.fromJson(Map<String, dynamic> json) => _$AtsProductInformationFromJson(json);
+  factory _AtsProductInformation.fromJson(Map<String, dynamic> json) =>
+      _$AtsProductInformationFromJson(json);
 
   /// Product code.
   @override
@@ -4705,7 +7982,8 @@ class _AtsProductInformation implements AtsProductInformation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsProductInformationCopyWith<_AtsProductInformation> get copyWith =>
-      __$AtsProductInformationCopyWithImpl<_AtsProductInformation>(this, _$identity);
+      __$AtsProductInformationCopyWithImpl<_AtsProductInformation>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -4721,17 +7999,30 @@ class _AtsProductInformation implements AtsProductInformation {
             other is _AtsProductInformation &&
             (identical(other.ncm, ncm) || other.ncm == ncm) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.measureUnit, measureUnit) || other.measureUnit == measureUnit) &&
-            (identical(other.quantity, quantity) || other.quantity == quantity) &&
-            (identical(other.unitValue, unitValue) || other.unitValue == unitValue) &&
-            (identical(other.productValue, productValue) || other.productValue == productValue) &&
+            (identical(other.measureUnit, measureUnit) ||
+                other.measureUnit == measureUnit) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unitValue, unitValue) ||
+                other.unitValue == unitValue) &&
+            (identical(other.productValue, productValue) ||
+                other.productValue == productValue) &&
             (identical(other.cfop, cfop) || other.cfop == cfop) &&
-            const DeepCollectionEquality().equals(other._subcategory, _subcategory));
+            const DeepCollectionEquality()
+                .equals(other._subcategory, _subcategory));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, ncm, name, measureUnit, quantity, unitValue, productValue, cfop,
+  int get hashCode => Object.hash(
+      runtimeType,
+      ncm,
+      name,
+      measureUnit,
+      quantity,
+      unitValue,
+      productValue,
+      cfop,
       const DeepCollectionEquality().hash(_subcategory));
 
   @override
@@ -4741,8 +8032,10 @@ class _AtsProductInformation implements AtsProductInformation {
 }
 
 /// @nodoc
-abstract mixin class _$AtsProductInformationCopyWith<$Res> implements $AtsProductInformationCopyWith<$Res> {
-  factory _$AtsProductInformationCopyWith(_AtsProductInformation value, $Res Function(_AtsProductInformation) _then) =
+abstract mixin class _$AtsProductInformationCopyWith<$Res>
+    implements $AtsProductInformationCopyWith<$Res> {
+  factory _$AtsProductInformationCopyWith(_AtsProductInformation value,
+          $Res Function(_AtsProductInformation) _then) =
       __$AtsProductInformationCopyWithImpl;
   @override
   @useResult
@@ -4758,7 +8051,8 @@ abstract mixin class _$AtsProductInformationCopyWith<$Res> implements $AtsProduc
 }
 
 /// @nodoc
-class __$AtsProductInformationCopyWithImpl<$Res> implements _$AtsProductInformationCopyWith<$Res> {
+class __$AtsProductInformationCopyWithImpl<$Res>
+    implements _$AtsProductInformationCopyWith<$Res> {
   __$AtsProductInformationCopyWithImpl(this._self, this._then);
 
   final _AtsProductInformation _self;
@@ -4933,7 +8227,8 @@ mixin _$AtsPurchaseOrder {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsPurchaseOrderCopyWith<AtsPurchaseOrder> get copyWith =>
-      _$AtsPurchaseOrderCopyWithImpl<AtsPurchaseOrder>(this as AtsPurchaseOrder, _$identity);
+      _$AtsPurchaseOrderCopyWithImpl<AtsPurchaseOrder>(
+          this as AtsPurchaseOrder, _$identity);
 
   /// Serializes this AtsPurchaseOrder to a JSON map.
   Map<String, dynamic> toJson();
@@ -4947,38 +8242,60 @@ mixin _$AtsPurchaseOrder {
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId) &&
-            (identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId) &&
-            (identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt) &&
-            (identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt) &&
+            (identical(other.sellerAssetId, sellerAssetId) ||
+                other.sellerAssetId == sellerAssetId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.purchasedAt, purchasedAt) ||
+                other.purchasedAt == purchasedAt) &&
+            (identical(other.receivedAt, receivedAt) ||
+                other.receivedAt == receivedAt) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation) &&
+            (identical(other.sellerInformation, sellerInformation) ||
+                other.sellerInformation == sellerInformation) &&
             (identical(other.receiverInformation, receiverInformation) ||
                 other.receiverInformation == receiverInformation) &&
-            const DeepCollectionEquality().equals(other.productsInformation, productsInformation) &&
+            const DeepCollectionEquality()
+                .equals(other.productsInformation, productsInformation) &&
             (identical(other.total, total) || other.total == total) &&
-            (identical(other.isReceived, isReceived) || other.isReceived == isReceived) &&
-            (identical(other.hasReception, hasReception) || other.hasReception == hasReception) &&
+            (identical(other.isReceived, isReceived) ||
+                other.isReceived == isReceived) &&
+            (identical(other.hasReception, hasReception) ||
+                other.hasReception == hasReception) &&
             (identical(other.transportInformation, transportInformation) ||
                 other.transportInformation == transportInformation) &&
-            (identical(other.hasRawXml, hasRawXml) || other.hasRawXml == hasRawXml) &&
-            (identical(other.invoiceType, invoiceType) || other.invoiceType == invoiceType) &&
-            (identical(other.parentInvoice, parentInvoice) || other.parentInvoice == parentInvoice) &&
-            (identical(other.ideInformation, ideInformation) || other.ideInformation == ideInformation) &&
-            (identical(other.receptionAt, receptionAt) || other.receptionAt == receptionAt) &&
+            (identical(other.hasRawXml, hasRawXml) ||
+                other.hasRawXml == hasRawXml) &&
+            (identical(other.invoiceType, invoiceType) ||
+                other.invoiceType == invoiceType) &&
+            (identical(other.parentInvoice, parentInvoice) ||
+                other.parentInvoice == parentInvoice) &&
+            (identical(other.ideInformation, ideInformation) ||
+                other.ideInformation == ideInformation) &&
+            (identical(other.receptionAt, receptionAt) ||
+                other.receptionAt == receptionAt) &&
             (identical(other.action, action) || other.action == action) &&
-            (identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset) &&
-            (identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset) &&
-            (identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus) &&
-            (identical(other.inTransitAt, inTransitAt) || other.inTransitAt == inTransitAt) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.sellerAsset, sellerAsset) ||
+                other.sellerAsset == sellerAsset) &&
+            (identical(other.orderStatus, orderStatus) ||
+                other.orderStatus == orderStatus) &&
+            (identical(other.inTransitAt, inTransitAt) ||
+                other.inTransitAt == inTransitAt) &&
             (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
                 other.waitingToDispatchAt == waitingToDispatchAt) &&
-            (identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt) &&
-            (identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory) &&
-            (identical(other.category, category) || other.category == category) &&
-            (identical(other.operation, operation) || other.operation == operation) &&
+            (identical(other.deliveredAt, deliveredAt) ||
+                other.deliveredAt == deliveredAt) &&
+            (identical(other.deliverCategory, deliverCategory) ||
+                other.deliverCategory == deliverCategory) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
             (identical(other.eta, eta) || other.eta == eta) &&
-            (identical(other.etaUpdatedAt, etaUpdatedAt) || other.etaUpdatedAt == etaUpdatedAt));
+            (identical(other.etaUpdatedAt, etaUpdatedAt) ||
+                other.etaUpdatedAt == etaUpdatedAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -5028,7 +8345,8 @@ mixin _$AtsPurchaseOrder {
 
 /// @nodoc
 abstract mixin class $AtsPurchaseOrderCopyWith<$Res> {
-  factory $AtsPurchaseOrderCopyWith(AtsPurchaseOrder value, $Res Function(AtsPurchaseOrder) _then) =
+  factory $AtsPurchaseOrderCopyWith(
+          AtsPurchaseOrder value, $Res Function(AtsPurchaseOrder) _then) =
       _$AtsPurchaseOrderCopyWithImpl;
   @useResult
   $Res call(
@@ -5056,12 +8374,15 @@ abstract mixin class $AtsPurchaseOrderCopyWith<$Res> {
       @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? action,
       Asset? transportAsset,
       Asset? sellerAsset,
-      @AtsPurchaseOrderStatusOrNullConverter() AtsPurchaseOrderStatus? orderStatus,
+      @AtsPurchaseOrderStatusOrNullConverter()
+      AtsPurchaseOrderStatus? orderStatus,
       @TimestampOrNullConverter() DateTime? inTransitAt,
       @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
       @TimestampOrNullConverter() DateTime? deliveredAt,
-      @AtsPurchaseOrderSubCategoriesOrNullConverter() AtsPurchaseOrderSubCategories? deliverCategory,
-      @AtsPurchaseOrderCategoriesEntityOrNullConverter() AtsPurchaseOrderCategoriesEntity? category,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      AtsPurchaseOrderSubCategories? deliverCategory,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      AtsPurchaseOrderCategoriesEntity? category,
       AtsOperation? operation,
       @TimestampOrNullConverter() DateTime? eta,
       @TimestampOrNullConverter() DateTime? etaUpdatedAt});
@@ -5079,7 +8400,8 @@ abstract mixin class $AtsPurchaseOrderCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsPurchaseOrderCopyWithImpl<$Res> implements $AtsPurchaseOrderCopyWith<$Res> {
+class _$AtsPurchaseOrderCopyWithImpl<$Res>
+    implements $AtsPurchaseOrderCopyWith<$Res> {
   _$AtsPurchaseOrderCopyWithImpl(this._self, this._then);
 
   final AtsPurchaseOrder _self;
@@ -5283,7 +8605,8 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res> implements $AtsPurchaseOrderCopyWith<
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!, (value) {
+    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!,
+        (value) {
       return _then(_self.copyWith(sellerInformation: value));
     });
   }
@@ -5297,7 +8620,8 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res> implements $AtsPurchaseOrderCopyWith<
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_self.receiverInformation!, (value) {
+    return $AtsCompanyInformationCopyWith<$Res>(_self.receiverInformation!,
+        (value) {
       return _then(_self.copyWith(receiverInformation: value));
     });
   }
@@ -5325,7 +8649,8 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res> implements $AtsPurchaseOrderCopyWith<
       return null;
     }
 
-    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!, (value) {
+    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!,
+        (value) {
       return _then(_self.copyWith(transportInformation: value));
     });
   }
@@ -5401,6 +8726,376 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res> implements $AtsPurchaseOrderCopyWith<
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsPurchaseOrder].
+extension AtsPurchaseOrderPatterns on AtsPurchaseOrder {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsPurchaseOrder value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseOrder() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsPurchaseOrder value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseOrder():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsPurchaseOrder value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseOrder() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? ownerId,
+            String? orderId,
+            String? assetId,
+            String? sellerAssetId,
+            String? transportAssetId,
+            @TimestampOrNullConverter() DateTime? purchasedAt,
+            @TimestampOrNullConverter() DateTime? receivedAt,
+            Asset? asset,
+            AtsCompanyInformation? sellerInformation,
+            AtsCompanyInformation? receiverInformation,
+            List<AtsProductInformation>? productsInformation,
+            AtsPurchaseTotal? total,
+            bool? isReceived,
+            bool? hasReception,
+            AtsTransportInformation? transportInformation,
+            bool? hasRawXml,
+            String? invoiceType,
+            AtsPurchaseOrder? parentInvoice,
+            AtsIdeInformation? ideInformation,
+            @TimestampOrNullConverter() DateTime? receptionAt,
+            @PurchaseOrderOperationOrNullConverter()
+            PurchaseOrderOperation? action,
+            Asset? transportAsset,
+            Asset? sellerAsset,
+            @AtsPurchaseOrderStatusOrNullConverter()
+            AtsPurchaseOrderStatus? orderStatus,
+            @TimestampOrNullConverter() DateTime? inTransitAt,
+            @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+            @TimestampOrNullConverter() DateTime? deliveredAt,
+            @AtsPurchaseOrderSubCategoriesOrNullConverter()
+            AtsPurchaseOrderSubCategories? deliverCategory,
+            @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+            AtsPurchaseOrderCategoriesEntity? category,
+            AtsOperation? operation,
+            @TimestampOrNullConverter() DateTime? eta,
+            @TimestampOrNullConverter() DateTime? etaUpdatedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseOrder() when $default != null:
+        return $default(
+            _that.id,
+            _that.ownerId,
+            _that.orderId,
+            _that.assetId,
+            _that.sellerAssetId,
+            _that.transportAssetId,
+            _that.purchasedAt,
+            _that.receivedAt,
+            _that.asset,
+            _that.sellerInformation,
+            _that.receiverInformation,
+            _that.productsInformation,
+            _that.total,
+            _that.isReceived,
+            _that.hasReception,
+            _that.transportInformation,
+            _that.hasRawXml,
+            _that.invoiceType,
+            _that.parentInvoice,
+            _that.ideInformation,
+            _that.receptionAt,
+            _that.action,
+            _that.transportAsset,
+            _that.sellerAsset,
+            _that.orderStatus,
+            _that.inTransitAt,
+            _that.waitingToDispatchAt,
+            _that.deliveredAt,
+            _that.deliverCategory,
+            _that.category,
+            _that.operation,
+            _that.eta,
+            _that.etaUpdatedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? ownerId,
+            String? orderId,
+            String? assetId,
+            String? sellerAssetId,
+            String? transportAssetId,
+            @TimestampOrNullConverter() DateTime? purchasedAt,
+            @TimestampOrNullConverter() DateTime? receivedAt,
+            Asset? asset,
+            AtsCompanyInformation? sellerInformation,
+            AtsCompanyInformation? receiverInformation,
+            List<AtsProductInformation>? productsInformation,
+            AtsPurchaseTotal? total,
+            bool? isReceived,
+            bool? hasReception,
+            AtsTransportInformation? transportInformation,
+            bool? hasRawXml,
+            String? invoiceType,
+            AtsPurchaseOrder? parentInvoice,
+            AtsIdeInformation? ideInformation,
+            @TimestampOrNullConverter() DateTime? receptionAt,
+            @PurchaseOrderOperationOrNullConverter()
+            PurchaseOrderOperation? action,
+            Asset? transportAsset,
+            Asset? sellerAsset,
+            @AtsPurchaseOrderStatusOrNullConverter()
+            AtsPurchaseOrderStatus? orderStatus,
+            @TimestampOrNullConverter() DateTime? inTransitAt,
+            @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+            @TimestampOrNullConverter() DateTime? deliveredAt,
+            @AtsPurchaseOrderSubCategoriesOrNullConverter()
+            AtsPurchaseOrderSubCategories? deliverCategory,
+            @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+            AtsPurchaseOrderCategoriesEntity? category,
+            AtsOperation? operation,
+            @TimestampOrNullConverter() DateTime? eta,
+            @TimestampOrNullConverter() DateTime? etaUpdatedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseOrder():
+        return $default(
+            _that.id,
+            _that.ownerId,
+            _that.orderId,
+            _that.assetId,
+            _that.sellerAssetId,
+            _that.transportAssetId,
+            _that.purchasedAt,
+            _that.receivedAt,
+            _that.asset,
+            _that.sellerInformation,
+            _that.receiverInformation,
+            _that.productsInformation,
+            _that.total,
+            _that.isReceived,
+            _that.hasReception,
+            _that.transportInformation,
+            _that.hasRawXml,
+            _that.invoiceType,
+            _that.parentInvoice,
+            _that.ideInformation,
+            _that.receptionAt,
+            _that.action,
+            _that.transportAsset,
+            _that.sellerAsset,
+            _that.orderStatus,
+            _that.inTransitAt,
+            _that.waitingToDispatchAt,
+            _that.deliveredAt,
+            _that.deliverCategory,
+            _that.category,
+            _that.operation,
+            _that.eta,
+            _that.etaUpdatedAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? ownerId,
+            String? orderId,
+            String? assetId,
+            String? sellerAssetId,
+            String? transportAssetId,
+            @TimestampOrNullConverter() DateTime? purchasedAt,
+            @TimestampOrNullConverter() DateTime? receivedAt,
+            Asset? asset,
+            AtsCompanyInformation? sellerInformation,
+            AtsCompanyInformation? receiverInformation,
+            List<AtsProductInformation>? productsInformation,
+            AtsPurchaseTotal? total,
+            bool? isReceived,
+            bool? hasReception,
+            AtsTransportInformation? transportInformation,
+            bool? hasRawXml,
+            String? invoiceType,
+            AtsPurchaseOrder? parentInvoice,
+            AtsIdeInformation? ideInformation,
+            @TimestampOrNullConverter() DateTime? receptionAt,
+            @PurchaseOrderOperationOrNullConverter()
+            PurchaseOrderOperation? action,
+            Asset? transportAsset,
+            Asset? sellerAsset,
+            @AtsPurchaseOrderStatusOrNullConverter()
+            AtsPurchaseOrderStatus? orderStatus,
+            @TimestampOrNullConverter() DateTime? inTransitAt,
+            @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+            @TimestampOrNullConverter() DateTime? deliveredAt,
+            @AtsPurchaseOrderSubCategoriesOrNullConverter()
+            AtsPurchaseOrderSubCategories? deliverCategory,
+            @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+            AtsPurchaseOrderCategoriesEntity? category,
+            AtsOperation? operation,
+            @TimestampOrNullConverter() DateTime? eta,
+            @TimestampOrNullConverter() DateTime? etaUpdatedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseOrder() when $default != null:
+        return $default(
+            _that.id,
+            _that.ownerId,
+            _that.orderId,
+            _that.assetId,
+            _that.sellerAssetId,
+            _that.transportAssetId,
+            _that.purchasedAt,
+            _that.receivedAt,
+            _that.asset,
+            _that.sellerInformation,
+            _that.receiverInformation,
+            _that.productsInformation,
+            _that.total,
+            _that.isReceived,
+            _that.hasReception,
+            _that.transportInformation,
+            _that.hasRawXml,
+            _that.invoiceType,
+            _that.parentInvoice,
+            _that.ideInformation,
+            _that.receptionAt,
+            _that.action,
+            _that.transportAsset,
+            _that.sellerAsset,
+            _that.orderStatus,
+            _that.inTransitAt,
+            _that.waitingToDispatchAt,
+            _that.deliveredAt,
+            _that.deliverCategory,
+            _that.category,
+            _that.operation,
+            _that.eta,
+            _that.etaUpdatedAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsPurchaseOrder implements AtsPurchaseOrder {
@@ -5439,7 +9134,8 @@ class _AtsPurchaseOrder implements AtsPurchaseOrder {
       @TimestampOrNullConverter() this.eta,
       @TimestampOrNullConverter() this.etaUpdatedAt})
       : _productsInformation = productsInformation;
-  factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) => _$AtsPurchaseOrderFromJson(json);
+  factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) =>
+      _$AtsPurchaseOrderFromJson(json);
 
   /// ID of the [Asset] entity. This ID is unique.
   @override
@@ -5495,7 +9191,8 @@ class _AtsPurchaseOrder implements AtsPurchaseOrder {
   List<AtsProductInformation>? get productsInformation {
     final value = _productsInformation;
     if (value == null) return null;
-    if (_productsInformation is EqualUnmodifiableListView) return _productsInformation;
+    if (_productsInformation is EqualUnmodifiableListView)
+      return _productsInformation;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -5618,38 +9315,60 @@ class _AtsPurchaseOrder implements AtsPurchaseOrder {
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId) &&
-            (identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId) &&
-            (identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt) &&
-            (identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt) &&
+            (identical(other.sellerAssetId, sellerAssetId) ||
+                other.sellerAssetId == sellerAssetId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.purchasedAt, purchasedAt) ||
+                other.purchasedAt == purchasedAt) &&
+            (identical(other.receivedAt, receivedAt) ||
+                other.receivedAt == receivedAt) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation) &&
+            (identical(other.sellerInformation, sellerInformation) ||
+                other.sellerInformation == sellerInformation) &&
             (identical(other.receiverInformation, receiverInformation) ||
                 other.receiverInformation == receiverInformation) &&
-            const DeepCollectionEquality().equals(other._productsInformation, _productsInformation) &&
+            const DeepCollectionEquality()
+                .equals(other._productsInformation, _productsInformation) &&
             (identical(other.total, total) || other.total == total) &&
-            (identical(other.isReceived, isReceived) || other.isReceived == isReceived) &&
-            (identical(other.hasReception, hasReception) || other.hasReception == hasReception) &&
+            (identical(other.isReceived, isReceived) ||
+                other.isReceived == isReceived) &&
+            (identical(other.hasReception, hasReception) ||
+                other.hasReception == hasReception) &&
             (identical(other.transportInformation, transportInformation) ||
                 other.transportInformation == transportInformation) &&
-            (identical(other.hasRawXml, hasRawXml) || other.hasRawXml == hasRawXml) &&
-            (identical(other.invoiceType, invoiceType) || other.invoiceType == invoiceType) &&
-            (identical(other.parentInvoice, parentInvoice) || other.parentInvoice == parentInvoice) &&
-            (identical(other.ideInformation, ideInformation) || other.ideInformation == ideInformation) &&
-            (identical(other.receptionAt, receptionAt) || other.receptionAt == receptionAt) &&
+            (identical(other.hasRawXml, hasRawXml) ||
+                other.hasRawXml == hasRawXml) &&
+            (identical(other.invoiceType, invoiceType) ||
+                other.invoiceType == invoiceType) &&
+            (identical(other.parentInvoice, parentInvoice) ||
+                other.parentInvoice == parentInvoice) &&
+            (identical(other.ideInformation, ideInformation) ||
+                other.ideInformation == ideInformation) &&
+            (identical(other.receptionAt, receptionAt) ||
+                other.receptionAt == receptionAt) &&
             (identical(other.action, action) || other.action == action) &&
-            (identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset) &&
-            (identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset) &&
-            (identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus) &&
-            (identical(other.inTransitAt, inTransitAt) || other.inTransitAt == inTransitAt) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.sellerAsset, sellerAsset) ||
+                other.sellerAsset == sellerAsset) &&
+            (identical(other.orderStatus, orderStatus) ||
+                other.orderStatus == orderStatus) &&
+            (identical(other.inTransitAt, inTransitAt) ||
+                other.inTransitAt == inTransitAt) &&
             (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
                 other.waitingToDispatchAt == waitingToDispatchAt) &&
-            (identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt) &&
-            (identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory) &&
-            (identical(other.category, category) || other.category == category) &&
-            (identical(other.operation, operation) || other.operation == operation) &&
+            (identical(other.deliveredAt, deliveredAt) ||
+                other.deliveredAt == deliveredAt) &&
+            (identical(other.deliverCategory, deliverCategory) ||
+                other.deliverCategory == deliverCategory) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
             (identical(other.eta, eta) || other.eta == eta) &&
-            (identical(other.etaUpdatedAt, etaUpdatedAt) || other.etaUpdatedAt == etaUpdatedAt));
+            (identical(other.etaUpdatedAt, etaUpdatedAt) ||
+                other.etaUpdatedAt == etaUpdatedAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -5698,8 +9417,10 @@ class _AtsPurchaseOrder implements AtsPurchaseOrder {
 }
 
 /// @nodoc
-abstract mixin class _$AtsPurchaseOrderCopyWith<$Res> implements $AtsPurchaseOrderCopyWith<$Res> {
-  factory _$AtsPurchaseOrderCopyWith(_AtsPurchaseOrder value, $Res Function(_AtsPurchaseOrder) _then) =
+abstract mixin class _$AtsPurchaseOrderCopyWith<$Res>
+    implements $AtsPurchaseOrderCopyWith<$Res> {
+  factory _$AtsPurchaseOrderCopyWith(
+          _AtsPurchaseOrder value, $Res Function(_AtsPurchaseOrder) _then) =
       __$AtsPurchaseOrderCopyWithImpl;
   @override
   @useResult
@@ -5728,12 +9449,15 @@ abstract mixin class _$AtsPurchaseOrderCopyWith<$Res> implements $AtsPurchaseOrd
       @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? action,
       Asset? transportAsset,
       Asset? sellerAsset,
-      @AtsPurchaseOrderStatusOrNullConverter() AtsPurchaseOrderStatus? orderStatus,
+      @AtsPurchaseOrderStatusOrNullConverter()
+      AtsPurchaseOrderStatus? orderStatus,
       @TimestampOrNullConverter() DateTime? inTransitAt,
       @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
       @TimestampOrNullConverter() DateTime? deliveredAt,
-      @AtsPurchaseOrderSubCategoriesOrNullConverter() AtsPurchaseOrderSubCategories? deliverCategory,
-      @AtsPurchaseOrderCategoriesEntityOrNullConverter() AtsPurchaseOrderCategoriesEntity? category,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      AtsPurchaseOrderSubCategories? deliverCategory,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      AtsPurchaseOrderCategoriesEntity? category,
       AtsOperation? operation,
       @TimestampOrNullConverter() DateTime? eta,
       @TimestampOrNullConverter() DateTime? etaUpdatedAt});
@@ -5761,7 +9485,8 @@ abstract mixin class _$AtsPurchaseOrderCopyWith<$Res> implements $AtsPurchaseOrd
 }
 
 /// @nodoc
-class __$AtsPurchaseOrderCopyWithImpl<$Res> implements _$AtsPurchaseOrderCopyWith<$Res> {
+class __$AtsPurchaseOrderCopyWithImpl<$Res>
+    implements _$AtsPurchaseOrderCopyWith<$Res> {
   __$AtsPurchaseOrderCopyWithImpl(this._self, this._then);
 
   final _AtsPurchaseOrder _self;
@@ -5965,7 +9690,8 @@ class __$AtsPurchaseOrderCopyWithImpl<$Res> implements _$AtsPurchaseOrderCopyWit
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!, (value) {
+    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!,
+        (value) {
       return _then(_self.copyWith(sellerInformation: value));
     });
   }
@@ -5979,7 +9705,8 @@ class __$AtsPurchaseOrderCopyWithImpl<$Res> implements _$AtsPurchaseOrderCopyWit
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_self.receiverInformation!, (value) {
+    return $AtsCompanyInformationCopyWith<$Res>(_self.receiverInformation!,
+        (value) {
       return _then(_self.copyWith(receiverInformation: value));
     });
   }
@@ -6007,7 +9734,8 @@ class __$AtsPurchaseOrderCopyWithImpl<$Res> implements _$AtsPurchaseOrderCopyWit
       return null;
     }
 
-    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!, (value) {
+    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!,
+        (value) {
       return _then(_self.copyWith(transportInformation: value));
     });
   }
@@ -6120,7 +9848,8 @@ mixin _$AtsPurchaseTotal {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsPurchaseTotalCopyWith<AtsPurchaseTotal> get copyWith =>
-      _$AtsPurchaseTotalCopyWithImpl<AtsPurchaseTotal>(this as AtsPurchaseTotal, _$identity);
+      _$AtsPurchaseTotalCopyWithImpl<AtsPurchaseTotal>(
+          this as AtsPurchaseTotal, _$identity);
 
   /// Serializes this AtsPurchaseTotal to a JSON map.
   Map<String, dynamic> toJson();
@@ -6130,24 +9859,41 @@ mixin _$AtsPurchaseTotal {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AtsPurchaseTotal &&
-            (identical(other.subtotal, subtotal) || other.subtotal == subtotal) &&
-            (identical(other.discountValue, discountValue) || other.discountValue == discountValue) &&
+            (identical(other.subtotal, subtotal) ||
+                other.subtotal == subtotal) &&
+            (identical(other.discountValue, discountValue) ||
+                other.discountValue == discountValue) &&
             (identical(other.total, total) || other.total == total) &&
-            (identical(other.totalLoad, totalLoad) || other.totalLoad == totalLoad) &&
+            (identical(other.totalLoad, totalLoad) ||
+                other.totalLoad == totalLoad) &&
             (identical(other.predominantProduct, predominantProduct) ||
                 other.predominantProduct == predominantProduct) &&
-            (identical(other.totalFreight, totalFreight) || other.totalFreight == totalFreight) &&
-            (identical(other.totalReceived, totalReceived) || other.totalReceived == totalReceived) &&
-            (identical(other.loadQuantity, loadQuantity) || other.loadQuantity == loadQuantity) &&
+            (identical(other.totalFreight, totalFreight) ||
+                other.totalFreight == totalFreight) &&
+            (identical(other.totalReceived, totalReceived) ||
+                other.totalReceived == totalReceived) &&
+            (identical(other.loadQuantity, loadQuantity) ||
+                other.loadQuantity == loadQuantity) &&
             (identical(other.loadQuantityMeasure, loadQuantityMeasure) ||
                 other.loadQuantityMeasure == loadQuantityMeasure) &&
-            (identical(other.freightWeight, freightWeight) || other.freightWeight == freightWeight));
+            (identical(other.freightWeight, freightWeight) ||
+                other.freightWeight == freightWeight));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, subtotal, discountValue, total, totalLoad, predominantProduct,
-      totalFreight, totalReceived, loadQuantity, loadQuantityMeasure, freightWeight);
+  int get hashCode => Object.hash(
+      runtimeType,
+      subtotal,
+      discountValue,
+      total,
+      totalLoad,
+      predominantProduct,
+      totalFreight,
+      totalReceived,
+      loadQuantity,
+      loadQuantityMeasure,
+      freightWeight);
 
   @override
   String toString() {
@@ -6157,7 +9903,8 @@ mixin _$AtsPurchaseTotal {
 
 /// @nodoc
 abstract mixin class $AtsPurchaseTotalCopyWith<$Res> {
-  factory $AtsPurchaseTotalCopyWith(AtsPurchaseTotal value, $Res Function(AtsPurchaseTotal) _then) =
+  factory $AtsPurchaseTotalCopyWith(
+          AtsPurchaseTotal value, $Res Function(AtsPurchaseTotal) _then) =
       _$AtsPurchaseTotalCopyWithImpl;
   @useResult
   $Res call(
@@ -6174,7 +9921,8 @@ abstract mixin class $AtsPurchaseTotalCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsPurchaseTotalCopyWithImpl<$Res> implements $AtsPurchaseTotalCopyWith<$Res> {
+class _$AtsPurchaseTotalCopyWithImpl<$Res>
+    implements $AtsPurchaseTotalCopyWith<$Res> {
   _$AtsPurchaseTotalCopyWithImpl(this._self, this._then);
 
   final AtsPurchaseTotal _self;
@@ -6241,6 +9989,226 @@ class _$AtsPurchaseTotalCopyWithImpl<$Res> implements $AtsPurchaseTotalCopyWith<
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsPurchaseTotal].
+extension AtsPurchaseTotalPatterns on AtsPurchaseTotal {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsPurchaseTotal value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseTotal() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsPurchaseTotal value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseTotal():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsPurchaseTotal value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseTotal() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double? subtotal,
+            double? discountValue,
+            double? total,
+            double? totalLoad,
+            String? predominantProduct,
+            double? totalFreight,
+            double? totalReceived,
+            double? loadQuantity,
+            String? loadQuantityMeasure,
+            double? freightWeight)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseTotal() when $default != null:
+        return $default(
+            _that.subtotal,
+            _that.discountValue,
+            _that.total,
+            _that.totalLoad,
+            _that.predominantProduct,
+            _that.totalFreight,
+            _that.totalReceived,
+            _that.loadQuantity,
+            _that.loadQuantityMeasure,
+            _that.freightWeight);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double? subtotal,
+            double? discountValue,
+            double? total,
+            double? totalLoad,
+            String? predominantProduct,
+            double? totalFreight,
+            double? totalReceived,
+            double? loadQuantity,
+            String? loadQuantityMeasure,
+            double? freightWeight)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseTotal():
+        return $default(
+            _that.subtotal,
+            _that.discountValue,
+            _that.total,
+            _that.totalLoad,
+            _that.predominantProduct,
+            _that.totalFreight,
+            _that.totalReceived,
+            _that.loadQuantity,
+            _that.loadQuantityMeasure,
+            _that.freightWeight);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double? subtotal,
+            double? discountValue,
+            double? total,
+            double? totalLoad,
+            String? predominantProduct,
+            double? totalFreight,
+            double? totalReceived,
+            double? loadQuantity,
+            String? loadQuantityMeasure,
+            double? freightWeight)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPurchaseTotal() when $default != null:
+        return $default(
+            _that.subtotal,
+            _that.discountValue,
+            _that.total,
+            _that.totalLoad,
+            _that.predominantProduct,
+            _that.totalFreight,
+            _that.totalReceived,
+            _that.loadQuantity,
+            _that.loadQuantityMeasure,
+            _that.freightWeight);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsPurchaseTotal implements AtsPurchaseTotal {
@@ -6255,7 +10223,8 @@ class _AtsPurchaseTotal implements AtsPurchaseTotal {
       this.loadQuantity,
       this.loadQuantityMeasure,
       this.freightWeight});
-  factory _AtsPurchaseTotal.fromJson(Map<String, dynamic> json) => _$AtsPurchaseTotalFromJson(json);
+  factory _AtsPurchaseTotal.fromJson(Map<String, dynamic> json) =>
+      _$AtsPurchaseTotalFromJson(json);
 
   /// Subtotal of the product.
   @override
@@ -6317,24 +10286,41 @@ class _AtsPurchaseTotal implements AtsPurchaseTotal {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AtsPurchaseTotal &&
-            (identical(other.subtotal, subtotal) || other.subtotal == subtotal) &&
-            (identical(other.discountValue, discountValue) || other.discountValue == discountValue) &&
+            (identical(other.subtotal, subtotal) ||
+                other.subtotal == subtotal) &&
+            (identical(other.discountValue, discountValue) ||
+                other.discountValue == discountValue) &&
             (identical(other.total, total) || other.total == total) &&
-            (identical(other.totalLoad, totalLoad) || other.totalLoad == totalLoad) &&
+            (identical(other.totalLoad, totalLoad) ||
+                other.totalLoad == totalLoad) &&
             (identical(other.predominantProduct, predominantProduct) ||
                 other.predominantProduct == predominantProduct) &&
-            (identical(other.totalFreight, totalFreight) || other.totalFreight == totalFreight) &&
-            (identical(other.totalReceived, totalReceived) || other.totalReceived == totalReceived) &&
-            (identical(other.loadQuantity, loadQuantity) || other.loadQuantity == loadQuantity) &&
+            (identical(other.totalFreight, totalFreight) ||
+                other.totalFreight == totalFreight) &&
+            (identical(other.totalReceived, totalReceived) ||
+                other.totalReceived == totalReceived) &&
+            (identical(other.loadQuantity, loadQuantity) ||
+                other.loadQuantity == loadQuantity) &&
             (identical(other.loadQuantityMeasure, loadQuantityMeasure) ||
                 other.loadQuantityMeasure == loadQuantityMeasure) &&
-            (identical(other.freightWeight, freightWeight) || other.freightWeight == freightWeight));
+            (identical(other.freightWeight, freightWeight) ||
+                other.freightWeight == freightWeight));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, subtotal, discountValue, total, totalLoad, predominantProduct,
-      totalFreight, totalReceived, loadQuantity, loadQuantityMeasure, freightWeight);
+  int get hashCode => Object.hash(
+      runtimeType,
+      subtotal,
+      discountValue,
+      total,
+      totalLoad,
+      predominantProduct,
+      totalFreight,
+      totalReceived,
+      loadQuantity,
+      loadQuantityMeasure,
+      freightWeight);
 
   @override
   String toString() {
@@ -6343,8 +10329,10 @@ class _AtsPurchaseTotal implements AtsPurchaseTotal {
 }
 
 /// @nodoc
-abstract mixin class _$AtsPurchaseTotalCopyWith<$Res> implements $AtsPurchaseTotalCopyWith<$Res> {
-  factory _$AtsPurchaseTotalCopyWith(_AtsPurchaseTotal value, $Res Function(_AtsPurchaseTotal) _then) =
+abstract mixin class _$AtsPurchaseTotalCopyWith<$Res>
+    implements $AtsPurchaseTotalCopyWith<$Res> {
+  factory _$AtsPurchaseTotalCopyWith(
+          _AtsPurchaseTotal value, $Res Function(_AtsPurchaseTotal) _then) =
       __$AtsPurchaseTotalCopyWithImpl;
   @override
   @useResult
@@ -6362,7 +10350,8 @@ abstract mixin class _$AtsPurchaseTotalCopyWith<$Res> implements $AtsPurchaseTot
 }
 
 /// @nodoc
-class __$AtsPurchaseTotalCopyWithImpl<$Res> implements _$AtsPurchaseTotalCopyWith<$Res> {
+class __$AtsPurchaseTotalCopyWithImpl<$Res>
+    implements _$AtsPurchaseTotalCopyWith<$Res> {
   __$AtsPurchaseTotalCopyWithImpl(this._self, this._then);
 
   final _AtsPurchaseTotal _self;
@@ -6467,7 +10456,8 @@ mixin _$AtsReception {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsReceptionCopyWith<AtsReception> get copyWith =>
-      _$AtsReceptionCopyWithImpl<AtsReception>(this as AtsReception, _$identity);
+      _$AtsReceptionCopyWithImpl<AtsReception>(
+          this as AtsReception, _$identity);
 
   /// Serializes this AtsReception to a JSON map.
   Map<String, dynamic> toJson();
@@ -6479,13 +10469,16 @@ mixin _$AtsReception {
             other is AtsReception &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
-            (identical(other.errorRate, errorRate) || other.errorRate == errorRate) &&
-            (identical(other.receptionStatus, receptionStatus) || other.receptionStatus == receptionStatus) &&
+            (identical(other.errorRate, errorRate) ||
+                other.errorRate == errorRate) &&
+            (identical(other.receptionStatus, receptionStatus) ||
+                other.receptionStatus == receptionStatus) &&
             (identical(other.order, order) || other.order == order) &&
             const DeepCollectionEquality().equals(other.orders, orders) &&
             const DeepCollectionEquality().equals(other.ordersIds, ordersIds) &&
             (identical(other.entry, entry) || other.entry == entry) &&
-            const DeepCollectionEquality().equals(other.loadingParamsForm, loadingParamsForm) &&
+            const DeepCollectionEquality()
+                .equals(other.loadingParamsForm, loadingParamsForm) &&
             const DeepCollectionEquality().equals(other.products, products));
   }
 
@@ -6512,7 +10505,9 @@ mixin _$AtsReception {
 
 /// @nodoc
 abstract mixin class $AtsReceptionCopyWith<$Res> {
-  factory $AtsReceptionCopyWith(AtsReception value, $Res Function(AtsReception) _then) = _$AtsReceptionCopyWithImpl;
+  factory $AtsReceptionCopyWith(
+          AtsReception value, $Res Function(AtsReception) _then) =
+      _$AtsReceptionCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -6626,6 +10621,226 @@ class _$AtsReceptionCopyWithImpl<$Res> implements $AtsReceptionCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsReception].
+extension AtsReceptionPatterns on AtsReception {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsReception value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReception() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsReception value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReception():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsReception value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReception() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            int? orderId,
+            double? errorRate,
+            @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
+            AtsPurchaseOrder? order,
+            List<AtsPurchaseOrder> orders,
+            List<int> ordersIds,
+            AtsEntry? entry,
+            List<AtsLoadingParamsForm> loadingParamsForm,
+            List<AtsReceptionProduct> products)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReception() when $default != null:
+        return $default(
+            _that.id,
+            _that.orderId,
+            _that.errorRate,
+            _that.receptionStatus,
+            _that.order,
+            _that.orders,
+            _that.ordersIds,
+            _that.entry,
+            _that.loadingParamsForm,
+            _that.products);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            int? orderId,
+            double? errorRate,
+            @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
+            AtsPurchaseOrder? order,
+            List<AtsPurchaseOrder> orders,
+            List<int> ordersIds,
+            AtsEntry? entry,
+            List<AtsLoadingParamsForm> loadingParamsForm,
+            List<AtsReceptionProduct> products)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReception():
+        return $default(
+            _that.id,
+            _that.orderId,
+            _that.errorRate,
+            _that.receptionStatus,
+            _that.order,
+            _that.orders,
+            _that.ordersIds,
+            _that.entry,
+            _that.loadingParamsForm,
+            _that.products);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            int? orderId,
+            double? errorRate,
+            @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
+            AtsPurchaseOrder? order,
+            List<AtsPurchaseOrder> orders,
+            List<int> ordersIds,
+            AtsEntry? entry,
+            List<AtsLoadingParamsForm> loadingParamsForm,
+            List<AtsReceptionProduct> products)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsReception() when $default != null:
+        return $default(
+            _that.id,
+            _that.orderId,
+            _that.errorRate,
+            _that.receptionStatus,
+            _that.order,
+            _that.orders,
+            _that.ordersIds,
+            _that.entry,
+            _that.loadingParamsForm,
+            _that.products);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsReception implements AtsReception {
@@ -6644,7 +10859,8 @@ class _AtsReception implements AtsReception {
         _ordersIds = ordersIds,
         _loadingParamsForm = loadingParamsForm,
         _products = products;
-  factory _AtsReception.fromJson(Map<String, dynamic> json) => _$AtsReceptionFromJson(json);
+  factory _AtsReception.fromJson(Map<String, dynamic> json) =>
+      _$AtsReceptionFromJson(json);
 
   ///  ID of the [AtsReception]. This ID is unique.
   @override
@@ -6702,7 +10918,8 @@ class _AtsReception implements AtsReception {
   @override
   @JsonKey()
   List<AtsLoadingParamsForm> get loadingParamsForm {
-    if (_loadingParamsForm is EqualUnmodifiableListView) return _loadingParamsForm;
+    if (_loadingParamsForm is EqualUnmodifiableListView)
+      return _loadingParamsForm;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_loadingParamsForm);
   }
@@ -6724,7 +10941,8 @@ class _AtsReception implements AtsReception {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsReceptionCopyWith<_AtsReception> get copyWith => __$AtsReceptionCopyWithImpl<_AtsReception>(this, _$identity);
+  _$AtsReceptionCopyWith<_AtsReception> get copyWith =>
+      __$AtsReceptionCopyWithImpl<_AtsReception>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -6740,13 +10958,17 @@ class _AtsReception implements AtsReception {
             other is _AtsReception &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
-            (identical(other.errorRate, errorRate) || other.errorRate == errorRate) &&
-            (identical(other.receptionStatus, receptionStatus) || other.receptionStatus == receptionStatus) &&
+            (identical(other.errorRate, errorRate) ||
+                other.errorRate == errorRate) &&
+            (identical(other.receptionStatus, receptionStatus) ||
+                other.receptionStatus == receptionStatus) &&
             (identical(other.order, order) || other.order == order) &&
             const DeepCollectionEquality().equals(other._orders, _orders) &&
-            const DeepCollectionEquality().equals(other._ordersIds, _ordersIds) &&
+            const DeepCollectionEquality()
+                .equals(other._ordersIds, _ordersIds) &&
             (identical(other.entry, entry) || other.entry == entry) &&
-            const DeepCollectionEquality().equals(other._loadingParamsForm, _loadingParamsForm) &&
+            const DeepCollectionEquality()
+                .equals(other._loadingParamsForm, _loadingParamsForm) &&
             const DeepCollectionEquality().equals(other._products, _products));
   }
 
@@ -6772,8 +10994,11 @@ class _AtsReception implements AtsReception {
 }
 
 /// @nodoc
-abstract mixin class _$AtsReceptionCopyWith<$Res> implements $AtsReceptionCopyWith<$Res> {
-  factory _$AtsReceptionCopyWith(_AtsReception value, $Res Function(_AtsReception) _then) = __$AtsReceptionCopyWithImpl;
+abstract mixin class _$AtsReceptionCopyWith<$Res>
+    implements $AtsReceptionCopyWith<$Res> {
+  factory _$AtsReceptionCopyWith(
+          _AtsReception value, $Res Function(_AtsReception) _then) =
+      __$AtsReceptionCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -6795,7 +11020,8 @@ abstract mixin class _$AtsReceptionCopyWith<$Res> implements $AtsReceptionCopyWi
 }
 
 /// @nodoc
-class __$AtsReceptionCopyWithImpl<$Res> implements _$AtsReceptionCopyWith<$Res> {
+class __$AtsReceptionCopyWithImpl<$Res>
+    implements _$AtsReceptionCopyWith<$Res> {
   __$AtsReceptionCopyWithImpl(this._self, this._then);
 
   final _AtsReception _self;
@@ -6921,7 +11147,8 @@ mixin _$AtsEntryUnloadInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsEntryUnloadInputCopyWith<AtsEntryUnloadInput> get copyWith =>
-      _$AtsEntryUnloadInputCopyWithImpl<AtsEntryUnloadInput>(this as AtsEntryUnloadInput, _$identity);
+      _$AtsEntryUnloadInputCopyWithImpl<AtsEntryUnloadInput>(
+          this as AtsEntryUnloadInput, _$identity);
 
   /// Serializes this AtsEntryUnloadInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -6934,14 +11161,20 @@ mixin _$AtsEntryUnloadInput {
 
 /// @nodoc
 abstract mixin class $AtsEntryUnloadInputCopyWith<$Res> {
-  factory $AtsEntryUnloadInputCopyWith(AtsEntryUnloadInput value, $Res Function(AtsEntryUnloadInput) _then) =
+  factory $AtsEntryUnloadInputCopyWith(
+          AtsEntryUnloadInput value, $Res Function(AtsEntryUnloadInput) _then) =
       _$AtsEntryUnloadInputCopyWithImpl;
   @useResult
-  $Res call({String? id, String? fromAssetId, String? receptionId, bool? isBluetooth});
+  $Res call(
+      {String? id,
+      String? fromAssetId,
+      String? receptionId,
+      bool? isBluetooth});
 }
 
 /// @nodoc
-class _$AtsEntryUnloadInputCopyWithImpl<$Res> implements $AtsEntryUnloadInputCopyWith<$Res> {
+class _$AtsEntryUnloadInputCopyWithImpl<$Res>
+    implements $AtsEntryUnloadInputCopyWith<$Res> {
   _$AtsEntryUnloadInputCopyWithImpl(this._self, this._then);
 
   final AtsEntryUnloadInput _self;
@@ -6978,11 +11211,179 @@ class _$AtsEntryUnloadInputCopyWithImpl<$Res> implements $AtsEntryUnloadInputCop
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsEntryUnloadInput].
+extension AtsEntryUnloadInputPatterns on AtsEntryUnloadInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsEntryUnloadInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryUnloadInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsEntryUnloadInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryUnloadInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsEntryUnloadInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryUnloadInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? id, String? fromAssetId, String? receptionId,
+            bool? isBluetooth)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryUnloadInput() when $default != null:
+        return $default(
+            _that.id, _that.fromAssetId, _that.receptionId, _that.isBluetooth);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? id, String? fromAssetId, String? receptionId,
+            bool? isBluetooth)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryUnloadInput():
+        return $default(
+            _that.id, _that.fromAssetId, _that.receptionId, _that.isBluetooth);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? id, String? fromAssetId, String? receptionId,
+            bool? isBluetooth)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryUnloadInput() when $default != null:
+        return $default(
+            _that.id, _that.fromAssetId, _that.receptionId, _that.isBluetooth);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsEntryUnloadInput implements AtsEntryUnloadInput {
-  _AtsEntryUnloadInput({this.id, this.fromAssetId, this.receptionId, this.isBluetooth});
-  factory _AtsEntryUnloadInput.fromJson(Map<String, dynamic> json) => _$AtsEntryUnloadInputFromJson(json);
+  _AtsEntryUnloadInput(
+      {this.id, this.fromAssetId, this.receptionId, this.isBluetooth});
+  factory _AtsEntryUnloadInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsEntryUnloadInputFromJson(json);
 
   /// `id` of the [AtsEntry] entity. This ID is unique.
   @override
@@ -7006,7 +11407,8 @@ class _AtsEntryUnloadInput implements AtsEntryUnloadInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsEntryUnloadInputCopyWith<_AtsEntryUnloadInput> get copyWith =>
-      __$AtsEntryUnloadInputCopyWithImpl<_AtsEntryUnloadInput>(this, _$identity);
+      __$AtsEntryUnloadInputCopyWithImpl<_AtsEntryUnloadInput>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -7022,16 +11424,23 @@ class _AtsEntryUnloadInput implements AtsEntryUnloadInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsEntryUnloadInputCopyWith<$Res> implements $AtsEntryUnloadInputCopyWith<$Res> {
-  factory _$AtsEntryUnloadInputCopyWith(_AtsEntryUnloadInput value, $Res Function(_AtsEntryUnloadInput) _then) =
+abstract mixin class _$AtsEntryUnloadInputCopyWith<$Res>
+    implements $AtsEntryUnloadInputCopyWith<$Res> {
+  factory _$AtsEntryUnloadInputCopyWith(_AtsEntryUnloadInput value,
+          $Res Function(_AtsEntryUnloadInput) _then) =
       __$AtsEntryUnloadInputCopyWithImpl;
   @override
   @useResult
-  $Res call({String? id, String? fromAssetId, String? receptionId, bool? isBluetooth});
+  $Res call(
+      {String? id,
+      String? fromAssetId,
+      String? receptionId,
+      bool? isBluetooth});
 }
 
 /// @nodoc
-class __$AtsEntryUnloadInputCopyWithImpl<$Res> implements _$AtsEntryUnloadInputCopyWith<$Res> {
+class __$AtsEntryUnloadInputCopyWithImpl<$Res>
+    implements _$AtsEntryUnloadInputCopyWith<$Res> {
   __$AtsEntryUnloadInputCopyWithImpl(this._self, this._then);
 
   final _AtsEntryUnloadInput _self;
@@ -7088,7 +11497,8 @@ mixin _$AtsIdeInformation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsIdeInformationCopyWith<AtsIdeInformation> get copyWith =>
-      _$AtsIdeInformationCopyWithImpl<AtsIdeInformation>(this as AtsIdeInformation, _$identity);
+      _$AtsIdeInformationCopyWithImpl<AtsIdeInformation>(
+          this as AtsIdeInformation, _$identity);
 
   /// Serializes this AtsIdeInformation to a JSON map.
   Map<String, dynamic> toJson();
@@ -7102,12 +11512,14 @@ mixin _$AtsIdeInformation {
             (identical(other.serie, serie) || other.serie == serie) &&
             (identical(other.model, model) || other.model == model) &&
             (identical(other.cfop, cfop) || other.cfop == cfop) &&
-            (identical(other.operationType, operationType) || other.operationType == operationType));
+            (identical(other.operationType, operationType) ||
+                other.operationType == operationType));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, ideType, serie, model, cfop, operationType);
+  int get hashCode =>
+      Object.hash(runtimeType, ideType, serie, model, cfop, operationType);
 
   @override
   String toString() {
@@ -7117,14 +11529,21 @@ mixin _$AtsIdeInformation {
 
 /// @nodoc
 abstract mixin class $AtsIdeInformationCopyWith<$Res> {
-  factory $AtsIdeInformationCopyWith(AtsIdeInformation value, $Res Function(AtsIdeInformation) _then) =
+  factory $AtsIdeInformationCopyWith(
+          AtsIdeInformation value, $Res Function(AtsIdeInformation) _then) =
       _$AtsIdeInformationCopyWithImpl;
   @useResult
-  $Res call({String? ideType, String? serie, String? model, String? cfop, String? operationType});
+  $Res call(
+      {String? ideType,
+      String? serie,
+      String? model,
+      String? cfop,
+      String? operationType});
 }
 
 /// @nodoc
-class _$AtsIdeInformationCopyWithImpl<$Res> implements $AtsIdeInformationCopyWith<$Res> {
+class _$AtsIdeInformationCopyWithImpl<$Res>
+    implements $AtsIdeInformationCopyWith<$Res> {
   _$AtsIdeInformationCopyWithImpl(this._self, this._then);
 
   final AtsIdeInformation _self;
@@ -7166,11 +11585,179 @@ class _$AtsIdeInformationCopyWithImpl<$Res> implements $AtsIdeInformationCopyWit
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsIdeInformation].
+extension AtsIdeInformationPatterns on AtsIdeInformation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsIdeInformation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsIdeInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsIdeInformation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsIdeInformation():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsIdeInformation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsIdeInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? ideType, String? serie, String? model,
+            String? cfop, String? operationType)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsIdeInformation() when $default != null:
+        return $default(_that.ideType, _that.serie, _that.model, _that.cfop,
+            _that.operationType);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? ideType, String? serie, String? model,
+            String? cfop, String? operationType)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsIdeInformation():
+        return $default(_that.ideType, _that.serie, _that.model, _that.cfop,
+            _that.operationType);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? ideType, String? serie, String? model,
+            String? cfop, String? operationType)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsIdeInformation() when $default != null:
+        return $default(_that.ideType, _that.serie, _that.model, _that.cfop,
+            _that.operationType);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsIdeInformation implements AtsIdeInformation {
-  _AtsIdeInformation({this.ideType, this.serie, this.model, this.cfop, this.operationType});
-  factory _AtsIdeInformation.fromJson(Map<String, dynamic> json) => _$AtsIdeInformationFromJson(json);
+  _AtsIdeInformation(
+      {this.ideType, this.serie, this.model, this.cfop, this.operationType});
+  factory _AtsIdeInformation.fromJson(Map<String, dynamic> json) =>
+      _$AtsIdeInformationFromJson(json);
 
   /// Ide type
   @override
@@ -7214,12 +11801,14 @@ class _AtsIdeInformation implements AtsIdeInformation {
             (identical(other.serie, serie) || other.serie == serie) &&
             (identical(other.model, model) || other.model == model) &&
             (identical(other.cfop, cfop) || other.cfop == cfop) &&
-            (identical(other.operationType, operationType) || other.operationType == operationType));
+            (identical(other.operationType, operationType) ||
+                other.operationType == operationType));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, ideType, serie, model, cfop, operationType);
+  int get hashCode =>
+      Object.hash(runtimeType, ideType, serie, model, cfop, operationType);
 
   @override
   String toString() {
@@ -7228,16 +11817,24 @@ class _AtsIdeInformation implements AtsIdeInformation {
 }
 
 /// @nodoc
-abstract mixin class _$AtsIdeInformationCopyWith<$Res> implements $AtsIdeInformationCopyWith<$Res> {
-  factory _$AtsIdeInformationCopyWith(_AtsIdeInformation value, $Res Function(_AtsIdeInformation) _then) =
+abstract mixin class _$AtsIdeInformationCopyWith<$Res>
+    implements $AtsIdeInformationCopyWith<$Res> {
+  factory _$AtsIdeInformationCopyWith(
+          _AtsIdeInformation value, $Res Function(_AtsIdeInformation) _then) =
       __$AtsIdeInformationCopyWithImpl;
   @override
   @useResult
-  $Res call({String? ideType, String? serie, String? model, String? cfop, String? operationType});
+  $Res call(
+      {String? ideType,
+      String? serie,
+      String? model,
+      String? cfop,
+      String? operationType});
 }
 
 /// @nodoc
-class __$AtsIdeInformationCopyWithImpl<$Res> implements _$AtsIdeInformationCopyWith<$Res> {
+class __$AtsIdeInformationCopyWithImpl<$Res>
+    implements _$AtsIdeInformationCopyWith<$Res> {
   __$AtsIdeInformationCopyWithImpl(this._self, this._then);
 
   final _AtsIdeInformation _self;
@@ -7297,8 +11894,9 @@ mixin _$OperationProductInformation {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $OperationProductInformationCopyWith<OperationProductInformation> get copyWith =>
-      _$OperationProductInformationCopyWithImpl<OperationProductInformation>(
+  $OperationProductInformationCopyWith<OperationProductInformation>
+      get copyWith => _$OperationProductInformationCopyWithImpl<
+              OperationProductInformation>(
           this as OperationProductInformation, _$identity);
 
   /// Serializes this OperationProductInformation to a JSON map.
@@ -7309,15 +11907,20 @@ mixin _$OperationProductInformation {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is OperationProductInformation &&
-            (identical(other.category, category) || other.category == category) &&
-            (identical(other.quantity, quantity) || other.quantity == quantity) &&
-            (identical(other.subcategory, subcategory) || other.subcategory == subcategory) &&
-            (identical(other.fuelType, fuelType) || other.fuelType == fuelType));
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.subcategory, subcategory) ||
+                other.subcategory == subcategory) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, category, quantity, subcategory, fuelType);
+  int get hashCode =>
+      Object.hash(runtimeType, category, quantity, subcategory, fuelType);
 
   @override
   String toString() {
@@ -7328,14 +11931,20 @@ mixin _$OperationProductInformation {
 /// @nodoc
 abstract mixin class $OperationProductInformationCopyWith<$Res> {
   factory $OperationProductInformationCopyWith(
-          OperationProductInformation value, $Res Function(OperationProductInformation) _then) =
+          OperationProductInformation value,
+          $Res Function(OperationProductInformation) _then) =
       _$OperationProductInformationCopyWithImpl;
   @useResult
-  $Res call({String? category, double? quantity, String? subcategory, String? fuelType});
+  $Res call(
+      {String? category,
+      double? quantity,
+      String? subcategory,
+      String? fuelType});
 }
 
 /// @nodoc
-class _$OperationProductInformationCopyWithImpl<$Res> implements $OperationProductInformationCopyWith<$Res> {
+class _$OperationProductInformationCopyWithImpl<$Res>
+    implements $OperationProductInformationCopyWith<$Res> {
   _$OperationProductInformationCopyWithImpl(this._self, this._then);
 
   final OperationProductInformation _self;
@@ -7372,10 +11981,177 @@ class _$OperationProductInformationCopyWithImpl<$Res> implements $OperationProdu
   }
 }
 
+/// Adds pattern-matching-related methods to [OperationProductInformation].
+extension OperationProductInformationPatterns on OperationProductInformation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_OperationProductInformation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _OperationProductInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_OperationProductInformation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _OperationProductInformation():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_OperationProductInformation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _OperationProductInformation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? category, double? quantity, String? subcategory,
+            String? fuelType)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _OperationProductInformation() when $default != null:
+        return $default(
+            _that.category, _that.quantity, _that.subcategory, _that.fuelType);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? category, double? quantity, String? subcategory,
+            String? fuelType)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _OperationProductInformation():
+        return $default(
+            _that.category, _that.quantity, _that.subcategory, _that.fuelType);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? category, double? quantity, String? subcategory,
+            String? fuelType)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _OperationProductInformation() when $default != null:
+        return $default(
+            _that.category, _that.quantity, _that.subcategory, _that.fuelType);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _OperationProductInformation implements OperationProductInformation {
-  _OperationProductInformation({this.category, this.quantity, this.subcategory, this.fuelType});
+  _OperationProductInformation(
+      {this.category, this.quantity, this.subcategory, this.fuelType});
   factory _OperationProductInformation.fromJson(Map<String, dynamic> json) =>
       _$OperationProductInformationFromJson(json);
 
@@ -7400,8 +12176,9 @@ class _OperationProductInformation implements OperationProductInformation {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$OperationProductInformationCopyWith<_OperationProductInformation> get copyWith =>
-      __$OperationProductInformationCopyWithImpl<_OperationProductInformation>(this, _$identity);
+  _$OperationProductInformationCopyWith<_OperationProductInformation>
+      get copyWith => __$OperationProductInformationCopyWithImpl<
+          _OperationProductInformation>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -7415,15 +12192,20 @@ class _OperationProductInformation implements OperationProductInformation {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _OperationProductInformation &&
-            (identical(other.category, category) || other.category == category) &&
-            (identical(other.quantity, quantity) || other.quantity == quantity) &&
-            (identical(other.subcategory, subcategory) || other.subcategory == subcategory) &&
-            (identical(other.fuelType, fuelType) || other.fuelType == fuelType));
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.subcategory, subcategory) ||
+                other.subcategory == subcategory) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, category, quantity, subcategory, fuelType);
+  int get hashCode =>
+      Object.hash(runtimeType, category, quantity, subcategory, fuelType);
 
   @override
   String toString() {
@@ -7432,17 +12214,24 @@ class _OperationProductInformation implements OperationProductInformation {
 }
 
 /// @nodoc
-abstract mixin class _$OperationProductInformationCopyWith<$Res> implements $OperationProductInformationCopyWith<$Res> {
+abstract mixin class _$OperationProductInformationCopyWith<$Res>
+    implements $OperationProductInformationCopyWith<$Res> {
   factory _$OperationProductInformationCopyWith(
-          _OperationProductInformation value, $Res Function(_OperationProductInformation) _then) =
+          _OperationProductInformation value,
+          $Res Function(_OperationProductInformation) _then) =
       __$OperationProductInformationCopyWithImpl;
   @override
   @useResult
-  $Res call({String? category, double? quantity, String? subcategory, String? fuelType});
+  $Res call(
+      {String? category,
+      double? quantity,
+      String? subcategory,
+      String? fuelType});
 }
 
 /// @nodoc
-class __$OperationProductInformationCopyWithImpl<$Res> implements _$OperationProductInformationCopyWith<$Res> {
+class __$OperationProductInformationCopyWithImpl<$Res>
+    implements _$OperationProductInformationCopyWith<$Res> {
   __$OperationProductInformationCopyWithImpl(this._self, this._then);
 
   final _OperationProductInformation _self;
@@ -7548,7 +12337,8 @@ mixin _$AtsLoadingParamsFormInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsLoadingParamsFormInputCopyWith<AtsLoadingParamsFormInput> get copyWith =>
-      _$AtsLoadingParamsFormInputCopyWithImpl<AtsLoadingParamsFormInput>(this as AtsLoadingParamsFormInput, _$identity);
+      _$AtsLoadingParamsFormInputCopyWithImpl<AtsLoadingParamsFormInput>(
+          this as AtsLoadingParamsFormInput, _$identity);
 
   /// Serializes this AtsLoadingParamsFormInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -7561,8 +12351,8 @@ mixin _$AtsLoadingParamsFormInput {
 
 /// @nodoc
 abstract mixin class $AtsLoadingParamsFormInputCopyWith<$Res> {
-  factory $AtsLoadingParamsFormInputCopyWith(
-          AtsLoadingParamsFormInput value, $Res Function(AtsLoadingParamsFormInput) _then) =
+  factory $AtsLoadingParamsFormInputCopyWith(AtsLoadingParamsFormInput value,
+          $Res Function(AtsLoadingParamsFormInput) _then) =
       _$AtsLoadingParamsFormInputCopyWithImpl;
   @useResult
   $Res call(
@@ -7574,12 +12364,14 @@ abstract mixin class $AtsLoadingParamsFormInputCopyWith<$Res> {
       double? sampleTemperature,
       double? assetTemperature,
       double? analyzedAt,
-      @AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
       String? formNumber});
 }
 
 /// @nodoc
-class _$AtsLoadingParamsFormInputCopyWithImpl<$Res> implements $AtsLoadingParamsFormInputCopyWith<$Res> {
+class _$AtsLoadingParamsFormInputCopyWithImpl<$Res>
+    implements $AtsLoadingParamsFormInputCopyWith<$Res> {
   _$AtsLoadingParamsFormInputCopyWithImpl(this._self, this._then);
 
   final AtsLoadingParamsFormInput _self;
@@ -7646,6 +12438,229 @@ class _$AtsLoadingParamsFormInputCopyWithImpl<$Res> implements $AtsLoadingParams
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsLoadingParamsFormInput].
+extension AtsLoadingParamsFormInputPatterns on AtsLoadingParamsFormInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsLoadingParamsFormInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsFormInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsLoadingParamsFormInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsFormInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsLoadingParamsFormInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsFormInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            String? receptionId,
+            String? driver,
+            double? sampleDensity,
+            double? sampleTemperature,
+            double? assetTemperature,
+            double? analyzedAt,
+            @AtsLoadingParamsSampleOrNullConverter()
+            AtsLoadingParamsSample? sampleType,
+            String? formNumber)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsFormInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.receptionId,
+            _that.driver,
+            _that.sampleDensity,
+            _that.sampleTemperature,
+            _that.assetTemperature,
+            _that.analyzedAt,
+            _that.sampleType,
+            _that.formNumber);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            String? receptionId,
+            String? driver,
+            double? sampleDensity,
+            double? sampleTemperature,
+            double? assetTemperature,
+            double? analyzedAt,
+            @AtsLoadingParamsSampleOrNullConverter()
+            AtsLoadingParamsSample? sampleType,
+            String? formNumber)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsFormInput():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.receptionId,
+            _that.driver,
+            _that.sampleDensity,
+            _that.sampleTemperature,
+            _that.assetTemperature,
+            _that.analyzedAt,
+            _that.sampleType,
+            _that.formNumber);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            String? receptionId,
+            String? driver,
+            double? sampleDensity,
+            double? sampleTemperature,
+            double? assetTemperature,
+            double? analyzedAt,
+            @AtsLoadingParamsSampleOrNullConverter()
+            AtsLoadingParamsSample? sampleType,
+            String? formNumber)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsFormInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.receptionId,
+            _that.driver,
+            _that.sampleDensity,
+            _that.sampleTemperature,
+            _that.assetTemperature,
+            _that.analyzedAt,
+            _that.sampleType,
+            _that.formNumber);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
@@ -7660,7 +12675,8 @@ class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
       this.analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
       this.formNumber});
-  factory _AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormInputFromJson(json);
+  factory _AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsLoadingParamsFormInputFromJson(json);
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
@@ -7708,8 +12724,10 @@ class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsLoadingParamsFormInputCopyWith<_AtsLoadingParamsFormInput> get copyWith =>
-      __$AtsLoadingParamsFormInputCopyWithImpl<_AtsLoadingParamsFormInput>(this, _$identity);
+  _$AtsLoadingParamsFormInputCopyWith<_AtsLoadingParamsFormInput>
+      get copyWith =>
+          __$AtsLoadingParamsFormInputCopyWithImpl<_AtsLoadingParamsFormInput>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -7725,9 +12743,10 @@ class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsLoadingParamsFormInputCopyWith<$Res> implements $AtsLoadingParamsFormInputCopyWith<$Res> {
-  factory _$AtsLoadingParamsFormInputCopyWith(
-          _AtsLoadingParamsFormInput value, $Res Function(_AtsLoadingParamsFormInput) _then) =
+abstract mixin class _$AtsLoadingParamsFormInputCopyWith<$Res>
+    implements $AtsLoadingParamsFormInputCopyWith<$Res> {
+  factory _$AtsLoadingParamsFormInputCopyWith(_AtsLoadingParamsFormInput value,
+          $Res Function(_AtsLoadingParamsFormInput) _then) =
       __$AtsLoadingParamsFormInputCopyWithImpl;
   @override
   @useResult
@@ -7740,12 +12759,14 @@ abstract mixin class _$AtsLoadingParamsFormInputCopyWith<$Res> implements $AtsLo
       double? sampleTemperature,
       double? assetTemperature,
       double? analyzedAt,
-      @AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
       String? formNumber});
 }
 
 /// @nodoc
-class __$AtsLoadingParamsFormInputCopyWithImpl<$Res> implements _$AtsLoadingParamsFormInputCopyWith<$Res> {
+class __$AtsLoadingParamsFormInputCopyWithImpl<$Res>
+    implements _$AtsLoadingParamsFormInputCopyWith<$Res> {
   __$AtsLoadingParamsFormInputCopyWithImpl(this._self, this._then);
 
   final _AtsLoadingParamsFormInput _self;
@@ -7861,7 +12882,8 @@ mixin _$AtsLoadingParamsForm {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsLoadingParamsFormCopyWith<AtsLoadingParamsForm> get copyWith =>
-      _$AtsLoadingParamsFormCopyWithImpl<AtsLoadingParamsForm>(this as AtsLoadingParamsForm, _$identity);
+      _$AtsLoadingParamsFormCopyWithImpl<AtsLoadingParamsForm>(
+          this as AtsLoadingParamsForm, _$identity);
 
   /// Serializes this AtsLoadingParamsForm to a JSON map.
   Map<String, dynamic> toJson();
@@ -7874,22 +12896,44 @@ mixin _$AtsLoadingParamsForm {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.receptionId, receptionId) || other.receptionId == receptionId) &&
-            (identical(other.reception, reception) || other.reception == reception) &&
+            (identical(other.receptionId, receptionId) ||
+                other.receptionId == receptionId) &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
             (identical(other.driver, driver) || other.driver == driver) &&
-            (identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity) &&
-            (identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature) &&
-            (identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature) &&
-            (identical(other.analyzedAt, analyzedAt) || other.analyzedAt == analyzedAt) &&
-            (identical(other.sampleType, sampleType) || other.sampleType == sampleType) &&
-            (identical(other.fuelType, fuelType) || other.fuelType == fuelType) &&
-            (identical(other.formNumber, formNumber) || other.formNumber == formNumber));
+            (identical(other.sampleDensity, sampleDensity) ||
+                other.sampleDensity == sampleDensity) &&
+            (identical(other.sampleTemperature, sampleTemperature) ||
+                other.sampleTemperature == sampleTemperature) &&
+            (identical(other.assetTemperature, assetTemperature) ||
+                other.assetTemperature == assetTemperature) &&
+            (identical(other.analyzedAt, analyzedAt) ||
+                other.analyzedAt == analyzedAt) &&
+            (identical(other.sampleType, sampleType) ||
+                other.sampleType == sampleType) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.formNumber, formNumber) ||
+                other.formNumber == formNumber));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, assetId, asset, receptionId, reception, driver, sampleDensity,
-      sampleTemperature, assetTemperature, analyzedAt, sampleType, fuelType, formNumber);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      receptionId,
+      reception,
+      driver,
+      sampleDensity,
+      sampleTemperature,
+      assetTemperature,
+      analyzedAt,
+      sampleType,
+      fuelType,
+      formNumber);
 
   @override
   String toString() {
@@ -7899,7 +12943,8 @@ mixin _$AtsLoadingParamsForm {
 
 /// @nodoc
 abstract mixin class $AtsLoadingParamsFormCopyWith<$Res> {
-  factory $AtsLoadingParamsFormCopyWith(AtsLoadingParamsForm value, $Res Function(AtsLoadingParamsForm) _then) =
+  factory $AtsLoadingParamsFormCopyWith(AtsLoadingParamsForm value,
+          $Res Function(AtsLoadingParamsForm) _then) =
       _$AtsLoadingParamsFormCopyWithImpl;
   @useResult
   $Res call(
@@ -7913,7 +12958,8 @@ abstract mixin class $AtsLoadingParamsFormCopyWith<$Res> {
       double? sampleTemperature,
       double? assetTemperature,
       @TimestampOrNullConverter() DateTime? analyzedAt,
-      @AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
       @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
       String? formNumber});
 
@@ -7922,7 +12968,8 @@ abstract mixin class $AtsLoadingParamsFormCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsLoadingParamsFormCopyWithImpl<$Res> implements $AtsLoadingParamsFormCopyWith<$Res> {
+class _$AtsLoadingParamsFormCopyWithImpl<$Res>
+    implements $AtsLoadingParamsFormCopyWith<$Res> {
   _$AtsLoadingParamsFormCopyWithImpl(this._self, this._then);
 
   final AtsLoadingParamsForm _self;
@@ -8032,6 +13079,247 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res> implements $AtsLoadingParamsFormC
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsLoadingParamsForm].
+extension AtsLoadingParamsFormPatterns on AtsLoadingParamsForm {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsLoadingParamsForm value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsForm() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsLoadingParamsForm value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsForm():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsLoadingParamsForm value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsForm() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? receptionId,
+            AtsReception? reception,
+            String? driver,
+            double? sampleDensity,
+            double? sampleTemperature,
+            double? assetTemperature,
+            @TimestampOrNullConverter() DateTime? analyzedAt,
+            @AtsLoadingParamsSampleOrNullConverter()
+            AtsLoadingParamsSample? sampleType,
+            @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+            String? formNumber)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsForm() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.receptionId,
+            _that.reception,
+            _that.driver,
+            _that.sampleDensity,
+            _that.sampleTemperature,
+            _that.assetTemperature,
+            _that.analyzedAt,
+            _that.sampleType,
+            _that.fuelType,
+            _that.formNumber);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? receptionId,
+            AtsReception? reception,
+            String? driver,
+            double? sampleDensity,
+            double? sampleTemperature,
+            double? assetTemperature,
+            @TimestampOrNullConverter() DateTime? analyzedAt,
+            @AtsLoadingParamsSampleOrNullConverter()
+            AtsLoadingParamsSample? sampleType,
+            @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+            String? formNumber)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsForm():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.receptionId,
+            _that.reception,
+            _that.driver,
+            _that.sampleDensity,
+            _that.sampleTemperature,
+            _that.assetTemperature,
+            _that.analyzedAt,
+            _that.sampleType,
+            _that.fuelType,
+            _that.formNumber);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? receptionId,
+            AtsReception? reception,
+            String? driver,
+            double? sampleDensity,
+            double? sampleTemperature,
+            double? assetTemperature,
+            @TimestampOrNullConverter() DateTime? analyzedAt,
+            @AtsLoadingParamsSampleOrNullConverter()
+            AtsLoadingParamsSample? sampleType,
+            @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+            String? formNumber)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsLoadingParamsForm() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.receptionId,
+            _that.reception,
+            _that.driver,
+            _that.sampleDensity,
+            _that.sampleTemperature,
+            _that.assetTemperature,
+            _that.analyzedAt,
+            _that.sampleType,
+            _that.fuelType,
+            _that.formNumber);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
@@ -8049,7 +13337,8 @@ class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
       @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
       @AtsFuelTypeOrNullConverter() this.fuelType,
       this.formNumber});
-  factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormFromJson(json);
+  factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) =>
+      _$AtsLoadingParamsFormFromJson(json);
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
@@ -8112,7 +13401,8 @@ class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsLoadingParamsFormCopyWith<_AtsLoadingParamsForm> get copyWith =>
-      __$AtsLoadingParamsFormCopyWithImpl<_AtsLoadingParamsForm>(this, _$identity);
+      __$AtsLoadingParamsFormCopyWithImpl<_AtsLoadingParamsForm>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -8129,22 +13419,44 @@ class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.receptionId, receptionId) || other.receptionId == receptionId) &&
-            (identical(other.reception, reception) || other.reception == reception) &&
+            (identical(other.receptionId, receptionId) ||
+                other.receptionId == receptionId) &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
             (identical(other.driver, driver) || other.driver == driver) &&
-            (identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity) &&
-            (identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature) &&
-            (identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature) &&
-            (identical(other.analyzedAt, analyzedAt) || other.analyzedAt == analyzedAt) &&
-            (identical(other.sampleType, sampleType) || other.sampleType == sampleType) &&
-            (identical(other.fuelType, fuelType) || other.fuelType == fuelType) &&
-            (identical(other.formNumber, formNumber) || other.formNumber == formNumber));
+            (identical(other.sampleDensity, sampleDensity) ||
+                other.sampleDensity == sampleDensity) &&
+            (identical(other.sampleTemperature, sampleTemperature) ||
+                other.sampleTemperature == sampleTemperature) &&
+            (identical(other.assetTemperature, assetTemperature) ||
+                other.assetTemperature == assetTemperature) &&
+            (identical(other.analyzedAt, analyzedAt) ||
+                other.analyzedAt == analyzedAt) &&
+            (identical(other.sampleType, sampleType) ||
+                other.sampleType == sampleType) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.formNumber, formNumber) ||
+                other.formNumber == formNumber));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, assetId, asset, receptionId, reception, driver, sampleDensity,
-      sampleTemperature, assetTemperature, analyzedAt, sampleType, fuelType, formNumber);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      receptionId,
+      reception,
+      driver,
+      sampleDensity,
+      sampleTemperature,
+      assetTemperature,
+      analyzedAt,
+      sampleType,
+      fuelType,
+      formNumber);
 
   @override
   String toString() {
@@ -8153,8 +13465,10 @@ class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
 }
 
 /// @nodoc
-abstract mixin class _$AtsLoadingParamsFormCopyWith<$Res> implements $AtsLoadingParamsFormCopyWith<$Res> {
-  factory _$AtsLoadingParamsFormCopyWith(_AtsLoadingParamsForm value, $Res Function(_AtsLoadingParamsForm) _then) =
+abstract mixin class _$AtsLoadingParamsFormCopyWith<$Res>
+    implements $AtsLoadingParamsFormCopyWith<$Res> {
+  factory _$AtsLoadingParamsFormCopyWith(_AtsLoadingParamsForm value,
+          $Res Function(_AtsLoadingParamsForm) _then) =
       __$AtsLoadingParamsFormCopyWithImpl;
   @override
   @useResult
@@ -8169,7 +13483,8 @@ abstract mixin class _$AtsLoadingParamsFormCopyWith<$Res> implements $AtsLoading
       double? sampleTemperature,
       double? assetTemperature,
       @TimestampOrNullConverter() DateTime? analyzedAt,
-      @AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
       @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
       String? formNumber});
 
@@ -8180,7 +13495,8 @@ abstract mixin class _$AtsLoadingParamsFormCopyWith<$Res> implements $AtsLoading
 }
 
 /// @nodoc
-class __$AtsLoadingParamsFormCopyWithImpl<$Res> implements _$AtsLoadingParamsFormCopyWith<$Res> {
+class __$AtsLoadingParamsFormCopyWithImpl<$Res>
+    implements _$AtsLoadingParamsFormCopyWith<$Res> {
   __$AtsLoadingParamsFormCopyWithImpl(this._self, this._then);
 
   final _AtsLoadingParamsForm _self;
@@ -8304,7 +13620,8 @@ mixin _$AtsExitStatus {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsExitStatusCopyWith<AtsExitStatus> get copyWith =>
-      _$AtsExitStatusCopyWithImpl<AtsExitStatus>(this as AtsExitStatus, _$identity);
+      _$AtsExitStatusCopyWithImpl<AtsExitStatus>(
+          this as AtsExitStatus, _$identity);
 
   /// Serializes this AtsExitStatus to a JSON map.
   Map<String, dynamic> toJson();
@@ -8330,13 +13647,16 @@ mixin _$AtsExitStatus {
 
 /// @nodoc
 abstract mixin class $AtsExitStatusCopyWith<$Res> {
-  factory $AtsExitStatusCopyWith(AtsExitStatus value, $Res Function(AtsExitStatus) _then) = _$AtsExitStatusCopyWithImpl;
+  factory $AtsExitStatusCopyWith(
+          AtsExitStatus value, $Res Function(AtsExitStatus) _then) =
+      _$AtsExitStatusCopyWithImpl;
   @useResult
   $Res call({@TimestampOrNullConverter() DateTime? date, bool? status});
 }
 
 /// @nodoc
-class _$AtsExitStatusCopyWithImpl<$Res> implements $AtsExitStatusCopyWith<$Res> {
+class _$AtsExitStatusCopyWithImpl<$Res>
+    implements $AtsExitStatusCopyWith<$Res> {
   _$AtsExitStatusCopyWithImpl(this._self, this._then);
 
   final AtsExitStatus _self;
@@ -8363,11 +13683,172 @@ class _$AtsExitStatusCopyWithImpl<$Res> implements $AtsExitStatusCopyWith<$Res> 
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsExitStatus].
+extension AtsExitStatusPatterns on AtsExitStatus {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsExitStatus value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExitStatus() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsExitStatus value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExitStatus():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsExitStatus value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExitStatus() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(@TimestampOrNullConverter() DateTime? date, bool? status)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExitStatus() when $default != null:
+        return $default(_that.date, _that.status);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(@TimestampOrNullConverter() DateTime? date, bool? status)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExitStatus():
+        return $default(_that.date, _that.status);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(@TimestampOrNullConverter() DateTime? date, bool? status)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExitStatus() when $default != null:
+        return $default(_that.date, _that.status);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsExitStatus implements AtsExitStatus {
   const _AtsExitStatus({@TimestampOrNullConverter() this.date, this.status});
-  factory _AtsExitStatus.fromJson(Map<String, dynamic> json) => _$AtsExitStatusFromJson(json);
+  factory _AtsExitStatus.fromJson(Map<String, dynamic> json) =>
+      _$AtsExitStatusFromJson(json);
 
   /// Date of the [AtsExit]
   @override
@@ -8413,8 +13894,10 @@ class _AtsExitStatus implements AtsExitStatus {
 }
 
 /// @nodoc
-abstract mixin class _$AtsExitStatusCopyWith<$Res> implements $AtsExitStatusCopyWith<$Res> {
-  factory _$AtsExitStatusCopyWith(_AtsExitStatus value, $Res Function(_AtsExitStatus) _then) =
+abstract mixin class _$AtsExitStatusCopyWith<$Res>
+    implements $AtsExitStatusCopyWith<$Res> {
+  factory _$AtsExitStatusCopyWith(
+          _AtsExitStatus value, $Res Function(_AtsExitStatus) _then) =
       __$AtsExitStatusCopyWithImpl;
   @override
   @useResult
@@ -8422,7 +13905,8 @@ abstract mixin class _$AtsExitStatusCopyWith<$Res> implements $AtsExitStatusCopy
 }
 
 /// @nodoc
-class __$AtsExitStatusCopyWithImpl<$Res> implements _$AtsExitStatusCopyWith<$Res> {
+class __$AtsExitStatusCopyWithImpl<$Res>
+    implements _$AtsExitStatusCopyWith<$Res> {
   __$AtsExitStatusCopyWithImpl(this._self, this._then);
 
   final _AtsExitStatus _self;
@@ -8518,7 +14002,8 @@ mixin _$AtsExit {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AtsExitCopyWith<AtsExit> get copyWith => _$AtsExitCopyWithImpl<AtsExit>(this as AtsExit, _$identity);
+  $AtsExitCopyWith<AtsExit> get copyWith =>
+      _$AtsExitCopyWithImpl<AtsExit>(this as AtsExit, _$identity);
 
   /// Serializes this AtsExit to a JSON map.
   Map<String, dynamic> toJson();
@@ -8529,25 +14014,40 @@ mixin _$AtsExit {
         (other.runtimeType == runtimeType &&
             other is AtsExit &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.identifier, identifier) || other.identifier == identifier) &&
-            (identical(other.fromAssetId, fromAssetId) || other.fromAssetId == fromAssetId) &&
-            (identical(other.fromAsset, fromAsset) || other.fromAsset == fromAsset) &&
-            (identical(other.toAssetId, toAssetId) || other.toAssetId == toAssetId) &&
+            (identical(other.identifier, identifier) ||
+                other.identifier == identifier) &&
+            (identical(other.fromAssetId, fromAssetId) ||
+                other.fromAssetId == fromAssetId) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
+            (identical(other.toAssetId, toAssetId) ||
+                other.toAssetId == toAssetId) &&
             (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
-            (identical(other.errorPercent, errorPercent) || other.errorPercent == errorPercent) &&
-            (identical(other.totalLiters, totalLiters) || other.totalLiters == totalLiters) &&
-            (identical(other.toAssetMileage, toAssetMileage) || other.toAssetMileage == toAssetMileage) &&
+            (identical(other.errorPercent, errorPercent) ||
+                other.errorPercent == errorPercent) &&
+            (identical(other.totalLiters, totalLiters) ||
+                other.totalLiters == totalLiters) &&
+            (identical(other.toAssetMileage, toAssetMileage) ||
+                other.toAssetMileage == toAssetMileage) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.totalTime, totalTime) || other.totalTime == totalTime) &&
-            (identical(other.totalTimeDuration, totalTimeDuration) || other.totalTimeDuration == totalTimeDuration) &&
-            (identical(other.initialFluxometer, initialFluxometer) || other.initialFluxometer == initialFluxometer) &&
-            (identical(other.finalFluxometer, finalFluxometer) || other.finalFluxometer == finalFluxometer) &&
-            (identical(other.initialTankVolume, initialTankVolume) || other.initialTankVolume == initialTankVolume) &&
-            (identical(other.finalTankVolume, finalTankVolume) || other.finalTankVolume == finalTankVolume) &&
+            (identical(other.totalTime, totalTime) ||
+                other.totalTime == totalTime) &&
+            (identical(other.totalTimeDuration, totalTimeDuration) ||
+                other.totalTimeDuration == totalTimeDuration) &&
+            (identical(other.initialFluxometer, initialFluxometer) ||
+                other.initialFluxometer == initialFluxometer) &&
+            (identical(other.finalFluxometer, finalFluxometer) ||
+                other.finalFluxometer == finalFluxometer) &&
+            (identical(other.initialTankVolume, initialTankVolume) ||
+                other.initialTankVolume == initialTankVolume) &&
+            (identical(other.finalTankVolume, finalTankVolume) ||
+                other.finalTankVolume == finalTankVolume) &&
             (identical(other.price, price) || other.price == price) &&
-            (identical(other.attendantName, attendantName) || other.attendantName == attendantName) &&
-            (identical(other.attendantId, attendantId) || other.attendantId == attendantId));
+            (identical(other.attendantName, attendantName) ||
+                other.attendantName == attendantName) &&
+            (identical(other.attendantId, attendantId) ||
+                other.attendantId == attendantId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -8584,7 +14084,8 @@ mixin _$AtsExit {
 
 /// @nodoc
 abstract mixin class $AtsExitCopyWith<$Res> {
-  factory $AtsExitCopyWith(AtsExit value, $Res Function(AtsExit) _then) = _$AtsExitCopyWithImpl;
+  factory $AtsExitCopyWith(AtsExit value, $Res Function(AtsExit) _then) =
+      _$AtsExitCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -8758,6 +14259,286 @@ class _$AtsExitCopyWithImpl<$Res> implements $AtsExitCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsExit].
+extension AtsExitPatterns on AtsExit {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsExit value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExit() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsExit value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExit():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsExit value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExit() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            int? identifier,
+            String? fromAssetId,
+            Asset? fromAsset,
+            String? toAssetId,
+            Asset? toAsset,
+            double? errorPercent,
+            double? totalLiters,
+            double? toAssetMileage,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            String? totalTime,
+            @DurationOrNullConverter() Duration? totalTimeDuration,
+            double? initialFluxometer,
+            double? finalFluxometer,
+            double? initialTankVolume,
+            double? finalTankVolume,
+            double? price,
+            String? attendantName,
+            String? attendantId)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExit() when $default != null:
+        return $default(
+            _that.id,
+            _that.identifier,
+            _that.fromAssetId,
+            _that.fromAsset,
+            _that.toAssetId,
+            _that.toAsset,
+            _that.errorPercent,
+            _that.totalLiters,
+            _that.toAssetMileage,
+            _that.startAt,
+            _that.endAt,
+            _that.totalTime,
+            _that.totalTimeDuration,
+            _that.initialFluxometer,
+            _that.finalFluxometer,
+            _that.initialTankVolume,
+            _that.finalTankVolume,
+            _that.price,
+            _that.attendantName,
+            _that.attendantId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            int? identifier,
+            String? fromAssetId,
+            Asset? fromAsset,
+            String? toAssetId,
+            Asset? toAsset,
+            double? errorPercent,
+            double? totalLiters,
+            double? toAssetMileage,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            String? totalTime,
+            @DurationOrNullConverter() Duration? totalTimeDuration,
+            double? initialFluxometer,
+            double? finalFluxometer,
+            double? initialTankVolume,
+            double? finalTankVolume,
+            double? price,
+            String? attendantName,
+            String? attendantId)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExit():
+        return $default(
+            _that.id,
+            _that.identifier,
+            _that.fromAssetId,
+            _that.fromAsset,
+            _that.toAssetId,
+            _that.toAsset,
+            _that.errorPercent,
+            _that.totalLiters,
+            _that.toAssetMileage,
+            _that.startAt,
+            _that.endAt,
+            _that.totalTime,
+            _that.totalTimeDuration,
+            _that.initialFluxometer,
+            _that.finalFluxometer,
+            _that.initialTankVolume,
+            _that.finalTankVolume,
+            _that.price,
+            _that.attendantName,
+            _that.attendantId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            int? identifier,
+            String? fromAssetId,
+            Asset? fromAsset,
+            String? toAssetId,
+            Asset? toAsset,
+            double? errorPercent,
+            double? totalLiters,
+            double? toAssetMileage,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            String? totalTime,
+            @DurationOrNullConverter() Duration? totalTimeDuration,
+            double? initialFluxometer,
+            double? finalFluxometer,
+            double? initialTankVolume,
+            double? finalTankVolume,
+            double? price,
+            String? attendantName,
+            String? attendantId)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExit() when $default != null:
+        return $default(
+            _that.id,
+            _that.identifier,
+            _that.fromAssetId,
+            _that.fromAsset,
+            _that.toAssetId,
+            _that.toAsset,
+            _that.errorPercent,
+            _that.totalLiters,
+            _that.toAssetMileage,
+            _that.startAt,
+            _that.endAt,
+            _that.totalTime,
+            _that.totalTimeDuration,
+            _that.initialFluxometer,
+            _that.finalFluxometer,
+            _that.initialTankVolume,
+            _that.finalTankVolume,
+            _that.price,
+            _that.attendantName,
+            _that.attendantId);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsExit implements AtsExit {
@@ -8782,7 +14563,8 @@ class _AtsExit implements AtsExit {
       this.price,
       this.attendantName,
       this.attendantId});
-  factory _AtsExit.fromJson(Map<String, dynamic> json) => _$AtsExitFromJson(json);
+  factory _AtsExit.fromJson(Map<String, dynamic> json) =>
+      _$AtsExitFromJson(json);
 
   /// `id` of the volume. This ID is unique.
   @override
@@ -8872,7 +14654,8 @@ class _AtsExit implements AtsExit {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsExitCopyWith<_AtsExit> get copyWith => __$AtsExitCopyWithImpl<_AtsExit>(this, _$identity);
+  _$AtsExitCopyWith<_AtsExit> get copyWith =>
+      __$AtsExitCopyWithImpl<_AtsExit>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -8887,25 +14670,40 @@ class _AtsExit implements AtsExit {
         (other.runtimeType == runtimeType &&
             other is _AtsExit &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.identifier, identifier) || other.identifier == identifier) &&
-            (identical(other.fromAssetId, fromAssetId) || other.fromAssetId == fromAssetId) &&
-            (identical(other.fromAsset, fromAsset) || other.fromAsset == fromAsset) &&
-            (identical(other.toAssetId, toAssetId) || other.toAssetId == toAssetId) &&
+            (identical(other.identifier, identifier) ||
+                other.identifier == identifier) &&
+            (identical(other.fromAssetId, fromAssetId) ||
+                other.fromAssetId == fromAssetId) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
+            (identical(other.toAssetId, toAssetId) ||
+                other.toAssetId == toAssetId) &&
             (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
-            (identical(other.errorPercent, errorPercent) || other.errorPercent == errorPercent) &&
-            (identical(other.totalLiters, totalLiters) || other.totalLiters == totalLiters) &&
-            (identical(other.toAssetMileage, toAssetMileage) || other.toAssetMileage == toAssetMileage) &&
+            (identical(other.errorPercent, errorPercent) ||
+                other.errorPercent == errorPercent) &&
+            (identical(other.totalLiters, totalLiters) ||
+                other.totalLiters == totalLiters) &&
+            (identical(other.toAssetMileage, toAssetMileage) ||
+                other.toAssetMileage == toAssetMileage) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.totalTime, totalTime) || other.totalTime == totalTime) &&
-            (identical(other.totalTimeDuration, totalTimeDuration) || other.totalTimeDuration == totalTimeDuration) &&
-            (identical(other.initialFluxometer, initialFluxometer) || other.initialFluxometer == initialFluxometer) &&
-            (identical(other.finalFluxometer, finalFluxometer) || other.finalFluxometer == finalFluxometer) &&
-            (identical(other.initialTankVolume, initialTankVolume) || other.initialTankVolume == initialTankVolume) &&
-            (identical(other.finalTankVolume, finalTankVolume) || other.finalTankVolume == finalTankVolume) &&
+            (identical(other.totalTime, totalTime) ||
+                other.totalTime == totalTime) &&
+            (identical(other.totalTimeDuration, totalTimeDuration) ||
+                other.totalTimeDuration == totalTimeDuration) &&
+            (identical(other.initialFluxometer, initialFluxometer) ||
+                other.initialFluxometer == initialFluxometer) &&
+            (identical(other.finalFluxometer, finalFluxometer) ||
+                other.finalFluxometer == finalFluxometer) &&
+            (identical(other.initialTankVolume, initialTankVolume) ||
+                other.initialTankVolume == initialTankVolume) &&
+            (identical(other.finalTankVolume, finalTankVolume) ||
+                other.finalTankVolume == finalTankVolume) &&
             (identical(other.price, price) || other.price == price) &&
-            (identical(other.attendantName, attendantName) || other.attendantName == attendantName) &&
-            (identical(other.attendantId, attendantId) || other.attendantId == attendantId));
+            (identical(other.attendantName, attendantName) ||
+                other.attendantName == attendantName) &&
+            (identical(other.attendantId, attendantId) ||
+                other.attendantId == attendantId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -8942,7 +14740,8 @@ class _AtsExit implements AtsExit {
 
 /// @nodoc
 abstract mixin class _$AtsExitCopyWith<$Res> implements $AtsExitCopyWith<$Res> {
-  factory _$AtsExitCopyWith(_AtsExit value, $Res Function(_AtsExit) _then) = __$AtsExitCopyWithImpl;
+  factory _$AtsExitCopyWith(_AtsExit value, $Res Function(_AtsExit) _then) =
+      __$AtsExitCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -9167,7 +14966,8 @@ mixin _$AtsPossibleExit {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsPossibleExitCopyWith<AtsPossibleExit> get copyWith =>
-      _$AtsPossibleExitCopyWithImpl<AtsPossibleExit>(this as AtsPossibleExit, _$identity);
+      _$AtsPossibleExitCopyWithImpl<AtsPossibleExit>(
+          this as AtsPossibleExit, _$identity);
 
   /// Serializes this AtsPossibleExit to a JSON map.
   Map<String, dynamic> toJson();
@@ -9178,24 +14978,44 @@ mixin _$AtsPossibleExit {
         (other.runtimeType == runtimeType &&
             other is AtsPossibleExit &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.fromAssetId, fromAssetId) || other.fromAssetId == fromAssetId) &&
-            (identical(other.fromAsset, fromAsset) || other.fromAsset == fromAsset) &&
-            (identical(other.sensorId, sensorId) || other.sensorId == sensorId) &&
+            (identical(other.fromAssetId, fromAssetId) ||
+                other.fromAssetId == fromAssetId) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
+            (identical(other.sensorId, sensorId) ||
+                other.sensorId == sensorId) &&
             (identical(other.sensor, sensor) || other.sensor == sensor) &&
-            (identical(other.toAssetId, toAssetId) || other.toAssetId == toAssetId) &&
+            (identical(other.toAssetId, toAssetId) ||
+                other.toAssetId == toAssetId) &&
             (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
-            (identical(other.totalLiters, totalLiters) || other.totalLiters == totalLiters) &&
+            (identical(other.totalLiters, totalLiters) ||
+                other.totalLiters == totalLiters) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
             (identical(other.isReady, isReady) || other.isReady == isReady) &&
-            (identical(other.inProgress, inProgress) || other.inProgress == inProgress) &&
-            (identical(other.isValidated, isValidated) || other.isValidated == isValidated));
+            (identical(other.inProgress, inProgress) ||
+                other.inProgress == inProgress) &&
+            (identical(other.isValidated, isValidated) ||
+                other.isValidated == isValidated));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, fromAssetId, fromAsset, sensorId, sensor, toAssetId, toAsset,
-      totalLiters, startAt, endAt, isReady, inProgress, isValidated);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      fromAssetId,
+      fromAsset,
+      sensorId,
+      sensor,
+      toAssetId,
+      toAsset,
+      totalLiters,
+      startAt,
+      endAt,
+      isReady,
+      inProgress,
+      isValidated);
 
   @override
   String toString() {
@@ -9205,7 +15025,8 @@ mixin _$AtsPossibleExit {
 
 /// @nodoc
 abstract mixin class $AtsPossibleExitCopyWith<$Res> {
-  factory $AtsPossibleExitCopyWith(AtsPossibleExit value, $Res Function(AtsPossibleExit) _then) =
+  factory $AtsPossibleExitCopyWith(
+          AtsPossibleExit value, $Res Function(AtsPossibleExit) _then) =
       _$AtsPossibleExitCopyWithImpl;
   @useResult
   $Res call(
@@ -9229,7 +15050,8 @@ abstract mixin class $AtsPossibleExitCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsPossibleExitCopyWithImpl<$Res> implements $AtsPossibleExitCopyWith<$Res> {
+class _$AtsPossibleExitCopyWithImpl<$Res>
+    implements $AtsPossibleExitCopyWith<$Res> {
   _$AtsPossibleExitCopyWithImpl(this._self, this._then);
 
   final AtsPossibleExit _self;
@@ -9353,6 +15175,244 @@ class _$AtsPossibleExitCopyWithImpl<$Res> implements $AtsPossibleExitCopyWith<$R
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsPossibleExit].
+extension AtsPossibleExitPatterns on AtsPossibleExit {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsPossibleExit value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPossibleExit() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsPossibleExit value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPossibleExit():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsPossibleExit value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPossibleExit() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? fromAssetId,
+            Asset? fromAsset,
+            String? sensorId,
+            Sensor? sensor,
+            String? toAssetId,
+            Asset? toAsset,
+            double? totalLiters,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            bool? isReady,
+            bool? inProgress,
+            bool? isValidated)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPossibleExit() when $default != null:
+        return $default(
+            _that.id,
+            _that.fromAssetId,
+            _that.fromAsset,
+            _that.sensorId,
+            _that.sensor,
+            _that.toAssetId,
+            _that.toAsset,
+            _that.totalLiters,
+            _that.startAt,
+            _that.endAt,
+            _that.isReady,
+            _that.inProgress,
+            _that.isValidated);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? fromAssetId,
+            Asset? fromAsset,
+            String? sensorId,
+            Sensor? sensor,
+            String? toAssetId,
+            Asset? toAsset,
+            double? totalLiters,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            bool? isReady,
+            bool? inProgress,
+            bool? isValidated)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPossibleExit():
+        return $default(
+            _that.id,
+            _that.fromAssetId,
+            _that.fromAsset,
+            _that.sensorId,
+            _that.sensor,
+            _that.toAssetId,
+            _that.toAsset,
+            _that.totalLiters,
+            _that.startAt,
+            _that.endAt,
+            _that.isReady,
+            _that.inProgress,
+            _that.isValidated);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? fromAssetId,
+            Asset? fromAsset,
+            String? sensorId,
+            Sensor? sensor,
+            String? toAssetId,
+            Asset? toAsset,
+            double? totalLiters,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            bool? isReady,
+            bool? inProgress,
+            bool? isValidated)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsPossibleExit() when $default != null:
+        return $default(
+            _that.id,
+            _that.fromAssetId,
+            _that.fromAsset,
+            _that.sensorId,
+            _that.sensor,
+            _that.toAssetId,
+            _that.toAsset,
+            _that.totalLiters,
+            _that.startAt,
+            _that.endAt,
+            _that.isReady,
+            _that.inProgress,
+            _that.isValidated);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsPossibleExit implements AtsPossibleExit {
@@ -9370,7 +15430,8 @@ class _AtsPossibleExit implements AtsPossibleExit {
       this.isReady,
       this.inProgress,
       this.isValidated});
-  factory _AtsPossibleExit.fromJson(Map<String, dynamic> json) => _$AtsPossibleExitFromJson(json);
+  factory _AtsPossibleExit.fromJson(Map<String, dynamic> json) =>
+      _$AtsPossibleExitFromJson(json);
 
   /// ID of the possible exit. This ID is unique.
   @override
@@ -9447,24 +15508,44 @@ class _AtsPossibleExit implements AtsPossibleExit {
         (other.runtimeType == runtimeType &&
             other is _AtsPossibleExit &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.fromAssetId, fromAssetId) || other.fromAssetId == fromAssetId) &&
-            (identical(other.fromAsset, fromAsset) || other.fromAsset == fromAsset) &&
-            (identical(other.sensorId, sensorId) || other.sensorId == sensorId) &&
+            (identical(other.fromAssetId, fromAssetId) ||
+                other.fromAssetId == fromAssetId) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
+            (identical(other.sensorId, sensorId) ||
+                other.sensorId == sensorId) &&
             (identical(other.sensor, sensor) || other.sensor == sensor) &&
-            (identical(other.toAssetId, toAssetId) || other.toAssetId == toAssetId) &&
+            (identical(other.toAssetId, toAssetId) ||
+                other.toAssetId == toAssetId) &&
             (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
-            (identical(other.totalLiters, totalLiters) || other.totalLiters == totalLiters) &&
+            (identical(other.totalLiters, totalLiters) ||
+                other.totalLiters == totalLiters) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
             (identical(other.isReady, isReady) || other.isReady == isReady) &&
-            (identical(other.inProgress, inProgress) || other.inProgress == inProgress) &&
-            (identical(other.isValidated, isValidated) || other.isValidated == isValidated));
+            (identical(other.inProgress, inProgress) ||
+                other.inProgress == inProgress) &&
+            (identical(other.isValidated, isValidated) ||
+                other.isValidated == isValidated));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, fromAssetId, fromAsset, sensorId, sensor, toAssetId, toAsset,
-      totalLiters, startAt, endAt, isReady, inProgress, isValidated);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      fromAssetId,
+      fromAsset,
+      sensorId,
+      sensor,
+      toAssetId,
+      toAsset,
+      totalLiters,
+      startAt,
+      endAt,
+      isReady,
+      inProgress,
+      isValidated);
 
   @override
   String toString() {
@@ -9473,8 +15554,10 @@ class _AtsPossibleExit implements AtsPossibleExit {
 }
 
 /// @nodoc
-abstract mixin class _$AtsPossibleExitCopyWith<$Res> implements $AtsPossibleExitCopyWith<$Res> {
-  factory _$AtsPossibleExitCopyWith(_AtsPossibleExit value, $Res Function(_AtsPossibleExit) _then) =
+abstract mixin class _$AtsPossibleExitCopyWith<$Res>
+    implements $AtsPossibleExitCopyWith<$Res> {
+  factory _$AtsPossibleExitCopyWith(
+          _AtsPossibleExit value, $Res Function(_AtsPossibleExit) _then) =
       __$AtsPossibleExitCopyWithImpl;
   @override
   @useResult
@@ -9502,7 +15585,8 @@ abstract mixin class _$AtsPossibleExitCopyWith<$Res> implements $AtsPossibleExit
 }
 
 /// @nodoc
-class __$AtsPossibleExitCopyWithImpl<$Res> implements _$AtsPossibleExitCopyWith<$Res> {
+class __$AtsPossibleExitCopyWithImpl<$Res>
+    implements _$AtsPossibleExitCopyWith<$Res> {
   __$AtsPossibleExitCopyWithImpl(this._self, this._then);
 
   final _AtsPossibleExit _self;
@@ -9671,7 +15755,8 @@ mixin _$AtsExecuteExitInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsExecuteExitInputCopyWith<AtsExecuteExitInput> get copyWith =>
-      _$AtsExecuteExitInputCopyWithImpl<AtsExecuteExitInput>(this as AtsExecuteExitInput, _$identity);
+      _$AtsExecuteExitInputCopyWithImpl<AtsExecuteExitInput>(
+          this as AtsExecuteExitInput, _$identity);
 
   /// Serializes this AtsExecuteExitInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -9684,7 +15769,8 @@ mixin _$AtsExecuteExitInput {
 
 /// @nodoc
 abstract mixin class $AtsExecuteExitInputCopyWith<$Res> {
-  factory $AtsExecuteExitInputCopyWith(AtsExecuteExitInput value, $Res Function(AtsExecuteExitInput) _then) =
+  factory $AtsExecuteExitInputCopyWith(
+          AtsExecuteExitInput value, $Res Function(AtsExecuteExitInput) _then) =
       _$AtsExecuteExitInputCopyWithImpl;
   @useResult
   $Res call(
@@ -9697,7 +15783,8 @@ abstract mixin class $AtsExecuteExitInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsExecuteExitInputCopyWithImpl<$Res> implements $AtsExecuteExitInputCopyWith<$Res> {
+class _$AtsExecuteExitInputCopyWithImpl<$Res>
+    implements $AtsExecuteExitInputCopyWith<$Res> {
   _$AtsExecuteExitInputCopyWithImpl(this._self, this._then);
 
   final AtsExecuteExitInput _self;
@@ -9744,6 +15831,187 @@ class _$AtsExecuteExitInputCopyWithImpl<$Res> implements $AtsExecuteExitInputCop
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsExecuteExitInput].
+extension AtsExecuteExitInputPatterns on AtsExecuteExitInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsExecuteExitInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsExecuteExitInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsExecuteExitInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? fromAssetId,
+            String? sensorId,
+            int? presetValue,
+            String? toAssetId,
+            double? toAssetMileage,
+            @AtsFromAppOrNullConverter() AtsFromApp? fromApp)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitInput() when $default != null:
+        return $default(_that.fromAssetId, _that.sensorId, _that.presetValue,
+            _that.toAssetId, _that.toAssetMileage, _that.fromApp);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? fromAssetId,
+            String? sensorId,
+            int? presetValue,
+            String? toAssetId,
+            double? toAssetMileage,
+            @AtsFromAppOrNullConverter() AtsFromApp? fromApp)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitInput():
+        return $default(_that.fromAssetId, _that.sensorId, _that.presetValue,
+            _that.toAssetId, _that.toAssetMileage, _that.fromApp);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? fromAssetId,
+            String? sensorId,
+            int? presetValue,
+            String? toAssetId,
+            double? toAssetMileage,
+            @AtsFromAppOrNullConverter() AtsFromApp? fromApp)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitInput() when $default != null:
+        return $default(_that.fromAssetId, _that.sensorId, _that.presetValue,
+            _that.toAssetId, _that.toAssetMileage, _that.fromApp);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsExecuteExitInput implements AtsExecuteExitInput {
@@ -9754,7 +16022,8 @@ class _AtsExecuteExitInput implements AtsExecuteExitInput {
       this.toAssetId,
       this.toAssetMileage,
       @AtsFromAppOrNullConverter() this.fromApp});
-  factory _AtsExecuteExitInput.fromJson(Map<String, dynamic> json) => _$AtsExecuteExitInputFromJson(json);
+  factory _AtsExecuteExitInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsExecuteExitInputFromJson(json);
 
   /// [fromAssetId] ID of the bomb [Asset].
   @override
@@ -9787,7 +16056,8 @@ class _AtsExecuteExitInput implements AtsExecuteExitInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsExecuteExitInputCopyWith<_AtsExecuteExitInput> get copyWith =>
-      __$AtsExecuteExitInputCopyWithImpl<_AtsExecuteExitInput>(this, _$identity);
+      __$AtsExecuteExitInputCopyWithImpl<_AtsExecuteExitInput>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -9803,8 +16073,10 @@ class _AtsExecuteExitInput implements AtsExecuteExitInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsExecuteExitInputCopyWith<$Res> implements $AtsExecuteExitInputCopyWith<$Res> {
-  factory _$AtsExecuteExitInputCopyWith(_AtsExecuteExitInput value, $Res Function(_AtsExecuteExitInput) _then) =
+abstract mixin class _$AtsExecuteExitInputCopyWith<$Res>
+    implements $AtsExecuteExitInputCopyWith<$Res> {
+  factory _$AtsExecuteExitInputCopyWith(_AtsExecuteExitInput value,
+          $Res Function(_AtsExecuteExitInput) _then) =
       __$AtsExecuteExitInputCopyWithImpl;
   @override
   @useResult
@@ -9818,7 +16090,8 @@ abstract mixin class _$AtsExecuteExitInputCopyWith<$Res> implements $AtsExecuteE
 }
 
 /// @nodoc
-class __$AtsExecuteExitInputCopyWithImpl<$Res> implements _$AtsExecuteExitInputCopyWith<$Res> {
+class __$AtsExecuteExitInputCopyWithImpl<$Res>
+    implements _$AtsExecuteExitInputCopyWith<$Res> {
   __$AtsExecuteExitInputCopyWithImpl(this._self, this._then);
 
   final _AtsExecuteExitInput _self;
@@ -9895,7 +16168,8 @@ mixin _$AtsExecuteExitHistory {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsExecuteExitHistoryCopyWith<AtsExecuteExitHistory> get copyWith =>
-      _$AtsExecuteExitHistoryCopyWithImpl<AtsExecuteExitHistory>(this as AtsExecuteExitHistory, _$identity);
+      _$AtsExecuteExitHistoryCopyWithImpl<AtsExecuteExitHistory>(
+          this as AtsExecuteExitHistory, _$identity);
 
   /// Serializes this AtsExecuteExitHistory to a JSON map.
   Map<String, dynamic> toJson();
@@ -9906,17 +16180,22 @@ mixin _$AtsExecuteExitHistory {
         (other.runtimeType == runtimeType &&
             other is AtsExecuteExitHistory &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.generatedBy, generatedBy) || other.generatedBy == generatedBy) &&
-            (identical(other.fromAsset, fromAsset) || other.fromAsset == fromAsset) &&
+            (identical(other.generatedBy, generatedBy) ||
+                other.generatedBy == generatedBy) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
             (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.errorResponse, errorResponse) || other.errorResponse == errorResponse) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.errorResponse, errorResponse) ||
+                other.errorResponse == errorResponse) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, generatedBy, fromAsset, toAsset, createdAt, errorResponse, status);
+  int get hashCode => Object.hash(runtimeType, id, generatedBy, fromAsset,
+      toAsset, createdAt, errorResponse, status);
 
   @override
   String toString() {
@@ -9926,7 +16205,8 @@ mixin _$AtsExecuteExitHistory {
 
 /// @nodoc
 abstract mixin class $AtsExecuteExitHistoryCopyWith<$Res> {
-  factory $AtsExecuteExitHistoryCopyWith(AtsExecuteExitHistory value, $Res Function(AtsExecuteExitHistory) _then) =
+  factory $AtsExecuteExitHistoryCopyWith(AtsExecuteExitHistory value,
+          $Res Function(AtsExecuteExitHistory) _then) =
       _$AtsExecuteExitHistoryCopyWithImpl;
   @useResult
   $Res call(
@@ -9940,7 +16220,8 @@ abstract mixin class $AtsExecuteExitHistoryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsExecuteExitHistoryCopyWithImpl<$Res> implements $AtsExecuteExitHistoryCopyWith<$Res> {
+class _$AtsExecuteExitHistoryCopyWithImpl<$Res>
+    implements $AtsExecuteExitHistoryCopyWith<$Res> {
   _$AtsExecuteExitHistoryCopyWithImpl(this._self, this._then);
 
   final AtsExecuteExitHistory _self;
@@ -9992,6 +16273,192 @@ class _$AtsExecuteExitHistoryCopyWithImpl<$Res> implements $AtsExecuteExitHistor
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsExecuteExitHistory].
+extension AtsExecuteExitHistoryPatterns on AtsExecuteExitHistory {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsExecuteExitHistory value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitHistory() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsExecuteExitHistory value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitHistory():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsExecuteExitHistory value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitHistory() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? generatedBy,
+            String? fromAsset,
+            String? toAsset,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            String? errorResponse,
+            @AtsExitExecuteStatusOrNullConverter()
+            AtsExitExecuteStatus? status)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitHistory() when $default != null:
+        return $default(_that.id, _that.generatedBy, _that.fromAsset,
+            _that.toAsset, _that.createdAt, _that.errorResponse, _that.status);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? generatedBy,
+            String? fromAsset,
+            String? toAsset,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            String? errorResponse,
+            @AtsExitExecuteStatusOrNullConverter() AtsExitExecuteStatus? status)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitHistory():
+        return $default(_that.id, _that.generatedBy, _that.fromAsset,
+            _that.toAsset, _that.createdAt, _that.errorResponse, _that.status);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? generatedBy,
+            String? fromAsset,
+            String? toAsset,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            String? errorResponse,
+            @AtsExitExecuteStatusOrNullConverter()
+            AtsExitExecuteStatus? status)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsExecuteExitHistory() when $default != null:
+        return $default(_that.id, _that.generatedBy, _that.fromAsset,
+            _that.toAsset, _that.createdAt, _that.errorResponse, _that.status);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
@@ -10003,7 +16470,8 @@ class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
       @TimestampOrNullConverter() this.createdAt,
       this.errorResponse,
       @AtsExitExecuteStatusOrNullConverter() this.status});
-  factory _AtsExecuteExitHistory.fromJson(Map<String, dynamic> json) => _$AtsExecuteExitHistoryFromJson(json);
+  factory _AtsExecuteExitHistory.fromJson(Map<String, dynamic> json) =>
+      _$AtsExecuteExitHistoryFromJson(json);
 
   /// ID of the recalculation entity. This ID is unique.
   @override
@@ -10041,7 +16509,8 @@ class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsExecuteExitHistoryCopyWith<_AtsExecuteExitHistory> get copyWith =>
-      __$AtsExecuteExitHistoryCopyWithImpl<_AtsExecuteExitHistory>(this, _$identity);
+      __$AtsExecuteExitHistoryCopyWithImpl<_AtsExecuteExitHistory>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -10056,17 +16525,22 @@ class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
         (other.runtimeType == runtimeType &&
             other is _AtsExecuteExitHistory &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.generatedBy, generatedBy) || other.generatedBy == generatedBy) &&
-            (identical(other.fromAsset, fromAsset) || other.fromAsset == fromAsset) &&
+            (identical(other.generatedBy, generatedBy) ||
+                other.generatedBy == generatedBy) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
             (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.errorResponse, errorResponse) || other.errorResponse == errorResponse) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.errorResponse, errorResponse) ||
+                other.errorResponse == errorResponse) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, generatedBy, fromAsset, toAsset, createdAt, errorResponse, status);
+  int get hashCode => Object.hash(runtimeType, id, generatedBy, fromAsset,
+      toAsset, createdAt, errorResponse, status);
 
   @override
   String toString() {
@@ -10075,8 +16549,10 @@ class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
 }
 
 /// @nodoc
-abstract mixin class _$AtsExecuteExitHistoryCopyWith<$Res> implements $AtsExecuteExitHistoryCopyWith<$Res> {
-  factory _$AtsExecuteExitHistoryCopyWith(_AtsExecuteExitHistory value, $Res Function(_AtsExecuteExitHistory) _then) =
+abstract mixin class _$AtsExecuteExitHistoryCopyWith<$Res>
+    implements $AtsExecuteExitHistoryCopyWith<$Res> {
+  factory _$AtsExecuteExitHistoryCopyWith(_AtsExecuteExitHistory value,
+          $Res Function(_AtsExecuteExitHistory) _then) =
       __$AtsExecuteExitHistoryCopyWithImpl;
   @override
   @useResult
@@ -10091,7 +16567,8 @@ abstract mixin class _$AtsExecuteExitHistoryCopyWith<$Res> implements $AtsExecut
 }
 
 /// @nodoc
-class __$AtsExecuteExitHistoryCopyWithImpl<$Res> implements _$AtsExecuteExitHistoryCopyWith<$Res> {
+class __$AtsExecuteExitHistoryCopyWithImpl<$Res>
+    implements _$AtsExecuteExitHistoryCopyWith<$Res> {
   __$AtsExecuteExitHistoryCopyWithImpl(this._self, this._then);
 
   final _AtsExecuteExitHistory _self;
@@ -10202,7 +16679,8 @@ mixin _$AtsExitInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsExitInputCopyWith<AtsExitInput> get copyWith =>
-      _$AtsExitInputCopyWithImpl<AtsExitInput>(this as AtsExitInput, _$identity);
+      _$AtsExitInputCopyWithImpl<AtsExitInput>(
+          this as AtsExitInput, _$identity);
 
   /// Serializes this AtsExitInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -10215,7 +16693,9 @@ mixin _$AtsExitInput {
 
 /// @nodoc
 abstract mixin class $AtsExitInputCopyWith<$Res> {
-  factory $AtsExitInputCopyWith(AtsExitInput value, $Res Function(AtsExitInput) _then) = _$AtsExitInputCopyWithImpl;
+  factory $AtsExitInputCopyWith(
+          AtsExitInput value, $Res Function(AtsExitInput) _then) =
+      _$AtsExitInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -10379,16 +16859,30 @@ extension AtsExitInputPatterns on AtsExitInput {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? id, String? assetId, double? liters, double? toAssetMileage, int? identifier,
-            String? attendantId, @TimestampConverter() DateTime? startAt, @TimestampConverter() DateTime? endAt)?
+    TResult Function(
+            String? id,
+            String? assetId,
+            double? liters,
+            double? toAssetMileage,
+            int? identifier,
+            String? attendantId,
+            @TimestampConverter() DateTime? startAt,
+            @TimestampConverter() DateTime? endAt)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _AtsExitInput() when $default != null:
-        return $default(_that.id, _that.assetId, _that.liters, _that.toAssetMileage, _that.identifier,
-            _that.attendantId, _that.startAt, _that.endAt);
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.liters,
+            _that.toAssetMileage,
+            _that.identifier,
+            _that.attendantId,
+            _that.startAt,
+            _that.endAt);
       case _:
         return orElse();
     }
@@ -10409,15 +16903,29 @@ extension AtsExitInputPatterns on AtsExitInput {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? id, String? assetId, double? liters, double? toAssetMileage, int? identifier,
-            String? attendantId, @TimestampConverter() DateTime? startAt, @TimestampConverter() DateTime? endAt)
+    TResult Function(
+            String? id,
+            String? assetId,
+            double? liters,
+            double? toAssetMileage,
+            int? identifier,
+            String? attendantId,
+            @TimestampConverter() DateTime? startAt,
+            @TimestampConverter() DateTime? endAt)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AtsExitInput():
-        return $default(_that.id, _that.assetId, _that.liters, _that.toAssetMileage, _that.identifier,
-            _that.attendantId, _that.startAt, _that.endAt);
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.liters,
+            _that.toAssetMileage,
+            _that.identifier,
+            _that.attendantId,
+            _that.startAt,
+            _that.endAt);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -10437,15 +16945,29 @@ extension AtsExitInputPatterns on AtsExitInput {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? id, String? assetId, double? liters, double? toAssetMileage, int? identifier,
-            String? attendantId, @TimestampConverter() DateTime? startAt, @TimestampConverter() DateTime? endAt)?
+    TResult? Function(
+            String? id,
+            String? assetId,
+            double? liters,
+            double? toAssetMileage,
+            int? identifier,
+            String? attendantId,
+            @TimestampConverter() DateTime? startAt,
+            @TimestampConverter() DateTime? endAt)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AtsExitInput() when $default != null:
-        return $default(_that.id, _that.assetId, _that.liters, _that.toAssetMileage, _that.identifier,
-            _that.attendantId, _that.startAt, _that.endAt);
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.liters,
+            _that.toAssetMileage,
+            _that.identifier,
+            _that.attendantId,
+            _that.startAt,
+            _that.endAt);
       case _:
         return null;
     }
@@ -10464,7 +16986,8 @@ class _AtsExitInput implements AtsExitInput {
       this.attendantId,
       @TimestampConverter() this.startAt,
       @TimestampConverter() this.endAt});
-  factory _AtsExitInput.fromJson(Map<String, dynamic> json) => _$AtsExitInputFromJson(json);
+  factory _AtsExitInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsExitInputFromJson(json);
 
   /// The [id] of the exit. Ignore it if you are using the "addExit" mutation.
   @override
@@ -10505,7 +17028,8 @@ class _AtsExitInput implements AtsExitInput {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsExitInputCopyWith<_AtsExitInput> get copyWith => __$AtsExitInputCopyWithImpl<_AtsExitInput>(this, _$identity);
+  _$AtsExitInputCopyWith<_AtsExitInput> get copyWith =>
+      __$AtsExitInputCopyWithImpl<_AtsExitInput>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -10521,8 +17045,11 @@ class _AtsExitInput implements AtsExitInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsExitInputCopyWith<$Res> implements $AtsExitInputCopyWith<$Res> {
-  factory _$AtsExitInputCopyWith(_AtsExitInput value, $Res Function(_AtsExitInput) _then) = __$AtsExitInputCopyWithImpl;
+abstract mixin class _$AtsExitInputCopyWith<$Res>
+    implements $AtsExitInputCopyWith<$Res> {
+  factory _$AtsExitInputCopyWith(
+          _AtsExitInput value, $Res Function(_AtsExitInput) _then) =
+      __$AtsExitInputCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -10537,7 +17064,8 @@ abstract mixin class _$AtsExitInputCopyWith<$Res> implements $AtsExitInputCopyWi
 }
 
 /// @nodoc
-class __$AtsExitInputCopyWithImpl<$Res> implements _$AtsExitInputCopyWith<$Res> {
+class __$AtsExitInputCopyWithImpl<$Res>
+    implements _$AtsExitInputCopyWith<$Res> {
   __$AtsExitInputCopyWithImpl(this._self, this._then);
 
   final _AtsExitInput _self;
@@ -10632,11 +17160,13 @@ mixin _$AtsEntry {
   bool? get isLinked;
 
   /// `fuelType` is the fuel type of the entry.
-  @Deprecated("Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
+  @Deprecated(
+      "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
   String? get fuelType;
 
   /// `fuelSubtype` is the fuel subtype of the entry.
-  @Deprecated("Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
+  @Deprecated(
+      "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
   String? get fuelSubtype;
 
   /// `temperature` is the temperature of the entry.
@@ -10676,7 +17206,8 @@ mixin _$AtsEntry {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AtsEntryCopyWith<AtsEntry> get copyWith => _$AtsEntryCopyWithImpl<AtsEntry>(this as AtsEntry, _$identity);
+  $AtsEntryCopyWith<AtsEntry> get copyWith =>
+      _$AtsEntryCopyWithImpl<AtsEntry>(this as AtsEntry, _$identity);
 
   /// Serializes this AtsEntry to a JSON map.
   Map<String, dynamic> toJson();
@@ -10689,28 +17220,43 @@ mixin _$AtsEntry {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.oldTankLevel, oldTankLevel) || other.oldTankLevel == oldTankLevel) &&
-            (identical(other.newTankLevel, newTankLevel) || other.newTankLevel == newTankLevel) &&
+            (identical(other.oldTankLevel, oldTankLevel) ||
+                other.oldTankLevel == oldTankLevel) &&
+            (identical(other.newTankLevel, newTankLevel) ||
+                other.newTankLevel == newTankLevel) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.errorPercent, errorPercent) || other.errorPercent == errorPercent) &&
-            (identical(other.reception, reception) || other.reception == reception) &&
-            const DeepCollectionEquality().equals(other.receptions, receptions) &&
-            (identical(other.isLinked, isLinked) || other.isLinked == isLinked) &&
-            (identical(other.fuelType, fuelType) || other.fuelType == fuelType) &&
-            (identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype) &&
-            (identical(other.temperature, temperature) || other.temperature == temperature) &&
+            (identical(other.errorPercent, errorPercent) ||
+                other.errorPercent == errorPercent) &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
+            const DeepCollectionEquality()
+                .equals(other.receptions, receptions) &&
+            (identical(other.isLinked, isLinked) ||
+                other.isLinked == isLinked) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
             (identical(other.initialTemperature, initialTemperature) ||
                 other.initialTemperature == initialTemperature) &&
             (identical(other.density, density) || other.density == density) &&
-            (identical(other.initialDensity, initialDensity) || other.initialDensity == initialDensity) &&
-            (identical(other.waterLevel, waterLevel) || other.waterLevel == waterLevel) &&
-            (identical(other.initialWaterLevel, initialWaterLevel) || other.initialWaterLevel == initialWaterLevel) &&
-            const DeepCollectionEquality().equals(other.volumeHistory, volumeHistory) &&
+            (identical(other.initialDensity, initialDensity) ||
+                other.initialDensity == initialDensity) &&
+            (identical(other.waterLevel, waterLevel) ||
+                other.waterLevel == waterLevel) &&
+            (identical(other.initialWaterLevel, initialWaterLevel) ||
+                other.initialWaterLevel == initialWaterLevel) &&
+            const DeepCollectionEquality()
+                .equals(other.volumeHistory, volumeHistory) &&
             (identical(other.fuelAnp, fuelAnp) || other.fuelAnp == fuelAnp) &&
             (identical(other.height, height) || other.height == height) &&
-            (identical(other.initialHeight, initialHeight) || other.initialHeight == initialHeight) &&
-            (identical(other.operationId, operationId) || other.operationId == operationId));
+            (identical(other.initialHeight, initialHeight) ||
+                other.initialHeight == initialHeight) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -10751,7 +17297,8 @@ mixin _$AtsEntry {
 
 /// @nodoc
 abstract mixin class $AtsEntryCopyWith<$Res> {
-  factory $AtsEntryCopyWith(AtsEntry value, $Res Function(AtsEntry) _then) = _$AtsEntryCopyWithImpl;
+  factory $AtsEntryCopyWith(AtsEntry value, $Res Function(AtsEntry) _then) =
+      _$AtsEntryCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -10765,8 +17312,11 @@ abstract mixin class $AtsEntryCopyWith<$Res> {
       AtsReception? reception,
       List<AtsReception>? receptions,
       bool? isLinked,
-      @Deprecated("Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType") String? fuelType,
-      @Deprecated("Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
+      @Deprecated(
+          "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
+      String? fuelType,
+      @Deprecated(
+          "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
       String? fuelSubtype,
       double? temperature,
       double? initialTemperature,
@@ -10950,6 +17500,322 @@ class _$AtsEntryCopyWithImpl<$Res> implements $AtsEntryCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsEntry].
+extension AtsEntryPatterns on AtsEntry {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsEntry value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntry() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsEntry value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntry():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsEntry value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntry() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String? assetId,
+            Asset? asset,
+            double? oldTankLevel,
+            double? newTankLevel,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            double? errorPercent,
+            AtsReception? reception,
+            List<AtsReception>? receptions,
+            bool? isLinked,
+            @Deprecated(
+                "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
+            String? fuelType,
+            @Deprecated(
+                "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
+            String? fuelSubtype,
+            double? temperature,
+            double? initialTemperature,
+            double? density,
+            double? initialDensity,
+            double? waterLevel,
+            double? initialWaterLevel,
+            List<AtsVolume> volumeHistory,
+            String? fuelAnp,
+            double? height,
+            double? initialHeight,
+            String? operationId)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntry() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.oldTankLevel,
+            _that.newTankLevel,
+            _that.startAt,
+            _that.endAt,
+            _that.errorPercent,
+            _that.reception,
+            _that.receptions,
+            _that.isLinked,
+            _that.fuelType,
+            _that.fuelSubtype,
+            _that.temperature,
+            _that.initialTemperature,
+            _that.density,
+            _that.initialDensity,
+            _that.waterLevel,
+            _that.initialWaterLevel,
+            _that.volumeHistory,
+            _that.fuelAnp,
+            _that.height,
+            _that.initialHeight,
+            _that.operationId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String? assetId,
+            Asset? asset,
+            double? oldTankLevel,
+            double? newTankLevel,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            double? errorPercent,
+            AtsReception? reception,
+            List<AtsReception>? receptions,
+            bool? isLinked,
+            @Deprecated(
+                "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
+            String? fuelType,
+            @Deprecated(
+                "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
+            String? fuelSubtype,
+            double? temperature,
+            double? initialTemperature,
+            double? density,
+            double? initialDensity,
+            double? waterLevel,
+            double? initialWaterLevel,
+            List<AtsVolume> volumeHistory,
+            String? fuelAnp,
+            double? height,
+            double? initialHeight,
+            String? operationId)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntry():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.oldTankLevel,
+            _that.newTankLevel,
+            _that.startAt,
+            _that.endAt,
+            _that.errorPercent,
+            _that.reception,
+            _that.receptions,
+            _that.isLinked,
+            _that.fuelType,
+            _that.fuelSubtype,
+            _that.temperature,
+            _that.initialTemperature,
+            _that.density,
+            _that.initialDensity,
+            _that.waterLevel,
+            _that.initialWaterLevel,
+            _that.volumeHistory,
+            _that.fuelAnp,
+            _that.height,
+            _that.initialHeight,
+            _that.operationId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String? assetId,
+            Asset? asset,
+            double? oldTankLevel,
+            double? newTankLevel,
+            @TimestampOrNullConverter() DateTime? startAt,
+            @TimestampOrNullConverter() DateTime? endAt,
+            double? errorPercent,
+            AtsReception? reception,
+            List<AtsReception>? receptions,
+            bool? isLinked,
+            @Deprecated(
+                "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
+            String? fuelType,
+            @Deprecated(
+                "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
+            String? fuelSubtype,
+            double? temperature,
+            double? initialTemperature,
+            double? density,
+            double? initialDensity,
+            double? waterLevel,
+            double? initialWaterLevel,
+            List<AtsVolume> volumeHistory,
+            String? fuelAnp,
+            double? height,
+            double? initialHeight,
+            String? operationId)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntry() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.oldTankLevel,
+            _that.newTankLevel,
+            _that.startAt,
+            _that.endAt,
+            _that.errorPercent,
+            _that.reception,
+            _that.receptions,
+            _that.isLinked,
+            _that.fuelType,
+            _that.fuelSubtype,
+            _that.temperature,
+            _that.initialTemperature,
+            _that.density,
+            _that.initialDensity,
+            _that.waterLevel,
+            _that.initialWaterLevel,
+            _that.volumeHistory,
+            _that.fuelAnp,
+            _that.height,
+            _that.initialHeight,
+            _that.operationId);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsEntry implements AtsEntry {
@@ -10965,8 +17831,11 @@ class _AtsEntry implements AtsEntry {
       this.reception,
       final List<AtsReception>? receptions,
       this.isLinked,
-      @Deprecated("Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType") this.fuelType,
-      @Deprecated("Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
+      @Deprecated(
+          "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
+      this.fuelType,
+      @Deprecated(
+          "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
       this.fuelSubtype,
       this.temperature,
       this.initialTemperature,
@@ -10981,7 +17850,8 @@ class _AtsEntry implements AtsEntry {
       this.operationId})
       : _receptions = receptions,
         _volumeHistory = volumeHistory;
-  factory _AtsEntry.fromJson(Map<String, dynamic> json) => _$AtsEntryFromJson(json);
+  factory _AtsEntry.fromJson(Map<String, dynamic> json) =>
+      _$AtsEntryFromJson(json);
 
   /// `id` is the unique ID of the entry.
   @override
@@ -11040,12 +17910,14 @@ class _AtsEntry implements AtsEntry {
 
   /// `fuelType` is the fuel type of the entry.
   @override
-  @Deprecated("Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
+  @Deprecated(
+      "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
   final String? fuelType;
 
   /// `fuelSubtype` is the fuel subtype of the entry.
   @override
-  @Deprecated("Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
+  @Deprecated(
+      "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
   final String? fuelSubtype;
 
   /// `temperature` is the temperature of the entry.
@@ -11105,7 +17977,8 @@ class _AtsEntry implements AtsEntry {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsEntryCopyWith<_AtsEntry> get copyWith => __$AtsEntryCopyWithImpl<_AtsEntry>(this, _$identity);
+  _$AtsEntryCopyWith<_AtsEntry> get copyWith =>
+      __$AtsEntryCopyWithImpl<_AtsEntry>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -11122,28 +17995,43 @@ class _AtsEntry implements AtsEntry {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.oldTankLevel, oldTankLevel) || other.oldTankLevel == oldTankLevel) &&
-            (identical(other.newTankLevel, newTankLevel) || other.newTankLevel == newTankLevel) &&
+            (identical(other.oldTankLevel, oldTankLevel) ||
+                other.oldTankLevel == oldTankLevel) &&
+            (identical(other.newTankLevel, newTankLevel) ||
+                other.newTankLevel == newTankLevel) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.errorPercent, errorPercent) || other.errorPercent == errorPercent) &&
-            (identical(other.reception, reception) || other.reception == reception) &&
-            const DeepCollectionEquality().equals(other._receptions, _receptions) &&
-            (identical(other.isLinked, isLinked) || other.isLinked == isLinked) &&
-            (identical(other.fuelType, fuelType) || other.fuelType == fuelType) &&
-            (identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype) &&
-            (identical(other.temperature, temperature) || other.temperature == temperature) &&
+            (identical(other.errorPercent, errorPercent) ||
+                other.errorPercent == errorPercent) &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
+            const DeepCollectionEquality()
+                .equals(other._receptions, _receptions) &&
+            (identical(other.isLinked, isLinked) ||
+                other.isLinked == isLinked) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
             (identical(other.initialTemperature, initialTemperature) ||
                 other.initialTemperature == initialTemperature) &&
             (identical(other.density, density) || other.density == density) &&
-            (identical(other.initialDensity, initialDensity) || other.initialDensity == initialDensity) &&
-            (identical(other.waterLevel, waterLevel) || other.waterLevel == waterLevel) &&
-            (identical(other.initialWaterLevel, initialWaterLevel) || other.initialWaterLevel == initialWaterLevel) &&
-            const DeepCollectionEquality().equals(other._volumeHistory, _volumeHistory) &&
+            (identical(other.initialDensity, initialDensity) ||
+                other.initialDensity == initialDensity) &&
+            (identical(other.waterLevel, waterLevel) ||
+                other.waterLevel == waterLevel) &&
+            (identical(other.initialWaterLevel, initialWaterLevel) ||
+                other.initialWaterLevel == initialWaterLevel) &&
+            const DeepCollectionEquality()
+                .equals(other._volumeHistory, _volumeHistory) &&
             (identical(other.fuelAnp, fuelAnp) || other.fuelAnp == fuelAnp) &&
             (identical(other.height, height) || other.height == height) &&
-            (identical(other.initialHeight, initialHeight) || other.initialHeight == initialHeight) &&
-            (identical(other.operationId, operationId) || other.operationId == operationId));
+            (identical(other.initialHeight, initialHeight) ||
+                other.initialHeight == initialHeight) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -11183,8 +18071,10 @@ class _AtsEntry implements AtsEntry {
 }
 
 /// @nodoc
-abstract mixin class _$AtsEntryCopyWith<$Res> implements $AtsEntryCopyWith<$Res> {
-  factory _$AtsEntryCopyWith(_AtsEntry value, $Res Function(_AtsEntry) _then) = __$AtsEntryCopyWithImpl;
+abstract mixin class _$AtsEntryCopyWith<$Res>
+    implements $AtsEntryCopyWith<$Res> {
+  factory _$AtsEntryCopyWith(_AtsEntry value, $Res Function(_AtsEntry) _then) =
+      __$AtsEntryCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -11199,8 +18089,11 @@ abstract mixin class _$AtsEntryCopyWith<$Res> implements $AtsEntryCopyWith<$Res>
       AtsReception? reception,
       List<AtsReception>? receptions,
       bool? isLinked,
-      @Deprecated("Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType") String? fuelType,
-      @Deprecated("Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
+      @Deprecated(
+          "Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType")
+      String? fuelType,
+      @Deprecated(
+          "Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
       String? fuelSubtype,
       double? temperature,
       double? initialTemperature,
@@ -11402,7 +18295,8 @@ mixin _$AtsVolume {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AtsVolumeCopyWith<AtsVolume> get copyWith => _$AtsVolumeCopyWithImpl<AtsVolume>(this as AtsVolume, _$identity);
+  $AtsVolumeCopyWith<AtsVolume> get copyWith =>
+      _$AtsVolumeCopyWithImpl<AtsVolume>(this as AtsVolume, _$identity);
 
   /// Serializes this AtsVolume to a JSON map.
   Map<String, dynamic> toJson();
@@ -11413,7 +18307,8 @@ mixin _$AtsVolume {
         (other.runtimeType == runtimeType &&
             other is AtsVolume &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.procedureResult, procedureResult) || other.procedureResult == procedureResult) &&
+            (identical(other.procedureResult, procedureResult) ||
+                other.procedureResult == procedureResult) &&
             (identical(other.at, at) || other.at == at));
   }
 
@@ -11429,9 +18324,13 @@ mixin _$AtsVolume {
 
 /// @nodoc
 abstract mixin class $AtsVolumeCopyWith<$Res> {
-  factory $AtsVolumeCopyWith(AtsVolume value, $Res Function(AtsVolume) _then) = _$AtsVolumeCopyWithImpl;
+  factory $AtsVolumeCopyWith(AtsVolume value, $Res Function(AtsVolume) _then) =
+      _$AtsVolumeCopyWithImpl;
   @useResult
-  $Res call({String? assetId, double? procedureResult, @TimestampOrNullConverter() DateTime? at});
+  $Res call(
+      {String? assetId,
+      double? procedureResult,
+      @TimestampOrNullConverter() DateTime? at});
 }
 
 /// @nodoc
@@ -11467,11 +18366,178 @@ class _$AtsVolumeCopyWithImpl<$Res> implements $AtsVolumeCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsVolume].
+extension AtsVolumePatterns on AtsVolume {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsVolume value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsVolume() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsVolume value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsVolume():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsVolume value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsVolume() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? assetId, double? procedureResult,
+            @TimestampOrNullConverter() DateTime? at)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsVolume() when $default != null:
+        return $default(_that.assetId, _that.procedureResult, _that.at);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? assetId, double? procedureResult,
+            @TimestampOrNullConverter() DateTime? at)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsVolume():
+        return $default(_that.assetId, _that.procedureResult, _that.at);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? assetId, double? procedureResult,
+            @TimestampOrNullConverter() DateTime? at)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsVolume() when $default != null:
+        return $default(_that.assetId, _that.procedureResult, _that.at);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsVolume implements AtsVolume {
-  const _AtsVolume({this.assetId, this.procedureResult, @TimestampOrNullConverter() this.at});
-  factory _AtsVolume.fromJson(Map<String, dynamic> json) => _$AtsVolumeFromJson(json);
+  const _AtsVolume(
+      {this.assetId,
+      this.procedureResult,
+      @TimestampOrNullConverter() this.at});
+  factory _AtsVolume.fromJson(Map<String, dynamic> json) =>
+      _$AtsVolumeFromJson(json);
 
   /// `assetId` is the ID of the associated asset.
   @override
@@ -11491,7 +18557,8 @@ class _AtsVolume implements AtsVolume {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsVolumeCopyWith<_AtsVolume> get copyWith => __$AtsVolumeCopyWithImpl<_AtsVolume>(this, _$identity);
+  _$AtsVolumeCopyWith<_AtsVolume> get copyWith =>
+      __$AtsVolumeCopyWithImpl<_AtsVolume>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -11506,7 +18573,8 @@ class _AtsVolume implements AtsVolume {
         (other.runtimeType == runtimeType &&
             other is _AtsVolume &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.procedureResult, procedureResult) || other.procedureResult == procedureResult) &&
+            (identical(other.procedureResult, procedureResult) ||
+                other.procedureResult == procedureResult) &&
             (identical(other.at, at) || other.at == at));
   }
 
@@ -11521,11 +18589,17 @@ class _AtsVolume implements AtsVolume {
 }
 
 /// @nodoc
-abstract mixin class _$AtsVolumeCopyWith<$Res> implements $AtsVolumeCopyWith<$Res> {
-  factory _$AtsVolumeCopyWith(_AtsVolume value, $Res Function(_AtsVolume) _then) = __$AtsVolumeCopyWithImpl;
+abstract mixin class _$AtsVolumeCopyWith<$Res>
+    implements $AtsVolumeCopyWith<$Res> {
+  factory _$AtsVolumeCopyWith(
+          _AtsVolume value, $Res Function(_AtsVolume) _then) =
+      __$AtsVolumeCopyWithImpl;
   @override
   @useResult
-  $Res call({String? assetId, double? procedureResult, @TimestampOrNullConverter() DateTime? at});
+  $Res call(
+      {String? assetId,
+      double? procedureResult,
+      @TimestampOrNullConverter() DateTime? at});
 }
 
 /// @nodoc
@@ -11660,7 +18734,8 @@ mixin _$AtsEntryInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsEntryInputCopyWith<AtsEntryInput> get copyWith =>
-      _$AtsEntryInputCopyWithImpl<AtsEntryInput>(this as AtsEntryInput, _$identity);
+      _$AtsEntryInputCopyWithImpl<AtsEntryInput>(
+          this as AtsEntryInput, _$identity);
 
   /// Serializes this AtsEntryInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -11673,7 +18748,9 @@ mixin _$AtsEntryInput {
 
 /// @nodoc
 abstract mixin class $AtsEntryInputCopyWith<$Res> {
-  factory $AtsEntryInputCopyWith(AtsEntryInput value, $Res Function(AtsEntryInput) _then) = _$AtsEntryInputCopyWithImpl;
+  factory $AtsEntryInputCopyWith(
+          AtsEntryInput value, $Res Function(AtsEntryInput) _then) =
+      _$AtsEntryInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -11690,11 +18767,13 @@ abstract mixin class $AtsEntryInputCopyWith<$Res> {
       double? endAt,
       double? initialHeight,
       double? height,
-      @Deprecated("Dont use it, Api search fuelType from assetId") String? fuelType});
+      @Deprecated("Dont use it, Api search fuelType from assetId")
+      String? fuelType});
 }
 
 /// @nodoc
-class _$AtsEntryInputCopyWithImpl<$Res> implements $AtsEntryInputCopyWith<$Res> {
+class _$AtsEntryInputCopyWithImpl<$Res>
+    implements $AtsEntryInputCopyWith<$Res> {
   _$AtsEntryInputCopyWithImpl(this._self, this._then);
 
   final AtsEntryInput _self;
@@ -11786,6 +18865,259 @@ class _$AtsEntryInputCopyWithImpl<$Res> implements $AtsEntryInputCopyWith<$Res> 
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsEntryInput].
+extension AtsEntryInputPatterns on AtsEntryInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsEntryInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsEntryInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsEntryInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            double? oldTankLevel,
+            double? newTankLevel,
+            double? initialDensity,
+            double? density,
+            double? initialTemperature,
+            double? temperature,
+            double? initialWaterLevel,
+            double? waterLevel,
+            double? startAt,
+            double? endAt,
+            double? initialHeight,
+            double? height,
+            @Deprecated("Dont use it, Api search fuelType from assetId")
+            String? fuelType)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.oldTankLevel,
+            _that.newTankLevel,
+            _that.initialDensity,
+            _that.density,
+            _that.initialTemperature,
+            _that.temperature,
+            _that.initialWaterLevel,
+            _that.waterLevel,
+            _that.startAt,
+            _that.endAt,
+            _that.initialHeight,
+            _that.height,
+            _that.fuelType);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            double? oldTankLevel,
+            double? newTankLevel,
+            double? initialDensity,
+            double? density,
+            double? initialTemperature,
+            double? temperature,
+            double? initialWaterLevel,
+            double? waterLevel,
+            double? startAt,
+            double? endAt,
+            double? initialHeight,
+            double? height,
+            @Deprecated("Dont use it, Api search fuelType from assetId")
+            String? fuelType)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryInput():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.oldTankLevel,
+            _that.newTankLevel,
+            _that.initialDensity,
+            _that.density,
+            _that.initialTemperature,
+            _that.temperature,
+            _that.initialWaterLevel,
+            _that.waterLevel,
+            _that.startAt,
+            _that.endAt,
+            _that.initialHeight,
+            _that.height,
+            _that.fuelType);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            double? oldTankLevel,
+            double? newTankLevel,
+            double? initialDensity,
+            double? density,
+            double? initialTemperature,
+            double? temperature,
+            double? initialWaterLevel,
+            double? waterLevel,
+            double? startAt,
+            double? endAt,
+            double? initialHeight,
+            double? height,
+            @Deprecated("Dont use it, Api search fuelType from assetId")
+            String? fuelType)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsEntryInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.oldTankLevel,
+            _that.newTankLevel,
+            _that.initialDensity,
+            _that.density,
+            _that.initialTemperature,
+            _that.temperature,
+            _that.initialWaterLevel,
+            _that.waterLevel,
+            _that.startAt,
+            _that.endAt,
+            _that.initialHeight,
+            _that.height,
+            _that.fuelType);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsEntryInput implements AtsEntryInput {
@@ -11804,8 +19136,10 @@ class _AtsEntryInput implements AtsEntryInput {
       this.endAt,
       this.initialHeight,
       this.height,
-      @Deprecated("Dont use it, Api search fuelType from assetId") this.fuelType});
-  factory _AtsEntryInput.fromJson(Map<String, dynamic> json) => _$AtsEntryInputFromJson(json);
+      @Deprecated("Dont use it, Api search fuelType from assetId")
+      this.fuelType});
+  factory _AtsEntryInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsEntryInputFromJson(json);
 
   /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
   @override
@@ -11890,8 +19224,10 @@ class _AtsEntryInput implements AtsEntryInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsEntryInputCopyWith<$Res> implements $AtsEntryInputCopyWith<$Res> {
-  factory _$AtsEntryInputCopyWith(_AtsEntryInput value, $Res Function(_AtsEntryInput) _then) =
+abstract mixin class _$AtsEntryInputCopyWith<$Res>
+    implements $AtsEntryInputCopyWith<$Res> {
+  factory _$AtsEntryInputCopyWith(
+          _AtsEntryInput value, $Res Function(_AtsEntryInput) _then) =
       __$AtsEntryInputCopyWithImpl;
   @override
   @useResult
@@ -11910,11 +19246,13 @@ abstract mixin class _$AtsEntryInputCopyWith<$Res> implements $AtsEntryInputCopy
       double? endAt,
       double? initialHeight,
       double? height,
-      @Deprecated("Dont use it, Api search fuelType from assetId") String? fuelType});
+      @Deprecated("Dont use it, Api search fuelType from assetId")
+      String? fuelType});
 }
 
 /// @nodoc
-class __$AtsEntryInputCopyWithImpl<$Res> implements _$AtsEntryInputCopyWith<$Res> {
+class __$AtsEntryInputCopyWithImpl<$Res>
+    implements _$AtsEntryInputCopyWith<$Res> {
   __$AtsEntryInputCopyWithImpl(this._self, this._then);
 
   final _AtsEntryInput _self;
@@ -12027,7 +19365,8 @@ mixin _$AtsOperationHistory {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsOperationHistoryCopyWith<AtsOperationHistory> get copyWith =>
-      _$AtsOperationHistoryCopyWithImpl<AtsOperationHistory>(this as AtsOperationHistory, _$identity);
+      _$AtsOperationHistoryCopyWithImpl<AtsOperationHistory>(
+          this as AtsOperationHistory, _$identity);
 
   /// Serializes this AtsOperationHistory to a JSON map.
   Map<String, dynamic> toJson();
@@ -12038,14 +19377,16 @@ mixin _$AtsOperationHistory {
         (other.runtimeType == runtimeType &&
             other is AtsOperationHistory &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.assetId, assetId) || other.assetId == assetId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, status, createdAt, asset, assetId);
+  int get hashCode =>
+      Object.hash(runtimeType, status, createdAt, asset, assetId);
 
   @override
   String toString() {
@@ -12055,11 +19396,13 @@ mixin _$AtsOperationHistory {
 
 /// @nodoc
 abstract mixin class $AtsOperationHistoryCopyWith<$Res> {
-  factory $AtsOperationHistoryCopyWith(AtsOperationHistory value, $Res Function(AtsOperationHistory) _then) =
+  factory $AtsOperationHistoryCopyWith(
+          AtsOperationHistory value, $Res Function(AtsOperationHistory) _then) =
       _$AtsOperationHistoryCopyWithImpl;
   @useResult
   $Res call(
-      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus status,
+      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      AtsPurchaseOrderStatus status,
       @TimestampConverter() DateTime createdAt,
       Asset? asset,
       String? assetId});
@@ -12068,7 +19411,8 @@ abstract mixin class $AtsOperationHistoryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsOperationHistoryCopyWithImpl<$Res> implements $AtsOperationHistoryCopyWith<$Res> {
+class _$AtsOperationHistoryCopyWithImpl<$Res>
+    implements $AtsOperationHistoryCopyWith<$Res> {
   _$AtsOperationHistoryCopyWithImpl(this._self, this._then);
 
   final AtsOperationHistory _self;
@@ -12119,15 +19463,195 @@ class _$AtsOperationHistoryCopyWithImpl<$Res> implements $AtsOperationHistoryCop
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsOperationHistory].
+extension AtsOperationHistoryPatterns on AtsOperationHistory {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsOperationHistory value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationHistory() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsOperationHistory value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationHistory():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsOperationHistory value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationHistory() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+            AtsPurchaseOrderStatus status,
+            @TimestampConverter() DateTime createdAt,
+            Asset? asset,
+            String? assetId)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationHistory() when $default != null:
+        return $default(
+            _that.status, _that.createdAt, _that.asset, _that.assetId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+            AtsPurchaseOrderStatus status,
+            @TimestampConverter() DateTime createdAt,
+            Asset? asset,
+            String? assetId)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationHistory():
+        return $default(
+            _that.status, _that.createdAt, _that.asset, _that.assetId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+            AtsPurchaseOrderStatus status,
+            @TimestampConverter() DateTime createdAt,
+            Asset? asset,
+            String? assetId)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationHistory() when $default != null:
+        return $default(
+            _that.status, _that.createdAt, _that.asset, _that.assetId);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsOperationHistory implements AtsOperationHistory {
   const _AtsOperationHistory(
-      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) required this.status,
+      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      required this.status,
       @TimestampConverter() required this.createdAt,
       this.asset,
       this.assetId});
-  factory _AtsOperationHistory.fromJson(Map<String, dynamic> json) => _$AtsOperationHistoryFromJson(json);
+  factory _AtsOperationHistory.fromJson(Map<String, dynamic> json) =>
+      _$AtsOperationHistoryFromJson(json);
 
   /// [status] is the status of of the operation.
   @override
@@ -12153,7 +19677,8 @@ class _AtsOperationHistory implements AtsOperationHistory {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsOperationHistoryCopyWith<_AtsOperationHistory> get copyWith =>
-      __$AtsOperationHistoryCopyWithImpl<_AtsOperationHistory>(this, _$identity);
+      __$AtsOperationHistoryCopyWithImpl<_AtsOperationHistory>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -12168,14 +19693,16 @@ class _AtsOperationHistory implements AtsOperationHistory {
         (other.runtimeType == runtimeType &&
             other is _AtsOperationHistory &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.assetId, assetId) || other.assetId == assetId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, status, createdAt, asset, assetId);
+  int get hashCode =>
+      Object.hash(runtimeType, status, createdAt, asset, assetId);
 
   @override
   String toString() {
@@ -12184,13 +19711,16 @@ class _AtsOperationHistory implements AtsOperationHistory {
 }
 
 /// @nodoc
-abstract mixin class _$AtsOperationHistoryCopyWith<$Res> implements $AtsOperationHistoryCopyWith<$Res> {
-  factory _$AtsOperationHistoryCopyWith(_AtsOperationHistory value, $Res Function(_AtsOperationHistory) _then) =
+abstract mixin class _$AtsOperationHistoryCopyWith<$Res>
+    implements $AtsOperationHistoryCopyWith<$Res> {
+  factory _$AtsOperationHistoryCopyWith(_AtsOperationHistory value,
+          $Res Function(_AtsOperationHistory) _then) =
       __$AtsOperationHistoryCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus status,
+      {@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      AtsPurchaseOrderStatus status,
       @TimestampConverter() DateTime createdAt,
       Asset? asset,
       String? assetId});
@@ -12200,7 +19730,8 @@ abstract mixin class _$AtsOperationHistoryCopyWith<$Res> implements $AtsOperatio
 }
 
 /// @nodoc
-class __$AtsOperationHistoryCopyWithImpl<$Res> implements _$AtsOperationHistoryCopyWith<$Res> {
+class __$AtsOperationHistoryCopyWithImpl<$Res>
+    implements _$AtsOperationHistoryCopyWith<$Res> {
   __$AtsOperationHistoryCopyWithImpl(this._self, this._then);
 
   final _AtsOperationHistory _self;
@@ -12336,7 +19867,8 @@ mixin _$AtsOperation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsOperationCopyWith<AtsOperation> get copyWith =>
-      _$AtsOperationCopyWithImpl<AtsOperation>(this as AtsOperation, _$identity);
+      _$AtsOperationCopyWithImpl<AtsOperation>(
+          this as AtsOperation, _$identity);
 
   /// Serializes this AtsOperation to a JSON map.
   Map<String, dynamic> toJson();
@@ -12347,27 +19879,43 @@ mixin _$AtsOperation {
         (other.runtimeType == runtimeType &&
             other is AtsOperation &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId) &&
-            (identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId) &&
-            (identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt) &&
-            (identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview) &&
+            (identical(other.sellerAssetId, sellerAssetId) ||
+                other.sellerAssetId == sellerAssetId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.purchasedAt, purchasedAt) ||
+                other.purchasedAt == purchasedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
+            (identical(other.pendingToReview, pendingToReview) ||
+                other.pendingToReview == pendingToReview) &&
             const DeepCollectionEquality().equals(other.ordersIds, ordersIds) &&
-            (identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset) &&
-            (identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset) &&
-            (identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation) &&
+            (identical(other.sellerAsset, sellerAsset) ||
+                other.sellerAsset == sellerAsset) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.sellerInformation, sellerInformation) ||
+                other.sellerInformation == sellerInformation) &&
             (identical(other.transportInformation, transportInformation) ||
                 other.transportInformation == transportInformation) &&
-            (identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus) &&
-            (identical(other.category, category) || other.category == category) &&
-            (identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory) &&
-            const DeepCollectionEquality().equals(other.purchaseOrders, purchaseOrders) &&
+            (identical(other.orderStatus, orderStatus) ||
+                other.orderStatus == orderStatus) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.deliverCategory, deliverCategory) ||
+                other.deliverCategory == deliverCategory) &&
+            const DeepCollectionEquality()
+                .equals(other.purchaseOrders, purchaseOrders) &&
             const DeepCollectionEquality().equals(other.statuses, statuses) &&
-            (identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity) &&
-            const DeepCollectionEquality().equals(other.productsInformation, productsInformation) &&
+            (identical(other.totalQuantity, totalQuantity) ||
+                other.totalQuantity == totalQuantity) &&
+            const DeepCollectionEquality()
+                .equals(other.productsInformation, productsInformation) &&
             const DeepCollectionEquality().equals(other.ctes, ctes) &&
-            const DeepCollectionEquality().equals(other.caclFormsIds, caclFormsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.caclFormsIds, caclFormsIds) &&
             const DeepCollectionEquality().equals(other.caclForms, caclForms) &&
             const DeepCollectionEquality().equals(other.manifests, manifests) &&
             const DeepCollectionEquality().equals(other.history, history));
@@ -12411,7 +19959,9 @@ mixin _$AtsOperation {
 
 /// @nodoc
 abstract mixin class $AtsOperationCopyWith<$Res> {
-  factory $AtsOperationCopyWith(AtsOperation value, $Res Function(AtsOperation) _then) = _$AtsOperationCopyWithImpl;
+  factory $AtsOperationCopyWith(
+          AtsOperation value, $Res Function(AtsOperation) _then) =
+      _$AtsOperationCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -12426,7 +19976,8 @@ abstract mixin class $AtsOperationCopyWith<$Res> {
       Asset? transportAsset,
       AtsCompanyInformation? sellerInformation,
       AtsTransportInformation? transportInformation,
-      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      AtsPurchaseOrderStatus? orderStatus,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
       AtsPurchaseOrderCategoriesEntity? category,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
@@ -12621,7 +20172,8 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!, (value) {
+    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!,
+        (value) {
       return _then(_self.copyWith(sellerInformation: value));
     });
   }
@@ -12635,9 +20187,326 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
       return null;
     }
 
-    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!, (value) {
+    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!,
+        (value) {
       return _then(_self.copyWith(transportInformation: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [AtsOperation].
+extension AtsOperationPatterns on AtsOperation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsOperation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsOperation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperation():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsOperation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? sellerAssetId,
+            String? transportAssetId,
+            @TimestampOrNullConverter() DateTime? purchasedAt,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            bool? pendingToReview,
+            List<String>? ordersIds,
+            Asset? sellerAsset,
+            Asset? transportAsset,
+            AtsCompanyInformation? sellerInformation,
+            AtsTransportInformation? transportInformation,
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+            AtsPurchaseOrderStatus? orderStatus,
+            @JsonKey(
+                unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
+            AtsPurchaseOrderCategoriesEntity? category,
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
+            AtsPurchaseOrderSubCategories? deliverCategory,
+            List<AtsPurchaseOrder>? purchaseOrders,
+            List<AtsOperationStatuses>? statuses,
+            double? totalQuantity,
+            List<OperationProductInformation>? productsInformation,
+            List<String>? ctes,
+            List<String>? caclFormsIds,
+            List<CaclEntity>? caclForms,
+            List<Manifest>? manifests,
+            List<AtsOperationHistory>? history)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperation() when $default != null:
+        return $default(
+            _that.id,
+            _that.sellerAssetId,
+            _that.transportAssetId,
+            _that.purchasedAt,
+            _that.createdAt,
+            _that.finishedAt,
+            _that.pendingToReview,
+            _that.ordersIds,
+            _that.sellerAsset,
+            _that.transportAsset,
+            _that.sellerInformation,
+            _that.transportInformation,
+            _that.orderStatus,
+            _that.category,
+            _that.deliverCategory,
+            _that.purchaseOrders,
+            _that.statuses,
+            _that.totalQuantity,
+            _that.productsInformation,
+            _that.ctes,
+            _that.caclFormsIds,
+            _that.caclForms,
+            _that.manifests,
+            _that.history);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? sellerAssetId,
+            String? transportAssetId,
+            @TimestampOrNullConverter() DateTime? purchasedAt,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            bool? pendingToReview,
+            List<String>? ordersIds,
+            Asset? sellerAsset,
+            Asset? transportAsset,
+            AtsCompanyInformation? sellerInformation,
+            AtsTransportInformation? transportInformation,
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+            AtsPurchaseOrderStatus? orderStatus,
+            @JsonKey(
+                unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
+            AtsPurchaseOrderCategoriesEntity? category,
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
+            AtsPurchaseOrderSubCategories? deliverCategory,
+            List<AtsPurchaseOrder>? purchaseOrders,
+            List<AtsOperationStatuses>? statuses,
+            double? totalQuantity,
+            List<OperationProductInformation>? productsInformation,
+            List<String>? ctes,
+            List<String>? caclFormsIds,
+            List<CaclEntity>? caclForms,
+            List<Manifest>? manifests,
+            List<AtsOperationHistory>? history)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperation():
+        return $default(
+            _that.id,
+            _that.sellerAssetId,
+            _that.transportAssetId,
+            _that.purchasedAt,
+            _that.createdAt,
+            _that.finishedAt,
+            _that.pendingToReview,
+            _that.ordersIds,
+            _that.sellerAsset,
+            _that.transportAsset,
+            _that.sellerInformation,
+            _that.transportInformation,
+            _that.orderStatus,
+            _that.category,
+            _that.deliverCategory,
+            _that.purchaseOrders,
+            _that.statuses,
+            _that.totalQuantity,
+            _that.productsInformation,
+            _that.ctes,
+            _that.caclFormsIds,
+            _that.caclForms,
+            _that.manifests,
+            _that.history);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? sellerAssetId,
+            String? transportAssetId,
+            @TimestampOrNullConverter() DateTime? purchasedAt,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            bool? pendingToReview,
+            List<String>? ordersIds,
+            Asset? sellerAsset,
+            Asset? transportAsset,
+            AtsCompanyInformation? sellerInformation,
+            AtsTransportInformation? transportInformation,
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+            AtsPurchaseOrderStatus? orderStatus,
+            @JsonKey(
+                unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
+            AtsPurchaseOrderCategoriesEntity? category,
+            @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
+            AtsPurchaseOrderSubCategories? deliverCategory,
+            List<AtsPurchaseOrder>? purchaseOrders,
+            List<AtsOperationStatuses>? statuses,
+            double? totalQuantity,
+            List<OperationProductInformation>? productsInformation,
+            List<String>? ctes,
+            List<String>? caclFormsIds,
+            List<CaclEntity>? caclForms,
+            List<Manifest>? manifests,
+            List<AtsOperationHistory>? history)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperation() when $default != null:
+        return $default(
+            _that.id,
+            _that.sellerAssetId,
+            _that.transportAssetId,
+            _that.purchasedAt,
+            _that.createdAt,
+            _that.finishedAt,
+            _that.pendingToReview,
+            _that.ordersIds,
+            _that.sellerAsset,
+            _that.transportAsset,
+            _that.sellerInformation,
+            _that.transportInformation,
+            _that.orderStatus,
+            _that.category,
+            _that.deliverCategory,
+            _that.purchaseOrders,
+            _that.statuses,
+            _that.totalQuantity,
+            _that.productsInformation,
+            _that.ctes,
+            _that.caclFormsIds,
+            _that.caclForms,
+            _that.manifests,
+            _that.history);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -12657,9 +20526,12 @@ class _AtsOperation implements AtsOperation {
       this.transportAsset,
       this.sellerInformation,
       this.transportInformation,
-      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) this.orderStatus,
-      @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) this.category,
-      @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) this.deliverCategory,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      this.orderStatus,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
+      this.category,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
+      this.deliverCategory,
       final List<AtsPurchaseOrder>? purchaseOrders,
       final List<AtsOperationStatuses>? statuses,
       this.totalQuantity,
@@ -12678,7 +20550,8 @@ class _AtsOperation implements AtsOperation {
         _caclForms = caclForms,
         _manifests = manifests,
         _history = history;
-  factory _AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);
+  factory _AtsOperation.fromJson(Map<String, dynamic> json) =>
+      _$AtsOperationFromJson(json);
 
   /// `id` of the asset entity. This ID is unique.
   @override
@@ -12793,7 +20666,8 @@ class _AtsOperation implements AtsOperation {
   List<OperationProductInformation>? get productsInformation {
     final value = _productsInformation;
     if (value == null) return null;
-    if (_productsInformation is EqualUnmodifiableListView) return _productsInformation;
+    if (_productsInformation is EqualUnmodifiableListView)
+      return _productsInformation;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -12868,7 +20742,8 @@ class _AtsOperation implements AtsOperation {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsOperationCopyWith<_AtsOperation> get copyWith => __$AtsOperationCopyWithImpl<_AtsOperation>(this, _$identity);
+  _$AtsOperationCopyWith<_AtsOperation> get copyWith =>
+      __$AtsOperationCopyWithImpl<_AtsOperation>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -12883,29 +20758,48 @@ class _AtsOperation implements AtsOperation {
         (other.runtimeType == runtimeType &&
             other is _AtsOperation &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId) &&
-            (identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId) &&
-            (identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt) &&
-            (identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview) &&
-            const DeepCollectionEquality().equals(other._ordersIds, _ordersIds) &&
-            (identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset) &&
-            (identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset) &&
-            (identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation) &&
+            (identical(other.sellerAssetId, sellerAssetId) ||
+                other.sellerAssetId == sellerAssetId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.purchasedAt, purchasedAt) ||
+                other.purchasedAt == purchasedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
+            (identical(other.pendingToReview, pendingToReview) ||
+                other.pendingToReview == pendingToReview) &&
+            const DeepCollectionEquality()
+                .equals(other._ordersIds, _ordersIds) &&
+            (identical(other.sellerAsset, sellerAsset) ||
+                other.sellerAsset == sellerAsset) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.sellerInformation, sellerInformation) ||
+                other.sellerInformation == sellerInformation) &&
             (identical(other.transportInformation, transportInformation) ||
                 other.transportInformation == transportInformation) &&
-            (identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus) &&
-            (identical(other.category, category) || other.category == category) &&
-            (identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory) &&
-            const DeepCollectionEquality().equals(other._purchaseOrders, _purchaseOrders) &&
+            (identical(other.orderStatus, orderStatus) ||
+                other.orderStatus == orderStatus) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.deliverCategory, deliverCategory) ||
+                other.deliverCategory == deliverCategory) &&
+            const DeepCollectionEquality()
+                .equals(other._purchaseOrders, _purchaseOrders) &&
             const DeepCollectionEquality().equals(other._statuses, _statuses) &&
-            (identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity) &&
-            const DeepCollectionEquality().equals(other._productsInformation, _productsInformation) &&
+            (identical(other.totalQuantity, totalQuantity) ||
+                other.totalQuantity == totalQuantity) &&
+            const DeepCollectionEquality()
+                .equals(other._productsInformation, _productsInformation) &&
             const DeepCollectionEquality().equals(other._ctes, _ctes) &&
-            const DeepCollectionEquality().equals(other._caclFormsIds, _caclFormsIds) &&
-            const DeepCollectionEquality().equals(other._caclForms, _caclForms) &&
-            const DeepCollectionEquality().equals(other._manifests, _manifests) &&
+            const DeepCollectionEquality()
+                .equals(other._caclFormsIds, _caclFormsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._caclForms, _caclForms) &&
+            const DeepCollectionEquality()
+                .equals(other._manifests, _manifests) &&
             const DeepCollectionEquality().equals(other._history, _history));
   }
 
@@ -12946,8 +20840,11 @@ class _AtsOperation implements AtsOperation {
 }
 
 /// @nodoc
-abstract mixin class _$AtsOperationCopyWith<$Res> implements $AtsOperationCopyWith<$Res> {
-  factory _$AtsOperationCopyWith(_AtsOperation value, $Res Function(_AtsOperation) _then) = __$AtsOperationCopyWithImpl;
+abstract mixin class _$AtsOperationCopyWith<$Res>
+    implements $AtsOperationCopyWith<$Res> {
+  factory _$AtsOperationCopyWith(
+          _AtsOperation value, $Res Function(_AtsOperation) _then) =
+      __$AtsOperationCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -12963,7 +20860,8 @@ abstract mixin class _$AtsOperationCopyWith<$Res> implements $AtsOperationCopyWi
       Asset? transportAsset,
       AtsCompanyInformation? sellerInformation,
       AtsTransportInformation? transportInformation,
-      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,
+      @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
+      AtsPurchaseOrderStatus? orderStatus,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
       AtsPurchaseOrderCategoriesEntity? category,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
@@ -12989,7 +20887,8 @@ abstract mixin class _$AtsOperationCopyWith<$Res> implements $AtsOperationCopyWi
 }
 
 /// @nodoc
-class __$AtsOperationCopyWithImpl<$Res> implements _$AtsOperationCopyWith<$Res> {
+class __$AtsOperationCopyWithImpl<$Res>
+    implements _$AtsOperationCopyWith<$Res> {
   __$AtsOperationCopyWithImpl(this._self, this._then);
 
   final _AtsOperation _self;
@@ -13162,7 +21061,8 @@ class __$AtsOperationCopyWithImpl<$Res> implements _$AtsOperationCopyWith<$Res> 
       return null;
     }
 
-    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!, (value) {
+    return $AtsCompanyInformationCopyWith<$Res>(_self.sellerInformation!,
+        (value) {
       return _then(_self.copyWith(sellerInformation: value));
     });
   }
@@ -13176,7 +21076,8 @@ class __$AtsOperationCopyWithImpl<$Res> implements _$AtsOperationCopyWith<$Res> 
       return null;
     }
 
-    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!, (value) {
+    return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!,
+        (value) {
       return _then(_self.copyWith(transportInformation: value));
     });
   }
@@ -13216,7 +21117,8 @@ mixin _$AtsOperationStatuses {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsOperationStatusesCopyWith<AtsOperationStatuses> get copyWith =>
-      _$AtsOperationStatusesCopyWithImpl<AtsOperationStatuses>(this as AtsOperationStatuses, _$identity);
+      _$AtsOperationStatusesCopyWithImpl<AtsOperationStatuses>(
+          this as AtsOperationStatuses, _$identity);
 
   /// Serializes this AtsOperationStatuses to a JSON map.
   Map<String, dynamic> toJson();
@@ -13227,20 +21129,30 @@ mixin _$AtsOperationStatuses {
         (other.runtimeType == runtimeType &&
             other is AtsOperationStatuses &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.inTransitAt, inTransitAt) || other.inTransitAt == inTransitAt) &&
+            (identical(other.inTransitAt, inTransitAt) ||
+                other.inTransitAt == inTransitAt) &&
             (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
                 other.waitingToDispatchAt == waitingToDispatchAt) &&
-            (identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt) &&
+            (identical(other.deliveredAt, deliveredAt) ||
+                other.deliveredAt == deliveredAt) &&
             (identical(other.unloadingOperationAt, unloadingOperationAt) ||
                 other.unloadingOperationAt == unloadingOperationAt) &&
-            (identical(other.readyToOperateAt, readyToOperateAt) || other.readyToOperateAt == readyToOperateAt) &&
+            (identical(other.readyToOperateAt, readyToOperateAt) ||
+                other.readyToOperateAt == readyToOperateAt) &&
             (identical(other.eta, eta) || other.eta == eta));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, asset, inTransitAt, waitingToDispatchAt, deliveredAt, unloadingOperationAt, readyToOperateAt, eta);
+      runtimeType,
+      asset,
+      inTransitAt,
+      waitingToDispatchAt,
+      deliveredAt,
+      unloadingOperationAt,
+      readyToOperateAt,
+      eta);
 
   @override
   String toString() {
@@ -13250,7 +21162,8 @@ mixin _$AtsOperationStatuses {
 
 /// @nodoc
 abstract mixin class $AtsOperationStatusesCopyWith<$Res> {
-  factory $AtsOperationStatusesCopyWith(AtsOperationStatuses value, $Res Function(AtsOperationStatuses) _then) =
+  factory $AtsOperationStatusesCopyWith(AtsOperationStatuses value,
+          $Res Function(AtsOperationStatuses) _then) =
       _$AtsOperationStatusesCopyWithImpl;
   @useResult
   $Res call(
@@ -13266,7 +21179,8 @@ abstract mixin class $AtsOperationStatusesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsOperationStatusesCopyWithImpl<$Res> implements $AtsOperationStatusesCopyWith<$Res> {
+class _$AtsOperationStatusesCopyWithImpl<$Res>
+    implements $AtsOperationStatusesCopyWith<$Res> {
   _$AtsOperationStatusesCopyWithImpl(this._self, this._then);
 
   final AtsOperationStatuses _self;
@@ -13332,6 +21246,208 @@ class _$AtsOperationStatusesCopyWithImpl<$Res> implements $AtsOperationStatusesC
   }
 }
 
+/// Adds pattern-matching-related methods to [AtsOperationStatuses].
+extension AtsOperationStatusesPatterns on AtsOperationStatuses {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AtsOperationStatuses value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationStatuses() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AtsOperationStatuses value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationStatuses():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AtsOperationStatuses value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationStatuses() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            Asset? asset,
+            @TimestampOrNullConverter() DateTime? inTransitAt,
+            @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+            @TimestampOrNullConverter() DateTime? deliveredAt,
+            @TimestampOrNullConverter() DateTime? unloadingOperationAt,
+            @TimestampOrNullConverter() DateTime? readyToOperateAt,
+            @TimestampOrNullConverter() DateTime? eta)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationStatuses() when $default != null:
+        return $default(
+            _that.asset,
+            _that.inTransitAt,
+            _that.waitingToDispatchAt,
+            _that.deliveredAt,
+            _that.unloadingOperationAt,
+            _that.readyToOperateAt,
+            _that.eta);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            Asset? asset,
+            @TimestampOrNullConverter() DateTime? inTransitAt,
+            @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+            @TimestampOrNullConverter() DateTime? deliveredAt,
+            @TimestampOrNullConverter() DateTime? unloadingOperationAt,
+            @TimestampOrNullConverter() DateTime? readyToOperateAt,
+            @TimestampOrNullConverter() DateTime? eta)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationStatuses():
+        return $default(
+            _that.asset,
+            _that.inTransitAt,
+            _that.waitingToDispatchAt,
+            _that.deliveredAt,
+            _that.unloadingOperationAt,
+            _that.readyToOperateAt,
+            _that.eta);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            Asset? asset,
+            @TimestampOrNullConverter() DateTime? inTransitAt,
+            @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+            @TimestampOrNullConverter() DateTime? deliveredAt,
+            @TimestampOrNullConverter() DateTime? unloadingOperationAt,
+            @TimestampOrNullConverter() DateTime? readyToOperateAt,
+            @TimestampOrNullConverter() DateTime? eta)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AtsOperationStatuses() when $default != null:
+        return $default(
+            _that.asset,
+            _that.inTransitAt,
+            _that.waitingToDispatchAt,
+            _that.deliveredAt,
+            _that.unloadingOperationAt,
+            _that.readyToOperateAt,
+            _that.eta);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _AtsOperationStatuses implements AtsOperationStatuses {
@@ -13343,7 +21459,8 @@ class _AtsOperationStatuses implements AtsOperationStatuses {
       @TimestampOrNullConverter() this.unloadingOperationAt,
       @TimestampOrNullConverter() this.readyToOperateAt,
       @TimestampOrNullConverter() this.eta});
-  factory _AtsOperationStatuses.fromJson(Map<String, dynamic> json) => _$AtsOperationStatusesFromJson(json);
+  factory _AtsOperationStatuses.fromJson(Map<String, dynamic> json) =>
+      _$AtsOperationStatusesFromJson(json);
 
   /// `asset` is the Asset linked to the operation.
   @override
@@ -13385,7 +21502,8 @@ class _AtsOperationStatuses implements AtsOperationStatuses {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsOperationStatusesCopyWith<_AtsOperationStatuses> get copyWith =>
-      __$AtsOperationStatusesCopyWithImpl<_AtsOperationStatuses>(this, _$identity);
+      __$AtsOperationStatusesCopyWithImpl<_AtsOperationStatuses>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -13400,20 +21518,30 @@ class _AtsOperationStatuses implements AtsOperationStatuses {
         (other.runtimeType == runtimeType &&
             other is _AtsOperationStatuses &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.inTransitAt, inTransitAt) || other.inTransitAt == inTransitAt) &&
+            (identical(other.inTransitAt, inTransitAt) ||
+                other.inTransitAt == inTransitAt) &&
             (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
                 other.waitingToDispatchAt == waitingToDispatchAt) &&
-            (identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt) &&
+            (identical(other.deliveredAt, deliveredAt) ||
+                other.deliveredAt == deliveredAt) &&
             (identical(other.unloadingOperationAt, unloadingOperationAt) ||
                 other.unloadingOperationAt == unloadingOperationAt) &&
-            (identical(other.readyToOperateAt, readyToOperateAt) || other.readyToOperateAt == readyToOperateAt) &&
+            (identical(other.readyToOperateAt, readyToOperateAt) ||
+                other.readyToOperateAt == readyToOperateAt) &&
             (identical(other.eta, eta) || other.eta == eta));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, asset, inTransitAt, waitingToDispatchAt, deliveredAt, unloadingOperationAt, readyToOperateAt, eta);
+      runtimeType,
+      asset,
+      inTransitAt,
+      waitingToDispatchAt,
+      deliveredAt,
+      unloadingOperationAt,
+      readyToOperateAt,
+      eta);
 
   @override
   String toString() {
@@ -13422,8 +21550,10 @@ class _AtsOperationStatuses implements AtsOperationStatuses {
 }
 
 /// @nodoc
-abstract mixin class _$AtsOperationStatusesCopyWith<$Res> implements $AtsOperationStatusesCopyWith<$Res> {
-  factory _$AtsOperationStatusesCopyWith(_AtsOperationStatuses value, $Res Function(_AtsOperationStatuses) _then) =
+abstract mixin class _$AtsOperationStatusesCopyWith<$Res>
+    implements $AtsOperationStatusesCopyWith<$Res> {
+  factory _$AtsOperationStatusesCopyWith(_AtsOperationStatuses value,
+          $Res Function(_AtsOperationStatuses) _then) =
       __$AtsOperationStatusesCopyWithImpl;
   @override
   @useResult
@@ -13441,7 +21571,8 @@ abstract mixin class _$AtsOperationStatusesCopyWith<$Res> implements $AtsOperati
 }
 
 /// @nodoc
-class __$AtsOperationStatusesCopyWithImpl<$Res> implements _$AtsOperationStatusesCopyWith<$Res> {
+class __$AtsOperationStatusesCopyWithImpl<$Res>
+    implements _$AtsOperationStatusesCopyWith<$Res> {
   __$AtsOperationStatusesCopyWithImpl(this._self, this._then);
 
   final _AtsOperationStatuses _self;
@@ -13563,7 +21694,8 @@ mixin _$Manifest {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $ManifestCopyWith<Manifest> get copyWith => _$ManifestCopyWithImpl<Manifest>(this as Manifest, _$identity);
+  $ManifestCopyWith<Manifest> get copyWith =>
+      _$ManifestCopyWithImpl<Manifest>(this as Manifest, _$identity);
 
   /// Serializes this Manifest to a JSON map.
   Map<String, dynamic> toJson();
@@ -13576,19 +21708,27 @@ mixin _$Manifest {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.terminalId, terminalId) || other.terminalId == terminalId) &&
-            (identical(other.terminal, terminal) || other.terminal == terminal) &&
-            (identical(other.totalVolume, totalVolume) || other.totalVolume == totalVolume) &&
+            (identical(other.terminalId, terminalId) ||
+                other.terminalId == terminalId) &&
+            (identical(other.terminal, terminal) ||
+                other.terminal == terminal) &&
+            (identical(other.totalVolume, totalVolume) ||
+                other.totalVolume == totalVolume) &&
             (identical(other.totalConvertedVolume, totalConvertedVolume) ||
                 other.totalConvertedVolume == totalConvertedVolume) &&
-            (identical(other.operationId, operationId) || other.operationId == operationId) &&
-            (identical(other.operation, operation) || other.operation == operation) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.trim, trim) || other.trim == trim) &&
             (identical(other.banda, banda) || other.banda == banda) &&
-            const DeepCollectionEquality().equals(other.tankMeasurements, tankMeasurements) &&
+            const DeepCollectionEquality()
+                .equals(other.tankMeasurements, tankMeasurements) &&
             (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.position, position) || other.position == position) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
             const DeepCollectionEquality().equals(other.sensors, sensors));
   }
 
@@ -13621,7 +21761,8 @@ mixin _$Manifest {
 
 /// @nodoc
 abstract mixin class $ManifestCopyWith<$Res> {
-  factory $ManifestCopyWith(Manifest value, $Res Function(Manifest) _then) = _$ManifestCopyWithImpl;
+  factory $ManifestCopyWith(Manifest value, $Res Function(Manifest) _then) =
+      _$ManifestCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -13801,6 +21942,262 @@ class _$ManifestCopyWithImpl<$Res> implements $ManifestCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [Manifest].
+extension ManifestPatterns on Manifest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Manifest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Manifest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Manifest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Manifest():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Manifest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Manifest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? terminalId,
+            Asset? terminal,
+            double? totalVolume,
+            double? totalConvertedVolume,
+            String? operationId,
+            AtsOperation? operation,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            double? trim,
+            double? banda,
+            List<TankMeasurement>? tankMeasurements,
+            @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind,
+            TelemetryPosition? position,
+            List<TelemetrySensor>? sensors)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Manifest() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.terminalId,
+            _that.terminal,
+            _that.totalVolume,
+            _that.totalConvertedVolume,
+            _that.operationId,
+            _that.operation,
+            _that.createdAt,
+            _that.trim,
+            _that.banda,
+            _that.tankMeasurements,
+            _that.kind,
+            _that.position,
+            _that.sensors);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? terminalId,
+            Asset? terminal,
+            double? totalVolume,
+            double? totalConvertedVolume,
+            String? operationId,
+            AtsOperation? operation,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            double? trim,
+            double? banda,
+            List<TankMeasurement>? tankMeasurements,
+            @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind,
+            TelemetryPosition? position,
+            List<TelemetrySensor>? sensors)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Manifest():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.terminalId,
+            _that.terminal,
+            _that.totalVolume,
+            _that.totalConvertedVolume,
+            _that.operationId,
+            _that.operation,
+            _that.createdAt,
+            _that.trim,
+            _that.banda,
+            _that.tankMeasurements,
+            _that.kind,
+            _that.position,
+            _that.sensors);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? terminalId,
+            Asset? terminal,
+            double? totalVolume,
+            double? totalConvertedVolume,
+            String? operationId,
+            AtsOperation? operation,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            double? trim,
+            double? banda,
+            List<TankMeasurement>? tankMeasurements,
+            @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind,
+            TelemetryPosition? position,
+            List<TelemetrySensor>? sensors)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Manifest() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.terminalId,
+            _that.terminal,
+            _that.totalVolume,
+            _that.totalConvertedVolume,
+            _that.operationId,
+            _that.operation,
+            _that.createdAt,
+            _that.trim,
+            _that.banda,
+            _that.tankMeasurements,
+            _that.kind,
+            _that.position,
+            _that.sensors);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _Manifest extends Manifest {
@@ -13824,7 +22221,8 @@ class _Manifest extends Manifest {
       : _tankMeasurements = tankMeasurements,
         _sensors = sensors,
         super._();
-  factory _Manifest.fromJson(Map<String, dynamic> json) => _$ManifestFromJson(json);
+  factory _Manifest.fromJson(Map<String, dynamic> json) =>
+      _$ManifestFromJson(json);
 
   /// The [id] parameter is the id of the manifest entity.
   @override
@@ -13883,7 +22281,8 @@ class _Manifest extends Manifest {
   List<TankMeasurement>? get tankMeasurements {
     final value = _tankMeasurements;
     if (value == null) return null;
-    if (_tankMeasurements is EqualUnmodifiableListView) return _tankMeasurements;
+    if (_tankMeasurements is EqualUnmodifiableListView)
+      return _tankMeasurements;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -13915,7 +22314,8 @@ class _Manifest extends Manifest {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$ManifestCopyWith<_Manifest> get copyWith => __$ManifestCopyWithImpl<_Manifest>(this, _$identity);
+  _$ManifestCopyWith<_Manifest> get copyWith =>
+      __$ManifestCopyWithImpl<_Manifest>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -13932,19 +22332,27 @@ class _Manifest extends Manifest {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.terminalId, terminalId) || other.terminalId == terminalId) &&
-            (identical(other.terminal, terminal) || other.terminal == terminal) &&
-            (identical(other.totalVolume, totalVolume) || other.totalVolume == totalVolume) &&
+            (identical(other.terminalId, terminalId) ||
+                other.terminalId == terminalId) &&
+            (identical(other.terminal, terminal) ||
+                other.terminal == terminal) &&
+            (identical(other.totalVolume, totalVolume) ||
+                other.totalVolume == totalVolume) &&
             (identical(other.totalConvertedVolume, totalConvertedVolume) ||
                 other.totalConvertedVolume == totalConvertedVolume) &&
-            (identical(other.operationId, operationId) || other.operationId == operationId) &&
-            (identical(other.operation, operation) || other.operation == operation) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.trim, trim) || other.trim == trim) &&
             (identical(other.banda, banda) || other.banda == banda) &&
-            const DeepCollectionEquality().equals(other._tankMeasurements, _tankMeasurements) &&
+            const DeepCollectionEquality()
+                .equals(other._tankMeasurements, _tankMeasurements) &&
             (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.position, position) || other.position == position) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors));
   }
 
@@ -13976,8 +22384,10 @@ class _Manifest extends Manifest {
 }
 
 /// @nodoc
-abstract mixin class _$ManifestCopyWith<$Res> implements $ManifestCopyWith<$Res> {
-  factory _$ManifestCopyWith(_Manifest value, $Res Function(_Manifest) _then) = __$ManifestCopyWithImpl;
+abstract mixin class _$ManifestCopyWith<$Res>
+    implements $ManifestCopyWith<$Res> {
+  factory _$ManifestCopyWith(_Manifest value, $Res Function(_Manifest) _then) =
+      __$ManifestCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -14213,7 +22623,8 @@ mixin _$ManifestInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $ManifestInputCopyWith<ManifestInput> get copyWith =>
-      _$ManifestInputCopyWithImpl<ManifestInput>(this as ManifestInput, _$identity);
+      _$ManifestInputCopyWithImpl<ManifestInput>(
+          this as ManifestInput, _$identity);
 
   /// Serializes this ManifestInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -14226,7 +22637,9 @@ mixin _$ManifestInput {
 
 /// @nodoc
 abstract mixin class $ManifestInputCopyWith<$Res> {
-  factory $ManifestInputCopyWith(ManifestInput value, $Res Function(ManifestInput) _then) = _$ManifestInputCopyWithImpl;
+  factory $ManifestInputCopyWith(
+          ManifestInput value, $Res Function(ManifestInput) _then) =
+      _$ManifestInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -14239,7 +22652,8 @@ abstract mixin class $ManifestInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ManifestInputCopyWithImpl<$Res> implements $ManifestInputCopyWith<$Res> {
+class _$ManifestInputCopyWithImpl<$Res>
+    implements $ManifestInputCopyWith<$Res> {
   _$ManifestInputCopyWithImpl(this._self, this._then);
 
   final ManifestInput _self;
@@ -14291,6 +22705,190 @@ class _$ManifestInputCopyWithImpl<$Res> implements $ManifestInputCopyWith<$Res> 
   }
 }
 
+/// Adds pattern-matching-related methods to [ManifestInput].
+extension ManifestInputPatterns on ManifestInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ManifestInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ManifestInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ManifestInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ManifestInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ManifestInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ManifestInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            String? operationId,
+            double? trim,
+            double? banda,
+            List<TankMeasurementInput> tankMeasurements,
+            @TimestampOrNullConverter() DateTime? createdAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ManifestInput() when $default != null:
+        return $default(_that.id, _that.assetId, _that.operationId, _that.trim,
+            _that.banda, _that.tankMeasurements, _that.createdAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            String? operationId,
+            double? trim,
+            double? banda,
+            List<TankMeasurementInput> tankMeasurements,
+            @TimestampOrNullConverter() DateTime? createdAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ManifestInput():
+        return $default(_that.id, _that.assetId, _that.operationId, _that.trim,
+            _that.banda, _that.tankMeasurements, _that.createdAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            String? operationId,
+            double? trim,
+            double? banda,
+            List<TankMeasurementInput> tankMeasurements,
+            @TimestampOrNullConverter() DateTime? createdAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ManifestInput() when $default != null:
+        return $default(_that.id, _that.assetId, _that.operationId, _that.trim,
+            _that.banda, _that.tankMeasurements, _that.createdAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ManifestInput extends ManifestInput {
@@ -14303,7 +22901,8 @@ class _ManifestInput extends ManifestInput {
       this.tankMeasurements = const [],
       @TimestampOrNullConverter() this.createdAt})
       : super._();
-  factory _ManifestInput.fromJson(Map<String, dynamic> json) => _$ManifestInputFromJson(json);
+  factory _ManifestInput.fromJson(Map<String, dynamic> json) =>
+      _$ManifestInputFromJson(json);
 
   /// The [id] parameter is the id of the manifest entity.
   @override
@@ -14357,8 +22956,10 @@ class _ManifestInput extends ManifestInput {
 }
 
 /// @nodoc
-abstract mixin class _$ManifestInputCopyWith<$Res> implements $ManifestInputCopyWith<$Res> {
-  factory _$ManifestInputCopyWith(_ManifestInput value, $Res Function(_ManifestInput) _then) =
+abstract mixin class _$ManifestInputCopyWith<$Res>
+    implements $ManifestInputCopyWith<$Res> {
+  factory _$ManifestInputCopyWith(
+          _ManifestInput value, $Res Function(_ManifestInput) _then) =
       __$ManifestInputCopyWithImpl;
   @override
   @useResult
@@ -14373,7 +22974,8 @@ abstract mixin class _$ManifestInputCopyWith<$Res> implements $ManifestInputCopy
 }
 
 /// @nodoc
-class __$ManifestInputCopyWithImpl<$Res> implements _$ManifestInputCopyWith<$Res> {
+class __$ManifestInputCopyWithImpl<$Res>
+    implements _$ManifestInputCopyWith<$Res> {
   __$ManifestInputCopyWithImpl(this._self, this._then);
 
   final _ManifestInput _self;
@@ -14459,7 +23061,8 @@ mixin _$TankMeasurement {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $TankMeasurementCopyWith<TankMeasurement> get copyWith =>
-      _$TankMeasurementCopyWithImpl<TankMeasurement>(this as TankMeasurement, _$identity);
+      _$TankMeasurementCopyWithImpl<TankMeasurement>(
+          this as TankMeasurement, _$identity);
 
   /// Serializes this TankMeasurement to a JSON map.
   Map<String, dynamic> toJson();
@@ -14469,21 +23072,37 @@ mixin _$TankMeasurement {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TankMeasurement &&
-            (identical(other.tankSlug, tankSlug) || other.tankSlug == tankSlug) &&
-            (identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype) &&
+            (identical(other.tankSlug, tankSlug) ||
+                other.tankSlug == tankSlug) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
             (identical(other.height, height) || other.height == height) &&
-            (identical(other.temperature, temperature) || other.temperature == temperature) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
             (identical(other.volume, volume) || other.volume == volume) &&
-            (identical(other.fuelDensity, fuelDensity) || other.fuelDensity == fuelDensity) &&
-            (identical(other.conversionFactor, conversionFactor) || other.conversionFactor == conversionFactor) &&
-            (identical(other.convertedDensity, convertedDensity) || other.convertedDensity == convertedDensity) &&
-            (identical(other.convertedVolume, convertedVolume) || other.convertedVolume == convertedVolume));
+            (identical(other.fuelDensity, fuelDensity) ||
+                other.fuelDensity == fuelDensity) &&
+            (identical(other.conversionFactor, conversionFactor) ||
+                other.conversionFactor == conversionFactor) &&
+            (identical(other.convertedDensity, convertedDensity) ||
+                other.convertedDensity == convertedDensity) &&
+            (identical(other.convertedVolume, convertedVolume) ||
+                other.convertedVolume == convertedVolume));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, tankSlug, fuelSubtype, height, temperature, volume, fuelDensity,
-      conversionFactor, convertedDensity, convertedVolume);
+  int get hashCode => Object.hash(
+      runtimeType,
+      tankSlug,
+      fuelSubtype,
+      height,
+      temperature,
+      volume,
+      fuelDensity,
+      conversionFactor,
+      convertedDensity,
+      convertedVolume);
 
   @override
   String toString() {
@@ -14493,7 +23112,8 @@ mixin _$TankMeasurement {
 
 /// @nodoc
 abstract mixin class $TankMeasurementCopyWith<$Res> {
-  factory $TankMeasurementCopyWith(TankMeasurement value, $Res Function(TankMeasurement) _then) =
+  factory $TankMeasurementCopyWith(
+          TankMeasurement value, $Res Function(TankMeasurement) _then) =
       _$TankMeasurementCopyWithImpl;
   @useResult
   $Res call(
@@ -14509,7 +23129,8 @@ abstract mixin class $TankMeasurementCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TankMeasurementCopyWithImpl<$Res> implements $TankMeasurementCopyWith<$Res> {
+class _$TankMeasurementCopyWithImpl<$Res>
+    implements $TankMeasurementCopyWith<$Res> {
   _$TankMeasurementCopyWithImpl(this._self, this._then);
 
   final TankMeasurement _self;
@@ -14571,6 +23192,220 @@ class _$TankMeasurementCopyWithImpl<$Res> implements $TankMeasurementCopyWith<$R
   }
 }
 
+/// Adds pattern-matching-related methods to [TankMeasurement].
+extension TankMeasurementPatterns on TankMeasurement {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TankMeasurement value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurement() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TankMeasurement value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurement():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TankMeasurement value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurement() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? tankSlug,
+            String? fuelSubtype,
+            double? height,
+            double? temperature,
+            double? volume,
+            double? fuelDensity,
+            double? conversionFactor,
+            double? convertedDensity,
+            double? convertedVolume)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurement() when $default != null:
+        return $default(
+            _that.tankSlug,
+            _that.fuelSubtype,
+            _that.height,
+            _that.temperature,
+            _that.volume,
+            _that.fuelDensity,
+            _that.conversionFactor,
+            _that.convertedDensity,
+            _that.convertedVolume);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? tankSlug,
+            String? fuelSubtype,
+            double? height,
+            double? temperature,
+            double? volume,
+            double? fuelDensity,
+            double? conversionFactor,
+            double? convertedDensity,
+            double? convertedVolume)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurement():
+        return $default(
+            _that.tankSlug,
+            _that.fuelSubtype,
+            _that.height,
+            _that.temperature,
+            _that.volume,
+            _that.fuelDensity,
+            _that.conversionFactor,
+            _that.convertedDensity,
+            _that.convertedVolume);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? tankSlug,
+            String? fuelSubtype,
+            double? height,
+            double? temperature,
+            double? volume,
+            double? fuelDensity,
+            double? conversionFactor,
+            double? convertedDensity,
+            double? convertedVolume)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurement() when $default != null:
+        return $default(
+            _that.tankSlug,
+            _that.fuelSubtype,
+            _that.height,
+            _that.temperature,
+            _that.volume,
+            _that.fuelDensity,
+            _that.conversionFactor,
+            _that.convertedDensity,
+            _that.convertedVolume);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TankMeasurement extends TankMeasurement {
@@ -14585,7 +23420,8 @@ class _TankMeasurement extends TankMeasurement {
       this.convertedDensity,
       this.convertedVolume})
       : super._();
-  factory _TankMeasurement.fromJson(Map<String, dynamic> json) => _$TankMeasurementFromJson(json);
+  factory _TankMeasurement.fromJson(Map<String, dynamic> json) =>
+      _$TankMeasurementFromJson(json);
 
   /// The [tankSlug] parameter is the tank slug.
   @override
@@ -14643,21 +23479,37 @@ class _TankMeasurement extends TankMeasurement {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TankMeasurement &&
-            (identical(other.tankSlug, tankSlug) || other.tankSlug == tankSlug) &&
-            (identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype) &&
+            (identical(other.tankSlug, tankSlug) ||
+                other.tankSlug == tankSlug) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
             (identical(other.height, height) || other.height == height) &&
-            (identical(other.temperature, temperature) || other.temperature == temperature) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
             (identical(other.volume, volume) || other.volume == volume) &&
-            (identical(other.fuelDensity, fuelDensity) || other.fuelDensity == fuelDensity) &&
-            (identical(other.conversionFactor, conversionFactor) || other.conversionFactor == conversionFactor) &&
-            (identical(other.convertedDensity, convertedDensity) || other.convertedDensity == convertedDensity) &&
-            (identical(other.convertedVolume, convertedVolume) || other.convertedVolume == convertedVolume));
+            (identical(other.fuelDensity, fuelDensity) ||
+                other.fuelDensity == fuelDensity) &&
+            (identical(other.conversionFactor, conversionFactor) ||
+                other.conversionFactor == conversionFactor) &&
+            (identical(other.convertedDensity, convertedDensity) ||
+                other.convertedDensity == convertedDensity) &&
+            (identical(other.convertedVolume, convertedVolume) ||
+                other.convertedVolume == convertedVolume));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, tankSlug, fuelSubtype, height, temperature, volume, fuelDensity,
-      conversionFactor, convertedDensity, convertedVolume);
+  int get hashCode => Object.hash(
+      runtimeType,
+      tankSlug,
+      fuelSubtype,
+      height,
+      temperature,
+      volume,
+      fuelDensity,
+      conversionFactor,
+      convertedDensity,
+      convertedVolume);
 
   @override
   String toString() {
@@ -14666,8 +23518,10 @@ class _TankMeasurement extends TankMeasurement {
 }
 
 /// @nodoc
-abstract mixin class _$TankMeasurementCopyWith<$Res> implements $TankMeasurementCopyWith<$Res> {
-  factory _$TankMeasurementCopyWith(_TankMeasurement value, $Res Function(_TankMeasurement) _then) =
+abstract mixin class _$TankMeasurementCopyWith<$Res>
+    implements $TankMeasurementCopyWith<$Res> {
+  factory _$TankMeasurementCopyWith(
+          _TankMeasurement value, $Res Function(_TankMeasurement) _then) =
       __$TankMeasurementCopyWithImpl;
   @override
   @useResult
@@ -14684,7 +23538,8 @@ abstract mixin class _$TankMeasurementCopyWith<$Res> implements $TankMeasurement
 }
 
 /// @nodoc
-class __$TankMeasurementCopyWithImpl<$Res> implements _$TankMeasurementCopyWith<$Res> {
+class __$TankMeasurementCopyWithImpl<$Res>
+    implements _$TankMeasurementCopyWith<$Res> {
   __$TankMeasurementCopyWithImpl(this._self, this._then);
 
   final _TankMeasurement _self;
@@ -14789,7 +23644,8 @@ mixin _$TankMeasurementInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $TankMeasurementInputCopyWith<TankMeasurementInput> get copyWith =>
-      _$TankMeasurementInputCopyWithImpl<TankMeasurementInput>(this as TankMeasurementInput, _$identity);
+      _$TankMeasurementInputCopyWithImpl<TankMeasurementInput>(
+          this as TankMeasurementInput, _$identity);
 
   /// Serializes this TankMeasurementInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -14802,15 +23658,22 @@ mixin _$TankMeasurementInput {
 
 /// @nodoc
 abstract mixin class $TankMeasurementInputCopyWith<$Res> {
-  factory $TankMeasurementInputCopyWith(TankMeasurementInput value, $Res Function(TankMeasurementInput) _then) =
+  factory $TankMeasurementInputCopyWith(TankMeasurementInput value,
+          $Res Function(TankMeasurementInput) _then) =
       _$TankMeasurementInputCopyWithImpl;
   @useResult
   $Res call(
-      {String tankSlug, String fuelSubtype, double height, double temperature, double volume, double fuelDensity});
+      {String tankSlug,
+      String fuelSubtype,
+      double height,
+      double temperature,
+      double volume,
+      double fuelDensity});
 }
 
 /// @nodoc
-class _$TankMeasurementInputCopyWithImpl<$Res> implements $TankMeasurementInputCopyWith<$Res> {
+class _$TankMeasurementInputCopyWithImpl<$Res>
+    implements $TankMeasurementInputCopyWith<$Res> {
   _$TankMeasurementInputCopyWithImpl(this._self, this._then);
 
   final TankMeasurementInput _self;
@@ -14857,6 +23720,172 @@ class _$TankMeasurementInputCopyWithImpl<$Res> implements $TankMeasurementInputC
   }
 }
 
+/// Adds pattern-matching-related methods to [TankMeasurementInput].
+extension TankMeasurementInputPatterns on TankMeasurementInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TankMeasurementInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurementInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TankMeasurementInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurementInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TankMeasurementInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurementInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String tankSlug, String fuelSubtype, double height,
+            double temperature, double volume, double fuelDensity)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurementInput() when $default != null:
+        return $default(_that.tankSlug, _that.fuelSubtype, _that.height,
+            _that.temperature, _that.volume, _that.fuelDensity);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String tankSlug, String fuelSubtype, double height,
+            double temperature, double volume, double fuelDensity)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurementInput():
+        return $default(_that.tankSlug, _that.fuelSubtype, _that.height,
+            _that.temperature, _that.volume, _that.fuelDensity);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String tankSlug, String fuelSubtype, double height,
+            double temperature, double volume, double fuelDensity)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TankMeasurementInput() when $default != null:
+        return $default(_that.tankSlug, _that.fuelSubtype, _that.height,
+            _that.temperature, _that.volume, _that.fuelDensity);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TankMeasurementInput extends TankMeasurementInput {
@@ -14868,7 +23897,8 @@ class _TankMeasurementInput extends TankMeasurementInput {
       this.volume = 0.0,
       this.fuelDensity = 0.0})
       : super._();
-  factory _TankMeasurementInput.fromJson(Map<String, dynamic> json) => _$TankMeasurementInputFromJson(json);
+  factory _TankMeasurementInput.fromJson(Map<String, dynamic> json) =>
+      _$TankMeasurementInputFromJson(json);
 
   /// The [tankSlug] parameter is the tank slug.
   @override
@@ -14906,7 +23936,8 @@ class _TankMeasurementInput extends TankMeasurementInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$TankMeasurementInputCopyWith<_TankMeasurementInput> get copyWith =>
-      __$TankMeasurementInputCopyWithImpl<_TankMeasurementInput>(this, _$identity);
+      __$TankMeasurementInputCopyWithImpl<_TankMeasurementInput>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -14922,17 +23953,25 @@ class _TankMeasurementInput extends TankMeasurementInput {
 }
 
 /// @nodoc
-abstract mixin class _$TankMeasurementInputCopyWith<$Res> implements $TankMeasurementInputCopyWith<$Res> {
-  factory _$TankMeasurementInputCopyWith(_TankMeasurementInput value, $Res Function(_TankMeasurementInput) _then) =
+abstract mixin class _$TankMeasurementInputCopyWith<$Res>
+    implements $TankMeasurementInputCopyWith<$Res> {
+  factory _$TankMeasurementInputCopyWith(_TankMeasurementInput value,
+          $Res Function(_TankMeasurementInput) _then) =
       __$TankMeasurementInputCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String tankSlug, String fuelSubtype, double height, double temperature, double volume, double fuelDensity});
+      {String tankSlug,
+      String fuelSubtype,
+      double height,
+      double temperature,
+      double volume,
+      double fuelDensity});
 }
 
 /// @nodoc
-class __$TankMeasurementInputCopyWithImpl<$Res> implements _$TankMeasurementInputCopyWith<$Res> {
+class __$TankMeasurementInputCopyWithImpl<$Res>
+    implements _$TankMeasurementInputCopyWith<$Res> {
   __$TankMeasurementInputCopyWithImpl(this._self, this._then);
 
   final _TankMeasurementInput _self;
@@ -15074,7 +24113,8 @@ mixin _$CaclEntity {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $CaclEntityCopyWith<CaclEntity> get copyWith => _$CaclEntityCopyWithImpl<CaclEntity>(this as CaclEntity, _$identity);
+  $CaclEntityCopyWith<CaclEntity> get copyWith =>
+      _$CaclEntityCopyWithImpl<CaclEntity>(this as CaclEntity, _$identity);
 
   /// Serializes this CaclEntity to a JSON map.
   Map<String, dynamic> toJson();
@@ -15087,31 +24127,53 @@ mixin _$CaclEntity {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId) &&
-            (identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset) &&
-            (identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId) &&
-            (identical(other.transportUser, transportUser) || other.transportUser == transportUser) &&
-            (identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber) &&
-            (identical(other.category, category) || other.category == category) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.transportUserId, transportUserId) ||
+                other.transportUserId == transportUserId) &&
+            (identical(other.transportUser, transportUser) ||
+                other.transportUser == transportUser) &&
+            (identical(other.caclNumber, caclNumber) ||
+                other.caclNumber == caclNumber) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
             (identical(other.product, product) || other.product == product) &&
-            (identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId) &&
-            (identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset) &&
+            (identical(other.clientAssetId, clientAssetId) ||
+                other.clientAssetId == clientAssetId) &&
+            (identical(other.clientAsset, clientAsset) ||
+                other.clientAsset == clientAsset) &&
             (identical(other.origin, origin) || other.origin == origin) &&
-            (identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber) &&
-            (identical(other.transport, transport) || other.transport == transport) &&
-            (identical(other.equipments, equipments) || other.equipments == equipments) &&
-            (identical(other.measurements, measurements) || other.measurements == measurements) &&
+            (identical(other.tankNumber, tankNumber) ||
+                other.tankNumber == tankNumber) &&
+            (identical(other.transport, transport) ||
+                other.transport == transport) &&
+            (identical(other.equipments, equipments) ||
+                other.equipments == equipments) &&
+            (identical(other.measurements, measurements) ||
+                other.measurements == measurements) &&
             (identical(other.results, results) || other.results == results) &&
-            (identical(other.measurer01, measurer01) || other.measurer01 == measurer01) &&
-            (identical(other.measurer02, measurer02) || other.measurer02 == measurer02) &&
-            (identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved) &&
-            (identical(other.observations, observations) || other.observations == observations) &&
-            (identical(other.startedAt, startedAt) || other.startedAt == startedAt) &&
-            (identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.operationId, operationId) || other.operationId == operationId) &&
-            (identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart) &&
-            (identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd));
+            (identical(other.measurer01, measurer01) ||
+                other.measurer01 == measurer01) &&
+            (identical(other.measurer02, measurer02) ||
+                other.measurer02 == measurer02) &&
+            (identical(other.volumeMoved, volumeMoved) ||
+                other.volumeMoved == volumeMoved) &&
+            (identical(other.observations, observations) ||
+                other.observations == observations) &&
+            (identical(other.startedAt, startedAt) ||
+                other.startedAt == startedAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.localDateStart, localDateStart) ||
+                other.localDateStart == localDateStart) &&
+            (identical(other.localDateEnd, localDateEnd) ||
+                other.localDateEnd == localDateEnd));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -15156,7 +24218,9 @@ mixin _$CaclEntity {
 
 /// @nodoc
 abstract mixin class $CaclEntityCopyWith<$Res> {
-  factory $CaclEntityCopyWith(CaclEntity value, $Res Function(CaclEntity) _then) = _$CaclEntityCopyWithImpl;
+  factory $CaclEntityCopyWith(
+          CaclEntity value, $Res Function(CaclEntity) _then) =
+      _$CaclEntityCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -15498,6 +24562,334 @@ class _$CaclEntityCopyWithImpl<$Res> implements $CaclEntityCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [CaclEntity].
+extension CaclEntityPatterns on CaclEntity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CaclEntity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CaclEntity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEntity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CaclEntity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? transportAssetId,
+            Asset? transportAsset,
+            String? transportUserId,
+            User? transportUser,
+            String? caclNumber,
+            String? category,
+            String? product,
+            String? clientAssetId,
+            Asset? clientAsset,
+            String? origin,
+            String? tankNumber,
+            String? transport,
+            CaclEquipmentEntity? equipments,
+            MeasurementsEntity? measurements,
+            ResultsEntity? results,
+            CaclMeasurementOutput? measurer01,
+            CaclMeasurementOutput? measurer02,
+            VolumeMovedEntity? volumeMoved,
+            String? observations,
+            @TimestampOrNullConverter() DateTime? startedAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            String? operationId,
+            @TimestampOrNullConverter() DateTime? localDateStart,
+            @TimestampOrNullConverter() DateTime? localDateEnd)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEntity() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.transportAssetId,
+            _that.transportAsset,
+            _that.transportUserId,
+            _that.transportUser,
+            _that.caclNumber,
+            _that.category,
+            _that.product,
+            _that.clientAssetId,
+            _that.clientAsset,
+            _that.origin,
+            _that.tankNumber,
+            _that.transport,
+            _that.equipments,
+            _that.measurements,
+            _that.results,
+            _that.measurer01,
+            _that.measurer02,
+            _that.volumeMoved,
+            _that.observations,
+            _that.startedAt,
+            _that.finishedAt,
+            _that.createdAt,
+            _that.operationId,
+            _that.localDateStart,
+            _that.localDateEnd);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? transportAssetId,
+            Asset? transportAsset,
+            String? transportUserId,
+            User? transportUser,
+            String? caclNumber,
+            String? category,
+            String? product,
+            String? clientAssetId,
+            Asset? clientAsset,
+            String? origin,
+            String? tankNumber,
+            String? transport,
+            CaclEquipmentEntity? equipments,
+            MeasurementsEntity? measurements,
+            ResultsEntity? results,
+            CaclMeasurementOutput? measurer01,
+            CaclMeasurementOutput? measurer02,
+            VolumeMovedEntity? volumeMoved,
+            String? observations,
+            @TimestampOrNullConverter() DateTime? startedAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            String? operationId,
+            @TimestampOrNullConverter() DateTime? localDateStart,
+            @TimestampOrNullConverter() DateTime? localDateEnd)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEntity():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.transportAssetId,
+            _that.transportAsset,
+            _that.transportUserId,
+            _that.transportUser,
+            _that.caclNumber,
+            _that.category,
+            _that.product,
+            _that.clientAssetId,
+            _that.clientAsset,
+            _that.origin,
+            _that.tankNumber,
+            _that.transport,
+            _that.equipments,
+            _that.measurements,
+            _that.results,
+            _that.measurer01,
+            _that.measurer02,
+            _that.volumeMoved,
+            _that.observations,
+            _that.startedAt,
+            _that.finishedAt,
+            _that.createdAt,
+            _that.operationId,
+            _that.localDateStart,
+            _that.localDateEnd);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            Asset? asset,
+            String? transportAssetId,
+            Asset? transportAsset,
+            String? transportUserId,
+            User? transportUser,
+            String? caclNumber,
+            String? category,
+            String? product,
+            String? clientAssetId,
+            Asset? clientAsset,
+            String? origin,
+            String? tankNumber,
+            String? transport,
+            CaclEquipmentEntity? equipments,
+            MeasurementsEntity? measurements,
+            ResultsEntity? results,
+            CaclMeasurementOutput? measurer01,
+            CaclMeasurementOutput? measurer02,
+            VolumeMovedEntity? volumeMoved,
+            String? observations,
+            @TimestampOrNullConverter() DateTime? startedAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            String? operationId,
+            @TimestampOrNullConverter() DateTime? localDateStart,
+            @TimestampOrNullConverter() DateTime? localDateEnd)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEntity() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.asset,
+            _that.transportAssetId,
+            _that.transportAsset,
+            _that.transportUserId,
+            _that.transportUser,
+            _that.caclNumber,
+            _that.category,
+            _that.product,
+            _that.clientAssetId,
+            _that.clientAsset,
+            _that.origin,
+            _that.tankNumber,
+            _that.transport,
+            _that.equipments,
+            _that.measurements,
+            _that.results,
+            _that.measurer01,
+            _that.measurer02,
+            _that.volumeMoved,
+            _that.observations,
+            _that.startedAt,
+            _that.finishedAt,
+            _that.createdAt,
+            _that.operationId,
+            _that.localDateStart,
+            _that.localDateEnd);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _CaclEntity implements CaclEntity {
@@ -15530,7 +24922,8 @@ class _CaclEntity implements CaclEntity {
       this.operationId,
       @TimestampOrNullConverter() this.localDateStart,
       @TimestampOrNullConverter() this.localDateEnd});
-  factory _CaclEntity.fromJson(Map<String, dynamic> json) => _$CaclEntityFromJson(json);
+  factory _CaclEntity.fromJson(Map<String, dynamic> json) =>
+      _$CaclEntityFromJson(json);
 
   /// The [id] parameter is the id of the cacl entity.
   @override
@@ -15654,7 +25047,8 @@ class _CaclEntity implements CaclEntity {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$CaclEntityCopyWith<_CaclEntity> get copyWith => __$CaclEntityCopyWithImpl<_CaclEntity>(this, _$identity);
+  _$CaclEntityCopyWith<_CaclEntity> get copyWith =>
+      __$CaclEntityCopyWithImpl<_CaclEntity>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -15671,31 +25065,53 @@ class _CaclEntity implements CaclEntity {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId) &&
-            (identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset) &&
-            (identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId) &&
-            (identical(other.transportUser, transportUser) || other.transportUser == transportUser) &&
-            (identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber) &&
-            (identical(other.category, category) || other.category == category) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.transportUserId, transportUserId) ||
+                other.transportUserId == transportUserId) &&
+            (identical(other.transportUser, transportUser) ||
+                other.transportUser == transportUser) &&
+            (identical(other.caclNumber, caclNumber) ||
+                other.caclNumber == caclNumber) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
             (identical(other.product, product) || other.product == product) &&
-            (identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId) &&
-            (identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset) &&
+            (identical(other.clientAssetId, clientAssetId) ||
+                other.clientAssetId == clientAssetId) &&
+            (identical(other.clientAsset, clientAsset) ||
+                other.clientAsset == clientAsset) &&
             (identical(other.origin, origin) || other.origin == origin) &&
-            (identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber) &&
-            (identical(other.transport, transport) || other.transport == transport) &&
-            (identical(other.equipments, equipments) || other.equipments == equipments) &&
-            (identical(other.measurements, measurements) || other.measurements == measurements) &&
+            (identical(other.tankNumber, tankNumber) ||
+                other.tankNumber == tankNumber) &&
+            (identical(other.transport, transport) ||
+                other.transport == transport) &&
+            (identical(other.equipments, equipments) ||
+                other.equipments == equipments) &&
+            (identical(other.measurements, measurements) ||
+                other.measurements == measurements) &&
             (identical(other.results, results) || other.results == results) &&
-            (identical(other.measurer01, measurer01) || other.measurer01 == measurer01) &&
-            (identical(other.measurer02, measurer02) || other.measurer02 == measurer02) &&
-            (identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved) &&
-            (identical(other.observations, observations) || other.observations == observations) &&
-            (identical(other.startedAt, startedAt) || other.startedAt == startedAt) &&
-            (identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.operationId, operationId) || other.operationId == operationId) &&
-            (identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart) &&
-            (identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd));
+            (identical(other.measurer01, measurer01) ||
+                other.measurer01 == measurer01) &&
+            (identical(other.measurer02, measurer02) ||
+                other.measurer02 == measurer02) &&
+            (identical(other.volumeMoved, volumeMoved) ||
+                other.volumeMoved == volumeMoved) &&
+            (identical(other.observations, observations) ||
+                other.observations == observations) &&
+            (identical(other.startedAt, startedAt) ||
+                other.startedAt == startedAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.localDateStart, localDateStart) ||
+                other.localDateStart == localDateStart) &&
+            (identical(other.localDateEnd, localDateEnd) ||
+                other.localDateEnd == localDateEnd));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -15739,8 +25155,11 @@ class _CaclEntity implements CaclEntity {
 }
 
 /// @nodoc
-abstract mixin class _$CaclEntityCopyWith<$Res> implements $CaclEntityCopyWith<$Res> {
-  factory _$CaclEntityCopyWith(_CaclEntity value, $Res Function(_CaclEntity) _then) = __$CaclEntityCopyWithImpl;
+abstract mixin class _$CaclEntityCopyWith<$Res>
+    implements $CaclEntityCopyWith<$Res> {
+  factory _$CaclEntityCopyWith(
+          _CaclEntity value, $Res Function(_CaclEntity) _then) =
+      __$CaclEntityCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -16109,7 +25528,8 @@ mixin _$CaclEquipmentEntity {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $CaclEquipmentEntityCopyWith<CaclEquipmentEntity> get copyWith =>
-      _$CaclEquipmentEntityCopyWithImpl<CaclEquipmentEntity>(this as CaclEquipmentEntity, _$identity);
+      _$CaclEquipmentEntityCopyWithImpl<CaclEquipmentEntity>(
+          this as CaclEquipmentEntity, _$identity);
 
   /// Serializes this CaclEquipmentEntity to a JSON map.
   Map<String, dynamic> toJson();
@@ -16119,14 +25539,18 @@ mixin _$CaclEquipmentEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CaclEquipmentEntity &&
-            (identical(other.measuringTape, measuringTape) || other.measuringTape == measuringTape) &&
-            (identical(other.densimeter, densimeter) || other.densimeter == densimeter) &&
-            (identical(other.thermometer, thermometer) || other.thermometer == thermometer));
+            (identical(other.measuringTape, measuringTape) ||
+                other.measuringTape == measuringTape) &&
+            (identical(other.densimeter, densimeter) ||
+                other.densimeter == densimeter) &&
+            (identical(other.thermometer, thermometer) ||
+                other.thermometer == thermometer));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, measuringTape, densimeter, thermometer);
+  int get hashCode =>
+      Object.hash(runtimeType, measuringTape, densimeter, thermometer);
 
   @override
   String toString() {
@@ -16136,7 +25560,8 @@ mixin _$CaclEquipmentEntity {
 
 /// @nodoc
 abstract mixin class $CaclEquipmentEntityCopyWith<$Res> {
-  factory $CaclEquipmentEntityCopyWith(CaclEquipmentEntity value, $Res Function(CaclEquipmentEntity) _then) =
+  factory $CaclEquipmentEntityCopyWith(
+          CaclEquipmentEntity value, $Res Function(CaclEquipmentEntity) _then) =
       _$CaclEquipmentEntityCopyWithImpl;
   @useResult
   $Res call(
@@ -16150,7 +25575,8 @@ abstract mixin class $CaclEquipmentEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CaclEquipmentEntityCopyWithImpl<$Res> implements $CaclEquipmentEntityCopyWith<$Res> {
+class _$CaclEquipmentEntityCopyWithImpl<$Res>
+    implements $CaclEquipmentEntityCopyWith<$Res> {
   _$CaclEquipmentEntityCopyWithImpl(this._self, this._then);
 
   final CaclEquipmentEntity _self;
@@ -16190,7 +25616,8 @@ class _$CaclEquipmentEntityCopyWithImpl<$Res> implements $CaclEquipmentEntityCop
       return null;
     }
 
-    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.measuringTape!, (value) {
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.measuringTape!,
+        (value) {
       return _then(_self.copyWith(measuringTape: value));
     });
   }
@@ -16204,7 +25631,8 @@ class _$CaclEquipmentEntityCopyWithImpl<$Res> implements $CaclEquipmentEntityCop
       return null;
     }
 
-    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.densimeter!, (value) {
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.densimeter!,
+        (value) {
       return _then(_self.copyWith(densimeter: value));
     });
   }
@@ -16218,9 +25646,182 @@ class _$CaclEquipmentEntityCopyWithImpl<$Res> implements $CaclEquipmentEntityCop
       return null;
     }
 
-    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.thermometer!, (value) {
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.thermometer!,
+        (value) {
       return _then(_self.copyWith(thermometer: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [CaclEquipmentEntity].
+extension CaclEquipmentEntityPatterns on CaclEquipmentEntity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CaclEquipmentEntity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CaclEquipmentEntity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentEntity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CaclEquipmentEntity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            EquipmentMeasurementEntity? measuringTape,
+            EquipmentMeasurementEntity? densimeter,
+            EquipmentMeasurementEntity? thermometer)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentEntity() when $default != null:
+        return $default(
+            _that.measuringTape, _that.densimeter, _that.thermometer);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            EquipmentMeasurementEntity? measuringTape,
+            EquipmentMeasurementEntity? densimeter,
+            EquipmentMeasurementEntity? thermometer)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentEntity():
+        return $default(
+            _that.measuringTape, _that.densimeter, _that.thermometer);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            EquipmentMeasurementEntity? measuringTape,
+            EquipmentMeasurementEntity? densimeter,
+            EquipmentMeasurementEntity? thermometer)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentEntity() when $default != null:
+        return $default(
+            _that.measuringTape, _that.densimeter, _that.thermometer);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -16228,7 +25829,8 @@ class _$CaclEquipmentEntityCopyWithImpl<$Res> implements $CaclEquipmentEntityCop
 @JsonSerializable()
 class _CaclEquipmentEntity implements CaclEquipmentEntity {
   _CaclEquipmentEntity({this.measuringTape, this.densimeter, this.thermometer});
-  factory _CaclEquipmentEntity.fromJson(Map<String, dynamic> json) => _$CaclEquipmentEntityFromJson(json);
+  factory _CaclEquipmentEntity.fromJson(Map<String, dynamic> json) =>
+      _$CaclEquipmentEntityFromJson(json);
 
   /// The [measuringTape] parameter is the measuringTape of the cacl equipment entity.
   @override
@@ -16248,7 +25850,8 @@ class _CaclEquipmentEntity implements CaclEquipmentEntity {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$CaclEquipmentEntityCopyWith<_CaclEquipmentEntity> get copyWith =>
-      __$CaclEquipmentEntityCopyWithImpl<_CaclEquipmentEntity>(this, _$identity);
+      __$CaclEquipmentEntityCopyWithImpl<_CaclEquipmentEntity>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -16262,14 +25865,18 @@ class _CaclEquipmentEntity implements CaclEquipmentEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CaclEquipmentEntity &&
-            (identical(other.measuringTape, measuringTape) || other.measuringTape == measuringTape) &&
-            (identical(other.densimeter, densimeter) || other.densimeter == densimeter) &&
-            (identical(other.thermometer, thermometer) || other.thermometer == thermometer));
+            (identical(other.measuringTape, measuringTape) ||
+                other.measuringTape == measuringTape) &&
+            (identical(other.densimeter, densimeter) ||
+                other.densimeter == densimeter) &&
+            (identical(other.thermometer, thermometer) ||
+                other.thermometer == thermometer));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, measuringTape, densimeter, thermometer);
+  int get hashCode =>
+      Object.hash(runtimeType, measuringTape, densimeter, thermometer);
 
   @override
   String toString() {
@@ -16278,8 +25885,10 @@ class _CaclEquipmentEntity implements CaclEquipmentEntity {
 }
 
 /// @nodoc
-abstract mixin class _$CaclEquipmentEntityCopyWith<$Res> implements $CaclEquipmentEntityCopyWith<$Res> {
-  factory _$CaclEquipmentEntityCopyWith(_CaclEquipmentEntity value, $Res Function(_CaclEquipmentEntity) _then) =
+abstract mixin class _$CaclEquipmentEntityCopyWith<$Res>
+    implements $CaclEquipmentEntityCopyWith<$Res> {
+  factory _$CaclEquipmentEntityCopyWith(_CaclEquipmentEntity value,
+          $Res Function(_CaclEquipmentEntity) _then) =
       __$CaclEquipmentEntityCopyWithImpl;
   @override
   @useResult
@@ -16297,7 +25906,8 @@ abstract mixin class _$CaclEquipmentEntityCopyWith<$Res> implements $CaclEquipme
 }
 
 /// @nodoc
-class __$CaclEquipmentEntityCopyWithImpl<$Res> implements _$CaclEquipmentEntityCopyWith<$Res> {
+class __$CaclEquipmentEntityCopyWithImpl<$Res>
+    implements _$CaclEquipmentEntityCopyWith<$Res> {
   __$CaclEquipmentEntityCopyWithImpl(this._self, this._then);
 
   final _CaclEquipmentEntity _self;
@@ -16337,7 +25947,8 @@ class __$CaclEquipmentEntityCopyWithImpl<$Res> implements _$CaclEquipmentEntityC
       return null;
     }
 
-    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.measuringTape!, (value) {
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.measuringTape!,
+        (value) {
       return _then(_self.copyWith(measuringTape: value));
     });
   }
@@ -16351,7 +25962,8 @@ class __$CaclEquipmentEntityCopyWithImpl<$Res> implements _$CaclEquipmentEntityC
       return null;
     }
 
-    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.densimeter!, (value) {
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.densimeter!,
+        (value) {
       return _then(_self.copyWith(densimeter: value));
     });
   }
@@ -16365,7 +25977,8 @@ class __$CaclEquipmentEntityCopyWithImpl<$Res> implements _$CaclEquipmentEntityC
       return null;
     }
 
-    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.thermometer!, (value) {
+    return $EquipmentMeasurementEntityCopyWith<$Res>(_self.thermometer!,
+        (value) {
       return _then(_self.copyWith(thermometer: value));
     });
   }
@@ -16402,7 +26015,8 @@ mixin _$MeasurementsEntity {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $MeasurementsEntityCopyWith<MeasurementsEntity> get copyWith =>
-      _$MeasurementsEntityCopyWithImpl<MeasurementsEntity>(this as MeasurementsEntity, _$identity);
+      _$MeasurementsEntityCopyWithImpl<MeasurementsEntity>(
+          this as MeasurementsEntity, _$identity);
 
   /// Serializes this MeasurementsEntity to a JSON map.
   Map<String, dynamic> toJson();
@@ -16412,14 +26026,18 @@ mixin _$MeasurementsEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MeasurementsEntity &&
-            (identical(other.referenceHeight, referenceHeight) || other.referenceHeight == referenceHeight) &&
+            (identical(other.referenceHeight, referenceHeight) ||
+                other.referenceHeight == referenceHeight) &&
             (identical(other.productLevelHeight, productLevelHeight) ||
                 other.productLevelHeight == productLevelHeight) &&
             (identical(other.correctedLevelHeight, correctedLevelHeight) ||
                 other.correctedLevelHeight == correctedLevelHeight) &&
-            (identical(other.waterHeight, waterHeight) || other.waterHeight == waterHeight) &&
-            (identical(other.ambientLineVolume, ambientLineVolume) || other.ambientLineVolume == ambientLineVolume) &&
-            (identical(other.ambientDensity, ambientDensity) || other.ambientDensity == ambientDensity) &&
+            (identical(other.waterHeight, waterHeight) ||
+                other.waterHeight == waterHeight) &&
+            (identical(other.ambientLineVolume, ambientLineVolume) ||
+                other.ambientLineVolume == ambientLineVolume) &&
+            (identical(other.ambientDensity, ambientDensity) ||
+                other.ambientDensity == ambientDensity) &&
             (identical(other.ambientTemperature, ambientTemperature) ||
                 other.ambientTemperature == ambientTemperature) &&
             (identical(other.averageTankTemperature, averageTankTemperature) ||
@@ -16428,8 +26046,16 @@ mixin _$MeasurementsEntity {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, referenceHeight, productLevelHeight, correctedLevelHeight, waterHeight,
-      ambientLineVolume, ambientDensity, ambientTemperature, averageTankTemperature);
+  int get hashCode => Object.hash(
+      runtimeType,
+      referenceHeight,
+      productLevelHeight,
+      correctedLevelHeight,
+      waterHeight,
+      ambientLineVolume,
+      ambientDensity,
+      ambientTemperature,
+      averageTankTemperature);
 
   @override
   String toString() {
@@ -16439,7 +26065,8 @@ mixin _$MeasurementsEntity {
 
 /// @nodoc
 abstract mixin class $MeasurementsEntityCopyWith<$Res> {
-  factory $MeasurementsEntityCopyWith(MeasurementsEntity value, $Res Function(MeasurementsEntity) _then) =
+  factory $MeasurementsEntityCopyWith(
+          MeasurementsEntity value, $Res Function(MeasurementsEntity) _then) =
       _$MeasurementsEntityCopyWithImpl;
   @useResult
   $Res call(
@@ -16463,7 +26090,8 @@ abstract mixin class $MeasurementsEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MeasurementsEntityCopyWithImpl<$Res> implements $MeasurementsEntityCopyWith<$Res> {
+class _$MeasurementsEntityCopyWithImpl<$Res>
+    implements $MeasurementsEntityCopyWith<$Res> {
   _$MeasurementsEntityCopyWithImpl(this._self, this._then);
 
   final MeasurementsEntity _self;
@@ -16556,7 +26184,8 @@ class _$MeasurementsEntityCopyWithImpl<$Res> implements $MeasurementsEntityCopyW
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.correctedLevelHeight!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.correctedLevelHeight!,
+        (value) {
       return _then(_self.copyWith(correctedLevelHeight: value));
     });
   }
@@ -16626,9 +26255,218 @@ class _$MeasurementsEntityCopyWithImpl<$Res> implements $MeasurementsEntityCopyW
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.averageTankTemperature!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.averageTankTemperature!,
+        (value) {
       return _then(_self.copyWith(averageTankTemperature: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [MeasurementsEntity].
+extension MeasurementsEntityPatterns on MeasurementsEntity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MeasurementsEntity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MeasurementsEntity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsEntity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MeasurementsEntity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            MeasurementEntity? referenceHeight,
+            MeasurementEntity? productLevelHeight,
+            MeasurementEntity? correctedLevelHeight,
+            MeasurementEntity? waterHeight,
+            MeasurementEntity? ambientLineVolume,
+            MeasurementEntity? ambientDensity,
+            MeasurementEntity? ambientTemperature,
+            MeasurementEntity? averageTankTemperature)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsEntity() when $default != null:
+        return $default(
+            _that.referenceHeight,
+            _that.productLevelHeight,
+            _that.correctedLevelHeight,
+            _that.waterHeight,
+            _that.ambientLineVolume,
+            _that.ambientDensity,
+            _that.ambientTemperature,
+            _that.averageTankTemperature);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            MeasurementEntity? referenceHeight,
+            MeasurementEntity? productLevelHeight,
+            MeasurementEntity? correctedLevelHeight,
+            MeasurementEntity? waterHeight,
+            MeasurementEntity? ambientLineVolume,
+            MeasurementEntity? ambientDensity,
+            MeasurementEntity? ambientTemperature,
+            MeasurementEntity? averageTankTemperature)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsEntity():
+        return $default(
+            _that.referenceHeight,
+            _that.productLevelHeight,
+            _that.correctedLevelHeight,
+            _that.waterHeight,
+            _that.ambientLineVolume,
+            _that.ambientDensity,
+            _that.ambientTemperature,
+            _that.averageTankTemperature);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            MeasurementEntity? referenceHeight,
+            MeasurementEntity? productLevelHeight,
+            MeasurementEntity? correctedLevelHeight,
+            MeasurementEntity? waterHeight,
+            MeasurementEntity? ambientLineVolume,
+            MeasurementEntity? ambientDensity,
+            MeasurementEntity? ambientTemperature,
+            MeasurementEntity? averageTankTemperature)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsEntity() when $default != null:
+        return $default(
+            _that.referenceHeight,
+            _that.productLevelHeight,
+            _that.correctedLevelHeight,
+            _that.waterHeight,
+            _that.ambientLineVolume,
+            _that.ambientDensity,
+            _that.ambientTemperature,
+            _that.averageTankTemperature);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -16644,7 +26482,8 @@ class _MeasurementsEntity implements MeasurementsEntity {
       this.ambientDensity,
       this.ambientTemperature,
       this.averageTankTemperature});
-  factory _MeasurementsEntity.fromJson(Map<String, dynamic> json) => _$MeasurementsEntityFromJson(json);
+  factory _MeasurementsEntity.fromJson(Map<String, dynamic> json) =>
+      _$MeasurementsEntityFromJson(json);
 
   /// The [referenceHeight] parameter is the referenceHeight of the measurements entity.
   @override
@@ -16698,14 +26537,18 @@ class _MeasurementsEntity implements MeasurementsEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _MeasurementsEntity &&
-            (identical(other.referenceHeight, referenceHeight) || other.referenceHeight == referenceHeight) &&
+            (identical(other.referenceHeight, referenceHeight) ||
+                other.referenceHeight == referenceHeight) &&
             (identical(other.productLevelHeight, productLevelHeight) ||
                 other.productLevelHeight == productLevelHeight) &&
             (identical(other.correctedLevelHeight, correctedLevelHeight) ||
                 other.correctedLevelHeight == correctedLevelHeight) &&
-            (identical(other.waterHeight, waterHeight) || other.waterHeight == waterHeight) &&
-            (identical(other.ambientLineVolume, ambientLineVolume) || other.ambientLineVolume == ambientLineVolume) &&
-            (identical(other.ambientDensity, ambientDensity) || other.ambientDensity == ambientDensity) &&
+            (identical(other.waterHeight, waterHeight) ||
+                other.waterHeight == waterHeight) &&
+            (identical(other.ambientLineVolume, ambientLineVolume) ||
+                other.ambientLineVolume == ambientLineVolume) &&
+            (identical(other.ambientDensity, ambientDensity) ||
+                other.ambientDensity == ambientDensity) &&
             (identical(other.ambientTemperature, ambientTemperature) ||
                 other.ambientTemperature == ambientTemperature) &&
             (identical(other.averageTankTemperature, averageTankTemperature) ||
@@ -16714,8 +26557,16 @@ class _MeasurementsEntity implements MeasurementsEntity {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, referenceHeight, productLevelHeight, correctedLevelHeight, waterHeight,
-      ambientLineVolume, ambientDensity, ambientTemperature, averageTankTemperature);
+  int get hashCode => Object.hash(
+      runtimeType,
+      referenceHeight,
+      productLevelHeight,
+      correctedLevelHeight,
+      waterHeight,
+      ambientLineVolume,
+      ambientDensity,
+      ambientTemperature,
+      averageTankTemperature);
 
   @override
   String toString() {
@@ -16724,8 +26575,10 @@ class _MeasurementsEntity implements MeasurementsEntity {
 }
 
 /// @nodoc
-abstract mixin class _$MeasurementsEntityCopyWith<$Res> implements $MeasurementsEntityCopyWith<$Res> {
-  factory _$MeasurementsEntityCopyWith(_MeasurementsEntity value, $Res Function(_MeasurementsEntity) _then) =
+abstract mixin class _$MeasurementsEntityCopyWith<$Res>
+    implements $MeasurementsEntityCopyWith<$Res> {
+  factory _$MeasurementsEntityCopyWith(
+          _MeasurementsEntity value, $Res Function(_MeasurementsEntity) _then) =
       __$MeasurementsEntityCopyWithImpl;
   @override
   @useResult
@@ -16758,7 +26611,8 @@ abstract mixin class _$MeasurementsEntityCopyWith<$Res> implements $Measurements
 }
 
 /// @nodoc
-class __$MeasurementsEntityCopyWithImpl<$Res> implements _$MeasurementsEntityCopyWith<$Res> {
+class __$MeasurementsEntityCopyWithImpl<$Res>
+    implements _$MeasurementsEntityCopyWith<$Res> {
   __$MeasurementsEntityCopyWithImpl(this._self, this._then);
 
   final _MeasurementsEntity _self;
@@ -16851,7 +26705,8 @@ class __$MeasurementsEntityCopyWithImpl<$Res> implements _$MeasurementsEntityCop
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.correctedLevelHeight!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.correctedLevelHeight!,
+        (value) {
       return _then(_self.copyWith(correctedLevelHeight: value));
     });
   }
@@ -16921,7 +26776,8 @@ class __$MeasurementsEntityCopyWithImpl<$Res> implements _$MeasurementsEntityCop
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.averageTankTemperature!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.averageTankTemperature!,
+        (value) {
       return _then(_self.copyWith(averageTankTemperature: value));
     });
   }
@@ -16958,7 +26814,8 @@ mixin _$ResultsEntity {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $ResultsEntityCopyWith<ResultsEntity> get copyWith =>
-      _$ResultsEntityCopyWithImpl<ResultsEntity>(this as ResultsEntity, _$identity);
+      _$ResultsEntityCopyWithImpl<ResultsEntity>(
+          this as ResultsEntity, _$identity);
 
   /// Serializes this ResultsEntity to a JSON map.
   Map<String, dynamic> toJson();
@@ -16968,23 +26825,37 @@ mixin _$ResultsEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ResultsEntity &&
-            (identical(other.environmentalTankVolume, environmentalTankVolume) ||
+            (identical(
+                    other.environmentalTankVolume, environmentalTankVolume) ||
                 other.environmentalTankVolume == environmentalTankVolume) &&
-            (identical(other.waterVolume, waterVolume) || other.waterVolume == waterVolume) &&
-            (identical(other.densityAt20, densityAt20) || other.densityAt20 == densityAt20) &&
+            (identical(other.waterVolume, waterVolume) ||
+                other.waterVolume == waterVolume) &&
+            (identical(other.densityAt20, densityAt20) ||
+                other.densityAt20 == densityAt20) &&
             (identical(other.volumeCorrectionFactor, volumeCorrectionFactor) ||
                 other.volumeCorrectionFactor == volumeCorrectionFactor) &&
-            (identical(other.alcoholicContent, alcoholicContent) || other.alcoholicContent == alcoholicContent) &&
+            (identical(other.alcoholicContent, alcoholicContent) ||
+                other.alcoholicContent == alcoholicContent) &&
             (identical(other.environmentalVolume, environmentalVolume) ||
                 other.environmentalVolume == environmentalVolume) &&
-            (identical(other.volumeAt20, volumeAt20) || other.volumeAt20 == volumeAt20) &&
-            (identical(other.kilogramsAt20, kilogramsAt20) || other.kilogramsAt20 == kilogramsAt20));
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.kilogramsAt20, kilogramsAt20) ||
+                other.kilogramsAt20 == kilogramsAt20));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, environmentalTankVolume, waterVolume, densityAt20,
-      volumeCorrectionFactor, alcoholicContent, environmentalVolume, volumeAt20, kilogramsAt20);
+  int get hashCode => Object.hash(
+      runtimeType,
+      environmentalTankVolume,
+      waterVolume,
+      densityAt20,
+      volumeCorrectionFactor,
+      alcoholicContent,
+      environmentalVolume,
+      volumeAt20,
+      kilogramsAt20);
 
   @override
   String toString() {
@@ -16994,7 +26865,9 @@ mixin _$ResultsEntity {
 
 /// @nodoc
 abstract mixin class $ResultsEntityCopyWith<$Res> {
-  factory $ResultsEntityCopyWith(ResultsEntity value, $Res Function(ResultsEntity) _then) = _$ResultsEntityCopyWithImpl;
+  factory $ResultsEntityCopyWith(
+          ResultsEntity value, $Res Function(ResultsEntity) _then) =
+      _$ResultsEntityCopyWithImpl;
   @useResult
   $Res call(
       {MeasurementEntity? environmentalTankVolume,
@@ -17017,7 +26890,8 @@ abstract mixin class $ResultsEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ResultsEntityCopyWithImpl<$Res> implements $ResultsEntityCopyWith<$Res> {
+class _$ResultsEntityCopyWithImpl<$Res>
+    implements $ResultsEntityCopyWith<$Res> {
   _$ResultsEntityCopyWithImpl(this._self, this._then);
 
   final ResultsEntity _self;
@@ -17082,7 +26956,8 @@ class _$ResultsEntityCopyWithImpl<$Res> implements $ResultsEntityCopyWith<$Res> 
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.environmentalTankVolume!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.environmentalTankVolume!,
+        (value) {
       return _then(_self.copyWith(environmentalTankVolume: value));
     });
   }
@@ -17124,7 +26999,8 @@ class _$ResultsEntityCopyWithImpl<$Res> implements $ResultsEntityCopyWith<$Res> 
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.volumeCorrectionFactor!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.volumeCorrectionFactor!,
+        (value) {
       return _then(_self.copyWith(volumeCorrectionFactor: value));
     });
   }
@@ -17152,7 +27028,8 @@ class _$ResultsEntityCopyWithImpl<$Res> implements $ResultsEntityCopyWith<$Res> 
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.environmentalVolume!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.environmentalVolume!,
+        (value) {
       return _then(_self.copyWith(environmentalVolume: value));
     });
   }
@@ -17186,6 +27063,214 @@ class _$ResultsEntityCopyWithImpl<$Res> implements $ResultsEntityCopyWith<$Res> 
   }
 }
 
+/// Adds pattern-matching-related methods to [ResultsEntity].
+extension ResultsEntityPatterns on ResultsEntity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ResultsEntity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ResultsEntity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsEntity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ResultsEntity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            MeasurementEntity? environmentalTankVolume,
+            MeasurementEntity? waterVolume,
+            MeasurementEntity? densityAt20,
+            MeasurementEntity? volumeCorrectionFactor,
+            MeasurementEntity? alcoholicContent,
+            MeasurementEntity? environmentalVolume,
+            MeasurementEntity? volumeAt20,
+            MeasurementEntity? kilogramsAt20)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsEntity() when $default != null:
+        return $default(
+            _that.environmentalTankVolume,
+            _that.waterVolume,
+            _that.densityAt20,
+            _that.volumeCorrectionFactor,
+            _that.alcoholicContent,
+            _that.environmentalVolume,
+            _that.volumeAt20,
+            _that.kilogramsAt20);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            MeasurementEntity? environmentalTankVolume,
+            MeasurementEntity? waterVolume,
+            MeasurementEntity? densityAt20,
+            MeasurementEntity? volumeCorrectionFactor,
+            MeasurementEntity? alcoholicContent,
+            MeasurementEntity? environmentalVolume,
+            MeasurementEntity? volumeAt20,
+            MeasurementEntity? kilogramsAt20)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsEntity():
+        return $default(
+            _that.environmentalTankVolume,
+            _that.waterVolume,
+            _that.densityAt20,
+            _that.volumeCorrectionFactor,
+            _that.alcoholicContent,
+            _that.environmentalVolume,
+            _that.volumeAt20,
+            _that.kilogramsAt20);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            MeasurementEntity? environmentalTankVolume,
+            MeasurementEntity? waterVolume,
+            MeasurementEntity? densityAt20,
+            MeasurementEntity? volumeCorrectionFactor,
+            MeasurementEntity? alcoholicContent,
+            MeasurementEntity? environmentalVolume,
+            MeasurementEntity? volumeAt20,
+            MeasurementEntity? kilogramsAt20)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsEntity() when $default != null:
+        return $default(
+            _that.environmentalTankVolume,
+            _that.waterVolume,
+            _that.densityAt20,
+            _that.volumeCorrectionFactor,
+            _that.alcoholicContent,
+            _that.environmentalVolume,
+            _that.volumeAt20,
+            _that.kilogramsAt20);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ResultsEntity implements ResultsEntity {
@@ -17198,7 +27283,8 @@ class _ResultsEntity implements ResultsEntity {
       this.environmentalVolume,
       this.volumeAt20,
       this.kilogramsAt20});
-  factory _ResultsEntity.fromJson(Map<String, dynamic> json) => _$ResultsEntityFromJson(json);
+  factory _ResultsEntity.fromJson(Map<String, dynamic> json) =>
+      _$ResultsEntityFromJson(json);
 
   /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results entity.
   @override
@@ -17252,23 +27338,37 @@ class _ResultsEntity implements ResultsEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ResultsEntity &&
-            (identical(other.environmentalTankVolume, environmentalTankVolume) ||
+            (identical(
+                    other.environmentalTankVolume, environmentalTankVolume) ||
                 other.environmentalTankVolume == environmentalTankVolume) &&
-            (identical(other.waterVolume, waterVolume) || other.waterVolume == waterVolume) &&
-            (identical(other.densityAt20, densityAt20) || other.densityAt20 == densityAt20) &&
+            (identical(other.waterVolume, waterVolume) ||
+                other.waterVolume == waterVolume) &&
+            (identical(other.densityAt20, densityAt20) ||
+                other.densityAt20 == densityAt20) &&
             (identical(other.volumeCorrectionFactor, volumeCorrectionFactor) ||
                 other.volumeCorrectionFactor == volumeCorrectionFactor) &&
-            (identical(other.alcoholicContent, alcoholicContent) || other.alcoholicContent == alcoholicContent) &&
+            (identical(other.alcoholicContent, alcoholicContent) ||
+                other.alcoholicContent == alcoholicContent) &&
             (identical(other.environmentalVolume, environmentalVolume) ||
                 other.environmentalVolume == environmentalVolume) &&
-            (identical(other.volumeAt20, volumeAt20) || other.volumeAt20 == volumeAt20) &&
-            (identical(other.kilogramsAt20, kilogramsAt20) || other.kilogramsAt20 == kilogramsAt20));
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.kilogramsAt20, kilogramsAt20) ||
+                other.kilogramsAt20 == kilogramsAt20));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, environmentalTankVolume, waterVolume, densityAt20,
-      volumeCorrectionFactor, alcoholicContent, environmentalVolume, volumeAt20, kilogramsAt20);
+  int get hashCode => Object.hash(
+      runtimeType,
+      environmentalTankVolume,
+      waterVolume,
+      densityAt20,
+      volumeCorrectionFactor,
+      alcoholicContent,
+      environmentalVolume,
+      volumeAt20,
+      kilogramsAt20);
 
   @override
   String toString() {
@@ -17277,8 +27377,10 @@ class _ResultsEntity implements ResultsEntity {
 }
 
 /// @nodoc
-abstract mixin class _$ResultsEntityCopyWith<$Res> implements $ResultsEntityCopyWith<$Res> {
-  factory _$ResultsEntityCopyWith(_ResultsEntity value, $Res Function(_ResultsEntity) _then) =
+abstract mixin class _$ResultsEntityCopyWith<$Res>
+    implements $ResultsEntityCopyWith<$Res> {
+  factory _$ResultsEntityCopyWith(
+          _ResultsEntity value, $Res Function(_ResultsEntity) _then) =
       __$ResultsEntityCopyWithImpl;
   @override
   @useResult
@@ -17311,7 +27413,8 @@ abstract mixin class _$ResultsEntityCopyWith<$Res> implements $ResultsEntityCopy
 }
 
 /// @nodoc
-class __$ResultsEntityCopyWithImpl<$Res> implements _$ResultsEntityCopyWith<$Res> {
+class __$ResultsEntityCopyWithImpl<$Res>
+    implements _$ResultsEntityCopyWith<$Res> {
   __$ResultsEntityCopyWithImpl(this._self, this._then);
 
   final _ResultsEntity _self;
@@ -17376,7 +27479,8 @@ class __$ResultsEntityCopyWithImpl<$Res> implements _$ResultsEntityCopyWith<$Res
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.environmentalTankVolume!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.environmentalTankVolume!,
+        (value) {
       return _then(_self.copyWith(environmentalTankVolume: value));
     });
   }
@@ -17418,7 +27522,8 @@ class __$ResultsEntityCopyWithImpl<$Res> implements _$ResultsEntityCopyWith<$Res
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.volumeCorrectionFactor!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.volumeCorrectionFactor!,
+        (value) {
       return _then(_self.copyWith(volumeCorrectionFactor: value));
     });
   }
@@ -17446,7 +27551,8 @@ class __$ResultsEntityCopyWithImpl<$Res> implements _$ResultsEntityCopyWith<$Res
       return null;
     }
 
-    return $MeasurementEntityCopyWith<$Res>(_self.environmentalVolume!, (value) {
+    return $MeasurementEntityCopyWith<$Res>(_self.environmentalVolume!,
+        (value) {
       return _then(_self.copyWith(environmentalVolume: value));
     });
   }
@@ -17496,7 +27602,8 @@ mixin _$MeasurementEntity {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $MeasurementEntityCopyWith<MeasurementEntity> get copyWith =>
-      _$MeasurementEntityCopyWithImpl<MeasurementEntity>(this as MeasurementEntity, _$identity);
+      _$MeasurementEntityCopyWithImpl<MeasurementEntity>(
+          this as MeasurementEntity, _$identity);
 
   /// Serializes this MeasurementEntity to a JSON map.
   Map<String, dynamic> toJson();
@@ -17508,7 +27615,8 @@ mixin _$MeasurementEntity {
             other is MeasurementEntity &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
-            (identical(other.differenceOrTotal, differenceOrTotal) || other.differenceOrTotal == differenceOrTotal));
+            (identical(other.differenceOrTotal, differenceOrTotal) ||
+                other.differenceOrTotal == differenceOrTotal));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -17523,14 +27631,16 @@ mixin _$MeasurementEntity {
 
 /// @nodoc
 abstract mixin class $MeasurementEntityCopyWith<$Res> {
-  factory $MeasurementEntityCopyWith(MeasurementEntity value, $Res Function(MeasurementEntity) _then) =
+  factory $MeasurementEntityCopyWith(
+          MeasurementEntity value, $Res Function(MeasurementEntity) _then) =
       _$MeasurementEntityCopyWithImpl;
   @useResult
   $Res call({double? start, double? end, double? differenceOrTotal});
 }
 
 /// @nodoc
-class _$MeasurementEntityCopyWithImpl<$Res> implements $MeasurementEntityCopyWith<$Res> {
+class _$MeasurementEntityCopyWithImpl<$Res>
+    implements $MeasurementEntityCopyWith<$Res> {
   _$MeasurementEntityCopyWithImpl(this._self, this._then);
 
   final MeasurementEntity _self;
@@ -17562,11 +27672,172 @@ class _$MeasurementEntityCopyWithImpl<$Res> implements $MeasurementEntityCopyWit
   }
 }
 
+/// Adds pattern-matching-related methods to [MeasurementEntity].
+extension MeasurementEntityPatterns on MeasurementEntity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MeasurementEntity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MeasurementEntity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementEntity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MeasurementEntity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double? start, double? end, double? differenceOrTotal)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementEntity() when $default != null:
+        return $default(_that.start, _that.end, _that.differenceOrTotal);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double? start, double? end, double? differenceOrTotal)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementEntity():
+        return $default(_that.start, _that.end, _that.differenceOrTotal);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double? start, double? end, double? differenceOrTotal)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementEntity() when $default != null:
+        return $default(_that.start, _that.end, _that.differenceOrTotal);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _MeasurementEntity implements MeasurementEntity {
   _MeasurementEntity({this.start, this.end, this.differenceOrTotal});
-  factory _MeasurementEntity.fromJson(Map<String, dynamic> json) => _$MeasurementEntityFromJson(json);
+  factory _MeasurementEntity.fromJson(Map<String, dynamic> json) =>
+      _$MeasurementEntityFromJson(json);
 
   /// The [start] parameter is the start of the measurement entity.
   @override
@@ -17602,7 +27873,8 @@ class _MeasurementEntity implements MeasurementEntity {
             other is _MeasurementEntity &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
-            (identical(other.differenceOrTotal, differenceOrTotal) || other.differenceOrTotal == differenceOrTotal));
+            (identical(other.differenceOrTotal, differenceOrTotal) ||
+                other.differenceOrTotal == differenceOrTotal));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -17616,8 +27888,10 @@ class _MeasurementEntity implements MeasurementEntity {
 }
 
 /// @nodoc
-abstract mixin class _$MeasurementEntityCopyWith<$Res> implements $MeasurementEntityCopyWith<$Res> {
-  factory _$MeasurementEntityCopyWith(_MeasurementEntity value, $Res Function(_MeasurementEntity) _then) =
+abstract mixin class _$MeasurementEntityCopyWith<$Res>
+    implements $MeasurementEntityCopyWith<$Res> {
+  factory _$MeasurementEntityCopyWith(
+          _MeasurementEntity value, $Res Function(_MeasurementEntity) _then) =
       __$MeasurementEntityCopyWithImpl;
   @override
   @useResult
@@ -17625,7 +27899,8 @@ abstract mixin class _$MeasurementEntityCopyWith<$Res> implements $MeasurementEn
 }
 
 /// @nodoc
-class __$MeasurementEntityCopyWithImpl<$Res> implements _$MeasurementEntityCopyWith<$Res> {
+class __$MeasurementEntityCopyWithImpl<$Res>
+    implements _$MeasurementEntityCopyWith<$Res> {
   __$MeasurementEntityCopyWithImpl(this._self, this._then);
 
   final _MeasurementEntity _self;
@@ -17682,7 +27957,8 @@ mixin _$CaclMeasurementOutput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $CaclMeasurementOutputCopyWith<CaclMeasurementOutput> get copyWith =>
-      _$CaclMeasurementOutputCopyWithImpl<CaclMeasurementOutput>(this as CaclMeasurementOutput, _$identity);
+      _$CaclMeasurementOutputCopyWithImpl<CaclMeasurementOutput>(
+          this as CaclMeasurementOutput, _$identity);
 
   /// Serializes this CaclMeasurementOutput to a JSON map.
   Map<String, dynamic> toJson();
@@ -17694,15 +27970,20 @@ mixin _$CaclMeasurementOutput {
             other is CaclMeasurementOutput &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
-            (identical(other.differenceOrTotal, differenceOrTotal) || other.differenceOrTotal == differenceOrTotal) &&
-            (identical(other.invoicedVolume, invoicedVolume) || other.invoicedVolume == invoicedVolume) &&
-            (identical(other.volumeAt20, volumeAt20) || other.volumeAt20 == volumeAt20) &&
-            (identical(other.massAt20, massAt20) || other.massAt20 == massAt20));
+            (identical(other.differenceOrTotal, differenceOrTotal) ||
+                other.differenceOrTotal == differenceOrTotal) &&
+            (identical(other.invoicedVolume, invoicedVolume) ||
+                other.invoicedVolume == invoicedVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.massAt20, massAt20) ||
+                other.massAt20 == massAt20));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, start, end, differenceOrTotal, invoicedVolume, volumeAt20, massAt20);
+  int get hashCode => Object.hash(runtimeType, start, end, differenceOrTotal,
+      invoicedVolume, volumeAt20, massAt20);
 
   @override
   String toString() {
@@ -17712,15 +27993,22 @@ mixin _$CaclMeasurementOutput {
 
 /// @nodoc
 abstract mixin class $CaclMeasurementOutputCopyWith<$Res> {
-  factory $CaclMeasurementOutputCopyWith(CaclMeasurementOutput value, $Res Function(CaclMeasurementOutput) _then) =
+  factory $CaclMeasurementOutputCopyWith(CaclMeasurementOutput value,
+          $Res Function(CaclMeasurementOutput) _then) =
       _$CaclMeasurementOutputCopyWithImpl;
   @useResult
   $Res call(
-      {double? start, double? end, double? differenceOrTotal, int? invoicedVolume, int? volumeAt20, int? massAt20});
+      {double? start,
+      double? end,
+      double? differenceOrTotal,
+      int? invoicedVolume,
+      int? volumeAt20,
+      int? massAt20});
 }
 
 /// @nodoc
-class _$CaclMeasurementOutputCopyWithImpl<$Res> implements $CaclMeasurementOutputCopyWith<$Res> {
+class _$CaclMeasurementOutputCopyWithImpl<$Res>
+    implements $CaclMeasurementOutputCopyWith<$Res> {
   _$CaclMeasurementOutputCopyWithImpl(this._self, this._then);
 
   final CaclMeasurementOutput _self;
@@ -17767,12 +28055,184 @@ class _$CaclMeasurementOutputCopyWithImpl<$Res> implements $CaclMeasurementOutpu
   }
 }
 
+/// Adds pattern-matching-related methods to [CaclMeasurementOutput].
+extension CaclMeasurementOutputPatterns on CaclMeasurementOutput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CaclMeasurementOutput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurementOutput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CaclMeasurementOutput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurementOutput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CaclMeasurementOutput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurementOutput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double? start, double? end, double? differenceOrTotal,
+            int? invoicedVolume, int? volumeAt20, int? massAt20)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurementOutput() when $default != null:
+        return $default(_that.start, _that.end, _that.differenceOrTotal,
+            _that.invoicedVolume, _that.volumeAt20, _that.massAt20);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double? start, double? end, double? differenceOrTotal,
+            int? invoicedVolume, int? volumeAt20, int? massAt20)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurementOutput():
+        return $default(_that.start, _that.end, _that.differenceOrTotal,
+            _that.invoicedVolume, _that.volumeAt20, _that.massAt20);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double? start, double? end, double? differenceOrTotal,
+            int? invoicedVolume, int? volumeAt20, int? massAt20)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurementOutput() when $default != null:
+        return $default(_that.start, _that.end, _that.differenceOrTotal,
+            _that.invoicedVolume, _that.volumeAt20, _that.massAt20);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _CaclMeasurementOutput implements CaclMeasurementOutput {
   _CaclMeasurementOutput(
-      {this.start, this.end, this.differenceOrTotal, this.invoicedVolume, this.volumeAt20, this.massAt20});
-  factory _CaclMeasurementOutput.fromJson(Map<String, dynamic> json) => _$CaclMeasurementOutputFromJson(json);
+      {this.start,
+      this.end,
+      this.differenceOrTotal,
+      this.invoicedVolume,
+      this.volumeAt20,
+      this.massAt20});
+  factory _CaclMeasurementOutput.fromJson(Map<String, dynamic> json) =>
+      _$CaclMeasurementOutputFromJson(json);
 
   /// The [start] parameter is the start of the measurement output.
   @override
@@ -17804,7 +28264,8 @@ class _CaclMeasurementOutput implements CaclMeasurementOutput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$CaclMeasurementOutputCopyWith<_CaclMeasurementOutput> get copyWith =>
-      __$CaclMeasurementOutputCopyWithImpl<_CaclMeasurementOutput>(this, _$identity);
+      __$CaclMeasurementOutputCopyWithImpl<_CaclMeasurementOutput>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -17820,15 +28281,20 @@ class _CaclMeasurementOutput implements CaclMeasurementOutput {
             other is _CaclMeasurementOutput &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
-            (identical(other.differenceOrTotal, differenceOrTotal) || other.differenceOrTotal == differenceOrTotal) &&
-            (identical(other.invoicedVolume, invoicedVolume) || other.invoicedVolume == invoicedVolume) &&
-            (identical(other.volumeAt20, volumeAt20) || other.volumeAt20 == volumeAt20) &&
-            (identical(other.massAt20, massAt20) || other.massAt20 == massAt20));
+            (identical(other.differenceOrTotal, differenceOrTotal) ||
+                other.differenceOrTotal == differenceOrTotal) &&
+            (identical(other.invoicedVolume, invoicedVolume) ||
+                other.invoicedVolume == invoicedVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.massAt20, massAt20) ||
+                other.massAt20 == massAt20));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, start, end, differenceOrTotal, invoicedVolume, volumeAt20, massAt20);
+  int get hashCode => Object.hash(runtimeType, start, end, differenceOrTotal,
+      invoicedVolume, volumeAt20, massAt20);
 
   @override
   String toString() {
@@ -17837,17 +28303,25 @@ class _CaclMeasurementOutput implements CaclMeasurementOutput {
 }
 
 /// @nodoc
-abstract mixin class _$CaclMeasurementOutputCopyWith<$Res> implements $CaclMeasurementOutputCopyWith<$Res> {
-  factory _$CaclMeasurementOutputCopyWith(_CaclMeasurementOutput value, $Res Function(_CaclMeasurementOutput) _then) =
+abstract mixin class _$CaclMeasurementOutputCopyWith<$Res>
+    implements $CaclMeasurementOutputCopyWith<$Res> {
+  factory _$CaclMeasurementOutputCopyWith(_CaclMeasurementOutput value,
+          $Res Function(_CaclMeasurementOutput) _then) =
       __$CaclMeasurementOutputCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {double? start, double? end, double? differenceOrTotal, int? invoicedVolume, int? volumeAt20, int? massAt20});
+      {double? start,
+      double? end,
+      double? differenceOrTotal,
+      int? invoicedVolume,
+      int? volumeAt20,
+      int? massAt20});
 }
 
 /// @nodoc
-class __$CaclMeasurementOutputCopyWithImpl<$Res> implements _$CaclMeasurementOutputCopyWith<$Res> {
+class __$CaclMeasurementOutputCopyWithImpl<$Res>
+    implements _$CaclMeasurementOutputCopyWith<$Res> {
   __$CaclMeasurementOutputCopyWithImpl(this._self, this._then);
 
   final _CaclMeasurementOutput _self;
@@ -17910,7 +28384,8 @@ mixin _$VolumeMovedEntity {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $VolumeMovedEntityCopyWith<VolumeMovedEntity> get copyWith =>
-      _$VolumeMovedEntityCopyWithImpl<VolumeMovedEntity>(this as VolumeMovedEntity, _$identity);
+      _$VolumeMovedEntityCopyWithImpl<VolumeMovedEntity>(
+          this as VolumeMovedEntity, _$identity);
 
   /// Serializes this VolumeMovedEntity to a JSON map.
   Map<String, dynamic> toJson();
@@ -17920,14 +28395,18 @@ mixin _$VolumeMovedEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VolumeMovedEntity &&
-            (identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume) &&
-            (identical(other.volumeAt20, volumeAt20) || other.volumeAt20 == volumeAt20) &&
-            (identical(other.kilogramsAt20, kilogramsAt20) || other.kilogramsAt20 == kilogramsAt20));
+            (identical(other.ambientVolume, ambientVolume) ||
+                other.ambientVolume == ambientVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.kilogramsAt20, kilogramsAt20) ||
+                other.kilogramsAt20 == kilogramsAt20));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, ambientVolume, volumeAt20, kilogramsAt20);
+  int get hashCode =>
+      Object.hash(runtimeType, ambientVolume, volumeAt20, kilogramsAt20);
 
   @override
   String toString() {
@@ -17937,14 +28416,16 @@ mixin _$VolumeMovedEntity {
 
 /// @nodoc
 abstract mixin class $VolumeMovedEntityCopyWith<$Res> {
-  factory $VolumeMovedEntityCopyWith(VolumeMovedEntity value, $Res Function(VolumeMovedEntity) _then) =
+  factory $VolumeMovedEntityCopyWith(
+          VolumeMovedEntity value, $Res Function(VolumeMovedEntity) _then) =
       _$VolumeMovedEntityCopyWithImpl;
   @useResult
   $Res call({double? ambientVolume, double? volumeAt20, double? kilogramsAt20});
 }
 
 /// @nodoc
-class _$VolumeMovedEntityCopyWithImpl<$Res> implements $VolumeMovedEntityCopyWith<$Res> {
+class _$VolumeMovedEntityCopyWithImpl<$Res>
+    implements $VolumeMovedEntityCopyWith<$Res> {
   _$VolumeMovedEntityCopyWithImpl(this._self, this._then);
 
   final VolumeMovedEntity _self;
@@ -17976,11 +28457,178 @@ class _$VolumeMovedEntityCopyWithImpl<$Res> implements $VolumeMovedEntityCopyWit
   }
 }
 
+/// Adds pattern-matching-related methods to [VolumeMovedEntity].
+extension VolumeMovedEntityPatterns on VolumeMovedEntity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_VolumeMovedEntity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_VolumeMovedEntity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedEntity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_VolumeMovedEntity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double? ambientVolume, double? volumeAt20, double? kilogramsAt20)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedEntity() when $default != null:
+        return $default(
+            _that.ambientVolume, _that.volumeAt20, _that.kilogramsAt20);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double? ambientVolume, double? volumeAt20, double? kilogramsAt20)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedEntity():
+        return $default(
+            _that.ambientVolume, _that.volumeAt20, _that.kilogramsAt20);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double? ambientVolume, double? volumeAt20, double? kilogramsAt20)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedEntity() when $default != null:
+        return $default(
+            _that.ambientVolume, _that.volumeAt20, _that.kilogramsAt20);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _VolumeMovedEntity implements VolumeMovedEntity {
   _VolumeMovedEntity({this.ambientVolume, this.volumeAt20, this.kilogramsAt20});
-  factory _VolumeMovedEntity.fromJson(Map<String, dynamic> json) => _$VolumeMovedEntityFromJson(json);
+  factory _VolumeMovedEntity.fromJson(Map<String, dynamic> json) =>
+      _$VolumeMovedEntityFromJson(json);
 
   /// The [ambientVolume] parameter is the ambientVolume of the volume moved entity.
   @override
@@ -18014,14 +28662,18 @@ class _VolumeMovedEntity implements VolumeMovedEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _VolumeMovedEntity &&
-            (identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume) &&
-            (identical(other.volumeAt20, volumeAt20) || other.volumeAt20 == volumeAt20) &&
-            (identical(other.kilogramsAt20, kilogramsAt20) || other.kilogramsAt20 == kilogramsAt20));
+            (identical(other.ambientVolume, ambientVolume) ||
+                other.ambientVolume == ambientVolume) &&
+            (identical(other.volumeAt20, volumeAt20) ||
+                other.volumeAt20 == volumeAt20) &&
+            (identical(other.kilogramsAt20, kilogramsAt20) ||
+                other.kilogramsAt20 == kilogramsAt20));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, ambientVolume, volumeAt20, kilogramsAt20);
+  int get hashCode =>
+      Object.hash(runtimeType, ambientVolume, volumeAt20, kilogramsAt20);
 
   @override
   String toString() {
@@ -18030,8 +28682,10 @@ class _VolumeMovedEntity implements VolumeMovedEntity {
 }
 
 /// @nodoc
-abstract mixin class _$VolumeMovedEntityCopyWith<$Res> implements $VolumeMovedEntityCopyWith<$Res> {
-  factory _$VolumeMovedEntityCopyWith(_VolumeMovedEntity value, $Res Function(_VolumeMovedEntity) _then) =
+abstract mixin class _$VolumeMovedEntityCopyWith<$Res>
+    implements $VolumeMovedEntityCopyWith<$Res> {
+  factory _$VolumeMovedEntityCopyWith(
+          _VolumeMovedEntity value, $Res Function(_VolumeMovedEntity) _then) =
       __$VolumeMovedEntityCopyWithImpl;
   @override
   @useResult
@@ -18039,7 +28693,8 @@ abstract mixin class _$VolumeMovedEntityCopyWith<$Res> implements $VolumeMovedEn
 }
 
 /// @nodoc
-class __$VolumeMovedEntityCopyWithImpl<$Res> implements _$VolumeMovedEntityCopyWith<$Res> {
+class __$VolumeMovedEntityCopyWithImpl<$Res>
+    implements _$VolumeMovedEntityCopyWith<$Res> {
   __$VolumeMovedEntityCopyWithImpl(this._self, this._then);
 
   final _VolumeMovedEntity _self;
@@ -18080,9 +28735,10 @@ mixin _$EquipmentMeasurementEntity {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $EquipmentMeasurementEntityCopyWith<EquipmentMeasurementEntity> get copyWith =>
-      _$EquipmentMeasurementEntityCopyWithImpl<EquipmentMeasurementEntity>(
-          this as EquipmentMeasurementEntity, _$identity);
+  $EquipmentMeasurementEntityCopyWith<EquipmentMeasurementEntity>
+      get copyWith =>
+          _$EquipmentMeasurementEntityCopyWithImpl<EquipmentMeasurementEntity>(
+              this as EquipmentMeasurementEntity, _$identity);
 
   /// Serializes this EquipmentMeasurementEntity to a JSON map.
   Map<String, dynamic> toJson();
@@ -18092,7 +28748,8 @@ mixin _$EquipmentMeasurementEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is EquipmentMeasurementEntity &&
-            (identical(other.serialNumber, serialNumber) || other.serialNumber == serialNumber));
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -18107,15 +28764,16 @@ mixin _$EquipmentMeasurementEntity {
 
 /// @nodoc
 abstract mixin class $EquipmentMeasurementEntityCopyWith<$Res> {
-  factory $EquipmentMeasurementEntityCopyWith(
-          EquipmentMeasurementEntity value, $Res Function(EquipmentMeasurementEntity) _then) =
+  factory $EquipmentMeasurementEntityCopyWith(EquipmentMeasurementEntity value,
+          $Res Function(EquipmentMeasurementEntity) _then) =
       _$EquipmentMeasurementEntityCopyWithImpl;
   @useResult
   $Res call({String? serialNumber});
 }
 
 /// @nodoc
-class _$EquipmentMeasurementEntityCopyWithImpl<$Res> implements $EquipmentMeasurementEntityCopyWith<$Res> {
+class _$EquipmentMeasurementEntityCopyWithImpl<$Res>
+    implements $EquipmentMeasurementEntityCopyWith<$Res> {
   _$EquipmentMeasurementEntityCopyWithImpl(this._self, this._then);
 
   final EquipmentMeasurementEntity _self;
@@ -18137,11 +28795,169 @@ class _$EquipmentMeasurementEntityCopyWithImpl<$Res> implements $EquipmentMeasur
   }
 }
 
+/// Adds pattern-matching-related methods to [EquipmentMeasurementEntity].
+extension EquipmentMeasurementEntityPatterns on EquipmentMeasurementEntity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_EquipmentMeasurementEntity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_EquipmentMeasurementEntity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementEntity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_EquipmentMeasurementEntity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementEntity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? serialNumber)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementEntity() when $default != null:
+        return $default(_that.serialNumber);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? serialNumber) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementEntity():
+        return $default(_that.serialNumber);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? serialNumber)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementEntity() when $default != null:
+        return $default(_that.serialNumber);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _EquipmentMeasurementEntity implements EquipmentMeasurementEntity {
   _EquipmentMeasurementEntity({this.serialNumber});
-  factory _EquipmentMeasurementEntity.fromJson(Map<String, dynamic> json) => _$EquipmentMeasurementEntityFromJson(json);
+  factory _EquipmentMeasurementEntity.fromJson(Map<String, dynamic> json) =>
+      _$EquipmentMeasurementEntityFromJson(json);
 
   /// The [serialNumber] parameter is the start of the equipment measurement entity.
   @override
@@ -18152,8 +28968,9 @@ class _EquipmentMeasurementEntity implements EquipmentMeasurementEntity {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$EquipmentMeasurementEntityCopyWith<_EquipmentMeasurementEntity> get copyWith =>
-      __$EquipmentMeasurementEntityCopyWithImpl<_EquipmentMeasurementEntity>(this, _$identity);
+  _$EquipmentMeasurementEntityCopyWith<_EquipmentMeasurementEntity>
+      get copyWith => __$EquipmentMeasurementEntityCopyWithImpl<
+          _EquipmentMeasurementEntity>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -18167,7 +28984,8 @@ class _EquipmentMeasurementEntity implements EquipmentMeasurementEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _EquipmentMeasurementEntity &&
-            (identical(other.serialNumber, serialNumber) || other.serialNumber == serialNumber));
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -18181,9 +28999,11 @@ class _EquipmentMeasurementEntity implements EquipmentMeasurementEntity {
 }
 
 /// @nodoc
-abstract mixin class _$EquipmentMeasurementEntityCopyWith<$Res> implements $EquipmentMeasurementEntityCopyWith<$Res> {
+abstract mixin class _$EquipmentMeasurementEntityCopyWith<$Res>
+    implements $EquipmentMeasurementEntityCopyWith<$Res> {
   factory _$EquipmentMeasurementEntityCopyWith(
-          _EquipmentMeasurementEntity value, $Res Function(_EquipmentMeasurementEntity) _then) =
+          _EquipmentMeasurementEntity value,
+          $Res Function(_EquipmentMeasurementEntity) _then) =
       __$EquipmentMeasurementEntityCopyWithImpl;
   @override
   @useResult
@@ -18191,7 +29011,8 @@ abstract mixin class _$EquipmentMeasurementEntityCopyWith<$Res> implements $Equi
 }
 
 /// @nodoc
-class __$EquipmentMeasurementEntityCopyWithImpl<$Res> implements _$EquipmentMeasurementEntityCopyWith<$Res> {
+class __$EquipmentMeasurementEntityCopyWithImpl<$Res>
+    implements _$EquipmentMeasurementEntityCopyWith<$Res> {
   __$EquipmentMeasurementEntityCopyWithImpl(this._self, this._then);
 
   final _EquipmentMeasurementEntity _self;
@@ -18359,7 +29180,8 @@ mixin _$CaclInput {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $CaclInputCopyWith<CaclInput> get copyWith => _$CaclInputCopyWithImpl<CaclInput>(this as CaclInput, _$identity);
+  $CaclInputCopyWith<CaclInput> get copyWith =>
+      _$CaclInputCopyWithImpl<CaclInput>(this as CaclInput, _$identity);
 
   /// Serializes this CaclInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -18372,7 +29194,8 @@ mixin _$CaclInput {
 
 /// @nodoc
 abstract mixin class $CaclInputCopyWith<$Res> {
-  factory $CaclInputCopyWith(CaclInput value, $Res Function(CaclInput) _then) = _$CaclInputCopyWithImpl;
+  factory $CaclInputCopyWith(CaclInput value, $Res Function(CaclInput) _then) =
+      _$CaclInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -18618,6 +29441,298 @@ class _$CaclInputCopyWithImpl<$Res> implements $CaclInputCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [CaclInput].
+extension CaclInputPatterns on CaclInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CaclInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CaclInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CaclInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            String? transportAssetId,
+            String? transportUserId,
+            String? caclNumber,
+            String? category,
+            String? product,
+            String? clientAssetId,
+            String? tankNumber,
+            String? transport,
+            CaclEquipmentInput? equipments,
+            MeasurementsInput? measurements,
+            ResultsInput? results,
+            CaclMeasurement? measurer01,
+            CaclMeasurement? measurer02,
+            VolumeMovedInput? volumeMoved,
+            String? observations,
+            @TimestampOrNullConverter() DateTime? startedAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            String? operationId,
+            @TimestampOrNullConverter() DateTime? localDateStart,
+            @TimestampOrNullConverter() DateTime? localDateEnd)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.transportAssetId,
+            _that.transportUserId,
+            _that.caclNumber,
+            _that.category,
+            _that.product,
+            _that.clientAssetId,
+            _that.tankNumber,
+            _that.transport,
+            _that.equipments,
+            _that.measurements,
+            _that.results,
+            _that.measurer01,
+            _that.measurer02,
+            _that.volumeMoved,
+            _that.observations,
+            _that.startedAt,
+            _that.finishedAt,
+            _that.operationId,
+            _that.localDateStart,
+            _that.localDateEnd);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? assetId,
+            String? transportAssetId,
+            String? transportUserId,
+            String? caclNumber,
+            String? category,
+            String? product,
+            String? clientAssetId,
+            String? tankNumber,
+            String? transport,
+            CaclEquipmentInput? equipments,
+            MeasurementsInput? measurements,
+            ResultsInput? results,
+            CaclMeasurement? measurer01,
+            CaclMeasurement? measurer02,
+            VolumeMovedInput? volumeMoved,
+            String? observations,
+            @TimestampOrNullConverter() DateTime? startedAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            String? operationId,
+            @TimestampOrNullConverter() DateTime? localDateStart,
+            @TimestampOrNullConverter() DateTime? localDateEnd)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclInput():
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.transportAssetId,
+            _that.transportUserId,
+            _that.caclNumber,
+            _that.category,
+            _that.product,
+            _that.clientAssetId,
+            _that.tankNumber,
+            _that.transport,
+            _that.equipments,
+            _that.measurements,
+            _that.results,
+            _that.measurer01,
+            _that.measurer02,
+            _that.volumeMoved,
+            _that.observations,
+            _that.startedAt,
+            _that.finishedAt,
+            _that.operationId,
+            _that.localDateStart,
+            _that.localDateEnd);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? assetId,
+            String? transportAssetId,
+            String? transportUserId,
+            String? caclNumber,
+            String? category,
+            String? product,
+            String? clientAssetId,
+            String? tankNumber,
+            String? transport,
+            CaclEquipmentInput? equipments,
+            MeasurementsInput? measurements,
+            ResultsInput? results,
+            CaclMeasurement? measurer01,
+            CaclMeasurement? measurer02,
+            VolumeMovedInput? volumeMoved,
+            String? observations,
+            @TimestampOrNullConverter() DateTime? startedAt,
+            @TimestampOrNullConverter() DateTime? finishedAt,
+            String? operationId,
+            @TimestampOrNullConverter() DateTime? localDateStart,
+            @TimestampOrNullConverter() DateTime? localDateEnd)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.assetId,
+            _that.transportAssetId,
+            _that.transportUserId,
+            _that.caclNumber,
+            _that.category,
+            _that.product,
+            _that.clientAssetId,
+            _that.tankNumber,
+            _that.transport,
+            _that.equipments,
+            _that.measurements,
+            _that.results,
+            _that.measurer01,
+            _that.measurer02,
+            _that.volumeMoved,
+            _that.observations,
+            _that.startedAt,
+            _that.finishedAt,
+            _that.operationId,
+            _that.localDateStart,
+            _that.localDateEnd);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _CaclInput implements CaclInput {
@@ -18644,7 +29759,8 @@ class _CaclInput implements CaclInput {
       this.operationId,
       @TimestampOrNullConverter() this.localDateStart,
       @TimestampOrNullConverter() this.localDateEnd});
-  factory _CaclInput.fromJson(Map<String, dynamic> json) => _$CaclInputFromJson(json);
+  factory _CaclInput.fromJson(Map<String, dynamic> json) =>
+      _$CaclInputFromJson(json);
 
   /// The [id] parameter is the id of the cacl input.
   @override
@@ -18743,7 +29859,8 @@ class _CaclInput implements CaclInput {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$CaclInputCopyWith<_CaclInput> get copyWith => __$CaclInputCopyWithImpl<_CaclInput>(this, _$identity);
+  _$CaclInputCopyWith<_CaclInput> get copyWith =>
+      __$CaclInputCopyWithImpl<_CaclInput>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -18759,8 +29876,11 @@ class _CaclInput implements CaclInput {
 }
 
 /// @nodoc
-abstract mixin class _$CaclInputCopyWith<$Res> implements $CaclInputCopyWith<$Res> {
-  factory _$CaclInputCopyWith(_CaclInput value, $Res Function(_CaclInput) _then) = __$CaclInputCopyWithImpl;
+abstract mixin class _$CaclInputCopyWith<$Res>
+    implements $CaclInputCopyWith<$Res> {
+  factory _$CaclInputCopyWith(
+          _CaclInput value, $Res Function(_CaclInput) _then) =
+      __$CaclInputCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -19038,7 +30158,8 @@ mixin _$CaclEquipmentInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $CaclEquipmentInputCopyWith<CaclEquipmentInput> get copyWith =>
-      _$CaclEquipmentInputCopyWithImpl<CaclEquipmentInput>(this as CaclEquipmentInput, _$identity);
+      _$CaclEquipmentInputCopyWithImpl<CaclEquipmentInput>(
+          this as CaclEquipmentInput, _$identity);
 
   /// Serializes this CaclEquipmentInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -19051,7 +30172,8 @@ mixin _$CaclEquipmentInput {
 
 /// @nodoc
 abstract mixin class $CaclEquipmentInputCopyWith<$Res> {
-  factory $CaclEquipmentInputCopyWith(CaclEquipmentInput value, $Res Function(CaclEquipmentInput) _then) =
+  factory $CaclEquipmentInputCopyWith(
+          CaclEquipmentInput value, $Res Function(CaclEquipmentInput) _then) =
       _$CaclEquipmentInputCopyWithImpl;
   @useResult
   $Res call(
@@ -19065,7 +30187,8 @@ abstract mixin class $CaclEquipmentInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CaclEquipmentInputCopyWithImpl<$Res> implements $CaclEquipmentInputCopyWith<$Res> {
+class _$CaclEquipmentInputCopyWithImpl<$Res>
+    implements $CaclEquipmentInputCopyWith<$Res> {
   _$CaclEquipmentInputCopyWithImpl(this._self, this._then);
 
   final CaclEquipmentInput _self;
@@ -19105,7 +30228,8 @@ class _$CaclEquipmentInputCopyWithImpl<$Res> implements $CaclEquipmentInputCopyW
       return null;
     }
 
-    return $EquipmentMeasurementInputCopyWith<$Res>(_self.measuringTape!, (value) {
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.measuringTape!,
+        (value) {
       return _then(_self.copyWith(measuringTape: value));
     });
   }
@@ -19133,9 +30257,182 @@ class _$CaclEquipmentInputCopyWithImpl<$Res> implements $CaclEquipmentInputCopyW
       return null;
     }
 
-    return $EquipmentMeasurementInputCopyWith<$Res>(_self.thermometer!, (value) {
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.thermometer!,
+        (value) {
       return _then(_self.copyWith(thermometer: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [CaclEquipmentInput].
+extension CaclEquipmentInputPatterns on CaclEquipmentInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CaclEquipmentInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CaclEquipmentInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CaclEquipmentInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            EquipmentMeasurementInput? measuringTape,
+            EquipmentMeasurementInput? densimeter,
+            EquipmentMeasurementInput? thermometer)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentInput() when $default != null:
+        return $default(
+            _that.measuringTape, _that.densimeter, _that.thermometer);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            EquipmentMeasurementInput? measuringTape,
+            EquipmentMeasurementInput? densimeter,
+            EquipmentMeasurementInput? thermometer)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentInput():
+        return $default(
+            _that.measuringTape, _that.densimeter, _that.thermometer);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            EquipmentMeasurementInput? measuringTape,
+            EquipmentMeasurementInput? densimeter,
+            EquipmentMeasurementInput? thermometer)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclEquipmentInput() when $default != null:
+        return $default(
+            _that.measuringTape, _that.densimeter, _that.thermometer);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -19143,7 +30440,8 @@ class _$CaclEquipmentInputCopyWithImpl<$Res> implements $CaclEquipmentInputCopyW
 @JsonSerializable()
 class _CaclEquipmentInput implements CaclEquipmentInput {
   _CaclEquipmentInput({this.measuringTape, this.densimeter, this.thermometer});
-  factory _CaclEquipmentInput.fromJson(Map<String, dynamic> json) => _$CaclEquipmentInputFromJson(json);
+  factory _CaclEquipmentInput.fromJson(Map<String, dynamic> json) =>
+      _$CaclEquipmentInputFromJson(json);
 
   /// The [measuringTape] parameter is the measuringTape of the cacl equipment input.
   @override
@@ -19179,8 +30477,10 @@ class _CaclEquipmentInput implements CaclEquipmentInput {
 }
 
 /// @nodoc
-abstract mixin class _$CaclEquipmentInputCopyWith<$Res> implements $CaclEquipmentInputCopyWith<$Res> {
-  factory _$CaclEquipmentInputCopyWith(_CaclEquipmentInput value, $Res Function(_CaclEquipmentInput) _then) =
+abstract mixin class _$CaclEquipmentInputCopyWith<$Res>
+    implements $CaclEquipmentInputCopyWith<$Res> {
+  factory _$CaclEquipmentInputCopyWith(
+          _CaclEquipmentInput value, $Res Function(_CaclEquipmentInput) _then) =
       __$CaclEquipmentInputCopyWithImpl;
   @override
   @useResult
@@ -19198,7 +30498,8 @@ abstract mixin class _$CaclEquipmentInputCopyWith<$Res> implements $CaclEquipmen
 }
 
 /// @nodoc
-class __$CaclEquipmentInputCopyWithImpl<$Res> implements _$CaclEquipmentInputCopyWith<$Res> {
+class __$CaclEquipmentInputCopyWithImpl<$Res>
+    implements _$CaclEquipmentInputCopyWith<$Res> {
   __$CaclEquipmentInputCopyWithImpl(this._self, this._then);
 
   final _CaclEquipmentInput _self;
@@ -19238,7 +30539,8 @@ class __$CaclEquipmentInputCopyWithImpl<$Res> implements _$CaclEquipmentInputCop
       return null;
     }
 
-    return $EquipmentMeasurementInputCopyWith<$Res>(_self.measuringTape!, (value) {
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.measuringTape!,
+        (value) {
       return _then(_self.copyWith(measuringTape: value));
     });
   }
@@ -19266,7 +30568,8 @@ class __$CaclEquipmentInputCopyWithImpl<$Res> implements _$CaclEquipmentInputCop
       return null;
     }
 
-    return $EquipmentMeasurementInputCopyWith<$Res>(_self.thermometer!, (value) {
+    return $EquipmentMeasurementInputCopyWith<$Res>(_self.thermometer!,
+        (value) {
       return _then(_self.copyWith(thermometer: value));
     });
   }
@@ -19327,7 +30630,8 @@ mixin _$MeasurementsInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $MeasurementsInputCopyWith<MeasurementsInput> get copyWith =>
-      _$MeasurementsInputCopyWithImpl<MeasurementsInput>(this as MeasurementsInput, _$identity);
+      _$MeasurementsInputCopyWithImpl<MeasurementsInput>(
+          this as MeasurementsInput, _$identity);
 
   /// Serializes this MeasurementsInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -19340,7 +30644,8 @@ mixin _$MeasurementsInput {
 
 /// @nodoc
 abstract mixin class $MeasurementsInputCopyWith<$Res> {
-  factory $MeasurementsInputCopyWith(MeasurementsInput value, $Res Function(MeasurementsInput) _then) =
+  factory $MeasurementsInputCopyWith(
+          MeasurementsInput value, $Res Function(MeasurementsInput) _then) =
       _$MeasurementsInputCopyWithImpl;
   @useResult
   $Res call(
@@ -19364,7 +30669,8 @@ abstract mixin class $MeasurementsInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MeasurementsInputCopyWithImpl<$Res> implements $MeasurementsInputCopyWith<$Res> {
+class _$MeasurementsInputCopyWithImpl<$Res>
+    implements $MeasurementsInputCopyWith<$Res> {
   _$MeasurementsInputCopyWithImpl(this._self, this._then);
 
   final MeasurementsInput _self;
@@ -19457,7 +30763,8 @@ class _$MeasurementsInputCopyWithImpl<$Res> implements $MeasurementsInputCopyWit
       return null;
     }
 
-    return $MeasurementInputCopyWith<$Res>(_self.correctedLevelHeight!, (value) {
+    return $MeasurementInputCopyWith<$Res>(_self.correctedLevelHeight!,
+        (value) {
       return _then(_self.copyWith(correctedLevelHeight: value));
     });
   }
@@ -19527,9 +30834,218 @@ class _$MeasurementsInputCopyWithImpl<$Res> implements $MeasurementsInputCopyWit
       return null;
     }
 
-    return $MeasurementInputCopyWith<$Res>(_self.averageTankTemperature!, (value) {
+    return $MeasurementInputCopyWith<$Res>(_self.averageTankTemperature!,
+        (value) {
       return _then(_self.copyWith(averageTankTemperature: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [MeasurementsInput].
+extension MeasurementsInputPatterns on MeasurementsInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MeasurementsInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MeasurementsInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MeasurementsInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            MeasurementInput? referenceHeight,
+            MeasurementInput? productLevelHeight,
+            MeasurementInput? correctedLevelHeight,
+            MeasurementInput? waterHeight,
+            MeasurementInput? ambientLineVolume,
+            MeasurementInput? ambientDensity,
+            MeasurementInput? ambientTemperature,
+            MeasurementInput? averageTankTemperature)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsInput() when $default != null:
+        return $default(
+            _that.referenceHeight,
+            _that.productLevelHeight,
+            _that.correctedLevelHeight,
+            _that.waterHeight,
+            _that.ambientLineVolume,
+            _that.ambientDensity,
+            _that.ambientTemperature,
+            _that.averageTankTemperature);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            MeasurementInput? referenceHeight,
+            MeasurementInput? productLevelHeight,
+            MeasurementInput? correctedLevelHeight,
+            MeasurementInput? waterHeight,
+            MeasurementInput? ambientLineVolume,
+            MeasurementInput? ambientDensity,
+            MeasurementInput? ambientTemperature,
+            MeasurementInput? averageTankTemperature)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsInput():
+        return $default(
+            _that.referenceHeight,
+            _that.productLevelHeight,
+            _that.correctedLevelHeight,
+            _that.waterHeight,
+            _that.ambientLineVolume,
+            _that.ambientDensity,
+            _that.ambientTemperature,
+            _that.averageTankTemperature);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            MeasurementInput? referenceHeight,
+            MeasurementInput? productLevelHeight,
+            MeasurementInput? correctedLevelHeight,
+            MeasurementInput? waterHeight,
+            MeasurementInput? ambientLineVolume,
+            MeasurementInput? ambientDensity,
+            MeasurementInput? ambientTemperature,
+            MeasurementInput? averageTankTemperature)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementsInput() when $default != null:
+        return $default(
+            _that.referenceHeight,
+            _that.productLevelHeight,
+            _that.correctedLevelHeight,
+            _that.waterHeight,
+            _that.ambientLineVolume,
+            _that.ambientDensity,
+            _that.ambientTemperature,
+            _that.averageTankTemperature);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -19545,7 +31061,8 @@ class _MeasurementsInput implements MeasurementsInput {
       this.ambientDensity,
       this.ambientTemperature,
       this.averageTankTemperature});
-  factory _MeasurementsInput.fromJson(Map<String, dynamic> json) => _$MeasurementsInputFromJson(json);
+  factory _MeasurementsInput.fromJson(Map<String, dynamic> json) =>
+      _$MeasurementsInputFromJson(json);
 
   /// The [referenceHeight] parameter is the referenceHeight of the measurements input.
   @override
@@ -19601,8 +31118,10 @@ class _MeasurementsInput implements MeasurementsInput {
 }
 
 /// @nodoc
-abstract mixin class _$MeasurementsInputCopyWith<$Res> implements $MeasurementsInputCopyWith<$Res> {
-  factory _$MeasurementsInputCopyWith(_MeasurementsInput value, $Res Function(_MeasurementsInput) _then) =
+abstract mixin class _$MeasurementsInputCopyWith<$Res>
+    implements $MeasurementsInputCopyWith<$Res> {
+  factory _$MeasurementsInputCopyWith(
+          _MeasurementsInput value, $Res Function(_MeasurementsInput) _then) =
       __$MeasurementsInputCopyWithImpl;
   @override
   @useResult
@@ -19635,7 +31154,8 @@ abstract mixin class _$MeasurementsInputCopyWith<$Res> implements $MeasurementsI
 }
 
 /// @nodoc
-class __$MeasurementsInputCopyWithImpl<$Res> implements _$MeasurementsInputCopyWith<$Res> {
+class __$MeasurementsInputCopyWithImpl<$Res>
+    implements _$MeasurementsInputCopyWith<$Res> {
   __$MeasurementsInputCopyWithImpl(this._self, this._then);
 
   final _MeasurementsInput _self;
@@ -19728,7 +31248,8 @@ class __$MeasurementsInputCopyWithImpl<$Res> implements _$MeasurementsInputCopyW
       return null;
     }
 
-    return $MeasurementInputCopyWith<$Res>(_self.correctedLevelHeight!, (value) {
+    return $MeasurementInputCopyWith<$Res>(_self.correctedLevelHeight!,
+        (value) {
       return _then(_self.copyWith(correctedLevelHeight: value));
     });
   }
@@ -19798,7 +31319,8 @@ class __$MeasurementsInputCopyWithImpl<$Res> implements _$MeasurementsInputCopyW
       return null;
     }
 
-    return $MeasurementInputCopyWith<$Res>(_self.averageTankTemperature!, (value) {
+    return $MeasurementInputCopyWith<$Res>(_self.averageTankTemperature!,
+        (value) {
       return _then(_self.copyWith(averageTankTemperature: value));
     });
   }
@@ -19859,7 +31381,8 @@ mixin _$ResultsInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $ResultsInputCopyWith<ResultsInput> get copyWith =>
-      _$ResultsInputCopyWithImpl<ResultsInput>(this as ResultsInput, _$identity);
+      _$ResultsInputCopyWithImpl<ResultsInput>(
+          this as ResultsInput, _$identity);
 
   /// Serializes this ResultsInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -19872,7 +31395,9 @@ mixin _$ResultsInput {
 
 /// @nodoc
 abstract mixin class $ResultsInputCopyWith<$Res> {
-  factory $ResultsInputCopyWith(ResultsInput value, $Res Function(ResultsInput) _then) = _$ResultsInputCopyWithImpl;
+  factory $ResultsInputCopyWith(
+          ResultsInput value, $Res Function(ResultsInput) _then) =
+      _$ResultsInputCopyWithImpl;
   @useResult
   $Res call(
       {MeasurementInput? environmentalTankVolume,
@@ -19960,7 +31485,8 @@ class _$ResultsInputCopyWithImpl<$Res> implements $ResultsInputCopyWith<$Res> {
       return null;
     }
 
-    return $MeasurementInputCopyWith<$Res>(_self.environmentalTankVolume!, (value) {
+    return $MeasurementInputCopyWith<$Res>(_self.environmentalTankVolume!,
+        (value) {
       return _then(_self.copyWith(environmentalTankVolume: value));
     });
   }
@@ -20002,7 +31528,8 @@ class _$ResultsInputCopyWithImpl<$Res> implements $ResultsInputCopyWith<$Res> {
       return null;
     }
 
-    return $MeasurementInputCopyWith<$Res>(_self.volumeCorrectionFactor!, (value) {
+    return $MeasurementInputCopyWith<$Res>(_self.volumeCorrectionFactor!,
+        (value) {
       return _then(_self.copyWith(volumeCorrectionFactor: value));
     });
   }
@@ -20064,6 +31591,214 @@ class _$ResultsInputCopyWithImpl<$Res> implements $ResultsInputCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [ResultsInput].
+extension ResultsInputPatterns on ResultsInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ResultsInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ResultsInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ResultsInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            MeasurementInput? environmentalTankVolume,
+            MeasurementInput? waterVolume,
+            MeasurementInput? densityAt20,
+            MeasurementInput? volumeCorrectionFactor,
+            MeasurementInput? alcoholicContent,
+            MeasurementInput? environmentalVolume,
+            MeasurementInput? volumeAt20,
+            MeasurementInput? kilogramsAt20)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsInput() when $default != null:
+        return $default(
+            _that.environmentalTankVolume,
+            _that.waterVolume,
+            _that.densityAt20,
+            _that.volumeCorrectionFactor,
+            _that.alcoholicContent,
+            _that.environmentalVolume,
+            _that.volumeAt20,
+            _that.kilogramsAt20);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            MeasurementInput? environmentalTankVolume,
+            MeasurementInput? waterVolume,
+            MeasurementInput? densityAt20,
+            MeasurementInput? volumeCorrectionFactor,
+            MeasurementInput? alcoholicContent,
+            MeasurementInput? environmentalVolume,
+            MeasurementInput? volumeAt20,
+            MeasurementInput? kilogramsAt20)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsInput():
+        return $default(
+            _that.environmentalTankVolume,
+            _that.waterVolume,
+            _that.densityAt20,
+            _that.volumeCorrectionFactor,
+            _that.alcoholicContent,
+            _that.environmentalVolume,
+            _that.volumeAt20,
+            _that.kilogramsAt20);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            MeasurementInput? environmentalTankVolume,
+            MeasurementInput? waterVolume,
+            MeasurementInput? densityAt20,
+            MeasurementInput? volumeCorrectionFactor,
+            MeasurementInput? alcoholicContent,
+            MeasurementInput? environmentalVolume,
+            MeasurementInput? volumeAt20,
+            MeasurementInput? kilogramsAt20)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResultsInput() when $default != null:
+        return $default(
+            _that.environmentalTankVolume,
+            _that.waterVolume,
+            _that.densityAt20,
+            _that.volumeCorrectionFactor,
+            _that.alcoholicContent,
+            _that.environmentalVolume,
+            _that.volumeAt20,
+            _that.kilogramsAt20);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ResultsInput implements ResultsInput {
@@ -20076,7 +31811,8 @@ class _ResultsInput implements ResultsInput {
       this.environmentalVolume,
       this.volumeAt20,
       this.kilogramsAt20});
-  factory _ResultsInput.fromJson(Map<String, dynamic> json) => _$ResultsInputFromJson(json);
+  factory _ResultsInput.fromJson(Map<String, dynamic> json) =>
+      _$ResultsInputFromJson(json);
 
   /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results input.
   @override
@@ -20115,7 +31851,8 @@ class _ResultsInput implements ResultsInput {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$ResultsInputCopyWith<_ResultsInput> get copyWith => __$ResultsInputCopyWithImpl<_ResultsInput>(this, _$identity);
+  _$ResultsInputCopyWith<_ResultsInput> get copyWith =>
+      __$ResultsInputCopyWithImpl<_ResultsInput>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -20131,8 +31868,11 @@ class _ResultsInput implements ResultsInput {
 }
 
 /// @nodoc
-abstract mixin class _$ResultsInputCopyWith<$Res> implements $ResultsInputCopyWith<$Res> {
-  factory _$ResultsInputCopyWith(_ResultsInput value, $Res Function(_ResultsInput) _then) = __$ResultsInputCopyWithImpl;
+abstract mixin class _$ResultsInputCopyWith<$Res>
+    implements $ResultsInputCopyWith<$Res> {
+  factory _$ResultsInputCopyWith(
+          _ResultsInput value, $Res Function(_ResultsInput) _then) =
+      __$ResultsInputCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -20164,7 +31904,8 @@ abstract mixin class _$ResultsInputCopyWith<$Res> implements $ResultsInputCopyWi
 }
 
 /// @nodoc
-class __$ResultsInputCopyWithImpl<$Res> implements _$ResultsInputCopyWith<$Res> {
+class __$ResultsInputCopyWithImpl<$Res>
+    implements _$ResultsInputCopyWith<$Res> {
   __$ResultsInputCopyWithImpl(this._self, this._then);
 
   final _ResultsInput _self;
@@ -20229,7 +31970,8 @@ class __$ResultsInputCopyWithImpl<$Res> implements _$ResultsInputCopyWith<$Res> 
       return null;
     }
 
-    return $MeasurementInputCopyWith<$Res>(_self.environmentalTankVolume!, (value) {
+    return $MeasurementInputCopyWith<$Res>(_self.environmentalTankVolume!,
+        (value) {
       return _then(_self.copyWith(environmentalTankVolume: value));
     });
   }
@@ -20271,7 +32013,8 @@ class __$ResultsInputCopyWithImpl<$Res> implements _$ResultsInputCopyWith<$Res> 
       return null;
     }
 
-    return $MeasurementInputCopyWith<$Res>(_self.volumeCorrectionFactor!, (value) {
+    return $MeasurementInputCopyWith<$Res>(_self.volumeCorrectionFactor!,
+        (value) {
       return _then(_self.copyWith(volumeCorrectionFactor: value));
     });
   }
@@ -20358,7 +32101,8 @@ mixin _$MeasurementInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $MeasurementInputCopyWith<MeasurementInput> get copyWith =>
-      _$MeasurementInputCopyWithImpl<MeasurementInput>(this as MeasurementInput, _$identity);
+      _$MeasurementInputCopyWithImpl<MeasurementInput>(
+          this as MeasurementInput, _$identity);
 
   /// Serializes this MeasurementInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -20371,14 +32115,16 @@ mixin _$MeasurementInput {
 
 /// @nodoc
 abstract mixin class $MeasurementInputCopyWith<$Res> {
-  factory $MeasurementInputCopyWith(MeasurementInput value, $Res Function(MeasurementInput) _then) =
+  factory $MeasurementInputCopyWith(
+          MeasurementInput value, $Res Function(MeasurementInput) _then) =
       _$MeasurementInputCopyWithImpl;
   @useResult
   $Res call({double? start, double? end, double? differenceOrTotal});
 }
 
 /// @nodoc
-class _$MeasurementInputCopyWithImpl<$Res> implements $MeasurementInputCopyWith<$Res> {
+class _$MeasurementInputCopyWithImpl<$Res>
+    implements $MeasurementInputCopyWith<$Res> {
   _$MeasurementInputCopyWithImpl(this._self, this._then);
 
   final MeasurementInput _self;
@@ -20410,11 +32156,172 @@ class _$MeasurementInputCopyWithImpl<$Res> implements $MeasurementInputCopyWith<
   }
 }
 
+/// Adds pattern-matching-related methods to [MeasurementInput].
+extension MeasurementInputPatterns on MeasurementInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MeasurementInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MeasurementInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MeasurementInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double? start, double? end, double? differenceOrTotal)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementInput() when $default != null:
+        return $default(_that.start, _that.end, _that.differenceOrTotal);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double? start, double? end, double? differenceOrTotal)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementInput():
+        return $default(_that.start, _that.end, _that.differenceOrTotal);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double? start, double? end, double? differenceOrTotal)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MeasurementInput() when $default != null:
+        return $default(_that.start, _that.end, _that.differenceOrTotal);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _MeasurementInput implements MeasurementInput {
   _MeasurementInput({this.start, this.end, this.differenceOrTotal});
-  factory _MeasurementInput.fromJson(Map<String, dynamic> json) => _$MeasurementInputFromJson(json);
+  factory _MeasurementInput.fromJson(Map<String, dynamic> json) =>
+      _$MeasurementInputFromJson(json);
 
   /// The [start] parameter is the start of the measurement input.
   @override
@@ -20450,8 +32357,10 @@ class _MeasurementInput implements MeasurementInput {
 }
 
 /// @nodoc
-abstract mixin class _$MeasurementInputCopyWith<$Res> implements $MeasurementInputCopyWith<$Res> {
-  factory _$MeasurementInputCopyWith(_MeasurementInput value, $Res Function(_MeasurementInput) _then) =
+abstract mixin class _$MeasurementInputCopyWith<$Res>
+    implements $MeasurementInputCopyWith<$Res> {
+  factory _$MeasurementInputCopyWith(
+          _MeasurementInput value, $Res Function(_MeasurementInput) _then) =
       __$MeasurementInputCopyWithImpl;
   @override
   @useResult
@@ -20459,7 +32368,8 @@ abstract mixin class _$MeasurementInputCopyWith<$Res> implements $MeasurementInp
 }
 
 /// @nodoc
-class __$MeasurementInputCopyWithImpl<$Res> implements _$MeasurementInputCopyWith<$Res> {
+class __$MeasurementInputCopyWithImpl<$Res>
+    implements _$MeasurementInputCopyWith<$Res> {
   __$MeasurementInputCopyWithImpl(this._self, this._then);
 
   final _MeasurementInput _self;
@@ -20534,7 +32444,8 @@ mixin _$CaclMeasurement {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $CaclMeasurementCopyWith<CaclMeasurement> get copyWith =>
-      _$CaclMeasurementCopyWithImpl<CaclMeasurement>(this as CaclMeasurement, _$identity);
+      _$CaclMeasurementCopyWithImpl<CaclMeasurement>(
+          this as CaclMeasurement, _$identity);
 
   /// Serializes this CaclMeasurement to a JSON map.
   Map<String, dynamic> toJson();
@@ -20547,15 +32458,22 @@ mixin _$CaclMeasurement {
 
 /// @nodoc
 abstract mixin class $CaclMeasurementCopyWith<$Res> {
-  factory $CaclMeasurementCopyWith(CaclMeasurement value, $Res Function(CaclMeasurement) _then) =
+  factory $CaclMeasurementCopyWith(
+          CaclMeasurement value, $Res Function(CaclMeasurement) _then) =
       _$CaclMeasurementCopyWithImpl;
   @useResult
   $Res call(
-      {double? start, double? end, double? differenceOrTotal, int? invoicedVolume, int? volumeAt20, int? massAt20});
+      {double? start,
+      double? end,
+      double? differenceOrTotal,
+      int? invoicedVolume,
+      int? volumeAt20,
+      int? massAt20});
 }
 
 /// @nodoc
-class _$CaclMeasurementCopyWithImpl<$Res> implements $CaclMeasurementCopyWith<$Res> {
+class _$CaclMeasurementCopyWithImpl<$Res>
+    implements $CaclMeasurementCopyWith<$Res> {
   _$CaclMeasurementCopyWithImpl(this._self, this._then);
 
   final CaclMeasurement _self;
@@ -20602,11 +32520,184 @@ class _$CaclMeasurementCopyWithImpl<$Res> implements $CaclMeasurementCopyWith<$R
   }
 }
 
+/// Adds pattern-matching-related methods to [CaclMeasurement].
+extension CaclMeasurementPatterns on CaclMeasurement {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CaclMeasurement value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurement() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CaclMeasurement value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurement():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CaclMeasurement value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurement() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double? start, double? end, double? differenceOrTotal,
+            int? invoicedVolume, int? volumeAt20, int? massAt20)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurement() when $default != null:
+        return $default(_that.start, _that.end, _that.differenceOrTotal,
+            _that.invoicedVolume, _that.volumeAt20, _that.massAt20);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double? start, double? end, double? differenceOrTotal,
+            int? invoicedVolume, int? volumeAt20, int? massAt20)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurement():
+        return $default(_that.start, _that.end, _that.differenceOrTotal,
+            _that.invoicedVolume, _that.volumeAt20, _that.massAt20);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double? start, double? end, double? differenceOrTotal,
+            int? invoicedVolume, int? volumeAt20, int? massAt20)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CaclMeasurement() when $default != null:
+        return $default(_that.start, _that.end, _that.differenceOrTotal,
+            _that.invoicedVolume, _that.volumeAt20, _that.massAt20);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _CaclMeasurement implements CaclMeasurement {
-  _CaclMeasurement({this.start, this.end, this.differenceOrTotal, this.invoicedVolume, this.volumeAt20, this.massAt20});
-  factory _CaclMeasurement.fromJson(Map<String, dynamic> json) => _$CaclMeasurementFromJson(json);
+  _CaclMeasurement(
+      {this.start,
+      this.end,
+      this.differenceOrTotal,
+      this.invoicedVolume,
+      this.volumeAt20,
+      this.massAt20});
+  factory _CaclMeasurement.fromJson(Map<String, dynamic> json) =>
+      _$CaclMeasurementFromJson(json);
 
   /// The [start] parameter is the start of the measurement input.
   @override
@@ -20654,17 +32745,25 @@ class _CaclMeasurement implements CaclMeasurement {
 }
 
 /// @nodoc
-abstract mixin class _$CaclMeasurementCopyWith<$Res> implements $CaclMeasurementCopyWith<$Res> {
-  factory _$CaclMeasurementCopyWith(_CaclMeasurement value, $Res Function(_CaclMeasurement) _then) =
+abstract mixin class _$CaclMeasurementCopyWith<$Res>
+    implements $CaclMeasurementCopyWith<$Res> {
+  factory _$CaclMeasurementCopyWith(
+          _CaclMeasurement value, $Res Function(_CaclMeasurement) _then) =
       __$CaclMeasurementCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {double? start, double? end, double? differenceOrTotal, int? invoicedVolume, int? volumeAt20, int? massAt20});
+      {double? start,
+      double? end,
+      double? differenceOrTotal,
+      int? invoicedVolume,
+      int? volumeAt20,
+      int? massAt20});
 }
 
 /// @nodoc
-class __$CaclMeasurementCopyWithImpl<$Res> implements _$CaclMeasurementCopyWith<$Res> {
+class __$CaclMeasurementCopyWithImpl<$Res>
+    implements _$CaclMeasurementCopyWith<$Res> {
   __$CaclMeasurementCopyWithImpl(this._self, this._then);
 
   final _CaclMeasurement _self;
@@ -20736,7 +32835,8 @@ mixin _$VolumeMovedInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $VolumeMovedInputCopyWith<VolumeMovedInput> get copyWith =>
-      _$VolumeMovedInputCopyWithImpl<VolumeMovedInput>(this as VolumeMovedInput, _$identity);
+      _$VolumeMovedInputCopyWithImpl<VolumeMovedInput>(
+          this as VolumeMovedInput, _$identity);
 
   /// Serializes this VolumeMovedInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -20749,14 +32849,16 @@ mixin _$VolumeMovedInput {
 
 /// @nodoc
 abstract mixin class $VolumeMovedInputCopyWith<$Res> {
-  factory $VolumeMovedInputCopyWith(VolumeMovedInput value, $Res Function(VolumeMovedInput) _then) =
+  factory $VolumeMovedInputCopyWith(
+          VolumeMovedInput value, $Res Function(VolumeMovedInput) _then) =
       _$VolumeMovedInputCopyWithImpl;
   @useResult
   $Res call({double? ambientVolume, double? volumeAt20, double? kilogramsAt20});
 }
 
 /// @nodoc
-class _$VolumeMovedInputCopyWithImpl<$Res> implements $VolumeMovedInputCopyWith<$Res> {
+class _$VolumeMovedInputCopyWithImpl<$Res>
+    implements $VolumeMovedInputCopyWith<$Res> {
   _$VolumeMovedInputCopyWithImpl(this._self, this._then);
 
   final VolumeMovedInput _self;
@@ -20788,11 +32890,178 @@ class _$VolumeMovedInputCopyWithImpl<$Res> implements $VolumeMovedInputCopyWith<
   }
 }
 
+/// Adds pattern-matching-related methods to [VolumeMovedInput].
+extension VolumeMovedInputPatterns on VolumeMovedInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_VolumeMovedInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_VolumeMovedInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_VolumeMovedInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double? ambientVolume, double? volumeAt20, double? kilogramsAt20)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedInput() when $default != null:
+        return $default(
+            _that.ambientVolume, _that.volumeAt20, _that.kilogramsAt20);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double? ambientVolume, double? volumeAt20, double? kilogramsAt20)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedInput():
+        return $default(
+            _that.ambientVolume, _that.volumeAt20, _that.kilogramsAt20);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double? ambientVolume, double? volumeAt20, double? kilogramsAt20)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _VolumeMovedInput() when $default != null:
+        return $default(
+            _that.ambientVolume, _that.volumeAt20, _that.kilogramsAt20);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _VolumeMovedInput implements VolumeMovedInput {
   _VolumeMovedInput({this.ambientVolume, this.volumeAt20, this.kilogramsAt20});
-  factory _VolumeMovedInput.fromJson(Map<String, dynamic> json) => _$VolumeMovedInputFromJson(json);
+  factory _VolumeMovedInput.fromJson(Map<String, dynamic> json) =>
+      _$VolumeMovedInputFromJson(json);
 
   /// The [ambientVolume] parameter is the ambientVolume of the volume moved input.
   @override
@@ -20828,8 +33097,10 @@ class _VolumeMovedInput implements VolumeMovedInput {
 }
 
 /// @nodoc
-abstract mixin class _$VolumeMovedInputCopyWith<$Res> implements $VolumeMovedInputCopyWith<$Res> {
-  factory _$VolumeMovedInputCopyWith(_VolumeMovedInput value, $Res Function(_VolumeMovedInput) _then) =
+abstract mixin class _$VolumeMovedInputCopyWith<$Res>
+    implements $VolumeMovedInputCopyWith<$Res> {
+  factory _$VolumeMovedInputCopyWith(
+          _VolumeMovedInput value, $Res Function(_VolumeMovedInput) _then) =
       __$VolumeMovedInputCopyWithImpl;
   @override
   @useResult
@@ -20837,7 +33108,8 @@ abstract mixin class _$VolumeMovedInputCopyWith<$Res> implements $VolumeMovedInp
 }
 
 /// @nodoc
-class __$VolumeMovedInputCopyWithImpl<$Res> implements _$VolumeMovedInputCopyWith<$Res> {
+class __$VolumeMovedInputCopyWithImpl<$Res>
+    implements _$VolumeMovedInputCopyWith<$Res> {
   __$VolumeMovedInputCopyWithImpl(this._self, this._then);
 
   final _VolumeMovedInput _self;
@@ -20882,7 +33154,8 @@ mixin _$EquipmentMeasurementInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $EquipmentMeasurementInputCopyWith<EquipmentMeasurementInput> get copyWith =>
-      _$EquipmentMeasurementInputCopyWithImpl<EquipmentMeasurementInput>(this as EquipmentMeasurementInput, _$identity);
+      _$EquipmentMeasurementInputCopyWithImpl<EquipmentMeasurementInput>(
+          this as EquipmentMeasurementInput, _$identity);
 
   /// Serializes this EquipmentMeasurementInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -20895,15 +33168,16 @@ mixin _$EquipmentMeasurementInput {
 
 /// @nodoc
 abstract mixin class $EquipmentMeasurementInputCopyWith<$Res> {
-  factory $EquipmentMeasurementInputCopyWith(
-          EquipmentMeasurementInput value, $Res Function(EquipmentMeasurementInput) _then) =
+  factory $EquipmentMeasurementInputCopyWith(EquipmentMeasurementInput value,
+          $Res Function(EquipmentMeasurementInput) _then) =
       _$EquipmentMeasurementInputCopyWithImpl;
   @useResult
   $Res call({String? serialNumber});
 }
 
 /// @nodoc
-class _$EquipmentMeasurementInputCopyWithImpl<$Res> implements $EquipmentMeasurementInputCopyWith<$Res> {
+class _$EquipmentMeasurementInputCopyWithImpl<$Res>
+    implements $EquipmentMeasurementInputCopyWith<$Res> {
   _$EquipmentMeasurementInputCopyWithImpl(this._self, this._then);
 
   final EquipmentMeasurementInput _self;
@@ -20925,11 +33199,169 @@ class _$EquipmentMeasurementInputCopyWithImpl<$Res> implements $EquipmentMeasure
   }
 }
 
+/// Adds pattern-matching-related methods to [EquipmentMeasurementInput].
+extension EquipmentMeasurementInputPatterns on EquipmentMeasurementInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_EquipmentMeasurementInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_EquipmentMeasurementInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_EquipmentMeasurementInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? serialNumber)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementInput() when $default != null:
+        return $default(_that.serialNumber);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? serialNumber) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementInput():
+        return $default(_that.serialNumber);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? serialNumber)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EquipmentMeasurementInput() when $default != null:
+        return $default(_that.serialNumber);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _EquipmentMeasurementInput implements EquipmentMeasurementInput {
   _EquipmentMeasurementInput({this.serialNumber});
-  factory _EquipmentMeasurementInput.fromJson(Map<String, dynamic> json) => _$EquipmentMeasurementInputFromJson(json);
+  factory _EquipmentMeasurementInput.fromJson(Map<String, dynamic> json) =>
+      _$EquipmentMeasurementInputFromJson(json);
 
   /// The [serialNumber] parameter is the start of the equipment measurement input.
   @override
@@ -20940,8 +33372,10 @@ class _EquipmentMeasurementInput implements EquipmentMeasurementInput {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$EquipmentMeasurementInputCopyWith<_EquipmentMeasurementInput> get copyWith =>
-      __$EquipmentMeasurementInputCopyWithImpl<_EquipmentMeasurementInput>(this, _$identity);
+  _$EquipmentMeasurementInputCopyWith<_EquipmentMeasurementInput>
+      get copyWith =>
+          __$EquipmentMeasurementInputCopyWithImpl<_EquipmentMeasurementInput>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -20957,9 +33391,10 @@ class _EquipmentMeasurementInput implements EquipmentMeasurementInput {
 }
 
 /// @nodoc
-abstract mixin class _$EquipmentMeasurementInputCopyWith<$Res> implements $EquipmentMeasurementInputCopyWith<$Res> {
-  factory _$EquipmentMeasurementInputCopyWith(
-          _EquipmentMeasurementInput value, $Res Function(_EquipmentMeasurementInput) _then) =
+abstract mixin class _$EquipmentMeasurementInputCopyWith<$Res>
+    implements $EquipmentMeasurementInputCopyWith<$Res> {
+  factory _$EquipmentMeasurementInputCopyWith(_EquipmentMeasurementInput value,
+          $Res Function(_EquipmentMeasurementInput) _then) =
       __$EquipmentMeasurementInputCopyWithImpl;
   @override
   @useResult
@@ -20967,7 +33402,8 @@ abstract mixin class _$EquipmentMeasurementInputCopyWith<$Res> implements $Equip
 }
 
 /// @nodoc
-class __$EquipmentMeasurementInputCopyWithImpl<$Res> implements _$EquipmentMeasurementInputCopyWith<$Res> {
+class __$EquipmentMeasurementInputCopyWithImpl<$Res>
+    implements _$EquipmentMeasurementInputCopyWith<$Res> {
   __$EquipmentMeasurementInputCopyWithImpl(this._self, this._then);
 
   final _EquipmentMeasurementInput _self;
@@ -21024,7 +33460,8 @@ mixin _$AtsMonitor {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AtsMonitorCopyWith<AtsMonitor> get copyWith => _$AtsMonitorCopyWithImpl<AtsMonitor>(this as AtsMonitor, _$identity);
+  $AtsMonitorCopyWith<AtsMonitor> get copyWith =>
+      _$AtsMonitorCopyWithImpl<AtsMonitor>(this as AtsMonitor, _$identity);
 
   /// Serializes this AtsMonitor to a JSON map.
   Map<String, dynamic> toJson();
@@ -21038,10 +33475,12 @@ mixin _$AtsMonitor {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
             (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite) &&
             const DeepCollectionEquality().equals(other.assets, assets) &&
             const DeepCollectionEquality().equals(other.assetsIds, assetsIds) &&
-            const DeepCollectionEquality().equals(other.gridStructure, gridStructure) &&
+            const DeepCollectionEquality()
+                .equals(other.gridStructure, gridStructure) &&
             const DeepCollectionEquality().equals(other.access, access));
   }
 
@@ -21067,7 +33506,9 @@ mixin _$AtsMonitor {
 
 /// @nodoc
 abstract mixin class $AtsMonitorCopyWith<$Res> {
-  factory $AtsMonitorCopyWith(AtsMonitor value, $Res Function(AtsMonitor) _then) = _$AtsMonitorCopyWithImpl;
+  factory $AtsMonitorCopyWith(
+          AtsMonitor value, $Res Function(AtsMonitor) _then) =
+      _$AtsMonitorCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -21253,8 +33694,16 @@ extension AtsMonitorPatterns on AtsMonitor {
     final _that = this;
     switch (_that) {
       case _AtsMonitor() when $default != null:
-        return $default(_that.id, _that.name, _that.color, _that.icon, _that.isFavorite, _that.assets, _that.assetsIds,
-            _that.gridStructure, _that.access);
+        return $default(
+            _that.id,
+            _that.name,
+            _that.color,
+            _that.icon,
+            _that.isFavorite,
+            _that.assets,
+            _that.assetsIds,
+            _that.gridStructure,
+            _that.access);
       case _:
         return orElse();
     }
@@ -21290,8 +33739,16 @@ extension AtsMonitorPatterns on AtsMonitor {
     final _that = this;
     switch (_that) {
       case _AtsMonitor():
-        return $default(_that.id, _that.name, _that.color, _that.icon, _that.isFavorite, _that.assets, _that.assetsIds,
-            _that.gridStructure, _that.access);
+        return $default(
+            _that.id,
+            _that.name,
+            _that.color,
+            _that.icon,
+            _that.isFavorite,
+            _that.assets,
+            _that.assetsIds,
+            _that.gridStructure,
+            _that.access);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -21326,8 +33783,16 @@ extension AtsMonitorPatterns on AtsMonitor {
     final _that = this;
     switch (_that) {
       case _AtsMonitor() when $default != null:
-        return $default(_that.id, _that.name, _that.color, _that.icon, _that.isFavorite, _that.assets, _that.assetsIds,
-            _that.gridStructure, _that.access);
+        return $default(
+            _that.id,
+            _that.name,
+            _that.color,
+            _that.icon,
+            _that.isFavorite,
+            _that.assets,
+            _that.assetsIds,
+            _that.gridStructure,
+            _that.access);
       case _:
         return null;
     }
@@ -21351,7 +33816,8 @@ class _AtsMonitor implements AtsMonitor {
         _assetsIds = assetsIds,
         _gridStructure = gridStructure,
         _access = access;
-  factory _AtsMonitor.fromJson(Map<String, dynamic> json) => _$AtsMonitorFromJson(json);
+  factory _AtsMonitor.fromJson(Map<String, dynamic> json) =>
+      _$AtsMonitorFromJson(json);
 
   /// ID of the entity. This ID is unique.
   @override
@@ -21430,7 +33896,8 @@ class _AtsMonitor implements AtsMonitor {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsMonitorCopyWith<_AtsMonitor> get copyWith => __$AtsMonitorCopyWithImpl<_AtsMonitor>(this, _$identity);
+  _$AtsMonitorCopyWith<_AtsMonitor> get copyWith =>
+      __$AtsMonitorCopyWithImpl<_AtsMonitor>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -21448,10 +33915,13 @@ class _AtsMonitor implements AtsMonitor {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
             (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite) &&
             const DeepCollectionEquality().equals(other._assets, _assets) &&
-            const DeepCollectionEquality().equals(other._assetsIds, _assetsIds) &&
-            const DeepCollectionEquality().equals(other._gridStructure, _gridStructure) &&
+            const DeepCollectionEquality()
+                .equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._gridStructure, _gridStructure) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
@@ -21476,8 +33946,11 @@ class _AtsMonitor implements AtsMonitor {
 }
 
 /// @nodoc
-abstract mixin class _$AtsMonitorCopyWith<$Res> implements $AtsMonitorCopyWith<$Res> {
-  factory _$AtsMonitorCopyWith(_AtsMonitor value, $Res Function(_AtsMonitor) _then) = __$AtsMonitorCopyWithImpl;
+abstract mixin class _$AtsMonitorCopyWith<$Res>
+    implements $AtsMonitorCopyWith<$Res> {
+  factory _$AtsMonitorCopyWith(
+          _AtsMonitor value, $Res Function(_AtsMonitor) _then) =
+      __$AtsMonitorCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -21608,7 +34081,8 @@ mixin _$AtsMonitorInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsMonitorInputCopyWith<AtsMonitorInput> get copyWith =>
-      _$AtsMonitorInputCopyWithImpl<AtsMonitorInput>(this as AtsMonitorInput, _$identity);
+      _$AtsMonitorInputCopyWithImpl<AtsMonitorInput>(
+          this as AtsMonitorInput, _$identity);
 
   /// Serializes this AtsMonitorInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -21621,7 +34095,8 @@ mixin _$AtsMonitorInput {
 
 /// @nodoc
 abstract mixin class $AtsMonitorInputCopyWith<$Res> {
-  factory $AtsMonitorInputCopyWith(AtsMonitorInput value, $Res Function(AtsMonitorInput) _then) =
+  factory $AtsMonitorInputCopyWith(
+          AtsMonitorInput value, $Res Function(AtsMonitorInput) _then) =
       _$AtsMonitorInputCopyWithImpl;
   @useResult
   $Res call(
@@ -21635,7 +34110,8 @@ abstract mixin class $AtsMonitorInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsMonitorInputCopyWithImpl<$Res> implements $AtsMonitorInputCopyWith<$Res> {
+class _$AtsMonitorInputCopyWithImpl<$Res>
+    implements $AtsMonitorInputCopyWith<$Res> {
   _$AtsMonitorInputCopyWithImpl(this._self, this._then);
 
   final AtsMonitorInput _self;
@@ -21794,8 +34270,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
     final _that = this;
     switch (_that) {
       case _AtsMonitorInput() when $default != null:
-        return $default(
-            _that.id, _that.name, _that.icon, _that.color, _that.isFavorite, _that.assetsIds, _that.gridStructure);
+        return $default(_that.id, _that.name, _that.icon, _that.color,
+            _that.isFavorite, _that.assetsIds, _that.gridStructure);
       case _:
         return orElse();
     }
@@ -21829,8 +34305,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
     final _that = this;
     switch (_that) {
       case _AtsMonitorInput():
-        return $default(
-            _that.id, _that.name, _that.icon, _that.color, _that.isFavorite, _that.assetsIds, _that.gridStructure);
+        return $default(_that.id, _that.name, _that.icon, _that.color,
+            _that.isFavorite, _that.assetsIds, _that.gridStructure);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -21863,8 +34339,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
     final _that = this;
     switch (_that) {
       case _AtsMonitorInput() when $default != null:
-        return $default(
-            _that.id, _that.name, _that.icon, _that.color, _that.isFavorite, _that.assetsIds, _that.gridStructure);
+        return $default(_that.id, _that.name, _that.icon, _that.color,
+            _that.isFavorite, _that.assetsIds, _that.gridStructure);
       case _:
         return null;
     }
@@ -21882,7 +34358,8 @@ class _AtsMonitorInput implements AtsMonitorInput {
       this.isFavorite = false,
       this.assetsIds = const [],
       this.gridStructure = const []});
-  factory _AtsMonitorInput.fromJson(Map<String, dynamic> json) => _$AtsMonitorInputFromJson(json);
+  factory _AtsMonitorInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsMonitorInputFromJson(json);
 
   /// ID of the entity. This ID is unique.
   @override
@@ -21939,8 +34416,10 @@ class _AtsMonitorInput implements AtsMonitorInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsMonitorInputCopyWith<$Res> implements $AtsMonitorInputCopyWith<$Res> {
-  factory _$AtsMonitorInputCopyWith(_AtsMonitorInput value, $Res Function(_AtsMonitorInput) _then) =
+abstract mixin class _$AtsMonitorInputCopyWith<$Res>
+    implements $AtsMonitorInputCopyWith<$Res> {
+  factory _$AtsMonitorInputCopyWith(
+          _AtsMonitorInput value, $Res Function(_AtsMonitorInput) _then) =
       __$AtsMonitorInputCopyWithImpl;
   @override
   @useResult
@@ -21955,7 +34434,8 @@ abstract mixin class _$AtsMonitorInputCopyWith<$Res> implements $AtsMonitorInput
 }
 
 /// @nodoc
-class __$AtsMonitorInputCopyWithImpl<$Res> implements _$AtsMonitorInputCopyWith<$Res> {
+class __$AtsMonitorInputCopyWithImpl<$Res>
+    implements _$AtsMonitorInputCopyWith<$Res> {
   __$AtsMonitorInputCopyWithImpl(this._self, this._then);
 
   final _AtsMonitorInput _self;
@@ -22037,16 +34517,18 @@ mixin _$AtsGridItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AtsGridItem &&
-            const DeepCollectionEquality().equals(other.objectsIds, objectsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.objectsIds, objectsIds) &&
             (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.dimensions, dimensions) || other.dimensions == dimensions) &&
+            (identical(other.dimensions, dimensions) ||
+                other.dimensions == dimensions) &&
             (identical(other.color, color) || other.color == color));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(objectsIds), kind, dimensions, color);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(objectsIds), kind, dimensions, color);
 
   @override
   String toString() {
@@ -22056,7 +34538,9 @@ mixin _$AtsGridItem {
 
 /// @nodoc
 abstract mixin class $AtsGridItemCopyWith<$Res> {
-  factory $AtsGridItemCopyWith(AtsGridItem value, $Res Function(AtsGridItem) _then) = _$AtsGridItemCopyWithImpl;
+  factory $AtsGridItemCopyWith(
+          AtsGridItem value, $Res Function(AtsGridItem) _then) =
+      _$AtsGridItemCopyWithImpl;
   @useResult
   $Res call(
       {List<String> objectsIds,
@@ -22212,15 +34696,20 @@ extension AtsGridItemPatterns on AtsGridItem {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<String> objectsIds, @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
-            AtsGridDimension? dimensions, String? color)?
+    TResult Function(
+            List<String> objectsIds,
+            @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+            MonitorCardType kind,
+            AtsGridDimension? dimensions,
+            String? color)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _AtsGridItem() when $default != null:
-        return $default(_that.objectsIds, _that.kind, _that.dimensions, _that.color);
+        return $default(
+            _that.objectsIds, _that.kind, _that.dimensions, _that.color);
       case _:
         return orElse();
     }
@@ -22241,14 +34730,19 @@ extension AtsGridItemPatterns on AtsGridItem {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<String> objectsIds, @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
-            AtsGridDimension? dimensions, String? color)
+    TResult Function(
+            List<String> objectsIds,
+            @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+            MonitorCardType kind,
+            AtsGridDimension? dimensions,
+            String? color)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AtsGridItem():
-        return $default(_that.objectsIds, _that.kind, _that.dimensions, _that.color);
+        return $default(
+            _that.objectsIds, _that.kind, _that.dimensions, _that.color);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -22268,14 +34762,19 @@ extension AtsGridItemPatterns on AtsGridItem {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<String> objectsIds, @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
-            AtsGridDimension? dimensions, String? color)?
+    TResult? Function(
+            List<String> objectsIds,
+            @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+            MonitorCardType kind,
+            AtsGridDimension? dimensions,
+            String? color)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AtsGridItem() when $default != null:
-        return $default(_that.objectsIds, _that.kind, _that.dimensions, _that.color);
+        return $default(
+            _that.objectsIds, _that.kind, _that.dimensions, _that.color);
       case _:
         return null;
     }
@@ -22287,11 +34786,13 @@ extension AtsGridItemPatterns on AtsGridItem {
 class _AtsGridItem implements AtsGridItem {
   const _AtsGridItem(
       {final List<String> objectsIds = const [],
-      @JsonKey(unknownEnumValue: MonitorCardType.unknown) this.kind = MonitorCardType.unknown,
+      @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+      this.kind = MonitorCardType.unknown,
       this.dimensions,
       this.color})
       : _objectsIds = objectsIds;
-  factory _AtsGridItem.fromJson(Map<String, dynamic> json) => _$AtsGridItemFromJson(json);
+  factory _AtsGridItem.fromJson(Map<String, dynamic> json) =>
+      _$AtsGridItemFromJson(json);
 
   /// Object id. Should be an Asset or many Assets.
   final List<String> _objectsIds;
@@ -22323,7 +34824,8 @@ class _AtsGridItem implements AtsGridItem {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AtsGridItemCopyWith<_AtsGridItem> get copyWith => __$AtsGridItemCopyWithImpl<_AtsGridItem>(this, _$identity);
+  _$AtsGridItemCopyWith<_AtsGridItem> get copyWith =>
+      __$AtsGridItemCopyWithImpl<_AtsGridItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -22337,16 +34839,22 @@ class _AtsGridItem implements AtsGridItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AtsGridItem &&
-            const DeepCollectionEquality().equals(other._objectsIds, _objectsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._objectsIds, _objectsIds) &&
             (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.dimensions, dimensions) || other.dimensions == dimensions) &&
+            (identical(other.dimensions, dimensions) ||
+                other.dimensions == dimensions) &&
             (identical(other.color, color) || other.color == color));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_objectsIds), kind, dimensions, color);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_objectsIds),
+      kind,
+      dimensions,
+      color);
 
   @override
   String toString() {
@@ -22355,8 +34863,11 @@ class _AtsGridItem implements AtsGridItem {
 }
 
 /// @nodoc
-abstract mixin class _$AtsGridItemCopyWith<$Res> implements $AtsGridItemCopyWith<$Res> {
-  factory _$AtsGridItemCopyWith(_AtsGridItem value, $Res Function(_AtsGridItem) _then) = __$AtsGridItemCopyWithImpl;
+abstract mixin class _$AtsGridItemCopyWith<$Res>
+    implements $AtsGridItemCopyWith<$Res> {
+  factory _$AtsGridItemCopyWith(
+          _AtsGridItem value, $Res Function(_AtsGridItem) _then) =
+      __$AtsGridItemCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -22450,7 +34961,8 @@ mixin _$AtsGridItemInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsGridItemInputCopyWith<AtsGridItemInput> get copyWith =>
-      _$AtsGridItemInputCopyWithImpl<AtsGridItemInput>(this as AtsGridItemInput, _$identity);
+      _$AtsGridItemInputCopyWithImpl<AtsGridItemInput>(
+          this as AtsGridItemInput, _$identity);
 
   /// Serializes this AtsGridItemInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -22463,7 +34975,8 @@ mixin _$AtsGridItemInput {
 
 /// @nodoc
 abstract mixin class $AtsGridItemInputCopyWith<$Res> {
-  factory $AtsGridItemInputCopyWith(AtsGridItemInput value, $Res Function(AtsGridItemInput) _then) =
+  factory $AtsGridItemInputCopyWith(
+          AtsGridItemInput value, $Res Function(AtsGridItemInput) _then) =
       _$AtsGridItemInputCopyWithImpl;
   @useResult
   $Res call(
@@ -22476,7 +34989,8 @@ abstract mixin class $AtsGridItemInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AtsGridItemInputCopyWithImpl<$Res> implements $AtsGridItemInputCopyWith<$Res> {
+class _$AtsGridItemInputCopyWithImpl<$Res>
+    implements $AtsGridItemInputCopyWith<$Res> {
   _$AtsGridItemInputCopyWithImpl(this._self, this._then);
 
   final AtsGridItemInput _self;
@@ -22623,7 +35137,8 @@ extension AtsGridItemInputPatterns on AtsGridItemInput {
     TResult Function(
             List<String> objectsIds,
             String? color,
-            @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
+            @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+            MonitorCardType kind,
             AtsGridDimensionInput? dimensions)?
         $default, {
     required TResult orElse(),
@@ -22631,7 +35146,8 @@ extension AtsGridItemInputPatterns on AtsGridItemInput {
     final _that = this;
     switch (_that) {
       case _AtsGridItemInput() when $default != null:
-        return $default(_that.objectsIds, _that.color, _that.kind, _that.dimensions);
+        return $default(
+            _that.objectsIds, _that.color, _that.kind, _that.dimensions);
       case _:
         return orElse();
     }
@@ -22652,14 +35168,19 @@ extension AtsGridItemInputPatterns on AtsGridItemInput {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<String> objectsIds, String? color,
-            @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind, AtsGridDimensionInput? dimensions)
+    TResult Function(
+            List<String> objectsIds,
+            String? color,
+            @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+            MonitorCardType kind,
+            AtsGridDimensionInput? dimensions)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AtsGridItemInput():
-        return $default(_that.objectsIds, _that.color, _that.kind, _that.dimensions);
+        return $default(
+            _that.objectsIds, _that.color, _that.kind, _that.dimensions);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -22682,14 +35203,16 @@ extension AtsGridItemInputPatterns on AtsGridItemInput {
     TResult? Function(
             List<String> objectsIds,
             String? color,
-            @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
+            @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+            MonitorCardType kind,
             AtsGridDimensionInput? dimensions)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AtsGridItemInput() when $default != null:
-        return $default(_that.objectsIds, _that.color, _that.kind, _that.dimensions);
+        return $default(
+            _that.objectsIds, _that.color, _that.kind, _that.dimensions);
       case _:
         return null;
     }
@@ -22702,9 +35225,11 @@ class _AtsGridItemInput implements AtsGridItemInput {
   _AtsGridItemInput(
       {this.objectsIds = const [],
       this.color,
-      @JsonKey(unknownEnumValue: MonitorCardType.unknown) this.kind = MonitorCardType.unknown,
+      @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+      this.kind = MonitorCardType.unknown,
       this.dimensions});
-  factory _AtsGridItemInput.fromJson(Map<String, dynamic> json) => _$AtsGridItemInputFromJson(json);
+  factory _AtsGridItemInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsGridItemInputFromJson(json);
 
   /// List of object ids.
   @override
@@ -22745,8 +35270,10 @@ class _AtsGridItemInput implements AtsGridItemInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsGridItemInputCopyWith<$Res> implements $AtsGridItemInputCopyWith<$Res> {
-  factory _$AtsGridItemInputCopyWith(_AtsGridItemInput value, $Res Function(_AtsGridItemInput) _then) =
+abstract mixin class _$AtsGridItemInputCopyWith<$Res>
+    implements $AtsGridItemInputCopyWith<$Res> {
+  factory _$AtsGridItemInputCopyWith(
+          _AtsGridItemInput value, $Res Function(_AtsGridItemInput) _then) =
       __$AtsGridItemInputCopyWithImpl;
   @override
   @useResult
@@ -22761,7 +35288,8 @@ abstract mixin class _$AtsGridItemInputCopyWith<$Res> implements $AtsGridItemInp
 }
 
 /// @nodoc
-class __$AtsGridItemInputCopyWithImpl<$Res> implements _$AtsGridItemInputCopyWith<$Res> {
+class __$AtsGridItemInputCopyWithImpl<$Res>
+    implements _$AtsGridItemInputCopyWith<$Res> {
   __$AtsGridItemInputCopyWithImpl(this._self, this._then);
 
   final _AtsGridItemInput _self;
@@ -22825,7 +35353,8 @@ mixin _$AtsGridDimension {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsGridDimensionCopyWith<AtsGridDimension> get copyWith =>
-      _$AtsGridDimensionCopyWithImpl<AtsGridDimension>(this as AtsGridDimension, _$identity);
+      _$AtsGridDimensionCopyWithImpl<AtsGridDimension>(
+          this as AtsGridDimension, _$identity);
 
   /// Serializes this AtsGridDimension to a JSON map.
   Map<String, dynamic> toJson();
@@ -22851,14 +35380,16 @@ mixin _$AtsGridDimension {
 
 /// @nodoc
 abstract mixin class $AtsGridDimensionCopyWith<$Res> {
-  factory $AtsGridDimensionCopyWith(AtsGridDimension value, $Res Function(AtsGridDimension) _then) =
+  factory $AtsGridDimensionCopyWith(
+          AtsGridDimension value, $Res Function(AtsGridDimension) _then) =
       _$AtsGridDimensionCopyWithImpl;
   @useResult
   $Res call({int width, int height});
 }
 
 /// @nodoc
-class _$AtsGridDimensionCopyWithImpl<$Res> implements $AtsGridDimensionCopyWith<$Res> {
+class _$AtsGridDimensionCopyWithImpl<$Res>
+    implements $AtsGridDimensionCopyWith<$Res> {
   _$AtsGridDimensionCopyWithImpl(this._self, this._then);
 
   final AtsGridDimension _self;
@@ -23046,7 +35577,8 @@ extension AtsGridDimensionPatterns on AtsGridDimension {
 @JsonSerializable()
 class _AtsGridDimension implements AtsGridDimension {
   const _AtsGridDimension({this.width = 1, this.height = 1});
-  factory _AtsGridDimension.fromJson(Map<String, dynamic> json) => _$AtsGridDimensionFromJson(json);
+  factory _AtsGridDimension.fromJson(Map<String, dynamic> json) =>
+      _$AtsGridDimensionFromJson(json);
 
   /// Number of columns to be expanded.
   @override
@@ -23093,8 +35625,10 @@ class _AtsGridDimension implements AtsGridDimension {
 }
 
 /// @nodoc
-abstract mixin class _$AtsGridDimensionCopyWith<$Res> implements $AtsGridDimensionCopyWith<$Res> {
-  factory _$AtsGridDimensionCopyWith(_AtsGridDimension value, $Res Function(_AtsGridDimension) _then) =
+abstract mixin class _$AtsGridDimensionCopyWith<$Res>
+    implements $AtsGridDimensionCopyWith<$Res> {
+  factory _$AtsGridDimensionCopyWith(
+          _AtsGridDimension value, $Res Function(_AtsGridDimension) _then) =
       __$AtsGridDimensionCopyWithImpl;
   @override
   @useResult
@@ -23102,7 +35636,8 @@ abstract mixin class _$AtsGridDimensionCopyWith<$Res> implements $AtsGridDimensi
 }
 
 /// @nodoc
-class __$AtsGridDimensionCopyWithImpl<$Res> implements _$AtsGridDimensionCopyWith<$Res> {
+class __$AtsGridDimensionCopyWithImpl<$Res>
+    implements _$AtsGridDimensionCopyWith<$Res> {
   __$AtsGridDimensionCopyWithImpl(this._self, this._then);
 
   final _AtsGridDimension _self;
@@ -23148,7 +35683,8 @@ mixin _$AtsGridDimensionInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AtsGridDimensionInputCopyWith<AtsGridDimensionInput> get copyWith =>
-      _$AtsGridDimensionInputCopyWithImpl<AtsGridDimensionInput>(this as AtsGridDimensionInput, _$identity);
+      _$AtsGridDimensionInputCopyWithImpl<AtsGridDimensionInput>(
+          this as AtsGridDimensionInput, _$identity);
 
   /// Serializes this AtsGridDimensionInput to a JSON map.
   Map<String, dynamic> toJson();
@@ -23161,14 +35697,16 @@ mixin _$AtsGridDimensionInput {
 
 /// @nodoc
 abstract mixin class $AtsGridDimensionInputCopyWith<$Res> {
-  factory $AtsGridDimensionInputCopyWith(AtsGridDimensionInput value, $Res Function(AtsGridDimensionInput) _then) =
+  factory $AtsGridDimensionInputCopyWith(AtsGridDimensionInput value,
+          $Res Function(AtsGridDimensionInput) _then) =
       _$AtsGridDimensionInputCopyWithImpl;
   @useResult
   $Res call({int width, int height});
 }
 
 /// @nodoc
-class _$AtsGridDimensionInputCopyWithImpl<$Res> implements $AtsGridDimensionInputCopyWith<$Res> {
+class _$AtsGridDimensionInputCopyWithImpl<$Res>
+    implements $AtsGridDimensionInputCopyWith<$Res> {
   _$AtsGridDimensionInputCopyWithImpl(this._self, this._then);
 
   final AtsGridDimensionInput _self;
@@ -23356,7 +35894,8 @@ extension AtsGridDimensionInputPatterns on AtsGridDimensionInput {
 @JsonSerializable()
 class _AtsGridDimensionInput implements AtsGridDimensionInput {
   _AtsGridDimensionInput({this.width = 1, this.height = 1});
-  factory _AtsGridDimensionInput.fromJson(Map<String, dynamic> json) => _$AtsGridDimensionInputFromJson(json);
+  factory _AtsGridDimensionInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsGridDimensionInputFromJson(json);
 
   /// [width] Represents the number of columns to be expanded
   @override
@@ -23374,7 +35913,8 @@ class _AtsGridDimensionInput implements AtsGridDimensionInput {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   _$AtsGridDimensionInputCopyWith<_AtsGridDimensionInput> get copyWith =>
-      __$AtsGridDimensionInputCopyWithImpl<_AtsGridDimensionInput>(this, _$identity);
+      __$AtsGridDimensionInputCopyWithImpl<_AtsGridDimensionInput>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -23390,8 +35930,10 @@ class _AtsGridDimensionInput implements AtsGridDimensionInput {
 }
 
 /// @nodoc
-abstract mixin class _$AtsGridDimensionInputCopyWith<$Res> implements $AtsGridDimensionInputCopyWith<$Res> {
-  factory _$AtsGridDimensionInputCopyWith(_AtsGridDimensionInput value, $Res Function(_AtsGridDimensionInput) _then) =
+abstract mixin class _$AtsGridDimensionInputCopyWith<$Res>
+    implements $AtsGridDimensionInputCopyWith<$Res> {
+  factory _$AtsGridDimensionInputCopyWith(_AtsGridDimensionInput value,
+          $Res Function(_AtsGridDimensionInput) _then) =
       __$AtsGridDimensionInputCopyWithImpl;
   @override
   @useResult
@@ -23399,7 +35941,8 @@ abstract mixin class _$AtsGridDimensionInputCopyWith<$Res> implements $AtsGridDi
 }
 
 /// @nodoc
-class __$AtsGridDimensionInputCopyWithImpl<$Res> implements _$AtsGridDimensionInputCopyWith<$Res> {
+class __$AtsGridDimensionInputCopyWithImpl<$Res>
+    implements _$AtsGridDimensionInputCopyWith<$Res> {
   __$AtsGridDimensionInputCopyWithImpl(this._self, this._then);
 
   final _AtsGridDimensionInput _self;
