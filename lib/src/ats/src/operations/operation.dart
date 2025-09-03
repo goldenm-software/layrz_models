@@ -4,8 +4,7 @@ part of '../../ats.dart';
 abstract class AtsOperationHistory with _$AtsOperationHistory {
   const factory AtsOperationHistory({
     /// [status] is the status of of the operation.
-    @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
-    required AtsPurchaseOrderStatus status,
+    @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) required AtsPurchaseOrderStatus status,
 
     /// [createdAt] is the date of the status change.
     @TimestampConverter() required DateTime createdAt,
@@ -17,8 +16,7 @@ abstract class AtsOperationHistory with _$AtsOperationHistory {
     String? assetId,
   }) = _AtsOperationHistory;
 
-  factory AtsOperationHistory.fromJson(Map<String, dynamic> json) =>
-      _$AtsOperationHistoryFromJson(json);
+  factory AtsOperationHistory.fromJson(Map<String, dynamic> json) => _$AtsOperationHistoryFromJson(json);
 }
 
 @freezed
@@ -32,6 +30,9 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// `transportAssetId` is the ID of the transport asset.
     String? transportAssetId,
+
+    /// `transportCompanyAssetId` is the ID of the transport company asset.
+    String? transportCompanyAssetId,
 
     /// `purchasedAt` is the Unix timestamp of the last reception date.
     @TimestampOrNullConverter() DateTime? purchasedAt,
@@ -54,6 +55,9 @@ abstract class AtsOperation with _$AtsOperation {
     /// `transportAsset` is the transport Asset linked to the purchase order.
     Asset? transportAsset,
 
+    /// `transportCompanyAsset` is the transport company Asset linked to the purchase order.
+    Asset? transportCompanyAsset,
+
     /// `sellerInformation` is the legal information about the seller.
     AtsCompanyInformation? sellerInformation,
 
@@ -61,16 +65,13 @@ abstract class AtsOperation with _$AtsOperation {
     AtsTransportInformation? transportInformation,
 
     /// `orderStatus` is the status of the order.
-    @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
-    AtsPurchaseOrderStatus? orderStatus,
+    @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,
 
     /// `category` is the category of the purchase order.
-    @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)
-    AtsPurchaseOrderCategoriesEntity? category,
+    @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,
 
     /// `deliverCategory` is the deliver category of the purchase order.
-    @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)
-    AtsPurchaseOrderSubCategories? deliverCategory,
+    @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory,
 
     /// `purchaseOrders` are the purchase orders linked to the operation.
     List<AtsPurchaseOrder>? purchaseOrders,
@@ -100,6 +101,5 @@ abstract class AtsOperation with _$AtsOperation {
     List<AtsOperationHistory>? history,
   }) = _AtsOperation;
 
-  factory AtsOperation.fromJson(Map<String, dynamic> json) =>
-      _$AtsOperationFromJson(json);
+  factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);
 }
