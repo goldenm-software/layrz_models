@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.4.31
+
+- Added `transportCompanyAsset` and `transportCompanyAssetId` in `AtsOperation` entity
+
+## 3.4.30
+
+- `startAt` and `endAt` are `DateTime` in `AtsExitInput`
+- Monitor entity models in Ats was implemented
+
 ## 3.4.29
 
 - Added `progress` to `MappitRecalculate` model
@@ -9,16 +18,20 @@
 - Added `MappitRecalculate` model
 
 ## 3.4.27
+
 - Update Changelog and Readme
 
 ## 3.4.26
+
 - Added `BlockInput`, `BoolBlockInput`, `MathBlockInput`, `ConditionType` `ExceptionType` `MathType` and `BlockType`
 - Added `startAt` and `endAt` in `AtsExitInput`
 
 ## 3.4.25
+
 - Update README
 
 ## 3.4.24
+
 - Fix prop name `authenticationCardBoard` to `authenticationCardCardboard` in ASset
 
 ## 3.4.23
@@ -31,30 +44,38 @@
 - Added `TriggerType.nested` to `TriggerType` enum
 
 ## 3.4.21
+
 - Deprecated `authenticationCard` and `authenticationCardId` from `Asset`
 - Added `authenticationCardCardboardId` , `authenticationCardTagId`, `authenticationCardNfcId`, `authenticationCardboard` `authenticationCardTag` adn `authenticationCardNfc` in `Asset`
 - Added `authenticationCardCardboardId` , `authenticationCardTagId` and `authenticationCardNfcId` in `AssetInput`
 
 ## 3.4.20
+
 - Added `assetId` in `Geofence` and `GeofenceInput`
 
 ## 3.4.19
+
 - Added `atsRecalculateOperationButton` in `ReferenceCategory`
 
 ## 3.4.18
+
 - Add `access` in `ReportScheduler`
 
 ## 3.4.17
+
 - Added `enabled` in `ReportScheduler`
 - Added `REPORT_SCHEDULERS` in `AccessModule`
 
 ## 3.4.16
+
 - Change `@Default([''])` to `@Default([])` in `ReportScheduler`
 
 ## 3.4.15
+
 - Remove `@Default` from `templateCode` in `ReportScheduler`
 
 ## 3.4.14
+
 - `Weekday` add `toInt()` converter
 - Rework `ReportScheduler` and `ReportSchedulerInput`
 
@@ -63,6 +84,7 @@
 - Added `localIpAddress` in `Device` and `DeviceInput
 
 ## 3.4.12
+
 - Added `ReportScheduler` and `ReportSchedulerInput`
 
 ## 3.4.11

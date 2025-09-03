@@ -10900,16 +10900,20 @@ mixin _$AtsExitInput {
   set attendantId(String? value);
 
   /// The [startAt] of the exit.
-  double? get startAt;
+  @TimestampConverter()
+  DateTime? get startAt;
 
   /// The [startAt] of the exit.
-  set startAt(double? value);
+  @TimestampConverter()
+  set startAt(DateTime? value);
 
   /// The [endAt] of the exit.
-  double? get endAt;
+  @TimestampConverter()
+  DateTime? get endAt;
 
   /// The [endAt] of the exit.
-  set endAt(double? value);
+  @TimestampConverter()
+  set endAt(DateTime? value);
 
   /// Create a copy of AtsExitInput
   /// with the given fields replaced by the non-null parameter values.
@@ -10941,8 +10945,8 @@ abstract mixin class $AtsExitInputCopyWith<$Res> {
       double? toAssetMileage,
       int? identifier,
       String? attendantId,
-      double? startAt,
-      double? endAt});
+      @TimestampConverter() DateTime? startAt,
+      @TimestampConverter() DateTime? endAt});
 }
 
 /// @nodoc
@@ -10994,11 +10998,11 @@ class _$AtsExitInputCopyWithImpl<$Res> implements $AtsExitInputCopyWith<$Res> {
       startAt: freezed == startAt
           ? _self.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as DateTime?,
       endAt: freezed == endAt
           ? _self.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as DateTime?,
     ));
   }
 }
@@ -11013,8 +11017,8 @@ class _AtsExitInput implements AtsExitInput {
       this.toAssetMileage,
       this.identifier,
       this.attendantId,
-      this.startAt,
-      this.endAt});
+      @TimestampConverter() this.startAt,
+      @TimestampConverter() this.endAt});
   factory _AtsExitInput.fromJson(Map<String, dynamic> json) =>
       _$AtsExitInputFromJson(json);
 
@@ -11044,11 +11048,13 @@ class _AtsExitInput implements AtsExitInput {
 
   /// The [startAt] of the exit.
   @override
-  double? startAt;
+  @TimestampConverter()
+  DateTime? startAt;
 
   /// The [endAt] of the exit.
   @override
-  double? endAt;
+  @TimestampConverter()
+  DateTime? endAt;
 
   /// Create a copy of AtsExitInput
   /// with the given fields replaced by the non-null parameter values.
@@ -11086,8 +11092,8 @@ abstract mixin class _$AtsExitInputCopyWith<$Res>
       double? toAssetMileage,
       int? identifier,
       String? attendantId,
-      double? startAt,
-      double? endAt});
+      @TimestampConverter() DateTime? startAt,
+      @TimestampConverter() DateTime? endAt});
 }
 
 /// @nodoc
@@ -11140,11 +11146,11 @@ class __$AtsExitInputCopyWithImpl<$Res>
       startAt: freezed == startAt
           ? _self.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as DateTime?,
       endAt: freezed == endAt
           ? _self.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as DateTime?,
     ));
   }
 }
@@ -12910,6 +12916,9 @@ mixin _$AtsOperation {
   /// `transportAssetId` is the ID of the transport asset.
   String? get transportAssetId;
 
+  /// `transportCompanyAssetId` is the ID of the transport company asset.
+  String? get transportCompanyAssetId;
+
   /// `purchasedAt` is the Unix timestamp of the last reception date.
   @TimestampOrNullConverter()
   DateTime? get purchasedAt;
@@ -12933,6 +12942,9 @@ mixin _$AtsOperation {
 
   /// `transportAsset` is the transport Asset linked to the purchase order.
   Asset? get transportAsset;
+
+  /// `transportCompanyAsset` is the transport company Asset linked to the purchase order.
+  Asset? get transportCompanyAsset;
 
   /// `sellerInformation` is the legal information about the seller.
   AtsCompanyInformation? get sellerInformation;
@@ -13000,6 +13012,9 @@ mixin _$AtsOperation {
                 other.sellerAssetId == sellerAssetId) &&
             (identical(other.transportAssetId, transportAssetId) ||
                 other.transportAssetId == transportAssetId) &&
+            (identical(
+                    other.transportCompanyAssetId, transportCompanyAssetId) ||
+                other.transportCompanyAssetId == transportCompanyAssetId) &&
             (identical(other.purchasedAt, purchasedAt) ||
                 other.purchasedAt == purchasedAt) &&
             (identical(other.createdAt, createdAt) ||
@@ -13013,6 +13028,8 @@ mixin _$AtsOperation {
                 other.sellerAsset == sellerAsset) &&
             (identical(other.transportAsset, transportAsset) ||
                 other.transportAsset == transportAsset) &&
+            (identical(other.transportCompanyAsset, transportCompanyAsset) ||
+                other.transportCompanyAsset == transportCompanyAsset) &&
             (identical(other.sellerInformation, sellerInformation) ||
                 other.sellerInformation == sellerInformation) &&
             (identical(other.transportInformation, transportInformation) ||
@@ -13045,6 +13062,7 @@ mixin _$AtsOperation {
         id,
         sellerAssetId,
         transportAssetId,
+        transportCompanyAssetId,
         purchasedAt,
         createdAt,
         finishedAt,
@@ -13052,6 +13070,7 @@ mixin _$AtsOperation {
         const DeepCollectionEquality().hash(ordersIds),
         sellerAsset,
         transportAsset,
+        transportCompanyAsset,
         sellerInformation,
         transportInformation,
         orderStatus,
@@ -13070,7 +13089,7 @@ mixin _$AtsOperation {
 
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
   }
 }
 
@@ -13084,6 +13103,7 @@ abstract mixin class $AtsOperationCopyWith<$Res> {
       {String? id,
       String? sellerAssetId,
       String? transportAssetId,
+      String? transportCompanyAssetId,
       @TimestampOrNullConverter() DateTime? purchasedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
@@ -13091,6 +13111,7 @@ abstract mixin class $AtsOperationCopyWith<$Res> {
       List<String>? ordersIds,
       Asset? sellerAsset,
       Asset? transportAsset,
+      Asset? transportCompanyAsset,
       AtsCompanyInformation? sellerInformation,
       AtsTransportInformation? transportInformation,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -13111,6 +13132,7 @@ abstract mixin class $AtsOperationCopyWith<$Res> {
 
   $AssetCopyWith<$Res>? get sellerAsset;
   $AssetCopyWith<$Res>? get transportAsset;
+  $AssetCopyWith<$Res>? get transportCompanyAsset;
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
   $AtsTransportInformationCopyWith<$Res>? get transportInformation;
 }
@@ -13130,6 +13152,7 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
     Object? id = freezed,
     Object? sellerAssetId = freezed,
     Object? transportAssetId = freezed,
+    Object? transportCompanyAssetId = freezed,
     Object? purchasedAt = freezed,
     Object? createdAt = freezed,
     Object? finishedAt = freezed,
@@ -13137,6 +13160,7 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
     Object? ordersIds = freezed,
     Object? sellerAsset = freezed,
     Object? transportAsset = freezed,
+    Object? transportCompanyAsset = freezed,
     Object? sellerInformation = freezed,
     Object? transportInformation = freezed,
     Object? orderStatus = freezed,
@@ -13165,6 +13189,10 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
           ? _self.transportAssetId
           : transportAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      transportCompanyAssetId: freezed == transportCompanyAssetId
+          ? _self.transportCompanyAssetId
+          : transportCompanyAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
       purchasedAt: freezed == purchasedAt
           ? _self.purchasedAt
           : purchasedAt // ignore: cast_nullable_to_non_nullable
@@ -13192,6 +13220,10 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
       transportAsset: freezed == transportAsset
           ? _self.transportAsset
           : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportCompanyAsset: freezed == transportCompanyAsset
+          ? _self.transportCompanyAsset
+          : transportCompanyAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       sellerInformation: freezed == sellerInformation
           ? _self.sellerInformation
@@ -13284,6 +13316,20 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportCompanyAsset {
+    if (_self.transportCompanyAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportCompanyAsset!, (value) {
+      return _then(_self.copyWith(transportCompanyAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation {
     if (_self.sellerInformation == null) {
       return null;
@@ -13318,6 +13364,7 @@ class _AtsOperation implements AtsOperation {
       {this.id,
       this.sellerAssetId,
       this.transportAssetId,
+      this.transportCompanyAssetId,
       @TimestampOrNullConverter() this.purchasedAt,
       @TimestampOrNullConverter() this.createdAt,
       @TimestampOrNullConverter() this.finishedAt,
@@ -13325,6 +13372,7 @@ class _AtsOperation implements AtsOperation {
       final List<String>? ordersIds,
       this.sellerAsset,
       this.transportAsset,
+      this.transportCompanyAsset,
       this.sellerInformation,
       this.transportInformation,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -13366,6 +13414,10 @@ class _AtsOperation implements AtsOperation {
   @override
   final String? transportAssetId;
 
+  /// `transportCompanyAssetId` is the ID of the transport company asset.
+  @override
+  final String? transportCompanyAssetId;
+
   /// `purchasedAt` is the Unix timestamp of the last reception date.
   @override
   @TimestampOrNullConverter()
@@ -13405,6 +13457,10 @@ class _AtsOperation implements AtsOperation {
   /// `transportAsset` is the transport Asset linked to the purchase order.
   @override
   final Asset? transportAsset;
+
+  /// `transportCompanyAsset` is the transport company Asset linked to the purchase order.
+  @override
+  final Asset? transportCompanyAsset;
 
   /// `sellerInformation` is the legal information about the seller.
   @override
@@ -13563,6 +13619,9 @@ class _AtsOperation implements AtsOperation {
                 other.sellerAssetId == sellerAssetId) &&
             (identical(other.transportAssetId, transportAssetId) ||
                 other.transportAssetId == transportAssetId) &&
+            (identical(
+                    other.transportCompanyAssetId, transportCompanyAssetId) ||
+                other.transportCompanyAssetId == transportCompanyAssetId) &&
             (identical(other.purchasedAt, purchasedAt) ||
                 other.purchasedAt == purchasedAt) &&
             (identical(other.createdAt, createdAt) ||
@@ -13577,6 +13636,8 @@ class _AtsOperation implements AtsOperation {
                 other.sellerAsset == sellerAsset) &&
             (identical(other.transportAsset, transportAsset) ||
                 other.transportAsset == transportAsset) &&
+            (identical(other.transportCompanyAsset, transportCompanyAsset) ||
+                other.transportCompanyAsset == transportCompanyAsset) &&
             (identical(other.sellerInformation, sellerInformation) ||
                 other.sellerInformation == sellerInformation) &&
             (identical(other.transportInformation, transportInformation) ||
@@ -13611,6 +13672,7 @@ class _AtsOperation implements AtsOperation {
         id,
         sellerAssetId,
         transportAssetId,
+        transportCompanyAssetId,
         purchasedAt,
         createdAt,
         finishedAt,
@@ -13618,6 +13680,7 @@ class _AtsOperation implements AtsOperation {
         const DeepCollectionEquality().hash(_ordersIds),
         sellerAsset,
         transportAsset,
+        transportCompanyAsset,
         sellerInformation,
         transportInformation,
         orderStatus,
@@ -13636,7 +13699,7 @@ class _AtsOperation implements AtsOperation {
 
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
   }
 }
 
@@ -13652,6 +13715,7 @@ abstract mixin class _$AtsOperationCopyWith<$Res>
       {String? id,
       String? sellerAssetId,
       String? transportAssetId,
+      String? transportCompanyAssetId,
       @TimestampOrNullConverter() DateTime? purchasedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
@@ -13659,6 +13723,7 @@ abstract mixin class _$AtsOperationCopyWith<$Res>
       List<String>? ordersIds,
       Asset? sellerAsset,
       Asset? transportAsset,
+      Asset? transportCompanyAsset,
       AtsCompanyInformation? sellerInformation,
       AtsTransportInformation? transportInformation,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -13682,6 +13747,8 @@ abstract mixin class _$AtsOperationCopyWith<$Res>
   @override
   $AssetCopyWith<$Res>? get transportAsset;
   @override
+  $AssetCopyWith<$Res>? get transportCompanyAsset;
+  @override
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
   @override
   $AtsTransportInformationCopyWith<$Res>? get transportInformation;
@@ -13703,6 +13770,7 @@ class __$AtsOperationCopyWithImpl<$Res>
     Object? id = freezed,
     Object? sellerAssetId = freezed,
     Object? transportAssetId = freezed,
+    Object? transportCompanyAssetId = freezed,
     Object? purchasedAt = freezed,
     Object? createdAt = freezed,
     Object? finishedAt = freezed,
@@ -13710,6 +13778,7 @@ class __$AtsOperationCopyWithImpl<$Res>
     Object? ordersIds = freezed,
     Object? sellerAsset = freezed,
     Object? transportAsset = freezed,
+    Object? transportCompanyAsset = freezed,
     Object? sellerInformation = freezed,
     Object? transportInformation = freezed,
     Object? orderStatus = freezed,
@@ -13738,6 +13807,10 @@ class __$AtsOperationCopyWithImpl<$Res>
           ? _self.transportAssetId
           : transportAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      transportCompanyAssetId: freezed == transportCompanyAssetId
+          ? _self.transportCompanyAssetId
+          : transportCompanyAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
       purchasedAt: freezed == purchasedAt
           ? _self.purchasedAt
           : purchasedAt // ignore: cast_nullable_to_non_nullable
@@ -13765,6 +13838,10 @@ class __$AtsOperationCopyWithImpl<$Res>
       transportAsset: freezed == transportAsset
           ? _self.transportAsset
           : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportCompanyAsset: freezed == transportCompanyAsset
+          ? _self.transportCompanyAsset
+          : transportCompanyAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       sellerInformation: freezed == sellerInformation
           ? _self.sellerInformation
@@ -13850,6 +13927,20 @@ class __$AtsOperationCopyWithImpl<$Res>
 
     return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
       return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportCompanyAsset {
+    if (_self.transportCompanyAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportCompanyAsset!, (value) {
+      return _then(_self.copyWith(transportCompanyAsset: value));
     });
   }
 
@@ -22106,6 +22197,1482 @@ class __$EquipmentMeasurementInputCopyWithImpl<$Res>
           ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$AtsMonitor {
+  /// ID of the entity. This ID is unique.
+  String get id;
+
+  /// Name assigned to the monitor.
+  String? get name;
+
+  /// Indicates the color of the monitor.
+  @ColorOrNullConverter()
+  Color? get color;
+
+  /// Is the icon URI of the monitor
+  @IconOrNullConverter()
+  LayrzIcon? get icon;
+
+  /// Is favorite indicator.
+  bool get isFavorite;
+
+  /// List of assets assigned to the monitor.
+  List<Asset> get assets;
+
+  /// List of asset IDs assigned to the monitor.
+  List<String> get assetsIds;
+
+  /// List of grid structure.
+  List<AtsGridItem>? get gridStructure;
+
+  /// List of custom access permissions.
+  List<Access> get access;
+
+  /// Create a copy of AtsMonitor
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AtsMonitorCopyWith<AtsMonitor> get copyWith =>
+      _$AtsMonitorCopyWithImpl<AtsMonitor>(this as AtsMonitor, _$identity);
+
+  /// Serializes this AtsMonitor to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsMonitor &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite) &&
+            const DeepCollectionEquality().equals(other.assets, assets) &&
+            const DeepCollectionEquality().equals(other.assetsIds, assetsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.gridStructure, gridStructure) &&
+            const DeepCollectionEquality().equals(other.access, access));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      color,
+      icon,
+      isFavorite,
+      const DeepCollectionEquality().hash(assets),
+      const DeepCollectionEquality().hash(assetsIds),
+      const DeepCollectionEquality().hash(gridStructure),
+      const DeepCollectionEquality().hash(access));
+
+  @override
+  String toString() {
+    return 'AtsMonitor(id: $id, name: $name, color: $color, icon: $icon, isFavorite: $isFavorite, assets: $assets, assetsIds: $assetsIds, gridStructure: $gridStructure, access: $access)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AtsMonitorCopyWith<$Res> {
+  factory $AtsMonitorCopyWith(
+          AtsMonitor value, $Res Function(AtsMonitor) _then) =
+      _$AtsMonitorCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String? name,
+      @ColorOrNullConverter() Color? color,
+      @IconOrNullConverter() LayrzIcon? icon,
+      bool isFavorite,
+      List<Asset> assets,
+      List<String> assetsIds,
+      List<AtsGridItem>? gridStructure,
+      List<Access> access});
+}
+
+/// @nodoc
+class _$AtsMonitorCopyWithImpl<$Res> implements $AtsMonitorCopyWith<$Res> {
+  _$AtsMonitorCopyWithImpl(this._self, this._then);
+
+  final AtsMonitor _self;
+  final $Res Function(AtsMonitor) _then;
+
+  /// Create a copy of AtsMonitor
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = freezed,
+    Object? color = freezed,
+    Object? icon = freezed,
+    Object? isFavorite = null,
+    Object? assets = null,
+    Object? assetsIds = null,
+    Object? gridStructure = freezed,
+    Object? access = null,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      isFavorite: null == isFavorite
+          ? _self.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      assets: null == assets
+          ? _self.assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>,
+      assetsIds: null == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      gridStructure: freezed == gridStructure
+          ? _self.gridStructure
+          : gridStructure // ignore: cast_nullable_to_non_nullable
+              as List<AtsGridItem>?,
+      access: null == access
+          ? _self.access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AtsMonitor implements AtsMonitor {
+  const _AtsMonitor(
+      {required this.id,
+      this.name,
+      @ColorOrNullConverter() this.color,
+      @IconOrNullConverter() this.icon,
+      this.isFavorite = false,
+      final List<Asset> assets = const [],
+      final List<String> assetsIds = const [],
+      final List<AtsGridItem>? gridStructure,
+      final List<Access> access = const []})
+      : _assets = assets,
+        _assetsIds = assetsIds,
+        _gridStructure = gridStructure,
+        _access = access;
+  factory _AtsMonitor.fromJson(Map<String, dynamic> json) =>
+      _$AtsMonitorFromJson(json);
+
+  /// ID of the entity. This ID is unique.
+  @override
+  final String id;
+
+  /// Name assigned to the monitor.
+  @override
+  final String? name;
+
+  /// Indicates the color of the monitor.
+  @override
+  @ColorOrNullConverter()
+  final Color? color;
+
+  /// Is the icon URI of the monitor
+  @override
+  @IconOrNullConverter()
+  final LayrzIcon? icon;
+
+  /// Is favorite indicator.
+  @override
+  @JsonKey()
+  final bool isFavorite;
+
+  /// List of assets assigned to the monitor.
+  final List<Asset> _assets;
+
+  /// List of assets assigned to the monitor.
+  @override
+  @JsonKey()
+  List<Asset> get assets {
+    if (_assets is EqualUnmodifiableListView) return _assets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_assets);
+  }
+
+  /// List of asset IDs assigned to the monitor.
+  final List<String> _assetsIds;
+
+  /// List of asset IDs assigned to the monitor.
+  @override
+  @JsonKey()
+  List<String> get assetsIds {
+    if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_assetsIds);
+  }
+
+  /// List of grid structure.
+  final List<AtsGridItem>? _gridStructure;
+
+  /// List of grid structure.
+  @override
+  List<AtsGridItem>? get gridStructure {
+    final value = _gridStructure;
+    if (value == null) return null;
+    if (_gridStructure is EqualUnmodifiableListView) return _gridStructure;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// List of custom access permissions.
+  final List<Access> _access;
+
+  /// List of custom access permissions.
+  @override
+  @JsonKey()
+  List<Access> get access {
+    if (_access is EqualUnmodifiableListView) return _access;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_access);
+  }
+
+  /// Create a copy of AtsMonitor
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsMonitorCopyWith<_AtsMonitor> get copyWith =>
+      __$AtsMonitorCopyWithImpl<_AtsMonitor>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsMonitorToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AtsMonitor &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite) &&
+            const DeepCollectionEquality().equals(other._assets, _assets) &&
+            const DeepCollectionEquality()
+                .equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._gridStructure, _gridStructure) &&
+            const DeepCollectionEquality().equals(other._access, _access));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      color,
+      icon,
+      isFavorite,
+      const DeepCollectionEquality().hash(_assets),
+      const DeepCollectionEquality().hash(_assetsIds),
+      const DeepCollectionEquality().hash(_gridStructure),
+      const DeepCollectionEquality().hash(_access));
+
+  @override
+  String toString() {
+    return 'AtsMonitor(id: $id, name: $name, color: $color, icon: $icon, isFavorite: $isFavorite, assets: $assets, assetsIds: $assetsIds, gridStructure: $gridStructure, access: $access)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AtsMonitorCopyWith<$Res>
+    implements $AtsMonitorCopyWith<$Res> {
+  factory _$AtsMonitorCopyWith(
+          _AtsMonitor value, $Res Function(_AtsMonitor) _then) =
+      __$AtsMonitorCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String? name,
+      @ColorOrNullConverter() Color? color,
+      @IconOrNullConverter() LayrzIcon? icon,
+      bool isFavorite,
+      List<Asset> assets,
+      List<String> assetsIds,
+      List<AtsGridItem>? gridStructure,
+      List<Access> access});
+}
+
+/// @nodoc
+class __$AtsMonitorCopyWithImpl<$Res> implements _$AtsMonitorCopyWith<$Res> {
+  __$AtsMonitorCopyWithImpl(this._self, this._then);
+
+  final _AtsMonitor _self;
+  final $Res Function(_AtsMonitor) _then;
+
+  /// Create a copy of AtsMonitor
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = freezed,
+    Object? color = freezed,
+    Object? icon = freezed,
+    Object? isFavorite = null,
+    Object? assets = null,
+    Object? assetsIds = null,
+    Object? gridStructure = freezed,
+    Object? access = null,
+  }) {
+    return _then(_AtsMonitor(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      isFavorite: null == isFavorite
+          ? _self.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      assets: null == assets
+          ? _self._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>,
+      assetsIds: null == assetsIds
+          ? _self._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      gridStructure: freezed == gridStructure
+          ? _self._gridStructure
+          : gridStructure // ignore: cast_nullable_to_non_nullable
+              as List<AtsGridItem>?,
+      access: null == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$AtsMonitorInput {
+  /// ID of the entity. This ID is unique.
+  String? get id;
+
+  /// ID of the entity. This ID is unique.
+  set id(String? value);
+
+  /// Name assigned to the monitor.
+  String? get name;
+
+  /// Name assigned to the monitor.
+  set name(String? value);
+
+  /// Icon of the monitor.
+  @IconOrNullConverter()
+  LayrzIcon? get icon;
+
+  /// Icon of the monitor.
+  @IconOrNullConverter()
+  set icon(LayrzIcon? value);
+
+  /// Color of the monitor.
+  @ColorOrNullConverter()
+  Color? get color;
+
+  /// Color of the monitor.
+  @ColorOrNullConverter()
+  set color(Color? value);
+
+  /// Is favorite indicator.
+  bool get isFavorite;
+
+  /// Is favorite indicator.
+  set isFavorite(bool value);
+
+  /// List of assets assigned to the monitor.
+  List<String> get assetsIds;
+
+  /// List of assets assigned to the monitor.
+  set assetsIds(List<String> value);
+
+  /// List of grid structure.
+  List<AtsGridItemInput> get gridStructure;
+
+  /// List of grid structure.
+  set gridStructure(List<AtsGridItemInput> value);
+
+  /// Create a copy of AtsMonitorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AtsMonitorInputCopyWith<AtsMonitorInput> get copyWith =>
+      _$AtsMonitorInputCopyWithImpl<AtsMonitorInput>(
+          this as AtsMonitorInput, _$identity);
+
+  /// Serializes this AtsMonitorInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'AtsMonitorInput(id: $id, name: $name, icon: $icon, color: $color, isFavorite: $isFavorite, assetsIds: $assetsIds, gridStructure: $gridStructure)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AtsMonitorInputCopyWith<$Res> {
+  factory $AtsMonitorInputCopyWith(
+          AtsMonitorInput value, $Res Function(AtsMonitorInput) _then) =
+      _$AtsMonitorInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? name,
+      @IconOrNullConverter() LayrzIcon? icon,
+      @ColorOrNullConverter() Color? color,
+      bool isFavorite,
+      List<String> assetsIds,
+      List<AtsGridItemInput> gridStructure});
+}
+
+/// @nodoc
+class _$AtsMonitorInputCopyWithImpl<$Res>
+    implements $AtsMonitorInputCopyWith<$Res> {
+  _$AtsMonitorInputCopyWithImpl(this._self, this._then);
+
+  final AtsMonitorInput _self;
+  final $Res Function(AtsMonitorInput) _then;
+
+  /// Create a copy of AtsMonitorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? icon = freezed,
+    Object? color = freezed,
+    Object? isFavorite = null,
+    Object? assetsIds = null,
+    Object? gridStructure = null,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      isFavorite: null == isFavorite
+          ? _self.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      assetsIds: null == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      gridStructure: null == gridStructure
+          ? _self.gridStructure
+          : gridStructure // ignore: cast_nullable_to_non_nullable
+              as List<AtsGridItemInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AtsMonitorInput implements AtsMonitorInput {
+  _AtsMonitorInput(
+      {this.id,
+      this.name,
+      @IconOrNullConverter() this.icon,
+      @ColorOrNullConverter() this.color,
+      this.isFavorite = false,
+      this.assetsIds = const [],
+      this.gridStructure = const []});
+  factory _AtsMonitorInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsMonitorInputFromJson(json);
+
+  /// ID of the entity. This ID is unique.
+  @override
+  String? id;
+
+  /// Name assigned to the monitor.
+  @override
+  String? name;
+
+  /// Icon of the monitor.
+  @override
+  @IconOrNullConverter()
+  LayrzIcon? icon;
+
+  /// Color of the monitor.
+  @override
+  @ColorOrNullConverter()
+  Color? color;
+
+  /// Is favorite indicator.
+  @override
+  @JsonKey()
+  bool isFavorite;
+
+  /// List of assets assigned to the monitor.
+  @override
+  @JsonKey()
+  List<String> assetsIds;
+
+  /// List of grid structure.
+  @override
+  @JsonKey()
+  List<AtsGridItemInput> gridStructure;
+
+  /// Create a copy of AtsMonitorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsMonitorInputCopyWith<_AtsMonitorInput> get copyWith =>
+      __$AtsMonitorInputCopyWithImpl<_AtsMonitorInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsMonitorInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'AtsMonitorInput(id: $id, name: $name, icon: $icon, color: $color, isFavorite: $isFavorite, assetsIds: $assetsIds, gridStructure: $gridStructure)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AtsMonitorInputCopyWith<$Res>
+    implements $AtsMonitorInputCopyWith<$Res> {
+  factory _$AtsMonitorInputCopyWith(
+          _AtsMonitorInput value, $Res Function(_AtsMonitorInput) _then) =
+      __$AtsMonitorInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? name,
+      @IconOrNullConverter() LayrzIcon? icon,
+      @ColorOrNullConverter() Color? color,
+      bool isFavorite,
+      List<String> assetsIds,
+      List<AtsGridItemInput> gridStructure});
+}
+
+/// @nodoc
+class __$AtsMonitorInputCopyWithImpl<$Res>
+    implements _$AtsMonitorInputCopyWith<$Res> {
+  __$AtsMonitorInputCopyWithImpl(this._self, this._then);
+
+  final _AtsMonitorInput _self;
+  final $Res Function(_AtsMonitorInput) _then;
+
+  /// Create a copy of AtsMonitorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? icon = freezed,
+    Object? color = freezed,
+    Object? isFavorite = null,
+    Object? assetsIds = null,
+    Object? gridStructure = null,
+  }) {
+    return _then(_AtsMonitorInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      isFavorite: null == isFavorite
+          ? _self.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      assetsIds: null == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      gridStructure: null == gridStructure
+          ? _self.gridStructure
+          : gridStructure // ignore: cast_nullable_to_non_nullable
+              as List<AtsGridItemInput>,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$AtsGridItem {
+  /// Object id. Should be an Asset or many Assets.
+  List<String> get objectsIds;
+
+  /// Kind of card.
+  @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+  MonitorCardType get kind;
+
+  /// Dimensions.
+  AtsGridDimension? get dimensions;
+
+  /// Color.
+  String? get color;
+
+  /// Create a copy of AtsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AtsGridItemCopyWith<AtsGridItem> get copyWith =>
+      _$AtsGridItemCopyWithImpl<AtsGridItem>(this as AtsGridItem, _$identity);
+
+  /// Serializes this AtsGridItem to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsGridItem &&
+            const DeepCollectionEquality()
+                .equals(other.objectsIds, objectsIds) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.dimensions, dimensions) ||
+                other.dimensions == dimensions) &&
+            (identical(other.color, color) || other.color == color));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(objectsIds), kind, dimensions, color);
+
+  @override
+  String toString() {
+    return 'AtsGridItem(objectsIds: $objectsIds, kind: $kind, dimensions: $dimensions, color: $color)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AtsGridItemCopyWith<$Res> {
+  factory $AtsGridItemCopyWith(
+          AtsGridItem value, $Res Function(AtsGridItem) _then) =
+      _$AtsGridItemCopyWithImpl;
+  @useResult
+  $Res call(
+      {List<String> objectsIds,
+      @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
+      AtsGridDimension? dimensions,
+      String? color});
+
+  $AtsGridDimensionCopyWith<$Res>? get dimensions;
+}
+
+/// @nodoc
+class _$AtsGridItemCopyWithImpl<$Res> implements $AtsGridItemCopyWith<$Res> {
+  _$AtsGridItemCopyWithImpl(this._self, this._then);
+
+  final AtsGridItem _self;
+  final $Res Function(AtsGridItem) _then;
+
+  /// Create a copy of AtsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? objectsIds = null,
+    Object? kind = null,
+    Object? dimensions = freezed,
+    Object? color = freezed,
+  }) {
+    return _then(_self.copyWith(
+      objectsIds: null == objectsIds
+          ? _self.objectsIds
+          : objectsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      kind: null == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as MonitorCardType,
+      dimensions: freezed == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as AtsGridDimension?,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of AtsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsGridDimensionCopyWith<$Res>? get dimensions {
+    if (_self.dimensions == null) {
+      return null;
+    }
+
+    return $AtsGridDimensionCopyWith<$Res>(_self.dimensions!, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AtsGridItem implements AtsGridItem {
+  const _AtsGridItem(
+      {final List<String> objectsIds = const [],
+      @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+      this.kind = MonitorCardType.unknown,
+      this.dimensions,
+      this.color})
+      : _objectsIds = objectsIds;
+  factory _AtsGridItem.fromJson(Map<String, dynamic> json) =>
+      _$AtsGridItemFromJson(json);
+
+  /// Object id. Should be an Asset or many Assets.
+  final List<String> _objectsIds;
+
+  /// Object id. Should be an Asset or many Assets.
+  @override
+  @JsonKey()
+  List<String> get objectsIds {
+    if (_objectsIds is EqualUnmodifiableListView) return _objectsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_objectsIds);
+  }
+
+  /// Kind of card.
+  @override
+  @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+  final MonitorCardType kind;
+
+  /// Dimensions.
+  @override
+  final AtsGridDimension? dimensions;
+
+  /// Color.
+  @override
+  final String? color;
+
+  /// Create a copy of AtsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsGridItemCopyWith<_AtsGridItem> get copyWith =>
+      __$AtsGridItemCopyWithImpl<_AtsGridItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsGridItemToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AtsGridItem &&
+            const DeepCollectionEquality()
+                .equals(other._objectsIds, _objectsIds) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.dimensions, dimensions) ||
+                other.dimensions == dimensions) &&
+            (identical(other.color, color) || other.color == color));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_objectsIds),
+      kind,
+      dimensions,
+      color);
+
+  @override
+  String toString() {
+    return 'AtsGridItem(objectsIds: $objectsIds, kind: $kind, dimensions: $dimensions, color: $color)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AtsGridItemCopyWith<$Res>
+    implements $AtsGridItemCopyWith<$Res> {
+  factory _$AtsGridItemCopyWith(
+          _AtsGridItem value, $Res Function(_AtsGridItem) _then) =
+      __$AtsGridItemCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {List<String> objectsIds,
+      @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
+      AtsGridDimension? dimensions,
+      String? color});
+
+  @override
+  $AtsGridDimensionCopyWith<$Res>? get dimensions;
+}
+
+/// @nodoc
+class __$AtsGridItemCopyWithImpl<$Res> implements _$AtsGridItemCopyWith<$Res> {
+  __$AtsGridItemCopyWithImpl(this._self, this._then);
+
+  final _AtsGridItem _self;
+  final $Res Function(_AtsGridItem) _then;
+
+  /// Create a copy of AtsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? objectsIds = null,
+    Object? kind = null,
+    Object? dimensions = freezed,
+    Object? color = freezed,
+  }) {
+    return _then(_AtsGridItem(
+      objectsIds: null == objectsIds
+          ? _self._objectsIds
+          : objectsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      kind: null == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as MonitorCardType,
+      dimensions: freezed == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as AtsGridDimension?,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of AtsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsGridDimensionCopyWith<$Res>? get dimensions {
+    if (_self.dimensions == null) {
+      return null;
+    }
+
+    return $AtsGridDimensionCopyWith<$Res>(_self.dimensions!, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$AtsGridItemInput {
+  /// List of object ids.
+  List<String> get objectsIds;
+
+  /// List of object ids.
+  set objectsIds(List<String> value);
+
+  /// Color.
+  String? get color;
+
+  /// Color.
+  set color(String? value);
+
+  /// Kind of card.
+  @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+  MonitorCardType get kind;
+
+  /// Kind of card.
+  @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+  set kind(MonitorCardType value); // /// Dimensions.
+  AtsGridDimensionInput? get dimensions; // /// Dimensions.
+  set dimensions(AtsGridDimensionInput? value);
+
+  /// Create a copy of AtsGridItemInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AtsGridItemInputCopyWith<AtsGridItemInput> get copyWith =>
+      _$AtsGridItemInputCopyWithImpl<AtsGridItemInput>(
+          this as AtsGridItemInput, _$identity);
+
+  /// Serializes this AtsGridItemInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'AtsGridItemInput(objectsIds: $objectsIds, color: $color, kind: $kind, dimensions: $dimensions)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AtsGridItemInputCopyWith<$Res> {
+  factory $AtsGridItemInputCopyWith(
+          AtsGridItemInput value, $Res Function(AtsGridItemInput) _then) =
+      _$AtsGridItemInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {List<String> objectsIds,
+      String? color,
+      @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
+      AtsGridDimensionInput? dimensions});
+
+  $AtsGridDimensionInputCopyWith<$Res>? get dimensions;
+}
+
+/// @nodoc
+class _$AtsGridItemInputCopyWithImpl<$Res>
+    implements $AtsGridItemInputCopyWith<$Res> {
+  _$AtsGridItemInputCopyWithImpl(this._self, this._then);
+
+  final AtsGridItemInput _self;
+  final $Res Function(AtsGridItemInput) _then;
+
+  /// Create a copy of AtsGridItemInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? objectsIds = null,
+    Object? color = freezed,
+    Object? kind = null,
+    Object? dimensions = freezed,
+  }) {
+    return _then(_self.copyWith(
+      objectsIds: null == objectsIds
+          ? _self.objectsIds
+          : objectsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: null == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as MonitorCardType,
+      dimensions: freezed == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as AtsGridDimensionInput?,
+    ));
+  }
+
+  /// Create a copy of AtsGridItemInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsGridDimensionInputCopyWith<$Res>? get dimensions {
+    if (_self.dimensions == null) {
+      return null;
+    }
+
+    return $AtsGridDimensionInputCopyWith<$Res>(_self.dimensions!, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AtsGridItemInput implements AtsGridItemInput {
+  _AtsGridItemInput(
+      {this.objectsIds = const [],
+      this.color,
+      @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+      this.kind = MonitorCardType.unknown,
+      this.dimensions});
+  factory _AtsGridItemInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsGridItemInputFromJson(json);
+
+  /// List of object ids.
+  @override
+  @JsonKey()
+  List<String> objectsIds;
+
+  /// Color.
+  @override
+  String? color;
+
+  /// Kind of card.
+  @override
+  @JsonKey(unknownEnumValue: MonitorCardType.unknown)
+  MonitorCardType kind;
+// /// Dimensions.
+  @override
+  AtsGridDimensionInput? dimensions;
+
+  /// Create a copy of AtsGridItemInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsGridItemInputCopyWith<_AtsGridItemInput> get copyWith =>
+      __$AtsGridItemInputCopyWithImpl<_AtsGridItemInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsGridItemInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'AtsGridItemInput(objectsIds: $objectsIds, color: $color, kind: $kind, dimensions: $dimensions)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AtsGridItemInputCopyWith<$Res>
+    implements $AtsGridItemInputCopyWith<$Res> {
+  factory _$AtsGridItemInputCopyWith(
+          _AtsGridItemInput value, $Res Function(_AtsGridItemInput) _then) =
+      __$AtsGridItemInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {List<String> objectsIds,
+      String? color,
+      @JsonKey(unknownEnumValue: MonitorCardType.unknown) MonitorCardType kind,
+      AtsGridDimensionInput? dimensions});
+
+  @override
+  $AtsGridDimensionInputCopyWith<$Res>? get dimensions;
+}
+
+/// @nodoc
+class __$AtsGridItemInputCopyWithImpl<$Res>
+    implements _$AtsGridItemInputCopyWith<$Res> {
+  __$AtsGridItemInputCopyWithImpl(this._self, this._then);
+
+  final _AtsGridItemInput _self;
+  final $Res Function(_AtsGridItemInput) _then;
+
+  /// Create a copy of AtsGridItemInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? objectsIds = null,
+    Object? color = freezed,
+    Object? kind = null,
+    Object? dimensions = freezed,
+  }) {
+    return _then(_AtsGridItemInput(
+      objectsIds: null == objectsIds
+          ? _self.objectsIds
+          : objectsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: null == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as MonitorCardType,
+      dimensions: freezed == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as AtsGridDimensionInput?,
+    ));
+  }
+
+  /// Create a copy of AtsGridItemInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsGridDimensionInputCopyWith<$Res>? get dimensions {
+    if (_self.dimensions == null) {
+      return null;
+    }
+
+    return $AtsGridDimensionInputCopyWith<$Res>(_self.dimensions!, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$AtsGridDimension {
+  /// Number of columns to be expanded.
+  int get width;
+
+  /// Number of rows to be expanded.
+  int get height;
+
+  /// Create a copy of AtsGridDimension
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AtsGridDimensionCopyWith<AtsGridDimension> get copyWith =>
+      _$AtsGridDimensionCopyWithImpl<AtsGridDimension>(
+          this as AtsGridDimension, _$identity);
+
+  /// Serializes this AtsGridDimension to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AtsGridDimension &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.height, height) || other.height == height));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, width, height);
+
+  @override
+  String toString() {
+    return 'AtsGridDimension(width: $width, height: $height)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AtsGridDimensionCopyWith<$Res> {
+  factory $AtsGridDimensionCopyWith(
+          AtsGridDimension value, $Res Function(AtsGridDimension) _then) =
+      _$AtsGridDimensionCopyWithImpl;
+  @useResult
+  $Res call({int width, int height});
+}
+
+/// @nodoc
+class _$AtsGridDimensionCopyWithImpl<$Res>
+    implements $AtsGridDimensionCopyWith<$Res> {
+  _$AtsGridDimensionCopyWithImpl(this._self, this._then);
+
+  final AtsGridDimension _self;
+  final $Res Function(AtsGridDimension) _then;
+
+  /// Create a copy of AtsGridDimension
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? width = null,
+    Object? height = null,
+  }) {
+    return _then(_self.copyWith(
+      width: null == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AtsGridDimension implements AtsGridDimension {
+  const _AtsGridDimension({this.width = 1, this.height = 1});
+  factory _AtsGridDimension.fromJson(Map<String, dynamic> json) =>
+      _$AtsGridDimensionFromJson(json);
+
+  /// Number of columns to be expanded.
+  @override
+  @JsonKey()
+  final int width;
+
+  /// Number of rows to be expanded.
+  @override
+  @JsonKey()
+  final int height;
+
+  /// Create a copy of AtsGridDimension
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsGridDimensionCopyWith<_AtsGridDimension> get copyWith =>
+      __$AtsGridDimensionCopyWithImpl<_AtsGridDimension>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsGridDimensionToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AtsGridDimension &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.height, height) || other.height == height));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, width, height);
+
+  @override
+  String toString() {
+    return 'AtsGridDimension(width: $width, height: $height)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AtsGridDimensionCopyWith<$Res>
+    implements $AtsGridDimensionCopyWith<$Res> {
+  factory _$AtsGridDimensionCopyWith(
+          _AtsGridDimension value, $Res Function(_AtsGridDimension) _then) =
+      __$AtsGridDimensionCopyWithImpl;
+  @override
+  @useResult
+  $Res call({int width, int height});
+}
+
+/// @nodoc
+class __$AtsGridDimensionCopyWithImpl<$Res>
+    implements _$AtsGridDimensionCopyWith<$Res> {
+  __$AtsGridDimensionCopyWithImpl(this._self, this._then);
+
+  final _AtsGridDimension _self;
+  final $Res Function(_AtsGridDimension) _then;
+
+  /// Create a copy of AtsGridDimension
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? width = null,
+    Object? height = null,
+  }) {
+    return _then(_AtsGridDimension(
+      width: null == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$AtsGridDimensionInput {
+  /// [width] Represents the number of columns to be expanded
+  int get width;
+
+  /// [width] Represents the number of columns to be expanded
+  set width(int value);
+
+  /// [height] Represents the number of rows to be expanded
+  int get height;
+
+  /// [height] Represents the number of rows to be expanded
+  set height(int value);
+
+  /// Create a copy of AtsGridDimensionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AtsGridDimensionInputCopyWith<AtsGridDimensionInput> get copyWith =>
+      _$AtsGridDimensionInputCopyWithImpl<AtsGridDimensionInput>(
+          this as AtsGridDimensionInput, _$identity);
+
+  /// Serializes this AtsGridDimensionInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'AtsGridDimensionInput(width: $width, height: $height)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AtsGridDimensionInputCopyWith<$Res> {
+  factory $AtsGridDimensionInputCopyWith(AtsGridDimensionInput value,
+          $Res Function(AtsGridDimensionInput) _then) =
+      _$AtsGridDimensionInputCopyWithImpl;
+  @useResult
+  $Res call({int width, int height});
+}
+
+/// @nodoc
+class _$AtsGridDimensionInputCopyWithImpl<$Res>
+    implements $AtsGridDimensionInputCopyWith<$Res> {
+  _$AtsGridDimensionInputCopyWithImpl(this._self, this._then);
+
+  final AtsGridDimensionInput _self;
+  final $Res Function(AtsGridDimensionInput) _then;
+
+  /// Create a copy of AtsGridDimensionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? width = null,
+    Object? height = null,
+  }) {
+    return _then(_self.copyWith(
+      width: null == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AtsGridDimensionInput implements AtsGridDimensionInput {
+  _AtsGridDimensionInput({this.width = 1, this.height = 1});
+  factory _AtsGridDimensionInput.fromJson(Map<String, dynamic> json) =>
+      _$AtsGridDimensionInputFromJson(json);
+
+  /// [width] Represents the number of columns to be expanded
+  @override
+  @JsonKey()
+  int width;
+
+  /// [height] Represents the number of rows to be expanded
+  @override
+  @JsonKey()
+  int height;
+
+  /// Create a copy of AtsGridDimensionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AtsGridDimensionInputCopyWith<_AtsGridDimensionInput> get copyWith =>
+      __$AtsGridDimensionInputCopyWithImpl<_AtsGridDimensionInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AtsGridDimensionInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'AtsGridDimensionInput(width: $width, height: $height)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AtsGridDimensionInputCopyWith<$Res>
+    implements $AtsGridDimensionInputCopyWith<$Res> {
+  factory _$AtsGridDimensionInputCopyWith(_AtsGridDimensionInput value,
+          $Res Function(_AtsGridDimensionInput) _then) =
+      __$AtsGridDimensionInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({int width, int height});
+}
+
+/// @nodoc
+class __$AtsGridDimensionInputCopyWithImpl<$Res>
+    implements _$AtsGridDimensionInputCopyWith<$Res> {
+  __$AtsGridDimensionInputCopyWithImpl(this._self, this._then);
+
+  final _AtsGridDimensionInput _self;
+  final $Res Function(_AtsGridDimensionInput) _then;
+
+  /// Create a copy of AtsGridDimensionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? width = null,
+    Object? height = null,
+  }) {
+    return _then(_AtsGridDimensionInput(
+      width: null == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }

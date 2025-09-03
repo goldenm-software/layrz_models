@@ -944,8 +944,10 @@ _AtsExitInput _$AtsExitInputFromJson(Map<String, dynamic> json) =>
       toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
       identifier: (json['identifier'] as num?)?.toInt(),
       attendantId: json['attendantId'] as String?,
-      startAt: (json['startAt'] as num?)?.toDouble(),
-      endAt: (json['endAt'] as num?)?.toDouble(),
+      startAt: _$JsonConverterFromJson<num, DateTime>(
+          json['startAt'], const TimestampConverter().fromJson),
+      endAt: _$JsonConverterFromJson<num, DateTime>(
+          json['endAt'], const TimestampConverter().fromJson),
     );
 
 Map<String, dynamic> _$AtsExitInputToJson(_AtsExitInput instance) =>
@@ -956,8 +958,10 @@ Map<String, dynamic> _$AtsExitInputToJson(_AtsExitInput instance) =>
       'toAssetMileage': instance.toAssetMileage,
       'identifier': instance.identifier,
       'attendantId': instance.attendantId,
-      'startAt': instance.startAt,
-      'endAt': instance.endAt,
+      'startAt': _$JsonConverterToJson<num, DateTime>(
+          instance.startAt, const TimestampConverter().toJson),
+      'endAt': _$JsonConverterToJson<num, DateTime>(
+          instance.endAt, const TimestampConverter().toJson),
     };
 
 _AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) => _AtsEntry(
@@ -1112,6 +1116,7 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
       sellerAssetId: json['sellerAssetId'] as String?,
       transportAssetId: json['transportAssetId'] as String?,
+      transportCompanyAssetId: json['transportCompanyAssetId'] as String?,
       purchasedAt: const TimestampOrNullConverter()
           .fromJson(json['purchasedAt'] as num?),
       createdAt:
@@ -1128,6 +1133,10 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       transportAsset: json['transportAsset'] == null
           ? null
           : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
+      transportCompanyAsset: json['transportCompanyAsset'] == null
+          ? null
+          : Asset.fromJson(
+              json['transportCompanyAsset'] as Map<String, dynamic>),
       sellerInformation: json['sellerInformation'] == null
           ? null
           : AtsCompanyInformation.fromJson(
@@ -1176,6 +1185,7 @@ Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
       'id': instance.id,
       'sellerAssetId': instance.sellerAssetId,
       'transportAssetId': instance.transportAssetId,
+      'transportCompanyAssetId': instance.transportCompanyAssetId,
       'purchasedAt':
           const TimestampOrNullConverter().toJson(instance.purchasedAt),
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
@@ -1185,6 +1195,7 @@ Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
       'ordersIds': instance.ordersIds,
       'sellerAsset': instance.sellerAsset?.toJson(),
       'transportAsset': instance.transportAsset?.toJson(),
+      'transportCompanyAsset': instance.transportCompanyAsset?.toJson(),
       'sellerInformation': instance.sellerInformation?.toJson(),
       'transportInformation': instance.transportInformation?.toJson(),
       'orderStatus': instance.orderStatus?.toJson(),
@@ -1924,4 +1935,149 @@ Map<String, dynamic> _$EquipmentMeasurementInputToJson(
         _EquipmentMeasurementInput instance) =>
     <String, dynamic>{
       'serialNumber': instance.serialNumber,
+    };
+
+_AtsMonitor _$AtsMonitorFromJson(Map<String, dynamic> json) => _AtsMonitor(
+      id: json['id'] as String,
+      name: json['name'] as String?,
+      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+      icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
+      isFavorite: json['isFavorite'] as bool? ?? false,
+      assets: (json['assets'] as List<dynamic>?)
+              ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      gridStructure: (json['gridStructure'] as List<dynamic>?)
+          ?.map((e) => AtsGridItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      access: (json['access'] as List<dynamic>?)
+              ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$AtsMonitorToJson(_AtsMonitor instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'color': const ColorOrNullConverter().toJson(instance.color),
+      'icon': const IconOrNullConverter().toJson(instance.icon),
+      'isFavorite': instance.isFavorite,
+      'assets': instance.assets.map((e) => e.toJson()).toList(),
+      'assetsIds': instance.assetsIds,
+      'gridStructure': instance.gridStructure?.map((e) => e.toJson()).toList(),
+      'access': instance.access.map((e) => e.toJson()).toList(),
+    };
+
+_AtsMonitorInput _$AtsMonitorInputFromJson(Map<String, dynamic> json) =>
+    _AtsMonitorInput(
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
+      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+      isFavorite: json['isFavorite'] as bool? ?? false,
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      gridStructure: (json['gridStructure'] as List<dynamic>?)
+              ?.map((e) => AtsGridItemInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$AtsMonitorInputToJson(_AtsMonitorInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'icon': const IconOrNullConverter().toJson(instance.icon),
+      'color': const ColorOrNullConverter().toJson(instance.color),
+      'isFavorite': instance.isFavorite,
+      'assetsIds': instance.assetsIds,
+      'gridStructure': instance.gridStructure.map((e) => e.toJson()).toList(),
+    };
+
+_AtsGridItem _$AtsGridItemFromJson(Map<String, dynamic> json) => _AtsGridItem(
+      objectsIds: (json['objectsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      kind: $enumDecodeNullable(_$MonitorCardTypeEnumMap, json['kind'],
+              unknownValue: MonitorCardType.unknown) ??
+          MonitorCardType.unknown,
+      dimensions: json['dimensions'] == null
+          ? null
+          : AtsGridDimension.fromJson(
+              json['dimensions'] as Map<String, dynamic>),
+      color: json['color'] as String?,
+    );
+
+Map<String, dynamic> _$AtsGridItemToJson(_AtsGridItem instance) =>
+    <String, dynamic>{
+      'objectsIds': instance.objectsIds,
+      'kind': _$MonitorCardTypeEnumMap[instance.kind]!,
+      'dimensions': instance.dimensions?.toJson(),
+      'color': instance.color,
+    };
+
+const _$MonitorCardTypeEnumMap = {
+  MonitorCardType.purchaseOrders: 'PURCHASE_ORDERS',
+  MonitorCardType.entries: 'ENTRIES',
+  MonitorCardType.exits: 'EXITS',
+  MonitorCardType.convoyLoads: 'CONVOY_LOADS',
+  MonitorCardType.unknown: 'UNKNOWN',
+};
+
+_AtsGridItemInput _$AtsGridItemInputFromJson(Map<String, dynamic> json) =>
+    _AtsGridItemInput(
+      objectsIds: (json['objectsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      color: json['color'] as String?,
+      kind: $enumDecodeNullable(_$MonitorCardTypeEnumMap, json['kind'],
+              unknownValue: MonitorCardType.unknown) ??
+          MonitorCardType.unknown,
+      dimensions: json['dimensions'] == null
+          ? null
+          : AtsGridDimensionInput.fromJson(
+              json['dimensions'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$AtsGridItemInputToJson(_AtsGridItemInput instance) =>
+    <String, dynamic>{
+      'objectsIds': instance.objectsIds,
+      'color': instance.color,
+      'kind': _$MonitorCardTypeEnumMap[instance.kind]!,
+      'dimensions': instance.dimensions?.toJson(),
+    };
+
+_AtsGridDimension _$AtsGridDimensionFromJson(Map<String, dynamic> json) =>
+    _AtsGridDimension(
+      width: (json['width'] as num?)?.toInt() ?? 1,
+      height: (json['height'] as num?)?.toInt() ?? 1,
+    );
+
+Map<String, dynamic> _$AtsGridDimensionToJson(_AtsGridDimension instance) =>
+    <String, dynamic>{
+      'width': instance.width,
+      'height': instance.height,
+    };
+
+_AtsGridDimensionInput _$AtsGridDimensionInputFromJson(
+        Map<String, dynamic> json) =>
+    _AtsGridDimensionInput(
+      width: (json['width'] as num?)?.toInt() ?? 1,
+      height: (json['height'] as num?)?.toInt() ?? 1,
+    );
+
+Map<String, dynamic> _$AtsGridDimensionInputToJson(
+        _AtsGridDimensionInput instance) =>
+    <String, dynamic>{
+      'width': instance.width,
+      'height': instance.height,
     };
