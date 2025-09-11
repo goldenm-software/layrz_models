@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -217,6 +216,214 @@ class _$TenvioItemMovementCopyWithImpl<$Res>
     return $UserCopyWith<$Res>(_self.receivedBy!, (value) {
       return _then(_self.copyWith(receivedBy: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioItemMovement].
+extension TenvioItemMovementPatterns on TenvioItemMovement {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioItemMovement value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemMovement() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioItemMovement value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemMovement():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioItemMovement value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemMovement() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String? previousOwnerId,
+            User? previousOwner,
+            String? newOwnerId,
+            User? newOwner,
+            String? receivedById,
+            User? receivedBy,
+            @TimestampConverter() DateTime triggeredAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemMovement() when $default != null:
+        return $default(
+            _that.id,
+            _that.previousOwnerId,
+            _that.previousOwner,
+            _that.newOwnerId,
+            _that.newOwner,
+            _that.receivedById,
+            _that.receivedBy,
+            _that.triggeredAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String? previousOwnerId,
+            User? previousOwner,
+            String? newOwnerId,
+            User? newOwner,
+            String? receivedById,
+            User? receivedBy,
+            @TimestampConverter() DateTime triggeredAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemMovement():
+        return $default(
+            _that.id,
+            _that.previousOwnerId,
+            _that.previousOwner,
+            _that.newOwnerId,
+            _that.newOwner,
+            _that.receivedById,
+            _that.receivedBy,
+            _that.triggeredAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String? previousOwnerId,
+            User? previousOwner,
+            String? newOwnerId,
+            User? newOwner,
+            String? receivedById,
+            User? receivedBy,
+            @TimestampConverter() DateTime triggeredAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemMovement() when $default != null:
+        return $default(
+            _that.id,
+            _that.previousOwnerId,
+            _that.previousOwner,
+            _that.newOwnerId,
+            _that.newOwner,
+            _that.receivedById,
+            _that.receivedBy,
+            _that.triggeredAt);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -585,6 +792,172 @@ class _$DropoffFailedReasonCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [DropoffFailedReason].
+extension DropoffFailedReasonPatterns on DropoffFailedReason {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_DropoffFailedReason value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DropoffFailedReason() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_DropoffFailedReason value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DropoffFailedReason():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_DropoffFailedReason value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DropoffFailedReason() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, String driverId, User? driver, String reason,
+            @TimestampConverter() DateTime createdAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DropoffFailedReason() when $default != null:
+        return $default(_that.id, _that.driverId, _that.driver, _that.reason,
+            _that.createdAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, String driverId, User? driver, String reason,
+            @TimestampConverter() DateTime createdAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DropoffFailedReason():
+        return $default(_that.id, _that.driverId, _that.driver, _that.reason,
+            _that.createdAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String id, String driverId, User? driver, String reason,
+            @TimestampConverter() DateTime createdAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DropoffFailedReason() when $default != null:
+        return $default(_that.id, _that.driverId, _that.driver, _that.reason,
+            _that.createdAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _DropoffFailedReason implements DropoffFailedReason {
@@ -918,6 +1291,226 @@ class _$TenvioCustomPropertyCopyWithImpl<$Res>
           : defaultValue // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioCustomProperty].
+extension TenvioCustomPropertyPatterns on TenvioCustomProperty {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioCustomProperty value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomProperty() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioCustomProperty value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomProperty():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioCustomProperty value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomProperty() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String name,
+            @TenvioPropertyDataTypeConverter() TenvioPropertyDataType dataType,
+            bool isRequired,
+            List<String> choices,
+            double? minValue,
+            double? maxValue,
+            int? minLength,
+            int? maxLength,
+            int? maxFileSize,
+            dynamic defaultValue)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomProperty() when $default != null:
+        return $default(
+            _that.name,
+            _that.dataType,
+            _that.isRequired,
+            _that.choices,
+            _that.minValue,
+            _that.maxValue,
+            _that.minLength,
+            _that.maxLength,
+            _that.maxFileSize,
+            _that.defaultValue);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String name,
+            @TenvioPropertyDataTypeConverter() TenvioPropertyDataType dataType,
+            bool isRequired,
+            List<String> choices,
+            double? minValue,
+            double? maxValue,
+            int? minLength,
+            int? maxLength,
+            int? maxFileSize,
+            dynamic defaultValue)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomProperty():
+        return $default(
+            _that.name,
+            _that.dataType,
+            _that.isRequired,
+            _that.choices,
+            _that.minValue,
+            _that.maxValue,
+            _that.minLength,
+            _that.maxLength,
+            _that.maxFileSize,
+            _that.defaultValue);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String name,
+            @TenvioPropertyDataTypeConverter() TenvioPropertyDataType dataType,
+            bool isRequired,
+            List<String> choices,
+            double? minValue,
+            double? maxValue,
+            int? minLength,
+            int? maxLength,
+            int? maxFileSize,
+            dynamic defaultValue)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomProperty() when $default != null:
+        return $default(
+            _that.name,
+            _that.dataType,
+            _that.isRequired,
+            _that.choices,
+            _that.minValue,
+            _that.maxValue,
+            _that.minLength,
+            _that.maxLength,
+            _that.maxFileSize,
+            _that.defaultValue);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1330,6 +1923,226 @@ class _$TenvioCustomPropertyInputCopyWithImpl<$Res>
           : defaultValue // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioCustomPropertyInput].
+extension TenvioCustomPropertyInputPatterns on TenvioCustomPropertyInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioCustomPropertyInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomPropertyInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioCustomPropertyInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomPropertyInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioCustomPropertyInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomPropertyInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String name,
+            @TenvioPropertyDataTypeConverter() TenvioPropertyDataType dataType,
+            bool isRequired,
+            List<String> choices,
+            double? minValue,
+            double? maxValue,
+            int? minLength,
+            int? maxLength,
+            int? maxFileSize,
+            dynamic defaultValue)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomPropertyInput() when $default != null:
+        return $default(
+            _that.name,
+            _that.dataType,
+            _that.isRequired,
+            _that.choices,
+            _that.minValue,
+            _that.maxValue,
+            _that.minLength,
+            _that.maxLength,
+            _that.maxFileSize,
+            _that.defaultValue);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String name,
+            @TenvioPropertyDataTypeConverter() TenvioPropertyDataType dataType,
+            bool isRequired,
+            List<String> choices,
+            double? minValue,
+            double? maxValue,
+            int? minLength,
+            int? maxLength,
+            int? maxFileSize,
+            dynamic defaultValue)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomPropertyInput():
+        return $default(
+            _that.name,
+            _that.dataType,
+            _that.isRequired,
+            _that.choices,
+            _that.minValue,
+            _that.maxValue,
+            _that.minLength,
+            _that.maxLength,
+            _that.maxFileSize,
+            _that.defaultValue);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String name,
+            @TenvioPropertyDataTypeConverter() TenvioPropertyDataType dataType,
+            bool isRequired,
+            List<String> choices,
+            double? minValue,
+            double? maxValue,
+            int? minLength,
+            int? maxLength,
+            int? maxFileSize,
+            dynamic defaultValue)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioCustomPropertyInput() when $default != null:
+        return $default(
+            _that.name,
+            _that.dataType,
+            _that.isRequired,
+            _that.choices,
+            _that.minValue,
+            _that.maxValue,
+            _that.minLength,
+            _that.maxLength,
+            _that.maxFileSize,
+            _that.defaultValue);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1869,6 +2682,283 @@ class _$TenvioPackageCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioPackage].
+extension TenvioPackagePatterns on TenvioPackage {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioPackage value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackage() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioPackage value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackage():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioPackage value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackage() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String trackingId,
+            String? warehouseId,
+            Asset? warehouse,
+            String? qrCode,
+            List<TenvioPackageQuantity>? items,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            Asset? destinationWarehouse,
+            String? destinationWarehouseId,
+            User? destinationUser,
+            String? destinationUserId,
+            TenvioUnregisteredUser? destinationUnregistered,
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            @TimestampConverter() DateTime createdAt,
+            @TimestampConverter() DateTime updatedAt,
+            bool isCurrent,
+            List<TenvioPackageHistory>? history,
+            bool requiresPhotos,
+            String? signature)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackage() when $default != null:
+        return $default(
+            _that.id,
+            _that.trackingId,
+            _that.warehouseId,
+            _that.warehouse,
+            _that.qrCode,
+            _that.items,
+            _that.destinationType,
+            _that.destinationWarehouse,
+            _that.destinationWarehouseId,
+            _that.destinationUser,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.isCurrent,
+            _that.history,
+            _that.requiresPhotos,
+            _that.signature);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String trackingId,
+            String? warehouseId,
+            Asset? warehouse,
+            String? qrCode,
+            List<TenvioPackageQuantity>? items,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            Asset? destinationWarehouse,
+            String? destinationWarehouseId,
+            User? destinationUser,
+            String? destinationUserId,
+            TenvioUnregisteredUser? destinationUnregistered,
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            @TimestampConverter() DateTime createdAt,
+            @TimestampConverter() DateTime updatedAt,
+            bool isCurrent,
+            List<TenvioPackageHistory>? history,
+            bool requiresPhotos,
+            String? signature)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackage():
+        return $default(
+            _that.id,
+            _that.trackingId,
+            _that.warehouseId,
+            _that.warehouse,
+            _that.qrCode,
+            _that.items,
+            _that.destinationType,
+            _that.destinationWarehouse,
+            _that.destinationWarehouseId,
+            _that.destinationUser,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.isCurrent,
+            _that.history,
+            _that.requiresPhotos,
+            _that.signature);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String trackingId,
+            String? warehouseId,
+            Asset? warehouse,
+            String? qrCode,
+            List<TenvioPackageQuantity>? items,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            Asset? destinationWarehouse,
+            String? destinationWarehouseId,
+            User? destinationUser,
+            String? destinationUserId,
+            TenvioUnregisteredUser? destinationUnregistered,
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            @TimestampConverter() DateTime createdAt,
+            @TimestampConverter() DateTime updatedAt,
+            bool isCurrent,
+            List<TenvioPackageHistory>? history,
+            bool requiresPhotos,
+            String? signature)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackage() when $default != null:
+        return $default(
+            _that.id,
+            _that.trackingId,
+            _that.warehouseId,
+            _that.warehouse,
+            _that.qrCode,
+            _that.items,
+            _that.destinationType,
+            _that.destinationWarehouse,
+            _that.destinationWarehouseId,
+            _that.destinationUser,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.isCurrent,
+            _that.history,
+            _that.requiresPhotos,
+            _that.signature);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioPackage implements TenvioPackage {
@@ -2400,6 +3490,166 @@ class _$TenvioPackageQuantityCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioPackageQuantity].
+extension TenvioPackageQuantityPatterns on TenvioPackageQuantity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioPackageQuantity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageQuantity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioPackageQuantity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageQuantity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioPackageQuantity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageQuantity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String matrixId, TenvioMatrixItem? matrix, int quantity)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageQuantity() when $default != null:
+        return $default(_that.matrixId, _that.matrix, _that.quantity);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String matrixId, TenvioMatrixItem? matrix, int quantity)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageQuantity():
+        return $default(_that.matrixId, _that.matrix, _that.quantity);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String matrixId, TenvioMatrixItem? matrix, int quantity)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageQuantity() when $default != null:
+        return $default(_that.matrixId, _that.matrix, _that.quantity);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioPackageQuantity implements TenvioPackageQuantity {
@@ -2688,6 +3938,220 @@ class _$TrackedTenvioPackageCopyWithImpl<$Res>
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TrackedTenvioPackage].
+extension TrackedTenvioPackagePatterns on TrackedTenvioPackage {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TrackedTenvioPackage value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TrackedTenvioPackage() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TrackedTenvioPackage value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TrackedTenvioPackage():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TrackedTenvioPackage value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TrackedTenvioPackage() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String trackingId,
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            String? driverName,
+            double? latitude,
+            double? longitude,
+            double? destinationLatitude,
+            double? destinationLongitude,
+            List<TenvioPackageHistory> history,
+            @TimestampConverter() DateTime updatedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TrackedTenvioPackage() when $default != null:
+        return $default(
+            _that.trackingId,
+            _that.status,
+            _that.driverName,
+            _that.latitude,
+            _that.longitude,
+            _that.destinationLatitude,
+            _that.destinationLongitude,
+            _that.history,
+            _that.updatedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String trackingId,
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            String? driverName,
+            double? latitude,
+            double? longitude,
+            double? destinationLatitude,
+            double? destinationLongitude,
+            List<TenvioPackageHistory> history,
+            @TimestampConverter() DateTime updatedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TrackedTenvioPackage():
+        return $default(
+            _that.trackingId,
+            _that.status,
+            _that.driverName,
+            _that.latitude,
+            _that.longitude,
+            _that.destinationLatitude,
+            _that.destinationLongitude,
+            _that.history,
+            _that.updatedAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String trackingId,
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            String? driverName,
+            double? latitude,
+            double? longitude,
+            double? destinationLatitude,
+            double? destinationLongitude,
+            List<TenvioPackageHistory> history,
+            @TimestampConverter() DateTime updatedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TrackedTenvioPackage() when $default != null:
+        return $default(
+            _that.trackingId,
+            _that.status,
+            _that.driverName,
+            _that.latitude,
+            _that.longitude,
+            _that.destinationLatitude,
+            _that.destinationLongitude,
+            _that.history,
+            _that.updatedAt);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -3041,6 +4505,187 @@ class _$TenvioPackageHistoryCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioPackageHistory].
+extension TenvioPackageHistoryPatterns on TenvioPackageHistory {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioPackageHistory value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageHistory() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioPackageHistory value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageHistory():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioPackageHistory value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageHistory() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            double? latitude,
+            double? longitude,
+            @TimestampConverter() DateTime updatedAt,
+            User? madeBy,
+            List<String>? images)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageHistory() when $default != null:
+        return $default(_that.status, _that.latitude, _that.longitude,
+            _that.updatedAt, _that.madeBy, _that.images);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            double? latitude,
+            double? longitude,
+            @TimestampConverter() DateTime updatedAt,
+            User? madeBy,
+            List<String>? images)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageHistory():
+        return $default(_that.status, _that.latitude, _that.longitude,
+            _that.updatedAt, _that.madeBy, _that.images);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @TenvioPackageStatusConverter() TenvioPackageStatus status,
+            double? latitude,
+            double? longitude,
+            @TimestampConverter() DateTime updatedAt,
+            User? madeBy,
+            List<String>? images)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPackageHistory() when $default != null:
+        return $default(_that.status, _that.latitude, _that.longitude,
+            _that.updatedAt, _that.madeBy, _that.images);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioPackageHistory extends TenvioPackageHistory {
@@ -3335,6 +4980,172 @@ class _$TenvioItemQuantityCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioItemQuantity].
+extension TenvioItemQuantityPatterns on TenvioItemQuantity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioItemQuantity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioItemQuantity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantity():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioItemQuantity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(int? quantity, int? loadedQuantity, String? matrixId,
+            TenvioMatrixItem? matrix)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantity() when $default != null:
+        return $default(
+            _that.quantity, _that.loadedQuantity, _that.matrixId, _that.matrix);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(int? quantity, int? loadedQuantity, String? matrixId,
+            TenvioMatrixItem? matrix)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantity():
+        return $default(
+            _that.quantity, _that.loadedQuantity, _that.matrixId, _that.matrix);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(int? quantity, int? loadedQuantity, String? matrixId,
+            TenvioMatrixItem? matrix)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantity() when $default != null:
+        return $default(
+            _that.quantity, _that.loadedQuantity, _that.matrixId, _that.matrix);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioItemQuantity implements TenvioItemQuantity {
@@ -3539,6 +5350,163 @@ class _$TenvioItemQuantityInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioItemQuantityInput].
+extension TenvioItemQuantityInputPatterns on TenvioItemQuantityInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioItemQuantityInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantityInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioItemQuantityInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantityInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioItemQuantityInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantityInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(int quantity, String? matrixId)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantityInput() when $default != null:
+        return $default(_that.quantity, _that.matrixId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(int quantity, String? matrixId) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantityInput():
+        return $default(_that.quantity, _that.matrixId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(int quantity, String? matrixId)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemQuantityInput() when $default != null:
+        return $default(_that.quantity, _that.matrixId);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioItemQuantityInput implements TenvioItemQuantityInput {
@@ -3702,6 +5670,163 @@ class _$TenvioMonitorAccessCopyWithImpl<$Res>
           : dispatch // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioMonitorAccess].
+extension TenvioMonitorAccessPatterns on TenvioMonitorAccess {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioMonitorAccess value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccess() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioMonitorAccess value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccess():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioMonitorAccess value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccess() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(bool reception, bool warehouse, bool dispatch)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccess() when $default != null:
+        return $default(_that.reception, _that.warehouse, _that.dispatch);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(bool reception, bool warehouse, bool dispatch) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccess():
+        return $default(_that.reception, _that.warehouse, _that.dispatch);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(bool reception, bool warehouse, bool dispatch)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccess() when $default != null:
+        return $default(_that.reception, _that.warehouse, _that.dispatch);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -3888,6 +6013,163 @@ class _$TenvioMonitorAccessInputCopyWithImpl<$Res>
           : dispatch // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioMonitorAccessInput].
+extension TenvioMonitorAccessInputPatterns on TenvioMonitorAccessInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioMonitorAccessInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccessInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioMonitorAccessInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccessInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioMonitorAccessInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccessInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(bool reception, bool warehouse, bool dispatch)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccessInput() when $default != null:
+        return $default(_that.reception, _that.warehouse, _that.dispatch);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(bool reception, bool warehouse, bool dispatch) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccessInput():
+        return $default(_that.reception, _that.warehouse, _that.dispatch);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(bool reception, bool warehouse, bool dispatch)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMonitorAccessInput() when $default != null:
+        return $default(_that.reception, _that.warehouse, _that.dispatch);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -4212,6 +6494,238 @@ class _$TenvioItemCopyWithImpl<$Res> implements $TenvioItemCopyWith<$Res> {
     return $AssetCopyWith<$Res>(_self.warehouse!, (value) {
       return _then(_self.copyWith(warehouse: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioItem].
+extension TenvioItemPatterns on TenvioItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItem():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String? matrixId,
+            TenvioMatrixItem? matrix,
+            @TenvioItemLocationOrNullConverter() TenvioItemLocation? location,
+            String? address,
+            @TimestampOrNullConverter() DateTime? pickupDate,
+            Map<String, dynamic>? customProperties,
+            List<TenvioItemMovement>? movements,
+            Asset? warehouse,
+            String? warehouseId,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.matrixId,
+            _that.matrix,
+            _that.location,
+            _that.address,
+            _that.pickupDate,
+            _that.customProperties,
+            _that.movements,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String? matrixId,
+            TenvioMatrixItem? matrix,
+            @TenvioItemLocationOrNullConverter() TenvioItemLocation? location,
+            String? address,
+            @TimestampOrNullConverter() DateTime? pickupDate,
+            Map<String, dynamic>? customProperties,
+            List<TenvioItemMovement>? movements,
+            Asset? warehouse,
+            String? warehouseId,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItem():
+        return $default(
+            _that.id,
+            _that.matrixId,
+            _that.matrix,
+            _that.location,
+            _that.address,
+            _that.pickupDate,
+            _that.customProperties,
+            _that.movements,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String? matrixId,
+            TenvioMatrixItem? matrix,
+            @TenvioItemLocationOrNullConverter() TenvioItemLocation? location,
+            String? address,
+            @TimestampOrNullConverter() DateTime? pickupDate,
+            Map<String, dynamic>? customProperties,
+            List<TenvioItemMovement>? movements,
+            Asset? warehouse,
+            String? warehouseId,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.matrixId,
+            _that.matrix,
+            _that.location,
+            _that.address,
+            _that.pickupDate,
+            _that.customProperties,
+            _that.movements,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -4649,6 +7163,190 @@ class _$TenvioItemInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioItemInput].
+extension TenvioItemInputPatterns on TenvioItemInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioItemInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioItemInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioItemInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? matrixId,
+            @TenvioItemLocationConverter() TenvioItemLocation location,
+            String? address,
+            @TimestampOrNullConverter() DateTime? pickupDate,
+            Map<String, dynamic> customProperties,
+            String? warehouseId)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemInput() when $default != null:
+        return $default(_that.id, _that.matrixId, _that.location, _that.address,
+            _that.pickupDate, _that.customProperties, _that.warehouseId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? matrixId,
+            @TenvioItemLocationConverter() TenvioItemLocation location,
+            String? address,
+            @TimestampOrNullConverter() DateTime? pickupDate,
+            Map<String, dynamic> customProperties,
+            String? warehouseId)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemInput():
+        return $default(_that.id, _that.matrixId, _that.location, _that.address,
+            _that.pickupDate, _that.customProperties, _that.warehouseId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? matrixId,
+            @TenvioItemLocationConverter() TenvioItemLocation location,
+            String? address,
+            @TimestampOrNullConverter() DateTime? pickupDate,
+            Map<String, dynamic> customProperties,
+            String? warehouseId)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioItemInput() when $default != null:
+        return $default(_that.id, _that.matrixId, _that.location, _that.address,
+            _that.pickupDate, _that.customProperties, _that.warehouseId);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioItemInput implements TenvioItemInput {
@@ -4987,6 +7685,238 @@ class _$TenvioMatrixItemCopyWithImpl<$Res>
           : items // ignore: cast_nullable_to_non_nullable
               as List<TenvioItem>?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioMatrixItem].
+extension TenvioMatrixItemPatterns on TenvioMatrixItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioMatrixItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioMatrixItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItem():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioMatrixItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String? image,
+            String code,
+            String? qrCode,
+            double? weight,
+            double? width,
+            double? height,
+            List<TenvioCustomProperty>? customProperties,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt,
+            List<TenvioItem>? items)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.image,
+            _that.code,
+            _that.qrCode,
+            _that.weight,
+            _that.width,
+            _that.height,
+            _that.customProperties,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.items);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String? image,
+            String code,
+            String? qrCode,
+            double? weight,
+            double? width,
+            double? height,
+            List<TenvioCustomProperty>? customProperties,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt,
+            List<TenvioItem>? items)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItem():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.image,
+            _that.code,
+            _that.qrCode,
+            _that.weight,
+            _that.width,
+            _that.height,
+            _that.customProperties,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.items);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String? image,
+            String code,
+            String? qrCode,
+            double? weight,
+            double? width,
+            double? height,
+            List<TenvioCustomProperty>? customProperties,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt,
+            List<TenvioItem>? items)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.image,
+            _that.code,
+            _that.qrCode,
+            _that.weight,
+            _that.width,
+            _that.height,
+            _that.customProperties,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.items);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -5395,6 +8325,193 @@ class _$TenvioMatrixItemInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioMatrixItemInput].
+extension TenvioMatrixItemInputPatterns on TenvioMatrixItemInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioMatrixItemInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItemInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioMatrixItemInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItemInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioMatrixItemInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItemInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String name,
+            String? image,
+            String code,
+            double? weight,
+            double? width,
+            double? height,
+            List<TenvioCustomPropertyInput> customProperties)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItemInput() when $default != null:
+        return $default(_that.id, _that.name, _that.image, _that.code,
+            _that.weight, _that.width, _that.height, _that.customProperties);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String name,
+            String? image,
+            String code,
+            double? weight,
+            double? width,
+            double? height,
+            List<TenvioCustomPropertyInput> customProperties)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItemInput():
+        return $default(_that.id, _that.name, _that.image, _that.code,
+            _that.weight, _that.width, _that.height, _that.customProperties);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String name,
+            String? image,
+            String code,
+            double? weight,
+            double? width,
+            double? height,
+            List<TenvioCustomPropertyInput> customProperties)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioMatrixItemInput() when $default != null:
+        return $default(_that.id, _that.name, _that.image, _that.code,
+            _that.weight, _that.width, _that.height, _that.customProperties);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioMatrixItemInput implements TenvioMatrixItemInput {
@@ -5668,6 +8785,172 @@ class _$TenvioUnregisteredUserCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioUnregisteredUser].
+extension TenvioUnregisteredUserPatterns on TenvioUnregisteredUser {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioUnregisteredUser value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUser() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioUnregisteredUser value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUser():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioUnregisteredUser value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUser() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String name, String? phone, String? address,
+            double? latitude, double? longitude, String email)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUser() when $default != null:
+        return $default(_that.name, _that.phone, _that.address, _that.latitude,
+            _that.longitude, _that.email);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String name, String? phone, String? address,
+            double? latitude, double? longitude, String email)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUser():
+        return $default(_that.name, _that.phone, _that.address, _that.latitude,
+            _that.longitude, _that.email);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String name, String? phone, String? address,
+            double? latitude, double? longitude, String email)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUser() when $default != null:
+        return $default(_that.name, _that.phone, _that.address, _that.latitude,
+            _that.longitude, _that.email);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioUnregisteredUser implements TenvioUnregisteredUser {
@@ -5931,6 +9214,172 @@ class _$TenvioUnregisteredUserInputCopyWithImpl<$Res>
           : email // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioUnregisteredUserInput].
+extension TenvioUnregisteredUserInputPatterns on TenvioUnregisteredUserInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioUnregisteredUserInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUserInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioUnregisteredUserInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUserInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioUnregisteredUserInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUserInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String name, String? phone, String? address,
+            double? latitude, double? longitude, String email)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUserInput() when $default != null:
+        return $default(_that.name, _that.phone, _that.address, _that.latitude,
+            _that.longitude, _that.email);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String name, String? phone, String? address,
+            double? latitude, double? longitude, String email)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUserInput():
+        return $default(_that.name, _that.phone, _that.address, _that.latitude,
+            _that.longitude, _that.email);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String name, String? phone, String? address,
+            double? latitude, double? longitude, String email)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioUnregisteredUserInput() when $default != null:
+        return $default(_that.name, _that.phone, _that.address, _that.latitude,
+            _that.longitude, _that.email);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -6451,6 +9900,307 @@ class _$TenvioOrderCopyWithImpl<$Res> implements $TenvioOrderCopyWith<$Res> {
         (value) {
       return _then(_self.copyWith(destinationUnregistered: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioOrder].
+extension TenvioOrderPatterns on TenvioOrder {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioOrder value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrder() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioOrder value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrder():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioOrder value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrder() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String ownerId,
+            Asset warehouse,
+            String warehouseId,
+            String? qrCode,
+            @TenvioOrderStatusConverter() TenvioOrderStatus status,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            Asset? destinationWarehouse,
+            String? destinationWarehouseId,
+            User? destinationUser,
+            String? destinationUserId,
+            TenvioUnregisteredUser? destinationUnregistered,
+            List<String> notes,
+            bool? requiresPhotos,
+            bool? highPriority,
+            List<User>? packers,
+            List<String>? packersIds,
+            List<TenvioItemQuantity>? itemQuantities,
+            List<TenvioItem>? items,
+            String? packedImage,
+            List<TenvioPhotos>? statusPhotos,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrder() when $default != null:
+        return $default(
+            _that.id,
+            _that.ownerId,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.qrCode,
+            _that.status,
+            _that.destinationType,
+            _that.destinationWarehouse,
+            _that.destinationWarehouseId,
+            _that.destinationUser,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.notes,
+            _that.requiresPhotos,
+            _that.highPriority,
+            _that.packers,
+            _that.packersIds,
+            _that.itemQuantities,
+            _that.items,
+            _that.packedImage,
+            _that.statusPhotos,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String ownerId,
+            Asset warehouse,
+            String warehouseId,
+            String? qrCode,
+            @TenvioOrderStatusConverter() TenvioOrderStatus status,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            Asset? destinationWarehouse,
+            String? destinationWarehouseId,
+            User? destinationUser,
+            String? destinationUserId,
+            TenvioUnregisteredUser? destinationUnregistered,
+            List<String> notes,
+            bool? requiresPhotos,
+            bool? highPriority,
+            List<User>? packers,
+            List<String>? packersIds,
+            List<TenvioItemQuantity>? itemQuantities,
+            List<TenvioItem>? items,
+            String? packedImage,
+            List<TenvioPhotos>? statusPhotos,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrder():
+        return $default(
+            _that.id,
+            _that.ownerId,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.qrCode,
+            _that.status,
+            _that.destinationType,
+            _that.destinationWarehouse,
+            _that.destinationWarehouseId,
+            _that.destinationUser,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.notes,
+            _that.requiresPhotos,
+            _that.highPriority,
+            _that.packers,
+            _that.packersIds,
+            _that.itemQuantities,
+            _that.items,
+            _that.packedImage,
+            _that.statusPhotos,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String ownerId,
+            Asset warehouse,
+            String warehouseId,
+            String? qrCode,
+            @TenvioOrderStatusConverter() TenvioOrderStatus status,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            Asset? destinationWarehouse,
+            String? destinationWarehouseId,
+            User? destinationUser,
+            String? destinationUserId,
+            TenvioUnregisteredUser? destinationUnregistered,
+            List<String> notes,
+            bool? requiresPhotos,
+            bool? highPriority,
+            List<User>? packers,
+            List<String>? packersIds,
+            List<TenvioItemQuantity>? itemQuantities,
+            List<TenvioItem>? items,
+            String? packedImage,
+            List<TenvioPhotos>? statusPhotos,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrder() when $default != null:
+        return $default(
+            _that.id,
+            _that.ownerId,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.qrCode,
+            _that.status,
+            _that.destinationType,
+            _that.destinationWarehouse,
+            _that.destinationWarehouseId,
+            _that.destinationUser,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.notes,
+            _that.requiresPhotos,
+            _that.highPriority,
+            _that.packers,
+            _that.packersIds,
+            _that.itemQuantities,
+            _that.items,
+            _that.packedImage,
+            _that.statusPhotos,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -7181,6 +10931,241 @@ class _$TenvioOrderInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioOrderInput].
+extension TenvioOrderInputPatterns on TenvioOrderInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioOrderInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrderInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioOrderInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrderInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioOrderInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrderInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? warehouseId,
+            @TenvioOrderStatusConverter() TenvioOrderStatus status,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            String? destinationWarehouseId,
+            String? destinationUserId,
+            TenvioUnregisteredUserInput? destinationUnregistered,
+            List<String> notes,
+            bool requiresPhotos,
+            bool highPriority,
+            List<String> packersIds,
+            List<TenvioItemQuantityInput> itemQuantities)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrderInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.warehouseId,
+            _that.status,
+            _that.destinationType,
+            _that.destinationWarehouseId,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.notes,
+            _that.requiresPhotos,
+            _that.highPriority,
+            _that.packersIds,
+            _that.itemQuantities);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? warehouseId,
+            @TenvioOrderStatusConverter() TenvioOrderStatus status,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            String? destinationWarehouseId,
+            String? destinationUserId,
+            TenvioUnregisteredUserInput? destinationUnregistered,
+            List<String> notes,
+            bool requiresPhotos,
+            bool highPriority,
+            List<String> packersIds,
+            List<TenvioItemQuantityInput> itemQuantities)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrderInput():
+        return $default(
+            _that.id,
+            _that.warehouseId,
+            _that.status,
+            _that.destinationType,
+            _that.destinationWarehouseId,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.notes,
+            _that.requiresPhotos,
+            _that.highPriority,
+            _that.packersIds,
+            _that.itemQuantities);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? warehouseId,
+            @TenvioOrderStatusConverter() TenvioOrderStatus status,
+            @TenvioDestinationTypeOrNullConverter()
+            TenvioDestinationType? destinationType,
+            String? destinationWarehouseId,
+            String? destinationUserId,
+            TenvioUnregisteredUserInput? destinationUnregistered,
+            List<String> notes,
+            bool requiresPhotos,
+            bool highPriority,
+            List<String> packersIds,
+            List<TenvioItemQuantityInput> itemQuantities)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioOrderInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.warehouseId,
+            _that.status,
+            _that.destinationType,
+            _that.destinationWarehouseId,
+            _that.destinationUserId,
+            _that.destinationUnregistered,
+            _that.notes,
+            _that.requiresPhotos,
+            _that.highPriority,
+            _that.packersIds,
+            _that.itemQuantities);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioOrderInput extends TenvioOrderInput {
@@ -7510,6 +11495,172 @@ class _$TenvioPhotosCopyWithImpl<$Res> implements $TenvioPhotosCopyWith<$Res> {
     return $TenvioPackageCopyWith<$Res>(_self.package!, (value) {
       return _then(_self.copyWith(package: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioPhotos].
+extension TenvioPhotosPatterns on TenvioPhotos {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioPhotos value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPhotos() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioPhotos value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPhotos():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioPhotos value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPhotos() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? status, String? urls, String? packagedId,
+            TenvioPackage? package)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPhotos() when $default != null:
+        return $default(
+            _that.status, _that.urls, _that.packagedId, _that.package);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? status, String? urls, String? packagedId,
+            TenvioPackage? package)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPhotos():
+        return $default(
+            _that.status, _that.urls, _that.packagedId, _that.package);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? status, String? urls, String? packagedId,
+            TenvioPackage? package)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioPhotos() when $default != null:
+        return $default(
+            _that.status, _that.urls, _that.packagedId, _that.package);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -7924,6 +12075,259 @@ class _$TenvioDispatchGuideCopyWithImpl<$Res>
     return $UserCopyWith<$Res>(_self.loader!, (value) {
       return _then(_self.copyWith(loader: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioDispatchGuide].
+extension TenvioDispatchGuidePatterns on TenvioDispatchGuide {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioDispatchGuide value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuide() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioDispatchGuide value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuide():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioDispatchGuide value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuide() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            @TenvioDispatchGuideStatusConverter()
+            TenvioDispatchGuideStatus status,
+            String? qrCode,
+            Asset? warehouse,
+            String? warehouseId,
+            TenvioDriver? driver,
+            String? driverId,
+            User? loader,
+            String? loaderId,
+            List<TenvioPackage> packages,
+            List<String> packagesIds,
+            bool hasRoute,
+            List<String> route,
+            @TimestampConverter() DateTime createdAt,
+            @TimestampConverter() DateTime updatedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuide() when $default != null:
+        return $default(
+            _that.id,
+            _that.status,
+            _that.qrCode,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.driver,
+            _that.driverId,
+            _that.loader,
+            _that.loaderId,
+            _that.packages,
+            _that.packagesIds,
+            _that.hasRoute,
+            _that.route,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            @TenvioDispatchGuideStatusConverter()
+            TenvioDispatchGuideStatus status,
+            String? qrCode,
+            Asset? warehouse,
+            String? warehouseId,
+            TenvioDriver? driver,
+            String? driverId,
+            User? loader,
+            String? loaderId,
+            List<TenvioPackage> packages,
+            List<String> packagesIds,
+            bool hasRoute,
+            List<String> route,
+            @TimestampConverter() DateTime createdAt,
+            @TimestampConverter() DateTime updatedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuide():
+        return $default(
+            _that.id,
+            _that.status,
+            _that.qrCode,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.driver,
+            _that.driverId,
+            _that.loader,
+            _that.loaderId,
+            _that.packages,
+            _that.packagesIds,
+            _that.hasRoute,
+            _that.route,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            @TenvioDispatchGuideStatusConverter()
+            TenvioDispatchGuideStatus status,
+            String? qrCode,
+            Asset? warehouse,
+            String? warehouseId,
+            TenvioDriver? driver,
+            String? driverId,
+            User? loader,
+            String? loaderId,
+            List<TenvioPackage> packages,
+            List<String> packagesIds,
+            bool hasRoute,
+            List<String> route,
+            @TimestampConverter() DateTime createdAt,
+            @TimestampConverter() DateTime updatedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuide() when $default != null:
+        return $default(
+            _that.id,
+            _that.status,
+            _that.qrCode,
+            _that.warehouse,
+            _that.warehouseId,
+            _that.driver,
+            _that.driverId,
+            _that.loader,
+            _that.loaderId,
+            _that.packages,
+            _that.packagesIds,
+            _that.hasRoute,
+            _that.route,
+            _that.createdAt,
+            _that.updatedAt);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -8431,6 +12835,217 @@ class _$TenvioDispatchGuideInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioDispatchGuideInput].
+extension TenvioDispatchGuideInputPatterns on TenvioDispatchGuideInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioDispatchGuideInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuideInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioDispatchGuideInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuideInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioDispatchGuideInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuideInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String warehouseId,
+            @TenvioDispatchGuideStatusConverter()
+            TenvioDispatchGuideStatus status,
+            String? driverId,
+            String? loaderId,
+            bool hasRoute,
+            List<String> route,
+            List<String> packagesIds)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuideInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.warehouseId,
+            _that.status,
+            _that.driverId,
+            _that.loaderId,
+            _that.hasRoute,
+            _that.route,
+            _that.packagesIds);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String warehouseId,
+            @TenvioDispatchGuideStatusConverter()
+            TenvioDispatchGuideStatus status,
+            String? driverId,
+            String? loaderId,
+            bool hasRoute,
+            List<String> route,
+            List<String> packagesIds)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuideInput():
+        return $default(
+            _that.id,
+            _that.warehouseId,
+            _that.status,
+            _that.driverId,
+            _that.loaderId,
+            _that.hasRoute,
+            _that.route,
+            _that.packagesIds);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String warehouseId,
+            @TenvioDispatchGuideStatusConverter()
+            TenvioDispatchGuideStatus status,
+            String? driverId,
+            String? loaderId,
+            bool hasRoute,
+            List<String> route,
+            List<String> packagesIds)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDispatchGuideInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.warehouseId,
+            _that.status,
+            _that.driverId,
+            _that.loaderId,
+            _that.hasRoute,
+            _that.route,
+            _that.packagesIds);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioDispatchGuideInput extends TenvioDispatchGuideInput {
@@ -8832,6 +13447,238 @@ class _$TenvioDriverCopyWithImpl<$Res> implements $TenvioDriverCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioDriver].
+extension TenvioDriverPatterns on TenvioDriver {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioDriver value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriver() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioDriver value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriver():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioDriver value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriver() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String? email,
+            String? username,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt,
+            DeviceTelemetry? telemetry,
+            String? maskedDeviceId,
+            RegisteredApp? app,
+            String? mqttToken,
+            Token? token,
+            String? originalId)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriver() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.email,
+            _that.username,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.telemetry,
+            _that.maskedDeviceId,
+            _that.app,
+            _that.mqttToken,
+            _that.token,
+            _that.originalId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String? email,
+            String? username,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt,
+            DeviceTelemetry? telemetry,
+            String? maskedDeviceId,
+            RegisteredApp? app,
+            String? mqttToken,
+            Token? token,
+            String? originalId)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriver():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.email,
+            _that.username,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.telemetry,
+            _that.maskedDeviceId,
+            _that.app,
+            _that.mqttToken,
+            _that.token,
+            _that.originalId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String? email,
+            String? username,
+            @TimestampOrNullConverter() DateTime? createdAt,
+            @TimestampOrNullConverter() DateTime? updatedAt,
+            DeviceTelemetry? telemetry,
+            String? maskedDeviceId,
+            RegisteredApp? app,
+            String? mqttToken,
+            Token? token,
+            String? originalId)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriver() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.email,
+            _that.username,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.telemetry,
+            _that.maskedDeviceId,
+            _that.app,
+            _that.mqttToken,
+            _that.token,
+            _that.originalId);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioDriver extends TenvioDriver {
@@ -9209,6 +14056,166 @@ class _$TenvioDriverInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [TenvioDriverInput].
+extension TenvioDriverInputPatterns on TenvioDriverInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioDriverInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriverInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioDriverInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriverInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioDriverInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriverInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? id, String name, String email, String username)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriverInput() when $default != null:
+        return $default(_that.id, _that.name, _that.email, _that.username);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? id, String name, String email, String username)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriverInput():
+        return $default(_that.id, _that.name, _that.email, _that.username);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? id, String name, String email, String username)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioDriverInput() when $default != null:
+        return $default(_that.id, _that.name, _that.email, _that.username);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _TenvioDriverInput implements TenvioDriverInput {
@@ -9390,6 +14397,172 @@ class _$TenvioBulkInputCopyWithImpl<$Res>
           : warehouseId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenvioBulkInput].
+extension TenvioBulkInputPatterns on TenvioBulkInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenvioBulkInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioBulkInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenvioBulkInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioBulkInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenvioBulkInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioBulkInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, dynamic> customProperties, String? matrixId,
+            int? quantity, String? warehouseId)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioBulkInput() when $default != null:
+        return $default(_that.customProperties, _that.matrixId, _that.quantity,
+            _that.warehouseId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, dynamic> customProperties, String? matrixId,
+            int? quantity, String? warehouseId)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioBulkInput():
+        return $default(_that.customProperties, _that.matrixId, _that.quantity,
+            _that.warehouseId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(Map<String, dynamic> customProperties, String? matrixId,
+            int? quantity, String? warehouseId)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenvioBulkInput() when $default != null:
+        return $default(_that.customProperties, _that.matrixId, _that.quantity,
+            _that.warehouseId);
+      case _:
+        return null;
+    }
   }
 }
 

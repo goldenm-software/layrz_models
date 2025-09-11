@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.32
+
+- Added `isPasswordExpired`  to `User` model
+
 ## 3.4.31
 
 - Added `transportCompanyAsset` and `transportCompanyAssetId` in `AtsOperation` entity

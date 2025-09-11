@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -384,6 +383,334 @@ class _$BrickhouseAlertCopyWithImpl<$Res>
           : triggerId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [BrickhouseAlert].
+extension BrickhouseAlertPatterns on BrickhouseAlert {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BrickhouseAlert value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlert() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BrickhouseAlert value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlert():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BrickhouseAlert value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlert() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            BrickhouseAlertType type,
+            List<Asset>? assets,
+            List<String>? assetsIds,
+            List<String>? email,
+            List<NullablePhoneNumber?>? phone,
+            bool? hasMobilePopup,
+            bool? hasWebPopup,
+            bool? hasEmail,
+            bool? hasPhone,
+            int? batteryMinLevel,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewStartHour,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewEndHour,
+            String? timezone,
+            @JsonKey(unknownEnumValue: Weekday.monday)
+            List<Weekday>? curfewWeekdays,
+            @ColorOrNullConverter() Color? geofenceColor,
+            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            double? geofenceRadius,
+            List<GeofencePoint>? geofenceShape,
+            @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
+            BrickhouseGeofenceTrigger? geofenceTrigger,
+            double? maxSpeedMaxValue,
+            bool? isMuted,
+            double? speedingThreshold,
+            bool? isDisabled,
+            String? triggerId)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlert() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.assets,
+            _that.assetsIds,
+            _that.email,
+            _that.phone,
+            _that.hasMobilePopup,
+            _that.hasWebPopup,
+            _that.hasEmail,
+            _that.hasPhone,
+            _that.batteryMinLevel,
+            _that.curfewStartHour,
+            _that.curfewEndHour,
+            _that.timezone,
+            _that.curfewWeekdays,
+            _that.geofenceColor,
+            _that.geofenceMode,
+            _that.geofenceRadius,
+            _that.geofenceShape,
+            _that.geofenceTrigger,
+            _that.maxSpeedMaxValue,
+            _that.isMuted,
+            _that.speedingThreshold,
+            _that.isDisabled,
+            _that.triggerId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            BrickhouseAlertType type,
+            List<Asset>? assets,
+            List<String>? assetsIds,
+            List<String>? email,
+            List<NullablePhoneNumber?>? phone,
+            bool? hasMobilePopup,
+            bool? hasWebPopup,
+            bool? hasEmail,
+            bool? hasPhone,
+            int? batteryMinLevel,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewStartHour,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewEndHour,
+            String? timezone,
+            @JsonKey(unknownEnumValue: Weekday.monday)
+            List<Weekday>? curfewWeekdays,
+            @ColorOrNullConverter() Color? geofenceColor,
+            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            double? geofenceRadius,
+            List<GeofencePoint>? geofenceShape,
+            @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
+            BrickhouseGeofenceTrigger? geofenceTrigger,
+            double? maxSpeedMaxValue,
+            bool? isMuted,
+            double? speedingThreshold,
+            bool? isDisabled,
+            String? triggerId)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlert():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.assets,
+            _that.assetsIds,
+            _that.email,
+            _that.phone,
+            _that.hasMobilePopup,
+            _that.hasWebPopup,
+            _that.hasEmail,
+            _that.hasPhone,
+            _that.batteryMinLevel,
+            _that.curfewStartHour,
+            _that.curfewEndHour,
+            _that.timezone,
+            _that.curfewWeekdays,
+            _that.geofenceColor,
+            _that.geofenceMode,
+            _that.geofenceRadius,
+            _that.geofenceShape,
+            _that.geofenceTrigger,
+            _that.maxSpeedMaxValue,
+            _that.isMuted,
+            _that.speedingThreshold,
+            _that.isDisabled,
+            _that.triggerId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            BrickhouseAlertType type,
+            List<Asset>? assets,
+            List<String>? assetsIds,
+            List<String>? email,
+            List<NullablePhoneNumber?>? phone,
+            bool? hasMobilePopup,
+            bool? hasWebPopup,
+            bool? hasEmail,
+            bool? hasPhone,
+            int? batteryMinLevel,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewStartHour,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewEndHour,
+            String? timezone,
+            @JsonKey(unknownEnumValue: Weekday.monday)
+            List<Weekday>? curfewWeekdays,
+            @ColorOrNullConverter() Color? geofenceColor,
+            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            double? geofenceRadius,
+            List<GeofencePoint>? geofenceShape,
+            @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
+            BrickhouseGeofenceTrigger? geofenceTrigger,
+            double? maxSpeedMaxValue,
+            bool? isMuted,
+            double? speedingThreshold,
+            bool? isDisabled,
+            String? triggerId)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlert() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.assets,
+            _that.assetsIds,
+            _that.email,
+            _that.phone,
+            _that.hasMobilePopup,
+            _that.hasWebPopup,
+            _that.hasEmail,
+            _that.hasPhone,
+            _that.batteryMinLevel,
+            _that.curfewStartHour,
+            _that.curfewEndHour,
+            _that.timezone,
+            _that.curfewWeekdays,
+            _that.geofenceColor,
+            _that.geofenceMode,
+            _that.geofenceRadius,
+            _that.geofenceShape,
+            _that.geofenceTrigger,
+            _that.maxSpeedMaxValue,
+            _that.isMuted,
+            _that.speedingThreshold,
+            _that.isDisabled,
+            _that.triggerId);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1227,6 +1554,316 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [BrickhouseAlertInput].
+extension BrickhouseAlertInputPatterns on BrickhouseAlertInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BrickhouseAlertInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlertInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BrickhouseAlertInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlertInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BrickhouseAlertInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlertInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String name,
+            BrickhouseAlertType type,
+            List<String> assetsIds,
+            List<String>? email,
+            List<NullablePhoneNumber?>? phone,
+            bool? hasMobilePopup,
+            bool? hasWebPopup,
+            bool? hasEmail,
+            bool? hasPhone,
+            int? batteryMinLevel,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewStartHour,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewEndHour,
+            String? timezone,
+            @JsonKey(unknownEnumValue: Weekday.monday)
+            List<Weekday>? curfewWeekdays,
+            @ColorOrNullConverter() Color? geofenceColor,
+            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            double? geofenceRadius,
+            List<GeofencePoint>? geofenceShape,
+            @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
+            BrickhouseGeofenceTrigger? geofenceTrigger,
+            double? maxSpeedMaxValue,
+            bool? isMuted,
+            double? speedingThreshold)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlertInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.assetsIds,
+            _that.email,
+            _that.phone,
+            _that.hasMobilePopup,
+            _that.hasWebPopup,
+            _that.hasEmail,
+            _that.hasPhone,
+            _that.batteryMinLevel,
+            _that.curfewStartHour,
+            _that.curfewEndHour,
+            _that.timezone,
+            _that.curfewWeekdays,
+            _that.geofenceColor,
+            _that.geofenceMode,
+            _that.geofenceRadius,
+            _that.geofenceShape,
+            _that.geofenceTrigger,
+            _that.maxSpeedMaxValue,
+            _that.isMuted,
+            _that.speedingThreshold);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String name,
+            BrickhouseAlertType type,
+            List<String> assetsIds,
+            List<String>? email,
+            List<NullablePhoneNumber?>? phone,
+            bool? hasMobilePopup,
+            bool? hasWebPopup,
+            bool? hasEmail,
+            bool? hasPhone,
+            int? batteryMinLevel,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewStartHour,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewEndHour,
+            String? timezone,
+            @JsonKey(unknownEnumValue: Weekday.monday)
+            List<Weekday>? curfewWeekdays,
+            @ColorOrNullConverter() Color? geofenceColor,
+            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            double? geofenceRadius,
+            List<GeofencePoint>? geofenceShape,
+            @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
+            BrickhouseGeofenceTrigger? geofenceTrigger,
+            double? maxSpeedMaxValue,
+            bool? isMuted,
+            double? speedingThreshold)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlertInput():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.assetsIds,
+            _that.email,
+            _that.phone,
+            _that.hasMobilePopup,
+            _that.hasWebPopup,
+            _that.hasEmail,
+            _that.hasPhone,
+            _that.batteryMinLevel,
+            _that.curfewStartHour,
+            _that.curfewEndHour,
+            _that.timezone,
+            _that.curfewWeekdays,
+            _that.geofenceColor,
+            _that.geofenceMode,
+            _that.geofenceRadius,
+            _that.geofenceShape,
+            _that.geofenceTrigger,
+            _that.maxSpeedMaxValue,
+            _that.isMuted,
+            _that.speedingThreshold);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String name,
+            BrickhouseAlertType type,
+            List<String> assetsIds,
+            List<String>? email,
+            List<NullablePhoneNumber?>? phone,
+            bool? hasMobilePopup,
+            bool? hasWebPopup,
+            bool? hasEmail,
+            bool? hasPhone,
+            int? batteryMinLevel,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewStartHour,
+            @BrickhouseTimeOfDayMinuteOrNullConverter()
+            TimeOfDay? curfewEndHour,
+            String? timezone,
+            @JsonKey(unknownEnumValue: Weekday.monday)
+            List<Weekday>? curfewWeekdays,
+            @ColorOrNullConverter() Color? geofenceColor,
+            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            double? geofenceRadius,
+            List<GeofencePoint>? geofenceShape,
+            @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
+            BrickhouseGeofenceTrigger? geofenceTrigger,
+            double? maxSpeedMaxValue,
+            bool? isMuted,
+            double? speedingThreshold)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseAlertInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.assetsIds,
+            _that.email,
+            _that.phone,
+            _that.hasMobilePopup,
+            _that.hasWebPopup,
+            _that.hasEmail,
+            _that.hasPhone,
+            _that.batteryMinLevel,
+            _that.curfewStartHour,
+            _that.curfewEndHour,
+            _that.timezone,
+            _that.curfewWeekdays,
+            _that.geofenceColor,
+            _that.geofenceMode,
+            _that.geofenceRadius,
+            _that.geofenceShape,
+            _that.geofenceTrigger,
+            _that.maxSpeedMaxValue,
+            _that.isMuted,
+            _that.speedingThreshold);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _BrickhouseAlertInput implements BrickhouseAlertInput {
@@ -1646,6 +2283,169 @@ class _$BHSDriverSafetyEventScoreCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [BHSDriverSafetyEventScore].
+extension BHSDriverSafetyEventScorePatterns on BHSDriverSafetyEventScore {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetyEventScore value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyEventScore() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetyEventScore value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyEventScore():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSDriverSafetyEventScore value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyEventScore() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double score, String? status, List<AssetTelemetry>? messages)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyEventScore() when $default != null:
+        return $default(_that.score, _that.status, _that.messages);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double score, String? status, List<AssetTelemetry>? messages)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyEventScore():
+        return $default(_that.score, _that.status, _that.messages);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double score, String? status, List<AssetTelemetry>? messages)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyEventScore() when $default != null:
+        return $default(_that.score, _that.status, _that.messages);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _BHSDriverSafetyEventScore implements BHSDriverSafetyEventScore {
@@ -1834,6 +2634,166 @@ class _$BHSDriverSafetyDrivenScoreCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [BHSDriverSafetyDrivenScore].
+extension BHSDriverSafetyDrivenScorePatterns on BHSDriverSafetyDrivenScore {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetyDrivenScore value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivenScore() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetyDrivenScore value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivenScore():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSDriverSafetyDrivenScore value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivenScore() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double score, String? status, double drivenSeconds)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivenScore() when $default != null:
+        return $default(_that.score, _that.status, _that.drivenSeconds);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double score, String? status, double drivenSeconds)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivenScore():
+        return $default(_that.score, _that.status, _that.drivenSeconds);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double score, String? status, double drivenSeconds)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivenScore() when $default != null:
+        return $default(_that.score, _that.status, _that.drivenSeconds);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _BHSDriverSafetyDrivenScore implements BHSDriverSafetyDrivenScore {
@@ -2005,6 +2965,167 @@ class _$BHSDriverSafetySpeedingEventsCopyWithImpl<$Res>
           : messages // ignore: cast_nullable_to_non_nullable
               as List<TriggerActivation>?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [BHSDriverSafetySpeedingEvents].
+extension BHSDriverSafetySpeedingEventsPatterns
+    on BHSDriverSafetySpeedingEvents {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetySpeedingEvents value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetySpeedingEvents() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetySpeedingEvents value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetySpeedingEvents():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSDriverSafetySpeedingEvents value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetySpeedingEvents() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? status, List<TriggerActivation>? messages)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetySpeedingEvents() when $default != null:
+        return $default(_that.status, _that.messages);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? status, List<TriggerActivation>? messages)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetySpeedingEvents():
+        return $default(_that.status, _that.messages);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? status, List<TriggerActivation>? messages)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetySpeedingEvents() when $default != null:
+        return $default(_that.status, _that.messages);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -2244,6 +3365,184 @@ class _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [BHSDriverSafetyDrivingEvent].
+extension BHSDriverSafetyDrivingEventPatterns on BHSDriverSafetyDrivingEvent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetyDrivingEvent value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivingEvent() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetyDrivingEvent value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivingEvent():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSDriverSafetyDrivingEvent value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivingEvent() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @TimestampConverter() DateTime startAt,
+            @TimestampConverter() DateTime endAt,
+            TelemetryPosition? startPosition,
+            TelemetryPosition? endPosition,
+            double drivenSeconds)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivingEvent() when $default != null:
+        return $default(_that.startAt, _that.endAt, _that.startPosition,
+            _that.endPosition, _that.drivenSeconds);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @TimestampConverter() DateTime startAt,
+            @TimestampConverter() DateTime endAt,
+            TelemetryPosition? startPosition,
+            TelemetryPosition? endPosition,
+            double drivenSeconds)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivingEvent():
+        return $default(_that.startAt, _that.endAt, _that.startPosition,
+            _that.endPosition, _that.drivenSeconds);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @TimestampConverter() DateTime startAt,
+            @TimestampConverter() DateTime endAt,
+            TelemetryPosition? startPosition,
+            TelemetryPosition? endPosition,
+            double drivenSeconds)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDrivingEvent() when $default != null:
+        return $default(_that.startAt, _that.endAt, _that.startPosition,
+            _that.endPosition, _that.drivenSeconds);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _BHSDriverSafetyDrivingEvent implements BHSDriverSafetyDrivingEvent {
@@ -2476,6 +3775,169 @@ class _$BHSDriverSafetyDrivingCopyWithImpl<$Res>
           : messages // ignore: cast_nullable_to_non_nullable
               as List<BHSDriverSafetyDrivingEvent>?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [BHSDriverSafetyDriving].
+extension BHSDriverSafetyDrivingPatterns on BHSDriverSafetyDriving {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetyDriving value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDriving() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSDriverSafetyDriving value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDriving():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSDriverSafetyDriving value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDriving() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? status, List<BHSDriverSafetyDrivingEvent>? messages)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDriving() when $default != null:
+        return $default(_that.status, _that.messages);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? status, List<BHSDriverSafetyDrivingEvent>? messages)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDriving():
+        return $default(_that.status, _that.messages);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? status, List<BHSDriverSafetyDrivingEvent>? messages)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSDriverSafetyDriving() when $default != null:
+        return $default(_that.status, _that.messages);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -2799,6 +4261,208 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res>
     return $BHSDriverSafetyDrivingCopyWith<$Res>(_self.drivingEvents!, (value) {
       return _then(_self.copyWith(drivingEvents: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [BrickhouseDriverSafety].
+extension BrickhouseDriverSafetyPatterns on BrickhouseDriverSafety {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BrickhouseDriverSafety value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseDriverSafety() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BrickhouseDriverSafety value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseDriverSafety():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BrickhouseDriverSafety value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseDriverSafety() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double totalScore,
+            BHSDriverSafetyDrivenScore? drivingHours,
+            BHSDriverSafetyEventScore? harshAcceleration,
+            BHSDriverSafetyEventScore? harshBraking,
+            BHSDriverSafetyEventScore? harshCornering,
+            BHSDriverSafetySpeedingEvents? speedingEvents,
+            BHSDriverSafetyDriving? drivingEvents)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseDriverSafety() when $default != null:
+        return $default(
+            _that.totalScore,
+            _that.drivingHours,
+            _that.harshAcceleration,
+            _that.harshBraking,
+            _that.harshCornering,
+            _that.speedingEvents,
+            _that.drivingEvents);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double totalScore,
+            BHSDriverSafetyDrivenScore? drivingHours,
+            BHSDriverSafetyEventScore? harshAcceleration,
+            BHSDriverSafetyEventScore? harshBraking,
+            BHSDriverSafetyEventScore? harshCornering,
+            BHSDriverSafetySpeedingEvents? speedingEvents,
+            BHSDriverSafetyDriving? drivingEvents)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseDriverSafety():
+        return $default(
+            _that.totalScore,
+            _that.drivingHours,
+            _that.harshAcceleration,
+            _that.harshBraking,
+            _that.harshCornering,
+            _that.speedingEvents,
+            _that.drivingEvents);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double totalScore,
+            BHSDriverSafetyDrivenScore? drivingHours,
+            BHSDriverSafetyEventScore? harshAcceleration,
+            BHSDriverSafetyEventScore? harshBraking,
+            BHSDriverSafetyEventScore? harshCornering,
+            BHSDriverSafetySpeedingEvents? speedingEvents,
+            BHSDriverSafetyDriving? drivingEvents)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickhouseDriverSafety() when $default != null:
+        return $default(
+            _that.totalScore,
+            _that.drivingHours,
+            _that.harshAcceleration,
+            _that.harshBraking,
+            _that.harshCornering,
+            _that.speedingEvents,
+            _that.drivingEvents);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -3156,6 +4820,172 @@ class _$BHSEncodedTripCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [BHSEncodedTrip].
+extension BHSEncodedTripPatterns on BHSEncodedTrip {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSEncodedTrip value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTrip() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSEncodedTrip value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTrip():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSEncodedTrip value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTrip() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, String assetId, String encodedPolyline,
+            int lineStartUnix, int lineEndUnix, double createdAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTrip() when $default != null:
+        return $default(_that.id, _that.assetId, _that.encodedPolyline,
+            _that.lineStartUnix, _that.lineEndUnix, _that.createdAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, String assetId, String encodedPolyline,
+            int lineStartUnix, int lineEndUnix, double createdAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTrip():
+        return $default(_that.id, _that.assetId, _that.encodedPolyline,
+            _that.lineStartUnix, _that.lineEndUnix, _that.createdAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String id, String assetId, String encodedPolyline,
+            int lineStartUnix, int lineEndUnix, double createdAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTrip() when $default != null:
+        return $default(_that.id, _that.assetId, _that.encodedPolyline,
+            _that.lineStartUnix, _that.lineEndUnix, _that.createdAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _BHSEncodedTrip implements BHSEncodedTrip {
@@ -3361,6 +5191,172 @@ class _$BHSEncodedTripInputCopyWithImpl<$Res>
           : lineEndUnix // ignore: cast_nullable_to_non_nullable
               as int,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [BHSEncodedTripInput].
+extension BHSEncodedTripInputPatterns on BHSEncodedTripInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSEncodedTripInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTripInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSEncodedTripInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTripInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSEncodedTripInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTripInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String assetId, String encodedPolyline, int lineStartUnix,
+            int lineEndUnix)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTripInput() when $default != null:
+        return $default(_that.assetId, _that.encodedPolyline,
+            _that.lineStartUnix, _that.lineEndUnix);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String assetId, String encodedPolyline, int lineStartUnix,
+            int lineEndUnix)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTripInput():
+        return $default(_that.assetId, _that.encodedPolyline,
+            _that.lineStartUnix, _that.lineEndUnix);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String assetId, String encodedPolyline, int lineStartUnix,
+            int lineEndUnix)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSEncodedTripInput() when $default != null:
+        return $default(_that.assetId, _that.encodedPolyline,
+            _that.lineStartUnix, _that.lineEndUnix);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -3614,6 +5610,214 @@ class _$BHSPermissionTierCopyWithImpl<$Res>
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [BHSPermissionTier].
+extension BHSPermissionTierPatterns on BHSPermissionTier {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSPermissionTier value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTier() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSPermissionTier value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTier():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSPermissionTier value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTier() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            int tierLevel,
+            BrickhouseBillingPeriod? billingPeriod,
+            String? description,
+            Map<String, dynamic>? customProperties,
+            List<User>? users,
+            List<Access>? access)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTier() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.tierLevel,
+            _that.billingPeriod,
+            _that.description,
+            _that.customProperties,
+            _that.users,
+            _that.access);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            int tierLevel,
+            BrickhouseBillingPeriod? billingPeriod,
+            String? description,
+            Map<String, dynamic>? customProperties,
+            List<User>? users,
+            List<Access>? access)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTier():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.tierLevel,
+            _that.billingPeriod,
+            _that.description,
+            _that.customProperties,
+            _that.users,
+            _that.access);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            int tierLevel,
+            BrickhouseBillingPeriod? billingPeriod,
+            String? description,
+            Map<String, dynamic>? customProperties,
+            List<User>? users,
+            List<Access>? access)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTier() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.tierLevel,
+            _that.billingPeriod,
+            _that.description,
+            _that.customProperties,
+            _that.users,
+            _that.access);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -3905,6 +6109,187 @@ class _$BHSPermissionTierInputCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [BHSPermissionTierInput].
+extension BHSPermissionTierInputPatterns on BHSPermissionTierInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BHSPermissionTierInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTierInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BHSPermissionTierInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTierInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BHSPermissionTierInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTierInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? name,
+            String? description,
+            BrickhouseBillingPeriod? billingPeriod,
+            int tierLevel,
+            Map<String, dynamic>? customProperties)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTierInput() when $default != null:
+        return $default(_that.id, _that.name, _that.description,
+            _that.billingPeriod, _that.tierLevel, _that.customProperties);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String? name,
+            String? description,
+            BrickhouseBillingPeriod? billingPeriod,
+            int tierLevel,
+            Map<String, dynamic>? customProperties)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTierInput():
+        return $default(_that.id, _that.name, _that.description,
+            _that.billingPeriod, _that.tierLevel, _that.customProperties);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String? name,
+            String? description,
+            BrickhouseBillingPeriod? billingPeriod,
+            int tierLevel,
+            Map<String, dynamic>? customProperties)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BHSPermissionTierInput() when $default != null:
+        return $default(_that.id, _that.name, _that.description,
+            _that.billingPeriod, _that.tierLevel, _that.customProperties);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _BHSPermissionTierInput implements BHSPermissionTierInput {
@@ -4141,6 +6526,196 @@ class _$BrickHouseWorkspaceInputCopyWithImpl<$Res>
           : assetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [BrickHouseWorkspaceInput].
+extension BrickHouseWorkspaceInputPatterns on BrickHouseWorkspaceInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BrickHouseWorkspaceInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BrickHouseWorkspaceInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BrickHouseWorkspaceInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickHouseWorkspaceInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BrickHouseWorkspaceInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickHouseWorkspaceInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String appId,
+            String name,
+            @JsonKey(unknownEnumValue: MetricSystem.imperial)
+            MetricSystem metricSystem,
+            @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+            AppInternalIdentifier? typeApp,
+            String timezoneId,
+            List<String>? assetsIds)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BrickHouseWorkspaceInput() when $default != null:
+        return $default(_that.id, _that.appId, _that.name, _that.metricSystem,
+            _that.typeApp, _that.timezoneId, _that.assetsIds);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String appId,
+            String name,
+            @JsonKey(unknownEnumValue: MetricSystem.imperial)
+            MetricSystem metricSystem,
+            @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+            AppInternalIdentifier? typeApp,
+            String timezoneId,
+            List<String>? assetsIds)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickHouseWorkspaceInput():
+        return $default(_that.id, _that.appId, _that.name, _that.metricSystem,
+            _that.typeApp, _that.timezoneId, _that.assetsIds);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String appId,
+            String name,
+            @JsonKey(unknownEnumValue: MetricSystem.imperial)
+            MetricSystem metricSystem,
+            @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+            AppInternalIdentifier? typeApp,
+            String timezoneId,
+            List<String>? assetsIds)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BrickHouseWorkspaceInput() when $default != null:
+        return $default(_that.id, _that.appId, _that.name, _that.metricSystem,
+            _that.typeApp, _that.timezoneId, _that.assetsIds);
+      case _:
+        return null;
+    }
   }
 }
 

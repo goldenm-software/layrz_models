@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -242,6 +241,256 @@ class _$ActionCopyWithImpl<$Res> implements $ActionCopyWith<$Res> {
         (value) {
       return _then(_self.copyWith(geofenceSettings: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [Action].
+extension ActionPatterns on Action {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Action value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Action() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Action value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Action():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Action value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Action() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            @JsonKey(unknownEnumValue: ActionType.performOperation)
+            ActionType kind,
+            @JsonKey(unknownEnumValue: ActionSubtype.unused)
+            ActionSubtype subkind,
+            String? commandId,
+            List<Trigger>? triggers,
+            List<String>? triggersIds,
+            List<OutboundService>? outboundServices,
+            List<String>? outboundServicesIds,
+            List<Operation>? operations,
+            List<String>? operationsIds,
+            List<Access>? access,
+            bool? watchImage,
+            ActionGeofenceSettings? geofenceSettings)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Action() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.kind,
+            _that.subkind,
+            _that.commandId,
+            _that.triggers,
+            _that.triggersIds,
+            _that.outboundServices,
+            _that.outboundServicesIds,
+            _that.operations,
+            _that.operationsIds,
+            _that.access,
+            _that.watchImage,
+            _that.geofenceSettings);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            @JsonKey(unknownEnumValue: ActionType.performOperation)
+            ActionType kind,
+            @JsonKey(unknownEnumValue: ActionSubtype.unused)
+            ActionSubtype subkind,
+            String? commandId,
+            List<Trigger>? triggers,
+            List<String>? triggersIds,
+            List<OutboundService>? outboundServices,
+            List<String>? outboundServicesIds,
+            List<Operation>? operations,
+            List<String>? operationsIds,
+            List<Access>? access,
+            bool? watchImage,
+            ActionGeofenceSettings? geofenceSettings)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Action():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.kind,
+            _that.subkind,
+            _that.commandId,
+            _that.triggers,
+            _that.triggersIds,
+            _that.outboundServices,
+            _that.outboundServicesIds,
+            _that.operations,
+            _that.operationsIds,
+            _that.access,
+            _that.watchImage,
+            _that.geofenceSettings);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            @JsonKey(unknownEnumValue: ActionType.performOperation)
+            ActionType kind,
+            @JsonKey(unknownEnumValue: ActionSubtype.unused)
+            ActionSubtype subkind,
+            String? commandId,
+            List<Trigger>? triggers,
+            List<String>? triggersIds,
+            List<OutboundService>? outboundServices,
+            List<String>? outboundServicesIds,
+            List<Operation>? operations,
+            List<String>? operationsIds,
+            List<Access>? access,
+            bool? watchImage,
+            ActionGeofenceSettings? geofenceSettings)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Action() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.kind,
+            _that.subkind,
+            _that.commandId,
+            _that.triggers,
+            _that.triggersIds,
+            _that.outboundServices,
+            _that.outboundServicesIds,
+            _that.operations,
+            _that.operationsIds,
+            _that.access,
+            _that.watchImage,
+            _that.geofenceSettings);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -770,6 +1019,232 @@ class _$ActionInputCopyWithImpl<$Res> implements $ActionInputCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [ActionInput].
+extension ActionInputPatterns on ActionInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ActionInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActionInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ActionInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ActionInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String name,
+            @JsonKey(unknownEnumValue: ActionType.performOperation)
+            ActionType kind,
+            @JsonKey(unknownEnumValue: ActionSubtype.unused)
+            ActionSubtype subkind,
+            String? commandId,
+            List<String> triggersIds,
+            List<String> operationsIds,
+            List<String> outboundServicesIds,
+            bool watchImage,
+            ActionGeofenceSettingsInput geofenceSettings)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActionInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.kind,
+            _that.subkind,
+            _that.commandId,
+            _that.triggersIds,
+            _that.operationsIds,
+            _that.outboundServicesIds,
+            _that.watchImage,
+            _that.geofenceSettings);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? id,
+            String name,
+            @JsonKey(unknownEnumValue: ActionType.performOperation)
+            ActionType kind,
+            @JsonKey(unknownEnumValue: ActionSubtype.unused)
+            ActionSubtype subkind,
+            String? commandId,
+            List<String> triggersIds,
+            List<String> operationsIds,
+            List<String> outboundServicesIds,
+            bool watchImage,
+            ActionGeofenceSettingsInput geofenceSettings)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionInput():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.kind,
+            _that.subkind,
+            _that.commandId,
+            _that.triggersIds,
+            _that.operationsIds,
+            _that.outboundServicesIds,
+            _that.watchImage,
+            _that.geofenceSettings);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? id,
+            String name,
+            @JsonKey(unknownEnumValue: ActionType.performOperation)
+            ActionType kind,
+            @JsonKey(unknownEnumValue: ActionSubtype.unused)
+            ActionSubtype subkind,
+            String? commandId,
+            List<String> triggersIds,
+            List<String> operationsIds,
+            List<String> outboundServicesIds,
+            bool watchImage,
+            ActionGeofenceSettingsInput geofenceSettings)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionInput() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.kind,
+            _that.subkind,
+            _that.commandId,
+            _that.triggersIds,
+            _that.operationsIds,
+            _that.outboundServicesIds,
+            _that.watchImage,
+            _that.geofenceSettings);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ActionInput extends ActionInput {
@@ -1104,6 +1579,193 @@ class _$ActionGeofenceSettingsCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [ActionGeofenceSettings].
+extension ActionGeofenceSettingsPatterns on ActionGeofenceSettings {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ActionGeofenceSettings value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettings() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ActionGeofenceSettings value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettings():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ActionGeofenceSettings value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettings() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(unknownEnumValue: ActionProperty.none)
+            ActionProperty whoOwner,
+            String? name,
+            @JsonKey(unknownEnumValue: GeofenceCategory.none)
+            GeofenceCategory? category,
+            double? radius,
+            String? mappitRouteId,
+            MappitRoute? mappitRoute)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettings() when $default != null:
+        return $default(_that.whoOwner, _that.name, _that.category,
+            _that.radius, _that.mappitRouteId, _that.mappitRoute);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(unknownEnumValue: ActionProperty.none)
+            ActionProperty whoOwner,
+            String? name,
+            @JsonKey(unknownEnumValue: GeofenceCategory.none)
+            GeofenceCategory? category,
+            double? radius,
+            String? mappitRouteId,
+            MappitRoute? mappitRoute)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettings():
+        return $default(_that.whoOwner, _that.name, _that.category,
+            _that.radius, _that.mappitRouteId, _that.mappitRoute);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(unknownEnumValue: ActionProperty.none)
+            ActionProperty whoOwner,
+            String? name,
+            @JsonKey(unknownEnumValue: GeofenceCategory.none)
+            GeofenceCategory? category,
+            double? radius,
+            String? mappitRouteId,
+            MappitRoute? mappitRoute)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettings() when $default != null:
+        return $default(_that.whoOwner, _that.name, _that.category,
+            _that.radius, _that.mappitRouteId, _that.mappitRoute);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ActionGeofenceSettings extends ActionGeofenceSettings {
@@ -1387,6 +2049,190 @@ class _$ActionGeofenceSettingsInputCopyWithImpl<$Res>
           : mappitRouteId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ActionGeofenceSettingsInput].
+extension ActionGeofenceSettingsInputPatterns on ActionGeofenceSettingsInput {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ActionGeofenceSettingsInput value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettingsInput() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ActionGeofenceSettingsInput value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettingsInput():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ActionGeofenceSettingsInput value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettingsInput() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(unknownEnumValue: ActionProperty.none)
+            ActionProperty whoOwner,
+            String? name,
+            @JsonKey(unknownEnumValue: GeofenceCategory.none)
+            GeofenceCategory category,
+            double radius,
+            String? mappitRouteId)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettingsInput() when $default != null:
+        return $default(_that.whoOwner, _that.name, _that.category,
+            _that.radius, _that.mappitRouteId);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(unknownEnumValue: ActionProperty.none)
+            ActionProperty whoOwner,
+            String? name,
+            @JsonKey(unknownEnumValue: GeofenceCategory.none)
+            GeofenceCategory category,
+            double radius,
+            String? mappitRouteId)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettingsInput():
+        return $default(_that.whoOwner, _that.name, _that.category,
+            _that.radius, _that.mappitRouteId);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(unknownEnumValue: ActionProperty.none)
+            ActionProperty whoOwner,
+            String? name,
+            @JsonKey(unknownEnumValue: GeofenceCategory.none)
+            GeofenceCategory category,
+            double radius,
+            String? mappitRouteId)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActionGeofenceSettingsInput() when $default != null:
+        return $default(_that.whoOwner, _that.name, _that.category,
+            _that.radius, _that.mappitRouteId);
+      case _:
+        return null;
+    }
   }
 }
 

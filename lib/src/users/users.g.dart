@@ -215,6 +215,7 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
       billingPlan: json['billingPlan'] == null
           ? null
           : BillingPlan.fromJson(json['billingPlan'] as Map<String, dynamic>),
+      isPasswordExpired: json['isPasswordExpired'] as bool?,
     );
 
 Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
@@ -263,6 +264,7 @@ Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
       'isSuspended': instance.isSuspended,
       'hasPaymentWarning': instance.hasPaymentWarning,
       'billingPlan': instance.billingPlan?.toJson(),
+      'isPasswordExpired': instance.isPasswordExpired,
     };
 
 _UserInput _$UserInputFromJson(Map<String, dynamic> json) => _UserInput(
