@@ -33431,7 +33431,7 @@ mixin _$AtsMonitor {
   String get id;
 
   /// Name assigned to the monitor.
-  String? get name;
+  String get name;
 
   /// Indicates the color of the monitor.
   @ColorOrNullConverter()
@@ -33451,10 +33451,13 @@ mixin _$AtsMonitor {
   List<String> get assetsIds;
 
   /// List of grid structure.
-  List<AtsGridItem>? get gridStructure;
+  List<AtsGridItem> get gridStructure;
 
   /// List of custom access permissions.
   List<Access> get access;
+
+  /// User linked to monitor.
+  User? get owner;
 
   /// Create a copy of AtsMonitor
   /// with the given fields replaced by the non-null parameter values.
@@ -33481,7 +33484,8 @@ mixin _$AtsMonitor {
             const DeepCollectionEquality().equals(other.assetsIds, assetsIds) &&
             const DeepCollectionEquality()
                 .equals(other.gridStructure, gridStructure) &&
-            const DeepCollectionEquality().equals(other.access, access));
+            const DeepCollectionEquality().equals(other.access, access) &&
+            (identical(other.owner, owner) || other.owner == owner));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -33496,11 +33500,12 @@ mixin _$AtsMonitor {
       const DeepCollectionEquality().hash(assets),
       const DeepCollectionEquality().hash(assetsIds),
       const DeepCollectionEquality().hash(gridStructure),
-      const DeepCollectionEquality().hash(access));
+      const DeepCollectionEquality().hash(access),
+      owner);
 
   @override
   String toString() {
-    return 'AtsMonitor(id: $id, name: $name, color: $color, icon: $icon, isFavorite: $isFavorite, assets: $assets, assetsIds: $assetsIds, gridStructure: $gridStructure, access: $access)';
+    return 'AtsMonitor(id: $id, name: $name, color: $color, icon: $icon, isFavorite: $isFavorite, assets: $assets, assetsIds: $assetsIds, gridStructure: $gridStructure, access: $access, owner: $owner)';
   }
 }
 
@@ -33512,14 +33517,17 @@ abstract mixin class $AtsMonitorCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String? name,
+      String name,
       @ColorOrNullConverter() Color? color,
       @IconOrNullConverter() LayrzIcon? icon,
       bool isFavorite,
       List<Asset> assets,
       List<String> assetsIds,
-      List<AtsGridItem>? gridStructure,
-      List<Access> access});
+      List<AtsGridItem> gridStructure,
+      List<Access> access,
+      User? owner});
+
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -33535,24 +33543,25 @@ class _$AtsMonitorCopyWithImpl<$Res> implements $AtsMonitorCopyWith<$Res> {
   @override
   $Res call({
     Object? id = null,
-    Object? name = freezed,
+    Object? name = null,
     Object? color = freezed,
     Object? icon = freezed,
     Object? isFavorite = null,
     Object? assets = null,
     Object? assetsIds = null,
-    Object? gridStructure = freezed,
+    Object? gridStructure = null,
     Object? access = null,
+    Object? owner = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: freezed == name
+      name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       color: freezed == color
           ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -33573,15 +33582,33 @@ class _$AtsMonitorCopyWithImpl<$Res> implements $AtsMonitorCopyWith<$Res> {
           ? _self.assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      gridStructure: freezed == gridStructure
+      gridStructure: null == gridStructure
           ? _self.gridStructure
           : gridStructure // ignore: cast_nullable_to_non_nullable
-              as List<AtsGridItem>?,
+              as List<AtsGridItem>,
       access: null == access
           ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>,
+      owner: freezed == owner
+          ? _self.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
+  }
+
+  /// Create a copy of AtsMonitor
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get owner {
+    if (_self.owner == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.owner!, (value) {
+      return _then(_self.copyWith(owner: value));
+    });
   }
 }
 
@@ -33680,14 +33707,15 @@ extension AtsMonitorPatterns on AtsMonitor {
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
             String id,
-            String? name,
+            String name,
             @ColorOrNullConverter() Color? color,
             @IconOrNullConverter() LayrzIcon? icon,
             bool isFavorite,
             List<Asset> assets,
             List<String> assetsIds,
-            List<AtsGridItem>? gridStructure,
-            List<Access> access)?
+            List<AtsGridItem> gridStructure,
+            List<Access> access,
+            User? owner)?
         $default, {
     required TResult orElse(),
   }) {
@@ -33703,7 +33731,8 @@ extension AtsMonitorPatterns on AtsMonitor {
             _that.assets,
             _that.assetsIds,
             _that.gridStructure,
-            _that.access);
+            _that.access,
+            _that.owner);
       case _:
         return orElse();
     }
@@ -33726,14 +33755,15 @@ extension AtsMonitorPatterns on AtsMonitor {
   TResult when<TResult extends Object?>(
     TResult Function(
             String id,
-            String? name,
+            String name,
             @ColorOrNullConverter() Color? color,
             @IconOrNullConverter() LayrzIcon? icon,
             bool isFavorite,
             List<Asset> assets,
             List<String> assetsIds,
-            List<AtsGridItem>? gridStructure,
-            List<Access> access)
+            List<AtsGridItem> gridStructure,
+            List<Access> access,
+            User? owner)
         $default,
   ) {
     final _that = this;
@@ -33748,7 +33778,8 @@ extension AtsMonitorPatterns on AtsMonitor {
             _that.assets,
             _that.assetsIds,
             _that.gridStructure,
-            _that.access);
+            _that.access,
+            _that.owner);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -33770,14 +33801,15 @@ extension AtsMonitorPatterns on AtsMonitor {
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
             String id,
-            String? name,
+            String name,
             @ColorOrNullConverter() Color? color,
             @IconOrNullConverter() LayrzIcon? icon,
             bool isFavorite,
             List<Asset> assets,
             List<String> assetsIds,
-            List<AtsGridItem>? gridStructure,
-            List<Access> access)?
+            List<AtsGridItem> gridStructure,
+            List<Access> access,
+            User? owner)?
         $default,
   ) {
     final _that = this;
@@ -33792,7 +33824,8 @@ extension AtsMonitorPatterns on AtsMonitor {
             _that.assets,
             _that.assetsIds,
             _that.gridStructure,
-            _that.access);
+            _that.access,
+            _that.owner);
       case _:
         return null;
     }
@@ -33804,14 +33837,15 @@ extension AtsMonitorPatterns on AtsMonitor {
 class _AtsMonitor implements AtsMonitor {
   const _AtsMonitor(
       {required this.id,
-      this.name,
+      required this.name,
       @ColorOrNullConverter() this.color,
       @IconOrNullConverter() this.icon,
       this.isFavorite = false,
       final List<Asset> assets = const [],
       final List<String> assetsIds = const [],
-      final List<AtsGridItem>? gridStructure,
-      final List<Access> access = const []})
+      final List<AtsGridItem> gridStructure = const [],
+      final List<Access> access = const [],
+      this.owner})
       : _assets = assets,
         _assetsIds = assetsIds,
         _gridStructure = gridStructure,
@@ -33825,7 +33859,7 @@ class _AtsMonitor implements AtsMonitor {
 
   /// Name assigned to the monitor.
   @override
-  final String? name;
+  final String name;
 
   /// Indicates the color of the monitor.
   @override
@@ -33867,16 +33901,15 @@ class _AtsMonitor implements AtsMonitor {
   }
 
   /// List of grid structure.
-  final List<AtsGridItem>? _gridStructure;
+  final List<AtsGridItem> _gridStructure;
 
   /// List of grid structure.
   @override
-  List<AtsGridItem>? get gridStructure {
-    final value = _gridStructure;
-    if (value == null) return null;
+  @JsonKey()
+  List<AtsGridItem> get gridStructure {
     if (_gridStructure is EqualUnmodifiableListView) return _gridStructure;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_gridStructure);
   }
 
   /// List of custom access permissions.
@@ -33890,6 +33923,10 @@ class _AtsMonitor implements AtsMonitor {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_access);
   }
+
+  /// User linked to monitor.
+  @override
+  final User? owner;
 
   /// Create a copy of AtsMonitor
   /// with the given fields replaced by the non-null parameter values.
@@ -33922,7 +33959,8 @@ class _AtsMonitor implements AtsMonitor {
                 .equals(other._assetsIds, _assetsIds) &&
             const DeepCollectionEquality()
                 .equals(other._gridStructure, _gridStructure) &&
-            const DeepCollectionEquality().equals(other._access, _access));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            (identical(other.owner, owner) || other.owner == owner));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -33937,11 +33975,12 @@ class _AtsMonitor implements AtsMonitor {
       const DeepCollectionEquality().hash(_assets),
       const DeepCollectionEquality().hash(_assetsIds),
       const DeepCollectionEquality().hash(_gridStructure),
-      const DeepCollectionEquality().hash(_access));
+      const DeepCollectionEquality().hash(_access),
+      owner);
 
   @override
   String toString() {
-    return 'AtsMonitor(id: $id, name: $name, color: $color, icon: $icon, isFavorite: $isFavorite, assets: $assets, assetsIds: $assetsIds, gridStructure: $gridStructure, access: $access)';
+    return 'AtsMonitor(id: $id, name: $name, color: $color, icon: $icon, isFavorite: $isFavorite, assets: $assets, assetsIds: $assetsIds, gridStructure: $gridStructure, access: $access, owner: $owner)';
   }
 }
 
@@ -33955,14 +33994,18 @@ abstract mixin class _$AtsMonitorCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String? name,
+      String name,
       @ColorOrNullConverter() Color? color,
       @IconOrNullConverter() LayrzIcon? icon,
       bool isFavorite,
       List<Asset> assets,
       List<String> assetsIds,
-      List<AtsGridItem>? gridStructure,
-      List<Access> access});
+      List<AtsGridItem> gridStructure,
+      List<Access> access,
+      User? owner});
+
+  @override
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -33978,24 +34021,25 @@ class __$AtsMonitorCopyWithImpl<$Res> implements _$AtsMonitorCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? name = freezed,
+    Object? name = null,
     Object? color = freezed,
     Object? icon = freezed,
     Object? isFavorite = null,
     Object? assets = null,
     Object? assetsIds = null,
-    Object? gridStructure = freezed,
+    Object? gridStructure = null,
     Object? access = null,
+    Object? owner = freezed,
   }) {
     return _then(_AtsMonitor(
       id: null == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: freezed == name
+      name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       color: freezed == color
           ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -34016,15 +34060,33 @@ class __$AtsMonitorCopyWithImpl<$Res> implements _$AtsMonitorCopyWith<$Res> {
           ? _self._assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      gridStructure: freezed == gridStructure
+      gridStructure: null == gridStructure
           ? _self._gridStructure
           : gridStructure // ignore: cast_nullable_to_non_nullable
-              as List<AtsGridItem>?,
+              as List<AtsGridItem>,
       access: null == access
           ? _self._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>,
+      owner: freezed == owner
+          ? _self.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
+  }
+
+  /// Create a copy of AtsMonitor
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get owner {
+    if (_self.owner == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_self.owner!, (value) {
+      return _then(_self.copyWith(owner: value));
+    });
   }
 }
 

@@ -101,5 +101,5 @@ part 'src/cacl/input/equipment_measurement_input.dart';
 
 // Monitor Entity
 part 'src/monitor/monitor.dart';
-part 'src/monitor/grid_item_input.dart';
-part 'src/monitor/grid_dimension_input.dart';
+part 'src/monitor/grid_item.dart';
+part 'src/monitor/grid_dimension.dart';

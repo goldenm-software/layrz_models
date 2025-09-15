@@ -7,7 +7,7 @@ abstract class AtsMonitor with _$AtsMonitor {
     required String id,
 
     /// Name assigned to the monitor.
-    String? name,
+    required String name,
 
     /// Indicates the color of the monitor.
     @ColorOrNullConverter() Color? color,
@@ -25,10 +25,13 @@ abstract class AtsMonitor with _$AtsMonitor {
     @Default([]) List<String> assetsIds,
 
     /// List of grid structure.
-    List<AtsGridItem>? gridStructure,
+    @Default([]) List<AtsGridItem> gridStructure,
 
     /// List of custom access permissions.
     @Default([]) List<Access> access,
+
+    /// User linked to monitor.
+    User? owner,
   }) = _AtsMonitor;
 
   factory AtsMonitor.fromJson(Map<String, dynamic> json) => _$AtsMonitorFromJson(json);

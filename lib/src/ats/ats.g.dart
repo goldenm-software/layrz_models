@@ -1932,7 +1932,7 @@ Map<String, dynamic> _$EquipmentMeasurementInputToJson(
 
 _AtsMonitor _$AtsMonitorFromJson(Map<String, dynamic> json) => _AtsMonitor(
       id: json['id'] as String,
-      name: json['name'] as String?,
+      name: json['name'] as String,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
       isFavorite: json['isFavorite'] as bool? ?? false,
@@ -1945,12 +1945,16 @@ _AtsMonitor _$AtsMonitorFromJson(Map<String, dynamic> json) => _AtsMonitor(
               .toList() ??
           const [],
       gridStructure: (json['gridStructure'] as List<dynamic>?)
-          ?.map((e) => AtsGridItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map((e) => AtsGridItem.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       access: (json['access'] as List<dynamic>?)
               ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      owner: json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AtsMonitorToJson(_AtsMonitor instance) =>
@@ -1962,8 +1966,9 @@ Map<String, dynamic> _$AtsMonitorToJson(_AtsMonitor instance) =>
       'isFavorite': instance.isFavorite,
       'assets': instance.assets.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
-      'gridStructure': instance.gridStructure?.map((e) => e.toJson()).toList(),
+      'gridStructure': instance.gridStructure.map((e) => e.toJson()).toList(),
       'access': instance.access.map((e) => e.toJson()).toList(),
+      'owner': instance.owner?.toJson(),
     };
 
 _AtsMonitorInput _$AtsMonitorInputFromJson(Map<String, dynamic> json) =>

@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.31
+- Add many models to new Ats monitor entities
+
 ## 3.4.30
 - `startAt` and `endAt` are `DateTime` in `AtsExitInput`
 - Monitor entity models in Ats was implemented
