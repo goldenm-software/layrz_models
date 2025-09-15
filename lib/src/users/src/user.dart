@@ -138,6 +138,9 @@ abstract class User with _$User {
 
     /// [billingPlan] represents the billing plan.
     BillingPlan? billingPlan,
+
+    /// [isPasswordExpired] represents if the user's password is expired and need to be changed.
+    bool? isPasswordExpired,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

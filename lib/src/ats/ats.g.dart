@@ -1116,6 +1116,7 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
       sellerAssetId: json['sellerAssetId'] as String?,
       transportAssetId: json['transportAssetId'] as String?,
+      transportCompanyAssetId: json['transportCompanyAssetId'] as String?,
       purchasedAt: const TimestampOrNullConverter()
           .fromJson(json['purchasedAt'] as num?),
       createdAt:
@@ -1132,6 +1133,10 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       transportAsset: json['transportAsset'] == null
           ? null
           : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
+      transportCompanyAsset: json['transportCompanyAsset'] == null
+          ? null
+          : Asset.fromJson(
+              json['transportCompanyAsset'] as Map<String, dynamic>),
       sellerInformation: json['sellerInformation'] == null
           ? null
           : AtsCompanyInformation.fromJson(
@@ -1180,6 +1185,7 @@ Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
       'id': instance.id,
       'sellerAssetId': instance.sellerAssetId,
       'transportAssetId': instance.transportAssetId,
+      'transportCompanyAssetId': instance.transportCompanyAssetId,
       'purchasedAt':
           const TimestampOrNullConverter().toJson(instance.purchasedAt),
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
@@ -1189,6 +1195,7 @@ Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
       'ordersIds': instance.ordersIds,
       'sellerAsset': instance.sellerAsset?.toJson(),
       'transportAsset': instance.transportAsset?.toJson(),
+      'transportCompanyAsset': instance.transportCompanyAsset?.toJson(),
       'sellerInformation': instance.sellerInformation?.toJson(),
       'transportInformation': instance.transportInformation?.toJson(),
       'orderStatus': instance.orderStatus?.toJson(),

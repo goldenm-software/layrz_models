@@ -2405,6 +2405,9 @@ mixin _$User {
   /// [billingPlan] represents the billing plan.
   BillingPlan? get billingPlan;
 
+  /// [isPasswordExpired] represents if the user's password is expired and need to be changed.
+  bool? get isPasswordExpired;
+
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2481,8 +2484,7 @@ mixin _$User {
                 other.suspendedAt == suspendedAt) &&
             const DeepCollectionEquality()
                 .equals(other.hwModelsAnimationsIds, hwModelsAnimationsIds) &&
-            (identical(
-                    other.brickhousePermissionTier, brickhousePermissionTier) ||
+            (identical(other.brickhousePermissionTier, brickhousePermissionTier) ||
                 other.brickhousePermissionTier == brickhousePermissionTier) &&
             (identical(other.brickhousePermissionTierId, brickhousePermissionTierId) ||
                 other.brickhousePermissionTierId ==
@@ -2497,7 +2499,9 @@ mixin _$User {
             (identical(other.hasPaymentWarning, hasPaymentWarning) ||
                 other.hasPaymentWarning == hasPaymentWarning) &&
             (identical(other.billingPlan, billingPlan) ||
-                other.billingPlan == billingPlan));
+                other.billingPlan == billingPlan) &&
+            (identical(other.isPasswordExpired, isPasswordExpired) ||
+                other.isPasswordExpired == isPasswordExpired));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2546,12 +2550,13 @@ mixin _$User {
         isLocked,
         isSuspended,
         hasPaymentWarning,
-        billingPlan
+        billingPlan,
+        isPasswordExpired
       ]);
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan, isPasswordExpired: $isPasswordExpired)';
   }
 }
 
@@ -2604,7 +2609,8 @@ abstract mixin class $UserCopyWith<$Res> {
       bool isLocked,
       bool isSuspended,
       bool hasPaymentWarning,
-      BillingPlan? billingPlan});
+      BillingPlan? billingPlan,
+      bool? isPasswordExpired});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -2669,6 +2675,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? isSuspended = null,
     Object? hasPaymentWarning = null,
     Object? billingPlan = freezed,
+    Object? isPasswordExpired = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -2843,6 +2850,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _self.billingPlan
           : billingPlan // ignore: cast_nullable_to_non_nullable
               as BillingPlan?,
+      isPasswordExpired: freezed == isPasswordExpired
+          ? _self.isPasswordExpired
+          : isPasswordExpired // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 
@@ -3070,7 +3081,8 @@ extension UserPatterns on User {
             bool isLocked,
             bool isSuspended,
             bool hasPaymentWarning,
-            BillingPlan? billingPlan)?
+            BillingPlan? billingPlan,
+            bool? isPasswordExpired)?
         $default, {
     required TResult orElse(),
   }) {
@@ -3120,7 +3132,8 @@ extension UserPatterns on User {
             _that.isLocked,
             _that.isSuspended,
             _that.hasPaymentWarning,
-            _that.billingPlan);
+            _that.billingPlan,
+            _that.isPasswordExpired);
       case _:
         return orElse();
     }
@@ -3185,7 +3198,8 @@ extension UserPatterns on User {
             bool isLocked,
             bool isSuspended,
             bool hasPaymentWarning,
-            BillingPlan? billingPlan)
+            BillingPlan? billingPlan,
+            bool? isPasswordExpired)
         $default,
   ) {
     final _that = this;
@@ -3234,7 +3248,8 @@ extension UserPatterns on User {
             _that.isLocked,
             _that.isSuspended,
             _that.hasPaymentWarning,
-            _that.billingPlan);
+            _that.billingPlan,
+            _that.isPasswordExpired);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -3298,7 +3313,8 @@ extension UserPatterns on User {
             bool isLocked,
             bool isSuspended,
             bool hasPaymentWarning,
-            BillingPlan? billingPlan)?
+            BillingPlan? billingPlan,
+            bool? isPasswordExpired)?
         $default,
   ) {
     final _that = this;
@@ -3347,7 +3363,8 @@ extension UserPatterns on User {
             _that.isLocked,
             _that.isSuspended,
             _that.hasPaymentWarning,
-            _that.billingPlan);
+            _that.billingPlan,
+            _that.isPasswordExpired);
       case _:
         return null;
     }
@@ -3401,7 +3418,8 @@ class _User extends User {
       this.isLocked = false,
       this.isSuspended = false,
       this.hasPaymentWarning = false,
-      this.billingPlan})
+      this.billingPlan,
+      this.isPasswordExpired})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -3721,6 +3739,10 @@ class _User extends User {
   @override
   final BillingPlan? billingPlan;
 
+  /// [isPasswordExpired] represents if the user's password is expired and need to be changed.
+  @override
+  final bool? isPasswordExpired;
+
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -3802,8 +3824,7 @@ class _User extends User {
                 other.suspendedAt == suspendedAt) &&
             const DeepCollectionEquality()
                 .equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds) &&
-            (identical(
-                    other.brickhousePermissionTier, brickhousePermissionTier) ||
+            (identical(other.brickhousePermissionTier, brickhousePermissionTier) ||
                 other.brickhousePermissionTier == brickhousePermissionTier) &&
             (identical(other.brickhousePermissionTierId, brickhousePermissionTierId) ||
                 other.brickhousePermissionTierId ==
@@ -3818,7 +3839,9 @@ class _User extends User {
             (identical(other.hasPaymentWarning, hasPaymentWarning) ||
                 other.hasPaymentWarning == hasPaymentWarning) &&
             (identical(other.billingPlan, billingPlan) ||
-                other.billingPlan == billingPlan));
+                other.billingPlan == billingPlan) &&
+            (identical(other.isPasswordExpired, isPasswordExpired) ||
+                other.isPasswordExpired == isPasswordExpired));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3867,12 +3890,13 @@ class _User extends User {
         isLocked,
         isSuspended,
         hasPaymentWarning,
-        billingPlan
+        billingPlan,
+        isPasswordExpired
       ]);
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan, isPasswordExpired: $isPasswordExpired)';
   }
 }
 
@@ -3926,7 +3950,8 @@ abstract mixin class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       bool isLocked,
       bool isSuspended,
       bool hasPaymentWarning,
-      BillingPlan? billingPlan});
+      BillingPlan? billingPlan,
+      bool? isPasswordExpired});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -3997,6 +4022,7 @@ class __$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
     Object? isSuspended = null,
     Object? hasPaymentWarning = null,
     Object? billingPlan = freezed,
+    Object? isPasswordExpired = freezed,
   }) {
     return _then(_User(
       id: null == id
@@ -4171,6 +4197,10 @@ class __$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
           ? _self.billingPlan
           : billingPlan // ignore: cast_nullable_to_non_nullable
               as BillingPlan?,
+      isPasswordExpired: freezed == isPasswordExpired
+          ? _self.isPasswordExpired
+          : isPasswordExpired // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 

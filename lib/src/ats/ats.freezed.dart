@@ -19793,6 +19793,9 @@ mixin _$AtsOperation {
   /// `transportAssetId` is the ID of the transport asset.
   String? get transportAssetId;
 
+  /// `transportCompanyAssetId` is the ID of the transport company asset.
+  String? get transportCompanyAssetId;
+
   /// `purchasedAt` is the Unix timestamp of the last reception date.
   @TimestampOrNullConverter()
   DateTime? get purchasedAt;
@@ -19816,6 +19819,9 @@ mixin _$AtsOperation {
 
   /// `transportAsset` is the transport Asset linked to the purchase order.
   Asset? get transportAsset;
+
+  /// `transportCompanyAsset` is the transport company Asset linked to the purchase order.
+  Asset? get transportCompanyAsset;
 
   /// `sellerInformation` is the legal information about the seller.
   AtsCompanyInformation? get sellerInformation;
@@ -19883,6 +19889,9 @@ mixin _$AtsOperation {
                 other.sellerAssetId == sellerAssetId) &&
             (identical(other.transportAssetId, transportAssetId) ||
                 other.transportAssetId == transportAssetId) &&
+            (identical(
+                    other.transportCompanyAssetId, transportCompanyAssetId) ||
+                other.transportCompanyAssetId == transportCompanyAssetId) &&
             (identical(other.purchasedAt, purchasedAt) ||
                 other.purchasedAt == purchasedAt) &&
             (identical(other.createdAt, createdAt) ||
@@ -19896,6 +19905,8 @@ mixin _$AtsOperation {
                 other.sellerAsset == sellerAsset) &&
             (identical(other.transportAsset, transportAsset) ||
                 other.transportAsset == transportAsset) &&
+            (identical(other.transportCompanyAsset, transportCompanyAsset) ||
+                other.transportCompanyAsset == transportCompanyAsset) &&
             (identical(other.sellerInformation, sellerInformation) ||
                 other.sellerInformation == sellerInformation) &&
             (identical(other.transportInformation, transportInformation) ||
@@ -19928,6 +19939,7 @@ mixin _$AtsOperation {
         id,
         sellerAssetId,
         transportAssetId,
+        transportCompanyAssetId,
         purchasedAt,
         createdAt,
         finishedAt,
@@ -19935,6 +19947,7 @@ mixin _$AtsOperation {
         const DeepCollectionEquality().hash(ordersIds),
         sellerAsset,
         transportAsset,
+        transportCompanyAsset,
         sellerInformation,
         transportInformation,
         orderStatus,
@@ -19953,7 +19966,7 @@ mixin _$AtsOperation {
 
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
   }
 }
 
@@ -19967,6 +19980,7 @@ abstract mixin class $AtsOperationCopyWith<$Res> {
       {String? id,
       String? sellerAssetId,
       String? transportAssetId,
+      String? transportCompanyAssetId,
       @TimestampOrNullConverter() DateTime? purchasedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
@@ -19974,6 +19988,7 @@ abstract mixin class $AtsOperationCopyWith<$Res> {
       List<String>? ordersIds,
       Asset? sellerAsset,
       Asset? transportAsset,
+      Asset? transportCompanyAsset,
       AtsCompanyInformation? sellerInformation,
       AtsTransportInformation? transportInformation,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -19994,6 +20009,7 @@ abstract mixin class $AtsOperationCopyWith<$Res> {
 
   $AssetCopyWith<$Res>? get sellerAsset;
   $AssetCopyWith<$Res>? get transportAsset;
+  $AssetCopyWith<$Res>? get transportCompanyAsset;
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
   $AtsTransportInformationCopyWith<$Res>? get transportInformation;
 }
@@ -20013,6 +20029,7 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
     Object? id = freezed,
     Object? sellerAssetId = freezed,
     Object? transportAssetId = freezed,
+    Object? transportCompanyAssetId = freezed,
     Object? purchasedAt = freezed,
     Object? createdAt = freezed,
     Object? finishedAt = freezed,
@@ -20020,6 +20037,7 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
     Object? ordersIds = freezed,
     Object? sellerAsset = freezed,
     Object? transportAsset = freezed,
+    Object? transportCompanyAsset = freezed,
     Object? sellerInformation = freezed,
     Object? transportInformation = freezed,
     Object? orderStatus = freezed,
@@ -20048,6 +20066,10 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
           ? _self.transportAssetId
           : transportAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      transportCompanyAssetId: freezed == transportCompanyAssetId
+          ? _self.transportCompanyAssetId
+          : transportCompanyAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
       purchasedAt: freezed == purchasedAt
           ? _self.purchasedAt
           : purchasedAt // ignore: cast_nullable_to_non_nullable
@@ -20075,6 +20097,10 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
       transportAsset: freezed == transportAsset
           ? _self.transportAsset
           : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportCompanyAsset: freezed == transportCompanyAsset
+          ? _self.transportCompanyAsset
+          : transportCompanyAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       sellerInformation: freezed == sellerInformation
           ? _self.sellerInformation
@@ -20160,6 +20186,20 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
 
     return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
       return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportCompanyAsset {
+    if (_self.transportCompanyAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportCompanyAsset!, (value) {
+      return _then(_self.copyWith(transportCompanyAsset: value));
     });
   }
 
@@ -20291,6 +20331,7 @@ extension AtsOperationPatterns on AtsOperation {
             String? id,
             String? sellerAssetId,
             String? transportAssetId,
+            String? transportCompanyAssetId,
             @TimestampOrNullConverter() DateTime? purchasedAt,
             @TimestampOrNullConverter() DateTime? createdAt,
             @TimestampOrNullConverter() DateTime? finishedAt,
@@ -20298,6 +20339,7 @@ extension AtsOperationPatterns on AtsOperation {
             List<String>? ordersIds,
             Asset? sellerAsset,
             Asset? transportAsset,
+            Asset? transportCompanyAsset,
             AtsCompanyInformation? sellerInformation,
             AtsTransportInformation? transportInformation,
             @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -20326,6 +20368,7 @@ extension AtsOperationPatterns on AtsOperation {
             _that.id,
             _that.sellerAssetId,
             _that.transportAssetId,
+            _that.transportCompanyAssetId,
             _that.purchasedAt,
             _that.createdAt,
             _that.finishedAt,
@@ -20333,6 +20376,7 @@ extension AtsOperationPatterns on AtsOperation {
             _that.ordersIds,
             _that.sellerAsset,
             _that.transportAsset,
+            _that.transportCompanyAsset,
             _that.sellerInformation,
             _that.transportInformation,
             _that.orderStatus,
@@ -20371,6 +20415,7 @@ extension AtsOperationPatterns on AtsOperation {
             String? id,
             String? sellerAssetId,
             String? transportAssetId,
+            String? transportCompanyAssetId,
             @TimestampOrNullConverter() DateTime? purchasedAt,
             @TimestampOrNullConverter() DateTime? createdAt,
             @TimestampOrNullConverter() DateTime? finishedAt,
@@ -20378,6 +20423,7 @@ extension AtsOperationPatterns on AtsOperation {
             List<String>? ordersIds,
             Asset? sellerAsset,
             Asset? transportAsset,
+            Asset? transportCompanyAsset,
             AtsCompanyInformation? sellerInformation,
             AtsTransportInformation? transportInformation,
             @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -20405,6 +20451,7 @@ extension AtsOperationPatterns on AtsOperation {
             _that.id,
             _that.sellerAssetId,
             _that.transportAssetId,
+            _that.transportCompanyAssetId,
             _that.purchasedAt,
             _that.createdAt,
             _that.finishedAt,
@@ -20412,6 +20459,7 @@ extension AtsOperationPatterns on AtsOperation {
             _that.ordersIds,
             _that.sellerAsset,
             _that.transportAsset,
+            _that.transportCompanyAsset,
             _that.sellerInformation,
             _that.transportInformation,
             _that.orderStatus,
@@ -20449,6 +20497,7 @@ extension AtsOperationPatterns on AtsOperation {
             String? id,
             String? sellerAssetId,
             String? transportAssetId,
+            String? transportCompanyAssetId,
             @TimestampOrNullConverter() DateTime? purchasedAt,
             @TimestampOrNullConverter() DateTime? createdAt,
             @TimestampOrNullConverter() DateTime? finishedAt,
@@ -20456,6 +20505,7 @@ extension AtsOperationPatterns on AtsOperation {
             List<String>? ordersIds,
             Asset? sellerAsset,
             Asset? transportAsset,
+            Asset? transportCompanyAsset,
             AtsCompanyInformation? sellerInformation,
             AtsTransportInformation? transportInformation,
             @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -20483,6 +20533,7 @@ extension AtsOperationPatterns on AtsOperation {
             _that.id,
             _that.sellerAssetId,
             _that.transportAssetId,
+            _that.transportCompanyAssetId,
             _that.purchasedAt,
             _that.createdAt,
             _that.finishedAt,
@@ -20490,6 +20541,7 @@ extension AtsOperationPatterns on AtsOperation {
             _that.ordersIds,
             _that.sellerAsset,
             _that.transportAsset,
+            _that.transportCompanyAsset,
             _that.sellerInformation,
             _that.transportInformation,
             _that.orderStatus,
@@ -20517,6 +20569,7 @@ class _AtsOperation implements AtsOperation {
       {this.id,
       this.sellerAssetId,
       this.transportAssetId,
+      this.transportCompanyAssetId,
       @TimestampOrNullConverter() this.purchasedAt,
       @TimestampOrNullConverter() this.createdAt,
       @TimestampOrNullConverter() this.finishedAt,
@@ -20524,6 +20577,7 @@ class _AtsOperation implements AtsOperation {
       final List<String>? ordersIds,
       this.sellerAsset,
       this.transportAsset,
+      this.transportCompanyAsset,
       this.sellerInformation,
       this.transportInformation,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -20565,6 +20619,10 @@ class _AtsOperation implements AtsOperation {
   @override
   final String? transportAssetId;
 
+  /// `transportCompanyAssetId` is the ID of the transport company asset.
+  @override
+  final String? transportCompanyAssetId;
+
   /// `purchasedAt` is the Unix timestamp of the last reception date.
   @override
   @TimestampOrNullConverter()
@@ -20604,6 +20662,10 @@ class _AtsOperation implements AtsOperation {
   /// `transportAsset` is the transport Asset linked to the purchase order.
   @override
   final Asset? transportAsset;
+
+  /// `transportCompanyAsset` is the transport company Asset linked to the purchase order.
+  @override
+  final Asset? transportCompanyAsset;
 
   /// `sellerInformation` is the legal information about the seller.
   @override
@@ -20762,6 +20824,9 @@ class _AtsOperation implements AtsOperation {
                 other.sellerAssetId == sellerAssetId) &&
             (identical(other.transportAssetId, transportAssetId) ||
                 other.transportAssetId == transportAssetId) &&
+            (identical(
+                    other.transportCompanyAssetId, transportCompanyAssetId) ||
+                other.transportCompanyAssetId == transportCompanyAssetId) &&
             (identical(other.purchasedAt, purchasedAt) ||
                 other.purchasedAt == purchasedAt) &&
             (identical(other.createdAt, createdAt) ||
@@ -20776,6 +20841,8 @@ class _AtsOperation implements AtsOperation {
                 other.sellerAsset == sellerAsset) &&
             (identical(other.transportAsset, transportAsset) ||
                 other.transportAsset == transportAsset) &&
+            (identical(other.transportCompanyAsset, transportCompanyAsset) ||
+                other.transportCompanyAsset == transportCompanyAsset) &&
             (identical(other.sellerInformation, sellerInformation) ||
                 other.sellerInformation == sellerInformation) &&
             (identical(other.transportInformation, transportInformation) ||
@@ -20810,6 +20877,7 @@ class _AtsOperation implements AtsOperation {
         id,
         sellerAssetId,
         transportAssetId,
+        transportCompanyAssetId,
         purchasedAt,
         createdAt,
         finishedAt,
@@ -20817,6 +20885,7 @@ class _AtsOperation implements AtsOperation {
         const DeepCollectionEquality().hash(_ordersIds),
         sellerAsset,
         transportAsset,
+        transportCompanyAsset,
         sellerInformation,
         transportInformation,
         orderStatus,
@@ -20835,7 +20904,7 @@ class _AtsOperation implements AtsOperation {
 
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history)';
   }
 }
 
@@ -20851,6 +20920,7 @@ abstract mixin class _$AtsOperationCopyWith<$Res>
       {String? id,
       String? sellerAssetId,
       String? transportAssetId,
+      String? transportCompanyAssetId,
       @TimestampOrNullConverter() DateTime? purchasedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? finishedAt,
@@ -20858,6 +20928,7 @@ abstract mixin class _$AtsOperationCopyWith<$Res>
       List<String>? ordersIds,
       Asset? sellerAsset,
       Asset? transportAsset,
+      Asset? transportCompanyAsset,
       AtsCompanyInformation? sellerInformation,
       AtsTransportInformation? transportInformation,
       @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)
@@ -20881,6 +20952,8 @@ abstract mixin class _$AtsOperationCopyWith<$Res>
   @override
   $AssetCopyWith<$Res>? get transportAsset;
   @override
+  $AssetCopyWith<$Res>? get transportCompanyAsset;
+  @override
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
   @override
   $AtsTransportInformationCopyWith<$Res>? get transportInformation;
@@ -20902,6 +20975,7 @@ class __$AtsOperationCopyWithImpl<$Res>
     Object? id = freezed,
     Object? sellerAssetId = freezed,
     Object? transportAssetId = freezed,
+    Object? transportCompanyAssetId = freezed,
     Object? purchasedAt = freezed,
     Object? createdAt = freezed,
     Object? finishedAt = freezed,
@@ -20909,6 +20983,7 @@ class __$AtsOperationCopyWithImpl<$Res>
     Object? ordersIds = freezed,
     Object? sellerAsset = freezed,
     Object? transportAsset = freezed,
+    Object? transportCompanyAsset = freezed,
     Object? sellerInformation = freezed,
     Object? transportInformation = freezed,
     Object? orderStatus = freezed,
@@ -20937,6 +21012,10 @@ class __$AtsOperationCopyWithImpl<$Res>
           ? _self.transportAssetId
           : transportAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      transportCompanyAssetId: freezed == transportCompanyAssetId
+          ? _self.transportCompanyAssetId
+          : transportCompanyAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
       purchasedAt: freezed == purchasedAt
           ? _self.purchasedAt
           : purchasedAt // ignore: cast_nullable_to_non_nullable
@@ -20964,6 +21043,10 @@ class __$AtsOperationCopyWithImpl<$Res>
       transportAsset: freezed == transportAsset
           ? _self.transportAsset
           : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportCompanyAsset: freezed == transportCompanyAsset
+          ? _self.transportCompanyAsset
+          : transportCompanyAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
       sellerInformation: freezed == sellerInformation
           ? _self.sellerInformation
@@ -21049,6 +21132,20 @@ class __$AtsOperationCopyWithImpl<$Res>
 
     return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
       return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of AtsOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportCompanyAsset {
+    if (_self.transportCompanyAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportCompanyAsset!, (value) {
+      return _then(_self.copyWith(transportCompanyAsset: value));
     });
   }
 
