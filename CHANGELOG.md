@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.36
+- Run `build_runner` to add in `AccessModule.atsMonitos`
+
 ## 3.4.35
 - Add in `AccessModule` `ATS_MONITORS`
 

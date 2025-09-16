@@ -66,6 +66,7 @@ const _$AccessModuleEnumMap = {
   AccessModule.tagonBusRoutes: 'TAGON_BUS_ROUTES',
   AccessModule.exchangeServices: 'EXCHANGE_SERVICES',
   AccessModule.reportSchedulers: 'REPORT_SCHEDULERS',
+  AccessModule.atsMonitors: 'ATS_MONITORS',
   AccessModule.unknown: 'UNKNOWN',
 };
 
