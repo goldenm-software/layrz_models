@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.35
+- Add in `AccessModule` `ATS_MONITORS`
+
 ## 3.4.34
 - Add many models to new Ats monitor entities
 
