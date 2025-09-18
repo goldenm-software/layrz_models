@@ -2034,6 +2034,9 @@ const _$MonitorCardTypeEnumMap = {
   MonitorCardType.entries: 'ENTRIES',
   MonitorCardType.exits: 'EXITS',
   MonitorCardType.convoyLoads: 'CONVOY_LOADS',
+  MonitorCardType.operations: 'OPERATIONS',
+  MonitorCardType.exitExecutions: 'EXIT_EXECUTIONS',
+  MonitorCardType.recalculations: 'RECALCULATIONS',
   MonitorCardType.unknown: 'UNKNOWN',
 };
 

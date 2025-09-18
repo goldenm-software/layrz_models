@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.37
+- Add new entities in `MonitorCardType`
+
 ## 3.4.36
 - Run `build_runner` to add in `AccessModule.atsMonitos`
 
