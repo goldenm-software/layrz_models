@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.38
+
+- Updated `WorkspaceTripPoint` model to include `eventId` and `sensors` properties.
+
 ## 3.4.37
 - Add new entities in `MonitorCardType`
 

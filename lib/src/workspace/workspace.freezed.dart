@@ -3047,6 +3047,8 @@ mixin _$WorkspaceTripPoint {
   String? get triggerId;
   @TimestampConverter()
   DateTime get receivedAt;
+  String? get eventId;
+  Map<String, dynamic>? get sensors;
 
   /// Create a copy of WorkspaceTripPoint
   /// with the given fields replaced by the non-null parameter values.
@@ -3074,17 +3076,27 @@ mixin _$WorkspaceTripPoint {
             (identical(other.triggerId, triggerId) ||
                 other.triggerId == triggerId) &&
             (identical(other.receivedAt, receivedAt) ||
-                other.receivedAt == receivedAt));
+                other.receivedAt == receivedAt) &&
+            (identical(other.eventId, eventId) || other.eventId == eventId) &&
+            const DeepCollectionEquality().equals(other.sensors, sensors));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude, speed,
-      triggerName, triggerId, receivedAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      latitude,
+      longitude,
+      speed,
+      triggerName,
+      triggerId,
+      receivedAt,
+      eventId,
+      const DeepCollectionEquality().hash(sensors));
 
   @override
   String toString() {
-    return 'WorkspaceTripPoint(latitude: $latitude, longitude: $longitude, speed: $speed, triggerName: $triggerName, triggerId: $triggerId, receivedAt: $receivedAt)';
+    return 'WorkspaceTripPoint(latitude: $latitude, longitude: $longitude, speed: $speed, triggerName: $triggerName, triggerId: $triggerId, receivedAt: $receivedAt, eventId: $eventId, sensors: $sensors)';
   }
 }
 
@@ -3100,7 +3112,9 @@ abstract mixin class $WorkspaceTripPointCopyWith<$Res> {
       double? speed,
       String? triggerName,
       String? triggerId,
-      @TimestampConverter() DateTime receivedAt});
+      @TimestampConverter() DateTime receivedAt,
+      String? eventId,
+      Map<String, dynamic>? sensors});
 }
 
 /// @nodoc
@@ -3122,6 +3136,8 @@ class _$WorkspaceTripPointCopyWithImpl<$Res>
     Object? triggerName = freezed,
     Object? triggerId = freezed,
     Object? receivedAt = null,
+    Object? eventId = freezed,
+    Object? sensors = freezed,
   }) {
     return _then(_self.copyWith(
       latitude: freezed == latitude
@@ -3148,6 +3164,14 @@ class _$WorkspaceTripPointCopyWithImpl<$Res>
           ? _self.receivedAt
           : receivedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      eventId: freezed == eventId
+          ? _self.eventId
+          : eventId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sensors: freezed == sensors
+          ? _self.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -3251,15 +3275,24 @@ extension WorkspaceTripPointPatterns on WorkspaceTripPoint {
             double? speed,
             String? triggerName,
             String? triggerId,
-            @TimestampConverter() DateTime receivedAt)?
+            @TimestampConverter() DateTime receivedAt,
+            String? eventId,
+            Map<String, dynamic>? sensors)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _WorkspaceTripPoint() when $default != null:
-        return $default(_that.latitude, _that.longitude, _that.speed,
-            _that.triggerName, _that.triggerId, _that.receivedAt);
+        return $default(
+            _that.latitude,
+            _that.longitude,
+            _that.speed,
+            _that.triggerName,
+            _that.triggerId,
+            _that.receivedAt,
+            _that.eventId,
+            _that.sensors);
       case _:
         return orElse();
     }
@@ -3286,14 +3319,23 @@ extension WorkspaceTripPointPatterns on WorkspaceTripPoint {
             double? speed,
             String? triggerName,
             String? triggerId,
-            @TimestampConverter() DateTime receivedAt)
+            @TimestampConverter() DateTime receivedAt,
+            String? eventId,
+            Map<String, dynamic>? sensors)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WorkspaceTripPoint():
-        return $default(_that.latitude, _that.longitude, _that.speed,
-            _that.triggerName, _that.triggerId, _that.receivedAt);
+        return $default(
+            _that.latitude,
+            _that.longitude,
+            _that.speed,
+            _that.triggerName,
+            _that.triggerId,
+            _that.receivedAt,
+            _that.eventId,
+            _that.sensors);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -3319,14 +3361,23 @@ extension WorkspaceTripPointPatterns on WorkspaceTripPoint {
             double? speed,
             String? triggerName,
             String? triggerId,
-            @TimestampConverter() DateTime receivedAt)?
+            @TimestampConverter() DateTime receivedAt,
+            String? eventId,
+            Map<String, dynamic>? sensors)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WorkspaceTripPoint() when $default != null:
-        return $default(_that.latitude, _that.longitude, _that.speed,
-            _that.triggerName, _that.triggerId, _that.receivedAt);
+        return $default(
+            _that.latitude,
+            _that.longitude,
+            _that.speed,
+            _that.triggerName,
+            _that.triggerId,
+            _that.receivedAt,
+            _that.eventId,
+            _that.sensors);
       case _:
         return null;
     }
@@ -3342,7 +3393,10 @@ class _WorkspaceTripPoint implements WorkspaceTripPoint {
       this.speed,
       this.triggerName,
       this.triggerId,
-      @TimestampConverter() required this.receivedAt});
+      @TimestampConverter() required this.receivedAt,
+      this.eventId,
+      final Map<String, dynamic>? sensors})
+      : _sensors = sensors;
   factory _WorkspaceTripPoint.fromJson(Map<String, dynamic> json) =>
       _$WorkspaceTripPointFromJson(json);
 
@@ -3359,6 +3413,17 @@ class _WorkspaceTripPoint implements WorkspaceTripPoint {
   @override
   @TimestampConverter()
   final DateTime receivedAt;
+  @override
+  final String? eventId;
+  final Map<String, dynamic>? _sensors;
+  @override
+  Map<String, dynamic>? get sensors {
+    final value = _sensors;
+    if (value == null) return null;
+    if (_sensors is EqualUnmodifiableMapView) return _sensors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Create a copy of WorkspaceTripPoint
   /// with the given fields replaced by the non-null parameter values.
@@ -3390,17 +3455,27 @@ class _WorkspaceTripPoint implements WorkspaceTripPoint {
             (identical(other.triggerId, triggerId) ||
                 other.triggerId == triggerId) &&
             (identical(other.receivedAt, receivedAt) ||
-                other.receivedAt == receivedAt));
+                other.receivedAt == receivedAt) &&
+            (identical(other.eventId, eventId) || other.eventId == eventId) &&
+            const DeepCollectionEquality().equals(other._sensors, _sensors));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude, speed,
-      triggerName, triggerId, receivedAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      latitude,
+      longitude,
+      speed,
+      triggerName,
+      triggerId,
+      receivedAt,
+      eventId,
+      const DeepCollectionEquality().hash(_sensors));
 
   @override
   String toString() {
-    return 'WorkspaceTripPoint(latitude: $latitude, longitude: $longitude, speed: $speed, triggerName: $triggerName, triggerId: $triggerId, receivedAt: $receivedAt)';
+    return 'WorkspaceTripPoint(latitude: $latitude, longitude: $longitude, speed: $speed, triggerName: $triggerName, triggerId: $triggerId, receivedAt: $receivedAt, eventId: $eventId, sensors: $sensors)';
   }
 }
 
@@ -3418,7 +3493,9 @@ abstract mixin class _$WorkspaceTripPointCopyWith<$Res>
       double? speed,
       String? triggerName,
       String? triggerId,
-      @TimestampConverter() DateTime receivedAt});
+      @TimestampConverter() DateTime receivedAt,
+      String? eventId,
+      Map<String, dynamic>? sensors});
 }
 
 /// @nodoc
@@ -3440,6 +3517,8 @@ class __$WorkspaceTripPointCopyWithImpl<$Res>
     Object? triggerName = freezed,
     Object? triggerId = freezed,
     Object? receivedAt = null,
+    Object? eventId = freezed,
+    Object? sensors = freezed,
   }) {
     return _then(_WorkspaceTripPoint(
       latitude: freezed == latitude
@@ -3466,6 +3545,14 @@ class __$WorkspaceTripPointCopyWithImpl<$Res>
           ? _self.receivedAt
           : receivedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      eventId: freezed == eventId
+          ? _self.eventId
+          : eventId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sensors: freezed == sensors
+          ? _self._sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }

@@ -339,6 +339,8 @@ _WorkspaceTripPoint _$WorkspaceTripPointFromJson(Map<String, dynamic> json) =>
       triggerId: json['triggerId'] as String?,
       receivedAt:
           const TimestampConverter().fromJson(json['receivedAt'] as num),
+      eventId: json['eventId'] as String?,
+      sensors: json['sensors'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$WorkspaceTripPointToJson(_WorkspaceTripPoint instance) =>
@@ -349,6 +351,8 @@ Map<String, dynamic> _$WorkspaceTripPointToJson(_WorkspaceTripPoint instance) =>
       'triggerName': instance.triggerName,
       'triggerId': instance.triggerId,
       'receivedAt': const TimestampConverter().toJson(instance.receivedAt),
+      'eventId': instance.eventId,
+      'sensors': instance.sensors,
     };
 
 _WorkspaceTrip _$WorkspaceTripFromJson(Map<String, dynamic> json) =>
