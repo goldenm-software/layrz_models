@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.40
+- Add in `AtsMonitor` and `AtsMonitorInput` new props to support charts
+
 ## 3.4.39
 
 - Added `hasCaseExpirity` and `whenCaseExpiresDelta` to `Trigger` and `TriggerInput` model

@@ -27,11 +27,20 @@ abstract class AtsMonitor with _$AtsMonitor {
     /// List of grid structure.
     @Default([]) List<AtsGridItem> gridStructure,
 
+    /// List of charts assigned to the workspace.
+    @Default([]) List<LayrzChart> charts,
+
+    /// List of charts assigned to the workspace.
+    @Default([]) List<String> chartsIds,
+
     /// List of custom access permissions.
     @Default([]) List<Access> access,
 
     /// User linked to monitor.
     User? owner,
+
+    /// List of grid structure.
+    List<AnalyticsGridItem>? analyticsGridStructure,
   }) = _AtsMonitor;
 
   factory AtsMonitor.fromJson(Map<String, dynamic> json) => _$AtsMonitorFromJson(json);
@@ -45,6 +54,9 @@ abstract class AtsMonitorInput with _$AtsMonitorInput {
 
     /// Name assigned to the monitor.
     String? name,
+
+    /// App ID linked to the monitor.
+    String? appId,
 
     /// Icon of the monitor.
     @IconOrNullConverter() LayrzIcon? icon,
@@ -60,6 +72,11 @@ abstract class AtsMonitorInput with _$AtsMonitorInput {
 
     /// List of grid structure.
     @Default([]) List<AtsGridItemInput> gridStructure,
+
+    /// List of charts assigned to the monitor for ATS Web.
+    @Default([]) List<String> chartsIds,
+
+    /// List of grid structure for Ats Web.
   }) = _AtsMonitorInput;
 
   factory AtsMonitorInput.fromJson(Map<String, dynamic> json) => _$AtsMonitorInputFromJson(json);
