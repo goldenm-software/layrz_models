@@ -166,6 +166,12 @@ abstract class TriggerInput with _$TriggerInput {
 
     /// Cooldown time of the trigger.
     @DurationConverter() @Default(Duration(minutes: 1)) Duration cooldownTime,
+
+    /// [hasCaseExpirity] indicates if the trigger has case expiry.
+    @Default(false) bool hasCaseExpirity,
+
+    /// [whenCaseExpiresDelta] represents the duration after which the case expires.
+    @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
   }) = _TriggerInput;
 
   factory TriggerInput.fromJson(Map<String, dynamic> json) => _$TriggerInputFromJson(json);

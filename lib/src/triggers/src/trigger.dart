@@ -121,6 +121,12 @@ abstract class Trigger with _$Trigger {
 
     /// [access] represents the list of accesses to the trigger.
     List<Access>? access,
+
+    /// [hasCaseExpirity] indicates if the trigger has case expiry.
+    bool? hasCaseExpirity,
+
+    /// [whenCaseExpiresDelta] represents the duration after which the case expires.
+    @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
   }) = _Trigger;
 
   factory Trigger.fromJson(Map<String, dynamic> json) => _$TriggerFromJson(json);

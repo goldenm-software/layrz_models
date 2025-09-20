@@ -140,6 +140,13 @@ mixin _$Trigger {
   /// [access] represents the list of accesses to the trigger.
   List<Access>? get access;
 
+  /// [hasCaseExpirity] indicates if the trigger has case expiry.
+  bool? get hasCaseExpirity;
+
+  /// [whenCaseExpiresDelta] represents the duration after which the case expires.
+  @DurationOrNullConverter()
+  Duration? get whenCaseExpiresDelta;
+
   /// Create a copy of Trigger
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -212,7 +219,11 @@ mixin _$Trigger {
                 .equals(other.childrenIds, childrenIds) &&
             (identical(other.searchTimeDelta, searchTimeDelta) ||
                 other.searchTimeDelta == searchTimeDelta) &&
-            const DeepCollectionEquality().equals(other.access, access));
+            const DeepCollectionEquality().equals(other.access, access) &&
+            (identical(other.hasCaseExpirity, hasCaseExpirity) ||
+                other.hasCaseExpirity == hasCaseExpirity) &&
+            (identical(other.whenCaseExpiresDelta, whenCaseExpiresDelta) ||
+                other.whenCaseExpiresDelta == whenCaseExpiresDelta));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -252,12 +263,14 @@ mixin _$Trigger {
         const DeepCollectionEquality().hash(children),
         const DeepCollectionEquality().hash(childrenIds),
         searchTimeDelta,
-        const DeepCollectionEquality().hash(access)
+        const DeepCollectionEquality().hash(access),
+        hasCaseExpirity,
+        whenCaseExpiresDelta
       ]);
 
   @override
   String toString() {
-    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access)';
+    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta)';
   }
 }
 
@@ -304,7 +317,9 @@ abstract mixin class $TriggerCopyWith<$Res> {
       List<Trigger>? children,
       List<String>? childrenIds,
       @DurationOrNullConverter() Duration? searchTimeDelta,
-      List<Access>? access});
+      List<Access>? access,
+      bool? hasCaseExpirity,
+      @DurationOrNullConverter() Duration? whenCaseExpiresDelta});
 
   $CareProtocolCopyWith<$Res>? get careProtocol;
 }
@@ -355,6 +370,8 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
     Object? childrenIds = freezed,
     Object? searchTimeDelta = freezed,
     Object? access = freezed,
+    Object? hasCaseExpirity = freezed,
+    Object? whenCaseExpiresDelta = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -493,6 +510,14 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
           ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      hasCaseExpirity: freezed == hasCaseExpirity
+          ? _self.hasCaseExpirity
+          : hasCaseExpirity // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      whenCaseExpiresDelta: freezed == whenCaseExpiresDelta
+          ? _self.whenCaseExpiresDelta
+          : whenCaseExpiresDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 
@@ -642,7 +667,9 @@ extension TriggerPatterns on Trigger {
             List<Trigger>? children,
             List<String>? childrenIds,
             @DurationOrNullConverter() Duration? searchTimeDelta,
-            List<Access>? access)?
+            List<Access>? access,
+            bool? hasCaseExpirity,
+            @DurationOrNullConverter() Duration? whenCaseExpiresDelta)?
         $default, {
     required TResult orElse(),
   }) {
@@ -683,7 +710,9 @@ extension TriggerPatterns on Trigger {
             _that.children,
             _that.childrenIds,
             _that.searchTimeDelta,
-            _that.access);
+            _that.access,
+            _that.hasCaseExpirity,
+            _that.whenCaseExpiresDelta);
       case _:
         return orElse();
     }
@@ -742,7 +771,9 @@ extension TriggerPatterns on Trigger {
             List<Trigger>? children,
             List<String>? childrenIds,
             @DurationOrNullConverter() Duration? searchTimeDelta,
-            List<Access>? access)
+            List<Access>? access,
+            bool? hasCaseExpirity,
+            @DurationOrNullConverter() Duration? whenCaseExpiresDelta)
         $default,
   ) {
     final _that = this;
@@ -782,7 +813,9 @@ extension TriggerPatterns on Trigger {
             _that.children,
             _that.childrenIds,
             _that.searchTimeDelta,
-            _that.access);
+            _that.access,
+            _that.hasCaseExpirity,
+            _that.whenCaseExpiresDelta);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -840,7 +873,9 @@ extension TriggerPatterns on Trigger {
             List<Trigger>? children,
             List<String>? childrenIds,
             @DurationOrNullConverter() Duration? searchTimeDelta,
-            List<Access>? access)?
+            List<Access>? access,
+            bool? hasCaseExpirity,
+            @DurationOrNullConverter() Duration? whenCaseExpiresDelta)?
         $default,
   ) {
     final _that = this;
@@ -880,7 +915,9 @@ extension TriggerPatterns on Trigger {
             _that.children,
             _that.childrenIds,
             _that.searchTimeDelta,
-            _that.access);
+            _that.access,
+            _that.hasCaseExpirity,
+            _that.whenCaseExpiresDelta);
       case _:
         return null;
     }
@@ -927,7 +964,9 @@ class _Trigger implements Trigger {
       final List<Trigger>? children,
       final List<String>? childrenIds,
       @DurationOrNullConverter() this.searchTimeDelta,
-      final List<Access>? access})
+      final List<Access>? access,
+      this.hasCaseExpirity,
+      @DurationOrNullConverter() this.whenCaseExpiresDelta})
       : _geofencesIds = geofencesIds,
         _tagsGeofencesIds = tagsGeofencesIds,
         _assetsIds = assetsIds,
@@ -1224,6 +1263,15 @@ class _Trigger implements Trigger {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [hasCaseExpirity] indicates if the trigger has case expiry.
+  @override
+  final bool? hasCaseExpirity;
+
+  /// [whenCaseExpiresDelta] represents the duration after which the case expires.
+  @override
+  @DurationOrNullConverter()
+  final Duration? whenCaseExpiresDelta;
+
   /// Create a copy of Trigger
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -1302,7 +1350,11 @@ class _Trigger implements Trigger {
                 .equals(other._childrenIds, _childrenIds) &&
             (identical(other.searchTimeDelta, searchTimeDelta) ||
                 other.searchTimeDelta == searchTimeDelta) &&
-            const DeepCollectionEquality().equals(other._access, _access));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            (identical(other.hasCaseExpirity, hasCaseExpirity) ||
+                other.hasCaseExpirity == hasCaseExpirity) &&
+            (identical(other.whenCaseExpiresDelta, whenCaseExpiresDelta) ||
+                other.whenCaseExpiresDelta == whenCaseExpiresDelta));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1342,12 +1394,14 @@ class _Trigger implements Trigger {
         const DeepCollectionEquality().hash(_children),
         const DeepCollectionEquality().hash(_childrenIds),
         searchTimeDelta,
-        const DeepCollectionEquality().hash(_access)
+        const DeepCollectionEquality().hash(_access),
+        hasCaseExpirity,
+        whenCaseExpiresDelta
       ]);
 
   @override
   String toString() {
-    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access)';
+    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta)';
   }
 }
 
@@ -1395,7 +1449,9 @@ abstract mixin class _$TriggerCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       List<Trigger>? children,
       List<String>? childrenIds,
       @DurationOrNullConverter() Duration? searchTimeDelta,
-      List<Access>? access});
+      List<Access>? access,
+      bool? hasCaseExpirity,
+      @DurationOrNullConverter() Duration? whenCaseExpiresDelta});
 
   @override
   $CareProtocolCopyWith<$Res>? get careProtocol;
@@ -1447,6 +1503,8 @@ class __$TriggerCopyWithImpl<$Res> implements _$TriggerCopyWith<$Res> {
     Object? childrenIds = freezed,
     Object? searchTimeDelta = freezed,
     Object? access = freezed,
+    Object? hasCaseExpirity = freezed,
+    Object? whenCaseExpiresDelta = freezed,
   }) {
     return _then(_Trigger(
       id: null == id
@@ -1585,6 +1643,14 @@ class __$TriggerCopyWithImpl<$Res> implements _$TriggerCopyWith<$Res> {
           ? _self._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      hasCaseExpirity: freezed == hasCaseExpirity
+          ? _self.hasCaseExpirity
+          : hasCaseExpirity // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      whenCaseExpiresDelta: freezed == whenCaseExpiresDelta
+          ? _self.whenCaseExpiresDelta
+          : whenCaseExpiresDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 
@@ -1811,6 +1877,20 @@ mixin _$TriggerInput {
   @DurationConverter()
   set cooldownTime(Duration value);
 
+  /// [hasCaseExpirity] indicates if the trigger has case expiry.
+  bool get hasCaseExpirity;
+
+  /// [hasCaseExpirity] indicates if the trigger has case expiry.
+  set hasCaseExpirity(bool value);
+
+  /// [whenCaseExpiresDelta] represents the duration after which the case expires.
+  @DurationOrNullConverter()
+  Duration? get whenCaseExpiresDelta;
+
+  /// [whenCaseExpiresDelta] represents the duration after which the case expires.
+  @DurationOrNullConverter()
+  set whenCaseExpiresDelta(Duration? value);
+
   /// Create a copy of TriggerInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1824,7 +1904,7 @@ mixin _$TriggerInput {
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta)';
   }
 }
 
@@ -1868,7 +1948,9 @@ abstract mixin class $TriggerInputCopyWith<$Res> {
       List<CareTaskInput>? manualActionFields,
       List<String> childrenIds,
       @DurationOrNullConverter() Duration? searchTimeDelta,
-      @DurationConverter() Duration cooldownTime});
+      @DurationConverter() Duration cooldownTime,
+      bool hasCaseExpirity,
+      @DurationOrNullConverter() Duration? whenCaseExpiresDelta});
 }
 
 /// @nodoc
@@ -1914,6 +1996,8 @@ class _$TriggerInputCopyWithImpl<$Res> implements $TriggerInputCopyWith<$Res> {
     Object? childrenIds = null,
     Object? searchTimeDelta = freezed,
     Object? cooldownTime = null,
+    Object? hasCaseExpirity = null,
+    Object? whenCaseExpiresDelta = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -2040,6 +2124,14 @@ class _$TriggerInputCopyWithImpl<$Res> implements $TriggerInputCopyWith<$Res> {
           ? _self.cooldownTime
           : cooldownTime // ignore: cast_nullable_to_non_nullable
               as Duration,
+      hasCaseExpirity: null == hasCaseExpirity
+          ? _self.hasCaseExpirity
+          : hasCaseExpirity // ignore: cast_nullable_to_non_nullable
+              as bool,
+      whenCaseExpiresDelta: freezed == whenCaseExpiresDelta
+          ? _self.whenCaseExpiresDelta
+          : whenCaseExpiresDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 }
@@ -2171,7 +2263,9 @@ extension TriggerInputPatterns on TriggerInput {
             List<CareTaskInput>? manualActionFields,
             List<String> childrenIds,
             @DurationOrNullConverter() Duration? searchTimeDelta,
-            @DurationConverter() Duration cooldownTime)?
+            @DurationConverter() Duration cooldownTime,
+            bool hasCaseExpirity,
+            @DurationOrNullConverter() Duration? whenCaseExpiresDelta)?
         $default, {
     required TResult orElse(),
   }) {
@@ -2209,7 +2303,9 @@ extension TriggerInputPatterns on TriggerInput {
             _that.manualActionFields,
             _that.childrenIds,
             _that.searchTimeDelta,
-            _that.cooldownTime);
+            _that.cooldownTime,
+            _that.hasCaseExpirity,
+            _that.whenCaseExpiresDelta);
       case _:
         return orElse();
     }
@@ -2264,7 +2360,9 @@ extension TriggerInputPatterns on TriggerInput {
             List<CareTaskInput>? manualActionFields,
             List<String> childrenIds,
             @DurationOrNullConverter() Duration? searchTimeDelta,
-            @DurationConverter() Duration cooldownTime)
+            @DurationConverter() Duration cooldownTime,
+            bool hasCaseExpirity,
+            @DurationOrNullConverter() Duration? whenCaseExpiresDelta)
         $default,
   ) {
     final _that = this;
@@ -2301,7 +2399,9 @@ extension TriggerInputPatterns on TriggerInput {
             _that.manualActionFields,
             _that.childrenIds,
             _that.searchTimeDelta,
-            _that.cooldownTime);
+            _that.cooldownTime,
+            _that.hasCaseExpirity,
+            _that.whenCaseExpiresDelta);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -2355,7 +2455,9 @@ extension TriggerInputPatterns on TriggerInput {
             List<CareTaskInput>? manualActionFields,
             List<String> childrenIds,
             @DurationOrNullConverter() Duration? searchTimeDelta,
-            @DurationConverter() Duration cooldownTime)?
+            @DurationConverter() Duration cooldownTime,
+            bool hasCaseExpirity,
+            @DurationOrNullConverter() Duration? whenCaseExpiresDelta)?
         $default,
   ) {
     final _that = this;
@@ -2392,7 +2494,9 @@ extension TriggerInputPatterns on TriggerInput {
             _that.manualActionFields,
             _that.childrenIds,
             _that.searchTimeDelta,
-            _that.cooldownTime);
+            _that.cooldownTime,
+            _that.hasCaseExpirity,
+            _that.whenCaseExpiresDelta);
       case _:
         return null;
     }
@@ -2437,7 +2541,9 @@ class _TriggerInput implements TriggerInput {
       this.manualActionFields = const [],
       this.childrenIds = const [],
       @DurationOrNullConverter() this.searchTimeDelta,
-      @DurationConverter() this.cooldownTime = const Duration(minutes: 1)});
+      @DurationConverter() this.cooldownTime = const Duration(minutes: 1),
+      this.hasCaseExpirity = false,
+      @DurationOrNullConverter() this.whenCaseExpiresDelta});
   factory _TriggerInput.fromJson(Map<String, dynamic> json) =>
       _$TriggerInputFromJson(json);
 
@@ -2589,6 +2695,16 @@ class _TriggerInput implements TriggerInput {
   @DurationConverter()
   Duration cooldownTime;
 
+  /// [hasCaseExpirity] indicates if the trigger has case expiry.
+  @override
+  @JsonKey()
+  bool hasCaseExpirity;
+
+  /// [whenCaseExpiresDelta] represents the duration after which the case expires.
+  @override
+  @DurationOrNullConverter()
+  Duration? whenCaseExpiresDelta;
+
   /// Create a copy of TriggerInput
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -2606,7 +2722,7 @@ class _TriggerInput implements TriggerInput {
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta)';
   }
 }
 
@@ -2652,7 +2768,9 @@ abstract mixin class _$TriggerInputCopyWith<$Res>
       List<CareTaskInput>? manualActionFields,
       List<String> childrenIds,
       @DurationOrNullConverter() Duration? searchTimeDelta,
-      @DurationConverter() Duration cooldownTime});
+      @DurationConverter() Duration cooldownTime,
+      bool hasCaseExpirity,
+      @DurationOrNullConverter() Duration? whenCaseExpiresDelta});
 }
 
 /// @nodoc
@@ -2699,6 +2817,8 @@ class __$TriggerInputCopyWithImpl<$Res>
     Object? childrenIds = null,
     Object? searchTimeDelta = freezed,
     Object? cooldownTime = null,
+    Object? hasCaseExpirity = null,
+    Object? whenCaseExpiresDelta = freezed,
   }) {
     return _then(_TriggerInput(
       id: freezed == id
@@ -2825,6 +2945,14 @@ class __$TriggerInputCopyWithImpl<$Res>
           ? _self.cooldownTime
           : cooldownTime // ignore: cast_nullable_to_non_nullable
               as Duration,
+      hasCaseExpirity: null == hasCaseExpirity
+          ? _self.hasCaseExpirity
+          : hasCaseExpirity // ignore: cast_nullable_to_non_nullable
+              as bool,
+      whenCaseExpiresDelta: freezed == whenCaseExpiresDelta
+          ? _self.whenCaseExpiresDelta
+          : whenCaseExpiresDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 }

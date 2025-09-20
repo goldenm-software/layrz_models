@@ -81,6 +81,9 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
+      hasCaseExpirity: json['hasCaseExpirity'] as bool?,
+      whenCaseExpiresDelta: const DurationOrNullConverter()
+          .fromJson(json['whenCaseExpiresDelta'] as num?),
     );
 
 Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
@@ -121,6 +124,9 @@ Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
       'searchTimeDelta':
           const DurationOrNullConverter().toJson(instance.searchTimeDelta),
       'access': instance.access?.map((e) => e.toJson()).toList(),
+      'hasCaseExpirity': instance.hasCaseExpirity,
+      'whenCaseExpiresDelta':
+          const DurationOrNullConverter().toJson(instance.whenCaseExpiresDelta),
     };
 
 const _$TriggerTypeEnumMap = {
@@ -255,6 +261,9 @@ _TriggerInput _$TriggerInputFromJson(Map<String, dynamic> json) =>
       cooldownTime: json['cooldownTime'] == null
           ? const Duration(minutes: 1)
           : const DurationConverter().fromJson(json['cooldownTime'] as num),
+      hasCaseExpirity: json['hasCaseExpirity'] as bool? ?? false,
+      whenCaseExpiresDelta: const DurationOrNullConverter()
+          .fromJson(json['whenCaseExpiresDelta'] as num?),
     );
 
 Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
@@ -292,6 +301,9 @@ Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
       'searchTimeDelta':
           const DurationOrNullConverter().toJson(instance.searchTimeDelta),
       'cooldownTime': const DurationConverter().toJson(instance.cooldownTime),
+      'hasCaseExpirity': instance.hasCaseExpirity,
+      'whenCaseExpiresDelta':
+          const DurationOrNullConverter().toJson(instance.whenCaseExpiresDelta),
     };
 
 _TriggerActivation _$TriggerActivationFromJson(Map<String, dynamic> json) =>

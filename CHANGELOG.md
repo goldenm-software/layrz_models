@@ -1,19 +1,27 @@
 # Changelog
 
+## 3.4.39
+
+- Added `hasCaseExpirity` and `whenCaseExpiresDelta` to `Trigger` and `TriggerInput` model
+
 ## 3.4.38
 
 - Updated `WorkspaceTripPoint` model to include `eventId` and `sensors` properties.
 
 ## 3.4.37
+
 - Add new entities in `MonitorCardType`
 
 ## 3.4.36
+
 - Run `build_runner` to add in `AccessModule.atsMonitos`
 
 ## 3.4.35
+
 - Add in `AccessModule` `ATS_MONITORS`
 
 ## 3.4.34
+
 - Add many models to new Ats monitor entities
 
 ## 3.4.33
