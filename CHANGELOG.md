@@ -1,6 +1,12 @@
 # Changelog
 
+## 3.4.41
+
+- `CaseStatus` and `CaseIgnoredStatus` enum converters reworked to use native @JsonKey and @JsonValue
+- Added `geofence` property to `Case` model to provide geofence context on cases when it's available.
+
 ## 3.4.40
+
 - Add in `AtsMonitor` and `AtsMonitorInput` new props to support charts
 
 ## 3.4.39

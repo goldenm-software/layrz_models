@@ -352,11 +352,16 @@ _Case _$CaseFromJson(Map<String, dynamic> json) => _Case(
       id: json['id'] as String,
       receivedAt:
           const TimestampConverter().fromJson(json['dateReceived'] as num),
-      status: const CaseStatusConverter().fromJson(json['status'] as String),
-      ignoredStatus: const CaseIgnoredStatusOrNullConverter()
-          .fromJson(json['ignoredStatus'] as String?),
+      status: $enumDecode(_$CaseStatusEnumMap, json['status'],
+          unknownValue: CaseStatus.pending),
+      ignoredStatus: $enumDecodeNullable(
+          _$CaseIgnoredStatusEnumMap, json['ignoredStatus'],
+          unknownValue: CaseIgnoredStatus.normal),
       asset: Asset.fromJson(json['asset'] as Map<String, dynamic>),
       trigger: Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
+      geofence: json['geofence'] == null
+          ? null
+          : Geofence.fromJson(json['geofence'] as Map<String, dynamic>),
       sequence: (json['sequence'] as num?)?.toInt(),
       comments: (json['comments'] as List<dynamic>?)
               ?.map((e) => CaseComment.fromJson(e as Map<String, dynamic>))
@@ -380,11 +385,11 @@ _Case _$CaseFromJson(Map<String, dynamic> json) => _Case(
 Map<String, dynamic> _$CaseToJson(_Case instance) => <String, dynamic>{
       'id': instance.id,
       'dateReceived': const TimestampConverter().toJson(instance.receivedAt),
-      'status': const CaseStatusConverter().toJson(instance.status),
-      'ignoredStatus': const CaseIgnoredStatusOrNullConverter()
-          .toJson(instance.ignoredStatus),
+      'status': instance.status.toJson(),
+      'ignoredStatus': instance.ignoredStatus?.toJson(),
       'asset': instance.asset.toJson(),
       'trigger': instance.trigger.toJson(),
+      'geofence': instance.geofence?.toJson(),
       'sequence': instance.sequence,
       'comments': instance.comments.map((e) => e.toJson()).toList(),
       'position': instance.position?.toJson(),
@@ -392,6 +397,20 @@ Map<String, dynamic> _$CaseToJson(_Case instance) => <String, dynamic>{
       'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
       'file': instance.file?.toJson(),
     };
+
+const _$CaseStatusEnumMap = {
+  CaseStatus.pending: 'PENDING',
+  CaseStatus.followed: 'FOLLOWED',
+  CaseStatus.closed: 'CLOSED',
+};
+
+const _$CaseIgnoredStatusEnumMap = {
+  CaseIgnoredStatus.normal: 'NORMAL',
+  CaseIgnoredStatus.ignored: 'IGNORED',
+  CaseIgnoredStatus.preset: 'PRESET',
+  CaseIgnoredStatus.expired: 'EXPIRED',
+  CaseIgnoredStatus.auto: 'AUTO',
+};
 
 _Category _$CategoryFromJson(Map<String, dynamic> json) => _Category(
       id: json['id'] as String,

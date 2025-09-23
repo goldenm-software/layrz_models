@@ -5310,12 +5310,13 @@ mixin _$Case {
   @JsonKey(name: 'dateReceived')
   @TimestampConverter()
   DateTime get receivedAt;
-  @CaseStatusConverter()
+  @JsonKey(unknownEnumValue: CaseStatus.pending)
   CaseStatus get status;
-  @CaseIgnoredStatusOrNullConverter()
+  @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
   CaseIgnoredStatus? get ignoredStatus;
   Asset get asset;
   Trigger get trigger;
+  Geofence? get geofence;
   int? get sequence;
   List<CaseComment> get comments;
   TelemetryPosition? get position;
@@ -5346,6 +5347,8 @@ mixin _$Case {
                 other.ignoredStatus == ignoredStatus) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.trigger, trigger) || other.trigger == trigger) &&
+            (identical(other.geofence, geofence) ||
+                other.geofence == geofence) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             const DeepCollectionEquality().equals(other.comments, comments) &&
@@ -5366,6 +5369,7 @@ mixin _$Case {
       ignoredStatus,
       asset,
       trigger,
+      geofence,
       sequence,
       const DeepCollectionEquality().hash(comments),
       position,
@@ -5375,7 +5379,7 @@ mixin _$Case {
 
   @override
   String toString() {
-    return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file)';
+    return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file)';
   }
 }
 
@@ -5387,10 +5391,12 @@ abstract mixin class $CaseCopyWith<$Res> {
   $Res call(
       {String id,
       @JsonKey(name: 'dateReceived') @TimestampConverter() DateTime receivedAt,
-      @CaseStatusConverter() CaseStatus status,
-      @CaseIgnoredStatusOrNullConverter() CaseIgnoredStatus? ignoredStatus,
+      @JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,
+      @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
+      CaseIgnoredStatus? ignoredStatus,
       Asset asset,
       Trigger trigger,
+      Geofence? geofence,
       int? sequence,
       List<CaseComment> comments,
       TelemetryPosition? position,
@@ -5400,6 +5406,7 @@ abstract mixin class $CaseCopyWith<$Res> {
 
   $AssetCopyWith<$Res> get asset;
   $TriggerCopyWith<$Res> get trigger;
+  $GeofenceCopyWith<$Res>? get geofence;
   $TelemetryPositionCopyWith<$Res>? get position;
   $CloudEntryCopyWith<$Res>? get file;
 }
@@ -5422,6 +5429,7 @@ class _$CaseCopyWithImpl<$Res> implements $CaseCopyWith<$Res> {
     Object? ignoredStatus = freezed,
     Object? asset = null,
     Object? trigger = null,
+    Object? geofence = freezed,
     Object? sequence = freezed,
     Object? comments = null,
     Object? position = freezed,
@@ -5454,6 +5462,10 @@ class _$CaseCopyWithImpl<$Res> implements $CaseCopyWith<$Res> {
           ? _self.trigger
           : trigger // ignore: cast_nullable_to_non_nullable
               as Trigger,
+      geofence: freezed == geofence
+          ? _self.geofence
+          : geofence // ignore: cast_nullable_to_non_nullable
+              as Geofence?,
       sequence: freezed == sequence
           ? _self.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -5498,6 +5510,20 @@ class _$CaseCopyWithImpl<$Res> implements $CaseCopyWith<$Res> {
   $TriggerCopyWith<$Res> get trigger {
     return $TriggerCopyWith<$Res>(_self.trigger, (value) {
       return _then(_self.copyWith(trigger: value));
+    });
+  }
+
+  /// Create a copy of Case
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GeofenceCopyWith<$Res>? get geofence {
+    if (_self.geofence == null) {
+      return null;
+    }
+
+    return $GeofenceCopyWith<$Res>(_self.geofence!, (value) {
+      return _then(_self.copyWith(geofence: value));
     });
   }
 
@@ -5628,11 +5654,12 @@ extension CasePatterns on Case {
             @JsonKey(name: 'dateReceived')
             @TimestampConverter()
             DateTime receivedAt,
-            @CaseStatusConverter() CaseStatus status,
-            @CaseIgnoredStatusOrNullConverter()
+            @JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,
+            @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
             CaseIgnoredStatus? ignoredStatus,
             Asset asset,
             Trigger trigger,
+            Geofence? geofence,
             int? sequence,
             List<CaseComment> comments,
             TelemetryPosition? position,
@@ -5652,6 +5679,7 @@ extension CasePatterns on Case {
             _that.ignoredStatus,
             _that.asset,
             _that.trigger,
+            _that.geofence,
             _that.sequence,
             _that.comments,
             _that.position,
@@ -5683,11 +5711,12 @@ extension CasePatterns on Case {
             @JsonKey(name: 'dateReceived')
             @TimestampConverter()
             DateTime receivedAt,
-            @CaseStatusConverter() CaseStatus status,
-            @CaseIgnoredStatusOrNullConverter()
+            @JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,
+            @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
             CaseIgnoredStatus? ignoredStatus,
             Asset asset,
             Trigger trigger,
+            Geofence? geofence,
             int? sequence,
             List<CaseComment> comments,
             TelemetryPosition? position,
@@ -5706,6 +5735,7 @@ extension CasePatterns on Case {
             _that.ignoredStatus,
             _that.asset,
             _that.trigger,
+            _that.geofence,
             _that.sequence,
             _that.comments,
             _that.position,
@@ -5736,11 +5766,12 @@ extension CasePatterns on Case {
             @JsonKey(name: 'dateReceived')
             @TimestampConverter()
             DateTime receivedAt,
-            @CaseStatusConverter() CaseStatus status,
-            @CaseIgnoredStatusOrNullConverter()
+            @JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,
+            @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
             CaseIgnoredStatus? ignoredStatus,
             Asset asset,
             Trigger trigger,
+            Geofence? geofence,
             int? sequence,
             List<CaseComment> comments,
             TelemetryPosition? position,
@@ -5759,6 +5790,7 @@ extension CasePatterns on Case {
             _that.ignoredStatus,
             _that.asset,
             _that.trigger,
+            _that.geofence,
             _that.sequence,
             _that.comments,
             _that.position,
@@ -5779,10 +5811,11 @@ class _Case implements Case {
       @JsonKey(name: 'dateReceived')
       @TimestampConverter()
       required this.receivedAt,
-      @CaseStatusConverter() required this.status,
-      @CaseIgnoredStatusOrNullConverter() this.ignoredStatus,
+      @JsonKey(unknownEnumValue: CaseStatus.pending) required this.status,
+      @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) this.ignoredStatus,
       required this.asset,
       required this.trigger,
+      this.geofence,
       this.sequence,
       final List<CaseComment> comments = const [],
       this.position,
@@ -5801,15 +5834,17 @@ class _Case implements Case {
   @TimestampConverter()
   final DateTime receivedAt;
   @override
-  @CaseStatusConverter()
+  @JsonKey(unknownEnumValue: CaseStatus.pending)
   final CaseStatus status;
   @override
-  @CaseIgnoredStatusOrNullConverter()
+  @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
   final CaseIgnoredStatus? ignoredStatus;
   @override
   final Asset asset;
   @override
   final Trigger trigger;
+  @override
+  final Geofence? geofence;
   @override
   final int? sequence;
   final List<CaseComment> _comments;
@@ -5874,6 +5909,8 @@ class _Case implements Case {
                 other.ignoredStatus == ignoredStatus) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.trigger, trigger) || other.trigger == trigger) &&
+            (identical(other.geofence, geofence) ||
+                other.geofence == geofence) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             const DeepCollectionEquality().equals(other._comments, _comments) &&
@@ -5894,6 +5931,7 @@ class _Case implements Case {
       ignoredStatus,
       asset,
       trigger,
+      geofence,
       sequence,
       const DeepCollectionEquality().hash(_comments),
       position,
@@ -5903,7 +5941,7 @@ class _Case implements Case {
 
   @override
   String toString() {
-    return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file)';
+    return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file)';
   }
 }
 
@@ -5916,10 +5954,12 @@ abstract mixin class _$CaseCopyWith<$Res> implements $CaseCopyWith<$Res> {
   $Res call(
       {String id,
       @JsonKey(name: 'dateReceived') @TimestampConverter() DateTime receivedAt,
-      @CaseStatusConverter() CaseStatus status,
-      @CaseIgnoredStatusOrNullConverter() CaseIgnoredStatus? ignoredStatus,
+      @JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,
+      @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
+      CaseIgnoredStatus? ignoredStatus,
       Asset asset,
       Trigger trigger,
+      Geofence? geofence,
       int? sequence,
       List<CaseComment> comments,
       TelemetryPosition? position,
@@ -5931,6 +5971,8 @@ abstract mixin class _$CaseCopyWith<$Res> implements $CaseCopyWith<$Res> {
   $AssetCopyWith<$Res> get asset;
   @override
   $TriggerCopyWith<$Res> get trigger;
+  @override
+  $GeofenceCopyWith<$Res>? get geofence;
   @override
   $TelemetryPositionCopyWith<$Res>? get position;
   @override
@@ -5955,6 +5997,7 @@ class __$CaseCopyWithImpl<$Res> implements _$CaseCopyWith<$Res> {
     Object? ignoredStatus = freezed,
     Object? asset = null,
     Object? trigger = null,
+    Object? geofence = freezed,
     Object? sequence = freezed,
     Object? comments = null,
     Object? position = freezed,
@@ -5987,6 +6030,10 @@ class __$CaseCopyWithImpl<$Res> implements _$CaseCopyWith<$Res> {
           ? _self.trigger
           : trigger // ignore: cast_nullable_to_non_nullable
               as Trigger,
+      geofence: freezed == geofence
+          ? _self.geofence
+          : geofence // ignore: cast_nullable_to_non_nullable
+              as Geofence?,
       sequence: freezed == sequence
           ? _self.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -6031,6 +6078,20 @@ class __$CaseCopyWithImpl<$Res> implements _$CaseCopyWith<$Res> {
   $TriggerCopyWith<$Res> get trigger {
     return $TriggerCopyWith<$Res>(_self.trigger, (value) {
       return _then(_self.copyWith(trigger: value));
+    });
+  }
+
+  /// Create a copy of Case
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GeofenceCopyWith<$Res>? get geofence {
+    if (_self.geofence == null) {
+      return null;
+    }
+
+    return $GeofenceCopyWith<$Res>(_self.geofence!, (value) {
+      return _then(_self.copyWith(geofence: value));
     });
   }
 
