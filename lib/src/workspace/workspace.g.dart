@@ -416,6 +416,8 @@ const _$CaseMonitorCardTypeEnumMap = {
   CaseMonitorCardType.specificAsset: 'SPECIFIC_ASSET',
   CaseMonitorCardType.pieChart: 'PIE_CHART',
   CaseMonitorCardType.heatMap: 'HEAT_MAP',
+  CaseMonitorCardType.expiredLast12Hours: 'EXPIRED_LAST_12_HOURS',
+  CaseMonitorCardType.expiredLast24Hours: 'EXPIRED_LAST_24_HOURS',
 };
 
 _CaseMonitorCardInput _$CaseMonitorCardInputFromJson(

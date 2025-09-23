@@ -54,7 +54,18 @@ enum CaseMonitorCardType {
   ///Display a heat map.
   /// GraphQL representation: `HEAT_MAP`
   @JsonValue('HEAT_MAP')
-  heatMap;
+  heatMap,
+
+  /// Display the last 12 hours of expired cases
+  /// GraphQL representation: `EXPIRED_LAST_12_HOURS`
+  @JsonValue('EXPIRED_LAST_12_HOURS')
+  expiredLast12Hours,
+
+  /// Display the last 24 hours of expired cases
+  /// GraphQL representation: `EXPIRED_LAST_24_HOURS`
+  @JsonValue('EXPIRED_LAST_24_HOURS')
+  expiredLast24Hours,
+  ;
 
   @override
   String toString() => toJson();

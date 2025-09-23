@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.42
+
+- Added `expiredLast12Hours` and `expiredLast24Hours` to `WorkspaceCardType` enum
+
 ## 3.4.41
 
 - `CaseStatus` and `CaseIgnoredStatus` enum converters reworked to use native @JsonKey and @JsonValue
