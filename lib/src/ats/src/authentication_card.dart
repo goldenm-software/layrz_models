@@ -39,6 +39,19 @@ enum AtsSelectCard {
         return AtsSelectCard.cardboard;
     }
   }
+
+  String getLayrzKey() {
+    switch (this) {
+      case AtsSelectCard.cardboard:
+        return 'ats.selectedCard.cardboard';
+
+      case AtsSelectCard.nfc:
+        return 'ats.selectedCard.nfc';
+
+      case AtsSelectCard.tag:
+        return 'ats.selectedCard.tag';
+    }
+  }
 }
 
 @freezed
