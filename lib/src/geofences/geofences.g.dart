@@ -9,7 +9,8 @@ part of 'geofences.dart';
 _Geofence _$GeofenceFromJson(Map<String, dynamic> json) => _Geofence(
       id: json['id'] as String,
       name: json['name'] as String,
-      mode: const GeofenceModeConverter().fromJson(json['mode'] as String),
+      mode: $enumDecode(_$GeofenceModeEnumMap, json['mode'],
+          unknownValue: GeofenceMode.radial),
       description: json['description'] as String?,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       path: (json['path'] as List<dynamic>?)
@@ -51,7 +52,7 @@ _Geofence _$GeofenceFromJson(Map<String, dynamic> json) => _Geofence(
 Map<String, dynamic> _$GeofenceToJson(_Geofence instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'mode': const GeofenceModeConverter().toJson(instance.mode),
+      'mode': instance.mode.toJson(),
       'description': instance.description,
       'color': const ColorOrNullConverter().toJson(instance.color),
       'path': instance.path?.map((e) => e.toJson()).toList(),
@@ -69,6 +70,12 @@ Map<String, dynamic> _$GeofenceToJson(_Geofence instance) => <String, dynamic>{
       'mappitRouteIds': instance.mappitRouteIds,
       'assetId': instance.assetId,
     };
+
+const _$GeofenceModeEnumMap = {
+  GeofenceMode.radial: 'RADIAL',
+  GeofenceMode.linear: 'LINEAR',
+  GeofenceMode.polygon: 'POLYGON',
+};
 
 const _$GeofenceCategoryEnumMap = {
   GeofenceCategory.none: 'NONE',
@@ -89,9 +96,9 @@ _GeofenceInput _$GeofenceInputFromJson(Map<String, dynamic> json) =>
       color: json['color'] == null
           ? Colors.blue
           : const ColorConverter().fromJson(json['color'] as String),
-      mode: json['mode'] == null
-          ? GeofenceMode.radial
-          : const GeofenceModeConverter().fromJson(json['mode'] as String),
+      mode: $enumDecodeNullable(_$GeofenceModeEnumMap, json['mode'],
+              unknownValue: GeofenceMode.radial) ??
+          GeofenceMode.radial,
       radius: (json['radius'] as num?)?.toDouble() ?? 100,
       path: (json['path'] as List<dynamic>?)
               ?.map(
@@ -118,7 +125,7 @@ Map<String, dynamic> _$GeofenceInputToJson(_GeofenceInput instance) =>
       'name': instance.name,
       'description': instance.description,
       'color': const ColorConverter().toJson(instance.color),
-      'mode': const GeofenceModeConverter().toJson(instance.mode),
+      'mode': instance.mode.toJson(),
       'radius': instance.radius,
       'path': instance.path.map((e) => e.toJson()).toList(),
       'category': instance.category.toJson(),

@@ -41,8 +41,9 @@ _BrickhouseAlert _$BrickhouseAlertFromJson(Map<String, dynamic> json) =>
           .toList(),
       geofenceColor: const ColorOrNullConverter()
           .fromJson(json['geofenceColor'] as String?),
-      geofenceMode: const GeofenceModeOrNullConverter()
-          .fromJson(json['geofenceMode'] as String?),
+      geofenceMode: $enumDecodeNullable(
+          _$GeofenceModeEnumMap, json['geofenceMode'],
+          unknownValue: GeofenceMode.radial),
       geofenceRadius: (json['geofenceRadius'] as num?)?.toDouble(),
       geofenceShape: (json['geofenceShape'] as List<dynamic>?)
           ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
@@ -80,8 +81,7 @@ Map<String, dynamic> _$BrickhouseAlertToJson(_BrickhouseAlert instance) =>
           instance.curfewWeekdays?.map((e) => e.toJson()).toList(),
       'geofenceColor':
           const ColorOrNullConverter().toJson(instance.geofenceColor),
-      'geofenceMode':
-          const GeofenceModeOrNullConverter().toJson(instance.geofenceMode),
+      'geofenceMode': instance.geofenceMode?.toJson(),
       'geofenceRadius': instance.geofenceRadius,
       'geofenceShape': instance.geofenceShape?.map((e) => e.toJson()).toList(),
       'geofenceTrigger': instance.geofenceTrigger?.toJson(),
@@ -111,6 +111,12 @@ const _$WeekdayEnumMap = {
   Weekday.friday: 'FRI',
   Weekday.saturday: 'SAT',
   Weekday.sunday: 'SUN',
+};
+
+const _$GeofenceModeEnumMap = {
+  GeofenceMode.radial: 'RADIAL',
+  GeofenceMode.linear: 'LINEAR',
+  GeofenceMode.polygon: 'POLYGON',
 };
 
 const _$BrickhouseGeofenceTriggerEnumMap = {
@@ -163,8 +169,9 @@ _BrickhouseAlertInput _$BrickhouseAlertInputFromJson(
           ],
       geofenceColor: const ColorOrNullConverter()
           .fromJson(json['geofenceColor'] as String?),
-      geofenceMode: const GeofenceModeOrNullConverter()
-          .fromJson(json['geofenceMode'] as String?),
+      geofenceMode: $enumDecodeNullable(
+          _$GeofenceModeEnumMap, json['geofenceMode'],
+          unknownValue: GeofenceMode.radial),
       geofenceRadius: (json['geofenceRadius'] as num?)?.toDouble(),
       geofenceShape: (json['geofenceShape'] as List<dynamic>?)
               ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
@@ -202,8 +209,7 @@ Map<String, dynamic> _$BrickhouseAlertInputToJson(
           instance.curfewWeekdays?.map((e) => e.toJson()).toList(),
       'geofenceColor':
           const ColorOrNullConverter().toJson(instance.geofenceColor),
-      'geofenceMode':
-          const GeofenceModeOrNullConverter().toJson(instance.geofenceMode),
+      'geofenceMode': instance.geofenceMode?.toJson(),
       'geofenceRadius': instance.geofenceRadius,
       'geofenceShape': instance.geofenceShape?.map((e) => e.toJson()).toList(),
       'geofenceTrigger': instance.geofenceTrigger?.toJson(),

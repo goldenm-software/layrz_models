@@ -1,9 +1,16 @@
 # Changelog
+
+## 3.4.45
+
+- Changes on `Case` model to support geofence context on cases when it's available.
+
 ## 3.4.44
+
 - Add `getLayrzKey()` in `AtsSelectCard`
 
 ## 3.4.43
-- - Version tag created for tracking purposes. No code changes were included in this release.
+
+- Version tag created for tracking purposes. No code changes were included in this release.
 
 ## 3.4.42
 

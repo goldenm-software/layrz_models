@@ -70,7 +70,7 @@ mixin _$BrickhouseAlert {
   Color? get geofenceColor;
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @GeofenceModeOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   GeofenceMode? get geofenceMode;
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
@@ -225,7 +225,8 @@ abstract mixin class $BrickhouseAlertCopyWith<$Res> {
       String? timezone,
       @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial)
+      GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -500,7 +501,8 @@ extension BrickhouseAlertPatterns on BrickhouseAlert {
             @JsonKey(unknownEnumValue: Weekday.monday)
             List<Weekday>? curfewWeekdays,
             @ColorOrNullConverter() Color? geofenceColor,
-            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial)
+            GeofenceMode? geofenceMode,
             double? geofenceRadius,
             List<GeofencePoint>? geofenceShape,
             @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -584,7 +586,8 @@ extension BrickhouseAlertPatterns on BrickhouseAlert {
             @JsonKey(unknownEnumValue: Weekday.monday)
             List<Weekday>? curfewWeekdays,
             @ColorOrNullConverter() Color? geofenceColor,
-            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial)
+            GeofenceMode? geofenceMode,
             double? geofenceRadius,
             List<GeofencePoint>? geofenceShape,
             @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -666,7 +669,8 @@ extension BrickhouseAlertPatterns on BrickhouseAlert {
             @JsonKey(unknownEnumValue: Weekday.monday)
             List<Weekday>? curfewWeekdays,
             @ColorOrNullConverter() Color? geofenceColor,
-            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial)
+            GeofenceMode? geofenceMode,
             double? geofenceRadius,
             List<GeofencePoint>? geofenceShape,
             @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -736,7 +740,7 @@ class _BrickhouseAlert implements BrickhouseAlert {
       @JsonKey(unknownEnumValue: Weekday.monday)
       final List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() this.geofenceColor,
-      @GeofenceModeOrNullConverter() this.geofenceMode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial) this.geofenceMode,
       this.geofenceRadius,
       final List<GeofencePoint>? geofenceShape,
       @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -874,7 +878,7 @@ class _BrickhouseAlert implements BrickhouseAlert {
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @override
-  @GeofenceModeOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   final GeofenceMode? geofenceMode;
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
@@ -1055,7 +1059,8 @@ abstract mixin class _$BrickhouseAlertCopyWith<$Res>
       String? timezone,
       @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial)
+      GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -1323,11 +1328,11 @@ mixin _$BrickhouseAlertInput {
   set geofenceColor(Color? value);
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @GeofenceModeOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   GeofenceMode? get geofenceMode;
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @GeofenceModeOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   set geofenceMode(GeofenceMode? value);
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
@@ -1410,7 +1415,8 @@ abstract mixin class $BrickhouseAlertInputCopyWith<$Res> {
       String? timezone,
       @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial)
+      GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -1667,7 +1673,8 @@ extension BrickhouseAlertInputPatterns on BrickhouseAlertInput {
             @JsonKey(unknownEnumValue: Weekday.monday)
             List<Weekday>? curfewWeekdays,
             @ColorOrNullConverter() Color? geofenceColor,
-            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial)
+            GeofenceMode? geofenceMode,
             double? geofenceRadius,
             List<GeofencePoint>? geofenceShape,
             @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -1745,7 +1752,8 @@ extension BrickhouseAlertInputPatterns on BrickhouseAlertInput {
             @JsonKey(unknownEnumValue: Weekday.monday)
             List<Weekday>? curfewWeekdays,
             @ColorOrNullConverter() Color? geofenceColor,
-            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial)
+            GeofenceMode? geofenceMode,
             double? geofenceRadius,
             List<GeofencePoint>? geofenceShape,
             @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -1821,7 +1829,8 @@ extension BrickhouseAlertInputPatterns on BrickhouseAlertInput {
             @JsonKey(unknownEnumValue: Weekday.monday)
             List<Weekday>? curfewWeekdays,
             @ColorOrNullConverter() Color? geofenceColor,
-            @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial)
+            GeofenceMode? geofenceMode,
             double? geofenceRadius,
             List<GeofencePoint>? geofenceShape,
             @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -1892,7 +1901,7 @@ class _BrickhouseAlertInput implements BrickhouseAlertInput {
         Weekday.sunday
       ],
       @ColorOrNullConverter() this.geofenceColor,
-      @GeofenceModeOrNullConverter() this.geofenceMode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial) this.geofenceMode,
       this.geofenceRadius,
       this.geofenceShape = const [],
       @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
@@ -1979,7 +1988,7 @@ class _BrickhouseAlertInput implements BrickhouseAlertInput {
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @override
-  @GeofenceModeOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   GeofenceMode? geofenceMode;
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
@@ -2058,7 +2067,8 @@ abstract mixin class _$BrickhouseAlertInputCopyWith<$Res>
       String? timezone,
       @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial)
+      GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)

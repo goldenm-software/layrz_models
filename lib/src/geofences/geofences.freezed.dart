@@ -21,7 +21,7 @@ mixin _$Geofence {
   String get name;
 
   /// Mode of geofence, check the documentation of GeofenceMode for more information.
-  @GeofenceModeConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   GeofenceMode get mode;
 
   /// Description of the geofence.
@@ -159,7 +159,7 @@ abstract mixin class $GeofenceCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @GeofenceModeConverter() GeofenceMode mode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
       String? description,
       @ColorOrNullConverter() Color? color,
       List<GeofencePoint>? path,
@@ -404,7 +404,7 @@ extension GeofencePatterns on Geofence {
     TResult Function(
             String id,
             String name,
-            @GeofenceModeConverter() GeofenceMode mode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
             String? description,
             @ColorOrNullConverter() Color? color,
             List<GeofencePoint>? path,
@@ -471,7 +471,7 @@ extension GeofencePatterns on Geofence {
     TResult Function(
             String id,
             String name,
-            @GeofenceModeConverter() GeofenceMode mode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
             String? description,
             @ColorOrNullConverter() Color? color,
             List<GeofencePoint>? path,
@@ -536,7 +536,7 @@ extension GeofencePatterns on Geofence {
     TResult? Function(
             String id,
             String name,
-            @GeofenceModeConverter() GeofenceMode mode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
             String? description,
             @ColorOrNullConverter() Color? color,
             List<GeofencePoint>? path,
@@ -591,7 +591,7 @@ class _Geofence implements Geofence {
   const _Geofence(
       {required this.id,
       required this.name,
-      @GeofenceModeConverter() required this.mode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial) required this.mode,
       this.description,
       @ColorOrNullConverter() this.color,
       final List<GeofencePoint>? path,
@@ -630,7 +630,7 @@ class _Geofence implements Geofence {
 
   /// Mode of geofence, check the documentation of GeofenceMode for more information.
   @override
-  @GeofenceModeConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   final GeofenceMode mode;
 
   /// Description of the geofence.
@@ -864,7 +864,7 @@ abstract mixin class _$GeofenceCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      @GeofenceModeConverter() GeofenceMode mode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
       String? description,
       @ColorOrNullConverter() Color? color,
       List<GeofencePoint>? path,
@@ -1043,11 +1043,11 @@ mixin _$GeofenceInput {
   set color(Color value);
 
   /// Mode of geofence, check the documentation of GeofenceMode for more information.
-  @GeofenceModeConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   GeofenceMode get mode;
 
   /// Mode of geofence, check the documentation of GeofenceMode for more information.
-  @GeofenceModeConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   set mode(GeofenceMode value);
 
   /// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
@@ -1116,7 +1116,7 @@ abstract mixin class $GeofenceInputCopyWith<$Res> {
       String name,
       String description,
       @ColorConverter() Color color,
-      @GeofenceModeConverter() GeofenceMode mode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
       double radius,
       List<GeofencePointInput> path,
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
@@ -1298,7 +1298,7 @@ extension GeofenceInputPatterns on GeofenceInput {
             String name,
             String description,
             @ColorConverter() Color color,
-            @GeofenceModeConverter() GeofenceMode mode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
             double radius,
             List<GeofencePointInput> path,
             @JsonKey(unknownEnumValue: GeofenceCategory.none)
@@ -1349,7 +1349,7 @@ extension GeofenceInputPatterns on GeofenceInput {
             String name,
             String description,
             @ColorConverter() Color color,
-            @GeofenceModeConverter() GeofenceMode mode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
             double radius,
             List<GeofencePointInput> path,
             @JsonKey(unknownEnumValue: GeofenceCategory.none)
@@ -1398,7 +1398,7 @@ extension GeofenceInputPatterns on GeofenceInput {
             String name,
             String description,
             @ColorConverter() Color color,
-            @GeofenceModeConverter() GeofenceMode mode,
+            @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
             double radius,
             List<GeofencePointInput> path,
             @JsonKey(unknownEnumValue: GeofenceCategory.none)
@@ -1437,7 +1437,8 @@ class _GeofenceInput implements GeofenceInput {
       this.name = "",
       this.description = "",
       @ColorConverter() this.color = Colors.blue,
-      @GeofenceModeConverter() this.mode = GeofenceMode.radial,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial)
+      this.mode = GeofenceMode.radial,
       this.radius = 100,
       this.path = const [],
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
@@ -1470,8 +1471,7 @@ class _GeofenceInput implements GeofenceInput {
 
   /// Mode of geofence, check the documentation of GeofenceMode for more information.
   @override
-  @JsonKey()
-  @GeofenceModeConverter()
+  @JsonKey(unknownEnumValue: GeofenceMode.radial)
   GeofenceMode mode;
 
   /// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
@@ -1537,7 +1537,7 @@ abstract mixin class _$GeofenceInputCopyWith<$Res>
       String name,
       String description,
       @ColorConverter() Color color,
-      @GeofenceModeConverter() GeofenceMode mode,
+      @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode mode,
       double radius,
       List<GeofencePointInput> path,
       @JsonKey(unknownEnumValue: GeofenceCategory.none)

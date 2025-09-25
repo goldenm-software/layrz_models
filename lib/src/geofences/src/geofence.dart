@@ -10,7 +10,8 @@ abstract class Geofence with _$Geofence {
     required String name,
 
     /// Mode of geofence, check the documentation of GeofenceMode for more information.
-    @GeofenceModeConverter() required GeofenceMode mode,
+
+    @JsonKey(unknownEnumValue: GeofenceMode.radial) required GeofenceMode mode,
 
     /// Description of the geofence.
     String? description,
@@ -82,7 +83,7 @@ abstract class GeofenceInput with _$GeofenceInput {
     @ColorConverter() @Default(Colors.blue) Color color,
 
     /// Mode of geofence, check the documentation of GeofenceMode for more information.
-    @GeofenceModeConverter() @Default(GeofenceMode.radial) GeofenceMode mode,
+    @JsonKey(unknownEnumValue: GeofenceMode.radial) @Default(GeofenceMode.radial) GeofenceMode mode,
 
     /// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
     @Default(100) double radius,

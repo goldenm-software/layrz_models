@@ -212,7 +212,7 @@ abstract class BrickhouseAlert with _$BrickhouseAlert {
     @ColorOrNullConverter() Color? geofenceColor,
 
     /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-    @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+    @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode? geofenceMode,
 
     /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
     double? geofenceRadius,
@@ -375,7 +375,7 @@ abstract class BrickhouseAlertInput with _$BrickhouseAlertInput {
     @ColorOrNullConverter() Color? geofenceColor,
 
     /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-    @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+    @JsonKey(unknownEnumValue: GeofenceMode.radial) GeofenceMode? geofenceMode,
 
     /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
     double? geofenceRadius,
