@@ -5306,23 +5306,66 @@ class __$CaseCommentCopyWithImpl<$Res> implements _$CaseCommentCopyWith<$Res> {
 
 /// @nodoc
 mixin _$Case {
+  /// [id] is a unique identifier for the case, typically used to reference and manage it within a system.
+  ///
+  /// This ID is an integer value represented as a string.
   String get id;
+
+  /// [receivedAt] indicates the date and time when the case was received or created.
   @JsonKey(name: 'dateReceived')
   @TimestampConverter()
   DateTime get receivedAt;
+
+  /// [status] represents the current state of the case, which can be one of the predefined statuses such as
+  /// pending, followed, or closed.
   @JsonKey(unknownEnumValue: CaseStatus.pending)
   CaseStatus get status;
+
+  /// [ignoredStatus] indicates whether the case is in a normal state or has been marked as
+  /// ignored, preset, expired, or auto.
   @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
   CaseIgnoredStatus? get ignoredStatus;
+
+  /// [asset] refers to the specific asset associated with the case, providing context and details about
+  /// the item or entity involved.
   Asset get asset;
+
+  /// [trigger] specifies the event or condition that initiated the creation of the case,
+  /// helping to understand the circumstances leading to its generation.
   Trigger get trigger;
+
+  /// [geofence] indicates the geographical boundary or area related to the case, which can be used
+  /// for location-based analysis or actions.
+  ///
+  /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with a geofence
+  /// (aka. geofence enter/exit).
   Geofence? get geofence;
+
+  /// [sequence] is an optional integer that represents the order or position of the case in a series or list.
   int? get sequence;
+
+  /// [comments] is a list of comments associated with the case, allowing for communication and
+  /// collaboration among users or stakeholders involved in the case.
   List<CaseComment> get comments;
+
+  /// [position] provides the geographical location or coordinates related to the case,
+  /// which can be used for mapping or tracking purposes.
   TelemetryPosition? get position;
+
+  /// [payload] contains additional data or information related to the case, which can include
+  /// various telemetry sensors or measurements.
   List<TelemetrySensor>? get payload;
+
+  /// [sensors] is a list of telemetry sensors associated with the case, providing insights
+  /// and data points relevant to the situation or event.
   List<TelemetrySensor>? get sensors;
+
+  /// [file] refers to an optional file associated with the case, which can include documents,
+  /// images, or other relevant attachments.
   CloudEntry? get file;
+
+  /// [stackCount] indicates the number of stacked cases.
+  int get stackCount;
 
   /// Create a copy of Case
   /// with the given fields replaced by the non-null parameter values.
@@ -5356,7 +5399,9 @@ mixin _$Case {
                 other.position == position) &&
             const DeepCollectionEquality().equals(other.payload, payload) &&
             const DeepCollectionEquality().equals(other.sensors, sensors) &&
-            (identical(other.file, file) || other.file == file));
+            (identical(other.file, file) || other.file == file) &&
+            (identical(other.stackCount, stackCount) ||
+                other.stackCount == stackCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -5375,11 +5420,12 @@ mixin _$Case {
       position,
       const DeepCollectionEquality().hash(payload),
       const DeepCollectionEquality().hash(sensors),
-      file);
+      file,
+      stackCount);
 
   @override
   String toString() {
-    return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file)';
+    return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file, stackCount: $stackCount)';
   }
 }
 
@@ -5402,7 +5448,8 @@ abstract mixin class $CaseCopyWith<$Res> {
       TelemetryPosition? position,
       List<TelemetrySensor>? payload,
       List<TelemetrySensor>? sensors,
-      CloudEntry? file});
+      CloudEntry? file,
+      int stackCount});
 
   $AssetCopyWith<$Res> get asset;
   $TriggerCopyWith<$Res> get trigger;
@@ -5436,6 +5483,7 @@ class _$CaseCopyWithImpl<$Res> implements $CaseCopyWith<$Res> {
     Object? payload = freezed,
     Object? sensors = freezed,
     Object? file = freezed,
+    Object? stackCount = null,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -5490,6 +5538,10 @@ class _$CaseCopyWithImpl<$Res> implements $CaseCopyWith<$Res> {
           ? _self.file
           : file // ignore: cast_nullable_to_non_nullable
               as CloudEntry?,
+      stackCount: null == stackCount
+          ? _self.stackCount
+          : stackCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -5665,7 +5717,8 @@ extension CasePatterns on Case {
             TelemetryPosition? position,
             List<TelemetrySensor>? payload,
             List<TelemetrySensor>? sensors,
-            CloudEntry? file)?
+            CloudEntry? file,
+            int stackCount)?
         $default, {
     required TResult orElse(),
   }) {
@@ -5685,7 +5738,8 @@ extension CasePatterns on Case {
             _that.position,
             _that.payload,
             _that.sensors,
-            _that.file);
+            _that.file,
+            _that.stackCount);
       case _:
         return orElse();
     }
@@ -5722,7 +5776,8 @@ extension CasePatterns on Case {
             TelemetryPosition? position,
             List<TelemetrySensor>? payload,
             List<TelemetrySensor>? sensors,
-            CloudEntry? file)
+            CloudEntry? file,
+            int stackCount)
         $default,
   ) {
     final _that = this;
@@ -5741,7 +5796,8 @@ extension CasePatterns on Case {
             _that.position,
             _that.payload,
             _that.sensors,
-            _that.file);
+            _that.file,
+            _that.stackCount);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -5777,7 +5833,8 @@ extension CasePatterns on Case {
             TelemetryPosition? position,
             List<TelemetrySensor>? payload,
             List<TelemetrySensor>? sensors,
-            CloudEntry? file)?
+            CloudEntry? file,
+            int stackCount)?
         $default,
   ) {
     final _that = this;
@@ -5796,7 +5853,8 @@ extension CasePatterns on Case {
             _that.position,
             _that.payload,
             _that.sensors,
-            _that.file);
+            _that.file,
+            _that.stackCount);
       case _:
         return null;
     }
@@ -5821,33 +5879,65 @@ class _Case implements Case {
       this.position,
       final List<TelemetrySensor>? payload,
       final List<TelemetrySensor>? sensors,
-      this.file})
+      this.file,
+      this.stackCount = 1})
       : _comments = comments,
         _payload = payload,
         _sensors = sensors;
   factory _Case.fromJson(Map<String, dynamic> json) => _$CaseFromJson(json);
 
+  /// [id] is a unique identifier for the case, typically used to reference and manage it within a system.
+  ///
+  /// This ID is an integer value represented as a string.
   @override
   final String id;
+
+  /// [receivedAt] indicates the date and time when the case was received or created.
   @override
   @JsonKey(name: 'dateReceived')
   @TimestampConverter()
   final DateTime receivedAt;
+
+  /// [status] represents the current state of the case, which can be one of the predefined statuses such as
+  /// pending, followed, or closed.
   @override
   @JsonKey(unknownEnumValue: CaseStatus.pending)
   final CaseStatus status;
+
+  /// [ignoredStatus] indicates whether the case is in a normal state or has been marked as
+  /// ignored, preset, expired, or auto.
   @override
   @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)
   final CaseIgnoredStatus? ignoredStatus;
+
+  /// [asset] refers to the specific asset associated with the case, providing context and details about
+  /// the item or entity involved.
   @override
   final Asset asset;
+
+  /// [trigger] specifies the event or condition that initiated the creation of the case,
+  /// helping to understand the circumstances leading to its generation.
   @override
   final Trigger trigger;
+
+  /// [geofence] indicates the geographical boundary or area related to the case, which can be used
+  /// for location-based analysis or actions.
+  ///
+  /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with a geofence
+  /// (aka. geofence enter/exit).
   @override
   final Geofence? geofence;
+
+  /// [sequence] is an optional integer that represents the order or position of the case in a series or list.
   @override
   final int? sequence;
+
+  /// [comments] is a list of comments associated with the case, allowing for communication and
+  /// collaboration among users or stakeholders involved in the case.
   final List<CaseComment> _comments;
+
+  /// [comments] is a list of comments associated with the case, allowing for communication and
+  /// collaboration among users or stakeholders involved in the case.
   @override
   @JsonKey()
   List<CaseComment> get comments {
@@ -5856,9 +5946,17 @@ class _Case implements Case {
     return EqualUnmodifiableListView(_comments);
   }
 
+  /// [position] provides the geographical location or coordinates related to the case,
+  /// which can be used for mapping or tracking purposes.
   @override
   final TelemetryPosition? position;
+
+  /// [payload] contains additional data or information related to the case, which can include
+  /// various telemetry sensors or measurements.
   final List<TelemetrySensor>? _payload;
+
+  /// [payload] contains additional data or information related to the case, which can include
+  /// various telemetry sensors or measurements.
   @override
   List<TelemetrySensor>? get payload {
     final value = _payload;
@@ -5868,7 +5966,12 @@ class _Case implements Case {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [sensors] is a list of telemetry sensors associated with the case, providing insights
+  /// and data points relevant to the situation or event.
   final List<TelemetrySensor>? _sensors;
+
+  /// [sensors] is a list of telemetry sensors associated with the case, providing insights
+  /// and data points relevant to the situation or event.
   @override
   List<TelemetrySensor>? get sensors {
     final value = _sensors;
@@ -5878,8 +5981,15 @@ class _Case implements Case {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [file] refers to an optional file associated with the case, which can include documents,
+  /// images, or other relevant attachments.
   @override
   final CloudEntry? file;
+
+  /// [stackCount] indicates the number of stacked cases.
+  @override
+  @JsonKey()
+  final int stackCount;
 
   /// Create a copy of Case
   /// with the given fields replaced by the non-null parameter values.
@@ -5918,7 +6028,9 @@ class _Case implements Case {
                 other.position == position) &&
             const DeepCollectionEquality().equals(other._payload, _payload) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors) &&
-            (identical(other.file, file) || other.file == file));
+            (identical(other.file, file) || other.file == file) &&
+            (identical(other.stackCount, stackCount) ||
+                other.stackCount == stackCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -5937,11 +6049,12 @@ class _Case implements Case {
       position,
       const DeepCollectionEquality().hash(_payload),
       const DeepCollectionEquality().hash(_sensors),
-      file);
+      file,
+      stackCount);
 
   @override
   String toString() {
-    return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file)';
+    return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file, stackCount: $stackCount)';
   }
 }
 
@@ -5965,7 +6078,8 @@ abstract mixin class _$CaseCopyWith<$Res> implements $CaseCopyWith<$Res> {
       TelemetryPosition? position,
       List<TelemetrySensor>? payload,
       List<TelemetrySensor>? sensors,
-      CloudEntry? file});
+      CloudEntry? file,
+      int stackCount});
 
   @override
   $AssetCopyWith<$Res> get asset;
@@ -6004,6 +6118,7 @@ class __$CaseCopyWithImpl<$Res> implements _$CaseCopyWith<$Res> {
     Object? payload = freezed,
     Object? sensors = freezed,
     Object? file = freezed,
+    Object? stackCount = null,
   }) {
     return _then(_Case(
       id: null == id
@@ -6058,6 +6173,10 @@ class __$CaseCopyWithImpl<$Res> implements _$CaseCopyWith<$Res> {
           ? _self.file
           : file // ignore: cast_nullable_to_non_nullable
               as CloudEntry?,
+      stackCount: null == stackCount
+          ? _self.stackCount
+          : stackCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 

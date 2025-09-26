@@ -84,6 +84,9 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
       hasCaseExpirity: json['hasCaseExpirity'] as bool?,
       whenCaseExpiresDelta: const DurationOrNullConverter()
           .fromJson(json['whenCaseExpiresDelta'] as num?),
+      shouldStack: json['shouldStack'] as bool? ?? false,
+      stackUpperLimit: (json['stackUpperLimit'] as num?)?.toInt(),
+      isPaused: json['isPaused'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
@@ -127,6 +130,9 @@ Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
       'hasCaseExpirity': instance.hasCaseExpirity,
       'whenCaseExpiresDelta':
           const DurationOrNullConverter().toJson(instance.whenCaseExpiresDelta),
+      'shouldStack': instance.shouldStack,
+      'stackUpperLimit': instance.stackUpperLimit,
+      'isPaused': instance.isPaused,
     };
 
 const _$TriggerTypeEnumMap = {
@@ -264,6 +270,8 @@ _TriggerInput _$TriggerInputFromJson(Map<String, dynamic> json) =>
       hasCaseExpirity: json['hasCaseExpirity'] as bool? ?? false,
       whenCaseExpiresDelta: const DurationOrNullConverter()
           .fromJson(json['whenCaseExpiresDelta'] as num?),
+      shouldStack: json['shouldStack'] as bool? ?? false,
+      stackUpperLimit: (json['stackUpperLimit'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
@@ -304,6 +312,8 @@ Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
       'hasCaseExpirity': instance.hasCaseExpirity,
       'whenCaseExpiresDelta':
           const DurationOrNullConverter().toJson(instance.whenCaseExpiresDelta),
+      'shouldStack': instance.shouldStack,
+      'stackUpperLimit': instance.stackUpperLimit,
     };
 
 _TriggerActivation _$TriggerActivationFromJson(Map<String, dynamic> json) =>

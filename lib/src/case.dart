@@ -27,19 +27,62 @@ abstract class CaseComment with _$CaseComment {
 @freezed
 abstract class Case with _$Case {
   const factory Case({
+    /// [id] is a unique identifier for the case, typically used to reference and manage it within a system.
+    ///
+    /// This ID is an integer value represented as a string.
     required String id,
+
+    /// [receivedAt] indicates the date and time when the case was received or created.
     @JsonKey(name: 'dateReceived') @TimestampConverter() required DateTime receivedAt,
+
+    /// [status] represents the current state of the case, which can be one of the predefined statuses such as
+    /// pending, followed, or closed.
     @JsonKey(unknownEnumValue: CaseStatus.pending) required CaseStatus status,
+
+    /// [ignoredStatus] indicates whether the case is in a normal state or has been marked as
+    /// ignored, preset, expired, or auto.
     @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) CaseIgnoredStatus? ignoredStatus,
+
+    /// [asset] refers to the specific asset associated with the case, providing context and details about
+    /// the item or entity involved.
     required Asset asset,
+
+    /// [trigger] specifies the event or condition that initiated the creation of the case,
+    /// helping to understand the circumstances leading to its generation.
     required Trigger trigger,
+
+    /// [geofence] indicates the geographical boundary or area related to the case, which can be used
+    /// for location-based analysis or actions.
+    ///
+    /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with a geofence
+    /// (aka. geofence enter/exit).
     Geofence? geofence,
+
+    /// [sequence] is an optional integer that represents the order or position of the case in a series or list.
     int? sequence,
+
+    /// [comments] is a list of comments associated with the case, allowing for communication and
+    /// collaboration among users or stakeholders involved in the case.
     @Default([]) List<CaseComment> comments,
+
+    /// [position] provides the geographical location or coordinates related to the case,
+    /// which can be used for mapping or tracking purposes.
     TelemetryPosition? position,
+
+    /// [payload] contains additional data or information related to the case, which can include
+    /// various telemetry sensors or measurements.
     List<TelemetrySensor>? payload,
+
+    /// [sensors] is a list of telemetry sensors associated with the case, providing insights
+    /// and data points relevant to the situation or event.
     List<TelemetrySensor>? sensors,
+
+    /// [file] refers to an optional file associated with the case, which can include documents,
+    /// images, or other relevant attachments.
     CloudEntry? file,
+
+    /// [stackCount] indicates the number of stacked cases.
+    @Default(1) int stackCount,
   }) = _Case;
 
   factory Case.fromJson(Map<String, dynamic> json) => _$CaseFromJson(json);

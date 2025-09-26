@@ -380,6 +380,7 @@ _Case _$CaseFromJson(Map<String, dynamic> json) => _Case(
       file: json['file'] == null
           ? null
           : CloudEntry.fromJson(json['file'] as Map<String, dynamic>),
+      stackCount: (json['stackCount'] as num?)?.toInt() ?? 1,
     );
 
 Map<String, dynamic> _$CaseToJson(_Case instance) => <String, dynamic>{
@@ -396,6 +397,7 @@ Map<String, dynamic> _$CaseToJson(_Case instance) => <String, dynamic>{
       'payload': instance.payload?.map((e) => e.toJson()).toList(),
       'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
       'file': instance.file?.toJson(),
+      'stackCount': instance.stackCount,
     };
 
 const _$CaseStatusEnumMap = {

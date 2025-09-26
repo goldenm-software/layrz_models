@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.46
+
+- Added `isPaused` to `Trigger` model
+- Added `shouldStack` and `stackUpperLimit` to `Trigger` and `TriggerInput` models to support case stacking functionality.
+
 ## 3.4.45
 
 - Changes on `Case` model to support geofence context on cases when it's available.
