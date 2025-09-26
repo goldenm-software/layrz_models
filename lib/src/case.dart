@@ -19,6 +19,7 @@ abstract class CaseComment with _$CaseComment {
     @TimestampConverter() required DateTime at,
     CommentOwner? owner,
     required String comment,
+    @Default({}) Map<String, dynamic> metadata,
   }) = _CaseComment;
 
   factory CaseComment.fromJson(Map<String, dynamic> json) => _$CaseCommentFromJson(json);

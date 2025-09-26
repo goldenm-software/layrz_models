@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.47
+
+- Added metadata to `CaseComment` model to support additional information storage.
+
 ## 3.4.46
 
 - Added `isPaused` to `Trigger` model

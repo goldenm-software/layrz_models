@@ -4915,6 +4915,7 @@ mixin _$CaseComment {
   DateTime get at;
   CommentOwner? get owner;
   String get comment;
+  Map<String, dynamic> get metadata;
 
   /// Create a copy of CaseComment
   /// with the given fields replaced by the non-null parameter values.
@@ -4934,16 +4935,18 @@ mixin _$CaseComment {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.at, at) || other.at == at) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.comment, comment) || other.comment == comment));
+            (identical(other.comment, comment) || other.comment == comment) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, at, owner, comment);
+  int get hashCode => Object.hash(runtimeType, id, at, owner, comment,
+      const DeepCollectionEquality().hash(metadata));
 
   @override
   String toString() {
-    return 'CaseComment(id: $id, at: $at, owner: $owner, comment: $comment)';
+    return 'CaseComment(id: $id, at: $at, owner: $owner, comment: $comment, metadata: $metadata)';
   }
 }
 
@@ -4957,7 +4960,8 @@ abstract mixin class $CaseCommentCopyWith<$Res> {
       {String id,
       @TimestampConverter() DateTime at,
       CommentOwner? owner,
-      String comment});
+      String comment,
+      Map<String, dynamic> metadata});
 
   $CommentOwnerCopyWith<$Res>? get owner;
 }
@@ -4978,6 +4982,7 @@ class _$CaseCommentCopyWithImpl<$Res> implements $CaseCommentCopyWith<$Res> {
     Object? at = null,
     Object? owner = freezed,
     Object? comment = null,
+    Object? metadata = null,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -4996,6 +5001,10 @@ class _$CaseCommentCopyWithImpl<$Res> implements $CaseCommentCopyWith<$Res> {
           ? _self.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String,
+      metadata: null == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
   }
 
@@ -5108,14 +5117,15 @@ extension CaseCommentPatterns on CaseComment {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String id, @TimestampConverter() DateTime at,
-            CommentOwner? owner, String comment)?
+            CommentOwner? owner, String comment, Map<String, dynamic> metadata)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _CaseComment() when $default != null:
-        return $default(_that.id, _that.at, _that.owner, _that.comment);
+        return $default(
+            _that.id, _that.at, _that.owner, _that.comment, _that.metadata);
       case _:
         return orElse();
     }
@@ -5137,13 +5147,14 @@ extension CaseCommentPatterns on CaseComment {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String id, @TimestampConverter() DateTime at,
-            CommentOwner? owner, String comment)
+            CommentOwner? owner, String comment, Map<String, dynamic> metadata)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _CaseComment():
-        return $default(_that.id, _that.at, _that.owner, _that.comment);
+        return $default(
+            _that.id, _that.at, _that.owner, _that.comment, _that.metadata);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -5164,13 +5175,14 @@ extension CaseCommentPatterns on CaseComment {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(String id, @TimestampConverter() DateTime at,
-            CommentOwner? owner, String comment)?
+            CommentOwner? owner, String comment, Map<String, dynamic> metadata)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _CaseComment() when $default != null:
-        return $default(_that.id, _that.at, _that.owner, _that.comment);
+        return $default(
+            _that.id, _that.at, _that.owner, _that.comment, _that.metadata);
       case _:
         return null;
     }
@@ -5184,7 +5196,9 @@ class _CaseComment implements CaseComment {
       {required this.id,
       @TimestampConverter() required this.at,
       this.owner,
-      required this.comment});
+      required this.comment,
+      final Map<String, dynamic> metadata = const {}})
+      : _metadata = metadata;
   factory _CaseComment.fromJson(Map<String, dynamic> json) =>
       _$CaseCommentFromJson(json);
 
@@ -5197,6 +5211,14 @@ class _CaseComment implements CaseComment {
   final CommentOwner? owner;
   @override
   final String comment;
+  final Map<String, dynamic> _metadata;
+  @override
+  @JsonKey()
+  Map<String, dynamic> get metadata {
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_metadata);
+  }
 
   /// Create a copy of CaseComment
   /// with the given fields replaced by the non-null parameter values.
@@ -5221,16 +5243,18 @@ class _CaseComment implements CaseComment {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.at, at) || other.at == at) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.comment, comment) || other.comment == comment));
+            (identical(other.comment, comment) || other.comment == comment) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, at, owner, comment);
+  int get hashCode => Object.hash(runtimeType, id, at, owner, comment,
+      const DeepCollectionEquality().hash(_metadata));
 
   @override
   String toString() {
-    return 'CaseComment(id: $id, at: $at, owner: $owner, comment: $comment)';
+    return 'CaseComment(id: $id, at: $at, owner: $owner, comment: $comment, metadata: $metadata)';
   }
 }
 
@@ -5246,7 +5270,8 @@ abstract mixin class _$CaseCommentCopyWith<$Res>
       {String id,
       @TimestampConverter() DateTime at,
       CommentOwner? owner,
-      String comment});
+      String comment,
+      Map<String, dynamic> metadata});
 
   @override
   $CommentOwnerCopyWith<$Res>? get owner;
@@ -5268,6 +5293,7 @@ class __$CaseCommentCopyWithImpl<$Res> implements _$CaseCommentCopyWith<$Res> {
     Object? at = null,
     Object? owner = freezed,
     Object? comment = null,
+    Object? metadata = null,
   }) {
     return _then(_CaseComment(
       id: null == id
@@ -5286,6 +5312,10 @@ class __$CaseCommentCopyWithImpl<$Res> implements _$CaseCommentCopyWith<$Res> {
           ? _self.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String,
+      metadata: null == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
   }
 

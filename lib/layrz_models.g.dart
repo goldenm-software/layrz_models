@@ -338,6 +338,7 @@ _CaseComment _$CaseCommentFromJson(Map<String, dynamic> json) => _CaseComment(
           ? null
           : CommentOwner.fromJson(json['owner'] as Map<String, dynamic>),
       comment: json['comment'] as String,
+      metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
 Map<String, dynamic> _$CaseCommentToJson(_CaseComment instance) =>
@@ -346,6 +347,7 @@ Map<String, dynamic> _$CaseCommentToJson(_CaseComment instance) =>
       'at': const TimestampConverter().toJson(instance.at),
       'owner': instance.owner?.toJson(),
       'comment': instance.comment,
+      'metadata': instance.metadata,
     };
 
 _Case _$CaseFromJson(Map<String, dynamic> json) => _Case(
