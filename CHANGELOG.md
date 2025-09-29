@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.4.48
+
+- Added Locator models (`Locator`, `LocatorInput`, `LocatorMqttConfig`) plus GraphQL helpers for CRUD, expiry, and bulk fetching.
+- Introduced `LayrzConnector` utility to streamline GraphQL requests and exported it via `layrz_models.utils`.
+- Declared new `dio` and `layrz_logging` dependencies required for Locator API tooling.
+
 ## 3.4.47
 
 - Added metadata to `CaseComment` model to support additional information storage.

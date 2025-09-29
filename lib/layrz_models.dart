@@ -73,6 +73,7 @@ export 'src/vision/vision.dart';
 export 'src/workspace/workspace.dart';
 export 'src/triggers/triggers.dart';
 export 'src/care_protocols/care_protocols.dart';
+export 'src/locator/locator.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
