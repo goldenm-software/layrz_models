@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.49
+- Added Locator in `AppInternalIdentifier` 
+
 ## 3.4.48
 
 - Added Locator models (`Locator`, `LocatorInput`, `LocatorMqttConfig`) plus GraphQL helpers for CRUD, expiry, and bulk fetching.

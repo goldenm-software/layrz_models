@@ -81,7 +81,8 @@ enum AppInternalIdentifier {
 
   @JsonValue('SDM_MANAGER')
   sdmManager,
-
+  @JsonValue('LOCATOR')
+  locator,
   @JsonValue('UNKNOWN')
   unknown,
   ;

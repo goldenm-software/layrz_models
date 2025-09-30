@@ -176,6 +176,7 @@ const _$AppInternalIdentifierEnumMap = {
   AppInternalIdentifier.tagonMap: 'TAGON_MAP',
   AppInternalIdentifier.tagonManager: 'TAGON_MANAGER',
   AppInternalIdentifier.sdmManager: 'SDM_MANAGER',
+  AppInternalIdentifier.locator: 'LOCATOR',
   AppInternalIdentifier.unknown: 'UNKNOWN',
 };
 
