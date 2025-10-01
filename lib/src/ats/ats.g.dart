@@ -2013,6 +2013,10 @@ _AtsMonitorInput _$AtsMonitorInputFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      analyticsGridStructure: (json['analyticsGridStructure'] as List<dynamic>?)
+          ?.map(
+              (e) => AnalyticsGridItemInput.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$AtsMonitorInputToJson(_AtsMonitorInput instance) =>
@@ -2026,6 +2030,8 @@ Map<String, dynamic> _$AtsMonitorInputToJson(_AtsMonitorInput instance) =>
       'assetsIds': instance.assetsIds,
       'gridStructure': instance.gridStructure.map((e) => e.toJson()).toList(),
       'chartsIds': instance.chartsIds,
+      'analyticsGridStructure':
+          instance.analyticsGridStructure?.map((e) => e.toJson()).toList(),
     };
 
 _AtsGridItem _$AtsGridItemFromJson(Map<String, dynamic> json) => _AtsGridItem(

@@ -34369,6 +34369,12 @@ mixin _$AtsMonitorInput {
   /// List of charts assigned to the monitor for ATS Web.
   set chartsIds(List<String> value);
 
+  /// List of grid structure for Ats Web.
+  List<AnalyticsGridItemInput>? get analyticsGridStructure;
+
+  /// List of grid structure for Ats Web.
+  set analyticsGridStructure(List<AnalyticsGridItemInput>? value);
+
   /// Create a copy of AtsMonitorInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -34382,7 +34388,7 @@ mixin _$AtsMonitorInput {
 
   @override
   String toString() {
-    return 'AtsMonitorInput(id: $id, name: $name, appId: $appId, icon: $icon, color: $color, isFavorite: $isFavorite, assetsIds: $assetsIds, gridStructure: $gridStructure, chartsIds: $chartsIds)';
+    return 'AtsMonitorInput(id: $id, name: $name, appId: $appId, icon: $icon, color: $color, isFavorite: $isFavorite, assetsIds: $assetsIds, gridStructure: $gridStructure, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure)';
   }
 }
 
@@ -34401,7 +34407,8 @@ abstract mixin class $AtsMonitorInputCopyWith<$Res> {
       bool isFavorite,
       List<String> assetsIds,
       List<AtsGridItemInput> gridStructure,
-      List<String> chartsIds});
+      List<String> chartsIds,
+      List<AnalyticsGridItemInput>? analyticsGridStructure});
 }
 
 /// @nodoc
@@ -34426,6 +34433,7 @@ class _$AtsMonitorInputCopyWithImpl<$Res>
     Object? assetsIds = null,
     Object? gridStructure = null,
     Object? chartsIds = null,
+    Object? analyticsGridStructure = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -34464,6 +34472,10 @@ class _$AtsMonitorInputCopyWithImpl<$Res>
           ? _self.chartsIds
           : chartsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      analyticsGridStructure: freezed == analyticsGridStructure
+          ? _self.analyticsGridStructure
+          : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
+              as List<AnalyticsGridItemInput>?,
     ));
   }
 }
@@ -34570,7 +34582,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
             bool isFavorite,
             List<String> assetsIds,
             List<AtsGridItemInput> gridStructure,
-            List<String> chartsIds)?
+            List<String> chartsIds,
+            List<AnalyticsGridItemInput>? analyticsGridStructure)?
         $default, {
     required TResult orElse(),
   }) {
@@ -34586,7 +34599,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
             _that.isFavorite,
             _that.assetsIds,
             _that.gridStructure,
-            _that.chartsIds);
+            _that.chartsIds,
+            _that.analyticsGridStructure);
       case _:
         return orElse();
     }
@@ -34616,7 +34630,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
             bool isFavorite,
             List<String> assetsIds,
             List<AtsGridItemInput> gridStructure,
-            List<String> chartsIds)
+            List<String> chartsIds,
+            List<AnalyticsGridItemInput>? analyticsGridStructure)
         $default,
   ) {
     final _that = this;
@@ -34631,7 +34646,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
             _that.isFavorite,
             _that.assetsIds,
             _that.gridStructure,
-            _that.chartsIds);
+            _that.chartsIds,
+            _that.analyticsGridStructure);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -34660,7 +34676,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
             bool isFavorite,
             List<String> assetsIds,
             List<AtsGridItemInput> gridStructure,
-            List<String> chartsIds)?
+            List<String> chartsIds,
+            List<AnalyticsGridItemInput>? analyticsGridStructure)?
         $default,
   ) {
     final _that = this;
@@ -34675,7 +34692,8 @@ extension AtsMonitorInputPatterns on AtsMonitorInput {
             _that.isFavorite,
             _that.assetsIds,
             _that.gridStructure,
-            _that.chartsIds);
+            _that.chartsIds,
+            _that.analyticsGridStructure);
       case _:
         return null;
     }
@@ -34694,7 +34712,8 @@ class _AtsMonitorInput implements AtsMonitorInput {
       this.isFavorite = false,
       this.assetsIds = const [],
       this.gridStructure = const [],
-      this.chartsIds = const []});
+      this.chartsIds = const [],
+      this.analyticsGridStructure});
   factory _AtsMonitorInput.fromJson(Map<String, dynamic> json) =>
       _$AtsMonitorInputFromJson(json);
 
@@ -34740,6 +34759,10 @@ class _AtsMonitorInput implements AtsMonitorInput {
   @JsonKey()
   List<String> chartsIds;
 
+  /// List of grid structure for Ats Web.
+  @override
+  List<AnalyticsGridItemInput>? analyticsGridStructure;
+
   /// Create a copy of AtsMonitorInput
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -34757,7 +34780,7 @@ class _AtsMonitorInput implements AtsMonitorInput {
 
   @override
   String toString() {
-    return 'AtsMonitorInput(id: $id, name: $name, appId: $appId, icon: $icon, color: $color, isFavorite: $isFavorite, assetsIds: $assetsIds, gridStructure: $gridStructure, chartsIds: $chartsIds)';
+    return 'AtsMonitorInput(id: $id, name: $name, appId: $appId, icon: $icon, color: $color, isFavorite: $isFavorite, assetsIds: $assetsIds, gridStructure: $gridStructure, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure)';
   }
 }
 
@@ -34778,7 +34801,8 @@ abstract mixin class _$AtsMonitorInputCopyWith<$Res>
       bool isFavorite,
       List<String> assetsIds,
       List<AtsGridItemInput> gridStructure,
-      List<String> chartsIds});
+      List<String> chartsIds,
+      List<AnalyticsGridItemInput>? analyticsGridStructure});
 }
 
 /// @nodoc
@@ -34803,6 +34827,7 @@ class __$AtsMonitorInputCopyWithImpl<$Res>
     Object? assetsIds = null,
     Object? gridStructure = null,
     Object? chartsIds = null,
+    Object? analyticsGridStructure = freezed,
   }) {
     return _then(_AtsMonitorInput(
       id: freezed == id
@@ -34841,6 +34866,10 @@ class __$AtsMonitorInputCopyWithImpl<$Res>
           ? _self.chartsIds
           : chartsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      analyticsGridStructure: freezed == analyticsGridStructure
+          ? _self.analyticsGridStructure
+          : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
+              as List<AnalyticsGridItemInput>?,
     ));
   }
 }

@@ -1,7 +1,12 @@
 # Changelog
 
+## 3.4.50
+
+- Added list `analyticsGridStructure` in `AtsMonitorInput`
+
 ## 3.4.49
-- Added Locator in `AppInternalIdentifier` 
+
+- Added Locator in `AppInternalIdentifier`
 
 ## 3.4.48
 

@@ -77,6 +77,7 @@ abstract class AtsMonitorInput with _$AtsMonitorInput {
     @Default([]) List<String> chartsIds,
 
     /// List of grid structure for Ats Web.
+    List<AnalyticsGridItemInput>? analyticsGridStructure,
   }) = _AtsMonitorInput;
 
   factory AtsMonitorInput.fromJson(Map<String, dynamic> json) => _$AtsMonitorInputFromJson(json);
