@@ -65,7 +65,7 @@ abstract class Locator with _$Locator {
 
   factory Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
 
-  String get link => 'https://locate.layrz.com/#/$token';
+  String get link => 'https://find.layrz.com/#/$token';
 
   /// [fetch] fetches a single locator from the server by its ID
   /// It returns a list of [Locator] with the required contextual information

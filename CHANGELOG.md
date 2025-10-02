@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.50+1
+
+- Adjustments on the link of the Locator
+
 ## 3.4.50
 
 - Added list `analyticsGridStructure` in `AtsMonitorInput`
