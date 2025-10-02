@@ -181,6 +181,18 @@ abstract class TriggerInput with _$TriggerInput {
     ///
     /// If null, there is no limit.
     int? stackUpperLimit,
+
+    /// [shouldGenerateLocator] indicates if the trigger should generate a locator when activated.
+    @Default(false) bool shouldGenerateLocator,
+
+    /// [locatorExpiresDelta] represents the duration after which the trigger is activated after its creation.
+    @DurationOrNullConverter() Duration? locatorExpiresDelta,
+
+    /// [locatorExpiresTriggersIds] represents the list of ID's of the triggers that can expire the locator.
+    List<String>? locatorExpiresTriggersIds,
+
+    /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
+    List<String>? locatorGeofencesIds,
   }) = _TriggerInput;
 
   factory TriggerInput.fromJson(Map<String, dynamic> json) => _$TriggerInputFromJson(json);

@@ -141,6 +141,18 @@ abstract class Trigger with _$Trigger {
     ///
     /// To toggle this value, use the mutation `toggleTriggerState`.
     @Default(false) bool isPaused,
+
+    /// [shouldGenerateLocator] indicates if the trigger should generate a locator when activated.
+    @Default(false) bool shouldGenerateLocator,
+
+    /// [locatorExpiresDelta] represents the duration after which the trigger is activated after its creation.
+    @DurationOrNullConverter() Duration? locatorExpiresDelta,
+
+    /// [locatorExpiresTriggersIds] represents the list of ID's of the triggers that can expire the locator.
+    List<String>? locatorExpiresTriggersIds,
+
+    /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
+    List<String>? locatorGeofencesIds,
   }) = _Trigger;
 
   factory Trigger.fromJson(Map<String, dynamic> json) => _$TriggerFromJson(json);

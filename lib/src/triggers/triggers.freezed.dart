@@ -161,6 +161,19 @@ mixin _$Trigger {
   /// To toggle this value, use the mutation `toggleTriggerState`.
   bool get isPaused;
 
+  /// [shouldGenerateLocator] indicates if the trigger should generate a locator when activated.
+  bool get shouldGenerateLocator;
+
+  /// [locatorExpiresDelta] represents the duration after which the trigger is activated after its creation.
+  @DurationOrNullConverter()
+  Duration? get locatorExpiresDelta;
+
+  /// [locatorExpiresTriggersIds] represents the list of ID's of the triggers that can expire the locator.
+  List<String>? get locatorExpiresTriggersIds;
+
+  /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
+  List<String>? get locatorGeofencesIds;
+
   /// Create a copy of Trigger
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -243,7 +256,15 @@ mixin _$Trigger {
             (identical(other.stackUpperLimit, stackUpperLimit) ||
                 other.stackUpperLimit == stackUpperLimit) &&
             (identical(other.isPaused, isPaused) ||
-                other.isPaused == isPaused));
+                other.isPaused == isPaused) &&
+            (identical(other.shouldGenerateLocator, shouldGenerateLocator) ||
+                other.shouldGenerateLocator == shouldGenerateLocator) &&
+            (identical(other.locatorExpiresDelta, locatorExpiresDelta) ||
+                other.locatorExpiresDelta == locatorExpiresDelta) &&
+            const DeepCollectionEquality().equals(
+                other.locatorExpiresTriggersIds, locatorExpiresTriggersIds) &&
+            const DeepCollectionEquality()
+                .equals(other.locatorGeofencesIds, locatorGeofencesIds));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -288,12 +309,16 @@ mixin _$Trigger {
         whenCaseExpiresDelta,
         shouldStack,
         stackUpperLimit,
-        isPaused
+        isPaused,
+        shouldGenerateLocator,
+        locatorExpiresDelta,
+        const DeepCollectionEquality().hash(locatorExpiresTriggersIds),
+        const DeepCollectionEquality().hash(locatorGeofencesIds)
       ]);
 
   @override
   String toString() {
-    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta, shouldStack: $shouldStack, stackUpperLimit: $stackUpperLimit, isPaused: $isPaused)';
+    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta, shouldStack: $shouldStack, stackUpperLimit: $stackUpperLimit, isPaused: $isPaused, shouldGenerateLocator: $shouldGenerateLocator, locatorExpiresDelta: $locatorExpiresDelta, locatorExpiresTriggersIds: $locatorExpiresTriggersIds, locatorGeofencesIds: $locatorGeofencesIds)';
   }
 }
 
@@ -345,7 +370,11 @@ abstract mixin class $TriggerCopyWith<$Res> {
       @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
       bool shouldStack,
       int? stackUpperLimit,
-      bool isPaused});
+      bool isPaused,
+      bool shouldGenerateLocator,
+      @DurationOrNullConverter() Duration? locatorExpiresDelta,
+      List<String>? locatorExpiresTriggersIds,
+      List<String>? locatorGeofencesIds});
 
   $CareProtocolCopyWith<$Res>? get careProtocol;
 }
@@ -401,6 +430,10 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
     Object? shouldStack = null,
     Object? stackUpperLimit = freezed,
     Object? isPaused = null,
+    Object? shouldGenerateLocator = null,
+    Object? locatorExpiresDelta = freezed,
+    Object? locatorExpiresTriggersIds = freezed,
+    Object? locatorGeofencesIds = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -559,6 +592,22 @@ class _$TriggerCopyWithImpl<$Res> implements $TriggerCopyWith<$Res> {
           ? _self.isPaused
           : isPaused // ignore: cast_nullable_to_non_nullable
               as bool,
+      shouldGenerateLocator: null == shouldGenerateLocator
+          ? _self.shouldGenerateLocator
+          : shouldGenerateLocator // ignore: cast_nullable_to_non_nullable
+              as bool,
+      locatorExpiresDelta: freezed == locatorExpiresDelta
+          ? _self.locatorExpiresDelta
+          : locatorExpiresDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      locatorExpiresTriggersIds: freezed == locatorExpiresTriggersIds
+          ? _self.locatorExpiresTriggersIds
+          : locatorExpiresTriggersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      locatorGeofencesIds: freezed == locatorGeofencesIds
+          ? _self.locatorGeofencesIds
+          : locatorGeofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 
@@ -713,7 +762,11 @@ extension TriggerPatterns on Trigger {
             @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
             bool shouldStack,
             int? stackUpperLimit,
-            bool isPaused)?
+            bool isPaused,
+            bool shouldGenerateLocator,
+            @DurationOrNullConverter() Duration? locatorExpiresDelta,
+            List<String>? locatorExpiresTriggersIds,
+            List<String>? locatorGeofencesIds)?
         $default, {
     required TResult orElse(),
   }) {
@@ -759,7 +812,11 @@ extension TriggerPatterns on Trigger {
             _that.whenCaseExpiresDelta,
             _that.shouldStack,
             _that.stackUpperLimit,
-            _that.isPaused);
+            _that.isPaused,
+            _that.shouldGenerateLocator,
+            _that.locatorExpiresDelta,
+            _that.locatorExpiresTriggersIds,
+            _that.locatorGeofencesIds);
       case _:
         return orElse();
     }
@@ -823,7 +880,11 @@ extension TriggerPatterns on Trigger {
             @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
             bool shouldStack,
             int? stackUpperLimit,
-            bool isPaused)
+            bool isPaused,
+            bool shouldGenerateLocator,
+            @DurationOrNullConverter() Duration? locatorExpiresDelta,
+            List<String>? locatorExpiresTriggersIds,
+            List<String>? locatorGeofencesIds)
         $default,
   ) {
     final _that = this;
@@ -868,7 +929,11 @@ extension TriggerPatterns on Trigger {
             _that.whenCaseExpiresDelta,
             _that.shouldStack,
             _that.stackUpperLimit,
-            _that.isPaused);
+            _that.isPaused,
+            _that.shouldGenerateLocator,
+            _that.locatorExpiresDelta,
+            _that.locatorExpiresTriggersIds,
+            _that.locatorGeofencesIds);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -931,7 +996,11 @@ extension TriggerPatterns on Trigger {
             @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
             bool shouldStack,
             int? stackUpperLimit,
-            bool isPaused)?
+            bool isPaused,
+            bool shouldGenerateLocator,
+            @DurationOrNullConverter() Duration? locatorExpiresDelta,
+            List<String>? locatorExpiresTriggersIds,
+            List<String>? locatorGeofencesIds)?
         $default,
   ) {
     final _that = this;
@@ -976,7 +1045,11 @@ extension TriggerPatterns on Trigger {
             _that.whenCaseExpiresDelta,
             _that.shouldStack,
             _that.stackUpperLimit,
-            _that.isPaused);
+            _that.isPaused,
+            _that.shouldGenerateLocator,
+            _that.locatorExpiresDelta,
+            _that.locatorExpiresTriggersIds,
+            _that.locatorGeofencesIds);
       case _:
         return null;
     }
@@ -1028,7 +1101,11 @@ class _Trigger implements Trigger {
       @DurationOrNullConverter() this.whenCaseExpiresDelta,
       this.shouldStack = false,
       this.stackUpperLimit,
-      this.isPaused = false})
+      this.isPaused = false,
+      this.shouldGenerateLocator = false,
+      @DurationOrNullConverter() this.locatorExpiresDelta,
+      final List<String>? locatorExpiresTriggersIds,
+      final List<String>? locatorGeofencesIds})
       : _geofencesIds = geofencesIds,
         _tagsGeofencesIds = tagsGeofencesIds,
         _assetsIds = assetsIds,
@@ -1041,7 +1118,9 @@ class _Trigger implements Trigger {
         _manualActionFields = manualActionFields,
         _children = children,
         _childrenIds = childrenIds,
-        _access = access;
+        _access = access,
+        _locatorExpiresTriggersIds = locatorExpiresTriggersIds,
+        _locatorGeofencesIds = locatorGeofencesIds;
   factory _Trigger.fromJson(Map<String, dynamic> json) =>
       _$TriggerFromJson(json);
 
@@ -1353,6 +1432,44 @@ class _Trigger implements Trigger {
   @JsonKey()
   final bool isPaused;
 
+  /// [shouldGenerateLocator] indicates if the trigger should generate a locator when activated.
+  @override
+  @JsonKey()
+  final bool shouldGenerateLocator;
+
+  /// [locatorExpiresDelta] represents the duration after which the trigger is activated after its creation.
+  @override
+  @DurationOrNullConverter()
+  final Duration? locatorExpiresDelta;
+
+  /// [locatorExpiresTriggersIds] represents the list of ID's of the triggers that can expire the locator.
+  final List<String>? _locatorExpiresTriggersIds;
+
+  /// [locatorExpiresTriggersIds] represents the list of ID's of the triggers that can expire the locator.
+  @override
+  List<String>? get locatorExpiresTriggersIds {
+    final value = _locatorExpiresTriggersIds;
+    if (value == null) return null;
+    if (_locatorExpiresTriggersIds is EqualUnmodifiableListView)
+      return _locatorExpiresTriggersIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
+  final List<String>? _locatorGeofencesIds;
+
+  /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
+  @override
+  List<String>? get locatorGeofencesIds {
+    final value = _locatorGeofencesIds;
+    if (value == null) return null;
+    if (_locatorGeofencesIds is EqualUnmodifiableListView)
+      return _locatorGeofencesIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// Create a copy of Trigger
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -1441,7 +1558,15 @@ class _Trigger implements Trigger {
             (identical(other.stackUpperLimit, stackUpperLimit) ||
                 other.stackUpperLimit == stackUpperLimit) &&
             (identical(other.isPaused, isPaused) ||
-                other.isPaused == isPaused));
+                other.isPaused == isPaused) &&
+            (identical(other.shouldGenerateLocator, shouldGenerateLocator) ||
+                other.shouldGenerateLocator == shouldGenerateLocator) &&
+            (identical(other.locatorExpiresDelta, locatorExpiresDelta) ||
+                other.locatorExpiresDelta == locatorExpiresDelta) &&
+            const DeepCollectionEquality().equals(
+                other._locatorExpiresTriggersIds, _locatorExpiresTriggersIds) &&
+            const DeepCollectionEquality()
+                .equals(other._locatorGeofencesIds, _locatorGeofencesIds));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1486,12 +1611,16 @@ class _Trigger implements Trigger {
         whenCaseExpiresDelta,
         shouldStack,
         stackUpperLimit,
-        isPaused
+        isPaused,
+        shouldGenerateLocator,
+        locatorExpiresDelta,
+        const DeepCollectionEquality().hash(_locatorExpiresTriggersIds),
+        const DeepCollectionEquality().hash(_locatorGeofencesIds)
       ]);
 
   @override
   String toString() {
-    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta, shouldStack: $shouldStack, stackUpperLimit: $stackUpperLimit, isPaused: $isPaused)';
+    return 'Trigger(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, careProtocol: $careProtocol, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, cooldownTime: $cooldownTime, manualActionFields: $manualActionFields, children: $children, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, access: $access, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta, shouldStack: $shouldStack, stackUpperLimit: $stackUpperLimit, isPaused: $isPaused, shouldGenerateLocator: $shouldGenerateLocator, locatorExpiresDelta: $locatorExpiresDelta, locatorExpiresTriggersIds: $locatorExpiresTriggersIds, locatorGeofencesIds: $locatorGeofencesIds)';
   }
 }
 
@@ -1544,7 +1673,11 @@ abstract mixin class _$TriggerCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
       bool shouldStack,
       int? stackUpperLimit,
-      bool isPaused});
+      bool isPaused,
+      bool shouldGenerateLocator,
+      @DurationOrNullConverter() Duration? locatorExpiresDelta,
+      List<String>? locatorExpiresTriggersIds,
+      List<String>? locatorGeofencesIds});
 
   @override
   $CareProtocolCopyWith<$Res>? get careProtocol;
@@ -1601,6 +1734,10 @@ class __$TriggerCopyWithImpl<$Res> implements _$TriggerCopyWith<$Res> {
     Object? shouldStack = null,
     Object? stackUpperLimit = freezed,
     Object? isPaused = null,
+    Object? shouldGenerateLocator = null,
+    Object? locatorExpiresDelta = freezed,
+    Object? locatorExpiresTriggersIds = freezed,
+    Object? locatorGeofencesIds = freezed,
   }) {
     return _then(_Trigger(
       id: null == id
@@ -1759,6 +1896,22 @@ class __$TriggerCopyWithImpl<$Res> implements _$TriggerCopyWith<$Res> {
           ? _self.isPaused
           : isPaused // ignore: cast_nullable_to_non_nullable
               as bool,
+      shouldGenerateLocator: null == shouldGenerateLocator
+          ? _self.shouldGenerateLocator
+          : shouldGenerateLocator // ignore: cast_nullable_to_non_nullable
+              as bool,
+      locatorExpiresDelta: freezed == locatorExpiresDelta
+          ? _self.locatorExpiresDelta
+          : locatorExpiresDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      locatorExpiresTriggersIds: freezed == locatorExpiresTriggersIds
+          ? _self._locatorExpiresTriggersIds
+          : locatorExpiresTriggersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      locatorGeofencesIds: freezed == locatorGeofencesIds
+          ? _self._locatorGeofencesIds
+          : locatorGeofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 
@@ -2017,6 +2170,32 @@ mixin _$TriggerInput {
   /// If null, there is no limit.
   set stackUpperLimit(int? value);
 
+  /// [shouldGenerateLocator] indicates if the trigger should generate a locator when activated.
+  bool get shouldGenerateLocator;
+
+  /// [shouldGenerateLocator] indicates if the trigger should generate a locator when activated.
+  set shouldGenerateLocator(bool value);
+
+  /// [locatorExpiresDelta] represents the duration after which the trigger is activated after its creation.
+  @DurationOrNullConverter()
+  Duration? get locatorExpiresDelta;
+
+  /// [locatorExpiresDelta] represents the duration after which the trigger is activated after its creation.
+  @DurationOrNullConverter()
+  set locatorExpiresDelta(Duration? value);
+
+  /// [locatorExpiresTriggersIds] represents the list of ID's of the triggers that can expire the locator.
+  List<String>? get locatorExpiresTriggersIds;
+
+  /// [locatorExpiresTriggersIds] represents the list of ID's of the triggers that can expire the locator.
+  set locatorExpiresTriggersIds(List<String>? value);
+
+  /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
+  List<String>? get locatorGeofencesIds;
+
+  /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
+  set locatorGeofencesIds(List<String>? value);
+
   /// Create a copy of TriggerInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2030,7 +2209,7 @@ mixin _$TriggerInput {
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta, shouldStack: $shouldStack, stackUpperLimit: $stackUpperLimit)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta, shouldStack: $shouldStack, stackUpperLimit: $stackUpperLimit, shouldGenerateLocator: $shouldGenerateLocator, locatorExpiresDelta: $locatorExpiresDelta, locatorExpiresTriggersIds: $locatorExpiresTriggersIds, locatorGeofencesIds: $locatorGeofencesIds)';
   }
 }
 
@@ -2078,7 +2257,11 @@ abstract mixin class $TriggerInputCopyWith<$Res> {
       bool hasCaseExpirity,
       @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
       bool shouldStack,
-      int? stackUpperLimit});
+      int? stackUpperLimit,
+      bool shouldGenerateLocator,
+      @DurationOrNullConverter() Duration? locatorExpiresDelta,
+      List<String>? locatorExpiresTriggersIds,
+      List<String>? locatorGeofencesIds});
 }
 
 /// @nodoc
@@ -2128,6 +2311,10 @@ class _$TriggerInputCopyWithImpl<$Res> implements $TriggerInputCopyWith<$Res> {
     Object? whenCaseExpiresDelta = freezed,
     Object? shouldStack = null,
     Object? stackUpperLimit = freezed,
+    Object? shouldGenerateLocator = null,
+    Object? locatorExpiresDelta = freezed,
+    Object? locatorExpiresTriggersIds = freezed,
+    Object? locatorGeofencesIds = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -2270,6 +2457,22 @@ class _$TriggerInputCopyWithImpl<$Res> implements $TriggerInputCopyWith<$Res> {
           ? _self.stackUpperLimit
           : stackUpperLimit // ignore: cast_nullable_to_non_nullable
               as int?,
+      shouldGenerateLocator: null == shouldGenerateLocator
+          ? _self.shouldGenerateLocator
+          : shouldGenerateLocator // ignore: cast_nullable_to_non_nullable
+              as bool,
+      locatorExpiresDelta: freezed == locatorExpiresDelta
+          ? _self.locatorExpiresDelta
+          : locatorExpiresDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      locatorExpiresTriggersIds: freezed == locatorExpiresTriggersIds
+          ? _self.locatorExpiresTriggersIds
+          : locatorExpiresTriggersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      locatorGeofencesIds: freezed == locatorGeofencesIds
+          ? _self.locatorGeofencesIds
+          : locatorGeofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -2405,7 +2608,11 @@ extension TriggerInputPatterns on TriggerInput {
             bool hasCaseExpirity,
             @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
             bool shouldStack,
-            int? stackUpperLimit)?
+            int? stackUpperLimit,
+            bool shouldGenerateLocator,
+            @DurationOrNullConverter() Duration? locatorExpiresDelta,
+            List<String>? locatorExpiresTriggersIds,
+            List<String>? locatorGeofencesIds)?
         $default, {
     required TResult orElse(),
   }) {
@@ -2447,7 +2654,11 @@ extension TriggerInputPatterns on TriggerInput {
             _that.hasCaseExpirity,
             _that.whenCaseExpiresDelta,
             _that.shouldStack,
-            _that.stackUpperLimit);
+            _that.stackUpperLimit,
+            _that.shouldGenerateLocator,
+            _that.locatorExpiresDelta,
+            _that.locatorExpiresTriggersIds,
+            _that.locatorGeofencesIds);
       case _:
         return orElse();
     }
@@ -2506,7 +2717,11 @@ extension TriggerInputPatterns on TriggerInput {
             bool hasCaseExpirity,
             @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
             bool shouldStack,
-            int? stackUpperLimit)
+            int? stackUpperLimit,
+            bool shouldGenerateLocator,
+            @DurationOrNullConverter() Duration? locatorExpiresDelta,
+            List<String>? locatorExpiresTriggersIds,
+            List<String>? locatorGeofencesIds)
         $default,
   ) {
     final _that = this;
@@ -2547,7 +2762,11 @@ extension TriggerInputPatterns on TriggerInput {
             _that.hasCaseExpirity,
             _that.whenCaseExpiresDelta,
             _that.shouldStack,
-            _that.stackUpperLimit);
+            _that.stackUpperLimit,
+            _that.shouldGenerateLocator,
+            _that.locatorExpiresDelta,
+            _that.locatorExpiresTriggersIds,
+            _that.locatorGeofencesIds);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -2605,7 +2824,11 @@ extension TriggerInputPatterns on TriggerInput {
             bool hasCaseExpirity,
             @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
             bool shouldStack,
-            int? stackUpperLimit)?
+            int? stackUpperLimit,
+            bool shouldGenerateLocator,
+            @DurationOrNullConverter() Duration? locatorExpiresDelta,
+            List<String>? locatorExpiresTriggersIds,
+            List<String>? locatorGeofencesIds)?
         $default,
   ) {
     final _that = this;
@@ -2646,7 +2869,11 @@ extension TriggerInputPatterns on TriggerInput {
             _that.hasCaseExpirity,
             _that.whenCaseExpiresDelta,
             _that.shouldStack,
-            _that.stackUpperLimit);
+            _that.stackUpperLimit,
+            _that.shouldGenerateLocator,
+            _that.locatorExpiresDelta,
+            _that.locatorExpiresTriggersIds,
+            _that.locatorGeofencesIds);
       case _:
         return null;
     }
@@ -2695,7 +2922,11 @@ class _TriggerInput implements TriggerInput {
       this.hasCaseExpirity = false,
       @DurationOrNullConverter() this.whenCaseExpiresDelta,
       this.shouldStack = false,
-      this.stackUpperLimit});
+      this.stackUpperLimit,
+      this.shouldGenerateLocator = false,
+      @DurationOrNullConverter() this.locatorExpiresDelta,
+      this.locatorExpiresTriggersIds,
+      this.locatorGeofencesIds});
   factory _TriggerInput.fromJson(Map<String, dynamic> json) =>
       _$TriggerInputFromJson(json);
 
@@ -2869,6 +3100,24 @@ class _TriggerInput implements TriggerInput {
   @override
   int? stackUpperLimit;
 
+  /// [shouldGenerateLocator] indicates if the trigger should generate a locator when activated.
+  @override
+  @JsonKey()
+  bool shouldGenerateLocator;
+
+  /// [locatorExpiresDelta] represents the duration after which the trigger is activated after its creation.
+  @override
+  @DurationOrNullConverter()
+  Duration? locatorExpiresDelta;
+
+  /// [locatorExpiresTriggersIds] represents the list of ID's of the triggers that can expire the locator.
+  @override
+  List<String>? locatorExpiresTriggersIds;
+
+  /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
+  @override
+  List<String>? locatorGeofencesIds;
+
   /// Create a copy of TriggerInput
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -2886,7 +3135,7 @@ class _TriggerInput implements TriggerInput {
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta, shouldStack: $shouldStack, stackUpperLimit: $stackUpperLimit)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, manualActionFields: $manualActionFields, childrenIds: $childrenIds, searchTimeDelta: $searchTimeDelta, cooldownTime: $cooldownTime, hasCaseExpirity: $hasCaseExpirity, whenCaseExpiresDelta: $whenCaseExpiresDelta, shouldStack: $shouldStack, stackUpperLimit: $stackUpperLimit, shouldGenerateLocator: $shouldGenerateLocator, locatorExpiresDelta: $locatorExpiresDelta, locatorExpiresTriggersIds: $locatorExpiresTriggersIds, locatorGeofencesIds: $locatorGeofencesIds)';
   }
 }
 
@@ -2936,7 +3185,11 @@ abstract mixin class _$TriggerInputCopyWith<$Res>
       bool hasCaseExpirity,
       @DurationOrNullConverter() Duration? whenCaseExpiresDelta,
       bool shouldStack,
-      int? stackUpperLimit});
+      int? stackUpperLimit,
+      bool shouldGenerateLocator,
+      @DurationOrNullConverter() Duration? locatorExpiresDelta,
+      List<String>? locatorExpiresTriggersIds,
+      List<String>? locatorGeofencesIds});
 }
 
 /// @nodoc
@@ -2987,6 +3240,10 @@ class __$TriggerInputCopyWithImpl<$Res>
     Object? whenCaseExpiresDelta = freezed,
     Object? shouldStack = null,
     Object? stackUpperLimit = freezed,
+    Object? shouldGenerateLocator = null,
+    Object? locatorExpiresDelta = freezed,
+    Object? locatorExpiresTriggersIds = freezed,
+    Object? locatorGeofencesIds = freezed,
   }) {
     return _then(_TriggerInput(
       id: freezed == id
@@ -3129,6 +3386,22 @@ class __$TriggerInputCopyWithImpl<$Res>
           ? _self.stackUpperLimit
           : stackUpperLimit // ignore: cast_nullable_to_non_nullable
               as int?,
+      shouldGenerateLocator: null == shouldGenerateLocator
+          ? _self.shouldGenerateLocator
+          : shouldGenerateLocator // ignore: cast_nullable_to_non_nullable
+              as bool,
+      locatorExpiresDelta: freezed == locatorExpiresDelta
+          ? _self.locatorExpiresDelta
+          : locatorExpiresDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      locatorExpiresTriggersIds: freezed == locatorExpiresTriggersIds
+          ? _self.locatorExpiresTriggersIds
+          : locatorExpiresTriggersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      locatorGeofencesIds: freezed == locatorGeofencesIds
+          ? _self.locatorGeofencesIds
+          : locatorGeofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }

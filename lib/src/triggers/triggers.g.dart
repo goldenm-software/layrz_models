@@ -87,6 +87,16 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
       shouldStack: json['shouldStack'] as bool? ?? false,
       stackUpperLimit: (json['stackUpperLimit'] as num?)?.toInt(),
       isPaused: json['isPaused'] as bool? ?? false,
+      shouldGenerateLocator: json['shouldGenerateLocator'] as bool? ?? false,
+      locatorExpiresDelta: const DurationOrNullConverter()
+          .fromJson(json['locatorExpiresDelta'] as num?),
+      locatorExpiresTriggersIds:
+          (json['locatorExpiresTriggersIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
+      locatorGeofencesIds: (json['locatorGeofencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
@@ -133,6 +143,11 @@ Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
       'shouldStack': instance.shouldStack,
       'stackUpperLimit': instance.stackUpperLimit,
       'isPaused': instance.isPaused,
+      'shouldGenerateLocator': instance.shouldGenerateLocator,
+      'locatorExpiresDelta':
+          const DurationOrNullConverter().toJson(instance.locatorExpiresDelta),
+      'locatorExpiresTriggersIds': instance.locatorExpiresTriggersIds,
+      'locatorGeofencesIds': instance.locatorGeofencesIds,
     };
 
 const _$TriggerTypeEnumMap = {
@@ -272,6 +287,16 @@ _TriggerInput _$TriggerInputFromJson(Map<String, dynamic> json) =>
           .fromJson(json['whenCaseExpiresDelta'] as num?),
       shouldStack: json['shouldStack'] as bool? ?? false,
       stackUpperLimit: (json['stackUpperLimit'] as num?)?.toInt(),
+      shouldGenerateLocator: json['shouldGenerateLocator'] as bool? ?? false,
+      locatorExpiresDelta: const DurationOrNullConverter()
+          .fromJson(json['locatorExpiresDelta'] as num?),
+      locatorExpiresTriggersIds:
+          (json['locatorExpiresTriggersIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
+      locatorGeofencesIds: (json['locatorGeofencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
@@ -314,6 +339,11 @@ Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
           const DurationOrNullConverter().toJson(instance.whenCaseExpiresDelta),
       'shouldStack': instance.shouldStack,
       'stackUpperLimit': instance.stackUpperLimit,
+      'shouldGenerateLocator': instance.shouldGenerateLocator,
+      'locatorExpiresDelta':
+          const DurationOrNullConverter().toJson(instance.locatorExpiresDelta),
+      'locatorExpiresTriggersIds': instance.locatorExpiresTriggersIds,
+      'locatorGeofencesIds': instance.locatorGeofencesIds,
     };
 
 _TriggerActivation _$TriggerActivationFromJson(Map<String, dynamic> json) =>

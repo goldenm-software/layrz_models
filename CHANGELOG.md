@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.51
+
+- Added `shouldGenerateLocator`, `locatorExpiresDelta`, `locatorExpiresTriggersIds` and `locatorGeofencesIds` to `Trigger` and `TriggerInput` models to support Locator generation on Trigger activation.
+
 ## 3.4.50+1
 
 - Adjustments on the link of the Locator
