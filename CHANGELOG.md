@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.52
+
+- New model `OutboundServiceInput` to create and update Outbound Services.
+
 ## 3.4.51
 
 - Added `shouldGenerateLocator`, `locatorExpiresDelta`, `locatorExpiresTriggersIds` and `locatorGeofencesIds` to `Trigger` and `TriggerInput` models to support Locator generation on Trigger activation.

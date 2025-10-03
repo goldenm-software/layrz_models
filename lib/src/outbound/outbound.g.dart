@@ -129,3 +129,81 @@ Map<String, dynamic> _$OutboundMetricsToJson(_OutboundMetrics instance) =>
       'totalItems': instance.totalItems,
       'statsLoading': instance.statsLoading,
     };
+
+_OutboundStructureInput _$OutboundStructureInputFromJson(
+        Map<String, dynamic> json) =>
+    _OutboundStructureInput(
+      field: json['field'] as String? ?? 'newField',
+      type: json['type'] as String? ?? 'constant',
+      value: json['value'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$OutboundStructureInputToJson(
+        _OutboundStructureInput instance) =>
+    <String, dynamic>{
+      'field': instance.field,
+      'type': instance.type,
+      'value': instance.value,
+    };
+
+_OutboundServiceInput _$OutboundServiceInputFromJson(
+        Map<String, dynamic> json) =>
+    _OutboundServiceInput(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      credentials: json['credentials'] as Map<String, dynamic>? ?? const {},
+      protocolId: json['protocolId'] as String?,
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      groupsIds: (json['groupsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      structure: (json['structure'] as List<dynamic>?)
+              ?.map((e) =>
+                  OutboundStructureInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      token: json['token'] as String?,
+    );
+
+Map<String, dynamic> _$OutboundServiceInputToJson(
+        _OutboundServiceInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'credentials': instance.credentials,
+      'protocolId': instance.protocolId,
+      'assetsIds': instance.assetsIds,
+      'groupsIds': instance.groupsIds,
+      'structure': instance.structure.map((e) => e.toJson()).toList(),
+      'token': instance.token,
+    };
+
+const _$OutboundStructureTypeEnumMap = {
+  OutboundStructureType.assetName: 'asset.name',
+  OutboundStructureType.receivedAt: 'receivedAt',
+  OutboundStructureType.constant: 'constant',
+  OutboundStructureType.position: 'position.full',
+  OutboundStructureType.latitude: 'position.latitude',
+  OutboundStructureType.longitude: 'position.longitude',
+  OutboundStructureType.altitude: 'position.altitude',
+  OutboundStructureType.speed: 'position.speed',
+  OutboundStructureType.direction: 'position.direction',
+  OutboundStructureType.satellites: 'position.satellites',
+  OutboundStructureType.hdop: 'position.hdop',
+  OutboundStructureType.payload: 'payload.full',
+  OutboundStructureType.assetVin: 'asset.vin',
+  OutboundStructureType.assetPlate: 'asset.plate',
+  OutboundStructureType.devices: 'devices.list',
+  OutboundStructureType.primaryDevice: 'primary.device.full',
+  OutboundStructureType.primaryDeviceName: 'primary.device.name',
+  OutboundStructureType.primaryDeviceIdent: 'primary.device.ident',
+  OutboundStructureType.triggerName: 'trigger.name',
+  OutboundStructureType.triggerCode: 'trigger.code',
+  OutboundStructureType.triggerGeofenceName: 'trigger.geofence.name',
+  OutboundStructureType.triggerGeofenceType: 'trigger.geofence.type',
+  OutboundStructureType.triggerLocatorLink: 'trigger.locator.link',
+};
