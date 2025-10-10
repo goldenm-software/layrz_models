@@ -1193,7 +1193,9 @@ _AtsOperationHistory _$AtsOperationHistoryFromJson(Map<String, dynamic> json) =>
               ? null
               : Asset.fromJson(json['asset'] as Map<String, dynamic>),
       assetId: json['assetId'] as String?,
-      bookedFor: const TimestampConverter().fromJson(json['bookedFor'] as num),
+      bookedFor: const TimestampOrNullConverter().fromJson(
+        json['bookedFor'] as num?,
+      ),
     );
 
 Map<String, dynamic> _$AtsOperationHistoryToJson(
@@ -1203,7 +1205,7 @@ Map<String, dynamic> _$AtsOperationHistoryToJson(
   'createdAt': const TimestampConverter().toJson(instance.createdAt),
   'asset': instance.asset?.toJson(),
   'assetId': instance.assetId,
-  'bookedFor': const TimestampConverter().toJson(instance.bookedFor),
+  'bookedFor': const TimestampOrNullConverter().toJson(instance.bookedFor),
 };
 
 const _$AtsPurchaseOrderStatusEnumMap = {

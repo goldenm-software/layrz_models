@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.54
+
+- Changed `bookedFor` for nullable in `AtsOperationHistory`
+
 ## 3.4.53
 
 - Added new values `LOADING_BOOKED` and `UNLOADING_BOOKED` in `AtsPurchaseOrderStatus`

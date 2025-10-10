@@ -10714,7 +10714,7 @@ mixin _$AtsOperationHistory {
 @TimestampConverter() DateTime get createdAt;/// [asset] is the asset of the operation. Can be null.
  Asset? get asset;/// [assetId] is the asset ID of the operation. Can be null.
  String? get assetId;/// [bookedFor] is the date booked for the status change.
-@TimestampConverter() DateTime get bookedFor;
+@TimestampOrNullConverter() DateTime? get bookedFor;
 /// Create a copy of AtsOperationHistory
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -10747,7 +10747,7 @@ abstract mixin class $AtsOperationHistoryCopyWith<$Res>  {
   factory $AtsOperationHistoryCopyWith(AtsOperationHistory value, $Res Function(AtsOperationHistory) _then) = _$AtsOperationHistoryCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus status,@TimestampConverter() DateTime createdAt, Asset? asset, String? assetId,@TimestampConverter() DateTime bookedFor
+@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus status,@TimestampConverter() DateTime createdAt, Asset? asset, String? assetId,@TimestampOrNullConverter() DateTime? bookedFor
 });
 
 
@@ -10764,14 +10764,14 @@ class _$AtsOperationHistoryCopyWithImpl<$Res>
 
 /// Create a copy of AtsOperationHistory
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? createdAt = null,Object? asset = freezed,Object? assetId = freezed,Object? bookedFor = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? createdAt = null,Object? asset = freezed,Object? assetId = freezed,Object? bookedFor = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as AtsPurchaseOrderStatus,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as Asset?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
-as String?,bookedFor: null == bookedFor ? _self.bookedFor : bookedFor // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as String?,bookedFor: freezed == bookedFor ? _self.bookedFor : bookedFor // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 /// Create a copy of AtsOperationHistory
@@ -10868,7 +10868,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus status, @TimestampConverter()  DateTime createdAt,  Asset? asset,  String? assetId, @TimestampConverter()  DateTime bookedFor)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus status, @TimestampConverter()  DateTime createdAt,  Asset? asset,  String? assetId, @TimestampOrNullConverter()  DateTime? bookedFor)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsOperationHistory() when $default != null:
 return $default(_that.status,_that.createdAt,_that.asset,_that.assetId,_that.bookedFor);case _:
@@ -10889,7 +10889,7 @@ return $default(_that.status,_that.createdAt,_that.asset,_that.assetId,_that.boo
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus status, @TimestampConverter()  DateTime createdAt,  Asset? asset,  String? assetId, @TimestampConverter()  DateTime bookedFor)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus status, @TimestampConverter()  DateTime createdAt,  Asset? asset,  String? assetId, @TimestampOrNullConverter()  DateTime? bookedFor)  $default,) {final _that = this;
 switch (_that) {
 case _AtsOperationHistory():
 return $default(_that.status,_that.createdAt,_that.asset,_that.assetId,_that.bookedFor);case _:
@@ -10909,7 +10909,7 @@ return $default(_that.status,_that.createdAt,_that.asset,_that.assetId,_that.boo
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus status, @TimestampConverter()  DateTime createdAt,  Asset? asset,  String? assetId, @TimestampConverter()  DateTime bookedFor)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus status, @TimestampConverter()  DateTime createdAt,  Asset? asset,  String? assetId, @TimestampOrNullConverter()  DateTime? bookedFor)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsOperationHistory() when $default != null:
 return $default(_that.status,_that.createdAt,_that.asset,_that.assetId,_that.bookedFor);case _:
@@ -10924,7 +10924,7 @@ return $default(_that.status,_that.createdAt,_that.asset,_that.assetId,_that.boo
 @JsonSerializable()
 
 class _AtsOperationHistory implements AtsOperationHistory {
-  const _AtsOperationHistory({@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) required this.status, @TimestampConverter() required this.createdAt, this.asset, this.assetId, @TimestampConverter() required this.bookedFor});
+  const _AtsOperationHistory({@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) required this.status, @TimestampConverter() required this.createdAt, this.asset, this.assetId, @TimestampOrNullConverter() this.bookedFor});
   factory _AtsOperationHistory.fromJson(Map<String, dynamic> json) => _$AtsOperationHistoryFromJson(json);
 
 /// [status] is the status of of the operation.
@@ -10936,7 +10936,7 @@ class _AtsOperationHistory implements AtsOperationHistory {
 /// [assetId] is the asset ID of the operation. Can be null.
 @override final  String? assetId;
 /// [bookedFor] is the date booked for the status change.
-@override@TimestampConverter() final  DateTime bookedFor;
+@override@TimestampOrNullConverter() final  DateTime? bookedFor;
 
 /// Create a copy of AtsOperationHistory
 /// with the given fields replaced by the non-null parameter values.
@@ -10971,7 +10971,7 @@ abstract mixin class _$AtsOperationHistoryCopyWith<$Res> implements $AtsOperatio
   factory _$AtsOperationHistoryCopyWith(_AtsOperationHistory value, $Res Function(_AtsOperationHistory) _then) = __$AtsOperationHistoryCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus status,@TimestampConverter() DateTime createdAt, Asset? asset, String? assetId,@TimestampConverter() DateTime bookedFor
+@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus status,@TimestampConverter() DateTime createdAt, Asset? asset, String? assetId,@TimestampOrNullConverter() DateTime? bookedFor
 });
 
 
@@ -10988,14 +10988,14 @@ class __$AtsOperationHistoryCopyWithImpl<$Res>
 
 /// Create a copy of AtsOperationHistory
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? createdAt = null,Object? asset = freezed,Object? assetId = freezed,Object? bookedFor = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? createdAt = null,Object? asset = freezed,Object? assetId = freezed,Object? bookedFor = freezed,}) {
   return _then(_AtsOperationHistory(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as AtsPurchaseOrderStatus,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as Asset?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
-as String?,bookedFor: null == bookedFor ? _self.bookedFor : bookedFor // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as String?,bookedFor: freezed == bookedFor ? _self.bookedFor : bookedFor // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
