@@ -10,32 +10,30 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
   id: json['id'] as String,
   name: json['name'] as String,
   code: json['code'] as String,
-  geofencesIds:
-      (json['geofencesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  tagsGeofencesIds:
-      (json['tagsGeofencesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  assetsIds:
-      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  tagsAssetsIds:
-      (json['tagsAssetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  parameters:
-      (json['parameters'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  authAssetsIds:
-      (json['authAssetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  authUsersIds:
-      (json['authUsersIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  authTagsIds:
-      (json['authTagsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  geofencesIds: (json['geofencesIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  tagsGeofencesIds: (json['tagsGeofencesIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  assetsIds: (json['assetsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  tagsAssetsIds: (json['tagsAssetsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  parameters: (json['parameters'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  authAssetsIds: (json['authAssetsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  authUsersIds: (json['authUsersIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  authTagsIds: (json['authTagsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
   kind: $enumDecode(
     _$TriggerTypeEnumMap,
     json['kind'],
@@ -52,13 +50,11 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
     json['exactHour'] as String?,
   ),
   crontabFormat: json['crontabFormat'] as String?,
-  weekdays:
-      (json['weekdays'] as List<dynamic>?)
-          ?.map(
-            (e) =>
-                $enumDecode(_$WeekdayEnumMap, e, unknownValue: Weekday.monday),
-          )
-          .toList(),
+  weekdays: (json['weekdays'] as List<dynamic>?)
+      ?.map(
+        (e) => $enumDecode(_$WeekdayEnumMap, e, unknownValue: Weekday.monday),
+      )
+      .toList(),
   isPlainCrontab: json['isPlainCrontab'] as bool?,
   timezoneId: json['timezoneId'] as String?,
   priority: (json['priority'] as num?)?.toInt(),
@@ -69,10 +65,9 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
     unknownValue: CaseEventEffect.none,
   ),
   careProtocolId: json['careProtocolId'] as String?,
-  careProtocol:
-      json['careProtocol'] == null
-          ? null
-          : CareProtocol.fromJson(json['careProtocol'] as Map<String, dynamic>),
+  careProtocol: json['careProtocol'] == null
+      ? null
+      : CareProtocol.fromJson(json['careProtocol'] as Map<String, dynamic>),
   caseKind: $enumDecodeNullable(
     _$CaseTypeEnumMap,
     json['caseKind'],
@@ -87,23 +82,21 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
   cooldownTime: const DurationOrNullConverter().fromJson(
     json['cooldownTime'] as num?,
   ),
-  manualActionFields:
-      (json['manualActionFields'] as List<dynamic>?)
-          ?.map((e) => CareTask.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  children:
-      (json['children'] as List<dynamic>?)
-          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  childrenIds:
-      (json['childrenIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  manualActionFields: (json['manualActionFields'] as List<dynamic>?)
+      ?.map((e) => CareTask.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  children: (json['children'] as List<dynamic>?)
+      ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  childrenIds: (json['childrenIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
   searchTimeDelta: const DurationOrNullConverter().fromJson(
     json['searchTimeDelta'] as num?,
   ),
-  access:
-      (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  access: (json['access'] as List<dynamic>?)
+      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+      .toList(),
   hasCaseExpirity: json['hasCaseExpirity'] as bool?,
   whenCaseExpiresDelta: const DurationOrNullConverter().fromJson(
     json['whenCaseExpiresDelta'] as num?,
@@ -119,10 +112,9 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
       (json['locatorExpiresTriggersIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-  locatorGeofencesIds:
-      (json['locatorGeofencesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+  locatorGeofencesIds: (json['locatorGeofencesIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
 );
 
 Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
@@ -155,8 +147,9 @@ Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
   'caseCommentPattern': instance.caseCommentPattern?.toJson(),
   'caseCommentPatternValue': instance.caseCommentPatternValue,
   'cooldownTime': const DurationOrNullConverter().toJson(instance.cooldownTime),
-  'manualActionFields':
-      instance.manualActionFields?.map((e) => e.toJson()).toList(),
+  'manualActionFields': instance.manualActionFields
+      ?.map((e) => e.toJson())
+      .toList(),
   'children': instance.children?.map((e) => e.toJson()).toList(),
   'childrenIds': instance.childrenIds,
   'searchTimeDelta': const DurationOrNullConverter().toJson(
@@ -273,10 +266,9 @@ _TriggerInput _$TriggerInputFromJson(
   formula: json['formula'] as String?,
   script: json['script'] as String?,
   priority: (json['priority'] as num?)?.toInt() ?? 1,
-  color:
-      json['color'] == null
-          ? kPrimaryColor
-          : const ColorConverter().fromJson(json['color'] as String),
+  color: json['color'] == null
+      ? kPrimaryColor
+      : const ColorConverter().fromJson(json['color'] as String),
   visualEventEffect:
       $enumDecodeNullable(
         _$CaseEventEffectEnumMap,
@@ -336,10 +328,9 @@ _TriggerInput _$TriggerInputFromJson(
   searchTimeDelta: const DurationOrNullConverter().fromJson(
     json['searchTimeDelta'] as num?,
   ),
-  cooldownTime:
-      json['cooldownTime'] == null
-          ? const Duration(minutes: 1)
-          : const DurationConverter().fromJson(json['cooldownTime'] as num),
+  cooldownTime: json['cooldownTime'] == null
+      ? const Duration(minutes: 1)
+      : const DurationConverter().fromJson(json['cooldownTime'] as num),
   hasCaseExpirity: json['hasCaseExpirity'] as bool? ?? false,
   whenCaseExpiresDelta: const DurationOrNullConverter().fromJson(
     json['whenCaseExpiresDelta'] as num?,
@@ -354,10 +345,9 @@ _TriggerInput _$TriggerInputFromJson(
       (json['locatorExpiresTriggersIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-  locatorGeofencesIds:
-      (json['locatorGeofencesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+  locatorGeofencesIds: (json['locatorGeofencesIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
 );
 
 Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
@@ -389,8 +379,9 @@ Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
       'authUsersIds': instance.authUsersIds,
       'authTagsIds': instance.authTagsIds,
       'parameters': instance.parameters,
-      'manualActionFields':
-          instance.manualActionFields?.map((e) => e.toJson()).toList(),
+      'manualActionFields': instance.manualActionFields
+          ?.map((e) => e.toJson())
+          .toList(),
       'childrenIds': instance.childrenIds,
       'searchTimeDelta': const DurationOrNullConverter().toJson(
         instance.searchTimeDelta,
@@ -414,25 +405,22 @@ _TriggerActivation _$TriggerActivationFromJson(Map<String, dynamic> json) =>
     _TriggerActivation(
       id: json['id'] as String,
       asset: Asset.fromJson(json['asset'] as Map<String, dynamic>),
-      trigger:
-          json['trigger'] == null
-              ? null
-              : Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
-      position:
-          json['position'] == null
-              ? null
-              : TelemetryPosition.fromJson(
-                json['position'] as Map<String, dynamic>,
-              ),
+      trigger: json['trigger'] == null
+          ? null
+          : Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
+      position: json['position'] == null
+          ? null
+          : TelemetryPosition.fromJson(
+              json['position'] as Map<String, dynamic>,
+            ),
       presenceType: $enumDecodeNullable(
         _$TriggerGeofenceDetectionModeEnumMap,
         json['presenceType'],
         unknownValue: TriggerGeofenceDetectionMode.entrance,
       ),
-      sensors:
-          (json['sensors'] as List<dynamic>?)
-              ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
-              .toList(),
+      sensors: (json['sensors'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
       date: const TimestampConverter().fromJson(json['at'] as num),
     );
 

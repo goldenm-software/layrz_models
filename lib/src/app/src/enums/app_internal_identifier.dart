@@ -1,5 +1,6 @@
 part of '../../app.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum AppInternalIdentifier {
   @JsonValue('ADMIN')
   admin,
@@ -84,8 +85,7 @@ enum AppInternalIdentifier {
   @JsonValue('LOCATOR')
   locator,
   @JsonValue('UNKNOWN')
-  unknown,
-  ;
+  unknown;
 
   @override
   String toString() => toJson();

@@ -1,5 +1,5 @@
 part of '../../app.dart';
-
+@JsonEnum(alwaysCreate: true)
 enum LayoutDesign {
   /// [LayoutDesign.right] defines the layout mode of the login.
   /// This value is used as default

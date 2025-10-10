@@ -141,6 +141,9 @@ abstract class User with _$User {
 
     /// [isPasswordExpired] represents if the user's password is expired and need to be changed.
     bool? isPasswordExpired,
+
+    /// [preferences] represents the user preferences.
+    UserPreferences? preferences,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -197,6 +200,9 @@ abstract class UserInput with _$UserInput {
 
     /// [password] default password if allowed by the form
     String? password,
+
+    /// [preferences] represents the user preferences.
+    UserPreferencesInput? preferences,
   }) = _UserInput;
 
   factory UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);

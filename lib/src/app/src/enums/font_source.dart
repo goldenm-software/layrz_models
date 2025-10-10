@@ -1,6 +1,7 @@
 part of '../../app.dart';
 
 /// [FontSource] defines where is stored the font
+@JsonEnum(alwaysCreate: true)
 enum FontSource {
   /// [google] is stored in google fonts, check out [`google_fonts` package](https://pub.dev/packages/google_fonts)
   @JsonValue('GOOGLE')
@@ -12,8 +13,7 @@ enum FontSource {
 
   /// [uri] is stored in a remote server
   @JsonValue('URI')
-  uri,
-  ;
+  uri;
 
   @override
   String toString() => toJson();

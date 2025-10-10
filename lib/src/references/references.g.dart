@@ -16,15 +16,13 @@ _Reference _$ReferenceFromJson(Map<String, dynamic> json) => _Reference(
         unknownValue: ReferenceCategory.unknown,
       ) ??
       ReferenceCategory.unknown,
-  customFields:
-      (json['customFields'] as List<dynamic>?)
-          ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  customFields: (json['customFields'] as List<dynamic>?)
+      ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
+      .toList(),
   qrCode: json['qrCode'] as String?,
-  access:
-      (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  access: (json['access'] as List<dynamic>?)
+      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$ReferenceToJson(_Reference instance) =>

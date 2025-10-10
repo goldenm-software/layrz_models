@@ -17,3 +17,4 @@ part 'src/tenvio_setup.dart';
 part 'src/user.dart';
 part 'src/colorblind.dart';
 part 'src/accessibility.dart';
+part 'src/preferences.dart';

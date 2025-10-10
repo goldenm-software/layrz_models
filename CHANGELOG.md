@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.55
+
+- Added accessibility and preferences to user entity.
+
 ## 3.4.54
 
 - Changed `bookedFor` for nullable in `AtsOperationHistory`

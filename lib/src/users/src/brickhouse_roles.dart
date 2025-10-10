@@ -1,6 +1,6 @@
 part of '../users.dart';
 
-@JsonEnum()
+@JsonEnum(alwaysCreate: true)
 enum BrickhouseUserRole {
   @JsonValue('OWNER')
   owner,

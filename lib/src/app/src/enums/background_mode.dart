@@ -1,11 +1,11 @@
 part of '../../app.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum BackgroundMode {
   @JsonValue('SOLID')
   solid,
   @JsonValue('WALLPAPER')
-  wallpaper,
-  ;
+  wallpaper;
 
   @override
   String toString() => toJson();

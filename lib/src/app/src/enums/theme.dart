@@ -1,5 +1,6 @@
 part of '../../app.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum AppTheme {
   @JsonValue('CUSTOM')
   custom,
@@ -38,8 +39,7 @@ enum AppTheme {
   @JsonValue('GREY')
   grey,
   @JsonValue('BLUE')
-  blue,
-  ;
+  blue;
 
   @override
   String toString() => toJson();

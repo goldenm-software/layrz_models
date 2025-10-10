@@ -1,5 +1,5 @@
 part of '../../app.dart';
-
+@JsonEnum(alwaysCreate: true)
 enum AppTechnology {
   @JsonValue('VUEJS')
   vuejs,

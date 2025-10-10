@@ -2,6 +2,7 @@ part of '../../app.dart';
 
 /// [InstanceStatus] is the status of the instance
 /// Only used when the platform is `AppPlatform.web`
+@JsonEnum(alwaysCreate: true)
 enum InstanceStatus {
   /// API Reference: PENDING
   /// Definition: Pending
