@@ -7,20 +7,25 @@ part of 'references.dart';
 // **************************************************************************
 
 _Reference _$ReferenceFromJson(Map<String, dynamic> json) => _Reference(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      category: $enumDecodeNullable(
-              _$ReferenceCategoryEnumMap, json['category'],
-              unknownValue: ReferenceCategory.unknown) ??
-          ReferenceCategory.unknown,
-      customFields: (json['customFields'] as List<dynamic>?)
+  id: json['id'] as String,
+  name: json['name'] as String,
+  category:
+      $enumDecodeNullable(
+        _$ReferenceCategoryEnumMap,
+        json['category'],
+        unknownValue: ReferenceCategory.unknown,
+      ) ??
+      ReferenceCategory.unknown,
+  customFields:
+      (json['customFields'] as List<dynamic>?)
           ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
           .toList(),
-      qrCode: json['qrCode'] as String?,
-      access: (json['access'] as List<dynamic>?)
+  qrCode: json['qrCode'] as String?,
+  access:
+      (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
-    );
+);
 
 Map<String, dynamic> _$ReferenceToJson(_Reference instance) =>
     <String, dynamic>{
@@ -116,11 +121,15 @@ _ReferenceInput _$ReferenceInputFromJson(Map<String, dynamic> json) =>
     _ReferenceInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
-      category: $enumDecodeNullable(
-              _$ReferenceCategoryEnumMap, json['category'],
-              unknownValue: ReferenceCategory.unknown) ??
+      category:
+          $enumDecodeNullable(
+            _$ReferenceCategoryEnumMap,
+            json['category'],
+            unknownValue: ReferenceCategory.unknown,
+          ) ??
           ReferenceCategory.universal,
-      customFields: (json['customFields'] as List<dynamic>?)
+      customFields:
+          (json['customFields'] as List<dynamic>?)
               ?.map((e) => CustomFieldInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],

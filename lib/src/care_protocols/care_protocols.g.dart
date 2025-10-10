@@ -10,26 +10,34 @@ _CareProtocol _$CareProtocolFromJson(Map<String, dynamic> json) =>
     _CareProtocol(
       id: json['id'] as String,
       name: json['name'] as String,
-      mode: $enumDecodeNullable(_$CareProtocolModeEnumMap, json['mode'],
-          unknownValue: CareProtocolMode.simple),
-      tasks: (json['tasks'] as List<dynamic>?)
+      mode: $enumDecodeNullable(
+        _$CareProtocolModeEnumMap,
+        json['mode'],
+        unknownValue: CareProtocolMode.simple,
+      ),
+      tasks:
+          (json['tasks'] as List<dynamic>?)
               ?.map((e) => CareTask.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      pages: (json['pages'] as List<dynamic>?)
+      pages:
+          (json['pages'] as List<dynamic>?)
               ?.map(
-                  (e) => ConciergeFormPage.fromJson(e as Map<String, dynamic>))
+                (e) => ConciergeFormPage.fromJson(e as Map<String, dynamic>),
+              )
               .toList() ??
           const [],
-      associatedTriggers: (json['associatedTriggers'] as List<dynamic>?)
-          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      associatedTriggers:
+          (json['associatedTriggers'] as List<dynamic>?)
+              ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+              .toList(),
       numOfTasks: (json['numOfTasks'] as num?)?.toInt(),
       numOfPages: (json['numOfPages'] as num?)?.toInt(),
       numOfBlocks: (json['numOfBlocks'] as num?)?.toInt(),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      access:
+          (json['access'] as List<dynamic>?)
+              ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$CareProtocolToJson(_CareProtocol instance) =>
@@ -56,16 +64,24 @@ _CareProtocolInput _$CareProtocolInputFromJson(Map<String, dynamic> json) =>
     _CareProtocolInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? "",
-      mode: $enumDecodeNullable(_$CareProtocolModeEnumMap, json['mode'],
-              unknownValue: CareProtocolMode.simple) ??
+      mode:
+          $enumDecodeNullable(
+            _$CareProtocolModeEnumMap,
+            json['mode'],
+            unknownValue: CareProtocolMode.simple,
+          ) ??
           CareProtocolMode.simple,
-      tasks: (json['tasks'] as List<dynamic>?)
+      tasks:
+          (json['tasks'] as List<dynamic>?)
               ?.map((e) => CareTaskInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      pages: (json['pages'] as List<dynamic>?)
-              ?.map((e) =>
-                  ConciergeFormPageInput.fromJson(e as Map<String, dynamic>))
+      pages:
+          (json['pages'] as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    ConciergeFormPageInput.fromJson(e as Map<String, dynamic>),
+              )
               .toList() ??
           const [],
     );
@@ -80,24 +96,26 @@ Map<String, dynamic> _$CareProtocolInputToJson(_CareProtocolInput instance) =>
     };
 
 _CareTask _$CareTaskFromJson(Map<String, dynamic> json) => _CareTask(
-      question: json['question'] as String,
-      answer: $enumDecode(_$AnswerKindEnumMap, json['answer'],
-          unknownValue: AnswerKind.text),
-      choices: (json['choices'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      minValue: (json['minValue'] as num?)?.toInt() ?? 0,
-      maxValue: (json['maxValue'] as num?)?.toInt() ?? 0,
-    );
+  question: json['question'] as String,
+  answer: $enumDecode(
+    _$AnswerKindEnumMap,
+    json['answer'],
+    unknownValue: AnswerKind.text,
+  ),
+  choices:
+      (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  minValue: (json['minValue'] as num?)?.toInt() ?? 0,
+  maxValue: (json['maxValue'] as num?)?.toInt() ?? 0,
+);
 
 Map<String, dynamic> _$CareTaskToJson(_CareTask instance) => <String, dynamic>{
-      'question': instance.question,
-      'answer': instance.answer.toJson(),
-      'choices': instance.choices,
-      'minValue': instance.minValue,
-      'maxValue': instance.maxValue,
-    };
+  'question': instance.question,
+  'answer': instance.answer.toJson(),
+  'choices': instance.choices,
+  'minValue': instance.minValue,
+  'maxValue': instance.maxValue,
+};
 
 const _$AnswerKindEnumMap = {
   AnswerKind.text: 'TEXT',
@@ -109,10 +127,15 @@ const _$AnswerKindEnumMap = {
 _CareTaskInput _$CareTaskInputFromJson(Map<String, dynamic> json) =>
     _CareTaskInput(
       question: json['question'] as String? ?? '',
-      answer: $enumDecodeNullable(_$AnswerKindEnumMap, json['answer'],
-              unknownValue: AnswerKind.text) ??
+      answer:
+          $enumDecodeNullable(
+            _$AnswerKindEnumMap,
+            json['answer'],
+            unknownValue: AnswerKind.text,
+          ) ??
           AnswerKind.text,
-      choices: (json['choices'] as List<dynamic>?)
+      choices:
+          (json['choices'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],

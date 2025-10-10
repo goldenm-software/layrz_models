@@ -14,17 +14,23 @@ _LayrzNotification _$LayrzNotificationFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String,
       messageTranslate: json['messageTranslate'] as bool? ?? false,
       messageArgs: json['messageArgs'] as Map<String, dynamic>? ?? const {},
-      sound: $enumDecodeNullable(_$SoundEffectEnumMap, json['sound'],
-              unknownValue: SoundEffect.none) ??
+      sound:
+          $enumDecodeNullable(
+            _$SoundEffectEnumMap,
+            json['sound'],
+            unknownValue: SoundEffect.none,
+          ) ??
           SoundEffect.none,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
-      color: json['color'] == null
-          ? Colors.blue
-          : const ColorConverter().fromJson(json['color'] as String),
+      color:
+          json['color'] == null
+              ? Colors.blue
+              : const ColorConverter().fromJson(json['color'] as String),
       uri: json['uri'] as String?,
-      duration: json['duration'] == null
-          ? const Duration(seconds: 5)
-          : const DurationConverter().fromJson(json['duration'] as num),
+      duration:
+          json['duration'] == null
+              ? const Duration(seconds: 5)
+              : const DurationConverter().fromJson(json['duration'] as num),
     );
 
 Map<String, dynamic> _$LayrzNotificationToJson(_LayrzNotification instance) =>

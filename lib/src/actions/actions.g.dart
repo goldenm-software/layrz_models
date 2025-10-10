@@ -7,59 +7,73 @@ part of 'actions.dart';
 // **************************************************************************
 
 _Action _$ActionFromJson(Map<String, dynamic> json) => _Action(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      kind: $enumDecode(_$ActionTypeEnumMap, json['kind'],
-          unknownValue: ActionType.performOperation),
-      subkind: $enumDecodeNullable(_$ActionSubtypeEnumMap, json['subkind'],
-              unknownValue: ActionSubtype.unused) ??
-          ActionSubtype.unused,
-      commandId: json['commandId'] as String?,
-      triggers: (json['triggers'] as List<dynamic>?)
+  id: json['id'] as String,
+  name: json['name'] as String,
+  kind: $enumDecode(
+    _$ActionTypeEnumMap,
+    json['kind'],
+    unknownValue: ActionType.performOperation,
+  ),
+  subkind:
+      $enumDecodeNullable(
+        _$ActionSubtypeEnumMap,
+        json['subkind'],
+        unknownValue: ActionSubtype.unused,
+      ) ??
+      ActionSubtype.unused,
+  commandId: json['commandId'] as String?,
+  triggers:
+      (json['triggers'] as List<dynamic>?)
           ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
           .toList(),
-      triggersIds: (json['triggersIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      outboundServices: (json['outboundServices'] as List<dynamic>?)
+  triggersIds:
+      (json['triggersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  outboundServices:
+      (json['outboundServices'] as List<dynamic>?)
           ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
           .toList(),
-      outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
+  outboundServicesIds:
+      (json['outboundServicesIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      operations: (json['operations'] as List<dynamic>?)
+  operations:
+      (json['operations'] as List<dynamic>?)
           ?.map((e) => Operation.fromJson(e as Map<String, dynamic>))
           .toList(),
-      operationsIds: (json['operationsIds'] as List<dynamic>?)
+  operationsIds:
+      (json['operationsIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      access: (json['access'] as List<dynamic>?)
+  access:
+      (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
-      watchImage: json['watchImage'] as bool?,
-      geofenceSettings: json['geofenceSettings'] == null
+  watchImage: json['watchImage'] as bool?,
+  geofenceSettings:
+      json['geofenceSettings'] == null
           ? null
           : ActionGeofenceSettings.fromJson(
-              json['geofenceSettings'] as Map<String, dynamic>),
-    );
+            json['geofenceSettings'] as Map<String, dynamic>,
+          ),
+);
 
 Map<String, dynamic> _$ActionToJson(_Action instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'kind': instance.kind.toJson(),
-      'subkind': instance.subkind.toJson(),
-      'commandId': instance.commandId,
-      'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
-      'triggersIds': instance.triggersIds,
-      'outboundServices':
-          instance.outboundServices?.map((e) => e.toJson()).toList(),
-      'outboundServicesIds': instance.outboundServicesIds,
-      'operations': instance.operations?.map((e) => e.toJson()).toList(),
-      'operationsIds': instance.operationsIds,
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-      'watchImage': instance.watchImage,
-      'geofenceSettings': instance.geofenceSettings?.toJson(),
-    };
+  'id': instance.id,
+  'name': instance.name,
+  'kind': instance.kind.toJson(),
+  'subkind': instance.subkind.toJson(),
+  'commandId': instance.commandId,
+  'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
+  'triggersIds': instance.triggersIds,
+  'outboundServices':
+      instance.outboundServices?.map((e) => e.toJson()).toList(),
+  'outboundServicesIds': instance.outboundServicesIds,
+  'operations': instance.operations?.map((e) => e.toJson()).toList(),
+  'operationsIds': instance.operationsIds,
+  'access': instance.access?.map((e) => e.toJson()).toList(),
+  'watchImage': instance.watchImage,
+  'geofenceSettings': instance.geofenceSettings?.toJson(),
+};
 
 const _$ActionTypeEnumMap = {
   ActionType.link: 'LINK',
@@ -79,31 +93,43 @@ const _$ActionSubtypeEnumMap = {
 };
 
 _ActionInput _$ActionInputFromJson(Map<String, dynamic> json) => _ActionInput(
-      id: json['id'] as String?,
-      name: json['name'] as String? ?? '',
-      kind: $enumDecodeNullable(_$ActionTypeEnumMap, json['kind'],
-              unknownValue: ActionType.performOperation) ??
-          ActionType.performOperation,
-      subkind: $enumDecodeNullable(_$ActionSubtypeEnumMap, json['subkind'],
-              unknownValue: ActionSubtype.unused) ??
-          ActionSubtype.unused,
-      commandId: json['commandId'] as String?,
-      triggersIds: (json['triggersIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      operationsIds: (json['operationsIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      watchImage: json['watchImage'] as bool? ?? false,
-      geofenceSettings: ActionGeofenceSettingsInput.fromJson(
-          json['geofenceSettings'] as Map<String, dynamic>),
-    );
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  kind:
+      $enumDecodeNullable(
+        _$ActionTypeEnumMap,
+        json['kind'],
+        unknownValue: ActionType.performOperation,
+      ) ??
+      ActionType.performOperation,
+  subkind:
+      $enumDecodeNullable(
+        _$ActionSubtypeEnumMap,
+        json['subkind'],
+        unknownValue: ActionSubtype.unused,
+      ) ??
+      ActionSubtype.unused,
+  commandId: json['commandId'] as String?,
+  triggersIds:
+      (json['triggersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  operationsIds:
+      (json['operationsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  outboundServicesIds:
+      (json['outboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  watchImage: json['watchImage'] as bool? ?? false,
+  geofenceSettings: ActionGeofenceSettingsInput.fromJson(
+    json['geofenceSettings'] as Map<String, dynamic>,
+  ),
+);
 
 Map<String, dynamic> _$ActionInputToJson(_ActionInput instance) =>
     <String, dynamic>{
@@ -120,31 +146,39 @@ Map<String, dynamic> _$ActionInputToJson(_ActionInput instance) =>
     };
 
 _ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
-        Map<String, dynamic> json) =>
-    _ActionGeofenceSettings(
-      whoOwner: $enumDecodeNullable(_$ActionPropertyEnumMap, json['whoOwner'],
-              unknownValue: ActionProperty.none) ??
-          ActionProperty.none,
-      name: json['name'] as String?,
-      category: $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category'],
-          unknownValue: GeofenceCategory.none),
-      radius: (json['radius'] as num?)?.toDouble(),
-      mappitRouteId: json['mappitRouteId'] as String?,
-      mappitRoute: json['mappitRoute'] == null
+  Map<String, dynamic> json,
+) => _ActionGeofenceSettings(
+  whoOwner:
+      $enumDecodeNullable(
+        _$ActionPropertyEnumMap,
+        json['whoOwner'],
+        unknownValue: ActionProperty.none,
+      ) ??
+      ActionProperty.none,
+  name: json['name'] as String?,
+  category: $enumDecodeNullable(
+    _$GeofenceCategoryEnumMap,
+    json['category'],
+    unknownValue: GeofenceCategory.none,
+  ),
+  radius: (json['radius'] as num?)?.toDouble(),
+  mappitRouteId: json['mappitRouteId'] as String?,
+  mappitRoute:
+      json['mappitRoute'] == null
           ? null
           : MappitRoute.fromJson(json['mappitRoute'] as Map<String, dynamic>),
-    );
+);
 
 Map<String, dynamic> _$ActionGeofenceSettingsToJson(
-        _ActionGeofenceSettings instance) =>
-    <String, dynamic>{
-      'whoOwner': instance.whoOwner.toJson(),
-      'name': instance.name,
-      'category': instance.category?.toJson(),
-      'radius': instance.radius,
-      'mappitRouteId': instance.mappitRouteId,
-      'mappitRoute': instance.mappitRoute?.toJson(),
-    };
+  _ActionGeofenceSettings instance,
+) => <String, dynamic>{
+  'whoOwner': instance.whoOwner.toJson(),
+  'name': instance.name,
+  'category': instance.category?.toJson(),
+  'radius': instance.radius,
+  'mappitRouteId': instance.mappitRouteId,
+  'mappitRoute': instance.mappitRoute?.toJson(),
+};
 
 const _$ActionPropertyEnumMap = {
   ActionProperty.none: 'NONE',
@@ -164,25 +198,33 @@ const _$GeofenceCategoryEnumMap = {
 };
 
 _ActionGeofenceSettingsInput _$ActionGeofenceSettingsInputFromJson(
-        Map<String, dynamic> json) =>
-    _ActionGeofenceSettingsInput(
-      whoOwner: $enumDecodeNullable(_$ActionPropertyEnumMap, json['whoOwner'],
-              unknownValue: ActionProperty.none) ??
-          ActionProperty.none,
-      name: json['name'] as String?,
-      category: $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category'],
-              unknownValue: GeofenceCategory.none) ??
-          GeofenceCategory.none,
-      radius: (json['radius'] as num?)?.toDouble() ?? 10.0,
-      mappitRouteId: json['mappitRouteId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _ActionGeofenceSettingsInput(
+  whoOwner:
+      $enumDecodeNullable(
+        _$ActionPropertyEnumMap,
+        json['whoOwner'],
+        unknownValue: ActionProperty.none,
+      ) ??
+      ActionProperty.none,
+  name: json['name'] as String?,
+  category:
+      $enumDecodeNullable(
+        _$GeofenceCategoryEnumMap,
+        json['category'],
+        unknownValue: GeofenceCategory.none,
+      ) ??
+      GeofenceCategory.none,
+  radius: (json['radius'] as num?)?.toDouble() ?? 10.0,
+  mappitRouteId: json['mappitRouteId'] as String?,
+);
 
 Map<String, dynamic> _$ActionGeofenceSettingsInputToJson(
-        _ActionGeofenceSettingsInput instance) =>
-    <String, dynamic>{
-      'whoOwner': instance.whoOwner.toJson(),
-      'name': instance.name,
-      'category': instance.category.toJson(),
-      'radius': instance.radius,
-      'mappitRouteId': instance.mappitRouteId,
-    };
+  _ActionGeofenceSettingsInput instance,
+) => <String, dynamic>{
+  'whoOwner': instance.whoOwner.toJson(),
+  'name': instance.name,
+  'category': instance.category.toJson(),
+  'radius': instance.radius,
+  'mappitRouteId': instance.mappitRouteId,
+};

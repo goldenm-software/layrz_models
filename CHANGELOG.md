@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.53
+
+- Added new values `LOADING_BOOKED` and `UNLOADING_BOOKED` in `AtsPurchaseOrderStatus`
+- Added new value `bookedFor` in `AtsOperationHistory`
+
 ## 3.4.52
 
 - New model `OutboundServiceInput` to create and update Outbound Services.

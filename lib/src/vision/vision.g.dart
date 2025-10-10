@@ -12,14 +12,16 @@ _VisionProtocol _$VisionProtocolFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
       isEnabled: json['isEnabled'] as bool,
-      requiredFields: (json['requiredFields'] as List<dynamic>?)
+      requiredFields:
+          (json['requiredFields'] as List<dynamic>?)
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       usage: (json['usage'] as num?)?.toInt(),
-      dynamicIcon: json['dynamicIcon'] == null
-          ? null
-          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+      dynamicIcon:
+          json['dynamicIcon'] == null
+              ? null
+              : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$VisionProtocolToJson(_VisionProtocol instance) =>
@@ -38,17 +40,23 @@ _VisionProfile _$VisionProfileFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       protocolId: json['protocolId'] as String?,
-      protocol: json['protocol'] == null
-          ? null
-          : VisionProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      protocol:
+          json['protocol'] == null
+              ? null
+              : VisionProtocol.fromJson(
+                json['protocol'] as Map<String, dynamic>,
+              ),
       config: json['config'] as Map<String, dynamic>?,
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      lastMeasurement: json['lastMeasurement'] == null
-          ? null
-          : VisionGaugeResult.fromJson(
-              json['lastMeasurement'] as Map<String, dynamic>),
+      access:
+          (json['access'] as List<dynamic>?)
+              ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      lastMeasurement:
+          json['lastMeasurement'] == null
+              ? null
+              : VisionGaugeResult.fromJson(
+                json['lastMeasurement'] as Map<String, dynamic>,
+              ),
     );
 
 Map<String, dynamic> _$VisionProfileToJson(_VisionProfile instance) =>
@@ -66,8 +74,9 @@ _VisionGaugeResult _$VisionGaugeResultFromJson(Map<String, dynamic> json) =>
     _VisionGaugeResult(
       id: json['id'] as String,
       result: (json['result'] as num).toDouble(),
-      performedAt:
-          const TimestampConverter().fromJson(json['performedAt'] as num),
+      performedAt: const TimestampConverter().fromJson(
+        json['performedAt'] as num,
+      ),
     );
 
 Map<String, dynamic> _$VisionGaugeResultToJson(_VisionGaugeResult instance) =>

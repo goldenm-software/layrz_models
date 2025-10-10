@@ -14,6 +14,9 @@ abstract class AtsOperationHistory with _$AtsOperationHistory {
 
     /// [assetId] is the asset ID of the operation. Can be null.
     String? assetId,
+
+    /// [bookedFor] is the date booked for the status change.
+    @TimestampConverter() required DateTime bookedFor,
   }) = _AtsOperationHistory;
 
   factory AtsOperationHistory.fromJson(Map<String, dynamic> json) => _$AtsOperationHistoryFromJson(json);

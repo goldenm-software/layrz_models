@@ -12,7 +12,8 @@ _OutboundProtocol _$OutboundProtocolFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
       isEnabled: json['isEnabled'] as bool,
-      categoriesIds: (json['categoriesIds'] as List<dynamic>?)
+      categoriesIds:
+          (json['categoriesIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
@@ -20,13 +21,15 @@ _OutboundProtocol _$OutboundProtocolFromJson(Map<String, dynamic> json) =>
       isConsumpted: json['isConsumpted'] as bool?,
       mqttTopic: json['mqttTopic'] as String?,
       isAsync: json['isAsync'] as bool?,
-      requiredFields: (json['requiredFields'] as List<dynamic>?)
+      requiredFields:
+          (json['requiredFields'] as List<dynamic>?)
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      dynamicIcon: json['dynamicIcon'] == null
-          ? null
-          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+      dynamicIcon:
+          json['dynamicIcon'] == null
+              ? null
+              : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
       usage: (json['usage'] as num?)?.toInt(),
     );
 
@@ -46,39 +49,44 @@ Map<String, dynamic> _$OutboundProtocolToJson(_OutboundProtocol instance) =>
       'usage': instance.usage,
     };
 
-_OutboundService _$OutboundServiceFromJson(Map<String, dynamic> json) =>
-    _OutboundService(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      credentials: json['credentials'] as Map<String, dynamic>?,
-      protocol: json['protocol'] == null
+_OutboundService _$OutboundServiceFromJson(
+  Map<String, dynamic> json,
+) => _OutboundService(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  credentials: json['credentials'] as Map<String, dynamic>?,
+  protocol:
+      json['protocol'] == null
           ? null
           : OutboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
-      protocolId: json['protocolId'] as String?,
-      isEnabled: json['isEnabled'] as bool?,
-      structure: (json['structure'] as List<dynamic>?)
+  protocolId: json['protocolId'] as String?,
+  isEnabled: json['isEnabled'] as bool?,
+  structure:
+      (json['structure'] as List<dynamic>?)
           ?.map((e) => OutboundStructure.fromJson(e as Map<String, dynamic>))
           .toList(),
-      token: json['token'] as String?,
-      assetsIds: (json['assetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      assets: (json['assets'] as List<dynamic>?)
+  token: json['token'] as String?,
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  assets:
+      (json['assets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      groupsIds: (json['groupsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      groups: (json['groups'] as List<dynamic>?)
+  groupsIds:
+      (json['groupsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  groups:
+      (json['groups'] as List<dynamic>?)
           ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
           .toList(),
-      access: (json['access'] as List<dynamic>?)
+  access:
+      (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
-      metrics: json['metrics'] == null
+  metrics:
+      json['metrics'] == null
           ? null
           : OutboundMetrics.fromJson(json['metrics'] as Map<String, dynamic>),
-    );
+);
 
 Map<String, dynamic> _$OutboundServiceToJson(_OutboundService instance) =>
     <String, dynamic>{
@@ -131,56 +139,56 @@ Map<String, dynamic> _$OutboundMetricsToJson(_OutboundMetrics instance) =>
     };
 
 _OutboundStructureInput _$OutboundStructureInputFromJson(
-        Map<String, dynamic> json) =>
-    _OutboundStructureInput(
-      field: json['field'] as String? ?? 'newField',
-      type: json['type'] as String? ?? 'constant',
-      value: json['value'] as String? ?? '',
-    );
+  Map<String, dynamic> json,
+) => _OutboundStructureInput(
+  field: json['field'] as String? ?? 'newField',
+  type: json['type'] as String? ?? 'constant',
+  value: json['value'] as String? ?? '',
+);
 
 Map<String, dynamic> _$OutboundStructureInputToJson(
-        _OutboundStructureInput instance) =>
-    <String, dynamic>{
-      'field': instance.field,
-      'type': instance.type,
-      'value': instance.value,
-    };
+  _OutboundStructureInput instance,
+) => <String, dynamic>{
+  'field': instance.field,
+  'type': instance.type,
+  'value': instance.value,
+};
 
 _OutboundServiceInput _$OutboundServiceInputFromJson(
-        Map<String, dynamic> json) =>
-    _OutboundServiceInput(
-      id: json['id'] as String?,
-      name: json['name'] as String? ?? '',
-      credentials: json['credentials'] as Map<String, dynamic>? ?? const {},
-      protocolId: json['protocolId'] as String?,
-      assetsIds: (json['assetsIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      groupsIds: (json['groupsIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      structure: (json['structure'] as List<dynamic>?)
-              ?.map((e) =>
-                  OutboundStructureInput.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-      token: json['token'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _OutboundServiceInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  credentials: json['credentials'] as Map<String, dynamic>? ?? const {},
+  protocolId: json['protocolId'] as String?,
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  groupsIds:
+      (json['groupsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  structure:
+      (json['structure'] as List<dynamic>?)
+          ?.map(
+            (e) => OutboundStructureInput.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      const [],
+  token: json['token'] as String?,
+);
 
 Map<String, dynamic> _$OutboundServiceInputToJson(
-        _OutboundServiceInput instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'credentials': instance.credentials,
-      'protocolId': instance.protocolId,
-      'assetsIds': instance.assetsIds,
-      'groupsIds': instance.groupsIds,
-      'structure': instance.structure.map((e) => e.toJson()).toList(),
-      'token': instance.token,
-    };
+  _OutboundServiceInput instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'credentials': instance.credentials,
+  'protocolId': instance.protocolId,
+  'assetsIds': instance.assetsIds,
+  'groupsIds': instance.groupsIds,
+  'structure': instance.structure.map((e) => e.toJson()).toList(),
+  'token': instance.token,
+};
 
 const _$OutboundStructureTypeEnumMap = {
   OutboundStructureType.assetName: 'asset.name',
