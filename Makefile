@@ -1,6 +1,9 @@
-.PHONY: build build_verbose lint test
+.PHONY: build build_delete build_verbose lint test
 
 build:
+	dart run build_runner build
+
+build_delete:
 	dart run build_runner build --delete-conflicting-outputs
 
 build_verbose:

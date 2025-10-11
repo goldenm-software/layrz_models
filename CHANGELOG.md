@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.56
+
+- Added `PresetInput` model
+
 ## 3.4.55
 
 - Added accessibility and preferences to user entity.
