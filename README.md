@@ -16,6 +16,8 @@ All packages developed by [Layrz](https://layrz.com) are prefixed with `layrz_`,
 
 This package is designed to convert our API responses into Dart objects, so you can use them in your Flutter projects. More information about our API can be found in our [documentation](https://developers.layrz.com/api/).
 
+<b>Update 2025-10-12:</b> We're working to convert `layrz_models` into an official API wrapper/connector, stay tuned!
+
 ### I have a question, how can I contact you?
 
 If you need more assistance, you open an issue on the [Repository](https://github.com/goldenm-software/layrz_models) and we're happy to help you :)

@@ -153,6 +153,12 @@ abstract class Trigger with _$Trigger {
 
     /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
     List<String>? locatorGeofencesIds,
+
+    /// [locatorCustomization] is the registered app that will act as a customization for this locator
+    RegisteredApp? locatorCustomization,
+
+    /// [locatorCustomizationId] is the ID of the registered app that will act as a customization for this locator
+    String? locatorCustomizationId,
   }) = _Trigger;
 
   factory Trigger.fromJson(Map<String, dynamic> json) => _$TriggerFromJson(json);

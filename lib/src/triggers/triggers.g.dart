@@ -115,6 +115,12 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
   locatorGeofencesIds: (json['locatorGeofencesIds'] as List<dynamic>?)
       ?.map((e) => e as String)
       .toList(),
+  locatorCustomization: json['locatorCustomization'] == null
+      ? null
+      : RegisteredApp.fromJson(
+          json['locatorCustomization'] as Map<String, dynamic>,
+        ),
+  locatorCustomizationId: json['locatorCustomizationId'] as String?,
 );
 
 Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
@@ -169,6 +175,8 @@ Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
   ),
   'locatorExpiresTriggersIds': instance.locatorExpiresTriggersIds,
   'locatorGeofencesIds': instance.locatorGeofencesIds,
+  'locatorCustomization': instance.locatorCustomization?.toJson(),
+  'locatorCustomizationId': instance.locatorCustomizationId,
 };
 
 const _$TriggerTypeEnumMap = {
@@ -267,7 +275,7 @@ _TriggerInput _$TriggerInputFromJson(
   script: json['script'] as String?,
   priority: (json['priority'] as num?)?.toInt() ?? 1,
   color: json['color'] == null
-      ? kPrimaryColor
+      ? Colors.red
       : const ColorConverter().fromJson(json['color'] as String),
   visualEventEffect:
       $enumDecodeNullable(
@@ -348,6 +356,7 @@ _TriggerInput _$TriggerInputFromJson(
   locatorGeofencesIds: (json['locatorGeofencesIds'] as List<dynamic>?)
       ?.map((e) => e as String)
       .toList(),
+  locatorCustomizationId: json['locatorCustomizationId'] as String?,
 );
 
 Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
@@ -399,6 +408,7 @@ Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
       ),
       'locatorExpiresTriggersIds': instance.locatorExpiresTriggersIds,
       'locatorGeofencesIds': instance.locatorGeofencesIds,
+      'locatorCustomizationId': instance.locatorCustomizationId,
     };
 
 _TriggerActivation _$TriggerActivationFromJson(Map<String, dynamic> json) =>

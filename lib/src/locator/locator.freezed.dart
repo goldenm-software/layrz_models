@@ -34,7 +34,9 @@ mixin _$Locator {
  String? get createdById;/// [updatedAt] is the last update date of the locator
 @TimestampConverter() DateTime get updatedAt;/// [updatedBy] is the user who last updated the locator
  User? get updatedBy;/// [updatedById] is the ID of the user who last updated the locator
- String? get updatedById;
+ String? get updatedById;/// [customization] is the registered app that will act as a customization for this locator
+ RegisteredApp? get customization;/// [customizationId] is the ID of the registered app that will act as a customization for this locator
+ String? get customizationId;
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -47,16 +49,16 @@ $LocatorCopyWith<Locator> get copyWith => _$LocatorCopyWithImpl<Locator>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.customization, customization) || other.customization == customization)&&(identical(other.customizationId, customizationId) || other.customizationId == customizationId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById]);
+int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById,customization,customizationId]);
 
 @override
 String toString() {
-  return 'Locator(id: $id, token: $token, mqttConfig: $mqttConfig, assets: $assets, assetsIds: $assetsIds, geofences: $geofences, geofencesIds: $geofencesIds, triggers: $triggers, triggersIds: $triggersIds, expiresAt: $expiresAt, expiredBy: $expiredBy, expiredById: $expiredById, isExpired: $isExpired, createdAt: $createdAt, createdBy: $createdBy, createdById: $createdById, updatedAt: $updatedAt, updatedBy: $updatedBy, updatedById: $updatedById)';
+  return 'Locator(id: $id, token: $token, mqttConfig: $mqttConfig, assets: $assets, assetsIds: $assetsIds, geofences: $geofences, geofencesIds: $geofencesIds, triggers: $triggers, triggersIds: $triggersIds, expiresAt: $expiresAt, expiredBy: $expiredBy, expiredById: $expiredById, isExpired: $isExpired, createdAt: $createdAt, createdBy: $createdBy, createdById: $createdById, updatedAt: $updatedAt, updatedBy: $updatedBy, updatedById: $updatedById, customization: $customization, customizationId: $customizationId)';
 }
 
 
@@ -67,11 +69,11 @@ abstract mixin class $LocatorCopyWith<$Res>  {
   factory $LocatorCopyWith(Locator value, $Res Function(Locator) _then) = _$LocatorCopyWithImpl;
 @useResult
 $Res call({
- String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById
+ String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId
 });
 
 
-$LocatorMqttConfigCopyWith<$Res>? get mqttConfig;$UserCopyWith<$Res>? get expiredBy;$UserCopyWith<$Res>? get createdBy;$UserCopyWith<$Res>? get updatedBy;
+$LocatorMqttConfigCopyWith<$Res>? get mqttConfig;$UserCopyWith<$Res>? get expiredBy;$UserCopyWith<$Res>? get createdBy;$UserCopyWith<$Res>? get updatedBy;$RegisteredAppCopyWith<$Res>? get customization;
 
 }
 /// @nodoc
@@ -84,7 +86,7 @@ class _$LocatorCopyWithImpl<$Res>
 
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
@@ -105,6 +107,8 @@ as User?,createdById: freezed == createdById ? _self.createdById : createdById /
 as String?,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedBy: freezed == updatedBy ? _self.updatedBy : updatedBy // ignore: cast_nullable_to_non_nullable
 as User?,updatedById: freezed == updatedById ? _self.updatedById : updatedById // ignore: cast_nullable_to_non_nullable
+as String?,customization: freezed == customization ? _self.customization : customization // ignore: cast_nullable_to_non_nullable
+as RegisteredApp?,customizationId: freezed == customizationId ? _self.customizationId : customizationId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -155,6 +159,18 @@ $UserCopyWith<$Res>? get updatedBy {
 
   return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
     return _then(_self.copyWith(updatedBy: value));
+  });
+}/// Create a copy of Locator
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RegisteredAppCopyWith<$Res>? get customization {
+    if (_self.customization == null) {
+    return null;
+  }
+
+  return $RegisteredAppCopyWith<$Res>(_self.customization!, (value) {
+    return _then(_self.copyWith(customization: value));
   });
 }
 }
@@ -238,10 +254,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Locator() when $default != null:
-return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById);case _:
+return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId);case _:
   return orElse();
 
 }
@@ -259,10 +275,10 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId)  $default,) {final _that = this;
 switch (_that) {
 case _Locator():
-return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById);case _:
+return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -279,10 +295,10 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId)?  $default,) {final _that = this;
 switch (_that) {
 case _Locator() when $default != null:
-return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById);case _:
+return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId);case _:
   return null;
 
 }
@@ -294,7 +310,7 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 @JsonSerializable()
 
 class _Locator extends Locator {
-  const _Locator({required this.id, required this.token, this.mqttConfig, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<Trigger>? triggers, final  List<String>? triggersIds, @TimestampOrNullConverter() this.expiresAt, this.expiredBy, this.expiredById, this.isExpired, @TimestampConverter() required this.createdAt, this.createdBy, this.createdById, @TimestampConverter() required this.updatedAt, this.updatedBy, this.updatedById}): _assets = assets,_assetsIds = assetsIds,_geofences = geofences,_geofencesIds = geofencesIds,_triggers = triggers,_triggersIds = triggersIds,super._();
+  const _Locator({required this.id, required this.token, this.mqttConfig, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<Trigger>? triggers, final  List<String>? triggersIds, @TimestampOrNullConverter() this.expiresAt, this.expiredBy, this.expiredById, this.isExpired, @TimestampConverter() required this.createdAt, this.createdBy, this.createdById, @TimestampConverter() required this.updatedAt, this.updatedBy, this.updatedById, this.customization, this.customizationId}): _assets = assets,_assetsIds = assetsIds,_geofences = geofences,_geofencesIds = geofencesIds,_triggers = triggers,_triggersIds = triggersIds,super._();
   factory _Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
 
 /// [id] is the UUIDv4 identifier of the locator
@@ -389,6 +405,10 @@ class _Locator extends Locator {
 @override final  User? updatedBy;
 /// [updatedById] is the ID of the user who last updated the locator
 @override final  String? updatedById;
+/// [customization] is the registered app that will act as a customization for this locator
+@override final  RegisteredApp? customization;
+/// [customizationId] is the ID of the registered app that will act as a customization for this locator
+@override final  String? customizationId;
 
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
@@ -403,16 +423,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.customization, customization) || other.customization == customization)&&(identical(other.customizationId, customizationId) || other.customizationId == customizationId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById]);
+int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById,customization,customizationId]);
 
 @override
 String toString() {
-  return 'Locator(id: $id, token: $token, mqttConfig: $mqttConfig, assets: $assets, assetsIds: $assetsIds, geofences: $geofences, geofencesIds: $geofencesIds, triggers: $triggers, triggersIds: $triggersIds, expiresAt: $expiresAt, expiredBy: $expiredBy, expiredById: $expiredById, isExpired: $isExpired, createdAt: $createdAt, createdBy: $createdBy, createdById: $createdById, updatedAt: $updatedAt, updatedBy: $updatedBy, updatedById: $updatedById)';
+  return 'Locator(id: $id, token: $token, mqttConfig: $mqttConfig, assets: $assets, assetsIds: $assetsIds, geofences: $geofences, geofencesIds: $geofencesIds, triggers: $triggers, triggersIds: $triggersIds, expiresAt: $expiresAt, expiredBy: $expiredBy, expiredById: $expiredById, isExpired: $isExpired, createdAt: $createdAt, createdBy: $createdBy, createdById: $createdById, updatedAt: $updatedAt, updatedBy: $updatedBy, updatedById: $updatedById, customization: $customization, customizationId: $customizationId)';
 }
 
 
@@ -423,11 +443,11 @@ abstract mixin class _$LocatorCopyWith<$Res> implements $LocatorCopyWith<$Res> {
   factory _$LocatorCopyWith(_Locator value, $Res Function(_Locator) _then) = __$LocatorCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById
+ String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId
 });
 
 
-@override $LocatorMqttConfigCopyWith<$Res>? get mqttConfig;@override $UserCopyWith<$Res>? get expiredBy;@override $UserCopyWith<$Res>? get createdBy;@override $UserCopyWith<$Res>? get updatedBy;
+@override $LocatorMqttConfigCopyWith<$Res>? get mqttConfig;@override $UserCopyWith<$Res>? get expiredBy;@override $UserCopyWith<$Res>? get createdBy;@override $UserCopyWith<$Res>? get updatedBy;@override $RegisteredAppCopyWith<$Res>? get customization;
 
 }
 /// @nodoc
@@ -440,7 +460,7 @@ class __$LocatorCopyWithImpl<$Res>
 
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,}) {
   return _then(_Locator(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
@@ -461,6 +481,8 @@ as User?,createdById: freezed == createdById ? _self.createdById : createdById /
 as String?,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedBy: freezed == updatedBy ? _self.updatedBy : updatedBy // ignore: cast_nullable_to_non_nullable
 as User?,updatedById: freezed == updatedById ? _self.updatedById : updatedById // ignore: cast_nullable_to_non_nullable
+as String?,customization: freezed == customization ? _self.customization : customization // ignore: cast_nullable_to_non_nullable
+as RegisteredApp?,customizationId: freezed == customizationId ? _self.customizationId : customizationId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -512,6 +534,18 @@ $UserCopyWith<$Res>? get updatedBy {
 
   return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
     return _then(_self.copyWith(updatedBy: value));
+  });
+}/// Create a copy of Locator
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RegisteredAppCopyWith<$Res>? get customization {
+    if (_self.customization == null) {
+    return null;
+  }
+
+  return $RegisteredAppCopyWith<$Res>(_self.customization!, (value) {
+    return _then(_self.copyWith(customization: value));
   });
 }
 }
@@ -815,7 +849,9 @@ mixin _$LocatorInput {
  List<String> get triggersIds;/// [triggersIds] is the list of triggers associated with the locator
  set triggersIds(List<String> value);/// [expiresAt] is the expiration date of the locator, can be null for non-expiring locators
 @TimestampOrNullConverter() DateTime? get expiresAt;/// [expiresAt] is the expiration date of the locator, can be null for non-expiring locators
-@TimestampOrNullConverter() set expiresAt(DateTime? value);
+@TimestampOrNullConverter() set expiresAt(DateTime? value);/// [customizationId] is the ID of the registered app that will act as a customization for this locator
+ String? get customizationId;/// [customizationId] is the ID of the registered app that will act as a customization for this locator
+ set customizationId(String? value);
 /// Create a copy of LocatorInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -830,7 +866,7 @@ $LocatorInputCopyWith<LocatorInput> get copyWith => _$LocatorInputCopyWithImpl<L
 
 @override
 String toString() {
-  return 'LocatorInput(id: $id, assetsIds: $assetsIds, geofencesIds: $geofencesIds, triggersIds: $triggersIds, expiresAt: $expiresAt)';
+  return 'LocatorInput(id: $id, assetsIds: $assetsIds, geofencesIds: $geofencesIds, triggersIds: $triggersIds, expiresAt: $expiresAt, customizationId: $customizationId)';
 }
 
 
@@ -841,7 +877,7 @@ abstract mixin class $LocatorInputCopyWith<$Res>  {
   factory $LocatorInputCopyWith(LocatorInput value, $Res Function(LocatorInput) _then) = _$LocatorInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, List<String> assetsIds, List<String> geofencesIds, List<String> triggersIds,@TimestampOrNullConverter() DateTime? expiresAt
+ String? id, List<String> assetsIds, List<String> geofencesIds, List<String> triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, String? customizationId
 });
 
 
@@ -858,14 +894,15 @@ class _$LocatorInputCopyWithImpl<$Res>
 
 /// Create a copy of LocatorInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetsIds = null,Object? geofencesIds = null,Object? triggersIds = null,Object? expiresAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetsIds = null,Object? geofencesIds = null,Object? triggersIds = null,Object? expiresAt = freezed,Object? customizationId = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,geofencesIds: null == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,triggersIds: null == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
 as List<String>,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime?,customizationId: freezed == customizationId ? _self.customizationId : customizationId // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -950,10 +987,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LocatorInput() when $default != null:
-return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt);case _:
+return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId);case _:
   return orElse();
 
 }
@@ -971,10 +1008,10 @@ return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId)  $default,) {final _that = this;
 switch (_that) {
 case _LocatorInput():
-return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt);case _:
+return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -991,10 +1028,10 @@ return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId)?  $default,) {final _that = this;
 switch (_that) {
 case _LocatorInput() when $default != null:
-return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt);case _:
+return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId);case _:
   return null;
 
 }
@@ -1006,7 +1043,7 @@ return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_t
 @JsonSerializable()
 
 class _LocatorInput extends LocatorInput {
-   _LocatorInput({this.id, this.assetsIds = const [], this.geofencesIds = const [], this.triggersIds = const [], @TimestampOrNullConverter() this.expiresAt}): super._();
+   _LocatorInput({this.id, this.assetsIds = const [], this.geofencesIds = const [], this.triggersIds = const [], @TimestampOrNullConverter() this.expiresAt, this.customizationId}): super._();
   factory _LocatorInput.fromJson(Map<String, dynamic> json) => _$LocatorInputFromJson(json);
 
 /// [id] is the UUIDv4 identifier of the locator
@@ -1019,6 +1056,8 @@ class _LocatorInput extends LocatorInput {
 @override@JsonKey()  List<String> triggersIds;
 /// [expiresAt] is the expiration date of the locator, can be null for non-expiring locators
 @override@TimestampOrNullConverter()  DateTime? expiresAt;
+/// [customizationId] is the ID of the registered app that will act as a customization for this locator
+@override  String? customizationId;
 
 /// Create a copy of LocatorInput
 /// with the given fields replaced by the non-null parameter values.
@@ -1035,7 +1074,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'LocatorInput(id: $id, assetsIds: $assetsIds, geofencesIds: $geofencesIds, triggersIds: $triggersIds, expiresAt: $expiresAt)';
+  return 'LocatorInput(id: $id, assetsIds: $assetsIds, geofencesIds: $geofencesIds, triggersIds: $triggersIds, expiresAt: $expiresAt, customizationId: $customizationId)';
 }
 
 
@@ -1046,7 +1085,7 @@ abstract mixin class _$LocatorInputCopyWith<$Res> implements $LocatorInputCopyWi
   factory _$LocatorInputCopyWith(_LocatorInput value, $Res Function(_LocatorInput) _then) = __$LocatorInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, List<String> assetsIds, List<String> geofencesIds, List<String> triggersIds,@TimestampOrNullConverter() DateTime? expiresAt
+ String? id, List<String> assetsIds, List<String> geofencesIds, List<String> triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, String? customizationId
 });
 
 
@@ -1063,14 +1102,15 @@ class __$LocatorInputCopyWithImpl<$Res>
 
 /// Create a copy of LocatorInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetsIds = null,Object? geofencesIds = null,Object? triggersIds = null,Object? expiresAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetsIds = null,Object? geofencesIds = null,Object? triggersIds = null,Object? expiresAt = freezed,Object? customizationId = freezed,}) {
   return _then(_LocatorInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,geofencesIds: null == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,triggersIds: null == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
 as List<String>,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime?,customizationId: freezed == customizationId ? _self.customizationId : customizationId // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

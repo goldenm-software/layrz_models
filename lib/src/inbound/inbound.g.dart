@@ -141,7 +141,7 @@ _InboundProtocolInput _$InboundProtocolInputFromJson(
   id: json['id'] as String?,
   name: json['name'] as String? ?? '',
   color: json['color'] == null
-      ? kPrimaryColor
+      ? Colors.blue
       : const ColorConverter().fromJson(json['color'] as String),
   isEnabled: json['isEnabled'] as bool? ?? true,
   categoriesIds:

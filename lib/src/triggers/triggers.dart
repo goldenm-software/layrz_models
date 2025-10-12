@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:collection/collection.dart';
 import 'package:layrz_models/layrz_models.dart';
-import 'package:layrz_models/utils/utils.dart';
 
 // Freezed
 part 'triggers.freezed.dart';

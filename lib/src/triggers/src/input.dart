@@ -123,7 +123,7 @@ abstract class TriggerInput with _$TriggerInput {
     @Default(1) int priority,
 
     /// Color of the trigger case
-    @ColorConverter() @Default(kPrimaryColor) Color color,
+    @ColorConverter() @Default(Colors.red) Color color,
 
     /// Visual event effects to use in Monitor Center events received.
     @JsonKey(unknownEnumValue: CaseEventEffect.none) @Default(CaseEventEffect.none) CaseEventEffect visualEventEffect,
@@ -193,6 +193,9 @@ abstract class TriggerInput with _$TriggerInput {
 
     /// [locatorGeofencesIds] represents the list of ID's of the geofences that can expire the locator.
     List<String>? locatorGeofencesIds,
+
+    /// [locatorCustomizationId] is the ID of the registered app that will act as a customization for this locator
+    String? locatorCustomizationId,
   }) = _TriggerInput;
 
   factory TriggerInput.fromJson(Map<String, dynamic> json) => _$TriggerInputFromJson(json);

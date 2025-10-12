@@ -61,11 +61,22 @@ abstract class Locator with _$Locator {
 
     /// [updatedById] is the ID of the user who last updated the locator
     String? updatedById,
+
+    /// [customization] is the registered app that will act as a customization for this locator
+    RegisteredApp? customization,
+
+    /// [customizationId] is the ID of the registered app that will act as a customization for this locator
+    String? customizationId,
   }) = _Locator;
 
   factory Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
 
-  String get link => 'https://find.layrz.com/#/$token';
+  String get link {
+    final webInstance = customization?.instances?.firstWhereOrNull((e) => e.platform == AppPlatform.web);
+    final webHost = webInstance?.host ?? '';
+    if (webHost.isNotEmpty) return 'https://$webHost/#/$token';
+    return 'https://find.layrz.com/#/$token';
+  }
 
   /// [fetch] fetches a single locator from the server by its ID
   /// It returns a list of [Locator] with the required contextual information
@@ -82,10 +93,7 @@ abstract class Locator with _$Locator {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(
-        query: fetchSingleQuery,
-        variables: {'apiToken': apiToken},
-      );
+      final response = await connector.perform(query: fetchSingleQuery, variables: {'apiToken': apiToken});
 
       final data = response.data;
       if (data == null) {
@@ -132,10 +140,7 @@ abstract class Locator with _$Locator {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(
-        query: fetchAllGraphqlQuery,
-        variables: {'apiToken': apiToken},
-      );
+      final response = await connector.perform(query: fetchAllGraphqlQuery, variables: {'apiToken': apiToken});
 
       final data = response.data;
       if (data == null) {
@@ -236,10 +241,7 @@ abstract class Locator with _$Locator {
     try {
       final response = await connector.perform(
         query: expireGraphqlMutation,
-        variables: {
-          'apiToken': apiToken,
-          'ids': ids,
-        },
+        variables: {'apiToken': apiToken, 'ids': ids},
       );
 
       final data = response.data;
@@ -270,7 +272,8 @@ abstract class Locator with _$Locator {
 
   /// [fetchSingleQuery] is the GraphQL query to fetch a single locator by its ID
   /// It uses the [Locator.graphqlFragment] to get the locator data
-  static String get fetchSingleQuery => '${Locator.graphqlFragment}'
+  static String get fetchSingleQuery =>
+      '${Locator.graphqlFragment}'
       r'''
         query fetchLocators($apiToken: String!) {
           locators(apiToken: $apiToken) {
@@ -331,7 +334,10 @@ abstract class Locator with _$Locator {
 
   /// [graphqlFragment] is the GraphQL fragment to fetch the locator data
   /// It includes the basic user fields fragment [basicUserFields] to get the user data
-  static String get graphqlFragment => '''
+  static String get graphqlFragment =>
+      '''
+    ${RegisteredApp.registeredAppFragment}
+
     fragment basicUserFields on User {
       id
       name
@@ -342,6 +348,7 @@ abstract class Locator with _$Locator {
         url
       }
     }
+
     fragment locatorFragment on Locator {
       id
       token
@@ -398,6 +405,11 @@ abstract class Locator with _$Locator {
         ...basicUserFields
       }
       updatedById
+
+      customization {
+        ...registeredAppFragment
+      }
+      customizationId
     }
   ''';
 

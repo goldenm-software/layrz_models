@@ -118,6 +118,9 @@ export 'src/vision/vision.dart';
 import 'src/workspace/workspace.dart';
 export 'src/workspace/workspace.dart';
 
+// import 'src/utils/utils.dart';
+export 'src/utils/utils.dart';
+
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
 

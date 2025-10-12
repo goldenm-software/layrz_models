@@ -19,9 +19,21 @@ abstract class LocatorInput with _$LocatorInput {
 
     /// [expiresAt] is the expiration date of the locator, can be null for non-expiring locators
     @TimestampOrNullConverter() DateTime? expiresAt,
+
+    /// [customizationId] is the ID of the registered app that will act as a customization for this locator
+    String? customizationId,
   }) = _LocatorInput;
 
   factory LocatorInput.fromJson(Map<String, dynamic> json) => _$LocatorInputFromJson(json);
+
+  /// [simulateLink] simulates the locator link
+  String simulateLink({RegisteredApp? customization}) {
+    final token = 'SIMULATED_TOKEN';
+    final webInstance = customization?.instances?.firstWhereOrNull((e) => e.platform == AppPlatform.web);
+    final webHost = webInstance?.host ?? '';
+    if (webHost.isNotEmpty) return 'https://$webHost/#/$token';
+    return 'https://find.layrz.com/#/$token';
+  }
 
   /// [save] saves the locator input to the server
   /// It returns a [LocatorApiResponse] with the saved locator or errors if any
@@ -40,10 +52,7 @@ abstract class LocatorInput with _$LocatorInput {
     try {
       final response = await connector.perform(
         query: id == null ? addGraphqlMutation : editGraphqlMutation,
-        variables: {
-          'apiToken': apiToken,
-          'data': toJson(),
-        },
+        variables: {'apiToken': apiToken, 'data': toJson()},
       );
 
       final data = response.data;
@@ -62,9 +71,7 @@ abstract class LocatorInput with _$LocatorInput {
 
       if (result['status'] != 'OK') {
         onResponse?.call(result['status']);
-        return LocatorApiResponse(
-          errors: Map<String, dynamic>.from(result['errors'] ?? {}),
-        );
+        return LocatorApiResponse(errors: Map<String, dynamic>.from(result['errors'] ?? {}));
       }
 
       return LocatorApiResponse(locator: Locator.fromJson(result['result']));
@@ -76,7 +83,8 @@ abstract class LocatorInput with _$LocatorInput {
 
   /// [addGraphqlMutation] is the GraphQL mutation to add a locator
   /// It uses the [Locator.graphqlFragment] to get the locator data
-  static String get addGraphqlMutation => '${Locator.graphqlFragment}'
+  static String get addGraphqlMutation =>
+      '${Locator.graphqlFragment}'
       r'''
         mutation addLocator($apiToken: String!, $data: LocatorInput!) {
           addLocator(data: $data, apiToken: $apiToken) {
@@ -91,7 +99,8 @@ abstract class LocatorInput with _$LocatorInput {
 
   /// [editGraphqlMutation] is the GraphQL mutation to edit a locator
   /// It uses the [Locator.graphqlFragment] to get the locator data
-  static String get editGraphqlMutation => '${Locator.graphqlFragment}'
+  static String get editGraphqlMutation =>
+      '${Locator.graphqlFragment}'
       r'''
         mutation editLocator($apiToken: String!, $data: LocatorInput!) {
           editLocator(data: $data, apiToken: $apiToken) {

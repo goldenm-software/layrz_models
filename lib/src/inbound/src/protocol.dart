@@ -139,7 +139,7 @@ abstract class InboundProtocolInput with _$InboundProtocolInput {
     @Default('') String name,
 
     /// [color] Indicates the color assigned to the protocol
-    @ColorConverter() @Default(kPrimaryColor) Color color,
+    @ColorConverter() @Default(Colors.blue) Color color,
 
     /// [isEnabled] Boolean that indicates if the protocol is enabled.
     @Default(true) bool isEnabled,

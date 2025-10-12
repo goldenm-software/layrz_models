@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.4.57
+
+- Moved `utils/` to `src/` to be consistent with the rest of the submodules.
+- Removed `kPrimaryColor` constant to avoid conflicts with other Layrz packages.
+- Added `customizationId` and `customization` to `Locator` and `LocatorInput` models to support Locator customization.
+- Added `locatorCustomizationId` and `locatorCustomization` to `Trigger` and `TriggerInput` models to support Locator customization on Trigger activation.
+- Created `fetchAll` and `fetchAllGraphqlQuery` statics on `RegisteredApp` as part of the transition to use `layrz_models` as official API wrapper/connector of Layrz.
+
 ## 3.4.56
 
 - Added `PresetInput` model

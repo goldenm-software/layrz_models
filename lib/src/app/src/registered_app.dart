@@ -46,4 +46,102 @@ abstract class RegisteredApp with _$RegisteredApp {
   }) = _RegisteredApp;
 
   factory RegisteredApp.fromJson(Map<String, dynamic> json) => _$RegisteredAppFromJson(json);
+
+  /// [fetchAll] fetches all registered apps from the server
+  /// It returns a list of [RegisteredApp] with the required contextual information
+  static Future<List<RegisteredApp>> fetchAll({
+    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
+    /// on the GraphQL API.
+    required String apiToken,
+
+    /// [uri] is the GraphQL endpoint to use
+    required Uri uri,
+
+    /// [onResponse] is the callback to call when the response is received
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri);
+    try {
+      final response = await connector.perform(query: fetchAllGraphqlQuery, variables: {'apiToken': apiToken});
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call('INTERNAL_ERROR');
+        Log.error("layrz_models/RegisteredApp/fetchAll(): No response from server");
+        return [];
+      }
+
+      final result = data['data']['registeredApps'];
+      if (result == null) {
+        onResponse?.call('INTERNAL_ERROR');
+        Log.error("layrz_models/RegisteredApp/fetchAll(): No result from server");
+        return [];
+      }
+
+      if (result['status'] != 'OK') {
+        onResponse?.call(result['status']);
+        return [];
+      }
+
+      return (result['result'] as List<dynamic>?)
+              ?.map((e) => RegisteredApp.fromJson(Map<String, dynamic>.from(e as Map)))
+              .toList() ??
+          [];
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/fetchAll(): General exception => $e\n$stack");
+      return [];
+    }
+  }
+
+  /// [fetchAllGraphqlQuery] is the GraphQL query to fetch all the registered apps.
+  /// This query requires the `apiToken` parameter.
+  static String get fetchAllGraphqlQuery =>
+      '$registeredAppFragment'
+      r'''
+    query($apiToken: String!) {
+      registeredApps(apiToken: $apiToken) {
+        status
+        result {
+          ...registeredAppFragment
+        }
+      }
+    }
+  ''';
+
+  /// [registeredAppFragment] is the GraphQL fragment to fetch a registered app.
+  static String get registeredAppFragment => r'''
+    fragment registeredAppFragment on RegisteredApp {
+      id
+      name
+      nickname
+      isCustomized
+      technology
+      sourceId
+
+      instances {
+        id
+        appId
+        platform
+        host
+        status
+      }
+
+      designInformation {
+        theme
+        mainColor
+
+        favicons {
+          normal
+          white
+        }
+
+        logos {
+          normal
+          white
+        }
+
+        appicon
+      }
+    }
+  ''';
 }
