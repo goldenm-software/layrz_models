@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.58
+
+- Added `atsPurchaseOrders` value in `ChartDataSource` enum
+
 ## 3.4.57
 
 - Moved `utils/` to `src/` to be consistent with the rest of the submodules.

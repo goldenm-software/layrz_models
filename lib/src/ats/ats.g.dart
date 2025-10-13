@@ -55,9 +55,8 @@ _AtsReceptionProductInput _$AtsReceptionProductInputFromJson(
   Map<String, dynamic> json,
 ) => _AtsReceptionProductInput(
   fuelAnp: json['fuelAnp'] as String?,
-  tanksImages: (json['tanksImages'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  tanksImages:
+      (json['tanksImages'] as List<dynamic>?)?.map((e) => e as String).toList(),
 );
 
 Map<String, dynamic> _$AtsReceptionProductInputToJson(
@@ -67,23 +66,24 @@ Map<String, dynamic> _$AtsReceptionProductInputToJson(
   'tanksImages': instance.tanksImages,
 };
 
-_AtsReceptionInput _$AtsReceptionInputFromJson(Map<String, dynamic> json) =>
-    _AtsReceptionInput(
-      id: json['id'] as String?,
-      ordersIds: (json['ordersIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      products: (json['products'] as List<dynamic>?)
+_AtsReceptionInput _$AtsReceptionInputFromJson(
+  Map<String, dynamic> json,
+) => _AtsReceptionInput(
+  id: json['id'] as String?,
+  ordersIds:
+      (json['ordersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  products:
+      (json['products'] as List<dynamic>?)
           ?.map(
             (e) => AtsReceptionProductInput.fromJson(e as Map<String, dynamic>),
           )
           .toList(),
-      assetId: json['assetId'] as String?,
-      operationTime: const DurationOrNullConverter().fromJson(
-        json['operationTime'] as num?,
-      ),
-      app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
-    );
+  assetId: json['assetId'] as String?,
+  operationTime: const DurationOrNullConverter().fromJson(
+    json['operationTime'] as num?,
+  ),
+  app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
+);
 
 Map<String, dynamic> _$AtsReceptionInputToJson(_AtsReceptionInput instance) =>
     <String, dynamic>{
@@ -105,9 +105,12 @@ _AtsAuthenticationIdentifier _$AtsAuthenticationIdentifierFromJson(
     json['category'] as String?,
   ),
   cardId: json['cardId'] as String?,
-  card: json['card'] == null
-      ? null
-      : AtsAuthenticationCard.fromJson(json['card'] as Map<String, dynamic>),
+  card:
+      json['card'] == null
+          ? null
+          : AtsAuthenticationCard.fromJson(
+            json['card'] as Map<String, dynamic>,
+          ),
   nfcIdentifier: json['nfcIdentifier'] as String?,
 );
 
@@ -130,19 +133,24 @@ _AtsAuthenticationCard _$AtsAuthenticationCardFromJson(
   number: (json['number'] as num).toInt(),
   externalIdentifier: (json['externalIdentifier'] as num).toInt(),
   externalIdentifierHex: json['externalIdentifierHex'] as String,
-  asset: json['asset'] == null
-      ? null
-      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
-  owner: json['owner'] == null
-      ? null
-      : User.fromJson(json['owner'] as Map<String, dynamic>),
+  asset:
+      json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  owner:
+      json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
   isSuspended: json['isSuspended'] as bool?,
   typeId: const AtsSelectCardConverter().fromJson(json['typeId'] as String),
-  history: (json['history'] as List<dynamic>?)
-      ?.map(
-        (e) => AtsHistoryAuthenticationCard.fromJson(e as Map<String, dynamic>),
-      )
-      .toList(),
+  history:
+      (json['history'] as List<dynamic>?)
+          ?.map(
+            (e) => AtsHistoryAuthenticationCard.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
   createdAt: const TimestampOrNullConverter().fromJson(
     json['createdAt'] as num?,
   ),
@@ -170,12 +178,14 @@ _AtsHistoryAuthenticationCard _$AtsHistoryAuthenticationCardFromJson(
   operation: const AtsHistoryAuthenticationCardOperationConverter().fromJson(
     json['operation'] as String,
   ),
-  asset: json['asset'] == null
-      ? null
-      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
-  owner: json['owner'] == null
-      ? null
-      : User.fromJson(json['owner'] as Map<String, dynamic>),
+  asset:
+      json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  owner:
+      json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
   createdBy: User.fromJson(json['createdBy'] as Map<String, dynamic>),
   createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
 );
@@ -197,13 +207,15 @@ _AtsFeedbackMessege _$AtsFeedbackMessegeFromJson(Map<String, dynamic> json) =>
     _AtsFeedbackMessege(
       id: json['id'] as String?,
       content: json['content'] as String?,
-      creator: json['creator'] == null
-          ? null
-          : User.fromJson(json['creator'] as Map<String, dynamic>),
+      creator:
+          json['creator'] == null
+              ? null
+              : User.fromJson(json['creator'] as Map<String, dynamic>),
       at: const TimestampOrNullConverter().fromJson(json['at'] as num?),
-      app: json['app'] == null
-          ? null
-          : RegisteredApp.fromJson(json['app'] as Map<String, dynamic>),
+      app:
+          json['app'] == null
+              ? null
+              : RegisteredApp.fromJson(json['app'] as Map<String, dynamic>),
       source: const FeedbackSourceOrNullConverter().fromJson(
         json['source'] as String?,
       ),
@@ -223,28 +235,36 @@ Map<String, dynamic> _$AtsFeedbackMessegeToJson(_AtsFeedbackMessege instance) =>
 
 _AtsEvent _$AtsEventFromJson(Map<String, dynamic> json) => _AtsEvent(
   id: json['id'] as String?,
-  operation: json['operation'] == null
-      ? null
-      : Operation.fromJson(json['operation'] as Map<String, dynamic>),
+  operation:
+      json['operation'] == null
+          ? null
+          : Operation.fromJson(json['operation'] as Map<String, dynamic>),
   operationId: json['operationId'] as String?,
-  trigger: json['trigger'] == null
-      ? null
-      : Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
+  trigger:
+      json['trigger'] == null
+          ? null
+          : Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
   triggerId: json['triggerId'] as String?,
   functionId: json['functionId'] as String?,
-  asset: json['asset'] == null
-      ? null
-      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  asset:
+      json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
   assetId: json['assetId'] as String?,
-  position: json['position'] == null
-      ? null
-      : TelemetryPosition.fromJson(json['position'] as Map<String, dynamic>),
-  payload: (json['payload'] as List<dynamic>?)
-      ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  sensors: (json['sensors'] as List<dynamic>?)
-      ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  position:
+      json['position'] == null
+          ? null
+          : TelemetryPosition.fromJson(
+            json['position'] as Map<String, dynamic>,
+          ),
+  payload:
+      (json['payload'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  sensors:
+      (json['sensors'] as List<dynamic>?)
+          ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
   at: const TimestampOrNullConverter().fromJson(json['at'] as num?),
   isCheck: json['isCheck'] as bool?,
   comment: json['comment'] as String?,
@@ -304,15 +324,16 @@ _AtsNsLicense _$AtsNsLicenseFromJson(Map<String, dynamic> json) =>
       icmsType: const AtsIcmsTypeOrNullConverter().fromJson(
         json['icmsType'] as String?,
       ),
-      emails: (json['emails'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      phoneNumbers: (json['phoneNumbers'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      addresses: (json['addresses'] as List<dynamic>?)
-          ?.map((e) => AtsNsAddress.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      emails:
+          (json['emails'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      phoneNumbers:
+          (json['phoneNumbers'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
+      addresses:
+          (json['addresses'] as List<dynamic>?)
+              ?.map((e) => AtsNsAddress.fromJson(e as Map<String, dynamic>))
+              .toList(),
       expirationDate: const TimestampOrNullConverter().fromJson(
         json['expirationDateUnix'] as num?,
       ),
@@ -454,96 +475,109 @@ Map<String, dynamic> _$AtsProductInformationToJson(
   'subcategory': instance.subcategory,
 };
 
-_AtsPurchaseOrder _$AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
-    _AtsPurchaseOrder(
-      id: json['id'] as String?,
-      ownerId: json['ownerId'] as String?,
-      orderId: json['orderId'] as String?,
-      assetId: json['assetId'] as String?,
-      sellerAssetId: json['sellerAssetId'] as String?,
-      transportAssetId: json['transportAssetId'] as String?,
-      purchasedAt: const TimestampOrNullConverter().fromJson(
-        json['purchasedAt'] as num?,
-      ),
-      receivedAt: const TimestampOrNullConverter().fromJson(
-        json['receivedAt'] as num?,
-      ),
-      asset: json['asset'] == null
+_AtsPurchaseOrder _$AtsPurchaseOrderFromJson(
+  Map<String, dynamic> json,
+) => _AtsPurchaseOrder(
+  id: json['id'] as String?,
+  ownerId: json['ownerId'] as String?,
+  orderId: json['orderId'] as String?,
+  assetId: json['assetId'] as String?,
+  sellerAssetId: json['sellerAssetId'] as String?,
+  transportAssetId: json['transportAssetId'] as String?,
+  purchasedAt: const TimestampOrNullConverter().fromJson(
+    json['purchasedAt'] as num?,
+  ),
+  receivedAt: const TimestampOrNullConverter().fromJson(
+    json['receivedAt'] as num?,
+  ),
+  asset:
+      json['asset'] == null
           ? null
           : Asset.fromJson(json['asset'] as Map<String, dynamic>),
-      sellerInformation: json['sellerInformation'] == null
+  sellerInformation:
+      json['sellerInformation'] == null
           ? null
           : AtsCompanyInformation.fromJson(
-              json['sellerInformation'] as Map<String, dynamic>,
-            ),
-      receiverInformation: json['receiverInformation'] == null
+            json['sellerInformation'] as Map<String, dynamic>,
+          ),
+  receiverInformation:
+      json['receiverInformation'] == null
           ? null
           : AtsCompanyInformation.fromJson(
-              json['receiverInformation'] as Map<String, dynamic>,
-            ),
-      productsInformation: (json['productsInformation'] as List<dynamic>?)
+            json['receiverInformation'] as Map<String, dynamic>,
+          ),
+  productsInformation:
+      (json['productsInformation'] as List<dynamic>?)
           ?.map(
             (e) => AtsProductInformation.fromJson(e as Map<String, dynamic>),
           )
           .toList(),
-      total: json['total'] == null
+  total:
+      json['total'] == null
           ? null
           : AtsPurchaseTotal.fromJson(json['total'] as Map<String, dynamic>),
-      isReceived: json['isReceived'] as bool?,
-      hasReception: json['hasReception'] as bool?,
-      transportInformation: json['transportInformation'] == null
+  isReceived: json['isReceived'] as bool?,
+  hasReception: json['hasReception'] as bool?,
+  transportInformation:
+      json['transportInformation'] == null
           ? null
           : AtsTransportInformation.fromJson(
-              json['transportInformation'] as Map<String, dynamic>,
-            ),
-      hasRawXml: json['hasRawXml'] as bool?,
-      invoiceType: json['invoiceType'] as String?,
-      parentInvoice: json['parentInvoice'] == null
+            json['transportInformation'] as Map<String, dynamic>,
+          ),
+  hasRawXml: json['hasRawXml'] as bool?,
+  invoiceType: json['invoiceType'] as String?,
+  parentInvoice:
+      json['parentInvoice'] == null
           ? null
           : AtsPurchaseOrder.fromJson(
-              json['parentInvoice'] as Map<String, dynamic>,
-            ),
-      ideInformation: json['ideInformation'] == null
+            json['parentInvoice'] as Map<String, dynamic>,
+          ),
+  ideInformation:
+      json['ideInformation'] == null
           ? null
           : AtsIdeInformation.fromJson(
-              json['ideInformation'] as Map<String, dynamic>,
-            ),
-      receptionAt: const TimestampOrNullConverter().fromJson(
-        json['receptionAt'] as num?,
-      ),
-      action: const PurchaseOrderOperationOrNullConverter().fromJson(
-        json['action'] as String?,
-      ),
-      transportAsset: json['transportAsset'] == null
+            json['ideInformation'] as Map<String, dynamic>,
+          ),
+  receptionAt: const TimestampOrNullConverter().fromJson(
+    json['receptionAt'] as num?,
+  ),
+  action: const PurchaseOrderOperationOrNullConverter().fromJson(
+    json['action'] as String?,
+  ),
+  transportAsset:
+      json['transportAsset'] == null
           ? null
           : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
-      sellerAsset: json['sellerAsset'] == null
+  sellerAsset:
+      json['sellerAsset'] == null
           ? null
           : Asset.fromJson(json['sellerAsset'] as Map<String, dynamic>),
-      orderStatus: const AtsPurchaseOrderStatusOrNullConverter().fromJson(
-        json['orderStatus'] as String?,
-      ),
-      inTransitAt: const TimestampOrNullConverter().fromJson(
-        json['inTransitAt'] as num?,
-      ),
-      waitingToDispatchAt: const TimestampOrNullConverter().fromJson(
-        json['waitingToDispatchAt'] as num?,
-      ),
-      deliveredAt: const TimestampOrNullConverter().fromJson(
-        json['deliveredAt'] as num?,
-      ),
-      deliverCategory: const AtsPurchaseOrderSubCategoriesOrNullConverter()
-          .fromJson(json['deliverCategory'] as String?),
-      category: const AtsPurchaseOrderCategoriesEntityOrNullConverter()
-          .fromJson(json['category'] as String?),
-      operation: json['operation'] == null
+  orderStatus: const AtsPurchaseOrderStatusOrNullConverter().fromJson(
+    json['orderStatus'] as String?,
+  ),
+  inTransitAt: const TimestampOrNullConverter().fromJson(
+    json['inTransitAt'] as num?,
+  ),
+  waitingToDispatchAt: const TimestampOrNullConverter().fromJson(
+    json['waitingToDispatchAt'] as num?,
+  ),
+  deliveredAt: const TimestampOrNullConverter().fromJson(
+    json['deliveredAt'] as num?,
+  ),
+  deliverCategory: const AtsPurchaseOrderSubCategoriesOrNullConverter()
+      .fromJson(json['deliverCategory'] as String?),
+  category: const AtsPurchaseOrderCategoriesEntityOrNullConverter().fromJson(
+    json['category'] as String?,
+  ),
+  operation:
+      json['operation'] == null
           ? null
           : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
-      eta: const TimestampOrNullConverter().fromJson(json['eta'] as num?),
-      etaUpdatedAt: const TimestampOrNullConverter().fromJson(
-        json['etaUpdatedAt'] as num?,
-      ),
-    );
+  eta: const TimestampOrNullConverter().fromJson(json['eta'] as num?),
+  etaUpdatedAt: const TimestampOrNullConverter().fromJson(
+    json['etaUpdatedAt'] as num?,
+  ),
+);
 
 Map<String, dynamic> _$AtsPurchaseOrderToJson(
   _AtsPurchaseOrder instance,
@@ -559,9 +593,8 @@ Map<String, dynamic> _$AtsPurchaseOrderToJson(
   'asset': instance.asset?.toJson(),
   'sellerInformation': instance.sellerInformation?.toJson(),
   'receiverInformation': instance.receiverInformation?.toJson(),
-  'productsInformation': instance.productsInformation
-      ?.map((e) => e.toJson())
-      .toList(),
+  'productsInformation':
+      instance.productsInformation?.map((e) => e.toJson()).toList(),
   'total': instance.total?.toJson(),
   'isReceived': instance.isReceived,
   'hasReception': instance.hasReception,
@@ -634,9 +667,10 @@ _AtsReception _$AtsReceptionFromJson(
     json['receptionStatus'],
     const AtsReceptionStatusConverter().fromJson,
   ),
-  order: json['order'] == null
-      ? null
-      : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
+  order:
+      json['order'] == null
+          ? null
+          : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
   orders:
       (json['orders'] as List<dynamic>?)
           ?.map((e) => AtsPurchaseOrder.fromJson(e as Map<String, dynamic>))
@@ -647,9 +681,10 @@ _AtsReception _$AtsReceptionFromJson(
           ?.map((e) => (e as num).toInt())
           .toList() ??
       const [],
-  entry: json['entry'] == null
-      ? null
-      : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
+  entry:
+      json['entry'] == null
+          ? null
+          : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
   loadingParamsForm:
       (json['loadingParamsForm'] as List<dynamic>?)
           ?.map((e) => AtsLoadingParamsForm.fromJson(e as Map<String, dynamic>))
@@ -675,9 +710,8 @@ Map<String, dynamic> _$AtsReceptionToJson(_AtsReception instance) =>
       'orders': instance.orders.map((e) => e.toJson()).toList(),
       'ordersIds': instance.ordersIds,
       'entry': instance.entry?.toJson(),
-      'loadingParamsForm': instance.loadingParamsForm
-          .map((e) => e.toJson())
-          .toList(),
+      'loadingParamsForm':
+          instance.loadingParamsForm.map((e) => e.toJson()).toList(),
       'products': instance.products.map((e) => e.toJson()).toList(),
     };
 
@@ -783,13 +817,15 @@ _AtsLoadingParamsForm _$AtsLoadingParamsFormFromJson(
 ) => _AtsLoadingParamsForm(
   id: json['id'] as String?,
   assetId: json['assetId'] as String?,
-  asset: json['asset'] == null
-      ? null
-      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  asset:
+      json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
   receptionId: json['receptionId'] as String?,
-  reception: json['reception'] == null
-      ? null
-      : AtsReception.fromJson(json['reception'] as Map<String, dynamic>),
+  reception:
+      json['reception'] == null
+          ? null
+          : AtsReception.fromJson(json['reception'] as Map<String, dynamic>),
   driver: json['driver'] as String?,
   sampleDensity: (json['sampleDensity'] as num?)?.toDouble(),
   sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
@@ -842,13 +878,15 @@ _AtsExit _$AtsExitFromJson(Map<String, dynamic> json) => _AtsExit(
   id: json['id'] as String?,
   identifier: (json['identifier'] as num?)?.toInt(),
   fromAssetId: json['fromAssetId'] as String?,
-  fromAsset: json['fromAsset'] == null
-      ? null
-      : Asset.fromJson(json['fromAsset'] as Map<String, dynamic>),
+  fromAsset:
+      json['fromAsset'] == null
+          ? null
+          : Asset.fromJson(json['fromAsset'] as Map<String, dynamic>),
   toAssetId: json['toAssetId'] as String?,
-  toAsset: json['toAsset'] == null
-      ? null
-      : Asset.fromJson(json['toAsset'] as Map<String, dynamic>),
+  toAsset:
+      json['toAsset'] == null
+          ? null
+          : Asset.fromJson(json['toAsset'] as Map<String, dynamic>),
   errorPercent: (json['errorPercent'] as num?)?.toDouble(),
   totalLiters: (json['totalLiters'] as num?)?.toDouble(),
   toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
@@ -896,17 +934,20 @@ _AtsPossibleExit _$AtsPossibleExitFromJson(Map<String, dynamic> json) =>
     _AtsPossibleExit(
       id: json['id'] as String?,
       fromAssetId: json['fromAssetId'] as String?,
-      fromAsset: json['fromAsset'] == null
-          ? null
-          : Asset.fromJson(json['fromAsset'] as Map<String, dynamic>),
+      fromAsset:
+          json['fromAsset'] == null
+              ? null
+              : Asset.fromJson(json['fromAsset'] as Map<String, dynamic>),
       sensorId: json['sensorId'] as String?,
-      sensor: json['sensor'] == null
-          ? null
-          : Sensor.fromJson(json['sensor'] as Map<String, dynamic>),
+      sensor:
+          json['sensor'] == null
+              ? null
+              : Sensor.fromJson(json['sensor'] as Map<String, dynamic>),
       toAssetId: json['toAssetId'] as String?,
-      toAsset: json['toAsset'] == null
-          ? null
-          : Asset.fromJson(json['toAsset'] as Map<String, dynamic>),
+      toAsset:
+          json['toAsset'] == null
+              ? null
+              : Asset.fromJson(json['toAsset'] as Map<String, dynamic>),
       totalLiters: (json['totalLiters'] as num?)?.toDouble(),
       startAt: const TimestampOrNullConverter().fromJson(
         json['startAt'] as num?,
@@ -1024,20 +1065,23 @@ Map<String, dynamic> _$AtsExitInputToJson(_AtsExitInput instance) =>
 _AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) => _AtsEntry(
   id: json['id'] as String,
   assetId: json['assetId'] as String?,
-  asset: json['asset'] == null
-      ? null
-      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  asset:
+      json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
   oldTankLevel: (json['oldTankLevel'] as num?)?.toDouble(),
   newTankLevel: (json['newTankLevel'] as num?)?.toDouble(),
   startAt: const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
   endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
   errorPercent: (json['errorPercent'] as num?)?.toDouble(),
-  reception: json['reception'] == null
-      ? null
-      : AtsReception.fromJson(json['reception'] as Map<String, dynamic>),
-  receptions: (json['receptions'] as List<dynamic>?)
-      ?.map((e) => AtsReception.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  reception:
+      json['reception'] == null
+          ? null
+          : AtsReception.fromJson(json['reception'] as Map<String, dynamic>),
+  receptions:
+      (json['receptions'] as List<dynamic>?)
+          ?.map((e) => AtsReception.fromJson(e as Map<String, dynamic>))
+          .toList(),
   isLinked: json['isLinked'] as bool?,
   fuelType: json['fuelType'] as String?,
   fuelSubtype: json['fuelSubtype'] as String?,
@@ -1144,9 +1188,10 @@ _AtsOperationHistory _$AtsOperationHistoryFromJson(Map<String, dynamic> json) =>
         unknownValue: AtsPurchaseOrderStatus.generated,
       ),
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
-      asset: json['asset'] == null
-          ? null
-          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      asset:
+          json['asset'] == null
+              ? null
+              : Asset.fromJson(json['asset'] as Map<String, dynamic>),
       assetId: json['assetId'] as String?,
       bookedFor: const TimestampOrNullConverter().fromJson(
         json['bookedFor'] as num?,
@@ -1177,88 +1222,100 @@ const _$AtsPurchaseOrderStatusEnumMap = {
   AtsPurchaseOrderStatus.unloadingBooked: 'UNLOADING_BOOKED',
 };
 
-_AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
-    _AtsOperation(
-      id: json['id'] as String?,
-      sellerAssetId: json['sellerAssetId'] as String?,
-      transportAssetId: json['transportAssetId'] as String?,
-      transportCompanyAssetId: json['transportCompanyAssetId'] as String?,
-      purchasedAt: const TimestampOrNullConverter().fromJson(
-        json['purchasedAt'] as num?,
-      ),
-      createdAt: const TimestampOrNullConverter().fromJson(
-        json['createdAt'] as num?,
-      ),
-      finishedAt: const TimestampOrNullConverter().fromJson(
-        json['finishedAt'] as num?,
-      ),
-      pendingToReview: json['pendingToReview'] as bool?,
-      ordersIds: (json['ordersIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      sellerAsset: json['sellerAsset'] == null
+_AtsOperation _$AtsOperationFromJson(
+  Map<String, dynamic> json,
+) => _AtsOperation(
+  id: json['id'] as String?,
+  sellerAssetId: json['sellerAssetId'] as String?,
+  transportAssetId: json['transportAssetId'] as String?,
+  transportCompanyAssetId: json['transportCompanyAssetId'] as String?,
+  purchasedAt: const TimestampOrNullConverter().fromJson(
+    json['purchasedAt'] as num?,
+  ),
+  createdAt: const TimestampOrNullConverter().fromJson(
+    json['createdAt'] as num?,
+  ),
+  finishedAt: const TimestampOrNullConverter().fromJson(
+    json['finishedAt'] as num?,
+  ),
+  pendingToReview: json['pendingToReview'] as bool?,
+  ordersIds:
+      (json['ordersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  sellerAsset:
+      json['sellerAsset'] == null
           ? null
           : Asset.fromJson(json['sellerAsset'] as Map<String, dynamic>),
-      transportAsset: json['transportAsset'] == null
+  transportAsset:
+      json['transportAsset'] == null
           ? null
           : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
-      transportCompanyAsset: json['transportCompanyAsset'] == null
+  transportCompanyAsset:
+      json['transportCompanyAsset'] == null
           ? null
           : Asset.fromJson(
-              json['transportCompanyAsset'] as Map<String, dynamic>,
-            ),
-      sellerInformation: json['sellerInformation'] == null
+            json['transportCompanyAsset'] as Map<String, dynamic>,
+          ),
+  sellerInformation:
+      json['sellerInformation'] == null
           ? null
           : AtsCompanyInformation.fromJson(
-              json['sellerInformation'] as Map<String, dynamic>,
-            ),
-      transportInformation: json['transportInformation'] == null
+            json['sellerInformation'] as Map<String, dynamic>,
+          ),
+  transportInformation:
+      json['transportInformation'] == null
           ? null
           : AtsTransportInformation.fromJson(
-              json['transportInformation'] as Map<String, dynamic>,
-            ),
-      orderStatus: $enumDecodeNullable(
-        _$AtsPurchaseOrderStatusEnumMap,
-        json['orderStatus'],
-        unknownValue: AtsPurchaseOrderStatus.generated,
-      ),
-      category: $enumDecodeNullable(
-        _$AtsPurchaseOrderCategoriesEntityEnumMap,
-        json['category'],
-        unknownValue: AtsPurchaseOrderCategoriesEntity.notDefined,
-      ),
-      deliverCategory: $enumDecodeNullable(
-        _$AtsPurchaseOrderSubCategoriesEnumMap,
-        json['deliverCategory'],
-        unknownValue: AtsPurchaseOrderSubCategories.notDefined,
-      ),
-      purchaseOrders: (json['purchaseOrders'] as List<dynamic>?)
+            json['transportInformation'] as Map<String, dynamic>,
+          ),
+  orderStatus: $enumDecodeNullable(
+    _$AtsPurchaseOrderStatusEnumMap,
+    json['orderStatus'],
+    unknownValue: AtsPurchaseOrderStatus.generated,
+  ),
+  category: $enumDecodeNullable(
+    _$AtsPurchaseOrderCategoriesEntityEnumMap,
+    json['category'],
+    unknownValue: AtsPurchaseOrderCategoriesEntity.notDefined,
+  ),
+  deliverCategory: $enumDecodeNullable(
+    _$AtsPurchaseOrderSubCategoriesEnumMap,
+    json['deliverCategory'],
+    unknownValue: AtsPurchaseOrderSubCategories.notDefined,
+  ),
+  purchaseOrders:
+      (json['purchaseOrders'] as List<dynamic>?)
           ?.map((e) => AtsPurchaseOrder.fromJson(e as Map<String, dynamic>))
           .toList(),
-      statuses: (json['statuses'] as List<dynamic>?)
+  statuses:
+      (json['statuses'] as List<dynamic>?)
           ?.map((e) => AtsOperationStatuses.fromJson(e as Map<String, dynamic>))
           .toList(),
-      totalQuantity: (json['totalQuantity'] as num?)?.toDouble(),
-      productsInformation: (json['productsInformation'] as List<dynamic>?)
+  totalQuantity: (json['totalQuantity'] as num?)?.toDouble(),
+  productsInformation:
+      (json['productsInformation'] as List<dynamic>?)
           ?.map(
             (e) =>
                 OperationProductInformation.fromJson(e as Map<String, dynamic>),
           )
           .toList(),
-      ctes: (json['ctes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      caclFormsIds: (json['caclFormsIds'] as List<dynamic>?)
+  ctes: (json['ctes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  caclFormsIds:
+      (json['caclFormsIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      caclForms: (json['caclForms'] as List<dynamic>?)
+  caclForms:
+      (json['caclForms'] as List<dynamic>?)
           ?.map((e) => CaclEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
-      manifests: (json['manifests'] as List<dynamic>?)
+  manifests:
+      (json['manifests'] as List<dynamic>?)
           ?.map((e) => Manifest.fromJson(e as Map<String, dynamic>))
           .toList(),
-      history: (json['history'] as List<dynamic>?)
+  history:
+      (json['history'] as List<dynamic>?)
           ?.map((e) => AtsOperationHistory.fromJson(e as Map<String, dynamic>))
           .toList(),
-    );
+);
 
 Map<String, dynamic> _$AtsOperationToJson(
   _AtsOperation instance,
@@ -1283,9 +1340,8 @@ Map<String, dynamic> _$AtsOperationToJson(
   'purchaseOrders': instance.purchaseOrders?.map((e) => e.toJson()).toList(),
   'statuses': instance.statuses?.map((e) => e.toJson()).toList(),
   'totalQuantity': instance.totalQuantity,
-  'productsInformation': instance.productsInformation
-      ?.map((e) => e.toJson())
-      .toList(),
+  'productsInformation':
+      instance.productsInformation?.map((e) => e.toJson()).toList(),
   'ctes': instance.ctes,
   'caclFormsIds': instance.caclFormsIds,
   'caclForms': instance.caclForms?.map((e) => e.toJson()).toList(),
@@ -1314,9 +1370,10 @@ const _$AtsPurchaseOrderSubCategoriesEnumMap = {
 _AtsOperationStatuses _$AtsOperationStatusesFromJson(
   Map<String, dynamic> json,
 ) => _AtsOperationStatuses(
-  asset: json['asset'] == null
-      ? null
-      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  asset:
+      json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
   inTransitAt: const TimestampOrNullConverter().fromJson(
     json['inTransitAt'] as num?,
   ),
@@ -1356,38 +1413,46 @@ Map<String, dynamic> _$AtsOperationStatusesToJson(
 _Manifest _$ManifestFromJson(Map<String, dynamic> json) => _Manifest(
   id: json['id'] as String?,
   assetId: json['assetId'] as String?,
-  asset: json['asset'] == null
-      ? null
-      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  asset:
+      json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
   terminalId: json['terminalId'] as String?,
-  terminal: json['terminal'] == null
-      ? null
-      : Asset.fromJson(json['terminal'] as Map<String, dynamic>),
+  terminal:
+      json['terminal'] == null
+          ? null
+          : Asset.fromJson(json['terminal'] as Map<String, dynamic>),
   totalVolume: (json['totalVolume'] as num?)?.toDouble(),
   totalConvertedVolume: (json['totalConvertedVolume'] as num?)?.toDouble(),
   operationId: json['operationId'] as String?,
-  operation: json['operation'] == null
-      ? null
-      : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
+  operation:
+      json['operation'] == null
+          ? null
+          : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
   createdAt: const TimestampOrNullConverter().fromJson(
     json['createdAt'] as num?,
   ),
   trim: (json['trim'] as num?)?.toDouble(),
   banda: (json['banda'] as num?)?.toDouble(),
-  tankMeasurements: (json['tankMeasurements'] as List<dynamic>?)
-      ?.map((e) => TankMeasurement.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  tankMeasurements:
+      (json['tankMeasurements'] as List<dynamic>?)
+          ?.map((e) => TankMeasurement.fromJson(e as Map<String, dynamic>))
+          .toList(),
   kind: $enumDecodeNullable(
     _$ManifestKindEnumMap,
     json['kind'],
     unknownValue: ManifestKind.manual,
   ),
-  position: json['position'] == null
-      ? null
-      : TelemetryPosition.fromJson(json['position'] as Map<String, dynamic>),
-  sensors: (json['sensors'] as List<dynamic>?)
-      ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  position:
+      json['position'] == null
+          ? null
+          : TelemetryPosition.fromJson(
+            json['position'] as Map<String, dynamic>,
+          ),
+  sensors:
+      (json['sensors'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$ManifestToJson(_Manifest instance) => <String, dynamic>{
@@ -1403,9 +1468,8 @@ Map<String, dynamic> _$ManifestToJson(_Manifest instance) => <String, dynamic>{
   'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
   'trim': instance.trim,
   'banda': instance.banda,
-  'tankMeasurements': instance.tankMeasurements
-      ?.map((e) => e.toJson())
-      .toList(),
+  'tankMeasurements':
+      instance.tankMeasurements?.map((e) => e.toJson()).toList(),
   'kind': instance.kind?.toJson(),
   'position': instance.position?.toJson(),
   'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
@@ -1500,53 +1564,65 @@ Map<String, dynamic> _$TankMeasurementInputToJson(
 _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
   id: json['id'] as String?,
   assetId: json['assetId'] as String?,
-  asset: json['asset'] == null
-      ? null
-      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  asset:
+      json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
   transportAssetId: json['transportAssetId'] as String?,
-  transportAsset: json['transportAsset'] == null
-      ? null
-      : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
+  transportAsset:
+      json['transportAsset'] == null
+          ? null
+          : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
   transportUserId: json['transportUserId'] as String?,
-  transportUser: json['transportUser'] == null
-      ? null
-      : User.fromJson(json['transportUser'] as Map<String, dynamic>),
+  transportUser:
+      json['transportUser'] == null
+          ? null
+          : User.fromJson(json['transportUser'] as Map<String, dynamic>),
   caclNumber: json['caclNumber'] as String?,
   category: json['category'] as String?,
   product: json['product'] as String?,
   clientAssetId: json['clientAssetId'] as String?,
-  clientAsset: json['clientAsset'] == null
-      ? null
-      : Asset.fromJson(json['clientAsset'] as Map<String, dynamic>),
+  clientAsset:
+      json['clientAsset'] == null
+          ? null
+          : Asset.fromJson(json['clientAsset'] as Map<String, dynamic>),
   origin: json['origin'] as String?,
   tankNumber: json['tankNumber'] as String?,
   transport: json['transport'] as String?,
-  equipments: json['equipments'] == null
-      ? null
-      : CaclEquipmentEntity.fromJson(
-          json['equipments'] as Map<String, dynamic>,
-        ),
-  measurements: json['measurements'] == null
-      ? null
-      : MeasurementsEntity.fromJson(
-          json['measurements'] as Map<String, dynamic>,
-        ),
-  results: json['results'] == null
-      ? null
-      : ResultsEntity.fromJson(json['results'] as Map<String, dynamic>),
-  measurer01: json['measurer01'] == null
-      ? null
-      : CaclMeasurementOutput.fromJson(
-          json['measurer01'] as Map<String, dynamic>,
-        ),
-  measurer02: json['measurer02'] == null
-      ? null
-      : CaclMeasurementOutput.fromJson(
-          json['measurer02'] as Map<String, dynamic>,
-        ),
-  volumeMoved: json['volumeMoved'] == null
-      ? null
-      : VolumeMovedEntity.fromJson(json['volumeMoved'] as Map<String, dynamic>),
+  equipments:
+      json['equipments'] == null
+          ? null
+          : CaclEquipmentEntity.fromJson(
+            json['equipments'] as Map<String, dynamic>,
+          ),
+  measurements:
+      json['measurements'] == null
+          ? null
+          : MeasurementsEntity.fromJson(
+            json['measurements'] as Map<String, dynamic>,
+          ),
+  results:
+      json['results'] == null
+          ? null
+          : ResultsEntity.fromJson(json['results'] as Map<String, dynamic>),
+  measurer01:
+      json['measurer01'] == null
+          ? null
+          : CaclMeasurementOutput.fromJson(
+            json['measurer01'] as Map<String, dynamic>,
+          ),
+  measurer02:
+      json['measurer02'] == null
+          ? null
+          : CaclMeasurementOutput.fromJson(
+            json['measurer02'] as Map<String, dynamic>,
+          ),
+  volumeMoved:
+      json['volumeMoved'] == null
+          ? null
+          : VolumeMovedEntity.fromJson(
+            json['volumeMoved'] as Map<String, dynamic>,
+          ),
   observations: json['observations'] as String?,
   startedAt: const TimestampOrNullConverter().fromJson(
     json['startedAt'] as num?,
@@ -1605,21 +1681,24 @@ Map<String, dynamic> _$CaclEntityToJson(
 
 _CaclEquipmentEntity _$CaclEquipmentEntityFromJson(Map<String, dynamic> json) =>
     _CaclEquipmentEntity(
-      measuringTape: json['measuringTape'] == null
-          ? null
-          : EquipmentMeasurementEntity.fromJson(
-              json['measuringTape'] as Map<String, dynamic>,
-            ),
-      densimeter: json['densimeter'] == null
-          ? null
-          : EquipmentMeasurementEntity.fromJson(
-              json['densimeter'] as Map<String, dynamic>,
-            ),
-      thermometer: json['thermometer'] == null
-          ? null
-          : EquipmentMeasurementEntity.fromJson(
-              json['thermometer'] as Map<String, dynamic>,
-            ),
+      measuringTape:
+          json['measuringTape'] == null
+              ? null
+              : EquipmentMeasurementEntity.fromJson(
+                json['measuringTape'] as Map<String, dynamic>,
+              ),
+      densimeter:
+          json['densimeter'] == null
+              ? null
+              : EquipmentMeasurementEntity.fromJson(
+                json['densimeter'] as Map<String, dynamic>,
+              ),
+      thermometer:
+          json['thermometer'] == null
+              ? null
+              : EquipmentMeasurementEntity.fromJson(
+                json['thermometer'] as Map<String, dynamic>,
+              ),
     );
 
 Map<String, dynamic> _$CaclEquipmentEntityToJson(
@@ -1632,46 +1711,54 @@ Map<String, dynamic> _$CaclEquipmentEntityToJson(
 
 _MeasurementsEntity _$MeasurementsEntityFromJson(Map<String, dynamic> json) =>
     _MeasurementsEntity(
-      referenceHeight: json['referenceHeight'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['referenceHeight'] as Map<String, dynamic>,
-            ),
-      productLevelHeight: json['productLevelHeight'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['productLevelHeight'] as Map<String, dynamic>,
-            ),
-      correctedLevelHeight: json['correctedLevelHeight'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['correctedLevelHeight'] as Map<String, dynamic>,
-            ),
-      waterHeight: json['waterHeight'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['waterHeight'] as Map<String, dynamic>,
-            ),
-      ambientLineVolume: json['ambientLineVolume'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['ambientLineVolume'] as Map<String, dynamic>,
-            ),
-      ambientDensity: json['ambientDensity'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['ambientDensity'] as Map<String, dynamic>,
-            ),
-      ambientTemperature: json['ambientTemperature'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['ambientTemperature'] as Map<String, dynamic>,
-            ),
-      averageTankTemperature: json['averageTankTemperature'] == null
-          ? null
-          : MeasurementEntity.fromJson(
-              json['averageTankTemperature'] as Map<String, dynamic>,
-            ),
+      referenceHeight:
+          json['referenceHeight'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['referenceHeight'] as Map<String, dynamic>,
+              ),
+      productLevelHeight:
+          json['productLevelHeight'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['productLevelHeight'] as Map<String, dynamic>,
+              ),
+      correctedLevelHeight:
+          json['correctedLevelHeight'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['correctedLevelHeight'] as Map<String, dynamic>,
+              ),
+      waterHeight:
+          json['waterHeight'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['waterHeight'] as Map<String, dynamic>,
+              ),
+      ambientLineVolume:
+          json['ambientLineVolume'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['ambientLineVolume'] as Map<String, dynamic>,
+              ),
+      ambientDensity:
+          json['ambientDensity'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['ambientDensity'] as Map<String, dynamic>,
+              ),
+      ambientTemperature:
+          json['ambientTemperature'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['ambientTemperature'] as Map<String, dynamic>,
+              ),
+      averageTankTemperature:
+          json['averageTankTemperature'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['averageTankTemperature'] as Map<String, dynamic>,
+              ),
     );
 
 Map<String, dynamic> _$MeasurementsEntityToJson(_MeasurementsEntity instance) =>
@@ -1686,44 +1773,57 @@ Map<String, dynamic> _$MeasurementsEntityToJson(_MeasurementsEntity instance) =>
       'averageTankTemperature': instance.averageTankTemperature?.toJson(),
     };
 
-_ResultsEntity _$ResultsEntityFromJson(
-  Map<String, dynamic> json,
-) => _ResultsEntity(
-  environmentalTankVolume: json['environmentalTankVolume'] == null
-      ? null
-      : MeasurementEntity.fromJson(
-          json['environmentalTankVolume'] as Map<String, dynamic>,
-        ),
-  waterVolume: json['waterVolume'] == null
-      ? null
-      : MeasurementEntity.fromJson(json['waterVolume'] as Map<String, dynamic>),
-  densityAt20: json['densityAt20'] == null
-      ? null
-      : MeasurementEntity.fromJson(json['densityAt20'] as Map<String, dynamic>),
-  volumeCorrectionFactor: json['volumeCorrectionFactor'] == null
-      ? null
-      : MeasurementEntity.fromJson(
-          json['volumeCorrectionFactor'] as Map<String, dynamic>,
-        ),
-  alcoholicContent: json['alcoholicContent'] == null
-      ? null
-      : MeasurementEntity.fromJson(
-          json['alcoholicContent'] as Map<String, dynamic>,
-        ),
-  environmentalVolume: json['environmentalVolume'] == null
-      ? null
-      : MeasurementEntity.fromJson(
-          json['environmentalVolume'] as Map<String, dynamic>,
-        ),
-  volumeAt20: json['volumeAt20'] == null
-      ? null
-      : MeasurementEntity.fromJson(json['volumeAt20'] as Map<String, dynamic>),
-  kilogramsAt20: json['kilogramsAt20'] == null
-      ? null
-      : MeasurementEntity.fromJson(
-          json['kilogramsAt20'] as Map<String, dynamic>,
-        ),
-);
+_ResultsEntity _$ResultsEntityFromJson(Map<String, dynamic> json) =>
+    _ResultsEntity(
+      environmentalTankVolume:
+          json['environmentalTankVolume'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['environmentalTankVolume'] as Map<String, dynamic>,
+              ),
+      waterVolume:
+          json['waterVolume'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['waterVolume'] as Map<String, dynamic>,
+              ),
+      densityAt20:
+          json['densityAt20'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['densityAt20'] as Map<String, dynamic>,
+              ),
+      volumeCorrectionFactor:
+          json['volumeCorrectionFactor'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['volumeCorrectionFactor'] as Map<String, dynamic>,
+              ),
+      alcoholicContent:
+          json['alcoholicContent'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['alcoholicContent'] as Map<String, dynamic>,
+              ),
+      environmentalVolume:
+          json['environmentalVolume'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['environmentalVolume'] as Map<String, dynamic>,
+              ),
+      volumeAt20:
+          json['volumeAt20'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['volumeAt20'] as Map<String, dynamic>,
+              ),
+      kilogramsAt20:
+          json['kilogramsAt20'] == null
+              ? null
+              : MeasurementEntity.fromJson(
+                json['kilogramsAt20'] as Map<String, dynamic>,
+              ),
+    );
 
 Map<String, dynamic> _$ResultsEntityToJson(_ResultsEntity instance) =>
     <String, dynamic>{
@@ -1806,26 +1906,40 @@ _CaclInput _$CaclInputFromJson(Map<String, dynamic> json) => _CaclInput(
   clientAssetId: json['clientAssetId'] as String?,
   tankNumber: json['tankNumber'] as String?,
   transport: json['transport'] as String?,
-  equipments: json['equipments'] == null
-      ? null
-      : CaclEquipmentInput.fromJson(json['equipments'] as Map<String, dynamic>),
-  measurements: json['measurements'] == null
-      ? null
-      : MeasurementsInput.fromJson(
-          json['measurements'] as Map<String, dynamic>,
-        ),
-  results: json['results'] == null
-      ? null
-      : ResultsInput.fromJson(json['results'] as Map<String, dynamic>),
-  measurer01: json['measurer01'] == null
-      ? null
-      : CaclMeasurement.fromJson(json['measurer01'] as Map<String, dynamic>),
-  measurer02: json['measurer02'] == null
-      ? null
-      : CaclMeasurement.fromJson(json['measurer02'] as Map<String, dynamic>),
-  volumeMoved: json['volumeMoved'] == null
-      ? null
-      : VolumeMovedInput.fromJson(json['volumeMoved'] as Map<String, dynamic>),
+  equipments:
+      json['equipments'] == null
+          ? null
+          : CaclEquipmentInput.fromJson(
+            json['equipments'] as Map<String, dynamic>,
+          ),
+  measurements:
+      json['measurements'] == null
+          ? null
+          : MeasurementsInput.fromJson(
+            json['measurements'] as Map<String, dynamic>,
+          ),
+  results:
+      json['results'] == null
+          ? null
+          : ResultsInput.fromJson(json['results'] as Map<String, dynamic>),
+  measurer01:
+      json['measurer01'] == null
+          ? null
+          : CaclMeasurement.fromJson(
+            json['measurer01'] as Map<String, dynamic>,
+          ),
+  measurer02:
+      json['measurer02'] == null
+          ? null
+          : CaclMeasurement.fromJson(
+            json['measurer02'] as Map<String, dynamic>,
+          ),
+  volumeMoved:
+      json['volumeMoved'] == null
+          ? null
+          : VolumeMovedInput.fromJson(
+            json['volumeMoved'] as Map<String, dynamic>,
+          ),
   observations: json['observations'] as String?,
   startedAt: const TimestampOrNullConverter().fromJson(
     json['startedAt'] as num?,
@@ -1875,21 +1989,24 @@ Map<String, dynamic> _$CaclInputToJson(
 
 _CaclEquipmentInput _$CaclEquipmentInputFromJson(Map<String, dynamic> json) =>
     _CaclEquipmentInput(
-      measuringTape: json['measuringTape'] == null
-          ? null
-          : EquipmentMeasurementInput.fromJson(
-              json['measuringTape'] as Map<String, dynamic>,
-            ),
-      densimeter: json['densimeter'] == null
-          ? null
-          : EquipmentMeasurementInput.fromJson(
-              json['densimeter'] as Map<String, dynamic>,
-            ),
-      thermometer: json['thermometer'] == null
-          ? null
-          : EquipmentMeasurementInput.fromJson(
-              json['thermometer'] as Map<String, dynamic>,
-            ),
+      measuringTape:
+          json['measuringTape'] == null
+              ? null
+              : EquipmentMeasurementInput.fromJson(
+                json['measuringTape'] as Map<String, dynamic>,
+              ),
+      densimeter:
+          json['densimeter'] == null
+              ? null
+              : EquipmentMeasurementInput.fromJson(
+                json['densimeter'] as Map<String, dynamic>,
+              ),
+      thermometer:
+          json['thermometer'] == null
+              ? null
+              : EquipmentMeasurementInput.fromJson(
+                json['thermometer'] as Map<String, dynamic>,
+              ),
     );
 
 Map<String, dynamic> _$CaclEquipmentInputToJson(_CaclEquipmentInput instance) =>
@@ -1901,46 +2018,54 @@ Map<String, dynamic> _$CaclEquipmentInputToJson(_CaclEquipmentInput instance) =>
 
 _MeasurementsInput _$MeasurementsInputFromJson(Map<String, dynamic> json) =>
     _MeasurementsInput(
-      referenceHeight: json['referenceHeight'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['referenceHeight'] as Map<String, dynamic>,
-            ),
-      productLevelHeight: json['productLevelHeight'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['productLevelHeight'] as Map<String, dynamic>,
-            ),
-      correctedLevelHeight: json['correctedLevelHeight'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['correctedLevelHeight'] as Map<String, dynamic>,
-            ),
-      waterHeight: json['waterHeight'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['waterHeight'] as Map<String, dynamic>,
-            ),
-      ambientLineVolume: json['ambientLineVolume'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['ambientLineVolume'] as Map<String, dynamic>,
-            ),
-      ambientDensity: json['ambientDensity'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['ambientDensity'] as Map<String, dynamic>,
-            ),
-      ambientTemperature: json['ambientTemperature'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['ambientTemperature'] as Map<String, dynamic>,
-            ),
-      averageTankTemperature: json['averageTankTemperature'] == null
-          ? null
-          : MeasurementInput.fromJson(
-              json['averageTankTemperature'] as Map<String, dynamic>,
-            ),
+      referenceHeight:
+          json['referenceHeight'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['referenceHeight'] as Map<String, dynamic>,
+              ),
+      productLevelHeight:
+          json['productLevelHeight'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['productLevelHeight'] as Map<String, dynamic>,
+              ),
+      correctedLevelHeight:
+          json['correctedLevelHeight'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['correctedLevelHeight'] as Map<String, dynamic>,
+              ),
+      waterHeight:
+          json['waterHeight'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['waterHeight'] as Map<String, dynamic>,
+              ),
+      ambientLineVolume:
+          json['ambientLineVolume'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['ambientLineVolume'] as Map<String, dynamic>,
+              ),
+      ambientDensity:
+          json['ambientDensity'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['ambientDensity'] as Map<String, dynamic>,
+              ),
+      ambientTemperature:
+          json['ambientTemperature'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['ambientTemperature'] as Map<String, dynamic>,
+              ),
+      averageTankTemperature:
+          json['averageTankTemperature'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['averageTankTemperature'] as Map<String, dynamic>,
+              ),
     );
 
 Map<String, dynamic> _$MeasurementsInputToJson(_MeasurementsInput instance) =>
@@ -1955,44 +2080,57 @@ Map<String, dynamic> _$MeasurementsInputToJson(_MeasurementsInput instance) =>
       'averageTankTemperature': instance.averageTankTemperature?.toJson(),
     };
 
-_ResultsInput _$ResultsInputFromJson(
-  Map<String, dynamic> json,
-) => _ResultsInput(
-  environmentalTankVolume: json['environmentalTankVolume'] == null
-      ? null
-      : MeasurementInput.fromJson(
-          json['environmentalTankVolume'] as Map<String, dynamic>,
-        ),
-  waterVolume: json['waterVolume'] == null
-      ? null
-      : MeasurementInput.fromJson(json['waterVolume'] as Map<String, dynamic>),
-  densityAt20: json['densityAt20'] == null
-      ? null
-      : MeasurementInput.fromJson(json['densityAt20'] as Map<String, dynamic>),
-  volumeCorrectionFactor: json['volumeCorrectionFactor'] == null
-      ? null
-      : MeasurementInput.fromJson(
-          json['volumeCorrectionFactor'] as Map<String, dynamic>,
-        ),
-  alcoholicContent: json['alcoholicContent'] == null
-      ? null
-      : MeasurementInput.fromJson(
-          json['alcoholicContent'] as Map<String, dynamic>,
-        ),
-  environmentalVolume: json['environmentalVolume'] == null
-      ? null
-      : MeasurementInput.fromJson(
-          json['environmentalVolume'] as Map<String, dynamic>,
-        ),
-  volumeAt20: json['volumeAt20'] == null
-      ? null
-      : MeasurementInput.fromJson(json['volumeAt20'] as Map<String, dynamic>),
-  kilogramsAt20: json['kilogramsAt20'] == null
-      ? null
-      : MeasurementInput.fromJson(
-          json['kilogramsAt20'] as Map<String, dynamic>,
-        ),
-);
+_ResultsInput _$ResultsInputFromJson(Map<String, dynamic> json) =>
+    _ResultsInput(
+      environmentalTankVolume:
+          json['environmentalTankVolume'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['environmentalTankVolume'] as Map<String, dynamic>,
+              ),
+      waterVolume:
+          json['waterVolume'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['waterVolume'] as Map<String, dynamic>,
+              ),
+      densityAt20:
+          json['densityAt20'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['densityAt20'] as Map<String, dynamic>,
+              ),
+      volumeCorrectionFactor:
+          json['volumeCorrectionFactor'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['volumeCorrectionFactor'] as Map<String, dynamic>,
+              ),
+      alcoholicContent:
+          json['alcoholicContent'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['alcoholicContent'] as Map<String, dynamic>,
+              ),
+      environmentalVolume:
+          json['environmentalVolume'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['environmentalVolume'] as Map<String, dynamic>,
+              ),
+      volumeAt20:
+          json['volumeAt20'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['volumeAt20'] as Map<String, dynamic>,
+              ),
+      kilogramsAt20:
+          json['kilogramsAt20'] == null
+              ? null
+              : MeasurementInput.fromJson(
+                json['kilogramsAt20'] as Map<String, dynamic>,
+              ),
+    );
 
 Map<String, dynamic> _$ResultsInputToJson(_ResultsInput instance) =>
     <String, dynamic>{
@@ -2094,12 +2232,14 @@ _AtsMonitor _$AtsMonitorFromJson(Map<String, dynamic> json) => _AtsMonitor(
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
-  owner: json['owner'] == null
-      ? null
-      : User.fromJson(json['owner'] as Map<String, dynamic>),
-  analyticsGridStructure: (json['analyticsGridStructure'] as List<dynamic>?)
-      ?.map((e) => AnalyticsGridItem.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  owner:
+      json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
+  analyticsGridStructure:
+      (json['analyticsGridStructure'] as List<dynamic>?)
+          ?.map((e) => AnalyticsGridItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$AtsMonitorToJson(_AtsMonitor instance) =>
@@ -2116,9 +2256,8 @@ Map<String, dynamic> _$AtsMonitorToJson(_AtsMonitor instance) =>
       'chartsIds': instance.chartsIds,
       'access': instance.access.map((e) => e.toJson()).toList(),
       'owner': instance.owner?.toJson(),
-      'analyticsGridStructure': instance.analyticsGridStructure
-          ?.map((e) => e.toJson())
-          .toList(),
+      'analyticsGridStructure':
+          instance.analyticsGridStructure?.map((e) => e.toJson()).toList(),
     };
 
 _AtsMonitorInput _$AtsMonitorInputFromJson(
@@ -2141,9 +2280,12 @@ _AtsMonitorInput _$AtsMonitorInputFromJson(
   chartsIds:
       (json['chartsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
-  analyticsGridStructure: (json['analyticsGridStructure'] as List<dynamic>?)
-      ?.map((e) => AnalyticsGridItemInput.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  analyticsGridStructure:
+      (json['analyticsGridStructure'] as List<dynamic>?)
+          ?.map(
+            (e) => AnalyticsGridItemInput.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
 );
 
 Map<String, dynamic> _$AtsMonitorInputToJson(_AtsMonitorInput instance) =>
@@ -2157,9 +2299,8 @@ Map<String, dynamic> _$AtsMonitorInputToJson(_AtsMonitorInput instance) =>
       'assetsIds': instance.assetsIds,
       'gridStructure': instance.gridStructure.map((e) => e.toJson()).toList(),
       'chartsIds': instance.chartsIds,
-      'analyticsGridStructure': instance.analyticsGridStructure
-          ?.map((e) => e.toJson())
-          .toList(),
+      'analyticsGridStructure':
+          instance.analyticsGridStructure?.map((e) => e.toJson()).toList(),
     };
 
 _AtsGridItem _$AtsGridItemFromJson(Map<String, dynamic> json) => _AtsGridItem(
@@ -2175,9 +2316,12 @@ _AtsGridItem _$AtsGridItemFromJson(Map<String, dynamic> json) => _AtsGridItem(
         unknownValue: MonitorCardType.unknown,
       ) ??
       MonitorCardType.unknown,
-  dimensions: json['dimensions'] == null
-      ? null
-      : AtsGridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
+  dimensions:
+      json['dimensions'] == null
+          ? null
+          : AtsGridDimension.fromJson(
+            json['dimensions'] as Map<String, dynamic>,
+          ),
   color: json['color'] as String?,
 );
 
@@ -2215,11 +2359,12 @@ _AtsGridItemInput _$AtsGridItemInputFromJson(Map<String, dynamic> json) =>
             unknownValue: MonitorCardType.unknown,
           ) ??
           MonitorCardType.unknown,
-      dimensions: json['dimensions'] == null
-          ? null
-          : AtsGridDimensionInput.fromJson(
-              json['dimensions'] as Map<String, dynamic>,
-            ),
+      dimensions:
+          json['dimensions'] == null
+              ? null
+              : AtsGridDimensionInput.fromJson(
+                json['dimensions'] as Map<String, dynamic>,
+              ),
     );
 
 Map<String, dynamic> _$AtsGridItemInputToJson(_AtsGridItemInput instance) =>

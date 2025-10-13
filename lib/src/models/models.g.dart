@@ -10,9 +10,10 @@ _Model _$ModelFromJson(Map<String, dynamic> json) => _Model(
   id: json['id'] as String,
   name: json['name'] as String,
   flespiId: json['flespiId'] as String?,
-  protocol: json['protocol'] == null
-      ? null
-      : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+  protocol:
+      json['protocol'] == null
+          ? null
+          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
   protocolId: json['protocolId'] as String?,
   isGeneric: json['isGeneric'] as bool?,
   commandsStructure:
@@ -50,9 +51,8 @@ Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
   'protocol': instance.protocol?.toJson(),
   'protocolId': instance.protocolId,
   'isGeneric': instance.isGeneric,
-  'commandsStructure': instance.commandsStructure
-      .map((e) => e.toJson())
-      .toList(),
+  'commandsStructure':
+      instance.commandsStructure.map((e) => e.toJson()).toList(),
   'configStructure': instance.configStructure.map((e) => e.toJson()).toList(),
   'confiotCapable': instance.confiotCapable,
   'confiotLayout': instance.confiotLayout.toJson(),
@@ -106,9 +106,8 @@ Map<String, dynamic> _$ModelInputToJson(
   'flespiId': instance.flespiId,
   'protocolId': instance.protocolId,
   'isGeneric': instance.isGeneric,
-  'commandsStructure': instance.commandsStructure
-      .map((e) => e.toJson())
-      .toList(),
+  'commandsStructure':
+      instance.commandsStructure.map((e) => e.toJson()).toList(),
   'configStructure': instance.configStructure.map((e) => e.toJson()).toList(),
   'confiotCapable': instance.confiotCapable,
   'confiotLayout': instance.confiotLayout.toJson(),

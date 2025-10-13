@@ -12,9 +12,8 @@ _LayrzChart _$LayrzChartFromJson(Map<String, dynamic> json) => _LayrzChart(
   description: json['description'] as String?,
   formula: json['formula'] as String?,
   script: json['script'] as String?,
-  sensors: (json['sensors'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  sensors:
+      (json['sensors'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: $enumDecodeNullable(
     _$ChartTypeEnumMap,
     json['type'],
@@ -30,9 +29,10 @@ _LayrzChart _$LayrzChartFromJson(Map<String, dynamic> json) => _LayrzChart(
     json['dataSource'],
     unknownValue: ChartDataSource.messages,
   ),
-  access: (json['access'] as List<dynamic>?)
-      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  access:
+      (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$LayrzChartToJson(_LayrzChart instance) =>
@@ -77,6 +77,7 @@ const _$ChartDataSourceEnumMap = {
   ChartDataSource.cases: 'CASES',
   ChartDataSource.checkpoints: 'CHECKPOINTS',
   ChartDataSource.atsOperations: 'ATS_OPERATIONS',
+  ChartDataSource.atsPurchaseOrders: 'ATS_PURCHASEORDERS',
 };
 
 _LayrzChartInput _$LayrzChartInputFromJson(Map<String, dynamic> json) =>
@@ -157,9 +158,10 @@ const _$ChartDataTypeEnumMap = {
 
 _LineChartRender _$LineChartRenderFromJson(Map<String, dynamic> json) =>
     _LineChartRender(
-      series: (json['series'] as List<dynamic>)
-          .map((e) => LineChartSerie.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      series:
+          (json['series'] as List<dynamic>)
+              .map((e) => LineChartSerie.fromJson(e as Map<String, dynamic>))
+              .toList(),
       xAxis: AxisConfig.fromJson(json['xAxis'] as Map<String, dynamic>),
       yAxis: AxisConfig.fromJson(json['yAxis'] as Map<String, dynamic>),
     );
@@ -180,9 +182,12 @@ _LineChartSerie _$LineChartSerieFromJson(Map<String, dynamic> json) =>
         json['type'],
         unknownValue: ChartDataSerieType.line,
       ),
-      values: (json['values'] as List<dynamic>)
-          .map((e) => LineChartDataPoint.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      values:
+          (json['values'] as List<dynamic>)
+              .map(
+                (e) => LineChartDataPoint.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
     );
 
 Map<String, dynamic> _$LineChartSerieToJson(_LineChartSerie instance) =>
@@ -213,12 +218,14 @@ Map<String, dynamic> _$TableHeaderToJson(_TableHeader instance) =>
 
 _TableDataSerie _$TableDataSerieFromJson(Map<String, dynamic> json) =>
     _TableDataSerie(
-      headers: (json['columns'] as List<dynamic>)
-          .map((e) => TableHeader.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      values: (json['rows'] as List<dynamic>)
-          .map((e) => e as Map<String, dynamic>)
-          .toList(),
+      headers:
+          (json['columns'] as List<dynamic>)
+              .map((e) => TableHeader.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      values:
+          (json['rows'] as List<dynamic>)
+              .map((e) => e as Map<String, dynamic>)
+              .toList(),
     );
 
 Map<String, dynamic> _$TableDataSerieToJson(_TableDataSerie instance) =>
@@ -229,9 +236,10 @@ Map<String, dynamic> _$TableDataSerieToJson(_TableDataSerie instance) =>
 
 _ColumnChartRender _$ColumnChartRenderFromJson(Map<String, dynamic> json) =>
     _ColumnChartRender(
-      series: (json['series'] as List<dynamic>)
-          .map((e) => ColumnChartSerie.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      series:
+          (json['series'] as List<dynamic>)
+              .map((e) => ColumnChartSerie.fromJson(e as Map<String, dynamic>))
+              .toList(),
       xAxis: AxisConfig.fromJson(json['xAxis'] as Map<String, dynamic>),
       yAxis: AxisConfig.fromJson(json['yAxis'] as Map<String, dynamic>),
     );
@@ -247,9 +255,12 @@ _ColumnChartSerie _$ColumnChartSerieFromJson(Map<String, dynamic> json) =>
     _ColumnChartSerie(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
-      values: (json['values'] as List<dynamic>)
-          .map((e) => ColumnChartDataPoint.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      values:
+          (json['values'] as List<dynamic>)
+              .map(
+                (e) => ColumnChartDataPoint.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
     );
 
 Map<String, dynamic> _$ColumnChartSerieToJson(_ColumnChartSerie instance) =>
@@ -272,9 +283,10 @@ Map<String, dynamic> _$ColumnChartDataPointToJson(
 
 _BarChartRender _$BarChartRenderFromJson(Map<String, dynamic> json) =>
     _BarChartRender(
-      series: (json['series'] as List<dynamic>)
-          .map((e) => BarChartSerie.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      series:
+          (json['series'] as List<dynamic>)
+              .map((e) => BarChartSerie.fromJson(e as Map<String, dynamic>))
+              .toList(),
       xAxis: AxisConfig.fromJson(json['xAxis'] as Map<String, dynamic>),
       yAxis: AxisConfig.fromJson(json['yAxis'] as Map<String, dynamic>),
     );
@@ -290,9 +302,10 @@ _BarChartSerie _$BarChartSerieFromJson(Map<String, dynamic> json) =>
     _BarChartSerie(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
-      values: (json['values'] as List<dynamic>)
-          .map((e) => BarChartDataPoint.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      values:
+          (json['values'] as List<dynamic>)
+              .map((e) => BarChartDataPoint.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$BarChartSerieToJson(_BarChartSerie instance) =>
@@ -313,9 +326,10 @@ Map<String, dynamic> _$BarChartDataPointToJson(_BarChartDataPoint instance) =>
 
 _ScatterChartRender _$ScatterChartRenderFromJson(Map<String, dynamic> json) =>
     _ScatterChartRender(
-      series: (json['series'] as List<dynamic>)
-          .map((e) => LineChartSerie.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      series:
+          (json['series'] as List<dynamic>)
+              .map((e) => LineChartSerie.fromJson(e as Map<String, dynamic>))
+              .toList(),
       xAxis: AxisConfig.fromJson(json['xAxis'] as Map<String, dynamic>),
       yAxis: AxisConfig.fromJson(json['yAxis'] as Map<String, dynamic>),
     );
@@ -343,9 +357,10 @@ Map<String, dynamic> _$NumberDataSerieToJson(_NumberDataSerie instance) =>
 
 _PieChartRender _$PieChartRenderFromJson(Map<String, dynamic> json) =>
     _PieChartRender(
-      series: (json['series'] as List<dynamic>)
-          .map((e) => PieChartSerie.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      series:
+          (json['series'] as List<dynamic>)
+              .map((e) => PieChartSerie.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$PieChartRenderToJson(_PieChartRender instance) =>
@@ -370,9 +385,10 @@ Map<String, dynamic> _$PieChartSerieToJson(_PieChartSerie instance) =>
 _RadialBarChartRender _$RadialBarChartRenderFromJson(
   Map<String, dynamic> json,
 ) => _RadialBarChartRender(
-  series: (json['series'] as List<dynamic>)
-      .map((e) => RadialBarChartSerie.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  series:
+      (json['series'] as List<dynamic>)
+          .map((e) => RadialBarChartSerie.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$RadialBarChartRenderToJson(
