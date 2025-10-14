@@ -60,6 +60,7 @@ part 'src/converters/fuel_type.dart';
 part 'src/converters/fuel_sub_type.dart';
 part 'src/converters/cf_fuel_type.dart';
 part 'src/converters/reception_status.dart';
+part 'src/converters/params_form_modality.dart';
 
 // ATS Enums
 part 'src/enums/fuel_sub_type.dart';
@@ -71,6 +72,7 @@ part 'src/enums/purchase_order_sub_categories.dart';
 part 'src/enums/cf_fuel_type.dart';
 part 'src/enums/reception_status.dart';
 part 'src/enums/monitor_card_type.dart';
+part 'src/enums/params_form_modality.dart';
 
 // Manifests
 part 'src/manifest/kind.dart';

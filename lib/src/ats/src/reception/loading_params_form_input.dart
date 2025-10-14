@@ -6,6 +6,9 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
     /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
     String? id,
 
+    /// `formNumber` Loading params form number
+    String? formNumber,
+
     /// `assetId` What asset is linked to loading params form (Truck).
     String? assetId,
 
@@ -30,8 +33,38 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
     /// `sampleType` represent the loading params sample type
     @AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,
 
-    /// `formNumber` Loading params form number
-    String? formNumber,
+    /// `fuelSubtype` Fuel ANP
+    String? fuelSubtype,
+
+    /// `ambientVolume` Ambient volume
+    double? ambientVolume,
+
+    /// `modality` Modality of the params form
+    @AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality,
+
+    /// `inpm` INPM code
+    double? inpm,
+
+    /// `a20Volume` A20 volume only on modality SKID
+    double? a20Volume,
+
+    /// `initialWeight` Initial weight only on modality balance
+    double? initialWeight,
+
+    /// `finalWeight` Final weight only on modality balance
+    double? finalWeight,
+
+    /// `liquidWeight` Liquid weight only on modality balance
+    double? liquidWeight,
+
+    /// `density20` Density at 20°C only on modality balance
+    double? density20,
+
+    /// `volume20` Volume at 20°C only on modality balance
+    double? volume20,
+
+    /// `spareVolume` Spare volume only on modality balance
+    double? spareVolume,
   }) = _AtsLoadingParamsFormInput;
 
   factory AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormInputFromJson(json);

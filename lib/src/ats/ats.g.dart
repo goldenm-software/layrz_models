@@ -748,6 +748,7 @@ _AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
   Map<String, dynamic> json,
 ) => _AtsLoadingParamsFormInput(
   id: json['id'] as String?,
+  formNumber: json['formNumber'] as String?,
   assetId: json['assetId'] as String?,
   receptionId: json['receptionId'] as String?,
   driver: json['driver'] as String?,
@@ -758,13 +759,26 @@ _AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
   sampleType: const AtsLoadingParamsSampleOrNullConverter().fromJson(
     json['sampleType'] as String?,
   ),
-  formNumber: json['formNumber'] as String?,
+  fuelSubtype: json['fuelSubtype'] as String?,
+  ambientVolume: (json['ambientVolume'] as num?)?.toDouble(),
+  modality: const AtsParamsFormModalityOrNullConverter().fromJson(
+    json['modality'] as String?,
+  ),
+  inpm: (json['inpm'] as num?)?.toDouble(),
+  a20Volume: (json['a20Volume'] as num?)?.toDouble(),
+  initialWeight: (json['initialWeight'] as num?)?.toDouble(),
+  finalWeight: (json['finalWeight'] as num?)?.toDouble(),
+  liquidWeight: (json['liquidWeight'] as num?)?.toDouble(),
+  density20: (json['density20'] as num?)?.toDouble(),
+  volume20: (json['volume20'] as num?)?.toDouble(),
+  spareVolume: (json['spareVolume'] as num?)?.toDouble(),
 );
 
 Map<String, dynamic> _$AtsLoadingParamsFormInputToJson(
   _AtsLoadingParamsFormInput instance,
 ) => <String, dynamic>{
   'id': instance.id,
+  'formNumber': instance.formNumber,
   'assetId': instance.assetId,
   'receptionId': instance.receptionId,
   'driver': instance.driver,
@@ -775,7 +789,19 @@ Map<String, dynamic> _$AtsLoadingParamsFormInputToJson(
   'sampleType': const AtsLoadingParamsSampleOrNullConverter().toJson(
     instance.sampleType,
   ),
-  'formNumber': instance.formNumber,
+  'fuelSubtype': instance.fuelSubtype,
+  'ambientVolume': instance.ambientVolume,
+  'modality': const AtsParamsFormModalityOrNullConverter().toJson(
+    instance.modality,
+  ),
+  'inpm': instance.inpm,
+  'a20Volume': instance.a20Volume,
+  'initialWeight': instance.initialWeight,
+  'finalWeight': instance.finalWeight,
+  'liquidWeight': instance.liquidWeight,
+  'density20': instance.density20,
+  'volume20': instance.volume20,
+  'spareVolume': instance.spareVolume,
 };
 
 _AtsLoadingParamsForm _$AtsLoadingParamsFormFromJson(
