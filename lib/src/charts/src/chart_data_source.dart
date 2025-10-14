@@ -11,7 +11,9 @@ enum ChartDataSource {
   @JsonValue('CHECKPOINTS')
   checkpoints,
   @JsonValue('ATS_OPERATIONS')
-  atsOperations;
+  atsOperations,
+  @JsonValue('ATS_PURCHASEORDERS')
+  atsPurchaseOrders;
 
   @override
   String toString() => toJson();
@@ -35,6 +37,8 @@ enum ChartDataSource {
         return "CHECKPOINTS";
       case ChartDataSource.atsOperations:
         return "ATS_OPERATIONS";
+      case ChartDataSource.atsPurchaseOrders:
+        return "ATS_PURCHASEORDERS";
     }
   }
 }

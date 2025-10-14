@@ -14,9 +14,10 @@ _Access _$AccessFromJson(Map<String, dynamic> json) => _Access(
   manage: json['manage'] as bool?,
   objectId: json['objectId'] as String?,
   userId: json['userId'] as String,
-  user: json['user'] == null
-      ? null
-      : User.fromJson(json['user'] as Map<String, dynamic>),
+  user:
+      json['user'] == null
+          ? null
+          : User.fromJson(json['user'] as Map<String, dynamic>),
   module: $enumDecode(
     _$AccessModuleEnumMap,
     json['module'],
@@ -103,9 +104,10 @@ _LinkShortcut _$LinkShortcutFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       code: json['code'] as String,
       redirectTo: json['redirectTo'] as String?,
-      creator: json['creator'] == null
-          ? null
-          : Employee.fromJson(json['creator'] as Map<String, dynamic>),
+      creator:
+          json['creator'] == null
+              ? null
+              : Employee.fromJson(json['creator'] as Map<String, dynamic>),
       creatorId: json['creatorId'] as String?,
     );
 
@@ -172,9 +174,10 @@ Map<String, dynamic> _$AvatarToJson(_Avatar instance) => <String, dynamic>{
 };
 
 _AvatarInput _$AvatarInputFromJson(Map<String, dynamic> json) => _AvatarInput(
-  type: json['type'] == null
-      ? AvatarType.none
-      : const AvatarTypeConverter().fromJson(json['type'] as String),
+  type:
+      json['type'] == null
+          ? AvatarType.none
+          : const AvatarTypeConverter().fromJson(json['type'] as String),
   emoji: json['emoji'] as String?,
   icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
   url: json['url'] as String?,
@@ -327,9 +330,10 @@ _CommentOwner _$CommentOwnerFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       avatar: json['avatar'] as String?,
-      dynamicAvatar: json['dynamicAvatar'] == null
-          ? null
-          : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
+      dynamicAvatar:
+          json['dynamicAvatar'] == null
+              ? null
+              : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CommentOwnerToJson(_CommentOwner instance) =>
@@ -343,9 +347,10 @@ Map<String, dynamic> _$CommentOwnerToJson(_CommentOwner instance) =>
 _CaseComment _$CaseCommentFromJson(Map<String, dynamic> json) => _CaseComment(
   id: json['id'] as String,
   at: const TimestampConverter().fromJson(json['at'] as num),
-  owner: json['owner'] == null
-      ? null
-      : CommentOwner.fromJson(json['owner'] as Map<String, dynamic>),
+  owner:
+      json['owner'] == null
+          ? null
+          : CommentOwner.fromJson(json['owner'] as Map<String, dynamic>),
   comment: json['comment'] as String,
   metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
 );
@@ -374,27 +379,34 @@ _Case _$CaseFromJson(Map<String, dynamic> json) => _Case(
   ),
   asset: Asset.fromJson(json['asset'] as Map<String, dynamic>),
   trigger: Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
-  geofence: json['geofence'] == null
-      ? null
-      : Geofence.fromJson(json['geofence'] as Map<String, dynamic>),
+  geofence:
+      json['geofence'] == null
+          ? null
+          : Geofence.fromJson(json['geofence'] as Map<String, dynamic>),
   sequence: (json['sequence'] as num?)?.toInt(),
   comments:
       (json['comments'] as List<dynamic>?)
           ?.map((e) => CaseComment.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
-  position: json['position'] == null
-      ? null
-      : TelemetryPosition.fromJson(json['position'] as Map<String, dynamic>),
-  payload: (json['payload'] as List<dynamic>?)
-      ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  sensors: (json['sensors'] as List<dynamic>?)
-      ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  file: json['file'] == null
-      ? null
-      : CloudEntry.fromJson(json['file'] as Map<String, dynamic>),
+  position:
+      json['position'] == null
+          ? null
+          : TelemetryPosition.fromJson(
+            json['position'] as Map<String, dynamic>,
+          ),
+  payload:
+      (json['payload'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  sensors:
+      (json['sensors'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  file:
+      json['file'] == null
+          ? null
+          : CloudEntry.fromJson(json['file'] as Map<String, dynamic>),
   stackCount: (json['stackCount'] as num?)?.toInt() ?? 1,
 );
 
@@ -449,18 +461,22 @@ _Checkpoint _$CheckpointFromJson(Map<String, dynamic> json) => _Checkpoint(
   id: json['id'] as String,
   name: json['name'] as String,
   assetId: json['assetId'] as String?,
-  waypoints: (json['waypoints'] as List<dynamic>?)
-      ?.map((e) => Waypoint.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  waypoints:
+      (json['waypoints'] as List<dynamic>?)
+          ?.map((e) => Waypoint.fromJson(e as Map<String, dynamic>))
+          .toList(),
   isActive: json['isActive'] as bool?,
-  access: (json['access'] as List<dynamic>?)
-      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  linkedAssetsIds: (json['linkedAssetsIds'] as List<dynamic>?)
-      ?.map(
-        (e) => LinkedAssetToCheckpointId.fromJson(e as Map<String, dynamic>),
-      )
-      .toList(),
+  access:
+      (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  linkedAssetsIds:
+      (json['linkedAssetsIds'] as List<dynamic>?)
+          ?.map(
+            (e) =>
+                LinkedAssetToCheckpointId.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
 );
 
 Map<String, dynamic> _$CheckpointToJson(
@@ -478,9 +494,10 @@ Map<String, dynamic> _$CheckpointToJson(
 _Waypoint _$WaypointFromJson(Map<String, dynamic> json) => _Waypoint(
   id: json['id'] as String,
   geofenceId: json['geofenceId'] as String?,
-  geofence: json['geofence'] == null
-      ? null
-      : Geofence.fromJson(json['geofence'] as Map<String, dynamic>),
+  geofence:
+      json['geofence'] == null
+          ? null
+          : Geofence.fromJson(json['geofence'] as Map<String, dynamic>),
   time: json['time'] as String?,
   kind: const WaypointKindOrNullConverter().fromJson(json['kind'] as String?),
 );
@@ -647,31 +664,29 @@ Map<String, dynamic> _$CountryStateToJson(_CountryState instance) =>
       'code': instance.code,
     };
 
-_CredentialField _$CredentialFieldFromJson(Map<String, dynamic> json) =>
-    _CredentialField(
-      field: json['field'] as String,
-      type: const CredentialFieldTypeConverter().fromJson(
-        json['type'] as String,
-      ),
-      maxLength: (json['maxLength'] as num?)?.toInt(),
-      minLength: (json['minLength'] as num?)?.toInt(),
-      maxValue: json['maxValue'] as num?,
-      minValue: json['minValue'] as num?,
-      choices: (json['choices'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      onlyField: json['onlyField'] as String?,
-      onlyChoices: (json['onlyChoices'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      action: _$JsonConverterFromJson<String, CredentialFieldAction>(
-        json['action'],
-        const CredentialFieldActionConverter().fromJson,
-      ),
-      requiredFields: (json['requiredFields'] as List<dynamic>?)
+_CredentialField _$CredentialFieldFromJson(
+  Map<String, dynamic> json,
+) => _CredentialField(
+  field: json['field'] as String,
+  type: const CredentialFieldTypeConverter().fromJson(json['type'] as String),
+  maxLength: (json['maxLength'] as num?)?.toInt(),
+  minLength: (json['minLength'] as num?)?.toInt(),
+  maxValue: json['maxValue'] as num?,
+  minValue: json['minValue'] as num?,
+  choices:
+      (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  onlyField: json['onlyField'] as String?,
+  onlyChoices:
+      (json['onlyChoices'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  action: _$JsonConverterFromJson<String, CredentialFieldAction>(
+    json['action'],
+    const CredentialFieldActionConverter().fromJson,
+  ),
+  requiredFields:
+      (json['requiredFields'] as List<dynamic>?)
           ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
           .toList(),
-    );
+);
 
 Map<String, dynamic> _$CredentialFieldToJson(
   _CredentialField instance,
@@ -706,9 +721,12 @@ _CredentialFieldInput _$CredentialFieldInputFromJson(
   Map<String, dynamic> json,
 ) => _CredentialFieldInput(
   field: json['field'] as String? ?? '',
-  type: json['type'] == null
-      ? CredentialFieldType.string
-      : const CredentialFieldTypeConverter().fromJson(json['type'] as String),
+  type:
+      json['type'] == null
+          ? CredentialFieldType.string
+          : const CredentialFieldTypeConverter().fromJson(
+            json['type'] as String,
+          ),
   maxLength: (json['maxLength'] as num?)?.toInt(),
   minLength: (json['minLength'] as num?)?.toInt(),
   maxValue: (json['maxValue'] as num?)?.toDouble(),
@@ -722,11 +740,12 @@ _CredentialFieldInput _$CredentialFieldInputFromJson(
           ?.map((e) => e as String)
           .toList() ??
       const [],
-  action: json['action'] == null
-      ? CredentialFieldAction.none
-      : const CredentialFieldActionConverter().fromJson(
-          json['action'] as String,
-        ),
+  action:
+      json['action'] == null
+          ? CredentialFieldAction.none
+          : const CredentialFieldActionConverter().fromJson(
+            json['action'] as String,
+          ),
   requiredFields:
       (json['requiredFields'] as List<dynamic>?)
           ?.map((e) => CredentialFieldInput.fromJson(e as Map<String, dynamic>))
@@ -815,9 +834,12 @@ Map<String, dynamic> _$DbPartitionToJson(_DbPartition instance) =>
 _Department _$DepartmentFromJson(Map<String, dynamic> json) => _Department(
   id: json['id'] as String,
   name: json['name'] as String,
-  permissions: json['permissions'] == null
-      ? null
-      : GenericPermission.fromJson(json['permissions'] as Map<String, dynamic>),
+  permissions:
+      json['permissions'] == null
+          ? null
+          : GenericPermission.fromJson(
+            json['permissions'] as Map<String, dynamic>,
+          ),
 );
 
 Map<String, dynamic> _$DepartmentToJson(_Department instance) =>
@@ -833,39 +855,52 @@ _Device _$DeviceFromJson(Map<String, dynamic> json) => _Device(
   ident: json['ident'] as String,
   flespiToken: json['flespiToken'] as String?,
   modelId: json['modelId'] as String?,
-  model: json['model'] == null
-      ? null
-      : Model.fromJson(json['model'] as Map<String, dynamic>),
+  model:
+      json['model'] == null
+          ? null
+          : Model.fromJson(json['model'] as Map<String, dynamic>),
   protocolId: json['protocolId'] as String?,
-  protocol: json['protocol'] == null
-      ? null
-      : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+  protocol:
+      json['protocol'] == null
+          ? null
+          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
   additionalFields: json['additionalFields'] as Map<String, dynamic>?,
   qrCode: json['qrCode'] as String?,
   linkQr: json['linkQr'] as String?,
-  commands: (json['commands'] as List<dynamic>?)
-      ?.map((e) => DeviceCommand.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  access: (json['access'] as List<dynamic>?)
-      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  telemetry: json['telemetry'] == null
-      ? null
-      : DeviceTelemetry.fromJson(json['telemetry'] as Map<String, dynamic>),
+  commands:
+      (json['commands'] as List<dynamic>?)
+          ?.map((e) => DeviceCommand.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  access:
+      (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  telemetry:
+      json['telemetry'] == null
+          ? null
+          : DeviceTelemetry.fromJson(json['telemetry'] as Map<String, dynamic>),
   visionProfileId: json['visionProfileId'] as String?,
-  visionProfile: json['visionProfile'] == null
-      ? null
-      : VisionProfile.fromJson(json['visionProfile'] as Map<String, dynamic>),
-  phone: json['phone'] == null
-      ? null
-      : PhoneNumber.fromJson(Map<String, String>.from(json['phone'] as Map)),
-  modbus: json['modbus'] == null
-      ? null
-      : ModbusConfig.fromJson(json['modbus'] as Map<String, dynamic>),
+  visionProfile:
+      json['visionProfile'] == null
+          ? null
+          : VisionProfile.fromJson(
+            json['visionProfile'] as Map<String, dynamic>,
+          ),
+  phone:
+      json['phone'] == null
+          ? null
+          : PhoneNumber.fromJson(
+            Map<String, String>.from(json['phone'] as Map),
+          ),
+  modbus:
+      json['modbus'] == null
+          ? null
+          : ModbusConfig.fromJson(json['modbus'] as Map<String, dynamic>),
   isSuspended: json['isSuspended'] as bool?,
-  hwModel: json['hwModel'] == null
-      ? null
-      : HwModel.fromJson(json['hwModel'] as Map<String, dynamic>),
+  hwModel:
+      json['hwModel'] == null
+          ? null
+          : HwModel.fromJson(json['hwModel'] as Map<String, dynamic>),
   hwModelId: json['hwModelId'] as String?,
   macAddress: json['macAddress'] as String?,
   configParams: json['configParams'] as Map<String, dynamic>?,
@@ -873,9 +908,10 @@ _Device _$DeviceFromJson(Map<String, dynamic> json) => _Device(
     json['visionCaptureThreshold'],
     const DurationConverter().fromJson,
   ),
-  peripherals: (json['peripherals'] as List<dynamic>?)
-      ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  peripherals:
+      (json['peripherals'] as List<dynamic>?)
+          ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
+          .toList(),
   localIpAddress: json['localIpAddress'] as String?,
 );
 
@@ -918,12 +954,14 @@ _DeviceInput _$DeviceInputFromJson(Map<String, dynamic> json) => _DeviceInput(
   protocolId: json['protocolId'] as String?,
   modelId: json['modelId'] as String?,
   visionProfileId: json['visionProfileId'] as String?,
-  phone: json['phone'] == null
-      ? null
-      : PhoneNumberInput.fromJson(json['phone'] as Map<String, dynamic>),
-  modbus: json['modbus'] == null
-      ? null
-      : ModbusConfigInput.fromJson(json['modbus'] as Map<String, dynamic>),
+  phone:
+      json['phone'] == null
+          ? null
+          : PhoneNumberInput.fromJson(json['phone'] as Map<String, dynamic>),
+  modbus:
+      json['modbus'] == null
+          ? null
+          : ModbusConfigInput.fromJson(json['modbus'] as Map<String, dynamic>),
   macAddress: json['macAddress'] as String?,
   hwModelId: json['hwModelId'] as String?,
   visionCaptureThreshold: _$JsonConverterFromJson<num, Duration>(
@@ -958,9 +996,10 @@ _EmailTemplate _$EmailTemplateFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       contentMjml: json['contentMjml'] as String?,
       contentTxt: json['contentTxt'] as String?,
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      access:
+          (json['access'] as List<dynamic>?)
+              ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$EmailTemplateToJson(_EmailTemplate instance) =>
@@ -977,24 +1016,31 @@ _Employee _$EmployeeFromJson(Map<String, dynamic> json) => _Employee(
   name: json['name'] as String,
   email: json['email'] as String?,
   username: json['username'] as String?,
-  department: json['department'] == null
-      ? null
-      : Department.fromJson(json['department'] as Map<String, dynamic>),
+  department:
+      json['department'] == null
+          ? null
+          : Department.fromJson(json['department'] as Map<String, dynamic>),
   departmentId: json['departmentId'] as String?,
-  dynamicAvatar: json['dynamicAvatar'] == null
-      ? null
-      : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
-  token: json['token'] == null
-      ? null
-      : Token.fromJson(json['token'] as Map<String, dynamic>),
-  permissions: json['permissions'] == null
-      ? null
-      : GenericPermission.fromJson(json['permissions'] as Map<String, dynamic>),
-  customPermissions: json['customPermissions'] == null
-      ? null
-      : GenericPermission.fromJson(
-          json['customPermissions'] as Map<String, dynamic>,
-        ),
+  dynamicAvatar:
+      json['dynamicAvatar'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
+  token:
+      json['token'] == null
+          ? null
+          : Token.fromJson(json['token'] as Map<String, dynamic>),
+  permissions:
+      json['permissions'] == null
+          ? null
+          : GenericPermission.fromJson(
+            json['permissions'] as Map<String, dynamic>,
+          ),
+  customPermissions:
+      json['customPermissions'] == null
+          ? null
+          : GenericPermission.fromJson(
+            json['customPermissions'] as Map<String, dynamic>,
+          ),
   mfaEnabled: json['mfaEnabled'] as bool? ?? false,
   mfaMethods:
       (json['mfaMethods'] as List<dynamic>?)
@@ -1015,9 +1061,8 @@ Map<String, dynamic> _$EmployeeToJson(_Employee instance) => <String, dynamic>{
   'permissions': instance.permissions?.toJson(),
   'customPermissions': instance.customPermissions?.toJson(),
   'mfaEnabled': instance.mfaEnabled,
-  'mfaMethods': instance.mfaMethods
-      .map(const MfaMethodConverter().toJson)
-      .toList(),
+  'mfaMethods':
+      instance.mfaMethods.map(const MfaMethodConverter().toJson).toList(),
 };
 
 _FtpAccount _$FtpAccountFromJson(Map<String, dynamic> json) => _FtpAccount(
@@ -1035,40 +1080,45 @@ Map<String, dynamic> _$FtpAccountToJson(_FtpAccount instance) =>
       'password': instance.password,
     };
 
-_LayrzFunction _$LayrzFunctionFromJson(Map<String, dynamic> json) =>
-    _LayrzFunction(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      algorithmId: json['algorithmId'] as String?,
-      algorithm: json['algorithm'] == null
+_LayrzFunction _$LayrzFunctionFromJson(
+  Map<String, dynamic> json,
+) => _LayrzFunction(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  algorithmId: json['algorithmId'] as String?,
+  algorithm:
+      json['algorithm'] == null
           ? null
           : Algorithm.fromJson(json['algorithm'] as Map<String, dynamic>),
-      maximumTime: (json['maximumTime'] as num?)?.toDouble(),
-      minutesDelta: (json['minutesDelta'] as num?)?.toDouble(),
-      externalIdentifiers: (json['externalIdentifiers'] as List<dynamic>?)
+  maximumTime: (json['maximumTime'] as num?)?.toDouble(),
+  minutesDelta: (json['minutesDelta'] as num?)?.toDouble(),
+  externalIdentifiers:
+      (json['externalIdentifiers'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      token: json['token'] as String?,
-      credentials: json['credentials'] as Map<String, dynamic>?,
-      ftp: json['ftp'] == null
+  token: json['token'] as String?,
+  credentials: json['credentials'] as Map<String, dynamic>?,
+  ftp:
+      json['ftp'] == null
           ? null
           : FtpAccount.fromJson(json['ftp'] as Map<String, dynamic>),
-      groupsIds: (json['groupsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      groups: (json['groups'] as List<dynamic>?)
+  groupsIds:
+      (json['groupsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  groups:
+      (json['groups'] as List<dynamic>?)
           ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
           .toList(),
-      assetsIds: (json['assetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      assets: (json['assets'] as List<dynamic>?)
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  assets:
+      (json['assets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      access: (json['access'] as List<dynamic>?)
+  access:
+      (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
-    );
+);
 
 Map<String, dynamic> _$LayrzFunctionToJson(_LayrzFunction instance) =>
     <String, dynamic>{
@@ -1113,60 +1163,81 @@ Map<String, dynamic> _$GenericPermissionItemToJson(
   'suspend': instance.suspend,
 };
 
-_GenericPermission _$GenericPermissionFromJson(
-  Map<String, dynamic> json,
-) => _GenericPermission(
-  apps: json['apps'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['apps'] as Map<String, dynamic>),
-  users: json['users'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['users'] as Map<String, dynamic>),
-  firmwares: json['firmwares'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['firmwares'] as Map<String, dynamic>,
-        ),
-  employees: json['employees'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['employees'] as Map<String, dynamic>,
-        ),
-  languages: json['languages'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['languages'] as Map<String, dynamic>,
-        ),
-  categories: json['categories'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['categories'] as Map<String, dynamic>,
-        ),
-  departments: json['departments'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['departments'] as Map<String, dynamic>,
-        ),
-  protocols: json['protocols'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['protocols'] as Map<String, dynamic>,
-        ),
-  billing: json['billing'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['billing'] as Map<String, dynamic>),
-  cycles: json['cycles'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['cycles'] as Map<String, dynamic>),
-  shortcuts: json['shortcuts'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['shortcuts'] as Map<String, dynamic>,
-        ),
-  layers: json['layers'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['layers'] as Map<String, dynamic>),
-);
+_GenericPermission _$GenericPermissionFromJson(Map<String, dynamic> json) =>
+    _GenericPermission(
+      apps:
+          json['apps'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['apps'] as Map<String, dynamic>,
+              ),
+      users:
+          json['users'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['users'] as Map<String, dynamic>,
+              ),
+      firmwares:
+          json['firmwares'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['firmwares'] as Map<String, dynamic>,
+              ),
+      employees:
+          json['employees'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['employees'] as Map<String, dynamic>,
+              ),
+      languages:
+          json['languages'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['languages'] as Map<String, dynamic>,
+              ),
+      categories:
+          json['categories'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['categories'] as Map<String, dynamic>,
+              ),
+      departments:
+          json['departments'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['departments'] as Map<String, dynamic>,
+              ),
+      protocols:
+          json['protocols'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['protocols'] as Map<String, dynamic>,
+              ),
+      billing:
+          json['billing'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['billing'] as Map<String, dynamic>,
+              ),
+      cycles:
+          json['cycles'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['cycles'] as Map<String, dynamic>,
+              ),
+      shortcuts:
+          json['shortcuts'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['shortcuts'] as Map<String, dynamic>,
+              ),
+      layers:
+          json['layers'] == null
+              ? null
+              : GenericPermissionItem.fromJson(
+                json['layers'] as Map<String, dynamic>,
+              ),
+    );
 
 Map<String, dynamic> _$GenericPermissionToJson(_GenericPermission instance) =>
     <String, dynamic>{
@@ -1339,154 +1410,187 @@ _Tag _$TagFromJson(Map<String, dynamic> json) => _Tag(
   id: json['id'] as String,
   name: json['name'] as String,
   color: const ColorConverter().fromJson(json['color'] as String),
-  dynamicIcon: json['dynamicIcon'] == null
-      ? null
-      : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
-  users: (json['users'] as List<dynamic>?)
-      ?.map((e) => User.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  usersIds: (json['usersIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  outboundServices: (json['outboundServices'] as List<dynamic>?)
-      ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  triggers: (json['triggers'] as List<dynamic>?)
-      ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  triggersIds: (json['triggersIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  actions: (json['actions'] as List<dynamic>?)
-      ?.map((e) => Action.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  actionsIds: (json['actionsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  operations: (json['operations'] as List<dynamic>?)
-      ?.map((e) => Operation.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  operationsIds: (json['operationsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  assets: (json['assets'] as List<dynamic>?)
-      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  assetsIds: (json['assetsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  devices: (json['devices'] as List<dynamic>?)
-      ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  devicesIds: (json['devicesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  geofences: (json['geofences'] as List<dynamic>?)
-      ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  geofencesIds: (json['geofencesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  externalAccounts: (json['externalAccounts'] as List<dynamic>?)
-      ?.map((e) => ExternalAccount.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  externalAccountsIds: (json['externalAccountsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  presets: (json['presets'] as List<dynamic>?)
-      ?.map((e) => Preset.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  presetsIds: (json['presetsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  references: (json['references'] as List<dynamic>?)
-      ?.map((e) => Reference.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  referencesIds: (json['referencesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  checkpoints: (json['checkpoints'] as List<dynamic>?)
-      ?.map((e) => Checkpoint.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  checkpointsIds: (json['checkpointsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  careProtocols: (json['careProtocols'] as List<dynamic>?)
-      ?.map((e) => CareProtocol.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  careProtocolsIds: (json['careProtocolsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  inboundServices: (json['inboundServices'] as List<dynamic>?)
-      ?.map((e) => InboundService.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  inboundServicesIds: (json['inboundServicesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  functions: (json['functions'] as List<dynamic>?)
-      ?.map((e) => LayrzFunction.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  functionsIds: (json['functionsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  conciergeForms: (json['conciergeForms'] as List<dynamic>?)
-      ?.map((e) => ConciergeForm.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  conciergeFormsIds: (json['conciergeFormsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  reportTemplates: (json['reportTemplates'] as List<dynamic>?)
-      ?.map((e) => ReportTemplate.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  reportTemplatesIds: (json['reportTemplatesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  charts: (json['charts'] as List<dynamic>?)
-      ?.map((e) => LayrzChart.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  chartsIds: (json['chartsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  workspaces: (json['workspaces'] as List<dynamic>?)
-      ?.map((e) => Workspace.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  workspacesIds: (json['workspacesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  visionProfiles: (json['visionProfiles'] as List<dynamic>?)
-      ?.map((e) => VisionProfile.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  visionProfilesIds: (json['visionProfilesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  mappitRoutes: (json['mappitRoutes'] as List<dynamic>?)
-      ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  mappitRoutesIds: (json['mappitRoutesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  exchangeServices: (json['exchangeServices'] as List<dynamic>?)
-      ?.map((e) => ExchangeService.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  exchangeServicesIds: (json['exchangeServicesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  access: (json['access'] as List<dynamic>?)
-      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  owner: json['owner'] == null
-      ? null
-      : User.fromJson(json['owner'] as Map<String, dynamic>),
+  dynamicIcon:
+      json['dynamicIcon'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+  users:
+      (json['users'] as List<dynamic>?)
+          ?.map((e) => User.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  usersIds:
+      (json['usersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  outboundServices:
+      (json['outboundServices'] as List<dynamic>?)
+          ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  outboundServicesIds:
+      (json['outboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  triggers:
+      (json['triggers'] as List<dynamic>?)
+          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  triggersIds:
+      (json['triggersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  actions:
+      (json['actions'] as List<dynamic>?)
+          ?.map((e) => Action.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  actionsIds:
+      (json['actionsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  operations:
+      (json['operations'] as List<dynamic>?)
+          ?.map((e) => Operation.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  operationsIds:
+      (json['operationsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  assets:
+      (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  devices:
+      (json['devices'] as List<dynamic>?)
+          ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  devicesIds:
+      (json['devicesIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  geofences:
+      (json['geofences'] as List<dynamic>?)
+          ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  geofencesIds:
+      (json['geofencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  externalAccounts:
+      (json['externalAccounts'] as List<dynamic>?)
+          ?.map((e) => ExternalAccount.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  externalAccountsIds:
+      (json['externalAccountsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  presets:
+      (json['presets'] as List<dynamic>?)
+          ?.map((e) => Preset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  presetsIds:
+      (json['presetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  references:
+      (json['references'] as List<dynamic>?)
+          ?.map((e) => Reference.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  referencesIds:
+      (json['referencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  checkpoints:
+      (json['checkpoints'] as List<dynamic>?)
+          ?.map((e) => Checkpoint.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  checkpointsIds:
+      (json['checkpointsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  careProtocols:
+      (json['careProtocols'] as List<dynamic>?)
+          ?.map((e) => CareProtocol.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  careProtocolsIds:
+      (json['careProtocolsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  inboundServices:
+      (json['inboundServices'] as List<dynamic>?)
+          ?.map((e) => InboundService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  inboundServicesIds:
+      (json['inboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  functions:
+      (json['functions'] as List<dynamic>?)
+          ?.map((e) => LayrzFunction.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  functionsIds:
+      (json['functionsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  conciergeForms:
+      (json['conciergeForms'] as List<dynamic>?)
+          ?.map((e) => ConciergeForm.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  conciergeFormsIds:
+      (json['conciergeFormsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  reportTemplates:
+      (json['reportTemplates'] as List<dynamic>?)
+          ?.map((e) => ReportTemplate.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  reportTemplatesIds:
+      (json['reportTemplatesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  charts:
+      (json['charts'] as List<dynamic>?)
+          ?.map((e) => LayrzChart.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  chartsIds:
+      (json['chartsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  workspaces:
+      (json['workspaces'] as List<dynamic>?)
+          ?.map((e) => Workspace.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  workspacesIds:
+      (json['workspacesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  visionProfiles:
+      (json['visionProfiles'] as List<dynamic>?)
+          ?.map((e) => VisionProfile.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  visionProfilesIds:
+      (json['visionProfilesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  mappitRoutes:
+      (json['mappitRoutes'] as List<dynamic>?)
+          ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  mappitRoutesIds:
+      (json['mappitRoutesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  exchangeServices:
+      (json['exchangeServices'] as List<dynamic>?)
+          ?.map((e) => ExchangeService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  exchangeServicesIds:
+      (json['exchangeServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  access:
+      (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  owner:
+      json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
   ownerId: json['ownerId'] as String?,
-  sensorsIds: (json['sensorsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  sensors: (json['sensors'] as List<dynamic>?)
-      ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  sensorsIds:
+      (json['sensorsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  sensors:
+      (json['sensors'] as List<dynamic>?)
+          ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$TagToJson(_Tag instance) => <String, dynamic>{
@@ -1496,9 +1600,8 @@ Map<String, dynamic> _$TagToJson(_Tag instance) => <String, dynamic>{
   'dynamicIcon': instance.dynamicIcon?.toJson(),
   'users': instance.users?.map((e) => e.toJson()).toList(),
   'usersIds': instance.usersIds,
-  'outboundServices': instance.outboundServices
-      ?.map((e) => e.toJson())
-      .toList(),
+  'outboundServices':
+      instance.outboundServices?.map((e) => e.toJson()).toList(),
   'outboundServicesIds': instance.outboundServicesIds,
   'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
   'triggersIds': instance.triggersIds,
@@ -1512,9 +1615,8 @@ Map<String, dynamic> _$TagToJson(_Tag instance) => <String, dynamic>{
   'devicesIds': instance.devicesIds,
   'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
   'geofencesIds': instance.geofencesIds,
-  'externalAccounts': instance.externalAccounts
-      ?.map((e) => e.toJson())
-      .toList(),
+  'externalAccounts':
+      instance.externalAccounts?.map((e) => e.toJson()).toList(),
   'externalAccountsIds': instance.externalAccountsIds,
   'presets': instance.presets?.map((e) => e.toJson()).toList(),
   'presetsIds': instance.presetsIds,
@@ -1540,9 +1642,8 @@ Map<String, dynamic> _$TagToJson(_Tag instance) => <String, dynamic>{
   'visionProfilesIds': instance.visionProfilesIds,
   'mappitRoutes': instance.mappitRoutes?.map((e) => e.toJson()).toList(),
   'mappitRoutesIds': instance.mappitRoutesIds,
-  'exchangeServices': instance.exchangeServices
-      ?.map((e) => e.toJson())
-      .toList(),
+  'exchangeServices':
+      instance.exchangeServices?.map((e) => e.toJson()).toList(),
   'exchangeServicesIds': instance.exchangeServicesIds,
   'access': instance.access?.map((e) => e.toJson()).toList(),
   'owner': instance.owner?.toJson(),
@@ -1551,19 +1652,24 @@ Map<String, dynamic> _$TagToJson(_Tag instance) => <String, dynamic>{
   'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
 };
 
-_DeviceTelemetry _$DeviceTelemetryFromJson(
-  Map<String, dynamic> json,
-) => _DeviceTelemetry(
-  id: json['id'] as String,
-  deviceId: json['deviceId'] as String?,
-  receivedAt: const TimestampConverter().fromJson(json['receivedAt'] as num),
-  position: json['position'] == null
-      ? null
-      : TelemetryPosition.fromJson(json['position'] as Map<String, dynamic>),
-  payload: (json['payload'] as List<dynamic>?)
-      ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
-);
+_DeviceTelemetry _$DeviceTelemetryFromJson(Map<String, dynamic> json) =>
+    _DeviceTelemetry(
+      id: json['id'] as String,
+      deviceId: json['deviceId'] as String?,
+      receivedAt: const TimestampConverter().fromJson(
+        json['receivedAt'] as num,
+      ),
+      position:
+          json['position'] == null
+              ? null
+              : TelemetryPosition.fromJson(
+                json['position'] as Map<String, dynamic>,
+              ),
+      payload:
+          (json['payload'] as List<dynamic>?)
+              ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+              .toList(),
+    );
 
 Map<String, dynamic> _$DeviceTelemetryToJson(_DeviceTelemetry instance) =>
     <String, dynamic>{
@@ -1580,18 +1686,22 @@ _AssetTelemetry _$AssetTelemetryFromJson(
   id: json['id'] as String,
   assetId: json['assetId'] as String?,
   receivedAt: const TimestampConverter().fromJson(json['receivedAt'] as num),
-  geofenceIds: (json['geofenceIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  position: json['position'] == null
-      ? null
-      : TelemetryPosition.fromJson(json['position'] as Map<String, dynamic>),
-  payload: (json['payload'] as List<dynamic>?)
-      ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  sensors: (json['sensors'] as List<dynamic>?)
-      ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  geofenceIds:
+      (json['geofenceIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  position:
+      json['position'] == null
+          ? null
+          : TelemetryPosition.fromJson(
+            json['position'] as Map<String, dynamic>,
+          ),
+  payload:
+      (json['payload'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  sensors:
+      (json['sensors'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$AssetTelemetryToJson(_AssetTelemetry instance) =>
@@ -1644,9 +1754,10 @@ _Timezone _$TimezoneFromJson(Map<String, dynamic> json) => _Timezone(
   id: json['id'] as String,
   name: json['name'] as String,
   offset: json['offset'] as String,
-  country: json['country'] == null
-      ? null
-      : Country.fromJson(json['country'] as Map<String, dynamic>),
+  country:
+      json['country'] == null
+          ? null
+          : Country.fromJson(json['country'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$TimezoneToJson(_Timezone instance) => <String, dynamic>{
@@ -1669,9 +1780,10 @@ Map<String, dynamic> _$TokenToJson(_Token instance) => <String, dynamic>{
 _Trip _$TripFromJson(Map<String, dynamic> json) => _Trip(
   assetId: json['assetId'] as String,
   assetName: json['assetName'] as String?,
-  points: (json['points'] as List<dynamic>)
-      .map((e) => Point.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  points:
+      (json['points'] as List<dynamic>)
+          .map((e) => Point.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$TripToJson(_Trip instance) => <String, dynamic>{
@@ -1766,12 +1878,14 @@ _BlockInput _$BlockInputFromJson(Map<String, dynamic> json) => _BlockInput(
   type: $enumDecodeNullable(_$BlockTypeEnumMap, json['type']),
   result: json['result'],
   lastValue: json['lastValue'],
-  boolObject: json['boolObject'] == null
-      ? null
-      : BoolBlockInput.fromJson(json['boolObject'] as Map<String, dynamic>),
-  mathObject: json['mathObject'] == null
-      ? null
-      : MathBlockInput.fromJson(json['mathObject'] as Map<String, dynamic>),
+  boolObject:
+      json['boolObject'] == null
+          ? null
+          : BoolBlockInput.fromJson(json['boolObject'] as Map<String, dynamic>),
+  mathObject:
+      json['mathObject'] == null
+          ? null
+          : MathBlockInput.fromJson(json['mathObject'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$BlockInputToJson(_BlockInput instance) =>

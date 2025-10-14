@@ -1,7 +1,10 @@
 # Changelog
 
-## 3.4.58
+## 3.4.59
 - Update `AtsLoadingParamsFormInput`
+
+## 3.4.58
+- Added `atsPurchaseOrders` value in `ChartDataSource` enum
 
 ## 3.4.57
 

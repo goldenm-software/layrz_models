@@ -23,72 +23,85 @@ _Workspace _$WorkspaceFromJson(Map<String, dynamic> json) => _Workspace(
     json['mainView'],
     unknownValue: WorkspaceMainView.sensors,
   ),
-  assets: (json['assets'] as List<dynamic>?)
-      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  assetsIds: (json['assetsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  inboundServices: (json['inboundServices'] as List<dynamic>?)
-      ?.map((e) => InboundService.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  inboundServicesIds: (json['inboundServicesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  outboundServices: (json['outboundServices'] as List<dynamic>?)
-      ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  assets:
+      (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  inboundServices:
+      (json['inboundServices'] as List<dynamic>?)
+          ?.map((e) => InboundService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  inboundServicesIds:
+      (json['inboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  outboundServices:
+      (json['outboundServices'] as List<dynamic>?)
+          ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  outboundServicesIds:
+      (json['outboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
   casesEnabled: json['casesEnabled'] as bool?,
-  triggers: (json['triggers'] as List<dynamic>?)
-      ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  triggersIds: (json['triggersIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  casesMonitorConfig: (json['casesMonitorConfig'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : CaseMonitorCard.fromJson(e as Map<String, dynamic>),
-      )
-      .toList(),
+  triggers:
+      (json['triggers'] as List<dynamic>?)
+          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  triggersIds:
+      (json['triggersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  casesMonitorConfig:
+      (json['casesMonitorConfig'] as List<dynamic>?)
+          ?.map(
+            (e) =>
+                e == null
+                    ? null
+                    : CaseMonitorCard.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
   checkpointsEnabled: json['checkpointsEnabled'] as bool?,
-  checkpoints: (json['checkpoints'] as List<dynamic>?)
-      ?.map((e) => Checkpoint.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  checkpointsIds: (json['checkpointsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  checkpoints:
+      (json['checkpoints'] as List<dynamic>?)
+          ?.map((e) => Checkpoint.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  checkpointsIds:
+      (json['checkpointsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
   mapEnabled: json['mapEnabled'] as bool?,
-  geofences: (json['geofences'] as List<dynamic>?)
-      ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  geofencesIds: (json['geofencesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  geofences:
+      (json['geofences'] as List<dynamic>?)
+          ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  geofencesIds:
+      (json['geofencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
   mapCardCustomization:
       (json['mapCardCustomization'] as List<dynamic>?)
           ?.map((e) => MapCardSensors.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
-  mapCenterCoordinates: json['mapCenterCoordinates'] == null
-      ? null
-      : GeoPoint.fromJson(json['mapCenterCoordinates'] as Map<String, dynamic>),
+  mapCenterCoordinates:
+      json['mapCenterCoordinates'] == null
+          ? null
+          : GeoPoint.fromJson(
+            json['mapCenterCoordinates'] as Map<String, dynamic>,
+          ),
   mapCenterMode: $enumDecodeNullable(
     _$MapCenterModeEnumMap,
     json['mapCenterMode'],
     unknownValue: MapCenterMode.bounds,
   ),
   analyticsEnabled: json['analyticsEnabled'] as bool?,
-  charts: (json['charts'] as List<dynamic>?)
-      ?.map((e) => LayrzChart.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  chartsIds: (json['chartsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  charts:
+      (json['charts'] as List<dynamic>?)
+          ?.map((e) => LayrzChart.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  chartsIds:
+      (json['chartsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
   analyticsGridStructure:
       (json['analyticsGridStructure'] as List<dynamic>?)
           ?.map((e) => AnalyticsGridItem.fromJson(e as Map<String, dynamic>))
@@ -105,12 +118,14 @@ _Workspace _$WorkspaceFromJson(Map<String, dynamic> json) => _Workspace(
     json['metricSystem'],
     unknownValue: MetricSystem.metric,
   ),
-  timezone: json['timezone'] == null
-      ? null
-      : Timezone.fromJson(json['timezone'] as Map<String, dynamic>),
-  access: (json['access'] as List<dynamic>?)
-      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  timezone:
+      json['timezone'] == null
+          ? null
+          : Timezone.fromJson(json['timezone'] as Map<String, dynamic>),
+  access:
+      (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$WorkspaceToJson(
@@ -128,37 +143,32 @@ Map<String, dynamic> _$WorkspaceToJson(
   'assetsIds': instance.assetsIds,
   'inboundServices': instance.inboundServices?.map((e) => e.toJson()).toList(),
   'inboundServicesIds': instance.inboundServicesIds,
-  'outboundServices': instance.outboundServices
-      ?.map((e) => e.toJson())
-      .toList(),
+  'outboundServices':
+      instance.outboundServices?.map((e) => e.toJson()).toList(),
   'outboundServicesIds': instance.outboundServicesIds,
   'casesEnabled': instance.casesEnabled,
   'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
   'triggersIds': instance.triggersIds,
-  'casesMonitorConfig': instance.casesMonitorConfig
-      ?.map((e) => e?.toJson())
-      .toList(),
+  'casesMonitorConfig':
+      instance.casesMonitorConfig?.map((e) => e?.toJson()).toList(),
   'checkpointsEnabled': instance.checkpointsEnabled,
   'checkpoints': instance.checkpoints?.map((e) => e.toJson()).toList(),
   'checkpointsIds': instance.checkpointsIds,
   'mapEnabled': instance.mapEnabled,
   'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
   'geofencesIds': instance.geofencesIds,
-  'mapCardCustomization': instance.mapCardCustomization
-      .map((e) => e.toJson())
-      .toList(),
+  'mapCardCustomization':
+      instance.mapCardCustomization.map((e) => e.toJson()).toList(),
   'mapCenterCoordinates': instance.mapCenterCoordinates?.toJson(),
   'mapCenterMode': instance.mapCenterMode?.toJson(),
   'analyticsEnabled': instance.analyticsEnabled,
   'charts': instance.charts?.map((e) => e.toJson()).toList(),
   'chartsIds': instance.chartsIds,
-  'analyticsGridStructure': instance.analyticsGridStructure
-      .map((e) => e.toJson())
-      .toList(),
+  'analyticsGridStructure':
+      instance.analyticsGridStructure.map((e) => e.toJson()).toList(),
   'sensorsEnabled': instance.sensorsEnabled,
-  'sensorsGridStructure': instance.sensorsGridStructure
-      .map((e) => e.toJson())
-      .toList(),
+  'sensorsGridStructure':
+      instance.sensorsGridStructure.map((e) => e.toJson()).toList(),
   'metricSystem': instance.metricSystem?.toJson(),
   'timezone': instance.timezone?.toJson(),
   'access': instance.access?.map((e) => e.toJson()).toList(),
@@ -219,9 +229,10 @@ _WorkspaceInput _$WorkspaceInputFromJson(
 ) => _WorkspaceInput(
   id: json['id'] as String?,
   name: json['name'] as String? ?? "",
-  color: json['color'] == null
-      ? Colors.blue
-      : const ColorOrNullConverter().fromJson(json['color'] as String?),
+  color:
+      json['color'] == null
+          ? Colors.blue
+          : const ColorOrNullConverter().fromJson(json['color'] as String?),
   icon: const IconConverter().fromJson(json['icon'] as String),
   background: json['background'] as String?,
   isFavorite: json['isFavorite'] as bool? ?? false,
@@ -254,9 +265,10 @@ _WorkspaceInput _$WorkspaceInputFromJson(
   casesMonitorConfig:
       (json['casesMonitorConfig'] as List<dynamic>?)
           ?.map(
-            (e) => e == null
-                ? null
-                : CaseMonitorCardInput.fromJson(e as Map<String, dynamic>),
+            (e) =>
+                e == null
+                    ? null
+                    : CaseMonitorCardInput.fromJson(e as Map<String, dynamic>),
           )
           .toList() ??
       const [],
@@ -277,9 +289,12 @@ _WorkspaceInput _$WorkspaceInputFromJson(
           ?.map((e) => MapCardSensorsInput.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
-  mapCenterCoordinates: json['mapCenterCoordinates'] == null
-      ? null
-      : GeoPoint.fromJson(json['mapCenterCoordinates'] as Map<String, dynamic>),
+  mapCenterCoordinates:
+      json['mapCenterCoordinates'] == null
+          ? null
+          : GeoPoint.fromJson(
+            json['mapCenterCoordinates'] as Map<String, dynamic>,
+          ),
   mapCenterMode:
       $enumDecodeNullable(
         _$MapCenterModeEnumMap,
@@ -327,27 +342,23 @@ Map<String, dynamic> _$WorkspaceInputToJson(_WorkspaceInput instance) =>
       'outboundServicesIds': instance.outboundServicesIds,
       'casesEnabled': instance.casesEnabled,
       'triggersIds': instance.triggersIds,
-      'casesMonitorConfig': instance.casesMonitorConfig
-          .map((e) => e?.toJson())
-          .toList(),
+      'casesMonitorConfig':
+          instance.casesMonitorConfig.map((e) => e?.toJson()).toList(),
       'checkpointsEnabled': instance.checkpointsEnabled,
       'checkpointsIds': instance.checkpointsIds,
       'mapEnabled': instance.mapEnabled,
       'geofencesIds': instance.geofencesIds,
-      'mapCardCustomization': instance.mapCardCustomization
-          .map((e) => e.toJson())
-          .toList(),
+      'mapCardCustomization':
+          instance.mapCardCustomization.map((e) => e.toJson()).toList(),
       'mapCenterCoordinates': instance.mapCenterCoordinates?.toJson(),
       'mapCenterMode': instance.mapCenterMode.toJson(),
       'analyticsEnabled': instance.analyticsEnabled,
       'chartsIds': instance.chartsIds,
-      'analyticsGridStructure': instance.analyticsGridStructure
-          .map((e) => e.toJson())
-          .toList(),
+      'analyticsGridStructure':
+          instance.analyticsGridStructure.map((e) => e.toJson()).toList(),
       'sensorsEnabled': instance.sensorsEnabled,
-      'sensorsGridStructure': instance.sensorsGridStructure
-          .map((e) => e.toJson())
-          .toList(),
+      'sensorsGridStructure':
+          instance.sensorsGridStructure.map((e) => e.toJson()).toList(),
       'metricSystem': instance.metricSystem.toJson(),
     };
 
@@ -507,28 +518,29 @@ Map<String, dynamic> _$AnalyticsGridItemInputToJson(
   'dimensions': instance.dimensions.toJson(),
 };
 
-_SensorGridItem _$SensorGridItemFromJson(Map<String, dynamic> json) =>
-    _SensorGridItem(
-      objectId: json['objectId'] as String?,
-      kind: $enumDecode(
-        _$WorkspaceCardTypeEnumMap,
-        json['kind'],
-        unknownValue: WorkspaceCardType.asset,
-      ),
-      dimensions: json['dimensions'] == null
+_SensorGridItem _$SensorGridItemFromJson(
+  Map<String, dynamic> json,
+) => _SensorGridItem(
+  objectId: json['objectId'] as String?,
+  kind: $enumDecode(
+    _$WorkspaceCardTypeEnumMap,
+    json['kind'],
+    unknownValue: WorkspaceCardType.asset,
+  ),
+  dimensions:
+      json['dimensions'] == null
           ? null
           : GridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
-      color: json['color'] == null
+  color:
+      json['color'] == null
           ? Colors.white
           : const ColorConverter().fromJson(json['color'] as String),
-      sensors:
-          (json['sensors'] as List<dynamic>?)
-              ?.map(
-                (e) => SensorGridContent.fromJson(e as Map<String, dynamic>),
-              )
-              .toList() ??
-          const [],
-    );
+  sensors:
+      (json['sensors'] as List<dynamic>?)
+          ?.map((e) => SensorGridContent.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+);
 
 Map<String, dynamic> _$SensorGridItemToJson(_SensorGridItem instance) =>
     <String, dynamic>{
@@ -555,14 +567,16 @@ _SensorGridItemInput _$SensorGridItemInputFromJson(Map<String, dynamic> json) =>
             unknownValue: WorkspaceCardType.asset,
           ) ??
           WorkspaceCardType.asset,
-      dimensions: json['dimensions'] == null
-          ? null
-          : GridDimensionInput.fromJson(
-              json['dimensions'] as Map<String, dynamic>,
-            ),
-      color: json['color'] == null
-          ? Colors.white
-          : const ColorConverter().fromJson(json['color'] as String),
+      dimensions:
+          json['dimensions'] == null
+              ? null
+              : GridDimensionInput.fromJson(
+                json['dimensions'] as Map<String, dynamic>,
+              ),
+      color:
+          json['color'] == null
+              ? Colors.white
+              : const ColorConverter().fromJson(json['color'] as String),
       sensors:
           (json['sensors'] as List<dynamic>?)
               ?.map(
@@ -755,21 +769,24 @@ Map<String, dynamic> _$MapCardSensorsToJson(_MapCardSensors instance) =>
 _MapCardSensorsInput _$MapCardSensorsInputFromJson(Map<String, dynamic> json) =>
     _MapCardSensorsInput(
       assetId: json['assetId'] as String?,
-      alerts: json['alerts'] == null
-          ? null
-          : MapCardAlertConfigurationInput.fromJson(
-              json['alerts'] as Map<String, dynamic>,
-            ),
-      connection: json['connection'] == null
-          ? null
-          : MapCardConnectionConfigurationInput.fromJson(
-              json['connection'] as Map<String, dynamic>,
-            ),
-      sensors: json['sensors'] == null
-          ? null
-          : MapCardSensorsConfigurationInput.fromJson(
-              json['sensors'] as Map<String, dynamic>,
-            ),
+      alerts:
+          json['alerts'] == null
+              ? null
+              : MapCardAlertConfigurationInput.fromJson(
+                json['alerts'] as Map<String, dynamic>,
+              ),
+      connection:
+          json['connection'] == null
+              ? null
+              : MapCardConnectionConfigurationInput.fromJson(
+                json['connection'] as Map<String, dynamic>,
+              ),
+      sensors:
+          json['sensors'] == null
+              ? null
+              : MapCardSensorsConfigurationInput.fromJson(
+                json['sensors'] as Map<String, dynamic>,
+              ),
     );
 
 Map<String, dynamic> _$MapCardSensorsInputToJson(

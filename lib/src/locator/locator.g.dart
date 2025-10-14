@@ -9,48 +9,59 @@ part of 'locator.dart';
 _Locator _$LocatorFromJson(Map<String, dynamic> json) => _Locator(
   id: json['id'] as String,
   token: json['token'] as String,
-  mqttConfig: json['mqttConfig'] == null
-      ? null
-      : LocatorMqttConfig.fromJson(json['mqttConfig'] as Map<String, dynamic>),
-  assets: (json['assets'] as List<dynamic>?)
-      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  assetsIds: (json['assetsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  geofences: (json['geofences'] as List<dynamic>?)
-      ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  geofencesIds: (json['geofencesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  triggers: (json['triggers'] as List<dynamic>?)
-      ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  triggersIds: (json['triggersIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  mqttConfig:
+      json['mqttConfig'] == null
+          ? null
+          : LocatorMqttConfig.fromJson(
+            json['mqttConfig'] as Map<String, dynamic>,
+          ),
+  assets:
+      (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  geofences:
+      (json['geofences'] as List<dynamic>?)
+          ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  geofencesIds:
+      (json['geofencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  triggers:
+      (json['triggers'] as List<dynamic>?)
+          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  triggersIds:
+      (json['triggersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: const TimestampOrNullConverter().fromJson(
     json['expiresAt'] as num?,
   ),
-  expiredBy: json['expiredBy'] == null
-      ? null
-      : User.fromJson(json['expiredBy'] as Map<String, dynamic>),
+  expiredBy:
+      json['expiredBy'] == null
+          ? null
+          : User.fromJson(json['expiredBy'] as Map<String, dynamic>),
   expiredById: json['expiredById'] as String?,
   isExpired: json['isExpired'] as bool?,
   createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
-  createdBy: json['createdBy'] == null
-      ? null
-      : User.fromJson(json['createdBy'] as Map<String, dynamic>),
+  createdBy:
+      json['createdBy'] == null
+          ? null
+          : User.fromJson(json['createdBy'] as Map<String, dynamic>),
   createdById: json['createdById'] as String?,
   updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
-  updatedBy: json['updatedBy'] == null
-      ? null
-      : User.fromJson(json['updatedBy'] as Map<String, dynamic>),
+  updatedBy:
+      json['updatedBy'] == null
+          ? null
+          : User.fromJson(json['updatedBy'] as Map<String, dynamic>),
   updatedById: json['updatedById'] as String?,
-  customization: json['customization'] == null
-      ? null
-      : RegisteredApp.fromJson(json['customization'] as Map<String, dynamic>),
+  customization:
+      json['customization'] == null
+          ? null
+          : RegisteredApp.fromJson(
+            json['customization'] as Map<String, dynamic>,
+          ),
   customizationId: json['customizationId'] as String?,
 );
 
