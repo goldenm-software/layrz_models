@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.60
+= Update `AtsLoadingParamsForm`
+
 ## 3.4.59
 - Update `AtsLoadingParamsFormInput`
 

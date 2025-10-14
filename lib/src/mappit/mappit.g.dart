@@ -9,10 +9,9 @@ part of 'mappit.dart';
 _MappitRouteLinkingHistory _$MappitRouteLinkingHistoryFromJson(
   Map<String, dynamic> json,
 ) => _MappitRouteLinkingHistory(
-  currentSeller:
-      json['currentSeller'] == null
-          ? null
-          : Asset.fromJson(json['currentSeller'] as Map<String, dynamic>),
+  currentSeller: json['currentSeller'] == null
+      ? null
+      : Asset.fromJson(json['currentSeller'] as Map<String, dynamic>),
   currentSellerId: json['currentSellerId'] as String?,
   performedBy: User.fromJson(json['performedBy'] as Map<String, dynamic>),
   performedById: json['performedById'] as String,
@@ -32,39 +31,31 @@ Map<String, dynamic> _$MappitRouteLinkingHistoryToJson(
 _MappitRoute _$MappitRouteFromJson(Map<String, dynamic> json) => _MappitRoute(
   id: json['id'] as String,
   name: json['name'] as String,
-  currentSeller:
-      json['currentSeller'] == null
-          ? null
-          : Asset.fromJson(json['currentSeller'] as Map<String, dynamic>),
+  currentSeller: json['currentSeller'] == null
+      ? null
+      : Asset.fromJson(json['currentSeller'] as Map<String, dynamic>),
   currentSellerId: json['currentSellerId'] as String?,
-  geofences:
-      (json['geofences'] as List<dynamic>?)
-          ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  geofencesIds:
-      (json['geofencesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  assignmentsHistory:
-      (json['assignmentsHistory'] as List<dynamic>?)
-          ?.map(
-            (e) =>
-                MappitRouteLinkingHistory.fromJson(e as Map<String, dynamic>),
-          )
-          .toList(),
+  geofences: (json['geofences'] as List<dynamic>?)
+      ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  geofencesIds: (json['geofencesIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  assignmentsHistory: (json['assignmentsHistory'] as List<dynamic>?)
+      ?.map(
+        (e) => MappitRouteLinkingHistory.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
   ownerId: json['ownerId'] as String?,
-  owner:
-      json['owner'] == null
-          ? null
-          : User.fromJson(json['owner'] as Map<String, dynamic>),
-  secondarySellers:
-      (json['secondarySellers'] as List<dynamic>?)
-          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  secondarySellersIds:
-      (json['secondarySellersIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+  owner: json['owner'] == null
+      ? null
+      : User.fromJson(json['owner'] as Map<String, dynamic>),
+  secondarySellers: (json['secondarySellers'] as List<dynamic>?)
+      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  secondarySellersIds: (json['secondarySellersIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
 );
 
 Map<String, dynamic> _$MappitRouteToJson(_MappitRoute instance) =>
@@ -75,12 +66,14 @@ Map<String, dynamic> _$MappitRouteToJson(_MappitRoute instance) =>
       'currentSellerId': instance.currentSellerId,
       'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
       'geofencesIds': instance.geofencesIds,
-      'assignmentsHistory':
-          instance.assignmentsHistory?.map((e) => e.toJson()).toList(),
+      'assignmentsHistory': instance.assignmentsHistory
+          ?.map((e) => e.toJson())
+          .toList(),
       'ownerId': instance.ownerId,
       'owner': instance.owner?.toJson(),
-      'secondarySellers':
-          instance.secondarySellers?.map((e) => e.toJson()).toList(),
+      'secondarySellers': instance.secondarySellers
+          ?.map((e) => e.toJson())
+          .toList(),
       'secondarySellersIds': instance.secondarySellersIds,
     };
 
@@ -128,18 +121,15 @@ _MappitLaborHourInput _$MappitLaborHourInputFromJson(
     json['weekday'],
     unknownValue: Weekday.monday,
   ),
-  administrative:
-      json['administrative'] == null
-          ? const Duration(minutes: 0)
-          : const DurationConverter().fromJson(json['administrative'] as num),
-  f2f:
-      json['f2f'] == null
-          ? const Duration(minutes: 0)
-          : const DurationConverter().fromJson(json['f2f'] as num),
-  other:
-      json['other'] == null
-          ? const Duration(minutes: 0)
-          : const DurationConverter().fromJson(json['other'] as num),
+  administrative: json['administrative'] == null
+      ? const Duration(minutes: 0)
+      : const DurationConverter().fromJson(json['administrative'] as num),
+  f2f: json['f2f'] == null
+      ? const Duration(minutes: 0)
+      : const DurationConverter().fromJson(json['f2f'] as num),
+  other: json['other'] == null
+      ? const Duration(minutes: 0)
+      : const DurationConverter().fromJson(json['other'] as num),
 );
 
 Map<String, dynamic> _$MappitLaborHourInputToJson(
@@ -156,10 +146,9 @@ _MappitProfileGeofence _$MappitProfileGeofenceFromJson(
   Map<String, dynamic> json,
 ) => _MappitProfileGeofence(
   geofenceId: json['geofenceId'] as String,
-  geofence:
-      json['geofence'] == null
-          ? null
-          : Geofence.fromJson(json['geofence'] as Map<String, dynamic>),
+  geofence: json['geofence'] == null
+      ? null
+      : Geofence.fromJson(json['geofence'] as Map<String, dynamic>),
   color: const ColorOrNullConverter().fromJson(json['color'] as String?),
 );
 
@@ -171,16 +160,14 @@ Map<String, dynamic> _$MappitProfileGeofenceToJson(
   'color': const ColorOrNullConverter().toJson(instance.color),
 };
 
-_MappitProfile _$MappitProfileFromJson(
-  Map<String, dynamic> json,
-) => _MappitProfile(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  geofences:
-      (json['geofences'] as List<dynamic>)
+_MappitProfile _$MappitProfileFromJson(Map<String, dynamic> json) =>
+    _MappitProfile(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      geofences: (json['geofences'] as List<dynamic>)
           .map((e) => MappitProfileGeofence.fromJson(e as Map<String, dynamic>))
           .toList(),
-);
+    );
 
 Map<String, dynamic> _$MappitProfileToJson(_MappitProfile instance) =>
     <String, dynamic>{
@@ -191,18 +178,15 @@ Map<String, dynamic> _$MappitProfileToJson(_MappitProfile instance) =>
 
 _MappitDurationRange _$MappitDurationRangeFromJson(Map<String, dynamic> json) =>
     _MappitDurationRange(
-      min:
-          json['min'] == null
-              ? Duration.zero
-              : const DurationConverter().fromJson(json['min'] as num),
-      max:
-          json['max'] == null
-              ? Duration.zero
-              : const DurationConverter().fromJson(json['max'] as num),
-      color:
-          json['color'] == null
-              ? Colors.blue
-              : const ColorConverter().fromJson(json['color'] as String),
+      min: json['min'] == null
+          ? Duration.zero
+          : const DurationConverter().fromJson(json['min'] as num),
+      max: json['max'] == null
+          ? Duration.zero
+          : const DurationConverter().fromJson(json['max'] as num),
+      color: json['color'] == null
+          ? Colors.blue
+          : const ColorConverter().fromJson(json['color'] as String),
     );
 
 Map<String, dynamic> _$MappitDurationRangeToJson(
@@ -217,10 +201,9 @@ _MappitIntRange _$MappitIntRangeFromJson(Map<String, dynamic> json) =>
     _MappitIntRange(
       min: (json['min'] as num?)?.toInt() ?? 0,
       max: (json['max'] as num?)?.toInt() ?? 0,
-      color:
-          json['color'] == null
-              ? Colors.blue
-              : const ColorConverter().fromJson(json['color'] as String),
+      color: json['color'] == null
+          ? Colors.blue
+          : const ColorConverter().fromJson(json['color'] as String),
     );
 
 Map<String, dynamic> _$MappitIntRangeToJson(_MappitIntRange instance) =>
@@ -234,10 +217,9 @@ _MappitDoubleRange _$MappitDoubleRangeFromJson(Map<String, dynamic> json) =>
     _MappitDoubleRange(
       min: (json['min'] as num?)?.toDouble() ?? 0,
       max: (json['max'] as num?)?.toDouble() ?? 0,
-      color:
-          json['color'] == null
-              ? Colors.blue
-              : const ColorConverter().fromJson(json['color'] as String),
+      color: json['color'] == null
+          ? Colors.blue
+          : const ColorConverter().fromJson(json['color'] as String),
     );
 
 Map<String, dynamic> _$MappitDoubleRangeToJson(_MappitDoubleRange instance) =>
@@ -286,14 +268,12 @@ _MappitFreeDay _$MappitFreeDayFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       date: const DateConverter().fromJson(json['date'] as String),
-      assets:
-          (json['assets'] as List<dynamic>?)
-              ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-              .toList(),
-      assetsIds:
-          (json['assetsIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
+      assets: (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$MappitFreeDayToJson(_MappitFreeDay instance) =>
@@ -308,13 +288,11 @@ Map<String, dynamic> _$MappitFreeDayToJson(_MappitFreeDay instance) =>
 _PolygonDetails _$PolygonDetailsFromJson(Map<String, dynamic> json) =>
     _PolygonDetails(
       polygon: Geofence.fromJson(json['polygon'] as Map<String, dynamic>),
-      containedRoutes:
-          (json['containedRoutes'] as List<dynamic>)
-              .map(
-                (e) =>
-                    ContainedRouteCategory.fromJson(e as Map<String, dynamic>),
-              )
-              .toList(),
+      containedRoutes: (json['containedRoutes'] as List<dynamic>)
+          .map(
+            (e) => ContainedRouteCategory.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
     );
 
 Map<String, dynamic> _$PolygonDetailsToJson(
@@ -369,8 +347,9 @@ _MappitReportInputMulti _$MappitReportInputMultiFromJson(
   timeFilter: const DurationOrNullConverter().fromJson(
     json['timeFilter'] as num?,
   ),
-  sellerIds:
-      (json['sellerIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  sellerIds: (json['sellerIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
 );
 
 Map<String, dynamic> _$MappitReportInputMultiToJson(
@@ -405,15 +384,13 @@ _MappitRecalculate _$MappitRecalculateFromJson(
 ) => _MappitRecalculate(
   id: json['id'] as String,
   assetId: json['assetId'] as String,
-  asset:
-      json['asset'] == null
-          ? null
-          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  asset: json['asset'] == null
+      ? null
+      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
   requestedById: json['requestedById'] as String,
-  requestedBy:
-      json['requestedBy'] == null
-          ? null
-          : User.fromJson(json['requestedBy'] as Map<String, dynamic>),
+  requestedBy: json['requestedBy'] == null
+      ? null
+      : User.fromJson(json['requestedBy'] as Map<String, dynamic>),
   requestedByIp: json['requestedByIp'] as String,
   progress: (json['progress'] as num?)?.toDouble() ?? 0,
   requestedAt: const TimestampConverter().fromJson(json['requestedAt'] as num),
