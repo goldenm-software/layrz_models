@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.61
+- Added Locator customization fields to GraphQL fetch helpers and allowed filtering by `id` when requesting a single Locator.
+
 ## 3.4.60
 = Update `AtsLoadingParamsForm`
 

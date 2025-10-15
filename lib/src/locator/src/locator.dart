@@ -93,7 +93,7 @@ abstract class Locator with _$Locator {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(query: fetchSingleQuery, variables: {'apiToken': apiToken});
+      final response = await connector.perform(query: fetchSingleQuery, variables: {'apiToken': apiToken, 'id': id});
 
       final data = response.data;
       if (data == null) {
@@ -275,8 +275,8 @@ abstract class Locator with _$Locator {
   static String get fetchSingleQuery =>
       '${Locator.graphqlFragment}'
       r'''
-        query fetchLocators($apiToken: String!) {
-          locators(apiToken: $apiToken) {
+        query fetchLocators($apiToken: String!, $id: ID) {
+          locators(apiToken: $apiToken, id: $id) {
             status
             errors
             result {
@@ -327,6 +327,21 @@ abstract class Locator with _$Locator {
                 ...basicUserFields
               }
               updatedById
+
+              customization {
+                id
+                name
+                nickname
+                technology
+                sourceId
+                
+                instances {
+                  id
+                  appId
+                  platform
+                  host
+                }
+              }
             }
           }
         }
@@ -359,6 +374,22 @@ abstract class Locator with _$Locator {
         password
         topic
       }
+
+      customization {
+        id
+        name
+        nickname
+        technology
+        sourceId
+        
+        instances {
+          id
+          appId
+          platform
+          host
+        }
+      }
+
       assets {
         id
         name
