@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.62
+
+- Added `geofences` to `Case` model as replacement of `geofence` to support multiple geofences context on cases when it's available.
+
 ## 3.4.61
 - Added Locator customization fields to GraphQL fetch helpers and allowed filtering by `id` when requesting a single Locator.
 

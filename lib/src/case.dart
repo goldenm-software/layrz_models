@@ -2,12 +2,8 @@ part of '../layrz_models.dart';
 
 @freezed
 abstract class CommentOwner with _$CommentOwner {
-  const factory CommentOwner({
-    required String id,
-    required String name,
-    String? avatar,
-    Avatar? dynamicAvatar,
-  }) = _CommentOwner;
+  const factory CommentOwner({required String id, required String name, String? avatar, Avatar? dynamicAvatar}) =
+      _CommentOwner;
 
   factory CommentOwner.fromJson(Map<String, dynamic> json) => _$CommentOwnerFromJson(json);
 }
@@ -57,7 +53,14 @@ abstract class Case with _$Case {
     ///
     /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with a geofence
     /// (aka. geofence enter/exit).
-    Geofence? geofence,
+    @Deprecated('Use `geofences` instead') Geofence? geofence,
+
+    /// [geofences] indicates the geographical boundaries or areas related to the case, which can be used
+    /// for location-based analysis or actions.
+    ///
+    /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with geofences
+    /// (aka. geofence enter/exit) and `2025-10-15` for stacked cases.
+    @Default([]) List<Geofence> geofences,
 
     /// [sequence] is an optional integer that represents the order or position of the case in a series or list.
     int? sequence,

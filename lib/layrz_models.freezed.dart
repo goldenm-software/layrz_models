@@ -3141,7 +3141,12 @@ mixin _$Case {
 ///
 /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with a geofence
 /// (aka. geofence enter/exit).
- Geofence? get geofence;/// [sequence] is an optional integer that represents the order or position of the case in a series or list.
+@Deprecated('Use `geofences` instead') Geofence? get geofence;/// [geofences] indicates the geographical boundaries or areas related to the case, which can be used
+/// for location-based analysis or actions.
+///
+/// This value only will be set after `2025-09-26` and also, only if the trigger is associated with geofences
+/// (aka. geofence enter/exit) and `2025-10-15` for stacked cases.
+ List<Geofence> get geofences;/// [sequence] is an optional integer that represents the order or position of the case in a series or list.
  int? get sequence;/// [comments] is a list of comments associated with the case, allowing for communication and
 /// collaboration among users or stakeholders involved in the case.
  List<CaseComment> get comments;/// [position] provides the geographical location or coordinates related to the case,
@@ -3166,16 +3171,16 @@ $CaseCopyWith<Case> get copyWith => _$CaseCopyWithImpl<Case>(this as Case, _$ide
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Case&&(identical(other.id, id) || other.id == id)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.ignoredStatus, ignoredStatus) || other.ignoredStatus == ignoredStatus)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.trigger, trigger) || other.trigger == trigger)&&(identical(other.geofence, geofence) || other.geofence == geofence)&&(identical(other.sequence, sequence) || other.sequence == sequence)&&const DeepCollectionEquality().equals(other.comments, comments)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.payload, payload)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.file, file) || other.file == file)&&(identical(other.stackCount, stackCount) || other.stackCount == stackCount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Case&&(identical(other.id, id) || other.id == id)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.ignoredStatus, ignoredStatus) || other.ignoredStatus == ignoredStatus)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.trigger, trigger) || other.trigger == trigger)&&(identical(other.geofence, geofence) || other.geofence == geofence)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&(identical(other.sequence, sequence) || other.sequence == sequence)&&const DeepCollectionEquality().equals(other.comments, comments)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.payload, payload)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.file, file) || other.file == file)&&(identical(other.stackCount, stackCount) || other.stackCount == stackCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,receivedAt,status,ignoredStatus,asset,trigger,geofence,sequence,const DeepCollectionEquality().hash(comments),position,const DeepCollectionEquality().hash(payload),const DeepCollectionEquality().hash(sensors),file,stackCount);
+int get hashCode => Object.hash(runtimeType,id,receivedAt,status,ignoredStatus,asset,trigger,geofence,const DeepCollectionEquality().hash(geofences),sequence,const DeepCollectionEquality().hash(comments),position,const DeepCollectionEquality().hash(payload),const DeepCollectionEquality().hash(sensors),file,stackCount);
 
 @override
 String toString() {
-  return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file, stackCount: $stackCount)';
+  return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, geofences: $geofences, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file, stackCount: $stackCount)';
 }
 
 
@@ -3186,7 +3191,7 @@ abstract mixin class $CaseCopyWith<$Res>  {
   factory $CaseCopyWith(Case value, $Res Function(Case) _then) = _$CaseCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'dateReceived')@TimestampConverter() DateTime receivedAt,@JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,@JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) CaseIgnoredStatus? ignoredStatus, Asset asset, Trigger trigger, Geofence? geofence, int? sequence, List<CaseComment> comments, TelemetryPosition? position, List<TelemetrySensor>? payload, List<TelemetrySensor>? sensors, CloudEntry? file, int stackCount
+ String id,@JsonKey(name: 'dateReceived')@TimestampConverter() DateTime receivedAt,@JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,@JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) CaseIgnoredStatus? ignoredStatus, Asset asset, Trigger trigger,@Deprecated('Use `geofences` instead') Geofence? geofence, List<Geofence> geofences, int? sequence, List<CaseComment> comments, TelemetryPosition? position, List<TelemetrySensor>? payload, List<TelemetrySensor>? sensors, CloudEntry? file, int stackCount
 });
 
 
@@ -3203,7 +3208,7 @@ class _$CaseCopyWithImpl<$Res>
 
 /// Create a copy of Case
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? receivedAt = null,Object? status = null,Object? ignoredStatus = freezed,Object? asset = null,Object? trigger = null,Object? geofence = freezed,Object? sequence = freezed,Object? comments = null,Object? position = freezed,Object? payload = freezed,Object? sensors = freezed,Object? file = freezed,Object? stackCount = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? receivedAt = null,Object? status = null,Object? ignoredStatus = freezed,Object? asset = null,Object? trigger = null,Object? geofence = freezed,Object? geofences = null,Object? sequence = freezed,Object? comments = null,Object? position = freezed,Object? payload = freezed,Object? sensors = freezed,Object? file = freezed,Object? stackCount = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,receivedAt: null == receivedAt ? _self.receivedAt : receivedAt // ignore: cast_nullable_to_non_nullable
@@ -3212,7 +3217,8 @@ as CaseStatus,ignoredStatus: freezed == ignoredStatus ? _self.ignoredStatus : ig
 as CaseIgnoredStatus?,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as Asset,trigger: null == trigger ? _self.trigger : trigger // ignore: cast_nullable_to_non_nullable
 as Trigger,geofence: freezed == geofence ? _self.geofence : geofence // ignore: cast_nullable_to_non_nullable
-as Geofence?,sequence: freezed == sequence ? _self.sequence : sequence // ignore: cast_nullable_to_non_nullable
+as Geofence?,geofences: null == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>,sequence: freezed == sequence ? _self.sequence : sequence // ignore: cast_nullable_to_non_nullable
 as int?,comments: null == comments ? _self.comments : comments // ignore: cast_nullable_to_non_nullable
 as List<CaseComment>,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
 as TelemetryPosition?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
@@ -3358,10 +3364,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'dateReceived')@TimestampConverter()  DateTime receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending)  CaseStatus status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)  CaseIgnoredStatus? ignoredStatus,  Asset asset,  Trigger trigger,  Geofence? geofence,  int? sequence,  List<CaseComment> comments,  TelemetryPosition? position,  List<TelemetrySensor>? payload,  List<TelemetrySensor>? sensors,  CloudEntry? file,  int stackCount)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'dateReceived')@TimestampConverter()  DateTime receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending)  CaseStatus status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)  CaseIgnoredStatus? ignoredStatus,  Asset asset,  Trigger trigger, @Deprecated('Use `geofences` instead')  Geofence? geofence,  List<Geofence> geofences,  int? sequence,  List<CaseComment> comments,  TelemetryPosition? position,  List<TelemetrySensor>? payload,  List<TelemetrySensor>? sensors,  CloudEntry? file,  int stackCount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Case() when $default != null:
-return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that.asset,_that.trigger,_that.geofence,_that.sequence,_that.comments,_that.position,_that.payload,_that.sensors,_that.file,_that.stackCount);case _:
+return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that.asset,_that.trigger,_that.geofence,_that.geofences,_that.sequence,_that.comments,_that.position,_that.payload,_that.sensors,_that.file,_that.stackCount);case _:
   return orElse();
 
 }
@@ -3379,10 +3385,10 @@ return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'dateReceived')@TimestampConverter()  DateTime receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending)  CaseStatus status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)  CaseIgnoredStatus? ignoredStatus,  Asset asset,  Trigger trigger,  Geofence? geofence,  int? sequence,  List<CaseComment> comments,  TelemetryPosition? position,  List<TelemetrySensor>? payload,  List<TelemetrySensor>? sensors,  CloudEntry? file,  int stackCount)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'dateReceived')@TimestampConverter()  DateTime receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending)  CaseStatus status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)  CaseIgnoredStatus? ignoredStatus,  Asset asset,  Trigger trigger, @Deprecated('Use `geofences` instead')  Geofence? geofence,  List<Geofence> geofences,  int? sequence,  List<CaseComment> comments,  TelemetryPosition? position,  List<TelemetrySensor>? payload,  List<TelemetrySensor>? sensors,  CloudEntry? file,  int stackCount)  $default,) {final _that = this;
 switch (_that) {
 case _Case():
-return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that.asset,_that.trigger,_that.geofence,_that.sequence,_that.comments,_that.position,_that.payload,_that.sensors,_that.file,_that.stackCount);case _:
+return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that.asset,_that.trigger,_that.geofence,_that.geofences,_that.sequence,_that.comments,_that.position,_that.payload,_that.sensors,_that.file,_that.stackCount);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3399,10 +3405,10 @@ return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'dateReceived')@TimestampConverter()  DateTime receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending)  CaseStatus status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)  CaseIgnoredStatus? ignoredStatus,  Asset asset,  Trigger trigger,  Geofence? geofence,  int? sequence,  List<CaseComment> comments,  TelemetryPosition? position,  List<TelemetrySensor>? payload,  List<TelemetrySensor>? sensors,  CloudEntry? file,  int stackCount)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'dateReceived')@TimestampConverter()  DateTime receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending)  CaseStatus status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal)  CaseIgnoredStatus? ignoredStatus,  Asset asset,  Trigger trigger, @Deprecated('Use `geofences` instead')  Geofence? geofence,  List<Geofence> geofences,  int? sequence,  List<CaseComment> comments,  TelemetryPosition? position,  List<TelemetrySensor>? payload,  List<TelemetrySensor>? sensors,  CloudEntry? file,  int stackCount)?  $default,) {final _that = this;
 switch (_that) {
 case _Case() when $default != null:
-return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that.asset,_that.trigger,_that.geofence,_that.sequence,_that.comments,_that.position,_that.payload,_that.sensors,_that.file,_that.stackCount);case _:
+return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that.asset,_that.trigger,_that.geofence,_that.geofences,_that.sequence,_that.comments,_that.position,_that.payload,_that.sensors,_that.file,_that.stackCount);case _:
   return null;
 
 }
@@ -3414,7 +3420,7 @@ return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that
 @JsonSerializable()
 
 class _Case implements Case {
-  const _Case({required this.id, @JsonKey(name: 'dateReceived')@TimestampConverter() required this.receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending) required this.status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) this.ignoredStatus, required this.asset, required this.trigger, this.geofence, this.sequence, final  List<CaseComment> comments = const [], this.position, final  List<TelemetrySensor>? payload, final  List<TelemetrySensor>? sensors, this.file, this.stackCount = 1}): _comments = comments,_payload = payload,_sensors = sensors;
+  const _Case({required this.id, @JsonKey(name: 'dateReceived')@TimestampConverter() required this.receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending) required this.status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) this.ignoredStatus, required this.asset, required this.trigger, @Deprecated('Use `geofences` instead') this.geofence, final  List<Geofence> geofences = const [], this.sequence, final  List<CaseComment> comments = const [], this.position, final  List<TelemetrySensor>? payload, final  List<TelemetrySensor>? sensors, this.file, this.stackCount = 1}): _geofences = geofences,_comments = comments,_payload = payload,_sensors = sensors;
   factory _Case.fromJson(Map<String, dynamic> json) => _$CaseFromJson(json);
 
 /// [id] is a unique identifier for the case, typically used to reference and manage it within a system.
@@ -3440,7 +3446,24 @@ class _Case implements Case {
 ///
 /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with a geofence
 /// (aka. geofence enter/exit).
-@override final  Geofence? geofence;
+@override@Deprecated('Use `geofences` instead') final  Geofence? geofence;
+/// [geofences] indicates the geographical boundaries or areas related to the case, which can be used
+/// for location-based analysis or actions.
+///
+/// This value only will be set after `2025-09-26` and also, only if the trigger is associated with geofences
+/// (aka. geofence enter/exit) and `2025-10-15` for stacked cases.
+ final  List<Geofence> _geofences;
+/// [geofences] indicates the geographical boundaries or areas related to the case, which can be used
+/// for location-based analysis or actions.
+///
+/// This value only will be set after `2025-09-26` and also, only if the trigger is associated with geofences
+/// (aka. geofence enter/exit) and `2025-10-15` for stacked cases.
+@override@JsonKey() List<Geofence> get geofences {
+  if (_geofences is EqualUnmodifiableListView) return _geofences;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_geofences);
+}
+
 /// [sequence] is an optional integer that represents the order or position of the case in a series or list.
 @override final  int? sequence;
 /// [comments] is a list of comments associated with the case, allowing for communication and
@@ -3502,16 +3525,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Case&&(identical(other.id, id) || other.id == id)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.ignoredStatus, ignoredStatus) || other.ignoredStatus == ignoredStatus)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.trigger, trigger) || other.trigger == trigger)&&(identical(other.geofence, geofence) || other.geofence == geofence)&&(identical(other.sequence, sequence) || other.sequence == sequence)&&const DeepCollectionEquality().equals(other._comments, _comments)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._payload, _payload)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.file, file) || other.file == file)&&(identical(other.stackCount, stackCount) || other.stackCount == stackCount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Case&&(identical(other.id, id) || other.id == id)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.ignoredStatus, ignoredStatus) || other.ignoredStatus == ignoredStatus)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.trigger, trigger) || other.trigger == trigger)&&(identical(other.geofence, geofence) || other.geofence == geofence)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&(identical(other.sequence, sequence) || other.sequence == sequence)&&const DeepCollectionEquality().equals(other._comments, _comments)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._payload, _payload)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.file, file) || other.file == file)&&(identical(other.stackCount, stackCount) || other.stackCount == stackCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,receivedAt,status,ignoredStatus,asset,trigger,geofence,sequence,const DeepCollectionEquality().hash(_comments),position,const DeepCollectionEquality().hash(_payload),const DeepCollectionEquality().hash(_sensors),file,stackCount);
+int get hashCode => Object.hash(runtimeType,id,receivedAt,status,ignoredStatus,asset,trigger,geofence,const DeepCollectionEquality().hash(_geofences),sequence,const DeepCollectionEquality().hash(_comments),position,const DeepCollectionEquality().hash(_payload),const DeepCollectionEquality().hash(_sensors),file,stackCount);
 
 @override
 String toString() {
-  return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file, stackCount: $stackCount)';
+  return 'Case(id: $id, receivedAt: $receivedAt, status: $status, ignoredStatus: $ignoredStatus, asset: $asset, trigger: $trigger, geofence: $geofence, geofences: $geofences, sequence: $sequence, comments: $comments, position: $position, payload: $payload, sensors: $sensors, file: $file, stackCount: $stackCount)';
 }
 
 
@@ -3522,7 +3545,7 @@ abstract mixin class _$CaseCopyWith<$Res> implements $CaseCopyWith<$Res> {
   factory _$CaseCopyWith(_Case value, $Res Function(_Case) _then) = __$CaseCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'dateReceived')@TimestampConverter() DateTime receivedAt,@JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,@JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) CaseIgnoredStatus? ignoredStatus, Asset asset, Trigger trigger, Geofence? geofence, int? sequence, List<CaseComment> comments, TelemetryPosition? position, List<TelemetrySensor>? payload, List<TelemetrySensor>? sensors, CloudEntry? file, int stackCount
+ String id,@JsonKey(name: 'dateReceived')@TimestampConverter() DateTime receivedAt,@JsonKey(unknownEnumValue: CaseStatus.pending) CaseStatus status,@JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) CaseIgnoredStatus? ignoredStatus, Asset asset, Trigger trigger,@Deprecated('Use `geofences` instead') Geofence? geofence, List<Geofence> geofences, int? sequence, List<CaseComment> comments, TelemetryPosition? position, List<TelemetrySensor>? payload, List<TelemetrySensor>? sensors, CloudEntry? file, int stackCount
 });
 
 
@@ -3539,7 +3562,7 @@ class __$CaseCopyWithImpl<$Res>
 
 /// Create a copy of Case
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? receivedAt = null,Object? status = null,Object? ignoredStatus = freezed,Object? asset = null,Object? trigger = null,Object? geofence = freezed,Object? sequence = freezed,Object? comments = null,Object? position = freezed,Object? payload = freezed,Object? sensors = freezed,Object? file = freezed,Object? stackCount = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? receivedAt = null,Object? status = null,Object? ignoredStatus = freezed,Object? asset = null,Object? trigger = null,Object? geofence = freezed,Object? geofences = null,Object? sequence = freezed,Object? comments = null,Object? position = freezed,Object? payload = freezed,Object? sensors = freezed,Object? file = freezed,Object? stackCount = null,}) {
   return _then(_Case(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,receivedAt: null == receivedAt ? _self.receivedAt : receivedAt // ignore: cast_nullable_to_non_nullable
@@ -3548,7 +3571,8 @@ as CaseStatus,ignoredStatus: freezed == ignoredStatus ? _self.ignoredStatus : ig
 as CaseIgnoredStatus?,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as Asset,trigger: null == trigger ? _self.trigger : trigger // ignore: cast_nullable_to_non_nullable
 as Trigger,geofence: freezed == geofence ? _self.geofence : geofence // ignore: cast_nullable_to_non_nullable
-as Geofence?,sequence: freezed == sequence ? _self.sequence : sequence // ignore: cast_nullable_to_non_nullable
+as Geofence?,geofences: null == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>,sequence: freezed == sequence ? _self.sequence : sequence // ignore: cast_nullable_to_non_nullable
 as int?,comments: null == comments ? _self._comments : comments // ignore: cast_nullable_to_non_nullable
 as List<CaseComment>,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
 as TelemetryPosition?,payload: freezed == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable

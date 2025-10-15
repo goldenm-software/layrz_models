@@ -377,6 +377,11 @@ _Case _$CaseFromJson(Map<String, dynamic> json) => _Case(
   geofence: json['geofence'] == null
       ? null
       : Geofence.fromJson(json['geofence'] as Map<String, dynamic>),
+  geofences:
+      (json['geofences'] as List<dynamic>?)
+          ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
   sequence: (json['sequence'] as num?)?.toInt(),
   comments:
       (json['comments'] as List<dynamic>?)
@@ -406,6 +411,7 @@ Map<String, dynamic> _$CaseToJson(_Case instance) => <String, dynamic>{
   'asset': instance.asset.toJson(),
   'trigger': instance.trigger.toJson(),
   'geofence': instance.geofence?.toJson(),
+  'geofences': instance.geofences.map((e) => e.toJson()).toList(),
   'sequence': instance.sequence,
   'comments': instance.comments.map((e) => e.toJson()).toList(),
   'position': instance.position?.toJson(),
