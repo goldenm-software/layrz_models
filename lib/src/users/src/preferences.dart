@@ -8,9 +8,17 @@ abstract class UserPreferences with _$UserPreferences {
     /// The format is the IANA timezone format, e.g., "America/New_York". If is empty will be the browser's timezone.
     @Default('') String timezone,
 
+    /// [dateTimeFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+    /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
+    @Default('%Y-%m-%d %I:%M %p') String dateTimeFormat,
+
     /// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
     /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
-    @Default('%Y-%m-%d %I:%M %p') String dateFormat,
+    @Default('%Y-%m-%d') String dateFormat,
+
+    /// [timeFormat] is the user's preferred time format. This will be the new time_format field on the user profile.
+    /// The format should be the same as python's strftime format, e.g., "%I:%M %p".
+    @Default('%I:%M %p') String timeFormat,
 
     /// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
     /// The default is [ColorblindMode.normal].
@@ -32,9 +40,17 @@ abstract class UserPreferencesInput with _$UserPreferencesInput {
     /// The format is the IANA timezone format, e.g., "America/New_York". If is empty will be the browser's timezone.
     @Default('') String timezone,
 
+    /// [dateTimeFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+    /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
+    @Default('%Y-%m-%d %I:%M %p') String dateTimeFormat,
+
     /// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
     /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
-    @Default('%Y-%m-%d %I:%M %p') String dateFormat,
+    @Default('%Y-%m-%d') String dateFormat,
+
+    /// [timeFormat] is the user's preferred time format. This will be the new time_format field on the user profile.
+    /// The format should be the same as python's strftime format, e.g., "%I:%M %p".
+    @Default('%I:%M %p') String timeFormat,
 
     /// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
     /// The default is [ColorblindMode.normal].

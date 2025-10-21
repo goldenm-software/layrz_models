@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.63
+
+- Expanded accessibility options in `UserPreferences` by introducing `dateFormat` and `timeFormat` fields. These additions allow users to customize their preferred date and time display formats independently, enhancing personalization and usability.
+
 ## 3.4.62
 
 - Added `geofences` to `Case` model as replacement of `geofence` to support multiple geofences context on cases when it's available.

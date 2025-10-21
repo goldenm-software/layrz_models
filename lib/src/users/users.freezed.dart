@@ -3081,9 +3081,13 @@ mixin _$UserPreferences {
 
 /// [timezone] is the user's preferred timezone. This will be the new timezone field on the user profile.
 /// The format is the IANA timezone format, e.g., "America/New_York". If is empty will be the browser's timezone.
- String get timezone;/// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+ String get timezone;/// [dateTimeFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
 /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
- String get dateFormat;/// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
+ String get dateTimeFormat;/// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
+ String get dateFormat;/// [timeFormat] is the user's preferred time format. This will be the new time_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%I:%M %p".
+ String get timeFormat;/// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
 /// The default is [ColorblindMode.normal].
 @JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode get colorblindMode;/// [colorblindForce] is the strength of the colorblind mode. This will be the new colorblind_force field on the user profile.
 /// The default is 1.0 (100%).
@@ -3100,16 +3104,16 @@ $UserPreferencesCopyWith<UserPreferences> get copyWith => _$UserPreferencesCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserPreferences&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.dateFormat, dateFormat) || other.dateFormat == dateFormat)&&(identical(other.colorblindMode, colorblindMode) || other.colorblindMode == colorblindMode)&&(identical(other.colorblindForce, colorblindForce) || other.colorblindForce == colorblindForce));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserPreferences&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.dateTimeFormat, dateTimeFormat) || other.dateTimeFormat == dateTimeFormat)&&(identical(other.dateFormat, dateFormat) || other.dateFormat == dateFormat)&&(identical(other.timeFormat, timeFormat) || other.timeFormat == timeFormat)&&(identical(other.colorblindMode, colorblindMode) || other.colorblindMode == colorblindMode)&&(identical(other.colorblindForce, colorblindForce) || other.colorblindForce == colorblindForce));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,timezone,dateFormat,colorblindMode,colorblindForce);
+int get hashCode => Object.hash(runtimeType,timezone,dateTimeFormat,dateFormat,timeFormat,colorblindMode,colorblindForce);
 
 @override
 String toString() {
-  return 'UserPreferences(timezone: $timezone, dateFormat: $dateFormat, colorblindMode: $colorblindMode, colorblindForce: $colorblindForce)';
+  return 'UserPreferences(timezone: $timezone, dateTimeFormat: $dateTimeFormat, dateFormat: $dateFormat, timeFormat: $timeFormat, colorblindMode: $colorblindMode, colorblindForce: $colorblindForce)';
 }
 
 
@@ -3120,7 +3124,7 @@ abstract mixin class $UserPreferencesCopyWith<$Res>  {
   factory $UserPreferencesCopyWith(UserPreferences value, $Res Function(UserPreferences) _then) = _$UserPreferencesCopyWithImpl;
 @useResult
 $Res call({
- String timezone, String dateFormat,@JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode colorblindMode, double colorblindForce
+ String timezone, String dateTimeFormat, String dateFormat, String timeFormat,@JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode colorblindMode, double colorblindForce
 });
 
 
@@ -3137,10 +3141,12 @@ class _$UserPreferencesCopyWithImpl<$Res>
 
 /// Create a copy of UserPreferences
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? timezone = null,Object? dateFormat = null,Object? colorblindMode = null,Object? colorblindForce = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? timezone = null,Object? dateTimeFormat = null,Object? dateFormat = null,Object? timeFormat = null,Object? colorblindMode = null,Object? colorblindForce = null,}) {
   return _then(_self.copyWith(
 timezone: null == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
+as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
 as String,dateFormat: null == dateFormat ? _self.dateFormat : dateFormat // ignore: cast_nullable_to_non_nullable
+as String,timeFormat: null == timeFormat ? _self.timeFormat : timeFormat // ignore: cast_nullable_to_non_nullable
 as String,colorblindMode: null == colorblindMode ? _self.colorblindMode : colorblindMode // ignore: cast_nullable_to_non_nullable
 as ColorblindMode,colorblindForce: null == colorblindForce ? _self.colorblindForce : colorblindForce // ignore: cast_nullable_to_non_nullable
 as double,
@@ -3228,10 +3234,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String timezone,  String dateFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String timezone,  String dateTimeFormat,  String dateFormat,  String timeFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UserPreferences() when $default != null:
-return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.colorblindForce);case _:
+return $default(_that.timezone,_that.dateTimeFormat,_that.dateFormat,_that.timeFormat,_that.colorblindMode,_that.colorblindForce);case _:
   return orElse();
 
 }
@@ -3249,10 +3255,10 @@ return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.color
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String timezone,  String dateFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String timezone,  String dateTimeFormat,  String dateFormat,  String timeFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)  $default,) {final _that = this;
 switch (_that) {
 case _UserPreferences():
-return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.colorblindForce);case _:
+return $default(_that.timezone,_that.dateTimeFormat,_that.dateFormat,_that.timeFormat,_that.colorblindMode,_that.colorblindForce);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3269,10 +3275,10 @@ return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.color
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String timezone,  String dateFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String timezone,  String dateTimeFormat,  String dateFormat,  String timeFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)?  $default,) {final _that = this;
 switch (_that) {
 case _UserPreferences() when $default != null:
-return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.colorblindForce);case _:
+return $default(_that.timezone,_that.dateTimeFormat,_that.dateFormat,_that.timeFormat,_that.colorblindMode,_that.colorblindForce);case _:
   return null;
 
 }
@@ -3284,15 +3290,21 @@ return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.color
 @JsonSerializable()
 
 class _UserPreferences extends UserPreferences {
-  const _UserPreferences({this.timezone = '', this.dateFormat = '%Y-%m-%d %I:%M %p', @JsonKey(unknownEnumValue: ColorblindMode.normal) this.colorblindMode = ColorblindMode.normal, this.colorblindForce = 1.0}): super._();
+  const _UserPreferences({this.timezone = '', this.dateTimeFormat = '%Y-%m-%d %I:%M %p', this.dateFormat = '%Y-%m-%d', this.timeFormat = '%I:%M %p', @JsonKey(unknownEnumValue: ColorblindMode.normal) this.colorblindMode = ColorblindMode.normal, this.colorblindForce = 1.0}): super._();
   factory _UserPreferences.fromJson(Map<String, dynamic> json) => _$UserPreferencesFromJson(json);
 
 /// [timezone] is the user's preferred timezone. This will be the new timezone field on the user profile.
 /// The format is the IANA timezone format, e.g., "America/New_York". If is empty will be the browser's timezone.
 @override@JsonKey() final  String timezone;
+/// [dateTimeFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
+@override@JsonKey() final  String dateTimeFormat;
 /// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
 /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
 @override@JsonKey() final  String dateFormat;
+/// [timeFormat] is the user's preferred time format. This will be the new time_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%I:%M %p".
+@override@JsonKey() final  String timeFormat;
 /// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
 /// The default is [ColorblindMode.normal].
 @override@JsonKey(unknownEnumValue: ColorblindMode.normal) final  ColorblindMode colorblindMode;
@@ -3313,16 +3325,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserPreferences&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.dateFormat, dateFormat) || other.dateFormat == dateFormat)&&(identical(other.colorblindMode, colorblindMode) || other.colorblindMode == colorblindMode)&&(identical(other.colorblindForce, colorblindForce) || other.colorblindForce == colorblindForce));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserPreferences&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.dateTimeFormat, dateTimeFormat) || other.dateTimeFormat == dateTimeFormat)&&(identical(other.dateFormat, dateFormat) || other.dateFormat == dateFormat)&&(identical(other.timeFormat, timeFormat) || other.timeFormat == timeFormat)&&(identical(other.colorblindMode, colorblindMode) || other.colorblindMode == colorblindMode)&&(identical(other.colorblindForce, colorblindForce) || other.colorblindForce == colorblindForce));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,timezone,dateFormat,colorblindMode,colorblindForce);
+int get hashCode => Object.hash(runtimeType,timezone,dateTimeFormat,dateFormat,timeFormat,colorblindMode,colorblindForce);
 
 @override
 String toString() {
-  return 'UserPreferences(timezone: $timezone, dateFormat: $dateFormat, colorblindMode: $colorblindMode, colorblindForce: $colorblindForce)';
+  return 'UserPreferences(timezone: $timezone, dateTimeFormat: $dateTimeFormat, dateFormat: $dateFormat, timeFormat: $timeFormat, colorblindMode: $colorblindMode, colorblindForce: $colorblindForce)';
 }
 
 
@@ -3333,7 +3345,7 @@ abstract mixin class _$UserPreferencesCopyWith<$Res> implements $UserPreferences
   factory _$UserPreferencesCopyWith(_UserPreferences value, $Res Function(_UserPreferences) _then) = __$UserPreferencesCopyWithImpl;
 @override @useResult
 $Res call({
- String timezone, String dateFormat,@JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode colorblindMode, double colorblindForce
+ String timezone, String dateTimeFormat, String dateFormat, String timeFormat,@JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode colorblindMode, double colorblindForce
 });
 
 
@@ -3350,10 +3362,12 @@ class __$UserPreferencesCopyWithImpl<$Res>
 
 /// Create a copy of UserPreferences
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? timezone = null,Object? dateFormat = null,Object? colorblindMode = null,Object? colorblindForce = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? timezone = null,Object? dateTimeFormat = null,Object? dateFormat = null,Object? timeFormat = null,Object? colorblindMode = null,Object? colorblindForce = null,}) {
   return _then(_UserPreferences(
 timezone: null == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
+as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
 as String,dateFormat: null == dateFormat ? _self.dateFormat : dateFormat // ignore: cast_nullable_to_non_nullable
+as String,timeFormat: null == timeFormat ? _self.timeFormat : timeFormat // ignore: cast_nullable_to_non_nullable
 as String,colorblindMode: null == colorblindMode ? _self.colorblindMode : colorblindMode // ignore: cast_nullable_to_non_nullable
 as ColorblindMode,colorblindForce: null == colorblindForce ? _self.colorblindForce : colorblindForce // ignore: cast_nullable_to_non_nullable
 as double,
@@ -3371,11 +3385,19 @@ mixin _$UserPreferencesInput {
 /// The format is the IANA timezone format, e.g., "America/New_York". If is empty will be the browser's timezone.
  String get timezone;/// [timezone] is the user's preferred timezone. This will be the new timezone field on the user profile.
 /// The format is the IANA timezone format, e.g., "America/New_York". If is empty will be the browser's timezone.
- set timezone(String value);/// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+ set timezone(String value);/// [dateTimeFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
+ String get dateTimeFormat;/// [dateTimeFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
+ set dateTimeFormat(String value);/// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
 /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
  String get dateFormat;/// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
 /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
- set dateFormat(String value);/// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
+ set dateFormat(String value);/// [timeFormat] is the user's preferred time format. This will be the new time_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%I:%M %p".
+ String get timeFormat;/// [timeFormat] is the user's preferred time format. This will be the new time_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%I:%M %p".
+ set timeFormat(String value);/// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
 /// The default is [ColorblindMode.normal].
 @JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode get colorblindMode;/// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
 /// The default is [ColorblindMode.normal].
@@ -3398,7 +3420,7 @@ $UserPreferencesInputCopyWith<UserPreferencesInput> get copyWith => _$UserPrefer
 
 @override
 String toString() {
-  return 'UserPreferencesInput(timezone: $timezone, dateFormat: $dateFormat, colorblindMode: $colorblindMode, colorblindForce: $colorblindForce)';
+  return 'UserPreferencesInput(timezone: $timezone, dateTimeFormat: $dateTimeFormat, dateFormat: $dateFormat, timeFormat: $timeFormat, colorblindMode: $colorblindMode, colorblindForce: $colorblindForce)';
 }
 
 
@@ -3409,7 +3431,7 @@ abstract mixin class $UserPreferencesInputCopyWith<$Res>  {
   factory $UserPreferencesInputCopyWith(UserPreferencesInput value, $Res Function(UserPreferencesInput) _then) = _$UserPreferencesInputCopyWithImpl;
 @useResult
 $Res call({
- String timezone, String dateFormat,@JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode colorblindMode, double colorblindForce
+ String timezone, String dateTimeFormat, String dateFormat, String timeFormat,@JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode colorblindMode, double colorblindForce
 });
 
 
@@ -3426,10 +3448,12 @@ class _$UserPreferencesInputCopyWithImpl<$Res>
 
 /// Create a copy of UserPreferencesInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? timezone = null,Object? dateFormat = null,Object? colorblindMode = null,Object? colorblindForce = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? timezone = null,Object? dateTimeFormat = null,Object? dateFormat = null,Object? timeFormat = null,Object? colorblindMode = null,Object? colorblindForce = null,}) {
   return _then(_self.copyWith(
 timezone: null == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
+as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
 as String,dateFormat: null == dateFormat ? _self.dateFormat : dateFormat // ignore: cast_nullable_to_non_nullable
+as String,timeFormat: null == timeFormat ? _self.timeFormat : timeFormat // ignore: cast_nullable_to_non_nullable
 as String,colorblindMode: null == colorblindMode ? _self.colorblindMode : colorblindMode // ignore: cast_nullable_to_non_nullable
 as ColorblindMode,colorblindForce: null == colorblindForce ? _self.colorblindForce : colorblindForce // ignore: cast_nullable_to_non_nullable
 as double,
@@ -3517,10 +3541,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String timezone,  String dateFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String timezone,  String dateTimeFormat,  String dateFormat,  String timeFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UserPreferencesInput() when $default != null:
-return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.colorblindForce);case _:
+return $default(_that.timezone,_that.dateTimeFormat,_that.dateFormat,_that.timeFormat,_that.colorblindMode,_that.colorblindForce);case _:
   return orElse();
 
 }
@@ -3538,10 +3562,10 @@ return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.color
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String timezone,  String dateFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String timezone,  String dateTimeFormat,  String dateFormat,  String timeFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)  $default,) {final _that = this;
 switch (_that) {
 case _UserPreferencesInput():
-return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.colorblindForce);case _:
+return $default(_that.timezone,_that.dateTimeFormat,_that.dateFormat,_that.timeFormat,_that.colorblindMode,_that.colorblindForce);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3558,10 +3582,10 @@ return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.color
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String timezone,  String dateFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String timezone,  String dateTimeFormat,  String dateFormat,  String timeFormat, @JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode,  double colorblindForce)?  $default,) {final _that = this;
 switch (_that) {
 case _UserPreferencesInput() when $default != null:
-return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.colorblindForce);case _:
+return $default(_that.timezone,_that.dateTimeFormat,_that.dateFormat,_that.timeFormat,_that.colorblindMode,_that.colorblindForce);case _:
   return null;
 
 }
@@ -3573,15 +3597,21 @@ return $default(_that.timezone,_that.dateFormat,_that.colorblindMode,_that.color
 @JsonSerializable()
 
 class _UserPreferencesInput extends UserPreferencesInput {
-   _UserPreferencesInput({this.timezone = '', this.dateFormat = '%Y-%m-%d %I:%M %p', @JsonKey(unknownEnumValue: ColorblindMode.normal) this.colorblindMode = ColorblindMode.normal, this.colorblindForce = 1.0}): super._();
+   _UserPreferencesInput({this.timezone = '', this.dateTimeFormat = '%Y-%m-%d %I:%M %p', this.dateFormat = '%Y-%m-%d', this.timeFormat = '%I:%M %p', @JsonKey(unknownEnumValue: ColorblindMode.normal) this.colorblindMode = ColorblindMode.normal, this.colorblindForce = 1.0}): super._();
   factory _UserPreferencesInput.fromJson(Map<String, dynamic> json) => _$UserPreferencesInputFromJson(json);
 
 /// [timezone] is the user's preferred timezone. This will be the new timezone field on the user profile.
 /// The format is the IANA timezone format, e.g., "America/New_York". If is empty will be the browser's timezone.
 @override@JsonKey()  String timezone;
+/// [dateTimeFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
+@override@JsonKey()  String dateTimeFormat;
 /// [dateFormat] is the user's preferred date format. This will be the new date_format field on the user profile.
 /// The format should be the same as python's strftime format, e.g., "%Y-%m-%d".
 @override@JsonKey()  String dateFormat;
+/// [timeFormat] is the user's preferred time format. This will be the new time_format field on the user profile.
+/// The format should be the same as python's strftime format, e.g., "%I:%M %p".
+@override@JsonKey()  String timeFormat;
 /// [colorblindMode] is the user's preferred colorblind mode. This will be the new colorblind_mode field on the user profile.
 /// The default is [ColorblindMode.normal].
 @override@JsonKey(unknownEnumValue: ColorblindMode.normal)  ColorblindMode colorblindMode;
@@ -3604,7 +3634,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'UserPreferencesInput(timezone: $timezone, dateFormat: $dateFormat, colorblindMode: $colorblindMode, colorblindForce: $colorblindForce)';
+  return 'UserPreferencesInput(timezone: $timezone, dateTimeFormat: $dateTimeFormat, dateFormat: $dateFormat, timeFormat: $timeFormat, colorblindMode: $colorblindMode, colorblindForce: $colorblindForce)';
 }
 
 
@@ -3615,7 +3645,7 @@ abstract mixin class _$UserPreferencesInputCopyWith<$Res> implements $UserPrefer
   factory _$UserPreferencesInputCopyWith(_UserPreferencesInput value, $Res Function(_UserPreferencesInput) _then) = __$UserPreferencesInputCopyWithImpl;
 @override @useResult
 $Res call({
- String timezone, String dateFormat,@JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode colorblindMode, double colorblindForce
+ String timezone, String dateTimeFormat, String dateFormat, String timeFormat,@JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode colorblindMode, double colorblindForce
 });
 
 
@@ -3632,10 +3662,12 @@ class __$UserPreferencesInputCopyWithImpl<$Res>
 
 /// Create a copy of UserPreferencesInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? timezone = null,Object? dateFormat = null,Object? colorblindMode = null,Object? colorblindForce = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? timezone = null,Object? dateTimeFormat = null,Object? dateFormat = null,Object? timeFormat = null,Object? colorblindMode = null,Object? colorblindForce = null,}) {
   return _then(_UserPreferencesInput(
 timezone: null == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
+as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
 as String,dateFormat: null == dateFormat ? _self.dateFormat : dateFormat // ignore: cast_nullable_to_non_nullable
+as String,timeFormat: null == timeFormat ? _self.timeFormat : timeFormat // ignore: cast_nullable_to_non_nullable
 as String,colorblindMode: null == colorblindMode ? _self.colorblindMode : colorblindMode // ignore: cast_nullable_to_non_nullable
 as ColorblindMode,colorblindForce: null == colorblindForce ? _self.colorblindForce : colorblindForce // ignore: cast_nullable_to_non_nullable
 as double,

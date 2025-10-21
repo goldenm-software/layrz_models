@@ -377,7 +377,9 @@ const _$ColorblindModeEnumMap = {
 _UserPreferences _$UserPreferencesFromJson(Map<String, dynamic> json) =>
     _UserPreferences(
       timezone: json['timezone'] as String? ?? '',
-      dateFormat: json['dateFormat'] as String? ?? '%Y-%m-%d %I:%M %p',
+      dateTimeFormat: json['dateTimeFormat'] as String? ?? '%Y-%m-%d %I:%M %p',
+      dateFormat: json['dateFormat'] as String? ?? '%Y-%m-%d',
+      timeFormat: json['timeFormat'] as String? ?? '%I:%M %p',
       colorblindMode:
           $enumDecodeNullable(
             _$ColorblindModeEnumMap,
@@ -391,7 +393,9 @@ _UserPreferences _$UserPreferencesFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$UserPreferencesToJson(_UserPreferences instance) =>
     <String, dynamic>{
       'timezone': instance.timezone,
+      'dateTimeFormat': instance.dateTimeFormat,
       'dateFormat': instance.dateFormat,
+      'timeFormat': instance.timeFormat,
       'colorblindMode': instance.colorblindMode.toJson(),
       'colorblindForce': instance.colorblindForce,
     };
@@ -400,7 +404,9 @@ _UserPreferencesInput _$UserPreferencesInputFromJson(
   Map<String, dynamic> json,
 ) => _UserPreferencesInput(
   timezone: json['timezone'] as String? ?? '',
-  dateFormat: json['dateFormat'] as String? ?? '%Y-%m-%d %I:%M %p',
+  dateTimeFormat: json['dateTimeFormat'] as String? ?? '%Y-%m-%d %I:%M %p',
+  dateFormat: json['dateFormat'] as String? ?? '%Y-%m-%d',
+  timeFormat: json['timeFormat'] as String? ?? '%I:%M %p',
   colorblindMode:
       $enumDecodeNullable(
         _$ColorblindModeEnumMap,
@@ -415,7 +421,9 @@ Map<String, dynamic> _$UserPreferencesInputToJson(
   _UserPreferencesInput instance,
 ) => <String, dynamic>{
   'timezone': instance.timezone,
+  'dateTimeFormat': instance.dateTimeFormat,
   'dateFormat': instance.dateFormat,
+  'timeFormat': instance.timeFormat,
   'colorblindMode': instance.colorblindMode.toJson(),
   'colorblindForce': instance.colorblindForce,
 };
