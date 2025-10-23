@@ -20050,6 +20050,264 @@ as List<AnalyticsGridItemInput>?,
 
 
 /// @nodoc
+mixin _$RequestChartInput {
+
+/// [id] is the Chart ID
+ String? get id;/// [id] is the Chart ID
+ set id(String? value);/// [assetsIds] is the list of asset IDs linked to the chart
+ List<String>? get assetsIds;/// [assetsIds] is the list of asset IDs linked to the chart
+ set assetsIds(List<String>? value);
+/// Create a copy of RequestChartInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RequestChartInputCopyWith<RequestChartInput> get copyWith => _$RequestChartInputCopyWithImpl<RequestChartInput>(this as RequestChartInput, _$identity);
+
+  /// Serializes this RequestChartInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'RequestChartInput(id: $id, assetsIds: $assetsIds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $RequestChartInputCopyWith<$Res>  {
+  factory $RequestChartInputCopyWith(RequestChartInput value, $Res Function(RequestChartInput) _then) = _$RequestChartInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, List<String>? assetsIds
+});
+
+
+
+
+}
+/// @nodoc
+class _$RequestChartInputCopyWithImpl<$Res>
+    implements $RequestChartInputCopyWith<$Res> {
+  _$RequestChartInputCopyWithImpl(this._self, this._then);
+
+  final RequestChartInput _self;
+  final $Res Function(RequestChartInput) _then;
+
+/// Create a copy of RequestChartInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetsIds = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [RequestChartInput].
+extension RequestChartInputPatterns on RequestChartInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _RequestChartInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _RequestChartInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _RequestChartInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _RequestChartInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _RequestChartInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _RequestChartInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  List<String>? assetsIds)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _RequestChartInput() when $default != null:
+return $default(_that.id,_that.assetsIds);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  List<String>? assetsIds)  $default,) {final _that = this;
+switch (_that) {
+case _RequestChartInput():
+return $default(_that.id,_that.assetsIds);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  List<String>? assetsIds)?  $default,) {final _that = this;
+switch (_that) {
+case _RequestChartInput() when $default != null:
+return $default(_that.id,_that.assetsIds);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _RequestChartInput implements RequestChartInput {
+   _RequestChartInput({this.id, this.assetsIds});
+  factory _RequestChartInput.fromJson(Map<String, dynamic> json) => _$RequestChartInputFromJson(json);
+
+/// [id] is the Chart ID
+@override  String? id;
+/// [assetsIds] is the list of asset IDs linked to the chart
+@override  List<String>? assetsIds;
+
+/// Create a copy of RequestChartInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RequestChartInputCopyWith<_RequestChartInput> get copyWith => __$RequestChartInputCopyWithImpl<_RequestChartInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$RequestChartInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'RequestChartInput(id: $id, assetsIds: $assetsIds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$RequestChartInputCopyWith<$Res> implements $RequestChartInputCopyWith<$Res> {
+  factory _$RequestChartInputCopyWith(_RequestChartInput value, $Res Function(_RequestChartInput) _then) = __$RequestChartInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, List<String>? assetsIds
+});
+
+
+
+
+}
+/// @nodoc
+class __$RequestChartInputCopyWithImpl<$Res>
+    implements _$RequestChartInputCopyWith<$Res> {
+  __$RequestChartInputCopyWithImpl(this._self, this._then);
+
+  final _RequestChartInput _self;
+  final $Res Function(_RequestChartInput) _then;
+
+/// Create a copy of RequestChartInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetsIds = freezed,}) {
+  return _then(_RequestChartInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$AtsGridItem {
 
 /// Object id. Should be an Asset or many Assets.

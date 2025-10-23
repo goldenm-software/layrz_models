@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.64
+
+- Added `RequestChartInput` model
+- Added new values `assetsIds` and `name`, in `AnalyticsGridItem` and `AnalyticsGridItemInput` models
+
 ## 3.4.63
 
 - Expanded accessibility options in `UserPreferences` by introducing `dateFormat` and `timeFormat` fields. These additions allow users to customize their preferred date and time display formats independently, enhancing personalization and usability.
@@ -9,15 +14,19 @@
 - Added `geofences` to `Case` model as replacement of `geofence` to support multiple geofences context on cases when it's available.
 
 ## 3.4.61
+
 - Added Locator customization fields to GraphQL fetch helpers and allowed filtering by `id` when requesting a single Locator.
 
 ## 3.4.60
+
 = Update `AtsLoadingParamsForm`
 
 ## 3.4.59
+
 - Update `AtsLoadingParamsFormInput`
 
 ## 3.4.58
+
 - Added `atsPurchaseOrders` value in `ChartDataSource` enum
 
 ## 3.4.57

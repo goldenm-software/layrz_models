@@ -10,17 +10,20 @@ _TenvioItemMovement _$TenvioItemMovementFromJson(Map<String, dynamic> json) =>
     _TenvioItemMovement(
       id: json['id'] as String,
       previousOwnerId: json['previousOwnerId'] as String?,
-      previousOwner: json['previousOwner'] == null
-          ? null
-          : User.fromJson(json['previousOwner'] as Map<String, dynamic>),
+      previousOwner:
+          json['previousOwner'] == null
+              ? null
+              : User.fromJson(json['previousOwner'] as Map<String, dynamic>),
       newOwnerId: json['newOwnerId'] as String?,
-      newOwner: json['newOwner'] == null
-          ? null
-          : User.fromJson(json['newOwner'] as Map<String, dynamic>),
+      newOwner:
+          json['newOwner'] == null
+              ? null
+              : User.fromJson(json['newOwner'] as Map<String, dynamic>),
       receivedById: json['receivedById'] as String?,
-      receivedBy: json['receivedBy'] == null
-          ? null
-          : User.fromJson(json['receivedBy'] as Map<String, dynamic>),
+      receivedBy:
+          json['receivedBy'] == null
+              ? null
+              : User.fromJson(json['receivedBy'] as Map<String, dynamic>),
       triggeredAt: const TimestampConverter().fromJson(
         json['triggeredAt'] as num,
       ),
@@ -42,9 +45,10 @@ _DropoffFailedReason _$DropoffFailedReasonFromJson(Map<String, dynamic> json) =>
     _DropoffFailedReason(
       id: json['id'] as String,
       driverId: json['driverId'] as String,
-      driver: json['driver'] == null
-          ? null
-          : User.fromJson(json['driver'] as Map<String, dynamic>),
+      driver:
+          json['driver'] == null
+              ? null
+              : User.fromJson(json['driver'] as Map<String, dynamic>),
       reason: json['reason'] as String,
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
     );
@@ -97,11 +101,12 @@ _TenvioCustomPropertyInput _$TenvioCustomPropertyInputFromJson(
   Map<String, dynamic> json,
 ) => _TenvioCustomPropertyInput(
   name: json['name'] as String? ?? '',
-  dataType: json['dataType'] == null
-      ? TenvioPropertyDataType.string
-      : const TenvioPropertyDataTypeConverter().fromJson(
-          json['dataType'] as String,
-        ),
+  dataType:
+      json['dataType'] == null
+          ? TenvioPropertyDataType.string
+          : const TenvioPropertyDataTypeConverter().fromJson(
+            json['dataType'] as String,
+          ),
   isRequired: json['isRequired'] as bool? ?? false,
   choices:
       (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList() ??
@@ -135,38 +140,48 @@ _TenvioPackage _$TenvioPackageFromJson(
   id: json['id'] as String,
   trackingId: json['trackingId'] as String,
   warehouseId: json['warehouseId'] as String?,
-  warehouse: json['warehouse'] == null
-      ? null
-      : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
+  warehouse:
+      json['warehouse'] == null
+          ? null
+          : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
   qrCode: json['qrCode'] as String?,
-  items: (json['items'] as List<dynamic>?)
-      ?.map((e) => TenvioPackageQuantity.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  items:
+      (json['items'] as List<dynamic>?)
+          ?.map(
+            (e) => TenvioPackageQuantity.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
   destinationType: const TenvioDestinationTypeOrNullConverter().fromJson(
     json['destinationType'] as String?,
   ),
-  destinationWarehouse: json['destinationWarehouse'] == null
-      ? null
-      : Asset.fromJson(json['destinationWarehouse'] as Map<String, dynamic>),
+  destinationWarehouse:
+      json['destinationWarehouse'] == null
+          ? null
+          : Asset.fromJson(
+            json['destinationWarehouse'] as Map<String, dynamic>,
+          ),
   destinationWarehouseId: json['destinationWarehouseId'] as String?,
-  destinationUser: json['destinationUser'] == null
-      ? null
-      : User.fromJson(json['destinationUser'] as Map<String, dynamic>),
+  destinationUser:
+      json['destinationUser'] == null
+          ? null
+          : User.fromJson(json['destinationUser'] as Map<String, dynamic>),
   destinationUserId: json['destinationUserId'] as String?,
-  destinationUnregistered: json['destinationUnregistered'] == null
-      ? null
-      : TenvioUnregisteredUser.fromJson(
-          json['destinationUnregistered'] as Map<String, dynamic>,
-        ),
+  destinationUnregistered:
+      json['destinationUnregistered'] == null
+          ? null
+          : TenvioUnregisteredUser.fromJson(
+            json['destinationUnregistered'] as Map<String, dynamic>,
+          ),
   status: const TenvioPackageStatusConverter().fromJson(
     json['status'] as String,
   ),
   createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
   updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
   isCurrent: json['isCurrent'] as bool? ?? false,
-  history: (json['history'] as List<dynamic>?)
-      ?.map((e) => TenvioPackageHistory.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  history:
+      (json['history'] as List<dynamic>?)
+          ?.map((e) => TenvioPackageHistory.fromJson(e as Map<String, dynamic>))
+          .toList(),
   requiresPhotos: json['requiresPhotos'] as bool? ?? false,
   signature: json['signature'] as String?,
 );
@@ -200,9 +215,10 @@ _TenvioPackageQuantity _$TenvioPackageQuantityFromJson(
   Map<String, dynamic> json,
 ) => _TenvioPackageQuantity(
   matrixId: json['matrixId'] as String,
-  matrix: json['matrix'] == null
-      ? null
-      : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
+  matrix:
+      json['matrix'] == null
+          ? null
+          : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
   quantity: (json['quantity'] as num).toInt(),
 );
 
@@ -226,9 +242,10 @@ _TrackedTenvioPackage _$TrackedTenvioPackageFromJson(
   longitude: (json['longitude'] as num?)?.toDouble(),
   destinationLatitude: (json['destinationLatitude'] as num?)?.toDouble(),
   destinationLongitude: (json['destinationLongitude'] as num?)?.toDouble(),
-  history: (json['history'] as List<dynamic>)
-      .map((e) => TenvioPackageHistory.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  history:
+      (json['history'] as List<dynamic>)
+          .map((e) => TenvioPackageHistory.fromJson(e as Map<String, dynamic>))
+          .toList(),
   updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
 );
 
@@ -255,9 +272,10 @@ _TenvioPackageHistory _$TenvioPackageHistoryFromJson(
   latitude: (json['latitude'] as num?)?.toDouble(),
   longitude: (json['longitude'] as num?)?.toDouble(),
   updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
-  madeBy: json['madeBy'] == null
-      ? null
-      : User.fromJson(json['madeBy'] as Map<String, dynamic>),
+  madeBy:
+      json['madeBy'] == null
+          ? null
+          : User.fromJson(json['madeBy'] as Map<String, dynamic>),
   images: (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
 );
 
@@ -277,9 +295,12 @@ _TenvioItemQuantity _$TenvioItemQuantityFromJson(Map<String, dynamic> json) =>
       quantity: (json['quantity'] as num?)?.toInt(),
       loadedQuantity: (json['loadedQuantity'] as num?)?.toInt(),
       matrixId: json['matrixId'] as String?,
-      matrix: json['matrix'] == null
-          ? null
-          : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
+      matrix:
+          json['matrix'] == null
+              ? null
+              : TenvioMatrixItem.fromJson(
+                json['matrix'] as Map<String, dynamic>,
+              ),
     );
 
 Map<String, dynamic> _$TenvioItemQuantityToJson(_TenvioItemQuantity instance) =>
@@ -338,9 +359,10 @@ Map<String, dynamic> _$TenvioMonitorAccessInputToJson(
 _TenvioItem _$TenvioItemFromJson(Map<String, dynamic> json) => _TenvioItem(
   id: json['id'] as String,
   matrixId: json['matrixId'] as String?,
-  matrix: json['matrix'] == null
-      ? null
-      : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
+  matrix:
+      json['matrix'] == null
+          ? null
+          : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
   location: const TenvioItemLocationOrNullConverter().fromJson(
     json['location'] as String?,
   ),
@@ -349,12 +371,14 @@ _TenvioItem _$TenvioItemFromJson(Map<String, dynamic> json) => _TenvioItem(
     json['pickupDate'] as num?,
   ),
   customProperties: json['customProperties'] as Map<String, dynamic>?,
-  movements: (json['movements'] as List<dynamic>?)
-      ?.map((e) => TenvioItemMovement.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  warehouse: json['warehouse'] == null
-      ? null
-      : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
+  movements:
+      (json['movements'] as List<dynamic>?)
+          ?.map((e) => TenvioItemMovement.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  warehouse:
+      json['warehouse'] == null
+          ? null
+          : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
   warehouseId: json['warehouseId'] as String?,
   createdAt: const TimestampOrNullConverter().fromJson(
     json['createdAt'] as num?,
@@ -387,11 +411,12 @@ _TenvioItemInput _$TenvioItemInputFromJson(Map<String, dynamic> json) =>
     _TenvioItemInput(
       id: json['id'] as String?,
       matrixId: json['matrixId'] as String?,
-      location: json['location'] == null
-          ? TenvioItemLocation.inWarehouse
-          : const TenvioItemLocationConverter().fromJson(
-              json['location'] as String,
-            ),
+      location:
+          json['location'] == null
+              ? TenvioItemLocation.inWarehouse
+              : const TenvioItemLocationConverter().fromJson(
+                json['location'] as String,
+              ),
       address: json['address'] as String?,
       pickupDate: const TimestampOrNullConverter().fromJson(
         json['pickupDate'] as num?,
@@ -423,18 +448,22 @@ _TenvioMatrixItem _$TenvioMatrixItemFromJson(Map<String, dynamic> json) =>
       weight: (json['weight'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
       height: (json['height'] as num?)?.toDouble(),
-      customProperties: (json['customProperties'] as List<dynamic>?)
-          ?.map((e) => TenvioCustomProperty.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      customProperties:
+          (json['customProperties'] as List<dynamic>?)
+              ?.map(
+                (e) => TenvioCustomProperty.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
       createdAt: const TimestampOrNullConverter().fromJson(
         json['createdAt'] as num?,
       ),
       updatedAt: const TimestampOrNullConverter().fromJson(
         json['updatedAt'] as num?,
       ),
-      items: (json['items'] as List<dynamic>?)
-          ?.map((e) => TenvioItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      items:
+          (json['items'] as List<dynamic>?)
+              ?.map((e) => TenvioItem.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$TenvioMatrixItemToJson(_TenvioMatrixItem instance) =>
@@ -447,9 +476,8 @@ Map<String, dynamic> _$TenvioMatrixItemToJson(_TenvioMatrixItem instance) =>
       'weight': instance.weight,
       'width': instance.width,
       'height': instance.height,
-      'customProperties': instance.customProperties
-          ?.map((e) => e.toJson())
-          .toList(),
+      'customProperties':
+          instance.customProperties?.map((e) => e.toJson()).toList(),
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
       'items': instance.items?.map((e) => e.toJson()).toList(),
@@ -542,40 +570,48 @@ _TenvioOrder _$TenvioOrderFromJson(Map<String, dynamic> json) => _TenvioOrder(
   destinationType: const TenvioDestinationTypeOrNullConverter().fromJson(
     json['destinationType'] as String?,
   ),
-  destinationWarehouse: json['destinationWarehouse'] == null
-      ? null
-      : Asset.fromJson(json['destinationWarehouse'] as Map<String, dynamic>),
+  destinationWarehouse:
+      json['destinationWarehouse'] == null
+          ? null
+          : Asset.fromJson(
+            json['destinationWarehouse'] as Map<String, dynamic>,
+          ),
   destinationWarehouseId: json['destinationWarehouseId'] as String?,
-  destinationUser: json['destinationUser'] == null
-      ? null
-      : User.fromJson(json['destinationUser'] as Map<String, dynamic>),
+  destinationUser:
+      json['destinationUser'] == null
+          ? null
+          : User.fromJson(json['destinationUser'] as Map<String, dynamic>),
   destinationUserId: json['destinationUserId'] as String?,
-  destinationUnregistered: json['destinationUnregistered'] == null
-      ? null
-      : TenvioUnregisteredUser.fromJson(
-          json['destinationUnregistered'] as Map<String, dynamic>,
-        ),
+  destinationUnregistered:
+      json['destinationUnregistered'] == null
+          ? null
+          : TenvioUnregisteredUser.fromJson(
+            json['destinationUnregistered'] as Map<String, dynamic>,
+          ),
   notes:
       (json['notes'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
   requiresPhotos: json['requiresPhotos'] as bool?,
   highPriority: json['highPriority'] as bool?,
-  packers: (json['packers'] as List<dynamic>?)
-      ?.map((e) => User.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  packersIds: (json['packersIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  itemQuantities: (json['itemQuantities'] as List<dynamic>?)
-      ?.map((e) => TenvioItemQuantity.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  items: (json['items'] as List<dynamic>?)
-      ?.map((e) => TenvioItem.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  packers:
+      (json['packers'] as List<dynamic>?)
+          ?.map((e) => User.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  packersIds:
+      (json['packersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  itemQuantities:
+      (json['itemQuantities'] as List<dynamic>?)
+          ?.map((e) => TenvioItemQuantity.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  items:
+      (json['items'] as List<dynamic>?)
+          ?.map((e) => TenvioItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
   packedImage: json['packedImage'] as String?,
-  statusPhotos: (json['statusPhotos'] as List<dynamic>?)
-      ?.map((e) => TenvioPhotos.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  statusPhotos:
+      (json['statusPhotos'] as List<dynamic>?)
+          ?.map((e) => TenvioPhotos.fromJson(e as Map<String, dynamic>))
+          .toList(),
   createdAt: const TimestampOrNullConverter().fromJson(
     json['createdAt'] as num?,
   ),
@@ -614,42 +650,41 @@ Map<String, dynamic> _$TenvioOrderToJson(
   'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
 };
 
-_TenvioOrderInput _$TenvioOrderInputFromJson(Map<String, dynamic> json) =>
-    _TenvioOrderInput(
-      id: json['id'] as String?,
-      warehouseId: json['warehouseId'] as String?,
-      status: const TenvioOrderStatusConverter().fromJson(
-        json['status'] as String,
-      ),
-      destinationType: const TenvioDestinationTypeOrNullConverter().fromJson(
-        json['destinationType'] as String?,
-      ),
-      destinationWarehouseId: json['destinationWarehouseId'] as String?,
-      destinationUserId: json['destinationUserId'] as String?,
-      destinationUnregistered: json['destinationUnregistered'] == null
+_TenvioOrderInput _$TenvioOrderInputFromJson(
+  Map<String, dynamic> json,
+) => _TenvioOrderInput(
+  id: json['id'] as String?,
+  warehouseId: json['warehouseId'] as String?,
+  status: const TenvioOrderStatusConverter().fromJson(json['status'] as String),
+  destinationType: const TenvioDestinationTypeOrNullConverter().fromJson(
+    json['destinationType'] as String?,
+  ),
+  destinationWarehouseId: json['destinationWarehouseId'] as String?,
+  destinationUserId: json['destinationUserId'] as String?,
+  destinationUnregistered:
+      json['destinationUnregistered'] == null
           ? null
           : TenvioUnregisteredUserInput.fromJson(
-              json['destinationUnregistered'] as Map<String, dynamic>,
-            ),
-      notes:
-          (json['notes'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-          const [],
-      requiresPhotos: json['requiresPhotos'] as bool? ?? false,
-      highPriority: json['highPriority'] as bool? ?? false,
-      packersIds:
-          (json['packersIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      itemQuantities:
-          (json['itemQuantities'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    TenvioItemQuantityInput.fromJson(e as Map<String, dynamic>),
-              )
-              .toList() ??
-          const [],
-    );
+            json['destinationUnregistered'] as Map<String, dynamic>,
+          ),
+  notes:
+      (json['notes'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  requiresPhotos: json['requiresPhotos'] as bool? ?? false,
+  highPriority: json['highPriority'] as bool? ?? false,
+  packersIds:
+      (json['packersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  itemQuantities:
+      (json['itemQuantities'] as List<dynamic>?)
+          ?.map(
+            (e) => TenvioItemQuantityInput.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      const [],
+);
 
 Map<String, dynamic> _$TenvioOrderInputToJson(_TenvioOrderInput instance) =>
     <String, dynamic>{
@@ -674,9 +709,10 @@ _TenvioPhotos _$TenvioPhotosFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String?,
       urls: json['urls'] as String?,
       packagedId: json['packagedId'] as String?,
-      package: json['package'] == null
-          ? null
-          : TenvioPackage.fromJson(json['package'] as Map<String, dynamic>),
+      package:
+          json['package'] == null
+              ? null
+              : TenvioPackage.fromJson(json['package'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TenvioPhotosToJson(_TenvioPhotos instance) =>
@@ -694,17 +730,20 @@ _TenvioDispatchGuide _$TenvioDispatchGuideFromJson(Map<String, dynamic> json) =>
         json['status'] as String,
       ),
       qrCode: json['qrCode'] as String?,
-      warehouse: json['warehouse'] == null
-          ? null
-          : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
+      warehouse:
+          json['warehouse'] == null
+              ? null
+              : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
       warehouseId: json['warehouseId'] as String?,
-      driver: json['driver'] == null
-          ? null
-          : TenvioDriver.fromJson(json['driver'] as Map<String, dynamic>),
+      driver:
+          json['driver'] == null
+              ? null
+              : TenvioDriver.fromJson(json['driver'] as Map<String, dynamic>),
       driverId: json['driverId'] as String?,
-      loader: json['loader'] == null
-          ? null
-          : User.fromJson(json['loader'] as Map<String, dynamic>),
+      loader:
+          json['loader'] == null
+              ? null
+              : User.fromJson(json['loader'] as Map<String, dynamic>),
       loaderId: json['loaderId'] as String?,
       packages:
           (json['packages'] as List<dynamic>?)
@@ -749,11 +788,12 @@ _TenvioDispatchGuideInput _$TenvioDispatchGuideInputFromJson(
 ) => _TenvioDispatchGuideInput(
   id: json['id'] as String?,
   warehouseId: json['warehouseId'] as String,
-  status: json['status'] == null
-      ? TenvioDispatchGuideStatus.draft
-      : const TenvioDispatchGuideStatusConverter().fromJson(
-          json['status'] as String,
-        ),
+  status:
+      json['status'] == null
+          ? TenvioDispatchGuideStatus.draft
+          : const TenvioDispatchGuideStatusConverter().fromJson(
+            json['status'] as String,
+          ),
   driverId: json['driverId'] as String?,
   loaderId: json['loaderId'] as String?,
   hasRoute: json['hasRoute'] as bool? ?? false,
@@ -792,17 +832,22 @@ _TenvioDriver _$TenvioDriverFromJson(Map<String, dynamic> json) =>
       updatedAt: const TimestampOrNullConverter().fromJson(
         json['updatedAt'] as num?,
       ),
-      telemetry: json['telemetry'] == null
-          ? null
-          : DeviceTelemetry.fromJson(json['telemetry'] as Map<String, dynamic>),
+      telemetry:
+          json['telemetry'] == null
+              ? null
+              : DeviceTelemetry.fromJson(
+                json['telemetry'] as Map<String, dynamic>,
+              ),
       maskedDeviceId: json['maskedDeviceId'] as String?,
-      app: json['app'] == null
-          ? null
-          : RegisteredApp.fromJson(json['app'] as Map<String, dynamic>),
+      app:
+          json['app'] == null
+              ? null
+              : RegisteredApp.fromJson(json['app'] as Map<String, dynamic>),
       mqttToken: json['mqttToken'] as String?,
-      token: json['token'] == null
-          ? null
-          : Token.fromJson(json['token'] as Map<String, dynamic>),
+      token:
+          json['token'] == null
+              ? null
+              : Token.fromJson(json['token'] as Map<String, dynamic>),
       originalId: json['originalId'] as String?,
     );
 

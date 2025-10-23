@@ -2933,8 +2933,10 @@ as String?,
 /// @nodoc
 mixin _$AnalyticsGridItem {
 
-/// Is the Chart ID
- String? get chartId;/// [dimensions] Represents the dimension of the sensor
+/// [chartId] is the Chart ID
+ String? get chartId;/// [name] is the name of the chart
+ String? get name;//// [assetsIds] is the list of asset IDs linked to the chart
+ List<String> get assetsIds;/// [dimensions] Represents the dimension of the sensor
  GridDimension get dimensions;
 /// Create a copy of AnalyticsGridItem
 /// with the given fields replaced by the non-null parameter values.
@@ -2948,16 +2950,16 @@ $AnalyticsGridItemCopyWith<AnalyticsGridItem> get copyWith => _$AnalyticsGridIte
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AnalyticsGridItem&&(identical(other.chartId, chartId) || other.chartId == chartId)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AnalyticsGridItem&&(identical(other.chartId, chartId) || other.chartId == chartId)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,chartId,dimensions);
+int get hashCode => Object.hash(runtimeType,chartId,name,const DeepCollectionEquality().hash(assetsIds),dimensions);
 
 @override
 String toString() {
-  return 'AnalyticsGridItem(chartId: $chartId, dimensions: $dimensions)';
+  return 'AnalyticsGridItem(chartId: $chartId, name: $name, assetsIds: $assetsIds, dimensions: $dimensions)';
 }
 
 
@@ -2968,7 +2970,7 @@ abstract mixin class $AnalyticsGridItemCopyWith<$Res>  {
   factory $AnalyticsGridItemCopyWith(AnalyticsGridItem value, $Res Function(AnalyticsGridItem) _then) = _$AnalyticsGridItemCopyWithImpl;
 @useResult
 $Res call({
- String? chartId, GridDimension dimensions
+ String? chartId, String? name, List<String> assetsIds, GridDimension dimensions
 });
 
 
@@ -2985,10 +2987,12 @@ class _$AnalyticsGridItemCopyWithImpl<$Res>
 
 /// Create a copy of AnalyticsGridItem
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? chartId = freezed,Object? dimensions = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? chartId = freezed,Object? name = freezed,Object? assetsIds = null,Object? dimensions = null,}) {
   return _then(_self.copyWith(
 chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
-as String?,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
 as GridDimension,
   ));
 }
@@ -3083,10 +3087,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? chartId,  GridDimension dimensions)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? chartId,  String? name,  List<String> assetsIds,  GridDimension dimensions)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AnalyticsGridItem() when $default != null:
-return $default(_that.chartId,_that.dimensions);case _:
+return $default(_that.chartId,_that.name,_that.assetsIds,_that.dimensions);case _:
   return orElse();
 
 }
@@ -3104,10 +3108,10 @@ return $default(_that.chartId,_that.dimensions);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? chartId,  GridDimension dimensions)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? chartId,  String? name,  List<String> assetsIds,  GridDimension dimensions)  $default,) {final _that = this;
 switch (_that) {
 case _AnalyticsGridItem():
-return $default(_that.chartId,_that.dimensions);case _:
+return $default(_that.chartId,_that.name,_that.assetsIds,_that.dimensions);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3124,10 +3128,10 @@ return $default(_that.chartId,_that.dimensions);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? chartId,  GridDimension dimensions)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? chartId,  String? name,  List<String> assetsIds,  GridDimension dimensions)?  $default,) {final _that = this;
 switch (_that) {
 case _AnalyticsGridItem() when $default != null:
-return $default(_that.chartId,_that.dimensions);case _:
+return $default(_that.chartId,_that.name,_that.assetsIds,_that.dimensions);case _:
   return null;
 
 }
@@ -3139,11 +3143,22 @@ return $default(_that.chartId,_that.dimensions);case _:
 @JsonSerializable()
 
 class _AnalyticsGridItem implements AnalyticsGridItem {
-  const _AnalyticsGridItem({this.chartId, required this.dimensions});
+  const _AnalyticsGridItem({this.chartId, this.name, final  List<String> assetsIds = const [], required this.dimensions}): _assetsIds = assetsIds;
   factory _AnalyticsGridItem.fromJson(Map<String, dynamic> json) => _$AnalyticsGridItemFromJson(json);
 
-/// Is the Chart ID
+/// [chartId] is the Chart ID
 @override final  String? chartId;
+/// [name] is the name of the chart
+@override final  String? name;
+//// [assetsIds] is the list of asset IDs linked to the chart
+ final  List<String> _assetsIds;
+//// [assetsIds] is the list of asset IDs linked to the chart
+@override@JsonKey() List<String> get assetsIds {
+  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_assetsIds);
+}
+
 /// [dimensions] Represents the dimension of the sensor
 @override final  GridDimension dimensions;
 
@@ -3160,16 +3175,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AnalyticsGridItem&&(identical(other.chartId, chartId) || other.chartId == chartId)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AnalyticsGridItem&&(identical(other.chartId, chartId) || other.chartId == chartId)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,chartId,dimensions);
+int get hashCode => Object.hash(runtimeType,chartId,name,const DeepCollectionEquality().hash(_assetsIds),dimensions);
 
 @override
 String toString() {
-  return 'AnalyticsGridItem(chartId: $chartId, dimensions: $dimensions)';
+  return 'AnalyticsGridItem(chartId: $chartId, name: $name, assetsIds: $assetsIds, dimensions: $dimensions)';
 }
 
 
@@ -3180,7 +3195,7 @@ abstract mixin class _$AnalyticsGridItemCopyWith<$Res> implements $AnalyticsGrid
   factory _$AnalyticsGridItemCopyWith(_AnalyticsGridItem value, $Res Function(_AnalyticsGridItem) _then) = __$AnalyticsGridItemCopyWithImpl;
 @override @useResult
 $Res call({
- String? chartId, GridDimension dimensions
+ String? chartId, String? name, List<String> assetsIds, GridDimension dimensions
 });
 
 
@@ -3197,10 +3212,12 @@ class __$AnalyticsGridItemCopyWithImpl<$Res>
 
 /// Create a copy of AnalyticsGridItem
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? chartId = freezed,Object? dimensions = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? chartId = freezed,Object? name = freezed,Object? assetsIds = null,Object? dimensions = null,}) {
   return _then(_AnalyticsGridItem(
 chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
-as String?,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
 as GridDimension,
   ));
 }
@@ -3221,7 +3238,13 @@ $GridDimensionCopyWith<$Res> get dimensions {
 /// @nodoc
 mixin _$AnalyticsGridItemInput {
 
- String? get chartId; set chartId(String? value);/// [dimensions] represents the dimensions of the sensor content
+/// [chartId] is the Chart ID
+ String? get chartId;/// [chartId] is the Chart ID
+ set chartId(String? value);/// [name] is the name of the chart
+ String? get name;/// [name] is the name of the chart
+ set name(String? value);//// [assetsIds] is the list of asset IDs linked to the chart
+ List<String>? get assetsIds;//// [assetsIds] is the list of asset IDs linked to the chart
+ set assetsIds(List<String>? value);/// [dimensions] represents the dimensions of the sensor content
  GridDimensionInput get dimensions;/// [dimensions] represents the dimensions of the sensor content
  set dimensions(GridDimensionInput value);
 /// Create a copy of AnalyticsGridItemInput
@@ -3238,7 +3261,7 @@ $AnalyticsGridItemInputCopyWith<AnalyticsGridItemInput> get copyWith => _$Analyt
 
 @override
 String toString() {
-  return 'AnalyticsGridItemInput(chartId: $chartId, dimensions: $dimensions)';
+  return 'AnalyticsGridItemInput(chartId: $chartId, name: $name, assetsIds: $assetsIds, dimensions: $dimensions)';
 }
 
 
@@ -3249,7 +3272,7 @@ abstract mixin class $AnalyticsGridItemInputCopyWith<$Res>  {
   factory $AnalyticsGridItemInputCopyWith(AnalyticsGridItemInput value, $Res Function(AnalyticsGridItemInput) _then) = _$AnalyticsGridItemInputCopyWithImpl;
 @useResult
 $Res call({
- String? chartId, GridDimensionInput dimensions
+ String? chartId, String? name, List<String>? assetsIds, GridDimensionInput dimensions
 });
 
 
@@ -3266,10 +3289,12 @@ class _$AnalyticsGridItemInputCopyWithImpl<$Res>
 
 /// Create a copy of AnalyticsGridItemInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? chartId = freezed,Object? dimensions = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? chartId = freezed,Object? name = freezed,Object? assetsIds = freezed,Object? dimensions = null,}) {
   return _then(_self.copyWith(
 chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
-as String?,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
 as GridDimensionInput,
   ));
 }
@@ -3364,10 +3389,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? chartId,  GridDimensionInput dimensions)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? chartId,  String? name,  List<String>? assetsIds,  GridDimensionInput dimensions)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AnalyticsGridItemInput() when $default != null:
-return $default(_that.chartId,_that.dimensions);case _:
+return $default(_that.chartId,_that.name,_that.assetsIds,_that.dimensions);case _:
   return orElse();
 
 }
@@ -3385,10 +3410,10 @@ return $default(_that.chartId,_that.dimensions);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? chartId,  GridDimensionInput dimensions)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? chartId,  String? name,  List<String>? assetsIds,  GridDimensionInput dimensions)  $default,) {final _that = this;
 switch (_that) {
 case _AnalyticsGridItemInput():
-return $default(_that.chartId,_that.dimensions);case _:
+return $default(_that.chartId,_that.name,_that.assetsIds,_that.dimensions);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3405,10 +3430,10 @@ return $default(_that.chartId,_that.dimensions);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? chartId,  GridDimensionInput dimensions)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? chartId,  String? name,  List<String>? assetsIds,  GridDimensionInput dimensions)?  $default,) {final _that = this;
 switch (_that) {
 case _AnalyticsGridItemInput() when $default != null:
-return $default(_that.chartId,_that.dimensions);case _:
+return $default(_that.chartId,_that.name,_that.assetsIds,_that.dimensions);case _:
   return null;
 
 }
@@ -3420,10 +3445,15 @@ return $default(_that.chartId,_that.dimensions);case _:
 @JsonSerializable()
 
 class _AnalyticsGridItemInput implements AnalyticsGridItemInput {
-   _AnalyticsGridItemInput({this.chartId, required this.dimensions});
+   _AnalyticsGridItemInput({this.chartId, this.name, this.assetsIds, required this.dimensions});
   factory _AnalyticsGridItemInput.fromJson(Map<String, dynamic> json) => _$AnalyticsGridItemInputFromJson(json);
 
+/// [chartId] is the Chart ID
 @override  String? chartId;
+/// [name] is the name of the chart
+@override  String? name;
+//// [assetsIds] is the list of asset IDs linked to the chart
+@override  List<String>? assetsIds;
 /// [dimensions] represents the dimensions of the sensor content
 @override  GridDimensionInput dimensions;
 
@@ -3442,7 +3472,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'AnalyticsGridItemInput(chartId: $chartId, dimensions: $dimensions)';
+  return 'AnalyticsGridItemInput(chartId: $chartId, name: $name, assetsIds: $assetsIds, dimensions: $dimensions)';
 }
 
 
@@ -3453,7 +3483,7 @@ abstract mixin class _$AnalyticsGridItemInputCopyWith<$Res> implements $Analytic
   factory _$AnalyticsGridItemInputCopyWith(_AnalyticsGridItemInput value, $Res Function(_AnalyticsGridItemInput) _then) = __$AnalyticsGridItemInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? chartId, GridDimensionInput dimensions
+ String? chartId, String? name, List<String>? assetsIds, GridDimensionInput dimensions
 });
 
 
@@ -3470,10 +3500,12 @@ class __$AnalyticsGridItemInputCopyWithImpl<$Res>
 
 /// Create a copy of AnalyticsGridItemInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? chartId = freezed,Object? dimensions = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? chartId = freezed,Object? name = freezed,Object? assetsIds = freezed,Object? dimensions = null,}) {
   return _then(_AnalyticsGridItemInput(
 chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
-as String?,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
 as GridDimensionInput,
   ));
 }

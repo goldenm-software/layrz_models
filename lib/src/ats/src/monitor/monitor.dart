@@ -82,3 +82,16 @@ abstract class AtsMonitorInput with _$AtsMonitorInput {
 
   factory AtsMonitorInput.fromJson(Map<String, dynamic> json) => _$AtsMonitorInputFromJson(json);
 }
+
+@unfreezed
+abstract class RequestChartInput with _$RequestChartInput {
+  factory RequestChartInput({
+    /// [id] is the Chart ID
+    String? id,
+
+    /// [assetsIds] is the list of asset IDs linked to the chart
+    List<String>? assetsIds,
+  }) = _RequestChartInput;
+
+  factory RequestChartInput.fromJson(Map<String, dynamic> json) => _$RequestChartInputFromJson(json);
+}
