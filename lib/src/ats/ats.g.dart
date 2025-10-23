@@ -2357,7 +2357,7 @@ Map<String, dynamic> _$AtsMonitorInputToJson(_AtsMonitorInput instance) =>
 
 _RequestChartInput _$RequestChartInputFromJson(Map<String, dynamic> json) =>
     _RequestChartInput(
-      id: json['id'] as String?,
+      chartId: json['chartId'] as String?,
       assetsIds:
           (json['assetsIds'] as List<dynamic>?)
               ?.map((e) => e as String)
@@ -2365,7 +2365,10 @@ _RequestChartInput _$RequestChartInputFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$RequestChartInputToJson(_RequestChartInput instance) =>
-    <String, dynamic>{'id': instance.id, 'assetsIds': instance.assetsIds};
+    <String, dynamic>{
+      'chartId': instance.chartId,
+      'assetsIds': instance.assetsIds,
+    };
 
 _AtsGridItem _$AtsGridItemFromJson(Map<String, dynamic> json) => _AtsGridItem(
   objectsIds:

@@ -86,8 +86,8 @@ abstract class AtsMonitorInput with _$AtsMonitorInput {
 @unfreezed
 abstract class RequestChartInput with _$RequestChartInput {
   factory RequestChartInput({
-    /// [id] is the Chart ID
-    String? id,
+    /// [chartId] is the Chart ID
+    String? chartId,
 
     /// [assetsIds] is the list of asset IDs linked to the chart
     List<String>? assetsIds,
