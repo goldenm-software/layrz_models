@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.66
+
+- Added `index` in `RequestChartInput` model
+
 ## 3.4.65
 
 - Changed `id` to `chartId` value in `RequestChartInput` model

@@ -20052,7 +20052,9 @@ as List<AnalyticsGridItemInput>?,
 /// @nodoc
 mixin _$RequestChartInput {
 
-/// [chartId] is the Chart ID
+/// [index] is the index of the chart in the monitor
+ int? get index;/// [index] is the index of the chart in the monitor
+ set index(int? value);/// [chartId] is the Chart ID
  String? get chartId;/// [chartId] is the Chart ID
  set chartId(String? value);/// [assetsIds] is the list of asset IDs linked to the chart
  List<String>? get assetsIds;/// [assetsIds] is the list of asset IDs linked to the chart
@@ -20071,7 +20073,7 @@ $RequestChartInputCopyWith<RequestChartInput> get copyWith => _$RequestChartInpu
 
 @override
 String toString() {
-  return 'RequestChartInput(chartId: $chartId, assetsIds: $assetsIds)';
+  return 'RequestChartInput(index: $index, chartId: $chartId, assetsIds: $assetsIds)';
 }
 
 
@@ -20082,7 +20084,7 @@ abstract mixin class $RequestChartInputCopyWith<$Res>  {
   factory $RequestChartInputCopyWith(RequestChartInput value, $Res Function(RequestChartInput) _then) = _$RequestChartInputCopyWithImpl;
 @useResult
 $Res call({
- String? chartId, List<String>? assetsIds
+ int? index, String? chartId, List<String>? assetsIds
 });
 
 
@@ -20099,9 +20101,10 @@ class _$RequestChartInputCopyWithImpl<$Res>
 
 /// Create a copy of RequestChartInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? chartId = freezed,Object? assetsIds = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? index = freezed,Object? chartId = freezed,Object? assetsIds = freezed,}) {
   return _then(_self.copyWith(
-chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
+index: freezed == index ? _self.index : index // ignore: cast_nullable_to_non_nullable
+as int?,chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
 as String?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
@@ -20188,10 +20191,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? chartId,  List<String>? assetsIds)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? index,  String? chartId,  List<String>? assetsIds)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RequestChartInput() when $default != null:
-return $default(_that.chartId,_that.assetsIds);case _:
+return $default(_that.index,_that.chartId,_that.assetsIds);case _:
   return orElse();
 
 }
@@ -20209,10 +20212,10 @@ return $default(_that.chartId,_that.assetsIds);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? chartId,  List<String>? assetsIds)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? index,  String? chartId,  List<String>? assetsIds)  $default,) {final _that = this;
 switch (_that) {
 case _RequestChartInput():
-return $default(_that.chartId,_that.assetsIds);case _:
+return $default(_that.index,_that.chartId,_that.assetsIds);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -20229,10 +20232,10 @@ return $default(_that.chartId,_that.assetsIds);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? chartId,  List<String>? assetsIds)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? index,  String? chartId,  List<String>? assetsIds)?  $default,) {final _that = this;
 switch (_that) {
 case _RequestChartInput() when $default != null:
-return $default(_that.chartId,_that.assetsIds);case _:
+return $default(_that.index,_that.chartId,_that.assetsIds);case _:
   return null;
 
 }
@@ -20244,9 +20247,11 @@ return $default(_that.chartId,_that.assetsIds);case _:
 @JsonSerializable()
 
 class _RequestChartInput implements RequestChartInput {
-   _RequestChartInput({this.chartId, this.assetsIds});
+   _RequestChartInput({this.index, this.chartId, this.assetsIds});
   factory _RequestChartInput.fromJson(Map<String, dynamic> json) => _$RequestChartInputFromJson(json);
 
+/// [index] is the index of the chart in the monitor
+@override  int? index;
 /// [chartId] is the Chart ID
 @override  String? chartId;
 /// [assetsIds] is the list of asset IDs linked to the chart
@@ -20267,7 +20272,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'RequestChartInput(chartId: $chartId, assetsIds: $assetsIds)';
+  return 'RequestChartInput(index: $index, chartId: $chartId, assetsIds: $assetsIds)';
 }
 
 
@@ -20278,7 +20283,7 @@ abstract mixin class _$RequestChartInputCopyWith<$Res> implements $RequestChartI
   factory _$RequestChartInputCopyWith(_RequestChartInput value, $Res Function(_RequestChartInput) _then) = __$RequestChartInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? chartId, List<String>? assetsIds
+ int? index, String? chartId, List<String>? assetsIds
 });
 
 
@@ -20295,9 +20300,10 @@ class __$RequestChartInputCopyWithImpl<$Res>
 
 /// Create a copy of RequestChartInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? chartId = freezed,Object? assetsIds = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? index = freezed,Object? chartId = freezed,Object? assetsIds = freezed,}) {
   return _then(_RequestChartInput(
-chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
+index: freezed == index ? _self.index : index // ignore: cast_nullable_to_non_nullable
+as int?,chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
 as String?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));

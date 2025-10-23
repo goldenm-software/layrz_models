@@ -86,6 +86,9 @@ abstract class AtsMonitorInput with _$AtsMonitorInput {
 @unfreezed
 abstract class RequestChartInput with _$RequestChartInput {
   factory RequestChartInput({
+    /// [index] is the index of the chart in the monitor
+    int? index,
+
     /// [chartId] is the Chart ID
     String? chartId,
 
