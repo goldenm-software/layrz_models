@@ -65,7 +65,26 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
 
     /// `spareVolume` Spare volume only on modality balance
     double? spareVolume,
+
+    /// `destinyInformation` Destiny information
+    List<AtsDestinyInformationInput>? destinyInformation,
   }) = _AtsLoadingParamsFormInput;
 
   factory AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormInputFromJson(json);
+}
+
+@unfreezed
+abstract class AtsDestinyInformationInput with _$AtsDestinyInformationInput {
+  factory AtsDestinyInformationInput({
+    /// `capacity` Capacity of the destiny
+    double? capacity,
+
+    /// `replesnishOrWithdraw` Replesnish or withdraw amount
+    double? replesnishOrWithdraw,
+
+    /// `destinyInformationSetaVerification` Destiny information seta verification
+    @AtsReplenishmentOrWithdrawOrNullConverter() AtsSetaVerification? destinyInformationSetaVerification,
+  }) = _AtsDestinyInformationInput;
+
+  factory AtsDestinyInformationInput.fromJson(Map<String, dynamic> json) => _$AtsDestinyInformationInputFromJson(json);
 }

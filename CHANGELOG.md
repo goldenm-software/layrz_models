@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.67
+- Update `AtsLoadingParamsForm` `AtsLoadingParamsFormInput` with new props
+
 ## 3.4.66
 
 - Added `index` in `RequestChartInput` model
