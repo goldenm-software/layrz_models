@@ -1,6 +1,11 @@
 # Changelog
 
+## 3.4.68
+
+- Added `sensorId` to `CloudEntry` model to associate files with specific sensors.
+
 ## 3.4.67
+
 - Update `AtsLoadingParamsForm` `AtsLoadingParamsFormInput` with new props
 
 ## 3.4.66

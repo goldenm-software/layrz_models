@@ -556,6 +556,7 @@ _CloudEntry _$CloudEntryFromJson(Map<String, dynamic> json) => _CloudEntry(
   ),
   contentType: json['contentType'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
+  sensorId: json['sensorId'] as String?,
 );
 
 Map<String, dynamic> _$CloudEntryToJson(_CloudEntry instance) =>
@@ -571,6 +572,7 @@ Map<String, dynamic> _$CloudEntryToJson(_CloudEntry instance) =>
       ),
       'contentType': instance.contentType,
       'metadata': instance.metadata,
+      'sensorId': instance.sensorId,
     };
 
 _Country _$CountryFromJson(Map<String, dynamic> json) => _Country(
