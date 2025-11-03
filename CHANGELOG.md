@@ -1,8 +1,11 @@
 # Changelog
 
-## 3.4.69
+## 3.4.70
 - Remove `a20Volume`, `liquidWeight`, `density20`, `volume20`, `spareVolume` from `AtsLoadingParamsFormInput` and `AtsLoadingParamsForm`
 - Add `balanceParams` and `skidSetaParams` in `AtsLoadingParamsForm`
+
+## 3.4.69
+- This version was published by mistake and should be omitted. Please use version 3.4.70 or later.
 
 ## 3.4.68
 
