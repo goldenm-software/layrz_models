@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.69
+- Remove `a20Volume`, `liquidWeight`, `density20`, `volume20`, `spareVolume` from `AtsLoadingParamsFormInput` and `AtsLoadingParamsForm`
+- Add `balanceParams` and `skidSetaParams` in `AtsLoadingParamsForm`
+
 ## 3.4.68
 
 - Added `sensorId` to `CloudEntry` model to associate files with specific sensors.

@@ -45,28 +45,13 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
     /// `inpm` INPM code
     double? inpm,
 
-    /// `a20Volume` A20 volume only on modality SKID
-    double? a20Volume,
-
     /// `initialWeight` Initial weight only on modality balance
     double? initialWeight,
 
     /// `finalWeight` Final weight only on modality balance
     double? finalWeight,
 
-    /// `liquidWeight` Liquid weight only on modality balance
-    double? liquidWeight,
-
-    /// `density20` Density at 20°C only on modality balance
-    double? density20,
-
-    /// `volume20` Volume at 20°C only on modality balance
-    double? volume20,
-
-    /// `spareVolume` Spare volume only on modality balance
-    double? spareVolume,
-
-    /// `destinyInformation` Destiny information
+    /// `destinyInformation` Destiny information only on modality seta
     List<AtsDestinyInformationInput>? destinyInformation,
   }) = _AtsLoadingParamsFormInput;
 

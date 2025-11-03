@@ -765,13 +765,8 @@ _AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
     json['modality'] as String?,
   ),
   inpm: (json['inpm'] as num?)?.toDouble(),
-  a20Volume: (json['a20Volume'] as num?)?.toDouble(),
   initialWeight: (json['initialWeight'] as num?)?.toDouble(),
   finalWeight: (json['finalWeight'] as num?)?.toDouble(),
-  liquidWeight: (json['liquidWeight'] as num?)?.toDouble(),
-  density20: (json['density20'] as num?)?.toDouble(),
-  volume20: (json['volume20'] as num?)?.toDouble(),
-  spareVolume: (json['spareVolume'] as num?)?.toDouble(),
   destinyInformation: (json['destinyInformation'] as List<dynamic>?)
       ?.map(
         (e) => AtsDestinyInformationInput.fromJson(e as Map<String, dynamic>),
@@ -800,13 +795,8 @@ Map<String, dynamic> _$AtsLoadingParamsFormInputToJson(
     instance.modality,
   ),
   'inpm': instance.inpm,
-  'a20Volume': instance.a20Volume,
   'initialWeight': instance.initialWeight,
   'finalWeight': instance.finalWeight,
-  'liquidWeight': instance.liquidWeight,
-  'density20': instance.density20,
-  'volume20': instance.volume20,
-  'spareVolume': instance.spareVolume,
   'destinyInformation': instance.destinyInformation
       ?.map((e) => e.toJson())
       .toList(),
@@ -865,17 +855,19 @@ _AtsLoadingParamsForm _$AtsLoadingParamsFormFromJson(
     json['modality'] as String?,
   ),
   inpm: (json['inpm'] as num?)?.toDouble(),
-  a20Volume: (json['a20Volume'] as num?)?.toDouble(),
-  ambientVolume: (json['ambientVolume'] as num?)?.toDouble(),
-  initialWeight: (json['initialWeight'] as num?)?.toDouble(),
-  finalWeight: (json['finalWeight'] as num?)?.toDouble(),
-  liquidWeight: (json['liquidWeight'] as num?)?.toDouble(),
-  density20: (json['density20'] as num?)?.toDouble(),
-  volume20: (json['volume20'] as num?)?.toDouble(),
-  spareVolume: (json['spareVolume'] as num?)?.toDouble(),
   destinyInformation: (json['destinyInformation'] as List<dynamic>?)
       ?.map((e) => AtsDestinyInformation.fromJson(e as Map<String, dynamic>))
       .toList(),
+  balanceParams: json['balanceParams'] == null
+      ? null
+      : AtsBalanceParams.fromJson(
+          json['balanceParams'] as Map<String, dynamic>,
+        ),
+  skidSetaParams: json['skidSetaParams'] == null
+      ? null
+      : AtsSkidSetaParams.fromJson(
+          json['skidSetaParams'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$AtsLoadingParamsFormToJson(
@@ -901,17 +893,11 @@ Map<String, dynamic> _$AtsLoadingParamsFormToJson(
     instance.modality,
   ),
   'inpm': instance.inpm,
-  'a20Volume': instance.a20Volume,
-  'ambientVolume': instance.ambientVolume,
-  'initialWeight': instance.initialWeight,
-  'finalWeight': instance.finalWeight,
-  'liquidWeight': instance.liquidWeight,
-  'density20': instance.density20,
-  'volume20': instance.volume20,
-  'spareVolume': instance.spareVolume,
   'destinyInformation': instance.destinyInformation
       ?.map((e) => e.toJson())
       .toList(),
+  'balanceParams': instance.balanceParams?.toJson(),
+  'skidSetaParams': instance.skidSetaParams?.toJson(),
 };
 
 _AtsDestinyInformation _$AtsDestinyInformationFromJson(
@@ -935,6 +921,58 @@ Map<String, dynamic> _$AtsDestinyInformationToJson(
         instance.destinyInformationSetaVerification,
       ),
 };
+
+_AtsBalanceParams _$AtsBalanceParamsFromJson(Map<String, dynamic> json) =>
+    _AtsBalanceParams(
+      initialWeight: (json['initialWeight'] as num?)?.toDouble(),
+      finalWeight: (json['finalWeight'] as num?)?.toDouble(),
+      liquidWeight: (json['liquidWeight'] as num?)?.toDouble(),
+      sampleDensity: (json['sampleDensity'] as num?)?.toDouble(),
+      sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
+      inpm: (json['inpm'] as num?)?.toDouble(),
+      spareVolume: (json['spareVolume'] as num?)?.toDouble(),
+      ambientVolume: (json['ambientVolume'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$AtsBalanceParamsToJson(_AtsBalanceParams instance) =>
+    <String, dynamic>{
+      'initialWeight': instance.initialWeight,
+      'finalWeight': instance.finalWeight,
+      'liquidWeight': instance.liquidWeight,
+      'sampleDensity': instance.sampleDensity,
+      'sampleTemperature': instance.sampleTemperature,
+      'inpm': instance.inpm,
+      'spareVolume': instance.spareVolume,
+      'ambientVolume': instance.ambientVolume,
+    };
+
+_AtsSkidSetaParams _$AtsSkidSetaParamsFromJson(Map<String, dynamic> json) =>
+    _AtsSkidSetaParams(
+      modality: const AtsParamsFormModalityOrNullConverter().fromJson(
+        json['modality'] as String?,
+      ),
+      sampleDensity: (json['sampleDensity'] as num?)?.toDouble(),
+      sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
+      assetTemperature: (json['assetTemperature'] as num?)?.toDouble(),
+      retiraVolume: (json['retiraVolume'] as num?)?.toDouble(),
+      inpm: (json['inpm'] as num?)?.toDouble(),
+      ambientVolume: (json['ambientVolume'] as num?)?.toDouble(),
+      spareVolume: (json['spareVolume'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$AtsSkidSetaParamsToJson(_AtsSkidSetaParams instance) =>
+    <String, dynamic>{
+      'modality': const AtsParamsFormModalityOrNullConverter().toJson(
+        instance.modality,
+      ),
+      'sampleDensity': instance.sampleDensity,
+      'sampleTemperature': instance.sampleTemperature,
+      'assetTemperature': instance.assetTemperature,
+      'retiraVolume': instance.retiraVolume,
+      'inpm': instance.inpm,
+      'ambientVolume': instance.ambientVolume,
+      'spareVolume': instance.spareVolume,
+    };
 
 _AtsExitStatus _$AtsExitStatusFromJson(Map<String, dynamic> json) =>
     _AtsExitStatus(

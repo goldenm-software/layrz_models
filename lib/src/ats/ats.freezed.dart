@@ -7057,22 +7057,12 @@ mixin _$AtsLoadingParamsFormInput {
 @AtsParamsFormModalityOrNullConverter() ParamsFormModality? get modality;/// `modality` Modality of the params form
 @AtsParamsFormModalityOrNullConverter() set modality(ParamsFormModality? value);/// `inpm` INPM code
  double? get inpm;/// `inpm` INPM code
- set inpm(double? value);/// `a20Volume` A20 volume only on modality SKID
- double? get a20Volume;/// `a20Volume` A20 volume only on modality SKID
- set a20Volume(double? value);/// `initialWeight` Initial weight only on modality balance
+ set inpm(double? value);/// `initialWeight` Initial weight only on modality balance
  double? get initialWeight;/// `initialWeight` Initial weight only on modality balance
  set initialWeight(double? value);/// `finalWeight` Final weight only on modality balance
  double? get finalWeight;/// `finalWeight` Final weight only on modality balance
- set finalWeight(double? value);/// `liquidWeight` Liquid weight only on modality balance
- double? get liquidWeight;/// `liquidWeight` Liquid weight only on modality balance
- set liquidWeight(double? value);/// `density20` Density at 20°C only on modality balance
- double? get density20;/// `density20` Density at 20°C only on modality balance
- set density20(double? value);/// `volume20` Volume at 20°C only on modality balance
- double? get volume20;/// `volume20` Volume at 20°C only on modality balance
- set volume20(double? value);/// `spareVolume` Spare volume only on modality balance
- double? get spareVolume;/// `spareVolume` Spare volume only on modality balance
- set spareVolume(double? value);/// `destinyInformation` Destiny information
- List<AtsDestinyInformationInput>? get destinyInformation;/// `destinyInformation` Destiny information
+ set finalWeight(double? value);/// `destinyInformation` Destiny information only on modality seta
+ List<AtsDestinyInformationInput>? get destinyInformation;/// `destinyInformation` Destiny information only on modality seta
  set destinyInformation(List<AtsDestinyInformationInput>? value);
 /// Create a copy of AtsLoadingParamsFormInput
 /// with the given fields replaced by the non-null parameter values.
@@ -7088,7 +7078,7 @@ $AtsLoadingParamsFormInputCopyWith<AtsLoadingParamsFormInput> get copyWith => _$
 
 @override
 String toString() {
-  return 'AtsLoadingParamsFormInput(id: $id, formNumber: $formNumber, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelSubtype: $fuelSubtype, ambientVolume: $ambientVolume, modality: $modality, inpm: $inpm, a20Volume: $a20Volume, initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, density20: $density20, volume20: $volume20, spareVolume: $spareVolume, destinyInformation: $destinyInformation)';
+  return 'AtsLoadingParamsFormInput(id: $id, formNumber: $formNumber, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelSubtype: $fuelSubtype, ambientVolume: $ambientVolume, modality: $modality, inpm: $inpm, initialWeight: $initialWeight, finalWeight: $finalWeight, destinyInformation: $destinyInformation)';
 }
 
 
@@ -7099,7 +7089,7 @@ abstract mixin class $AtsLoadingParamsFormInputCopyWith<$Res>  {
   factory $AtsLoadingParamsFormInputCopyWith(AtsLoadingParamsFormInput value, $Res Function(AtsLoadingParamsFormInput) _then) = _$AtsLoadingParamsFormInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? formNumber, String? assetId, String? receptionId, String? driver, double? sampleDensity, double? sampleTemperature, double? assetTemperature, double? analyzedAt,@AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType, String? fuelSubtype, double? ambientVolume,@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? inpm, double? a20Volume, double? initialWeight, double? finalWeight, double? liquidWeight, double? density20, double? volume20, double? spareVolume, List<AtsDestinyInformationInput>? destinyInformation
+ String? id, String? formNumber, String? assetId, String? receptionId, String? driver, double? sampleDensity, double? sampleTemperature, double? assetTemperature, double? analyzedAt,@AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType, String? fuelSubtype, double? ambientVolume,@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? inpm, double? initialWeight, double? finalWeight, List<AtsDestinyInformationInput>? destinyInformation
 });
 
 
@@ -7116,7 +7106,7 @@ class _$AtsLoadingParamsFormInputCopyWithImpl<$Res>
 
 /// Create a copy of AtsLoadingParamsFormInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? formNumber = freezed,Object? assetId = freezed,Object? receptionId = freezed,Object? driver = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? analyzedAt = freezed,Object? sampleType = freezed,Object? fuelSubtype = freezed,Object? ambientVolume = freezed,Object? modality = freezed,Object? inpm = freezed,Object? a20Volume = freezed,Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? density20 = freezed,Object? volume20 = freezed,Object? spareVolume = freezed,Object? destinyInformation = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? formNumber = freezed,Object? assetId = freezed,Object? receptionId = freezed,Object? driver = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? analyzedAt = freezed,Object? sampleType = freezed,Object? fuelSubtype = freezed,Object? ambientVolume = freezed,Object? modality = freezed,Object? inpm = freezed,Object? initialWeight = freezed,Object? finalWeight = freezed,Object? destinyInformation = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,formNumber: freezed == formNumber ? _self.formNumber : formNumber // ignore: cast_nullable_to_non_nullable
@@ -7132,13 +7122,8 @@ as AtsLoadingParamsSample?,fuelSubtype: freezed == fuelSubtype ? _self.fuelSubty
 as String?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
 as double?,modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
 as ParamsFormModality?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
-as double?,a20Volume: freezed == a20Volume ? _self.a20Volume : a20Volume // ignore: cast_nullable_to_non_nullable
 as double?,initialWeight: freezed == initialWeight ? _self.initialWeight : initialWeight // ignore: cast_nullable_to_non_nullable
 as double?,finalWeight: freezed == finalWeight ? _self.finalWeight : finalWeight // ignore: cast_nullable_to_non_nullable
-as double?,liquidWeight: freezed == liquidWeight ? _self.liquidWeight : liquidWeight // ignore: cast_nullable_to_non_nullable
-as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
-as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
-as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
 as double?,destinyInformation: freezed == destinyInformation ? _self.destinyInformation : destinyInformation // ignore: cast_nullable_to_non_nullable
 as List<AtsDestinyInformationInput>?,
   ));
@@ -7225,10 +7210,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? formNumber,  String? assetId,  String? receptionId,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType,  String? fuelSubtype,  double? ambientVolume, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? a20Volume,  double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? density20,  double? volume20,  double? spareVolume,  List<AtsDestinyInformationInput>? destinyInformation)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? formNumber,  String? assetId,  String? receptionId,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType,  String? fuelSubtype,  double? ambientVolume, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? initialWeight,  double? finalWeight,  List<AtsDestinyInformationInput>? destinyInformation)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsLoadingParamsFormInput() when $default != null:
-return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelSubtype,_that.ambientVolume,_that.modality,_that.inpm,_that.a20Volume,_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.density20,_that.volume20,_that.spareVolume,_that.destinyInformation);case _:
+return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelSubtype,_that.ambientVolume,_that.modality,_that.inpm,_that.initialWeight,_that.finalWeight,_that.destinyInformation);case _:
   return orElse();
 
 }
@@ -7246,10 +7231,10 @@ return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? formNumber,  String? assetId,  String? receptionId,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType,  String? fuelSubtype,  double? ambientVolume, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? a20Volume,  double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? density20,  double? volume20,  double? spareVolume,  List<AtsDestinyInformationInput>? destinyInformation)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? formNumber,  String? assetId,  String? receptionId,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType,  String? fuelSubtype,  double? ambientVolume, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? initialWeight,  double? finalWeight,  List<AtsDestinyInformationInput>? destinyInformation)  $default,) {final _that = this;
 switch (_that) {
 case _AtsLoadingParamsFormInput():
-return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelSubtype,_that.ambientVolume,_that.modality,_that.inpm,_that.a20Volume,_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.density20,_that.volume20,_that.spareVolume,_that.destinyInformation);case _:
+return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelSubtype,_that.ambientVolume,_that.modality,_that.inpm,_that.initialWeight,_that.finalWeight,_that.destinyInformation);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -7266,10 +7251,10 @@ return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? formNumber,  String? assetId,  String? receptionId,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType,  String? fuelSubtype,  double? ambientVolume, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? a20Volume,  double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? density20,  double? volume20,  double? spareVolume,  List<AtsDestinyInformationInput>? destinyInformation)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? formNumber,  String? assetId,  String? receptionId,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType,  String? fuelSubtype,  double? ambientVolume, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? initialWeight,  double? finalWeight,  List<AtsDestinyInformationInput>? destinyInformation)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsLoadingParamsFormInput() when $default != null:
-return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelSubtype,_that.ambientVolume,_that.modality,_that.inpm,_that.a20Volume,_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.density20,_that.volume20,_that.spareVolume,_that.destinyInformation);case _:
+return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelSubtype,_that.ambientVolume,_that.modality,_that.inpm,_that.initialWeight,_that.finalWeight,_that.destinyInformation);case _:
   return null;
 
 }
@@ -7281,7 +7266,7 @@ return $default(_that.id,_that.formNumber,_that.assetId,_that.receptionId,_that.
 @JsonSerializable()
 
 class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
-   _AtsLoadingParamsFormInput({this.id, this.formNumber, this.assetId, this.receptionId, this.driver, this.sampleDensity, this.sampleTemperature, this.assetTemperature, this.analyzedAt, @AtsLoadingParamsSampleOrNullConverter() this.sampleType, this.fuelSubtype, this.ambientVolume, @AtsParamsFormModalityOrNullConverter() this.modality, this.inpm, this.a20Volume, this.initialWeight, this.finalWeight, this.liquidWeight, this.density20, this.volume20, this.spareVolume, this.destinyInformation});
+   _AtsLoadingParamsFormInput({this.id, this.formNumber, this.assetId, this.receptionId, this.driver, this.sampleDensity, this.sampleTemperature, this.assetTemperature, this.analyzedAt, @AtsLoadingParamsSampleOrNullConverter() this.sampleType, this.fuelSubtype, this.ambientVolume, @AtsParamsFormModalityOrNullConverter() this.modality, this.inpm, this.initialWeight, this.finalWeight, this.destinyInformation});
   factory _AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormInputFromJson(json);
 
 /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
@@ -7312,21 +7297,11 @@ class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
 @override@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality;
 /// `inpm` INPM code
 @override  double? inpm;
-/// `a20Volume` A20 volume only on modality SKID
-@override  double? a20Volume;
 /// `initialWeight` Initial weight only on modality balance
 @override  double? initialWeight;
 /// `finalWeight` Final weight only on modality balance
 @override  double? finalWeight;
-/// `liquidWeight` Liquid weight only on modality balance
-@override  double? liquidWeight;
-/// `density20` Density at 20°C only on modality balance
-@override  double? density20;
-/// `volume20` Volume at 20°C only on modality balance
-@override  double? volume20;
-/// `spareVolume` Spare volume only on modality balance
-@override  double? spareVolume;
-/// `destinyInformation` Destiny information
+/// `destinyInformation` Destiny information only on modality seta
 @override  List<AtsDestinyInformationInput>? destinyInformation;
 
 /// Create a copy of AtsLoadingParamsFormInput
@@ -7344,7 +7319,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'AtsLoadingParamsFormInput(id: $id, formNumber: $formNumber, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelSubtype: $fuelSubtype, ambientVolume: $ambientVolume, modality: $modality, inpm: $inpm, a20Volume: $a20Volume, initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, density20: $density20, volume20: $volume20, spareVolume: $spareVolume, destinyInformation: $destinyInformation)';
+  return 'AtsLoadingParamsFormInput(id: $id, formNumber: $formNumber, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelSubtype: $fuelSubtype, ambientVolume: $ambientVolume, modality: $modality, inpm: $inpm, initialWeight: $initialWeight, finalWeight: $finalWeight, destinyInformation: $destinyInformation)';
 }
 
 
@@ -7355,7 +7330,7 @@ abstract mixin class _$AtsLoadingParamsFormInputCopyWith<$Res> implements $AtsLo
   factory _$AtsLoadingParamsFormInputCopyWith(_AtsLoadingParamsFormInput value, $Res Function(_AtsLoadingParamsFormInput) _then) = __$AtsLoadingParamsFormInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? formNumber, String? assetId, String? receptionId, String? driver, double? sampleDensity, double? sampleTemperature, double? assetTemperature, double? analyzedAt,@AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType, String? fuelSubtype, double? ambientVolume,@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? inpm, double? a20Volume, double? initialWeight, double? finalWeight, double? liquidWeight, double? density20, double? volume20, double? spareVolume, List<AtsDestinyInformationInput>? destinyInformation
+ String? id, String? formNumber, String? assetId, String? receptionId, String? driver, double? sampleDensity, double? sampleTemperature, double? assetTemperature, double? analyzedAt,@AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType, String? fuelSubtype, double? ambientVolume,@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? inpm, double? initialWeight, double? finalWeight, List<AtsDestinyInformationInput>? destinyInformation
 });
 
 
@@ -7372,7 +7347,7 @@ class __$AtsLoadingParamsFormInputCopyWithImpl<$Res>
 
 /// Create a copy of AtsLoadingParamsFormInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? formNumber = freezed,Object? assetId = freezed,Object? receptionId = freezed,Object? driver = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? analyzedAt = freezed,Object? sampleType = freezed,Object? fuelSubtype = freezed,Object? ambientVolume = freezed,Object? modality = freezed,Object? inpm = freezed,Object? a20Volume = freezed,Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? density20 = freezed,Object? volume20 = freezed,Object? spareVolume = freezed,Object? destinyInformation = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? formNumber = freezed,Object? assetId = freezed,Object? receptionId = freezed,Object? driver = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? analyzedAt = freezed,Object? sampleType = freezed,Object? fuelSubtype = freezed,Object? ambientVolume = freezed,Object? modality = freezed,Object? inpm = freezed,Object? initialWeight = freezed,Object? finalWeight = freezed,Object? destinyInformation = freezed,}) {
   return _then(_AtsLoadingParamsFormInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,formNumber: freezed == formNumber ? _self.formNumber : formNumber // ignore: cast_nullable_to_non_nullable
@@ -7388,13 +7363,8 @@ as AtsLoadingParamsSample?,fuelSubtype: freezed == fuelSubtype ? _self.fuelSubty
 as String?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
 as double?,modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
 as ParamsFormModality?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
-as double?,a20Volume: freezed == a20Volume ? _self.a20Volume : a20Volume // ignore: cast_nullable_to_non_nullable
 as double?,initialWeight: freezed == initialWeight ? _self.initialWeight : initialWeight // ignore: cast_nullable_to_non_nullable
 as double?,finalWeight: freezed == finalWeight ? _self.finalWeight : finalWeight // ignore: cast_nullable_to_non_nullable
-as double?,liquidWeight: freezed == liquidWeight ? _self.liquidWeight : liquidWeight // ignore: cast_nullable_to_non_nullable
-as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
-as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
-as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
 as double?,destinyInformation: freezed == destinyInformation ? _self.destinyInformation : destinyInformation // ignore: cast_nullable_to_non_nullable
 as List<AtsDestinyInformationInput>?,
   ));
@@ -7687,16 +7657,10 @@ mixin _$AtsLoadingParamsForm {
  String? get formNumber;/// `fuelSubtype` Fuel ANP
  String? get fuelSubtype;/// `modality` Modality of the params form
 @AtsParamsFormModalityOrNullConverter() ParamsFormModality? get modality;/// `inpm` INPM code
- double? get inpm;/// `a20Volume` A20 volume only on modality SKID
- double? get a20Volume;/// `ambientVolume` Ambient volume only on modality SKID
- double? get ambientVolume;/// `initialWeight` Initial weight only on modality balance
- double? get initialWeight;/// `finalWeight` Final weight only on modality balance
- double? get finalWeight;/// `liquidWeight` Liquid weight only on modality balance
- double? get liquidWeight;/// `density20` Density at 20°C only on modality balance
- double? get density20;/// `volume20` Volume at 20°C only on modality balance
- double? get volume20;/// `spareVolume` Spare volume only on modality balance
- double? get spareVolume;/// `destinyInformation` Destiny information
- List<AtsDestinyInformation>? get destinyInformation;
+ double? get inpm;/// `destinyInformation` Destiny information
+ List<AtsDestinyInformation>? get destinyInformation;/// `balanceParams` Balance params
+ AtsBalanceParams? get balanceParams;/// `skidSetaParams` Skid Seta params
+ AtsSkidSetaParams? get skidSetaParams;
 /// Create a copy of AtsLoadingParamsForm
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7709,16 +7673,16 @@ $AtsLoadingParamsFormCopyWith<AtsLoadingParamsForm> get copyWith => _$AtsLoading
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsLoadingParamsForm&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.receptionId, receptionId) || other.receptionId == receptionId)&&(identical(other.reception, reception) || other.reception == reception)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.analyzedAt, analyzedAt) || other.analyzedAt == analyzedAt)&&(identical(other.sampleType, sampleType) || other.sampleType == sampleType)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.formNumber, formNumber) || other.formNumber == formNumber)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.a20Volume, a20Volume) || other.a20Volume == a20Volume)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.initialWeight, initialWeight) || other.initialWeight == initialWeight)&&(identical(other.finalWeight, finalWeight) || other.finalWeight == finalWeight)&&(identical(other.liquidWeight, liquidWeight) || other.liquidWeight == liquidWeight)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume)&&const DeepCollectionEquality().equals(other.destinyInformation, destinyInformation));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsLoadingParamsForm&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.receptionId, receptionId) || other.receptionId == receptionId)&&(identical(other.reception, reception) || other.reception == reception)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.analyzedAt, analyzedAt) || other.analyzedAt == analyzedAt)&&(identical(other.sampleType, sampleType) || other.sampleType == sampleType)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.formNumber, formNumber) || other.formNumber == formNumber)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&const DeepCollectionEquality().equals(other.destinyInformation, destinyInformation)&&(identical(other.balanceParams, balanceParams) || other.balanceParams == balanceParams)&&(identical(other.skidSetaParams, skidSetaParams) || other.skidSetaParams == skidSetaParams));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,receptionId,reception,driver,sampleDensity,sampleTemperature,assetTemperature,analyzedAt,sampleType,fuelType,formNumber,fuelSubtype,modality,inpm,a20Volume,ambientVolume,initialWeight,finalWeight,liquidWeight,density20,volume20,spareVolume,const DeepCollectionEquality().hash(destinyInformation)]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,receptionId,reception,driver,sampleDensity,sampleTemperature,assetTemperature,analyzedAt,sampleType,fuelType,formNumber,fuelSubtype,modality,inpm,const DeepCollectionEquality().hash(destinyInformation),balanceParams,skidSetaParams]);
 
 @override
 String toString() {
-  return 'AtsLoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber, fuelSubtype: $fuelSubtype, modality: $modality, inpm: $inpm, a20Volume: $a20Volume, ambientVolume: $ambientVolume, initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, density20: $density20, volume20: $volume20, spareVolume: $spareVolume, destinyInformation: $destinyInformation)';
+  return 'AtsLoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber, fuelSubtype: $fuelSubtype, modality: $modality, inpm: $inpm, destinyInformation: $destinyInformation, balanceParams: $balanceParams, skidSetaParams: $skidSetaParams)';
 }
 
 
@@ -7729,11 +7693,11 @@ abstract mixin class $AtsLoadingParamsFormCopyWith<$Res>  {
   factory $AtsLoadingParamsFormCopyWith(AtsLoadingParamsForm value, $Res Function(AtsLoadingParamsForm) _then) = _$AtsLoadingParamsFormCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? receptionId, AtsReception? reception, String? driver, double? sampleDensity, double? sampleTemperature, double? assetTemperature,@TimestampOrNullConverter() DateTime? analyzedAt,@AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,@AtsFuelTypeOrNullConverter() AtsFuelType? fuelType, String? formNumber, String? fuelSubtype,@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? inpm, double? a20Volume, double? ambientVolume, double? initialWeight, double? finalWeight, double? liquidWeight, double? density20, double? volume20, double? spareVolume, List<AtsDestinyInformation>? destinyInformation
+ String? id, String? assetId, Asset? asset, String? receptionId, AtsReception? reception, String? driver, double? sampleDensity, double? sampleTemperature, double? assetTemperature,@TimestampOrNullConverter() DateTime? analyzedAt,@AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,@AtsFuelTypeOrNullConverter() AtsFuelType? fuelType, String? formNumber, String? fuelSubtype,@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? inpm, List<AtsDestinyInformation>? destinyInformation, AtsBalanceParams? balanceParams, AtsSkidSetaParams? skidSetaParams
 });
 
 
-$AssetCopyWith<$Res>? get asset;$AtsReceptionCopyWith<$Res>? get reception;
+$AssetCopyWith<$Res>? get asset;$AtsReceptionCopyWith<$Res>? get reception;$AtsBalanceParamsCopyWith<$Res>? get balanceParams;$AtsSkidSetaParamsCopyWith<$Res>? get skidSetaParams;
 
 }
 /// @nodoc
@@ -7746,7 +7710,7 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res>
 
 /// Create a copy of AtsLoadingParamsForm
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? receptionId = freezed,Object? reception = freezed,Object? driver = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? analyzedAt = freezed,Object? sampleType = freezed,Object? fuelType = freezed,Object? formNumber = freezed,Object? fuelSubtype = freezed,Object? modality = freezed,Object? inpm = freezed,Object? a20Volume = freezed,Object? ambientVolume = freezed,Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? density20 = freezed,Object? volume20 = freezed,Object? spareVolume = freezed,Object? destinyInformation = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? receptionId = freezed,Object? reception = freezed,Object? driver = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? analyzedAt = freezed,Object? sampleType = freezed,Object? fuelType = freezed,Object? formNumber = freezed,Object? fuelSubtype = freezed,Object? modality = freezed,Object? inpm = freezed,Object? destinyInformation = freezed,Object? balanceParams = freezed,Object? skidSetaParams = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -7764,16 +7728,10 @@ as AtsFuelType?,formNumber: freezed == formNumber ? _self.formNumber : formNumbe
 as String?,fuelSubtype: freezed == fuelSubtype ? _self.fuelSubtype : fuelSubtype // ignore: cast_nullable_to_non_nullable
 as String?,modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
 as ParamsFormModality?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
-as double?,a20Volume: freezed == a20Volume ? _self.a20Volume : a20Volume // ignore: cast_nullable_to_non_nullable
-as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
-as double?,initialWeight: freezed == initialWeight ? _self.initialWeight : initialWeight // ignore: cast_nullable_to_non_nullable
-as double?,finalWeight: freezed == finalWeight ? _self.finalWeight : finalWeight // ignore: cast_nullable_to_non_nullable
-as double?,liquidWeight: freezed == liquidWeight ? _self.liquidWeight : liquidWeight // ignore: cast_nullable_to_non_nullable
-as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
-as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
-as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
 as double?,destinyInformation: freezed == destinyInformation ? _self.destinyInformation : destinyInformation // ignore: cast_nullable_to_non_nullable
-as List<AtsDestinyInformation>?,
+as List<AtsDestinyInformation>?,balanceParams: freezed == balanceParams ? _self.balanceParams : balanceParams // ignore: cast_nullable_to_non_nullable
+as AtsBalanceParams?,skidSetaParams: freezed == skidSetaParams ? _self.skidSetaParams : skidSetaParams // ignore: cast_nullable_to_non_nullable
+as AtsSkidSetaParams?,
   ));
 }
 /// Create a copy of AtsLoadingParamsForm
@@ -7799,6 +7757,30 @@ $AtsReceptionCopyWith<$Res>? get reception {
 
   return $AtsReceptionCopyWith<$Res>(_self.reception!, (value) {
     return _then(_self.copyWith(reception: value));
+  });
+}/// Create a copy of AtsLoadingParamsForm
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsBalanceParamsCopyWith<$Res>? get balanceParams {
+    if (_self.balanceParams == null) {
+    return null;
+  }
+
+  return $AtsBalanceParamsCopyWith<$Res>(_self.balanceParams!, (value) {
+    return _then(_self.copyWith(balanceParams: value));
+  });
+}/// Create a copy of AtsLoadingParamsForm
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsSkidSetaParamsCopyWith<$Res>? get skidSetaParams {
+    if (_self.skidSetaParams == null) {
+    return null;
+  }
+
+  return $AtsSkidSetaParamsCopyWith<$Res>(_self.skidSetaParams!, (value) {
+    return _then(_self.copyWith(skidSetaParams: value));
   });
 }
 }
@@ -7882,10 +7864,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? receptionId,  AtsReception? reception,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature, @TimestampOrNullConverter()  DateTime? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType, @AtsFuelTypeOrNullConverter()  AtsFuelType? fuelType,  String? formNumber,  String? fuelSubtype, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? a20Volume,  double? ambientVolume,  double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? density20,  double? volume20,  double? spareVolume,  List<AtsDestinyInformation>? destinyInformation)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? receptionId,  AtsReception? reception,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature, @TimestampOrNullConverter()  DateTime? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType, @AtsFuelTypeOrNullConverter()  AtsFuelType? fuelType,  String? formNumber,  String? fuelSubtype, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  List<AtsDestinyInformation>? destinyInformation,  AtsBalanceParams? balanceParams,  AtsSkidSetaParams? skidSetaParams)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsLoadingParamsForm() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.reception,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelType,_that.formNumber,_that.fuelSubtype,_that.modality,_that.inpm,_that.a20Volume,_that.ambientVolume,_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.density20,_that.volume20,_that.spareVolume,_that.destinyInformation);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.reception,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelType,_that.formNumber,_that.fuelSubtype,_that.modality,_that.inpm,_that.destinyInformation,_that.balanceParams,_that.skidSetaParams);case _:
   return orElse();
 
 }
@@ -7903,10 +7885,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.recep
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? receptionId,  AtsReception? reception,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature, @TimestampOrNullConverter()  DateTime? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType, @AtsFuelTypeOrNullConverter()  AtsFuelType? fuelType,  String? formNumber,  String? fuelSubtype, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? a20Volume,  double? ambientVolume,  double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? density20,  double? volume20,  double? spareVolume,  List<AtsDestinyInformation>? destinyInformation)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? receptionId,  AtsReception? reception,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature, @TimestampOrNullConverter()  DateTime? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType, @AtsFuelTypeOrNullConverter()  AtsFuelType? fuelType,  String? formNumber,  String? fuelSubtype, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  List<AtsDestinyInformation>? destinyInformation,  AtsBalanceParams? balanceParams,  AtsSkidSetaParams? skidSetaParams)  $default,) {final _that = this;
 switch (_that) {
 case _AtsLoadingParamsForm():
-return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.reception,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelType,_that.formNumber,_that.fuelSubtype,_that.modality,_that.inpm,_that.a20Volume,_that.ambientVolume,_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.density20,_that.volume20,_that.spareVolume,_that.destinyInformation);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.reception,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelType,_that.formNumber,_that.fuelSubtype,_that.modality,_that.inpm,_that.destinyInformation,_that.balanceParams,_that.skidSetaParams);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -7923,10 +7905,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.recep
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? receptionId,  AtsReception? reception,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature, @TimestampOrNullConverter()  DateTime? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType, @AtsFuelTypeOrNullConverter()  AtsFuelType? fuelType,  String? formNumber,  String? fuelSubtype, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  double? a20Volume,  double? ambientVolume,  double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? density20,  double? volume20,  double? spareVolume,  List<AtsDestinyInformation>? destinyInformation)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? receptionId,  AtsReception? reception,  String? driver,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature, @TimestampOrNullConverter()  DateTime? analyzedAt, @AtsLoadingParamsSampleOrNullConverter()  AtsLoadingParamsSample? sampleType, @AtsFuelTypeOrNullConverter()  AtsFuelType? fuelType,  String? formNumber,  String? fuelSubtype, @AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? inpm,  List<AtsDestinyInformation>? destinyInformation,  AtsBalanceParams? balanceParams,  AtsSkidSetaParams? skidSetaParams)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsLoadingParamsForm() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.reception,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelType,_that.formNumber,_that.fuelSubtype,_that.modality,_that.inpm,_that.a20Volume,_that.ambientVolume,_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.density20,_that.volume20,_that.spareVolume,_that.destinyInformation);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.reception,_that.driver,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.analyzedAt,_that.sampleType,_that.fuelType,_that.formNumber,_that.fuelSubtype,_that.modality,_that.inpm,_that.destinyInformation,_that.balanceParams,_that.skidSetaParams);case _:
   return null;
 
 }
@@ -7938,7 +7920,7 @@ return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.recep
 @JsonSerializable()
 
 class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
-   _AtsLoadingParamsForm({this.id, this.assetId, this.asset, this.receptionId, this.reception, this.driver, this.sampleDensity, this.sampleTemperature, this.assetTemperature, @TimestampOrNullConverter() this.analyzedAt, @AtsLoadingParamsSampleOrNullConverter() this.sampleType, @AtsFuelTypeOrNullConverter() this.fuelType, this.formNumber, this.fuelSubtype, @AtsParamsFormModalityOrNullConverter() this.modality, this.inpm, this.a20Volume, this.ambientVolume, this.initialWeight, this.finalWeight, this.liquidWeight, this.density20, this.volume20, this.spareVolume, final  List<AtsDestinyInformation>? destinyInformation}): _destinyInformation = destinyInformation;
+   _AtsLoadingParamsForm({this.id, this.assetId, this.asset, this.receptionId, this.reception, this.driver, this.sampleDensity, this.sampleTemperature, this.assetTemperature, @TimestampOrNullConverter() this.analyzedAt, @AtsLoadingParamsSampleOrNullConverter() this.sampleType, @AtsFuelTypeOrNullConverter() this.fuelType, this.formNumber, this.fuelSubtype, @AtsParamsFormModalityOrNullConverter() this.modality, this.inpm, final  List<AtsDestinyInformation>? destinyInformation, this.balanceParams, this.skidSetaParams}): _destinyInformation = destinyInformation;
   factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormFromJson(json);
 
 /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
@@ -7973,22 +7955,6 @@ class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
 @override@AtsParamsFormModalityOrNullConverter() final  ParamsFormModality? modality;
 /// `inpm` INPM code
 @override final  double? inpm;
-/// `a20Volume` A20 volume only on modality SKID
-@override final  double? a20Volume;
-/// `ambientVolume` Ambient volume only on modality SKID
-@override final  double? ambientVolume;
-/// `initialWeight` Initial weight only on modality balance
-@override final  double? initialWeight;
-/// `finalWeight` Final weight only on modality balance
-@override final  double? finalWeight;
-/// `liquidWeight` Liquid weight only on modality balance
-@override final  double? liquidWeight;
-/// `density20` Density at 20°C only on modality balance
-@override final  double? density20;
-/// `volume20` Volume at 20°C only on modality balance
-@override final  double? volume20;
-/// `spareVolume` Spare volume only on modality balance
-@override final  double? spareVolume;
 /// `destinyInformation` Destiny information
  final  List<AtsDestinyInformation>? _destinyInformation;
 /// `destinyInformation` Destiny information
@@ -8000,6 +7966,10 @@ class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
   return EqualUnmodifiableListView(value);
 }
 
+/// `balanceParams` Balance params
+@override final  AtsBalanceParams? balanceParams;
+/// `skidSetaParams` Skid Seta params
+@override final  AtsSkidSetaParams? skidSetaParams;
 
 /// Create a copy of AtsLoadingParamsForm
 /// with the given fields replaced by the non-null parameter values.
@@ -8014,16 +7984,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsLoadingParamsForm&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.receptionId, receptionId) || other.receptionId == receptionId)&&(identical(other.reception, reception) || other.reception == reception)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.analyzedAt, analyzedAt) || other.analyzedAt == analyzedAt)&&(identical(other.sampleType, sampleType) || other.sampleType == sampleType)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.formNumber, formNumber) || other.formNumber == formNumber)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.a20Volume, a20Volume) || other.a20Volume == a20Volume)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.initialWeight, initialWeight) || other.initialWeight == initialWeight)&&(identical(other.finalWeight, finalWeight) || other.finalWeight == finalWeight)&&(identical(other.liquidWeight, liquidWeight) || other.liquidWeight == liquidWeight)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume)&&const DeepCollectionEquality().equals(other._destinyInformation, _destinyInformation));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsLoadingParamsForm&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.receptionId, receptionId) || other.receptionId == receptionId)&&(identical(other.reception, reception) || other.reception == reception)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.analyzedAt, analyzedAt) || other.analyzedAt == analyzedAt)&&(identical(other.sampleType, sampleType) || other.sampleType == sampleType)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.formNumber, formNumber) || other.formNumber == formNumber)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&const DeepCollectionEquality().equals(other._destinyInformation, _destinyInformation)&&(identical(other.balanceParams, balanceParams) || other.balanceParams == balanceParams)&&(identical(other.skidSetaParams, skidSetaParams) || other.skidSetaParams == skidSetaParams));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,receptionId,reception,driver,sampleDensity,sampleTemperature,assetTemperature,analyzedAt,sampleType,fuelType,formNumber,fuelSubtype,modality,inpm,a20Volume,ambientVolume,initialWeight,finalWeight,liquidWeight,density20,volume20,spareVolume,const DeepCollectionEquality().hash(_destinyInformation)]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,receptionId,reception,driver,sampleDensity,sampleTemperature,assetTemperature,analyzedAt,sampleType,fuelType,formNumber,fuelSubtype,modality,inpm,const DeepCollectionEquality().hash(_destinyInformation),balanceParams,skidSetaParams]);
 
 @override
 String toString() {
-  return 'AtsLoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber, fuelSubtype: $fuelSubtype, modality: $modality, inpm: $inpm, a20Volume: $a20Volume, ambientVolume: $ambientVolume, initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, density20: $density20, volume20: $volume20, spareVolume: $spareVolume, destinyInformation: $destinyInformation)';
+  return 'AtsLoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber, fuelSubtype: $fuelSubtype, modality: $modality, inpm: $inpm, destinyInformation: $destinyInformation, balanceParams: $balanceParams, skidSetaParams: $skidSetaParams)';
 }
 
 
@@ -8034,11 +8004,11 @@ abstract mixin class _$AtsLoadingParamsFormCopyWith<$Res> implements $AtsLoading
   factory _$AtsLoadingParamsFormCopyWith(_AtsLoadingParamsForm value, $Res Function(_AtsLoadingParamsForm) _then) = __$AtsLoadingParamsFormCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? receptionId, AtsReception? reception, String? driver, double? sampleDensity, double? sampleTemperature, double? assetTemperature,@TimestampOrNullConverter() DateTime? analyzedAt,@AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,@AtsFuelTypeOrNullConverter() AtsFuelType? fuelType, String? formNumber, String? fuelSubtype,@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? inpm, double? a20Volume, double? ambientVolume, double? initialWeight, double? finalWeight, double? liquidWeight, double? density20, double? volume20, double? spareVolume, List<AtsDestinyInformation>? destinyInformation
+ String? id, String? assetId, Asset? asset, String? receptionId, AtsReception? reception, String? driver, double? sampleDensity, double? sampleTemperature, double? assetTemperature,@TimestampOrNullConverter() DateTime? analyzedAt,@AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,@AtsFuelTypeOrNullConverter() AtsFuelType? fuelType, String? formNumber, String? fuelSubtype,@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? inpm, List<AtsDestinyInformation>? destinyInformation, AtsBalanceParams? balanceParams, AtsSkidSetaParams? skidSetaParams
 });
 
 
-@override $AssetCopyWith<$Res>? get asset;@override $AtsReceptionCopyWith<$Res>? get reception;
+@override $AssetCopyWith<$Res>? get asset;@override $AtsReceptionCopyWith<$Res>? get reception;@override $AtsBalanceParamsCopyWith<$Res>? get balanceParams;@override $AtsSkidSetaParamsCopyWith<$Res>? get skidSetaParams;
 
 }
 /// @nodoc
@@ -8051,7 +8021,7 @@ class __$AtsLoadingParamsFormCopyWithImpl<$Res>
 
 /// Create a copy of AtsLoadingParamsForm
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? receptionId = freezed,Object? reception = freezed,Object? driver = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? analyzedAt = freezed,Object? sampleType = freezed,Object? fuelType = freezed,Object? formNumber = freezed,Object? fuelSubtype = freezed,Object? modality = freezed,Object? inpm = freezed,Object? a20Volume = freezed,Object? ambientVolume = freezed,Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? density20 = freezed,Object? volume20 = freezed,Object? spareVolume = freezed,Object? destinyInformation = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? receptionId = freezed,Object? reception = freezed,Object? driver = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? analyzedAt = freezed,Object? sampleType = freezed,Object? fuelType = freezed,Object? formNumber = freezed,Object? fuelSubtype = freezed,Object? modality = freezed,Object? inpm = freezed,Object? destinyInformation = freezed,Object? balanceParams = freezed,Object? skidSetaParams = freezed,}) {
   return _then(_AtsLoadingParamsForm(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -8069,16 +8039,10 @@ as AtsFuelType?,formNumber: freezed == formNumber ? _self.formNumber : formNumbe
 as String?,fuelSubtype: freezed == fuelSubtype ? _self.fuelSubtype : fuelSubtype // ignore: cast_nullable_to_non_nullable
 as String?,modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
 as ParamsFormModality?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
-as double?,a20Volume: freezed == a20Volume ? _self.a20Volume : a20Volume // ignore: cast_nullable_to_non_nullable
-as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
-as double?,initialWeight: freezed == initialWeight ? _self.initialWeight : initialWeight // ignore: cast_nullable_to_non_nullable
-as double?,finalWeight: freezed == finalWeight ? _self.finalWeight : finalWeight // ignore: cast_nullable_to_non_nullable
-as double?,liquidWeight: freezed == liquidWeight ? _self.liquidWeight : liquidWeight // ignore: cast_nullable_to_non_nullable
-as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
-as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
-as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
 as double?,destinyInformation: freezed == destinyInformation ? _self._destinyInformation : destinyInformation // ignore: cast_nullable_to_non_nullable
-as List<AtsDestinyInformation>?,
+as List<AtsDestinyInformation>?,balanceParams: freezed == balanceParams ? _self.balanceParams : balanceParams // ignore: cast_nullable_to_non_nullable
+as AtsBalanceParams?,skidSetaParams: freezed == skidSetaParams ? _self.skidSetaParams : skidSetaParams // ignore: cast_nullable_to_non_nullable
+as AtsSkidSetaParams?,
   ));
 }
 
@@ -8105,6 +8069,30 @@ $AtsReceptionCopyWith<$Res>? get reception {
 
   return $AtsReceptionCopyWith<$Res>(_self.reception!, (value) {
     return _then(_self.copyWith(reception: value));
+  });
+}/// Create a copy of AtsLoadingParamsForm
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsBalanceParamsCopyWith<$Res>? get balanceParams {
+    if (_self.balanceParams == null) {
+    return null;
+  }
+
+  return $AtsBalanceParamsCopyWith<$Res>(_self.balanceParams!, (value) {
+    return _then(_self.copyWith(balanceParams: value));
+  });
+}/// Create a copy of AtsLoadingParamsForm
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsSkidSetaParamsCopyWith<$Res>? get skidSetaParams {
+    if (_self.skidSetaParams == null) {
+    return null;
+  }
+
+  return $AtsSkidSetaParamsCopyWith<$Res>(_self.skidSetaParams!, (value) {
+    return _then(_self.copyWith(skidSetaParams: value));
   });
 }
 }
@@ -8378,6 +8366,626 @@ capacity: freezed == capacity ? _self.capacity : capacity // ignore: cast_nullab
 as double?,replesnishOrWithdraw: freezed == replesnishOrWithdraw ? _self.replesnishOrWithdraw : replesnishOrWithdraw // ignore: cast_nullable_to_non_nullable
 as double?,destinyInformationSetaVerification: freezed == destinyInformationSetaVerification ? _self.destinyInformationSetaVerification : destinyInformationSetaVerification // ignore: cast_nullable_to_non_nullable
 as AtsSetaVerification?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$AtsBalanceParams {
+
+/// `initialWeight` Initial weight only on modality balance
+ double? get initialWeight;/// `finalWeight` Final weight only on modality balance
+ double? get finalWeight;/// `liquidWeight` Liquid weight only on modality balance
+ double? get liquidWeight;/// `sampleDensity` is loading params form density
+ double? get sampleDensity;/// `sampleTemperature` is loading params form temperature
+ double? get sampleTemperature;// /// `density20` Density at 20°C only on modality balance
+// double? density20,
+/// `inpm` INPM code
+ double? get inpm;// /// `volume20` Volume at 20°C only on modality balance
+// double? volume20,
+/// `spareVolume` Spare volume
+ double? get spareVolume;/// `ambientVolume` Ambient volume
+ double? get ambientVolume;
+/// Create a copy of AtsBalanceParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsBalanceParamsCopyWith<AtsBalanceParams> get copyWith => _$AtsBalanceParamsCopyWithImpl<AtsBalanceParams>(this as AtsBalanceParams, _$identity);
+
+  /// Serializes this AtsBalanceParams to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsBalanceParams&&(identical(other.initialWeight, initialWeight) || other.initialWeight == initialWeight)&&(identical(other.finalWeight, finalWeight) || other.finalWeight == finalWeight)&&(identical(other.liquidWeight, liquidWeight) || other.liquidWeight == liquidWeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,initialWeight,finalWeight,liquidWeight,sampleDensity,sampleTemperature,inpm,spareVolume,ambientVolume);
+
+@override
+String toString() {
+  return 'AtsBalanceParams(initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, inpm: $inpm, spareVolume: $spareVolume, ambientVolume: $ambientVolume)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsBalanceParamsCopyWith<$Res>  {
+  factory $AtsBalanceParamsCopyWith(AtsBalanceParams value, $Res Function(AtsBalanceParams) _then) = _$AtsBalanceParamsCopyWithImpl;
+@useResult
+$Res call({
+ double? initialWeight, double? finalWeight, double? liquidWeight, double? sampleDensity, double? sampleTemperature, double? inpm, double? spareVolume, double? ambientVolume
+});
+
+
+
+
+}
+/// @nodoc
+class _$AtsBalanceParamsCopyWithImpl<$Res>
+    implements $AtsBalanceParamsCopyWith<$Res> {
+  _$AtsBalanceParamsCopyWithImpl(this._self, this._then);
+
+  final AtsBalanceParams _self;
+  final $Res Function(AtsBalanceParams) _then;
+
+/// Create a copy of AtsBalanceParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? inpm = freezed,Object? spareVolume = freezed,Object? ambientVolume = freezed,}) {
+  return _then(_self.copyWith(
+initialWeight: freezed == initialWeight ? _self.initialWeight : initialWeight // ignore: cast_nullable_to_non_nullable
+as double?,finalWeight: freezed == finalWeight ? _self.finalWeight : finalWeight // ignore: cast_nullable_to_non_nullable
+as double?,liquidWeight: freezed == liquidWeight ? _self.liquidWeight : liquidWeight // ignore: cast_nullable_to_non_nullable
+as double?,sampleDensity: freezed == sampleDensity ? _self.sampleDensity : sampleDensity // ignore: cast_nullable_to_non_nullable
+as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
+as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
+as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AtsBalanceParams].
+extension AtsBalanceParamsPatterns on AtsBalanceParams {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsBalanceParams value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsBalanceParams() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsBalanceParams value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsBalanceParams():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsBalanceParams value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsBalanceParams() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? inpm,  double? spareVolume,  double? ambientVolume)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsBalanceParams() when $default != null:
+return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.inpm,_that.spareVolume,_that.ambientVolume);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? inpm,  double? spareVolume,  double? ambientVolume)  $default,) {final _that = this;
+switch (_that) {
+case _AtsBalanceParams():
+return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.inpm,_that.spareVolume,_that.ambientVolume);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? inpm,  double? spareVolume,  double? ambientVolume)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsBalanceParams() when $default != null:
+return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.inpm,_that.spareVolume,_that.ambientVolume);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsBalanceParams implements AtsBalanceParams {
+   _AtsBalanceParams({this.initialWeight, this.finalWeight, this.liquidWeight, this.sampleDensity, this.sampleTemperature, this.inpm, this.spareVolume, this.ambientVolume});
+  factory _AtsBalanceParams.fromJson(Map<String, dynamic> json) => _$AtsBalanceParamsFromJson(json);
+
+/// `initialWeight` Initial weight only on modality balance
+@override final  double? initialWeight;
+/// `finalWeight` Final weight only on modality balance
+@override final  double? finalWeight;
+/// `liquidWeight` Liquid weight only on modality balance
+@override final  double? liquidWeight;
+/// `sampleDensity` is loading params form density
+@override final  double? sampleDensity;
+/// `sampleTemperature` is loading params form temperature
+@override final  double? sampleTemperature;
+// /// `density20` Density at 20°C only on modality balance
+// double? density20,
+/// `inpm` INPM code
+@override final  double? inpm;
+// /// `volume20` Volume at 20°C only on modality balance
+// double? volume20,
+/// `spareVolume` Spare volume
+@override final  double? spareVolume;
+/// `ambientVolume` Ambient volume
+@override final  double? ambientVolume;
+
+/// Create a copy of AtsBalanceParams
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsBalanceParamsCopyWith<_AtsBalanceParams> get copyWith => __$AtsBalanceParamsCopyWithImpl<_AtsBalanceParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsBalanceParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsBalanceParams&&(identical(other.initialWeight, initialWeight) || other.initialWeight == initialWeight)&&(identical(other.finalWeight, finalWeight) || other.finalWeight == finalWeight)&&(identical(other.liquidWeight, liquidWeight) || other.liquidWeight == liquidWeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,initialWeight,finalWeight,liquidWeight,sampleDensity,sampleTemperature,inpm,spareVolume,ambientVolume);
+
+@override
+String toString() {
+  return 'AtsBalanceParams(initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, inpm: $inpm, spareVolume: $spareVolume, ambientVolume: $ambientVolume)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsBalanceParamsCopyWith<$Res> implements $AtsBalanceParamsCopyWith<$Res> {
+  factory _$AtsBalanceParamsCopyWith(_AtsBalanceParams value, $Res Function(_AtsBalanceParams) _then) = __$AtsBalanceParamsCopyWithImpl;
+@override @useResult
+$Res call({
+ double? initialWeight, double? finalWeight, double? liquidWeight, double? sampleDensity, double? sampleTemperature, double? inpm, double? spareVolume, double? ambientVolume
+});
+
+
+
+
+}
+/// @nodoc
+class __$AtsBalanceParamsCopyWithImpl<$Res>
+    implements _$AtsBalanceParamsCopyWith<$Res> {
+  __$AtsBalanceParamsCopyWithImpl(this._self, this._then);
+
+  final _AtsBalanceParams _self;
+  final $Res Function(_AtsBalanceParams) _then;
+
+/// Create a copy of AtsBalanceParams
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? inpm = freezed,Object? spareVolume = freezed,Object? ambientVolume = freezed,}) {
+  return _then(_AtsBalanceParams(
+initialWeight: freezed == initialWeight ? _self.initialWeight : initialWeight // ignore: cast_nullable_to_non_nullable
+as double?,finalWeight: freezed == finalWeight ? _self.finalWeight : finalWeight // ignore: cast_nullable_to_non_nullable
+as double?,liquidWeight: freezed == liquidWeight ? _self.liquidWeight : liquidWeight // ignore: cast_nullable_to_non_nullable
+as double?,sampleDensity: freezed == sampleDensity ? _self.sampleDensity : sampleDensity // ignore: cast_nullable_to_non_nullable
+as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
+as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
+as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$AtsSkidSetaParams {
+
+/// `modality` Modality of the params form
+@AtsParamsFormModalityOrNullConverter() ParamsFormModality? get modality;/// `sampleDensity` is loading params form density
+ double? get sampleDensity;/// `sampleTemperature` is loading params form temperature
+ double? get sampleTemperature;// /// `density20` Density at 20°C
+// double? density20,
+/// `assetTemperature` represent the asset temperature
+ double? get assetTemperature;// /// `correctionFactor` Float
+// double? correctionFactor,
+/// `retiraVolume`
+ double? get retiraVolume;// /// `volume20` Volume at 20°C
+// double? volume20,
+/// `inpm` INPM code
+ double? get inpm;/// `ambientVolume` Ambient Volume
+ double? get ambientVolume;/// `spareVolume` Spare volume
+ double? get spareVolume;
+/// Create a copy of AtsSkidSetaParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsSkidSetaParamsCopyWith<AtsSkidSetaParams> get copyWith => _$AtsSkidSetaParamsCopyWithImpl<AtsSkidSetaParams>(this as AtsSkidSetaParams, _$identity);
+
+  /// Serializes this AtsSkidSetaParams to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsSkidSetaParams&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.retiraVolume, retiraVolume) || other.retiraVolume == retiraVolume)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,modality,sampleDensity,sampleTemperature,assetTemperature,retiraVolume,inpm,ambientVolume,spareVolume);
+
+@override
+String toString() {
+  return 'AtsSkidSetaParams(modality: $modality, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, retiraVolume: $retiraVolume, inpm: $inpm, ambientVolume: $ambientVolume, spareVolume: $spareVolume)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsSkidSetaParamsCopyWith<$Res>  {
+  factory $AtsSkidSetaParamsCopyWith(AtsSkidSetaParams value, $Res Function(AtsSkidSetaParams) _then) = _$AtsSkidSetaParamsCopyWithImpl;
+@useResult
+$Res call({
+@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? sampleDensity, double? sampleTemperature, double? assetTemperature, double? retiraVolume, double? inpm, double? ambientVolume, double? spareVolume
+});
+
+
+
+
+}
+/// @nodoc
+class _$AtsSkidSetaParamsCopyWithImpl<$Res>
+    implements $AtsSkidSetaParamsCopyWith<$Res> {
+  _$AtsSkidSetaParamsCopyWithImpl(this._self, this._then);
+
+  final AtsSkidSetaParams _self;
+  final $Res Function(AtsSkidSetaParams) _then;
+
+/// Create a copy of AtsSkidSetaParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? modality = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? retiraVolume = freezed,Object? inpm = freezed,Object? ambientVolume = freezed,Object? spareVolume = freezed,}) {
+  return _then(_self.copyWith(
+modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
+as ParamsFormModality?,sampleDensity: freezed == sampleDensity ? _self.sampleDensity : sampleDensity // ignore: cast_nullable_to_non_nullable
+as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,assetTemperature: freezed == assetTemperature ? _self.assetTemperature : assetTemperature // ignore: cast_nullable_to_non_nullable
+as double?,retiraVolume: freezed == retiraVolume ? _self.retiraVolume : retiraVolume // ignore: cast_nullable_to_non_nullable
+as double?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
+as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
+as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AtsSkidSetaParams].
+extension AtsSkidSetaParamsPatterns on AtsSkidSetaParams {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSkidSetaParams value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsSkidSetaParams() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSkidSetaParams value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSkidSetaParams():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSkidSetaParams value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSkidSetaParams() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? retiraVolume,  double? inpm,  double? ambientVolume,  double? spareVolume)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsSkidSetaParams() when $default != null:
+return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.retiraVolume,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? retiraVolume,  double? inpm,  double? ambientVolume,  double? spareVolume)  $default,) {final _that = this;
+switch (_that) {
+case _AtsSkidSetaParams():
+return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.retiraVolume,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? retiraVolume,  double? inpm,  double? ambientVolume,  double? spareVolume)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsSkidSetaParams() when $default != null:
+return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.retiraVolume,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsSkidSetaParams implements AtsSkidSetaParams {
+   _AtsSkidSetaParams({@AtsParamsFormModalityOrNullConverter() this.modality, this.sampleDensity, this.sampleTemperature, this.assetTemperature, this.retiraVolume, this.inpm, this.ambientVolume, this.spareVolume});
+  factory _AtsSkidSetaParams.fromJson(Map<String, dynamic> json) => _$AtsSkidSetaParamsFromJson(json);
+
+/// `modality` Modality of the params form
+@override@AtsParamsFormModalityOrNullConverter() final  ParamsFormModality? modality;
+/// `sampleDensity` is loading params form density
+@override final  double? sampleDensity;
+/// `sampleTemperature` is loading params form temperature
+@override final  double? sampleTemperature;
+// /// `density20` Density at 20°C
+// double? density20,
+/// `assetTemperature` represent the asset temperature
+@override final  double? assetTemperature;
+// /// `correctionFactor` Float
+// double? correctionFactor,
+/// `retiraVolume`
+@override final  double? retiraVolume;
+// /// `volume20` Volume at 20°C
+// double? volume20,
+/// `inpm` INPM code
+@override final  double? inpm;
+/// `ambientVolume` Ambient Volume
+@override final  double? ambientVolume;
+/// `spareVolume` Spare volume
+@override final  double? spareVolume;
+
+/// Create a copy of AtsSkidSetaParams
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsSkidSetaParamsCopyWith<_AtsSkidSetaParams> get copyWith => __$AtsSkidSetaParamsCopyWithImpl<_AtsSkidSetaParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsSkidSetaParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSkidSetaParams&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.retiraVolume, retiraVolume) || other.retiraVolume == retiraVolume)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,modality,sampleDensity,sampleTemperature,assetTemperature,retiraVolume,inpm,ambientVolume,spareVolume);
+
+@override
+String toString() {
+  return 'AtsSkidSetaParams(modality: $modality, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, retiraVolume: $retiraVolume, inpm: $inpm, ambientVolume: $ambientVolume, spareVolume: $spareVolume)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsSkidSetaParamsCopyWith<$Res> implements $AtsSkidSetaParamsCopyWith<$Res> {
+  factory _$AtsSkidSetaParamsCopyWith(_AtsSkidSetaParams value, $Res Function(_AtsSkidSetaParams) _then) = __$AtsSkidSetaParamsCopyWithImpl;
+@override @useResult
+$Res call({
+@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? sampleDensity, double? sampleTemperature, double? assetTemperature, double? retiraVolume, double? inpm, double? ambientVolume, double? spareVolume
+});
+
+
+
+
+}
+/// @nodoc
+class __$AtsSkidSetaParamsCopyWithImpl<$Res>
+    implements _$AtsSkidSetaParamsCopyWith<$Res> {
+  __$AtsSkidSetaParamsCopyWithImpl(this._self, this._then);
+
+  final _AtsSkidSetaParams _self;
+  final $Res Function(_AtsSkidSetaParams) _then;
+
+/// Create a copy of AtsSkidSetaParams
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? modality = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? retiraVolume = freezed,Object? inpm = freezed,Object? ambientVolume = freezed,Object? spareVolume = freezed,}) {
+  return _then(_AtsSkidSetaParams(
+modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
+as ParamsFormModality?,sampleDensity: freezed == sampleDensity ? _self.sampleDensity : sampleDensity // ignore: cast_nullable_to_non_nullable
+as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,assetTemperature: freezed == assetTemperature ? _self.assetTemperature : assetTemperature // ignore: cast_nullable_to_non_nullable
+as double?,retiraVolume: freezed == retiraVolume ? _self.retiraVolume : retiraVolume // ignore: cast_nullable_to_non_nullable
+as double?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
+as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
+as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
+as double?,
   ));
 }
 

@@ -51,32 +51,14 @@ abstract class AtsLoadingParamsForm with _$AtsLoadingParamsForm {
     /// `inpm` INPM code
     double? inpm,
 
-    /// `a20Volume` A20 volume only on modality SKID
-    double? a20Volume,
-
-    /// `ambientVolume` Ambient volume only on modality SKID
-    double? ambientVolume,
-
-    /// `initialWeight` Initial weight only on modality balance
-    double? initialWeight,
-
-    /// `finalWeight` Final weight only on modality balance
-    double? finalWeight,
-
-    /// `liquidWeight` Liquid weight only on modality balance
-    double? liquidWeight,
-
-    /// `density20` Density at 20°C only on modality balance
-    double? density20,
-
-    /// `volume20` Volume at 20°C only on modality balance
-    double? volume20,
-
-    /// `spareVolume` Spare volume only on modality balance
-    double? spareVolume,
-
     /// `destinyInformation` Destiny information
     List<AtsDestinyInformation>? destinyInformation,
+
+    /// `balanceParams` Balance params
+    AtsBalanceParams? balanceParams,
+
+    /// `skidSetaParams` Skid Seta params
+    AtsSkidSetaParams? skidSetaParams,
   }) = _AtsLoadingParamsForm;
 
   factory AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormFromJson(json);
@@ -96,4 +78,81 @@ abstract class AtsDestinyInformation with _$AtsDestinyInformation {
   }) = _AtsDestinyInformation;
 
   factory AtsDestinyInformation.fromJson(Map<String, dynamic> json) => _$AtsDestinyInformationFromJson(json);
+}
+
+@freezed
+abstract class AtsBalanceParams with _$AtsBalanceParams {
+  factory AtsBalanceParams({
+    /// `initialWeight` Initial weight only on modality balance
+    double? initialWeight,
+
+    /// `finalWeight` Final weight only on modality balance
+    double? finalWeight,
+
+    /// `liquidWeight` Liquid weight only on modality balance
+    double? liquidWeight,
+
+    /// `sampleDensity` is loading params form density
+    double? sampleDensity,
+
+    /// `sampleTemperature` is loading params form temperature
+    double? sampleTemperature,
+
+    // /// `density20` Density at 20°C only on modality balance
+    // double? density20,
+
+    /// `inpm` INPM code
+    double? inpm,
+
+    // /// `volume20` Volume at 20°C only on modality balance
+    // double? volume20,
+
+    /// `spareVolume` Spare volume
+    double? spareVolume,
+
+    /// `ambientVolume` Ambient volume
+    double? ambientVolume,
+  }) = _AtsBalanceParams;
+
+  factory AtsBalanceParams.fromJson(Map<String, dynamic> json) => _$AtsBalanceParamsFromJson(json);
+}
+
+@freezed
+abstract class AtsSkidSetaParams with _$AtsSkidSetaParams {
+  factory AtsSkidSetaParams({
+    /// `modality` Modality of the params form
+    @AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality,
+
+    /// `sampleDensity` is loading params form density
+    double? sampleDensity,
+
+    /// `sampleTemperature` is loading params form temperature
+    double? sampleTemperature,
+
+    // /// `density20` Density at 20°C
+    // double? density20,
+
+    /// `assetTemperature` represent the asset temperature
+    double? assetTemperature,
+
+    // /// `correctionFactor` Float
+    // double? correctionFactor,
+
+    /// `retiraVolume`
+    double? retiraVolume,
+
+    // /// `volume20` Volume at 20°C
+    // double? volume20,
+
+    /// `inpm` INPM code
+    double? inpm,
+
+    /// `ambientVolume` Ambient Volume
+    double? ambientVolume,
+
+    /// `spareVolume` Spare volume
+    double? spareVolume,
+  }) = _AtsSkidSetaParams;
+
+  factory AtsSkidSetaParams.fromJson(Map<String, dynamic> json) => _$AtsSkidSetaParamsFromJson(json);
 }
