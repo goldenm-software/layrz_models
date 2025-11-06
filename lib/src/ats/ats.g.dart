@@ -767,6 +767,7 @@ _AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
   inpm: (json['inpm'] as num?)?.toDouble(),
   initialWeight: (json['initialWeight'] as num?)?.toDouble(),
   finalWeight: (json['finalWeight'] as num?)?.toDouble(),
+  volume20: (json['volume20'] as num?)?.toDouble(),
   destinyInformation: (json['destinyInformation'] as List<dynamic>?)
       ?.map(
         (e) => AtsDestinyInformationInput.fromJson(e as Map<String, dynamic>),
@@ -797,6 +798,7 @@ Map<String, dynamic> _$AtsLoadingParamsFormInputToJson(
   'inpm': instance.inpm,
   'initialWeight': instance.initialWeight,
   'finalWeight': instance.finalWeight,
+  'volume20': instance.volume20,
   'destinyInformation': instance.destinyInformation
       ?.map((e) => e.toJson())
       .toList(),

@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.72
+- Add again `volume20` in `AtsLoadingParamsFormInput`
+
 ## 3.4.71
 
 - Added TagOn models

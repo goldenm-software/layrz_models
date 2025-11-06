@@ -51,6 +51,9 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
     /// `finalWeight` Final weight only on modality balance
     double? finalWeight,
 
+    /// `volume20` Volume at 20 only on modality SKID
+    double? volume20,
+
     /// `destinyInformation` Destiny information only on modality seta
     List<AtsDestinyInformationInput>? destinyInformation,
   }) = _AtsLoadingParamsFormInput;
