@@ -150,6 +150,9 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
       : Category.fromJson(json['category'] as Map<String, dynamic>),
   categoryId: json['categoryId'] as String?,
   mqttToken: json['mqttToken'] as String?,
+  mqttConfig: json['mqttConfig'] == null
+      ? null
+      : RealtimeMqttConfig.fromJson(json['mqttConfig'] as Map<String, dynamic>),
   access: (json['access'] as List<dynamic>?)
       ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
       .toList(),
@@ -244,6 +247,7 @@ Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
   'category': instance.category?.toJson(),
   'categoryId': instance.categoryId,
   'mqttToken': instance.mqttToken,
+  'mqttConfig': instance.mqttConfig?.toJson(),
   'access': instance.access?.map((e) => e.toJson()).toList(),
   'customFields': instance.customFields?.map((e) => e.toJson()).toList(),
   'platformAuth': instance.platformAuth,

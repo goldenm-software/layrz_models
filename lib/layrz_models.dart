@@ -124,6 +124,9 @@ export 'src/utils/utils.dart';
 // import 'src/tagon/tagon.dart';
 export 'src/tagon/tagon.dart';
 
+// import 'src/mqtt/mqtt.dart';
+export 'src/mqtt/mqtt.dart';
+
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
 

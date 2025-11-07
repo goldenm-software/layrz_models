@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.75
+
+- Added `RealtimeMqttConfig` model to support real-time MQTT configurations.
+- Updated `User` model to include `mqttConfig` property.
+
 ## 3.4.74
 
 - Updated parameters structure and new model `SensorLastUpdate`.

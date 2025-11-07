@@ -39,7 +39,10 @@ abstract class User with _$User {
     String? categoryId,
 
     /// [mqttToken] represents the MQTT token.
-    String? mqttToken,
+    @Deprecated('Use mqttConfig instead') String? mqttToken,
+
+    /// [mqttConfig] represents the MQTT configuration.
+    RealtimeMqttConfig? mqttConfig,
 
     /// [access] represents the list of granted access.
     List<Access>? access,
