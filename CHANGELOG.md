@@ -1,10 +1,16 @@
 # Changelog
 
+## 3.4.74
+
+- Updated parameters structure and new model `SensorLastUpdate`.
+
 ## 3.4.73
+
 -  Add `ParamData` and `ParameterUpdate`.
 - create `param_test` this is a funtion to test `ParamData`,`ParameterUpdate` and `@ParamDataMapConverter()`.
 
 ## 3.4.72
+
 - Add again `volume20` in `AtsLoadingParamsFormInput`
 
 ## 3.4.71

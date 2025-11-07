@@ -1789,16 +1789,36 @@ Map<String, dynamic> _$ParamDataToJson(_ParamData instance) =>
 _ParameterUpdate _$ParameterUpdateFromJson(Map<String, dynamic> json) =>
     _ParameterUpdate(
       assetId: json['assetId'] as String,
-      parameters: const ParamDataMapConverter().fromJson(
-        json['parameters'] as Map<String, dynamic>?,
-      ),
+      parameters:
+          (json['parameters'] as Map<String, dynamic>?)?.map(
+            (k, e) =>
+                MapEntry(k, ParamData.fromJson(e as Map<String, dynamic>)),
+          ) ??
+          const {},
     );
 
 Map<String, dynamic> _$ParameterUpdateToJson(_ParameterUpdate instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
-      'parameters': const ParamDataMapConverter().toJson(instance.parameters),
+      'parameters': instance.parameters.map((k, e) => MapEntry(k, e.toJson())),
     };
+
+_SensorLastUpdate _$SensorLastUpdateFromJson(Map<String, dynamic> json) =>
+    _SensorLastUpdate(
+      assetId: json['assetId'] as String,
+      sensors:
+          (json['sensors'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, DateTime.parse(e as String)),
+          ) ??
+          const {},
+    );
+
+Map<String, dynamic> _$SensorLastUpdateToJson(
+  _SensorLastUpdate instance,
+) => <String, dynamic>{
+  'assetId': instance.assetId,
+  'sensors': instance.sensors.map((k, e) => MapEntry(k, e.toIso8601String())),
+};
 
 _BlockInput _$BlockInputFromJson(Map<String, dynamic> json) => _BlockInput(
   parameter: json['parameter'] as String?,

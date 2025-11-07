@@ -161,6 +161,7 @@ part 'src/weekdays.dart';
 part 'src/registered_logs.dart';
 part 'src/param_data.dart';
 part 'src/parameter_update.dart';
+part 'src/sensor_last_update.dart';
 
 part 'src/block/block.dart';
 part 'src/block/enums/condition_type.dart';

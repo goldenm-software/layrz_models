@@ -18432,7 +18432,7 @@ mixin _$ParameterUpdate {
 
 /// `assetId` is the unique identifier of the asset whose parameters are being updated.
  String get assetId;/// `parameters` is a map where the keys are parameter names (strings) and the values are `ParamData` objects containing the new values and update timestamps for those parameters.
-@ParamDataMapConverter() Map<String, ParamData>? get parameters;
+@ParamDataMapConverter() Map<String, ParamData> get parameters;
 /// Create a copy of ParameterUpdate
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -18465,7 +18465,7 @@ abstract mixin class $ParameterUpdateCopyWith<$Res>  {
   factory $ParameterUpdateCopyWith(ParameterUpdate value, $Res Function(ParameterUpdate) _then) = _$ParameterUpdateCopyWithImpl;
 @useResult
 $Res call({
- String assetId,@ParamDataMapConverter() Map<String, ParamData>? parameters
+ String assetId,@ParamDataMapConverter() Map<String, ParamData> parameters
 });
 
 
@@ -18482,11 +18482,11 @@ class _$ParameterUpdateCopyWithImpl<$Res>
 
 /// Create a copy of ParameterUpdate
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? assetId = null,Object? parameters = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? assetId = null,Object? parameters = null,}) {
   return _then(_self.copyWith(
 assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
-as String,parameters: freezed == parameters ? _self.parameters : parameters // ignore: cast_nullable_to_non_nullable
-as Map<String, ParamData>?,
+as String,parameters: null == parameters ? _self.parameters : parameters // ignore: cast_nullable_to_non_nullable
+as Map<String, ParamData>,
   ));
 }
 
@@ -18571,7 +18571,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData>? parameters)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData> parameters)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ParameterUpdate() when $default != null:
 return $default(_that.assetId,_that.parameters);case _:
@@ -18592,7 +18592,7 @@ return $default(_that.assetId,_that.parameters);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData>? parameters)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData> parameters)  $default,) {final _that = this;
 switch (_that) {
 case _ParameterUpdate():
 return $default(_that.assetId,_that.parameters);case _:
@@ -18612,7 +18612,7 @@ return $default(_that.assetId,_that.parameters);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData>? parameters)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData> parameters)?  $default,) {final _that = this;
 switch (_that) {
 case _ParameterUpdate() when $default != null:
 return $default(_that.assetId,_that.parameters);case _:
@@ -18627,20 +18627,18 @@ return $default(_that.assetId,_that.parameters);case _:
 @JsonSerializable()
 
 class _ParameterUpdate implements ParameterUpdate {
-  const _ParameterUpdate({required this.assetId, @ParamDataMapConverter() final  Map<String, ParamData>? parameters}): _parameters = parameters;
+  const _ParameterUpdate({required this.assetId, @ParamDataMapConverter() final  Map<String, ParamData> parameters = const {}}): _parameters = parameters;
   factory _ParameterUpdate.fromJson(Map<String, dynamic> json) => _$ParameterUpdateFromJson(json);
 
 /// `assetId` is the unique identifier of the asset whose parameters are being updated.
 @override final  String assetId;
 /// `parameters` is a map where the keys are parameter names (strings) and the values are `ParamData` objects containing the new values and update timestamps for those parameters.
- final  Map<String, ParamData>? _parameters;
+ final  Map<String, ParamData> _parameters;
 /// `parameters` is a map where the keys are parameter names (strings) and the values are `ParamData` objects containing the new values and update timestamps for those parameters.
-@override@ParamDataMapConverter() Map<String, ParamData>? get parameters {
-  final value = _parameters;
-  if (value == null) return null;
+@override@JsonKey()@ParamDataMapConverter() Map<String, ParamData> get parameters {
   if (_parameters is EqualUnmodifiableMapView) return _parameters;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  return EqualUnmodifiableMapView(_parameters);
 }
 
 
@@ -18677,7 +18675,7 @@ abstract mixin class _$ParameterUpdateCopyWith<$Res> implements $ParameterUpdate
   factory _$ParameterUpdateCopyWith(_ParameterUpdate value, $Res Function(_ParameterUpdate) _then) = __$ParameterUpdateCopyWithImpl;
 @override @useResult
 $Res call({
- String assetId,@ParamDataMapConverter() Map<String, ParamData>? parameters
+ String assetId,@ParamDataMapConverter() Map<String, ParamData> parameters
 });
 
 
@@ -18694,11 +18692,291 @@ class __$ParameterUpdateCopyWithImpl<$Res>
 
 /// Create a copy of ParameterUpdate
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? assetId = null,Object? parameters = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? assetId = null,Object? parameters = null,}) {
   return _then(_ParameterUpdate(
 assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
-as String,parameters: freezed == parameters ? _self._parameters : parameters // ignore: cast_nullable_to_non_nullable
-as Map<String, ParamData>?,
+as String,parameters: null == parameters ? _self._parameters : parameters // ignore: cast_nullable_to_non_nullable
+as Map<String, ParamData>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$SensorLastUpdate {
+
+/// `assetId` is the unique identifier of the asset whose parameters are being updated.
+ String get assetId;/// `sensors` is a map where the keys are sensors names (strings) and the values are
+/// `DateTime` objects containing the last update timestamps for those sensors.
+@SensorLastUpdateConverter() Map<String, DateTime> get sensors;
+/// Create a copy of SensorLastUpdate
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SensorLastUpdateCopyWith<SensorLastUpdate> get copyWith => _$SensorLastUpdateCopyWithImpl<SensorLastUpdate>(this as SensorLastUpdate, _$identity);
+
+  /// Serializes this SensorLastUpdate to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SensorLastUpdate&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other.sensors, sensors));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,assetId,const DeepCollectionEquality().hash(sensors));
+
+@override
+String toString() {
+  return 'SensorLastUpdate(assetId: $assetId, sensors: $sensors)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SensorLastUpdateCopyWith<$Res>  {
+  factory $SensorLastUpdateCopyWith(SensorLastUpdate value, $Res Function(SensorLastUpdate) _then) = _$SensorLastUpdateCopyWithImpl;
+@useResult
+$Res call({
+ String assetId,@SensorLastUpdateConverter() Map<String, DateTime> sensors
+});
+
+
+
+
+}
+/// @nodoc
+class _$SensorLastUpdateCopyWithImpl<$Res>
+    implements $SensorLastUpdateCopyWith<$Res> {
+  _$SensorLastUpdateCopyWithImpl(this._self, this._then);
+
+  final SensorLastUpdate _self;
+  final $Res Function(SensorLastUpdate) _then;
+
+/// Create a copy of SensorLastUpdate
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? assetId = null,Object? sensors = null,}) {
+  return _then(_self.copyWith(
+assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
+as String,sensors: null == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
+as Map<String, DateTime>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SensorLastUpdate].
+extension SensorLastUpdatePatterns on SensorLastUpdate {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SensorLastUpdate value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SensorLastUpdate() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SensorLastUpdate value)  $default,){
+final _that = this;
+switch (_that) {
+case _SensorLastUpdate():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SensorLastUpdate value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SensorLastUpdate() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String assetId, @SensorLastUpdateConverter()  Map<String, DateTime> sensors)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SensorLastUpdate() when $default != null:
+return $default(_that.assetId,_that.sensors);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String assetId, @SensorLastUpdateConverter()  Map<String, DateTime> sensors)  $default,) {final _that = this;
+switch (_that) {
+case _SensorLastUpdate():
+return $default(_that.assetId,_that.sensors);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String assetId, @SensorLastUpdateConverter()  Map<String, DateTime> sensors)?  $default,) {final _that = this;
+switch (_that) {
+case _SensorLastUpdate() when $default != null:
+return $default(_that.assetId,_that.sensors);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SensorLastUpdate implements SensorLastUpdate {
+  const _SensorLastUpdate({required this.assetId, @SensorLastUpdateConverter() final  Map<String, DateTime> sensors = const {}}): _sensors = sensors;
+  factory _SensorLastUpdate.fromJson(Map<String, dynamic> json) => _$SensorLastUpdateFromJson(json);
+
+/// `assetId` is the unique identifier of the asset whose parameters are being updated.
+@override final  String assetId;
+/// `sensors` is a map where the keys are sensors names (strings) and the values are
+/// `DateTime` objects containing the last update timestamps for those sensors.
+ final  Map<String, DateTime> _sensors;
+/// `sensors` is a map where the keys are sensors names (strings) and the values are
+/// `DateTime` objects containing the last update timestamps for those sensors.
+@override@JsonKey()@SensorLastUpdateConverter() Map<String, DateTime> get sensors {
+  if (_sensors is EqualUnmodifiableMapView) return _sensors;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(_sensors);
+}
+
+
+/// Create a copy of SensorLastUpdate
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SensorLastUpdateCopyWith<_SensorLastUpdate> get copyWith => __$SensorLastUpdateCopyWithImpl<_SensorLastUpdate>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SensorLastUpdateToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SensorLastUpdate&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other._sensors, _sensors));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,assetId,const DeepCollectionEquality().hash(_sensors));
+
+@override
+String toString() {
+  return 'SensorLastUpdate(assetId: $assetId, sensors: $sensors)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SensorLastUpdateCopyWith<$Res> implements $SensorLastUpdateCopyWith<$Res> {
+  factory _$SensorLastUpdateCopyWith(_SensorLastUpdate value, $Res Function(_SensorLastUpdate) _then) = __$SensorLastUpdateCopyWithImpl;
+@override @useResult
+$Res call({
+ String assetId,@SensorLastUpdateConverter() Map<String, DateTime> sensors
+});
+
+
+
+
+}
+/// @nodoc
+class __$SensorLastUpdateCopyWithImpl<$Res>
+    implements _$SensorLastUpdateCopyWith<$Res> {
+  __$SensorLastUpdateCopyWithImpl(this._self, this._then);
+
+  final _SensorLastUpdate _self;
+  final $Res Function(_SensorLastUpdate) _then;
+
+/// Create a copy of SensorLastUpdate
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? assetId = null,Object? sensors = null,}) {
+  return _then(_SensorLastUpdate(
+assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
+as String,sensors: null == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as Map<String, DateTime>,
   ));
 }
 
