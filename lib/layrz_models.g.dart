@@ -1769,6 +1769,37 @@ const _$RegisteredLogLevelEnumMap = {
   RegisteredLogLevel.unknown: 'UNKNOWN',
 };
 
+_ParamData _$ParamDataFromJson(Map<String, dynamic> json) => _ParamData(
+  value: json['value'],
+  updatedAt: _$JsonConverterFromJson<num, DateTime>(
+    json['updatedAt'],
+    const TimestampConverter().fromJson,
+  ),
+);
+
+Map<String, dynamic> _$ParamDataToJson(_ParamData instance) =>
+    <String, dynamic>{
+      'value': instance.value,
+      'updatedAt': _$JsonConverterToJson<num, DateTime>(
+        instance.updatedAt,
+        const TimestampConverter().toJson,
+      ),
+    };
+
+_ParameterUpdate _$ParameterUpdateFromJson(Map<String, dynamic> json) =>
+    _ParameterUpdate(
+      assetId: json['assetId'] as String,
+      parameters: const ParamDataMapConverter().fromJson(
+        json['parameters'] as Map<String, dynamic>?,
+      ),
+    );
+
+Map<String, dynamic> _$ParameterUpdateToJson(_ParameterUpdate instance) =>
+    <String, dynamic>{
+      'assetId': instance.assetId,
+      'parameters': const ParamDataMapConverter().toJson(instance.parameters),
+    };
+
 _BlockInput _$BlockInputFromJson(Map<String, dynamic> json) => _BlockInput(
   parameter: json['parameter'] as String?,
   type: $enumDecodeNullable(_$BlockTypeEnumMap, json['type']),

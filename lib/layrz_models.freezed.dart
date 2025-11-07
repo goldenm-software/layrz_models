@@ -18158,6 +18158,555 @@ as String?,
 
 
 /// @nodoc
+mixin _$ParamData {
+
+/// `value` represents the new value of the parameter being updated.
+ dynamic get value;/// `updatedAt` is a timestamp indicating when the parameter was last updated.
+@TimestampConverter() DateTime? get updatedAt;
+/// Create a copy of ParamData
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ParamDataCopyWith<ParamData> get copyWith => _$ParamDataCopyWithImpl<ParamData>(this as ParamData, _$identity);
+
+  /// Serializes this ParamData to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ParamData&&const DeepCollectionEquality().equals(other.value, value)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value),updatedAt);
+
+@override
+String toString() {
+  return 'ParamData(value: $value, updatedAt: $updatedAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ParamDataCopyWith<$Res>  {
+  factory $ParamDataCopyWith(ParamData value, $Res Function(ParamData) _then) = _$ParamDataCopyWithImpl;
+@useResult
+$Res call({
+ dynamic value,@TimestampConverter() DateTime? updatedAt
+});
+
+
+
+
+}
+/// @nodoc
+class _$ParamDataCopyWithImpl<$Res>
+    implements $ParamDataCopyWith<$Res> {
+  _$ParamDataCopyWithImpl(this._self, this._then);
+
+  final ParamData _self;
+  final $Res Function(ParamData) _then;
+
+/// Create a copy of ParamData
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? value = freezed,Object? updatedAt = freezed,}) {
+  return _then(_self.copyWith(
+value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as dynamic,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ParamData].
+extension ParamDataPatterns on ParamData {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ParamData value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ParamData() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ParamData value)  $default,){
+final _that = this;
+switch (_that) {
+case _ParamData():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ParamData value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ParamData() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( dynamic value, @TimestampConverter()  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ParamData() when $default != null:
+return $default(_that.value,_that.updatedAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( dynamic value, @TimestampConverter()  DateTime? updatedAt)  $default,) {final _that = this;
+switch (_that) {
+case _ParamData():
+return $default(_that.value,_that.updatedAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( dynamic value, @TimestampConverter()  DateTime? updatedAt)?  $default,) {final _that = this;
+switch (_that) {
+case _ParamData() when $default != null:
+return $default(_that.value,_that.updatedAt);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ParamData implements ParamData {
+  const _ParamData({this.value, @TimestampConverter() this.updatedAt});
+  factory _ParamData.fromJson(Map<String, dynamic> json) => _$ParamDataFromJson(json);
+
+/// `value` represents the new value of the parameter being updated.
+@override final  dynamic value;
+/// `updatedAt` is a timestamp indicating when the parameter was last updated.
+@override@TimestampConverter() final  DateTime? updatedAt;
+
+/// Create a copy of ParamData
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ParamDataCopyWith<_ParamData> get copyWith => __$ParamDataCopyWithImpl<_ParamData>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ParamDataToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ParamData&&const DeepCollectionEquality().equals(other.value, value)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value),updatedAt);
+
+@override
+String toString() {
+  return 'ParamData(value: $value, updatedAt: $updatedAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ParamDataCopyWith<$Res> implements $ParamDataCopyWith<$Res> {
+  factory _$ParamDataCopyWith(_ParamData value, $Res Function(_ParamData) _then) = __$ParamDataCopyWithImpl;
+@override @useResult
+$Res call({
+ dynamic value,@TimestampConverter() DateTime? updatedAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$ParamDataCopyWithImpl<$Res>
+    implements _$ParamDataCopyWith<$Res> {
+  __$ParamDataCopyWithImpl(this._self, this._then);
+
+  final _ParamData _self;
+  final $Res Function(_ParamData) _then;
+
+/// Create a copy of ParamData
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? value = freezed,Object? updatedAt = freezed,}) {
+  return _then(_ParamData(
+value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as dynamic,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ParameterUpdate {
+
+/// `assetId` is the unique identifier of the asset whose parameters are being updated.
+ String get assetId;/// `parameters` is a map where the keys are parameter names (strings) and the values are `ParamData` objects containing the new values and update timestamps for those parameters.
+@ParamDataMapConverter() Map<String, ParamData>? get parameters;
+/// Create a copy of ParameterUpdate
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ParameterUpdateCopyWith<ParameterUpdate> get copyWith => _$ParameterUpdateCopyWithImpl<ParameterUpdate>(this as ParameterUpdate, _$identity);
+
+  /// Serializes this ParameterUpdate to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ParameterUpdate&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other.parameters, parameters));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,assetId,const DeepCollectionEquality().hash(parameters));
+
+@override
+String toString() {
+  return 'ParameterUpdate(assetId: $assetId, parameters: $parameters)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ParameterUpdateCopyWith<$Res>  {
+  factory $ParameterUpdateCopyWith(ParameterUpdate value, $Res Function(ParameterUpdate) _then) = _$ParameterUpdateCopyWithImpl;
+@useResult
+$Res call({
+ String assetId,@ParamDataMapConverter() Map<String, ParamData>? parameters
+});
+
+
+
+
+}
+/// @nodoc
+class _$ParameterUpdateCopyWithImpl<$Res>
+    implements $ParameterUpdateCopyWith<$Res> {
+  _$ParameterUpdateCopyWithImpl(this._self, this._then);
+
+  final ParameterUpdate _self;
+  final $Res Function(ParameterUpdate) _then;
+
+/// Create a copy of ParameterUpdate
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? assetId = null,Object? parameters = freezed,}) {
+  return _then(_self.copyWith(
+assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
+as String,parameters: freezed == parameters ? _self.parameters : parameters // ignore: cast_nullable_to_non_nullable
+as Map<String, ParamData>?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ParameterUpdate].
+extension ParameterUpdatePatterns on ParameterUpdate {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ParameterUpdate value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ParameterUpdate() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ParameterUpdate value)  $default,){
+final _that = this;
+switch (_that) {
+case _ParameterUpdate():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ParameterUpdate value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ParameterUpdate() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData>? parameters)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ParameterUpdate() when $default != null:
+return $default(_that.assetId,_that.parameters);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData>? parameters)  $default,) {final _that = this;
+switch (_that) {
+case _ParameterUpdate():
+return $default(_that.assetId,_that.parameters);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String assetId, @ParamDataMapConverter()  Map<String, ParamData>? parameters)?  $default,) {final _that = this;
+switch (_that) {
+case _ParameterUpdate() when $default != null:
+return $default(_that.assetId,_that.parameters);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ParameterUpdate implements ParameterUpdate {
+  const _ParameterUpdate({required this.assetId, @ParamDataMapConverter() final  Map<String, ParamData>? parameters}): _parameters = parameters;
+  factory _ParameterUpdate.fromJson(Map<String, dynamic> json) => _$ParameterUpdateFromJson(json);
+
+/// `assetId` is the unique identifier of the asset whose parameters are being updated.
+@override final  String assetId;
+/// `parameters` is a map where the keys are parameter names (strings) and the values are `ParamData` objects containing the new values and update timestamps for those parameters.
+ final  Map<String, ParamData>? _parameters;
+/// `parameters` is a map where the keys are parameter names (strings) and the values are `ParamData` objects containing the new values and update timestamps for those parameters.
+@override@ParamDataMapConverter() Map<String, ParamData>? get parameters {
+  final value = _parameters;
+  if (value == null) return null;
+  if (_parameters is EqualUnmodifiableMapView) return _parameters;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(value);
+}
+
+
+/// Create a copy of ParameterUpdate
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ParameterUpdateCopyWith<_ParameterUpdate> get copyWith => __$ParameterUpdateCopyWithImpl<_ParameterUpdate>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ParameterUpdateToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ParameterUpdate&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other._parameters, _parameters));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,assetId,const DeepCollectionEquality().hash(_parameters));
+
+@override
+String toString() {
+  return 'ParameterUpdate(assetId: $assetId, parameters: $parameters)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ParameterUpdateCopyWith<$Res> implements $ParameterUpdateCopyWith<$Res> {
+  factory _$ParameterUpdateCopyWith(_ParameterUpdate value, $Res Function(_ParameterUpdate) _then) = __$ParameterUpdateCopyWithImpl;
+@override @useResult
+$Res call({
+ String assetId,@ParamDataMapConverter() Map<String, ParamData>? parameters
+});
+
+
+
+
+}
+/// @nodoc
+class __$ParameterUpdateCopyWithImpl<$Res>
+    implements _$ParameterUpdateCopyWith<$Res> {
+  __$ParameterUpdateCopyWithImpl(this._self, this._then);
+
+  final _ParameterUpdate _self;
+  final $Res Function(_ParameterUpdate) _then;
+
+/// Create a copy of ParameterUpdate
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? assetId = null,Object? parameters = freezed,}) {
+  return _then(_ParameterUpdate(
+assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
+as String,parameters: freezed == parameters ? _self._parameters : parameters // ignore: cast_nullable_to_non_nullable
+as Map<String, ParamData>?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$BlockInput {
 
  String? get parameter; set parameter(String? value); BlockType? get type; set type(BlockType? value); dynamic get result; set result(dynamic value); dynamic get lastValue; set lastValue(dynamic value); BoolBlockInput? get boolObject; set boolObject(BoolBlockInput? value); MathBlockInput? get mathObject; set mathObject(MathBlockInput? value);
