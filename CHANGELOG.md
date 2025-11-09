@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.76
+
+- Added `file` property to `CaseComment` model to associate files with specific comments.
+- Updated `Case` model documentation to clarify its purpose.
+
 ## 3.4.75
 
 - Added `RealtimeMqttConfig` model to support real-time MQTT configurations.

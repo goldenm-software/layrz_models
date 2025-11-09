@@ -2819,7 +2819,14 @@ $AvatarCopyWith<$Res>? get dynamicAvatar {
 /// @nodoc
 mixin _$CaseComment {
 
- String get id;@TimestampConverter() DateTime get at; CommentOwner? get owner; String get comment; Map<String, dynamic> get metadata;
+/// [id] is a unique identifier for the case comment, typically used to reference and manage it within a system.
+ String get id;/// [at] indicates the date and time when the comment was made or created.
+@TimestampConverter() DateTime get at;/// [owner] refers to the individual or entity that made the comment, providing context about who is responsible for the content.
+ CommentOwner? get owner;/// [comment] contains the actual text or content of the comment made on the case.
+ String get comment;/// [metadata] holds additional information or data related to the comment, which can include various attributes or properties.
+ Map<String, dynamic> get metadata;/// [file] refers to an optional file associated with the case, which can include documents,
+/// images, or other relevant attachments.
+ CloudEntry? get file;
 /// Create a copy of CaseComment
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2832,16 +2839,16 @@ $CaseCommentCopyWith<CaseComment> get copyWith => _$CaseCommentCopyWithImpl<Case
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CaseComment&&(identical(other.id, id) || other.id == id)&&(identical(other.at, at) || other.at == at)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CaseComment&&(identical(other.id, id) || other.id == id)&&(identical(other.at, at) || other.at == at)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.file, file) || other.file == file));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,at,owner,comment,const DeepCollectionEquality().hash(metadata));
+int get hashCode => Object.hash(runtimeType,id,at,owner,comment,const DeepCollectionEquality().hash(metadata),file);
 
 @override
 String toString() {
-  return 'CaseComment(id: $id, at: $at, owner: $owner, comment: $comment, metadata: $metadata)';
+  return 'CaseComment(id: $id, at: $at, owner: $owner, comment: $comment, metadata: $metadata, file: $file)';
 }
 
 
@@ -2852,11 +2859,11 @@ abstract mixin class $CaseCommentCopyWith<$Res>  {
   factory $CaseCommentCopyWith(CaseComment value, $Res Function(CaseComment) _then) = _$CaseCommentCopyWithImpl;
 @useResult
 $Res call({
- String id,@TimestampConverter() DateTime at, CommentOwner? owner, String comment, Map<String, dynamic> metadata
+ String id,@TimestampConverter() DateTime at, CommentOwner? owner, String comment, Map<String, dynamic> metadata, CloudEntry? file
 });
 
 
-$CommentOwnerCopyWith<$Res>? get owner;
+$CommentOwnerCopyWith<$Res>? get owner;$CloudEntryCopyWith<$Res>? get file;
 
 }
 /// @nodoc
@@ -2869,14 +2876,15 @@ class _$CaseCommentCopyWithImpl<$Res>
 
 /// Create a copy of CaseComment
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? at = null,Object? owner = freezed,Object? comment = null,Object? metadata = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? at = null,Object? owner = freezed,Object? comment = null,Object? metadata = null,Object? file = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,at: null == at ? _self.at : at // ignore: cast_nullable_to_non_nullable
 as DateTime,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
 as CommentOwner?,comment: null == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
 as String,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
+as Map<String, dynamic>,file: freezed == file ? _self.file : file // ignore: cast_nullable_to_non_nullable
+as CloudEntry?,
   ));
 }
 /// Create a copy of CaseComment
@@ -2890,6 +2898,18 @@ $CommentOwnerCopyWith<$Res>? get owner {
 
   return $CommentOwnerCopyWith<$Res>(_self.owner!, (value) {
     return _then(_self.copyWith(owner: value));
+  });
+}/// Create a copy of CaseComment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CloudEntryCopyWith<$Res>? get file {
+    if (_self.file == null) {
+    return null;
+  }
+
+  return $CloudEntryCopyWith<$Res>(_self.file!, (value) {
+    return _then(_self.copyWith(file: value));
   });
 }
 }
@@ -2973,10 +2993,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @TimestampConverter()  DateTime at,  CommentOwner? owner,  String comment,  Map<String, dynamic> metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @TimestampConverter()  DateTime at,  CommentOwner? owner,  String comment,  Map<String, dynamic> metadata,  CloudEntry? file)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaseComment() when $default != null:
-return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata);case _:
+return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata,_that.file);case _:
   return orElse();
 
 }
@@ -2994,10 +3014,10 @@ return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata);case
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @TimestampConverter()  DateTime at,  CommentOwner? owner,  String comment,  Map<String, dynamic> metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @TimestampConverter()  DateTime at,  CommentOwner? owner,  String comment,  Map<String, dynamic> metadata,  CloudEntry? file)  $default,) {final _that = this;
 switch (_that) {
 case _CaseComment():
-return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata);case _:
+return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata,_that.file);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3014,10 +3034,10 @@ return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata);case
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @TimestampConverter()  DateTime at,  CommentOwner? owner,  String comment,  Map<String, dynamic> metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @TimestampConverter()  DateTime at,  CommentOwner? owner,  String comment,  Map<String, dynamic> metadata,  CloudEntry? file)?  $default,) {final _that = this;
 switch (_that) {
 case _CaseComment() when $default != null:
-return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata);case _:
+return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata,_that.file);case _:
   return null;
 
 }
@@ -3029,20 +3049,29 @@ return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata);case
 @JsonSerializable()
 
 class _CaseComment implements CaseComment {
-  const _CaseComment({required this.id, @TimestampConverter() required this.at, this.owner, required this.comment, final  Map<String, dynamic> metadata = const {}}): _metadata = metadata;
+  const _CaseComment({required this.id, @TimestampConverter() required this.at, this.owner, required this.comment, final  Map<String, dynamic> metadata = const {}, this.file}): _metadata = metadata;
   factory _CaseComment.fromJson(Map<String, dynamic> json) => _$CaseCommentFromJson(json);
 
+/// [id] is a unique identifier for the case comment, typically used to reference and manage it within a system.
 @override final  String id;
+/// [at] indicates the date and time when the comment was made or created.
 @override@TimestampConverter() final  DateTime at;
+/// [owner] refers to the individual or entity that made the comment, providing context about who is responsible for the content.
 @override final  CommentOwner? owner;
+/// [comment] contains the actual text or content of the comment made on the case.
 @override final  String comment;
+/// [metadata] holds additional information or data related to the comment, which can include various attributes or properties.
  final  Map<String, dynamic> _metadata;
+/// [metadata] holds additional information or data related to the comment, which can include various attributes or properties.
 @override@JsonKey() Map<String, dynamic> get metadata {
   if (_metadata is EqualUnmodifiableMapView) return _metadata;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableMapView(_metadata);
 }
 
+/// [file] refers to an optional file associated with the case, which can include documents,
+/// images, or other relevant attachments.
+@override final  CloudEntry? file;
 
 /// Create a copy of CaseComment
 /// with the given fields replaced by the non-null parameter values.
@@ -3057,16 +3086,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaseComment&&(identical(other.id, id) || other.id == id)&&(identical(other.at, at) || other.at == at)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaseComment&&(identical(other.id, id) || other.id == id)&&(identical(other.at, at) || other.at == at)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.file, file) || other.file == file));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,at,owner,comment,const DeepCollectionEquality().hash(_metadata));
+int get hashCode => Object.hash(runtimeType,id,at,owner,comment,const DeepCollectionEquality().hash(_metadata),file);
 
 @override
 String toString() {
-  return 'CaseComment(id: $id, at: $at, owner: $owner, comment: $comment, metadata: $metadata)';
+  return 'CaseComment(id: $id, at: $at, owner: $owner, comment: $comment, metadata: $metadata, file: $file)';
 }
 
 
@@ -3077,11 +3106,11 @@ abstract mixin class _$CaseCommentCopyWith<$Res> implements $CaseCommentCopyWith
   factory _$CaseCommentCopyWith(_CaseComment value, $Res Function(_CaseComment) _then) = __$CaseCommentCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@TimestampConverter() DateTime at, CommentOwner? owner, String comment, Map<String, dynamic> metadata
+ String id,@TimestampConverter() DateTime at, CommentOwner? owner, String comment, Map<String, dynamic> metadata, CloudEntry? file
 });
 
 
-@override $CommentOwnerCopyWith<$Res>? get owner;
+@override $CommentOwnerCopyWith<$Res>? get owner;@override $CloudEntryCopyWith<$Res>? get file;
 
 }
 /// @nodoc
@@ -3094,14 +3123,15 @@ class __$CaseCommentCopyWithImpl<$Res>
 
 /// Create a copy of CaseComment
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? at = null,Object? owner = freezed,Object? comment = null,Object? metadata = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? at = null,Object? owner = freezed,Object? comment = null,Object? metadata = null,Object? file = freezed,}) {
   return _then(_CaseComment(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,at: null == at ? _self.at : at // ignore: cast_nullable_to_non_nullable
 as DateTime,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
 as CommentOwner?,comment: null == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
 as String,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
+as Map<String, dynamic>,file: freezed == file ? _self.file : file // ignore: cast_nullable_to_non_nullable
+as CloudEntry?,
   ));
 }
 
@@ -3116,6 +3146,18 @@ $CommentOwnerCopyWith<$Res>? get owner {
 
   return $CommentOwnerCopyWith<$Res>(_self.owner!, (value) {
     return _then(_self.copyWith(owner: value));
+  });
+}/// Create a copy of CaseComment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CloudEntryCopyWith<$Res>? get file {
+    if (_self.file == null) {
+    return null;
+  }
+
+  return $CloudEntryCopyWith<$Res>(_self.file!, (value) {
+    return _then(_self.copyWith(file: value));
   });
 }
 }

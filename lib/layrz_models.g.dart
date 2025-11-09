@@ -348,6 +348,9 @@ _CaseComment _$CaseCommentFromJson(Map<String, dynamic> json) => _CaseComment(
       : CommentOwner.fromJson(json['owner'] as Map<String, dynamic>),
   comment: json['comment'] as String,
   metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
+  file: json['file'] == null
+      ? null
+      : CloudEntry.fromJson(json['file'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$CaseCommentToJson(_CaseComment instance) =>
@@ -357,6 +360,7 @@ Map<String, dynamic> _$CaseCommentToJson(_CaseComment instance) =>
       'owner': instance.owner?.toJson(),
       'comment': instance.comment,
       'metadata': instance.metadata,
+      'file': instance.file?.toJson(),
     };
 
 _Case _$CaseFromJson(Map<String, dynamic> json) => _Case(
