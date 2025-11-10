@@ -408,6 +408,95 @@ Map<String, dynamic> _$AtsExecuteLoadInputToJson(
   'toAssetId': instance.toAssetId,
 };
 
+_AtsBooking _$AtsBookingFromJson(Map<String, dynamic> json) => _AtsBooking(
+  id: json['id'] as String?,
+  terminalAssetId: json['terminalAssetId'] as String,
+  bayAssetId: json['bayAssetId'] as String,
+  operationId: json['operationId'] as String?,
+  bookingStatus: const AtsBookingStatusOrNullConverter().fromJson(
+    json['bookingStatus'] as String?,
+  ),
+  bookingForDate: const TimestampConverter().fromJson(
+    json['bookingForDate'] as num,
+  ),
+  transportAssetId: json['transportAssetId'] as String,
+  bookingType: const AtsBookingTypeOrNullConverter().fromJson(
+    json['bookingType'] as String?,
+  ),
+  createdById: json['createdById'] as String,
+  createdBy: json['createdBy'] == null
+      ? null
+      : User.fromJson(json['createdBy'] as Map<String, dynamic>),
+  transportAsset: json['transportAsset'] == null
+      ? null
+      : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
+  terminalAsset: json['terminalAsset'] == null
+      ? null
+      : Asset.fromJson(json['terminalAsset'] as Map<String, dynamic>),
+  bayAsset: json['bayAsset'] == null
+      ? null
+      : Asset.fromJson(json['bayAsset'] as Map<String, dynamic>),
+  operation: json['operation'] == null
+      ? null
+      : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$AtsBookingToJson(
+  _AtsBooking instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'terminalAssetId': instance.terminalAssetId,
+  'bayAssetId': instance.bayAssetId,
+  'operationId': instance.operationId,
+  'bookingStatus': const AtsBookingStatusOrNullConverter().toJson(
+    instance.bookingStatus,
+  ),
+  'bookingForDate': const TimestampConverter().toJson(instance.bookingForDate),
+  'transportAssetId': instance.transportAssetId,
+  'bookingType': const AtsBookingTypeOrNullConverter().toJson(
+    instance.bookingType,
+  ),
+  'createdById': instance.createdById,
+  'createdBy': instance.createdBy?.toJson(),
+  'transportAsset': instance.transportAsset?.toJson(),
+  'terminalAsset': instance.terminalAsset?.toJson(),
+  'bayAsset': instance.bayAsset?.toJson(),
+  'operation': instance.operation?.toJson(),
+};
+
+_AtsBookingInput _$AtsBookingInputFromJson(Map<String, dynamic> json) =>
+    _AtsBookingInput(
+      terminalAssetId: json['terminalAssetId'] as String,
+      bayAssetId: json['bayAssetId'] as String,
+      operationId: json['operationId'] as String?,
+      bookingStatus: const AtsBookingStatusOrNullConverter().fromJson(
+        json['bookingStatus'] as String?,
+      ),
+      bookingForDate: const TimestampConverter().fromJson(
+        json['bookingForDate'] as num,
+      ),
+      transportAssetId: json['transportAssetId'] as String,
+      bookingType: const AtsBookingTypeOrNullConverter().fromJson(
+        json['bookingType'] as String?,
+      ),
+    );
+
+Map<String, dynamic> _$AtsBookingInputToJson(
+  _AtsBookingInput instance,
+) => <String, dynamic>{
+  'terminalAssetId': instance.terminalAssetId,
+  'bayAssetId': instance.bayAssetId,
+  'operationId': instance.operationId,
+  'bookingStatus': const AtsBookingStatusOrNullConverter().toJson(
+    instance.bookingStatus,
+  ),
+  'bookingForDate': const TimestampConverter().toJson(instance.bookingForDate),
+  'transportAssetId': instance.transportAssetId,
+  'bookingType': const AtsBookingTypeOrNullConverter().toJson(
+    instance.bookingType,
+  ),
+};
+
 _AtsCompanyInformation _$AtsCompanyInformationFromJson(
   Map<String, dynamic> json,
 ) => _AtsCompanyInformation(

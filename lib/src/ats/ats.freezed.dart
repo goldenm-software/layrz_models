@@ -4230,6 +4230,744 @@ as String?,
 
 
 /// @nodoc
+mixin _$AtsBooking {
+
+/// The `id` parameter is the id of the booking entity.
+ String? get id;/// The `terminalAssetId` parameter is the terminal asset ID of the booking entity.
+ String get terminalAssetId;/// The `bayAssetId` parameter is the bay asset ID of the booking entity.
+ String get bayAssetId;/// The `operationId` parameter is the operation ID of the booking entity.
+ String? get operationId;/// The `bookingStatus` parameter is the booking status of the booking entity.
+@AtsBookingStatusOrNullConverter() AtsBookingStatus? get bookingStatus;/// The `bookingForDate` parameter is the booking for date of the booking entity.
+@TimestampConverter() DateTime get bookingForDate;/// The `transportAssetId` parameter is the transport asset ID of the booking entity.
+ String get transportAssetId;/// The `bookingType` parameter is the booking type of the booking entity.
+@AtsBookingTypeOrNullConverter() AtsBookingType? get bookingType;/// The `createdById` parameter is the ID of the user who created the booking entity.
+ String get createdById;/// The `createdBy` parameter is the `User` who created the booking entity.
+ User? get createdBy;/// The `transportAsset` parameter is the `Asset` who is the transport asset of the booking entity.
+ Asset? get transportAsset;/// The `terminalAsset` parameter is the `Asset` who is the terminal asset of the booking entity.
+ Asset? get terminalAsset;/// The `bayAsset` parameter is the `Asset` who is the bay asset of the booking entity.
+ Asset? get bayAsset;/// The `operation` parameter is the operation of the booking entity.
+ AtsOperation? get operation;
+/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsBookingCopyWith<AtsBooking> get copyWith => _$AtsBookingCopyWithImpl<AtsBooking>(this as AtsBooking, _$identity);
+
+  /// Serializes this AtsBooking to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsBooking&&(identical(other.id, id) || other.id == id)&&(identical(other.terminalAssetId, terminalAssetId) || other.terminalAssetId == terminalAssetId)&&(identical(other.bayAssetId, bayAssetId) || other.bayAssetId == bayAssetId)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.bookingStatus, bookingStatus) || other.bookingStatus == bookingStatus)&&(identical(other.bookingForDate, bookingForDate) || other.bookingForDate == bookingForDate)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.bookingType, bookingType) || other.bookingType == bookingType)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.terminalAsset, terminalAsset) || other.terminalAsset == terminalAsset)&&(identical(other.bayAsset, bayAsset) || other.bayAsset == bayAsset)&&(identical(other.operation, operation) || other.operation == operation));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,terminalAssetId,bayAssetId,operationId,bookingStatus,bookingForDate,transportAssetId,bookingType,createdById,createdBy,transportAsset,terminalAsset,bayAsset,operation);
+
+@override
+String toString() {
+  return 'AtsBooking(id: $id, terminalAssetId: $terminalAssetId, bayAssetId: $bayAssetId, operationId: $operationId, bookingStatus: $bookingStatus, bookingForDate: $bookingForDate, transportAssetId: $transportAssetId, bookingType: $bookingType, createdById: $createdById, createdBy: $createdBy, transportAsset: $transportAsset, terminalAsset: $terminalAsset, bayAsset: $bayAsset, operation: $operation)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsBookingCopyWith<$Res>  {
+  factory $AtsBookingCopyWith(AtsBooking value, $Res Function(AtsBooking) _then) = _$AtsBookingCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String terminalAssetId, String bayAssetId, String? operationId,@AtsBookingStatusOrNullConverter() AtsBookingStatus? bookingStatus,@TimestampConverter() DateTime bookingForDate, String transportAssetId,@AtsBookingTypeOrNullConverter() AtsBookingType? bookingType, String createdById, User? createdBy, Asset? transportAsset, Asset? terminalAsset, Asset? bayAsset, AtsOperation? operation
+});
+
+
+$UserCopyWith<$Res>? get createdBy;$AssetCopyWith<$Res>? get transportAsset;$AssetCopyWith<$Res>? get terminalAsset;$AssetCopyWith<$Res>? get bayAsset;$AtsOperationCopyWith<$Res>? get operation;
+
+}
+/// @nodoc
+class _$AtsBookingCopyWithImpl<$Res>
+    implements $AtsBookingCopyWith<$Res> {
+  _$AtsBookingCopyWithImpl(this._self, this._then);
+
+  final AtsBooking _self;
+  final $Res Function(AtsBooking) _then;
+
+/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? terminalAssetId = null,Object? bayAssetId = null,Object? operationId = freezed,Object? bookingStatus = freezed,Object? bookingForDate = null,Object? transportAssetId = null,Object? bookingType = freezed,Object? createdById = null,Object? createdBy = freezed,Object? transportAsset = freezed,Object? terminalAsset = freezed,Object? bayAsset = freezed,Object? operation = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,terminalAssetId: null == terminalAssetId ? _self.terminalAssetId : terminalAssetId // ignore: cast_nullable_to_non_nullable
+as String,bayAssetId: null == bayAssetId ? _self.bayAssetId : bayAssetId // ignore: cast_nullable_to_non_nullable
+as String,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as String?,bookingStatus: freezed == bookingStatus ? _self.bookingStatus : bookingStatus // ignore: cast_nullable_to_non_nullable
+as AtsBookingStatus?,bookingForDate: null == bookingForDate ? _self.bookingForDate : bookingForDate // ignore: cast_nullable_to_non_nullable
+as DateTime,transportAssetId: null == transportAssetId ? _self.transportAssetId : transportAssetId // ignore: cast_nullable_to_non_nullable
+as String,bookingType: freezed == bookingType ? _self.bookingType : bookingType // ignore: cast_nullable_to_non_nullable
+as AtsBookingType?,createdById: null == createdById ? _self.createdById : createdById // ignore: cast_nullable_to_non_nullable
+as String,createdBy: freezed == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
+as User?,transportAsset: freezed == transportAsset ? _self.transportAsset : transportAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,terminalAsset: freezed == terminalAsset ? _self.terminalAsset : terminalAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,bayAsset: freezed == bayAsset ? _self.bayAsset : bayAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,
+  ));
+}
+/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserCopyWith<$Res>? get createdBy {
+    if (_self.createdBy == null) {
+    return null;
+  }
+
+  return $UserCopyWith<$Res>(_self.createdBy!, (value) {
+    return _then(_self.copyWith(createdBy: value));
+  });
+}/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get transportAsset {
+    if (_self.transportAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+    return _then(_self.copyWith(transportAsset: value));
+  });
+}/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get terminalAsset {
+    if (_self.terminalAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.terminalAsset!, (value) {
+    return _then(_self.copyWith(terminalAsset: value));
+  });
+}/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get bayAsset {
+    if (_self.bayAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.bayAsset!, (value) {
+    return _then(_self.copyWith(bayAsset: value));
+  });
+}/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+    return null;
+  }
+
+  return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+    return _then(_self.copyWith(operation: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AtsBooking].
+extension AtsBookingPatterns on AtsBooking {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsBooking value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsBooking() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsBooking value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsBooking():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsBooking value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsBooking() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String terminalAssetId,  String bayAssetId,  String? operationId, @AtsBookingStatusOrNullConverter()  AtsBookingStatus? bookingStatus, @TimestampConverter()  DateTime bookingForDate,  String transportAssetId, @AtsBookingTypeOrNullConverter()  AtsBookingType? bookingType,  String createdById,  User? createdBy,  Asset? transportAsset,  Asset? terminalAsset,  Asset? bayAsset,  AtsOperation? operation)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsBooking() when $default != null:
+return $default(_that.id,_that.terminalAssetId,_that.bayAssetId,_that.operationId,_that.bookingStatus,_that.bookingForDate,_that.transportAssetId,_that.bookingType,_that.createdById,_that.createdBy,_that.transportAsset,_that.terminalAsset,_that.bayAsset,_that.operation);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String terminalAssetId,  String bayAssetId,  String? operationId, @AtsBookingStatusOrNullConverter()  AtsBookingStatus? bookingStatus, @TimestampConverter()  DateTime bookingForDate,  String transportAssetId, @AtsBookingTypeOrNullConverter()  AtsBookingType? bookingType,  String createdById,  User? createdBy,  Asset? transportAsset,  Asset? terminalAsset,  Asset? bayAsset,  AtsOperation? operation)  $default,) {final _that = this;
+switch (_that) {
+case _AtsBooking():
+return $default(_that.id,_that.terminalAssetId,_that.bayAssetId,_that.operationId,_that.bookingStatus,_that.bookingForDate,_that.transportAssetId,_that.bookingType,_that.createdById,_that.createdBy,_that.transportAsset,_that.terminalAsset,_that.bayAsset,_that.operation);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String terminalAssetId,  String bayAssetId,  String? operationId, @AtsBookingStatusOrNullConverter()  AtsBookingStatus? bookingStatus, @TimestampConverter()  DateTime bookingForDate,  String transportAssetId, @AtsBookingTypeOrNullConverter()  AtsBookingType? bookingType,  String createdById,  User? createdBy,  Asset? transportAsset,  Asset? terminalAsset,  Asset? bayAsset,  AtsOperation? operation)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsBooking() when $default != null:
+return $default(_that.id,_that.terminalAssetId,_that.bayAssetId,_that.operationId,_that.bookingStatus,_that.bookingForDate,_that.transportAssetId,_that.bookingType,_that.createdById,_that.createdBy,_that.transportAsset,_that.terminalAsset,_that.bayAsset,_that.operation);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsBooking implements AtsBooking {
+   _AtsBooking({this.id, required this.terminalAssetId, required this.bayAssetId, this.operationId, @AtsBookingStatusOrNullConverter() this.bookingStatus, @TimestampConverter() required this.bookingForDate, required this.transportAssetId, @AtsBookingTypeOrNullConverter() this.bookingType, required this.createdById, this.createdBy, this.transportAsset, this.terminalAsset, this.bayAsset, this.operation});
+  factory _AtsBooking.fromJson(Map<String, dynamic> json) => _$AtsBookingFromJson(json);
+
+/// The `id` parameter is the id of the booking entity.
+@override final  String? id;
+/// The `terminalAssetId` parameter is the terminal asset ID of the booking entity.
+@override final  String terminalAssetId;
+/// The `bayAssetId` parameter is the bay asset ID of the booking entity.
+@override final  String bayAssetId;
+/// The `operationId` parameter is the operation ID of the booking entity.
+@override final  String? operationId;
+/// The `bookingStatus` parameter is the booking status of the booking entity.
+@override@AtsBookingStatusOrNullConverter() final  AtsBookingStatus? bookingStatus;
+/// The `bookingForDate` parameter is the booking for date of the booking entity.
+@override@TimestampConverter() final  DateTime bookingForDate;
+/// The `transportAssetId` parameter is the transport asset ID of the booking entity.
+@override final  String transportAssetId;
+/// The `bookingType` parameter is the booking type of the booking entity.
+@override@AtsBookingTypeOrNullConverter() final  AtsBookingType? bookingType;
+/// The `createdById` parameter is the ID of the user who created the booking entity.
+@override final  String createdById;
+/// The `createdBy` parameter is the `User` who created the booking entity.
+@override final  User? createdBy;
+/// The `transportAsset` parameter is the `Asset` who is the transport asset of the booking entity.
+@override final  Asset? transportAsset;
+/// The `terminalAsset` parameter is the `Asset` who is the terminal asset of the booking entity.
+@override final  Asset? terminalAsset;
+/// The `bayAsset` parameter is the `Asset` who is the bay asset of the booking entity.
+@override final  Asset? bayAsset;
+/// The `operation` parameter is the operation of the booking entity.
+@override final  AtsOperation? operation;
+
+/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsBookingCopyWith<_AtsBooking> get copyWith => __$AtsBookingCopyWithImpl<_AtsBooking>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsBookingToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsBooking&&(identical(other.id, id) || other.id == id)&&(identical(other.terminalAssetId, terminalAssetId) || other.terminalAssetId == terminalAssetId)&&(identical(other.bayAssetId, bayAssetId) || other.bayAssetId == bayAssetId)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.bookingStatus, bookingStatus) || other.bookingStatus == bookingStatus)&&(identical(other.bookingForDate, bookingForDate) || other.bookingForDate == bookingForDate)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.bookingType, bookingType) || other.bookingType == bookingType)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.terminalAsset, terminalAsset) || other.terminalAsset == terminalAsset)&&(identical(other.bayAsset, bayAsset) || other.bayAsset == bayAsset)&&(identical(other.operation, operation) || other.operation == operation));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,terminalAssetId,bayAssetId,operationId,bookingStatus,bookingForDate,transportAssetId,bookingType,createdById,createdBy,transportAsset,terminalAsset,bayAsset,operation);
+
+@override
+String toString() {
+  return 'AtsBooking(id: $id, terminalAssetId: $terminalAssetId, bayAssetId: $bayAssetId, operationId: $operationId, bookingStatus: $bookingStatus, bookingForDate: $bookingForDate, transportAssetId: $transportAssetId, bookingType: $bookingType, createdById: $createdById, createdBy: $createdBy, transportAsset: $transportAsset, terminalAsset: $terminalAsset, bayAsset: $bayAsset, operation: $operation)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsBookingCopyWith<$Res> implements $AtsBookingCopyWith<$Res> {
+  factory _$AtsBookingCopyWith(_AtsBooking value, $Res Function(_AtsBooking) _then) = __$AtsBookingCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String terminalAssetId, String bayAssetId, String? operationId,@AtsBookingStatusOrNullConverter() AtsBookingStatus? bookingStatus,@TimestampConverter() DateTime bookingForDate, String transportAssetId,@AtsBookingTypeOrNullConverter() AtsBookingType? bookingType, String createdById, User? createdBy, Asset? transportAsset, Asset? terminalAsset, Asset? bayAsset, AtsOperation? operation
+});
+
+
+@override $UserCopyWith<$Res>? get createdBy;@override $AssetCopyWith<$Res>? get transportAsset;@override $AssetCopyWith<$Res>? get terminalAsset;@override $AssetCopyWith<$Res>? get bayAsset;@override $AtsOperationCopyWith<$Res>? get operation;
+
+}
+/// @nodoc
+class __$AtsBookingCopyWithImpl<$Res>
+    implements _$AtsBookingCopyWith<$Res> {
+  __$AtsBookingCopyWithImpl(this._self, this._then);
+
+  final _AtsBooking _self;
+  final $Res Function(_AtsBooking) _then;
+
+/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? terminalAssetId = null,Object? bayAssetId = null,Object? operationId = freezed,Object? bookingStatus = freezed,Object? bookingForDate = null,Object? transportAssetId = null,Object? bookingType = freezed,Object? createdById = null,Object? createdBy = freezed,Object? transportAsset = freezed,Object? terminalAsset = freezed,Object? bayAsset = freezed,Object? operation = freezed,}) {
+  return _then(_AtsBooking(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,terminalAssetId: null == terminalAssetId ? _self.terminalAssetId : terminalAssetId // ignore: cast_nullable_to_non_nullable
+as String,bayAssetId: null == bayAssetId ? _self.bayAssetId : bayAssetId // ignore: cast_nullable_to_non_nullable
+as String,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as String?,bookingStatus: freezed == bookingStatus ? _self.bookingStatus : bookingStatus // ignore: cast_nullable_to_non_nullable
+as AtsBookingStatus?,bookingForDate: null == bookingForDate ? _self.bookingForDate : bookingForDate // ignore: cast_nullable_to_non_nullable
+as DateTime,transportAssetId: null == transportAssetId ? _self.transportAssetId : transportAssetId // ignore: cast_nullable_to_non_nullable
+as String,bookingType: freezed == bookingType ? _self.bookingType : bookingType // ignore: cast_nullable_to_non_nullable
+as AtsBookingType?,createdById: null == createdById ? _self.createdById : createdById // ignore: cast_nullable_to_non_nullable
+as String,createdBy: freezed == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
+as User?,transportAsset: freezed == transportAsset ? _self.transportAsset : transportAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,terminalAsset: freezed == terminalAsset ? _self.terminalAsset : terminalAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,bayAsset: freezed == bayAsset ? _self.bayAsset : bayAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,
+  ));
+}
+
+/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserCopyWith<$Res>? get createdBy {
+    if (_self.createdBy == null) {
+    return null;
+  }
+
+  return $UserCopyWith<$Res>(_self.createdBy!, (value) {
+    return _then(_self.copyWith(createdBy: value));
+  });
+}/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get transportAsset {
+    if (_self.transportAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+    return _then(_self.copyWith(transportAsset: value));
+  });
+}/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get terminalAsset {
+    if (_self.terminalAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.terminalAsset!, (value) {
+    return _then(_self.copyWith(terminalAsset: value));
+  });
+}/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get bayAsset {
+    if (_self.bayAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.bayAsset!, (value) {
+    return _then(_self.copyWith(bayAsset: value));
+  });
+}/// Create a copy of AtsBooking
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+    return null;
+  }
+
+  return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+    return _then(_self.copyWith(operation: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AtsBookingInput {
+
+/// The [terminalAssetId] parameter is the terminal asset ID of the booking input.
+ String get terminalAssetId;/// The [terminalAssetId] parameter is the terminal asset ID of the booking input.
+ set terminalAssetId(String value);/// The [bayAssetId] parameter is the bay asset ID of the booking input.
+ String get bayAssetId;/// The [bayAssetId] parameter is the bay asset ID of the booking input.
+ set bayAssetId(String value);/// The [operationId] parameter is the operation ID of the booking input.
+ String? get operationId;/// The [operationId] parameter is the operation ID of the booking input.
+ set operationId(String? value);/// The [bookingStatus] parameter is the booking status of the booking input.
+@AtsBookingStatusOrNullConverter() AtsBookingStatus? get bookingStatus;/// The [bookingStatus] parameter is the booking status of the booking input.
+@AtsBookingStatusOrNullConverter() set bookingStatus(AtsBookingStatus? value);/// The [bookingForDate] parameter is the booking for date of the booking input.
+@TimestampConverter() DateTime get bookingForDate;/// The [bookingForDate] parameter is the booking for date of the booking input.
+@TimestampConverter() set bookingForDate(DateTime value);/// The [transportAssetId] parameter is the transport asset ID of the booking input.
+ String get transportAssetId;/// The [transportAssetId] parameter is the transport asset ID of the booking input.
+ set transportAssetId(String value);/// The [bookingType] parameter is the booking type of the booking input.
+@AtsBookingTypeOrNullConverter() AtsBookingType? get bookingType;/// The [bookingType] parameter is the booking type of the booking input.
+@AtsBookingTypeOrNullConverter() set bookingType(AtsBookingType? value);
+/// Create a copy of AtsBookingInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsBookingInputCopyWith<AtsBookingInput> get copyWith => _$AtsBookingInputCopyWithImpl<AtsBookingInput>(this as AtsBookingInput, _$identity);
+
+  /// Serializes this AtsBookingInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'AtsBookingInput(terminalAssetId: $terminalAssetId, bayAssetId: $bayAssetId, operationId: $operationId, bookingStatus: $bookingStatus, bookingForDate: $bookingForDate, transportAssetId: $transportAssetId, bookingType: $bookingType)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsBookingInputCopyWith<$Res>  {
+  factory $AtsBookingInputCopyWith(AtsBookingInput value, $Res Function(AtsBookingInput) _then) = _$AtsBookingInputCopyWithImpl;
+@useResult
+$Res call({
+ String terminalAssetId, String bayAssetId, String? operationId,@AtsBookingStatusOrNullConverter() AtsBookingStatus? bookingStatus,@TimestampConverter() DateTime bookingForDate, String transportAssetId,@AtsBookingTypeOrNullConverter() AtsBookingType? bookingType
+});
+
+
+
+
+}
+/// @nodoc
+class _$AtsBookingInputCopyWithImpl<$Res>
+    implements $AtsBookingInputCopyWith<$Res> {
+  _$AtsBookingInputCopyWithImpl(this._self, this._then);
+
+  final AtsBookingInput _self;
+  final $Res Function(AtsBookingInput) _then;
+
+/// Create a copy of AtsBookingInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? terminalAssetId = null,Object? bayAssetId = null,Object? operationId = freezed,Object? bookingStatus = freezed,Object? bookingForDate = null,Object? transportAssetId = null,Object? bookingType = freezed,}) {
+  return _then(_self.copyWith(
+terminalAssetId: null == terminalAssetId ? _self.terminalAssetId : terminalAssetId // ignore: cast_nullable_to_non_nullable
+as String,bayAssetId: null == bayAssetId ? _self.bayAssetId : bayAssetId // ignore: cast_nullable_to_non_nullable
+as String,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as String?,bookingStatus: freezed == bookingStatus ? _self.bookingStatus : bookingStatus // ignore: cast_nullable_to_non_nullable
+as AtsBookingStatus?,bookingForDate: null == bookingForDate ? _self.bookingForDate : bookingForDate // ignore: cast_nullable_to_non_nullable
+as DateTime,transportAssetId: null == transportAssetId ? _self.transportAssetId : transportAssetId // ignore: cast_nullable_to_non_nullable
+as String,bookingType: freezed == bookingType ? _self.bookingType : bookingType // ignore: cast_nullable_to_non_nullable
+as AtsBookingType?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AtsBookingInput].
+extension AtsBookingInputPatterns on AtsBookingInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsBookingInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsBookingInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsBookingInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsBookingInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsBookingInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsBookingInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String terminalAssetId,  String bayAssetId,  String? operationId, @AtsBookingStatusOrNullConverter()  AtsBookingStatus? bookingStatus, @TimestampConverter()  DateTime bookingForDate,  String transportAssetId, @AtsBookingTypeOrNullConverter()  AtsBookingType? bookingType)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsBookingInput() when $default != null:
+return $default(_that.terminalAssetId,_that.bayAssetId,_that.operationId,_that.bookingStatus,_that.bookingForDate,_that.transportAssetId,_that.bookingType);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String terminalAssetId,  String bayAssetId,  String? operationId, @AtsBookingStatusOrNullConverter()  AtsBookingStatus? bookingStatus, @TimestampConverter()  DateTime bookingForDate,  String transportAssetId, @AtsBookingTypeOrNullConverter()  AtsBookingType? bookingType)  $default,) {final _that = this;
+switch (_that) {
+case _AtsBookingInput():
+return $default(_that.terminalAssetId,_that.bayAssetId,_that.operationId,_that.bookingStatus,_that.bookingForDate,_that.transportAssetId,_that.bookingType);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String terminalAssetId,  String bayAssetId,  String? operationId, @AtsBookingStatusOrNullConverter()  AtsBookingStatus? bookingStatus, @TimestampConverter()  DateTime bookingForDate,  String transportAssetId, @AtsBookingTypeOrNullConverter()  AtsBookingType? bookingType)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsBookingInput() when $default != null:
+return $default(_that.terminalAssetId,_that.bayAssetId,_that.operationId,_that.bookingStatus,_that.bookingForDate,_that.transportAssetId,_that.bookingType);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsBookingInput implements AtsBookingInput {
+   _AtsBookingInput({required this.terminalAssetId, required this.bayAssetId, this.operationId, @AtsBookingStatusOrNullConverter() this.bookingStatus, @TimestampConverter() required this.bookingForDate, required this.transportAssetId, @AtsBookingTypeOrNullConverter() this.bookingType});
+  factory _AtsBookingInput.fromJson(Map<String, dynamic> json) => _$AtsBookingInputFromJson(json);
+
+/// The [terminalAssetId] parameter is the terminal asset ID of the booking input.
+@override  String terminalAssetId;
+/// The [bayAssetId] parameter is the bay asset ID of the booking input.
+@override  String bayAssetId;
+/// The [operationId] parameter is the operation ID of the booking input.
+@override  String? operationId;
+/// The [bookingStatus] parameter is the booking status of the booking input.
+@override@AtsBookingStatusOrNullConverter()  AtsBookingStatus? bookingStatus;
+/// The [bookingForDate] parameter is the booking for date of the booking input.
+@override@TimestampConverter()  DateTime bookingForDate;
+/// The [transportAssetId] parameter is the transport asset ID of the booking input.
+@override  String transportAssetId;
+/// The [bookingType] parameter is the booking type of the booking input.
+@override@AtsBookingTypeOrNullConverter()  AtsBookingType? bookingType;
+
+/// Create a copy of AtsBookingInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsBookingInputCopyWith<_AtsBookingInput> get copyWith => __$AtsBookingInputCopyWithImpl<_AtsBookingInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsBookingInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'AtsBookingInput(terminalAssetId: $terminalAssetId, bayAssetId: $bayAssetId, operationId: $operationId, bookingStatus: $bookingStatus, bookingForDate: $bookingForDate, transportAssetId: $transportAssetId, bookingType: $bookingType)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsBookingInputCopyWith<$Res> implements $AtsBookingInputCopyWith<$Res> {
+  factory _$AtsBookingInputCopyWith(_AtsBookingInput value, $Res Function(_AtsBookingInput) _then) = __$AtsBookingInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String terminalAssetId, String bayAssetId, String? operationId,@AtsBookingStatusOrNullConverter() AtsBookingStatus? bookingStatus,@TimestampConverter() DateTime bookingForDate, String transportAssetId,@AtsBookingTypeOrNullConverter() AtsBookingType? bookingType
+});
+
+
+
+
+}
+/// @nodoc
+class __$AtsBookingInputCopyWithImpl<$Res>
+    implements _$AtsBookingInputCopyWith<$Res> {
+  __$AtsBookingInputCopyWithImpl(this._self, this._then);
+
+  final _AtsBookingInput _self;
+  final $Res Function(_AtsBookingInput) _then;
+
+/// Create a copy of AtsBookingInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? terminalAssetId = null,Object? bayAssetId = null,Object? operationId = freezed,Object? bookingStatus = freezed,Object? bookingForDate = null,Object? transportAssetId = null,Object? bookingType = freezed,}) {
+  return _then(_AtsBookingInput(
+terminalAssetId: null == terminalAssetId ? _self.terminalAssetId : terminalAssetId // ignore: cast_nullable_to_non_nullable
+as String,bayAssetId: null == bayAssetId ? _self.bayAssetId : bayAssetId // ignore: cast_nullable_to_non_nullable
+as String,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as String?,bookingStatus: freezed == bookingStatus ? _self.bookingStatus : bookingStatus // ignore: cast_nullable_to_non_nullable
+as AtsBookingStatus?,bookingForDate: null == bookingForDate ? _self.bookingForDate : bookingForDate // ignore: cast_nullable_to_non_nullable
+as DateTime,transportAssetId: null == transportAssetId ? _self.transportAssetId : transportAssetId // ignore: cast_nullable_to_non_nullable
+as String,bookingType: freezed == bookingType ? _self.bookingType : bookingType // ignore: cast_nullable_to_non_nullable
+as AtsBookingType?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$AtsCompanyInformation {
 
 /// Your company name, could be the legal name or commercial name. For example, Golden M is the commercial name of Golden M, Inc.

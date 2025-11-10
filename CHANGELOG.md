@@ -1,5 +1,8 @@
 # Changelog
 
+## 3,4.78
+- Added `AtsBooking` and `AtsBookingInput`
+
 ## 3.4.77
 
 - Added `TableItem` model to support table functionalities in the workspace module.
