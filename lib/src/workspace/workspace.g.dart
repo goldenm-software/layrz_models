@@ -230,6 +230,7 @@ const _$WorkspaceMainViewEnumMap = {
   WorkspaceMainView.cases: '/Main/Cases',
   WorkspaceMainView.checkpoints: '/Main/Checkpoints',
   WorkspaceMainView.analytics: '/Main/Analytics',
+  WorkspaceMainView.table: '/Main/Table',
 };
 
 const _$MapCenterModeEnumMap = {

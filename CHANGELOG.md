@@ -1,6 +1,6 @@
 # Changelog
 
-## UNRELEASED
+## 3.4.77
 
 - Added `TableItem` model to support table functionalities in the workspace module.
 - Added `TableItemInput` model for creating and updating table items on the workspace module.

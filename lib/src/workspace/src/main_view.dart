@@ -1,5 +1,6 @@
 part of '../workspace.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum WorkspaceMainView {
   @JsonValue('/Main/Grid')
   sensors,
@@ -10,7 +11,9 @@ enum WorkspaceMainView {
   @JsonValue('/Main/Checkpoints')
   checkpoints,
   @JsonValue('/Main/Analytics')
-  analytics;
+  analytics,
+  @JsonValue('/Main/Table')
+  table;
 
   @override
   String toString() => toJson();
