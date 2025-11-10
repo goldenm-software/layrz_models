@@ -14,7 +14,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/goldenm-software/flutter-web-builder:flutter3.35.3-uv-python3.13
+      image: ghcr.io/goldenm-software/flutter-web-builder:flutter3.35.7-uv-python3.13
       options: --user root
       credentials:
         username: ${{ github.repository_owner }}

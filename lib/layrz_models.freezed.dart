@@ -2523,7 +2523,11 @@ as bool,
 /// @nodoc
 mixin _$CommentOwner {
 
- String get id; String get name; String? get avatar; Avatar? get dynamicAvatar;
+/// [id] is a unique identifier for the comment owner, typically used to reference and manage the owner within a system.
+ String get id;/// [name] represents the name of the comment owner, providing a human-readable identifier.
+ String get name;/// [avatar] is a URL or path to the avatar image associated with the comment owner.
+ String? get avatar;/// [dynamicAvatar] refers to a dynamic representation of the avatar, which may include various types such as
+ Avatar? get dynamicAvatar;
 /// Create a copy of CommentOwner
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2735,9 +2739,13 @@ class _CommentOwner implements CommentOwner {
   const _CommentOwner({required this.id, required this.name, this.avatar, this.dynamicAvatar});
   factory _CommentOwner.fromJson(Map<String, dynamic> json) => _$CommentOwnerFromJson(json);
 
+/// [id] is a unique identifier for the comment owner, typically used to reference and manage the owner within a system.
 @override final  String id;
+/// [name] represents the name of the comment owner, providing a human-readable identifier.
 @override final  String name;
+/// [avatar] is a URL or path to the avatar image associated with the comment owner.
 @override final  String? avatar;
+/// [dynamicAvatar] refers to a dynamic representation of the avatar, which may include various types such as
 @override final  Avatar? dynamicAvatar;
 
 /// Create a copy of CommentOwner

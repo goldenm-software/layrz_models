@@ -38,3 +38,6 @@ part 'src/map/center_mode.dart';
 part 'src/map/sensor_card.dart';
 part 'src/map/sensor_mode.dart';
 part 'src/map/sensors.dart';
+
+// Table
+part 'src/table/table_item.dart';

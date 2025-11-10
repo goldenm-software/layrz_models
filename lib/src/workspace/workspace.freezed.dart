@@ -23,34 +23,36 @@ mixin _$Workspace {
 @IconOrNullConverter() LayrzIcon? get icon;/// Background image URI of the workspace
  String? get background;/// Indicates if the workspace is tagged as favorite
  bool? get isFavorite;/// Indicates the main view of the workspace
-@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView? get mainView;/// Is the list of [assets] associated with the workspace
- List<Asset>? get assets;/// [assetsIds] is the list of ids of the [assets] associated with the workspace
- List<String>? get assetsIds;/// Is the list of [inboundServices] associated with the workspace
- List<InboundService>? get inboundServices;/// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
- List<String>? get inboundServicesIds;/// Is the list of [outboundServices] associated with the workspace
- List<OutboundService>? get outboundServices;/// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
- List<String>? get outboundServicesIds;/// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
+@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView get mainView;/// Is the list of [assets] associated with the workspace
+ List<Asset> get assets;/// [assetsIds] is the list of ids of the [assets] associated with the workspace
+ List<String> get assetsIds;/// Is the list of [inboundServices] associated with the workspace
+ List<InboundService> get inboundServices;/// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
+ List<String> get inboundServicesIds;/// Is the list of [outboundServices] associated with the workspace
+ List<OutboundService> get outboundServices;/// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
+ List<String> get outboundServicesIds;/// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
 /// [mapEnabled], [geofences], [geofencesIds], [mapCardCustomization], [mapCenterCoordinates], [mapCenterMode],
 /// [analyticsEnabled], [charts], [chartsIds], [chartStructure], [gridEnabled], [gridStructure]
 /// are used only when [typeApp] = [AppInternalIdentifier.one]
 /// Is the list of [triggers] and their ids [triggersIds]. And [casesEnabled] indicates
 /// if the cases monitor is enabled
 /// Also, [casesMonitorConfig] indicates the configuration of the cases monitor
- bool? get casesEnabled; List<Trigger>? get triggers; List<String>? get triggersIds; List<CaseMonitorCard?>? get casesMonitorConfig;/// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
+ bool get casesEnabled; List<Trigger> get triggers; List<String> get triggersIds; List<CaseMonitorCard> get casesMonitorConfig;/// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
 /// if the checkpoints monitor is enabled
- bool? get checkpointsEnabled; List<Checkpoint>? get checkpoints; List<String>? get checkpointsIds;/// Is the list of [geofences] and their ids [geofencesIds]. And [mapEnabled] indicates
+ bool get checkpointsEnabled; List<Checkpoint> get checkpoints; List<String> get checkpointsIds;/// Is the list of [geofences] and their ids [geofencesIds]. And [mapEnabled] indicates
 /// if the map monitor is enabled
 /// Also, [mapCardCustomization] indicates the customization of the map card
 /// [mapCenterCoordinates] indicates the center coordinates of the map
 /// [mapCenterMode] indicates the center mode of the map
- bool? get mapEnabled; List<Geofence>? get geofences; List<String>? get geofencesIds; List<MapCardSensors> get mapCardCustomization; GeoPoint? get mapCenterCoordinates;@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode? get mapCenterMode;/// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
+ bool get mapEnabled; List<Geofence> get geofences; List<String> get geofencesIds; List<MapCardSensors> get mapCardCustomization; GeoPoint? get mapCenterCoordinates;@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode? get mapCenterMode;/// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
 /// if the analytics monitor is enabled.
 /// Also, [analyticsGridStructure] indicates the visual structure of the charts
- bool? get analyticsEnabled; List<LayrzChart>? get charts; List<String>? get chartsIds; List<AnalyticsGridItem> get analyticsGridStructure;/// [sensorsEnabled] indicates if the sensors sensors monitor is enabled
+ bool get analyticsEnabled; List<LayrzChart> get charts; List<String> get chartsIds; List<AnalyticsGridItem> get analyticsGridStructure;/// [sensorsEnabled] indicates if the sensors sensors monitor is enabled
 /// Also, [sensorsGridStructure] indicates the visual structure of the sensors
- bool? get sensorsEnabled; List<SensorGridItem> get sensorsGridStructure;/// Metric system of the workspace
+ bool get sensorsEnabled; List<SensorGridItem> get sensorsGridStructure;/// Metric system of the workspace
 @JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem? get metricSystem; Timezone? get timezone;/// [access] indicates the access of the workspace
- List<Access>? get access;
+ List<Access>? get access;/// [tableEnabled] indicates if the table functionality is enabled
+ bool get tableEnabled;/// [tableStructure] indicates the structure of the table
+ TableItem? get tableStructure;
 /// Create a copy of Workspace
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -63,16 +65,16 @@ $WorkspaceCopyWith<Workspace> get copyWith => _$WorkspaceCopyWithImpl<Workspace>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Workspace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.typeApp, typeApp) || other.typeApp == typeApp)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.background, background) || other.background == background)&&(identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite)&&(identical(other.mainView, mainView) || other.mainView == mainView)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.inboundServices, inboundServices)&&const DeepCollectionEquality().equals(other.inboundServicesIds, inboundServicesIds)&&const DeepCollectionEquality().equals(other.outboundServices, outboundServices)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&(identical(other.casesEnabled, casesEnabled) || other.casesEnabled == casesEnabled)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&const DeepCollectionEquality().equals(other.casesMonitorConfig, casesMonitorConfig)&&(identical(other.checkpointsEnabled, checkpointsEnabled) || other.checkpointsEnabled == checkpointsEnabled)&&const DeepCollectionEquality().equals(other.checkpoints, checkpoints)&&const DeepCollectionEquality().equals(other.checkpointsIds, checkpointsIds)&&(identical(other.mapEnabled, mapEnabled) || other.mapEnabled == mapEnabled)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.mapCardCustomization, mapCardCustomization)&&(identical(other.mapCenterCoordinates, mapCenterCoordinates) || other.mapCenterCoordinates == mapCenterCoordinates)&&(identical(other.mapCenterMode, mapCenterMode) || other.mapCenterMode == mapCenterMode)&&(identical(other.analyticsEnabled, analyticsEnabled) || other.analyticsEnabled == analyticsEnabled)&&const DeepCollectionEquality().equals(other.charts, charts)&&const DeepCollectionEquality().equals(other.chartsIds, chartsIds)&&const DeepCollectionEquality().equals(other.analyticsGridStructure, analyticsGridStructure)&&(identical(other.sensorsEnabled, sensorsEnabled) || other.sensorsEnabled == sensorsEnabled)&&const DeepCollectionEquality().equals(other.sensorsGridStructure, sensorsGridStructure)&&(identical(other.metricSystem, metricSystem) || other.metricSystem == metricSystem)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&const DeepCollectionEquality().equals(other.access, access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Workspace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.typeApp, typeApp) || other.typeApp == typeApp)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.background, background) || other.background == background)&&(identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite)&&(identical(other.mainView, mainView) || other.mainView == mainView)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.inboundServices, inboundServices)&&const DeepCollectionEquality().equals(other.inboundServicesIds, inboundServicesIds)&&const DeepCollectionEquality().equals(other.outboundServices, outboundServices)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&(identical(other.casesEnabled, casesEnabled) || other.casesEnabled == casesEnabled)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&const DeepCollectionEquality().equals(other.casesMonitorConfig, casesMonitorConfig)&&(identical(other.checkpointsEnabled, checkpointsEnabled) || other.checkpointsEnabled == checkpointsEnabled)&&const DeepCollectionEquality().equals(other.checkpoints, checkpoints)&&const DeepCollectionEquality().equals(other.checkpointsIds, checkpointsIds)&&(identical(other.mapEnabled, mapEnabled) || other.mapEnabled == mapEnabled)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.mapCardCustomization, mapCardCustomization)&&(identical(other.mapCenterCoordinates, mapCenterCoordinates) || other.mapCenterCoordinates == mapCenterCoordinates)&&(identical(other.mapCenterMode, mapCenterMode) || other.mapCenterMode == mapCenterMode)&&(identical(other.analyticsEnabled, analyticsEnabled) || other.analyticsEnabled == analyticsEnabled)&&const DeepCollectionEquality().equals(other.charts, charts)&&const DeepCollectionEquality().equals(other.chartsIds, chartsIds)&&const DeepCollectionEquality().equals(other.analyticsGridStructure, analyticsGridStructure)&&(identical(other.sensorsEnabled, sensorsEnabled) || other.sensorsEnabled == sensorsEnabled)&&const DeepCollectionEquality().equals(other.sensorsGridStructure, sensorsGridStructure)&&(identical(other.metricSystem, metricSystem) || other.metricSystem == metricSystem)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.tableEnabled, tableEnabled) || other.tableEnabled == tableEnabled)&&(identical(other.tableStructure, tableStructure) || other.tableStructure == tableStructure));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,typeApp,color,icon,background,isFavorite,mainView,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(inboundServices),const DeepCollectionEquality().hash(inboundServicesIds),const DeepCollectionEquality().hash(outboundServices),const DeepCollectionEquality().hash(outboundServicesIds),casesEnabled,const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),const DeepCollectionEquality().hash(casesMonitorConfig),checkpointsEnabled,const DeepCollectionEquality().hash(checkpoints),const DeepCollectionEquality().hash(checkpointsIds),mapEnabled,const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(mapCardCustomization),mapCenterCoordinates,mapCenterMode,analyticsEnabled,const DeepCollectionEquality().hash(charts),const DeepCollectionEquality().hash(chartsIds),const DeepCollectionEquality().hash(analyticsGridStructure),sensorsEnabled,const DeepCollectionEquality().hash(sensorsGridStructure),metricSystem,timezone,const DeepCollectionEquality().hash(access)]);
+int get hashCode => Object.hashAll([runtimeType,id,name,typeApp,color,icon,background,isFavorite,mainView,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(inboundServices),const DeepCollectionEquality().hash(inboundServicesIds),const DeepCollectionEquality().hash(outboundServices),const DeepCollectionEquality().hash(outboundServicesIds),casesEnabled,const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),const DeepCollectionEquality().hash(casesMonitorConfig),checkpointsEnabled,const DeepCollectionEquality().hash(checkpoints),const DeepCollectionEquality().hash(checkpointsIds),mapEnabled,const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(mapCardCustomization),mapCenterCoordinates,mapCenterMode,analyticsEnabled,const DeepCollectionEquality().hash(charts),const DeepCollectionEquality().hash(chartsIds),const DeepCollectionEquality().hash(analyticsGridStructure),sensorsEnabled,const DeepCollectionEquality().hash(sensorsGridStructure),metricSystem,timezone,const DeepCollectionEquality().hash(access),tableEnabled,tableStructure]);
 
 @override
 String toString() {
-  return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access)';
+  return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access, tableEnabled: $tableEnabled, tableStructure: $tableStructure)';
 }
 
 
@@ -83,11 +85,11 @@ abstract mixin class $WorkspaceCopyWith<$Res>  {
   factory $WorkspaceCopyWith(Workspace value, $Res Function(Workspace) _then) = _$WorkspaceCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) AppInternalIdentifier? typeApp,@ColorOrNullConverter() Color? color,@IconOrNullConverter() LayrzIcon? icon, String? background, bool? isFavorite,@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView? mainView, List<Asset>? assets, List<String>? assetsIds, List<InboundService>? inboundServices, List<String>? inboundServicesIds, List<OutboundService>? outboundServices, List<String>? outboundServicesIds, bool? casesEnabled, List<Trigger>? triggers, List<String>? triggersIds, List<CaseMonitorCard?>? casesMonitorConfig, bool? checkpointsEnabled, List<Checkpoint>? checkpoints, List<String>? checkpointsIds, bool? mapEnabled, List<Geofence>? geofences, List<String>? geofencesIds, List<MapCardSensors> mapCardCustomization, GeoPoint? mapCenterCoordinates,@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode? mapCenterMode, bool? analyticsEnabled, List<LayrzChart>? charts, List<String>? chartsIds, List<AnalyticsGridItem> analyticsGridStructure, bool? sensorsEnabled, List<SensorGridItem> sensorsGridStructure,@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem? metricSystem, Timezone? timezone, List<Access>? access
+ String id, String name,@JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) AppInternalIdentifier? typeApp,@ColorOrNullConverter() Color? color,@IconOrNullConverter() LayrzIcon? icon, String? background, bool? isFavorite,@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView mainView, List<Asset> assets, List<String> assetsIds, List<InboundService> inboundServices, List<String> inboundServicesIds, List<OutboundService> outboundServices, List<String> outboundServicesIds, bool casesEnabled, List<Trigger> triggers, List<String> triggersIds, List<CaseMonitorCard> casesMonitorConfig, bool checkpointsEnabled, List<Checkpoint> checkpoints, List<String> checkpointsIds, bool mapEnabled, List<Geofence> geofences, List<String> geofencesIds, List<MapCardSensors> mapCardCustomization, GeoPoint? mapCenterCoordinates,@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode? mapCenterMode, bool analyticsEnabled, List<LayrzChart> charts, List<String> chartsIds, List<AnalyticsGridItem> analyticsGridStructure, bool sensorsEnabled, List<SensorGridItem> sensorsGridStructure,@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem? metricSystem, Timezone? timezone, List<Access>? access, bool tableEnabled, TableItem? tableStructure
 });
 
 
-$GeoPointCopyWith<$Res>? get mapCenterCoordinates;$TimezoneCopyWith<$Res>? get timezone;
+$GeoPointCopyWith<$Res>? get mapCenterCoordinates;$TimezoneCopyWith<$Res>? get timezone;$TableItemCopyWith<$Res>? get tableStructure;
 
 }
 /// @nodoc
@@ -100,7 +102,7 @@ class _$WorkspaceCopyWithImpl<$Res>
 
 /// Create a copy of Workspace
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? typeApp = freezed,Object? color = freezed,Object? icon = freezed,Object? background = freezed,Object? isFavorite = freezed,Object? mainView = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? inboundServices = freezed,Object? inboundServicesIds = freezed,Object? outboundServices = freezed,Object? outboundServicesIds = freezed,Object? casesEnabled = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? casesMonitorConfig = freezed,Object? checkpointsEnabled = freezed,Object? checkpoints = freezed,Object? checkpointsIds = freezed,Object? mapEnabled = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? mapCardCustomization = null,Object? mapCenterCoordinates = freezed,Object? mapCenterMode = freezed,Object? analyticsEnabled = freezed,Object? charts = freezed,Object? chartsIds = freezed,Object? analyticsGridStructure = null,Object? sensorsEnabled = freezed,Object? sensorsGridStructure = null,Object? metricSystem = freezed,Object? timezone = freezed,Object? access = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? typeApp = freezed,Object? color = freezed,Object? icon = freezed,Object? background = freezed,Object? isFavorite = freezed,Object? mainView = null,Object? assets = null,Object? assetsIds = null,Object? inboundServices = null,Object? inboundServicesIds = null,Object? outboundServices = null,Object? outboundServicesIds = null,Object? casesEnabled = null,Object? triggers = null,Object? triggersIds = null,Object? casesMonitorConfig = null,Object? checkpointsEnabled = null,Object? checkpoints = null,Object? checkpointsIds = null,Object? mapEnabled = null,Object? geofences = null,Object? geofencesIds = null,Object? mapCardCustomization = null,Object? mapCenterCoordinates = freezed,Object? mapCenterMode = freezed,Object? analyticsEnabled = null,Object? charts = null,Object? chartsIds = null,Object? analyticsGridStructure = null,Object? sensorsEnabled = null,Object? sensorsGridStructure = null,Object? metricSystem = freezed,Object? timezone = freezed,Object? access = freezed,Object? tableEnabled = null,Object? tableStructure = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -109,36 +111,38 @@ as AppInternalIdentifier?,color: freezed == color ? _self.color : color // ignor
 as Color?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as LayrzIcon?,background: freezed == background ? _self.background : background // ignore: cast_nullable_to_non_nullable
 as String?,isFavorite: freezed == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
-as bool?,mainView: freezed == mainView ? _self.mainView : mainView // ignore: cast_nullable_to_non_nullable
-as WorkspaceMainView?,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,inboundServices: freezed == inboundServices ? _self.inboundServices : inboundServices // ignore: cast_nullable_to_non_nullable
-as List<InboundService>?,inboundServicesIds: freezed == inboundServicesIds ? _self.inboundServicesIds : inboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,outboundServices: freezed == outboundServices ? _self.outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
-as List<OutboundService>?,outboundServicesIds: freezed == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,casesEnabled: freezed == casesEnabled ? _self.casesEnabled : casesEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,triggers: freezed == triggers ? _self.triggers : triggers // ignore: cast_nullable_to_non_nullable
-as List<Trigger>?,triggersIds: freezed == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,casesMonitorConfig: freezed == casesMonitorConfig ? _self.casesMonitorConfig : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
-as List<CaseMonitorCard?>?,checkpointsEnabled: freezed == checkpointsEnabled ? _self.checkpointsEnabled : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,checkpoints: freezed == checkpoints ? _self.checkpoints : checkpoints // ignore: cast_nullable_to_non_nullable
-as List<Checkpoint>?,checkpointsIds: freezed == checkpointsIds ? _self.checkpointsIds : checkpointsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,mapEnabled: freezed == mapEnabled ? _self.mapEnabled : mapEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,geofences: freezed == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,mapCardCustomization: null == mapCardCustomization ? _self.mapCardCustomization : mapCardCustomization // ignore: cast_nullable_to_non_nullable
+as bool?,mainView: null == mainView ? _self.mainView : mainView // ignore: cast_nullable_to_non_nullable
+as WorkspaceMainView,assets: null == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,inboundServices: null == inboundServices ? _self.inboundServices : inboundServices // ignore: cast_nullable_to_non_nullable
+as List<InboundService>,inboundServicesIds: null == inboundServicesIds ? _self.inboundServicesIds : inboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,outboundServices: null == outboundServices ? _self.outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
+as List<OutboundService>,outboundServicesIds: null == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,casesEnabled: null == casesEnabled ? _self.casesEnabled : casesEnabled // ignore: cast_nullable_to_non_nullable
+as bool,triggers: null == triggers ? _self.triggers : triggers // ignore: cast_nullable_to_non_nullable
+as List<Trigger>,triggersIds: null == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
+as List<String>,casesMonitorConfig: null == casesMonitorConfig ? _self.casesMonitorConfig : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
+as List<CaseMonitorCard>,checkpointsEnabled: null == checkpointsEnabled ? _self.checkpointsEnabled : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
+as bool,checkpoints: null == checkpoints ? _self.checkpoints : checkpoints // ignore: cast_nullable_to_non_nullable
+as List<Checkpoint>,checkpointsIds: null == checkpointsIds ? _self.checkpointsIds : checkpointsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mapEnabled: null == mapEnabled ? _self.mapEnabled : mapEnabled // ignore: cast_nullable_to_non_nullable
+as bool,geofences: null == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>,geofencesIds: null == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mapCardCustomization: null == mapCardCustomization ? _self.mapCardCustomization : mapCardCustomization // ignore: cast_nullable_to_non_nullable
 as List<MapCardSensors>,mapCenterCoordinates: freezed == mapCenterCoordinates ? _self.mapCenterCoordinates : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
 as GeoPoint?,mapCenterMode: freezed == mapCenterMode ? _self.mapCenterMode : mapCenterMode // ignore: cast_nullable_to_non_nullable
-as MapCenterMode?,analyticsEnabled: freezed == analyticsEnabled ? _self.analyticsEnabled : analyticsEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,charts: freezed == charts ? _self.charts : charts // ignore: cast_nullable_to_non_nullable
-as List<LayrzChart>?,chartsIds: freezed == chartsIds ? _self.chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,analyticsGridStructure: null == analyticsGridStructure ? _self.analyticsGridStructure : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
-as List<AnalyticsGridItem>,sensorsEnabled: freezed == sensorsEnabled ? _self.sensorsEnabled : sensorsEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,sensorsGridStructure: null == sensorsGridStructure ? _self.sensorsGridStructure : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
+as MapCenterMode?,analyticsEnabled: null == analyticsEnabled ? _self.analyticsEnabled : analyticsEnabled // ignore: cast_nullable_to_non_nullable
+as bool,charts: null == charts ? _self.charts : charts // ignore: cast_nullable_to_non_nullable
+as List<LayrzChart>,chartsIds: null == chartsIds ? _self.chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,analyticsGridStructure: null == analyticsGridStructure ? _self.analyticsGridStructure : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
+as List<AnalyticsGridItem>,sensorsEnabled: null == sensorsEnabled ? _self.sensorsEnabled : sensorsEnabled // ignore: cast_nullable_to_non_nullable
+as bool,sensorsGridStructure: null == sensorsGridStructure ? _self.sensorsGridStructure : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
 as List<SensorGridItem>,metricSystem: freezed == metricSystem ? _self.metricSystem : metricSystem // ignore: cast_nullable_to_non_nullable
 as MetricSystem?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
 as Timezone?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,
+as List<Access>?,tableEnabled: null == tableEnabled ? _self.tableEnabled : tableEnabled // ignore: cast_nullable_to_non_nullable
+as bool,tableStructure: freezed == tableStructure ? _self.tableStructure : tableStructure // ignore: cast_nullable_to_non_nullable
+as TableItem?,
   ));
 }
 /// Create a copy of Workspace
@@ -164,6 +168,18 @@ $TimezoneCopyWith<$Res>? get timezone {
 
   return $TimezoneCopyWith<$Res>(_self.timezone!, (value) {
     return _then(_self.copyWith(timezone: value));
+  });
+}/// Create a copy of Workspace
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$TableItemCopyWith<$Res>? get tableStructure {
+    if (_self.tableStructure == null) {
+    return null;
+  }
+
+  return $TableItemCopyWith<$Res>(_self.tableStructure!, (value) {
+    return _then(_self.copyWith(tableStructure: value));
   });
 }
 }
@@ -247,10 +263,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)  AppInternalIdentifier? typeApp, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  String? background,  bool? isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView? mainView,  List<Asset>? assets,  List<String>? assetsIds,  List<InboundService>? inboundServices,  List<String>? inboundServicesIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  bool? casesEnabled,  List<Trigger>? triggers,  List<String>? triggersIds,  List<CaseMonitorCard?>? casesMonitorConfig,  bool? checkpointsEnabled,  List<Checkpoint>? checkpoints,  List<String>? checkpointsIds,  bool? mapEnabled,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<MapCardSensors> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode? mapCenterMode,  bool? analyticsEnabled,  List<LayrzChart>? charts,  List<String>? chartsIds,  List<AnalyticsGridItem> analyticsGridStructure,  bool? sensorsEnabled,  List<SensorGridItem> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem? metricSystem,  Timezone? timezone,  List<Access>? access)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)  AppInternalIdentifier? typeApp, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  String? background,  bool? isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<Asset> assets,  List<String> assetsIds,  List<InboundService> inboundServices,  List<String> inboundServicesIds,  List<OutboundService> outboundServices,  List<String> outboundServicesIds,  bool casesEnabled,  List<Trigger> triggers,  List<String> triggersIds,  List<CaseMonitorCard> casesMonitorConfig,  bool checkpointsEnabled,  List<Checkpoint> checkpoints,  List<String> checkpointsIds,  bool mapEnabled,  List<Geofence> geofences,  List<String> geofencesIds,  List<MapCardSensors> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode? mapCenterMode,  bool analyticsEnabled,  List<LayrzChart> charts,  List<String> chartsIds,  List<AnalyticsGridItem> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItem> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem? metricSystem,  Timezone? timezone,  List<Access>? access,  bool tableEnabled,  TableItem? tableStructure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Workspace() when $default != null:
-return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assets,_that.assetsIds,_that.inboundServices,_that.inboundServicesIds,_that.outboundServices,_that.outboundServicesIds,_that.casesEnabled,_that.triggers,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpoints,_that.checkpointsIds,_that.mapEnabled,_that.geofences,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.charts,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.timezone,_that.access);case _:
+return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assets,_that.assetsIds,_that.inboundServices,_that.inboundServicesIds,_that.outboundServices,_that.outboundServicesIds,_that.casesEnabled,_that.triggers,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpoints,_that.checkpointsIds,_that.mapEnabled,_that.geofences,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.charts,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.timezone,_that.access,_that.tableEnabled,_that.tableStructure);case _:
   return orElse();
 
 }
@@ -268,10 +284,10 @@ return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.b
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)  AppInternalIdentifier? typeApp, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  String? background,  bool? isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView? mainView,  List<Asset>? assets,  List<String>? assetsIds,  List<InboundService>? inboundServices,  List<String>? inboundServicesIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  bool? casesEnabled,  List<Trigger>? triggers,  List<String>? triggersIds,  List<CaseMonitorCard?>? casesMonitorConfig,  bool? checkpointsEnabled,  List<Checkpoint>? checkpoints,  List<String>? checkpointsIds,  bool? mapEnabled,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<MapCardSensors> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode? mapCenterMode,  bool? analyticsEnabled,  List<LayrzChart>? charts,  List<String>? chartsIds,  List<AnalyticsGridItem> analyticsGridStructure,  bool? sensorsEnabled,  List<SensorGridItem> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem? metricSystem,  Timezone? timezone,  List<Access>? access)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)  AppInternalIdentifier? typeApp, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  String? background,  bool? isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<Asset> assets,  List<String> assetsIds,  List<InboundService> inboundServices,  List<String> inboundServicesIds,  List<OutboundService> outboundServices,  List<String> outboundServicesIds,  bool casesEnabled,  List<Trigger> triggers,  List<String> triggersIds,  List<CaseMonitorCard> casesMonitorConfig,  bool checkpointsEnabled,  List<Checkpoint> checkpoints,  List<String> checkpointsIds,  bool mapEnabled,  List<Geofence> geofences,  List<String> geofencesIds,  List<MapCardSensors> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode? mapCenterMode,  bool analyticsEnabled,  List<LayrzChart> charts,  List<String> chartsIds,  List<AnalyticsGridItem> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItem> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem? metricSystem,  Timezone? timezone,  List<Access>? access,  bool tableEnabled,  TableItem? tableStructure)  $default,) {final _that = this;
 switch (_that) {
 case _Workspace():
-return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assets,_that.assetsIds,_that.inboundServices,_that.inboundServicesIds,_that.outboundServices,_that.outboundServicesIds,_that.casesEnabled,_that.triggers,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpoints,_that.checkpointsIds,_that.mapEnabled,_that.geofences,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.charts,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.timezone,_that.access);case _:
+return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assets,_that.assetsIds,_that.inboundServices,_that.inboundServicesIds,_that.outboundServices,_that.outboundServicesIds,_that.casesEnabled,_that.triggers,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpoints,_that.checkpointsIds,_that.mapEnabled,_that.geofences,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.charts,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.timezone,_that.access,_that.tableEnabled,_that.tableStructure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -288,10 +304,10 @@ return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.b
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)  AppInternalIdentifier? typeApp, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  String? background,  bool? isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView? mainView,  List<Asset>? assets,  List<String>? assetsIds,  List<InboundService>? inboundServices,  List<String>? inboundServicesIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  bool? casesEnabled,  List<Trigger>? triggers,  List<String>? triggersIds,  List<CaseMonitorCard?>? casesMonitorConfig,  bool? checkpointsEnabled,  List<Checkpoint>? checkpoints,  List<String>? checkpointsIds,  bool? mapEnabled,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<MapCardSensors> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode? mapCenterMode,  bool? analyticsEnabled,  List<LayrzChart>? charts,  List<String>? chartsIds,  List<AnalyticsGridItem> analyticsGridStructure,  bool? sensorsEnabled,  List<SensorGridItem> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem? metricSystem,  Timezone? timezone,  List<Access>? access)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)  AppInternalIdentifier? typeApp, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  String? background,  bool? isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<Asset> assets,  List<String> assetsIds,  List<InboundService> inboundServices,  List<String> inboundServicesIds,  List<OutboundService> outboundServices,  List<String> outboundServicesIds,  bool casesEnabled,  List<Trigger> triggers,  List<String> triggersIds,  List<CaseMonitorCard> casesMonitorConfig,  bool checkpointsEnabled,  List<Checkpoint> checkpoints,  List<String> checkpointsIds,  bool mapEnabled,  List<Geofence> geofences,  List<String> geofencesIds,  List<MapCardSensors> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode? mapCenterMode,  bool analyticsEnabled,  List<LayrzChart> charts,  List<String> chartsIds,  List<AnalyticsGridItem> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItem> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem? metricSystem,  Timezone? timezone,  List<Access>? access,  bool tableEnabled,  TableItem? tableStructure)?  $default,) {final _that = this;
 switch (_that) {
 case _Workspace() when $default != null:
-return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assets,_that.assetsIds,_that.inboundServices,_that.inboundServicesIds,_that.outboundServices,_that.outboundServicesIds,_that.casesEnabled,_that.triggers,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpoints,_that.checkpointsIds,_that.mapEnabled,_that.geofences,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.charts,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.timezone,_that.access);case _:
+return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assets,_that.assetsIds,_that.inboundServices,_that.inboundServicesIds,_that.outboundServices,_that.outboundServicesIds,_that.casesEnabled,_that.triggers,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpoints,_that.checkpointsIds,_that.mapEnabled,_that.geofences,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.charts,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.timezone,_that.access,_that.tableEnabled,_that.tableStructure);case _:
   return null;
 
 }
@@ -303,7 +319,7 @@ return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.b
 @JsonSerializable()
 
 class _Workspace implements Workspace {
-  const _Workspace({required this.id, required this.name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.typeApp, @ColorOrNullConverter() this.color, @IconOrNullConverter() this.icon, this.background, this.isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors) this.mainView, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<InboundService>? inboundServices, final  List<String>? inboundServicesIds, final  List<OutboundService>? outboundServices, final  List<String>? outboundServicesIds, this.casesEnabled, final  List<Trigger>? triggers, final  List<String>? triggersIds, final  List<CaseMonitorCard?>? casesMonitorConfig, this.checkpointsEnabled, final  List<Checkpoint>? checkpoints, final  List<String>? checkpointsIds, this.mapEnabled, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<MapCardSensors> mapCardCustomization = const [], this.mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds) this.mapCenterMode, this.analyticsEnabled, final  List<LayrzChart>? charts, final  List<String>? chartsIds, final  List<AnalyticsGridItem> analyticsGridStructure = const [], this.sensorsEnabled, final  List<SensorGridItem> sensorsGridStructure = const [], @JsonKey(unknownEnumValue: MetricSystem.metric) this.metricSystem, this.timezone, final  List<Access>? access}): _assets = assets,_assetsIds = assetsIds,_inboundServices = inboundServices,_inboundServicesIds = inboundServicesIds,_outboundServices = outboundServices,_outboundServicesIds = outboundServicesIds,_triggers = triggers,_triggersIds = triggersIds,_casesMonitorConfig = casesMonitorConfig,_checkpoints = checkpoints,_checkpointsIds = checkpointsIds,_geofences = geofences,_geofencesIds = geofencesIds,_mapCardCustomization = mapCardCustomization,_charts = charts,_chartsIds = chartsIds,_analyticsGridStructure = analyticsGridStructure,_sensorsGridStructure = sensorsGridStructure,_access = access;
+  const _Workspace({required this.id, required this.name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.typeApp, @ColorOrNullConverter() this.color, @IconOrNullConverter() this.icon, this.background, this.isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors) this.mainView = WorkspaceMainView.sensors, final  List<Asset> assets = const [], final  List<String> assetsIds = const [], final  List<InboundService> inboundServices = const [], final  List<String> inboundServicesIds = const [], final  List<OutboundService> outboundServices = const [], final  List<String> outboundServicesIds = const [], this.casesEnabled = false, final  List<Trigger> triggers = const [], final  List<String> triggersIds = const [], final  List<CaseMonitorCard> casesMonitorConfig = const [], this.checkpointsEnabled = false, final  List<Checkpoint> checkpoints = const [], final  List<String> checkpointsIds = const [], this.mapEnabled = false, final  List<Geofence> geofences = const [], final  List<String> geofencesIds = const [], final  List<MapCardSensors> mapCardCustomization = const [], this.mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds) this.mapCenterMode, this.analyticsEnabled = false, final  List<LayrzChart> charts = const [], final  List<String> chartsIds = const [], final  List<AnalyticsGridItem> analyticsGridStructure = const [], this.sensorsEnabled = false, final  List<SensorGridItem> sensorsGridStructure = const [], @JsonKey(unknownEnumValue: MetricSystem.metric) this.metricSystem, this.timezone, final  List<Access>? access, this.tableEnabled = false, this.tableStructure}): _assets = assets,_assetsIds = assetsIds,_inboundServices = inboundServices,_inboundServicesIds = inboundServicesIds,_outboundServices = outboundServices,_outboundServicesIds = outboundServicesIds,_triggers = triggers,_triggersIds = triggersIds,_casesMonitorConfig = casesMonitorConfig,_checkpoints = checkpoints,_checkpointsIds = checkpointsIds,_geofences = geofences,_geofencesIds = geofencesIds,_mapCardCustomization = mapCardCustomization,_charts = charts,_chartsIds = chartsIds,_analyticsGridStructure = analyticsGridStructure,_sensorsGridStructure = sensorsGridStructure,_access = access;
   factory _Workspace.fromJson(Map<String, dynamic> json) => _$WorkspaceFromJson(json);
 
 /// Is the ID
@@ -321,71 +337,59 @@ class _Workspace implements Workspace {
 /// Indicates if the workspace is tagged as favorite
 @override final  bool? isFavorite;
 /// Indicates the main view of the workspace
-@override@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) final  WorkspaceMainView? mainView;
+@override@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) final  WorkspaceMainView mainView;
 /// Is the list of [assets] associated with the workspace
- final  List<Asset>? _assets;
+ final  List<Asset> _assets;
 /// Is the list of [assets] associated with the workspace
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
+@override@JsonKey() List<Asset> get assets {
   if (_assets is EqualUnmodifiableListView) return _assets;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_assets);
 }
 
 /// [assetsIds] is the list of ids of the [assets] associated with the workspace
- final  List<String>? _assetsIds;
+ final  List<String> _assetsIds;
 /// [assetsIds] is the list of ids of the [assets] associated with the workspace
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
+@override@JsonKey() List<String> get assetsIds {
   if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_assetsIds);
 }
 
 /// Is the list of [inboundServices] associated with the workspace
- final  List<InboundService>? _inboundServices;
+ final  List<InboundService> _inboundServices;
 /// Is the list of [inboundServices] associated with the workspace
-@override List<InboundService>? get inboundServices {
-  final value = _inboundServices;
-  if (value == null) return null;
+@override@JsonKey() List<InboundService> get inboundServices {
   if (_inboundServices is EqualUnmodifiableListView) return _inboundServices;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_inboundServices);
 }
 
 /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
- final  List<String>? _inboundServicesIds;
+ final  List<String> _inboundServicesIds;
 /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
-@override List<String>? get inboundServicesIds {
-  final value = _inboundServicesIds;
-  if (value == null) return null;
+@override@JsonKey() List<String> get inboundServicesIds {
   if (_inboundServicesIds is EqualUnmodifiableListView) return _inboundServicesIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_inboundServicesIds);
 }
 
 /// Is the list of [outboundServices] associated with the workspace
- final  List<OutboundService>? _outboundServices;
+ final  List<OutboundService> _outboundServices;
 /// Is the list of [outboundServices] associated with the workspace
-@override List<OutboundService>? get outboundServices {
-  final value = _outboundServices;
-  if (value == null) return null;
+@override@JsonKey() List<OutboundService> get outboundServices {
   if (_outboundServices is EqualUnmodifiableListView) return _outboundServices;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_outboundServices);
 }
 
 /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
- final  List<String>? _outboundServicesIds;
+ final  List<String> _outboundServicesIds;
 /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
-@override List<String>? get outboundServicesIds {
-  final value = _outboundServicesIds;
-  if (value == null) return null;
+@override@JsonKey() List<String> get outboundServicesIds {
   if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_outboundServicesIds);
 }
 
 /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
@@ -395,53 +399,43 @@ class _Workspace implements Workspace {
 /// Is the list of [triggers] and their ids [triggersIds]. And [casesEnabled] indicates
 /// if the cases monitor is enabled
 /// Also, [casesMonitorConfig] indicates the configuration of the cases monitor
-@override final  bool? casesEnabled;
- final  List<Trigger>? _triggers;
-@override List<Trigger>? get triggers {
-  final value = _triggers;
-  if (value == null) return null;
+@override@JsonKey() final  bool casesEnabled;
+ final  List<Trigger> _triggers;
+@override@JsonKey() List<Trigger> get triggers {
   if (_triggers is EqualUnmodifiableListView) return _triggers;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_triggers);
 }
 
- final  List<String>? _triggersIds;
-@override List<String>? get triggersIds {
-  final value = _triggersIds;
-  if (value == null) return null;
+ final  List<String> _triggersIds;
+@override@JsonKey() List<String> get triggersIds {
   if (_triggersIds is EqualUnmodifiableListView) return _triggersIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_triggersIds);
 }
 
- final  List<CaseMonitorCard?>? _casesMonitorConfig;
-@override List<CaseMonitorCard?>? get casesMonitorConfig {
-  final value = _casesMonitorConfig;
-  if (value == null) return null;
+ final  List<CaseMonitorCard> _casesMonitorConfig;
+@override@JsonKey() List<CaseMonitorCard> get casesMonitorConfig {
   if (_casesMonitorConfig is EqualUnmodifiableListView) return _casesMonitorConfig;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_casesMonitorConfig);
 }
 
 /// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
 /// if the checkpoints monitor is enabled
-@override final  bool? checkpointsEnabled;
- final  List<Checkpoint>? _checkpoints;
-@override List<Checkpoint>? get checkpoints {
-  final value = _checkpoints;
-  if (value == null) return null;
+@override@JsonKey() final  bool checkpointsEnabled;
+ final  List<Checkpoint> _checkpoints;
+@override@JsonKey() List<Checkpoint> get checkpoints {
   if (_checkpoints is EqualUnmodifiableListView) return _checkpoints;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_checkpoints);
 }
 
- final  List<String>? _checkpointsIds;
-@override List<String>? get checkpointsIds {
-  final value = _checkpointsIds;
-  if (value == null) return null;
+ final  List<String> _checkpointsIds;
+@override@JsonKey() List<String> get checkpointsIds {
   if (_checkpointsIds is EqualUnmodifiableListView) return _checkpointsIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_checkpointsIds);
 }
 
 /// Is the list of [geofences] and their ids [geofencesIds]. And [mapEnabled] indicates
@@ -449,23 +443,19 @@ class _Workspace implements Workspace {
 /// Also, [mapCardCustomization] indicates the customization of the map card
 /// [mapCenterCoordinates] indicates the center coordinates of the map
 /// [mapCenterMode] indicates the center mode of the map
-@override final  bool? mapEnabled;
- final  List<Geofence>? _geofences;
-@override List<Geofence>? get geofences {
-  final value = _geofences;
-  if (value == null) return null;
+@override@JsonKey() final  bool mapEnabled;
+ final  List<Geofence> _geofences;
+@override@JsonKey() List<Geofence> get geofences {
   if (_geofences is EqualUnmodifiableListView) return _geofences;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_geofences);
 }
 
- final  List<String>? _geofencesIds;
-@override List<String>? get geofencesIds {
-  final value = _geofencesIds;
-  if (value == null) return null;
+ final  List<String> _geofencesIds;
+@override@JsonKey() List<String> get geofencesIds {
   if (_geofencesIds is EqualUnmodifiableListView) return _geofencesIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_geofencesIds);
 }
 
  final  List<MapCardSensors> _mapCardCustomization;
@@ -480,23 +470,19 @@ class _Workspace implements Workspace {
 /// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
 /// if the analytics monitor is enabled.
 /// Also, [analyticsGridStructure] indicates the visual structure of the charts
-@override final  bool? analyticsEnabled;
- final  List<LayrzChart>? _charts;
-@override List<LayrzChart>? get charts {
-  final value = _charts;
-  if (value == null) return null;
+@override@JsonKey() final  bool analyticsEnabled;
+ final  List<LayrzChart> _charts;
+@override@JsonKey() List<LayrzChart> get charts {
   if (_charts is EqualUnmodifiableListView) return _charts;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_charts);
 }
 
- final  List<String>? _chartsIds;
-@override List<String>? get chartsIds {
-  final value = _chartsIds;
-  if (value == null) return null;
+ final  List<String> _chartsIds;
+@override@JsonKey() List<String> get chartsIds {
   if (_chartsIds is EqualUnmodifiableListView) return _chartsIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_chartsIds);
 }
 
  final  List<AnalyticsGridItem> _analyticsGridStructure;
@@ -508,7 +494,7 @@ class _Workspace implements Workspace {
 
 /// [sensorsEnabled] indicates if the sensors sensors monitor is enabled
 /// Also, [sensorsGridStructure] indicates the visual structure of the sensors
-@override final  bool? sensorsEnabled;
+@override@JsonKey() final  bool sensorsEnabled;
  final  List<SensorGridItem> _sensorsGridStructure;
 @override@JsonKey() List<SensorGridItem> get sensorsGridStructure {
   if (_sensorsGridStructure is EqualUnmodifiableListView) return _sensorsGridStructure;
@@ -530,6 +516,10 @@ class _Workspace implements Workspace {
   return EqualUnmodifiableListView(value);
 }
 
+/// [tableEnabled] indicates if the table functionality is enabled
+@override@JsonKey() final  bool tableEnabled;
+/// [tableStructure] indicates the structure of the table
+@override final  TableItem? tableStructure;
 
 /// Create a copy of Workspace
 /// with the given fields replaced by the non-null parameter values.
@@ -544,16 +534,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Workspace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.typeApp, typeApp) || other.typeApp == typeApp)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.background, background) || other.background == background)&&(identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite)&&(identical(other.mainView, mainView) || other.mainView == mainView)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._inboundServices, _inboundServices)&&const DeepCollectionEquality().equals(other._inboundServicesIds, _inboundServicesIds)&&const DeepCollectionEquality().equals(other._outboundServices, _outboundServices)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&(identical(other.casesEnabled, casesEnabled) || other.casesEnabled == casesEnabled)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&const DeepCollectionEquality().equals(other._casesMonitorConfig, _casesMonitorConfig)&&(identical(other.checkpointsEnabled, checkpointsEnabled) || other.checkpointsEnabled == checkpointsEnabled)&&const DeepCollectionEquality().equals(other._checkpoints, _checkpoints)&&const DeepCollectionEquality().equals(other._checkpointsIds, _checkpointsIds)&&(identical(other.mapEnabled, mapEnabled) || other.mapEnabled == mapEnabled)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._mapCardCustomization, _mapCardCustomization)&&(identical(other.mapCenterCoordinates, mapCenterCoordinates) || other.mapCenterCoordinates == mapCenterCoordinates)&&(identical(other.mapCenterMode, mapCenterMode) || other.mapCenterMode == mapCenterMode)&&(identical(other.analyticsEnabled, analyticsEnabled) || other.analyticsEnabled == analyticsEnabled)&&const DeepCollectionEquality().equals(other._charts, _charts)&&const DeepCollectionEquality().equals(other._chartsIds, _chartsIds)&&const DeepCollectionEquality().equals(other._analyticsGridStructure, _analyticsGridStructure)&&(identical(other.sensorsEnabled, sensorsEnabled) || other.sensorsEnabled == sensorsEnabled)&&const DeepCollectionEquality().equals(other._sensorsGridStructure, _sensorsGridStructure)&&(identical(other.metricSystem, metricSystem) || other.metricSystem == metricSystem)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Workspace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.typeApp, typeApp) || other.typeApp == typeApp)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.background, background) || other.background == background)&&(identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite)&&(identical(other.mainView, mainView) || other.mainView == mainView)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._inboundServices, _inboundServices)&&const DeepCollectionEquality().equals(other._inboundServicesIds, _inboundServicesIds)&&const DeepCollectionEquality().equals(other._outboundServices, _outboundServices)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&(identical(other.casesEnabled, casesEnabled) || other.casesEnabled == casesEnabled)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&const DeepCollectionEquality().equals(other._casesMonitorConfig, _casesMonitorConfig)&&(identical(other.checkpointsEnabled, checkpointsEnabled) || other.checkpointsEnabled == checkpointsEnabled)&&const DeepCollectionEquality().equals(other._checkpoints, _checkpoints)&&const DeepCollectionEquality().equals(other._checkpointsIds, _checkpointsIds)&&(identical(other.mapEnabled, mapEnabled) || other.mapEnabled == mapEnabled)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._mapCardCustomization, _mapCardCustomization)&&(identical(other.mapCenterCoordinates, mapCenterCoordinates) || other.mapCenterCoordinates == mapCenterCoordinates)&&(identical(other.mapCenterMode, mapCenterMode) || other.mapCenterMode == mapCenterMode)&&(identical(other.analyticsEnabled, analyticsEnabled) || other.analyticsEnabled == analyticsEnabled)&&const DeepCollectionEquality().equals(other._charts, _charts)&&const DeepCollectionEquality().equals(other._chartsIds, _chartsIds)&&const DeepCollectionEquality().equals(other._analyticsGridStructure, _analyticsGridStructure)&&(identical(other.sensorsEnabled, sensorsEnabled) || other.sensorsEnabled == sensorsEnabled)&&const DeepCollectionEquality().equals(other._sensorsGridStructure, _sensorsGridStructure)&&(identical(other.metricSystem, metricSystem) || other.metricSystem == metricSystem)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.tableEnabled, tableEnabled) || other.tableEnabled == tableEnabled)&&(identical(other.tableStructure, tableStructure) || other.tableStructure == tableStructure));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,typeApp,color,icon,background,isFavorite,mainView,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_inboundServices),const DeepCollectionEquality().hash(_inboundServicesIds),const DeepCollectionEquality().hash(_outboundServices),const DeepCollectionEquality().hash(_outboundServicesIds),casesEnabled,const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),const DeepCollectionEquality().hash(_casesMonitorConfig),checkpointsEnabled,const DeepCollectionEquality().hash(_checkpoints),const DeepCollectionEquality().hash(_checkpointsIds),mapEnabled,const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_mapCardCustomization),mapCenterCoordinates,mapCenterMode,analyticsEnabled,const DeepCollectionEquality().hash(_charts),const DeepCollectionEquality().hash(_chartsIds),const DeepCollectionEquality().hash(_analyticsGridStructure),sensorsEnabled,const DeepCollectionEquality().hash(_sensorsGridStructure),metricSystem,timezone,const DeepCollectionEquality().hash(_access)]);
+int get hashCode => Object.hashAll([runtimeType,id,name,typeApp,color,icon,background,isFavorite,mainView,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_inboundServices),const DeepCollectionEquality().hash(_inboundServicesIds),const DeepCollectionEquality().hash(_outboundServices),const DeepCollectionEquality().hash(_outboundServicesIds),casesEnabled,const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),const DeepCollectionEquality().hash(_casesMonitorConfig),checkpointsEnabled,const DeepCollectionEquality().hash(_checkpoints),const DeepCollectionEquality().hash(_checkpointsIds),mapEnabled,const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_mapCardCustomization),mapCenterCoordinates,mapCenterMode,analyticsEnabled,const DeepCollectionEquality().hash(_charts),const DeepCollectionEquality().hash(_chartsIds),const DeepCollectionEquality().hash(_analyticsGridStructure),sensorsEnabled,const DeepCollectionEquality().hash(_sensorsGridStructure),metricSystem,timezone,const DeepCollectionEquality().hash(_access),tableEnabled,tableStructure]);
 
 @override
 String toString() {
-  return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access)';
+  return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access, tableEnabled: $tableEnabled, tableStructure: $tableStructure)';
 }
 
 
@@ -564,11 +554,11 @@ abstract mixin class _$WorkspaceCopyWith<$Res> implements $WorkspaceCopyWith<$Re
   factory _$WorkspaceCopyWith(_Workspace value, $Res Function(_Workspace) _then) = __$WorkspaceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) AppInternalIdentifier? typeApp,@ColorOrNullConverter() Color? color,@IconOrNullConverter() LayrzIcon? icon, String? background, bool? isFavorite,@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView? mainView, List<Asset>? assets, List<String>? assetsIds, List<InboundService>? inboundServices, List<String>? inboundServicesIds, List<OutboundService>? outboundServices, List<String>? outboundServicesIds, bool? casesEnabled, List<Trigger>? triggers, List<String>? triggersIds, List<CaseMonitorCard?>? casesMonitorConfig, bool? checkpointsEnabled, List<Checkpoint>? checkpoints, List<String>? checkpointsIds, bool? mapEnabled, List<Geofence>? geofences, List<String>? geofencesIds, List<MapCardSensors> mapCardCustomization, GeoPoint? mapCenterCoordinates,@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode? mapCenterMode, bool? analyticsEnabled, List<LayrzChart>? charts, List<String>? chartsIds, List<AnalyticsGridItem> analyticsGridStructure, bool? sensorsEnabled, List<SensorGridItem> sensorsGridStructure,@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem? metricSystem, Timezone? timezone, List<Access>? access
+ String id, String name,@JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) AppInternalIdentifier? typeApp,@ColorOrNullConverter() Color? color,@IconOrNullConverter() LayrzIcon? icon, String? background, bool? isFavorite,@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView mainView, List<Asset> assets, List<String> assetsIds, List<InboundService> inboundServices, List<String> inboundServicesIds, List<OutboundService> outboundServices, List<String> outboundServicesIds, bool casesEnabled, List<Trigger> triggers, List<String> triggersIds, List<CaseMonitorCard> casesMonitorConfig, bool checkpointsEnabled, List<Checkpoint> checkpoints, List<String> checkpointsIds, bool mapEnabled, List<Geofence> geofences, List<String> geofencesIds, List<MapCardSensors> mapCardCustomization, GeoPoint? mapCenterCoordinates,@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode? mapCenterMode, bool analyticsEnabled, List<LayrzChart> charts, List<String> chartsIds, List<AnalyticsGridItem> analyticsGridStructure, bool sensorsEnabled, List<SensorGridItem> sensorsGridStructure,@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem? metricSystem, Timezone? timezone, List<Access>? access, bool tableEnabled, TableItem? tableStructure
 });
 
 
-@override $GeoPointCopyWith<$Res>? get mapCenterCoordinates;@override $TimezoneCopyWith<$Res>? get timezone;
+@override $GeoPointCopyWith<$Res>? get mapCenterCoordinates;@override $TimezoneCopyWith<$Res>? get timezone;@override $TableItemCopyWith<$Res>? get tableStructure;
 
 }
 /// @nodoc
@@ -581,7 +571,7 @@ class __$WorkspaceCopyWithImpl<$Res>
 
 /// Create a copy of Workspace
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? typeApp = freezed,Object? color = freezed,Object? icon = freezed,Object? background = freezed,Object? isFavorite = freezed,Object? mainView = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? inboundServices = freezed,Object? inboundServicesIds = freezed,Object? outboundServices = freezed,Object? outboundServicesIds = freezed,Object? casesEnabled = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? casesMonitorConfig = freezed,Object? checkpointsEnabled = freezed,Object? checkpoints = freezed,Object? checkpointsIds = freezed,Object? mapEnabled = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? mapCardCustomization = null,Object? mapCenterCoordinates = freezed,Object? mapCenterMode = freezed,Object? analyticsEnabled = freezed,Object? charts = freezed,Object? chartsIds = freezed,Object? analyticsGridStructure = null,Object? sensorsEnabled = freezed,Object? sensorsGridStructure = null,Object? metricSystem = freezed,Object? timezone = freezed,Object? access = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? typeApp = freezed,Object? color = freezed,Object? icon = freezed,Object? background = freezed,Object? isFavorite = freezed,Object? mainView = null,Object? assets = null,Object? assetsIds = null,Object? inboundServices = null,Object? inboundServicesIds = null,Object? outboundServices = null,Object? outboundServicesIds = null,Object? casesEnabled = null,Object? triggers = null,Object? triggersIds = null,Object? casesMonitorConfig = null,Object? checkpointsEnabled = null,Object? checkpoints = null,Object? checkpointsIds = null,Object? mapEnabled = null,Object? geofences = null,Object? geofencesIds = null,Object? mapCardCustomization = null,Object? mapCenterCoordinates = freezed,Object? mapCenterMode = freezed,Object? analyticsEnabled = null,Object? charts = null,Object? chartsIds = null,Object? analyticsGridStructure = null,Object? sensorsEnabled = null,Object? sensorsGridStructure = null,Object? metricSystem = freezed,Object? timezone = freezed,Object? access = freezed,Object? tableEnabled = null,Object? tableStructure = freezed,}) {
   return _then(_Workspace(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -590,36 +580,38 @@ as AppInternalIdentifier?,color: freezed == color ? _self.color : color // ignor
 as Color?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as LayrzIcon?,background: freezed == background ? _self.background : background // ignore: cast_nullable_to_non_nullable
 as String?,isFavorite: freezed == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
-as bool?,mainView: freezed == mainView ? _self.mainView : mainView // ignore: cast_nullable_to_non_nullable
-as WorkspaceMainView?,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,inboundServices: freezed == inboundServices ? _self._inboundServices : inboundServices // ignore: cast_nullable_to_non_nullable
-as List<InboundService>?,inboundServicesIds: freezed == inboundServicesIds ? _self._inboundServicesIds : inboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,outboundServices: freezed == outboundServices ? _self._outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
-as List<OutboundService>?,outboundServicesIds: freezed == outboundServicesIds ? _self._outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,casesEnabled: freezed == casesEnabled ? _self.casesEnabled : casesEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,triggers: freezed == triggers ? _self._triggers : triggers // ignore: cast_nullable_to_non_nullable
-as List<Trigger>?,triggersIds: freezed == triggersIds ? _self._triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,casesMonitorConfig: freezed == casesMonitorConfig ? _self._casesMonitorConfig : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
-as List<CaseMonitorCard?>?,checkpointsEnabled: freezed == checkpointsEnabled ? _self.checkpointsEnabled : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,checkpoints: freezed == checkpoints ? _self._checkpoints : checkpoints // ignore: cast_nullable_to_non_nullable
-as List<Checkpoint>?,checkpointsIds: freezed == checkpointsIds ? _self._checkpointsIds : checkpointsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,mapEnabled: freezed == mapEnabled ? _self.mapEnabled : mapEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,geofences: freezed == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self._geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,mapCardCustomization: null == mapCardCustomization ? _self._mapCardCustomization : mapCardCustomization // ignore: cast_nullable_to_non_nullable
+as bool?,mainView: null == mainView ? _self.mainView : mainView // ignore: cast_nullable_to_non_nullable
+as WorkspaceMainView,assets: null == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>,assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,inboundServices: null == inboundServices ? _self._inboundServices : inboundServices // ignore: cast_nullable_to_non_nullable
+as List<InboundService>,inboundServicesIds: null == inboundServicesIds ? _self._inboundServicesIds : inboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,outboundServices: null == outboundServices ? _self._outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
+as List<OutboundService>,outboundServicesIds: null == outboundServicesIds ? _self._outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,casesEnabled: null == casesEnabled ? _self.casesEnabled : casesEnabled // ignore: cast_nullable_to_non_nullable
+as bool,triggers: null == triggers ? _self._triggers : triggers // ignore: cast_nullable_to_non_nullable
+as List<Trigger>,triggersIds: null == triggersIds ? _self._triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
+as List<String>,casesMonitorConfig: null == casesMonitorConfig ? _self._casesMonitorConfig : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
+as List<CaseMonitorCard>,checkpointsEnabled: null == checkpointsEnabled ? _self.checkpointsEnabled : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
+as bool,checkpoints: null == checkpoints ? _self._checkpoints : checkpoints // ignore: cast_nullable_to_non_nullable
+as List<Checkpoint>,checkpointsIds: null == checkpointsIds ? _self._checkpointsIds : checkpointsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mapEnabled: null == mapEnabled ? _self.mapEnabled : mapEnabled // ignore: cast_nullable_to_non_nullable
+as bool,geofences: null == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>,geofencesIds: null == geofencesIds ? _self._geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mapCardCustomization: null == mapCardCustomization ? _self._mapCardCustomization : mapCardCustomization // ignore: cast_nullable_to_non_nullable
 as List<MapCardSensors>,mapCenterCoordinates: freezed == mapCenterCoordinates ? _self.mapCenterCoordinates : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
 as GeoPoint?,mapCenterMode: freezed == mapCenterMode ? _self.mapCenterMode : mapCenterMode // ignore: cast_nullable_to_non_nullable
-as MapCenterMode?,analyticsEnabled: freezed == analyticsEnabled ? _self.analyticsEnabled : analyticsEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,charts: freezed == charts ? _self._charts : charts // ignore: cast_nullable_to_non_nullable
-as List<LayrzChart>?,chartsIds: freezed == chartsIds ? _self._chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,analyticsGridStructure: null == analyticsGridStructure ? _self._analyticsGridStructure : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
-as List<AnalyticsGridItem>,sensorsEnabled: freezed == sensorsEnabled ? _self.sensorsEnabled : sensorsEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,sensorsGridStructure: null == sensorsGridStructure ? _self._sensorsGridStructure : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
+as MapCenterMode?,analyticsEnabled: null == analyticsEnabled ? _self.analyticsEnabled : analyticsEnabled // ignore: cast_nullable_to_non_nullable
+as bool,charts: null == charts ? _self._charts : charts // ignore: cast_nullable_to_non_nullable
+as List<LayrzChart>,chartsIds: null == chartsIds ? _self._chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,analyticsGridStructure: null == analyticsGridStructure ? _self._analyticsGridStructure : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
+as List<AnalyticsGridItem>,sensorsEnabled: null == sensorsEnabled ? _self.sensorsEnabled : sensorsEnabled // ignore: cast_nullable_to_non_nullable
+as bool,sensorsGridStructure: null == sensorsGridStructure ? _self._sensorsGridStructure : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
 as List<SensorGridItem>,metricSystem: freezed == metricSystem ? _self.metricSystem : metricSystem // ignore: cast_nullable_to_non_nullable
 as MetricSystem?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
 as Timezone?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,
+as List<Access>?,tableEnabled: null == tableEnabled ? _self.tableEnabled : tableEnabled // ignore: cast_nullable_to_non_nullable
+as bool,tableStructure: freezed == tableStructure ? _self.tableStructure : tableStructure // ignore: cast_nullable_to_non_nullable
+as TableItem?,
   ));
 }
 
@@ -647,6 +639,18 @@ $TimezoneCopyWith<$Res>? get timezone {
   return $TimezoneCopyWith<$Res>(_self.timezone!, (value) {
     return _then(_self.copyWith(timezone: value));
   });
+}/// Create a copy of Workspace
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$TableItemCopyWith<$Res>? get tableStructure {
+    if (_self.tableStructure == null) {
+    return null;
+  }
+
+  return $TableItemCopyWith<$Res>(_self.tableStructure!, (value) {
+    return _then(_self.copyWith(tableStructure: value));
+  });
 }
 }
 
@@ -654,7 +658,7 @@ $TimezoneCopyWith<$Res>? get timezone {
 /// @nodoc
 mixin _$WorkspaceInput {
 
- String? get id; set id(String? value); String get name; set name(String value);@ColorOrNullConverter() Color? get color;@ColorOrNullConverter() set color(Color? value);@IconConverter() LayrzIcon get icon;@IconConverter() set icon(LayrzIcon value); String? get background; set background(String? value); bool get isFavorite; set isFavorite(bool value);@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView get mainView;@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) set mainView(WorkspaceMainView value); List<String> get assetsIds; set assetsIds(List<String> value); List<String> get inboundServicesIds; set inboundServicesIds(List<String> value); List<String> get outboundServicesIds; set outboundServicesIds(List<String> value); bool get casesEnabled; set casesEnabled(bool value); List<String> get triggersIds; set triggersIds(List<String> value); List<CaseMonitorCardInput?> get casesMonitorConfig; set casesMonitorConfig(List<CaseMonitorCardInput?> value); bool get checkpointsEnabled; set checkpointsEnabled(bool value); List<String> get checkpointsIds; set checkpointsIds(List<String> value); bool get mapEnabled; set mapEnabled(bool value); List<String> get geofencesIds; set geofencesIds(List<String> value); List<MapCardSensorsInput> get mapCardCustomization; set mapCardCustomization(List<MapCardSensorsInput> value); GeoPoint? get mapCenterCoordinates; set mapCenterCoordinates(GeoPoint? value);@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode get mapCenterMode;@JsonKey(unknownEnumValue: MapCenterMode.bounds) set mapCenterMode(MapCenterMode value); bool get analyticsEnabled; set analyticsEnabled(bool value); List<String> get chartsIds; set chartsIds(List<String> value); List<AnalyticsGridItemInput> get analyticsGridStructure; set analyticsGridStructure(List<AnalyticsGridItemInput> value); bool get sensorsEnabled; set sensorsEnabled(bool value); List<SensorGridItemInput> get sensorsGridStructure; set sensorsGridStructure(List<SensorGridItemInput> value);@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem get metricSystem;@JsonKey(unknownEnumValue: MetricSystem.metric) set metricSystem(MetricSystem value);
+ String? get id; set id(String? value); String get name; set name(String value);@ColorOrNullConverter() Color? get color;@ColorOrNullConverter() set color(Color? value);@IconConverter() LayrzIcon get icon;@IconConverter() set icon(LayrzIcon value); String? get background; set background(String? value); bool get isFavorite; set isFavorite(bool value);@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView get mainView;@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) set mainView(WorkspaceMainView value); List<String> get assetsIds; set assetsIds(List<String> value); List<String> get inboundServicesIds; set inboundServicesIds(List<String> value); List<String> get outboundServicesIds; set outboundServicesIds(List<String> value); bool get casesEnabled; set casesEnabled(bool value); List<String> get triggersIds; set triggersIds(List<String> value); List<CaseMonitorCardInput?> get casesMonitorConfig; set casesMonitorConfig(List<CaseMonitorCardInput?> value); bool get checkpointsEnabled; set checkpointsEnabled(bool value); List<String> get checkpointsIds; set checkpointsIds(List<String> value); bool get mapEnabled; set mapEnabled(bool value); List<String> get geofencesIds; set geofencesIds(List<String> value); List<MapCardSensorsInput> get mapCardCustomization; set mapCardCustomization(List<MapCardSensorsInput> value); GeoPoint? get mapCenterCoordinates; set mapCenterCoordinates(GeoPoint? value);@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode get mapCenterMode;@JsonKey(unknownEnumValue: MapCenterMode.bounds) set mapCenterMode(MapCenterMode value); bool get analyticsEnabled; set analyticsEnabled(bool value); List<String> get chartsIds; set chartsIds(List<String> value); List<AnalyticsGridItemInput> get analyticsGridStructure; set analyticsGridStructure(List<AnalyticsGridItemInput> value); bool get sensorsEnabled; set sensorsEnabled(bool value); List<SensorGridItemInput> get sensorsGridStructure; set sensorsGridStructure(List<SensorGridItemInput> value);@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem get metricSystem;@JsonKey(unknownEnumValue: MetricSystem.metric) set metricSystem(MetricSystem value); bool get tableEnabled; set tableEnabled(bool value); TableItemInput? get tableStructure; set tableStructure(TableItemInput? value);
 /// Create a copy of WorkspaceInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -669,7 +673,7 @@ $WorkspaceInputCopyWith<WorkspaceInput> get copyWith => _$WorkspaceInputCopyWith
 
 @override
 String toString() {
-  return 'WorkspaceInput(id: $id, name: $name, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assetsIds: $assetsIds, inboundServicesIds: $inboundServicesIds, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem)';
+  return 'WorkspaceInput(id: $id, name: $name, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assetsIds: $assetsIds, inboundServicesIds: $inboundServicesIds, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, tableEnabled: $tableEnabled, tableStructure: $tableStructure)';
 }
 
 
@@ -680,11 +684,11 @@ abstract mixin class $WorkspaceInputCopyWith<$Res>  {
   factory $WorkspaceInputCopyWith(WorkspaceInput value, $Res Function(WorkspaceInput) _then) = _$WorkspaceInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name,@ColorOrNullConverter() Color? color,@IconConverter() LayrzIcon icon, String? background, bool isFavorite,@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView mainView, List<String> assetsIds, List<String> inboundServicesIds, List<String> outboundServicesIds, bool casesEnabled, List<String> triggersIds, List<CaseMonitorCardInput?> casesMonitorConfig, bool checkpointsEnabled, List<String> checkpointsIds, bool mapEnabled, List<String> geofencesIds, List<MapCardSensorsInput> mapCardCustomization, GeoPoint? mapCenterCoordinates,@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode mapCenterMode, bool analyticsEnabled, List<String> chartsIds, List<AnalyticsGridItemInput> analyticsGridStructure, bool sensorsEnabled, List<SensorGridItemInput> sensorsGridStructure,@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem metricSystem
+ String? id, String name,@ColorOrNullConverter() Color? color,@IconConverter() LayrzIcon icon, String? background, bool isFavorite,@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView mainView, List<String> assetsIds, List<String> inboundServicesIds, List<String> outboundServicesIds, bool casesEnabled, List<String> triggersIds, List<CaseMonitorCardInput?> casesMonitorConfig, bool checkpointsEnabled, List<String> checkpointsIds, bool mapEnabled, List<String> geofencesIds, List<MapCardSensorsInput> mapCardCustomization, GeoPoint? mapCenterCoordinates,@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode mapCenterMode, bool analyticsEnabled, List<String> chartsIds, List<AnalyticsGridItemInput> analyticsGridStructure, bool sensorsEnabled, List<SensorGridItemInput> sensorsGridStructure,@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem metricSystem, bool tableEnabled, TableItemInput? tableStructure
 });
 
 
-$GeoPointCopyWith<$Res>? get mapCenterCoordinates;
+$GeoPointCopyWith<$Res>? get mapCenterCoordinates;$TableItemInputCopyWith<$Res>? get tableStructure;
 
 }
 /// @nodoc
@@ -697,7 +701,7 @@ class _$WorkspaceInputCopyWithImpl<$Res>
 
 /// Create a copy of WorkspaceInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? color = freezed,Object? icon = null,Object? background = freezed,Object? isFavorite = null,Object? mainView = null,Object? assetsIds = null,Object? inboundServicesIds = null,Object? outboundServicesIds = null,Object? casesEnabled = null,Object? triggersIds = null,Object? casesMonitorConfig = null,Object? checkpointsEnabled = null,Object? checkpointsIds = null,Object? mapEnabled = null,Object? geofencesIds = null,Object? mapCardCustomization = null,Object? mapCenterCoordinates = freezed,Object? mapCenterMode = null,Object? analyticsEnabled = null,Object? chartsIds = null,Object? analyticsGridStructure = null,Object? sensorsEnabled = null,Object? sensorsGridStructure = null,Object? metricSystem = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? color = freezed,Object? icon = null,Object? background = freezed,Object? isFavorite = null,Object? mainView = null,Object? assetsIds = null,Object? inboundServicesIds = null,Object? outboundServicesIds = null,Object? casesEnabled = null,Object? triggersIds = null,Object? casesMonitorConfig = null,Object? checkpointsEnabled = null,Object? checkpointsIds = null,Object? mapEnabled = null,Object? geofencesIds = null,Object? mapCardCustomization = null,Object? mapCenterCoordinates = freezed,Object? mapCenterMode = null,Object? analyticsEnabled = null,Object? chartsIds = null,Object? analyticsGridStructure = null,Object? sensorsEnabled = null,Object? sensorsGridStructure = null,Object? metricSystem = null,Object? tableEnabled = null,Object? tableStructure = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -725,7 +729,9 @@ as List<String>,analyticsGridStructure: null == analyticsGridStructure ? _self.a
 as List<AnalyticsGridItemInput>,sensorsEnabled: null == sensorsEnabled ? _self.sensorsEnabled : sensorsEnabled // ignore: cast_nullable_to_non_nullable
 as bool,sensorsGridStructure: null == sensorsGridStructure ? _self.sensorsGridStructure : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
 as List<SensorGridItemInput>,metricSystem: null == metricSystem ? _self.metricSystem : metricSystem // ignore: cast_nullable_to_non_nullable
-as MetricSystem,
+as MetricSystem,tableEnabled: null == tableEnabled ? _self.tableEnabled : tableEnabled // ignore: cast_nullable_to_non_nullable
+as bool,tableStructure: freezed == tableStructure ? _self.tableStructure : tableStructure // ignore: cast_nullable_to_non_nullable
+as TableItemInput?,
   ));
 }
 /// Create a copy of WorkspaceInput
@@ -739,6 +745,18 @@ $GeoPointCopyWith<$Res>? get mapCenterCoordinates {
 
   return $GeoPointCopyWith<$Res>(_self.mapCenterCoordinates!, (value) {
     return _then(_self.copyWith(mapCenterCoordinates: value));
+  });
+}/// Create a copy of WorkspaceInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$TableItemInputCopyWith<$Res>? get tableStructure {
+    if (_self.tableStructure == null) {
+    return null;
+  }
+
+  return $TableItemInputCopyWith<$Res>(_self.tableStructure!, (value) {
+    return _then(_self.copyWith(tableStructure: value));
   });
 }
 }
@@ -822,10 +840,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @ColorOrNullConverter()  Color? color, @IconConverter()  LayrzIcon icon,  String? background,  bool isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<String> assetsIds,  List<String> inboundServicesIds,  List<String> outboundServicesIds,  bool casesEnabled,  List<String> triggersIds,  List<CaseMonitorCardInput?> casesMonitorConfig,  bool checkpointsEnabled,  List<String> checkpointsIds,  bool mapEnabled,  List<String> geofencesIds,  List<MapCardSensorsInput> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode mapCenterMode,  bool analyticsEnabled,  List<String> chartsIds,  List<AnalyticsGridItemInput> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItemInput> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem metricSystem)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @ColorOrNullConverter()  Color? color, @IconConverter()  LayrzIcon icon,  String? background,  bool isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<String> assetsIds,  List<String> inboundServicesIds,  List<String> outboundServicesIds,  bool casesEnabled,  List<String> triggersIds,  List<CaseMonitorCardInput?> casesMonitorConfig,  bool checkpointsEnabled,  List<String> checkpointsIds,  bool mapEnabled,  List<String> geofencesIds,  List<MapCardSensorsInput> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode mapCenterMode,  bool analyticsEnabled,  List<String> chartsIds,  List<AnalyticsGridItemInput> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItemInput> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem metricSystem,  bool tableEnabled,  TableItemInput? tableStructure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WorkspaceInput() when $default != null:
-return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assetsIds,_that.inboundServicesIds,_that.outboundServicesIds,_that.casesEnabled,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpointsIds,_that.mapEnabled,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem);case _:
+return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assetsIds,_that.inboundServicesIds,_that.outboundServicesIds,_that.casesEnabled,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpointsIds,_that.mapEnabled,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.tableEnabled,_that.tableStructure);case _:
   return orElse();
 
 }
@@ -843,10 +861,10 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @ColorOrNullConverter()  Color? color, @IconConverter()  LayrzIcon icon,  String? background,  bool isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<String> assetsIds,  List<String> inboundServicesIds,  List<String> outboundServicesIds,  bool casesEnabled,  List<String> triggersIds,  List<CaseMonitorCardInput?> casesMonitorConfig,  bool checkpointsEnabled,  List<String> checkpointsIds,  bool mapEnabled,  List<String> geofencesIds,  List<MapCardSensorsInput> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode mapCenterMode,  bool analyticsEnabled,  List<String> chartsIds,  List<AnalyticsGridItemInput> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItemInput> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem metricSystem)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @ColorOrNullConverter()  Color? color, @IconConverter()  LayrzIcon icon,  String? background,  bool isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<String> assetsIds,  List<String> inboundServicesIds,  List<String> outboundServicesIds,  bool casesEnabled,  List<String> triggersIds,  List<CaseMonitorCardInput?> casesMonitorConfig,  bool checkpointsEnabled,  List<String> checkpointsIds,  bool mapEnabled,  List<String> geofencesIds,  List<MapCardSensorsInput> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode mapCenterMode,  bool analyticsEnabled,  List<String> chartsIds,  List<AnalyticsGridItemInput> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItemInput> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem metricSystem,  bool tableEnabled,  TableItemInput? tableStructure)  $default,) {final _that = this;
 switch (_that) {
 case _WorkspaceInput():
-return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assetsIds,_that.inboundServicesIds,_that.outboundServicesIds,_that.casesEnabled,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpointsIds,_that.mapEnabled,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem);case _:
+return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assetsIds,_that.inboundServicesIds,_that.outboundServicesIds,_that.casesEnabled,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpointsIds,_that.mapEnabled,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.tableEnabled,_that.tableStructure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -863,10 +881,10 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @ColorOrNullConverter()  Color? color, @IconConverter()  LayrzIcon icon,  String? background,  bool isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<String> assetsIds,  List<String> inboundServicesIds,  List<String> outboundServicesIds,  bool casesEnabled,  List<String> triggersIds,  List<CaseMonitorCardInput?> casesMonitorConfig,  bool checkpointsEnabled,  List<String> checkpointsIds,  bool mapEnabled,  List<String> geofencesIds,  List<MapCardSensorsInput> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode mapCenterMode,  bool analyticsEnabled,  List<String> chartsIds,  List<AnalyticsGridItemInput> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItemInput> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem metricSystem)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @ColorOrNullConverter()  Color? color, @IconConverter()  LayrzIcon icon,  String? background,  bool isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)  WorkspaceMainView mainView,  List<String> assetsIds,  List<String> inboundServicesIds,  List<String> outboundServicesIds,  bool casesEnabled,  List<String> triggersIds,  List<CaseMonitorCardInput?> casesMonitorConfig,  bool checkpointsEnabled,  List<String> checkpointsIds,  bool mapEnabled,  List<String> geofencesIds,  List<MapCardSensorsInput> mapCardCustomization,  GeoPoint? mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds)  MapCenterMode mapCenterMode,  bool analyticsEnabled,  List<String> chartsIds,  List<AnalyticsGridItemInput> analyticsGridStructure,  bool sensorsEnabled,  List<SensorGridItemInput> sensorsGridStructure, @JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem metricSystem,  bool tableEnabled,  TableItemInput? tableStructure)?  $default,) {final _that = this;
 switch (_that) {
 case _WorkspaceInput() when $default != null:
-return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assetsIds,_that.inboundServicesIds,_that.outboundServicesIds,_that.casesEnabled,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpointsIds,_that.mapEnabled,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem);case _:
+return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_that.isFavorite,_that.mainView,_that.assetsIds,_that.inboundServicesIds,_that.outboundServicesIds,_that.casesEnabled,_that.triggersIds,_that.casesMonitorConfig,_that.checkpointsEnabled,_that.checkpointsIds,_that.mapEnabled,_that.geofencesIds,_that.mapCardCustomization,_that.mapCenterCoordinates,_that.mapCenterMode,_that.analyticsEnabled,_that.chartsIds,_that.analyticsGridStructure,_that.sensorsEnabled,_that.sensorsGridStructure,_that.metricSystem,_that.tableEnabled,_that.tableStructure);case _:
   return null;
 
 }
@@ -878,7 +896,7 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.background,_tha
 @JsonSerializable()
 
 class _WorkspaceInput implements WorkspaceInput {
-   _WorkspaceInput({this.id, this.name = "", @ColorOrNullConverter() this.color = Colors.blue, @IconConverter() required this.icon, this.background, this.isFavorite = false, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors) this.mainView = WorkspaceMainView.sensors, this.assetsIds = const [], this.inboundServicesIds = const [], this.outboundServicesIds = const [], this.casesEnabled = false, this.triggersIds = const [], this.casesMonitorConfig = const [], this.checkpointsEnabled = false, this.checkpointsIds = const [], this.mapEnabled = false, this.geofencesIds = const [], this.mapCardCustomization = const [], this.mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds) this.mapCenterMode = MapCenterMode.bounds, this.analyticsEnabled = false, this.chartsIds = const [], this.analyticsGridStructure = const [], this.sensorsEnabled = false, this.sensorsGridStructure = const [], @JsonKey(unknownEnumValue: MetricSystem.metric) this.metricSystem = MetricSystem.metric});
+   _WorkspaceInput({this.id, this.name = "", @ColorOrNullConverter() this.color = Colors.blue, @IconConverter() required this.icon, this.background, this.isFavorite = false, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors) this.mainView = WorkspaceMainView.sensors, this.assetsIds = const [], this.inboundServicesIds = const [], this.outboundServicesIds = const [], this.casesEnabled = false, this.triggersIds = const [], this.casesMonitorConfig = const [], this.checkpointsEnabled = false, this.checkpointsIds = const [], this.mapEnabled = false, this.geofencesIds = const [], this.mapCardCustomization = const [], this.mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds) this.mapCenterMode = MapCenterMode.bounds, this.analyticsEnabled = false, this.chartsIds = const [], this.analyticsGridStructure = const [], this.sensorsEnabled = false, this.sensorsGridStructure = const [], @JsonKey(unknownEnumValue: MetricSystem.metric) this.metricSystem = MetricSystem.metric, this.tableEnabled = false, this.tableStructure});
   factory _WorkspaceInput.fromJson(Map<String, dynamic> json) => _$WorkspaceInputFromJson(json);
 
 @override  String? id;
@@ -907,6 +925,8 @@ class _WorkspaceInput implements WorkspaceInput {
 @override@JsonKey()  bool sensorsEnabled;
 @override@JsonKey()  List<SensorGridItemInput> sensorsGridStructure;
 @override@JsonKey(unknownEnumValue: MetricSystem.metric)  MetricSystem metricSystem;
+@override@JsonKey()  bool tableEnabled;
+@override  TableItemInput? tableStructure;
 
 /// Create a copy of WorkspaceInput
 /// with the given fields replaced by the non-null parameter values.
@@ -923,7 +943,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'WorkspaceInput(id: $id, name: $name, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assetsIds: $assetsIds, inboundServicesIds: $inboundServicesIds, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem)';
+  return 'WorkspaceInput(id: $id, name: $name, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assetsIds: $assetsIds, inboundServicesIds: $inboundServicesIds, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, tableEnabled: $tableEnabled, tableStructure: $tableStructure)';
 }
 
 
@@ -934,11 +954,11 @@ abstract mixin class _$WorkspaceInputCopyWith<$Res> implements $WorkspaceInputCo
   factory _$WorkspaceInputCopyWith(_WorkspaceInput value, $Res Function(_WorkspaceInput) _then) = __$WorkspaceInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name,@ColorOrNullConverter() Color? color,@IconConverter() LayrzIcon icon, String? background, bool isFavorite,@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView mainView, List<String> assetsIds, List<String> inboundServicesIds, List<String> outboundServicesIds, bool casesEnabled, List<String> triggersIds, List<CaseMonitorCardInput?> casesMonitorConfig, bool checkpointsEnabled, List<String> checkpointsIds, bool mapEnabled, List<String> geofencesIds, List<MapCardSensorsInput> mapCardCustomization, GeoPoint? mapCenterCoordinates,@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode mapCenterMode, bool analyticsEnabled, List<String> chartsIds, List<AnalyticsGridItemInput> analyticsGridStructure, bool sensorsEnabled, List<SensorGridItemInput> sensorsGridStructure,@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem metricSystem
+ String? id, String name,@ColorOrNullConverter() Color? color,@IconConverter() LayrzIcon icon, String? background, bool isFavorite,@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView mainView, List<String> assetsIds, List<String> inboundServicesIds, List<String> outboundServicesIds, bool casesEnabled, List<String> triggersIds, List<CaseMonitorCardInput?> casesMonitorConfig, bool checkpointsEnabled, List<String> checkpointsIds, bool mapEnabled, List<String> geofencesIds, List<MapCardSensorsInput> mapCardCustomization, GeoPoint? mapCenterCoordinates,@JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode mapCenterMode, bool analyticsEnabled, List<String> chartsIds, List<AnalyticsGridItemInput> analyticsGridStructure, bool sensorsEnabled, List<SensorGridItemInput> sensorsGridStructure,@JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem metricSystem, bool tableEnabled, TableItemInput? tableStructure
 });
 
 
-@override $GeoPointCopyWith<$Res>? get mapCenterCoordinates;
+@override $GeoPointCopyWith<$Res>? get mapCenterCoordinates;@override $TableItemInputCopyWith<$Res>? get tableStructure;
 
 }
 /// @nodoc
@@ -951,7 +971,7 @@ class __$WorkspaceInputCopyWithImpl<$Res>
 
 /// Create a copy of WorkspaceInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? color = freezed,Object? icon = null,Object? background = freezed,Object? isFavorite = null,Object? mainView = null,Object? assetsIds = null,Object? inboundServicesIds = null,Object? outboundServicesIds = null,Object? casesEnabled = null,Object? triggersIds = null,Object? casesMonitorConfig = null,Object? checkpointsEnabled = null,Object? checkpointsIds = null,Object? mapEnabled = null,Object? geofencesIds = null,Object? mapCardCustomization = null,Object? mapCenterCoordinates = freezed,Object? mapCenterMode = null,Object? analyticsEnabled = null,Object? chartsIds = null,Object? analyticsGridStructure = null,Object? sensorsEnabled = null,Object? sensorsGridStructure = null,Object? metricSystem = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? color = freezed,Object? icon = null,Object? background = freezed,Object? isFavorite = null,Object? mainView = null,Object? assetsIds = null,Object? inboundServicesIds = null,Object? outboundServicesIds = null,Object? casesEnabled = null,Object? triggersIds = null,Object? casesMonitorConfig = null,Object? checkpointsEnabled = null,Object? checkpointsIds = null,Object? mapEnabled = null,Object? geofencesIds = null,Object? mapCardCustomization = null,Object? mapCenterCoordinates = freezed,Object? mapCenterMode = null,Object? analyticsEnabled = null,Object? chartsIds = null,Object? analyticsGridStructure = null,Object? sensorsEnabled = null,Object? sensorsGridStructure = null,Object? metricSystem = null,Object? tableEnabled = null,Object? tableStructure = freezed,}) {
   return _then(_WorkspaceInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -979,7 +999,9 @@ as List<String>,analyticsGridStructure: null == analyticsGridStructure ? _self.a
 as List<AnalyticsGridItemInput>,sensorsEnabled: null == sensorsEnabled ? _self.sensorsEnabled : sensorsEnabled // ignore: cast_nullable_to_non_nullable
 as bool,sensorsGridStructure: null == sensorsGridStructure ? _self.sensorsGridStructure : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
 as List<SensorGridItemInput>,metricSystem: null == metricSystem ? _self.metricSystem : metricSystem // ignore: cast_nullable_to_non_nullable
-as MetricSystem,
+as MetricSystem,tableEnabled: null == tableEnabled ? _self.tableEnabled : tableEnabled // ignore: cast_nullable_to_non_nullable
+as bool,tableStructure: freezed == tableStructure ? _self.tableStructure : tableStructure // ignore: cast_nullable_to_non_nullable
+as TableItemInput?,
   ));
 }
 
@@ -994,6 +1016,18 @@ $GeoPointCopyWith<$Res>? get mapCenterCoordinates {
 
   return $GeoPointCopyWith<$Res>(_self.mapCenterCoordinates!, (value) {
     return _then(_self.copyWith(mapCenterCoordinates: value));
+  });
+}/// Create a copy of WorkspaceInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$TableItemInputCopyWith<$Res>? get tableStructure {
+    if (_self.tableStructure == null) {
+    return null;
+  }
+
+  return $TableItemInputCopyWith<$Res>(_self.tableStructure!, (value) {
+    return _then(_self.copyWith(tableStructure: value));
   });
 }
 }
@@ -7039,6 +7073,548 @@ class __$MapCardSensorsConfigurationInputCopyWithImpl<$Res>
 enabled: null == enabled ? _self.enabled : enabled // ignore: cast_nullable_to_non_nullable
 as bool,mode: null == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
 as MapSensorMode,values: null == values ? _self.values : values // ignore: cast_nullable_to_non_nullable
+as List<String>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$TableItem {
+
+/// [assetsIds] is the list of ids of the [assets] associated with the table
+ List<String> get assetsIds;/// [sensorsIds] is the list of ids of the [sensors] associated with the table
+ List<String> get sensorsIds;
+/// Create a copy of TableItem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TableItemCopyWith<TableItem> get copyWith => _$TableItemCopyWithImpl<TableItem>(this as TableItem, _$identity);
+
+  /// Serializes this TableItem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TableItem&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.sensorsIds, sensorsIds));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(sensorsIds));
+
+@override
+String toString() {
+  return 'TableItem(assetsIds: $assetsIds, sensorsIds: $sensorsIds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $TableItemCopyWith<$Res>  {
+  factory $TableItemCopyWith(TableItem value, $Res Function(TableItem) _then) = _$TableItemCopyWithImpl;
+@useResult
+$Res call({
+ List<String> assetsIds, List<String> sensorsIds
+});
+
+
+
+
+}
+/// @nodoc
+class _$TableItemCopyWithImpl<$Res>
+    implements $TableItemCopyWith<$Res> {
+  _$TableItemCopyWithImpl(this._self, this._then);
+
+  final TableItem _self;
+  final $Res Function(TableItem) _then;
+
+/// Create a copy of TableItem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? assetsIds = null,Object? sensorsIds = null,}) {
+  return _then(_self.copyWith(
+assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,sensorsIds: null == sensorsIds ? _self.sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [TableItem].
+extension TableItemPatterns on TableItem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _TableItem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _TableItem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _TableItem value)  $default,){
+final _that = this;
+switch (_that) {
+case _TableItem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _TableItem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _TableItem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _TableItem() when $default != null:
+return $default(_that.assetsIds,_that.sensorsIds);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds)  $default,) {final _that = this;
+switch (_that) {
+case _TableItem():
+return $default(_that.assetsIds,_that.sensorsIds);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> assetsIds,  List<String> sensorsIds)?  $default,) {final _that = this;
+switch (_that) {
+case _TableItem() when $default != null:
+return $default(_that.assetsIds,_that.sensorsIds);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _TableItem extends TableItem {
+  const _TableItem({final  List<String> assetsIds = const [], final  List<String> sensorsIds = const []}): _assetsIds = assetsIds,_sensorsIds = sensorsIds,super._();
+  factory _TableItem.fromJson(Map<String, dynamic> json) => _$TableItemFromJson(json);
+
+/// [assetsIds] is the list of ids of the [assets] associated with the table
+ final  List<String> _assetsIds;
+/// [assetsIds] is the list of ids of the [assets] associated with the table
+@override@JsonKey() List<String> get assetsIds {
+  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_assetsIds);
+}
+
+/// [sensorsIds] is the list of ids of the [sensors] associated with the table
+ final  List<String> _sensorsIds;
+/// [sensorsIds] is the list of ids of the [sensors] associated with the table
+@override@JsonKey() List<String> get sensorsIds {
+  if (_sensorsIds is EqualUnmodifiableListView) return _sensorsIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_sensorsIds);
+}
+
+
+/// Create a copy of TableItem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$TableItemCopyWith<_TableItem> get copyWith => __$TableItemCopyWithImpl<_TableItem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$TableItemToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TableItem&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._sensorsIds, _sensorsIds));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_sensorsIds));
+
+@override
+String toString() {
+  return 'TableItem(assetsIds: $assetsIds, sensorsIds: $sensorsIds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$TableItemCopyWith<$Res> implements $TableItemCopyWith<$Res> {
+  factory _$TableItemCopyWith(_TableItem value, $Res Function(_TableItem) _then) = __$TableItemCopyWithImpl;
+@override @useResult
+$Res call({
+ List<String> assetsIds, List<String> sensorsIds
+});
+
+
+
+
+}
+/// @nodoc
+class __$TableItemCopyWithImpl<$Res>
+    implements _$TableItemCopyWith<$Res> {
+  __$TableItemCopyWithImpl(this._self, this._then);
+
+  final _TableItem _self;
+  final $Res Function(_TableItem) _then;
+
+/// Create a copy of TableItem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? assetsIds = null,Object? sensorsIds = null,}) {
+  return _then(_TableItem(
+assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,sensorsIds: null == sensorsIds ? _self._sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$TableItemInput {
+
+/// [assetsIds] is the list of ids of the [assets] associated with the table
+ List<String> get assetsIds;/// [assetsIds] is the list of ids of the [assets] associated with the table
+ set assetsIds(List<String> value);/// [sensorsIds] is the list of ids of the [sensors] associated with the table
+ List<String> get sensorsIds;/// [sensorsIds] is the list of ids of the [sensors] associated with the table
+ set sensorsIds(List<String> value);
+/// Create a copy of TableItemInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TableItemInputCopyWith<TableItemInput> get copyWith => _$TableItemInputCopyWithImpl<TableItemInput>(this as TableItemInput, _$identity);
+
+  /// Serializes this TableItemInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'TableItemInput(assetsIds: $assetsIds, sensorsIds: $sensorsIds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $TableItemInputCopyWith<$Res>  {
+  factory $TableItemInputCopyWith(TableItemInput value, $Res Function(TableItemInput) _then) = _$TableItemInputCopyWithImpl;
+@useResult
+$Res call({
+ List<String> assetsIds, List<String> sensorsIds
+});
+
+
+
+
+}
+/// @nodoc
+class _$TableItemInputCopyWithImpl<$Res>
+    implements $TableItemInputCopyWith<$Res> {
+  _$TableItemInputCopyWithImpl(this._self, this._then);
+
+  final TableItemInput _self;
+  final $Res Function(TableItemInput) _then;
+
+/// Create a copy of TableItemInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? assetsIds = null,Object? sensorsIds = null,}) {
+  return _then(_self.copyWith(
+assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,sensorsIds: null == sensorsIds ? _self.sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [TableItemInput].
+extension TableItemInputPatterns on TableItemInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _TableItemInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _TableItemInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _TableItemInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _TableItemInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _TableItemInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _TableItemInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _TableItemInput() when $default != null:
+return $default(_that.assetsIds,_that.sensorsIds);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds)  $default,) {final _that = this;
+switch (_that) {
+case _TableItemInput():
+return $default(_that.assetsIds,_that.sensorsIds);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> assetsIds,  List<String> sensorsIds)?  $default,) {final _that = this;
+switch (_that) {
+case _TableItemInput() when $default != null:
+return $default(_that.assetsIds,_that.sensorsIds);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _TableItemInput extends TableItemInput {
+   _TableItemInput({this.assetsIds = const [], this.sensorsIds = const []}): super._();
+  factory _TableItemInput.fromJson(Map<String, dynamic> json) => _$TableItemInputFromJson(json);
+
+/// [assetsIds] is the list of ids of the [assets] associated with the table
+@override@JsonKey()  List<String> assetsIds;
+/// [sensorsIds] is the list of ids of the [sensors] associated with the table
+@override@JsonKey()  List<String> sensorsIds;
+
+/// Create a copy of TableItemInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$TableItemInputCopyWith<_TableItemInput> get copyWith => __$TableItemInputCopyWithImpl<_TableItemInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$TableItemInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'TableItemInput(assetsIds: $assetsIds, sensorsIds: $sensorsIds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$TableItemInputCopyWith<$Res> implements $TableItemInputCopyWith<$Res> {
+  factory _$TableItemInputCopyWith(_TableItemInput value, $Res Function(_TableItemInput) _then) = __$TableItemInputCopyWithImpl;
+@override @useResult
+$Res call({
+ List<String> assetsIds, List<String> sensorsIds
+});
+
+
+
+
+}
+/// @nodoc
+class __$TableItemInputCopyWithImpl<$Res>
+    implements _$TableItemInputCopyWith<$Res> {
+  __$TableItemInputCopyWithImpl(this._self, this._then);
+
+  final _TableItemInput _self;
+  final $Res Function(_TableItemInput) _then;
+
+/// Create a copy of TableItemInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? assetsIds = null,Object? sensorsIds = null,}) {
+  return _then(_TableItemInput(
+assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,sensorsIds: null == sensorsIds ? _self.sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }

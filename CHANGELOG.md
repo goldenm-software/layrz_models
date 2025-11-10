@@ -1,5 +1,12 @@
 # Changelog
 
+## UNRELEASED
+
+- Added `TableItem` model to support table functionalities in the workspace module.
+- Added `TableItemInput` model for creating and updating table items on the workspace module.
+- Refactored `Workspace` and `WorkspaceInput` models to include new table properties: `tableEnabled` and `tableStructure`.
+- Also refactored `Workspace` to use default values for lists and enums to enhance stability and usability.
+
 ## 3.4.76
 
 - Added `file` property to `CaseComment` model to associate files with specific comments.
