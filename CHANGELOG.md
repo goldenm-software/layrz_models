@@ -1,6 +1,9 @@
 # Changelog
 
-## 3,4.78
+## 3.4.79
+- Added `lossPercentage` to `CaclEntity`
+
+## 3.4.78
 - Added `AtsBooking` and `AtsBookingInput`
 
 ## 3.4.77

@@ -1803,6 +1803,7 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
   localDateEnd: const TimestampOrNullConverter().fromJson(
     json['localDateEnd'] as num?,
   ),
+  lossPercentage: (json['lossPercentage'] as num?)?.toDouble(),
 );
 
 Map<String, dynamic> _$CaclEntityToJson(
@@ -1840,6 +1841,7 @@ Map<String, dynamic> _$CaclEntityToJson(
   'localDateEnd': const TimestampOrNullConverter().toJson(
     instance.localDateEnd,
   ),
+  'lossPercentage': instance.lossPercentage,
 };
 
 _CaclEquipmentEntity _$CaclEquipmentEntityFromJson(Map<String, dynamic> json) =>
