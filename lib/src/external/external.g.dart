@@ -33,16 +33,19 @@ _ExternalAccount _$ExternalAccountFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       credentials: json['credentials'] as Map<String, dynamic>?,
-      source: json['source'] == null
-          ? null
-          : ExternalSource.fromJson(json['source'] as Map<String, dynamic>),
+      source:
+          json['source'] == null
+              ? null
+              : ExternalSource.fromJson(json['source'] as Map<String, dynamic>),
       sourceId: json['sourceId'] as String?,
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      devices: (json['devices'] as List<dynamic>?)
-          ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      access:
+          (json['access'] as List<dynamic>?)
+              ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      devices:
+          (json['devices'] as List<dynamic>?)
+              ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$ExternalAccountToJson(_ExternalAccount instance) =>

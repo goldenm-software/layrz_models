@@ -98,14 +98,14 @@ abstract class AtsBalanceParams with _$AtsBalanceParams {
     /// `sampleTemperature` is loading params form temperature
     double? sampleTemperature,
 
-    // /// `density20` Density at 20°C only on modality balance
-    // double? density20,
+    /// `density20` Density at 20°C only on modality balance
+    double? density20,
 
     /// `inpm` INPM code
     double? inpm,
 
-    // /// `volume20` Volume at 20°C only on modality balance
-    // double? volume20,
+    /// `volume20` Volume at 20°C only on modality balance
+    double? volume20,
 
     /// `spareVolume` Spare volume
     double? spareVolume,
@@ -129,20 +129,20 @@ abstract class AtsSkidSetaParams with _$AtsSkidSetaParams {
     /// `sampleTemperature` is loading params form temperature
     double? sampleTemperature,
 
-    // /// `density20` Density at 20°C
-    // double? density20,
+    /// `density20` Density at 20°C
+    double? density20,
 
     /// `assetTemperature` represent the asset temperature
     double? assetTemperature,
 
-    // /// `correctionFactor` Float
-    // double? correctionFactor,
+    /// `correctionFactor` Float
+    double? correctionFactor,
 
     /// `retiraVolume`
     double? retiraVolume,
 
-    // /// `volume20` Volume at 20°C
-    // double? volume20,
+    /// `volume20` Volume at 20°C
+    double? volume20,
 
     /// `inpm` INPM code
     double? inpm,

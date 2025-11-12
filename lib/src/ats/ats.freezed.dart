@@ -9125,12 +9125,10 @@ mixin _$AtsBalanceParams {
  double? get finalWeight;/// `liquidWeight` Liquid weight only on modality balance
  double? get liquidWeight;/// `sampleDensity` is loading params form density
  double? get sampleDensity;/// `sampleTemperature` is loading params form temperature
- double? get sampleTemperature;// /// `density20` Density at 20°C only on modality balance
-// double? density20,
-/// `inpm` INPM code
- double? get inpm;// /// `volume20` Volume at 20°C only on modality balance
-// double? volume20,
-/// `spareVolume` Spare volume
+ double? get sampleTemperature;/// `density20` Density at 20°C only on modality balance
+ double? get density20;/// `inpm` INPM code
+ double? get inpm;/// `volume20` Volume at 20°C only on modality balance
+ double? get volume20;/// `spareVolume` Spare volume
  double? get spareVolume;/// `ambientVolume` Ambient volume
  double? get ambientVolume;
 /// Create a copy of AtsBalanceParams
@@ -9145,16 +9143,16 @@ $AtsBalanceParamsCopyWith<AtsBalanceParams> get copyWith => _$AtsBalanceParamsCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsBalanceParams&&(identical(other.initialWeight, initialWeight) || other.initialWeight == initialWeight)&&(identical(other.finalWeight, finalWeight) || other.finalWeight == finalWeight)&&(identical(other.liquidWeight, liquidWeight) || other.liquidWeight == liquidWeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsBalanceParams&&(identical(other.initialWeight, initialWeight) || other.initialWeight == initialWeight)&&(identical(other.finalWeight, finalWeight) || other.finalWeight == finalWeight)&&(identical(other.liquidWeight, liquidWeight) || other.liquidWeight == liquidWeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,initialWeight,finalWeight,liquidWeight,sampleDensity,sampleTemperature,inpm,spareVolume,ambientVolume);
+int get hashCode => Object.hash(runtimeType,initialWeight,finalWeight,liquidWeight,sampleDensity,sampleTemperature,density20,inpm,volume20,spareVolume,ambientVolume);
 
 @override
 String toString() {
-  return 'AtsBalanceParams(initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, inpm: $inpm, spareVolume: $spareVolume, ambientVolume: $ambientVolume)';
+  return 'AtsBalanceParams(initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, density20: $density20, inpm: $inpm, volume20: $volume20, spareVolume: $spareVolume, ambientVolume: $ambientVolume)';
 }
 
 
@@ -9165,7 +9163,7 @@ abstract mixin class $AtsBalanceParamsCopyWith<$Res>  {
   factory $AtsBalanceParamsCopyWith(AtsBalanceParams value, $Res Function(AtsBalanceParams) _then) = _$AtsBalanceParamsCopyWithImpl;
 @useResult
 $Res call({
- double? initialWeight, double? finalWeight, double? liquidWeight, double? sampleDensity, double? sampleTemperature, double? inpm, double? spareVolume, double? ambientVolume
+ double? initialWeight, double? finalWeight, double? liquidWeight, double? sampleDensity, double? sampleTemperature, double? density20, double? inpm, double? volume20, double? spareVolume, double? ambientVolume
 });
 
 
@@ -9182,14 +9180,16 @@ class _$AtsBalanceParamsCopyWithImpl<$Res>
 
 /// Create a copy of AtsBalanceParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? inpm = freezed,Object? spareVolume = freezed,Object? ambientVolume = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? density20 = freezed,Object? inpm = freezed,Object? volume20 = freezed,Object? spareVolume = freezed,Object? ambientVolume = freezed,}) {
   return _then(_self.copyWith(
 initialWeight: freezed == initialWeight ? _self.initialWeight : initialWeight // ignore: cast_nullable_to_non_nullable
 as double?,finalWeight: freezed == finalWeight ? _self.finalWeight : finalWeight // ignore: cast_nullable_to_non_nullable
 as double?,liquidWeight: freezed == liquidWeight ? _self.liquidWeight : liquidWeight // ignore: cast_nullable_to_non_nullable
 as double?,sampleDensity: freezed == sampleDensity ? _self.sampleDensity : sampleDensity // ignore: cast_nullable_to_non_nullable
 as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
 as double?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
+as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
 as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
 as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
 as double?,
@@ -9277,10 +9277,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? inpm,  double? spareVolume,  double? ambientVolume)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? density20,  double? inpm,  double? volume20,  double? spareVolume,  double? ambientVolume)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsBalanceParams() when $default != null:
-return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.inpm,_that.spareVolume,_that.ambientVolume);case _:
+return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.density20,_that.inpm,_that.volume20,_that.spareVolume,_that.ambientVolume);case _:
   return orElse();
 
 }
@@ -9298,10 +9298,10 @@ return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.s
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? inpm,  double? spareVolume,  double? ambientVolume)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? density20,  double? inpm,  double? volume20,  double? spareVolume,  double? ambientVolume)  $default,) {final _that = this;
 switch (_that) {
 case _AtsBalanceParams():
-return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.inpm,_that.spareVolume,_that.ambientVolume);case _:
+return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.density20,_that.inpm,_that.volume20,_that.spareVolume,_that.ambientVolume);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -9318,10 +9318,10 @@ return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.s
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? inpm,  double? spareVolume,  double? ambientVolume)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? initialWeight,  double? finalWeight,  double? liquidWeight,  double? sampleDensity,  double? sampleTemperature,  double? density20,  double? inpm,  double? volume20,  double? spareVolume,  double? ambientVolume)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsBalanceParams() when $default != null:
-return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.inpm,_that.spareVolume,_that.ambientVolume);case _:
+return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.sampleDensity,_that.sampleTemperature,_that.density20,_that.inpm,_that.volume20,_that.spareVolume,_that.ambientVolume);case _:
   return null;
 
 }
@@ -9333,7 +9333,7 @@ return $default(_that.initialWeight,_that.finalWeight,_that.liquidWeight,_that.s
 @JsonSerializable()
 
 class _AtsBalanceParams implements AtsBalanceParams {
-   _AtsBalanceParams({this.initialWeight, this.finalWeight, this.liquidWeight, this.sampleDensity, this.sampleTemperature, this.inpm, this.spareVolume, this.ambientVolume});
+   _AtsBalanceParams({this.initialWeight, this.finalWeight, this.liquidWeight, this.sampleDensity, this.sampleTemperature, this.density20, this.inpm, this.volume20, this.spareVolume, this.ambientVolume});
   factory _AtsBalanceParams.fromJson(Map<String, dynamic> json) => _$AtsBalanceParamsFromJson(json);
 
 /// `initialWeight` Initial weight only on modality balance
@@ -9346,12 +9346,12 @@ class _AtsBalanceParams implements AtsBalanceParams {
 @override final  double? sampleDensity;
 /// `sampleTemperature` is loading params form temperature
 @override final  double? sampleTemperature;
-// /// `density20` Density at 20°C only on modality balance
-// double? density20,
+/// `density20` Density at 20°C only on modality balance
+@override final  double? density20;
 /// `inpm` INPM code
 @override final  double? inpm;
-// /// `volume20` Volume at 20°C only on modality balance
-// double? volume20,
+/// `volume20` Volume at 20°C only on modality balance
+@override final  double? volume20;
 /// `spareVolume` Spare volume
 @override final  double? spareVolume;
 /// `ambientVolume` Ambient volume
@@ -9370,16 +9370,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsBalanceParams&&(identical(other.initialWeight, initialWeight) || other.initialWeight == initialWeight)&&(identical(other.finalWeight, finalWeight) || other.finalWeight == finalWeight)&&(identical(other.liquidWeight, liquidWeight) || other.liquidWeight == liquidWeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsBalanceParams&&(identical(other.initialWeight, initialWeight) || other.initialWeight == initialWeight)&&(identical(other.finalWeight, finalWeight) || other.finalWeight == finalWeight)&&(identical(other.liquidWeight, liquidWeight) || other.liquidWeight == liquidWeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,initialWeight,finalWeight,liquidWeight,sampleDensity,sampleTemperature,inpm,spareVolume,ambientVolume);
+int get hashCode => Object.hash(runtimeType,initialWeight,finalWeight,liquidWeight,sampleDensity,sampleTemperature,density20,inpm,volume20,spareVolume,ambientVolume);
 
 @override
 String toString() {
-  return 'AtsBalanceParams(initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, inpm: $inpm, spareVolume: $spareVolume, ambientVolume: $ambientVolume)';
+  return 'AtsBalanceParams(initialWeight: $initialWeight, finalWeight: $finalWeight, liquidWeight: $liquidWeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, density20: $density20, inpm: $inpm, volume20: $volume20, spareVolume: $spareVolume, ambientVolume: $ambientVolume)';
 }
 
 
@@ -9390,7 +9390,7 @@ abstract mixin class _$AtsBalanceParamsCopyWith<$Res> implements $AtsBalancePara
   factory _$AtsBalanceParamsCopyWith(_AtsBalanceParams value, $Res Function(_AtsBalanceParams) _then) = __$AtsBalanceParamsCopyWithImpl;
 @override @useResult
 $Res call({
- double? initialWeight, double? finalWeight, double? liquidWeight, double? sampleDensity, double? sampleTemperature, double? inpm, double? spareVolume, double? ambientVolume
+ double? initialWeight, double? finalWeight, double? liquidWeight, double? sampleDensity, double? sampleTemperature, double? density20, double? inpm, double? volume20, double? spareVolume, double? ambientVolume
 });
 
 
@@ -9407,14 +9407,16 @@ class __$AtsBalanceParamsCopyWithImpl<$Res>
 
 /// Create a copy of AtsBalanceParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? inpm = freezed,Object? spareVolume = freezed,Object? ambientVolume = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? initialWeight = freezed,Object? finalWeight = freezed,Object? liquidWeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? density20 = freezed,Object? inpm = freezed,Object? volume20 = freezed,Object? spareVolume = freezed,Object? ambientVolume = freezed,}) {
   return _then(_AtsBalanceParams(
 initialWeight: freezed == initialWeight ? _self.initialWeight : initialWeight // ignore: cast_nullable_to_non_nullable
 as double?,finalWeight: freezed == finalWeight ? _self.finalWeight : finalWeight // ignore: cast_nullable_to_non_nullable
 as double?,liquidWeight: freezed == liquidWeight ? _self.liquidWeight : liquidWeight // ignore: cast_nullable_to_non_nullable
 as double?,sampleDensity: freezed == sampleDensity ? _self.sampleDensity : sampleDensity // ignore: cast_nullable_to_non_nullable
 as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
 as double?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
+as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
 as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
 as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
 as double?,
@@ -9431,15 +9433,12 @@ mixin _$AtsSkidSetaParams {
 /// `modality` Modality of the params form
 @AtsParamsFormModalityOrNullConverter() ParamsFormModality? get modality;/// `sampleDensity` is loading params form density
  double? get sampleDensity;/// `sampleTemperature` is loading params form temperature
- double? get sampleTemperature;// /// `density20` Density at 20°C
-// double? density20,
-/// `assetTemperature` represent the asset temperature
- double? get assetTemperature;// /// `correctionFactor` Float
-// double? correctionFactor,
-/// `retiraVolume`
- double? get retiraVolume;// /// `volume20` Volume at 20°C
-// double? volume20,
-/// `inpm` INPM code
+ double? get sampleTemperature;/// `density20` Density at 20°C
+ double? get density20;/// `assetTemperature` represent the asset temperature
+ double? get assetTemperature;/// `correctionFactor` Float
+ double? get correctionFactor;/// `retiraVolume`
+ double? get retiraVolume;/// `volume20` Volume at 20°C
+ double? get volume20;/// `inpm` INPM code
  double? get inpm;/// `ambientVolume` Ambient Volume
  double? get ambientVolume;/// `spareVolume` Spare volume
  double? get spareVolume;
@@ -9455,16 +9454,16 @@ $AtsSkidSetaParamsCopyWith<AtsSkidSetaParams> get copyWith => _$AtsSkidSetaParam
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsSkidSetaParams&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.retiraVolume, retiraVolume) || other.retiraVolume == retiraVolume)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsSkidSetaParams&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.correctionFactor, correctionFactor) || other.correctionFactor == correctionFactor)&&(identical(other.retiraVolume, retiraVolume) || other.retiraVolume == retiraVolume)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,modality,sampleDensity,sampleTemperature,assetTemperature,retiraVolume,inpm,ambientVolume,spareVolume);
+int get hashCode => Object.hash(runtimeType,modality,sampleDensity,sampleTemperature,density20,assetTemperature,correctionFactor,retiraVolume,volume20,inpm,ambientVolume,spareVolume);
 
 @override
 String toString() {
-  return 'AtsSkidSetaParams(modality: $modality, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, retiraVolume: $retiraVolume, inpm: $inpm, ambientVolume: $ambientVolume, spareVolume: $spareVolume)';
+  return 'AtsSkidSetaParams(modality: $modality, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, density20: $density20, assetTemperature: $assetTemperature, correctionFactor: $correctionFactor, retiraVolume: $retiraVolume, volume20: $volume20, inpm: $inpm, ambientVolume: $ambientVolume, spareVolume: $spareVolume)';
 }
 
 
@@ -9475,7 +9474,7 @@ abstract mixin class $AtsSkidSetaParamsCopyWith<$Res>  {
   factory $AtsSkidSetaParamsCopyWith(AtsSkidSetaParams value, $Res Function(AtsSkidSetaParams) _then) = _$AtsSkidSetaParamsCopyWithImpl;
 @useResult
 $Res call({
-@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? sampleDensity, double? sampleTemperature, double? assetTemperature, double? retiraVolume, double? inpm, double? ambientVolume, double? spareVolume
+@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? sampleDensity, double? sampleTemperature, double? density20, double? assetTemperature, double? correctionFactor, double? retiraVolume, double? volume20, double? inpm, double? ambientVolume, double? spareVolume
 });
 
 
@@ -9492,13 +9491,16 @@ class _$AtsSkidSetaParamsCopyWithImpl<$Res>
 
 /// Create a copy of AtsSkidSetaParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? modality = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? retiraVolume = freezed,Object? inpm = freezed,Object? ambientVolume = freezed,Object? spareVolume = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? modality = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? density20 = freezed,Object? assetTemperature = freezed,Object? correctionFactor = freezed,Object? retiraVolume = freezed,Object? volume20 = freezed,Object? inpm = freezed,Object? ambientVolume = freezed,Object? spareVolume = freezed,}) {
   return _then(_self.copyWith(
 modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
 as ParamsFormModality?,sampleDensity: freezed == sampleDensity ? _self.sampleDensity : sampleDensity // ignore: cast_nullable_to_non_nullable
 as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
 as double?,assetTemperature: freezed == assetTemperature ? _self.assetTemperature : assetTemperature // ignore: cast_nullable_to_non_nullable
+as double?,correctionFactor: freezed == correctionFactor ? _self.correctionFactor : correctionFactor // ignore: cast_nullable_to_non_nullable
 as double?,retiraVolume: freezed == retiraVolume ? _self.retiraVolume : retiraVolume // ignore: cast_nullable_to_non_nullable
+as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
 as double?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
 as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
 as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable
@@ -9587,10 +9589,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? retiraVolume,  double? inpm,  double? ambientVolume,  double? spareVolume)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? density20,  double? assetTemperature,  double? correctionFactor,  double? retiraVolume,  double? volume20,  double? inpm,  double? ambientVolume,  double? spareVolume)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsSkidSetaParams() when $default != null:
-return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.retiraVolume,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
+return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.density20,_that.assetTemperature,_that.correctionFactor,_that.retiraVolume,_that.volume20,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
   return orElse();
 
 }
@@ -9608,10 +9610,10 @@ return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? retiraVolume,  double? inpm,  double? ambientVolume,  double? spareVolume)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? density20,  double? assetTemperature,  double? correctionFactor,  double? retiraVolume,  double? volume20,  double? inpm,  double? ambientVolume,  double? spareVolume)  $default,) {final _that = this;
 switch (_that) {
 case _AtsSkidSetaParams():
-return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.retiraVolume,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
+return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.density20,_that.assetTemperature,_that.correctionFactor,_that.retiraVolume,_that.volume20,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -9628,10 +9630,10 @@ return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? assetTemperature,  double? retiraVolume,  double? inpm,  double? ambientVolume,  double? spareVolume)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@AtsParamsFormModalityOrNullConverter()  ParamsFormModality? modality,  double? sampleDensity,  double? sampleTemperature,  double? density20,  double? assetTemperature,  double? correctionFactor,  double? retiraVolume,  double? volume20,  double? inpm,  double? ambientVolume,  double? spareVolume)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsSkidSetaParams() when $default != null:
-return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.assetTemperature,_that.retiraVolume,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
+return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that.density20,_that.assetTemperature,_that.correctionFactor,_that.retiraVolume,_that.volume20,_that.inpm,_that.ambientVolume,_that.spareVolume);case _:
   return null;
 
 }
@@ -9643,7 +9645,7 @@ return $default(_that.modality,_that.sampleDensity,_that.sampleTemperature,_that
 @JsonSerializable()
 
 class _AtsSkidSetaParams implements AtsSkidSetaParams {
-   _AtsSkidSetaParams({@AtsParamsFormModalityOrNullConverter() this.modality, this.sampleDensity, this.sampleTemperature, this.assetTemperature, this.retiraVolume, this.inpm, this.ambientVolume, this.spareVolume});
+   _AtsSkidSetaParams({@AtsParamsFormModalityOrNullConverter() this.modality, this.sampleDensity, this.sampleTemperature, this.density20, this.assetTemperature, this.correctionFactor, this.retiraVolume, this.volume20, this.inpm, this.ambientVolume, this.spareVolume});
   factory _AtsSkidSetaParams.fromJson(Map<String, dynamic> json) => _$AtsSkidSetaParamsFromJson(json);
 
 /// `modality` Modality of the params form
@@ -9652,16 +9654,16 @@ class _AtsSkidSetaParams implements AtsSkidSetaParams {
 @override final  double? sampleDensity;
 /// `sampleTemperature` is loading params form temperature
 @override final  double? sampleTemperature;
-// /// `density20` Density at 20°C
-// double? density20,
+/// `density20` Density at 20°C
+@override final  double? density20;
 /// `assetTemperature` represent the asset temperature
 @override final  double? assetTemperature;
-// /// `correctionFactor` Float
-// double? correctionFactor,
+/// `correctionFactor` Float
+@override final  double? correctionFactor;
 /// `retiraVolume`
 @override final  double? retiraVolume;
-// /// `volume20` Volume at 20°C
-// double? volume20,
+/// `volume20` Volume at 20°C
+@override final  double? volume20;
 /// `inpm` INPM code
 @override final  double? inpm;
 /// `ambientVolume` Ambient Volume
@@ -9682,16 +9684,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSkidSetaParams&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.retiraVolume, retiraVolume) || other.retiraVolume == retiraVolume)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSkidSetaParams&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.correctionFactor, correctionFactor) || other.correctionFactor == correctionFactor)&&(identical(other.retiraVolume, retiraVolume) || other.retiraVolume == retiraVolume)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.spareVolume, spareVolume) || other.spareVolume == spareVolume));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,modality,sampleDensity,sampleTemperature,assetTemperature,retiraVolume,inpm,ambientVolume,spareVolume);
+int get hashCode => Object.hash(runtimeType,modality,sampleDensity,sampleTemperature,density20,assetTemperature,correctionFactor,retiraVolume,volume20,inpm,ambientVolume,spareVolume);
 
 @override
 String toString() {
-  return 'AtsSkidSetaParams(modality: $modality, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, retiraVolume: $retiraVolume, inpm: $inpm, ambientVolume: $ambientVolume, spareVolume: $spareVolume)';
+  return 'AtsSkidSetaParams(modality: $modality, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, density20: $density20, assetTemperature: $assetTemperature, correctionFactor: $correctionFactor, retiraVolume: $retiraVolume, volume20: $volume20, inpm: $inpm, ambientVolume: $ambientVolume, spareVolume: $spareVolume)';
 }
 
 
@@ -9702,7 +9704,7 @@ abstract mixin class _$AtsSkidSetaParamsCopyWith<$Res> implements $AtsSkidSetaPa
   factory _$AtsSkidSetaParamsCopyWith(_AtsSkidSetaParams value, $Res Function(_AtsSkidSetaParams) _then) = __$AtsSkidSetaParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? sampleDensity, double? sampleTemperature, double? assetTemperature, double? retiraVolume, double? inpm, double? ambientVolume, double? spareVolume
+@AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality, double? sampleDensity, double? sampleTemperature, double? density20, double? assetTemperature, double? correctionFactor, double? retiraVolume, double? volume20, double? inpm, double? ambientVolume, double? spareVolume
 });
 
 
@@ -9719,13 +9721,16 @@ class __$AtsSkidSetaParamsCopyWithImpl<$Res>
 
 /// Create a copy of AtsSkidSetaParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? modality = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? assetTemperature = freezed,Object? retiraVolume = freezed,Object? inpm = freezed,Object? ambientVolume = freezed,Object? spareVolume = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? modality = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? density20 = freezed,Object? assetTemperature = freezed,Object? correctionFactor = freezed,Object? retiraVolume = freezed,Object? volume20 = freezed,Object? inpm = freezed,Object? ambientVolume = freezed,Object? spareVolume = freezed,}) {
   return _then(_AtsSkidSetaParams(
 modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
 as ParamsFormModality?,sampleDensity: freezed == sampleDensity ? _self.sampleDensity : sampleDensity // ignore: cast_nullable_to_non_nullable
 as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
 as double?,assetTemperature: freezed == assetTemperature ? _self.assetTemperature : assetTemperature // ignore: cast_nullable_to_non_nullable
+as double?,correctionFactor: freezed == correctionFactor ? _self.correctionFactor : correctionFactor // ignore: cast_nullable_to_non_nullable
 as double?,retiraVolume: freezed == retiraVolume ? _self.retiraVolume : retiraVolume // ignore: cast_nullable_to_non_nullable
+as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
 as double?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
 as double?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
 as double?,spareVolume: freezed == spareVolume ? _self.spareVolume : spareVolume // ignore: cast_nullable_to_non_nullable

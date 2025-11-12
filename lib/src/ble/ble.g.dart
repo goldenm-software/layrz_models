@@ -36,9 +36,10 @@ Map<String, dynamic> _$BleDeviceToJson(
 
 _BleService _$BleServiceFromJson(Map<String, dynamic> json) => _BleService(
   uuid: json['uuid'] as String,
-  characteristics: (json['characteristics'] as List<dynamic>?)
-      ?.map((e) => BleCharacteristic.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  characteristics:
+      (json['characteristics'] as List<dynamic>?)
+          ?.map((e) => BleCharacteristic.fromJson(e as Map<String, dynamic>))
+          .toList(),
 );
 
 Map<String, dynamic> _$BleServiceToJson(
@@ -51,9 +52,10 @@ Map<String, dynamic> _$BleServiceToJson(
 _BleServiceData _$BleServiceDataFromJson(Map<String, dynamic> json) =>
     _BleServiceData(
       uuid: (json['uuid'] as num).toInt(),
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      data:
+          (json['data'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList(),
     );
 
 Map<String, dynamic> _$BleServiceDataToJson(_BleServiceData instance) =>
@@ -96,9 +98,10 @@ const _$BlePropertyEnumMap = {
 _BleManufacturerData _$BleManufacturerDataFromJson(Map<String, dynamic> json) =>
     _BleManufacturerData(
       companyId: (json['companyId'] as num?)?.toInt() ?? 0x0000,
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      data:
+          (json['data'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList(),
     );
 
 Map<String, dynamic> _$BleManufacturerDataToJson(

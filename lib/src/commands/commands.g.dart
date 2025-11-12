@@ -32,30 +32,38 @@ _DeviceCommand _$DeviceCommandFromJson(Map<String, dynamic> json) =>
       tagId: json['tagId'] as String?,
       deviceId: json['deviceId'] as String?,
       protocolId: json['protocolId'] as String?,
-      protocol: json['protocol'] == null
-          ? null
-          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      protocol:
+          json['protocol'] == null
+              ? null
+              : InboundProtocol.fromJson(
+                json['protocol'] as Map<String, dynamic>,
+              ),
       modelId: json['modelId'] as String?,
-      model: json['model'] == null
-          ? null
-          : Model.fromJson(json['model'] as Map<String, dynamic>),
+      model:
+          json['model'] == null
+              ? null
+              : Model.fromJson(json['model'] as Map<String, dynamic>),
       definition: json['definition'] as String?,
       externalAccountId: json['externalAccountId'] as String?,
-      data: json['data'] == null
-          ? null
-          : CommandData.fromJson(json['data'] as Map<String, dynamic>),
-      modbusParameter: json['modbusParameter'] == null
-          ? null
-          : ModbusParameter.fromJson(
-              json['modbusParameter'] as Map<String, dynamic>,
-            ),
+      data:
+          json['data'] == null
+              ? null
+              : CommandData.fromJson(json['data'] as Map<String, dynamic>),
+      modbusParameter:
+          json['modbusParameter'] == null
+              ? null
+              : ModbusParameter.fromJson(
+                json['modbusParameter'] as Map<String, dynamic>,
+              ),
       modbusPort: json['modbusPort'] as String?,
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      possibleDevices: (json['possibleDevices'] as List<dynamic>?)
-          ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      access:
+          (json['access'] as List<dynamic>?)
+              ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      possibleDevices:
+          (json['possibleDevices'] as List<dynamic>?)
+              ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$DeviceCommandToJson(
@@ -112,14 +120,16 @@ _CommandInput _$CommandInputFromJson(Map<String, dynamic> json) =>
       protocolId: json['protocolId'] as String?,
       modelId: json['modelId'] as String?,
       externalAccountId: json['externalAccountId'] as String?,
-      data: json['data'] == null
-          ? null
-          : CommandDataInput.fromJson(json['data'] as Map<String, dynamic>),
-      modbusParameter: json['modbusParameter'] == null
-          ? null
-          : ModbusParameterInput.fromJson(
-              json['modbusParameter'] as Map<String, dynamic>,
-            ),
+      data:
+          json['data'] == null
+              ? null
+              : CommandDataInput.fromJson(json['data'] as Map<String, dynamic>),
+      modbusParameter:
+          json['modbusParameter'] == null
+              ? null
+              : ModbusParameterInput.fromJson(
+                json['modbusParameter'] as Map<String, dynamic>,
+              ),
       modbusPort: json['modbusPort'] as String?,
     );
 
@@ -152,15 +162,17 @@ _CommandPayloadDefinition _$CommandPayloadDefinitionFromJson(
   maxValue: json['maxValue'] as num?,
   minLength: (json['minLength'] as num?)?.toInt(),
   maxLength: (json['maxLength'] as num?)?.toInt(),
-  choices: (json['choices'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  choices:
+      (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList(),
   regexPattern: const RegExpOrNullConverter().fromJson(
     json['regexPattern'] as String?,
   ),
-  nested: (json['nested'] as List<dynamic>?)
-      ?.map((e) => CommandPayloadDefinition.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  nested:
+      (json['nested'] as List<dynamic>?)
+          ?.map(
+            (e) => CommandPayloadDefinition.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
   maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
 );
 
@@ -186,28 +198,30 @@ _CommandPayloadDefinitionInput _$CommandPayloadDefinitionInputFromJson(
 ) => _CommandPayloadDefinitionInput(
   parameter: json['parameter'] as String? ?? '',
   description: json['description'] as String? ?? '',
-  dataType: json['dataType'] == null
-      ? CommandPayloadDataType.string
-      : const CommandPayloadDataTypeConverter().fromJson(
-          json['dataType'] as String,
-        ),
+  dataType:
+      json['dataType'] == null
+          ? CommandPayloadDataType.string
+          : const CommandPayloadDataTypeConverter().fromJson(
+            json['dataType'] as String,
+          ),
   isRequired: json['isRequired'] as bool? ?? false,
   minValue: json['minValue'] as num?,
   maxValue: json['maxValue'] as num?,
   minLength: (json['minLength'] as num?)?.toInt(),
   maxLength: (json['maxLength'] as num?)?.toInt(),
-  choices: (json['choices'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  choices:
+      (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList(),
   regexPattern: const RegExpOrNullConverter().fromJson(
     json['regexPattern'] as String?,
   ),
-  nested: (json['nested'] as List<dynamic>?)
-      ?.map(
-        (e) =>
-            CommandPayloadDefinitionInput.fromJson(e as Map<String, dynamic>),
-      )
-      .toList(),
+  nested:
+      (json['nested'] as List<dynamic>?)
+          ?.map(
+            (e) => CommandPayloadDefinitionInput.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
   maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
 );
 
@@ -228,31 +242,35 @@ Map<String, dynamic> _$CommandPayloadDefinitionInputToJson(
   'maxQuantity': instance.maxQuantity,
 };
 
-_CommandDefinition _$CommandDefinitionFromJson(Map<String, dynamic> json) =>
-    _CommandDefinition(
-      name: json['name'] as String,
-      description: json['description'] as String?,
-      sources: (json['sources'] as List<dynamic>)
+_CommandDefinition _$CommandDefinitionFromJson(
+  Map<String, dynamic> json,
+) => _CommandDefinition(
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  sources:
+      (json['sources'] as List<dynamic>)
           .map(
             (e) =>
                 const CommandDefinitionSourceConverter().fromJson(e as String),
           )
           .toList(),
-      payload: (json['payload'] as List<dynamic>)
+  payload:
+      (json['payload'] as List<dynamic>)
           .map(
             (e) => CommandPayloadDefinition.fromJson(e as Map<String, dynamic>),
           )
           .toList(),
-      translationKey: json['translationKey'] as String?,
-    );
+  translationKey: json['translationKey'] as String?,
+);
 
 Map<String, dynamic> _$CommandDefinitionToJson(_CommandDefinition instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
-      'sources': instance.sources
-          .map(const CommandDefinitionSourceConverter().toJson)
-          .toList(),
+      'sources':
+          instance.sources
+              .map(const CommandDefinitionSourceConverter().toJson)
+              .toList(),
       'payload': instance.payload.map((e) => e.toJson()).toList(),
       'translationKey': instance.translationKey,
     };
@@ -286,9 +304,10 @@ Map<String, dynamic> _$CommandDefinitionInputToJson(
 ) => <String, dynamic>{
   'name': instance.name,
   'description': instance.description,
-  'sources': instance.sources
-      .map(const CommandDefinitionSourceConverter().toJson)
-      .toList(),
+  'sources':
+      instance.sources
+          .map(const CommandDefinitionSourceConverter().toJson)
+          .toList(),
   'payload': instance.payload.map((e) => e.toJson()).toList(),
 };
 

@@ -1,9 +1,16 @@
 # Changelog
 
+## 3.4.80
+
+- Added `density20`, `volume20` in `AtsBalanceParams`
+- Added `density20`, `volume20`, `correctionFactor` in `AtsSkidSetaParams`
+
 ## 3.4.79
+
 - Added `lossPercentage` to `CaclEntity`
 
 ## 3.4.78
+
 - Added `AtsBooking` and `AtsBookingInput`
 
 ## 3.4.77
@@ -29,7 +36,7 @@
 
 ## 3.4.73
 
--  Add `ParamData` and `ParameterUpdate`.
+- Add `ParamData` and `ParameterUpdate`.
 - create `param_test` this is a funtion to test `ParamData`,`ParameterUpdate` and `@ParamDataMapConverter()`.
 
 ## 3.4.72

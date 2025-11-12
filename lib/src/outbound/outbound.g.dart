@@ -26,9 +26,10 @@ _OutboundProtocol _$OutboundProtocolFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      dynamicIcon: json['dynamicIcon'] == null
-          ? null
-          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+      dynamicIcon:
+          json['dynamicIcon'] == null
+              ? null
+              : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
       usage: (json['usage'] as num?)?.toInt(),
     );
 
@@ -48,39 +49,44 @@ Map<String, dynamic> _$OutboundProtocolToJson(_OutboundProtocol instance) =>
       'usage': instance.usage,
     };
 
-_OutboundService _$OutboundServiceFromJson(Map<String, dynamic> json) =>
-    _OutboundService(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      credentials: json['credentials'] as Map<String, dynamic>?,
-      protocol: json['protocol'] == null
+_OutboundService _$OutboundServiceFromJson(
+  Map<String, dynamic> json,
+) => _OutboundService(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  credentials: json['credentials'] as Map<String, dynamic>?,
+  protocol:
+      json['protocol'] == null
           ? null
           : OutboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
-      protocolId: json['protocolId'] as String?,
-      isEnabled: json['isEnabled'] as bool?,
-      structure: (json['structure'] as List<dynamic>?)
+  protocolId: json['protocolId'] as String?,
+  isEnabled: json['isEnabled'] as bool?,
+  structure:
+      (json['structure'] as List<dynamic>?)
           ?.map((e) => OutboundStructure.fromJson(e as Map<String, dynamic>))
           .toList(),
-      token: json['token'] as String?,
-      assetsIds: (json['assetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      assets: (json['assets'] as List<dynamic>?)
+  token: json['token'] as String?,
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  assets:
+      (json['assets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      groupsIds: (json['groupsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      groups: (json['groups'] as List<dynamic>?)
+  groupsIds:
+      (json['groupsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  groups:
+      (json['groups'] as List<dynamic>?)
           ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
           .toList(),
-      access: (json['access'] as List<dynamic>?)
+  access:
+      (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
-      metrics: json['metrics'] == null
+  metrics:
+      json['metrics'] == null
           ? null
           : OutboundMetrics.fromJson(json['metrics'] as Map<String, dynamic>),
-    );
+);
 
 Map<String, dynamic> _$OutboundServiceToJson(_OutboundService instance) =>
     <String, dynamic>{
