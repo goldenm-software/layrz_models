@@ -84,6 +84,24 @@ abstract class AtsEntry with _$AtsEntry {
 
     /// `operationId` is the operation ID of the entry.
     String? operationId,
+
+    /// `initialDensity20` is the initial density at 20 degrees.
+    double? initialDensity20,
+
+    /// `finalDensity20` is the final density at 20 degrees.
+    double? finalDensity20,
+
+    /// `initialVolume20` is the initial volume at 20 degrees.
+    double? initialVolume20,
+
+    /// `finalVolume20` is the final volume at 20 degrees.
+    double? finalVolume20,
+
+    /// `initialCorrectionFactor` is the initial correction factor.
+    double? initialCorrectionFactor,
+
+    /// `finalCorrectionFactor` is the final correction factor.
+    double? finalCorrectionFactor,
   }) = _AtsEntry;
 
   /// fromJson creates a new `AtsEntry` from a JSON object.

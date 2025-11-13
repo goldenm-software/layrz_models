@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.81
+
+- Added `initialDensity20`, `finalDensity20`, `initialVolume20`, `finalVolume20`, `initialCorrectionFactor`, `finalCorrectionFactor` in `AtsEntry` models
+
 ## 3.4.80
 
 - Added `density20`, `volume20` in `AtsBalanceParams`

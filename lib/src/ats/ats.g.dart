@@ -1359,6 +1359,13 @@ _AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) => _AtsEntry(
   height: (json['height'] as num?)?.toDouble(),
   initialHeight: (json['initialHeight'] as num?)?.toDouble(),
   operationId: json['operationId'] as String?,
+  initialDensity20: (json['initialDensity20'] as num?)?.toDouble(),
+  finalDensity20: (json['finalDensity20'] as num?)?.toDouble(),
+  initialVolume20: (json['initialVolume20'] as num?)?.toDouble(),
+  finalVolume20: (json['finalVolume20'] as num?)?.toDouble(),
+  initialCorrectionFactor:
+      (json['initialCorrectionFactor'] as num?)?.toDouble(),
+  finalCorrectionFactor: (json['finalCorrectionFactor'] as num?)?.toDouble(),
 );
 
 Map<String, dynamic> _$AtsEntryToJson(_AtsEntry instance) => <String, dynamic>{
@@ -1386,6 +1393,12 @@ Map<String, dynamic> _$AtsEntryToJson(_AtsEntry instance) => <String, dynamic>{
   'height': instance.height,
   'initialHeight': instance.initialHeight,
   'operationId': instance.operationId,
+  'initialDensity20': instance.initialDensity20,
+  'finalDensity20': instance.finalDensity20,
+  'initialVolume20': instance.initialVolume20,
+  'finalVolume20': instance.finalVolume20,
+  'initialCorrectionFactor': instance.initialCorrectionFactor,
+  'finalCorrectionFactor': instance.finalCorrectionFactor,
 };
 
 _AtsVolume _$AtsVolumeFromJson(Map<String, dynamic> json) => _AtsVolume(
