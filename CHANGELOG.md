@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.82
+
+- Added accessibility and preferences to `Employee`
+
 ## 3.4.81
 
 - Added `initialDensity20`, `finalDensity20`, `initialVolume20`, `finalVolume20`, `initialCorrectionFactor`, `finalCorrectionFactor` in `AtsEntry` models

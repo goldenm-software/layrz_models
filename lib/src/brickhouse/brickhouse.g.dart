@@ -12,24 +12,20 @@ _BrickhouseAlert _$BrickhouseAlertFromJson(
   id: json['id'] as String,
   name: json['name'] as String,
   type: $enumDecode(_$BrickhouseAlertTypeEnumMap, json['type']),
-  assets:
-      (json['assets'] as List<dynamic>?)
-          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  assetsIds:
-      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  assets: (json['assets'] as List<dynamic>?)
+      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  assetsIds: (json['assetsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
   email: (json['email'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  phone:
-      (json['phone'] as List<dynamic>?)
-          ?.map(
-            (e) =>
-                e == null
-                    ? null
-                    : NullablePhoneNumber.fromJson(
-                      Map<String, String?>.from(e as Map),
-                    ),
-          )
-          .toList(),
+  phone: (json['phone'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : NullablePhoneNumber.fromJson(Map<String, String?>.from(e as Map)),
+      )
+      .toList(),
   hasMobilePopup: json['hasMobilePopup'] as bool?,
   hasWebPopup: json['hasWebPopup'] as bool?,
   hasEmail: json['hasEmail'] as bool?,
@@ -42,13 +38,11 @@ _BrickhouseAlert _$BrickhouseAlertFromJson(
     (json['curfewEndHour'] as num?)?.toInt(),
   ),
   timezone: json['timezone'] as String?,
-  curfewWeekdays:
-      (json['curfewWeekdays'] as List<dynamic>?)
-          ?.map(
-            (e) =>
-                $enumDecode(_$WeekdayEnumMap, e, unknownValue: Weekday.monday),
-          )
-          .toList(),
+  curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
+      ?.map(
+        (e) => $enumDecode(_$WeekdayEnumMap, e, unknownValue: Weekday.monday),
+      )
+      .toList(),
   geofenceColor: const ColorOrNullConverter().fromJson(
     json['geofenceColor'] as String?,
   ),
@@ -58,10 +52,9 @@ _BrickhouseAlert _$BrickhouseAlertFromJson(
     unknownValue: GeofenceMode.radial,
   ),
   geofenceRadius: (json['geofenceRadius'] as num?)?.toDouble(),
-  geofenceShape:
-      (json['geofenceShape'] as List<dynamic>?)
-          ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  geofenceShape: (json['geofenceShape'] as List<dynamic>?)
+      ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
+      .toList(),
   geofenceTrigger: $enumDecodeNullable(
     _$BrickhouseGeofenceTriggerEnumMap,
     json['geofenceTrigger'],
@@ -149,20 +142,20 @@ _BrickhouseAlertInput _$BrickhouseAlertInputFromJson(
   id: json['id'] as String?,
   name: json['name'] as String,
   type: $enumDecode(_$BrickhouseAlertTypeEnumMap, json['type']),
-  assetsIds:
-      (json['assetsIds'] as List<dynamic>).map((e) => e as String).toList(),
+  assetsIds: (json['assetsIds'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
   email:
       (json['email'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
   phone:
       (json['phone'] as List<dynamic>?)
           ?.map(
-            (e) =>
-                e == null
-                    ? null
-                    : NullablePhoneNumber.fromJson(
-                      Map<String, String?>.from(e as Map),
-                    ),
+            (e) => e == null
+                ? null
+                : NullablePhoneNumber.fromJson(
+                    Map<String, String?>.from(e as Map),
+                  ),
           )
           .toList() ??
       const [],
@@ -257,10 +250,9 @@ _BHSDriverSafetyEventScore _$BHSDriverSafetyEventScoreFromJson(
 ) => _BHSDriverSafetyEventScore(
   score: (json['score'] as num).toDouble(),
   status: json['status'] as String?,
-  messages:
-      (json['messages'] as List<dynamic>?)
-          ?.map((e) => AssetTelemetry.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  messages: (json['messages'] as List<dynamic>?)
+      ?.map((e) => AssetTelemetry.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$BHSDriverSafetyEventScoreToJson(
@@ -291,10 +283,9 @@ _BHSDriverSafetySpeedingEvents _$BHSDriverSafetySpeedingEventsFromJson(
   Map<String, dynamic> json,
 ) => _BHSDriverSafetySpeedingEvents(
   status: json['status'] as String?,
-  messages:
-      (json['messages'] as List<dynamic>?)
-          ?.map((e) => TriggerActivation.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  messages: (json['messages'] as List<dynamic>?)
+      ?.map((e) => TriggerActivation.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$BHSDriverSafetySpeedingEventsToJson(
@@ -309,18 +300,14 @@ _BHSDriverSafetyDrivingEvent _$BHSDriverSafetyDrivingEventFromJson(
 ) => _BHSDriverSafetyDrivingEvent(
   startAt: const TimestampConverter().fromJson(json['startAt'] as num),
   endAt: const TimestampConverter().fromJson(json['endAt'] as num),
-  startPosition:
-      json['startPosition'] == null
-          ? null
-          : TelemetryPosition.fromJson(
-            json['startPosition'] as Map<String, dynamic>,
-          ),
-  endPosition:
-      json['endPosition'] == null
-          ? null
-          : TelemetryPosition.fromJson(
-            json['endPosition'] as Map<String, dynamic>,
-          ),
+  startPosition: json['startPosition'] == null
+      ? null
+      : TelemetryPosition.fromJson(
+          json['startPosition'] as Map<String, dynamic>,
+        ),
+  endPosition: json['endPosition'] == null
+      ? null
+      : TelemetryPosition.fromJson(json['endPosition'] as Map<String, dynamic>),
   drivenSeconds: (json['drivenSeconds'] as num).toDouble(),
 );
 
@@ -338,13 +325,11 @@ _BHSDriverSafetyDriving _$BHSDriverSafetyDrivingFromJson(
   Map<String, dynamic> json,
 ) => _BHSDriverSafetyDriving(
   status: json['status'] as String?,
-  messages:
-      (json['messages'] as List<dynamic>?)
-          ?.map(
-            (e) =>
-                BHSDriverSafetyDrivingEvent.fromJson(e as Map<String, dynamic>),
-          )
-          .toList(),
+  messages: (json['messages'] as List<dynamic>?)
+      ?.map(
+        (e) => BHSDriverSafetyDrivingEvent.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
 );
 
 Map<String, dynamic> _$BHSDriverSafetyDrivingToJson(
@@ -358,42 +343,36 @@ _BrickhouseDriverSafety _$BrickhouseDriverSafetyFromJson(
   Map<String, dynamic> json,
 ) => _BrickhouseDriverSafety(
   totalScore: (json['totalScore'] as num).toDouble(),
-  drivingHours:
-      json['drivingHours'] == null
-          ? null
-          : BHSDriverSafetyDrivenScore.fromJson(
-            json['drivingHours'] as Map<String, dynamic>,
-          ),
-  harshAcceleration:
-      json['harshAcceleration'] == null
-          ? null
-          : BHSDriverSafetyEventScore.fromJson(
-            json['harshAcceleration'] as Map<String, dynamic>,
-          ),
-  harshBraking:
-      json['harshBraking'] == null
-          ? null
-          : BHSDriverSafetyEventScore.fromJson(
-            json['harshBraking'] as Map<String, dynamic>,
-          ),
-  harshCornering:
-      json['harshCornering'] == null
-          ? null
-          : BHSDriverSafetyEventScore.fromJson(
-            json['harshCornering'] as Map<String, dynamic>,
-          ),
-  speedingEvents:
-      json['speedingEvents'] == null
-          ? null
-          : BHSDriverSafetySpeedingEvents.fromJson(
-            json['speedingEvents'] as Map<String, dynamic>,
-          ),
-  drivingEvents:
-      json['drivingEvents'] == null
-          ? null
-          : BHSDriverSafetyDriving.fromJson(
-            json['drivingEvents'] as Map<String, dynamic>,
-          ),
+  drivingHours: json['drivingHours'] == null
+      ? null
+      : BHSDriverSafetyDrivenScore.fromJson(
+          json['drivingHours'] as Map<String, dynamic>,
+        ),
+  harshAcceleration: json['harshAcceleration'] == null
+      ? null
+      : BHSDriverSafetyEventScore.fromJson(
+          json['harshAcceleration'] as Map<String, dynamic>,
+        ),
+  harshBraking: json['harshBraking'] == null
+      ? null
+      : BHSDriverSafetyEventScore.fromJson(
+          json['harshBraking'] as Map<String, dynamic>,
+        ),
+  harshCornering: json['harshCornering'] == null
+      ? null
+      : BHSDriverSafetyEventScore.fromJson(
+          json['harshCornering'] as Map<String, dynamic>,
+        ),
+  speedingEvents: json['speedingEvents'] == null
+      ? null
+      : BHSDriverSafetySpeedingEvents.fromJson(
+          json['speedingEvents'] as Map<String, dynamic>,
+        ),
+  drivingEvents: json['drivingEvents'] == null
+      ? null
+      : BHSDriverSafetyDriving.fromJson(
+          json['drivingEvents'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$BrickhouseDriverSafetyToJson(
@@ -456,14 +435,12 @@ _BHSPermissionTier _$BHSPermissionTierFromJson(Map<String, dynamic> json) =>
       ),
       description: json['description'] as String?,
       customProperties: json['customProperties'] as Map<String, dynamic>?,
-      users:
-          (json['users'] as List<dynamic>?)
-              ?.map((e) => User.fromJson(e as Map<String, dynamic>))
-              .toList(),
-      access:
-          (json['access'] as List<dynamic>?)
-              ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-              .toList(),
+      users: (json['users'] as List<dynamic>?)
+          ?.map((e) => User.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      access: (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$BHSPermissionTierToJson(_BHSPermissionTier instance) =>

@@ -50,18 +50,16 @@ _ConciergeFormBlock _$ConciergeFormBlockFromJson(Map<String, dynamic> json) =>
         unknownValue: ConciergeFormBlockType.text,
       ),
       name: json['name'] as String,
-      configuration:
-          json['configuration'] == null
-              ? null
-              : ConciergeFormBlockConfiguration.fromJson(
-                json['configuration'] as Map<String, dynamic>,
-              ),
-      showWhen:
-          json['showWhen'] == null
-              ? null
-              : ConciergeFormBlockValidator.fromJson(
-                json['showWhen'] as Map<String, dynamic>,
-              ),
+      configuration: json['configuration'] == null
+          ? null
+          : ConciergeFormBlockConfiguration.fromJson(
+              json['configuration'] as Map<String, dynamic>,
+            ),
+      showWhen: json['showWhen'] == null
+          ? null
+          : ConciergeFormBlockValidator.fromJson(
+              json['showWhen'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$ConciergeFormBlockToJson(_ConciergeFormBlock instance) =>
@@ -97,18 +95,16 @@ _ConciergeBlockInput _$ConciergeBlockInputFromJson(Map<String, dynamic> json) =>
             unknownValue: ConciergeFormBlockType.text,
           ) ??
           ConciergeFormBlockType.text,
-      showWhen:
-          json['showWhen'] == null
-              ? null
-              : ConciergeFormBlockDisplayConditionInput.fromJson(
-                json['showWhen'] as Map<String, dynamic>,
-              ),
-      configuration:
-          json['configuration'] == null
-              ? null
-              : ConciergeFormBlockConfigurationInput.fromJson(
-                json['configuration'] as Map<String, dynamic>,
-              ),
+      showWhen: json['showWhen'] == null
+          ? null
+          : ConciergeFormBlockDisplayConditionInput.fromJson(
+              json['showWhen'] as Map<String, dynamic>,
+            ),
+      configuration: json['configuration'] == null
+          ? null
+          : ConciergeFormBlockConfigurationInput.fromJson(
+              json['configuration'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$ConciergeBlockInputToJson(
@@ -152,8 +148,9 @@ _$ConciergeFormBlockConfigurationInputFromJson(Map<String, dynamic> json) =>
       min: (json['min'] as num?)?.toDouble(),
       max: (json['max'] as num?)?.toDouble(),
       asInt: json['asInt'] as bool?,
-      choices:
-          (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      choices: (json['choices'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$ConciergeFormBlockConfigurationInputToJson(

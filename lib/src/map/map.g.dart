@@ -17,40 +17,33 @@ _MapLayer _$MapLayerFromJson(Map<String, dynamic> json) => _MapLayer(
   rasterServerLight: json['rasterServerLight'] as String?,
   rasterServerDark: json['rasterServerDark'] as String?,
   googleToken: json['googleToken'] as String?,
-  googleLayers:
-      (json['googleLayers'] as List<dynamic>?)
-          ?.map(
-            (e) => $enumDecode(
-              _$GoogleMapLayerEnumMap,
-              e,
-              unknownValue: GoogleMapLayer.roadmap,
-            ),
-          )
-          .toList(),
+  googleLayers: (json['googleLayers'] as List<dynamic>?)
+      ?.map(
+        (e) => $enumDecode(
+          _$GoogleMapLayerEnumMap,
+          e,
+          unknownValue: GoogleMapLayer.roadmap,
+        ),
+      )
+      .toList(),
   mapboxToken: json['mapboxToken'] as String?,
-  mapboxLayers:
-      (json['mapboxLayers'] as List<dynamic>?)
-          ?.map(
-            (e) => $enumDecode(
-              _$MapboxStyleEnumMap,
-              e,
-              unknownValue: MapboxStyle.navigation,
-            ),
-          )
-          .toList(),
+  mapboxLayers: (json['mapboxLayers'] as List<dynamic>?)
+      ?.map(
+        (e) => $enumDecode(
+          _$MapboxStyleEnumMap,
+          e,
+          unknownValue: MapboxStyle.navigation,
+        ),
+      )
+      .toList(),
   mapboxCustomUsername: json['mapboxCustomUsername'] as String?,
   mapboxCustomStyleId: json['mapboxCustomStyleId'] as String?,
   hereToken: json['hereToken'] as String?,
-  hereLayers:
-      (json['hereLayers'] as List<dynamic>?)
-          ?.map(
-            (e) => $enumDecode(
-              _$HereStyleEnumMap,
-              e,
-              unknownValue: HereStyle.lite,
-            ),
-          )
-          .toList(),
+  hereLayers: (json['hereLayers'] as List<dynamic>?)
+      ?.map(
+        (e) => $enumDecode(_$HereStyleEnumMap, e, unknownValue: HereStyle.lite),
+      )
+      .toList(),
   attributionUrl:
       json['attributionUrl'] as String? ??
       'https://cdn.layrz.com/resources/layrz/logo/normal.png',
@@ -131,40 +124,33 @@ _MapLayerInput _$MapLayerInputFromJson(
   rasterServerLight: json['rasterServerLight'] as String?,
   rasterServerDark: json['rasterServerDark'] as String?,
   googleToken: json['googleToken'] as String?,
-  googleLayers:
-      (json['googleLayers'] as List<dynamic>?)
-          ?.map(
-            (e) => $enumDecode(
-              _$GoogleMapLayerEnumMap,
-              e,
-              unknownValue: GoogleMapLayer.roadmap,
-            ),
-          )
-          .toList(),
+  googleLayers: (json['googleLayers'] as List<dynamic>?)
+      ?.map(
+        (e) => $enumDecode(
+          _$GoogleMapLayerEnumMap,
+          e,
+          unknownValue: GoogleMapLayer.roadmap,
+        ),
+      )
+      .toList(),
   mapboxToken: json['mapboxToken'] as String?,
-  mapboxLayers:
-      (json['mapboxLayers'] as List<dynamic>?)
-          ?.map(
-            (e) => $enumDecode(
-              _$MapboxStyleEnumMap,
-              e,
-              unknownValue: MapboxStyle.navigation,
-            ),
-          )
-          .toList(),
+  mapboxLayers: (json['mapboxLayers'] as List<dynamic>?)
+      ?.map(
+        (e) => $enumDecode(
+          _$MapboxStyleEnumMap,
+          e,
+          unknownValue: MapboxStyle.navigation,
+        ),
+      )
+      .toList(),
   mapboxCustomUsername: json['mapboxCustomUsername'] as String?,
   mapboxCustomStyleId: json['mapboxCustomStyleId'] as String?,
   hereToken: json['hereToken'] as String?,
-  hereLayers:
-      (json['hereLayers'] as List<dynamic>?)
-          ?.map(
-            (e) => $enumDecode(
-              _$HereStyleEnumMap,
-              e,
-              unknownValue: HereStyle.lite,
-            ),
-          )
-          .toList(),
+  hereLayers: (json['hereLayers'] as List<dynamic>?)
+      ?.map(
+        (e) => $enumDecode(_$HereStyleEnumMap, e, unknownValue: HereStyle.lite),
+      )
+      .toList(),
   attributionUrl:
       json['attributionUrl'] as String? ??
       'https://cdn.layrz.com/resources/layrz/logo/normal.png',

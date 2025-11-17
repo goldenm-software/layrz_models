@@ -12,12 +12,9 @@ _TagOnStudent _$TagOnStudentFromJson(Map<String, dynamic> json) =>
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
       rfidId: json['rfidId'] as String,
-      busRoute:
-          json['busRoute'] == null
-              ? null
-              : TagOnBusRoute.fromJson(
-                json['busRoute'] as Map<String, dynamic>,
-              ),
+      busRoute: json['busRoute'] == null
+          ? null
+          : TagOnBusRoute.fromJson(json['busRoute'] as Map<String, dynamic>),
       isEligible: json['isEligible'] as bool,
       school: json['school'] as String?,
       rapid: json['rapid'] as String?,

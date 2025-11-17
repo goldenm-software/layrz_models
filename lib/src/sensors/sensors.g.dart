@@ -25,53 +25,46 @@ _Sensor _$SensorFromJson(Map<String, dynamic> json) => _Sensor(
     unknownValue: SensorSubType.raw,
   ),
   parameter: json['parameter'] as String?,
-  externalIdentifiers:
-      (json['externalIdentifiers'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+  externalIdentifiers: (json['externalIdentifiers'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
   formula: json['formula'] as String?,
   script: json['script'] as String?,
   hasHeaders: json['hasHeaders'] as bool?,
-  csvHeaders:
-      (json['csvHeaders'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  csvHeaders: (json['csvHeaders'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
   csvSeparator: json['csvSeparator'] as String?,
-  ranges:
-      (json['ranges'] as List<dynamic>?)
-          ?.map((e) => SensorRange.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  mask:
-      (json['mask'] as List<dynamic>?)
-          ?.map((e) => MaskPoint.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  ranges: (json['ranges'] as List<dynamic>?)
+      ?.map((e) => SensorRange.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  mask: (json['mask'] as List<dynamic>?)
+      ?.map((e) => MaskPoint.fromJson(e as Map<String, dynamic>))
+      .toList(),
   hasValidator: json['hasValidator'] as bool?,
   minValue: (json['minValue'] as num?)?.toDouble(),
   maxValue: (json['maxValue'] as num?)?.toDouble(),
   contentType: json['contentType'] as String?,
   parentId: json['parentId'] as String?,
-  parent:
-      json['parent'] == null
-          ? null
-          : Sensor.fromJson(json['parent'] as Map<String, dynamic>),
+  parent: json['parent'] == null
+      ? null
+      : Sensor.fromJson(json['parent'] as Map<String, dynamic>),
   functionId: json['functionId'] as String?,
-  lastExit:
-      json['lastExit'] == null
-          ? null
-          : AtsExit.fromJson(json['lastExit'] as Map<String, dynamic>),
+  lastExit: json['lastExit'] == null
+      ? null
+      : AtsExit.fromJson(json['lastExit'] as Map<String, dynamic>),
   qrCode: json['qrCode'] as String?,
-  assignedAssetsIds:
-      (json['assignedAssetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  assignedAssets:
-      (json['assignedAssets'] as List<dynamic>?)
-          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  assignedAssetsIds: (json['assignedAssetsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  assignedAssets: (json['assignedAssets'] as List<dynamic>?)
+      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+      .toList(),
   isTemplate: json['isTemplate'] as bool?,
   isGlobal: json['isGlobal'] as bool? ?? false,
-  access:
-      (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  access: (json['access'] as List<dynamic>?)
+      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+      .toList(),
   maxHistorySearch: const DurationOrNullConverter().fromJson(
     json['maxHistorySearch'] as num?,
   ),

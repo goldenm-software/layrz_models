@@ -22,15 +22,13 @@ _LayrzNotification _$LayrzNotificationFromJson(Map<String, dynamic> json) =>
           ) ??
           SoundEffect.none,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
-      color:
-          json['color'] == null
-              ? Colors.blue
-              : const ColorConverter().fromJson(json['color'] as String),
+      color: json['color'] == null
+          ? Colors.blue
+          : const ColorConverter().fromJson(json['color'] as String),
       uri: json['uri'] as String?,
-      duration:
-          json['duration'] == null
-              ? const Duration(seconds: 5)
-              : const DurationConverter().fromJson(json['duration'] as num),
+      duration: json['duration'] == null
+          ? const Duration(seconds: 5)
+          : const DurationConverter().fromJson(json['duration'] as num),
     );
 
 Map<String, dynamic> _$LayrzNotificationToJson(_LayrzNotification instance) =>
