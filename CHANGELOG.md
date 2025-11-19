@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.83
+
+- change `additionalFields` of `ExternalUnit` to have the posibility of be null
+
 ## 3.4.82
 
 - Added accessibility and preferences to `Employee`

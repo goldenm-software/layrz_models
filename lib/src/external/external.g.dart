@@ -61,7 +61,7 @@ _ExternalUnit _$ExternalUnitFromJson(Map<String, dynamic> json) =>
       externalId: json['externalId'] as String?,
       name: json['name'] as String,
       ident: json['ident'] as String,
-      additionalFields: json['additionalFields'] as Map<String, dynamic>,
+      additionalFields: json['additionalFields'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ExternalUnitToJson(_ExternalUnit instance) =>

@@ -6,7 +6,7 @@ abstract class ExternalUnit with _$ExternalUnit {
     String? externalId,
     required String name,
     required String ident,
-    required Map<String, dynamic> additionalFields,
+    Map<String, dynamic>? additionalFields,
   }) = _ExternalUnit;
 
   factory ExternalUnit.fromJson(Map<String, dynamic> json) => _$ExternalUnitFromJson(json);

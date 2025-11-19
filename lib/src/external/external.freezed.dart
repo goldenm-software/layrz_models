@@ -653,7 +653,7 @@ $ExternalSourceCopyWith<$Res>? get source {
 /// @nodoc
 mixin _$ExternalUnit {
 
- String? get externalId; String get name; String get ident; Map<String, dynamic> get additionalFields;
+ String? get externalId; String get name; String get ident; Map<String, dynamic>? get additionalFields;
 /// Create a copy of ExternalUnit
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -686,7 +686,7 @@ abstract mixin class $ExternalUnitCopyWith<$Res>  {
   factory $ExternalUnitCopyWith(ExternalUnit value, $Res Function(ExternalUnit) _then) = _$ExternalUnitCopyWithImpl;
 @useResult
 $Res call({
- String? externalId, String name, String ident, Map<String, dynamic> additionalFields
+ String? externalId, String name, String ident, Map<String, dynamic>? additionalFields
 });
 
 
@@ -703,13 +703,13 @@ class _$ExternalUnitCopyWithImpl<$Res>
 
 /// Create a copy of ExternalUnit
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? externalId = freezed,Object? name = null,Object? ident = null,Object? additionalFields = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? externalId = freezed,Object? name = null,Object? ident = null,Object? additionalFields = freezed,}) {
   return _then(_self.copyWith(
 externalId: freezed == externalId ? _self.externalId : externalId // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,ident: null == ident ? _self.ident : ident // ignore: cast_nullable_to_non_nullable
-as String,additionalFields: null == additionalFields ? _self.additionalFields : additionalFields // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
+as String,additionalFields: freezed == additionalFields ? _self.additionalFields : additionalFields // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,
   ));
 }
 
@@ -794,7 +794,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? externalId,  String name,  String ident,  Map<String, dynamic> additionalFields)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? externalId,  String name,  String ident,  Map<String, dynamic>? additionalFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ExternalUnit() when $default != null:
 return $default(_that.externalId,_that.name,_that.ident,_that.additionalFields);case _:
@@ -815,7 +815,7 @@ return $default(_that.externalId,_that.name,_that.ident,_that.additionalFields);
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? externalId,  String name,  String ident,  Map<String, dynamic> additionalFields)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? externalId,  String name,  String ident,  Map<String, dynamic>? additionalFields)  $default,) {final _that = this;
 switch (_that) {
 case _ExternalUnit():
 return $default(_that.externalId,_that.name,_that.ident,_that.additionalFields);case _:
@@ -835,7 +835,7 @@ return $default(_that.externalId,_that.name,_that.ident,_that.additionalFields);
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? externalId,  String name,  String ident,  Map<String, dynamic> additionalFields)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? externalId,  String name,  String ident,  Map<String, dynamic>? additionalFields)?  $default,) {final _that = this;
 switch (_that) {
 case _ExternalUnit() when $default != null:
 return $default(_that.externalId,_that.name,_that.ident,_that.additionalFields);case _:
@@ -850,17 +850,19 @@ return $default(_that.externalId,_that.name,_that.ident,_that.additionalFields);
 @JsonSerializable()
 
 class _ExternalUnit implements ExternalUnit {
-  const _ExternalUnit({this.externalId, required this.name, required this.ident, required final  Map<String, dynamic> additionalFields}): _additionalFields = additionalFields;
+  const _ExternalUnit({this.externalId, required this.name, required this.ident, final  Map<String, dynamic>? additionalFields}): _additionalFields = additionalFields;
   factory _ExternalUnit.fromJson(Map<String, dynamic> json) => _$ExternalUnitFromJson(json);
 
 @override final  String? externalId;
 @override final  String name;
 @override final  String ident;
- final  Map<String, dynamic> _additionalFields;
-@override Map<String, dynamic> get additionalFields {
+ final  Map<String, dynamic>? _additionalFields;
+@override Map<String, dynamic>? get additionalFields {
+  final value = _additionalFields;
+  if (value == null) return null;
   if (_additionalFields is EqualUnmodifiableMapView) return _additionalFields;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_additionalFields);
+  return EqualUnmodifiableMapView(value);
 }
 
 
@@ -897,7 +899,7 @@ abstract mixin class _$ExternalUnitCopyWith<$Res> implements $ExternalUnitCopyWi
   factory _$ExternalUnitCopyWith(_ExternalUnit value, $Res Function(_ExternalUnit) _then) = __$ExternalUnitCopyWithImpl;
 @override @useResult
 $Res call({
- String? externalId, String name, String ident, Map<String, dynamic> additionalFields
+ String? externalId, String name, String ident, Map<String, dynamic>? additionalFields
 });
 
 
@@ -914,13 +916,13 @@ class __$ExternalUnitCopyWithImpl<$Res>
 
 /// Create a copy of ExternalUnit
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? externalId = freezed,Object? name = null,Object? ident = null,Object? additionalFields = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? externalId = freezed,Object? name = null,Object? ident = null,Object? additionalFields = freezed,}) {
   return _then(_ExternalUnit(
 externalId: freezed == externalId ? _self.externalId : externalId // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,ident: null == ident ? _self.ident : ident // ignore: cast_nullable_to_non_nullable
-as String,additionalFields: null == additionalFields ? _self._additionalFields : additionalFields // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
+as String,additionalFields: freezed == additionalFields ? _self._additionalFields : additionalFields // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,
   ));
 }
 
