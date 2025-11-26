@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.85
+
+- Changed `temperature` value in `TankMeasurementInput` to have the possibility of be null
+
 ## 3.4.84
 
 - Added `messageId` in `ManifestInput` and `Manifest` models

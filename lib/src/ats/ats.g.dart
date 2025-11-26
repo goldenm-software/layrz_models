@@ -1821,7 +1821,7 @@ _TankMeasurementInput _$TankMeasurementInputFromJson(
   tankSlug: json['tankSlug'] as String? ?? '',
   fuelSubtype: json['fuelSubtype'] as String? ?? '',
   height: (json['height'] as num?)?.toDouble() ?? 0.0,
-  temperature: (json['temperature'] as num?)?.toDouble() ?? 0.0,
+  temperature: (json['temperature'] as num?)?.toDouble(),
   volume: (json['volume'] as num?)?.toDouble() ?? 0.0,
   fuelDensity: (json['fuelDensity'] as num?)?.toDouble() ?? 0.0,
 );

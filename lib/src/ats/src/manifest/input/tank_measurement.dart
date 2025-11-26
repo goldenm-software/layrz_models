@@ -15,7 +15,7 @@ abstract class TankMeasurementInput with _$TankMeasurementInput {
     @Default(0.0) double height,
 
     /// The [temperature] parameter is the temperature of the tank measurement.
-    @Default(0.0) double temperature,
+    double? temperature,
 
     /// The [volume] parameter is the volume of the tank measurement.
     @Default(0.0) double volume,
