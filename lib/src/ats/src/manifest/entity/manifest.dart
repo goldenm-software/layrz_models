@@ -53,6 +53,9 @@ abstract class Manifest with _$Manifest {
 
     /// [sensors] is the list of sensors associated with the manifest entity.
     List<TelemetrySensor>? sensors,
+
+    /// The [messageId] parameter is the messageId of the manifest entity.
+    String? messageId,
   }) = _Manifest;
 
   /// Creates a new [Manifest] instance from a JSON map.

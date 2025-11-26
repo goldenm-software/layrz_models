@@ -14011,7 +14011,8 @@ mixin _$Manifest {
  List<TankMeasurement>? get tankMeasurements;/// The [kind] parameter is the kind of the manifest entity.
 @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? get kind;/// [position] is the position of the manifest entity.
  TelemetryPosition? get position;/// [sensors] is the list of sensors associated with the manifest entity.
- List<TelemetrySensor>? get sensors;
+ List<TelemetrySensor>? get sensors;/// The [messageId] parameter is the messageId of the manifest entity.
+ String? get messageId;
 /// Create a copy of Manifest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -14024,16 +14025,16 @@ $ManifestCopyWith<Manifest> get copyWith => _$ManifestCopyWithImpl<Manifest>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Manifest&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.terminalId, terminalId) || other.terminalId == terminalId)&&(identical(other.terminal, terminal) || other.terminal == terminal)&&(identical(other.totalVolume, totalVolume) || other.totalVolume == totalVolume)&&(identical(other.totalConvertedVolume, totalConvertedVolume) || other.totalConvertedVolume == totalConvertedVolume)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.trim, trim) || other.trim == trim)&&(identical(other.banda, banda) || other.banda == banda)&&const DeepCollectionEquality().equals(other.tankMeasurements, tankMeasurements)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.sensors, sensors));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Manifest&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.terminalId, terminalId) || other.terminalId == terminalId)&&(identical(other.terminal, terminal) || other.terminal == terminal)&&(identical(other.totalVolume, totalVolume) || other.totalVolume == totalVolume)&&(identical(other.totalConvertedVolume, totalConvertedVolume) || other.totalConvertedVolume == totalConvertedVolume)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.trim, trim) || other.trim == trim)&&(identical(other.banda, banda) || other.banda == banda)&&const DeepCollectionEquality().equals(other.tankMeasurements, tankMeasurements)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.messageId, messageId) || other.messageId == messageId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,assetId,asset,terminalId,terminal,totalVolume,totalConvertedVolume,operationId,operation,createdAt,trim,banda,const DeepCollectionEquality().hash(tankMeasurements),kind,position,const DeepCollectionEquality().hash(sensors));
+int get hashCode => Object.hash(runtimeType,id,assetId,asset,terminalId,terminal,totalVolume,totalConvertedVolume,operationId,operation,createdAt,trim,banda,const DeepCollectionEquality().hash(tankMeasurements),kind,position,const DeepCollectionEquality().hash(sensors),messageId);
 
 @override
 String toString() {
-  return 'Manifest(id: $id, assetId: $assetId, asset: $asset, terminalId: $terminalId, terminal: $terminal, totalVolume: $totalVolume, totalConvertedVolume: $totalConvertedVolume, operationId: $operationId, operation: $operation, createdAt: $createdAt, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, kind: $kind, position: $position, sensors: $sensors)';
+  return 'Manifest(id: $id, assetId: $assetId, asset: $asset, terminalId: $terminalId, terminal: $terminal, totalVolume: $totalVolume, totalConvertedVolume: $totalConvertedVolume, operationId: $operationId, operation: $operation, createdAt: $createdAt, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, kind: $kind, position: $position, sensors: $sensors, messageId: $messageId)';
 }
 
 
@@ -14044,7 +14045,7 @@ abstract mixin class $ManifestCopyWith<$Res>  {
   factory $ManifestCopyWith(Manifest value, $Res Function(Manifest) _then) = _$ManifestCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? terminalId, Asset? terminal, double? totalVolume, double? totalConvertedVolume, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? createdAt, double? trim, double? banda, List<TankMeasurement>? tankMeasurements,@JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind, TelemetryPosition? position, List<TelemetrySensor>? sensors
+ String? id, String? assetId, Asset? asset, String? terminalId, Asset? terminal, double? totalVolume, double? totalConvertedVolume, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? createdAt, double? trim, double? banda, List<TankMeasurement>? tankMeasurements,@JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind, TelemetryPosition? position, List<TelemetrySensor>? sensors, String? messageId
 });
 
 
@@ -14061,7 +14062,7 @@ class _$ManifestCopyWithImpl<$Res>
 
 /// Create a copy of Manifest
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? terminalId = freezed,Object? terminal = freezed,Object? totalVolume = freezed,Object? totalConvertedVolume = freezed,Object? operationId = freezed,Object? operation = freezed,Object? createdAt = freezed,Object? trim = freezed,Object? banda = freezed,Object? tankMeasurements = freezed,Object? kind = freezed,Object? position = freezed,Object? sensors = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? terminalId = freezed,Object? terminal = freezed,Object? totalVolume = freezed,Object? totalConvertedVolume = freezed,Object? operationId = freezed,Object? operation = freezed,Object? createdAt = freezed,Object? trim = freezed,Object? banda = freezed,Object? tankMeasurements = freezed,Object? kind = freezed,Object? position = freezed,Object? sensors = freezed,Object? messageId = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -14079,7 +14080,8 @@ as double?,tankMeasurements: freezed == tankMeasurements ? _self.tankMeasurement
 as List<TankMeasurement>?,kind: freezed == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as ManifestKind?,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
 as TelemetryPosition?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
-as List<TelemetrySensor>?,
+as List<TelemetrySensor>?,messageId: freezed == messageId ? _self.messageId : messageId // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 /// Create a copy of Manifest
@@ -14212,10 +14214,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? terminalId,  Asset? terminal,  double? totalVolume,  double? totalConvertedVolume,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? createdAt,  double? trim,  double? banda,  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual)  ManifestKind? kind,  TelemetryPosition? position,  List<TelemetrySensor>? sensors)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? terminalId,  Asset? terminal,  double? totalVolume,  double? totalConvertedVolume,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? createdAt,  double? trim,  double? banda,  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual)  ManifestKind? kind,  TelemetryPosition? position,  List<TelemetrySensor>? sensors,  String? messageId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Manifest() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.terminal,_that.totalVolume,_that.totalConvertedVolume,_that.operationId,_that.operation,_that.createdAt,_that.trim,_that.banda,_that.tankMeasurements,_that.kind,_that.position,_that.sensors);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.terminal,_that.totalVolume,_that.totalConvertedVolume,_that.operationId,_that.operation,_that.createdAt,_that.trim,_that.banda,_that.tankMeasurements,_that.kind,_that.position,_that.sensors,_that.messageId);case _:
   return orElse();
 
 }
@@ -14233,10 +14235,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.termin
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? terminalId,  Asset? terminal,  double? totalVolume,  double? totalConvertedVolume,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? createdAt,  double? trim,  double? banda,  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual)  ManifestKind? kind,  TelemetryPosition? position,  List<TelemetrySensor>? sensors)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? terminalId,  Asset? terminal,  double? totalVolume,  double? totalConvertedVolume,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? createdAt,  double? trim,  double? banda,  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual)  ManifestKind? kind,  TelemetryPosition? position,  List<TelemetrySensor>? sensors,  String? messageId)  $default,) {final _that = this;
 switch (_that) {
 case _Manifest():
-return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.terminal,_that.totalVolume,_that.totalConvertedVolume,_that.operationId,_that.operation,_that.createdAt,_that.trim,_that.banda,_that.tankMeasurements,_that.kind,_that.position,_that.sensors);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.terminal,_that.totalVolume,_that.totalConvertedVolume,_that.operationId,_that.operation,_that.createdAt,_that.trim,_that.banda,_that.tankMeasurements,_that.kind,_that.position,_that.sensors,_that.messageId);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -14253,10 +14255,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.termin
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? terminalId,  Asset? terminal,  double? totalVolume,  double? totalConvertedVolume,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? createdAt,  double? trim,  double? banda,  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual)  ManifestKind? kind,  TelemetryPosition? position,  List<TelemetrySensor>? sensors)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? terminalId,  Asset? terminal,  double? totalVolume,  double? totalConvertedVolume,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? createdAt,  double? trim,  double? banda,  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual)  ManifestKind? kind,  TelemetryPosition? position,  List<TelemetrySensor>? sensors,  String? messageId)?  $default,) {final _that = this;
 switch (_that) {
 case _Manifest() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.terminal,_that.totalVolume,_that.totalConvertedVolume,_that.operationId,_that.operation,_that.createdAt,_that.trim,_that.banda,_that.tankMeasurements,_that.kind,_that.position,_that.sensors);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.terminal,_that.totalVolume,_that.totalConvertedVolume,_that.operationId,_that.operation,_that.createdAt,_that.trim,_that.banda,_that.tankMeasurements,_that.kind,_that.position,_that.sensors,_that.messageId);case _:
   return null;
 
 }
@@ -14268,7 +14270,7 @@ return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.termin
 @JsonSerializable()
 
 class _Manifest extends Manifest {
-   _Manifest({this.id, this.assetId, this.asset, this.terminalId, this.terminal, this.totalVolume, this.totalConvertedVolume, this.operationId, this.operation, @TimestampOrNullConverter() this.createdAt, this.trim, this.banda, final  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual) this.kind, this.position, final  List<TelemetrySensor>? sensors}): _tankMeasurements = tankMeasurements,_sensors = sensors,super._();
+   _Manifest({this.id, this.assetId, this.asset, this.terminalId, this.terminal, this.totalVolume, this.totalConvertedVolume, this.operationId, this.operation, @TimestampOrNullConverter() this.createdAt, this.trim, this.banda, final  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual) this.kind, this.position, final  List<TelemetrySensor>? sensors, this.messageId}): _tankMeasurements = tankMeasurements,_sensors = sensors,super._();
   factory _Manifest.fromJson(Map<String, dynamic> json) => _$ManifestFromJson(json);
 
 /// The [id] parameter is the id of the manifest entity.
@@ -14321,6 +14323,8 @@ class _Manifest extends Manifest {
   return EqualUnmodifiableListView(value);
 }
 
+/// The [messageId] parameter is the messageId of the manifest entity.
+@override final  String? messageId;
 
 /// Create a copy of Manifest
 /// with the given fields replaced by the non-null parameter values.
@@ -14335,16 +14339,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Manifest&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.terminalId, terminalId) || other.terminalId == terminalId)&&(identical(other.terminal, terminal) || other.terminal == terminal)&&(identical(other.totalVolume, totalVolume) || other.totalVolume == totalVolume)&&(identical(other.totalConvertedVolume, totalConvertedVolume) || other.totalConvertedVolume == totalConvertedVolume)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.trim, trim) || other.trim == trim)&&(identical(other.banda, banda) || other.banda == banda)&&const DeepCollectionEquality().equals(other._tankMeasurements, _tankMeasurements)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._sensors, _sensors));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Manifest&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.terminalId, terminalId) || other.terminalId == terminalId)&&(identical(other.terminal, terminal) || other.terminal == terminal)&&(identical(other.totalVolume, totalVolume) || other.totalVolume == totalVolume)&&(identical(other.totalConvertedVolume, totalConvertedVolume) || other.totalConvertedVolume == totalConvertedVolume)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.trim, trim) || other.trim == trim)&&(identical(other.banda, banda) || other.banda == banda)&&const DeepCollectionEquality().equals(other._tankMeasurements, _tankMeasurements)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.messageId, messageId) || other.messageId == messageId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,assetId,asset,terminalId,terminal,totalVolume,totalConvertedVolume,operationId,operation,createdAt,trim,banda,const DeepCollectionEquality().hash(_tankMeasurements),kind,position,const DeepCollectionEquality().hash(_sensors));
+int get hashCode => Object.hash(runtimeType,id,assetId,asset,terminalId,terminal,totalVolume,totalConvertedVolume,operationId,operation,createdAt,trim,banda,const DeepCollectionEquality().hash(_tankMeasurements),kind,position,const DeepCollectionEquality().hash(_sensors),messageId);
 
 @override
 String toString() {
-  return 'Manifest(id: $id, assetId: $assetId, asset: $asset, terminalId: $terminalId, terminal: $terminal, totalVolume: $totalVolume, totalConvertedVolume: $totalConvertedVolume, operationId: $operationId, operation: $operation, createdAt: $createdAt, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, kind: $kind, position: $position, sensors: $sensors)';
+  return 'Manifest(id: $id, assetId: $assetId, asset: $asset, terminalId: $terminalId, terminal: $terminal, totalVolume: $totalVolume, totalConvertedVolume: $totalConvertedVolume, operationId: $operationId, operation: $operation, createdAt: $createdAt, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, kind: $kind, position: $position, sensors: $sensors, messageId: $messageId)';
 }
 
 
@@ -14355,7 +14359,7 @@ abstract mixin class _$ManifestCopyWith<$Res> implements $ManifestCopyWith<$Res>
   factory _$ManifestCopyWith(_Manifest value, $Res Function(_Manifest) _then) = __$ManifestCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? terminalId, Asset? terminal, double? totalVolume, double? totalConvertedVolume, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? createdAt, double? trim, double? banda, List<TankMeasurement>? tankMeasurements,@JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind, TelemetryPosition? position, List<TelemetrySensor>? sensors
+ String? id, String? assetId, Asset? asset, String? terminalId, Asset? terminal, double? totalVolume, double? totalConvertedVolume, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? createdAt, double? trim, double? banda, List<TankMeasurement>? tankMeasurements,@JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind, TelemetryPosition? position, List<TelemetrySensor>? sensors, String? messageId
 });
 
 
@@ -14372,7 +14376,7 @@ class __$ManifestCopyWithImpl<$Res>
 
 /// Create a copy of Manifest
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? terminalId = freezed,Object? terminal = freezed,Object? totalVolume = freezed,Object? totalConvertedVolume = freezed,Object? operationId = freezed,Object? operation = freezed,Object? createdAt = freezed,Object? trim = freezed,Object? banda = freezed,Object? tankMeasurements = freezed,Object? kind = freezed,Object? position = freezed,Object? sensors = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? terminalId = freezed,Object? terminal = freezed,Object? totalVolume = freezed,Object? totalConvertedVolume = freezed,Object? operationId = freezed,Object? operation = freezed,Object? createdAt = freezed,Object? trim = freezed,Object? banda = freezed,Object? tankMeasurements = freezed,Object? kind = freezed,Object? position = freezed,Object? sensors = freezed,Object? messageId = freezed,}) {
   return _then(_Manifest(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -14390,7 +14394,8 @@ as double?,tankMeasurements: freezed == tankMeasurements ? _self._tankMeasuremen
 as List<TankMeasurement>?,kind: freezed == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as ManifestKind?,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
 as TelemetryPosition?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
-as List<TelemetrySensor>?,
+as List<TelemetrySensor>?,messageId: freezed == messageId ? _self.messageId : messageId // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -14455,7 +14460,9 @@ mixin _$ManifestInput {
  String? get assetId;/// The [assetId] parameter is the assetId of the manifest entity.
  set assetId(String? value);/// The [operationId] parameter is the operationId of the manifest entity.
  String? get operationId;/// The [operationId] parameter is the operationId of the manifest entity.
- set operationId(String? value);/// The [trim] parameter is the trim of the manifest entity.
+ set operationId(String? value);/// The [messageId] parameter is the messageId of the manifest entity.
+ String? get messageId;/// The [messageId] parameter is the messageId of the manifest entity.
+ set messageId(String? value);/// The [trim] parameter is the trim of the manifest entity.
  double? get trim;/// The [trim] parameter is the trim of the manifest entity.
  set trim(double? value);/// The [banda] parameter is the banda of the manifest entity.
  double? get banda;/// The [banda] parameter is the banda of the manifest entity.
@@ -14478,7 +14485,7 @@ $ManifestInputCopyWith<ManifestInput> get copyWith => _$ManifestInputCopyWithImp
 
 @override
 String toString() {
-  return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, createdAt: $createdAt)';
+  return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, messageId: $messageId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, createdAt: $createdAt)';
 }
 
 
@@ -14489,7 +14496,7 @@ abstract mixin class $ManifestInputCopyWith<$Res>  {
   factory $ManifestInputCopyWith(ManifestInput value, $Res Function(ManifestInput) _then) = _$ManifestInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, String? operationId, double? trim, double? banda, List<TankMeasurementInput> tankMeasurements,@TimestampOrNullConverter() DateTime? createdAt
+ String? id, String? assetId, String? operationId, String? messageId, double? trim, double? banda, List<TankMeasurementInput> tankMeasurements,@TimestampOrNullConverter() DateTime? createdAt
 });
 
 
@@ -14506,11 +14513,12 @@ class _$ManifestInputCopyWithImpl<$Res>
 
 /// Create a copy of ManifestInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? operationId = freezed,Object? trim = freezed,Object? banda = freezed,Object? tankMeasurements = null,Object? createdAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? operationId = freezed,Object? messageId = freezed,Object? trim = freezed,Object? banda = freezed,Object? tankMeasurements = null,Object? createdAt = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String?,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as String?,messageId: freezed == messageId ? _self.messageId : messageId // ignore: cast_nullable_to_non_nullable
 as String?,trim: freezed == trim ? _self.trim : trim // ignore: cast_nullable_to_non_nullable
 as double?,banda: freezed == banda ? _self.banda : banda // ignore: cast_nullable_to_non_nullable
 as double?,tankMeasurements: null == tankMeasurements ? _self.tankMeasurements : tankMeasurements // ignore: cast_nullable_to_non_nullable
@@ -14600,10 +14608,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? operationId,  double? trim,  double? banda,  List<TankMeasurementInput> tankMeasurements, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? operationId,  String? messageId,  double? trim,  double? banda,  List<TankMeasurementInput> tankMeasurements, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ManifestInput() when $default != null:
-return $default(_that.id,_that.assetId,_that.operationId,_that.trim,_that.banda,_that.tankMeasurements,_that.createdAt);case _:
+return $default(_that.id,_that.assetId,_that.operationId,_that.messageId,_that.trim,_that.banda,_that.tankMeasurements,_that.createdAt);case _:
   return orElse();
 
 }
@@ -14621,10 +14629,10 @@ return $default(_that.id,_that.assetId,_that.operationId,_that.trim,_that.banda,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? operationId,  double? trim,  double? banda,  List<TankMeasurementInput> tankMeasurements, @TimestampOrNullConverter()  DateTime? createdAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? operationId,  String? messageId,  double? trim,  double? banda,  List<TankMeasurementInput> tankMeasurements, @TimestampOrNullConverter()  DateTime? createdAt)  $default,) {final _that = this;
 switch (_that) {
 case _ManifestInput():
-return $default(_that.id,_that.assetId,_that.operationId,_that.trim,_that.banda,_that.tankMeasurements,_that.createdAt);case _:
+return $default(_that.id,_that.assetId,_that.operationId,_that.messageId,_that.trim,_that.banda,_that.tankMeasurements,_that.createdAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -14641,10 +14649,10 @@ return $default(_that.id,_that.assetId,_that.operationId,_that.trim,_that.banda,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String? operationId,  double? trim,  double? banda,  List<TankMeasurementInput> tankMeasurements, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String? operationId,  String? messageId,  double? trim,  double? banda,  List<TankMeasurementInput> tankMeasurements, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ManifestInput() when $default != null:
-return $default(_that.id,_that.assetId,_that.operationId,_that.trim,_that.banda,_that.tankMeasurements,_that.createdAt);case _:
+return $default(_that.id,_that.assetId,_that.operationId,_that.messageId,_that.trim,_that.banda,_that.tankMeasurements,_that.createdAt);case _:
   return null;
 
 }
@@ -14656,7 +14664,7 @@ return $default(_that.id,_that.assetId,_that.operationId,_that.trim,_that.banda,
 @JsonSerializable()
 
 class _ManifestInput extends ManifestInput {
-   _ManifestInput({this.id, this.assetId, this.operationId, this.trim, this.banda, this.tankMeasurements = const [], @TimestampOrNullConverter() this.createdAt}): super._();
+   _ManifestInput({this.id, this.assetId, this.operationId, this.messageId, this.trim, this.banda, this.tankMeasurements = const [], @TimestampOrNullConverter() this.createdAt}): super._();
   factory _ManifestInput.fromJson(Map<String, dynamic> json) => _$ManifestInputFromJson(json);
 
 /// The [id] parameter is the id of the manifest entity.
@@ -14665,6 +14673,8 @@ class _ManifestInput extends ManifestInput {
 @override  String? assetId;
 /// The [operationId] parameter is the operationId of the manifest entity.
 @override  String? operationId;
+/// The [messageId] parameter is the messageId of the manifest entity.
+@override  String? messageId;
 /// The [trim] parameter is the trim of the manifest entity.
 @override  double? trim;
 /// The [banda] parameter is the banda of the manifest entity.
@@ -14689,7 +14699,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, createdAt: $createdAt)';
+  return 'ManifestInput(id: $id, assetId: $assetId, operationId: $operationId, messageId: $messageId, trim: $trim, banda: $banda, tankMeasurements: $tankMeasurements, createdAt: $createdAt)';
 }
 
 
@@ -14700,7 +14710,7 @@ abstract mixin class _$ManifestInputCopyWith<$Res> implements $ManifestInputCopy
   factory _$ManifestInputCopyWith(_ManifestInput value, $Res Function(_ManifestInput) _then) = __$ManifestInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, String? operationId, double? trim, double? banda, List<TankMeasurementInput> tankMeasurements,@TimestampOrNullConverter() DateTime? createdAt
+ String? id, String? assetId, String? operationId, String? messageId, double? trim, double? banda, List<TankMeasurementInput> tankMeasurements,@TimestampOrNullConverter() DateTime? createdAt
 });
 
 
@@ -14717,11 +14727,12 @@ class __$ManifestInputCopyWithImpl<$Res>
 
 /// Create a copy of ManifestInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? operationId = freezed,Object? trim = freezed,Object? banda = freezed,Object? tankMeasurements = null,Object? createdAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? operationId = freezed,Object? messageId = freezed,Object? trim = freezed,Object? banda = freezed,Object? tankMeasurements = null,Object? createdAt = freezed,}) {
   return _then(_ManifestInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String?,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as String?,messageId: freezed == messageId ? _self.messageId : messageId // ignore: cast_nullable_to_non_nullable
 as String?,trim: freezed == trim ? _self.trim : trim // ignore: cast_nullable_to_non_nullable
 as double?,banda: freezed == banda ? _self.banda : banda // ignore: cast_nullable_to_non_nullable
 as double?,tankMeasurements: null == tankMeasurements ? _self.tankMeasurements : tankMeasurements // ignore: cast_nullable_to_non_nullable

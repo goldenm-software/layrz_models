@@ -16,14 +16,16 @@ _Geofence _$GeofenceFromJson(Map<String, dynamic> json) => _Geofence(
   ),
   description: json['description'] as String?,
   color: const ColorOrNullConverter().fromJson(json['color'] as String?),
-  path: (json['path'] as List<dynamic>?)
-      ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  path:
+      (json['path'] as List<dynamic>?)
+          ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
+          .toList(),
   radius: (json['radius'] as num?)?.toDouble(),
   resourceId: json['resourceId'] as String?,
-  assetsInside: (json['assetsInside'] as List<dynamic>?)
-      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  assetsInside:
+      (json['assetsInside'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
   category:
       $enumDecodeNullable(
         _$GeofenceCategoryEnumMap,
@@ -31,28 +33,33 @@ _Geofence _$GeofenceFromJson(Map<String, dynamic> json) => _Geofence(
         unknownValue: GeofenceCategory.none,
       ) ??
       GeofenceCategory.none,
-  childrenIds: (json['childrenIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  children: (json['children'] as List<dynamic>?)
-      ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  access: (json['access'] as List<dynamic>?)
-      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  customFields: (json['customFields'] as List<dynamic>?)
-      ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  childrenIds:
+      (json['childrenIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  children:
+      (json['children'] as List<dynamic>?)
+          ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  access:
+      (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  customFields:
+      (json['customFields'] as List<dynamic>?)
+          ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
+          .toList(),
   ownerId: json['ownerId'] as String?,
-  owner: json['owner'] == null
-      ? null
-      : User.fromJson(json['owner'] as Map<String, dynamic>),
-  mappitRoutes: (json['mappitRoutes'] as List<dynamic>?)
-      ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  mappitRouteIds: (json['mappitRouteIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
+  owner:
+      json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
+  mappitRoutes:
+      (json['mappitRoutes'] as List<dynamic>?)
+          ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  mappitRouteIds:
+      (json['mappitRouteIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
   assetId: json['assetId'] as String?,
 );
 
@@ -100,9 +107,10 @@ _GeofenceInput _$GeofenceInputFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
       name: json['name'] as String? ?? "",
       description: json['description'] as String? ?? "",
-      color: json['color'] == null
-          ? Colors.blue
-          : const ColorConverter().fromJson(json['color'] as String),
+      color:
+          json['color'] == null
+              ? Colors.blue
+              : const ColorConverter().fromJson(json['color'] as String),
       mode:
           $enumDecodeNullable(
             _$GeofenceModeEnumMap,

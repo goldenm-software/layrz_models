@@ -22,33 +22,39 @@ _Action _$ActionFromJson(Map<String, dynamic> json) => _Action(
       ) ??
       ActionSubtype.unused,
   commandId: json['commandId'] as String?,
-  triggers: (json['triggers'] as List<dynamic>?)
-      ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  triggersIds: (json['triggersIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  outboundServices: (json['outboundServices'] as List<dynamic>?)
-      ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  operations: (json['operations'] as List<dynamic>?)
-      ?.map((e) => Operation.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  operationsIds: (json['operationsIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  access: (json['access'] as List<dynamic>?)
-      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  triggers:
+      (json['triggers'] as List<dynamic>?)
+          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  triggersIds:
+      (json['triggersIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  outboundServices:
+      (json['outboundServices'] as List<dynamic>?)
+          ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  outboundServicesIds:
+      (json['outboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  operations:
+      (json['operations'] as List<dynamic>?)
+          ?.map((e) => Operation.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  operationsIds:
+      (json['operationsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+  access:
+      (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
   watchImage: json['watchImage'] as bool?,
-  geofenceSettings: json['geofenceSettings'] == null
-      ? null
-      : ActionGeofenceSettings.fromJson(
-          json['geofenceSettings'] as Map<String, dynamic>,
-        ),
+  geofenceSettings:
+      json['geofenceSettings'] == null
+          ? null
+          : ActionGeofenceSettings.fromJson(
+            json['geofenceSettings'] as Map<String, dynamic>,
+          ),
 );
 
 Map<String, dynamic> _$ActionToJson(_Action instance) => <String, dynamic>{
@@ -59,9 +65,8 @@ Map<String, dynamic> _$ActionToJson(_Action instance) => <String, dynamic>{
   'commandId': instance.commandId,
   'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
   'triggersIds': instance.triggersIds,
-  'outboundServices': instance.outboundServices
-      ?.map((e) => e.toJson())
-      .toList(),
+  'outboundServices':
+      instance.outboundServices?.map((e) => e.toJson()).toList(),
   'outboundServicesIds': instance.outboundServicesIds,
   'operations': instance.operations?.map((e) => e.toJson()).toList(),
   'operationsIds': instance.operationsIds,
@@ -158,9 +163,10 @@ _ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
   ),
   radius: (json['radius'] as num?)?.toDouble(),
   mappitRouteId: json['mappitRouteId'] as String?,
-  mappitRoute: json['mappitRoute'] == null
-      ? null
-      : MappitRoute.fromJson(json['mappitRoute'] as Map<String, dynamic>),
+  mappitRoute:
+      json['mappitRoute'] == null
+          ? null
+          : MappitRoute.fromJson(json['mappitRoute'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$ActionGeofenceSettingsToJson(

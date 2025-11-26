@@ -27,15 +27,17 @@ _CareProtocol _$CareProtocolFromJson(Map<String, dynamic> json) =>
               )
               .toList() ??
           const [],
-      associatedTriggers: (json['associatedTriggers'] as List<dynamic>?)
-          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      associatedTriggers:
+          (json['associatedTriggers'] as List<dynamic>?)
+              ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+              .toList(),
       numOfTasks: (json['numOfTasks'] as num?)?.toInt(),
       numOfPages: (json['numOfPages'] as num?)?.toInt(),
       numOfBlocks: (json['numOfBlocks'] as num?)?.toInt(),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      access:
+          (json['access'] as List<dynamic>?)
+              ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$CareProtocolToJson(_CareProtocol instance) =>
@@ -45,9 +47,8 @@ Map<String, dynamic> _$CareProtocolToJson(_CareProtocol instance) =>
       'mode': instance.mode?.toJson(),
       'tasks': instance.tasks.map((e) => e.toJson()).toList(),
       'pages': instance.pages.map((e) => e.toJson()).toList(),
-      'associatedTriggers': instance.associatedTriggers
-          ?.map((e) => e.toJson())
-          .toList(),
+      'associatedTriggers':
+          instance.associatedTriggers?.map((e) => e.toJson()).toList(),
       'numOfTasks': instance.numOfTasks,
       'numOfPages': instance.numOfPages,
       'numOfBlocks': instance.numOfBlocks,

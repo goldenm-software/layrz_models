@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.84
+
+- Added `messageId` in `ManifestInput` and `Manifest` models
+
 ## 3.4.83
 
 - change `additionalFields` of `ExternalUnit` to have the posibility of be null

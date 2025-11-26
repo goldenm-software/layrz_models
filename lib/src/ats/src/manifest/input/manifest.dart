@@ -15,6 +15,9 @@ abstract class ManifestInput with _$ManifestInput {
     /// The [operationId] parameter is the operationId of the manifest entity.
     String? operationId,
 
+    /// The [messageId] parameter is the messageId of the manifest entity.
+    String? messageId,
+
     /// The [trim] parameter is the trim of the manifest entity.
     double? trim,
 

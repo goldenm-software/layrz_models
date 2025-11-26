@@ -106,29 +106,34 @@ const _$ReportDataTypeEnumMap = {
   ReportDataType.currency: 'CURRENCY',
 };
 
-_ReportTemplate _$ReportTemplateFromJson(Map<String, dynamic> json) =>
-    _ReportTemplate(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      structure: (json['structure'] as List<dynamic>?)
+_ReportTemplate _$ReportTemplateFromJson(
+  Map<String, dynamic> json,
+) => _ReportTemplate(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  structure:
+      (json['structure'] as List<dynamic>?)
           ?.map((e) => ReportTemplatePage.fromJson(e as Map<String, dynamic>))
           .toList(),
-      assets: (json['assets'] as List<dynamic>?)
+  assets:
+      (json['assets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      assetsIds: (json['assetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      outboundServices: (json['outboundServices'] as List<dynamic>?)
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  outboundServices:
+      (json['outboundServices'] as List<dynamic>?)
           ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
           .toList(),
-      outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
+  outboundServicesIds:
+      (json['outboundServicesIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      access: (json['access'] as List<dynamic>?)
+  access:
+      (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
-    );
+);
 
 Map<String, dynamic> _$ReportTemplateToJson(_ReportTemplate instance) =>
     <String, dynamic>{
@@ -137,36 +142,33 @@ Map<String, dynamic> _$ReportTemplateToJson(_ReportTemplate instance) =>
       'structure': instance.structure?.map((e) => e.toJson()).toList(),
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
-      'outboundServices': instance.outboundServices
-          ?.map((e) => e.toJson())
-          .toList(),
+      'outboundServices':
+          instance.outboundServices?.map((e) => e.toJson()).toList(),
       'outboundServicesIds': instance.outboundServicesIds,
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_ReportTemplateInput _$ReportTemplateInputFromJson(Map<String, dynamic> json) =>
-    _ReportTemplateInput(
-      id: json['id'] as String?,
-      name: json['name'] as String? ?? '',
-      assetsIds:
-          (json['assetsIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      outboundServicesIds:
-          (json['outboundServicesIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      structure:
-          (json['structure'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    ReportTemplatePageInput.fromJson(e as Map<String, dynamic>),
-              )
-              .toList() ??
-          const [],
-    );
+_ReportTemplateInput _$ReportTemplateInputFromJson(
+  Map<String, dynamic> json,
+) => _ReportTemplateInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  outboundServicesIds:
+      (json['outboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  structure:
+      (json['structure'] as List<dynamic>?)
+          ?.map(
+            (e) => ReportTemplatePageInput.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      const [],
+);
 
 Map<String, dynamic> _$ReportTemplateInputToJson(
   _ReportTemplateInput instance,
@@ -216,9 +218,10 @@ _CustomReport _$CustomReportFromJson(Map<String, dynamic> json) =>
     _CustomReport(
       id: json['id'] as String,
       code: json['code'] as String,
-      allowedApps: (json['allowedApps'] as List<dynamic>?)
-          ?.map((e) => RegisteredApp.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      allowedApps:
+          (json['allowedApps'] as List<dynamic>?)
+              ?.map((e) => RegisteredApp.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
 
 Map<String, dynamic> _$CustomReportToJson(_CustomReport instance) =>
@@ -243,9 +246,12 @@ _ReportTemplatePage _$ReportTemplatePageFromJson(Map<String, dynamic> json) =>
             unknownValue: ReportTemplateAlgorithm.auto,
           ) ??
           ReportTemplateAlgorithm.auto,
-      cols: (json['cols'] as List<dynamic>?)
-          ?.map((e) => ReportTemplateCol.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      cols:
+          (json['cols'] as List<dynamic>?)
+              ?.map(
+                (e) => ReportTemplateCol.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
       script: json['script'] as String?,
     );
 
@@ -352,21 +358,24 @@ _ReportScheduler _$ReportSchedulerFromJson(
     const TimestampConverter().fromJson,
   ),
   updatedById: json['updatedById'] as String?,
-  updatedBy: json['updatedBy'] == null
-      ? null
-      : User.fromJson(json['updatedBy'] as Map<String, dynamic>),
+  updatedBy:
+      json['updatedBy'] == null
+          ? null
+          : User.fromJson(json['updatedBy'] as Map<String, dynamic>),
   createdAt: _$JsonConverterFromJson<num, DateTime>(
     json['createdAt'],
     const TimestampConverter().fromJson,
   ),
   createdById: json['createdById'] as String?,
-  createdBy: json['createdBy'] == null
-      ? null
-      : User.fromJson(json['createdBy'] as Map<String, dynamic>),
+  createdBy:
+      json['createdBy'] == null
+          ? null
+          : User.fromJson(json['createdBy'] as Map<String, dynamic>),
   subject: json['subject'] as String?,
-  access: (json['access'] as List<dynamic>?)
-      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  access:
+      (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
   enabled: json['enabled'] as bool?,
 );
 
