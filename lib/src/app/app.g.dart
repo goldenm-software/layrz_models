@@ -20,61 +20,50 @@ Map<String, dynamic> _$AppAccessibilityToJson(_AppAccessibility instance) =>
       'isSuspended': instance.isSuspended,
     };
 
-_AvailableApp _$AvailableAppFromJson(Map<String, dynamic> json) =>
-    _AvailableApp(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      technology:
-          $enumDecodeNullable(
-            _$AppTechnologyEnumMap,
-            json['technology'],
-            unknownValue: AppTechnology.flutter,
-          ) ??
-          AppTechnology.flutter,
-      legalInformation:
-          json['legalInformation'] == null
-              ? null
-              : AppLegal.fromJson(
-                json['legalInformation'] as Map<String, dynamic>,
-              ),
-      designInformation:
-          json['designInformation'] == null
-              ? null
-              : AppDesign.fromJson(
-                json['designInformation'] as Map<String, dynamic>,
-              ),
-      appId: json['appId'] as String,
-      appType:
-          $enumDecodeNullable(
-            _$AppTypeEnumMap,
-            json['appType'],
-            unknownValue: AppType.public,
-          ) ??
-          AppType.public,
-      supportedPlatforms:
-          (json['supportedPlatforms'] as List<dynamic>?)
-              ?.map(
-                (e) => $enumDecode(
-                  _$AppPlatformEnumMap,
-                  e,
-                  unknownValue: AppPlatform.web,
-                ),
-              )
-              .toList(),
-      onlyCustomized: json['onlyCustomized'] as bool,
-      hasImport: json['hasImport'] as bool?,
-      hasKeychain: json['hasKeychain'] as bool?,
-      serverFolder: json['serverFolder'] as String?,
-      s3Folder: json['s3Folder'] as String?,
-      versions:
-          (json['versions'] as List<dynamic>?)
-              ?.map((e) => AppVersion.fromJson(e as Map<String, dynamic>))
-              .toList(),
-      implementations:
-          (json['implementations'] as List<dynamic>?)
-              ?.map((e) => RegisteredApp.fromJson(e as Map<String, dynamic>))
-              .toList(),
-    );
+_AvailableApp _$AvailableAppFromJson(
+  Map<String, dynamic> json,
+) => _AvailableApp(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  technology:
+      $enumDecodeNullable(
+        _$AppTechnologyEnumMap,
+        json['technology'],
+        unknownValue: AppTechnology.flutter,
+      ) ??
+      AppTechnology.flutter,
+  legalInformation: json['legalInformation'] == null
+      ? null
+      : AppLegal.fromJson(json['legalInformation'] as Map<String, dynamic>),
+  designInformation: json['designInformation'] == null
+      ? null
+      : AppDesign.fromJson(json['designInformation'] as Map<String, dynamic>),
+  appId: json['appId'] as String,
+  appType:
+      $enumDecodeNullable(
+        _$AppTypeEnumMap,
+        json['appType'],
+        unknownValue: AppType.public,
+      ) ??
+      AppType.public,
+  supportedPlatforms: (json['supportedPlatforms'] as List<dynamic>?)
+      ?.map(
+        (e) =>
+            $enumDecode(_$AppPlatformEnumMap, e, unknownValue: AppPlatform.web),
+      )
+      .toList(),
+  onlyCustomized: json['onlyCustomized'] as bool,
+  hasImport: json['hasImport'] as bool?,
+  hasKeychain: json['hasKeychain'] as bool?,
+  serverFolder: json['serverFolder'] as String?,
+  s3Folder: json['s3Folder'] as String?,
+  versions: (json['versions'] as List<dynamic>?)
+      ?.map((e) => AppVersion.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  implementations: (json['implementations'] as List<dynamic>?)
+      ?.map((e) => RegisteredApp.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
 Map<String, dynamic> _$AvailableAppToJson(
   _AvailableApp instance,
@@ -86,8 +75,9 @@ Map<String, dynamic> _$AvailableAppToJson(
   'designInformation': instance.designInformation?.toJson(),
   'appId': instance.appId,
   'appType': instance.appType.toJson(),
-  'supportedPlatforms':
-      instance.supportedPlatforms?.map((e) => e.toJson()).toList(),
+  'supportedPlatforms': instance.supportedPlatforms
+      ?.map((e) => e.toJson())
+      .toList(),
   'onlyCustomized': instance.onlyCustomized,
   'hasImport': instance.hasImport,
   'hasKeychain': instance.hasKeychain,
@@ -160,77 +150,67 @@ Map<String, dynamic> _$AvailableAppInputToJson(_AvailableAppInput instance) =>
       'technology': instance.technology.toJson(),
       'legalInformation': instance.legalInformation.toJson(),
       'designInformation': instance.designInformation.toJson(),
-      'supportedPlatforms':
-          instance.supportedPlatforms.map((e) => e.toJson()).toList(),
+      'supportedPlatforms': instance.supportedPlatforms
+          .map((e) => e.toJson())
+          .toList(),
       'onlyCustomized': instance.onlyCustomized,
       'hasImport': instance.hasImport,
       'hasKeychain': instance.hasKeychain,
     };
 
-_RegisteredApp _$RegisteredAppFromJson(
-  Map<String, dynamic> json,
-) => _RegisteredApp(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  technology:
-      $enumDecodeNullable(
-        _$AppTechnologyEnumMap,
-        json['technology'],
-        unknownValue: AppTechnology.flutter,
-      ) ??
-      AppTechnology.flutter,
-  legalInformation:
-      json['legalInformation'] == null
+_RegisteredApp _$RegisteredAppFromJson(Map<String, dynamic> json) =>
+    _RegisteredApp(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      technology:
+          $enumDecodeNullable(
+            _$AppTechnologyEnumMap,
+            json['technology'],
+            unknownValue: AppTechnology.flutter,
+          ) ??
+          AppTechnology.flutter,
+      legalInformation: json['legalInformation'] == null
           ? null
           : AppLegal.fromJson(json['legalInformation'] as Map<String, dynamic>),
-  designInformation:
-      json['designInformation'] == null
+      designInformation: json['designInformation'] == null
           ? null
           : AppDesign.fromJson(
-            json['designInformation'] as Map<String, dynamic>,
-          ),
-  nickname: json['nickname'] as String,
-  isCustomized: json['isCustomized'] as bool?,
-  instances:
-      (json['instances'] as List<dynamic>?)
+              json['designInformation'] as Map<String, dynamic>,
+            ),
+      nickname: json['nickname'] as String,
+      isCustomized: json['isCustomized'] as bool?,
+      instances: (json['instances'] as List<dynamic>?)
           ?.map((e) => AppInstance.fromJson(e as Map<String, dynamic>))
           .toList(),
-  importedAssets:
-      (json['importedAssets'] as List<dynamic>?)
+      importedAssets: (json['importedAssets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-  importedDevices:
-      (json['importedDevices'] as List<dynamic>?)
+      importedDevices: (json['importedDevices'] as List<dynamic>?)
           ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
           .toList(),
-  importedUsers:
-      (json['importedUsers'] as List<dynamic>?)
+      importedUsers: (json['importedUsers'] as List<dynamic>?)
           ?.map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
-  keychain:
-      (json['keychain'] as List<dynamic>?)
+      keychain: (json['keychain'] as List<dynamic>?)
           ?.map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
-  sourceId: json['sourceId'] as String,
-  owner:
-      json['owner'] == null
+      sourceId: json['sourceId'] as String,
+      owner: json['owner'] == null
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
-  allowedReports:
-      (json['allowedReports'] as List<dynamic>?)
+      allowedReports: (json['allowedReports'] as List<dynamic>?)
           ?.map((e) => CustomReport.fromJson(e as Map<String, dynamic>))
           .toList(),
-  fixedWorkspaceId: json['fixedWorkspaceId'] as String?,
-  fixedWorkspace:
-      json['fixedWorkspace'] == null
+      fixedWorkspaceId: json['fixedWorkspaceId'] as String?,
+      fixedWorkspace: json['fixedWorkspace'] == null
           ? null
           : Workspace.fromJson(json['fixedWorkspace'] as Map<String, dynamic>),
-  authorizedLayers:
-      (json['authorizedLayers'] as List<dynamic>?)
-          ?.map((e) => MapLayer.fromJson(e as Map<String, dynamic>))
-          .toList() ??
-      const [],
-);
+      authorizedLayers:
+          (json['authorizedLayers'] as List<dynamic>?)
+              ?.map((e) => MapLayer.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
 
 Map<String, dynamic> _$RegisteredAppToJson(
   _RegisteredApp instance,
@@ -350,23 +330,20 @@ _AppDesign _$AppDesignFromJson(Map<String, dynamic> json) => _AppDesign(
   favicons: AppThemedAsset.fromJson(json['favicons'] as Map<String, dynamic>),
   logos: AppThemedAsset.fromJson(json['logos'] as Map<String, dynamic>),
   appicon: json['appicon'] as String,
-  login:
-      json['login'] == null
-          ? null
-          : AppLoginDesign.fromJson(json['login'] as Map<String, dynamic>),
+  login: json['login'] == null
+      ? null
+      : AppLoginDesign.fromJson(json['login'] as Map<String, dynamic>),
   footerFormat: $enumDecodeNullable(
     _$FooterFormatEnumMap,
     json['footerFormat'],
     unknownValue: FooterFormat.madeWith,
   ),
-  titleFont:
-      json['titleFont'] == null
-          ? null
-          : AppFont.fromJson(json['titleFont'] as Map<String, dynamic>),
-  bodyFont:
-      json['bodyFont'] == null
-          ? null
-          : AppFont.fromJson(json['bodyFont'] as Map<String, dynamic>),
+  titleFont: json['titleFont'] == null
+      ? null
+      : AppFont.fromJson(json['titleFont'] as Map<String, dynamic>),
+  bodyFont: json['bodyFont'] == null
+      ? null
+      : AppFont.fromJson(json['bodyFont'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$AppDesignToJson(_AppDesign instance) =>
@@ -482,18 +459,12 @@ _AppInstance _$AppInstanceFromJson(Map<String, dynamic> json) => _AppInstance(
         unknownValue: InstanceStatus.pending,
       ) ??
       InstanceStatus.pending,
-  cloudfront:
-      json['cloudfront'] == null
-          ? null
-          : DnsConfiguration.fromJson(
-            json['cloudfront'] as Map<String, dynamic>,
-          ),
-  certificate:
-      json['certificate'] == null
-          ? null
-          : DnsConfiguration.fromJson(
-            json['certificate'] as Map<String, dynamic>,
-          ),
+  cloudfront: json['cloudfront'] == null
+      ? null
+      : DnsConfiguration.fromJson(json['cloudfront'] as Map<String, dynamic>),
+  certificate: json['certificate'] == null
+      ? null
+      : DnsConfiguration.fromJson(json['certificate'] as Map<String, dynamic>),
   migrationStatus:
       $enumDecodeNullable(
         _$InstanceMigrationStatusEnumMap,

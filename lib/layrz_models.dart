@@ -127,6 +127,9 @@ export 'src/tagon/tagon.dart';
 // import 'src/mqtt/mqtt.dart';
 export 'src/mqtt/mqtt.dart';
 
+// import 'src/api/api.dart';
+export 'src/api/api.dart';
+
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
 

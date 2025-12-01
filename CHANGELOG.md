@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.5.0
+
+- Upgraded to Dart SDK version 3.10.0 and Flutter version 3.38.1
+- New `ApiResponse<T>` generic class to standardize API responses across the package.
+
 ## 3.4.85
 
 - Changed `temperature` value in `TankMeasurementInput` to have the possibility of be null

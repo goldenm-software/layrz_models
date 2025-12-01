@@ -27,10 +27,9 @@ _Operation _$OperationFromJson(Map<String, dynamic> json) => _Operation(
       const [],
   payload: json['payload'] as String?,
   languageId: json['languageId'] as String?,
-  timezone:
-      json['timezone'] == null
-          ? null
-          : Timezone.fromJson(json['timezone'] as Map<String, dynamic>),
+  timezone: json['timezone'] == null
+      ? null
+      : Timezone.fromJson(json['timezone'] as Map<String, dynamic>),
   timezoneId: json['timezoneId'] as String?,
   receptionEmails:
       (json['receptionEmails'] as List<dynamic>?)
@@ -42,37 +41,30 @@ _Operation _$OperationFromJson(Map<String, dynamic> json) => _Operation(
   textColor: const ColorOrNullConverter().fromJson(
     json['textColor'] as String?,
   ),
-  destinationPhones:
-      (json['destinationPhones'] as List<dynamic>?)
-          ?.map((e) => PhoneNumber.fromJson(Map<String, String>.from(e as Map)))
-          .toList(),
+  destinationPhones: (json['destinationPhones'] as List<dynamic>?)
+      ?.map((e) => PhoneNumber.fromJson(Map<String, String>.from(e as Map)))
+      .toList(),
   notificationType: $enumDecodeNullable(
     _$NotificationTypeEnumMap,
     json['notificationType'],
     unknownValue: NotificationType.unknown,
   ),
   externalAccountId: json['externalAccountId'] as String?,
-  access:
-      (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  triggers:
-      (json['triggers'] as List<dynamic>?)
-          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  access: (json['access'] as List<dynamic>?)
+      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  triggers: (json['triggers'] as List<dynamic>?)
+      ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
+      .toList(),
   useAssetContactsInstead: json['useAssetContactsInstead'] as bool?,
   attachImage: json['attachImage'] as bool?,
   emailTemplateId: json['emailTemplateId'] as String?,
-  pushPlatforms:
-      (json['pushPlatforms'] as List<dynamic>?)
-          ?.map(
-            (e) => $enumDecode(
-              _$AppPlatformEnumMap,
-              e,
-              unknownValue: AppPlatform.web,
-            ),
-          )
-          .toList(),
+  pushPlatforms: (json['pushPlatforms'] as List<dynamic>?)
+      ?.map(
+        (e) =>
+            $enumDecode(_$AppPlatformEnumMap, e, unknownValue: AppPlatform.web),
+      )
+      .toList(),
   pushTitle: json['pushTitle'] as String?,
   soundEffect:
       $enumDecodeNullable(
@@ -102,8 +94,9 @@ Map<String, dynamic> _$OperationToJson(_Operation instance) =>
       'emailSubject': instance.emailSubject,
       'color': const ColorOrNullConverter().toJson(instance.color),
       'textColor': const ColorOrNullConverter().toJson(instance.textColor),
-      'destinationPhones':
-          instance.destinationPhones?.map((e) => e.toJson()).toList(),
+      'destinationPhones': instance.destinationPhones
+          ?.map((e) => e.toJson())
+          .toList(),
       'notificationType': instance.notificationType?.toJson(),
       'externalAccountId': instance.externalAccountId,
       'access': instance.access?.map((e) => e.toJson()).toList(),
@@ -167,81 +160,76 @@ const _$SoundEffectEnumMap = {
   SoundEffect.custom: 'CUSTOM',
 };
 
-_OperationInput _$OperationInputFromJson(Map<String, dynamic> json) =>
-    _OperationInput(
-      id: json['id'] as String?,
-      name: json['name'] as String? ?? '',
-      operationType:
-          $enumDecodeNullable(
-            _$OperationTypeEnumMap,
-            json['operationType'],
-            unknownValue: OperationType.unknown,
-          ) ??
-          OperationType.inAppNotification,
-      requestType: $enumDecodeNullable(
-        _$HttpRequestTypeEnumMap,
-        json['requestType'],
-        unknownValue: HttpRequestType.httpGet,
-      ),
-      url: json['url'] as String?,
-      headers:
-          (json['headers'] as List<dynamic>?)
-              ?.map((e) => HttpHeaderInput.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-      payload: json['payload'] as String?,
-      languageId: json['languageId'] as String?,
-      timezoneId: json['timezoneId'] as String?,
-      receptionEmails:
-          (json['receptionEmails'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      emailSubject: json['emailSubject'] as String? ?? '',
-      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
-      textColor: const ColorOrNullConverter().fromJson(
-        json['textColor'] as String?,
-      ),
-      destinationPhones:
-          (json['destinationPhones'] as List<dynamic>?)
-              ?.map((e) => PhoneNumberInput.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-      notificationType: $enumDecodeNullable(
-        _$NotificationTypeEnumMap,
-        json['notificationType'],
-        unknownValue: NotificationType.unknown,
-      ),
-      externalAccountId: json['externalAccountId'] as String?,
-      useAssetContactsInstead:
-          json['useAssetContactsInstead'] as bool? ?? false,
-      attachImage: json['attachImage'] as bool? ?? false,
-      emailTemplateId: json['emailTemplateId'] as String?,
-      pushPlatforms:
-          (json['pushPlatforms'] as List<dynamic>?)
-              ?.map(
-                (e) => $enumDecode(
-                  _$AppPlatformEnumMap,
-                  e,
-                  unknownValue: AppPlatform.web,
-                ),
-              )
-              .toList(),
-      pushTitle: json['pushTitle'] as String?,
-      soundEffect:
-          $enumDecodeNullable(
-            _$SoundEffectEnumMap,
-            json['soundEffect'],
-            unknownValue: SoundEffect.none,
-          ) ??
-          SoundEffect.none,
-      soundEffectUri: json['soundEffectUri'] as String?,
-      icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
-      duration:
-          json['duration'] == null
-              ? const Duration(seconds: 5)
-              : const DurationConverter().fromJson(json['duration'] as num),
-    );
+_OperationInput _$OperationInputFromJson(
+  Map<String, dynamic> json,
+) => _OperationInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  operationType:
+      $enumDecodeNullable(
+        _$OperationTypeEnumMap,
+        json['operationType'],
+        unknownValue: OperationType.unknown,
+      ) ??
+      OperationType.inAppNotification,
+  requestType: $enumDecodeNullable(
+    _$HttpRequestTypeEnumMap,
+    json['requestType'],
+    unknownValue: HttpRequestType.httpGet,
+  ),
+  url: json['url'] as String?,
+  headers:
+      (json['headers'] as List<dynamic>?)
+          ?.map((e) => HttpHeaderInput.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+  payload: json['payload'] as String?,
+  languageId: json['languageId'] as String?,
+  timezoneId: json['timezoneId'] as String?,
+  receptionEmails:
+      (json['receptionEmails'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  emailSubject: json['emailSubject'] as String? ?? '',
+  color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+  textColor: const ColorOrNullConverter().fromJson(
+    json['textColor'] as String?,
+  ),
+  destinationPhones:
+      (json['destinationPhones'] as List<dynamic>?)
+          ?.map((e) => PhoneNumberInput.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+  notificationType: $enumDecodeNullable(
+    _$NotificationTypeEnumMap,
+    json['notificationType'],
+    unknownValue: NotificationType.unknown,
+  ),
+  externalAccountId: json['externalAccountId'] as String?,
+  useAssetContactsInstead: json['useAssetContactsInstead'] as bool? ?? false,
+  attachImage: json['attachImage'] as bool? ?? false,
+  emailTemplateId: json['emailTemplateId'] as String?,
+  pushPlatforms: (json['pushPlatforms'] as List<dynamic>?)
+      ?.map(
+        (e) =>
+            $enumDecode(_$AppPlatformEnumMap, e, unknownValue: AppPlatform.web),
+      )
+      .toList(),
+  pushTitle: json['pushTitle'] as String?,
+  soundEffect:
+      $enumDecodeNullable(
+        _$SoundEffectEnumMap,
+        json['soundEffect'],
+        unknownValue: SoundEffect.none,
+      ) ??
+      SoundEffect.none,
+  soundEffectUri: json['soundEffectUri'] as String?,
+  icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
+  duration: json['duration'] == null
+      ? const Duration(seconds: 5)
+      : const DurationConverter().fromJson(json['duration'] as num),
+);
 
 Map<String, dynamic> _$OperationInputToJson(_OperationInput instance) =>
     <String, dynamic>{
@@ -258,8 +246,9 @@ Map<String, dynamic> _$OperationInputToJson(_OperationInput instance) =>
       'emailSubject': instance.emailSubject,
       'color': const ColorOrNullConverter().toJson(instance.color),
       'textColor': const ColorOrNullConverter().toJson(instance.textColor),
-      'destinationPhones':
-          instance.destinationPhones.map((e) => e.toJson()).toList(),
+      'destinationPhones': instance.destinationPhones
+          .map((e) => e.toJson())
+          .toList(),
       'notificationType': instance.notificationType?.toJson(),
       'externalAccountId': instance.externalAccountId,
       'useAssetContactsInstead': instance.useAssetContactsInstead,

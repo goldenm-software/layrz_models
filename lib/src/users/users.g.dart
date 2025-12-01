@@ -96,12 +96,9 @@ _ProfileInput _$ProfileInputFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       username: json['username'] as String? ?? '',
-      dynamicAvatar:
-          json['dynamicAvatar'] == null
-              ? null
-              : AvatarInput.fromJson(
-                json['dynamicAvatar'] as Map<String, dynamic>,
-              ),
+      dynamicAvatar: json['dynamicAvatar'] == null
+          ? null
+          : AvatarInput.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProfileInputToJson(_ProfileInput instance) =>
@@ -133,82 +130,67 @@ Map<String, dynamic> _$TenvioDestinationSetupToJson(
 _User _$UserFromJson(Map<String, dynamic> json) => _User(
   id: json['id'] as String,
   name: json['name'] as String,
-  token:
-      json['token'] == null
-          ? null
-          : Token.fromJson(json['token'] as Map<String, dynamic>),
+  token: json['token'] == null
+      ? null
+      : Token.fromJson(json['token'] as Map<String, dynamic>),
   parentId: json['parentId'] as String?,
   email: json['email'] as String?,
   username: json['username'] as String?,
-  dynamicAvatar:
-      json['dynamicAvatar'] == null
-          ? null
-          : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
-  referencesIds:
-      (json['referencesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  references:
-      (json['references'] as List<dynamic>?)
-          ?.map((e) => Reference.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  category:
-      json['category'] == null
-          ? null
-          : Category.fromJson(json['category'] as Map<String, dynamic>),
+  dynamicAvatar: json['dynamicAvatar'] == null
+      ? null
+      : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
+  referencesIds: (json['referencesIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  references: (json['references'] as List<dynamic>?)
+      ?.map((e) => Reference.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  category: json['category'] == null
+      ? null
+      : Category.fromJson(json['category'] as Map<String, dynamic>),
   categoryId: json['categoryId'] as String?,
   mqttToken: json['mqttToken'] as String?,
-  mqttConfig:
-      json['mqttConfig'] == null
-          ? null
-          : RealtimeMqttConfig.fromJson(
-            json['mqttConfig'] as Map<String, dynamic>,
-          ),
-  access:
-      (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  customFields:
-      (json['customFields'] as List<dynamic>?)
-          ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  mqttConfig: json['mqttConfig'] == null
+      ? null
+      : RealtimeMqttConfig.fromJson(json['mqttConfig'] as Map<String, dynamic>),
+  access: (json['access'] as List<dynamic>?)
+      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  customFields: (json['customFields'] as List<dynamic>?)
+      ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
+      .toList(),
   platformAuth: json['platformAuth'] as String? ?? "",
   childs:
       (json['childs'] as List<dynamic>?)
           ?.map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
-  tagsIds:
-      (json['tagsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  tags:
-      (json['tags'] as List<dynamic>?)
-          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  tagsIds: (json['tagsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  tags: (json['tags'] as List<dynamic>?)
+      ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
+      .toList(),
   planId: json['planId'] as String?,
-  allowedApps:
-      (json['allowedApps'] as List<dynamic>?)
-          ?.map((e) => RegisteredApp.fromJson(e as Map<String, dynamic>))
-          .toList(),
-  mappitAssetsIds:
-      (json['mappitAssetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  mappitSecondaryRoutesIds:
-      (json['mappitSecondaryRoutesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-  mappitAssets:
-      (json['mappitAssets'] as List<dynamic>?)
-          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  allowedApps: (json['allowedApps'] as List<dynamic>?)
+      ?.map((e) => RegisteredApp.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  mappitAssetsIds: (json['mappitAssetsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  mappitSecondaryRoutesIds: (json['mappitSecondaryRoutesIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  mappitAssets: (json['mappitAssets'] as List<dynamic>?)
+      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+      .toList(),
   historicalDaysAllowed: (json['historicalDaysAllowed'] as num?)?.toInt(),
   mappitExternalAccountId: json['mappitExternalAccountId'] as String?,
-  mappitExternalAccount:
-      json['mappitExternalAccount'] == null
-          ? null
-          : ExternalAccount.fromJson(
-            json['mappitExternalAccount'] as Map<String, dynamic>,
-          ),
+  mappitExternalAccount: json['mappitExternalAccount'] == null
+      ? null
+      : ExternalAccount.fromJson(
+          json['mappitExternalAccount'] as Map<String, dynamic>,
+        ),
   mfaEnabled: json['mfaEnabled'] as bool? ?? false,
   mfaMethods:
       (json['mfaMethods'] as List<dynamic>?)
@@ -228,12 +210,11 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
           ?.map((e) => e as String)
           .toList() ??
       const [],
-  brickhousePermissionTier:
-      json['brickhousePermissionTier'] == null
-          ? null
-          : BHSPermissionTier.fromJson(
-            json['brickhousePermissionTier'] as Map<String, dynamic>,
-          ),
+  brickhousePermissionTier: json['brickhousePermissionTier'] == null
+      ? null
+      : BHSPermissionTier.fromJson(
+          json['brickhousePermissionTier'] as Map<String, dynamic>,
+        ),
   brickhousePermissionTierId: json['brickhousePermissionTierId'] as String?,
   brickhouseRole: $enumDecodeNullable(
     _$BrickhouseUserRoleEnumMap,
@@ -244,17 +225,13 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
   isLocked: json['isLocked'] as bool? ?? false,
   isSuspended: json['isSuspended'] as bool? ?? false,
   hasPaymentWarning: json['hasPaymentWarning'] as bool? ?? false,
-  billingPlan:
-      json['billingPlan'] == null
-          ? null
-          : BillingPlan.fromJson(json['billingPlan'] as Map<String, dynamic>),
+  billingPlan: json['billingPlan'] == null
+      ? null
+      : BillingPlan.fromJson(json['billingPlan'] as Map<String, dynamic>),
   isPasswordExpired: json['isPasswordExpired'] as bool?,
-  preferences:
-      json['preferences'] == null
-          ? null
-          : UserPreferences.fromJson(
-            json['preferences'] as Map<String, dynamic>,
-          ),
+  preferences: json['preferences'] == null
+      ? null
+      : UserPreferences.fromJson(json['preferences'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
@@ -286,8 +263,9 @@ Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
   'mappitExternalAccountId': instance.mappitExternalAccountId,
   'mappitExternalAccount': instance.mappitExternalAccount?.toJson(),
   'mfaEnabled': instance.mfaEnabled,
-  'mfaMethods':
-      instance.mfaMethods.map(const MfaMethodConverter().toJson).toList(),
+  'mfaMethods': instance.mfaMethods
+      .map(const MfaMethodConverter().toJson)
+      .toList(),
   'tenvioAddress': instance.tenvioAddress,
   'tenvioPhone': instance.tenvioPhone,
   'tenvioLatitude': instance.tenvioLatitude,
@@ -312,10 +290,9 @@ _UserInput _$UserInputFromJson(Map<String, dynamic> json) => _UserInput(
   name: json['name'] as String? ?? '',
   email: json['email'] as String? ?? '',
   username: json['username'] as String? ?? '',
-  dynamicAvatar:
-      json['dynamicAvatar'] == null
-          ? null
-          : AvatarInput.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
+  dynamicAvatar: json['dynamicAvatar'] == null
+      ? null
+      : AvatarInput.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
   referencesIds:
       (json['referencesIds'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -344,12 +321,11 @@ _UserInput _$UserInputFromJson(Map<String, dynamic> json) => _UserInput(
   ),
   sdmCode: json['sdmCode'] as String?,
   password: json['password'] as String?,
-  preferences:
-      json['preferences'] == null
-          ? null
-          : UserPreferencesInput.fromJson(
-            json['preferences'] as Map<String, dynamic>,
-          ),
+  preferences: json['preferences'] == null
+      ? null
+      : UserPreferencesInput.fromJson(
+          json['preferences'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$UserInputToJson(_UserInput instance) =>
