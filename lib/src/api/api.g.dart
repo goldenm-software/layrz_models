@@ -6,21 +6,23 @@ part of 'api.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ApiResponse<T> _$ApiResponseFromJson<T>(
+_ApiResponse<T, Q> _$ApiResponseFromJson<T, Q>(
   Map<String, dynamic> json,
   T Function(Object? json) fromJsonT,
-) => _ApiResponse<T>(
+  Q Function(Object? json) fromJsonQ,
+) => _ApiResponse<T, Q>(
   status: $enumDecode(_$ApiStatusEnumMap, json['status']),
-  errors: json['errors'],
+  errors: _$nullableGenericFromJson(json['errors'], fromJsonQ),
   result: _$nullableGenericFromJson(json['result'], fromJsonT),
 );
 
-Map<String, dynamic> _$ApiResponseToJson<T>(
-  _ApiResponse<T> instance,
+Map<String, dynamic> _$ApiResponseToJson<T, Q>(
+  _ApiResponse<T, Q> instance,
   Object? Function(T value) toJsonT,
+  Object? Function(Q value) toJsonQ,
 ) => <String, dynamic>{
   'status': instance.status.toJson(),
-  'errors': instance.errors,
+  'errors': _$nullableGenericToJson(instance.errors, toJsonQ),
   'result': _$nullableGenericToJson(instance.result, toJsonT),
 };
 

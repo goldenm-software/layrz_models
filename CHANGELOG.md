@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.0+1
+
+- Modified `ApiResponse<T>` generic class to also include a second generic type `Q` for error representation.
+
 ## 3.5.0
 
 - Upgraded to Dart SDK version 3.10.0 and Flutter version 3.38.1

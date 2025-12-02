@@ -13,22 +13,22 @@ part of 'api.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$ApiResponse<T> {
+mixin _$ApiResponse<T,Q> {
 
- ApiStatus get status; dynamic get errors; T? get result;
+ ApiStatus get status; Q? get errors; T? get result;
 /// Create a copy of ApiResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$ApiResponseCopyWith<T, ApiResponse<T>> get copyWith => _$ApiResponseCopyWithImpl<T, ApiResponse<T>>(this as ApiResponse<T>, _$identity);
+$ApiResponseCopyWith<T, Q, ApiResponse<T, Q>> get copyWith => _$ApiResponseCopyWithImpl<T, Q, ApiResponse<T, Q>>(this as ApiResponse<T, Q>, _$identity);
 
   /// Serializes this ApiResponse to a JSON map.
-  Map<String, dynamic> toJson(Object? Function(T) toJsonT);
+  Map<String, dynamic> toJson(Object? Function(T) toJsonT,Object? Function(Q) toJsonQ);
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApiResponse<T>&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.errors, errors)&&const DeepCollectionEquality().equals(other.result, result));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApiResponse<T, Q>&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.errors, errors)&&const DeepCollectionEquality().equals(other.result, result));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,18 +37,18 @@ int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality(
 
 @override
 String toString() {
-  return 'ApiResponse<$T>(status: $status, errors: $errors, result: $result)';
+  return 'ApiResponse<$T, $Q>(status: $status, errors: $errors, result: $result)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ApiResponseCopyWith<T,$Res>  {
-  factory $ApiResponseCopyWith(ApiResponse<T> value, $Res Function(ApiResponse<T>) _then) = _$ApiResponseCopyWithImpl;
+abstract mixin class $ApiResponseCopyWith<T,Q,$Res>  {
+  factory $ApiResponseCopyWith(ApiResponse<T, Q> value, $Res Function(ApiResponse<T, Q>) _then) = _$ApiResponseCopyWithImpl;
 @useResult
 $Res call({
- ApiStatus status, dynamic errors, T? result
+ ApiStatus status, Q? errors, T? result
 });
 
 
@@ -56,12 +56,12 @@ $Res call({
 
 }
 /// @nodoc
-class _$ApiResponseCopyWithImpl<T,$Res>
-    implements $ApiResponseCopyWith<T, $Res> {
+class _$ApiResponseCopyWithImpl<T,Q,$Res>
+    implements $ApiResponseCopyWith<T, Q, $Res> {
   _$ApiResponseCopyWithImpl(this._self, this._then);
 
-  final ApiResponse<T> _self;
-  final $Res Function(ApiResponse<T>) _then;
+  final ApiResponse<T, Q> _self;
+  final $Res Function(ApiResponse<T, Q>) _then;
 
 /// Create a copy of ApiResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -69,7 +69,7 @@ class _$ApiResponseCopyWithImpl<T,$Res>
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ApiStatus,errors: freezed == errors ? _self.errors : errors // ignore: cast_nullable_to_non_nullable
-as dynamic,result: freezed == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
+as Q?,result: freezed == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
 as T?,
   ));
 }
@@ -78,7 +78,7 @@ as T?,
 
 
 /// Adds pattern-matching-related methods to [ApiResponse].
-extension ApiResponsePatterns<T> on ApiResponse<T> {
+extension ApiResponsePatterns<T,Q> on ApiResponse<T, Q> {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -91,7 +91,7 @@ extension ApiResponsePatterns<T> on ApiResponse<T> {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ApiResponse<T> value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ApiResponse<T, Q> value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _ApiResponse() when $default != null:
@@ -113,7 +113,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ApiResponse<T> value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ApiResponse<T, Q> value)  $default,){
 final _that = this;
 switch (_that) {
 case _ApiResponse():
@@ -134,7 +134,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ApiResponse<T> value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ApiResponse<T, Q> value)?  $default,){
 final _that = this;
 switch (_that) {
 case _ApiResponse() when $default != null:
@@ -155,7 +155,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ApiStatus status,  dynamic errors,  T? result)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ApiStatus status,  Q? errors,  T? result)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApiResponse() when $default != null:
 return $default(_that.status,_that.errors,_that.result);case _:
@@ -176,7 +176,7 @@ return $default(_that.status,_that.errors,_that.result);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ApiStatus status,  dynamic errors,  T? result)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ApiStatus status,  Q? errors,  T? result)  $default,) {final _that = this;
 switch (_that) {
 case _ApiResponse():
 return $default(_that.status,_that.errors,_that.result);case _:
@@ -196,7 +196,7 @@ return $default(_that.status,_that.errors,_that.result);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ApiStatus status,  dynamic errors,  T? result)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ApiStatus status,  Q? errors,  T? result)?  $default,) {final _that = this;
 switch (_that) {
 case _ApiResponse() when $default != null:
 return $default(_that.status,_that.errors,_that.result);case _:
@@ -210,28 +210,28 @@ return $default(_that.status,_that.errors,_that.result);case _:
 /// @nodoc
 @JsonSerializable(genericArgumentFactories: true)
 
-class _ApiResponse<T> implements ApiResponse<T> {
+class _ApiResponse<T,Q> implements ApiResponse<T, Q> {
   const _ApiResponse({required this.status, this.errors, this.result});
-  factory _ApiResponse.fromJson(Map<String, dynamic> json,T Function(Object?) fromJsonT) => _$ApiResponseFromJson(json,fromJsonT);
+  factory _ApiResponse.fromJson(Map<String, dynamic> json,T Function(Object?) fromJsonT,Q Function(Object?) fromJsonQ) => _$ApiResponseFromJson(json,fromJsonT,fromJsonQ);
 
 @override final  ApiStatus status;
-@override final  dynamic errors;
+@override final  Q? errors;
 @override final  T? result;
 
 /// Create a copy of ApiResponse
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$ApiResponseCopyWith<T, _ApiResponse<T>> get copyWith => __$ApiResponseCopyWithImpl<T, _ApiResponse<T>>(this, _$identity);
+_$ApiResponseCopyWith<T, Q, _ApiResponse<T, Q>> get copyWith => __$ApiResponseCopyWithImpl<T, Q, _ApiResponse<T, Q>>(this, _$identity);
 
 @override
-Map<String, dynamic> toJson(Object? Function(T) toJsonT) {
-  return _$ApiResponseToJson<T>(this, toJsonT);
+Map<String, dynamic> toJson(Object? Function(T) toJsonT,Object? Function(Q) toJsonQ) {
+  return _$ApiResponseToJson<T, Q>(this, toJsonT,toJsonQ);
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApiResponse<T>&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.errors, errors)&&const DeepCollectionEquality().equals(other.result, result));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApiResponse<T, Q>&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.errors, errors)&&const DeepCollectionEquality().equals(other.result, result));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -240,18 +240,18 @@ int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality(
 
 @override
 String toString() {
-  return 'ApiResponse<$T>(status: $status, errors: $errors, result: $result)';
+  return 'ApiResponse<$T, $Q>(status: $status, errors: $errors, result: $result)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$ApiResponseCopyWith<T,$Res> implements $ApiResponseCopyWith<T, $Res> {
-  factory _$ApiResponseCopyWith(_ApiResponse<T> value, $Res Function(_ApiResponse<T>) _then) = __$ApiResponseCopyWithImpl;
+abstract mixin class _$ApiResponseCopyWith<T,Q,$Res> implements $ApiResponseCopyWith<T, Q, $Res> {
+  factory _$ApiResponseCopyWith(_ApiResponse<T, Q> value, $Res Function(_ApiResponse<T, Q>) _then) = __$ApiResponseCopyWithImpl;
 @override @useResult
 $Res call({
- ApiStatus status, dynamic errors, T? result
+ ApiStatus status, Q? errors, T? result
 });
 
 
@@ -259,20 +259,20 @@ $Res call({
 
 }
 /// @nodoc
-class __$ApiResponseCopyWithImpl<T,$Res>
-    implements _$ApiResponseCopyWith<T, $Res> {
+class __$ApiResponseCopyWithImpl<T,Q,$Res>
+    implements _$ApiResponseCopyWith<T, Q, $Res> {
   __$ApiResponseCopyWithImpl(this._self, this._then);
 
-  final _ApiResponse<T> _self;
-  final $Res Function(_ApiResponse<T>) _then;
+  final _ApiResponse<T, Q> _self;
+  final $Res Function(_ApiResponse<T, Q>) _then;
 
 /// Create a copy of ApiResponse
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? errors = freezed,Object? result = freezed,}) {
-  return _then(_ApiResponse<T>(
+  return _then(_ApiResponse<T, Q>(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ApiStatus,errors: freezed == errors ? _self.errors : errors // ignore: cast_nullable_to_non_nullable
-as dynamic,result: freezed == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
+as Q?,result: freezed == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
 as T?,
   ));
 }
