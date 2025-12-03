@@ -29,8 +29,8 @@ part 'src/enums/source.dart';
 part 'src/enums/algorithm.dart';
 part 'src/enums/relative_choices.dart';
 
-const Map<ReportTemplateSource, List<String>> kDefaultFieldsPerModule = {
-  ReportTemplateSource.messages: [
+const Map<ReportSource, List<String>> kDefaultFieldsPerModule = {
+  ReportSource.messages: [
     'asset.id',
     'asset.name',
     'primaryDevice.id',
@@ -45,7 +45,22 @@ const Map<ReportTemplateSource, List<String>> kDefaultFieldsPerModule = {
     'position.satellites',
     'position.altitude',
   ],
-  ReportTemplateSource.cases: [
+  ReportSource.lastMessages: [
+    'asset.id',
+    'asset.name',
+    'primaryDevice.id',
+    'primaryDevice.name',
+    'primaryDevice.ident',
+    'receivedAt',
+    'position.latitude',
+    'position.longitude',
+    'position.speed',
+    'position.direction',
+    'position.hdop',
+    'position.satellites',
+    'position.altitude',
+  ],
+  ReportSource.cases: [
     'receivedAt',
     'status',
     'comment.id',
@@ -61,7 +76,7 @@ const Map<ReportTemplateSource, List<String>> kDefaultFieldsPerModule = {
     'trigger.id',
     'trigger.code',
   ],
-  ReportTemplateSource.checkpoints: [
+  ReportSource.checkpoints: [
     'startAt',
     'endAt',
     'point.startAt',
@@ -76,7 +91,7 @@ const Map<ReportTemplateSource, List<String>> kDefaultFieldsPerModule = {
     'checkpoint.name',
     'checkpoint.id',
   ],
-  ReportTemplateSource.events: [
+  ReportSource.events: [
     'asset.id',
     'asset.name',
     'primaryDevice.id',
@@ -87,7 +102,7 @@ const Map<ReportTemplateSource, List<String>> kDefaultFieldsPerModule = {
     'trigger.code',
     'activatedAt',
   ],
-  ReportTemplateSource.broadcast: [
+  ReportSource.broadcast: [
     'sentAt',
     'asset.id',
     'asset.name',

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.1+2
+
+- Added `lastMessages` to `ReportSource` enum columns
+
 ## 3.5.1+1
 
 - Added migration guide for renaming `ReportTemplateSource` and `ReportTemplateAlgorithm` enums.
