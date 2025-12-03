@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.1+1
+
+- Added migration guide for renaming `ReportTemplateSource` and `ReportTemplateAlgorithm` enums.
+
 ## 3.5.1
 
 - Renamed `ReportTemplateSource` to `ReportSource` enum, also, added `ReportTemplateSource` as typedef to avoid breaking changes.
