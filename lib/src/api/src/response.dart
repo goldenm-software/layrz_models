@@ -12,5 +12,9 @@ abstract class ApiResponse<T, Q> with _$ApiResponse<T, Q> {
     Map<String, dynamic> json,
     T Function(Object?) fromJsonT,
     Q Function(Object?) fromJsonQ,
-  ) => _$ApiResponseFromJson(json, fromJsonT, fromJsonQ);
+  ) => _$ApiResponseFromJson(
+    json,
+    fromJsonT,
+    fromJsonQ,
+  );
 }

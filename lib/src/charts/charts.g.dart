@@ -78,6 +78,7 @@ const _$ChartDataSourceEnumMap = {
   ChartDataSource.checkpoints: 'CHECKPOINTS',
   ChartDataSource.atsOperations: 'ATS_OPERATIONS',
   ChartDataSource.atsPurchaseOrders: 'ATS_PURCHASEORDERS',
+  ChartDataSource.lastMessages: 'LAST_MESSAGES',
 };
 
 _LayrzChartInput _$LayrzChartInputFromJson(Map<String, dynamic> json) =>

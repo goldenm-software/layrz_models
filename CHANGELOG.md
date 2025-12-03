@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.5.1
+
+- Renamed `ReportTemplateSource` to `ReportSource` enum, also, added `ReportTemplateSource` as typedef to avoid breaking changes.
+- Renamed `ReportTemplateAlgorithm` to `ReportAlgorithm` enum, also, added `ReportTemplateAlgorithm` as typedef to avoid breaking changes.
+
 ## 3.5.0+1
 
 - Modified `ApiResponse<T>` generic class to also include a second generic type `Q` for error representation.

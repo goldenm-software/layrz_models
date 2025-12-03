@@ -12,9 +12,10 @@ void main() {
     };
 
     // Deserialize
-    final apiResponse = ApiResponse<List<Model>>.fromJson(
+    final apiResponse = ApiResponse<List<Model>, Map<String, dynamic>>.fromJson(
       json,
       (json) => (json as List<dynamic>).map((e) => Model.fromJson(e as Map<String, dynamic>)).toList(),
+      (json) => (json as Map<String, dynamic>),
     );
 
     debugPrint("apiResponse=$apiResponse");
@@ -28,7 +29,10 @@ void main() {
     debugPrint("--------------");
 
     // Serialize
-    final serialized = apiResponse.toJson((value) => value.map((e) => e.toJson()).toList());
+    final serialized = apiResponse.toJson(
+      (value) => value.map((e) => e.toJson()).toList(),
+      (value) => value,
+    );
     debugPrint("serialized=$serialized");
   });
 }

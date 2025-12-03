@@ -13,12 +13,16 @@ abstract class ReportTemplate with _$ReportTemplate {
     /// Structure
     List<ReportTemplatePage>? structure,
 
-    /// Is the report template linked assets or assets' IDs
+    /// Is the report template linked assets or assets
     List<Asset>? assets,
+
+    /// Is the report template linked assets or assets' IDs
     List<String>? assetsIds,
 
-    /// Is the report template linked outbound services or outbound services' IDs
+    /// Is the report template linked outbound services or outbound services
     List<OutboundService>? outboundServices,
+
+    /// Is the report template linked outbound services or outbound services' IDs
     List<String>? outboundServicesIds,
 
     /// Controls the access of this entity.

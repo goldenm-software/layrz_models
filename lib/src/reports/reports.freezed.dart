@@ -1421,9 +1421,11 @@ mixin _$ReportTemplate {
 /// Is the report template ID
  String get id;/// Is the report template name
  String get name;/// Structure
- List<ReportTemplatePage>? get structure;/// Is the report template linked assets or assets' IDs
- List<Asset>? get assets; List<String>? get assetsIds;/// Is the report template linked outbound services or outbound services' IDs
- List<OutboundService>? get outboundServices; List<String>? get outboundServicesIds;/// Controls the access of this entity.
+ List<ReportTemplatePage>? get structure;/// Is the report template linked assets or assets
+ List<Asset>? get assets;/// Is the report template linked assets or assets' IDs
+ List<String>? get assetsIds;/// Is the report template linked outbound services or outbound services
+ List<OutboundService>? get outboundServices;/// Is the report template linked outbound services or outbound services' IDs
+ List<String>? get outboundServicesIds;/// Controls the access of this entity.
  List<Access>? get access;
 /// Create a copy of ReportTemplate
 /// with the given fields replaced by the non-null parameter values.
@@ -1643,9 +1645,9 @@ class _ReportTemplate extends ReportTemplate {
   return EqualUnmodifiableListView(value);
 }
 
-/// Is the report template linked assets or assets' IDs
+/// Is the report template linked assets or assets
  final  List<Asset>? _assets;
-/// Is the report template linked assets or assets' IDs
+/// Is the report template linked assets or assets
 @override List<Asset>? get assets {
   final value = _assets;
   if (value == null) return null;
@@ -1654,7 +1656,9 @@ class _ReportTemplate extends ReportTemplate {
   return EqualUnmodifiableListView(value);
 }
 
+/// Is the report template linked assets or assets' IDs
  final  List<String>? _assetsIds;
+/// Is the report template linked assets or assets' IDs
 @override List<String>? get assetsIds {
   final value = _assetsIds;
   if (value == null) return null;
@@ -1663,9 +1667,9 @@ class _ReportTemplate extends ReportTemplate {
   return EqualUnmodifiableListView(value);
 }
 
-/// Is the report template linked outbound services or outbound services' IDs
+/// Is the report template linked outbound services or outbound services
  final  List<OutboundService>? _outboundServices;
-/// Is the report template linked outbound services or outbound services' IDs
+/// Is the report template linked outbound services or outbound services
 @override List<OutboundService>? get outboundServices {
   final value = _outboundServices;
   if (value == null) return null;
@@ -1674,7 +1678,9 @@ class _ReportTemplate extends ReportTemplate {
   return EqualUnmodifiableListView(value);
 }
 
+/// Is the report template linked outbound services or outbound services' IDs
  final  List<String>? _outboundServicesIds;
+/// Is the report template linked outbound services or outbound services' IDs
 @override List<String>? get outboundServicesIds {
   final value = _outboundServicesIds;
   if (value == null) return null;
@@ -2851,9 +2857,9 @@ mixin _$ReportTemplatePage {
 
 /// Is the page title
  String get title;/// Is the page source
-@JsonKey(unknownEnumValue: ReportTemplateSource.messages) ReportTemplateSource get source;/// Is the algorithm used to generate the page data.
-@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) ReportTemplateAlgorithm get algorithm;/// Is the page data, aka, the cols. Only used when [algorithm] is [ReportTemplateAlgorithm.auto]
- List<ReportTemplateCol>? get cols;/// Is the script in Python to generate the page data. Only used when [algorithm] is [ReportTemplateAlgorithm.python]
+@JsonKey(unknownEnumValue: ReportSource.messages) ReportSource get source;/// Is the algorithm used to generate the page data.
+@JsonKey(unknownEnumValue: ReportAlgorithm.auto) ReportAlgorithm get algorithm;/// Is the page data, aka, the cols. Only used when [algorithm] is [ReportAlgorithm.auto]
+ List<ReportTemplateCol>? get cols;/// Is the script in Python to generate the page data. Only used when [algorithm] is [ReportAlgorithm.python]
  String? get script;
 /// Create a copy of ReportTemplatePage
 /// with the given fields replaced by the non-null parameter values.
@@ -2887,7 +2893,7 @@ abstract mixin class $ReportTemplatePageCopyWith<$Res>  {
   factory $ReportTemplatePageCopyWith(ReportTemplatePage value, $Res Function(ReportTemplatePage) _then) = _$ReportTemplatePageCopyWithImpl;
 @useResult
 $Res call({
- String title,@JsonKey(unknownEnumValue: ReportTemplateSource.messages) ReportTemplateSource source,@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) ReportTemplateAlgorithm algorithm, List<ReportTemplateCol>? cols, String? script
+ String title,@JsonKey(unknownEnumValue: ReportSource.messages) ReportSource source,@JsonKey(unknownEnumValue: ReportAlgorithm.auto) ReportAlgorithm algorithm, List<ReportTemplateCol>? cols, String? script
 });
 
 
@@ -2908,8 +2914,8 @@ class _$ReportTemplatePageCopyWithImpl<$Res>
   return _then(_self.copyWith(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
-as ReportTemplateSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
-as ReportTemplateAlgorithm,cols: freezed == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
+as ReportSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
+as ReportAlgorithm,cols: freezed == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
 as List<ReportTemplateCol>?,script: freezed == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -2996,7 +3002,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title, @JsonKey(unknownEnumValue: ReportTemplateSource.messages)  ReportTemplateSource source, @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)  ReportTemplateAlgorithm algorithm,  List<ReportTemplateCol>? cols,  String? script)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title, @JsonKey(unknownEnumValue: ReportSource.messages)  ReportSource source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto)  ReportAlgorithm algorithm,  List<ReportTemplateCol>? cols,  String? script)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReportTemplatePage() when $default != null:
 return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script);case _:
@@ -3017,7 +3023,7 @@ return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title, @JsonKey(unknownEnumValue: ReportTemplateSource.messages)  ReportTemplateSource source, @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)  ReportTemplateAlgorithm algorithm,  List<ReportTemplateCol>? cols,  String? script)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title, @JsonKey(unknownEnumValue: ReportSource.messages)  ReportSource source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto)  ReportAlgorithm algorithm,  List<ReportTemplateCol>? cols,  String? script)  $default,) {final _that = this;
 switch (_that) {
 case _ReportTemplatePage():
 return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script);case _:
@@ -3037,7 +3043,7 @@ return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title, @JsonKey(unknownEnumValue: ReportTemplateSource.messages)  ReportTemplateSource source, @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)  ReportTemplateAlgorithm algorithm,  List<ReportTemplateCol>? cols,  String? script)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title, @JsonKey(unknownEnumValue: ReportSource.messages)  ReportSource source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto)  ReportAlgorithm algorithm,  List<ReportTemplateCol>? cols,  String? script)?  $default,) {final _that = this;
 switch (_that) {
 case _ReportTemplatePage() when $default != null:
 return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script);case _:
@@ -3052,18 +3058,18 @@ return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script
 @JsonSerializable()
 
 class _ReportTemplatePage extends ReportTemplatePage {
-  const _ReportTemplatePage({required this.title, @JsonKey(unknownEnumValue: ReportTemplateSource.messages) required this.source, @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) this.algorithm = ReportTemplateAlgorithm.auto, final  List<ReportTemplateCol>? cols, this.script}): _cols = cols,super._();
+  const _ReportTemplatePage({required this.title, @JsonKey(unknownEnumValue: ReportSource.messages) required this.source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto) this.algorithm = ReportAlgorithm.auto, final  List<ReportTemplateCol>? cols, this.script}): _cols = cols,super._();
   factory _ReportTemplatePage.fromJson(Map<String, dynamic> json) => _$ReportTemplatePageFromJson(json);
 
 /// Is the page title
 @override final  String title;
 /// Is the page source
-@override@JsonKey(unknownEnumValue: ReportTemplateSource.messages) final  ReportTemplateSource source;
+@override@JsonKey(unknownEnumValue: ReportSource.messages) final  ReportSource source;
 /// Is the algorithm used to generate the page data.
-@override@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) final  ReportTemplateAlgorithm algorithm;
-/// Is the page data, aka, the cols. Only used when [algorithm] is [ReportTemplateAlgorithm.auto]
+@override@JsonKey(unknownEnumValue: ReportAlgorithm.auto) final  ReportAlgorithm algorithm;
+/// Is the page data, aka, the cols. Only used when [algorithm] is [ReportAlgorithm.auto]
  final  List<ReportTemplateCol>? _cols;
-/// Is the page data, aka, the cols. Only used when [algorithm] is [ReportTemplateAlgorithm.auto]
+/// Is the page data, aka, the cols. Only used when [algorithm] is [ReportAlgorithm.auto]
 @override List<ReportTemplateCol>? get cols {
   final value = _cols;
   if (value == null) return null;
@@ -3072,7 +3078,7 @@ class _ReportTemplatePage extends ReportTemplatePage {
   return EqualUnmodifiableListView(value);
 }
 
-/// Is the script in Python to generate the page data. Only used when [algorithm] is [ReportTemplateAlgorithm.python]
+/// Is the script in Python to generate the page data. Only used when [algorithm] is [ReportAlgorithm.python]
 @override final  String? script;
 
 /// Create a copy of ReportTemplatePage
@@ -3108,7 +3114,7 @@ abstract mixin class _$ReportTemplatePageCopyWith<$Res> implements $ReportTempla
   factory _$ReportTemplatePageCopyWith(_ReportTemplatePage value, $Res Function(_ReportTemplatePage) _then) = __$ReportTemplatePageCopyWithImpl;
 @override @useResult
 $Res call({
- String title,@JsonKey(unknownEnumValue: ReportTemplateSource.messages) ReportTemplateSource source,@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) ReportTemplateAlgorithm algorithm, List<ReportTemplateCol>? cols, String? script
+ String title,@JsonKey(unknownEnumValue: ReportSource.messages) ReportSource source,@JsonKey(unknownEnumValue: ReportAlgorithm.auto) ReportAlgorithm algorithm, List<ReportTemplateCol>? cols, String? script
 });
 
 
@@ -3129,8 +3135,8 @@ class __$ReportTemplatePageCopyWithImpl<$Res>
   return _then(_ReportTemplatePage(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
-as ReportTemplateSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
-as ReportTemplateAlgorithm,cols: freezed == cols ? _self._cols : cols // ignore: cast_nullable_to_non_nullable
+as ReportSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
+as ReportAlgorithm,cols: freezed == cols ? _self._cols : cols // ignore: cast_nullable_to_non_nullable
 as List<ReportTemplateCol>?,script: freezed == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -3143,7 +3149,7 @@ as String?,
 /// @nodoc
 mixin _$ReportTemplatePageInput {
 
- String get title; set title(String value);@JsonKey(unknownEnumValue: ReportTemplateSource.messages) ReportTemplateSource get source;@JsonKey(unknownEnumValue: ReportTemplateSource.messages) set source(ReportTemplateSource value);@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) ReportTemplateAlgorithm get algorithm;@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) set algorithm(ReportTemplateAlgorithm value); List<ReportTemplateColInput> get cols; set cols(List<ReportTemplateColInput> value); String get script; set script(String value);
+ String get title; set title(String value);@JsonKey(unknownEnumValue: ReportSource.messages) ReportSource get source;@JsonKey(unknownEnumValue: ReportSource.messages) set source(ReportSource value);@JsonKey(unknownEnumValue: ReportAlgorithm.auto) ReportAlgorithm get algorithm;@JsonKey(unknownEnumValue: ReportAlgorithm.auto) set algorithm(ReportAlgorithm value); List<ReportTemplateColInput> get cols; set cols(List<ReportTemplateColInput> value); String get script; set script(String value);
 /// Create a copy of ReportTemplatePageInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3169,7 +3175,7 @@ abstract mixin class $ReportTemplatePageInputCopyWith<$Res>  {
   factory $ReportTemplatePageInputCopyWith(ReportTemplatePageInput value, $Res Function(ReportTemplatePageInput) _then) = _$ReportTemplatePageInputCopyWithImpl;
 @useResult
 $Res call({
- String title,@JsonKey(unknownEnumValue: ReportTemplateSource.messages) ReportTemplateSource source,@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) ReportTemplateAlgorithm algorithm, List<ReportTemplateColInput> cols, String script
+ String title,@JsonKey(unknownEnumValue: ReportSource.messages) ReportSource source,@JsonKey(unknownEnumValue: ReportAlgorithm.auto) ReportAlgorithm algorithm, List<ReportTemplateColInput> cols, String script
 });
 
 
@@ -3190,8 +3196,8 @@ class _$ReportTemplatePageInputCopyWithImpl<$Res>
   return _then(_self.copyWith(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
-as ReportTemplateSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
-as ReportTemplateAlgorithm,cols: null == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
+as ReportSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
+as ReportAlgorithm,cols: null == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
 as List<ReportTemplateColInput>,script: null == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
 as String,
   ));
@@ -3278,7 +3284,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title, @JsonKey(unknownEnumValue: ReportTemplateSource.messages)  ReportTemplateSource source, @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)  ReportTemplateAlgorithm algorithm,  List<ReportTemplateColInput> cols,  String script)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title, @JsonKey(unknownEnumValue: ReportSource.messages)  ReportSource source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto)  ReportAlgorithm algorithm,  List<ReportTemplateColInput> cols,  String script)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReportTemplatePageInput() when $default != null:
 return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script);case _:
@@ -3299,7 +3305,7 @@ return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title, @JsonKey(unknownEnumValue: ReportTemplateSource.messages)  ReportTemplateSource source, @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)  ReportTemplateAlgorithm algorithm,  List<ReportTemplateColInput> cols,  String script)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title, @JsonKey(unknownEnumValue: ReportSource.messages)  ReportSource source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto)  ReportAlgorithm algorithm,  List<ReportTemplateColInput> cols,  String script)  $default,) {final _that = this;
 switch (_that) {
 case _ReportTemplatePageInput():
 return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script);case _:
@@ -3319,7 +3325,7 @@ return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title, @JsonKey(unknownEnumValue: ReportTemplateSource.messages)  ReportTemplateSource source, @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)  ReportTemplateAlgorithm algorithm,  List<ReportTemplateColInput> cols,  String script)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title, @JsonKey(unknownEnumValue: ReportSource.messages)  ReportSource source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto)  ReportAlgorithm algorithm,  List<ReportTemplateColInput> cols,  String script)?  $default,) {final _that = this;
 switch (_that) {
 case _ReportTemplatePageInput() when $default != null:
 return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script);case _:
@@ -3334,12 +3340,12 @@ return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script
 @JsonSerializable()
 
 class _ReportTemplatePageInput extends ReportTemplatePageInput {
-   _ReportTemplatePageInput({this.title = 'Page', @JsonKey(unknownEnumValue: ReportTemplateSource.messages) this.source = ReportTemplateSource.messages, @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) this.algorithm = ReportTemplateAlgorithm.auto, this.cols = const [], this.script = ''}): super._();
+   _ReportTemplatePageInput({this.title = 'Page', @JsonKey(unknownEnumValue: ReportSource.messages) this.source = ReportSource.messages, @JsonKey(unknownEnumValue: ReportAlgorithm.auto) this.algorithm = ReportAlgorithm.auto, this.cols = const [], this.script = ''}): super._();
   factory _ReportTemplatePageInput.fromJson(Map<String, dynamic> json) => _$ReportTemplatePageInputFromJson(json);
 
 @override@JsonKey()  String title;
-@override@JsonKey(unknownEnumValue: ReportTemplateSource.messages)  ReportTemplateSource source;
-@override@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)  ReportTemplateAlgorithm algorithm;
+@override@JsonKey(unknownEnumValue: ReportSource.messages)  ReportSource source;
+@override@JsonKey(unknownEnumValue: ReportAlgorithm.auto)  ReportAlgorithm algorithm;
 @override@JsonKey()  List<ReportTemplateColInput> cols;
 @override@JsonKey()  String script;
 
@@ -3369,7 +3375,7 @@ abstract mixin class _$ReportTemplatePageInputCopyWith<$Res> implements $ReportT
   factory _$ReportTemplatePageInputCopyWith(_ReportTemplatePageInput value, $Res Function(_ReportTemplatePageInput) _then) = __$ReportTemplatePageInputCopyWithImpl;
 @override @useResult
 $Res call({
- String title,@JsonKey(unknownEnumValue: ReportTemplateSource.messages) ReportTemplateSource source,@JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto) ReportTemplateAlgorithm algorithm, List<ReportTemplateColInput> cols, String script
+ String title,@JsonKey(unknownEnumValue: ReportSource.messages) ReportSource source,@JsonKey(unknownEnumValue: ReportAlgorithm.auto) ReportAlgorithm algorithm, List<ReportTemplateColInput> cols, String script
 });
 
 
@@ -3390,8 +3396,8 @@ class __$ReportTemplatePageInputCopyWithImpl<$Res>
   return _then(_ReportTemplatePageInput(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
-as ReportTemplateSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
-as ReportTemplateAlgorithm,cols: null == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
+as ReportSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
+as ReportAlgorithm,cols: null == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
 as List<ReportTemplateColInput>,script: null == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
 as String,
   ));

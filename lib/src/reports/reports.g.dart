@@ -232,17 +232,17 @@ _ReportTemplatePage _$ReportTemplatePageFromJson(Map<String, dynamic> json) =>
     _ReportTemplatePage(
       title: json['title'] as String,
       source: $enumDecode(
-        _$ReportTemplateSourceEnumMap,
+        _$ReportSourceEnumMap,
         json['source'],
-        unknownValue: ReportTemplateSource.messages,
+        unknownValue: ReportSource.messages,
       ),
       algorithm:
           $enumDecodeNullable(
-            _$ReportTemplateAlgorithmEnumMap,
+            _$ReportAlgorithmEnumMap,
             json['algorithm'],
-            unknownValue: ReportTemplateAlgorithm.auto,
+            unknownValue: ReportAlgorithm.auto,
           ) ??
-          ReportTemplateAlgorithm.auto,
+          ReportAlgorithm.auto,
       cols: (json['cols'] as List<dynamic>?)
           ?.map((e) => ReportTemplateCol.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -258,17 +258,18 @@ Map<String, dynamic> _$ReportTemplatePageToJson(_ReportTemplatePage instance) =>
       'script': instance.script,
     };
 
-const _$ReportTemplateSourceEnumMap = {
-  ReportTemplateSource.messages: 'MESSAGES',
-  ReportTemplateSource.cases: 'CASES',
-  ReportTemplateSource.checkpoints: 'CHECKPOINTS',
-  ReportTemplateSource.events: 'EVENTS',
-  ReportTemplateSource.broadcast: 'BROADCASTS',
+const _$ReportSourceEnumMap = {
+  ReportSource.messages: 'MESSAGES',
+  ReportSource.cases: 'CASES',
+  ReportSource.checkpoints: 'CHECKPOINTS',
+  ReportSource.events: 'EVENTS',
+  ReportSource.broadcast: 'BROADCASTS',
+  ReportSource.lastMessages: 'LAST_MESSAGES',
 };
 
-const _$ReportTemplateAlgorithmEnumMap = {
-  ReportTemplateAlgorithm.auto: 'AUTO',
-  ReportTemplateAlgorithm.python: 'PYTHON',
+const _$ReportAlgorithmEnumMap = {
+  ReportAlgorithm.auto: 'AUTO',
+  ReportAlgorithm.python: 'PYTHON',
 };
 
 _ReportTemplatePageInput _$ReportTemplatePageInputFromJson(
@@ -277,18 +278,18 @@ _ReportTemplatePageInput _$ReportTemplatePageInputFromJson(
   title: json['title'] as String? ?? 'Page',
   source:
       $enumDecodeNullable(
-        _$ReportTemplateSourceEnumMap,
+        _$ReportSourceEnumMap,
         json['source'],
-        unknownValue: ReportTemplateSource.messages,
+        unknownValue: ReportSource.messages,
       ) ??
-      ReportTemplateSource.messages,
+      ReportSource.messages,
   algorithm:
       $enumDecodeNullable(
-        _$ReportTemplateAlgorithmEnumMap,
+        _$ReportAlgorithmEnumMap,
         json['algorithm'],
-        unknownValue: ReportTemplateAlgorithm.auto,
+        unknownValue: ReportAlgorithm.auto,
       ) ??
-      ReportTemplateAlgorithm.auto,
+      ReportAlgorithm.auto,
   cols:
       (json['cols'] as List<dynamic>?)
           ?.map(
