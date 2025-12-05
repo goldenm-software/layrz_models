@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.2
+
+- Added new value `BEFORE_UNLOAD` in `ManifestKind` enum
+
 ## 3.5.1+2
 
 - Added `lastMessages` to `ReportSource` enum columns

@@ -1680,6 +1680,7 @@ const _$ManifestKindEnumMap = {
   ManifestKind.unload: 'UNLOAD',
   ManifestKind.movementBeforeStop: 'MOVEMENT_BEFORE_STOP',
   ManifestKind.movementAfterStop: 'MOVEMENT_AFTER_STOP',
+  ManifestKind.beforeUnload: 'BEFORE_UNLOAD',
 };
 
 _ManifestInput _$ManifestInputFromJson(Map<String, dynamic> json) =>
