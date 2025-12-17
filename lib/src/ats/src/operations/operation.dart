@@ -102,6 +102,12 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// [history] is the list of history linked to the operation.
     List<AtsOperationHistory>? history,
+
+    /// [minEta] is the minimum estimated time of arrival.
+    @TimestampOrNullConverter() DateTime? minEta,
+
+    /// [etaStatus] is the estimated time of arrival status.
+    AtsEtaStatus? etaStatus,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);

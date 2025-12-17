@@ -80,6 +80,7 @@ part 'src/enums/params_form_modality.dart';
 part 'src/enums/replenishment_or_withdraw.dart';
 part 'src/enums/booking_status.dart';
 part 'src/enums/booking_type.dart';
+part 'src/enums/eta_status.dart';
 
 // Manifests
 part 'src/manifest/kind.dart';

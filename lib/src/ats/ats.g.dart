@@ -1520,6 +1520,8 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       history: (json['history'] as List<dynamic>?)
           ?.map((e) => AtsOperationHistory.fromJson(e as Map<String, dynamic>))
           .toList(),
+      minEta: const TimestampOrNullConverter().fromJson(json['minEta'] as num?),
+      etaStatus: $enumDecodeNullable(_$AtsEtaStatusEnumMap, json['etaStatus']),
     );
 
 Map<String, dynamic> _$AtsOperationToJson(
@@ -1553,6 +1555,8 @@ Map<String, dynamic> _$AtsOperationToJson(
   'caclForms': instance.caclForms?.map((e) => e.toJson()).toList(),
   'manifests': instance.manifests?.map((e) => e.toJson()).toList(),
   'history': instance.history?.map((e) => e.toJson()).toList(),
+  'minEta': const TimestampOrNullConverter().toJson(instance.minEta),
+  'etaStatus': instance.etaStatus?.toJson(),
 };
 
 const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
@@ -1571,6 +1575,13 @@ const _$AtsPurchaseOrderSubCategoriesEnumMap = {
   AtsPurchaseOrderSubCategories.sameState: 'SAME_STATE',
   AtsPurchaseOrderSubCategories.otherState: 'OTHER_STATE',
   AtsPurchaseOrderSubCategories.notDefined: 'NOT_DEFINED',
+};
+
+const _$AtsEtaStatusEnumMap = {
+  AtsEtaStatus.pending: 'PENDING',
+  AtsEtaStatus.lowAccuracy: 'LOW_ACCURACY',
+  AtsEtaStatus.highAccuracy: 'HIGH_ACCURACY',
+  AtsEtaStatus.notEnoughData: 'NOT_ENOUGH_DATA',
 };
 
 _AtsOperationStatuses _$AtsOperationStatusesFromJson(

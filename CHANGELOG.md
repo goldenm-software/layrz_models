@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.5.3
+
+- Added new enum `AtsEtaStatus`
+- Added new values `minEta` and `etaStatus` in `AtsOperation` model
+
 ## 3.5.2
 
 - Added new value `BEFORE_UNLOAD` in `ManifestKind` enum
