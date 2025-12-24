@@ -77,6 +77,7 @@ const _$ReferenceCategoryEnumMap = {
       'ATS_SEND_ODOMETER_IN_EXECUTE_EXITS',
   ReferenceCategory.atsRecalculateOperationButton:
       'ATS_RECALCULATE_OPERATION_BUTTON',
+  ReferenceCategory.atsBalsaBordo: 'ATS_BALSA_BORDO',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',

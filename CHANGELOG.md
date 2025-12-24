@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.4
+
+- Added new value `ATS_BALSA_BORDO` in enum `ReferenceCategory`
+
 ## 3.5.3
 
 - Added new enum `AtsEtaStatus`

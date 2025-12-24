@@ -228,6 +228,12 @@ enum ReferenceCategory {
   @JsonValue('ATS_RECALCULATE_OPERATION_BUTTON')
   atsRecalculateOperationButton,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to the balsa bordo module
+  /// ATS_BALSA_BORDO
+  @JsonValue('ATS_BALSA_BORDO')
+  atsBalsaBordo,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR
