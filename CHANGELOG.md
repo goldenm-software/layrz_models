@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.5
+
+- Added new value `MEDIUM_ACCURACY` in enum `AtsEtaStatus`
+
 ## 3.5.4
 
 - Added new value `ATS_BALSA_BORDO` in enum `ReferenceCategory`

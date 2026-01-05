@@ -1581,6 +1581,7 @@ const _$AtsEtaStatusEnumMap = {
   AtsEtaStatus.pending: 'PENDING',
   AtsEtaStatus.lowAccuracy: 'LOW_ACCURACY',
   AtsEtaStatus.highAccuracy: 'HIGH_ACCURACY',
+  AtsEtaStatus.mediumAccuracy: 'MEDIUM_ACCURACY',
   AtsEtaStatus.notEnoughData: 'NOT_ENOUGH_DATA',
 };
 

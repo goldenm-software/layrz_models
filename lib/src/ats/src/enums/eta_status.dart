@@ -8,6 +8,8 @@ enum AtsEtaStatus {
   lowAccuracy,
   @JsonValue('HIGH_ACCURACY')
   highAccuracy,
+  @JsonValue('MEDIUM_ACCURACY')
+  mediumAccuracy,
   @JsonValue('NOT_ENOUGH_DATA')
   notEnoughData
   ;
