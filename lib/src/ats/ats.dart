@@ -81,6 +81,10 @@ part 'src/enums/replenishment_or_withdraw.dart';
 part 'src/enums/booking_status.dart';
 part 'src/enums/booking_type.dart';
 part 'src/enums/eta_status.dart';
+part 'src/enums/command_execution_status.dart';
+part 'src/enums/from_app.dart';
+part 'src/enums/command_execute_type.dart';
+part 'src/enums/command_delivery_type.dart';
 
 // Manifests
 part 'src/manifest/kind.dart';
@@ -111,3 +115,6 @@ part 'src/cacl/input/equipment_measurement_input.dart';
 part 'src/monitor/monitor.dart';
 part 'src/monitor/grid_item.dart';
 part 'src/monitor/grid_dimension.dart';
+
+// Command Execute
+part 'src/comand_execute_history.dart';

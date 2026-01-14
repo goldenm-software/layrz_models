@@ -23417,4 +23417,674 @@ as int,
 
 }
 
+
+/// @nodoc
+mixin _$AtsCommandExecutionHistory {
+
+/// ID of the command execution history. This ID is unique.
+ String? get id;/// UUID of the command
+ String? get commandId;/// Asset from which the command was sent
+ String? get fromAsset;/// Asset to which the command was sent
+ String? get toAsset;/// Status of the command execution
+@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus get status;/// Application from which the command was sent
+@JsonKey(unknownEnumValue: FromApp.unknown) FromApp get fromApp;/// Father asset related to the command execution
+ String? get fatherAsset;/// Error response if the command failed
+ String? get errorResponse;/// User who generated the command execution
+ String? get generatedBy;/// Queue ID associated with the command execution
+ String? get queueId;/// Mileage of the to_asset at the time of command execution
+ double? get toAssetMileage;/// Timestamp when the command execution history was created (Unix)
+@TimestampConverter() DateTime? get createdAt;/// Timestamp when the command execution history was last updated (Unix)
+@TimestampConverter() DateTime? get updatedAt;/// Payload of the command execution
+ String? get payload;/// Type of the command executed
+@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType get commandType;/// Communication method used for the command execution
+@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod get communicationMethod;
+/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsCommandExecutionHistoryCopyWith<AtsCommandExecutionHistory> get copyWith => _$AtsCommandExecutionHistoryCopyWithImpl<AtsCommandExecutionHistory>(this as AtsCommandExecutionHistory, _$identity);
+
+  /// Serializes this AtsCommandExecutionHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsCommandExecutionHistory&&(identical(other.id, id) || other.id == id)&&(identical(other.commandId, commandId) || other.commandId == commandId)&&(identical(other.fromAsset, fromAsset) || other.fromAsset == fromAsset)&&(identical(other.toAsset, toAsset) || other.toAsset == toAsset)&&(identical(other.status, status) || other.status == status)&&(identical(other.fromApp, fromApp) || other.fromApp == fromApp)&&(identical(other.fatherAsset, fatherAsset) || other.fatherAsset == fatherAsset)&&(identical(other.errorResponse, errorResponse) || other.errorResponse == errorResponse)&&(identical(other.generatedBy, generatedBy) || other.generatedBy == generatedBy)&&(identical(other.queueId, queueId) || other.queueId == queueId)&&(identical(other.toAssetMileage, toAssetMileage) || other.toAssetMileage == toAssetMileage)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.commandType, commandType) || other.commandType == commandType)&&(identical(other.communicationMethod, communicationMethod) || other.communicationMethod == communicationMethod));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,commandId,fromAsset,toAsset,status,fromApp,fatherAsset,errorResponse,generatedBy,queueId,toAssetMileage,createdAt,updatedAt,payload,commandType,communicationMethod);
+
+@override
+String toString() {
+  return 'AtsCommandExecutionHistory(id: $id, commandId: $commandId, fromAsset: $fromAsset, toAsset: $toAsset, status: $status, fromApp: $fromApp, fatherAsset: $fatherAsset, errorResponse: $errorResponse, generatedBy: $generatedBy, queueId: $queueId, toAssetMileage: $toAssetMileage, createdAt: $createdAt, updatedAt: $updatedAt, payload: $payload, commandType: $commandType, communicationMethod: $communicationMethod)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsCommandExecutionHistoryCopyWith<$Res>  {
+  factory $AtsCommandExecutionHistoryCopyWith(AtsCommandExecutionHistory value, $Res Function(AtsCommandExecutionHistory) _then) = _$AtsCommandExecutionHistoryCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? commandId, String? fromAsset, String? toAsset,@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus status,@JsonKey(unknownEnumValue: FromApp.unknown) FromApp fromApp, String? fatherAsset, String? errorResponse, String? generatedBy, String? queueId, double? toAssetMileage,@TimestampConverter() DateTime? createdAt,@TimestampConverter() DateTime? updatedAt, String? payload,@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType commandType,@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod communicationMethod
+});
+
+
+
+
+}
+/// @nodoc
+class _$AtsCommandExecutionHistoryCopyWithImpl<$Res>
+    implements $AtsCommandExecutionHistoryCopyWith<$Res> {
+  _$AtsCommandExecutionHistoryCopyWithImpl(this._self, this._then);
+
+  final AtsCommandExecutionHistory _self;
+  final $Res Function(AtsCommandExecutionHistory) _then;
+
+/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? commandId = freezed,Object? fromAsset = freezed,Object? toAsset = freezed,Object? status = null,Object? fromApp = null,Object? fatherAsset = freezed,Object? errorResponse = freezed,Object? generatedBy = freezed,Object? queueId = freezed,Object? toAssetMileage = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? payload = freezed,Object? commandType = null,Object? communicationMethod = null,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,commandId: freezed == commandId ? _self.commandId : commandId // ignore: cast_nullable_to_non_nullable
+as String?,fromAsset: freezed == fromAsset ? _self.fromAsset : fromAsset // ignore: cast_nullable_to_non_nullable
+as String?,toAsset: freezed == toAsset ? _self.toAsset : toAsset // ignore: cast_nullable_to_non_nullable
+as String?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as AtsCommandExecutionStatus,fromApp: null == fromApp ? _self.fromApp : fromApp // ignore: cast_nullable_to_non_nullable
+as FromApp,fatherAsset: freezed == fatherAsset ? _self.fatherAsset : fatherAsset // ignore: cast_nullable_to_non_nullable
+as String?,errorResponse: freezed == errorResponse ? _self.errorResponse : errorResponse // ignore: cast_nullable_to_non_nullable
+as String?,generatedBy: freezed == generatedBy ? _self.generatedBy : generatedBy // ignore: cast_nullable_to_non_nullable
+as String?,queueId: freezed == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
+as String?,toAssetMileage: freezed == toAssetMileage ? _self.toAssetMileage : toAssetMileage // ignore: cast_nullable_to_non_nullable
+as double?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
+as String?,commandType: null == commandType ? _self.commandType : commandType // ignore: cast_nullable_to_non_nullable
+as AtsCommandExecutionType,communicationMethod: null == communicationMethod ? _self.communicationMethod : communicationMethod // ignore: cast_nullable_to_non_nullable
+as AtsCommunicationMethod,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AtsCommandExecutionHistory].
+extension AtsCommandExecutionHistoryPatterns on AtsCommandExecutionHistory {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsCommandExecutionHistory value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsCommandExecutionHistory() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsCommandExecutionHistory value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsCommandExecutionHistory():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsCommandExecutionHistory value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsCommandExecutionHistory() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? commandId,  String? fromAsset,  String? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsCommandExecutionHistory() when $default != null:
+return $default(_that.id,_that.commandId,_that.fromAsset,_that.toAsset,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedBy,_that.queueId,_that.toAssetMileage,_that.createdAt,_that.updatedAt,_that.payload,_that.commandType,_that.communicationMethod);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? commandId,  String? fromAsset,  String? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)  $default,) {final _that = this;
+switch (_that) {
+case _AtsCommandExecutionHistory():
+return $default(_that.id,_that.commandId,_that.fromAsset,_that.toAsset,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedBy,_that.queueId,_that.toAssetMileage,_that.createdAt,_that.updatedAt,_that.payload,_that.commandType,_that.communicationMethod);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? commandId,  String? fromAsset,  String? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsCommandExecutionHistory() when $default != null:
+return $default(_that.id,_that.commandId,_that.fromAsset,_that.toAsset,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedBy,_that.queueId,_that.toAssetMileage,_that.createdAt,_that.updatedAt,_that.payload,_that.commandType,_that.communicationMethod);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsCommandExecutionHistory implements AtsCommandExecutionHistory {
+   _AtsCommandExecutionHistory({this.id, this.commandId, this.fromAsset, this.toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) this.status = AtsCommandExecutionStatus.unknown, @JsonKey(unknownEnumValue: FromApp.unknown) this.fromApp = FromApp.unknown, this.fatherAsset, this.errorResponse, this.generatedBy, this.queueId, this.toAssetMileage, @TimestampConverter() this.createdAt, @TimestampConverter() this.updatedAt, this.payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) this.commandType = AtsCommandExecutionType.unknown, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) this.communicationMethod = AtsCommunicationMethod.unknown});
+  factory _AtsCommandExecutionHistory.fromJson(Map<String, dynamic> json) => _$AtsCommandExecutionHistoryFromJson(json);
+
+/// ID of the command execution history. This ID is unique.
+@override final  String? id;
+/// UUID of the command
+@override final  String? commandId;
+/// Asset from which the command was sent
+@override final  String? fromAsset;
+/// Asset to which the command was sent
+@override final  String? toAsset;
+/// Status of the command execution
+@override@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) final  AtsCommandExecutionStatus status;
+/// Application from which the command was sent
+@override@JsonKey(unknownEnumValue: FromApp.unknown) final  FromApp fromApp;
+/// Father asset related to the command execution
+@override final  String? fatherAsset;
+/// Error response if the command failed
+@override final  String? errorResponse;
+/// User who generated the command execution
+@override final  String? generatedBy;
+/// Queue ID associated with the command execution
+@override final  String? queueId;
+/// Mileage of the to_asset at the time of command execution
+@override final  double? toAssetMileage;
+/// Timestamp when the command execution history was created (Unix)
+@override@TimestampConverter() final  DateTime? createdAt;
+/// Timestamp when the command execution history was last updated (Unix)
+@override@TimestampConverter() final  DateTime? updatedAt;
+/// Payload of the command execution
+@override final  String? payload;
+/// Type of the command executed
+@override@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) final  AtsCommandExecutionType commandType;
+/// Communication method used for the command execution
+@override@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) final  AtsCommunicationMethod communicationMethod;
+
+/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsCommandExecutionHistoryCopyWith<_AtsCommandExecutionHistory> get copyWith => __$AtsCommandExecutionHistoryCopyWithImpl<_AtsCommandExecutionHistory>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsCommandExecutionHistoryToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsCommandExecutionHistory&&(identical(other.id, id) || other.id == id)&&(identical(other.commandId, commandId) || other.commandId == commandId)&&(identical(other.fromAsset, fromAsset) || other.fromAsset == fromAsset)&&(identical(other.toAsset, toAsset) || other.toAsset == toAsset)&&(identical(other.status, status) || other.status == status)&&(identical(other.fromApp, fromApp) || other.fromApp == fromApp)&&(identical(other.fatherAsset, fatherAsset) || other.fatherAsset == fatherAsset)&&(identical(other.errorResponse, errorResponse) || other.errorResponse == errorResponse)&&(identical(other.generatedBy, generatedBy) || other.generatedBy == generatedBy)&&(identical(other.queueId, queueId) || other.queueId == queueId)&&(identical(other.toAssetMileage, toAssetMileage) || other.toAssetMileage == toAssetMileage)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.commandType, commandType) || other.commandType == commandType)&&(identical(other.communicationMethod, communicationMethod) || other.communicationMethod == communicationMethod));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,commandId,fromAsset,toAsset,status,fromApp,fatherAsset,errorResponse,generatedBy,queueId,toAssetMileage,createdAt,updatedAt,payload,commandType,communicationMethod);
+
+@override
+String toString() {
+  return 'AtsCommandExecutionHistory(id: $id, commandId: $commandId, fromAsset: $fromAsset, toAsset: $toAsset, status: $status, fromApp: $fromApp, fatherAsset: $fatherAsset, errorResponse: $errorResponse, generatedBy: $generatedBy, queueId: $queueId, toAssetMileage: $toAssetMileage, createdAt: $createdAt, updatedAt: $updatedAt, payload: $payload, commandType: $commandType, communicationMethod: $communicationMethod)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsCommandExecutionHistoryCopyWith<$Res> implements $AtsCommandExecutionHistoryCopyWith<$Res> {
+  factory _$AtsCommandExecutionHistoryCopyWith(_AtsCommandExecutionHistory value, $Res Function(_AtsCommandExecutionHistory) _then) = __$AtsCommandExecutionHistoryCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? commandId, String? fromAsset, String? toAsset,@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus status,@JsonKey(unknownEnumValue: FromApp.unknown) FromApp fromApp, String? fatherAsset, String? errorResponse, String? generatedBy, String? queueId, double? toAssetMileage,@TimestampConverter() DateTime? createdAt,@TimestampConverter() DateTime? updatedAt, String? payload,@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType commandType,@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod communicationMethod
+});
+
+
+
+
+}
+/// @nodoc
+class __$AtsCommandExecutionHistoryCopyWithImpl<$Res>
+    implements _$AtsCommandExecutionHistoryCopyWith<$Res> {
+  __$AtsCommandExecutionHistoryCopyWithImpl(this._self, this._then);
+
+  final _AtsCommandExecutionHistory _self;
+  final $Res Function(_AtsCommandExecutionHistory) _then;
+
+/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? commandId = freezed,Object? fromAsset = freezed,Object? toAsset = freezed,Object? status = null,Object? fromApp = null,Object? fatherAsset = freezed,Object? errorResponse = freezed,Object? generatedBy = freezed,Object? queueId = freezed,Object? toAssetMileage = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? payload = freezed,Object? commandType = null,Object? communicationMethod = null,}) {
+  return _then(_AtsCommandExecutionHistory(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,commandId: freezed == commandId ? _self.commandId : commandId // ignore: cast_nullable_to_non_nullable
+as String?,fromAsset: freezed == fromAsset ? _self.fromAsset : fromAsset // ignore: cast_nullable_to_non_nullable
+as String?,toAsset: freezed == toAsset ? _self.toAsset : toAsset // ignore: cast_nullable_to_non_nullable
+as String?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as AtsCommandExecutionStatus,fromApp: null == fromApp ? _self.fromApp : fromApp // ignore: cast_nullable_to_non_nullable
+as FromApp,fatherAsset: freezed == fatherAsset ? _self.fatherAsset : fatherAsset // ignore: cast_nullable_to_non_nullable
+as String?,errorResponse: freezed == errorResponse ? _self.errorResponse : errorResponse // ignore: cast_nullable_to_non_nullable
+as String?,generatedBy: freezed == generatedBy ? _self.generatedBy : generatedBy // ignore: cast_nullable_to_non_nullable
+as String?,queueId: freezed == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
+as String?,toAssetMileage: freezed == toAssetMileage ? _self.toAssetMileage : toAssetMileage // ignore: cast_nullable_to_non_nullable
+as double?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
+as String?,commandType: null == commandType ? _self.commandType : commandType // ignore: cast_nullable_to_non_nullable
+as AtsCommandExecutionType,communicationMethod: null == communicationMethod ? _self.communicationMethod : communicationMethod // ignore: cast_nullable_to_non_nullable
+as AtsCommunicationMethod,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$AtsCommandExecuteHistoryInput {
+
+/// UUID of the command
+ String? get commandId;/// UUID of the command
+ set commandId(String? value);/// Asset from which the command was sent
+ String? get fromAssetId;/// Asset from which the command was sent
+ set fromAssetId(String? value);/// Asset to which the command was sent
+ String? get toAssetId;/// Asset to which the command was sent
+ set toAssetId(String? value);/// Status of the command execution
+@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus get status;/// Status of the command execution
+@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) set status(AtsCommandExecutionStatus value);/// Application from which the command was sent
+@JsonKey(unknownEnumValue: FromApp.unknown) FromApp get fromApp;/// Application from which the command was sent
+@JsonKey(unknownEnumValue: FromApp.unknown) set fromApp(FromApp value);/// Father asset related to the command execution
+ String? get fatherAsset;/// Father asset related to the command execution
+ set fatherAsset(String? value);/// Error response if the command failed
+ String? get errorResponse;/// Error response if the command failed
+ set errorResponse(String? value);/// User who generated the command execution
+ String? get generatedById;/// User who generated the command execution
+ set generatedById(String? value);/// Queue ID associated with the command execution
+ String? get queueId;/// Queue ID associated with the command execution
+ set queueId(String? value);/// Mileage of the to_asset at the time of command execution
+ double? get toAssetMileage;/// Mileage of the to_asset at the time of command execution
+ set toAssetMileage(double? value);/// Payload of the command execution
+ String? get payload;/// Payload of the command execution
+ set payload(String? value);/// Type of the command executed
+@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType get commandType;/// Type of the command executed
+@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) set commandType(AtsCommandExecutionType value);/// Timestamp when the command execution history was created (Unix)
+@TimestampConverter() DateTime? get createdAt;/// Timestamp when the command execution history was created (Unix)
+@TimestampConverter() set createdAt(DateTime? value);/// Communication method used for the command execution
+@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod get communicationMethod;/// Communication method used for the command execution
+@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) set communicationMethod(AtsCommunicationMethod value);
+/// Create a copy of AtsCommandExecuteHistoryInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsCommandExecuteHistoryInputCopyWith<AtsCommandExecuteHistoryInput> get copyWith => _$AtsCommandExecuteHistoryInputCopyWithImpl<AtsCommandExecuteHistoryInput>(this as AtsCommandExecuteHistoryInput, _$identity);
+
+  /// Serializes this AtsCommandExecuteHistoryInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'AtsCommandExecuteHistoryInput(commandId: $commandId, fromAssetId: $fromAssetId, toAssetId: $toAssetId, status: $status, fromApp: $fromApp, fatherAsset: $fatherAsset, errorResponse: $errorResponse, generatedById: $generatedById, queueId: $queueId, toAssetMileage: $toAssetMileage, payload: $payload, commandType: $commandType, createdAt: $createdAt, communicationMethod: $communicationMethod)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsCommandExecuteHistoryInputCopyWith<$Res>  {
+  factory $AtsCommandExecuteHistoryInputCopyWith(AtsCommandExecuteHistoryInput value, $Res Function(AtsCommandExecuteHistoryInput) _then) = _$AtsCommandExecuteHistoryInputCopyWithImpl;
+@useResult
+$Res call({
+ String? commandId, String? fromAssetId, String? toAssetId,@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus status,@JsonKey(unknownEnumValue: FromApp.unknown) FromApp fromApp, String? fatherAsset, String? errorResponse, String? generatedById, String? queueId, double? toAssetMileage, String? payload,@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType commandType,@TimestampConverter() DateTime? createdAt,@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod communicationMethod
+});
+
+
+
+
+}
+/// @nodoc
+class _$AtsCommandExecuteHistoryInputCopyWithImpl<$Res>
+    implements $AtsCommandExecuteHistoryInputCopyWith<$Res> {
+  _$AtsCommandExecuteHistoryInputCopyWithImpl(this._self, this._then);
+
+  final AtsCommandExecuteHistoryInput _self;
+  final $Res Function(AtsCommandExecuteHistoryInput) _then;
+
+/// Create a copy of AtsCommandExecuteHistoryInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? commandId = freezed,Object? fromAssetId = freezed,Object? toAssetId = freezed,Object? status = null,Object? fromApp = null,Object? fatherAsset = freezed,Object? errorResponse = freezed,Object? generatedById = freezed,Object? queueId = freezed,Object? toAssetMileage = freezed,Object? payload = freezed,Object? commandType = null,Object? createdAt = freezed,Object? communicationMethod = null,}) {
+  return _then(_self.copyWith(
+commandId: freezed == commandId ? _self.commandId : commandId // ignore: cast_nullable_to_non_nullable
+as String?,fromAssetId: freezed == fromAssetId ? _self.fromAssetId : fromAssetId // ignore: cast_nullable_to_non_nullable
+as String?,toAssetId: freezed == toAssetId ? _self.toAssetId : toAssetId // ignore: cast_nullable_to_non_nullable
+as String?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as AtsCommandExecutionStatus,fromApp: null == fromApp ? _self.fromApp : fromApp // ignore: cast_nullable_to_non_nullable
+as FromApp,fatherAsset: freezed == fatherAsset ? _self.fatherAsset : fatherAsset // ignore: cast_nullable_to_non_nullable
+as String?,errorResponse: freezed == errorResponse ? _self.errorResponse : errorResponse // ignore: cast_nullable_to_non_nullable
+as String?,generatedById: freezed == generatedById ? _self.generatedById : generatedById // ignore: cast_nullable_to_non_nullable
+as String?,queueId: freezed == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
+as String?,toAssetMileage: freezed == toAssetMileage ? _self.toAssetMileage : toAssetMileage // ignore: cast_nullable_to_non_nullable
+as double?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
+as String?,commandType: null == commandType ? _self.commandType : commandType // ignore: cast_nullable_to_non_nullable
+as AtsCommandExecutionType,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,communicationMethod: null == communicationMethod ? _self.communicationMethod : communicationMethod // ignore: cast_nullable_to_non_nullable
+as AtsCommunicationMethod,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AtsCommandExecuteHistoryInput].
+extension AtsCommandExecuteHistoryInputPatterns on AtsCommandExecuteHistoryInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsCommandExecuteHistoryInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsCommandExecuteHistoryInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsCommandExecuteHistoryInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsCommandExecuteHistoryInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsCommandExecuteHistoryInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsCommandExecuteHistoryInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? commandId,  String? fromAssetId,  String? toAssetId, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedById,  String? queueId,  double? toAssetMileage,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @TimestampConverter()  DateTime? createdAt, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsCommandExecuteHistoryInput() when $default != null:
+return $default(_that.commandId,_that.fromAssetId,_that.toAssetId,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedById,_that.queueId,_that.toAssetMileage,_that.payload,_that.commandType,_that.createdAt,_that.communicationMethod);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? commandId,  String? fromAssetId,  String? toAssetId, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedById,  String? queueId,  double? toAssetMileage,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @TimestampConverter()  DateTime? createdAt, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)  $default,) {final _that = this;
+switch (_that) {
+case _AtsCommandExecuteHistoryInput():
+return $default(_that.commandId,_that.fromAssetId,_that.toAssetId,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedById,_that.queueId,_that.toAssetMileage,_that.payload,_that.commandType,_that.createdAt,_that.communicationMethod);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? commandId,  String? fromAssetId,  String? toAssetId, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedById,  String? queueId,  double? toAssetMileage,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @TimestampConverter()  DateTime? createdAt, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsCommandExecuteHistoryInput() when $default != null:
+return $default(_that.commandId,_that.fromAssetId,_that.toAssetId,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedById,_that.queueId,_that.toAssetMileage,_that.payload,_that.commandType,_that.createdAt,_that.communicationMethod);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsCommandExecuteHistoryInput implements AtsCommandExecuteHistoryInput {
+   _AtsCommandExecuteHistoryInput({this.commandId, this.fromAssetId, this.toAssetId, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) this.status = AtsCommandExecutionStatus.unknown, @JsonKey(unknownEnumValue: FromApp.unknown) this.fromApp = FromApp.unknown, this.fatherAsset, this.errorResponse, this.generatedById, this.queueId, this.toAssetMileage, this.payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) this.commandType = AtsCommandExecutionType.unknown, @TimestampConverter() this.createdAt, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) this.communicationMethod = AtsCommunicationMethod.unknown});
+  factory _AtsCommandExecuteHistoryInput.fromJson(Map<String, dynamic> json) => _$AtsCommandExecuteHistoryInputFromJson(json);
+
+/// UUID of the command
+@override  String? commandId;
+/// Asset from which the command was sent
+@override  String? fromAssetId;
+/// Asset to which the command was sent
+@override  String? toAssetId;
+/// Status of the command execution
+@override@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status;
+/// Application from which the command was sent
+@override@JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp;
+/// Father asset related to the command execution
+@override  String? fatherAsset;
+/// Error response if the command failed
+@override  String? errorResponse;
+/// User who generated the command execution
+@override  String? generatedById;
+/// Queue ID associated with the command execution
+@override  String? queueId;
+/// Mileage of the to_asset at the time of command execution
+@override  double? toAssetMileage;
+/// Payload of the command execution
+@override  String? payload;
+/// Type of the command executed
+@override@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType;
+/// Timestamp when the command execution history was created (Unix)
+@override@TimestampConverter()  DateTime? createdAt;
+/// Communication method used for the command execution
+@override@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod;
+
+/// Create a copy of AtsCommandExecuteHistoryInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsCommandExecuteHistoryInputCopyWith<_AtsCommandExecuteHistoryInput> get copyWith => __$AtsCommandExecuteHistoryInputCopyWithImpl<_AtsCommandExecuteHistoryInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsCommandExecuteHistoryInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'AtsCommandExecuteHistoryInput(commandId: $commandId, fromAssetId: $fromAssetId, toAssetId: $toAssetId, status: $status, fromApp: $fromApp, fatherAsset: $fatherAsset, errorResponse: $errorResponse, generatedById: $generatedById, queueId: $queueId, toAssetMileage: $toAssetMileage, payload: $payload, commandType: $commandType, createdAt: $createdAt, communicationMethod: $communicationMethod)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsCommandExecuteHistoryInputCopyWith<$Res> implements $AtsCommandExecuteHistoryInputCopyWith<$Res> {
+  factory _$AtsCommandExecuteHistoryInputCopyWith(_AtsCommandExecuteHistoryInput value, $Res Function(_AtsCommandExecuteHistoryInput) _then) = __$AtsCommandExecuteHistoryInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? commandId, String? fromAssetId, String? toAssetId,@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus status,@JsonKey(unknownEnumValue: FromApp.unknown) FromApp fromApp, String? fatherAsset, String? errorResponse, String? generatedById, String? queueId, double? toAssetMileage, String? payload,@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType commandType,@TimestampConverter() DateTime? createdAt,@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod communicationMethod
+});
+
+
+
+
+}
+/// @nodoc
+class __$AtsCommandExecuteHistoryInputCopyWithImpl<$Res>
+    implements _$AtsCommandExecuteHistoryInputCopyWith<$Res> {
+  __$AtsCommandExecuteHistoryInputCopyWithImpl(this._self, this._then);
+
+  final _AtsCommandExecuteHistoryInput _self;
+  final $Res Function(_AtsCommandExecuteHistoryInput) _then;
+
+/// Create a copy of AtsCommandExecuteHistoryInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? commandId = freezed,Object? fromAssetId = freezed,Object? toAssetId = freezed,Object? status = null,Object? fromApp = null,Object? fatherAsset = freezed,Object? errorResponse = freezed,Object? generatedById = freezed,Object? queueId = freezed,Object? toAssetMileage = freezed,Object? payload = freezed,Object? commandType = null,Object? createdAt = freezed,Object? communicationMethod = null,}) {
+  return _then(_AtsCommandExecuteHistoryInput(
+commandId: freezed == commandId ? _self.commandId : commandId // ignore: cast_nullable_to_non_nullable
+as String?,fromAssetId: freezed == fromAssetId ? _self.fromAssetId : fromAssetId // ignore: cast_nullable_to_non_nullable
+as String?,toAssetId: freezed == toAssetId ? _self.toAssetId : toAssetId // ignore: cast_nullable_to_non_nullable
+as String?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as AtsCommandExecutionStatus,fromApp: null == fromApp ? _self.fromApp : fromApp // ignore: cast_nullable_to_non_nullable
+as FromApp,fatherAsset: freezed == fatherAsset ? _self.fatherAsset : fatherAsset // ignore: cast_nullable_to_non_nullable
+as String?,errorResponse: freezed == errorResponse ? _self.errorResponse : errorResponse // ignore: cast_nullable_to_non_nullable
+as String?,generatedById: freezed == generatedById ? _self.generatedById : generatedById // ignore: cast_nullable_to_non_nullable
+as String?,queueId: freezed == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
+as String?,toAssetMileage: freezed == toAssetMileage ? _self.toAssetMileage : toAssetMileage // ignore: cast_nullable_to_non_nullable
+as double?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
+as String?,commandType: null == commandType ? _self.commandType : commandType // ignore: cast_nullable_to_non_nullable
+as AtsCommandExecutionType,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,communicationMethod: null == communicationMethod ? _self.communicationMethod : communicationMethod // ignore: cast_nullable_to_non_nullable
+as AtsCommunicationMethod,
+  ));
+}
+
+
+}
+
 // dart format on

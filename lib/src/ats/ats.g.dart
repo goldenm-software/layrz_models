@@ -2546,3 +2546,178 @@ _AtsGridDimensionInput _$AtsGridDimensionInputFromJson(
 Map<String, dynamic> _$AtsGridDimensionInputToJson(
   _AtsGridDimensionInput instance,
 ) => <String, dynamic>{'width': instance.width, 'height': instance.height};
+
+_AtsCommandExecutionHistory _$AtsCommandExecutionHistoryFromJson(
+  Map<String, dynamic> json,
+) => _AtsCommandExecutionHistory(
+  id: json['id'] as String?,
+  commandId: json['commandId'] as String?,
+  fromAsset: json['fromAsset'] as String?,
+  toAsset: json['toAsset'] as String?,
+  status:
+      $enumDecodeNullable(
+        _$AtsCommandExecutionStatusEnumMap,
+        json['status'],
+        unknownValue: AtsCommandExecutionStatus.unknown,
+      ) ??
+      AtsCommandExecutionStatus.unknown,
+  fromApp:
+      $enumDecodeNullable(
+        _$FromAppEnumMap,
+        json['fromApp'],
+        unknownValue: FromApp.unknown,
+      ) ??
+      FromApp.unknown,
+  fatherAsset: json['fatherAsset'] as String?,
+  errorResponse: json['errorResponse'] as String?,
+  generatedBy: json['generatedBy'] as String?,
+  queueId: json['queueId'] as String?,
+  toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
+  createdAt: _$JsonConverterFromJson<num, DateTime>(
+    json['createdAt'],
+    const TimestampConverter().fromJson,
+  ),
+  updatedAt: _$JsonConverterFromJson<num, DateTime>(
+    json['updatedAt'],
+    const TimestampConverter().fromJson,
+  ),
+  payload: json['payload'] as String?,
+  commandType:
+      $enumDecodeNullable(
+        _$AtsCommandExecutionTypeEnumMap,
+        json['commandType'],
+        unknownValue: AtsCommandExecutionType.unknown,
+      ) ??
+      AtsCommandExecutionType.unknown,
+  communicationMethod:
+      $enumDecodeNullable(
+        _$AtsCommunicationMethodEnumMap,
+        json['communicationMethod'],
+        unknownValue: AtsCommunicationMethod.unknown,
+      ) ??
+      AtsCommunicationMethod.unknown,
+);
+
+Map<String, dynamic> _$AtsCommandExecutionHistoryToJson(
+  _AtsCommandExecutionHistory instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'commandId': instance.commandId,
+  'fromAsset': instance.fromAsset,
+  'toAsset': instance.toAsset,
+  'status': _$AtsCommandExecutionStatusEnumMap[instance.status]!,
+  'fromApp': _$FromAppEnumMap[instance.fromApp]!,
+  'fatherAsset': instance.fatherAsset,
+  'errorResponse': instance.errorResponse,
+  'generatedBy': instance.generatedBy,
+  'queueId': instance.queueId,
+  'toAssetMileage': instance.toAssetMileage,
+  'createdAt': _$JsonConverterToJson<num, DateTime>(
+    instance.createdAt,
+    const TimestampConverter().toJson,
+  ),
+  'updatedAt': _$JsonConverterToJson<num, DateTime>(
+    instance.updatedAt,
+    const TimestampConverter().toJson,
+  ),
+  'payload': instance.payload,
+  'commandType': _$AtsCommandExecutionTypeEnumMap[instance.commandType]!,
+  'communicationMethod':
+      _$AtsCommunicationMethodEnumMap[instance.communicationMethod]!,
+};
+
+const _$AtsCommandExecutionStatusEnumMap = {
+  AtsCommandExecutionStatus.pending: 'PENDING',
+  AtsCommandExecutionStatus.failed: 'FAILED',
+  AtsCommandExecutionStatus.success: 'SUCCESS',
+  AtsCommandExecutionStatus.unknown: 'UNKNOWN',
+};
+
+const _$FromAppEnumMap = {
+  FromApp.atsweb: 'ATSWEB',
+  FromApp.atsmobile: 'ATSMOBILE',
+  FromApp.unknown: 'UNKNOWN',
+};
+
+const _$AtsCommandExecutionTypeEnumMap = {
+  AtsCommandExecutionType.reception: 'RECEPTION',
+  AtsCommandExecutionType.executeExit: 'EXECUTE_EXIT',
+  AtsCommandExecutionType.executeCargo: 'EXECUTE_CARGO',
+  AtsCommandExecutionType.unknown: 'UNKNOWN',
+};
+
+const _$AtsCommunicationMethodEnumMap = {
+  AtsCommunicationMethod.private: 'PRIVATE',
+  AtsCommunicationMethod.public: 'PUBLIC',
+  AtsCommunicationMethod.bluetooth: 'BLUETOOTH',
+  AtsCommunicationMethod.unknown: 'UNKNOWN',
+};
+
+_AtsCommandExecuteHistoryInput _$AtsCommandExecuteHistoryInputFromJson(
+  Map<String, dynamic> json,
+) => _AtsCommandExecuteHistoryInput(
+  commandId: json['commandId'] as String?,
+  fromAssetId: json['fromAssetId'] as String?,
+  toAssetId: json['toAssetId'] as String?,
+  status:
+      $enumDecodeNullable(
+        _$AtsCommandExecutionStatusEnumMap,
+        json['status'],
+        unknownValue: AtsCommandExecutionStatus.unknown,
+      ) ??
+      AtsCommandExecutionStatus.unknown,
+  fromApp:
+      $enumDecodeNullable(
+        _$FromAppEnumMap,
+        json['fromApp'],
+        unknownValue: FromApp.unknown,
+      ) ??
+      FromApp.unknown,
+  fatherAsset: json['fatherAsset'] as String?,
+  errorResponse: json['errorResponse'] as String?,
+  generatedById: json['generatedById'] as String?,
+  queueId: json['queueId'] as String?,
+  toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
+  payload: json['payload'] as String?,
+  commandType:
+      $enumDecodeNullable(
+        _$AtsCommandExecutionTypeEnumMap,
+        json['commandType'],
+        unknownValue: AtsCommandExecutionType.unknown,
+      ) ??
+      AtsCommandExecutionType.unknown,
+  createdAt: _$JsonConverterFromJson<num, DateTime>(
+    json['createdAt'],
+    const TimestampConverter().fromJson,
+  ),
+  communicationMethod:
+      $enumDecodeNullable(
+        _$AtsCommunicationMethodEnumMap,
+        json['communicationMethod'],
+        unknownValue: AtsCommunicationMethod.unknown,
+      ) ??
+      AtsCommunicationMethod.unknown,
+);
+
+Map<String, dynamic> _$AtsCommandExecuteHistoryInputToJson(
+  _AtsCommandExecuteHistoryInput instance,
+) => <String, dynamic>{
+  'commandId': instance.commandId,
+  'fromAssetId': instance.fromAssetId,
+  'toAssetId': instance.toAssetId,
+  'status': _$AtsCommandExecutionStatusEnumMap[instance.status]!,
+  'fromApp': _$FromAppEnumMap[instance.fromApp]!,
+  'fatherAsset': instance.fatherAsset,
+  'errorResponse': instance.errorResponse,
+  'generatedById': instance.generatedById,
+  'queueId': instance.queueId,
+  'toAssetMileage': instance.toAssetMileage,
+  'payload': instance.payload,
+  'commandType': _$AtsCommandExecutionTypeEnumMap[instance.commandType]!,
+  'createdAt': _$JsonConverterToJson<num, DateTime>(
+    instance.createdAt,
+    const TimestampConverter().toJson,
+  ),
+  'communicationMethod':
+      _$AtsCommunicationMethodEnumMap[instance.communicationMethod]!,
+};

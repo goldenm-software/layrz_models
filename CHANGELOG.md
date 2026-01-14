@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.5.6
+- Add `AtsCommandExecutionHistory` and `AtsCommandExecuteHistoryInput`
+
 ## 3.5.5
 
 - Added new value `MEDIUM_ACCURACY` in enum `AtsEtaStatus`
