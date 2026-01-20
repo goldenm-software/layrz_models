@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.5.7
+-  Rempalce `fatherAsset` to `fatherAssetId` in `AtsCommandExecuteHistoryInput` 
+
 ## 3.5.6
 - Add `AtsCommandExecutionHistory` and `AtsCommandExecuteHistoryInput`
 

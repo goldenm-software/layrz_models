@@ -84,7 +84,7 @@ abstract class AtsCommandExecuteHistoryInput with _$AtsCommandExecuteHistoryInpu
     @JsonKey(unknownEnumValue: FromApp.unknown) @Default(FromApp.unknown) FromApp fromApp,
 
     /// Father asset related to the command execution
-    String? fatherAsset,
+    String? fatherAssetId,
 
     /// Error response if the command failed
     String? errorResponse,

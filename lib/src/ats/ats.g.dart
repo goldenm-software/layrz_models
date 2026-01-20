@@ -2673,7 +2673,7 @@ _AtsCommandExecuteHistoryInput _$AtsCommandExecuteHistoryInputFromJson(
         unknownValue: FromApp.unknown,
       ) ??
       FromApp.unknown,
-  fatherAsset: json['fatherAsset'] as String?,
+  fatherAssetId: json['fatherAssetId'] as String?,
   errorResponse: json['errorResponse'] as String?,
   generatedById: json['generatedById'] as String?,
   queueId: json['queueId'] as String?,
@@ -2707,7 +2707,7 @@ Map<String, dynamic> _$AtsCommandExecuteHistoryInputToJson(
   'toAssetId': instance.toAssetId,
   'status': _$AtsCommandExecutionStatusEnumMap[instance.status]!,
   'fromApp': _$FromAppEnumMap[instance.fromApp]!,
-  'fatherAsset': instance.fatherAsset,
+  'fatherAssetId': instance.fatherAssetId,
   'errorResponse': instance.errorResponse,
   'generatedById': instance.generatedById,
   'queueId': instance.queueId,
