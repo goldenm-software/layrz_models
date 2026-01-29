@@ -3,8 +3,8 @@ part of '../operations.dart';
 @JsonEnum(alwaysCreate: true)
 enum TwilioContentSid {
   /// [simpleEnglish] is the Twilio Content SID for Simple English.
-  /// SID: `HXa68ca57bdda67e39d82b62aa2061acf4`
-  @JsonValue('HXa68ca57bdda67e39d82b62aa2061acf4')
+  /// SID: `HXccc3896a451b4188fad6f0f7253d7353`
+  @JsonValue('HXccc3896a451b4188fad6f0f7253d7353')
   simpleEnglish,
 
   /// [simpleSpanish] is the Twilio Content SID for Simple Spanish.
@@ -25,8 +25,8 @@ Layrz Alert 🚨
 An operational alert was triggered.
 
 Asset: {{assetName}}
-Alert / Alerta: {{triggerName}}
-Date / Fecha: {{executedAt}}
+Alert: {{triggerName}}
+Date: {{executedAt}}
 
 Review details and take action in Layrz.
 """;

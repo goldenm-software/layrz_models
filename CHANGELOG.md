@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.1
+
+- Updated `TwilioContentSid` template SID on English
+
 ## 3.6.0
 
 - Updated `Operation` and `OperationInput` to support new notifications

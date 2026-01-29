@@ -289,6 +289,6 @@ Map<String, dynamic> _$HttpHeaderInputToJson(_HttpHeaderInput instance) =>
     <String, dynamic>{'name': instance.name, 'value': instance.value};
 
 const _$TwilioContentSidEnumMap = {
-  TwilioContentSid.simpleEnglish: 'HXa68ca57bdda67e39d82b62aa2061acf4',
+  TwilioContentSid.simpleEnglish: 'HXccc3896a451b4188fad6f0f7253d7353',
   TwilioContentSid.simpleSpanish: 'HX7a3cece41e25fde8200cc1f1b09659bb',
 };
