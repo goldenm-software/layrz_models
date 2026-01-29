@@ -40,7 +40,7 @@ jobs:
           sdk: stable
 
       - name: Publish to pub.dev
-        run: dart pub publish --force
+        run: flutter pub publish --force
 
       - name: Rename tag when fails
         if: failure()
