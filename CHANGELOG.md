@@ -1,9 +1,15 @@
 # Changelog
 
+## 3.6.0
+
+- Updated `Operation` and `OperationInput` to support new notifications
+
 ## 3.5.7
+
 -  Rempalce `fatherAsset` to `fatherAssetId` in `AtsCommandExecuteHistoryInput` 
 
 ## 3.5.6
+
 - Add `AtsCommandExecutionHistory` and `AtsCommandExecuteHistoryInput`
 
 ## 3.5.5

@@ -30,8 +30,10 @@ mixin _$Operation {
  List<HttpHeader>? get headers;/// Is the payload to send in the submission.
  String? get payload;/// Is the language ID of the message. Used to define the default language of the message.
  String? get languageId;/// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
- Timezone? get timezone;/// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
- String? get timezoneId;/// Is the reception email to send the message
+@Deprecated('Use `timezoneName` instead') Timezone? get timezone;/// [timezoneName] is the IANA name of the timezone.
+ String get timezoneName;/// [dateTimeFormat] is the date time format to use for the operation.
+/// This will override the user's date time format preference.
+ String get dateTimeFormat;/// Is the reception email to send the message
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.email].
  List<String>? get receptionEmails;/// Is the subject of the email
@@ -73,7 +75,8 @@ mixin _$Operation {
 @IconOrNullConverter() LayrzIcon? get icon;/// [duration] is the duration of the notification
 ///
 /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-@DurationOrNullConverter() Duration? get duration;
+@DurationOrNullConverter() Duration? get duration;/// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
+ String? get layrzTemplate;
 /// Create a copy of Operation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -86,16 +89,16 @@ $OperationCopyWith<Operation> get copyWith => _$OperationCopyWithImpl<Operation>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Operation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.requestType, requestType) || other.requestType == requestType)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other.headers, headers)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.languageId, languageId) || other.languageId == languageId)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.timezoneId, timezoneId) || other.timezoneId == timezoneId)&&const DeepCollectionEquality().equals(other.receptionEmails, receptionEmails)&&(identical(other.emailSubject, emailSubject) || other.emailSubject == emailSubject)&&(identical(other.color, color) || other.color == color)&&(identical(other.textColor, textColor) || other.textColor == textColor)&&const DeepCollectionEquality().equals(other.destinationPhones, destinationPhones)&&(identical(other.notificationType, notificationType) || other.notificationType == notificationType)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&(identical(other.useAssetContactsInstead, useAssetContactsInstead) || other.useAssetContactsInstead == useAssetContactsInstead)&&(identical(other.attachImage, attachImage) || other.attachImage == attachImage)&&(identical(other.emailTemplateId, emailTemplateId) || other.emailTemplateId == emailTemplateId)&&const DeepCollectionEquality().equals(other.pushPlatforms, pushPlatforms)&&(identical(other.pushTitle, pushTitle) || other.pushTitle == pushTitle)&&(identical(other.soundEffect, soundEffect) || other.soundEffect == soundEffect)&&(identical(other.soundEffectUri, soundEffectUri) || other.soundEffectUri == soundEffectUri)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.duration, duration) || other.duration == duration));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Operation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.requestType, requestType) || other.requestType == requestType)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other.headers, headers)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.languageId, languageId) || other.languageId == languageId)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.timezoneName, timezoneName) || other.timezoneName == timezoneName)&&(identical(other.dateTimeFormat, dateTimeFormat) || other.dateTimeFormat == dateTimeFormat)&&const DeepCollectionEquality().equals(other.receptionEmails, receptionEmails)&&(identical(other.emailSubject, emailSubject) || other.emailSubject == emailSubject)&&(identical(other.color, color) || other.color == color)&&(identical(other.textColor, textColor) || other.textColor == textColor)&&const DeepCollectionEquality().equals(other.destinationPhones, destinationPhones)&&(identical(other.notificationType, notificationType) || other.notificationType == notificationType)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&(identical(other.useAssetContactsInstead, useAssetContactsInstead) || other.useAssetContactsInstead == useAssetContactsInstead)&&(identical(other.attachImage, attachImage) || other.attachImage == attachImage)&&(identical(other.emailTemplateId, emailTemplateId) || other.emailTemplateId == emailTemplateId)&&const DeepCollectionEquality().equals(other.pushPlatforms, pushPlatforms)&&(identical(other.pushTitle, pushTitle) || other.pushTitle == pushTitle)&&(identical(other.soundEffect, soundEffect) || other.soundEffect == soundEffect)&&(identical(other.soundEffectUri, soundEffectUri) || other.soundEffectUri == soundEffectUri)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.layrzTemplate, layrzTemplate) || other.layrzTemplate == layrzTemplate));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,operationType,requestType,url,const DeepCollectionEquality().hash(headers),payload,languageId,timezone,timezoneId,const DeepCollectionEquality().hash(receptionEmails),emailSubject,color,textColor,const DeepCollectionEquality().hash(destinationPhones),notificationType,externalAccountId,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(triggers),useAssetContactsInstead,attachImage,emailTemplateId,const DeepCollectionEquality().hash(pushPlatforms),pushTitle,soundEffect,soundEffectUri,icon,duration]);
+int get hashCode => Object.hashAll([runtimeType,id,name,operationType,requestType,url,const DeepCollectionEquality().hash(headers),payload,languageId,timezone,timezoneName,dateTimeFormat,const DeepCollectionEquality().hash(receptionEmails),emailSubject,color,textColor,const DeepCollectionEquality().hash(destinationPhones),notificationType,externalAccountId,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(triggers),useAssetContactsInstead,attachImage,emailTemplateId,const DeepCollectionEquality().hash(pushPlatforms),pushTitle,soundEffect,soundEffectUri,icon,duration,layrzTemplate]);
 
 @override
 String toString() {
-  return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
+  return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneName: $timezoneName, dateTimeFormat: $dateTimeFormat, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration, layrzTemplate: $layrzTemplate)';
 }
 
 
@@ -106,7 +109,7 @@ abstract mixin class $OperationCopyWith<$Res>  {
   factory $OperationCopyWith(Operation value, $Res Function(Operation) _then) = _$OperationCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: OperationType.unknown) OperationType operationType,@JsonKey(unknownEnumValue: HttpRequestType.httpGet) HttpRequestType? requestType, String? url, List<HttpHeader>? headers, String? payload, String? languageId, Timezone? timezone, String? timezoneId, List<String>? receptionEmails, String? emailSubject,@ColorOrNullConverter() Color? color,@ColorOrNullConverter() Color? textColor, List<PhoneNumber>? destinationPhones,@JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType, String? externalAccountId, List<Access>? access, List<Trigger>? triggers, bool? useAssetContactsInstead, bool? attachImage, String? emailTemplateId,@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms, String? pushTitle,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect, String? soundEffectUri,@IconOrNullConverter() LayrzIcon? icon,@DurationOrNullConverter() Duration? duration
+ String id, String name,@JsonKey(unknownEnumValue: OperationType.unknown) OperationType operationType,@JsonKey(unknownEnumValue: HttpRequestType.httpGet) HttpRequestType? requestType, String? url, List<HttpHeader>? headers, String? payload, String? languageId,@Deprecated('Use `timezoneName` instead') Timezone? timezone, String timezoneName, String dateTimeFormat, List<String>? receptionEmails, String? emailSubject,@ColorOrNullConverter() Color? color,@ColorOrNullConverter() Color? textColor, List<PhoneNumber>? destinationPhones,@JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType, String? externalAccountId, List<Access>? access, List<Trigger>? triggers, bool? useAssetContactsInstead, bool? attachImage, String? emailTemplateId,@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms, String? pushTitle,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect, String? soundEffectUri,@IconOrNullConverter() LayrzIcon? icon,@DurationOrNullConverter() Duration? duration, String? layrzTemplate
 });
 
 
@@ -123,7 +126,7 @@ class _$OperationCopyWithImpl<$Res>
 
 /// Create a copy of Operation
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? operationType = null,Object? requestType = freezed,Object? url = freezed,Object? headers = freezed,Object? payload = freezed,Object? languageId = freezed,Object? timezone = freezed,Object? timezoneId = freezed,Object? receptionEmails = freezed,Object? emailSubject = freezed,Object? color = freezed,Object? textColor = freezed,Object? destinationPhones = freezed,Object? notificationType = freezed,Object? externalAccountId = freezed,Object? access = freezed,Object? triggers = freezed,Object? useAssetContactsInstead = freezed,Object? attachImage = freezed,Object? emailTemplateId = freezed,Object? pushPlatforms = freezed,Object? pushTitle = freezed,Object? soundEffect = null,Object? soundEffectUri = freezed,Object? icon = freezed,Object? duration = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? operationType = null,Object? requestType = freezed,Object? url = freezed,Object? headers = freezed,Object? payload = freezed,Object? languageId = freezed,Object? timezone = freezed,Object? timezoneName = null,Object? dateTimeFormat = null,Object? receptionEmails = freezed,Object? emailSubject = freezed,Object? color = freezed,Object? textColor = freezed,Object? destinationPhones = freezed,Object? notificationType = freezed,Object? externalAccountId = freezed,Object? access = freezed,Object? triggers = freezed,Object? useAssetContactsInstead = freezed,Object? attachImage = freezed,Object? emailTemplateId = freezed,Object? pushPlatforms = freezed,Object? pushTitle = freezed,Object? soundEffect = null,Object? soundEffectUri = freezed,Object? icon = freezed,Object? duration = freezed,Object? layrzTemplate = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -134,8 +137,9 @@ as String?,headers: freezed == headers ? _self.headers : headers // ignore: cast
 as List<HttpHeader>?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as String?,languageId: freezed == languageId ? _self.languageId : languageId // ignore: cast_nullable_to_non_nullable
 as String?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
-as Timezone?,timezoneId: freezed == timezoneId ? _self.timezoneId : timezoneId // ignore: cast_nullable_to_non_nullable
-as String?,receptionEmails: freezed == receptionEmails ? _self.receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
+as Timezone?,timezoneName: null == timezoneName ? _self.timezoneName : timezoneName // ignore: cast_nullable_to_non_nullable
+as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
+as String,receptionEmails: freezed == receptionEmails ? _self.receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
 as List<String>?,emailSubject: freezed == emailSubject ? _self.emailSubject : emailSubject // ignore: cast_nullable_to_non_nullable
 as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,textColor: freezed == textColor ? _self.textColor : textColor // ignore: cast_nullable_to_non_nullable
@@ -153,7 +157,8 @@ as String?,soundEffect: null == soundEffect ? _self.soundEffect : soundEffect //
 as SoundEffect,soundEffectUri: freezed == soundEffectUri ? _self.soundEffectUri : soundEffectUri // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
-as Duration?,
+as Duration?,layrzTemplate: freezed == layrzTemplate ? _self.layrzTemplate : layrzTemplate // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 /// Create a copy of Operation
@@ -250,10 +255,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeader>? headers,  String? payload,  String? languageId,  Timezone? timezone,  String? timezoneId,  List<String>? receptionEmails,  String? emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  List<Access>? access,  List<Trigger>? triggers,  bool? useAssetContactsInstead,  bool? attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationOrNullConverter()  Duration? duration)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeader>? headers,  String? payload,  String? languageId, @Deprecated('Use `timezoneName` instead')  Timezone? timezone,  String timezoneName,  String dateTimeFormat,  List<String>? receptionEmails,  String? emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  List<Access>? access,  List<Trigger>? triggers,  bool? useAssetContactsInstead,  bool? attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationOrNullConverter()  Duration? duration,  String? layrzTemplate)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Operation() when $default != null:
-return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezone,_that.timezoneId,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.access,_that.triggers,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration);case _:
+return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezone,_that.timezoneName,_that.dateTimeFormat,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.access,_that.triggers,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration,_that.layrzTemplate);case _:
   return orElse();
 
 }
@@ -271,10 +276,10 @@ return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeader>? headers,  String? payload,  String? languageId,  Timezone? timezone,  String? timezoneId,  List<String>? receptionEmails,  String? emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  List<Access>? access,  List<Trigger>? triggers,  bool? useAssetContactsInstead,  bool? attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationOrNullConverter()  Duration? duration)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeader>? headers,  String? payload,  String? languageId, @Deprecated('Use `timezoneName` instead')  Timezone? timezone,  String timezoneName,  String dateTimeFormat,  List<String>? receptionEmails,  String? emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  List<Access>? access,  List<Trigger>? triggers,  bool? useAssetContactsInstead,  bool? attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationOrNullConverter()  Duration? duration,  String? layrzTemplate)  $default,) {final _that = this;
 switch (_that) {
 case _Operation():
-return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezone,_that.timezoneId,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.access,_that.triggers,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration);case _:
+return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezone,_that.timezoneName,_that.dateTimeFormat,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.access,_that.triggers,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration,_that.layrzTemplate);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -291,10 +296,10 @@ return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeader>? headers,  String? payload,  String? languageId,  Timezone? timezone,  String? timezoneId,  List<String>? receptionEmails,  String? emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  List<Access>? access,  List<Trigger>? triggers,  bool? useAssetContactsInstead,  bool? attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationOrNullConverter()  Duration? duration)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeader>? headers,  String? payload,  String? languageId, @Deprecated('Use `timezoneName` instead')  Timezone? timezone,  String timezoneName,  String dateTimeFormat,  List<String>? receptionEmails,  String? emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  List<Access>? access,  List<Trigger>? triggers,  bool? useAssetContactsInstead,  bool? attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationOrNullConverter()  Duration? duration,  String? layrzTemplate)?  $default,) {final _that = this;
 switch (_that) {
 case _Operation() when $default != null:
-return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezone,_that.timezoneId,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.access,_that.triggers,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration);case _:
+return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezone,_that.timezoneName,_that.dateTimeFormat,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.access,_that.triggers,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration,_that.layrzTemplate);case _:
   return null;
 
 }
@@ -306,7 +311,7 @@ return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.
 @JsonSerializable()
 
 class _Operation extends Operation {
-  const _Operation({required this.id, required this.name, @JsonKey(unknownEnumValue: OperationType.unknown) required this.operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet) this.requestType, this.url, final  List<HttpHeader>? headers = const [], this.payload, this.languageId, this.timezone, this.timezoneId, final  List<String>? receptionEmails = const [], this.emailSubject, @ColorOrNullConverter() this.color, @ColorOrNullConverter() this.textColor, final  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown) this.notificationType, this.externalAccountId, final  List<Access>? access, final  List<Trigger>? triggers, this.useAssetContactsInstead, this.attachImage, this.emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web) final  List<AppPlatform>? pushPlatforms, this.pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none) this.soundEffect = SoundEffect.none, this.soundEffectUri, @IconOrNullConverter() this.icon, @DurationOrNullConverter() this.duration}): _headers = headers,_receptionEmails = receptionEmails,_destinationPhones = destinationPhones,_access = access,_triggers = triggers,_pushPlatforms = pushPlatforms,super._();
+  const _Operation({required this.id, required this.name, @JsonKey(unknownEnumValue: OperationType.unknown) required this.operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet) this.requestType, this.url, final  List<HttpHeader>? headers = const [], this.payload, this.languageId, @Deprecated('Use `timezoneName` instead') this.timezone, this.timezoneName = 'UTC', this.dateTimeFormat = '%Y-%m-%d %I:%M %p', final  List<String>? receptionEmails = const [], this.emailSubject, @ColorOrNullConverter() this.color, @ColorOrNullConverter() this.textColor, final  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown) this.notificationType, this.externalAccountId, final  List<Access>? access, final  List<Trigger>? triggers, this.useAssetContactsInstead, this.attachImage, this.emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web) final  List<AppPlatform>? pushPlatforms, this.pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none) this.soundEffect = SoundEffect.none, this.soundEffectUri, @IconOrNullConverter() this.icon, @DurationOrNullConverter() this.duration, this.layrzTemplate}): _headers = headers,_receptionEmails = receptionEmails,_destinationPhones = destinationPhones,_access = access,_triggers = triggers,_pushPlatforms = pushPlatforms,super._();
   factory _Operation.fromJson(Map<String, dynamic> json) => _$OperationFromJson(json);
 
 /// Is the ID of the operation.
@@ -343,9 +348,12 @@ class _Operation extends Operation {
 /// Is the language ID of the message. Used to define the default language of the message.
 @override final  String? languageId;
 /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-@override final  Timezone? timezone;
-/// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-@override final  String? timezoneId;
+@override@Deprecated('Use `timezoneName` instead') final  Timezone? timezone;
+/// [timezoneName] is the IANA name of the timezone.
+@override@JsonKey() final  String timezoneName;
+/// [dateTimeFormat] is the date time format to use for the operation.
+/// This will override the user's date time format preference.
+@override@JsonKey() final  String dateTimeFormat;
 /// Is the reception email to send the message
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.email].
@@ -457,6 +465,8 @@ class _Operation extends Operation {
 ///
 /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
 @override@DurationOrNullConverter() final  Duration? duration;
+/// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
+@override final  String? layrzTemplate;
 
 /// Create a copy of Operation
 /// with the given fields replaced by the non-null parameter values.
@@ -471,16 +481,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Operation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.requestType, requestType) || other.requestType == requestType)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other._headers, _headers)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.languageId, languageId) || other.languageId == languageId)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.timezoneId, timezoneId) || other.timezoneId == timezoneId)&&const DeepCollectionEquality().equals(other._receptionEmails, _receptionEmails)&&(identical(other.emailSubject, emailSubject) || other.emailSubject == emailSubject)&&(identical(other.color, color) || other.color == color)&&(identical(other.textColor, textColor) || other.textColor == textColor)&&const DeepCollectionEquality().equals(other._destinationPhones, _destinationPhones)&&(identical(other.notificationType, notificationType) || other.notificationType == notificationType)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&(identical(other.useAssetContactsInstead, useAssetContactsInstead) || other.useAssetContactsInstead == useAssetContactsInstead)&&(identical(other.attachImage, attachImage) || other.attachImage == attachImage)&&(identical(other.emailTemplateId, emailTemplateId) || other.emailTemplateId == emailTemplateId)&&const DeepCollectionEquality().equals(other._pushPlatforms, _pushPlatforms)&&(identical(other.pushTitle, pushTitle) || other.pushTitle == pushTitle)&&(identical(other.soundEffect, soundEffect) || other.soundEffect == soundEffect)&&(identical(other.soundEffectUri, soundEffectUri) || other.soundEffectUri == soundEffectUri)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.duration, duration) || other.duration == duration));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Operation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.requestType, requestType) || other.requestType == requestType)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other._headers, _headers)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.languageId, languageId) || other.languageId == languageId)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.timezoneName, timezoneName) || other.timezoneName == timezoneName)&&(identical(other.dateTimeFormat, dateTimeFormat) || other.dateTimeFormat == dateTimeFormat)&&const DeepCollectionEquality().equals(other._receptionEmails, _receptionEmails)&&(identical(other.emailSubject, emailSubject) || other.emailSubject == emailSubject)&&(identical(other.color, color) || other.color == color)&&(identical(other.textColor, textColor) || other.textColor == textColor)&&const DeepCollectionEquality().equals(other._destinationPhones, _destinationPhones)&&(identical(other.notificationType, notificationType) || other.notificationType == notificationType)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&(identical(other.useAssetContactsInstead, useAssetContactsInstead) || other.useAssetContactsInstead == useAssetContactsInstead)&&(identical(other.attachImage, attachImage) || other.attachImage == attachImage)&&(identical(other.emailTemplateId, emailTemplateId) || other.emailTemplateId == emailTemplateId)&&const DeepCollectionEquality().equals(other._pushPlatforms, _pushPlatforms)&&(identical(other.pushTitle, pushTitle) || other.pushTitle == pushTitle)&&(identical(other.soundEffect, soundEffect) || other.soundEffect == soundEffect)&&(identical(other.soundEffectUri, soundEffectUri) || other.soundEffectUri == soundEffectUri)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.layrzTemplate, layrzTemplate) || other.layrzTemplate == layrzTemplate));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,operationType,requestType,url,const DeepCollectionEquality().hash(_headers),payload,languageId,timezone,timezoneId,const DeepCollectionEquality().hash(_receptionEmails),emailSubject,color,textColor,const DeepCollectionEquality().hash(_destinationPhones),notificationType,externalAccountId,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_triggers),useAssetContactsInstead,attachImage,emailTemplateId,const DeepCollectionEquality().hash(_pushPlatforms),pushTitle,soundEffect,soundEffectUri,icon,duration]);
+int get hashCode => Object.hashAll([runtimeType,id,name,operationType,requestType,url,const DeepCollectionEquality().hash(_headers),payload,languageId,timezone,timezoneName,dateTimeFormat,const DeepCollectionEquality().hash(_receptionEmails),emailSubject,color,textColor,const DeepCollectionEquality().hash(_destinationPhones),notificationType,externalAccountId,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_triggers),useAssetContactsInstead,attachImage,emailTemplateId,const DeepCollectionEquality().hash(_pushPlatforms),pushTitle,soundEffect,soundEffectUri,icon,duration,layrzTemplate]);
 
 @override
 String toString() {
-  return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
+  return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneName: $timezoneName, dateTimeFormat: $dateTimeFormat, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration, layrzTemplate: $layrzTemplate)';
 }
 
 
@@ -491,7 +501,7 @@ abstract mixin class _$OperationCopyWith<$Res> implements $OperationCopyWith<$Re
   factory _$OperationCopyWith(_Operation value, $Res Function(_Operation) _then) = __$OperationCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: OperationType.unknown) OperationType operationType,@JsonKey(unknownEnumValue: HttpRequestType.httpGet) HttpRequestType? requestType, String? url, List<HttpHeader>? headers, String? payload, String? languageId, Timezone? timezone, String? timezoneId, List<String>? receptionEmails, String? emailSubject,@ColorOrNullConverter() Color? color,@ColorOrNullConverter() Color? textColor, List<PhoneNumber>? destinationPhones,@JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType, String? externalAccountId, List<Access>? access, List<Trigger>? triggers, bool? useAssetContactsInstead, bool? attachImage, String? emailTemplateId,@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms, String? pushTitle,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect, String? soundEffectUri,@IconOrNullConverter() LayrzIcon? icon,@DurationOrNullConverter() Duration? duration
+ String id, String name,@JsonKey(unknownEnumValue: OperationType.unknown) OperationType operationType,@JsonKey(unknownEnumValue: HttpRequestType.httpGet) HttpRequestType? requestType, String? url, List<HttpHeader>? headers, String? payload, String? languageId,@Deprecated('Use `timezoneName` instead') Timezone? timezone, String timezoneName, String dateTimeFormat, List<String>? receptionEmails, String? emailSubject,@ColorOrNullConverter() Color? color,@ColorOrNullConverter() Color? textColor, List<PhoneNumber>? destinationPhones,@JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType, String? externalAccountId, List<Access>? access, List<Trigger>? triggers, bool? useAssetContactsInstead, bool? attachImage, String? emailTemplateId,@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms, String? pushTitle,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect, String? soundEffectUri,@IconOrNullConverter() LayrzIcon? icon,@DurationOrNullConverter() Duration? duration, String? layrzTemplate
 });
 
 
@@ -508,7 +518,7 @@ class __$OperationCopyWithImpl<$Res>
 
 /// Create a copy of Operation
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? operationType = null,Object? requestType = freezed,Object? url = freezed,Object? headers = freezed,Object? payload = freezed,Object? languageId = freezed,Object? timezone = freezed,Object? timezoneId = freezed,Object? receptionEmails = freezed,Object? emailSubject = freezed,Object? color = freezed,Object? textColor = freezed,Object? destinationPhones = freezed,Object? notificationType = freezed,Object? externalAccountId = freezed,Object? access = freezed,Object? triggers = freezed,Object? useAssetContactsInstead = freezed,Object? attachImage = freezed,Object? emailTemplateId = freezed,Object? pushPlatforms = freezed,Object? pushTitle = freezed,Object? soundEffect = null,Object? soundEffectUri = freezed,Object? icon = freezed,Object? duration = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? operationType = null,Object? requestType = freezed,Object? url = freezed,Object? headers = freezed,Object? payload = freezed,Object? languageId = freezed,Object? timezone = freezed,Object? timezoneName = null,Object? dateTimeFormat = null,Object? receptionEmails = freezed,Object? emailSubject = freezed,Object? color = freezed,Object? textColor = freezed,Object? destinationPhones = freezed,Object? notificationType = freezed,Object? externalAccountId = freezed,Object? access = freezed,Object? triggers = freezed,Object? useAssetContactsInstead = freezed,Object? attachImage = freezed,Object? emailTemplateId = freezed,Object? pushPlatforms = freezed,Object? pushTitle = freezed,Object? soundEffect = null,Object? soundEffectUri = freezed,Object? icon = freezed,Object? duration = freezed,Object? layrzTemplate = freezed,}) {
   return _then(_Operation(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -519,8 +529,9 @@ as String?,headers: freezed == headers ? _self._headers : headers // ignore: cas
 as List<HttpHeader>?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as String?,languageId: freezed == languageId ? _self.languageId : languageId // ignore: cast_nullable_to_non_nullable
 as String?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
-as Timezone?,timezoneId: freezed == timezoneId ? _self.timezoneId : timezoneId // ignore: cast_nullable_to_non_nullable
-as String?,receptionEmails: freezed == receptionEmails ? _self._receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
+as Timezone?,timezoneName: null == timezoneName ? _self.timezoneName : timezoneName // ignore: cast_nullable_to_non_nullable
+as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
+as String,receptionEmails: freezed == receptionEmails ? _self._receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
 as List<String>?,emailSubject: freezed == emailSubject ? _self.emailSubject : emailSubject // ignore: cast_nullable_to_non_nullable
 as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,textColor: freezed == textColor ? _self.textColor : textColor // ignore: cast_nullable_to_non_nullable
@@ -538,7 +549,8 @@ as String?,soundEffect: null == soundEffect ? _self.soundEffect : soundEffect //
 as SoundEffect,soundEffectUri: freezed == soundEffectUri ? _self.soundEffectUri : soundEffectUri // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
-as Duration?,
+as Duration?,layrzTemplate: freezed == layrzTemplate ? _self.layrzTemplate : layrzTemplate // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -589,9 +601,13 @@ mixin _$OperationInput {
  String? get payload;/// Is the payload to send in the submission.
  set payload(String? value);/// Is the language ID of the message. Used to define the default language of the message.
  String? get languageId;/// Is the language ID of the message. Used to define the default language of the message.
- set languageId(String? value);/// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
- String? get timezoneId;/// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
- set timezoneId(String? value);/// Is the reception email to send the message
+ set languageId(String? value);/// [timezoneName] is the IANA name of the timezone.
+ String get timezoneName;/// [timezoneName] is the IANA name of the timezone.
+ set timezoneName(String value);/// [dateTimeFormat] is the date time format to use for the operation.
+/// This will override the user's date time format preference.
+ String get dateTimeFormat;/// [dateTimeFormat] is the date time format to use for the operation.
+/// This will override the user's date time format preference.
+ set dateTimeFormat(String value);/// Is the reception email to send the message
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.email].
  List<String> get receptionEmails;/// Is the reception email to send the message
@@ -671,7 +687,9 @@ mixin _$OperationInput {
 @DurationConverter() Duration get duration;/// [duration] is the duration of the notification
 ///
 /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-@DurationConverter() set duration(Duration value);
+@DurationConverter() set duration(Duration value);/// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
+ String? get layrzTemplate;/// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
+ set layrzTemplate(String? value);
 /// Create a copy of OperationInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -686,7 +704,7 @@ $OperationInputCopyWith<OperationInput> get copyWith => _$OperationInputCopyWith
 
 @override
 String toString() {
-  return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
+  return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezoneName: $timezoneName, dateTimeFormat: $dateTimeFormat, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration, layrzTemplate: $layrzTemplate)';
 }
 
 
@@ -697,7 +715,7 @@ abstract mixin class $OperationInputCopyWith<$Res>  {
   factory $OperationInputCopyWith(OperationInput value, $Res Function(OperationInput) _then) = _$OperationInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: OperationType.unknown) OperationType operationType,@JsonKey(unknownEnumValue: HttpRequestType.httpGet) HttpRequestType? requestType, String? url, List<HttpHeaderInput> headers, String? payload, String? languageId, String? timezoneId, List<String> receptionEmails, String emailSubject,@ColorOrNullConverter() Color? color,@ColorOrNullConverter() Color? textColor, List<PhoneNumberInput> destinationPhones,@JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType, String? externalAccountId, bool useAssetContactsInstead, bool attachImage, String? emailTemplateId,@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms, String? pushTitle,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect, String? soundEffectUri,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration duration
+ String? id, String name,@JsonKey(unknownEnumValue: OperationType.unknown) OperationType operationType,@JsonKey(unknownEnumValue: HttpRequestType.httpGet) HttpRequestType? requestType, String? url, List<HttpHeaderInput> headers, String? payload, String? languageId, String timezoneName, String dateTimeFormat, List<String> receptionEmails, String emailSubject,@ColorOrNullConverter() Color? color,@ColorOrNullConverter() Color? textColor, List<PhoneNumberInput> destinationPhones,@JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType, String? externalAccountId, bool useAssetContactsInstead, bool attachImage, String? emailTemplateId,@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms, String? pushTitle,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect, String? soundEffectUri,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration duration, String? layrzTemplate
 });
 
 
@@ -714,7 +732,7 @@ class _$OperationInputCopyWithImpl<$Res>
 
 /// Create a copy of OperationInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? operationType = null,Object? requestType = freezed,Object? url = freezed,Object? headers = null,Object? payload = freezed,Object? languageId = freezed,Object? timezoneId = freezed,Object? receptionEmails = null,Object? emailSubject = null,Object? color = freezed,Object? textColor = freezed,Object? destinationPhones = null,Object? notificationType = freezed,Object? externalAccountId = freezed,Object? useAssetContactsInstead = null,Object? attachImage = null,Object? emailTemplateId = freezed,Object? pushPlatforms = freezed,Object? pushTitle = freezed,Object? soundEffect = null,Object? soundEffectUri = freezed,Object? icon = freezed,Object? duration = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? operationType = null,Object? requestType = freezed,Object? url = freezed,Object? headers = null,Object? payload = freezed,Object? languageId = freezed,Object? timezoneName = null,Object? dateTimeFormat = null,Object? receptionEmails = null,Object? emailSubject = null,Object? color = freezed,Object? textColor = freezed,Object? destinationPhones = null,Object? notificationType = freezed,Object? externalAccountId = freezed,Object? useAssetContactsInstead = null,Object? attachImage = null,Object? emailTemplateId = freezed,Object? pushPlatforms = freezed,Object? pushTitle = freezed,Object? soundEffect = null,Object? soundEffectUri = freezed,Object? icon = freezed,Object? duration = null,Object? layrzTemplate = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -724,8 +742,9 @@ as HttpRequestType?,url: freezed == url ? _self.url : url // ignore: cast_nullab
 as String?,headers: null == headers ? _self.headers : headers // ignore: cast_nullable_to_non_nullable
 as List<HttpHeaderInput>,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as String?,languageId: freezed == languageId ? _self.languageId : languageId // ignore: cast_nullable_to_non_nullable
-as String?,timezoneId: freezed == timezoneId ? _self.timezoneId : timezoneId // ignore: cast_nullable_to_non_nullable
-as String?,receptionEmails: null == receptionEmails ? _self.receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
+as String?,timezoneName: null == timezoneName ? _self.timezoneName : timezoneName // ignore: cast_nullable_to_non_nullable
+as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
+as String,receptionEmails: null == receptionEmails ? _self.receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
 as List<String>,emailSubject: null == emailSubject ? _self.emailSubject : emailSubject // ignore: cast_nullable_to_non_nullable
 as String,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,textColor: freezed == textColor ? _self.textColor : textColor // ignore: cast_nullable_to_non_nullable
@@ -741,7 +760,8 @@ as String?,soundEffect: null == soundEffect ? _self.soundEffect : soundEffect //
 as SoundEffect,soundEffectUri: freezed == soundEffectUri ? _self.soundEffectUri : soundEffectUri // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as LayrzIcon?,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
-as Duration,
+as Duration,layrzTemplate: freezed == layrzTemplate ? _self.layrzTemplate : layrzTemplate // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -826,10 +846,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeaderInput> headers,  String? payload,  String? languageId,  String? timezoneId,  List<String> receptionEmails,  String emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumberInput> destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  bool useAssetContactsInstead,  bool attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration duration)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeaderInput> headers,  String? payload,  String? languageId,  String timezoneName,  String dateTimeFormat,  List<String> receptionEmails,  String emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumberInput> destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  bool useAssetContactsInstead,  bool attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration duration,  String? layrzTemplate)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OperationInput() when $default != null:
-return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezoneId,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration);case _:
+return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezoneName,_that.dateTimeFormat,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration,_that.layrzTemplate);case _:
   return orElse();
 
 }
@@ -847,10 +867,10 @@ return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeaderInput> headers,  String? payload,  String? languageId,  String? timezoneId,  List<String> receptionEmails,  String emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumberInput> destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  bool useAssetContactsInstead,  bool attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration duration)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeaderInput> headers,  String? payload,  String? languageId,  String timezoneName,  String dateTimeFormat,  List<String> receptionEmails,  String emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumberInput> destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  bool useAssetContactsInstead,  bool attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration duration,  String? layrzTemplate)  $default,) {final _that = this;
 switch (_that) {
 case _OperationInput():
-return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezoneId,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration);case _:
+return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezoneName,_that.dateTimeFormat,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration,_that.layrzTemplate);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -867,10 +887,10 @@ return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeaderInput> headers,  String? payload,  String? languageId,  String? timezoneId,  List<String> receptionEmails,  String emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumberInput> destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  bool useAssetContactsInstead,  bool attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration duration)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @JsonKey(unknownEnumValue: OperationType.unknown)  OperationType operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet)  HttpRequestType? requestType,  String? url,  List<HttpHeaderInput> headers,  String? payload,  String? languageId,  String timezoneName,  String dateTimeFormat,  List<String> receptionEmails,  String emailSubject, @ColorOrNullConverter()  Color? color, @ColorOrNullConverter()  Color? textColor,  List<PhoneNumberInput> destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown)  NotificationType? notificationType,  String? externalAccountId,  bool useAssetContactsInstead,  bool attachImage,  String? emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web)  List<AppPlatform>? pushPlatforms,  String? pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect soundEffect,  String? soundEffectUri, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration duration,  String? layrzTemplate)?  $default,) {final _that = this;
 switch (_that) {
 case _OperationInput() when $default != null:
-return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezoneId,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration);case _:
+return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.url,_that.headers,_that.payload,_that.languageId,_that.timezoneName,_that.dateTimeFormat,_that.receptionEmails,_that.emailSubject,_that.color,_that.textColor,_that.destinationPhones,_that.notificationType,_that.externalAccountId,_that.useAssetContactsInstead,_that.attachImage,_that.emailTemplateId,_that.pushPlatforms,_that.pushTitle,_that.soundEffect,_that.soundEffectUri,_that.icon,_that.duration,_that.layrzTemplate);case _:
   return null;
 
 }
@@ -882,7 +902,7 @@ return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.
 @JsonSerializable()
 
 class _OperationInput implements OperationInput {
-   _OperationInput({this.id, this.name = '', @JsonKey(unknownEnumValue: OperationType.unknown) this.operationType = OperationType.inAppNotification, @JsonKey(unknownEnumValue: HttpRequestType.httpGet) this.requestType, this.url, this.headers = const [], this.payload, this.languageId, this.timezoneId, this.receptionEmails = const [], this.emailSubject = '', @ColorOrNullConverter() this.color, @ColorOrNullConverter() this.textColor, this.destinationPhones = const [], @JsonKey(unknownEnumValue: NotificationType.unknown) this.notificationType, this.externalAccountId, this.useAssetContactsInstead = false, this.attachImage = false, this.emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web) this.pushPlatforms, this.pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none) this.soundEffect = SoundEffect.none, this.soundEffectUri, @IconOrNullConverter() this.icon, @DurationConverter() this.duration = const Duration(seconds: 5)});
+   _OperationInput({this.id, this.name = '', @JsonKey(unknownEnumValue: OperationType.unknown) this.operationType = OperationType.inAppNotification, @JsonKey(unknownEnumValue: HttpRequestType.httpGet) this.requestType, this.url, this.headers = const [], this.payload, this.languageId, this.timezoneName = 'UTC', this.dateTimeFormat = '%Y-%m-%d %I:%M %p', this.receptionEmails = const [], this.emailSubject = '', @ColorOrNullConverter() this.color, @ColorOrNullConverter() this.textColor, this.destinationPhones = const [], @JsonKey(unknownEnumValue: NotificationType.unknown) this.notificationType, this.externalAccountId, this.useAssetContactsInstead = false, this.attachImage = false, this.emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web) this.pushPlatforms, this.pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none) this.soundEffect = SoundEffect.none, this.soundEffectUri, @IconOrNullConverter() this.icon, @DurationConverter() this.duration = const Duration(seconds: 5), this.layrzTemplate});
   factory _OperationInput.fromJson(Map<String, dynamic> json) => _$OperationInputFromJson(json);
 
 /// Is the ID of the operation.
@@ -907,8 +927,11 @@ class _OperationInput implements OperationInput {
 @override  String? payload;
 /// Is the language ID of the message. Used to define the default language of the message.
 @override  String? languageId;
-/// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-@override  String? timezoneId;
+/// [timezoneName] is the IANA name of the timezone.
+@override@JsonKey()  String timezoneName;
+/// [dateTimeFormat] is the date time format to use for the operation.
+/// This will override the user's date time format preference.
+@override@JsonKey()  String dateTimeFormat;
 /// Is the reception email to send the message
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.email].
@@ -965,6 +988,8 @@ class _OperationInput implements OperationInput {
 ///
 /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
 @override@JsonKey()@DurationConverter()  Duration duration;
+/// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
+@override  String? layrzTemplate;
 
 /// Create a copy of OperationInput
 /// with the given fields replaced by the non-null parameter values.
@@ -981,7 +1006,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
+  return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezoneName: $timezoneName, dateTimeFormat: $dateTimeFormat, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration, layrzTemplate: $layrzTemplate)';
 }
 
 
@@ -992,7 +1017,7 @@ abstract mixin class _$OperationInputCopyWith<$Res> implements $OperationInputCo
   factory _$OperationInputCopyWith(_OperationInput value, $Res Function(_OperationInput) _then) = __$OperationInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: OperationType.unknown) OperationType operationType,@JsonKey(unknownEnumValue: HttpRequestType.httpGet) HttpRequestType? requestType, String? url, List<HttpHeaderInput> headers, String? payload, String? languageId, String? timezoneId, List<String> receptionEmails, String emailSubject,@ColorOrNullConverter() Color? color,@ColorOrNullConverter() Color? textColor, List<PhoneNumberInput> destinationPhones,@JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType, String? externalAccountId, bool useAssetContactsInstead, bool attachImage, String? emailTemplateId,@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms, String? pushTitle,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect, String? soundEffectUri,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration duration
+ String? id, String name,@JsonKey(unknownEnumValue: OperationType.unknown) OperationType operationType,@JsonKey(unknownEnumValue: HttpRequestType.httpGet) HttpRequestType? requestType, String? url, List<HttpHeaderInput> headers, String? payload, String? languageId, String timezoneName, String dateTimeFormat, List<String> receptionEmails, String emailSubject,@ColorOrNullConverter() Color? color,@ColorOrNullConverter() Color? textColor, List<PhoneNumberInput> destinationPhones,@JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType, String? externalAccountId, bool useAssetContactsInstead, bool attachImage, String? emailTemplateId,@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms, String? pushTitle,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect, String? soundEffectUri,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration duration, String? layrzTemplate
 });
 
 
@@ -1009,7 +1034,7 @@ class __$OperationInputCopyWithImpl<$Res>
 
 /// Create a copy of OperationInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? operationType = null,Object? requestType = freezed,Object? url = freezed,Object? headers = null,Object? payload = freezed,Object? languageId = freezed,Object? timezoneId = freezed,Object? receptionEmails = null,Object? emailSubject = null,Object? color = freezed,Object? textColor = freezed,Object? destinationPhones = null,Object? notificationType = freezed,Object? externalAccountId = freezed,Object? useAssetContactsInstead = null,Object? attachImage = null,Object? emailTemplateId = freezed,Object? pushPlatforms = freezed,Object? pushTitle = freezed,Object? soundEffect = null,Object? soundEffectUri = freezed,Object? icon = freezed,Object? duration = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? operationType = null,Object? requestType = freezed,Object? url = freezed,Object? headers = null,Object? payload = freezed,Object? languageId = freezed,Object? timezoneName = null,Object? dateTimeFormat = null,Object? receptionEmails = null,Object? emailSubject = null,Object? color = freezed,Object? textColor = freezed,Object? destinationPhones = null,Object? notificationType = freezed,Object? externalAccountId = freezed,Object? useAssetContactsInstead = null,Object? attachImage = null,Object? emailTemplateId = freezed,Object? pushPlatforms = freezed,Object? pushTitle = freezed,Object? soundEffect = null,Object? soundEffectUri = freezed,Object? icon = freezed,Object? duration = null,Object? layrzTemplate = freezed,}) {
   return _then(_OperationInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1019,8 +1044,9 @@ as HttpRequestType?,url: freezed == url ? _self.url : url // ignore: cast_nullab
 as String?,headers: null == headers ? _self.headers : headers // ignore: cast_nullable_to_non_nullable
 as List<HttpHeaderInput>,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as String?,languageId: freezed == languageId ? _self.languageId : languageId // ignore: cast_nullable_to_non_nullable
-as String?,timezoneId: freezed == timezoneId ? _self.timezoneId : timezoneId // ignore: cast_nullable_to_non_nullable
-as String?,receptionEmails: null == receptionEmails ? _self.receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
+as String?,timezoneName: null == timezoneName ? _self.timezoneName : timezoneName // ignore: cast_nullable_to_non_nullable
+as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
+as String,receptionEmails: null == receptionEmails ? _self.receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
 as List<String>,emailSubject: null == emailSubject ? _self.emailSubject : emailSubject // ignore: cast_nullable_to_non_nullable
 as String,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,textColor: freezed == textColor ? _self.textColor : textColor // ignore: cast_nullable_to_non_nullable
@@ -1036,7 +1062,8 @@ as String?,soundEffect: null == soundEffect ? _self.soundEffect : soundEffect //
 as SoundEffect,soundEffectUri: freezed == soundEffectUri ? _self.soundEffectUri : soundEffectUri // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as LayrzIcon?,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
-as Duration,
+as Duration,layrzTemplate: freezed == layrzTemplate ? _self.layrzTemplate : layrzTemplate // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

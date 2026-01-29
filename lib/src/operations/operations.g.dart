@@ -30,7 +30,8 @@ _Operation _$OperationFromJson(Map<String, dynamic> json) => _Operation(
   timezone: json['timezone'] == null
       ? null
       : Timezone.fromJson(json['timezone'] as Map<String, dynamic>),
-  timezoneId: json['timezoneId'] as String?,
+  timezoneName: json['timezoneName'] as String? ?? 'UTC',
+  dateTimeFormat: json['dateTimeFormat'] as String? ?? '%Y-%m-%d %I:%M %p',
   receptionEmails:
       (json['receptionEmails'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -76,6 +77,7 @@ _Operation _$OperationFromJson(Map<String, dynamic> json) => _Operation(
   soundEffectUri: json['soundEffectUri'] as String?,
   icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
   duration: const DurationOrNullConverter().fromJson(json['duration'] as num?),
+  layrzTemplate: json['layrzTemplate'] as String?,
 );
 
 Map<String, dynamic> _$OperationToJson(_Operation instance) =>
@@ -89,7 +91,8 @@ Map<String, dynamic> _$OperationToJson(_Operation instance) =>
       'payload': instance.payload,
       'languageId': instance.languageId,
       'timezone': instance.timezone?.toJson(),
-      'timezoneId': instance.timezoneId,
+      'timezoneName': instance.timezoneName,
+      'dateTimeFormat': instance.dateTimeFormat,
       'receptionEmails': instance.receptionEmails,
       'emailSubject': instance.emailSubject,
       'color': const ColorOrNullConverter().toJson(instance.color),
@@ -110,6 +113,7 @@ Map<String, dynamic> _$OperationToJson(_Operation instance) =>
       'soundEffectUri': instance.soundEffectUri,
       'icon': const IconOrNullConverter().toJson(instance.icon),
       'duration': const DurationOrNullConverter().toJson(instance.duration),
+      'layrzTemplate': instance.layrzTemplate,
     };
 
 const _$OperationTypeEnumMap = {
@@ -121,6 +125,9 @@ const _$OperationTypeEnumMap = {
   OperationType.mobilePopupNotification: 'MOBILE_POPUP_NOTIFICATION',
   OperationType.bhsPush: 'BHS_PUSH',
   OperationType.pushNotification: 'PUSH_NOTIFICATION',
+  OperationType.sms: 'SMS',
+  OperationType.voiceCall: 'VOICE_CALL',
+  OperationType.whatsappMessage: 'WHATSAPP_MESSAGE',
   OperationType.unknown: 'UNKNOWN',
 };
 
@@ -185,7 +192,8 @@ _OperationInput _$OperationInputFromJson(
       const [],
   payload: json['payload'] as String?,
   languageId: json['languageId'] as String?,
-  timezoneId: json['timezoneId'] as String?,
+  timezoneName: json['timezoneName'] as String? ?? 'UTC',
+  dateTimeFormat: json['dateTimeFormat'] as String? ?? '%Y-%m-%d %I:%M %p',
   receptionEmails:
       (json['receptionEmails'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -229,6 +237,7 @@ _OperationInput _$OperationInputFromJson(
   duration: json['duration'] == null
       ? const Duration(seconds: 5)
       : const DurationConverter().fromJson(json['duration'] as num),
+  layrzTemplate: json['layrzTemplate'] as String?,
 );
 
 Map<String, dynamic> _$OperationInputToJson(_OperationInput instance) =>
@@ -241,7 +250,8 @@ Map<String, dynamic> _$OperationInputToJson(_OperationInput instance) =>
       'headers': instance.headers.map((e) => e.toJson()).toList(),
       'payload': instance.payload,
       'languageId': instance.languageId,
-      'timezoneId': instance.timezoneId,
+      'timezoneName': instance.timezoneName,
+      'dateTimeFormat': instance.dateTimeFormat,
       'receptionEmails': instance.receptionEmails,
       'emailSubject': instance.emailSubject,
       'color': const ColorOrNullConverter().toJson(instance.color),
@@ -260,6 +270,7 @@ Map<String, dynamic> _$OperationInputToJson(_OperationInput instance) =>
       'soundEffectUri': instance.soundEffectUri,
       'icon': const IconOrNullConverter().toJson(instance.icon),
       'duration': const DurationConverter().toJson(instance.duration),
+      'layrzTemplate': instance.layrzTemplate,
     };
 
 _HttpHeader _$HttpHeaderFromJson(Map<String, dynamic> json) =>
@@ -276,3 +287,8 @@ _HttpHeaderInput _$HttpHeaderInputFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$HttpHeaderInputToJson(_HttpHeaderInput instance) =>
     <String, dynamic>{'name': instance.name, 'value': instance.value};
+
+const _$TwilioContentSidEnumMap = {
+  TwilioContentSid.simpleEnglish: 'HXa68ca57bdda67e39d82b62aa2061acf4',
+  TwilioContentSid.simpleSpanish: 'HX7a3cece41e25fde8200cc1f1b09659bb',
+};

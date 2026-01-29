@@ -35,10 +35,14 @@ abstract class Operation with _$Operation {
     String? languageId,
 
     /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-    Timezone? timezone,
+    @Deprecated('Use `timezoneName` instead') Timezone? timezone,
 
-    /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-    String? timezoneId,
+    /// [timezoneName] is the IANA name of the timezone.
+    @Default('UTC') String timezoneName,
+
+    /// [dateTimeFormat] is the date time format to use for the operation.
+    /// This will override the user's date time format preference.
+    @Default('%Y-%m-%d %I:%M %p') String dateTimeFormat,
 
     /// Is the reception email to send the message
     /// This field will only be considered in the following [operationType]:
@@ -117,6 +121,9 @@ abstract class Operation with _$Operation {
     ///
     /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
     @DurationOrNullConverter() Duration? duration,
+
+    /// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
+    String? layrzTemplate,
   }) = _Operation;
 
   factory Operation.fromJson(Map<String, dynamic> json) => _$OperationFromJson(json);
@@ -157,8 +164,12 @@ abstract class OperationInput with _$OperationInput {
     /// Is the language ID of the message. Used to define the default language of the message.
     String? languageId,
 
-    /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-    String? timezoneId,
+    /// [timezoneName] is the IANA name of the timezone.
+    @Default('UTC') String timezoneName,
+
+    /// [dateTimeFormat] is the date time format to use for the operation.
+    /// This will override the user's date time format preference.
+    @Default('%Y-%m-%d %I:%M %p') String dateTimeFormat,
 
     /// Is the reception email to send the message
     /// This field will only be considered in the following [operationType]:
@@ -231,6 +242,9 @@ abstract class OperationInput with _$OperationInput {
     ///
     /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
     @DurationConverter() @Default(Duration(seconds: 5)) Duration duration,
+
+    /// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
+    String? layrzTemplate,
   }) = _OperationInput;
 
   factory OperationInput.fromJson(Map<String, dynamic> json) => _$OperationInputFromJson(json);
