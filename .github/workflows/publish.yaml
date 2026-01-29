@@ -35,7 +35,12 @@ jobs:
         run: flutter pub publish --dry-run
 
       - name: Publish to pub.dev
-        run: flutter pub publish --force
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Publish to pub.dev
+        run: dart pub publish --force
 
       - name: Rename tag when fails
         if: failure()
