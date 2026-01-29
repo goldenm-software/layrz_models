@@ -48,7 +48,7 @@ enum SensorType {
 
   String toJson() => _$SensorTypeEnumMap[this] ?? 'CONSTANT';
 
-  static SensorType fromJson(json) {
+  static SensorType fromJson(String json) {
     final value = _$SensorTypeEnumMap.entries.firstWhereOrNull((element) => element.value == json);
     return value?.key ?? SensorType.constant;
   }
