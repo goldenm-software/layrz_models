@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.2
+
+- Added `totalExits` value in `AtsEntry` model
+
 ## 3.6.1
 
 - Updated `TwilioContentSid` template SID on English
@@ -10,7 +14,7 @@
 
 ## 3.5.7
 
--  Rempalce `fatherAsset` to `fatherAssetId` in `AtsCommandExecuteHistoryInput` 
+- Rempalce `fatherAsset` to `fatherAssetId` in `AtsCommandExecuteHistoryInput`
 
 ## 3.5.6
 

@@ -102,6 +102,9 @@ abstract class AtsEntry with _$AtsEntry {
 
     /// `finalCorrectionFactor` is the final correction factor.
     double? finalCorrectionFactor,
+
+    /// `totalExits` is the total exits associated with the entry.
+    double? totalExits,
   }) = _AtsEntry;
 
   /// fromJson creates a new `AtsEntry` from a JSON object.
