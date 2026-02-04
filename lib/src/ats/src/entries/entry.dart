@@ -105,6 +105,9 @@ abstract class AtsEntry with _$AtsEntry {
 
     /// `totalExits` is the total exits associated with the entry.
     double? totalExits,
+
+    /// `totalExits20` is the total exits at 20 degrees associated with the entry.
+    double? totalExits20,
   }) = _AtsEntry;
 
   /// fromJson creates a new `AtsEntry` from a JSON object.

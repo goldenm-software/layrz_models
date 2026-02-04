@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.3
+
+- Added `ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF` value in `ReferenceCategory` enum
+- Added `totalExits20` value in `AtsEntry` model
+
 ## 3.6.2
 
 - Added `totalExits` value in `AtsEntry` model

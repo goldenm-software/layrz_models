@@ -78,6 +78,8 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.atsRecalculateOperationButton:
       'ATS_RECALCULATE_OPERATION_BUTTON',
   ReferenceCategory.atsBalsaBordo: 'ATS_BALSA_BORDO',
+  ReferenceCategory.atsBalsaExportReceivementReportPdf:
+      'ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',

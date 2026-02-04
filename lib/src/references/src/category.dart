@@ -234,6 +234,12 @@ enum ReferenceCategory {
   @JsonValue('ATS_BALSA_BORDO')
   atsBalsaBordo,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to export receivement report PDF
+  /// ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF
+  @JsonValue('ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF')
+  atsBalsaExportReceivementReportPdf,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR

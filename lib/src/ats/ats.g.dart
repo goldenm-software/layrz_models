@@ -1313,6 +1313,7 @@ _AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) => _AtsEntry(
       ?.toDouble(),
   finalCorrectionFactor: (json['finalCorrectionFactor'] as num?)?.toDouble(),
   totalExits: (json['totalExits'] as num?)?.toDouble(),
+  totalExits20: (json['totalExits20'] as num?)?.toDouble(),
 );
 
 Map<String, dynamic> _$AtsEntryToJson(_AtsEntry instance) => <String, dynamic>{
@@ -1347,6 +1348,7 @@ Map<String, dynamic> _$AtsEntryToJson(_AtsEntry instance) => <String, dynamic>{
   'initialCorrectionFactor': instance.initialCorrectionFactor,
   'finalCorrectionFactor': instance.finalCorrectionFactor,
   'totalExits': instance.totalExits,
+  'totalExits20': instance.totalExits20,
 };
 
 _AtsVolume _$AtsVolumeFromJson(Map<String, dynamic> json) => _AtsVolume(
