@@ -24097,4 +24097,745 @@ as AtsCommunicationMethod,
 
 }
 
+
+/// @nodoc
+mixin _$AtsOrder {
+
+/// The [id] parameter is the id of the order.
+ String get id;/// The [cnpj] parameter is the cnpj of the order.
+ String get cnpj;/// The [customer] parameter is the customer of the order.
+ String get customer;/// The [customerAsset] parameter is the customerAsset of the order.
+ Asset? get customerAsset;/// The [customerCode] parameter is the customerCode of the order.
+ String get customerCode;/// The [orderDate] parameter is the orderDate of the order.
+@TimestampOrNullConverter() DateTime? get orderDate;/// The [inclusionDate] parameter is the inclusionDate of the order.
+@TimestampOrNullConverter() DateTime? get inclusionDate;/// The [fiscalNumber] parameter is the fiscalNumber of the order.
+ String get fiscalNumber;/// The [productAnp] parameter is the productAnp of the order.
+ String get productAnp;/// The [quantity] parameter is the quantity of the order.
+ double get quantity;/// The [status] parameter is the status of the order.
+ String get status;/// The [checkInAt] parameter is the checkInAt of the order.
+@TimestampOrNullConverter() DateTime? get checkInAt;/// The [orderStatusHistory] parameter is the orderStatusHistory of the order.
+ List<AtsOrderStatusHistory>? get orderStatusHistory;
+/// Create a copy of AtsOrder
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsOrderCopyWith<AtsOrder> get copyWith => _$AtsOrderCopyWithImpl<AtsOrder>(this as AtsOrder, _$identity);
+
+  /// Serializes this AtsOrder to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerAsset, customerAsset) || other.customerAsset == customerAsset)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.fiscalNumber, fiscalNumber) || other.fiscalNumber == fiscalNumber)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.status, status) || other.status == status)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&const DeepCollectionEquality().equals(other.orderStatusHistory, orderStatusHistory));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,cnpj,customer,customerAsset,customerCode,orderDate,inclusionDate,fiscalNumber,productAnp,quantity,status,checkInAt,const DeepCollectionEquality().hash(orderStatusHistory));
+
+@override
+String toString() {
+  return 'AtsOrder(id: $id, cnpj: $cnpj, customer: $customer, customerAsset: $customerAsset, customerCode: $customerCode, orderDate: $orderDate, inclusionDate: $inclusionDate, fiscalNumber: $fiscalNumber, productAnp: $productAnp, quantity: $quantity, status: $status, checkInAt: $checkInAt, orderStatusHistory: $orderStatusHistory)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsOrderCopyWith<$Res>  {
+  factory $AtsOrderCopyWith(AtsOrder value, $Res Function(AtsOrder) _then) = _$AtsOrderCopyWithImpl;
+@useResult
+$Res call({
+ String id, String cnpj, String customer, Asset? customerAsset, String customerCode,@TimestampOrNullConverter() DateTime? orderDate,@TimestampOrNullConverter() DateTime? inclusionDate, String fiscalNumber, String productAnp, double quantity, String status,@TimestampOrNullConverter() DateTime? checkInAt, List<AtsOrderStatusHistory>? orderStatusHistory
+});
+
+
+$AssetCopyWith<$Res>? get customerAsset;
+
+}
+/// @nodoc
+class _$AtsOrderCopyWithImpl<$Res>
+    implements $AtsOrderCopyWith<$Res> {
+  _$AtsOrderCopyWithImpl(this._self, this._then);
+
+  final AtsOrder _self;
+  final $Res Function(AtsOrder) _then;
+
+/// Create a copy of AtsOrder
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? cnpj = null,Object? customer = null,Object? customerAsset = freezed,Object? customerCode = null,Object? orderDate = freezed,Object? inclusionDate = freezed,Object? fiscalNumber = null,Object? productAnp = null,Object? quantity = null,Object? status = null,Object? checkInAt = freezed,Object? orderStatusHistory = freezed,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,cnpj: null == cnpj ? _self.cnpj : cnpj // ignore: cast_nullable_to_non_nullable
+as String,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
+as String,customerAsset: freezed == customerAsset ? _self.customerAsset : customerAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,customerCode: null == customerCode ? _self.customerCode : customerCode // ignore: cast_nullable_to_non_nullable
+as String,orderDate: freezed == orderDate ? _self.orderDate : orderDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,inclusionDate: freezed == inclusionDate ? _self.inclusionDate : inclusionDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,fiscalNumber: null == fiscalNumber ? _self.fiscalNumber : fiscalNumber // ignore: cast_nullable_to_non_nullable
+as String,productAnp: null == productAnp ? _self.productAnp : productAnp // ignore: cast_nullable_to_non_nullable
+as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
+as double,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,orderStatusHistory: freezed == orderStatusHistory ? _self.orderStatusHistory : orderStatusHistory // ignore: cast_nullable_to_non_nullable
+as List<AtsOrderStatusHistory>?,
+  ));
+}
+/// Create a copy of AtsOrder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get customerAsset {
+    if (_self.customerAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.customerAsset!, (value) {
+    return _then(_self.copyWith(customerAsset: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AtsOrder].
+extension AtsOrderPatterns on AtsOrder {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsOrder value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsOrder() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsOrder value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsOrder():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsOrder value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsOrder() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsOrder() when $default != null:
+return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory)  $default,) {final _that = this;
+switch (_that) {
+case _AtsOrder():
+return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsOrder() when $default != null:
+return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsOrder implements AtsOrder {
+  const _AtsOrder({required this.id, required this.cnpj, required this.customer, this.customerAsset, required this.customerCode, @TimestampOrNullConverter() this.orderDate, @TimestampOrNullConverter() this.inclusionDate, required this.fiscalNumber, required this.productAnp, required this.quantity, required this.status, @TimestampOrNullConverter() this.checkInAt, final  List<AtsOrderStatusHistory>? orderStatusHistory}): _orderStatusHistory = orderStatusHistory;
+  factory _AtsOrder.fromJson(Map<String, dynamic> json) => _$AtsOrderFromJson(json);
+
+/// The [id] parameter is the id of the order.
+@override final  String id;
+/// The [cnpj] parameter is the cnpj of the order.
+@override final  String cnpj;
+/// The [customer] parameter is the customer of the order.
+@override final  String customer;
+/// The [customerAsset] parameter is the customerAsset of the order.
+@override final  Asset? customerAsset;
+/// The [customerCode] parameter is the customerCode of the order.
+@override final  String customerCode;
+/// The [orderDate] parameter is the orderDate of the order.
+@override@TimestampOrNullConverter() final  DateTime? orderDate;
+/// The [inclusionDate] parameter is the inclusionDate of the order.
+@override@TimestampOrNullConverter() final  DateTime? inclusionDate;
+/// The [fiscalNumber] parameter is the fiscalNumber of the order.
+@override final  String fiscalNumber;
+/// The [productAnp] parameter is the productAnp of the order.
+@override final  String productAnp;
+/// The [quantity] parameter is the quantity of the order.
+@override final  double quantity;
+/// The [status] parameter is the status of the order.
+@override final  String status;
+/// The [checkInAt] parameter is the checkInAt of the order.
+@override@TimestampOrNullConverter() final  DateTime? checkInAt;
+/// The [orderStatusHistory] parameter is the orderStatusHistory of the order.
+ final  List<AtsOrderStatusHistory>? _orderStatusHistory;
+/// The [orderStatusHistory] parameter is the orderStatusHistory of the order.
+@override List<AtsOrderStatusHistory>? get orderStatusHistory {
+  final value = _orderStatusHistory;
+  if (value == null) return null;
+  if (_orderStatusHistory is EqualUnmodifiableListView) return _orderStatusHistory;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+
+/// Create a copy of AtsOrder
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsOrderCopyWith<_AtsOrder> get copyWith => __$AtsOrderCopyWithImpl<_AtsOrder>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsOrderToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerAsset, customerAsset) || other.customerAsset == customerAsset)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.fiscalNumber, fiscalNumber) || other.fiscalNumber == fiscalNumber)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.status, status) || other.status == status)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&const DeepCollectionEquality().equals(other._orderStatusHistory, _orderStatusHistory));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,cnpj,customer,customerAsset,customerCode,orderDate,inclusionDate,fiscalNumber,productAnp,quantity,status,checkInAt,const DeepCollectionEquality().hash(_orderStatusHistory));
+
+@override
+String toString() {
+  return 'AtsOrder(id: $id, cnpj: $cnpj, customer: $customer, customerAsset: $customerAsset, customerCode: $customerCode, orderDate: $orderDate, inclusionDate: $inclusionDate, fiscalNumber: $fiscalNumber, productAnp: $productAnp, quantity: $quantity, status: $status, checkInAt: $checkInAt, orderStatusHistory: $orderStatusHistory)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsOrderCopyWith<$Res> implements $AtsOrderCopyWith<$Res> {
+  factory _$AtsOrderCopyWith(_AtsOrder value, $Res Function(_AtsOrder) _then) = __$AtsOrderCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String cnpj, String customer, Asset? customerAsset, String customerCode,@TimestampOrNullConverter() DateTime? orderDate,@TimestampOrNullConverter() DateTime? inclusionDate, String fiscalNumber, String productAnp, double quantity, String status,@TimestampOrNullConverter() DateTime? checkInAt, List<AtsOrderStatusHistory>? orderStatusHistory
+});
+
+
+@override $AssetCopyWith<$Res>? get customerAsset;
+
+}
+/// @nodoc
+class __$AtsOrderCopyWithImpl<$Res>
+    implements _$AtsOrderCopyWith<$Res> {
+  __$AtsOrderCopyWithImpl(this._self, this._then);
+
+  final _AtsOrder _self;
+  final $Res Function(_AtsOrder) _then;
+
+/// Create a copy of AtsOrder
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? cnpj = null,Object? customer = null,Object? customerAsset = freezed,Object? customerCode = null,Object? orderDate = freezed,Object? inclusionDate = freezed,Object? fiscalNumber = null,Object? productAnp = null,Object? quantity = null,Object? status = null,Object? checkInAt = freezed,Object? orderStatusHistory = freezed,}) {
+  return _then(_AtsOrder(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,cnpj: null == cnpj ? _self.cnpj : cnpj // ignore: cast_nullable_to_non_nullable
+as String,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
+as String,customerAsset: freezed == customerAsset ? _self.customerAsset : customerAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,customerCode: null == customerCode ? _self.customerCode : customerCode // ignore: cast_nullable_to_non_nullable
+as String,orderDate: freezed == orderDate ? _self.orderDate : orderDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,inclusionDate: freezed == inclusionDate ? _self.inclusionDate : inclusionDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,fiscalNumber: null == fiscalNumber ? _self.fiscalNumber : fiscalNumber // ignore: cast_nullable_to_non_nullable
+as String,productAnp: null == productAnp ? _self.productAnp : productAnp // ignore: cast_nullable_to_non_nullable
+as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
+as double,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,orderStatusHistory: freezed == orderStatusHistory ? _self._orderStatusHistory : orderStatusHistory // ignore: cast_nullable_to_non_nullable
+as List<AtsOrderStatusHistory>?,
+  ));
+}
+
+/// Create a copy of AtsOrder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get customerAsset {
+    if (_self.customerAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.customerAsset!, (value) {
+    return _then(_self.copyWith(customerAsset: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AtsOrderStatusHistory {
+
+/// The [id] parameter is the id of the order status history.
+ String get id;/// The [order] parameter is the order of the order status history.
+ AtsOrderStatusHistory? get order;/// The [orderNumber] parameter is the orderNumber of the order status history.
+ String get orderNumber;/// The [checkInAt] parameter is the checkInAt of the order status history.
+@TimestampOrNullConverter() DateTime? get checkInAt;/// The [inclusionDate] parameter is the inclusionDate of the order status history.
+@TimestampOrNullConverter() DateTime? get inclusionDate;/// The [releaseDate] parameter is the releaseDate of the order status history.
+@TimestampOrNullConverter() DateTime? get releaseDate;/// The [orderDate] parameter is the orderDate of the order status history.
+@TimestampOrNullConverter() DateTime? get orderDate;/// The [driver] parameter is the driver of the order status history.
+ String? get driver;/// The [asset] parameter is the asset of the order status history.
+ Asset? get asset;/// The [assetPlate] parameter is the assetPlate of the order status history.
+ String? get assetPlate;/// The [movementRecord] parameter is the movementRecord of the order status history.
+ String? get movementRecord;/// The [compartmentExitAt] parameter is the compartmentExitAt of the order status history.
+@TimestampOrNullConverter() DateTime? get compartmentExitAt;/// The [compartmentEntryAt] parameter is the compartmentEntryAt of the order status history.
+@TimestampOrNullConverter() DateTime? get compartmentEntryAt;/// The [orderSeries] parameter is the orderSeries of the order status history.
+ String? get orderSeries;/// The [rmStatus] parameter is the rmStatus of the order status history.
+ String? get rmStatus;
+/// Create a copy of AtsOrderStatusHistory
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsOrderStatusHistoryCopyWith<AtsOrderStatusHistory> get copyWith => _$AtsOrderStatusHistoryCopyWithImpl<AtsOrderStatusHistory>(this as AtsOrderStatusHistory, _$identity);
+
+  /// Serializes this AtsOrderStatusHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsOrderStatusHistory&&(identical(other.id, id) || other.id == id)&&(identical(other.order, order) || other.order == order)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.releaseDate, releaseDate) || other.releaseDate == releaseDate)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.assetPlate, assetPlate) || other.assetPlate == assetPlate)&&(identical(other.movementRecord, movementRecord) || other.movementRecord == movementRecord)&&(identical(other.compartmentExitAt, compartmentExitAt) || other.compartmentExitAt == compartmentExitAt)&&(identical(other.compartmentEntryAt, compartmentEntryAt) || other.compartmentEntryAt == compartmentEntryAt)&&(identical(other.orderSeries, orderSeries) || other.orderSeries == orderSeries)&&(identical(other.rmStatus, rmStatus) || other.rmStatus == rmStatus));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,order,orderNumber,checkInAt,inclusionDate,releaseDate,orderDate,driver,asset,assetPlate,movementRecord,compartmentExitAt,compartmentEntryAt,orderSeries,rmStatus);
+
+@override
+String toString() {
+  return 'AtsOrderStatusHistory(id: $id, order: $order, orderNumber: $orderNumber, checkInAt: $checkInAt, inclusionDate: $inclusionDate, releaseDate: $releaseDate, orderDate: $orderDate, driver: $driver, asset: $asset, assetPlate: $assetPlate, movementRecord: $movementRecord, compartmentExitAt: $compartmentExitAt, compartmentEntryAt: $compartmentEntryAt, orderSeries: $orderSeries, rmStatus: $rmStatus)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsOrderStatusHistoryCopyWith<$Res>  {
+  factory $AtsOrderStatusHistoryCopyWith(AtsOrderStatusHistory value, $Res Function(AtsOrderStatusHistory) _then) = _$AtsOrderStatusHistoryCopyWithImpl;
+@useResult
+$Res call({
+ String id, AtsOrderStatusHistory? order, String orderNumber,@TimestampOrNullConverter() DateTime? checkInAt,@TimestampOrNullConverter() DateTime? inclusionDate,@TimestampOrNullConverter() DateTime? releaseDate,@TimestampOrNullConverter() DateTime? orderDate, String? driver, Asset? asset, String? assetPlate, String? movementRecord,@TimestampOrNullConverter() DateTime? compartmentExitAt,@TimestampOrNullConverter() DateTime? compartmentEntryAt, String? orderSeries, String? rmStatus
+});
+
+
+$AtsOrderStatusHistoryCopyWith<$Res>? get order;$AssetCopyWith<$Res>? get asset;
+
+}
+/// @nodoc
+class _$AtsOrderStatusHistoryCopyWithImpl<$Res>
+    implements $AtsOrderStatusHistoryCopyWith<$Res> {
+  _$AtsOrderStatusHistoryCopyWithImpl(this._self, this._then);
+
+  final AtsOrderStatusHistory _self;
+  final $Res Function(AtsOrderStatusHistory) _then;
+
+/// Create a copy of AtsOrderStatusHistory
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? order = freezed,Object? orderNumber = null,Object? checkInAt = freezed,Object? inclusionDate = freezed,Object? releaseDate = freezed,Object? orderDate = freezed,Object? driver = freezed,Object? asset = freezed,Object? assetPlate = freezed,Object? movementRecord = freezed,Object? compartmentExitAt = freezed,Object? compartmentEntryAt = freezed,Object? orderSeries = freezed,Object? rmStatus = freezed,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
+as AtsOrderStatusHistory?,orderNumber: null == orderNumber ? _self.orderNumber : orderNumber // ignore: cast_nullable_to_non_nullable
+as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,inclusionDate: freezed == inclusionDate ? _self.inclusionDate : inclusionDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,releaseDate: freezed == releaseDate ? _self.releaseDate : releaseDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,orderDate: freezed == orderDate ? _self.orderDate : orderDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,driver: freezed == driver ? _self.driver : driver // ignore: cast_nullable_to_non_nullable
+as String?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
+as Asset?,assetPlate: freezed == assetPlate ? _self.assetPlate : assetPlate // ignore: cast_nullable_to_non_nullable
+as String?,movementRecord: freezed == movementRecord ? _self.movementRecord : movementRecord // ignore: cast_nullable_to_non_nullable
+as String?,compartmentExitAt: freezed == compartmentExitAt ? _self.compartmentExitAt : compartmentExitAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,compartmentEntryAt: freezed == compartmentEntryAt ? _self.compartmentEntryAt : compartmentEntryAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,orderSeries: freezed == orderSeries ? _self.orderSeries : orderSeries // ignore: cast_nullable_to_non_nullable
+as String?,rmStatus: freezed == rmStatus ? _self.rmStatus : rmStatus // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+/// Create a copy of AtsOrderStatusHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOrderStatusHistoryCopyWith<$Res>? get order {
+    if (_self.order == null) {
+    return null;
+  }
+
+  return $AtsOrderStatusHistoryCopyWith<$Res>(_self.order!, (value) {
+    return _then(_self.copyWith(order: value));
+  });
+}/// Create a copy of AtsOrderStatusHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.asset!, (value) {
+    return _then(_self.copyWith(asset: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AtsOrderStatusHistory].
+extension AtsOrderStatusHistoryPatterns on AtsOrderStatusHistory {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsOrderStatusHistory value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsOrderStatusHistory() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsOrderStatusHistory value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsOrderStatusHistory():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsOrderStatusHistory value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsOrderStatusHistory() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  AtsOrderStatusHistory? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsOrderStatusHistory() when $default != null:
+return $default(_that.id,_that.order,_that.orderNumber,_that.checkInAt,_that.inclusionDate,_that.releaseDate,_that.orderDate,_that.driver,_that.asset,_that.assetPlate,_that.movementRecord,_that.compartmentExitAt,_that.compartmentEntryAt,_that.orderSeries,_that.rmStatus);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  AtsOrderStatusHistory? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)  $default,) {final _that = this;
+switch (_that) {
+case _AtsOrderStatusHistory():
+return $default(_that.id,_that.order,_that.orderNumber,_that.checkInAt,_that.inclusionDate,_that.releaseDate,_that.orderDate,_that.driver,_that.asset,_that.assetPlate,_that.movementRecord,_that.compartmentExitAt,_that.compartmentEntryAt,_that.orderSeries,_that.rmStatus);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  AtsOrderStatusHistory? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsOrderStatusHistory() when $default != null:
+return $default(_that.id,_that.order,_that.orderNumber,_that.checkInAt,_that.inclusionDate,_that.releaseDate,_that.orderDate,_that.driver,_that.asset,_that.assetPlate,_that.movementRecord,_that.compartmentExitAt,_that.compartmentEntryAt,_that.orderSeries,_that.rmStatus);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsOrderStatusHistory implements AtsOrderStatusHistory {
+  const _AtsOrderStatusHistory({required this.id, this.order, required this.orderNumber, @TimestampOrNullConverter() this.checkInAt, @TimestampOrNullConverter() this.inclusionDate, @TimestampOrNullConverter() this.releaseDate, @TimestampOrNullConverter() this.orderDate, this.driver, this.asset, this.assetPlate, this.movementRecord, @TimestampOrNullConverter() this.compartmentExitAt, @TimestampOrNullConverter() this.compartmentEntryAt, this.orderSeries, this.rmStatus});
+  factory _AtsOrderStatusHistory.fromJson(Map<String, dynamic> json) => _$AtsOrderStatusHistoryFromJson(json);
+
+/// The [id] parameter is the id of the order status history.
+@override final  String id;
+/// The [order] parameter is the order of the order status history.
+@override final  AtsOrderStatusHistory? order;
+/// The [orderNumber] parameter is the orderNumber of the order status history.
+@override final  String orderNumber;
+/// The [checkInAt] parameter is the checkInAt of the order status history.
+@override@TimestampOrNullConverter() final  DateTime? checkInAt;
+/// The [inclusionDate] parameter is the inclusionDate of the order status history.
+@override@TimestampOrNullConverter() final  DateTime? inclusionDate;
+/// The [releaseDate] parameter is the releaseDate of the order status history.
+@override@TimestampOrNullConverter() final  DateTime? releaseDate;
+/// The [orderDate] parameter is the orderDate of the order status history.
+@override@TimestampOrNullConverter() final  DateTime? orderDate;
+/// The [driver] parameter is the driver of the order status history.
+@override final  String? driver;
+/// The [asset] parameter is the asset of the order status history.
+@override final  Asset? asset;
+/// The [assetPlate] parameter is the assetPlate of the order status history.
+@override final  String? assetPlate;
+/// The [movementRecord] parameter is the movementRecord of the order status history.
+@override final  String? movementRecord;
+/// The [compartmentExitAt] parameter is the compartmentExitAt of the order status history.
+@override@TimestampOrNullConverter() final  DateTime? compartmentExitAt;
+/// The [compartmentEntryAt] parameter is the compartmentEntryAt of the order status history.
+@override@TimestampOrNullConverter() final  DateTime? compartmentEntryAt;
+/// The [orderSeries] parameter is the orderSeries of the order status history.
+@override final  String? orderSeries;
+/// The [rmStatus] parameter is the rmStatus of the order status history.
+@override final  String? rmStatus;
+
+/// Create a copy of AtsOrderStatusHistory
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsOrderStatusHistoryCopyWith<_AtsOrderStatusHistory> get copyWith => __$AtsOrderStatusHistoryCopyWithImpl<_AtsOrderStatusHistory>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsOrderStatusHistoryToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOrderStatusHistory&&(identical(other.id, id) || other.id == id)&&(identical(other.order, order) || other.order == order)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.releaseDate, releaseDate) || other.releaseDate == releaseDate)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.assetPlate, assetPlate) || other.assetPlate == assetPlate)&&(identical(other.movementRecord, movementRecord) || other.movementRecord == movementRecord)&&(identical(other.compartmentExitAt, compartmentExitAt) || other.compartmentExitAt == compartmentExitAt)&&(identical(other.compartmentEntryAt, compartmentEntryAt) || other.compartmentEntryAt == compartmentEntryAt)&&(identical(other.orderSeries, orderSeries) || other.orderSeries == orderSeries)&&(identical(other.rmStatus, rmStatus) || other.rmStatus == rmStatus));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,order,orderNumber,checkInAt,inclusionDate,releaseDate,orderDate,driver,asset,assetPlate,movementRecord,compartmentExitAt,compartmentEntryAt,orderSeries,rmStatus);
+
+@override
+String toString() {
+  return 'AtsOrderStatusHistory(id: $id, order: $order, orderNumber: $orderNumber, checkInAt: $checkInAt, inclusionDate: $inclusionDate, releaseDate: $releaseDate, orderDate: $orderDate, driver: $driver, asset: $asset, assetPlate: $assetPlate, movementRecord: $movementRecord, compartmentExitAt: $compartmentExitAt, compartmentEntryAt: $compartmentEntryAt, orderSeries: $orderSeries, rmStatus: $rmStatus)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsOrderStatusHistoryCopyWith<$Res> implements $AtsOrderStatusHistoryCopyWith<$Res> {
+  factory _$AtsOrderStatusHistoryCopyWith(_AtsOrderStatusHistory value, $Res Function(_AtsOrderStatusHistory) _then) = __$AtsOrderStatusHistoryCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, AtsOrderStatusHistory? order, String orderNumber,@TimestampOrNullConverter() DateTime? checkInAt,@TimestampOrNullConverter() DateTime? inclusionDate,@TimestampOrNullConverter() DateTime? releaseDate,@TimestampOrNullConverter() DateTime? orderDate, String? driver, Asset? asset, String? assetPlate, String? movementRecord,@TimestampOrNullConverter() DateTime? compartmentExitAt,@TimestampOrNullConverter() DateTime? compartmentEntryAt, String? orderSeries, String? rmStatus
+});
+
+
+@override $AtsOrderStatusHistoryCopyWith<$Res>? get order;@override $AssetCopyWith<$Res>? get asset;
+
+}
+/// @nodoc
+class __$AtsOrderStatusHistoryCopyWithImpl<$Res>
+    implements _$AtsOrderStatusHistoryCopyWith<$Res> {
+  __$AtsOrderStatusHistoryCopyWithImpl(this._self, this._then);
+
+  final _AtsOrderStatusHistory _self;
+  final $Res Function(_AtsOrderStatusHistory) _then;
+
+/// Create a copy of AtsOrderStatusHistory
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? order = freezed,Object? orderNumber = null,Object? checkInAt = freezed,Object? inclusionDate = freezed,Object? releaseDate = freezed,Object? orderDate = freezed,Object? driver = freezed,Object? asset = freezed,Object? assetPlate = freezed,Object? movementRecord = freezed,Object? compartmentExitAt = freezed,Object? compartmentEntryAt = freezed,Object? orderSeries = freezed,Object? rmStatus = freezed,}) {
+  return _then(_AtsOrderStatusHistory(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
+as AtsOrderStatusHistory?,orderNumber: null == orderNumber ? _self.orderNumber : orderNumber // ignore: cast_nullable_to_non_nullable
+as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,inclusionDate: freezed == inclusionDate ? _self.inclusionDate : inclusionDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,releaseDate: freezed == releaseDate ? _self.releaseDate : releaseDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,orderDate: freezed == orderDate ? _self.orderDate : orderDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,driver: freezed == driver ? _self.driver : driver // ignore: cast_nullable_to_non_nullable
+as String?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
+as Asset?,assetPlate: freezed == assetPlate ? _self.assetPlate : assetPlate // ignore: cast_nullable_to_non_nullable
+as String?,movementRecord: freezed == movementRecord ? _self.movementRecord : movementRecord // ignore: cast_nullable_to_non_nullable
+as String?,compartmentExitAt: freezed == compartmentExitAt ? _self.compartmentExitAt : compartmentExitAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,compartmentEntryAt: freezed == compartmentEntryAt ? _self.compartmentEntryAt : compartmentEntryAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,orderSeries: freezed == orderSeries ? _self.orderSeries : orderSeries // ignore: cast_nullable_to_non_nullable
+as String?,rmStatus: freezed == rmStatus ? _self.rmStatus : rmStatus // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+/// Create a copy of AtsOrderStatusHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOrderStatusHistoryCopyWith<$Res>? get order {
+    if (_self.order == null) {
+    return null;
+  }
+
+  return $AtsOrderStatusHistoryCopyWith<$Res>(_self.order!, (value) {
+    return _then(_self.copyWith(order: value));
+  });
+}/// Create a copy of AtsOrderStatusHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.asset!, (value) {
+    return _then(_self.copyWith(asset: value));
+  });
+}
+}
+
 // dart format on

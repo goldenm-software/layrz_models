@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.4
+
+- Added `AtsOrder` model
+- Added `AtsOrderStatusHistory` model
+
 ## 3.6.3
 
 - Added `ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF` value in `ReferenceCategory` enum

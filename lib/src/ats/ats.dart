@@ -118,3 +118,6 @@ part 'src/monitor/grid_dimension.dart';
 
 // Command Execute
 part 'src/comand_execute_history.dart';
+
+// Orders
+part 'src/orders/order.dart';

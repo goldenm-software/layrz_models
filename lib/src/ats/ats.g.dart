@@ -2725,3 +2725,111 @@ Map<String, dynamic> _$AtsCommandExecuteHistoryInputToJson(
   'communicationMethod':
       _$AtsCommunicationMethodEnumMap[instance.communicationMethod]!,
 };
+
+_AtsOrder _$AtsOrderFromJson(Map<String, dynamic> json) => _AtsOrder(
+  id: json['id'] as String,
+  cnpj: json['cnpj'] as String,
+  customer: json['customer'] as String,
+  customerAsset: json['customerAsset'] == null
+      ? null
+      : Asset.fromJson(json['customerAsset'] as Map<String, dynamic>),
+  customerCode: json['customerCode'] as String,
+  orderDate: const TimestampOrNullConverter().fromJson(
+    json['orderDate'] as num?,
+  ),
+  inclusionDate: const TimestampOrNullConverter().fromJson(
+    json['inclusionDate'] as num?,
+  ),
+  fiscalNumber: json['fiscalNumber'] as String,
+  productAnp: json['productAnp'] as String,
+  quantity: (json['quantity'] as num).toDouble(),
+  status: json['status'] as String,
+  checkInAt: const TimestampOrNullConverter().fromJson(
+    json['checkInAt'] as num?,
+  ),
+  orderStatusHistory: (json['orderStatusHistory'] as List<dynamic>?)
+      ?.map((e) => AtsOrderStatusHistory.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
+
+Map<String, dynamic> _$AtsOrderToJson(_AtsOrder instance) => <String, dynamic>{
+  'id': instance.id,
+  'cnpj': instance.cnpj,
+  'customer': instance.customer,
+  'customerAsset': instance.customerAsset?.toJson(),
+  'customerCode': instance.customerCode,
+  'orderDate': const TimestampOrNullConverter().toJson(instance.orderDate),
+  'inclusionDate': const TimestampOrNullConverter().toJson(
+    instance.inclusionDate,
+  ),
+  'fiscalNumber': instance.fiscalNumber,
+  'productAnp': instance.productAnp,
+  'quantity': instance.quantity,
+  'status': instance.status,
+  'checkInAt': const TimestampOrNullConverter().toJson(instance.checkInAt),
+  'orderStatusHistory': instance.orderStatusHistory
+      ?.map((e) => e.toJson())
+      .toList(),
+};
+
+_AtsOrderStatusHistory _$AtsOrderStatusHistoryFromJson(
+  Map<String, dynamic> json,
+) => _AtsOrderStatusHistory(
+  id: json['id'] as String,
+  order: json['order'] == null
+      ? null
+      : AtsOrderStatusHistory.fromJson(json['order'] as Map<String, dynamic>),
+  orderNumber: json['orderNumber'] as String,
+  checkInAt: const TimestampOrNullConverter().fromJson(
+    json['checkInAt'] as num?,
+  ),
+  inclusionDate: const TimestampOrNullConverter().fromJson(
+    json['inclusionDate'] as num?,
+  ),
+  releaseDate: const TimestampOrNullConverter().fromJson(
+    json['releaseDate'] as num?,
+  ),
+  orderDate: const TimestampOrNullConverter().fromJson(
+    json['orderDate'] as num?,
+  ),
+  driver: json['driver'] as String?,
+  asset: json['asset'] == null
+      ? null
+      : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+  assetPlate: json['assetPlate'] as String?,
+  movementRecord: json['movementRecord'] as String?,
+  compartmentExitAt: const TimestampOrNullConverter().fromJson(
+    json['compartmentExitAt'] as num?,
+  ),
+  compartmentEntryAt: const TimestampOrNullConverter().fromJson(
+    json['compartmentEntryAt'] as num?,
+  ),
+  orderSeries: json['orderSeries'] as String?,
+  rmStatus: json['rmStatus'] as String?,
+);
+
+Map<String, dynamic> _$AtsOrderStatusHistoryToJson(
+  _AtsOrderStatusHistory instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'order': instance.order?.toJson(),
+  'orderNumber': instance.orderNumber,
+  'checkInAt': const TimestampOrNullConverter().toJson(instance.checkInAt),
+  'inclusionDate': const TimestampOrNullConverter().toJson(
+    instance.inclusionDate,
+  ),
+  'releaseDate': const TimestampOrNullConverter().toJson(instance.releaseDate),
+  'orderDate': const TimestampOrNullConverter().toJson(instance.orderDate),
+  'driver': instance.driver,
+  'asset': instance.asset?.toJson(),
+  'assetPlate': instance.assetPlate,
+  'movementRecord': instance.movementRecord,
+  'compartmentExitAt': const TimestampOrNullConverter().toJson(
+    instance.compartmentExitAt,
+  ),
+  'compartmentEntryAt': const TimestampOrNullConverter().toJson(
+    instance.compartmentEntryAt,
+  ),
+  'orderSeries': instance.orderSeries,
+  'rmStatus': instance.rmStatus,
+};
