@@ -240,6 +240,24 @@ enum ReferenceCategory {
   @JsonValue('ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF')
   atsBalsaExportReceivementReportPdf,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to export closure report PDF
+  /// ATS_EXPORT_RAFT_CLOSURE_REPORT_PDF
+  @JsonValue('ATS_EXPORT_RAFT_CLOSURE_REPORT_PDF')
+  atsExportRaftClosureReportPdf,
+
+  /// !ATS Reference
+  /// [AllTank Systems] Access to the CACL edit in supervisorio module
+  /// ATS_SUPERVISORIO_EDIT_CACL
+  @JsonValue('ATS_SUPERVISORIO_EDIT_CACL')
+  atsSupervisorioEditCacl,
+
+  /// !ATS Reference
+  /// [AllTank Systems] Access to the CACL remove in supervisorio module
+  /// ATS_SUPERVISORIO_REMOVE_CACL
+  @JsonValue('ATS_SUPERVISORIO_REMOVE_CACL')
+  atsSupervisorioRemoveCacl,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR

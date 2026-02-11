@@ -24461,7 +24461,7 @@ mixin _$AtsOrderStatusHistory {
 
 /// The [id] parameter is the id of the order status history.
  String get id;/// The [order] parameter is the order of the order status history.
- AtsOrderStatusHistory? get order;/// The [orderNumber] parameter is the orderNumber of the order status history.
+ AtsOrder? get order;/// The [orderNumber] parameter is the orderNumber of the order status history.
  String get orderNumber;/// The [checkInAt] parameter is the checkInAt of the order status history.
 @TimestampOrNullConverter() DateTime? get checkInAt;/// The [inclusionDate] parameter is the inclusionDate of the order status history.
 @TimestampOrNullConverter() DateTime? get inclusionDate;/// The [releaseDate] parameter is the releaseDate of the order status history.
@@ -24507,11 +24507,11 @@ abstract mixin class $AtsOrderStatusHistoryCopyWith<$Res>  {
   factory $AtsOrderStatusHistoryCopyWith(AtsOrderStatusHistory value, $Res Function(AtsOrderStatusHistory) _then) = _$AtsOrderStatusHistoryCopyWithImpl;
 @useResult
 $Res call({
- String id, AtsOrderStatusHistory? order, String orderNumber,@TimestampOrNullConverter() DateTime? checkInAt,@TimestampOrNullConverter() DateTime? inclusionDate,@TimestampOrNullConverter() DateTime? releaseDate,@TimestampOrNullConverter() DateTime? orderDate, String? driver, Asset? asset, String? assetPlate, String? movementRecord,@TimestampOrNullConverter() DateTime? compartmentExitAt,@TimestampOrNullConverter() DateTime? compartmentEntryAt, String? orderSeries, String? rmStatus
+ String id, AtsOrder? order, String orderNumber,@TimestampOrNullConverter() DateTime? checkInAt,@TimestampOrNullConverter() DateTime? inclusionDate,@TimestampOrNullConverter() DateTime? releaseDate,@TimestampOrNullConverter() DateTime? orderDate, String? driver, Asset? asset, String? assetPlate, String? movementRecord,@TimestampOrNullConverter() DateTime? compartmentExitAt,@TimestampOrNullConverter() DateTime? compartmentEntryAt, String? orderSeries, String? rmStatus
 });
 
 
-$AtsOrderStatusHistoryCopyWith<$Res>? get order;$AssetCopyWith<$Res>? get asset;
+$AtsOrderCopyWith<$Res>? get order;$AssetCopyWith<$Res>? get asset;
 
 }
 /// @nodoc
@@ -24528,7 +24528,7 @@ class _$AtsOrderStatusHistoryCopyWithImpl<$Res>
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
-as AtsOrderStatusHistory?,orderNumber: null == orderNumber ? _self.orderNumber : orderNumber // ignore: cast_nullable_to_non_nullable
+as AtsOrder?,orderNumber: null == orderNumber ? _self.orderNumber : orderNumber // ignore: cast_nullable_to_non_nullable
 as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,inclusionDate: freezed == inclusionDate ? _self.inclusionDate : inclusionDate // ignore: cast_nullable_to_non_nullable
 as DateTime?,releaseDate: freezed == releaseDate ? _self.releaseDate : releaseDate // ignore: cast_nullable_to_non_nullable
@@ -24548,12 +24548,12 @@ as String?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AtsOrderStatusHistoryCopyWith<$Res>? get order {
+$AtsOrderCopyWith<$Res>? get order {
     if (_self.order == null) {
     return null;
   }
 
-  return $AtsOrderStatusHistoryCopyWith<$Res>(_self.order!, (value) {
+  return $AtsOrderCopyWith<$Res>(_self.order!, (value) {
     return _then(_self.copyWith(order: value));
   });
 }/// Create a copy of AtsOrderStatusHistory
@@ -24650,7 +24650,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  AtsOrderStatusHistory? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  AtsOrder? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsOrderStatusHistory() when $default != null:
 return $default(_that.id,_that.order,_that.orderNumber,_that.checkInAt,_that.inclusionDate,_that.releaseDate,_that.orderDate,_that.driver,_that.asset,_that.assetPlate,_that.movementRecord,_that.compartmentExitAt,_that.compartmentEntryAt,_that.orderSeries,_that.rmStatus);case _:
@@ -24671,7 +24671,7 @@ return $default(_that.id,_that.order,_that.orderNumber,_that.checkInAt,_that.inc
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  AtsOrderStatusHistory? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  AtsOrder? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)  $default,) {final _that = this;
 switch (_that) {
 case _AtsOrderStatusHistory():
 return $default(_that.id,_that.order,_that.orderNumber,_that.checkInAt,_that.inclusionDate,_that.releaseDate,_that.orderDate,_that.driver,_that.asset,_that.assetPlate,_that.movementRecord,_that.compartmentExitAt,_that.compartmentEntryAt,_that.orderSeries,_that.rmStatus);case _:
@@ -24691,7 +24691,7 @@ return $default(_that.id,_that.order,_that.orderNumber,_that.checkInAt,_that.inc
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  AtsOrderStatusHistory? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  AtsOrder? order,  String orderNumber, @TimestampOrNullConverter()  DateTime? checkInAt, @TimestampOrNullConverter()  DateTime? inclusionDate, @TimestampOrNullConverter()  DateTime? releaseDate, @TimestampOrNullConverter()  DateTime? orderDate,  String? driver,  Asset? asset,  String? assetPlate,  String? movementRecord, @TimestampOrNullConverter()  DateTime? compartmentExitAt, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String? orderSeries,  String? rmStatus)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsOrderStatusHistory() when $default != null:
 return $default(_that.id,_that.order,_that.orderNumber,_that.checkInAt,_that.inclusionDate,_that.releaseDate,_that.orderDate,_that.driver,_that.asset,_that.assetPlate,_that.movementRecord,_that.compartmentExitAt,_that.compartmentEntryAt,_that.orderSeries,_that.rmStatus);case _:
@@ -24712,7 +24712,7 @@ class _AtsOrderStatusHistory implements AtsOrderStatusHistory {
 /// The [id] parameter is the id of the order status history.
 @override final  String id;
 /// The [order] parameter is the order of the order status history.
-@override final  AtsOrderStatusHistory? order;
+@override final  AtsOrder? order;
 /// The [orderNumber] parameter is the orderNumber of the order status history.
 @override final  String orderNumber;
 /// The [checkInAt] parameter is the checkInAt of the order status history.
@@ -24773,11 +24773,11 @@ abstract mixin class _$AtsOrderStatusHistoryCopyWith<$Res> implements $AtsOrderS
   factory _$AtsOrderStatusHistoryCopyWith(_AtsOrderStatusHistory value, $Res Function(_AtsOrderStatusHistory) _then) = __$AtsOrderStatusHistoryCopyWithImpl;
 @override @useResult
 $Res call({
- String id, AtsOrderStatusHistory? order, String orderNumber,@TimestampOrNullConverter() DateTime? checkInAt,@TimestampOrNullConverter() DateTime? inclusionDate,@TimestampOrNullConverter() DateTime? releaseDate,@TimestampOrNullConverter() DateTime? orderDate, String? driver, Asset? asset, String? assetPlate, String? movementRecord,@TimestampOrNullConverter() DateTime? compartmentExitAt,@TimestampOrNullConverter() DateTime? compartmentEntryAt, String? orderSeries, String? rmStatus
+ String id, AtsOrder? order, String orderNumber,@TimestampOrNullConverter() DateTime? checkInAt,@TimestampOrNullConverter() DateTime? inclusionDate,@TimestampOrNullConverter() DateTime? releaseDate,@TimestampOrNullConverter() DateTime? orderDate, String? driver, Asset? asset, String? assetPlate, String? movementRecord,@TimestampOrNullConverter() DateTime? compartmentExitAt,@TimestampOrNullConverter() DateTime? compartmentEntryAt, String? orderSeries, String? rmStatus
 });
 
 
-@override $AtsOrderStatusHistoryCopyWith<$Res>? get order;@override $AssetCopyWith<$Res>? get asset;
+@override $AtsOrderCopyWith<$Res>? get order;@override $AssetCopyWith<$Res>? get asset;
 
 }
 /// @nodoc
@@ -24794,7 +24794,7 @@ class __$AtsOrderStatusHistoryCopyWithImpl<$Res>
   return _then(_AtsOrderStatusHistory(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
-as AtsOrderStatusHistory?,orderNumber: null == orderNumber ? _self.orderNumber : orderNumber // ignore: cast_nullable_to_non_nullable
+as AtsOrder?,orderNumber: null == orderNumber ? _self.orderNumber : orderNumber // ignore: cast_nullable_to_non_nullable
 as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,inclusionDate: freezed == inclusionDate ? _self.inclusionDate : inclusionDate // ignore: cast_nullable_to_non_nullable
 as DateTime?,releaseDate: freezed == releaseDate ? _self.releaseDate : releaseDate // ignore: cast_nullable_to_non_nullable
@@ -24815,12 +24815,12 @@ as String?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AtsOrderStatusHistoryCopyWith<$Res>? get order {
+$AtsOrderCopyWith<$Res>? get order {
     if (_self.order == null) {
     return null;
   }
 
-  return $AtsOrderStatusHistoryCopyWith<$Res>(_self.order!, (value) {
+  return $AtsOrderCopyWith<$Res>(_self.order!, (value) {
     return _then(_self.copyWith(order: value));
   });
 }/// Create a copy of AtsOrderStatusHistory

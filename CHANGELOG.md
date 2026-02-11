@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.6.5
+
+- Changed `order` value type in `AtsOrderStatusHistory` model
+- Added `ATS_EXPORT_RAFT_CLOSURE_REPORT_PDF` value in `ReferenceCategory` enum
+- Added `ATS_SUPERVISORIO_EDIT_CACL` value in `ReferenceCategory` enum
+- Added `ATS_SUPERVISORIO_REMOVE_CACL` value in `ReferenceCategory` enum
+
 ## 3.6.4
 
 - Added `AtsOrder` model

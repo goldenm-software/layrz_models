@@ -2778,7 +2778,7 @@ _AtsOrderStatusHistory _$AtsOrderStatusHistoryFromJson(
   id: json['id'] as String,
   order: json['order'] == null
       ? null
-      : AtsOrderStatusHistory.fromJson(json['order'] as Map<String, dynamic>),
+      : AtsOrder.fromJson(json['order'] as Map<String, dynamic>),
   orderNumber: json['orderNumber'] as String,
   checkInAt: const TimestampOrNullConverter().fromJson(
     json['checkInAt'] as num?,

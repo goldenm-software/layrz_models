@@ -80,6 +80,10 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.atsBalsaBordo: 'ATS_BALSA_BORDO',
   ReferenceCategory.atsBalsaExportReceivementReportPdf:
       'ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF',
+  ReferenceCategory.atsExportRaftClosureReportPdf:
+      'ATS_EXPORT_RAFT_CLOSURE_REPORT_PDF',
+  ReferenceCategory.atsSupervisorioEditCacl: 'ATS_SUPERVISORIO_EDIT_CACL',
+  ReferenceCategory.atsSupervisorioRemoveCacl: 'ATS_SUPERVISORIO_REMOVE_CACL',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',

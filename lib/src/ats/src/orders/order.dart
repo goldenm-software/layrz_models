@@ -58,7 +58,7 @@ abstract class AtsOrderStatusHistory with _$AtsOrderStatusHistory {
     required String id,
 
     /// The [order] parameter is the order of the order status history.
-    AtsOrderStatusHistory? order,
+    AtsOrder? order,
 
     /// The [orderNumber] parameter is the orderNumber of the order status history.
     required String orderNumber,
