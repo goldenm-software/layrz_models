@@ -459,6 +459,7 @@ const _$BrickhouseBillingPeriodEnumMap = {
   BrickhouseBillingPeriod.monthly: 'MONTHLY',
   BrickhouseBillingPeriod.quarterly: 'QUARTERLY',
   BrickhouseBillingPeriod.yearly: 'YEARLY',
+  BrickhouseBillingPeriod.twoYearly: 'TWO_YEARLY',
   BrickhouseBillingPeriod.unknown: 'UNKNOWN',
 };
 

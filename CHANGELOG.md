@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.6
+
+- Added `TWO_YEARLY` value in `BrickhouseBillingPeriod` enum
+
 ## 3.6.5
 
 - Changed `order` value type in `AtsOrderStatusHistory` model
