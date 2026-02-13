@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.7
+
+- Renamed `ExternalAccountForm` to `ExternalAccountInput`
+
 ## 3.6.6
 
 - Added `TWO_YEARLY` value in `BrickhouseBillingPeriod` enum

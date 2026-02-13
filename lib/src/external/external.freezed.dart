@@ -15,11 +15,11 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ExternalSource {
 
-/// [id] represents the DB ID.
- String get id;/// [name] represents the name of the external account.
- String get name;/// [color] represents the color of the external account.
-@ColorConverter() Color get color;/// [isEnabled] represents if the external account is enabled.
- bool get isEnabled;/// [requiredFields] represents the required fields of the external account.
+/// [id] is the unique database identifier for this external source.
+ String get id;/// [name] is the display name of the external source/protocol.
+ String get name;/// [color] is the brand or theme color associated with this external source.
+@ColorConverter() Color get color;/// [isEnabled] indicates whether this external source is currently active and available for use.
+ bool get isEnabled;/// [requiredFields] is the list of credential fields required to authenticate with this external source.
  List<CredentialField> get requiredFields;
 /// Create a copy of ExternalSource
 /// with the given fields replaced by the non-null parameter values.
@@ -221,17 +221,17 @@ class _ExternalSource implements ExternalSource {
   const _ExternalSource({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, final  List<CredentialField> requiredFields = const []}): _requiredFields = requiredFields;
   factory _ExternalSource.fromJson(Map<String, dynamic> json) => _$ExternalSourceFromJson(json);
 
-/// [id] represents the DB ID.
+/// [id] is the unique database identifier for this external source.
 @override final  String id;
-/// [name] represents the name of the external account.
+/// [name] is the display name of the external source/protocol.
 @override final  String name;
-/// [color] represents the color of the external account.
+/// [color] is the brand or theme color associated with this external source.
 @override@ColorConverter() final  Color color;
-/// [isEnabled] represents if the external account is enabled.
+/// [isEnabled] indicates whether this external source is currently active and available for use.
 @override final  bool isEnabled;
-/// [requiredFields] represents the required fields of the external account.
+/// [requiredFields] is the list of credential fields required to authenticate with this external source.
  final  List<CredentialField> _requiredFields;
-/// [requiredFields] represents the required fields of the external account.
+/// [requiredFields] is the list of credential fields required to authenticate with this external source.
 @override@JsonKey() List<CredentialField> get requiredFields {
   if (_requiredFields is EqualUnmodifiableListView) return _requiredFields;
   // ignore: implicit_dynamic_type
@@ -307,13 +307,15 @@ as List<CredentialField>,
 /// @nodoc
 mixin _$ExternalAccount {
 
-/// [id] represents the DB ID.
- String get id;/// [name] represents the name of the external account.
- String get name;/// [credentials] represents the credentials of the external account.
- Map<String, dynamic>? get credentials;/// [source] represents the protocol
- ExternalSource? get source;/// [sourceId] represents the source ID.
- String? get sourceId;/// [access] represents the access of the external account.
- List<Access>? get access;/// [devices] represents the devices imported from the external account.
+/// [id] is the unique database identifier for this external account.
+ String get id;/// [name] is the display name for this external account connection.
+ String get name;/// [credentials] contains the authentication credentials (API keys, tokens, etc.) for the external service.
+///
+/// The structure of this map depends on the requirements of the [source].
+ Map<String, dynamic>? get credentials;/// [source] is the external platform/protocol this account connects to.
+ ExternalSource? get source;/// [sourceId] is the reference to the [ExternalSource] identifier.
+ String? get sourceId;/// [access] is the list of access permissions configured for this external account.
+ List<Access>? get access;/// [devices] is the list of devices that have been imported from this external account.
  List<Device>? get devices;
 /// Create a copy of ExternalAccount
 /// with the given fields replaced by the non-null parameter values.
@@ -529,13 +531,17 @@ class _ExternalAccount implements ExternalAccount {
   const _ExternalAccount({required this.id, required this.name, final  Map<String, dynamic>? credentials, this.source, this.sourceId, final  List<Access>? access, final  List<Device>? devices}): _credentials = credentials,_access = access,_devices = devices;
   factory _ExternalAccount.fromJson(Map<String, dynamic> json) => _$ExternalAccountFromJson(json);
 
-/// [id] represents the DB ID.
+/// [id] is the unique database identifier for this external account.
 @override final  String id;
-/// [name] represents the name of the external account.
+/// [name] is the display name for this external account connection.
 @override final  String name;
-/// [credentials] represents the credentials of the external account.
+/// [credentials] contains the authentication credentials (API keys, tokens, etc.) for the external service.
+///
+/// The structure of this map depends on the requirements of the [source].
  final  Map<String, dynamic>? _credentials;
-/// [credentials] represents the credentials of the external account.
+/// [credentials] contains the authentication credentials (API keys, tokens, etc.) for the external service.
+///
+/// The structure of this map depends on the requirements of the [source].
 @override Map<String, dynamic>? get credentials {
   final value = _credentials;
   if (value == null) return null;
@@ -544,13 +550,13 @@ class _ExternalAccount implements ExternalAccount {
   return EqualUnmodifiableMapView(value);
 }
 
-/// [source] represents the protocol
+/// [source] is the external platform/protocol this account connects to.
 @override final  ExternalSource? source;
-/// [sourceId] represents the source ID.
+/// [sourceId] is the reference to the [ExternalSource] identifier.
 @override final  String? sourceId;
-/// [access] represents the access of the external account.
+/// [access] is the list of access permissions configured for this external account.
  final  List<Access>? _access;
-/// [access] represents the access of the external account.
+/// [access] is the list of access permissions configured for this external account.
 @override List<Access>? get access {
   final value = _access;
   if (value == null) return null;
@@ -559,9 +565,9 @@ class _ExternalAccount implements ExternalAccount {
   return EqualUnmodifiableListView(value);
 }
 
-/// [devices] represents the devices imported from the external account.
+/// [devices] is the list of devices that have been imported from this external account.
  final  List<Device>? _devices;
-/// [devices] represents the devices imported from the external account.
+/// [devices] is the list of devices that have been imported from this external account.
 @override List<Device>? get devices {
   final value = _devices;
   if (value == null) return null;
@@ -651,9 +657,289 @@ $ExternalSourceCopyWith<$Res>? get source {
 
 
 /// @nodoc
+mixin _$ExternalAccountInput {
+
+/// [id] is the database identifier when updating an existing account. Null when creating a new one.
+ String? get id;/// [id] is the database identifier when updating an existing account. Null when creating a new one.
+ set id(String? value);/// [name] is the display name for the external account connection.
+ String get name;/// [name] is the display name for the external account connection.
+ set name(String value);/// [credentials] contains the authentication credentials required by the external service.
+///
+/// The required fields depend on the selected [sourceId].
+ Map<String, dynamic> get credentials;/// [credentials] contains the authentication credentials required by the external service.
+///
+/// The required fields depend on the selected [sourceId].
+ set credentials(Map<String, dynamic> value);/// [sourceId] is the identifier of the external source/protocol to connect to.
+ String? get sourceId;/// [sourceId] is the identifier of the external source/protocol to connect to.
+ set sourceId(String? value);
+/// Create a copy of ExternalAccountInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ExternalAccountInputCopyWith<ExternalAccountInput> get copyWith => _$ExternalAccountInputCopyWithImpl<ExternalAccountInput>(this as ExternalAccountInput, _$identity);
+
+  /// Serializes this ExternalAccountInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'ExternalAccountInput(id: $id, name: $name, credentials: $credentials, sourceId: $sourceId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ExternalAccountInputCopyWith<$Res>  {
+  factory $ExternalAccountInputCopyWith(ExternalAccountInput value, $Res Function(ExternalAccountInput) _then) = _$ExternalAccountInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String name, Map<String, dynamic> credentials, String? sourceId
+});
+
+
+
+
+}
+/// @nodoc
+class _$ExternalAccountInputCopyWithImpl<$Res>
+    implements $ExternalAccountInputCopyWith<$Res> {
+  _$ExternalAccountInputCopyWithImpl(this._self, this._then);
+
+  final ExternalAccountInput _self;
+  final $Res Function(ExternalAccountInput) _then;
+
+/// Create a copy of ExternalAccountInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? credentials = null,Object? sourceId = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,credentials: null == credentials ? _self.credentials : credentials // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ExternalAccountInput].
+extension ExternalAccountInputPatterns on ExternalAccountInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ExternalAccountInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ExternalAccountInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ExternalAccountInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _ExternalAccountInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ExternalAccountInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ExternalAccountInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  Map<String, dynamic> credentials,  String? sourceId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ExternalAccountInput() when $default != null:
+return $default(_that.id,_that.name,_that.credentials,_that.sourceId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  Map<String, dynamic> credentials,  String? sourceId)  $default,) {final _that = this;
+switch (_that) {
+case _ExternalAccountInput():
+return $default(_that.id,_that.name,_that.credentials,_that.sourceId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  Map<String, dynamic> credentials,  String? sourceId)?  $default,) {final _that = this;
+switch (_that) {
+case _ExternalAccountInput() when $default != null:
+return $default(_that.id,_that.name,_that.credentials,_that.sourceId);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ExternalAccountInput implements ExternalAccountInput {
+   _ExternalAccountInput({this.id, this.name = '', this.credentials = const {}, this.sourceId});
+  factory _ExternalAccountInput.fromJson(Map<String, dynamic> json) => _$ExternalAccountInputFromJson(json);
+
+/// [id] is the database identifier when updating an existing account. Null when creating a new one.
+@override  String? id;
+/// [name] is the display name for the external account connection.
+@override@JsonKey()  String name;
+/// [credentials] contains the authentication credentials required by the external service.
+///
+/// The required fields depend on the selected [sourceId].
+@override@JsonKey()  Map<String, dynamic> credentials;
+/// [sourceId] is the identifier of the external source/protocol to connect to.
+@override  String? sourceId;
+
+/// Create a copy of ExternalAccountInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ExternalAccountInputCopyWith<_ExternalAccountInput> get copyWith => __$ExternalAccountInputCopyWithImpl<_ExternalAccountInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ExternalAccountInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'ExternalAccountInput(id: $id, name: $name, credentials: $credentials, sourceId: $sourceId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ExternalAccountInputCopyWith<$Res> implements $ExternalAccountInputCopyWith<$Res> {
+  factory _$ExternalAccountInputCopyWith(_ExternalAccountInput value, $Res Function(_ExternalAccountInput) _then) = __$ExternalAccountInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String name, Map<String, dynamic> credentials, String? sourceId
+});
+
+
+
+
+}
+/// @nodoc
+class __$ExternalAccountInputCopyWithImpl<$Res>
+    implements _$ExternalAccountInputCopyWith<$Res> {
+  __$ExternalAccountInputCopyWithImpl(this._self, this._then);
+
+  final _ExternalAccountInput _self;
+  final $Res Function(_ExternalAccountInput) _then;
+
+/// Create a copy of ExternalAccountInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? credentials = null,Object? sourceId = freezed,}) {
+  return _then(_ExternalAccountInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,credentials: null == credentials ? _self.credentials : credentials // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$ExternalUnit {
 
- String? get externalId; String get name; String get ident; Map<String, dynamic>? get additionalFields;
+/// [externalId] is the unique identifier of this unit in the external platform.
+ String? get externalId;/// [name] is the display name of the unit as defined in the external service.
+ String get name;/// [ident] is the unique identifier or serial number used to identify this unit.
+ String get ident;/// [additionalFields] contains any extra metadata or custom fields from the external platform.
+ Map<String, dynamic>? get additionalFields;
 /// Create a copy of ExternalUnit
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -853,10 +1139,15 @@ class _ExternalUnit implements ExternalUnit {
   const _ExternalUnit({this.externalId, required this.name, required this.ident, final  Map<String, dynamic>? additionalFields}): _additionalFields = additionalFields;
   factory _ExternalUnit.fromJson(Map<String, dynamic> json) => _$ExternalUnitFromJson(json);
 
+/// [externalId] is the unique identifier of this unit in the external platform.
 @override final  String? externalId;
+/// [name] is the display name of the unit as defined in the external service.
 @override final  String name;
+/// [ident] is the unique identifier or serial number used to identify this unit.
 @override final  String ident;
+/// [additionalFields] contains any extra metadata or custom fields from the external platform.
  final  Map<String, dynamic>? _additionalFields;
+/// [additionalFields] contains any extra metadata or custom fields from the external platform.
 @override Map<String, dynamic>? get additionalFields {
   final value = _additionalFields;
   if (value == null) return null;
@@ -933,8 +1224,8 @@ as Map<String, dynamic>?,
 /// @nodoc
 mixin _$ExternalResource {
 
-/// [wialonId] represents the ID from Wialon (Hosting or local).
- String get wialonId;/// [name] represents the name of the resource in Wialon.
+/// [wialonId] is the unique identifier from Wialon (Hosting or Local).
+ String get wialonId;/// [name] is the name of the resource as defined in the external service.
  String get name;
 /// Create a copy of ExternalResource
 /// with the given fields replaced by the non-null parameter values.
@@ -1133,9 +1424,9 @@ class _ExternalResource implements ExternalResource {
   const _ExternalResource({required this.wialonId, required this.name});
   factory _ExternalResource.fromJson(Map<String, dynamic> json) => _$ExternalResourceFromJson(json);
 
-/// [wialonId] represents the ID from Wialon (Hosting or local).
+/// [wialonId] is the unique identifier from Wialon (Hosting or Local).
 @override final  String wialonId;
-/// [name] represents the name of the resource in Wialon.
+/// [name] is the name of the resource as defined in the external service.
 @override final  String name;
 
 /// Create a copy of ExternalResource
@@ -1203,8 +1494,8 @@ as String,
 /// @nodoc
 mixin _$ExternalGeofence {
 
-/// [wialonId] represents the ID from Wialon (Hosting or local).
- String get wialonId;/// [name] represents the name of the geofence in Wialon.
+/// [wialonId] is the unique identifier from Wialon (Hosting or Local).
+ String get wialonId;/// [name] is the name of the geofence as defined in the external service.
  String get name;
 /// Create a copy of ExternalGeofence
 /// with the given fields replaced by the non-null parameter values.
@@ -1403,9 +1694,9 @@ class _ExternalGeofence implements ExternalGeofence {
   const _ExternalGeofence({required this.wialonId, required this.name});
   factory _ExternalGeofence.fromJson(Map<String, dynamic> json) => _$ExternalGeofenceFromJson(json);
 
-/// [wialonId] represents the ID from Wialon (Hosting or local).
+/// [wialonId] is the unique identifier from Wialon (Hosting or Local).
 @override final  String wialonId;
-/// [name] represents the name of the geofence in Wialon.
+/// [name] is the name of the geofence as defined in the external service.
 @override final  String name;
 
 /// Create a copy of ExternalGeofence

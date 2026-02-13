@@ -56,6 +56,24 @@ Map<String, dynamic> _$ExternalAccountToJson(_ExternalAccount instance) =>
       'devices': instance.devices?.map((e) => e.toJson()).toList(),
     };
 
+_ExternalAccountInput _$ExternalAccountInputFromJson(
+  Map<String, dynamic> json,
+) => _ExternalAccountInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  credentials: json['credentials'] as Map<String, dynamic>? ?? const {},
+  sourceId: json['sourceId'] as String?,
+);
+
+Map<String, dynamic> _$ExternalAccountInputToJson(
+  _ExternalAccountInput instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'credentials': instance.credentials,
+  'sourceId': instance.sourceId,
+};
+
 _ExternalUnit _$ExternalUnitFromJson(Map<String, dynamic> json) =>
     _ExternalUnit(
       externalId: json['externalId'] as String?,
