@@ -1,40 +1,27 @@
 part of '../geofences.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum GeofenceMode {
+  @JsonValue('RADIAL')
   radial,
+  @JsonValue('LINEAR')
   linear,
+  @JsonValue('POLYGON')
   polygon;
 
   @override
   String toString() => toJson();
-  String toJson() {
-    switch (this) {
-      case GeofenceMode.radial:
-        return 'RADIAL';
-      case GeofenceMode.linear:
-        return 'LINEAR';
-      case GeofenceMode.polygon:
-        return 'POLYGON';
-      default:
-        throw Exception('Unknown GeofenceMode');
-    }
-  }
+  String toJson() => _$GeofenceModeEnumMap[this] ?? 'RADIAL';
 
   static GeofenceMode fromJson(String json) {
-    switch (json) {
-      case 'RADIAL':
-        return GeofenceMode.radial;
-      case 'LINEAR':
-        return GeofenceMode.linear;
-      case 'POLYGON':
-        return GeofenceMode.polygon;
-      default:
-        throw Exception('Unknown GeofenceMode');
-    }
+    final found = _$GeofenceModeEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? GeofenceMode.radial;
   }
 }
 
+@Deprecated('Use the native enum methods instead')
 class GeofenceModeConverter implements JsonConverter<GeofenceMode, String> {
+  @Deprecated('Use the native enum methods instead')
   const GeofenceModeConverter();
 
   @override
@@ -48,7 +35,9 @@ class GeofenceModeConverter implements JsonConverter<GeofenceMode, String> {
   }
 }
 
+@Deprecated('Use the native enum methods instead')
 class GeofenceModeOrNullConverter implements JsonConverter<GeofenceMode?, String?> {
+  @Deprecated('Use the native enum methods instead')
   const GeofenceModeOrNullConverter();
 
   @override

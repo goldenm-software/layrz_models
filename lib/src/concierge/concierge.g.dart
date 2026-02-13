@@ -9,9 +9,11 @@ part of 'concierge.dart';
 _ConciergeFormPage _$ConciergeFormPageFromJson(Map<String, dynamic> json) =>
     _ConciergeFormPage(
       title: json['title'] as String,
-      blocks: (json['blocks'] as List<dynamic>?)
+      blocks:
+          (json['blocks'] as List<dynamic>?)
               ?.map(
-                  (e) => ConciergeFormBlock.fromJson(e as Map<String, dynamic>))
+                (e) => ConciergeFormBlock.fromJson(e as Map<String, dynamic>),
+              )
               .toList() ??
           const <ConciergeFormBlock>[],
     );
@@ -23,36 +25,41 @@ Map<String, dynamic> _$ConciergeFormPageToJson(_ConciergeFormPage instance) =>
     };
 
 _ConciergeFormPageInput _$ConciergeFormPageInputFromJson(
-        Map<String, dynamic> json) =>
-    _ConciergeFormPageInput(
-      title: json['title'] as String? ?? "",
-      blocks: (json['blocks'] as List<dynamic>?)
-              ?.map((e) =>
-                  ConciergeBlockInput.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-    );
+  Map<String, dynamic> json,
+) => _ConciergeFormPageInput(
+  title: json['title'] as String? ?? "",
+  blocks:
+      (json['blocks'] as List<dynamic>?)
+          ?.map((e) => ConciergeBlockInput.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+);
 
 Map<String, dynamic> _$ConciergeFormPageInputToJson(
-        _ConciergeFormPageInput instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'blocks': instance.blocks.map((e) => e.toJson()).toList(),
-    };
+  _ConciergeFormPageInput instance,
+) => <String, dynamic>{
+  'title': instance.title,
+  'blocks': instance.blocks.map((e) => e.toJson()).toList(),
+};
 
 _ConciergeFormBlock _$ConciergeFormBlockFromJson(Map<String, dynamic> json) =>
     _ConciergeFormBlock(
-      blockType: $enumDecode(_$ConciergeFormBlockTypeEnumMap, json['blockType'],
-          unknownValue: ConciergeFormBlockType.text),
+      blockType: $enumDecode(
+        _$ConciergeFormBlockTypeEnumMap,
+        json['blockType'],
+        unknownValue: ConciergeFormBlockType.text,
+      ),
       name: json['name'] as String,
       configuration: json['configuration'] == null
           ? null
           : ConciergeFormBlockConfiguration.fromJson(
-              json['configuration'] as Map<String, dynamic>),
+              json['configuration'] as Map<String, dynamic>,
+            ),
       showWhen: json['showWhen'] == null
           ? null
           : ConciergeFormBlockValidator.fromJson(
-              json['showWhen'] as Map<String, dynamic>),
+              json['showWhen'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$ConciergeFormBlockToJson(_ConciergeFormBlock instance) =>
@@ -81,104 +88,111 @@ const _$ConciergeFormBlockTypeEnumMap = {
 _ConciergeBlockInput _$ConciergeBlockInputFromJson(Map<String, dynamic> json) =>
     _ConciergeBlockInput(
       name: json['name'] as String? ?? "",
-      blockType: $enumDecodeNullable(
-              _$ConciergeFormBlockTypeEnumMap, json['blockType'],
-              unknownValue: ConciergeFormBlockType.text) ??
+      blockType:
+          $enumDecodeNullable(
+            _$ConciergeFormBlockTypeEnumMap,
+            json['blockType'],
+            unknownValue: ConciergeFormBlockType.text,
+          ) ??
           ConciergeFormBlockType.text,
       showWhen: json['showWhen'] == null
           ? null
           : ConciergeFormBlockDisplayConditionInput.fromJson(
-              json['showWhen'] as Map<String, dynamic>),
+              json['showWhen'] as Map<String, dynamic>,
+            ),
       configuration: json['configuration'] == null
           ? null
           : ConciergeFormBlockConfigurationInput.fromJson(
-              json['configuration'] as Map<String, dynamic>),
+              json['configuration'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$ConciergeBlockInputToJson(
-        _ConciergeBlockInput instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'blockType': instance.blockType.toJson(),
-      'showWhen': instance.showWhen?.toJson(),
-      'configuration': instance.configuration?.toJson(),
-    };
+  _ConciergeBlockInput instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'blockType': instance.blockType.toJson(),
+  'showWhen': instance.showWhen?.toJson(),
+  'configuration': instance.configuration?.toJson(),
+};
 
 _ConciergeFormBlockConfiguration _$ConciergeFormBlockConfigurationFromJson(
-        Map<String, dynamic> json) =>
-    _ConciergeFormBlockConfiguration(
-      allowEmpty: json['allowEmpty'] as bool,
-      isInt: json['isInt'] as bool?,
-      isMultiple: json['isMultiple'] as bool?,
-      max: (json['max'] as num?)?.toDouble(),
-      min: (json['min'] as num?)?.toDouble(),
-      choices: (json['choices'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const <String>[],
-    );
+  Map<String, dynamic> json,
+) => _ConciergeFormBlockConfiguration(
+  allowEmpty: json['allowEmpty'] as bool,
+  isInt: json['isInt'] as bool?,
+  isMultiple: json['isMultiple'] as bool?,
+  max: (json['max'] as num?)?.toDouble(),
+  min: (json['min'] as num?)?.toDouble(),
+  choices:
+      (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const <String>[],
+);
 
 Map<String, dynamic> _$ConciergeFormBlockConfigurationToJson(
-        _ConciergeFormBlockConfiguration instance) =>
-    <String, dynamic>{
-      'allowEmpty': instance.allowEmpty,
-      'isInt': instance.isInt,
-      'isMultiple': instance.isMultiple,
-      'max': instance.max,
-      'min': instance.min,
-      'choices': instance.choices,
-    };
+  _ConciergeFormBlockConfiguration instance,
+) => <String, dynamic>{
+  'allowEmpty': instance.allowEmpty,
+  'isInt': instance.isInt,
+  'isMultiple': instance.isMultiple,
+  'max': instance.max,
+  'min': instance.min,
+  'choices': instance.choices,
+};
 
 _ConciergeFormBlockConfigurationInput
-    _$ConciergeFormBlockConfigurationInputFromJson(Map<String, dynamic> json) =>
-        _ConciergeFormBlockConfigurationInput(
-          allowEmpty: json['allowEmpty'] as bool?,
-          isMultiple: json['isMultiple'] as bool?,
-          min: (json['min'] as num?)?.toDouble(),
-          max: (json['max'] as num?)?.toDouble(),
-          asInt: json['asInt'] as bool?,
-          choices: (json['choices'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
-        );
-
-Map<String, dynamic> _$ConciergeFormBlockConfigurationInputToJson(
-        _ConciergeFormBlockConfigurationInput instance) =>
-    <String, dynamic>{
-      'allowEmpty': instance.allowEmpty,
-      'isMultiple': instance.isMultiple,
-      'min': instance.min,
-      'max': instance.max,
-      'asInt': instance.asInt,
-      'choices': instance.choices,
-    };
-
-_ConciergeFormBlockValidator _$ConciergeFormBlockValidatorFromJson(
-        Map<String, dynamic> json) =>
-    _ConciergeFormBlockValidator(
-      blockId: (json['blockId'] as num?)?.toInt(),
-      max: (json['max'] as num?)?.toDouble(),
+_$ConciergeFormBlockConfigurationInputFromJson(Map<String, dynamic> json) =>
+    _ConciergeFormBlockConfigurationInput(
+      allowEmpty: json['allowEmpty'] as bool?,
+      isMultiple: json['isMultiple'] as bool?,
       min: (json['min'] as num?)?.toDouble(),
-      value: json['value'] as String?,
-      validator: $enumDecode(
-          _$ConciergeFormDisplayConditionValidatorEnumMap, json['validator'],
-          unknownValue: ConciergeFormDisplayConditionValidator.always),
-      validatorOperator: $enumDecodeNullable(
-          _$ConciergeFormDisplayConditionOperatorEnumMap,
-          json['validatorOperator'],
-          unknownValue: ConciergeFormDisplayConditionOperator.equals),
+      max: (json['max'] as num?)?.toDouble(),
+      asInt: json['asInt'] as bool?,
+      choices: (json['choices'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
+Map<String, dynamic> _$ConciergeFormBlockConfigurationInputToJson(
+  _ConciergeFormBlockConfigurationInput instance,
+) => <String, dynamic>{
+  'allowEmpty': instance.allowEmpty,
+  'isMultiple': instance.isMultiple,
+  'min': instance.min,
+  'max': instance.max,
+  'asInt': instance.asInt,
+  'choices': instance.choices,
+};
+
+_ConciergeFormBlockValidator _$ConciergeFormBlockValidatorFromJson(
+  Map<String, dynamic> json,
+) => _ConciergeFormBlockValidator(
+  blockId: (json['blockId'] as num?)?.toInt(),
+  max: (json['max'] as num?)?.toDouble(),
+  min: (json['min'] as num?)?.toDouble(),
+  value: json['value'] as String?,
+  validator: $enumDecode(
+    _$ConciergeFormDisplayConditionValidatorEnumMap,
+    json['validator'],
+    unknownValue: ConciergeFormDisplayConditionValidator.always,
+  ),
+  validatorOperator: $enumDecodeNullable(
+    _$ConciergeFormDisplayConditionOperatorEnumMap,
+    json['validatorOperator'],
+    unknownValue: ConciergeFormDisplayConditionOperator.equals,
+  ),
+);
+
 Map<String, dynamic> _$ConciergeFormBlockValidatorToJson(
-        _ConciergeFormBlockValidator instance) =>
-    <String, dynamic>{
-      'blockId': instance.blockId,
-      'max': instance.max,
-      'min': instance.min,
-      'value': instance.value,
-      'validator': instance.validator.toJson(),
-      'validatorOperator': instance.validatorOperator?.toJson(),
-    };
+  _ConciergeFormBlockValidator instance,
+) => <String, dynamic>{
+  'blockId': instance.blockId,
+  'max': instance.max,
+  'min': instance.min,
+  'value': instance.value,
+  'validator': instance.validator.toJson(),
+  'validatorOperator': instance.validatorOperator?.toJson(),
+};
 
 const _$ConciergeFormDisplayConditionValidatorEnumMap = {
   ConciergeFormDisplayConditionValidator.always: 'ALWAYS',
@@ -195,32 +209,33 @@ const _$ConciergeFormDisplayConditionOperatorEnumMap = {
 };
 
 _ConciergeFormBlockDisplayConditionInput
-    _$ConciergeFormBlockDisplayConditionInputFromJson(
-            Map<String, dynamic> json) =>
-        _ConciergeFormBlockDisplayConditionInput(
-          blockId: (json['blockId'] as num?)?.toInt(),
-          min: (json['min'] as num?)?.toDouble(),
-          max: (json['max'] as num?)?.toDouble(),
-          value: json['value'] as String?,
-          validator: $enumDecodeNullable(
-                  _$ConciergeFormDisplayConditionValidatorEnumMap,
-                  json['validator'],
-                  unknownValue:
-                      ConciergeFormDisplayConditionValidator.always) ??
-              ConciergeFormDisplayConditionValidator.always,
-          validatorOperator: $enumDecodeNullable(
-              _$ConciergeFormDisplayConditionOperatorEnumMap,
-              json['validatorOperator'],
-              unknownValue: ConciergeFormDisplayConditionOperator.equals),
-        );
+_$ConciergeFormBlockDisplayConditionInputFromJson(Map<String, dynamic> json) =>
+    _ConciergeFormBlockDisplayConditionInput(
+      blockId: (json['blockId'] as num?)?.toInt(),
+      min: (json['min'] as num?)?.toDouble(),
+      max: (json['max'] as num?)?.toDouble(),
+      value: json['value'] as String?,
+      validator:
+          $enumDecodeNullable(
+            _$ConciergeFormDisplayConditionValidatorEnumMap,
+            json['validator'],
+            unknownValue: ConciergeFormDisplayConditionValidator.always,
+          ) ??
+          ConciergeFormDisplayConditionValidator.always,
+      validatorOperator: $enumDecodeNullable(
+        _$ConciergeFormDisplayConditionOperatorEnumMap,
+        json['validatorOperator'],
+        unknownValue: ConciergeFormDisplayConditionOperator.equals,
+      ),
+    );
 
 Map<String, dynamic> _$ConciergeFormBlockDisplayConditionInputToJson(
-        _ConciergeFormBlockDisplayConditionInput instance) =>
-    <String, dynamic>{
-      'blockId': instance.blockId,
-      'min': instance.min,
-      'max': instance.max,
-      'value': instance.value,
-      'validator': instance.validator.toJson(),
-      'validatorOperator': instance.validatorOperator?.toJson(),
-    };
+  _ConciergeFormBlockDisplayConditionInput instance,
+) => <String, dynamic>{
+  'blockId': instance.blockId,
+  'min': instance.min,
+  'max': instance.max,
+  'value': instance.value,
+  'validator': instance.validator.toJson(),
+  'validatorOperator': instance.validatorOperator?.toJson(),
+};

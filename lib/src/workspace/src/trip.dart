@@ -9,6 +9,8 @@ abstract class WorkspaceTripPoint with _$WorkspaceTripPoint {
     String? triggerName,
     String? triggerId,
     @TimestampConverter() required DateTime receivedAt,
+    String? eventId,
+    Map<String, dynamic>? sensors,
   }) = _WorkspaceTripPoint;
 
   factory WorkspaceTripPoint.fromJson(Map<String, dynamic> json) => _$WorkspaceTripPointFromJson(json);

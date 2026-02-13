@@ -1,34 +1,42 @@
 part of '../../reports.dart';
 
+@Deprecated('Use ReportSource instead')
+typedef ReportTemplateSource = ReportSource;
+
 @JsonEnum(alwaysCreate: true)
-enum ReportTemplateSource {
-  /// Is the report template source for messages
+enum ReportSource {
+  /// Is the source for messages
   @JsonValue('MESSAGES')
   messages,
 
-  /// Is the report template source for cases
+  /// Is the source for cases
   @JsonValue('CASES')
   cases,
 
-  /// Is the report template source for checkpoints
+  /// Is the source for checkpoints
   @JsonValue('CHECKPOINTS')
   checkpoints,
 
-  /// Is the report template source for events
+  /// Is the source for events
   @JsonValue('EVENTS')
   events,
 
-  /// Is the report template source for outbound services' broadcast
+  /// Is the source for outbound services' broadcast
   @JsonValue('BROADCASTS')
-  broadcast;
+  broadcast,
+
+  /// Is the source for Last Messages, similar to [messages] but only the latest message per asset
+  @JsonValue('LAST_MESSAGES')
+  lastMessages,
+  ;
 
   @override
   String toString() => toJson();
 
-  String toJson() => _$ReportTemplateSourceEnumMap[this] ?? 'MESSAGES';
+  String toJson() => _$ReportSourceEnumMap[this] ?? 'MESSAGES';
 
-  static ReportTemplateSource fromJson(String json) {
-    return _$ReportTemplateSourceEnumMap.entries.firstWhereOrNull((element) => element.value == json)?.key ??
-        ReportTemplateSource.messages;
+  static ReportSource fromJson(String json) {
+    return _$ReportSourceEnumMap.entries.firstWhereOrNull((element) => element.value == json)?.key ??
+        ReportSource.messages;
   }
 }

@@ -1,22 +1,26 @@
 part of '../../reports.dart';
 
+@Deprecated('Use ReportAlgorithm instead')
+typedef ReportTemplateAlgorithm = ReportAlgorithm;
+
 @JsonEnum(alwaysCreate: true)
-enum ReportTemplateAlgorithm {
+enum ReportAlgorithm {
   /// Is the report template algorithm for AUTO
   @JsonValue('AUTO')
   auto,
 
   /// Is the report template algorithm for PYTHON
   @JsonValue('PYTHON')
-  python;
+  python
+  ;
 
   @override
   String toString() => toJson();
 
-  String toJson() => _$ReportTemplateAlgorithmEnumMap[this] ?? 'AUTO';
+  String toJson() => _$ReportAlgorithmEnumMap[this] ?? 'AUTO';
 
-  static ReportTemplateAlgorithm fromJson(String json) {
-    return _$ReportTemplateAlgorithmEnumMap.entries.firstWhereOrNull((element) => element.value == json)?.key ??
-        ReportTemplateAlgorithm.auto;
+  static ReportAlgorithm fromJson(String json) {
+    return _$ReportAlgorithmEnumMap.entries.firstWhereOrNull((element) => element.value == json)?.key ??
+        ReportAlgorithm.auto;
   }
 }

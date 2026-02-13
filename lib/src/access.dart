@@ -161,6 +161,11 @@ enum AccessModule {
   @JsonValue('REPORT_SCHEDULERS')
   reportSchedulers,
 
+  /// Acces to ats monitors module
+  /// Layrz API Definition: `ATS_MONITORS`
+  @JsonValue('ATS_MONITORS')
+  atsMonitors,
+
   /// Unknown access module
   @JsonValue('UNKNOWN')
   unknown,

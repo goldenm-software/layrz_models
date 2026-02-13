@@ -72,7 +72,7 @@ enum SensorSubType {
 
   String toJson() => _$SensorSubTypeEnumMap[this] ?? 'RAW';
 
-  static SensorSubType fromJson(json) {
+  static SensorSubType fromJson(String json) {
     final value = _$SensorSubTypeEnumMap.entries.firstWhereOrNull((element) => element.value == json);
 
     return value?.key ?? SensorSubType.raw;

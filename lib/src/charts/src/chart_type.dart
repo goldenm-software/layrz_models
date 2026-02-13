@@ -52,8 +52,7 @@ enum ChartType {
 
   /// Table chart
   @JsonValue('TABLE')
-  table,
-  ;
+  table;
 
   @override
   String toString() => toJson();

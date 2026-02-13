@@ -5,7 +5,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
-import 'package:layrz_models/utils/utils.dart';
+import 'package:layrz_models/layrz_models.dart';
 
 part 'src/color.dart';
 part 'src/duration.dart';
@@ -14,3 +14,4 @@ part 'src/timestamp.dart';
 part 'src/time_of_day.dart';
 part 'src/regex.dart';
 part 'src/byte_list.dart';
+part 'src/param_converter.dart';

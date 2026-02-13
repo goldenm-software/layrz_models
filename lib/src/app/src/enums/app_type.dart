@@ -1,5 +1,5 @@
 part of '../../app.dart';
-
+@JsonEnum(alwaysCreate: true)
 enum AppType {
   @JsonValue('PUBLIC')
   public,

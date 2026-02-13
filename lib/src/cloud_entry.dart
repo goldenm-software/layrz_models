@@ -32,6 +32,12 @@ abstract class CloudEntry with _$CloudEntry {
     /// Is the metadata of the file. Only used for [CloudEntryType.file].
     /// Currently only works for images.
     Map<String, dynamic>? metadata,
+
+    /// [sensorId] is the ID of the sensor associated with this file, if applicable.
+    ///
+    /// This value is only used for [CloudEntryType.file] and when it's populated by an asset, also
+    /// this property will only be populated after `2025-10-27`, before that, it will be null for all entries.
+    String? sensorId,
   }) = _CloudEntry;
 
   factory CloudEntry.fromJson(Map<String, dynamic> json) => _$CloudEntryFromJson(json);

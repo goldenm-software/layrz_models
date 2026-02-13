@@ -26,6 +26,9 @@ enum NotificationType {
   unknown,
   ;
 
+  @override
+  String toString() => toJson();
+
   /// [toJson] returns the string representation of the enum value.
   String toJson() => _$NotificationTypeEnumMap[this] ?? 'UNKNOWN';
 

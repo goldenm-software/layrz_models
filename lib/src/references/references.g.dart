@@ -7,20 +7,23 @@ part of 'references.dart';
 // **************************************************************************
 
 _Reference _$ReferenceFromJson(Map<String, dynamic> json) => _Reference(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      category: $enumDecodeNullable(
-              _$ReferenceCategoryEnumMap, json['category'],
-              unknownValue: ReferenceCategory.unknown) ??
-          ReferenceCategory.unknown,
-      customFields: (json['customFields'] as List<dynamic>?)
-          ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      qrCode: json['qrCode'] as String?,
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  id: json['id'] as String,
+  name: json['name'] as String,
+  category:
+      $enumDecodeNullable(
+        _$ReferenceCategoryEnumMap,
+        json['category'],
+        unknownValue: ReferenceCategory.unknown,
+      ) ??
+      ReferenceCategory.unknown,
+  customFields: (json['customFields'] as List<dynamic>?)
+      ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  qrCode: json['qrCode'] as String?,
+  access: (json['access'] as List<dynamic>?)
+      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
 Map<String, dynamic> _$ReferenceToJson(_Reference instance) =>
     <String, dynamic>{
@@ -74,6 +77,13 @@ const _$ReferenceCategoryEnumMap = {
       'ATS_SEND_ODOMETER_IN_EXECUTE_EXITS',
   ReferenceCategory.atsRecalculateOperationButton:
       'ATS_RECALCULATE_OPERATION_BUTTON',
+  ReferenceCategory.atsBalsaBordo: 'ATS_BALSA_BORDO',
+  ReferenceCategory.atsBalsaExportReceivementReportPdf:
+      'ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF',
+  ReferenceCategory.atsExportRaftClosureReportPdf:
+      'ATS_EXPORT_RAFT_CLOSURE_REPORT_PDF',
+  ReferenceCategory.atsSupervisorioEditCacl: 'ATS_SUPERVISORIO_EDIT_CACL',
+  ReferenceCategory.atsSupervisorioRemoveCacl: 'ATS_SUPERVISORIO_REMOVE_CACL',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',
@@ -116,11 +126,15 @@ _ReferenceInput _$ReferenceInputFromJson(Map<String, dynamic> json) =>
     _ReferenceInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
-      category: $enumDecodeNullable(
-              _$ReferenceCategoryEnumMap, json['category'],
-              unknownValue: ReferenceCategory.unknown) ??
+      category:
+          $enumDecodeNullable(
+            _$ReferenceCategoryEnumMap,
+            json['category'],
+            unknownValue: ReferenceCategory.unknown,
+          ) ??
           ReferenceCategory.universal,
-      customFields: (json['customFields'] as List<dynamic>?)
+      customFields:
+          (json['customFields'] as List<dynamic>?)
               ?.map((e) => CustomFieldInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],

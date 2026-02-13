@@ -1,5 +1,327 @@
 # Changelog
 
+## 3.6.7
+
+- Renamed `ExternalAccountForm` to `ExternalAccountInput`
+
+## 3.6.6
+
+- Added `TWO_YEARLY` value in `BrickhouseBillingPeriod` enum
+
+## 3.6.5
+
+- Changed `order` value type in `AtsOrderStatusHistory` model
+- Added `ATS_EXPORT_RAFT_CLOSURE_REPORT_PDF` value in `ReferenceCategory` enum
+- Added `ATS_SUPERVISORIO_EDIT_CACL` value in `ReferenceCategory` enum
+- Added `ATS_SUPERVISORIO_REMOVE_CACL` value in `ReferenceCategory` enum
+
+## 3.6.4
+
+- Added `AtsOrder` model
+- Added `AtsOrderStatusHistory` model
+
+## 3.6.3
+
+- Added `ATS_BALSA_EXPORT_RECEIVEMENT_REPORT_PDF` value in `ReferenceCategory` enum
+- Added `totalExits20` value in `AtsEntry` model
+
+## 3.6.2
+
+- Added `totalExits` value in `AtsEntry` model
+
+## 3.6.1
+
+- Updated `TwilioContentSid` template SID on English
+
+## 3.6.0
+
+- Updated `Operation` and `OperationInput` to support new notifications
+
+## 3.5.7
+
+- Rempalce `fatherAsset` to `fatherAssetId` in `AtsCommandExecuteHistoryInput`
+
+## 3.5.6
+
+- Add `AtsCommandExecutionHistory` and `AtsCommandExecuteHistoryInput`
+
+## 3.5.5
+
+- Added new value `MEDIUM_ACCURACY` in enum `AtsEtaStatus`
+
+## 3.5.4
+
+- Added new value `ATS_BALSA_BORDO` in enum `ReferenceCategory`
+
+## 3.5.3
+
+- Added new enum `AtsEtaStatus`
+- Added new values `minEta` and `etaStatus` in `AtsOperation` model
+
+## 3.5.2
+
+- Added new value `BEFORE_UNLOAD` in `ManifestKind` enum
+
+## 3.5.1+2
+
+- Added `lastMessages` to `ReportSource` enum columns
+
+## 3.5.1+1
+
+- Added migration guide for renaming `ReportTemplateSource` and `ReportTemplateAlgorithm` enums.
+
+## 3.5.1
+
+- Renamed `ReportTemplateSource` to `ReportSource` enum, also, added `ReportTemplateSource` as typedef to avoid breaking changes.
+- Renamed `ReportTemplateAlgorithm` to `ReportAlgorithm` enum, also, added `ReportTemplateAlgorithm` as typedef to avoid breaking changes.
+
+## 3.5.0+1
+
+- Modified `ApiResponse<T>` generic class to also include a second generic type `Q` for error representation.
+
+## 3.5.0
+
+- Upgraded to Dart SDK version 3.10.0 and Flutter version 3.38.1
+- New `ApiResponse<T>` generic class to standardize API responses across the package.
+
+## 3.4.85
+
+- Changed `temperature` value in `TankMeasurementInput` to have the possibility of be null
+
+## 3.4.84
+
+- Added `messageId` in `ManifestInput` and `Manifest` models
+
+## 3.4.83
+
+- change `additionalFields` of `ExternalUnit` to have the posibility of be null
+
+## 3.4.82
+
+- Added accessibility and preferences to `Employee`
+
+## 3.4.81
+
+- Added `initialDensity20`, `finalDensity20`, `initialVolume20`, `finalVolume20`, `initialCorrectionFactor`, `finalCorrectionFactor` in `AtsEntry` models
+
+## 3.4.80
+
+- Added `density20`, `volume20` in `AtsBalanceParams`
+- Added `density20`, `volume20`, `correctionFactor` in `AtsSkidSetaParams`
+
+## 3.4.79
+
+- Added `lossPercentage` to `CaclEntity`
+
+## 3.4.78
+
+- Added `AtsBooking` and `AtsBookingInput`
+
+## 3.4.77
+
+- Added `TableItem` model to support table functionalities in the workspace module.
+- Added `TableItemInput` model for creating and updating table items on the workspace module.
+- Refactored `Workspace` and `WorkspaceInput` models to include new table properties: `tableEnabled` and `tableStructure`.
+- Also refactored `Workspace` to use default values for lists and enums to enhance stability and usability.
+
+## 3.4.76
+
+- Added `file` property to `CaseComment` model to associate files with specific comments.
+- Updated `Case` model documentation to clarify its purpose.
+
+## 3.4.75
+
+- Added `RealtimeMqttConfig` model to support real-time MQTT configurations.
+- Updated `User` model to include `mqttConfig` property.
+
+## 3.4.74
+
+- Updated parameters structure and new model `SensorLastUpdate`.
+
+## 3.4.73
+
+- Add `ParamData` and `ParameterUpdate`.
+- create `param_test` this is a funtion to test `ParamData`,`ParameterUpdate` and `@ParamDataMapConverter()`.
+
+## 3.4.72
+
+- Add again `volume20` in `AtsLoadingParamsFormInput`
+
+## 3.4.71
+
+- Added TagOn models
+
+## 3.4.70
+
+- Remove `a20Volume`, `liquidWeight`, `density20`, `volume20`, `spareVolume` from `AtsLoadingParamsFormInput` and `AtsLoadingParamsForm`
+- Add `balanceParams` and `skidSetaParams` in `AtsLoadingParamsForm`
+
+## 3.4.69
+
+- This version was published by mistake and should be omitted. Please use version 3.4.70 or later.
+
+## 3.4.68
+
+- Added `sensorId` to `CloudEntry` model to associate files with specific sensors.
+
+## 3.4.67
+
+- Update `AtsLoadingParamsForm` `AtsLoadingParamsFormInput` with new props
+
+## 3.4.66
+
+- Added `index` in `RequestChartInput` model
+
+## 3.4.65
+
+- Changed `id` to `chartId` value in `RequestChartInput` model
+
+## 3.4.64
+
+- Added `RequestChartInput` model
+- Added new values `assetsIds` and `name`, in `AnalyticsGridItem` and `AnalyticsGridItemInput` models
+
+## 3.4.63
+
+- Expanded accessibility options in `UserPreferences` by introducing `dateFormat` and `timeFormat` fields. These additions allow users to customize their preferred date and time display formats independently, enhancing personalization and usability.
+
+## 3.4.62
+
+- Added `geofences` to `Case` model as replacement of `geofence` to support multiple geofences context on cases when it's available.
+
+## 3.4.61
+
+- Added Locator customization fields to GraphQL fetch helpers and allowed filtering by `id` when requesting a single Locator.
+
+## 3.4.60
+
+= Update `AtsLoadingParamsForm`
+
+## 3.4.59
+
+- Update `AtsLoadingParamsFormInput`
+
+## 3.4.58
+
+- Added `atsPurchaseOrders` value in `ChartDataSource` enum
+
+## 3.4.57
+
+- Moved `utils/` to `src/` to be consistent with the rest of the submodules.
+- Removed `kPrimaryColor` constant to avoid conflicts with other Layrz packages.
+- Added `customizationId` and `customization` to `Locator` and `LocatorInput` models to support Locator customization.
+- Added `locatorCustomizationId` and `locatorCustomization` to `Trigger` and `TriggerInput` models to support Locator customization on Trigger activation.
+- Created `fetchAll` and `fetchAllGraphqlQuery` statics on `RegisteredApp` as part of the transition to use `layrz_models` as official API wrapper/connector of Layrz.
+
+## 3.4.56
+
+- Added `PresetInput` model
+
+## 3.4.55
+
+- Added accessibility and preferences to user entity.
+
+## 3.4.54
+
+- Changed `bookedFor` for nullable in `AtsOperationHistory`
+
+## 3.4.53
+
+- Added new values `LOADING_BOOKED` and `UNLOADING_BOOKED` in `AtsPurchaseOrderStatus`
+- Added new value `bookedFor` in `AtsOperationHistory`
+
+## 3.4.52
+
+- New model `OutboundServiceInput` to create and update Outbound Services.
+
+## 3.4.51
+
+- Added `shouldGenerateLocator`, `locatorExpiresDelta`, `locatorExpiresTriggersIds` and `locatorGeofencesIds` to `Trigger` and `TriggerInput` models to support Locator generation on Trigger activation.
+
+## 3.4.50+1
+
+- Adjustments on the link of the Locator
+
+## 3.4.50
+
+- Added list `analyticsGridStructure` in `AtsMonitorInput`
+
+## 3.4.49
+
+- Added Locator in `AppInternalIdentifier`
+
+## 3.4.48
+
+- Added Locator models (`Locator`, `LocatorInput`, `LocatorMqttConfig`) plus GraphQL helpers for CRUD, expiry, and bulk fetching.
+- Introduced `LayrzConnector` utility to streamline GraphQL requests and exported it via `layrz_models.utils`.
+- Declared new `dio` and `layrz_logging` dependencies required for Locator API tooling.
+
+## 3.4.47
+
+- Added metadata to `CaseComment` model to support additional information storage.
+
+## 3.4.46
+
+- Added `isPaused` to `Trigger` model
+- Added `shouldStack` and `stackUpperLimit` to `Trigger` and `TriggerInput` models to support case stacking functionality.
+
+## 3.4.45
+
+- Changes on `Case` model to support geofence context on cases when it's available.
+
+## 3.4.44
+
+- Add `getLayrzKey()` in `AtsSelectCard`
+
+## 3.4.43
+
+- Version tag created for tracking purposes. No code changes were included in this release.
+
+## 3.4.42
+
+- Added `expiredLast12Hours` and `expiredLast24Hours` to `WorkspaceCardType` enum
+
+## 3.4.41
+
+- `CaseStatus` and `CaseIgnoredStatus` enum converters reworked to use native @JsonKey and @JsonValue
+- Added `geofence` property to `Case` model to provide geofence context on cases when it's available.
+
+## 3.4.40
+
+- Add in `AtsMonitor` and `AtsMonitorInput` new props to support charts
+
+## 3.4.39
+
+- Added `hasCaseExpirity` and `whenCaseExpiresDelta` to `Trigger` and `TriggerInput` model
+
+## 3.4.38
+
+- Updated `WorkspaceTripPoint` model to include `eventId` and `sensors` properties.
+
+## 3.4.37
+
+- Add new entities in `MonitorCardType`
+
+## 3.4.36
+
+- Run `build_runner` to add in `AccessModule.atsMonitos`
+
+## 3.4.35
+
+- Add in `AccessModule` `ATS_MONITORS`
+
+## 3.4.34
+
+- Add many models to new Ats monitor entities
+
+## 3.4.33
+
+- Added new value `atsOperations` in `ChartDataSource` enum
+
+## 3.4.32
+
+- Added `isPasswordExpired` to `User` model
+
 ## 3.4.31
 
 - Added `transportCompanyAsset` and `transportCompanyAssetId` in `AtsOperation` entity

@@ -25,25 +25,27 @@ abstract class Workspace with _$Workspace {
     bool? isFavorite,
 
     /// Indicates the main view of the workspace
-    @JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView? mainView,
+    @Default(WorkspaceMainView.sensors)
+    @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
+    WorkspaceMainView mainView,
 
     /// Is the list of [assets] associated with the workspace
-    List<Asset>? assets,
+    @Default([]) List<Asset> assets,
 
     /// [assetsIds] is the list of ids of the [assets] associated with the workspace
-    List<String>? assetsIds,
+    @Default([]) List<String> assetsIds,
 
     /// Is the list of [inboundServices] associated with the workspace
-    List<InboundService>? inboundServices,
+    @Default([]) List<InboundService> inboundServices,
 
     /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
-    List<String>? inboundServicesIds,
+    @Default([]) List<String> inboundServicesIds,
 
     /// Is the list of [outboundServices] associated with the workspace
-    List<OutboundService>? outboundServices,
+    @Default([]) List<OutboundService> outboundServices,
 
     /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
-    List<String>? outboundServicesIds,
+    @Default([]) List<String> outboundServicesIds,
 
     /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
     /// [mapEnabled], [geofences], [geofencesIds], [mapCardCustomization], [mapCenterCoordinates], [mapCenterMode],
@@ -52,25 +54,25 @@ abstract class Workspace with _$Workspace {
     /// Is the list of [triggers] and their ids [triggersIds]. And [casesEnabled] indicates
     /// if the cases monitor is enabled
     /// Also, [casesMonitorConfig] indicates the configuration of the cases monitor
-    bool? casesEnabled,
-    List<Trigger>? triggers,
-    List<String>? triggersIds,
-    List<CaseMonitorCard?>? casesMonitorConfig,
+    @Default(false) bool casesEnabled,
+    @Default([]) List<Trigger> triggers,
+    @Default([]) List<String> triggersIds,
+    @Default([]) List<CaseMonitorCard> casesMonitorConfig,
 
     /// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
     /// if the checkpoints monitor is enabled
-    bool? checkpointsEnabled,
-    List<Checkpoint>? checkpoints,
-    List<String>? checkpointsIds,
+    @Default(false) bool checkpointsEnabled,
+    @Default([]) List<Checkpoint> checkpoints,
+    @Default([]) List<String> checkpointsIds,
 
     /// Is the list of [geofences] and their ids [geofencesIds]. And [mapEnabled] indicates
     /// if the map monitor is enabled
     /// Also, [mapCardCustomization] indicates the customization of the map card
     /// [mapCenterCoordinates] indicates the center coordinates of the map
     /// [mapCenterMode] indicates the center mode of the map
-    bool? mapEnabled,
-    List<Geofence>? geofences,
-    List<String>? geofencesIds,
+    @Default(false) bool mapEnabled,
+    @Default([]) List<Geofence> geofences,
+    @Default([]) List<String> geofencesIds,
     @Default([]) List<MapCardSensors> mapCardCustomization,
     GeoPoint? mapCenterCoordinates,
     @JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode? mapCenterMode,
@@ -78,14 +80,14 @@ abstract class Workspace with _$Workspace {
     /// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
     /// if the analytics monitor is enabled.
     /// Also, [analyticsGridStructure] indicates the visual structure of the charts
-    bool? analyticsEnabled,
-    List<LayrzChart>? charts,
-    List<String>? chartsIds,
+    @Default(false) bool analyticsEnabled,
+    @Default([]) List<LayrzChart> charts,
+    @Default([]) List<String> chartsIds,
     @Default([]) List<AnalyticsGridItem> analyticsGridStructure,
 
     /// [sensorsEnabled] indicates if the sensors sensors monitor is enabled
     /// Also, [sensorsGridStructure] indicates the visual structure of the sensors
-    bool? sensorsEnabled,
+    @Default(false) bool sensorsEnabled,
     @Default([]) List<SensorGridItem> sensorsGridStructure,
 
     /// Metric system of the workspace
@@ -94,6 +96,12 @@ abstract class Workspace with _$Workspace {
 
     /// [access] indicates the access of the workspace
     List<Access>? access,
+
+    /// [tableEnabled] indicates if the table functionality is enabled
+    @Default(false) bool tableEnabled,
+
+    /// [tableStructure] indicates the structure of the table
+    TableItem? tableStructure,
   }) = _Workspace;
 
   factory Workspace.fromJson(Map<String, dynamic> json) => _$WorkspaceFromJson(json);
@@ -130,6 +138,8 @@ abstract class WorkspaceInput with _$WorkspaceInput {
     @Default(false) bool sensorsEnabled,
     @Default([]) List<SensorGridItemInput> sensorsGridStructure,
     @JsonKey(unknownEnumValue: MetricSystem.metric) @Default(MetricSystem.metric) MetricSystem metricSystem,
+    @Default(false) bool tableEnabled,
+    TableItemInput? tableStructure,
   }) = _WorkspaceInput;
 
   factory WorkspaceInput.fromJson(Map<String, dynamic> json) => _$WorkspaceInputFromJson(json);

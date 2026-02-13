@@ -1,6 +1,6 @@
 part of '../users.dart';
 
-@JsonEnum()
+@JsonEnum(alwaysCreate: true)
 enum ColorblindMode {
   /// [protanopia] is the red-blind colorblindness.
   @JsonValue('PROTANOPIA')
@@ -28,8 +28,7 @@ enum ColorblindMode {
 
   /// [normal] is the normal vision. No colorblindness.
   @JsonValue('NORMAL')
-  normal,
-  ;
+  normal;
 
   String toJson() => _$ColorblindModeEnumMap[this] ?? 'NORMAL';
 

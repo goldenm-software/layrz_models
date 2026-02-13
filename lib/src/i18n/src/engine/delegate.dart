@@ -102,9 +102,9 @@ class LayrzAppLocalizations {
   }
 
   Map<String, dynamic> get _defaultTranslations => {
-        'helpers.error.disaster': "We are sorry, but something went wrong",
-        'errors.not_found': "We are sorry, but the object you are looking for does not exist",
-      };
+    'helpers.error.disaster': "We are sorry, but something went wrong",
+    'errors.not_found': "We are sorry, but the object you are looking for does not exist",
+  };
 
   Map<String, String> _messages = {};
   Map<String, String> _fallback = {};

@@ -39,7 +39,10 @@ abstract class User with _$User {
     String? categoryId,
 
     /// [mqttToken] represents the MQTT token.
-    String? mqttToken,
+    @Deprecated('Use mqttConfig instead') String? mqttToken,
+
+    /// [mqttConfig] represents the MQTT configuration.
+    RealtimeMqttConfig? mqttConfig,
 
     /// [access] represents the list of granted access.
     List<Access>? access,
@@ -138,6 +141,12 @@ abstract class User with _$User {
 
     /// [billingPlan] represents the billing plan.
     BillingPlan? billingPlan,
+
+    /// [isPasswordExpired] represents if the user's password is expired and need to be changed.
+    bool? isPasswordExpired,
+
+    /// [preferences] represents the user preferences.
+    UserPreferences? preferences,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -194,6 +203,9 @@ abstract class UserInput with _$UserInput {
 
     /// [password] default password if allowed by the form
     String? password,
+
+    /// [preferences] represents the user preferences.
+    UserPreferencesInput? preferences,
   }) = _UserInput;
 
   factory UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);

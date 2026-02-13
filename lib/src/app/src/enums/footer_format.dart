@@ -1,13 +1,13 @@
 part of '../../app.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum FooterFormat {
   @JsonValue('CUSTOM')
   custom,
   @JsonValue('SIMPLE')
   simple,
   @JsonValue('MADEWITH')
-  madeWith,
-  ;
+  madeWith;
 
   @override
   String toString() => toJson();

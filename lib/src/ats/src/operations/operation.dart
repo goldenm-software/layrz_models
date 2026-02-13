@@ -14,6 +14,9 @@ abstract class AtsOperationHistory with _$AtsOperationHistory {
 
     /// [assetId] is the asset ID of the operation. Can be null.
     String? assetId,
+
+    /// [bookedFor] is the date booked for the status change.
+    @TimestampOrNullConverter() DateTime? bookedFor,
   }) = _AtsOperationHistory;
 
   factory AtsOperationHistory.fromJson(Map<String, dynamic> json) => _$AtsOperationHistoryFromJson(json);
@@ -99,6 +102,12 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// [history] is the list of history linked to the operation.
     List<AtsOperationHistory>? history,
+
+    /// [minEta] is the minimum estimated time of arrival.
+    @TimestampOrNullConverter() DateTime? minEta,
+
+    /// [etaStatus] is the estimated time of arrival status.
+    AtsEtaStatus? etaStatus,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);

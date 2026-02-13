@@ -12,7 +12,8 @@ _ExternalSource _$ExternalSourceFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
       isEnabled: json['isEnabled'] as bool,
-      requiredFields: (json['requiredFields'] as List<dynamic>?)
+      requiredFields:
+          (json['requiredFields'] as List<dynamic>?)
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -55,12 +56,30 @@ Map<String, dynamic> _$ExternalAccountToJson(_ExternalAccount instance) =>
       'devices': instance.devices?.map((e) => e.toJson()).toList(),
     };
 
+_ExternalAccountInput _$ExternalAccountInputFromJson(
+  Map<String, dynamic> json,
+) => _ExternalAccountInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  credentials: json['credentials'] as Map<String, dynamic>? ?? const {},
+  sourceId: json['sourceId'] as String?,
+);
+
+Map<String, dynamic> _$ExternalAccountInputToJson(
+  _ExternalAccountInput instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'credentials': instance.credentials,
+  'sourceId': instance.sourceId,
+};
+
 _ExternalUnit _$ExternalUnitFromJson(Map<String, dynamic> json) =>
     _ExternalUnit(
       externalId: json['externalId'] as String?,
       name: json['name'] as String,
       ident: json['ident'] as String,
-      additionalFields: json['additionalFields'] as Map<String, dynamic>,
+      additionalFields: json['additionalFields'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ExternalUnitToJson(_ExternalUnit instance) =>
@@ -78,10 +97,7 @@ _ExternalResource _$ExternalResourceFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ExternalResourceToJson(_ExternalResource instance) =>
-    <String, dynamic>{
-      'wialonId': instance.wialonId,
-      'name': instance.name,
-    };
+    <String, dynamic>{'wialonId': instance.wialonId, 'name': instance.name};
 
 _ExternalGeofence _$ExternalGeofenceFromJson(Map<String, dynamic> json) =>
     _ExternalGeofence(
@@ -90,7 +106,4 @@ _ExternalGeofence _$ExternalGeofenceFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ExternalGeofenceToJson(_ExternalGeofence instance) =>
-    <String, dynamic>{
-      'wialonId': instance.wialonId,
-      'name': instance.name,
-    };
+    <String, dynamic>{'wialonId': instance.wialonId, 'name': instance.name};

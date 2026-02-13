@@ -39,6 +39,9 @@ abstract class Employee with _$Employee {
 
     /// [mfaMethods] represents the list of MFA methods.
     @MfaMethodConverter() @Default([]) List<MfaMethod> mfaMethods,
+
+    /// [preferences] represents the user preferences.
+    UserPreferences? preferences,
   }) = _Employee;
 
   factory Employee.fromJson(Map<String, dynamic> json) => _$EmployeeFromJson(json);

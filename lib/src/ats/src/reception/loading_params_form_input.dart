@@ -6,6 +6,9 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
     /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
     String? id,
 
+    /// `formNumber` Loading params form number
+    String? formNumber,
+
     /// `assetId` What asset is linked to loading params form (Truck).
     String? assetId,
 
@@ -30,9 +33,46 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
     /// `sampleType` represent the loading params sample type
     @AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,
 
-    /// `formNumber` Loading params form number
-    String? formNumber,
+    /// `fuelSubtype` Fuel ANP
+    String? fuelSubtype,
+
+    /// `ambientVolume` Ambient volume
+    double? ambientVolume,
+
+    /// `modality` Modality of the params form
+    @AtsParamsFormModalityOrNullConverter() ParamsFormModality? modality,
+
+    /// `inpm` INPM code
+    double? inpm,
+
+    /// `initialWeight` Initial weight only on modality balance
+    double? initialWeight,
+
+    /// `finalWeight` Final weight only on modality balance
+    double? finalWeight,
+
+    /// `volume20` Volume at 20 only on modality SKID
+    double? volume20,
+
+    /// `destinyInformation` Destiny information only on modality seta
+    List<AtsDestinyInformationInput>? destinyInformation,
   }) = _AtsLoadingParamsFormInput;
 
   factory AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormInputFromJson(json);
+}
+
+@unfreezed
+abstract class AtsDestinyInformationInput with _$AtsDestinyInformationInput {
+  factory AtsDestinyInformationInput({
+    /// `capacity` Capacity of the destiny
+    double? capacity,
+
+    /// `replesnishOrWithdraw` Replesnish or withdraw amount
+    double? replesnishOrWithdraw,
+
+    /// `destinyInformationSetaVerification` Destiny information seta verification
+    @AtsReplenishmentOrWithdrawOrNullConverter() AtsSetaVerification? destinyInformationSetaVerification,
+  }) = _AtsDestinyInformationInput;
+
+  factory AtsDestinyInformationInput.fromJson(Map<String, dynamic> json) => _$AtsDestinyInformationInputFromJson(json);
 }

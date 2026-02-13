@@ -20,7 +20,10 @@ enum AtsPurchaseOrderStatus {
   unloadingFuelInterrupted,
   @JsonValue('DESTINATION_BERTH_EXIT')
   destinationBerthExit,
-  ;
+  @JsonValue('LOADING_BOOKED')
+  loadingBooked,
+  @JsonValue('UNLOADING_BOOKED')
+  unloadingBooked;
 
   @override
   String toString() => toJson();
@@ -28,9 +31,7 @@ enum AtsPurchaseOrderStatus {
   String toJson() => _$AtsPurchaseOrderStatusEnumMap[this] ?? 'GENERATED';
 
   static AtsPurchaseOrderStatus fromJson(String value) {
-    return _$AtsPurchaseOrderStatusEnumMap.entries
-            .firstWhereOrNull((element) => element.value == value)
-            ?.key ??
+    return _$AtsPurchaseOrderStatusEnumMap.entries.firstWhereOrNull((element) => element.value == value)?.key ??
         AtsPurchaseOrderStatus.generated;
   }
 }

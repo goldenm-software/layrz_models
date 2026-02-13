@@ -64,72 +64,100 @@ abstract class OutboundStructure with _$OutboundStructure {
 
 /// Outbound structure default types, if a field is not found here, is consider a custom field.
 /// To validate that, you can use the [OutboundStructure.isCustom(String)] static method.
+@JsonEnum(alwaysCreate: true)
 enum OutboundStructureType {
   /// Layrz API equivalence: `asset.name`. Means the Asset Name
+  @JsonValue('asset.name')
   assetName,
 
   /// Layrz API equivalence: `receivedAt`. Means the reception date
+  @JsonValue('receivedAt')
   receivedAt,
 
   /// Layrz API equivalence: `constant`. Means a constant value
+  @JsonValue('constant')
   constant,
 
   /// Layrz API equivalence: `position.full`. Means the full position object
+  @JsonValue('position.full')
   position,
 
   /// Layrz API equivalence: `position.latitude`. Means the latitude position
+  @JsonValue('position.latitude')
   latitude,
 
   /// Layrz API equivalence: `position.longitude`. Means the longitude position
+  @JsonValue('position.longitude')
   longitude,
 
   /// Layrz API equivalence: `position.altitude`. Means the altitude position
+  @JsonValue('position.altitude')
   altitude,
 
   /// Layrz API equivalence: `position.speed`. Means the speed position
+  @JsonValue('position.speed')
   speed,
 
   /// Layrz API equivalence: `position.direction`. Means the direction position
+  @JsonValue('position.direction')
   direction,
 
   /// Layrz API equivalence: `position.satellites`. Means the satellites' quantity
+  @JsonValue('position.satellites')
   satellites,
 
   /// Layrz API equivalence: `position.hdop`. Means the horizontal dilusion of precision (HDOP) position
+  @JsonValue('position.hdop')
   hdop,
 
   /// Layrz API equivalence: `payload.full`. Means the full payload object
+  @JsonValue('payload.full')
   payload,
 
   /// Layrz API equivalence: `asset.vin`. Means the Asset VIN
+  @JsonValue('asset.vin')
   assetVin,
 
   /// Layrz API equivalence: `asset.plate`. Means the Asset Plate
+  @JsonValue('asset.plate')
   assetPlate,
 
   /// Layrz API equivalence: `devices.list`. Means a list of devices associated to the asset
+  @JsonValue('devices.list')
   devices,
 
   /// Layrz API equivalence: `primary.device.full`. Means the primary device object
+  @JsonValue('primary.device.full')
   primaryDevice,
 
   /// Layrz API equivalence: `primary.device.name`. Means the primary device name
+  @JsonValue('primary.device.name')
   primaryDeviceName,
 
   /// Layrz API equivalence: `primary.device.ident`. Means the primary device ident
+  @JsonValue('primary.device.ident')
   primaryDeviceIdent,
 
   /// Layrz API equivalence: `trigger.name`. Means the trigger name
+  @JsonValue('trigger.name')
   triggerName,
 
   /// Layrz API equivalence: `trigger.code`. Means the trigger code
+  @JsonValue('trigger.code')
   triggerCode,
 
   /// Layrz API equivalence: `trigger.geofence.name`. Means the trigger geofence name
+  @JsonValue('trigger.geofence.name')
   triggerGeofenceName,
 
   /// Layrz API equivalence: `trigger.geofence.type`. Means the trigger geofence type, aka, if is entrance or exit
-  triggerGeofenceType;
+  @JsonValue('trigger.geofence.type')
+  triggerGeofenceType,
+
+  /// Layrz API equivalence: `trigger.locator.link`. Means the trigger locator link
+  @JsonValue('trigger.locator.link')
+  triggerLocatorLink,
+  ;
 
   /// Validates if the [search] is a custom value or not.
   static bool isCustom(String search) {
@@ -140,110 +168,17 @@ enum OutboundStructureType {
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case OutboundStructureType.assetName:
-        return 'asset.name';
-      case OutboundStructureType.receivedAt:
-        return 'receivedAt';
-      case OutboundStructureType.constant:
-        return 'constant';
-      case OutboundStructureType.position:
-        return 'position.full';
-      case OutboundStructureType.latitude:
-        return 'position.latitude';
-      case OutboundStructureType.longitude:
-        return 'position.longitude';
-      case OutboundStructureType.altitude:
-        return 'position.altitude';
-      case OutboundStructureType.speed:
-        return 'position.speed';
-      case OutboundStructureType.direction:
-        return 'position.direction';
-      case OutboundStructureType.satellites:
-        return 'position.satellites';
-      case OutboundStructureType.hdop:
-        return 'position.hdop';
-      case OutboundStructureType.payload:
-        return 'payload.full';
-      case OutboundStructureType.assetVin:
-        return 'asset.vin';
-      case OutboundStructureType.assetPlate:
-        return 'asset.plate';
-      case OutboundStructureType.devices:
-        return 'devices.list';
-      case OutboundStructureType.primaryDevice:
-        return 'primary.device.full';
-      case OutboundStructureType.primaryDeviceName:
-        return 'primary.device.name';
-      case OutboundStructureType.primaryDeviceIdent:
-        return 'primary.device.ident';
-      case OutboundStructureType.triggerName:
-        return 'trigger.name';
-      case OutboundStructureType.triggerCode:
-        return 'trigger.code';
-      case OutboundStructureType.triggerGeofenceName:
-        return 'trigger.geofence.name';
-      case OutboundStructureType.triggerGeofenceType:
-        return 'trigger.geofence.type';
-      default:
-        return 'constant';
-    }
-  }
+  String toJson() => _$OutboundStructureTypeEnumMap[this] ?? 'constant';
 
   static OutboundStructureType fromJson(String json) {
-    switch (json) {
-      case 'asset.name':
-        return OutboundStructureType.assetName;
-      case 'receivedAt':
-        return OutboundStructureType.receivedAt;
-      case 'constant':
-        return OutboundStructureType.constant;
-      case 'position.full':
-        return OutboundStructureType.position;
-      case 'position.latitude':
-        return OutboundStructureType.latitude;
-      case 'position.longitude':
-        return OutboundStructureType.longitude;
-      case 'position.altitude':
-        return OutboundStructureType.altitude;
-      case 'position.speed':
-        return OutboundStructureType.speed;
-      case 'position.direction':
-        return OutboundStructureType.direction;
-      case 'position.satellites':
-        return OutboundStructureType.satellites;
-      case 'position.hdop':
-        return OutboundStructureType.hdop;
-      case 'payload.full':
-        return OutboundStructureType.payload;
-      case 'asset.vin':
-        return OutboundStructureType.assetVin;
-      case 'asset.plate':
-        return OutboundStructureType.assetPlate;
-      case 'devices.list':
-        return OutboundStructureType.devices;
-      case 'primary.device.full':
-        return OutboundStructureType.primaryDevice;
-      case 'primary.device.name':
-        return OutboundStructureType.primaryDeviceName;
-      case 'primary.device.ident':
-        return OutboundStructureType.primaryDeviceIdent;
-      case 'trigger.name':
-        return OutboundStructureType.triggerName;
-      case 'trigger.code':
-        return OutboundStructureType.triggerCode;
-      case 'trigger.geofence.name':
-        return OutboundStructureType.triggerGeofenceName;
-      case 'trigger.geofence.type':
-        return OutboundStructureType.triggerGeofenceType;
-      default:
-        return OutboundStructureType.constant;
-    }
+    return _$OutboundStructureTypeEnumMap.entries.firstWhereOrNull((element) => element.value == json)?.key ??
+        OutboundStructureType.constant;
   }
 }
 
+@Deprecated('Use native JsonConverter instead')
 class OutboundStructureTypeConverter implements JsonConverter<OutboundStructureType, String> {
+  @Deprecated('Use native JsonConverter instead')
   const OutboundStructureTypeConverter();
 
   @override
@@ -253,7 +188,9 @@ class OutboundStructureTypeConverter implements JsonConverter<OutboundStructureT
   String toJson(OutboundStructureType object) => object.toJson();
 }
 
+@Deprecated('Use native JsonConverter instead')
 class OutboundStructureTypeOrNullConverter implements JsonConverter<OutboundStructureType?, String?> {
+  @Deprecated('Use native JsonConverter instead')
   const OutboundStructureTypeOrNullConverter();
 
   @override

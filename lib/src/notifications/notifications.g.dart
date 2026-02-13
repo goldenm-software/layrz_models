@@ -14,8 +14,12 @@ _LayrzNotification _$LayrzNotificationFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String,
       messageTranslate: json['messageTranslate'] as bool? ?? false,
       messageArgs: json['messageArgs'] as Map<String, dynamic>? ?? const {},
-      sound: $enumDecodeNullable(_$SoundEffectEnumMap, json['sound'],
-              unknownValue: SoundEffect.none) ??
+      sound:
+          $enumDecodeNullable(
+            _$SoundEffectEnumMap,
+            json['sound'],
+            unknownValue: SoundEffect.none,
+          ) ??
           SoundEffect.none,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
       color: json['color'] == null

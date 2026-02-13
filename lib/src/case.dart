@@ -2,10 +2,19 @@ part of '../layrz_models.dart';
 
 @freezed
 abstract class CommentOwner with _$CommentOwner {
+  /// [CommentOwner] represents the owner of a comment, encapsulating details about the individual or entity
+  /// who made the comment.
   const factory CommentOwner({
+    /// [id] is a unique identifier for the comment owner, typically used to reference and manage the owner within a system.
     required String id,
+
+    /// [name] represents the name of the comment owner, providing a human-readable identifier.
     required String name,
+
+    /// [avatar] is a URL or path to the avatar image associated with the comment owner.
     String? avatar,
+
+    /// [dynamicAvatar] refers to a dynamic representation of the avatar, which may include various types such as
     Avatar? dynamicAvatar,
   }) = _CommentOwner;
 
@@ -14,11 +23,26 @@ abstract class CommentOwner with _$CommentOwner {
 
 @freezed
 abstract class CaseComment with _$CaseComment {
+  /// [CaseComment] represents a comment made on a case, including details about the comment itself,
   const factory CaseComment({
+    /// [id] is a unique identifier for the case comment, typically used to reference and manage it within a system.
     required String id,
+
+    /// [at] indicates the date and time when the comment was made or created.
     @TimestampConverter() required DateTime at,
+
+    /// [owner] refers to the individual or entity that made the comment, providing context about who is responsible for the content.
     CommentOwner? owner,
+
+    /// [comment] contains the actual text or content of the comment made on the case.
     required String comment,
+
+    /// [metadata] holds additional information or data related to the comment, which can include various attributes or properties.
+    @Default({}) Map<String, dynamic> metadata,
+
+    /// [file] refers to an optional file associated with the case, which can include documents,
+    /// images, or other relevant attachments.
+    CloudEntry? file,
   }) = _CaseComment;
 
   factory CaseComment.fromJson(Map<String, dynamic> json) => _$CaseCommentFromJson(json);
@@ -26,131 +50,129 @@ abstract class CaseComment with _$CaseComment {
 
 @freezed
 abstract class Case with _$Case {
+  /// [Case] represents a case within a system, encapsulating various details and attributes
   const factory Case({
+    /// [id] is a unique identifier for the case, typically used to reference and manage it within a system.
+    ///
+    /// This ID is an integer value represented as a string.
     required String id,
+
+    /// [receivedAt] indicates the date and time when the case was received or created.
     @JsonKey(name: 'dateReceived') @TimestampConverter() required DateTime receivedAt,
-    @CaseStatusConverter() required CaseStatus status,
-    @CaseIgnoredStatusOrNullConverter() CaseIgnoredStatus? ignoredStatus,
+
+    /// [status] represents the current state of the case, which can be one of the predefined statuses such as
+    /// pending, followed, or closed.
+    @JsonKey(unknownEnumValue: CaseStatus.pending) required CaseStatus status,
+
+    /// [ignoredStatus] indicates whether the case is in a normal state or has been marked as
+    /// ignored, preset, expired, or auto.
+    @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) CaseIgnoredStatus? ignoredStatus,
+
+    /// [asset] refers to the specific asset associated with the case, providing context and details about
+    /// the item or entity involved.
     required Asset asset,
+
+    /// [trigger] specifies the event or condition that initiated the creation of the case,
+    /// helping to understand the circumstances leading to its generation.
     required Trigger trigger,
+
+    /// [geofence] indicates the geographical boundary or area related to the case, which can be used
+    /// for location-based analysis or actions.
+    ///
+    /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with a geofence
+    /// (aka. geofence enter/exit).
+    @Deprecated('Use `geofences` instead') Geofence? geofence,
+
+    /// [geofences] indicates the geographical boundaries or areas related to the case, which can be used
+    /// for location-based analysis or actions.
+    ///
+    /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with geofences
+    /// (aka. geofence enter/exit) and `2025-10-15` for stacked cases.
+    @Default([]) List<Geofence> geofences,
+
+    /// [sequence] is an optional integer that represents the order or position of the case in a series or list.
     int? sequence,
+
+    /// [comments] is a list of comments associated with the case, allowing for communication and
+    /// collaboration among users or stakeholders involved in the case.
     @Default([]) List<CaseComment> comments,
+
+    /// [position] provides the geographical location or coordinates related to the case,
+    /// which can be used for mapping or tracking purposes.
     TelemetryPosition? position,
+
+    /// [payload] contains additional data or information related to the case, which can include
+    /// various telemetry sensors or measurements.
     List<TelemetrySensor>? payload,
+
+    /// [sensors] is a list of telemetry sensors associated with the case, providing insights
+    /// and data points relevant to the situation or event.
     List<TelemetrySensor>? sensors,
+
+    /// [file] refers to an optional file associated with the case, which can include documents,
+    /// images, or other relevant attachments.
     CloudEntry? file,
+
+    /// [stackCount] indicates the number of stacked cases.
+    @Default(1) int stackCount,
   }) = _Case;
 
   factory Case.fromJson(Map<String, dynamic> json) => _$CaseFromJson(json);
 }
 
+@JsonEnum(alwaysCreate: true)
 enum CaseStatus {
+  /// [pending] refers to cases that are newly created and awaiting review or action.
+  @JsonValue('PENDING')
   pending,
+
+  /// [followed] indicates cases that are being actively monitored or tracked for updates.
+  @JsonValue('FOLLOWED')
   followed,
+
+  /// [closed] signifies cases that have been resolved or completed and are no longer active.
+  @JsonValue('CLOSED')
   closed;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case CaseStatus.pending:
-        return 'PENDING';
-      case CaseStatus.followed:
-        return 'FOLLOWED';
-      case CaseStatus.closed:
-        return 'CLOSED';
-    }
-  }
+  String toJson() => _$CaseStatusEnumMap[this] ?? 'PENDING';
 
   static CaseStatus fromJson(String json) {
-    switch (json) {
-      case 'PENDING':
-        return CaseStatus.pending;
-      case 'FOLLOWED':
-        return CaseStatus.followed;
-      case 'CLOSED':
-        return CaseStatus.closed;
-      default:
-        throw Exception('Invalid CaseStatus: $json');
-    }
+    return _$CaseStatusEnumMap.entries.firstWhereOrNull((element) => element.value == json)?.key ?? CaseStatus.pending;
   }
 }
 
-class CaseStatusConverter implements JsonConverter<CaseStatus, String> {
-  const CaseStatusConverter();
-
-  @override
-  CaseStatus fromJson(String json) => CaseStatus.fromJson(json);
-
-  @override
-  String toJson(CaseStatus object) => object.toJson();
-}
-
-class CaseStatusOrNullConverter implements JsonConverter<CaseStatus?, String?> {
-  const CaseStatusOrNullConverter();
-
-  @override
-  CaseStatus? fromJson(String? json) => json == null ? null : CaseStatus.fromJson(json);
-
-  @override
-  String? toJson(CaseStatus? object) => object?.toJson();
-}
-
+@JsonEnum(alwaysCreate: true)
 enum CaseIgnoredStatus {
+  /// [normal] indicates that the case is in its default state and has not been marked for any special handling.
+  @JsonValue('NORMAL')
   normal,
+
+  /// [ignored] means that the case has been deliberately set aside and will not be considered for further action or review.
+  @JsonValue('IGNORED')
   ignored,
+
+  /// [preset] suggests that the case has been pre-configured or set up in advance, possibly with specific parameters or conditions.
+  @JsonValue('PRESET')
   preset,
+
+  /// [expired] indicates that the case is no longer valid or active due to the passage of time or failure to meet certain conditions.
+  @JsonValue('EXPIRED')
+  expired,
+
+  /// [auto] implies that the case has been automatically generated or modified by a system or algorithm without manual intervention.
+  @JsonValue('AUTO')
   auto;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case CaseIgnoredStatus.normal:
-        return 'NORMAL';
-      case CaseIgnoredStatus.ignored:
-        return 'IGNORED';
-      case CaseIgnoredStatus.preset:
-        return 'PRESET';
-      case CaseIgnoredStatus.auto:
-        return 'AUTO';
-    }
-  }
+  String toJson() => _$CaseIgnoredStatusEnumMap[this] ?? 'NORMAL';
 
   static CaseIgnoredStatus fromJson(String json) {
-    switch (json) {
-      case 'NORMAL':
-        return CaseIgnoredStatus.normal;
-      case 'IGNORED':
-        return CaseIgnoredStatus.ignored;
-      case 'PRESET':
-        return CaseIgnoredStatus.preset;
-      case 'AUTO':
-        return CaseIgnoredStatus.auto;
-      default:
-        throw Exception('Invalid CaseIgnoredStatus: $json');
-    }
+    return _$CaseIgnoredStatusEnumMap.entries.firstWhereOrNull((element) => element.value == json)?.key ??
+        CaseIgnoredStatus.normal;
   }
-}
-
-class CaseIgnoredStatusConverter implements JsonConverter<CaseIgnoredStatus, String> {
-  const CaseIgnoredStatusConverter();
-
-  @override
-  CaseIgnoredStatus fromJson(String json) => CaseIgnoredStatus.fromJson(json);
-
-  @override
-  String toJson(CaseIgnoredStatus object) => object.toJson();
-}
-
-class CaseIgnoredStatusOrNullConverter implements JsonConverter<CaseIgnoredStatus?, String?> {
-  const CaseIgnoredStatusOrNullConverter();
-
-  @override
-  CaseIgnoredStatus? fromJson(String? json) => json == null ? null : CaseIgnoredStatus.fromJson(json);
-
-  @override
-  String? toJson(CaseIgnoredStatus? object) => object?.toJson();
 }

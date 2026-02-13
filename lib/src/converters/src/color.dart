@@ -16,7 +16,7 @@ class ColorConverter implements JsonConverter<Color, String> {
     if (kVuetifyColors[json] != null) {
       return kVuetifyColors[json]!;
     }
-    return kPrimaryColor;
+    return Colors.blue;
   }
 
   @override
@@ -48,7 +48,7 @@ class ColorOrNullConverter implements JsonConverter<Color?, String?> {
     if (kVuetifyColors[json] != null) {
       return kVuetifyColors[json]!;
     }
-    return kPrimaryColor;
+    return null;
   }
 
   @override

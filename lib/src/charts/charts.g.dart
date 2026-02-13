@@ -7,24 +7,33 @@ part of 'charts.dart';
 // **************************************************************************
 
 _LayrzChart _$LayrzChartFromJson(Map<String, dynamic> json) => _LayrzChart(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      description: json['description'] as String?,
-      formula: json['formula'] as String?,
-      script: json['script'] as String?,
-      sensors:
-          (json['sensors'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      type: $enumDecodeNullable(_$ChartTypeEnumMap, json['type'],
-          unknownValue: ChartType.area),
-      algorithm: $enumDecodeNullable(_$ChartAlgorithmEnumMap, json['algorithm'],
-          unknownValue: ChartAlgorithm.auto),
-      dataSource: $enumDecodeNullable(
-          _$ChartDataSourceEnumMap, json['dataSource'],
-          unknownValue: ChartDataSource.messages),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  id: json['id'] as String,
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  formula: json['formula'] as String?,
+  script: json['script'] as String?,
+  sensors: (json['sensors'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  type: $enumDecodeNullable(
+    _$ChartTypeEnumMap,
+    json['type'],
+    unknownValue: ChartType.area,
+  ),
+  algorithm: $enumDecodeNullable(
+    _$ChartAlgorithmEnumMap,
+    json['algorithm'],
+    unknownValue: ChartAlgorithm.auto,
+  ),
+  dataSource: $enumDecodeNullable(
+    _$ChartDataSourceEnumMap,
+    json['dataSource'],
+    unknownValue: ChartDataSource.messages,
+  ),
+  access: (json['access'] as List<dynamic>?)
+      ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
 Map<String, dynamic> _$LayrzChartToJson(_LayrzChart instance) =>
     <String, dynamic>{
@@ -67,6 +76,9 @@ const _$ChartDataSourceEnumMap = {
   ChartDataSource.events: 'EVENTS',
   ChartDataSource.cases: 'CASES',
   ChartDataSource.checkpoints: 'CHECKPOINTS',
+  ChartDataSource.atsOperations: 'ATS_OPERATIONS',
+  ChartDataSource.atsPurchaseOrders: 'ATS_PURCHASEORDERS',
+  ChartDataSource.lastMessages: 'LAST_MESSAGES',
 };
 
 _LayrzChartInput _$LayrzChartInputFromJson(Map<String, dynamic> json) =>
@@ -76,19 +88,31 @@ _LayrzChartInput _$LayrzChartInputFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String? ?? '',
       formula: json['formula'] as String? ?? '',
       script: json['script'] as String? ?? '',
-      sensors: (json['sensors'] as List<dynamic>?)
+      sensors:
+          (json['sensors'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      type: $enumDecodeNullable(_$ChartTypeEnumMap, json['type'],
-              unknownValue: ChartType.area) ??
+      type:
+          $enumDecodeNullable(
+            _$ChartTypeEnumMap,
+            json['type'],
+            unknownValue: ChartType.area,
+          ) ??
           ChartType.area,
-      algorithm: $enumDecodeNullable(_$ChartAlgorithmEnumMap, json['algorithm'],
-              unknownValue: ChartAlgorithm.auto) ??
+      algorithm:
+          $enumDecodeNullable(
+            _$ChartAlgorithmEnumMap,
+            json['algorithm'],
+            unknownValue: ChartAlgorithm.auto,
+          ) ??
           ChartAlgorithm.auto,
-      dataSource: $enumDecodeNullable(
-              _$ChartDataSourceEnumMap, json['dataSource'],
-              unknownValue: ChartDataSource.messages) ??
+      dataSource:
+          $enumDecodeNullable(
+            _$ChartDataSourceEnumMap,
+            json['dataSource'],
+            unknownValue: ChartDataSource.messages,
+          ) ??
           ChartDataSource.messages,
     );
 
@@ -106,13 +130,16 @@ Map<String, dynamic> _$LayrzChartInputToJson(_LayrzChartInput instance) =>
     };
 
 _AxisConfig _$AxisConfigFromJson(Map<String, dynamic> json) => _AxisConfig(
-      label: json['label'] as String?,
-      measureUnit: json['measureUnit'] as String?,
-      minValue: json['minValue'] as num?,
-      maxValue: json['maxValue'] as num?,
-      dataType: $enumDecodeNullable(_$ChartDataTypeEnumMap, json['dataType'],
-          unknownValue: ChartDataType.unknown),
-    );
+  label: json['label'] as String?,
+  measureUnit: json['measureUnit'] as String?,
+  minValue: json['minValue'] as num?,
+  maxValue: json['maxValue'] as num?,
+  dataType: $enumDecodeNullable(
+    _$ChartDataTypeEnumMap,
+    json['dataType'],
+    unknownValue: ChartDataType.unknown,
+  ),
+);
 
 Map<String, dynamic> _$AxisConfigToJson(_AxisConfig instance) =>
     <String, dynamic>{
@@ -150,8 +177,11 @@ _LineChartSerie _$LineChartSerieFromJson(Map<String, dynamic> json) =>
     _LineChartSerie(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
-      type: $enumDecode(_$ChartDataSerieTypeEnumMap, json['type'],
-          unknownValue: ChartDataSerieType.line),
+      type: $enumDecode(
+        _$ChartDataSerieTypeEnumMap,
+        json['type'],
+        unknownValue: ChartDataSerieType.line,
+      ),
       values: (json['values'] as List<dynamic>)
           .map((e) => LineChartDataPoint.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -172,27 +202,16 @@ const _$ChartDataSerieTypeEnumMap = {
 };
 
 _LineChartDataPoint _$LineChartDataPointFromJson(Map<String, dynamic> json) =>
-    _LineChartDataPoint(
-      xAxis: json['xAxis'],
-      yAxis: json['yAxis'] as num,
-    );
+    _LineChartDataPoint(xAxis: json['xAxis'], yAxis: json['yAxis'] as num);
 
 Map<String, dynamic> _$LineChartDataPointToJson(_LineChartDataPoint instance) =>
-    <String, dynamic>{
-      'xAxis': instance.xAxis,
-      'yAxis': instance.yAxis,
-    };
+    <String, dynamic>{'xAxis': instance.xAxis, 'yAxis': instance.yAxis};
 
-_TableHeader _$TableHeaderFromJson(Map<String, dynamic> json) => _TableHeader(
-      label: json['label'] as String,
-      key: json['key'] as String,
-    );
+_TableHeader _$TableHeaderFromJson(Map<String, dynamic> json) =>
+    _TableHeader(label: json['label'] as String, key: json['key'] as String);
 
 Map<String, dynamic> _$TableHeaderToJson(_TableHeader instance) =>
-    <String, dynamic>{
-      'label': instance.label,
-      'key': instance.key,
-    };
+    <String, dynamic>{'label': instance.label, 'key': instance.key};
 
 _TableDataSerie _$TableDataSerieFromJson(Map<String, dynamic> json) =>
     _TableDataSerie(
@@ -243,18 +262,15 @@ Map<String, dynamic> _$ColumnChartSerieToJson(_ColumnChartSerie instance) =>
     };
 
 _ColumnChartDataPoint _$ColumnChartDataPointFromJson(
-        Map<String, dynamic> json) =>
-    _ColumnChartDataPoint(
-      xAxis: json['xAxis'] as String,
-      yAxis: json['yAxis'] as num,
-    );
+  Map<String, dynamic> json,
+) => _ColumnChartDataPoint(
+  xAxis: json['xAxis'] as String,
+  yAxis: json['yAxis'] as num,
+);
 
 Map<String, dynamic> _$ColumnChartDataPointToJson(
-        _ColumnChartDataPoint instance) =>
-    <String, dynamic>{
-      'xAxis': instance.xAxis,
-      'yAxis': instance.yAxis,
-    };
+  _ColumnChartDataPoint instance,
+) => <String, dynamic>{'xAxis': instance.xAxis, 'yAxis': instance.yAxis};
 
 _BarChartRender _$BarChartRenderFromJson(Map<String, dynamic> json) =>
     _BarChartRender(
@@ -295,10 +311,7 @@ _BarChartDataPoint _$BarChartDataPointFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$BarChartDataPointToJson(_BarChartDataPoint instance) =>
-    <String, dynamic>{
-      'xAxis': instance.xAxis,
-      'yAxis': instance.yAxis,
-    };
+    <String, dynamic>{'xAxis': instance.xAxis, 'yAxis': instance.yAxis};
 
 _ScatterChartRender _$ScatterChartRenderFromJson(Map<String, dynamic> json) =>
     _ScatterChartRender(
@@ -357,18 +370,18 @@ Map<String, dynamic> _$PieChartSerieToJson(_PieChartSerie instance) =>
     };
 
 _RadialBarChartRender _$RadialBarChartRenderFromJson(
-        Map<String, dynamic> json) =>
-    _RadialBarChartRender(
-      series: (json['series'] as List<dynamic>)
-          .map((e) => RadialBarChartSerie.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  Map<String, dynamic> json,
+) => _RadialBarChartRender(
+  series: (json['series'] as List<dynamic>)
+      .map((e) => RadialBarChartSerie.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
 Map<String, dynamic> _$RadialBarChartRenderToJson(
-        _RadialBarChartRender instance) =>
-    <String, dynamic>{
-      'series': instance.series.map((e) => e.toJson()).toList(),
-    };
+  _RadialBarChartRender instance,
+) => <String, dynamic>{
+  'series': instance.series.map((e) => e.toJson()).toList(),
+};
 
 _RadialBarChartSerie _$RadialBarChartSerieFromJson(Map<String, dynamic> json) =>
     _RadialBarChartSerie(
@@ -378,9 +391,9 @@ _RadialBarChartSerie _$RadialBarChartSerieFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$RadialBarChartSerieToJson(
-        _RadialBarChartSerie instance) =>
-    <String, dynamic>{
-      'color': const ColorConverter().toJson(instance.color),
-      'label': instance.label,
-      'value': instance.value,
-    };
+  _RadialBarChartSerie instance,
+) => <String, dynamic>{
+  'color': const ColorConverter().toJson(instance.color),
+  'label': instance.label,
+  'value': instance.value,
+};

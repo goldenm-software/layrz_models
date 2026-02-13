@@ -88,6 +88,9 @@ abstract class CaclEntity with _$CaclEntity {
 
     /// [localDateEnd] is the local date end of the cacl entity.
     @TimestampOrNullConverter() DateTime? localDateEnd,
+
+    /// [lossPercentage] is the loss percentage of the cacl entity.
+    double? lossPercentage,
   }) = _CaclEntity;
 
   /// Creates a new [CaclEntity] instance from a JSON map.

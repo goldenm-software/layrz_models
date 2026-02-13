@@ -14,7 +14,8 @@ _ExchangeProtocol _$ExchangeProtocolFromJson(Map<String, dynamic> json) =>
       dynamicIcon: json['dynamicIcon'] == null
           ? null
           : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
-      requiredFields: (json['requiredFields'] as List<dynamic>?)
+      requiredFields:
+          (json['requiredFields'] as List<dynamic>?)
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -59,8 +60,9 @@ _ExchangeService _$ExchangeServiceFromJson(Map<String, dynamic> json) =>
       assets: (json['assets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      tagsIds:
-          (json['tagsIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      tagsIds: (json['tagsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       tags: (json['tags'] as List<dynamic>?)
           ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -81,22 +83,22 @@ _ExchangeService _$ExchangeServiceFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$ExchangeServiceToJson(_ExchangeService instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'credentials': instance.credentials,
-      'protocol': instance.protocol?.toJson(),
-      'protocolId': instance.protocolId,
-      'isEnabled': instance.isEnabled,
-      'assetsIds': instance.assetsIds,
-      'assets': instance.assets?.map((e) => e.toJson()).toList(),
-      'tagsIds': instance.tagsIds,
-      'tags': instance.tags?.map((e) => e.toJson()).toList(),
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-      'geofencesIds': instance.geofencesIds,
-      'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
-      'geofencesGroupsIds': instance.geofencesGroupsIds,
-      'geofencesGroups':
-          instance.geofencesGroups?.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$ExchangeServiceToJson(
+  _ExchangeService instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'credentials': instance.credentials,
+  'protocol': instance.protocol?.toJson(),
+  'protocolId': instance.protocolId,
+  'isEnabled': instance.isEnabled,
+  'assetsIds': instance.assetsIds,
+  'assets': instance.assets?.map((e) => e.toJson()).toList(),
+  'tagsIds': instance.tagsIds,
+  'tags': instance.tags?.map((e) => e.toJson()).toList(),
+  'access': instance.access?.map((e) => e.toJson()).toList(),
+  'geofencesIds': instance.geofencesIds,
+  'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
+  'geofencesGroupsIds': instance.geofencesGroupsIds,
+  'geofencesGroups': instance.geofencesGroups?.map((e) => e.toJson()).toList(),
+};

@@ -14,3 +14,4 @@ part 'src/http_request_type.dart';
 part 'src/notification_type.dart';
 part 'src/operation.dart';
 part 'src/http_header.dart';
+part 'src/twilio_content_sid.dart';

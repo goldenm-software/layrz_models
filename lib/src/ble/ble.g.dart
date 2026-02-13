@@ -7,45 +7,46 @@ part of 'ble.dart';
 // **************************************************************************
 
 _BleDevice _$BleDeviceFromJson(Map<String, dynamic> json) => _BleDevice(
-      macAddress: json['macAddress'] as String,
-      name: json['name'] as String?,
-      rssi: (json['rssi'] as num?)?.toInt(),
-      txPower: (json['txPower'] as num?)?.toInt(),
-      manufacturerData: (json['manufacturerData'] as List<dynamic>?)
-              ?.map((e) =>
-                  BleManufacturerData.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-      serviceData: (json['serviceData'] as List<dynamic>?)
-              ?.map((e) => BleServiceData.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-    );
+  macAddress: json['macAddress'] as String,
+  name: json['name'] as String?,
+  rssi: (json['rssi'] as num?)?.toInt(),
+  txPower: (json['txPower'] as num?)?.toInt(),
+  manufacturerData:
+      (json['manufacturerData'] as List<dynamic>?)
+          ?.map((e) => BleManufacturerData.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+  serviceData:
+      (json['serviceData'] as List<dynamic>?)
+          ?.map((e) => BleServiceData.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+);
 
-Map<String, dynamic> _$BleDeviceToJson(_BleDevice instance) =>
-    <String, dynamic>{
-      'macAddress': instance.macAddress,
-      'name': instance.name,
-      'rssi': instance.rssi,
-      'txPower': instance.txPower,
-      'manufacturerData':
-          instance.manufacturerData.map((e) => e.toJson()).toList(),
-      'serviceData': instance.serviceData.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$BleDeviceToJson(
+  _BleDevice instance,
+) => <String, dynamic>{
+  'macAddress': instance.macAddress,
+  'name': instance.name,
+  'rssi': instance.rssi,
+  'txPower': instance.txPower,
+  'manufacturerData': instance.manufacturerData.map((e) => e.toJson()).toList(),
+  'serviceData': instance.serviceData.map((e) => e.toJson()).toList(),
+};
 
 _BleService _$BleServiceFromJson(Map<String, dynamic> json) => _BleService(
-      uuid: json['uuid'] as String,
-      characteristics: (json['characteristics'] as List<dynamic>?)
-          ?.map((e) => BleCharacteristic.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  uuid: json['uuid'] as String,
+  characteristics: (json['characteristics'] as List<dynamic>?)
+      ?.map((e) => BleCharacteristic.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
-Map<String, dynamic> _$BleServiceToJson(_BleService instance) =>
-    <String, dynamic>{
-      'uuid': instance.uuid,
-      'characteristics':
-          instance.characteristics?.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$BleServiceToJson(
+  _BleService instance,
+) => <String, dynamic>{
+  'uuid': instance.uuid,
+  'characteristics': instance.characteristics?.map((e) => e.toJson()).toList(),
+};
 
 _BleServiceData _$BleServiceDataFromJson(Map<String, dynamic> json) =>
     _BleServiceData(
@@ -56,17 +57,20 @@ _BleServiceData _$BleServiceDataFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$BleServiceDataToJson(_BleServiceData instance) =>
-    <String, dynamic>{
-      'uuid': instance.uuid,
-      'data': instance.data,
-    };
+    <String, dynamic>{'uuid': instance.uuid, 'data': instance.data};
 
 _BleCharacteristic _$BleCharacteristicFromJson(Map<String, dynamic> json) =>
     _BleCharacteristic(
       uuid: json['uuid'] as String,
-      properties: (json['properties'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$BlePropertyEnumMap, e,
-                  unknownValue: BleProperty.unknown))
+      properties:
+          (json['properties'] as List<dynamic>?)
+              ?.map(
+                (e) => $enumDecode(
+                  _$BlePropertyEnumMap,
+                  e,
+                  unknownValue: BleProperty.unknown,
+                ),
+              )
               .toList() ??
           const [],
     );
@@ -98,8 +102,5 @@ _BleManufacturerData _$BleManufacturerDataFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$BleManufacturerDataToJson(
-        _BleManufacturerData instance) =>
-    <String, dynamic>{
-      'companyId': instance.companyId,
-      'data': instance.data,
-    };
+  _BleManufacturerData instance,
+) => <String, dynamic>{'companyId': instance.companyId, 'data': instance.data};

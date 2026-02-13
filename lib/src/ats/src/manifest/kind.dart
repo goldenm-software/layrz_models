@@ -13,6 +13,9 @@ enum ManifestKind {
 
   @JsonValue('MOVEMENT_AFTER_STOP')
   movementAfterStop,
+
+  @JsonValue('BEFORE_UNLOAD')
+  beforeUnload,
   ;
 
   @override

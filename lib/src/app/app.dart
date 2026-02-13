@@ -3,6 +3,7 @@ library;
 import 'package:collection/collection.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_logging/layrz_logging.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 // Freezed
