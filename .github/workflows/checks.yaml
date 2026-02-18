@@ -2,23 +2,20 @@ name: "Checks"
 
 on:
   pull_request:
-    branches: [ main, next, development ]
+    branches: [ main ]
     types: [ opened, synchronize, reopened ]
 
 jobs:
   lint-dart:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
+      - uses: actions/checkout@v6
 
       - name: Setup Flutter
         uses: flutter-actions/setup-flutter@v4
         with:
           channel: stable
-          version: 3.38.8
+          version: '3.38.8'
           cache: true
           cache-sdk: true
           cache-key: ${{ runner.os }}-flutter-${{ hashFiles('pubspec.yaml') }}
@@ -27,4 +24,63 @@ jobs:
         run: flutter pub get
 
       - name: Run checks
+        shell: bash
         run: flutter analyze
+
+      - name: Run tests
+        shell: bash
+        run: flutter test --machine --coverage > test-results.json
+
+      - name: Publish test results
+        uses: dorny/test-reporter@v1
+        with:
+          name: Unit Tests
+          path: test-results.json
+          reporter: flutter-json
+
+      - name: Set outputs
+        id: set-outputs
+        run: |
+          COVERAGE_PATH="lcov.info"
+          TEST_RESULTS_PATH="test-results.json"
+          echo "coverage-path=$COVERAGE_PATH" >> $GITHUB_OUTPUT
+          echo "test-results-path=$TEST_RESULTS_PATH" >> $GITHUB_OUTPUT
+
+      - name: Upload coverage artifact
+        id: upload-coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: dart-coverage-${{ github.run_id }}
+          path: coverage/lcov.info
+          retention-days: 1
+  
+  coverage-comment:
+    needs: lint-dart
+    if: always() && github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download coverage artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dart-coverage-${{ github.run_id }}
+          path: dart-coverage
+
+      - uses: ./.github/actions/coverage-comment
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          enable-dart: true
+          dart-coverage-path: dart-coverage/lcov.info
+
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/changelog
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          post-comment: true

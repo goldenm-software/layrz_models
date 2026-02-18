@@ -1016,6 +1016,11 @@ _Employee _$EmployeeFromJson(Map<String, dynamic> json) => _Employee(
   preferences: json['preferences'] == null
       ? null
       : UserPreferences.fromJson(json['preferences'] as Map<String, dynamic>),
+  passkeys:
+      (json['passkeys'] as List<dynamic>?)
+          ?.map((e) => Passkey.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$EmployeeToJson(_Employee instance) => <String, dynamic>{
@@ -1034,6 +1039,7 @@ Map<String, dynamic> _$EmployeeToJson(_Employee instance) => <String, dynamic>{
       .map(const MfaMethodConverter().toJson)
       .toList(),
   'preferences': instance.preferences?.toJson(),
+  'passkeys': instance.passkeys.map((e) => e.toJson()).toList(),
 };
 
 _FtpAccount _$FtpAccountFromJson(Map<String, dynamic> json) => _FtpAccount(

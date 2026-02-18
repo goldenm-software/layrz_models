@@ -77,6 +77,14 @@ const _$MfaMethodEnumMap = {
   MfaMethod.backupCode: 'BACKUP_CODE',
 };
 
+_Passkey _$PasskeyFromJson(Map<String, dynamic> json) =>
+    _Passkey(id: json['id'] as String, appId: json['appId'] as String);
+
+Map<String, dynamic> _$PasskeyToJson(_Passkey instance) => <String, dynamic>{
+  'id': instance.id,
+  'appId': instance.appId,
+};
+
 _PasswordInput _$PasswordInputFromJson(Map<String, dynamic> json) =>
     _PasswordInput(
       currentPassword: json['currentPassword'] as String? ?? '',
@@ -232,6 +240,11 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
   preferences: json['preferences'] == null
       ? null
       : UserPreferences.fromJson(json['preferences'] as Map<String, dynamic>),
+  passkeys:
+      (json['passkeys'] as List<dynamic>?)
+          ?.map((e) => Passkey.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
@@ -283,6 +296,7 @@ Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
   'billingPlan': instance.billingPlan?.toJson(),
   'isPasswordExpired': instance.isPasswordExpired,
   'preferences': instance.preferences?.toJson(),
+  'passkeys': instance.passkeys.map((e) => e.toJson()).toList(),
 };
 
 _UserInput _$UserInputFromJson(Map<String, dynamic> json) => _UserInput(

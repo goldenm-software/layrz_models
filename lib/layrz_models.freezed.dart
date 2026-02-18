@@ -10184,7 +10184,8 @@ mixin _$Employee {
  GenericPermission? get customPermissions;/// [mfaEnabled] represents the MFA enabled flag.
  bool get mfaEnabled;/// [mfaMethods] represents the list of MFA methods.
 @MfaMethodConverter() List<MfaMethod> get mfaMethods;/// [preferences] represents the user preferences.
- UserPreferences? get preferences;
+ UserPreferences? get preferences;/// [passkeys] is the list of passkeys registered for the user.
+ List<Passkey> get passkeys;
 /// Create a copy of Employee
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -10197,16 +10198,16 @@ $EmployeeCopyWith<Employee> get copyWith => _$EmployeeCopyWithImpl<Employee>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Employee&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.department, department) || other.department == department)&&(identical(other.departmentId, departmentId) || other.departmentId == departmentId)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&(identical(other.token, token) || other.token == token)&&(identical(other.permissions, permissions) || other.permissions == permissions)&&(identical(other.customPermissions, customPermissions) || other.customPermissions == customPermissions)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other.mfaMethods, mfaMethods)&&(identical(other.preferences, preferences) || other.preferences == preferences));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Employee&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.department, department) || other.department == department)&&(identical(other.departmentId, departmentId) || other.departmentId == departmentId)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&(identical(other.token, token) || other.token == token)&&(identical(other.permissions, permissions) || other.permissions == permissions)&&(identical(other.customPermissions, customPermissions) || other.customPermissions == customPermissions)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other.mfaMethods, mfaMethods)&&(identical(other.preferences, preferences) || other.preferences == preferences)&&const DeepCollectionEquality().equals(other.passkeys, passkeys));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,email,username,department,departmentId,dynamicAvatar,token,permissions,customPermissions,mfaEnabled,const DeepCollectionEquality().hash(mfaMethods),preferences);
+int get hashCode => Object.hash(runtimeType,id,name,email,username,department,departmentId,dynamicAvatar,token,permissions,customPermissions,mfaEnabled,const DeepCollectionEquality().hash(mfaMethods),preferences,const DeepCollectionEquality().hash(passkeys));
 
 @override
 String toString() {
-  return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, preferences: $preferences)';
+  return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, preferences: $preferences, passkeys: $passkeys)';
 }
 
 
@@ -10217,7 +10218,7 @@ abstract mixin class $EmployeeCopyWith<$Res>  {
   factory $EmployeeCopyWith(Employee value, $Res Function(Employee) _then) = _$EmployeeCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String? email, String? username, Department? department, String? departmentId, Avatar? dynamicAvatar, Token? token, GenericPermission? permissions, GenericPermission? customPermissions, bool mfaEnabled,@MfaMethodConverter() List<MfaMethod> mfaMethods, UserPreferences? preferences
+ String id, String name, String? email, String? username, Department? department, String? departmentId, Avatar? dynamicAvatar, Token? token, GenericPermission? permissions, GenericPermission? customPermissions, bool mfaEnabled,@MfaMethodConverter() List<MfaMethod> mfaMethods, UserPreferences? preferences, List<Passkey> passkeys
 });
 
 
@@ -10234,7 +10235,7 @@ class _$EmployeeCopyWithImpl<$Res>
 
 /// Create a copy of Employee
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? email = freezed,Object? username = freezed,Object? department = freezed,Object? departmentId = freezed,Object? dynamicAvatar = freezed,Object? token = freezed,Object? permissions = freezed,Object? customPermissions = freezed,Object? mfaEnabled = null,Object? mfaMethods = null,Object? preferences = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? email = freezed,Object? username = freezed,Object? department = freezed,Object? departmentId = freezed,Object? dynamicAvatar = freezed,Object? token = freezed,Object? permissions = freezed,Object? customPermissions = freezed,Object? mfaEnabled = null,Object? mfaMethods = null,Object? preferences = freezed,Object? passkeys = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -10249,7 +10250,8 @@ as GenericPermission?,customPermissions: freezed == customPermissions ? _self.cu
 as GenericPermission?,mfaEnabled: null == mfaEnabled ? _self.mfaEnabled : mfaEnabled // ignore: cast_nullable_to_non_nullable
 as bool,mfaMethods: null == mfaMethods ? _self.mfaMethods : mfaMethods // ignore: cast_nullable_to_non_nullable
 as List<MfaMethod>,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as UserPreferences?,
+as UserPreferences?,passkeys: null == passkeys ? _self.passkeys : passkeys // ignore: cast_nullable_to_non_nullable
+as List<Passkey>,
   ));
 }
 /// Create a copy of Employee
@@ -10406,10 +10408,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? email,  String? username,  Department? department,  String? departmentId,  Avatar? dynamicAvatar,  Token? token,  GenericPermission? permissions,  GenericPermission? customPermissions,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  UserPreferences? preferences)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? email,  String? username,  Department? department,  String? departmentId,  Avatar? dynamicAvatar,  Token? token,  GenericPermission? permissions,  GenericPermission? customPermissions,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  UserPreferences? preferences,  List<Passkey> passkeys)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Employee() when $default != null:
-return $default(_that.id,_that.name,_that.email,_that.username,_that.department,_that.departmentId,_that.dynamicAvatar,_that.token,_that.permissions,_that.customPermissions,_that.mfaEnabled,_that.mfaMethods,_that.preferences);case _:
+return $default(_that.id,_that.name,_that.email,_that.username,_that.department,_that.departmentId,_that.dynamicAvatar,_that.token,_that.permissions,_that.customPermissions,_that.mfaEnabled,_that.mfaMethods,_that.preferences,_that.passkeys);case _:
   return orElse();
 
 }
@@ -10427,10 +10429,10 @@ return $default(_that.id,_that.name,_that.email,_that.username,_that.department,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? email,  String? username,  Department? department,  String? departmentId,  Avatar? dynamicAvatar,  Token? token,  GenericPermission? permissions,  GenericPermission? customPermissions,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  UserPreferences? preferences)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? email,  String? username,  Department? department,  String? departmentId,  Avatar? dynamicAvatar,  Token? token,  GenericPermission? permissions,  GenericPermission? customPermissions,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  UserPreferences? preferences,  List<Passkey> passkeys)  $default,) {final _that = this;
 switch (_that) {
 case _Employee():
-return $default(_that.id,_that.name,_that.email,_that.username,_that.department,_that.departmentId,_that.dynamicAvatar,_that.token,_that.permissions,_that.customPermissions,_that.mfaEnabled,_that.mfaMethods,_that.preferences);case _:
+return $default(_that.id,_that.name,_that.email,_that.username,_that.department,_that.departmentId,_that.dynamicAvatar,_that.token,_that.permissions,_that.customPermissions,_that.mfaEnabled,_that.mfaMethods,_that.preferences,_that.passkeys);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -10447,10 +10449,10 @@ return $default(_that.id,_that.name,_that.email,_that.username,_that.department,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? email,  String? username,  Department? department,  String? departmentId,  Avatar? dynamicAvatar,  Token? token,  GenericPermission? permissions,  GenericPermission? customPermissions,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  UserPreferences? preferences)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? email,  String? username,  Department? department,  String? departmentId,  Avatar? dynamicAvatar,  Token? token,  GenericPermission? permissions,  GenericPermission? customPermissions,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  UserPreferences? preferences,  List<Passkey> passkeys)?  $default,) {final _that = this;
 switch (_that) {
 case _Employee() when $default != null:
-return $default(_that.id,_that.name,_that.email,_that.username,_that.department,_that.departmentId,_that.dynamicAvatar,_that.token,_that.permissions,_that.customPermissions,_that.mfaEnabled,_that.mfaMethods,_that.preferences);case _:
+return $default(_that.id,_that.name,_that.email,_that.username,_that.department,_that.departmentId,_that.dynamicAvatar,_that.token,_that.permissions,_that.customPermissions,_that.mfaEnabled,_that.mfaMethods,_that.preferences,_that.passkeys);case _:
   return null;
 
 }
@@ -10462,7 +10464,7 @@ return $default(_that.id,_that.name,_that.email,_that.username,_that.department,
 @JsonSerializable()
 
 class _Employee implements Employee {
-  const _Employee({required this.id, required this.name, this.email, this.username, this.department, this.departmentId, this.dynamicAvatar, this.token, this.permissions, this.customPermissions, this.mfaEnabled = false, @MfaMethodConverter() final  List<MfaMethod> mfaMethods = const [], this.preferences}): _mfaMethods = mfaMethods;
+  const _Employee({required this.id, required this.name, this.email, this.username, this.department, this.departmentId, this.dynamicAvatar, this.token, this.permissions, this.customPermissions, this.mfaEnabled = false, @MfaMethodConverter() final  List<MfaMethod> mfaMethods = const [], this.preferences, final  List<Passkey> passkeys = const []}): _mfaMethods = mfaMethods,_passkeys = passkeys;
   factory _Employee.fromJson(Map<String, dynamic> json) => _$EmployeeFromJson(json);
 
 /// [id] represents the user id.
@@ -10498,6 +10500,15 @@ class _Employee implements Employee {
 
 /// [preferences] represents the user preferences.
 @override final  UserPreferences? preferences;
+/// [passkeys] is the list of passkeys registered for the user.
+ final  List<Passkey> _passkeys;
+/// [passkeys] is the list of passkeys registered for the user.
+@override@JsonKey() List<Passkey> get passkeys {
+  if (_passkeys is EqualUnmodifiableListView) return _passkeys;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_passkeys);
+}
+
 
 /// Create a copy of Employee
 /// with the given fields replaced by the non-null parameter values.
@@ -10512,16 +10523,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Employee&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.department, department) || other.department == department)&&(identical(other.departmentId, departmentId) || other.departmentId == departmentId)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&(identical(other.token, token) || other.token == token)&&(identical(other.permissions, permissions) || other.permissions == permissions)&&(identical(other.customPermissions, customPermissions) || other.customPermissions == customPermissions)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other._mfaMethods, _mfaMethods)&&(identical(other.preferences, preferences) || other.preferences == preferences));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Employee&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.department, department) || other.department == department)&&(identical(other.departmentId, departmentId) || other.departmentId == departmentId)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&(identical(other.token, token) || other.token == token)&&(identical(other.permissions, permissions) || other.permissions == permissions)&&(identical(other.customPermissions, customPermissions) || other.customPermissions == customPermissions)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other._mfaMethods, _mfaMethods)&&(identical(other.preferences, preferences) || other.preferences == preferences)&&const DeepCollectionEquality().equals(other._passkeys, _passkeys));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,email,username,department,departmentId,dynamicAvatar,token,permissions,customPermissions,mfaEnabled,const DeepCollectionEquality().hash(_mfaMethods),preferences);
+int get hashCode => Object.hash(runtimeType,id,name,email,username,department,departmentId,dynamicAvatar,token,permissions,customPermissions,mfaEnabled,const DeepCollectionEquality().hash(_mfaMethods),preferences,const DeepCollectionEquality().hash(_passkeys));
 
 @override
 String toString() {
-  return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, preferences: $preferences)';
+  return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, preferences: $preferences, passkeys: $passkeys)';
 }
 
 
@@ -10532,7 +10543,7 @@ abstract mixin class _$EmployeeCopyWith<$Res> implements $EmployeeCopyWith<$Res>
   factory _$EmployeeCopyWith(_Employee value, $Res Function(_Employee) _then) = __$EmployeeCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String? email, String? username, Department? department, String? departmentId, Avatar? dynamicAvatar, Token? token, GenericPermission? permissions, GenericPermission? customPermissions, bool mfaEnabled,@MfaMethodConverter() List<MfaMethod> mfaMethods, UserPreferences? preferences
+ String id, String name, String? email, String? username, Department? department, String? departmentId, Avatar? dynamicAvatar, Token? token, GenericPermission? permissions, GenericPermission? customPermissions, bool mfaEnabled,@MfaMethodConverter() List<MfaMethod> mfaMethods, UserPreferences? preferences, List<Passkey> passkeys
 });
 
 
@@ -10549,7 +10560,7 @@ class __$EmployeeCopyWithImpl<$Res>
 
 /// Create a copy of Employee
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? email = freezed,Object? username = freezed,Object? department = freezed,Object? departmentId = freezed,Object? dynamicAvatar = freezed,Object? token = freezed,Object? permissions = freezed,Object? customPermissions = freezed,Object? mfaEnabled = null,Object? mfaMethods = null,Object? preferences = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? email = freezed,Object? username = freezed,Object? department = freezed,Object? departmentId = freezed,Object? dynamicAvatar = freezed,Object? token = freezed,Object? permissions = freezed,Object? customPermissions = freezed,Object? mfaEnabled = null,Object? mfaMethods = null,Object? preferences = freezed,Object? passkeys = null,}) {
   return _then(_Employee(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -10564,7 +10575,8 @@ as GenericPermission?,customPermissions: freezed == customPermissions ? _self.cu
 as GenericPermission?,mfaEnabled: null == mfaEnabled ? _self.mfaEnabled : mfaEnabled // ignore: cast_nullable_to_non_nullable
 as bool,mfaMethods: null == mfaMethods ? _self._mfaMethods : mfaMethods // ignore: cast_nullable_to_non_nullable
 as List<MfaMethod>,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as UserPreferences?,
+as UserPreferences?,passkeys: null == passkeys ? _self._passkeys : passkeys // ignore: cast_nullable_to_non_nullable
+as List<Passkey>,
   ));
 }
 
