@@ -1,0 +1,267 @@
+name: 'Generate Changelog'
+description: 'Generate and optionally post changelog comments for PRs or releases'
+author: 'Layrz'
+
+inputs:
+  exclude-dependabot:
+    description: 'Skip action for dependabot PRs'
+    required: false
+    default: 'true'
+  exclude-types:
+    description: 'Commit types to exclude from changelog (comma-separated)'
+    required: false
+    default: 'chore,style'
+  comment-header:
+    description: 'Header text for the PR comment'
+    required: false
+    default: '## 📋 Changelog Summary'
+  from-ref:
+    description: 'Starting reference (commit/tag) for changelog. If empty, auto-detects based on event type'
+    required: false
+    default: ''
+  to-ref:
+    description: 'Ending reference (commit/tag) for changelog. If empty, auto-detects based on event type'
+    required: false
+    default: ''
+  github-token:
+    description: 'GitHub token for posting comments (only needed if posting to PR)'
+    required: false
+    default: ''
+  post-comment:
+    description: 'Whether to post comment to PR (requires github-token)'
+    required: false
+    default: 'true'
+
+outputs:
+  changelog:
+    description: 'Generated changelog text'
+    value: ${{ steps.read-changelog.outputs.changelog }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Check if should skip for dependabot
+      id: check-skip
+      shell: bash
+      run: |
+        if [ "${{ inputs.exclude-dependabot }}" == "true" ] && [ "${{ github.actor }}" == "dependabot[bot]" ]; then
+          echo "skip=true" >> $GITHUB_OUTPUT
+        else
+          echo "skip=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Determine refs
+      if: ${{ steps.check-skip.outputs.skip != 'true' }}
+      id: refs
+      shell: bash
+      run: |
+        # Determine if PR based on event type FIRST
+        if [ "${{ github.event_name }}" == "pull_request" ]; then
+          echo "is_pr=true" >> $GITHUB_OUTPUT
+          # Use custom refs if provided, otherwise use PR refs
+          if [ -n "${{ inputs.from-ref }}" ] && [ -n "${{ inputs.to-ref }}" ]; then
+            echo "from_ref=${{ inputs.from-ref }}" >> $GITHUB_OUTPUT
+            echo "to_ref=${{ inputs.to-ref }}" >> $GITHUB_OUTPUT
+          else
+            echo "from_ref=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
+            echo "to_ref=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+          fi
+        # If custom refs provided for non-PR events
+        elif [ -n "${{ inputs.from-ref }}" ] && [ -n "${{ inputs.to-ref }}" ]; then
+          echo "from_ref=${{ inputs.from-ref }}" >> $GITHUB_OUTPUT
+          echo "to_ref=${{ inputs.to-ref }}" >> $GITHUB_OUTPUT
+          echo "is_pr=false" >> $GITHUB_OUTPUT
+        # If it's a tag push
+        elif [[ "${{ github.ref }}" == refs/tags/* ]]; then
+          CURRENT_TAG="${{ github.ref_name }}"
+          # Get previous tag
+          PREVIOUS_TAG=$(git tag --sort=-version:refname | grep -A1 "^${CURRENT_TAG}$" | tail -n1)
+          if [ -z "$PREVIOUS_TAG" ] || [ "$PREVIOUS_TAG" == "$CURRENT_TAG" ]; then
+            # No previous tag, use first commit
+            PREVIOUS_TAG=$(git rev-list --max-parents=0 HEAD)
+          fi
+          echo "from_ref=${CURRENT_TAG}" >> $GITHUB_OUTPUT
+          echo "to_ref=${PREVIOUS_TAG}" >> $GITHUB_OUTPUT
+          echo "is_pr=false" >> $GITHUB_OUTPUT
+        # Default: compare with previous commit
+        else
+          echo "from_ref=${{ github.sha }}" >> $GITHUB_OUTPUT
+          echo "to_ref=${{ github.sha }}~1" >> $GITHUB_OUTPUT
+          echo "is_pr=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Generate Changelog
+      if: ${{ steps.check-skip.outputs.skip != 'true' }}
+      id: prepare
+      shell: bash
+      run: |
+        # Generate changelog from commit messages
+        # Supports both conventional commits and regular commit messages
+
+        FROM_REF="${{ steps.refs.outputs.to_ref }}"
+        TO_REF="${{ steps.refs.outputs.from_ref }}"
+
+        # Get commit messages
+        COMMITS=$(git log ${FROM_REF}..${TO_REF} --pretty=format:"%s|%h" --no-merges)
+
+        if [ -z "$COMMITS" ]; then
+          echo "- No changes detected" > changelog.txt
+          exit 0
+        fi
+
+        # Parse commits and categorize
+        echo "$COMMITS" | while IFS='|' read -r message hash; do
+          # Check if it's a conventional commit
+          if [[ "$message" =~ ^(feat|fix|docs|style|refactor|perf|test|build|ci|chore)(\(.+\))?!?:\ .+ ]]; then
+            # Extract type and description
+            TYPE=$(echo "$message" | sed -E 's/^([a-z]+)(\(.+\))?!?:\ .*/\1/')
+            DESC=$(echo "$message" | sed -E 's/^[a-z]+(\(.+\))?!?:\ (.*)/\2/')
+
+            # Skip excluded types
+            if [[ ",${{ inputs.exclude-types }}," == *",$TYPE,"* ]]; then
+              continue
+            fi
+
+            # Format based on type with clickable commit links
+            COMMIT_LINK="[\`$hash\`](https://github.com/${{ github.repository }}/commit/$hash)"
+            case "$TYPE" in
+              feat)
+                [ ! -f /tmp/feat.txt ] && echo "### ✨ Features" > /tmp/feat.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/feat.txt
+                ;;
+              fix)
+                [ ! -f /tmp/fix.txt ] && echo "### 🐛 Bug Fixes" > /tmp/fix.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/fix.txt
+                ;;
+              docs)
+                [ ! -f /tmp/docs.txt ] && echo "### 📚 Documentation" > /tmp/docs.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/docs.txt
+                ;;
+              perf)
+                [ ! -f /tmp/perf.txt ] && echo "### ⚡ Performance" > /tmp/perf.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/perf.txt
+                ;;
+              refactor)
+                [ ! -f /tmp/refactor.txt ] && echo "### ♻️ Refactoring" > /tmp/refactor.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/refactor.txt
+                ;;
+              test)
+                [ ! -f /tmp/test.txt ] && echo "### ✅ Tests" > /tmp/test.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/test.txt
+                ;;
+              build)
+                [ ! -f /tmp/build.txt ] && echo "### 🏗️ Build" > /tmp/build.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/build.txt
+                ;;
+              ci)
+                [ ! -f /tmp/ci.txt ] && echo "### 👷 CI/CD" > /tmp/ci.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/ci.txt
+                ;;
+              *)
+                [ ! -f /tmp/other.txt ] && echo "### 🔧 Other" > /tmp/other.txt
+                echo "- $DESC ($COMMIT_LINK)" >> /tmp/other.txt
+                ;;
+            esac
+          else
+            # Regular commit message (non-conventional) with clickable commit link
+            COMMIT_LINK="[\`$hash\`](https://github.com/${{ github.repository }}/commit/$hash)"
+            [ ! -f /tmp/changes.txt ] && echo "### 📝 Changes" > /tmp/changes.txt
+            echo "- $message ($COMMIT_LINK)" >> /tmp/changes.txt
+          fi
+        done
+
+        # Combine all sections in order
+        {
+          [ -f /tmp/feat.txt ] && cat /tmp/feat.txt && echo ""
+          [ -f /tmp/fix.txt ] && cat /tmp/fix.txt && echo ""
+          [ -f /tmp/perf.txt ] && cat /tmp/perf.txt && echo ""
+          [ -f /tmp/docs.txt ] && cat /tmp/docs.txt && echo ""
+          [ -f /tmp/refactor.txt ] && cat /tmp/refactor.txt && echo ""
+          [ -f /tmp/test.txt ] && cat /tmp/test.txt && echo ""
+          [ -f /tmp/build.txt ] && cat /tmp/build.txt && echo ""
+          [ -f /tmp/ci.txt ] && cat /tmp/ci.txt && echo ""
+          [ -f /tmp/changes.txt ] && cat /tmp/changes.txt && echo ""
+          [ -f /tmp/other.txt ] && cat /tmp/other.txt && echo ""
+        } > changelog.txt
+
+        # Clean up temp files
+        rm -f /tmp/{feat,fix,perf,docs,refactor,test,build,ci,changes,other}.txt
+
+        # If still empty, add placeholder
+        if [ ! -s changelog.txt ]; then
+          echo "- No changes detected" > changelog.txt
+        fi
+
+    - name: Format Changelog
+      if: ${{ steps.check-skip.outputs.skip != 'true' }}
+      id: format
+      shell: bash
+      run: |
+        # Create formatted changelog with header/footer
+        if [ "${{ steps.refs.outputs.is_pr }}" == "true" ]; then
+          INTRO_TEXT="This PR includes the following changes:"
+        else
+          INTRO_TEXT="This release includes the following changes:"
+        fi
+
+        {
+          echo "${{ inputs.comment-header }}"
+          echo ""
+          echo "$INTRO_TEXT"
+          echo ""
+          cat changelog.txt
+          echo ""
+          echo "---"
+          echo ""
+          echo "<sub>🤖 Auto-generated by changelog workflow</sub>"
+        } > formatted_changelog.txt
+
+    - name: Read Formatted Changelog
+      if: ${{ steps.check-skip.outputs.skip != 'true' }}
+      id: read-changelog
+      shell: bash
+      run: |
+        {
+          echo 'changelog<<CHANGELOG_EOF'
+          cat formatted_changelog.txt
+          echo 'CHANGELOG_EOF'
+        } >> $GITHUB_OUTPUT
+
+    - name: Create PR Comment
+      if: ${{ steps.check-skip.outputs.skip != 'true' && steps.refs.outputs.is_pr == 'true' && inputs.post-comment == 'true' }}
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ inputs.github-token || github.token }}
+        script: |
+          const fs = require('fs');
+          const comment = fs.readFileSync('formatted_changelog.txt', 'utf8');
+
+          // Check if bot already commented
+          const { data: comments } = await github.rest.issues.listComments({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+          });
+
+          const botComment = comments.find(comment =>
+            comment.user.type === 'Bot' &&
+            comment.body.includes('📋 Changelog Summary')
+          );
+
+          if (botComment) {
+            // Update existing comment
+            await github.rest.issues.updateComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: botComment.id,
+              body: comment
+            });
+          } else {
+            // Create new comment
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: comment
+            });
+          }
