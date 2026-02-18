@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dart-coverage-${{ github.run_id }}
-          path: lcov.info
+          path: coverage/lcov.info
           retention-days: 1
   
   coverage-comment:
