@@ -2,29 +2,46 @@ name: "Checks"
 
 on:
   pull_request:
-    branches: [ main, next, development ]
+    branches: [ main ]
     types: [ opened, synchronize, reopened ]
 
 jobs:
   lint-dart:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
 
-
-      - name: Setup Flutter
-        uses: flutter-actions/setup-flutter@v4
+      - uses: goldenm-software/layrz-ci-workflows/.github/actions/check-dart@v1
         with:
-          channel: stable
-          version: 3.38.8
-          cache: true
-          cache-sdk: true
-          cache-key: ${{ runner.os }}-flutter-${{ hashFiles('pubspec.yaml') }}
+          flutter-version: "3.38.8"
+          run-tests: true
+          artifact-name: 'dart-coverage-${{ github.run_id }}'
+  
+  coverage-comment:
+    needs: lint-dart
+    if: always() && github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download coverage artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dart-coverage-${{ github.run_id }}
+          path: dart-coverage
 
-      - name: Install dependencies
-        run: flutter pub get
+      - uses: goldenm-software/layrz-ci-workflows/.github/actions/coverage-comment@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          enable-dart: true
+          dart-coverage-path: dart-coverage/lcov.info
 
-      - name: Run checks
-        run: flutter analyze
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: goldenm-software/layrz-ci-workflows/.github/actions/changelog@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          post-comment: true

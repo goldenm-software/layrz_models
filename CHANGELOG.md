@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.8
+
+- Added new `Passkey` model to represent passkeys registered for users and employees.
+
 ## 3.6.7
 
 - Renamed `ExternalAccountForm` to `ExternalAccountInput`

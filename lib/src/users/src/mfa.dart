@@ -7,6 +7,16 @@ abstract class MfaInput with _$MfaInput {
   factory MfaInput.fromJson(Map<String, dynamic> json) => _$MfaInputFromJson(json);
 }
 
+@freezed
+abstract class Passkey with _$Passkey {
+  factory Passkey({
+    required String id,
+    required String appId,
+  }) = _Passkey;
+
+  factory Passkey.fromJson(Map<String, dynamic> json) => _$PasskeyFromJson(json);
+}
+
 @JsonEnum(alwaysCreate: true)
 enum MfaMethod {
   /// Layrz API Reference: `TOTP`
@@ -27,7 +37,8 @@ enum MfaMethod {
   /// Layrz API Reference: `BACKUP_CODE`
   /// Refers to a Backup Code algorithm.
   @JsonValue('BACKUP_CODE')
-  backupCode;
+  backupCode
+  ;
 
   @override
   String toString() => toJson();

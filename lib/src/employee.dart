@@ -42,6 +42,9 @@ abstract class Employee with _$Employee {
 
     /// [preferences] represents the user preferences.
     UserPreferences? preferences,
+
+    /// [passkeys] is the list of passkeys registered for the user.
+    @Default([]) List<Passkey> passkeys,
   }) = _Employee;
 
   factory Employee.fromJson(Map<String, dynamic> json) => _$EmployeeFromJson(json);

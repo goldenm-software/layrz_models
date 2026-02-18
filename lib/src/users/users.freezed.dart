@@ -834,6 +834,272 @@ as bool,
 
 
 /// @nodoc
+mixin _$Passkey {
+
+ String get id; String get appId;
+/// Create a copy of Passkey
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PasskeyCopyWith<Passkey> get copyWith => _$PasskeyCopyWithImpl<Passkey>(this as Passkey, _$identity);
+
+  /// Serializes this Passkey to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Passkey&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,appId);
+
+@override
+String toString() {
+  return 'Passkey(id: $id, appId: $appId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PasskeyCopyWith<$Res>  {
+  factory $PasskeyCopyWith(Passkey value, $Res Function(Passkey) _then) = _$PasskeyCopyWithImpl;
+@useResult
+$Res call({
+ String id, String appId
+});
+
+
+
+
+}
+/// @nodoc
+class _$PasskeyCopyWithImpl<$Res>
+    implements $PasskeyCopyWith<$Res> {
+  _$PasskeyCopyWithImpl(this._self, this._then);
+
+  final Passkey _self;
+  final $Res Function(Passkey) _then;
+
+/// Create a copy of Passkey
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? appId = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,appId: null == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [Passkey].
+extension PasskeyPatterns on Passkey {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Passkey value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Passkey() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Passkey value)  $default,){
+final _that = this;
+switch (_that) {
+case _Passkey():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Passkey value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Passkey() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String appId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Passkey() when $default != null:
+return $default(_that.id,_that.appId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String appId)  $default,) {final _that = this;
+switch (_that) {
+case _Passkey():
+return $default(_that.id,_that.appId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String appId)?  $default,) {final _that = this;
+switch (_that) {
+case _Passkey() when $default != null:
+return $default(_that.id,_that.appId);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _Passkey implements Passkey {
+   _Passkey({required this.id, required this.appId});
+  factory _Passkey.fromJson(Map<String, dynamic> json) => _$PasskeyFromJson(json);
+
+@override final  String id;
+@override final  String appId;
+
+/// Create a copy of Passkey
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PasskeyCopyWith<_Passkey> get copyWith => __$PasskeyCopyWithImpl<_Passkey>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PasskeyToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Passkey&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,appId);
+
+@override
+String toString() {
+  return 'Passkey(id: $id, appId: $appId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PasskeyCopyWith<$Res> implements $PasskeyCopyWith<$Res> {
+  factory _$PasskeyCopyWith(_Passkey value, $Res Function(_Passkey) _then) = __$PasskeyCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String appId
+});
+
+
+
+
+}
+/// @nodoc
+class __$PasskeyCopyWithImpl<$Res>
+    implements _$PasskeyCopyWith<$Res> {
+  __$PasskeyCopyWithImpl(this._self, this._then);
+
+  final _Passkey _self;
+  final $Res Function(_Passkey) _then;
+
+/// Create a copy of Passkey
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? appId = null,}) {
+  return _then(_Passkey(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,appId: null == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$PasswordInput {
 
  String get currentPassword; set currentPassword(String value); String get newPassword; set newPassword(String value); String get newPasswordConfirmation; set newPasswordConfirmation(String value);
@@ -1682,7 +1948,8 @@ mixin _$User {
  bool get hasPaymentWarning;/// [billingPlan] represents the billing plan.
  BillingPlan? get billingPlan;/// [isPasswordExpired] represents if the user's password is expired and need to be changed.
  bool? get isPasswordExpired;/// [preferences] represents the user preferences.
- UserPreferences? get preferences;
+ UserPreferences? get preferences;/// [passkeys] is the list of passkeys registered for the user.
+ List<Passkey> get passkeys;
 /// Create a copy of User
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1695,16 +1962,16 @@ $UserCopyWith<User> get copyWith => _$UserCopyWithImpl<User>(this as User, _$ide
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is User&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.token, token) || other.token == token)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&const DeepCollectionEquality().equals(other.referencesIds, referencesIds)&&const DeepCollectionEquality().equals(other.references, references)&&(identical(other.category, category) || other.category == category)&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.mqttToken, mqttToken) || other.mqttToken == mqttToken)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&(identical(other.platformAuth, platformAuth) || other.platformAuth == platformAuth)&&const DeepCollectionEquality().equals(other.childs, childs)&&const DeepCollectionEquality().equals(other.tagsIds, tagsIds)&&const DeepCollectionEquality().equals(other.tags, tags)&&(identical(other.planId, planId) || other.planId == planId)&&const DeepCollectionEquality().equals(other.allowedApps, allowedApps)&&const DeepCollectionEquality().equals(other.mappitAssetsIds, mappitAssetsIds)&&const DeepCollectionEquality().equals(other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds)&&const DeepCollectionEquality().equals(other.mappitAssets, mappitAssets)&&(identical(other.historicalDaysAllowed, historicalDaysAllowed) || other.historicalDaysAllowed == historicalDaysAllowed)&&(identical(other.mappitExternalAccountId, mappitExternalAccountId) || other.mappitExternalAccountId == mappitExternalAccountId)&&(identical(other.mappitExternalAccount, mappitExternalAccount) || other.mappitExternalAccount == mappitExternalAccount)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other.mfaMethods, mfaMethods)&&(identical(other.tenvioAddress, tenvioAddress) || other.tenvioAddress == tenvioAddress)&&(identical(other.tenvioPhone, tenvioPhone) || other.tenvioPhone == tenvioPhone)&&(identical(other.tenvioLatitude, tenvioLatitude) || other.tenvioLatitude == tenvioLatitude)&&(identical(other.tenvioLongitude, tenvioLongitude) || other.tenvioLongitude == tenvioLongitude)&&(identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) || other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode)&&(identical(other.suspendedAt, suspendedAt) || other.suspendedAt == suspendedAt)&&const DeepCollectionEquality().equals(other.hwModelsAnimationsIds, hwModelsAnimationsIds)&&(identical(other.brickhousePermissionTier, brickhousePermissionTier) || other.brickhousePermissionTier == brickhousePermissionTier)&&(identical(other.brickhousePermissionTierId, brickhousePermissionTierId) || other.brickhousePermissionTierId == brickhousePermissionTierId)&&(identical(other.brickhouseRole, brickhouseRole) || other.brickhouseRole == brickhouseRole)&&(identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode)&&(identical(other.isLocked, isLocked) || other.isLocked == isLocked)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hasPaymentWarning, hasPaymentWarning) || other.hasPaymentWarning == hasPaymentWarning)&&(identical(other.billingPlan, billingPlan) || other.billingPlan == billingPlan)&&(identical(other.isPasswordExpired, isPasswordExpired) || other.isPasswordExpired == isPasswordExpired)&&(identical(other.preferences, preferences) || other.preferences == preferences));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is User&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.token, token) || other.token == token)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&const DeepCollectionEquality().equals(other.referencesIds, referencesIds)&&const DeepCollectionEquality().equals(other.references, references)&&(identical(other.category, category) || other.category == category)&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.mqttToken, mqttToken) || other.mqttToken == mqttToken)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&(identical(other.platformAuth, platformAuth) || other.platformAuth == platformAuth)&&const DeepCollectionEquality().equals(other.childs, childs)&&const DeepCollectionEquality().equals(other.tagsIds, tagsIds)&&const DeepCollectionEquality().equals(other.tags, tags)&&(identical(other.planId, planId) || other.planId == planId)&&const DeepCollectionEquality().equals(other.allowedApps, allowedApps)&&const DeepCollectionEquality().equals(other.mappitAssetsIds, mappitAssetsIds)&&const DeepCollectionEquality().equals(other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds)&&const DeepCollectionEquality().equals(other.mappitAssets, mappitAssets)&&(identical(other.historicalDaysAllowed, historicalDaysAllowed) || other.historicalDaysAllowed == historicalDaysAllowed)&&(identical(other.mappitExternalAccountId, mappitExternalAccountId) || other.mappitExternalAccountId == mappitExternalAccountId)&&(identical(other.mappitExternalAccount, mappitExternalAccount) || other.mappitExternalAccount == mappitExternalAccount)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other.mfaMethods, mfaMethods)&&(identical(other.tenvioAddress, tenvioAddress) || other.tenvioAddress == tenvioAddress)&&(identical(other.tenvioPhone, tenvioPhone) || other.tenvioPhone == tenvioPhone)&&(identical(other.tenvioLatitude, tenvioLatitude) || other.tenvioLatitude == tenvioLatitude)&&(identical(other.tenvioLongitude, tenvioLongitude) || other.tenvioLongitude == tenvioLongitude)&&(identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) || other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode)&&(identical(other.suspendedAt, suspendedAt) || other.suspendedAt == suspendedAt)&&const DeepCollectionEquality().equals(other.hwModelsAnimationsIds, hwModelsAnimationsIds)&&(identical(other.brickhousePermissionTier, brickhousePermissionTier) || other.brickhousePermissionTier == brickhousePermissionTier)&&(identical(other.brickhousePermissionTierId, brickhousePermissionTierId) || other.brickhousePermissionTierId == brickhousePermissionTierId)&&(identical(other.brickhouseRole, brickhouseRole) || other.brickhouseRole == brickhouseRole)&&(identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode)&&(identical(other.isLocked, isLocked) || other.isLocked == isLocked)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hasPaymentWarning, hasPaymentWarning) || other.hasPaymentWarning == hasPaymentWarning)&&(identical(other.billingPlan, billingPlan) || other.billingPlan == billingPlan)&&(identical(other.isPasswordExpired, isPasswordExpired) || other.isPasswordExpired == isPasswordExpired)&&(identical(other.preferences, preferences) || other.preferences == preferences)&&const DeepCollectionEquality().equals(other.passkeys, passkeys));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,token,parentId,email,username,dynamicAvatar,const DeepCollectionEquality().hash(referencesIds),const DeepCollectionEquality().hash(references),category,categoryId,mqttToken,mqttConfig,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(customFields),platformAuth,const DeepCollectionEquality().hash(childs),const DeepCollectionEquality().hash(tagsIds),const DeepCollectionEquality().hash(tags),planId,const DeepCollectionEquality().hash(allowedApps),const DeepCollectionEquality().hash(mappitAssetsIds),const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),const DeepCollectionEquality().hash(mappitAssets),historicalDaysAllowed,mappitExternalAccountId,mappitExternalAccount,mfaEnabled,const DeepCollectionEquality().hash(mfaMethods),tenvioAddress,tenvioPhone,tenvioLatitude,tenvioLongitude,tenvioAddressIsPlusCode,suspendedAt,const DeepCollectionEquality().hash(hwModelsAnimationsIds),brickhousePermissionTier,brickhousePermissionTierId,brickhouseRole,sdmCode,isLocked,isSuspended,hasPaymentWarning,billingPlan,isPasswordExpired,preferences]);
+int get hashCode => Object.hashAll([runtimeType,id,name,token,parentId,email,username,dynamicAvatar,const DeepCollectionEquality().hash(referencesIds),const DeepCollectionEquality().hash(references),category,categoryId,mqttToken,mqttConfig,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(customFields),platformAuth,const DeepCollectionEquality().hash(childs),const DeepCollectionEquality().hash(tagsIds),const DeepCollectionEquality().hash(tags),planId,const DeepCollectionEquality().hash(allowedApps),const DeepCollectionEquality().hash(mappitAssetsIds),const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),const DeepCollectionEquality().hash(mappitAssets),historicalDaysAllowed,mappitExternalAccountId,mappitExternalAccount,mfaEnabled,const DeepCollectionEquality().hash(mfaMethods),tenvioAddress,tenvioPhone,tenvioLatitude,tenvioLongitude,tenvioAddressIsPlusCode,suspendedAt,const DeepCollectionEquality().hash(hwModelsAnimationsIds),brickhousePermissionTier,brickhousePermissionTierId,brickhouseRole,sdmCode,isLocked,isSuspended,hasPaymentWarning,billingPlan,isPasswordExpired,preferences,const DeepCollectionEquality().hash(passkeys)]);
 
 @override
 String toString() {
-  return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, mqttConfig: $mqttConfig, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan, isPasswordExpired: $isPasswordExpired, preferences: $preferences)';
+  return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, mqttConfig: $mqttConfig, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan, isPasswordExpired: $isPasswordExpired, preferences: $preferences, passkeys: $passkeys)';
 }
 
 
@@ -1715,7 +1982,7 @@ abstract mixin class $UserCopyWith<$Res>  {
   factory $UserCopyWith(User value, $Res Function(User) _then) = _$UserCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, Token? token, String? parentId, String? email, String? username, Avatar? dynamicAvatar, List<String>? referencesIds, List<Reference>? references, Category? category, String? categoryId,@Deprecated('Use mqttConfig instead') String? mqttToken, RealtimeMqttConfig? mqttConfig, List<Access>? access, List<CustomField>? customFields, String platformAuth, List<User> childs, List<String>? tagsIds, List<Tag>? tags, String? planId, List<RegisteredApp>? allowedApps, List<String>? mappitAssetsIds, List<String>? mappitSecondaryRoutesIds, List<Asset>? mappitAssets, int? historicalDaysAllowed, String? mappitExternalAccountId, ExternalAccount? mappitExternalAccount, bool mfaEnabled,@MfaMethodConverter() List<MfaMethod> mfaMethods, String? tenvioAddress, String? tenvioPhone, double? tenvioLatitude, double? tenvioLongitude, bool? tenvioAddressIsPlusCode,@TimestampOrNullConverter() DateTime? suspendedAt, List<String> hwModelsAnimationsIds, BHSPermissionTier? brickhousePermissionTier, String? brickhousePermissionTierId,@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole, String? sdmCode, bool isLocked, bool isSuspended, bool hasPaymentWarning, BillingPlan? billingPlan, bool? isPasswordExpired, UserPreferences? preferences
+ String id, String name, Token? token, String? parentId, String? email, String? username, Avatar? dynamicAvatar, List<String>? referencesIds, List<Reference>? references, Category? category, String? categoryId,@Deprecated('Use mqttConfig instead') String? mqttToken, RealtimeMqttConfig? mqttConfig, List<Access>? access, List<CustomField>? customFields, String platformAuth, List<User> childs, List<String>? tagsIds, List<Tag>? tags, String? planId, List<RegisteredApp>? allowedApps, List<String>? mappitAssetsIds, List<String>? mappitSecondaryRoutesIds, List<Asset>? mappitAssets, int? historicalDaysAllowed, String? mappitExternalAccountId, ExternalAccount? mappitExternalAccount, bool mfaEnabled,@MfaMethodConverter() List<MfaMethod> mfaMethods, String? tenvioAddress, String? tenvioPhone, double? tenvioLatitude, double? tenvioLongitude, bool? tenvioAddressIsPlusCode,@TimestampOrNullConverter() DateTime? suspendedAt, List<String> hwModelsAnimationsIds, BHSPermissionTier? brickhousePermissionTier, String? brickhousePermissionTierId,@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole, String? sdmCode, bool isLocked, bool isSuspended, bool hasPaymentWarning, BillingPlan? billingPlan, bool? isPasswordExpired, UserPreferences? preferences, List<Passkey> passkeys
 });
 
 
@@ -1732,7 +1999,7 @@ class _$UserCopyWithImpl<$Res>
 
 /// Create a copy of User
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? token = freezed,Object? parentId = freezed,Object? email = freezed,Object? username = freezed,Object? dynamicAvatar = freezed,Object? referencesIds = freezed,Object? references = freezed,Object? category = freezed,Object? categoryId = freezed,Object? mqttToken = freezed,Object? mqttConfig = freezed,Object? access = freezed,Object? customFields = freezed,Object? platformAuth = null,Object? childs = null,Object? tagsIds = freezed,Object? tags = freezed,Object? planId = freezed,Object? allowedApps = freezed,Object? mappitAssetsIds = freezed,Object? mappitSecondaryRoutesIds = freezed,Object? mappitAssets = freezed,Object? historicalDaysAllowed = freezed,Object? mappitExternalAccountId = freezed,Object? mappitExternalAccount = freezed,Object? mfaEnabled = null,Object? mfaMethods = null,Object? tenvioAddress = freezed,Object? tenvioPhone = freezed,Object? tenvioLatitude = freezed,Object? tenvioLongitude = freezed,Object? tenvioAddressIsPlusCode = freezed,Object? suspendedAt = freezed,Object? hwModelsAnimationsIds = null,Object? brickhousePermissionTier = freezed,Object? brickhousePermissionTierId = freezed,Object? brickhouseRole = freezed,Object? sdmCode = freezed,Object? isLocked = null,Object? isSuspended = null,Object? hasPaymentWarning = null,Object? billingPlan = freezed,Object? isPasswordExpired = freezed,Object? preferences = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? token = freezed,Object? parentId = freezed,Object? email = freezed,Object? username = freezed,Object? dynamicAvatar = freezed,Object? referencesIds = freezed,Object? references = freezed,Object? category = freezed,Object? categoryId = freezed,Object? mqttToken = freezed,Object? mqttConfig = freezed,Object? access = freezed,Object? customFields = freezed,Object? platformAuth = null,Object? childs = null,Object? tagsIds = freezed,Object? tags = freezed,Object? planId = freezed,Object? allowedApps = freezed,Object? mappitAssetsIds = freezed,Object? mappitSecondaryRoutesIds = freezed,Object? mappitAssets = freezed,Object? historicalDaysAllowed = freezed,Object? mappitExternalAccountId = freezed,Object? mappitExternalAccount = freezed,Object? mfaEnabled = null,Object? mfaMethods = null,Object? tenvioAddress = freezed,Object? tenvioPhone = freezed,Object? tenvioLatitude = freezed,Object? tenvioLongitude = freezed,Object? tenvioAddressIsPlusCode = freezed,Object? suspendedAt = freezed,Object? hwModelsAnimationsIds = null,Object? brickhousePermissionTier = freezed,Object? brickhousePermissionTierId = freezed,Object? brickhouseRole = freezed,Object? sdmCode = freezed,Object? isLocked = null,Object? isSuspended = null,Object? hasPaymentWarning = null,Object? billingPlan = freezed,Object? isPasswordExpired = freezed,Object? preferences = freezed,Object? passkeys = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1780,7 +2047,8 @@ as bool,hasPaymentWarning: null == hasPaymentWarning ? _self.hasPaymentWarning :
 as bool,billingPlan: freezed == billingPlan ? _self.billingPlan : billingPlan // ignore: cast_nullable_to_non_nullable
 as BillingPlan?,isPasswordExpired: freezed == isPasswordExpired ? _self.isPasswordExpired : isPasswordExpired // ignore: cast_nullable_to_non_nullable
 as bool?,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as UserPreferences?,
+as UserPreferences?,passkeys: null == passkeys ? _self.passkeys : passkeys // ignore: cast_nullable_to_non_nullable
+as List<Passkey>,
   ));
 }
 /// Create a copy of User
@@ -1961,10 +2229,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  Token? token,  String? parentId,  String? email,  String? username,  Avatar? dynamicAvatar,  List<String>? referencesIds,  List<Reference>? references,  Category? category,  String? categoryId, @Deprecated('Use mqttConfig instead')  String? mqttToken,  RealtimeMqttConfig? mqttConfig,  List<Access>? access,  List<CustomField>? customFields,  String platformAuth,  List<User> childs,  List<String>? tagsIds,  List<Tag>? tags,  String? planId,  List<RegisteredApp>? allowedApps,  List<String>? mappitAssetsIds,  List<String>? mappitSecondaryRoutesIds,  List<Asset>? mappitAssets,  int? historicalDaysAllowed,  String? mappitExternalAccountId,  ExternalAccount? mappitExternalAccount,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  String? tenvioAddress,  String? tenvioPhone,  double? tenvioLatitude,  double? tenvioLongitude,  bool? tenvioAddressIsPlusCode, @TimestampOrNullConverter()  DateTime? suspendedAt,  List<String> hwModelsAnimationsIds,  BHSPermissionTier? brickhousePermissionTier,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  bool isLocked,  bool isSuspended,  bool hasPaymentWarning,  BillingPlan? billingPlan,  bool? isPasswordExpired,  UserPreferences? preferences)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  Token? token,  String? parentId,  String? email,  String? username,  Avatar? dynamicAvatar,  List<String>? referencesIds,  List<Reference>? references,  Category? category,  String? categoryId, @Deprecated('Use mqttConfig instead')  String? mqttToken,  RealtimeMqttConfig? mqttConfig,  List<Access>? access,  List<CustomField>? customFields,  String platformAuth,  List<User> childs,  List<String>? tagsIds,  List<Tag>? tags,  String? planId,  List<RegisteredApp>? allowedApps,  List<String>? mappitAssetsIds,  List<String>? mappitSecondaryRoutesIds,  List<Asset>? mappitAssets,  int? historicalDaysAllowed,  String? mappitExternalAccountId,  ExternalAccount? mappitExternalAccount,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  String? tenvioAddress,  String? tenvioPhone,  double? tenvioLatitude,  double? tenvioLongitude,  bool? tenvioAddressIsPlusCode, @TimestampOrNullConverter()  DateTime? suspendedAt,  List<String> hwModelsAnimationsIds,  BHSPermissionTier? brickhousePermissionTier,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  bool isLocked,  bool isSuspended,  bool hasPaymentWarning,  BillingPlan? billingPlan,  bool? isPasswordExpired,  UserPreferences? preferences,  List<Passkey> passkeys)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _User() when $default != null:
-return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.references,_that.category,_that.categoryId,_that.mqttToken,_that.mqttConfig,_that.access,_that.customFields,_that.platformAuth,_that.childs,_that.tagsIds,_that.tags,_that.planId,_that.allowedApps,_that.mappitAssetsIds,_that.mappitSecondaryRoutesIds,_that.mappitAssets,_that.historicalDaysAllowed,_that.mappitExternalAccountId,_that.mappitExternalAccount,_that.mfaEnabled,_that.mfaMethods,_that.tenvioAddress,_that.tenvioPhone,_that.tenvioLatitude,_that.tenvioLongitude,_that.tenvioAddressIsPlusCode,_that.suspendedAt,_that.hwModelsAnimationsIds,_that.brickhousePermissionTier,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.isLocked,_that.isSuspended,_that.hasPaymentWarning,_that.billingPlan,_that.isPasswordExpired,_that.preferences);case _:
+return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.references,_that.category,_that.categoryId,_that.mqttToken,_that.mqttConfig,_that.access,_that.customFields,_that.platformAuth,_that.childs,_that.tagsIds,_that.tags,_that.planId,_that.allowedApps,_that.mappitAssetsIds,_that.mappitSecondaryRoutesIds,_that.mappitAssets,_that.historicalDaysAllowed,_that.mappitExternalAccountId,_that.mappitExternalAccount,_that.mfaEnabled,_that.mfaMethods,_that.tenvioAddress,_that.tenvioPhone,_that.tenvioLatitude,_that.tenvioLongitude,_that.tenvioAddressIsPlusCode,_that.suspendedAt,_that.hwModelsAnimationsIds,_that.brickhousePermissionTier,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.isLocked,_that.isSuspended,_that.hasPaymentWarning,_that.billingPlan,_that.isPasswordExpired,_that.preferences,_that.passkeys);case _:
   return orElse();
 
 }
@@ -1982,10 +2250,10 @@ return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  Token? token,  String? parentId,  String? email,  String? username,  Avatar? dynamicAvatar,  List<String>? referencesIds,  List<Reference>? references,  Category? category,  String? categoryId, @Deprecated('Use mqttConfig instead')  String? mqttToken,  RealtimeMqttConfig? mqttConfig,  List<Access>? access,  List<CustomField>? customFields,  String platformAuth,  List<User> childs,  List<String>? tagsIds,  List<Tag>? tags,  String? planId,  List<RegisteredApp>? allowedApps,  List<String>? mappitAssetsIds,  List<String>? mappitSecondaryRoutesIds,  List<Asset>? mappitAssets,  int? historicalDaysAllowed,  String? mappitExternalAccountId,  ExternalAccount? mappitExternalAccount,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  String? tenvioAddress,  String? tenvioPhone,  double? tenvioLatitude,  double? tenvioLongitude,  bool? tenvioAddressIsPlusCode, @TimestampOrNullConverter()  DateTime? suspendedAt,  List<String> hwModelsAnimationsIds,  BHSPermissionTier? brickhousePermissionTier,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  bool isLocked,  bool isSuspended,  bool hasPaymentWarning,  BillingPlan? billingPlan,  bool? isPasswordExpired,  UserPreferences? preferences)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  Token? token,  String? parentId,  String? email,  String? username,  Avatar? dynamicAvatar,  List<String>? referencesIds,  List<Reference>? references,  Category? category,  String? categoryId, @Deprecated('Use mqttConfig instead')  String? mqttToken,  RealtimeMqttConfig? mqttConfig,  List<Access>? access,  List<CustomField>? customFields,  String platformAuth,  List<User> childs,  List<String>? tagsIds,  List<Tag>? tags,  String? planId,  List<RegisteredApp>? allowedApps,  List<String>? mappitAssetsIds,  List<String>? mappitSecondaryRoutesIds,  List<Asset>? mappitAssets,  int? historicalDaysAllowed,  String? mappitExternalAccountId,  ExternalAccount? mappitExternalAccount,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  String? tenvioAddress,  String? tenvioPhone,  double? tenvioLatitude,  double? tenvioLongitude,  bool? tenvioAddressIsPlusCode, @TimestampOrNullConverter()  DateTime? suspendedAt,  List<String> hwModelsAnimationsIds,  BHSPermissionTier? brickhousePermissionTier,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  bool isLocked,  bool isSuspended,  bool hasPaymentWarning,  BillingPlan? billingPlan,  bool? isPasswordExpired,  UserPreferences? preferences,  List<Passkey> passkeys)  $default,) {final _that = this;
 switch (_that) {
 case _User():
-return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.references,_that.category,_that.categoryId,_that.mqttToken,_that.mqttConfig,_that.access,_that.customFields,_that.platformAuth,_that.childs,_that.tagsIds,_that.tags,_that.planId,_that.allowedApps,_that.mappitAssetsIds,_that.mappitSecondaryRoutesIds,_that.mappitAssets,_that.historicalDaysAllowed,_that.mappitExternalAccountId,_that.mappitExternalAccount,_that.mfaEnabled,_that.mfaMethods,_that.tenvioAddress,_that.tenvioPhone,_that.tenvioLatitude,_that.tenvioLongitude,_that.tenvioAddressIsPlusCode,_that.suspendedAt,_that.hwModelsAnimationsIds,_that.brickhousePermissionTier,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.isLocked,_that.isSuspended,_that.hasPaymentWarning,_that.billingPlan,_that.isPasswordExpired,_that.preferences);case _:
+return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.references,_that.category,_that.categoryId,_that.mqttToken,_that.mqttConfig,_that.access,_that.customFields,_that.platformAuth,_that.childs,_that.tagsIds,_that.tags,_that.planId,_that.allowedApps,_that.mappitAssetsIds,_that.mappitSecondaryRoutesIds,_that.mappitAssets,_that.historicalDaysAllowed,_that.mappitExternalAccountId,_that.mappitExternalAccount,_that.mfaEnabled,_that.mfaMethods,_that.tenvioAddress,_that.tenvioPhone,_that.tenvioLatitude,_that.tenvioLongitude,_that.tenvioAddressIsPlusCode,_that.suspendedAt,_that.hwModelsAnimationsIds,_that.brickhousePermissionTier,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.isLocked,_that.isSuspended,_that.hasPaymentWarning,_that.billingPlan,_that.isPasswordExpired,_that.preferences,_that.passkeys);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -2002,10 +2270,10 @@ return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  Token? token,  String? parentId,  String? email,  String? username,  Avatar? dynamicAvatar,  List<String>? referencesIds,  List<Reference>? references,  Category? category,  String? categoryId, @Deprecated('Use mqttConfig instead')  String? mqttToken,  RealtimeMqttConfig? mqttConfig,  List<Access>? access,  List<CustomField>? customFields,  String platformAuth,  List<User> childs,  List<String>? tagsIds,  List<Tag>? tags,  String? planId,  List<RegisteredApp>? allowedApps,  List<String>? mappitAssetsIds,  List<String>? mappitSecondaryRoutesIds,  List<Asset>? mappitAssets,  int? historicalDaysAllowed,  String? mappitExternalAccountId,  ExternalAccount? mappitExternalAccount,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  String? tenvioAddress,  String? tenvioPhone,  double? tenvioLatitude,  double? tenvioLongitude,  bool? tenvioAddressIsPlusCode, @TimestampOrNullConverter()  DateTime? suspendedAt,  List<String> hwModelsAnimationsIds,  BHSPermissionTier? brickhousePermissionTier,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  bool isLocked,  bool isSuspended,  bool hasPaymentWarning,  BillingPlan? billingPlan,  bool? isPasswordExpired,  UserPreferences? preferences)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  Token? token,  String? parentId,  String? email,  String? username,  Avatar? dynamicAvatar,  List<String>? referencesIds,  List<Reference>? references,  Category? category,  String? categoryId, @Deprecated('Use mqttConfig instead')  String? mqttToken,  RealtimeMqttConfig? mqttConfig,  List<Access>? access,  List<CustomField>? customFields,  String platformAuth,  List<User> childs,  List<String>? tagsIds,  List<Tag>? tags,  String? planId,  List<RegisteredApp>? allowedApps,  List<String>? mappitAssetsIds,  List<String>? mappitSecondaryRoutesIds,  List<Asset>? mappitAssets,  int? historicalDaysAllowed,  String? mappitExternalAccountId,  ExternalAccount? mappitExternalAccount,  bool mfaEnabled, @MfaMethodConverter()  List<MfaMethod> mfaMethods,  String? tenvioAddress,  String? tenvioPhone,  double? tenvioLatitude,  double? tenvioLongitude,  bool? tenvioAddressIsPlusCode, @TimestampOrNullConverter()  DateTime? suspendedAt,  List<String> hwModelsAnimationsIds,  BHSPermissionTier? brickhousePermissionTier,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  bool isLocked,  bool isSuspended,  bool hasPaymentWarning,  BillingPlan? billingPlan,  bool? isPasswordExpired,  UserPreferences? preferences,  List<Passkey> passkeys)?  $default,) {final _that = this;
 switch (_that) {
 case _User() when $default != null:
-return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.references,_that.category,_that.categoryId,_that.mqttToken,_that.mqttConfig,_that.access,_that.customFields,_that.platformAuth,_that.childs,_that.tagsIds,_that.tags,_that.planId,_that.allowedApps,_that.mappitAssetsIds,_that.mappitSecondaryRoutesIds,_that.mappitAssets,_that.historicalDaysAllowed,_that.mappitExternalAccountId,_that.mappitExternalAccount,_that.mfaEnabled,_that.mfaMethods,_that.tenvioAddress,_that.tenvioPhone,_that.tenvioLatitude,_that.tenvioLongitude,_that.tenvioAddressIsPlusCode,_that.suspendedAt,_that.hwModelsAnimationsIds,_that.brickhousePermissionTier,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.isLocked,_that.isSuspended,_that.hasPaymentWarning,_that.billingPlan,_that.isPasswordExpired,_that.preferences);case _:
+return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.references,_that.category,_that.categoryId,_that.mqttToken,_that.mqttConfig,_that.access,_that.customFields,_that.platformAuth,_that.childs,_that.tagsIds,_that.tags,_that.planId,_that.allowedApps,_that.mappitAssetsIds,_that.mappitSecondaryRoutesIds,_that.mappitAssets,_that.historicalDaysAllowed,_that.mappitExternalAccountId,_that.mappitExternalAccount,_that.mfaEnabled,_that.mfaMethods,_that.tenvioAddress,_that.tenvioPhone,_that.tenvioLatitude,_that.tenvioLongitude,_that.tenvioAddressIsPlusCode,_that.suspendedAt,_that.hwModelsAnimationsIds,_that.brickhousePermissionTier,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.isLocked,_that.isSuspended,_that.hasPaymentWarning,_that.billingPlan,_that.isPasswordExpired,_that.preferences,_that.passkeys);case _:
   return null;
 
 }
@@ -2017,7 +2285,7 @@ return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that
 @JsonSerializable()
 
 class _User extends User {
-  const _User({required this.id, required this.name, this.token, this.parentId, this.email, this.username, this.dynamicAvatar, final  List<String>? referencesIds, final  List<Reference>? references, this.category, this.categoryId, @Deprecated('Use mqttConfig instead') this.mqttToken, this.mqttConfig, final  List<Access>? access, final  List<CustomField>? customFields, this.platformAuth = "", final  List<User> childs = const [], final  List<String>? tagsIds, final  List<Tag>? tags, this.planId, final  List<RegisteredApp>? allowedApps, final  List<String>? mappitAssetsIds, final  List<String>? mappitSecondaryRoutesIds, final  List<Asset>? mappitAssets, this.historicalDaysAllowed, this.mappitExternalAccountId, this.mappitExternalAccount, this.mfaEnabled = false, @MfaMethodConverter() final  List<MfaMethod> mfaMethods = const [], this.tenvioAddress, this.tenvioPhone, this.tenvioLatitude, this.tenvioLongitude, this.tenvioAddressIsPlusCode, @TimestampOrNullConverter() this.suspendedAt, final  List<String> hwModelsAnimationsIds = const [], this.brickhousePermissionTier, this.brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) this.brickhouseRole, this.sdmCode, this.isLocked = false, this.isSuspended = false, this.hasPaymentWarning = false, this.billingPlan, this.isPasswordExpired, this.preferences}): _referencesIds = referencesIds,_references = references,_access = access,_customFields = customFields,_childs = childs,_tagsIds = tagsIds,_tags = tags,_allowedApps = allowedApps,_mappitAssetsIds = mappitAssetsIds,_mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,_mappitAssets = mappitAssets,_mfaMethods = mfaMethods,_hwModelsAnimationsIds = hwModelsAnimationsIds,super._();
+  const _User({required this.id, required this.name, this.token, this.parentId, this.email, this.username, this.dynamicAvatar, final  List<String>? referencesIds, final  List<Reference>? references, this.category, this.categoryId, @Deprecated('Use mqttConfig instead') this.mqttToken, this.mqttConfig, final  List<Access>? access, final  List<CustomField>? customFields, this.platformAuth = "", final  List<User> childs = const [], final  List<String>? tagsIds, final  List<Tag>? tags, this.planId, final  List<RegisteredApp>? allowedApps, final  List<String>? mappitAssetsIds, final  List<String>? mappitSecondaryRoutesIds, final  List<Asset>? mappitAssets, this.historicalDaysAllowed, this.mappitExternalAccountId, this.mappitExternalAccount, this.mfaEnabled = false, @MfaMethodConverter() final  List<MfaMethod> mfaMethods = const [], this.tenvioAddress, this.tenvioPhone, this.tenvioLatitude, this.tenvioLongitude, this.tenvioAddressIsPlusCode, @TimestampOrNullConverter() this.suspendedAt, final  List<String> hwModelsAnimationsIds = const [], this.brickhousePermissionTier, this.brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) this.brickhouseRole, this.sdmCode, this.isLocked = false, this.isSuspended = false, this.hasPaymentWarning = false, this.billingPlan, this.isPasswordExpired, this.preferences, final  List<Passkey> passkeys = const []}): _referencesIds = referencesIds,_references = references,_access = access,_customFields = customFields,_childs = childs,_tagsIds = tagsIds,_tags = tags,_allowedApps = allowedApps,_mappitAssetsIds = mappitAssetsIds,_mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,_mappitAssets = mappitAssets,_mfaMethods = mfaMethods,_hwModelsAnimationsIds = hwModelsAnimationsIds,_passkeys = passkeys,super._();
   factory _User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
 /// [id] represents the user ID.
@@ -2230,6 +2498,15 @@ class _User extends User {
 @override final  bool? isPasswordExpired;
 /// [preferences] represents the user preferences.
 @override final  UserPreferences? preferences;
+/// [passkeys] is the list of passkeys registered for the user.
+ final  List<Passkey> _passkeys;
+/// [passkeys] is the list of passkeys registered for the user.
+@override@JsonKey() List<Passkey> get passkeys {
+  if (_passkeys is EqualUnmodifiableListView) return _passkeys;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_passkeys);
+}
+
 
 /// Create a copy of User
 /// with the given fields replaced by the non-null parameter values.
@@ -2244,16 +2521,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _User&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.token, token) || other.token == token)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&const DeepCollectionEquality().equals(other._referencesIds, _referencesIds)&&const DeepCollectionEquality().equals(other._references, _references)&&(identical(other.category, category) || other.category == category)&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.mqttToken, mqttToken) || other.mqttToken == mqttToken)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&(identical(other.platformAuth, platformAuth) || other.platformAuth == platformAuth)&&const DeepCollectionEquality().equals(other._childs, _childs)&&const DeepCollectionEquality().equals(other._tagsIds, _tagsIds)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.planId, planId) || other.planId == planId)&&const DeepCollectionEquality().equals(other._allowedApps, _allowedApps)&&const DeepCollectionEquality().equals(other._mappitAssetsIds, _mappitAssetsIds)&&const DeepCollectionEquality().equals(other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds)&&const DeepCollectionEquality().equals(other._mappitAssets, _mappitAssets)&&(identical(other.historicalDaysAllowed, historicalDaysAllowed) || other.historicalDaysAllowed == historicalDaysAllowed)&&(identical(other.mappitExternalAccountId, mappitExternalAccountId) || other.mappitExternalAccountId == mappitExternalAccountId)&&(identical(other.mappitExternalAccount, mappitExternalAccount) || other.mappitExternalAccount == mappitExternalAccount)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other._mfaMethods, _mfaMethods)&&(identical(other.tenvioAddress, tenvioAddress) || other.tenvioAddress == tenvioAddress)&&(identical(other.tenvioPhone, tenvioPhone) || other.tenvioPhone == tenvioPhone)&&(identical(other.tenvioLatitude, tenvioLatitude) || other.tenvioLatitude == tenvioLatitude)&&(identical(other.tenvioLongitude, tenvioLongitude) || other.tenvioLongitude == tenvioLongitude)&&(identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) || other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode)&&(identical(other.suspendedAt, suspendedAt) || other.suspendedAt == suspendedAt)&&const DeepCollectionEquality().equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds)&&(identical(other.brickhousePermissionTier, brickhousePermissionTier) || other.brickhousePermissionTier == brickhousePermissionTier)&&(identical(other.brickhousePermissionTierId, brickhousePermissionTierId) || other.brickhousePermissionTierId == brickhousePermissionTierId)&&(identical(other.brickhouseRole, brickhouseRole) || other.brickhouseRole == brickhouseRole)&&(identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode)&&(identical(other.isLocked, isLocked) || other.isLocked == isLocked)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hasPaymentWarning, hasPaymentWarning) || other.hasPaymentWarning == hasPaymentWarning)&&(identical(other.billingPlan, billingPlan) || other.billingPlan == billingPlan)&&(identical(other.isPasswordExpired, isPasswordExpired) || other.isPasswordExpired == isPasswordExpired)&&(identical(other.preferences, preferences) || other.preferences == preferences));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _User&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.token, token) || other.token == token)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&const DeepCollectionEquality().equals(other._referencesIds, _referencesIds)&&const DeepCollectionEquality().equals(other._references, _references)&&(identical(other.category, category) || other.category == category)&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.mqttToken, mqttToken) || other.mqttToken == mqttToken)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&(identical(other.platformAuth, platformAuth) || other.platformAuth == platformAuth)&&const DeepCollectionEquality().equals(other._childs, _childs)&&const DeepCollectionEquality().equals(other._tagsIds, _tagsIds)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.planId, planId) || other.planId == planId)&&const DeepCollectionEquality().equals(other._allowedApps, _allowedApps)&&const DeepCollectionEquality().equals(other._mappitAssetsIds, _mappitAssetsIds)&&const DeepCollectionEquality().equals(other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds)&&const DeepCollectionEquality().equals(other._mappitAssets, _mappitAssets)&&(identical(other.historicalDaysAllowed, historicalDaysAllowed) || other.historicalDaysAllowed == historicalDaysAllowed)&&(identical(other.mappitExternalAccountId, mappitExternalAccountId) || other.mappitExternalAccountId == mappitExternalAccountId)&&(identical(other.mappitExternalAccount, mappitExternalAccount) || other.mappitExternalAccount == mappitExternalAccount)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other._mfaMethods, _mfaMethods)&&(identical(other.tenvioAddress, tenvioAddress) || other.tenvioAddress == tenvioAddress)&&(identical(other.tenvioPhone, tenvioPhone) || other.tenvioPhone == tenvioPhone)&&(identical(other.tenvioLatitude, tenvioLatitude) || other.tenvioLatitude == tenvioLatitude)&&(identical(other.tenvioLongitude, tenvioLongitude) || other.tenvioLongitude == tenvioLongitude)&&(identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) || other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode)&&(identical(other.suspendedAt, suspendedAt) || other.suspendedAt == suspendedAt)&&const DeepCollectionEquality().equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds)&&(identical(other.brickhousePermissionTier, brickhousePermissionTier) || other.brickhousePermissionTier == brickhousePermissionTier)&&(identical(other.brickhousePermissionTierId, brickhousePermissionTierId) || other.brickhousePermissionTierId == brickhousePermissionTierId)&&(identical(other.brickhouseRole, brickhouseRole) || other.brickhouseRole == brickhouseRole)&&(identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode)&&(identical(other.isLocked, isLocked) || other.isLocked == isLocked)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hasPaymentWarning, hasPaymentWarning) || other.hasPaymentWarning == hasPaymentWarning)&&(identical(other.billingPlan, billingPlan) || other.billingPlan == billingPlan)&&(identical(other.isPasswordExpired, isPasswordExpired) || other.isPasswordExpired == isPasswordExpired)&&(identical(other.preferences, preferences) || other.preferences == preferences)&&const DeepCollectionEquality().equals(other._passkeys, _passkeys));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,token,parentId,email,username,dynamicAvatar,const DeepCollectionEquality().hash(_referencesIds),const DeepCollectionEquality().hash(_references),category,categoryId,mqttToken,mqttConfig,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_customFields),platformAuth,const DeepCollectionEquality().hash(_childs),const DeepCollectionEquality().hash(_tagsIds),const DeepCollectionEquality().hash(_tags),planId,const DeepCollectionEquality().hash(_allowedApps),const DeepCollectionEquality().hash(_mappitAssetsIds),const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),const DeepCollectionEquality().hash(_mappitAssets),historicalDaysAllowed,mappitExternalAccountId,mappitExternalAccount,mfaEnabled,const DeepCollectionEquality().hash(_mfaMethods),tenvioAddress,tenvioPhone,tenvioLatitude,tenvioLongitude,tenvioAddressIsPlusCode,suspendedAt,const DeepCollectionEquality().hash(_hwModelsAnimationsIds),brickhousePermissionTier,brickhousePermissionTierId,brickhouseRole,sdmCode,isLocked,isSuspended,hasPaymentWarning,billingPlan,isPasswordExpired,preferences]);
+int get hashCode => Object.hashAll([runtimeType,id,name,token,parentId,email,username,dynamicAvatar,const DeepCollectionEquality().hash(_referencesIds),const DeepCollectionEquality().hash(_references),category,categoryId,mqttToken,mqttConfig,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_customFields),platformAuth,const DeepCollectionEquality().hash(_childs),const DeepCollectionEquality().hash(_tagsIds),const DeepCollectionEquality().hash(_tags),planId,const DeepCollectionEquality().hash(_allowedApps),const DeepCollectionEquality().hash(_mappitAssetsIds),const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),const DeepCollectionEquality().hash(_mappitAssets),historicalDaysAllowed,mappitExternalAccountId,mappitExternalAccount,mfaEnabled,const DeepCollectionEquality().hash(_mfaMethods),tenvioAddress,tenvioPhone,tenvioLatitude,tenvioLongitude,tenvioAddressIsPlusCode,suspendedAt,const DeepCollectionEquality().hash(_hwModelsAnimationsIds),brickhousePermissionTier,brickhousePermissionTierId,brickhouseRole,sdmCode,isLocked,isSuspended,hasPaymentWarning,billingPlan,isPasswordExpired,preferences,const DeepCollectionEquality().hash(_passkeys)]);
 
 @override
 String toString() {
-  return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, mqttConfig: $mqttConfig, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan, isPasswordExpired: $isPasswordExpired, preferences: $preferences)';
+  return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, mqttConfig: $mqttConfig, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan, isPasswordExpired: $isPasswordExpired, preferences: $preferences, passkeys: $passkeys)';
 }
 
 
@@ -2264,7 +2541,7 @@ abstract mixin class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) _then) = __$UserCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, Token? token, String? parentId, String? email, String? username, Avatar? dynamicAvatar, List<String>? referencesIds, List<Reference>? references, Category? category, String? categoryId,@Deprecated('Use mqttConfig instead') String? mqttToken, RealtimeMqttConfig? mqttConfig, List<Access>? access, List<CustomField>? customFields, String platformAuth, List<User> childs, List<String>? tagsIds, List<Tag>? tags, String? planId, List<RegisteredApp>? allowedApps, List<String>? mappitAssetsIds, List<String>? mappitSecondaryRoutesIds, List<Asset>? mappitAssets, int? historicalDaysAllowed, String? mappitExternalAccountId, ExternalAccount? mappitExternalAccount, bool mfaEnabled,@MfaMethodConverter() List<MfaMethod> mfaMethods, String? tenvioAddress, String? tenvioPhone, double? tenvioLatitude, double? tenvioLongitude, bool? tenvioAddressIsPlusCode,@TimestampOrNullConverter() DateTime? suspendedAt, List<String> hwModelsAnimationsIds, BHSPermissionTier? brickhousePermissionTier, String? brickhousePermissionTierId,@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole, String? sdmCode, bool isLocked, bool isSuspended, bool hasPaymentWarning, BillingPlan? billingPlan, bool? isPasswordExpired, UserPreferences? preferences
+ String id, String name, Token? token, String? parentId, String? email, String? username, Avatar? dynamicAvatar, List<String>? referencesIds, List<Reference>? references, Category? category, String? categoryId,@Deprecated('Use mqttConfig instead') String? mqttToken, RealtimeMqttConfig? mqttConfig, List<Access>? access, List<CustomField>? customFields, String platformAuth, List<User> childs, List<String>? tagsIds, List<Tag>? tags, String? planId, List<RegisteredApp>? allowedApps, List<String>? mappitAssetsIds, List<String>? mappitSecondaryRoutesIds, List<Asset>? mappitAssets, int? historicalDaysAllowed, String? mappitExternalAccountId, ExternalAccount? mappitExternalAccount, bool mfaEnabled,@MfaMethodConverter() List<MfaMethod> mfaMethods, String? tenvioAddress, String? tenvioPhone, double? tenvioLatitude, double? tenvioLongitude, bool? tenvioAddressIsPlusCode,@TimestampOrNullConverter() DateTime? suspendedAt, List<String> hwModelsAnimationsIds, BHSPermissionTier? brickhousePermissionTier, String? brickhousePermissionTierId,@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole, String? sdmCode, bool isLocked, bool isSuspended, bool hasPaymentWarning, BillingPlan? billingPlan, bool? isPasswordExpired, UserPreferences? preferences, List<Passkey> passkeys
 });
 
 
@@ -2281,7 +2558,7 @@ class __$UserCopyWithImpl<$Res>
 
 /// Create a copy of User
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? token = freezed,Object? parentId = freezed,Object? email = freezed,Object? username = freezed,Object? dynamicAvatar = freezed,Object? referencesIds = freezed,Object? references = freezed,Object? category = freezed,Object? categoryId = freezed,Object? mqttToken = freezed,Object? mqttConfig = freezed,Object? access = freezed,Object? customFields = freezed,Object? platformAuth = null,Object? childs = null,Object? tagsIds = freezed,Object? tags = freezed,Object? planId = freezed,Object? allowedApps = freezed,Object? mappitAssetsIds = freezed,Object? mappitSecondaryRoutesIds = freezed,Object? mappitAssets = freezed,Object? historicalDaysAllowed = freezed,Object? mappitExternalAccountId = freezed,Object? mappitExternalAccount = freezed,Object? mfaEnabled = null,Object? mfaMethods = null,Object? tenvioAddress = freezed,Object? tenvioPhone = freezed,Object? tenvioLatitude = freezed,Object? tenvioLongitude = freezed,Object? tenvioAddressIsPlusCode = freezed,Object? suspendedAt = freezed,Object? hwModelsAnimationsIds = null,Object? brickhousePermissionTier = freezed,Object? brickhousePermissionTierId = freezed,Object? brickhouseRole = freezed,Object? sdmCode = freezed,Object? isLocked = null,Object? isSuspended = null,Object? hasPaymentWarning = null,Object? billingPlan = freezed,Object? isPasswordExpired = freezed,Object? preferences = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? token = freezed,Object? parentId = freezed,Object? email = freezed,Object? username = freezed,Object? dynamicAvatar = freezed,Object? referencesIds = freezed,Object? references = freezed,Object? category = freezed,Object? categoryId = freezed,Object? mqttToken = freezed,Object? mqttConfig = freezed,Object? access = freezed,Object? customFields = freezed,Object? platformAuth = null,Object? childs = null,Object? tagsIds = freezed,Object? tags = freezed,Object? planId = freezed,Object? allowedApps = freezed,Object? mappitAssetsIds = freezed,Object? mappitSecondaryRoutesIds = freezed,Object? mappitAssets = freezed,Object? historicalDaysAllowed = freezed,Object? mappitExternalAccountId = freezed,Object? mappitExternalAccount = freezed,Object? mfaEnabled = null,Object? mfaMethods = null,Object? tenvioAddress = freezed,Object? tenvioPhone = freezed,Object? tenvioLatitude = freezed,Object? tenvioLongitude = freezed,Object? tenvioAddressIsPlusCode = freezed,Object? suspendedAt = freezed,Object? hwModelsAnimationsIds = null,Object? brickhousePermissionTier = freezed,Object? brickhousePermissionTierId = freezed,Object? brickhouseRole = freezed,Object? sdmCode = freezed,Object? isLocked = null,Object? isSuspended = null,Object? hasPaymentWarning = null,Object? billingPlan = freezed,Object? isPasswordExpired = freezed,Object? preferences = freezed,Object? passkeys = null,}) {
   return _then(_User(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -2329,7 +2606,8 @@ as bool,hasPaymentWarning: null == hasPaymentWarning ? _self.hasPaymentWarning :
 as bool,billingPlan: freezed == billingPlan ? _self.billingPlan : billingPlan // ignore: cast_nullable_to_non_nullable
 as BillingPlan?,isPasswordExpired: freezed == isPasswordExpired ? _self.isPasswordExpired : isPasswordExpired // ignore: cast_nullable_to_non_nullable
 as bool?,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as UserPreferences?,
+as UserPreferences?,passkeys: null == passkeys ? _self._passkeys : passkeys // ignore: cast_nullable_to_non_nullable
+as List<Passkey>,
   ));
 }
 

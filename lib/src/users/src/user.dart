@@ -147,6 +147,9 @@ abstract class User with _$User {
 
     /// [preferences] represents the user preferences.
     UserPreferences? preferences,
+
+    /// [passkeys] is the list of passkeys registered for the user.
+    @Default([]) List<Passkey> passkeys,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
