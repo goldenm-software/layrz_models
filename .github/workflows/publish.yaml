@@ -14,12 +14,10 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
 
 
-      - name: Setup Flutter
-        uses: flutter-actions/setup-flutter@v4
+      - uses: flutter-actions/setup-flutter@v4
         with:
           channel: stable
           version: 3.38.8
@@ -62,8 +60,7 @@ jobs:
     if: success()
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # Fetch all history for changelog generation
 
