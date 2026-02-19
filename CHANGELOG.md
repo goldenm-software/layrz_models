@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.9
+
+- Added `AppPlatform` enum to represent the platform of the passkey in the `Passkey` model.
+
 ## 3.6.8
 
 - Added new `Passkey` model to represent passkeys registered for users and employees.

@@ -77,12 +77,26 @@ const _$MfaMethodEnumMap = {
   MfaMethod.backupCode: 'BACKUP_CODE',
 };
 
-_Passkey _$PasskeyFromJson(Map<String, dynamic> json) =>
-    _Passkey(id: json['id'] as String, appId: json['appId'] as String);
+_Passkey _$PasskeyFromJson(Map<String, dynamic> json) => _Passkey(
+  id: json['id'] as String,
+  appId: json['appId'] as String,
+  platform: $enumDecode(_$AppPlatformEnumMap, json['platform']),
+);
 
 Map<String, dynamic> _$PasskeyToJson(_Passkey instance) => <String, dynamic>{
   'id': instance.id,
   'appId': instance.appId,
+  'platform': instance.platform.toJson(),
+};
+
+const _$AppPlatformEnumMap = {
+  AppPlatform.web: 'WEB',
+  AppPlatform.windows: 'WINDOWS',
+  AppPlatform.macos: 'MACOS',
+  AppPlatform.ios: 'IOS',
+  AppPlatform.android: 'ANDROID',
+  AppPlatform.linux: 'LINUX',
+  AppPlatform.layrzOS: 'LAYRZ_OS',
 };
 
 _PasswordInput _$PasswordInputFromJson(Map<String, dynamic> json) =>
