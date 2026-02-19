@@ -836,7 +836,7 @@ as bool,
 /// @nodoc
 mixin _$Passkey {
 
- String get id; String get appId;
+ String get id; String get appId; AppPlatform get platform;
 /// Create a copy of Passkey
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -849,16 +849,16 @@ $PasskeyCopyWith<Passkey> get copyWith => _$PasskeyCopyWithImpl<Passkey>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Passkey&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Passkey&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.platform, platform) || other.platform == platform));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,appId);
+int get hashCode => Object.hash(runtimeType,id,appId,platform);
 
 @override
 String toString() {
-  return 'Passkey(id: $id, appId: $appId)';
+  return 'Passkey(id: $id, appId: $appId, platform: $platform)';
 }
 
 
@@ -869,7 +869,7 @@ abstract mixin class $PasskeyCopyWith<$Res>  {
   factory $PasskeyCopyWith(Passkey value, $Res Function(Passkey) _then) = _$PasskeyCopyWithImpl;
 @useResult
 $Res call({
- String id, String appId
+ String id, String appId, AppPlatform platform
 });
 
 
@@ -886,11 +886,12 @@ class _$PasskeyCopyWithImpl<$Res>
 
 /// Create a copy of Passkey
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? appId = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? appId = null,Object? platform = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,appId: null == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
-as String,
+as String,platform: null == platform ? _self.platform : platform // ignore: cast_nullable_to_non_nullable
+as AppPlatform,
   ));
 }
 
@@ -975,10 +976,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String appId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String appId,  AppPlatform platform)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Passkey() when $default != null:
-return $default(_that.id,_that.appId);case _:
+return $default(_that.id,_that.appId,_that.platform);case _:
   return orElse();
 
 }
@@ -996,10 +997,10 @@ return $default(_that.id,_that.appId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String appId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String appId,  AppPlatform platform)  $default,) {final _that = this;
 switch (_that) {
 case _Passkey():
-return $default(_that.id,_that.appId);case _:
+return $default(_that.id,_that.appId,_that.platform);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1016,10 +1017,10 @@ return $default(_that.id,_that.appId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String appId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String appId,  AppPlatform platform)?  $default,) {final _that = this;
 switch (_that) {
 case _Passkey() when $default != null:
-return $default(_that.id,_that.appId);case _:
+return $default(_that.id,_that.appId,_that.platform);case _:
   return null;
 
 }
@@ -1031,11 +1032,12 @@ return $default(_that.id,_that.appId);case _:
 @JsonSerializable()
 
 class _Passkey implements Passkey {
-   _Passkey({required this.id, required this.appId});
+   _Passkey({required this.id, required this.appId, required this.platform});
   factory _Passkey.fromJson(Map<String, dynamic> json) => _$PasskeyFromJson(json);
 
 @override final  String id;
 @override final  String appId;
+@override final  AppPlatform platform;
 
 /// Create a copy of Passkey
 /// with the given fields replaced by the non-null parameter values.
@@ -1050,16 +1052,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Passkey&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Passkey&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.platform, platform) || other.platform == platform));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,appId);
+int get hashCode => Object.hash(runtimeType,id,appId,platform);
 
 @override
 String toString() {
-  return 'Passkey(id: $id, appId: $appId)';
+  return 'Passkey(id: $id, appId: $appId, platform: $platform)';
 }
 
 
@@ -1070,7 +1072,7 @@ abstract mixin class _$PasskeyCopyWith<$Res> implements $PasskeyCopyWith<$Res> {
   factory _$PasskeyCopyWith(_Passkey value, $Res Function(_Passkey) _then) = __$PasskeyCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String appId
+ String id, String appId, AppPlatform platform
 });
 
 
@@ -1087,11 +1089,12 @@ class __$PasskeyCopyWithImpl<$Res>
 
 /// Create a copy of Passkey
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? appId = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? appId = null,Object? platform = null,}) {
   return _then(_Passkey(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,appId: null == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
-as String,
+as String,platform: null == platform ? _self.platform : platform // ignore: cast_nullable_to_non_nullable
+as AppPlatform,
   ));
 }
 

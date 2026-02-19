@@ -12,6 +12,7 @@ abstract class Passkey with _$Passkey {
   factory Passkey({
     required String id,
     required String appId,
+    required AppPlatform platform,
   }) = _Passkey;
 
   factory Passkey.fromJson(Map<String, dynamic> json) => _$PasskeyFromJson(json);
