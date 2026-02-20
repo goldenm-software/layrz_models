@@ -8,6 +8,9 @@ All commit messages MUST follow the Conventional Commits specification:
 <type>: <description>
 
 [optional body]
+[extra <type>: <description>]
+
+[BREAKING CHANGE: <description>]
 
 [optional co-authors(s) (Can be human or AIs)]
 ```
@@ -39,4 +42,15 @@ feat: Add passkey authentication support
 fix: Resolve MFA validation timing issue
 docs: Update web platform setup instructions
 perf: Optimize GraphQL query caching
+```
+
+**Complex example:**
+```feat: Added new things!
+
+Enhancements on something
+
+fix: Fixed some bugs
+
+Co-authored-by: Kenny Mochizuki <PHKenny@users.noreply.github.com>
+Co-authored-by: AI Assistant <no-reply@ai.com>
 ```
