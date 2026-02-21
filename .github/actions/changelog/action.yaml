@@ -94,6 +94,8 @@ runs:
       if: ${{ steps.check-skip.outputs.skip != 'true' }}
       id: prepare
       shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token || github.token }}
       run: |
         # Generate changelog from commit messages
         # Supports both conventional commits and regular commit messages
@@ -101,77 +103,171 @@ runs:
         FROM_REF="${{ steps.refs.outputs.to_ref }}"
         TO_REF="${{ steps.refs.outputs.from_ref }}"
 
-        # Get commit messages
-        COMMITS=$(git log ${FROM_REF}..${TO_REF} --pretty=format:"%s|%h" --no-merges)
+        # Function to resolve a Co-authored-by line to a display name
+        # Input: "Co-authored-by: Name <email>"
+        # Output: "[@username](https://github.com/username)" or "Name"
+        resolve_coauthor() {
+          local trailer="$1"
+          local name=$(echo "$trailer" | sed -E 's/^[Cc]o-[Aa]uthored-[Bb]y:[[:space:]]*(.*)[[:space:]]*<.*>/\1/' | sed 's/[[:space:]]*$//')
+          local email=$(echo "$trailer" | sed -E 's/.*<(.*)>/\1/')
 
-        if [ -z "$COMMITS" ]; then
+          # Check for GitHub noreply email patterns:
+          # username@users.noreply.github.com
+          # ID+username@users.noreply.github.com
+          if [[ "$email" =~ ^([0-9]+\+)?([^@]+)@users\.noreply\.github\.com$ ]]; then
+            local gh_user="${BASH_REMATCH[2]}"
+            echo "[@${gh_user}](https://github.com/${gh_user})"
+            return
+          fi
+
+          # Try GitHub API search by email
+          local gh_user=$(gh api "/search/users?q=${email}+in:email" --jq '.items[0].login' 2>/dev/null || true)
+          if [ -n "$gh_user" ] && [ "$gh_user" != "null" ]; then
+            echo "[@${gh_user}](https://github.com/${gh_user})"
+            return
+          fi
+
+          # Fallback to plain name
+          echo "$name"
+        }
+
+        # Function to categorize a conventional commit line
+        categorize_line() {
+          local line="$1"
+          local entry_suffix="$2"
+
+          # Extract type and description
+          local TYPE=$(echo "$line" | sed -E 's/^([a-z]+)(\(.+\))?!?:\ .*/\1/')
+          local DESC=$(echo "$line" | sed -E 's/^[a-z]+(\(.+\))?!?:\ (.*)/\2/')
+
+          # Detect breaking change from ! suffix
+          if [[ "$line" =~ ^[a-z]+(\(.+\))?!: ]]; then
+            [ ! -f /tmp/breaking.txt ] && echo "### 🚨 Breaking Changes" > /tmp/breaking.txt
+            echo "- $DESC $entry_suffix" >> /tmp/breaking.txt
+          fi
+
+          # Skip excluded types
+          if [[ ",${{ inputs.exclude-types }}," == *",$TYPE,"* ]]; then
+            return
+          fi
+
+          # Format based on type
+          case "$TYPE" in
+            feat)
+              [ ! -f /tmp/feat.txt ] && echo "### ✨ Features" > /tmp/feat.txt
+              echo "- $DESC $entry_suffix" >> /tmp/feat.txt
+              ;;
+            fix)
+              [ ! -f /tmp/fix.txt ] && echo "### 🐛 Bug Fixes" > /tmp/fix.txt
+              echo "- $DESC $entry_suffix" >> /tmp/fix.txt
+              ;;
+            docs)
+              [ ! -f /tmp/docs.txt ] && echo "### 📚 Documentation" > /tmp/docs.txt
+              echo "- $DESC $entry_suffix" >> /tmp/docs.txt
+              ;;
+            perf)
+              [ ! -f /tmp/perf.txt ] && echo "### ⚡ Performance" > /tmp/perf.txt
+              echo "- $DESC $entry_suffix" >> /tmp/perf.txt
+              ;;
+            refactor)
+              [ ! -f /tmp/refactor.txt ] && echo "### ♻️ Refactoring" > /tmp/refactor.txt
+              echo "- $DESC $entry_suffix" >> /tmp/refactor.txt
+              ;;
+            test)
+              [ ! -f /tmp/test.txt ] && echo "### ✅ Tests" > /tmp/test.txt
+              echo "- $DESC $entry_suffix" >> /tmp/test.txt
+              ;;
+            build)
+              [ ! -f /tmp/build.txt ] && echo "### 🏗️ Build" > /tmp/build.txt
+              echo "- $DESC $entry_suffix" >> /tmp/build.txt
+              ;;
+            ci)
+              [ ! -f /tmp/ci.txt ] && echo "### 👷 CI/CD" > /tmp/ci.txt
+              echo "- $DESC $entry_suffix" >> /tmp/ci.txt
+              ;;
+            *)
+              [ ! -f /tmp/other.txt ] && echo "### 🔧 Other" > /tmp/other.txt
+              echo "- $DESC $entry_suffix" >> /tmp/other.txt
+              ;;
+          esac
+        }
+
+        CONV_REGEX="^(feat|fix|docs|style|refactor|perf|test|build|ci|chore)(\(.+\))?!?:\ .+"
+
+        # Get commit hashes
+        HASHES=$(git log ${FROM_REF}..${TO_REF} --pretty=format:"%h" --no-merges)
+
+        if [ -z "$HASHES" ]; then
           echo "- No changes detected" > changelog.txt
           exit 0
         fi
 
         # Parse commits and categorize
-        echo "$COMMITS" | while IFS='|' read -r message hash; do
-          # Check if it's a conventional commit
-          if [[ "$message" =~ ^(feat|fix|docs|style|refactor|perf|test|build|ci|chore)(\(.+\))?!?:\ .+ ]]; then
-            # Extract type and description
-            TYPE=$(echo "$message" | sed -E 's/^([a-z]+)(\(.+\))?!?:\ .*/\1/')
-            DESC=$(echo "$message" | sed -E 's/^[a-z]+(\(.+\))?!?:\ (.*)/\2/')
+        echo "$HASHES" | while read -r hash; do
+          # Get subject, body, and author separately
+          message=$(git log -1 --pretty=format:"%s" "$hash")
+          body=$(git log -1 --pretty=format:"%b" "$hash")
 
-            # Skip excluded types
-            if [[ ",${{ inputs.exclude-types }}," == *",$TYPE,"* ]]; then
-              continue
-            fi
-
-            # Format based on type with clickable commit links
-            COMMIT_LINK="[\`$hash\`](https://github.com/${{ github.repository }}/commit/$hash)"
-            case "$TYPE" in
-              feat)
-                [ ! -f /tmp/feat.txt ] && echo "### ✨ Features" > /tmp/feat.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/feat.txt
-                ;;
-              fix)
-                [ ! -f /tmp/fix.txt ] && echo "### 🐛 Bug Fixes" > /tmp/fix.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/fix.txt
-                ;;
-              docs)
-                [ ! -f /tmp/docs.txt ] && echo "### 📚 Documentation" > /tmp/docs.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/docs.txt
-                ;;
-              perf)
-                [ ! -f /tmp/perf.txt ] && echo "### ⚡ Performance" > /tmp/perf.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/perf.txt
-                ;;
-              refactor)
-                [ ! -f /tmp/refactor.txt ] && echo "### ♻️ Refactoring" > /tmp/refactor.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/refactor.txt
-                ;;
-              test)
-                [ ! -f /tmp/test.txt ] && echo "### ✅ Tests" > /tmp/test.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/test.txt
-                ;;
-              build)
-                [ ! -f /tmp/build.txt ] && echo "### 🏗️ Build" > /tmp/build.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/build.txt
-                ;;
-              ci)
-                [ ! -f /tmp/ci.txt ] && echo "### 👷 CI/CD" > /tmp/ci.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/ci.txt
-                ;;
-              *)
-                [ ! -f /tmp/other.txt ] && echo "### 🔧 Other" > /tmp/other.txt
-                echo "- $DESC ($COMMIT_LINK)" >> /tmp/other.txt
-                ;;
-            esac
+          # Get GitHub username from API, fallback to git author name
+          FULL_HASH=$(git log -1 --pretty=format:"%H" "$hash")
+          GH_USERNAME=$(gh api "repos/${{ github.repository }}/commits/${FULL_HASH}" --jq '.author.login' 2>/dev/null || true)
+          if [ -n "$GH_USERNAME" ]; then
+            author="[@${GH_USERNAME}](https://github.com/${GH_USERNAME})"
           else
-            # Regular commit message (non-conventional) with clickable commit link
-            COMMIT_LINK="[\`$hash\`](https://github.com/${{ github.repository }}/commit/$hash)"
+            author=$(git log -1 --pretty=format:"%an" "$hash")
+          fi
+
+          # Build contributors list (author + co-authors)
+          contributors="$author"
+          if [ -n "$body" ]; then
+            (echo "$body" | grep -iE "^co-authored-by:" || true) | while read -r coauthor_line; do
+              [ -z "$coauthor_line" ] && continue
+              resolved=$(resolve_coauthor "$coauthor_line")
+              echo "$resolved"
+            done > /tmp/coauthors_${hash}.txt
+
+            if [ -s /tmp/coauthors_${hash}.txt ]; then
+              while read -r resolved; do
+                contributors="${contributors}, ${resolved}"
+              done < /tmp/coauthors_${hash}.txt
+              rm -f /tmp/coauthors_${hash}.txt
+            fi
+          fi
+
+          COMMIT_LINK="[\`$hash\`](https://github.com/${{ github.repository }}/commit/$hash)"
+          ENTRY_SUFFIX="($COMMIT_LINK by $contributors)"
+
+          # Process subject line
+          if [[ "$message" =~ $CONV_REGEX ]]; then
+            categorize_line "$message" "$ENTRY_SUFFIX"
+          else
             [ ! -f /tmp/changes.txt ] && echo "### 📝 Changes" > /tmp/changes.txt
-            echo "- $message ($COMMIT_LINK)" >> /tmp/changes.txt
+            echo "- $message $ENTRY_SUFFIX" >> /tmp/changes.txt
+          fi
+
+          # Process BREAKING CHANGE footers from body
+          if [ -n "$body" ]; then
+            (echo "$body" | grep -iE "^BREAKING[ -]CHANGE:" || true) | while read -r breaking_line; do
+              [ -z "$breaking_line" ] && continue
+              BREAKING_DESC=$(echo "$breaking_line" | sed -E 's/^BREAKING[ -]CHANGE:[[:space:]]*//')
+              if [ -n "$BREAKING_DESC" ]; then
+                [ ! -f /tmp/breaking.txt ] && echo "### 🚨 Breaking Changes" > /tmp/breaking.txt
+                echo "- $BREAKING_DESC $ENTRY_SUFFIX" >> /tmp/breaking.txt
+              fi
+            done
+
+            # Process additional conventional commit lines from body
+            echo "$body" | while read -r body_line; do
+              if [[ "$body_line" =~ $CONV_REGEX ]]; then
+                categorize_line "$body_line" "$ENTRY_SUFFIX"
+              fi
+            done
           fi
         done
 
-        # Combine all sections in order
+        # Combine all sections in order (breaking changes first)
         {
+          [ -f /tmp/breaking.txt ] && cat /tmp/breaking.txt && echo ""
           [ -f /tmp/feat.txt ] && cat /tmp/feat.txt && echo ""
           [ -f /tmp/fix.txt ] && cat /tmp/fix.txt && echo ""
           [ -f /tmp/perf.txt ] && cat /tmp/perf.txt && echo ""
@@ -185,7 +281,7 @@ runs:
         } > changelog.txt
 
         # Clean up temp files
-        rm -f /tmp/{feat,fix,perf,docs,refactor,test,build,ci,changes,other}.txt
+        rm -f /tmp/{breaking,feat,fix,perf,docs,refactor,test,build,ci,changes,other}.txt
 
         # If still empty, add placeholder
         if [ ! -s changelog.txt ]; then
