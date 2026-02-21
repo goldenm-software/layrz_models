@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../token.dart';
 
 @freezed
 abstract class Token with _$Token {

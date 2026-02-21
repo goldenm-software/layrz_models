@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.10
+
+- Intenal re-organization of modules
+- New `EmployeeInput` and `CustomPermissionInput` in favor of centralization of models.
+
 ## 3.6.9
 
 - Added `AppPlatform` enum to represent the platform of the passkey in the `Passkey` model.

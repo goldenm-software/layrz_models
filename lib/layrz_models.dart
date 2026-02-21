@@ -1,7 +1,5 @@
 library;
 
-import 'dart:convert';
-
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart' hide Action;
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -130,13 +128,28 @@ export 'src/mqtt/mqtt.dart';
 // import 'src/api/api.dart';
 export 'src/api/api.dart';
 
+// import 'src/department/department.dart';
+export 'src/department/department.dart';
+
+import 'src/employees/employees.dart';
+export 'src/employees/employees.dart';
+
+import 'src/avatar/avatar.dart';
+export 'src/avatar/avatar.dart';
+
+// import 'src/token/token.dart';
+export 'src/token/token.dart';
+
+// import 'src/permissions/permissions.dart';
+export 'src/permissions/permissions.dart';
+
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
 
+/// Models that should be re-organized to sub-modules
 part 'src/access.dart';
 part 'src/accessibility/shortcut.dart';
 part 'src/algorithm.dart';
-part 'src/avatar.dart';
 part 'src/billing_plan.dart';
 part 'src/case.dart';
 part 'src/category.dart';
@@ -146,12 +159,9 @@ part 'src/country.dart';
 part 'src/credential_field.dart';
 part 'src/custom_field.dart';
 part 'src/db_partition.dart';
-part 'src/department.dart';
 part 'src/device.dart';
 part 'src/email_template.dart';
-part 'src/employee.dart';
 part 'src/function.dart';
-part 'src/generic_permission.dart';
 part 'src/guide.dart';
 part 'src/lint_errors.dart';
 part 'src/monitor/checkpoints.dart';
@@ -160,7 +170,6 @@ part 'src/suspended_service.dart';
 part 'src/tag.dart';
 part 'src/telemetry.dart';
 part 'src/timezone.dart';
-part 'src/token.dart';
 part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
 part 'src/weekdays.dart';
@@ -168,7 +177,6 @@ part 'src/registered_logs.dart';
 part 'src/param_data.dart';
 part 'src/parameter_update.dart';
 part 'src/sensor_last_update.dart';
-
 part 'src/block/block.dart';
 part 'src/block/enums/condition_type.dart';
 part 'src/block/enums/type.dart';
@@ -181,7 +189,8 @@ enum LayrzListingFormat {
   list,
   table,
   interactive,
-  wildcard;
+  wildcard
+  ;
 
   @override
   String toString() => toJson();

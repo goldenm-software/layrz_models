@@ -155,41 +155,6 @@ Map<String, dynamic> _$AlgorithmToJson(_Algorithm instance) =>
       'usage': instance.usage,
     };
 
-_Avatar _$AvatarFromJson(Map<String, dynamic> json) => _Avatar(
-  type: const AvatarTypeConverter().fromJson(json['type'] as String),
-  emoji: json['emoji'] as String?,
-  icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
-  url: json['url'] as String?,
-  base64: json['base64'] as String?,
-);
-
-Map<String, dynamic> _$AvatarToJson(_Avatar instance) => <String, dynamic>{
-  'type': const AvatarTypeConverter().toJson(instance.type),
-  'emoji': instance.emoji,
-  'icon': const IconOrNullConverter().toJson(instance.icon),
-  'url': instance.url,
-  'base64': instance.base64,
-};
-
-_AvatarInput _$AvatarInputFromJson(Map<String, dynamic> json) => _AvatarInput(
-  type: json['type'] == null
-      ? AvatarType.none
-      : const AvatarTypeConverter().fromJson(json['type'] as String),
-  emoji: json['emoji'] as String?,
-  icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
-  url: json['url'] as String?,
-  base64: json['base64'] as String?,
-);
-
-Map<String, dynamic> _$AvatarInputToJson(_AvatarInput instance) =>
-    <String, dynamic>{
-      'type': const AvatarTypeConverter().toJson(instance.type),
-      'emoji': instance.emoji,
-      'icon': const IconOrNullConverter().toJson(instance.icon),
-      'url': instance.url,
-      'base64': instance.base64,
-    };
-
 _BillingPlan _$BillingPlanFromJson(Map<String, dynamic> json) => _BillingPlan(
   id: json['id'] as String,
   reconnectionPercent: (json['reconnectionPercent'] as num?)?.toDouble() ?? 0.0,
@@ -824,21 +789,6 @@ Map<String, dynamic> _$DbPartitionToJson(_DbPartition instance) =>
       'sizePerRecord': instance.sizePerRecord,
     };
 
-_Department _$DepartmentFromJson(Map<String, dynamic> json) => _Department(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  permissions: json['permissions'] == null
-      ? null
-      : GenericPermission.fromJson(json['permissions'] as Map<String, dynamic>),
-);
-
-Map<String, dynamic> _$DepartmentToJson(_Department instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'permissions': instance.permissions?.toJson(),
-    };
-
 _Device _$DeviceFromJson(Map<String, dynamic> json) => _Device(
   id: json['id'] as String,
   name: json['name'] as String,
@@ -984,64 +934,6 @@ Map<String, dynamic> _$EmailTemplateToJson(_EmailTemplate instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_Employee _$EmployeeFromJson(Map<String, dynamic> json) => _Employee(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  email: json['email'] as String?,
-  username: json['username'] as String?,
-  department: json['department'] == null
-      ? null
-      : Department.fromJson(json['department'] as Map<String, dynamic>),
-  departmentId: json['departmentId'] as String?,
-  dynamicAvatar: json['dynamicAvatar'] == null
-      ? null
-      : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
-  token: json['token'] == null
-      ? null
-      : Token.fromJson(json['token'] as Map<String, dynamic>),
-  permissions: json['permissions'] == null
-      ? null
-      : GenericPermission.fromJson(json['permissions'] as Map<String, dynamic>),
-  customPermissions: json['customPermissions'] == null
-      ? null
-      : GenericPermission.fromJson(
-          json['customPermissions'] as Map<String, dynamic>,
-        ),
-  mfaEnabled: json['mfaEnabled'] as bool? ?? false,
-  mfaMethods:
-      (json['mfaMethods'] as List<dynamic>?)
-          ?.map((e) => const MfaMethodConverter().fromJson(e as String))
-          .toList() ??
-      const [],
-  preferences: json['preferences'] == null
-      ? null
-      : UserPreferences.fromJson(json['preferences'] as Map<String, dynamic>),
-  passkeys:
-      (json['passkeys'] as List<dynamic>?)
-          ?.map((e) => Passkey.fromJson(e as Map<String, dynamic>))
-          .toList() ??
-      const [],
-);
-
-Map<String, dynamic> _$EmployeeToJson(_Employee instance) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'email': instance.email,
-  'username': instance.username,
-  'department': instance.department?.toJson(),
-  'departmentId': instance.departmentId,
-  'dynamicAvatar': instance.dynamicAvatar?.toJson(),
-  'token': instance.token?.toJson(),
-  'permissions': instance.permissions?.toJson(),
-  'customPermissions': instance.customPermissions?.toJson(),
-  'mfaEnabled': instance.mfaEnabled,
-  'mfaMethods': instance.mfaMethods
-      .map(const MfaMethodConverter().toJson)
-      .toList(),
-  'preferences': instance.preferences?.toJson(),
-  'passkeys': instance.passkeys.map((e) => e.toJson()).toList(),
-};
-
 _FtpAccount _$FtpAccountFromJson(Map<String, dynamic> json) => _FtpAccount(
   host: json['host'] as String?,
   port: (json['port'] as num?)?.toInt(),
@@ -1109,101 +1001,6 @@ Map<String, dynamic> _$LayrzFunctionToJson(_LayrzFunction instance) =>
       'assetsIds': instance.assetsIds,
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
-    };
-
-_GenericPermissionItem _$GenericPermissionItemFromJson(
-  Map<String, dynamic> json,
-) => _GenericPermissionItem(
-  read: json['read'] as bool? ?? false,
-  write: json['write'] as bool? ?? false,
-  create: json['create'] as bool? ?? false,
-  delete: json['delete'] as bool? ?? false,
-  plan: json['plan'] as bool? ?? false,
-  loginas: json['loginas'] as bool? ?? false,
-  suspend: json['suspend'] as bool? ?? false,
-);
-
-Map<String, dynamic> _$GenericPermissionItemToJson(
-  _GenericPermissionItem instance,
-) => <String, dynamic>{
-  'read': instance.read,
-  'write': instance.write,
-  'create': instance.create,
-  'delete': instance.delete,
-  'plan': instance.plan,
-  'loginas': instance.loginas,
-  'suspend': instance.suspend,
-};
-
-_GenericPermission _$GenericPermissionFromJson(
-  Map<String, dynamic> json,
-) => _GenericPermission(
-  apps: json['apps'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['apps'] as Map<String, dynamic>),
-  users: json['users'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['users'] as Map<String, dynamic>),
-  firmwares: json['firmwares'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['firmwares'] as Map<String, dynamic>,
-        ),
-  employees: json['employees'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['employees'] as Map<String, dynamic>,
-        ),
-  languages: json['languages'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['languages'] as Map<String, dynamic>,
-        ),
-  categories: json['categories'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['categories'] as Map<String, dynamic>,
-        ),
-  departments: json['departments'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['departments'] as Map<String, dynamic>,
-        ),
-  protocols: json['protocols'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['protocols'] as Map<String, dynamic>,
-        ),
-  billing: json['billing'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['billing'] as Map<String, dynamic>),
-  cycles: json['cycles'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['cycles'] as Map<String, dynamic>),
-  shortcuts: json['shortcuts'] == null
-      ? null
-      : GenericPermissionItem.fromJson(
-          json['shortcuts'] as Map<String, dynamic>,
-        ),
-  layers: json['layers'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['layers'] as Map<String, dynamic>),
-);
-
-Map<String, dynamic> _$GenericPermissionToJson(_GenericPermission instance) =>
-    <String, dynamic>{
-      'apps': instance.apps?.toJson(),
-      'users': instance.users?.toJson(),
-      'firmwares': instance.firmwares?.toJson(),
-      'employees': instance.employees?.toJson(),
-      'languages': instance.languages?.toJson(),
-      'categories': instance.categories?.toJson(),
-      'departments': instance.departments?.toJson(),
-      'protocols': instance.protocols?.toJson(),
-      'billing': instance.billing?.toJson(),
-      'cycles': instance.cycles?.toJson(),
-      'shortcuts': instance.shortcuts?.toJson(),
-      'layers': instance.layers?.toJson(),
     };
 
 _Guide _$GuideFromJson(Map<String, dynamic> json) => _Guide(
@@ -1676,16 +1473,6 @@ Map<String, dynamic> _$TimezoneToJson(_Timezone instance) => <String, dynamic>{
   'name': instance.name,
   'offset': instance.offset,
   'country': instance.country?.toJson(),
-};
-
-_Token _$TokenFromJson(Map<String, dynamic> json) => _Token(
-  token: json['token'] as String,
-  validBefore: const TimestampConverter().fromJson(json['validBefore'] as num),
-);
-
-Map<String, dynamic> _$TokenToJson(_Token instance) => <String, dynamic>{
-  'token': instance.token,
-  'validBefore': const TimestampConverter().toJson(instance.validBefore),
 };
 
 _Trip _$TripFromJson(Map<String, dynamic> json) => _Trip(
