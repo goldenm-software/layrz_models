@@ -1,16 +1,11 @@
-.PHONY: build build_delete build_verbose lint test
-
-build:
+.PHONY: freezed
+freezed:
 	dart run build_runner build
 
-build_delete:
-	dart run build_runner build --delete-conflicting-outputs
-
-build_verbose:
-	dart run build_runner build --delete-conflicting-outputs --verbose
-
+.PHONY: lint
 lint:
 	dart fix --dry-run
 
+.PHONY: test
 test:
 	flutter test

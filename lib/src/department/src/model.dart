@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../department.dart';
 
 @freezed
 abstract class Department with _$Department {
