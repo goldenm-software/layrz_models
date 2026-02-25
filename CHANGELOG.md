@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.12
+
+- Fix `AtsPurchaseOrderCategoriesEntity` enum values
+
 ## 3.6.11
 
 - Added new value `PRODUCTION_SALE_TO_FREE_TRADE_ZONE` in `AtsPurchaseOrderCategoriesEntity` enum

@@ -26,13 +26,12 @@ enum AtsPurchaseOrderCategoriesEntity {
   // Return of fuel from storage (5664 / 6664)
   @JsonValue('RETURN_FROM_STORAGE')
   returnFromStorage,
+  // Fuel delivery to free trade zone (5901 / 6901)
+  @JsonValue('PRODUCTION_SALE_TO_FREE_TRADE_ZONE')
+  productionSaleToFreeTradeZone,
   // Not defined
   @JsonValue('NOT_DEFINED')
   notDefined,
-
-  // Fuel delivery to free trade zone (5654 / 6654)
-  @JsonValue('PRODUCTION_SALE_TO_FREE_TRADE_ZONE')
-  productionSaleToFreeTradeZone,
   ;
 
   @override
@@ -73,6 +72,9 @@ enum AtsPurchaseOrderCategoriesEntity {
       case '5664':
       case '6664':
         return AtsPurchaseOrderCategoriesEntity.returnFromStorage;
+      case '5901':
+      case '6901':
+        return AtsPurchaseOrderCategoriesEntity.productionSaleToFreeTradeZone;
       default:
         return AtsPurchaseOrderCategoriesEntity.notDefined;
     }

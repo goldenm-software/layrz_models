@@ -1572,9 +1572,9 @@ const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
   AtsPurchaseOrderCategoriesEntity.forSaleOutside: 'FOR_SALE_OUTSIDE',
   AtsPurchaseOrderCategoriesEntity.deliveryToStorage: 'DELIVERY_TO_STORAGE',
   AtsPurchaseOrderCategoriesEntity.returnFromStorage: 'RETURN_FROM_STORAGE',
-  AtsPurchaseOrderCategoriesEntity.notDefined: 'NOT_DEFINED',
   AtsPurchaseOrderCategoriesEntity.productionSaleToFreeTradeZone:
       'PRODUCTION_SALE_TO_FREE_TRADE_ZONE',
+  AtsPurchaseOrderCategoriesEntity.notDefined: 'NOT_DEFINED',
 };
 
 const _$AtsPurchaseOrderSubCategoriesEnumMap = {
