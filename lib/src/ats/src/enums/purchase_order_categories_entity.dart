@@ -29,6 +29,10 @@ enum AtsPurchaseOrderCategoriesEntity {
   // Not defined
   @JsonValue('NOT_DEFINED')
   notDefined,
+
+  // Fuel delivery to free trade zone (5654 / 6654)
+  @JsonValue('PRODUCTION_SALE_TO_FREE_TRADE_ZONE')
+  productionSaleToFreeTradeZone,
   ;
 
   @override
