@@ -4,7 +4,9 @@ enum ParamsFormModality {
   skid,
   seta,
   balance,
-  unknown;
+  pa,
+  unknown
+  ;
 
   String toJson() {
     switch (this) {
@@ -16,6 +18,8 @@ enum ParamsFormModality {
         return 'BALANCE';
       case ParamsFormModality.unknown:
         return 'UNKNOWN';
+      case ParamsFormModality.pa:
+        return 'PA';
     }
   }
 
@@ -27,6 +31,8 @@ enum ParamsFormModality {
         return ParamsFormModality.seta;
       case 'BALANCE':
         return ParamsFormModality.balance;
+      case 'PA':
+        return ParamsFormModality.pa;
       default:
         return ParamsFormModality.unknown;
     }
@@ -42,6 +48,8 @@ enum ParamsFormModality {
         return 'paramsFormModality.balance';
       case ParamsFormModality.unknown:
         return 'paramsFormModality.unknown';
+      case ParamsFormModality.pa:
+        return 'paramsFormModality.pa';
     }
   }
 }

@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.6.14
+- Added `density20` in `AtsLoadingParamsFormInput`
+
 ## 3.6.13
 
 - Added `TokenAudience` enum with values `API` and `SESSION`
