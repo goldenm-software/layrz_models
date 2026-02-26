@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.6.13
+
+- Added `TokenAudience` enum with values `API` and `SESSION`
+- Added `id`, `issuedAt`, and `audience` fields to `Token` model
+- Changed `validBefore` to nullable in `Token` model
+- Added `fetchAll`, `expire`, and `create` GraphQL operations to `Token` model
+
 ## 3.6.12
 
 - Fix `AtsPurchaseOrderCategoriesEntity` enum values
