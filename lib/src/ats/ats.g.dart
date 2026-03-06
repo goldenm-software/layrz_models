@@ -1443,6 +1443,7 @@ const _$AtsPurchaseOrderStatusEnumMap = {
   AtsPurchaseOrderStatus.destinationBerthExit: 'DESTINATION_BERTH_EXIT',
   AtsPurchaseOrderStatus.loadingBooked: 'LOADING_BOOKED',
   AtsPurchaseOrderStatus.unloadingBooked: 'UNLOADING_BOOKED',
+  AtsPurchaseOrderStatus.validated: 'VALIDATED',
 };
 
 _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
@@ -2754,6 +2755,9 @@ _AtsOrder _$AtsOrderFromJson(Map<String, dynamic> json) => _AtsOrder(
   orderStatusHistory: (json['orderStatusHistory'] as List<dynamic>?)
       ?.map((e) => AtsOrderStatusHistory.fromJson(e as Map<String, dynamic>))
       .toList(),
+  loadingOrders: (json['loadingOrders'] as List<dynamic>?)
+      ?.map((e) => AtsLoadingOrder.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$AtsOrderToJson(_AtsOrder instance) => <String, dynamic>{
@@ -2774,6 +2778,7 @@ Map<String, dynamic> _$AtsOrderToJson(_AtsOrder instance) => <String, dynamic>{
   'orderStatusHistory': instance.orderStatusHistory
       ?.map((e) => e.toJson())
       .toList(),
+  'loadingOrders': instance.loadingOrders?.map((e) => e.toJson()).toList(),
 };
 
 _AtsOrderStatusHistory _$AtsOrderStatusHistoryFromJson(
@@ -2837,3 +2842,65 @@ Map<String, dynamic> _$AtsOrderStatusHistoryToJson(
   'orderSeries': instance.orderSeries,
   'rmStatus': instance.rmStatus,
 };
+
+_AtsLoadingOrder _$AtsLoadingOrderFromJson(Map<String, dynamic> json) =>
+    _AtsLoadingOrder(
+      id: json['id'] as String,
+      productAnp: json['productAnp'] as String,
+      customer: json['customer'] as String,
+      customerCode: json['customerCode'] as String,
+      industryCode: json['industryCode'] as String,
+      branchCode: json['branchCode'] as String,
+      orderCode: json['orderCode'] as String,
+      organizationCode: json['organizationCode'] as String,
+      orderNumber: json['orderNumber'] as String,
+      productCode: json['productCode'] as String,
+      compartment: json['compartment'] as String,
+      orderDate: const TimestampOrNullConverter().fromJson(
+        json['orderDate'] as num?,
+      ),
+      compartmentEntryAt: const TimestampOrNullConverter().fromJson(
+        json['compartmentEntryAt'] as num?,
+      ),
+      assetPlate: json['assetPlate'] as String,
+      quantity: (json['quantity'] as num).toDouble(),
+      compartmentExitAt: const TimestampOrNullConverter().fromJson(
+        json['compartmentExitAt'] as num?,
+      ),
+      ticketNumber: json['ticketNumber'] as String?,
+      movementRecord: json['movementRecord'] as String?,
+      asset: json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      order: json['order'] == null
+          ? null
+          : AtsOrder.fromJson(json['order'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$AtsLoadingOrderToJson(_AtsLoadingOrder instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'productAnp': instance.productAnp,
+      'customer': instance.customer,
+      'customerCode': instance.customerCode,
+      'industryCode': instance.industryCode,
+      'branchCode': instance.branchCode,
+      'orderCode': instance.orderCode,
+      'organizationCode': instance.organizationCode,
+      'orderNumber': instance.orderNumber,
+      'productCode': instance.productCode,
+      'compartment': instance.compartment,
+      'orderDate': const TimestampOrNullConverter().toJson(instance.orderDate),
+      'compartmentEntryAt': const TimestampOrNullConverter().toJson(
+        instance.compartmentEntryAt,
+      ),
+      'assetPlate': instance.assetPlate,
+      'quantity': instance.quantity,
+      'compartmentExitAt': const TimestampOrNullConverter().toJson(
+        instance.compartmentExitAt,
+      ),
+      'ticketNumber': instance.ticketNumber,
+      'movementRecord': instance.movementRecord,
+      'asset': instance.asset?.toJson(),
+      'order': instance.order?.toJson(),
+    };

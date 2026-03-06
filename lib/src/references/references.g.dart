@@ -84,6 +84,7 @@ const _$ReferenceCategoryEnumMap = {
       'ATS_EXPORT_RAFT_CLOSURE_REPORT_PDF',
   ReferenceCategory.atsSupervisorioEditCacl: 'ATS_SUPERVISORIO_EDIT_CACL',
   ReferenceCategory.atsSupervisorioRemoveCacl: 'ATS_SUPERVISORIO_REMOVE_CACL',
+  ReferenceCategory.atsSupervisorioExportCacl: 'ATS_SUPERVISORIO_EXPORT_CACL',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',

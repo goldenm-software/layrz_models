@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.16
+
+- Added new model `AtsLoadingOrder`
+- Added new value `loadingOrders` in `AtsOrder` model
+
 ## 3.6.15
 
 - Added new value `VALIDATED` in `AtsPurchaseOrderStatus` enum
