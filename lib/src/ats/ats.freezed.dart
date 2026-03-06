@@ -24120,7 +24120,8 @@ mixin _$AtsOrder {
  double get quantity;/// The [status] parameter is the status of the order.
  String get status;/// The [checkInAt] parameter is the checkInAt of the order.
 @TimestampOrNullConverter() DateTime? get checkInAt;/// The [orderStatusHistory] parameter is the orderStatusHistory of the order.
- List<AtsOrderStatusHistory>? get orderStatusHistory;
+ List<AtsOrderStatusHistory>? get orderStatusHistory;/// The [loadingOrders] parameter is the loadingOrders of the order.
+ List<AtsLoadingOrder>? get loadingOrders;
 /// Create a copy of AtsOrder
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -24133,16 +24134,16 @@ $AtsOrderCopyWith<AtsOrder> get copyWith => _$AtsOrderCopyWithImpl<AtsOrder>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerAsset, customerAsset) || other.customerAsset == customerAsset)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.fiscalNumber, fiscalNumber) || other.fiscalNumber == fiscalNumber)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.status, status) || other.status == status)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&const DeepCollectionEquality().equals(other.orderStatusHistory, orderStatusHistory));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerAsset, customerAsset) || other.customerAsset == customerAsset)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.fiscalNumber, fiscalNumber) || other.fiscalNumber == fiscalNumber)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.status, status) || other.status == status)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&const DeepCollectionEquality().equals(other.orderStatusHistory, orderStatusHistory)&&const DeepCollectionEquality().equals(other.loadingOrders, loadingOrders));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,cnpj,customer,customerAsset,customerCode,orderDate,inclusionDate,fiscalNumber,productAnp,quantity,status,checkInAt,const DeepCollectionEquality().hash(orderStatusHistory));
+int get hashCode => Object.hash(runtimeType,id,cnpj,customer,customerAsset,customerCode,orderDate,inclusionDate,fiscalNumber,productAnp,quantity,status,checkInAt,const DeepCollectionEquality().hash(orderStatusHistory),const DeepCollectionEquality().hash(loadingOrders));
 
 @override
 String toString() {
-  return 'AtsOrder(id: $id, cnpj: $cnpj, customer: $customer, customerAsset: $customerAsset, customerCode: $customerCode, orderDate: $orderDate, inclusionDate: $inclusionDate, fiscalNumber: $fiscalNumber, productAnp: $productAnp, quantity: $quantity, status: $status, checkInAt: $checkInAt, orderStatusHistory: $orderStatusHistory)';
+  return 'AtsOrder(id: $id, cnpj: $cnpj, customer: $customer, customerAsset: $customerAsset, customerCode: $customerCode, orderDate: $orderDate, inclusionDate: $inclusionDate, fiscalNumber: $fiscalNumber, productAnp: $productAnp, quantity: $quantity, status: $status, checkInAt: $checkInAt, orderStatusHistory: $orderStatusHistory, loadingOrders: $loadingOrders)';
 }
 
 
@@ -24153,7 +24154,7 @@ abstract mixin class $AtsOrderCopyWith<$Res>  {
   factory $AtsOrderCopyWith(AtsOrder value, $Res Function(AtsOrder) _then) = _$AtsOrderCopyWithImpl;
 @useResult
 $Res call({
- String id, String cnpj, String customer, Asset? customerAsset, String customerCode,@TimestampOrNullConverter() DateTime? orderDate,@TimestampOrNullConverter() DateTime? inclusionDate, String fiscalNumber, String productAnp, double quantity, String status,@TimestampOrNullConverter() DateTime? checkInAt, List<AtsOrderStatusHistory>? orderStatusHistory
+ String id, String cnpj, String customer, Asset? customerAsset, String customerCode,@TimestampOrNullConverter() DateTime? orderDate,@TimestampOrNullConverter() DateTime? inclusionDate, String fiscalNumber, String productAnp, double quantity, String status,@TimestampOrNullConverter() DateTime? checkInAt, List<AtsOrderStatusHistory>? orderStatusHistory, List<AtsLoadingOrder>? loadingOrders
 });
 
 
@@ -24170,7 +24171,7 @@ class _$AtsOrderCopyWithImpl<$Res>
 
 /// Create a copy of AtsOrder
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? cnpj = null,Object? customer = null,Object? customerAsset = freezed,Object? customerCode = null,Object? orderDate = freezed,Object? inclusionDate = freezed,Object? fiscalNumber = null,Object? productAnp = null,Object? quantity = null,Object? status = null,Object? checkInAt = freezed,Object? orderStatusHistory = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? cnpj = null,Object? customer = null,Object? customerAsset = freezed,Object? customerCode = null,Object? orderDate = freezed,Object? inclusionDate = freezed,Object? fiscalNumber = null,Object? productAnp = null,Object? quantity = null,Object? status = null,Object? checkInAt = freezed,Object? orderStatusHistory = freezed,Object? loadingOrders = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,cnpj: null == cnpj ? _self.cnpj : cnpj // ignore: cast_nullable_to_non_nullable
@@ -24185,7 +24186,8 @@ as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast
 as double,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,orderStatusHistory: freezed == orderStatusHistory ? _self.orderStatusHistory : orderStatusHistory // ignore: cast_nullable_to_non_nullable
-as List<AtsOrderStatusHistory>?,
+as List<AtsOrderStatusHistory>?,loadingOrders: freezed == loadingOrders ? _self.loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
+as List<AtsLoadingOrder>?,
   ));
 }
 /// Create a copy of AtsOrder
@@ -24282,10 +24284,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory,  List<AtsLoadingOrder>? loadingOrders)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsOrder() when $default != null:
-return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory);case _:
+return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory,_that.loadingOrders);case _:
   return orElse();
 
 }
@@ -24303,10 +24305,10 @@ return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.cus
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory,  List<AtsLoadingOrder>? loadingOrders)  $default,) {final _that = this;
 switch (_that) {
 case _AtsOrder():
-return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory);case _:
+return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory,_that.loadingOrders);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -24323,10 +24325,10 @@ return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.cus
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String cnpj,  String customer,  Asset? customerAsset,  String customerCode, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? inclusionDate,  String fiscalNumber,  String productAnp,  double quantity,  String status, @TimestampOrNullConverter()  DateTime? checkInAt,  List<AtsOrderStatusHistory>? orderStatusHistory,  List<AtsLoadingOrder>? loadingOrders)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsOrder() when $default != null:
-return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory);case _:
+return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.customerCode,_that.orderDate,_that.inclusionDate,_that.fiscalNumber,_that.productAnp,_that.quantity,_that.status,_that.checkInAt,_that.orderStatusHistory,_that.loadingOrders);case _:
   return null;
 
 }
@@ -24338,7 +24340,7 @@ return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.cus
 @JsonSerializable()
 
 class _AtsOrder implements AtsOrder {
-  const _AtsOrder({required this.id, required this.cnpj, required this.customer, this.customerAsset, required this.customerCode, @TimestampOrNullConverter() this.orderDate, @TimestampOrNullConverter() this.inclusionDate, required this.fiscalNumber, required this.productAnp, required this.quantity, required this.status, @TimestampOrNullConverter() this.checkInAt, final  List<AtsOrderStatusHistory>? orderStatusHistory}): _orderStatusHistory = orderStatusHistory;
+  const _AtsOrder({required this.id, required this.cnpj, required this.customer, this.customerAsset, required this.customerCode, @TimestampOrNullConverter() this.orderDate, @TimestampOrNullConverter() this.inclusionDate, required this.fiscalNumber, required this.productAnp, required this.quantity, required this.status, @TimestampOrNullConverter() this.checkInAt, final  List<AtsOrderStatusHistory>? orderStatusHistory, final  List<AtsLoadingOrder>? loadingOrders}): _orderStatusHistory = orderStatusHistory,_loadingOrders = loadingOrders;
   factory _AtsOrder.fromJson(Map<String, dynamic> json) => _$AtsOrderFromJson(json);
 
 /// The [id] parameter is the id of the order.
@@ -24376,6 +24378,17 @@ class _AtsOrder implements AtsOrder {
   return EqualUnmodifiableListView(value);
 }
 
+/// The [loadingOrders] parameter is the loadingOrders of the order.
+ final  List<AtsLoadingOrder>? _loadingOrders;
+/// The [loadingOrders] parameter is the loadingOrders of the order.
+@override List<AtsLoadingOrder>? get loadingOrders {
+  final value = _loadingOrders;
+  if (value == null) return null;
+  if (_loadingOrders is EqualUnmodifiableListView) return _loadingOrders;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
 
 /// Create a copy of AtsOrder
 /// with the given fields replaced by the non-null parameter values.
@@ -24390,16 +24403,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerAsset, customerAsset) || other.customerAsset == customerAsset)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.fiscalNumber, fiscalNumber) || other.fiscalNumber == fiscalNumber)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.status, status) || other.status == status)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&const DeepCollectionEquality().equals(other._orderStatusHistory, _orderStatusHistory));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerAsset, customerAsset) || other.customerAsset == customerAsset)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.fiscalNumber, fiscalNumber) || other.fiscalNumber == fiscalNumber)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.status, status) || other.status == status)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&const DeepCollectionEquality().equals(other._orderStatusHistory, _orderStatusHistory)&&const DeepCollectionEquality().equals(other._loadingOrders, _loadingOrders));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,cnpj,customer,customerAsset,customerCode,orderDate,inclusionDate,fiscalNumber,productAnp,quantity,status,checkInAt,const DeepCollectionEquality().hash(_orderStatusHistory));
+int get hashCode => Object.hash(runtimeType,id,cnpj,customer,customerAsset,customerCode,orderDate,inclusionDate,fiscalNumber,productAnp,quantity,status,checkInAt,const DeepCollectionEquality().hash(_orderStatusHistory),const DeepCollectionEquality().hash(_loadingOrders));
 
 @override
 String toString() {
-  return 'AtsOrder(id: $id, cnpj: $cnpj, customer: $customer, customerAsset: $customerAsset, customerCode: $customerCode, orderDate: $orderDate, inclusionDate: $inclusionDate, fiscalNumber: $fiscalNumber, productAnp: $productAnp, quantity: $quantity, status: $status, checkInAt: $checkInAt, orderStatusHistory: $orderStatusHistory)';
+  return 'AtsOrder(id: $id, cnpj: $cnpj, customer: $customer, customerAsset: $customerAsset, customerCode: $customerCode, orderDate: $orderDate, inclusionDate: $inclusionDate, fiscalNumber: $fiscalNumber, productAnp: $productAnp, quantity: $quantity, status: $status, checkInAt: $checkInAt, orderStatusHistory: $orderStatusHistory, loadingOrders: $loadingOrders)';
 }
 
 
@@ -24410,7 +24423,7 @@ abstract mixin class _$AtsOrderCopyWith<$Res> implements $AtsOrderCopyWith<$Res>
   factory _$AtsOrderCopyWith(_AtsOrder value, $Res Function(_AtsOrder) _then) = __$AtsOrderCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String cnpj, String customer, Asset? customerAsset, String customerCode,@TimestampOrNullConverter() DateTime? orderDate,@TimestampOrNullConverter() DateTime? inclusionDate, String fiscalNumber, String productAnp, double quantity, String status,@TimestampOrNullConverter() DateTime? checkInAt, List<AtsOrderStatusHistory>? orderStatusHistory
+ String id, String cnpj, String customer, Asset? customerAsset, String customerCode,@TimestampOrNullConverter() DateTime? orderDate,@TimestampOrNullConverter() DateTime? inclusionDate, String fiscalNumber, String productAnp, double quantity, String status,@TimestampOrNullConverter() DateTime? checkInAt, List<AtsOrderStatusHistory>? orderStatusHistory, List<AtsLoadingOrder>? loadingOrders
 });
 
 
@@ -24427,7 +24440,7 @@ class __$AtsOrderCopyWithImpl<$Res>
 
 /// Create a copy of AtsOrder
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? cnpj = null,Object? customer = null,Object? customerAsset = freezed,Object? customerCode = null,Object? orderDate = freezed,Object? inclusionDate = freezed,Object? fiscalNumber = null,Object? productAnp = null,Object? quantity = null,Object? status = null,Object? checkInAt = freezed,Object? orderStatusHistory = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? cnpj = null,Object? customer = null,Object? customerAsset = freezed,Object? customerCode = null,Object? orderDate = freezed,Object? inclusionDate = freezed,Object? fiscalNumber = null,Object? productAnp = null,Object? quantity = null,Object? status = null,Object? checkInAt = freezed,Object? orderStatusHistory = freezed,Object? loadingOrders = freezed,}) {
   return _then(_AtsOrder(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,cnpj: null == cnpj ? _self.cnpj : cnpj // ignore: cast_nullable_to_non_nullable
@@ -24442,7 +24455,8 @@ as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast
 as double,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,orderStatusHistory: freezed == orderStatusHistory ? _self._orderStatusHistory : orderStatusHistory // ignore: cast_nullable_to_non_nullable
-as List<AtsOrderStatusHistory>?,
+as List<AtsOrderStatusHistory>?,loadingOrders: freezed == loadingOrders ? _self._loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
+as List<AtsLoadingOrder>?,
   ));
 }
 
@@ -24840,6 +24854,414 @@ $AssetCopyWith<$Res>? get asset {
 
   return $AssetCopyWith<$Res>(_self.asset!, (value) {
     return _then(_self.copyWith(asset: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AtsLoadingOrder {
+
+/// The [id] parameter is the id of the order.
+ String get id;/// The [productAnp] parameter is the productAnp of the order.
+ String get productAnp;/// The [customer] parameter is the customer of the order.
+ String get customer;/// The [customerCode] parameter is the customerCode of the order.
+ String get customerCode;/// The [industryCode] parameter is the industryCode of the order.
+ String get industryCode;/// The [branchCode] parameter is the branchCode of the order.
+ String get branchCode;/// The [orderCode] parameter is the orderCode of the order.
+ String get orderCode;/// The [organizationCode] parameter is the organizationCode of the order.
+ String get organizationCode;/// The [orderNumber] parameter is the orderNumber of the order.
+ String get orderNumber;/// The [productCode] parameter is the productCode of the order.
+ String get productCode;/// The [compartment] parameter is the compartment of the order.
+ String get compartment;/// The [orderDate] parameter is the orderDate of the order.
+@TimestampOrNullConverter() DateTime? get orderDate;/// The [compartmentEntryAt] parameter is the compartmentEntryAt of the order.
+@TimestampOrNullConverter() DateTime? get compartmentEntryAt;/// The [assetPlate] parameter is the assetPlate of the order.
+ String get assetPlate;/// The [quantity] parameter is the quantity of the order.
+ double get quantity;/// The [compartmentExitAt] parameter is the compartmentExitAt of the order.
+@TimestampOrNullConverter() DateTime? get compartmentExitAt;/// The [ticketNumber] parameter is the ticketNumber of the order.
+ String? get ticketNumber;/// The [movementRecord] parameter is the movementRecord of the order.
+ String? get movementRecord;/// The [asset] parameter is the asset of the order.
+ Asset? get asset;/// The [order] parameter is the order of the order.
+ AtsOrder? get order;
+/// Create a copy of AtsLoadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsLoadingOrderCopyWith<AtsLoadingOrder> get copyWith => _$AtsLoadingOrderCopyWithImpl<AtsLoadingOrder>(this as AtsLoadingOrder, _$identity);
+
+  /// Serializes this AtsLoadingOrder to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsLoadingOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.industryCode, industryCode) || other.industryCode == industryCode)&&(identical(other.branchCode, branchCode) || other.branchCode == branchCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.organizationCode, organizationCode) || other.organizationCode == organizationCode)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.productCode, productCode) || other.productCode == productCode)&&(identical(other.compartment, compartment) || other.compartment == compartment)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.compartmentEntryAt, compartmentEntryAt) || other.compartmentEntryAt == compartmentEntryAt)&&(identical(other.assetPlate, assetPlate) || other.assetPlate == assetPlate)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.compartmentExitAt, compartmentExitAt) || other.compartmentExitAt == compartmentExitAt)&&(identical(other.ticketNumber, ticketNumber) || other.ticketNumber == ticketNumber)&&(identical(other.movementRecord, movementRecord) || other.movementRecord == movementRecord)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.order, order) || other.order == order));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hashAll([runtimeType,id,productAnp,customer,customerCode,industryCode,branchCode,orderCode,organizationCode,orderNumber,productCode,compartment,orderDate,compartmentEntryAt,assetPlate,quantity,compartmentExitAt,ticketNumber,movementRecord,asset,order]);
+
+@override
+String toString() {
+  return 'AtsLoadingOrder(id: $id, productAnp: $productAnp, customer: $customer, customerCode: $customerCode, industryCode: $industryCode, branchCode: $branchCode, orderCode: $orderCode, organizationCode: $organizationCode, orderNumber: $orderNumber, productCode: $productCode, compartment: $compartment, orderDate: $orderDate, compartmentEntryAt: $compartmentEntryAt, assetPlate: $assetPlate, quantity: $quantity, compartmentExitAt: $compartmentExitAt, ticketNumber: $ticketNumber, movementRecord: $movementRecord, asset: $asset, order: $order)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsLoadingOrderCopyWith<$Res>  {
+  factory $AtsLoadingOrderCopyWith(AtsLoadingOrder value, $Res Function(AtsLoadingOrder) _then) = _$AtsLoadingOrderCopyWithImpl;
+@useResult
+$Res call({
+ String id, String productAnp, String customer, String customerCode, String industryCode, String branchCode, String orderCode, String organizationCode, String orderNumber, String productCode, String compartment,@TimestampOrNullConverter() DateTime? orderDate,@TimestampOrNullConverter() DateTime? compartmentEntryAt, String assetPlate, double quantity,@TimestampOrNullConverter() DateTime? compartmentExitAt, String? ticketNumber, String? movementRecord, Asset? asset, AtsOrder? order
+});
+
+
+$AssetCopyWith<$Res>? get asset;$AtsOrderCopyWith<$Res>? get order;
+
+}
+/// @nodoc
+class _$AtsLoadingOrderCopyWithImpl<$Res>
+    implements $AtsLoadingOrderCopyWith<$Res> {
+  _$AtsLoadingOrderCopyWithImpl(this._self, this._then);
+
+  final AtsLoadingOrder _self;
+  final $Res Function(AtsLoadingOrder) _then;
+
+/// Create a copy of AtsLoadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? productAnp = null,Object? customer = null,Object? customerCode = null,Object? industryCode = null,Object? branchCode = null,Object? orderCode = null,Object? organizationCode = null,Object? orderNumber = null,Object? productCode = null,Object? compartment = null,Object? orderDate = freezed,Object? compartmentEntryAt = freezed,Object? assetPlate = null,Object? quantity = null,Object? compartmentExitAt = freezed,Object? ticketNumber = freezed,Object? movementRecord = freezed,Object? asset = freezed,Object? order = freezed,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,productAnp: null == productAnp ? _self.productAnp : productAnp // ignore: cast_nullable_to_non_nullable
+as String,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
+as String,customerCode: null == customerCode ? _self.customerCode : customerCode // ignore: cast_nullable_to_non_nullable
+as String,industryCode: null == industryCode ? _self.industryCode : industryCode // ignore: cast_nullable_to_non_nullable
+as String,branchCode: null == branchCode ? _self.branchCode : branchCode // ignore: cast_nullable_to_non_nullable
+as String,orderCode: null == orderCode ? _self.orderCode : orderCode // ignore: cast_nullable_to_non_nullable
+as String,organizationCode: null == organizationCode ? _self.organizationCode : organizationCode // ignore: cast_nullable_to_non_nullable
+as String,orderNumber: null == orderNumber ? _self.orderNumber : orderNumber // ignore: cast_nullable_to_non_nullable
+as String,productCode: null == productCode ? _self.productCode : productCode // ignore: cast_nullable_to_non_nullable
+as String,compartment: null == compartment ? _self.compartment : compartment // ignore: cast_nullable_to_non_nullable
+as String,orderDate: freezed == orderDate ? _self.orderDate : orderDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,compartmentEntryAt: freezed == compartmentEntryAt ? _self.compartmentEntryAt : compartmentEntryAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,assetPlate: null == assetPlate ? _self.assetPlate : assetPlate // ignore: cast_nullable_to_non_nullable
+as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
+as double,compartmentExitAt: freezed == compartmentExitAt ? _self.compartmentExitAt : compartmentExitAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,ticketNumber: freezed == ticketNumber ? _self.ticketNumber : ticketNumber // ignore: cast_nullable_to_non_nullable
+as String?,movementRecord: freezed == movementRecord ? _self.movementRecord : movementRecord // ignore: cast_nullable_to_non_nullable
+as String?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
+as Asset?,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
+as AtsOrder?,
+  ));
+}
+/// Create a copy of AtsLoadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.asset!, (value) {
+    return _then(_self.copyWith(asset: value));
+  });
+}/// Create a copy of AtsLoadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOrderCopyWith<$Res>? get order {
+    if (_self.order == null) {
+    return null;
+  }
+
+  return $AtsOrderCopyWith<$Res>(_self.order!, (value) {
+    return _then(_self.copyWith(order: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AtsLoadingOrder].
+extension AtsLoadingOrderPatterns on AtsLoadingOrder {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsLoadingOrder value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsLoadingOrder() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsLoadingOrder value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsLoadingOrder():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsLoadingOrder value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsLoadingOrder() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String productAnp,  String customer,  String customerCode,  String industryCode,  String branchCode,  String orderCode,  String organizationCode,  String orderNumber,  String productCode,  String compartment, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String assetPlate,  double quantity, @TimestampOrNullConverter()  DateTime? compartmentExitAt,  String? ticketNumber,  String? movementRecord,  Asset? asset,  AtsOrder? order)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsLoadingOrder() when $default != null:
+return $default(_that.id,_that.productAnp,_that.customer,_that.customerCode,_that.industryCode,_that.branchCode,_that.orderCode,_that.organizationCode,_that.orderNumber,_that.productCode,_that.compartment,_that.orderDate,_that.compartmentEntryAt,_that.assetPlate,_that.quantity,_that.compartmentExitAt,_that.ticketNumber,_that.movementRecord,_that.asset,_that.order);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String productAnp,  String customer,  String customerCode,  String industryCode,  String branchCode,  String orderCode,  String organizationCode,  String orderNumber,  String productCode,  String compartment, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String assetPlate,  double quantity, @TimestampOrNullConverter()  DateTime? compartmentExitAt,  String? ticketNumber,  String? movementRecord,  Asset? asset,  AtsOrder? order)  $default,) {final _that = this;
+switch (_that) {
+case _AtsLoadingOrder():
+return $default(_that.id,_that.productAnp,_that.customer,_that.customerCode,_that.industryCode,_that.branchCode,_that.orderCode,_that.organizationCode,_that.orderNumber,_that.productCode,_that.compartment,_that.orderDate,_that.compartmentEntryAt,_that.assetPlate,_that.quantity,_that.compartmentExitAt,_that.ticketNumber,_that.movementRecord,_that.asset,_that.order);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String productAnp,  String customer,  String customerCode,  String industryCode,  String branchCode,  String orderCode,  String organizationCode,  String orderNumber,  String productCode,  String compartment, @TimestampOrNullConverter()  DateTime? orderDate, @TimestampOrNullConverter()  DateTime? compartmentEntryAt,  String assetPlate,  double quantity, @TimestampOrNullConverter()  DateTime? compartmentExitAt,  String? ticketNumber,  String? movementRecord,  Asset? asset,  AtsOrder? order)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsLoadingOrder() when $default != null:
+return $default(_that.id,_that.productAnp,_that.customer,_that.customerCode,_that.industryCode,_that.branchCode,_that.orderCode,_that.organizationCode,_that.orderNumber,_that.productCode,_that.compartment,_that.orderDate,_that.compartmentEntryAt,_that.assetPlate,_that.quantity,_that.compartmentExitAt,_that.ticketNumber,_that.movementRecord,_that.asset,_that.order);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsLoadingOrder implements AtsLoadingOrder {
+  const _AtsLoadingOrder({required this.id, required this.productAnp, required this.customer, required this.customerCode, required this.industryCode, required this.branchCode, required this.orderCode, required this.organizationCode, required this.orderNumber, required this.productCode, required this.compartment, @TimestampOrNullConverter() this.orderDate, @TimestampOrNullConverter() this.compartmentEntryAt, required this.assetPlate, required this.quantity, @TimestampOrNullConverter() this.compartmentExitAt, this.ticketNumber, this.movementRecord, this.asset, this.order});
+  factory _AtsLoadingOrder.fromJson(Map<String, dynamic> json) => _$AtsLoadingOrderFromJson(json);
+
+/// The [id] parameter is the id of the order.
+@override final  String id;
+/// The [productAnp] parameter is the productAnp of the order.
+@override final  String productAnp;
+/// The [customer] parameter is the customer of the order.
+@override final  String customer;
+/// The [customerCode] parameter is the customerCode of the order.
+@override final  String customerCode;
+/// The [industryCode] parameter is the industryCode of the order.
+@override final  String industryCode;
+/// The [branchCode] parameter is the branchCode of the order.
+@override final  String branchCode;
+/// The [orderCode] parameter is the orderCode of the order.
+@override final  String orderCode;
+/// The [organizationCode] parameter is the organizationCode of the order.
+@override final  String organizationCode;
+/// The [orderNumber] parameter is the orderNumber of the order.
+@override final  String orderNumber;
+/// The [productCode] parameter is the productCode of the order.
+@override final  String productCode;
+/// The [compartment] parameter is the compartment of the order.
+@override final  String compartment;
+/// The [orderDate] parameter is the orderDate of the order.
+@override@TimestampOrNullConverter() final  DateTime? orderDate;
+/// The [compartmentEntryAt] parameter is the compartmentEntryAt of the order.
+@override@TimestampOrNullConverter() final  DateTime? compartmentEntryAt;
+/// The [assetPlate] parameter is the assetPlate of the order.
+@override final  String assetPlate;
+/// The [quantity] parameter is the quantity of the order.
+@override final  double quantity;
+/// The [compartmentExitAt] parameter is the compartmentExitAt of the order.
+@override@TimestampOrNullConverter() final  DateTime? compartmentExitAt;
+/// The [ticketNumber] parameter is the ticketNumber of the order.
+@override final  String? ticketNumber;
+/// The [movementRecord] parameter is the movementRecord of the order.
+@override final  String? movementRecord;
+/// The [asset] parameter is the asset of the order.
+@override final  Asset? asset;
+/// The [order] parameter is the order of the order.
+@override final  AtsOrder? order;
+
+/// Create a copy of AtsLoadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsLoadingOrderCopyWith<_AtsLoadingOrder> get copyWith => __$AtsLoadingOrderCopyWithImpl<_AtsLoadingOrder>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsLoadingOrderToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsLoadingOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.industryCode, industryCode) || other.industryCode == industryCode)&&(identical(other.branchCode, branchCode) || other.branchCode == branchCode)&&(identical(other.orderCode, orderCode) || other.orderCode == orderCode)&&(identical(other.organizationCode, organizationCode) || other.organizationCode == organizationCode)&&(identical(other.orderNumber, orderNumber) || other.orderNumber == orderNumber)&&(identical(other.productCode, productCode) || other.productCode == productCode)&&(identical(other.compartment, compartment) || other.compartment == compartment)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.compartmentEntryAt, compartmentEntryAt) || other.compartmentEntryAt == compartmentEntryAt)&&(identical(other.assetPlate, assetPlate) || other.assetPlate == assetPlate)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.compartmentExitAt, compartmentExitAt) || other.compartmentExitAt == compartmentExitAt)&&(identical(other.ticketNumber, ticketNumber) || other.ticketNumber == ticketNumber)&&(identical(other.movementRecord, movementRecord) || other.movementRecord == movementRecord)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.order, order) || other.order == order));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hashAll([runtimeType,id,productAnp,customer,customerCode,industryCode,branchCode,orderCode,organizationCode,orderNumber,productCode,compartment,orderDate,compartmentEntryAt,assetPlate,quantity,compartmentExitAt,ticketNumber,movementRecord,asset,order]);
+
+@override
+String toString() {
+  return 'AtsLoadingOrder(id: $id, productAnp: $productAnp, customer: $customer, customerCode: $customerCode, industryCode: $industryCode, branchCode: $branchCode, orderCode: $orderCode, organizationCode: $organizationCode, orderNumber: $orderNumber, productCode: $productCode, compartment: $compartment, orderDate: $orderDate, compartmentEntryAt: $compartmentEntryAt, assetPlate: $assetPlate, quantity: $quantity, compartmentExitAt: $compartmentExitAt, ticketNumber: $ticketNumber, movementRecord: $movementRecord, asset: $asset, order: $order)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsLoadingOrderCopyWith<$Res> implements $AtsLoadingOrderCopyWith<$Res> {
+  factory _$AtsLoadingOrderCopyWith(_AtsLoadingOrder value, $Res Function(_AtsLoadingOrder) _then) = __$AtsLoadingOrderCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String productAnp, String customer, String customerCode, String industryCode, String branchCode, String orderCode, String organizationCode, String orderNumber, String productCode, String compartment,@TimestampOrNullConverter() DateTime? orderDate,@TimestampOrNullConverter() DateTime? compartmentEntryAt, String assetPlate, double quantity,@TimestampOrNullConverter() DateTime? compartmentExitAt, String? ticketNumber, String? movementRecord, Asset? asset, AtsOrder? order
+});
+
+
+@override $AssetCopyWith<$Res>? get asset;@override $AtsOrderCopyWith<$Res>? get order;
+
+}
+/// @nodoc
+class __$AtsLoadingOrderCopyWithImpl<$Res>
+    implements _$AtsLoadingOrderCopyWith<$Res> {
+  __$AtsLoadingOrderCopyWithImpl(this._self, this._then);
+
+  final _AtsLoadingOrder _self;
+  final $Res Function(_AtsLoadingOrder) _then;
+
+/// Create a copy of AtsLoadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? productAnp = null,Object? customer = null,Object? customerCode = null,Object? industryCode = null,Object? branchCode = null,Object? orderCode = null,Object? organizationCode = null,Object? orderNumber = null,Object? productCode = null,Object? compartment = null,Object? orderDate = freezed,Object? compartmentEntryAt = freezed,Object? assetPlate = null,Object? quantity = null,Object? compartmentExitAt = freezed,Object? ticketNumber = freezed,Object? movementRecord = freezed,Object? asset = freezed,Object? order = freezed,}) {
+  return _then(_AtsLoadingOrder(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,productAnp: null == productAnp ? _self.productAnp : productAnp // ignore: cast_nullable_to_non_nullable
+as String,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
+as String,customerCode: null == customerCode ? _self.customerCode : customerCode // ignore: cast_nullable_to_non_nullable
+as String,industryCode: null == industryCode ? _self.industryCode : industryCode // ignore: cast_nullable_to_non_nullable
+as String,branchCode: null == branchCode ? _self.branchCode : branchCode // ignore: cast_nullable_to_non_nullable
+as String,orderCode: null == orderCode ? _self.orderCode : orderCode // ignore: cast_nullable_to_non_nullable
+as String,organizationCode: null == organizationCode ? _self.organizationCode : organizationCode // ignore: cast_nullable_to_non_nullable
+as String,orderNumber: null == orderNumber ? _self.orderNumber : orderNumber // ignore: cast_nullable_to_non_nullable
+as String,productCode: null == productCode ? _self.productCode : productCode // ignore: cast_nullable_to_non_nullable
+as String,compartment: null == compartment ? _self.compartment : compartment // ignore: cast_nullable_to_non_nullable
+as String,orderDate: freezed == orderDate ? _self.orderDate : orderDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,compartmentEntryAt: freezed == compartmentEntryAt ? _self.compartmentEntryAt : compartmentEntryAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,assetPlate: null == assetPlate ? _self.assetPlate : assetPlate // ignore: cast_nullable_to_non_nullable
+as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
+as double,compartmentExitAt: freezed == compartmentExitAt ? _self.compartmentExitAt : compartmentExitAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,ticketNumber: freezed == ticketNumber ? _self.ticketNumber : ticketNumber // ignore: cast_nullable_to_non_nullable
+as String?,movementRecord: freezed == movementRecord ? _self.movementRecord : movementRecord // ignore: cast_nullable_to_non_nullable
+as String?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
+as Asset?,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
+as AtsOrder?,
+  ));
+}
+
+/// Create a copy of AtsLoadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.asset!, (value) {
+    return _then(_self.copyWith(asset: value));
+  });
+}/// Create a copy of AtsLoadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOrderCopyWith<$Res>? get order {
+    if (_self.order == null) {
+    return null;
+  }
+
+  return $AtsOrderCopyWith<$Res>(_self.order!, (value) {
+    return _then(_self.copyWith(order: value));
   });
 }
 }

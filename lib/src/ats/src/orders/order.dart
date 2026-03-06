@@ -42,6 +42,9 @@ abstract class AtsOrder with _$AtsOrder {
 
     /// The [orderStatusHistory] parameter is the orderStatusHistory of the order.
     List<AtsOrderStatusHistory>? orderStatusHistory,
+
+    /// The [loadingOrders] parameter is the loadingOrders of the order.
+    List<AtsLoadingOrder>? loadingOrders,
   }) = _AtsOrder;
 
   /// Creates a new [AtsOrder] instance.

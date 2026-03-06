@@ -121,3 +121,4 @@ part 'src/comand_execute_history.dart';
 
 // Orders
 part 'src/orders/order.dart';
+part 'src/orders/loading_order.dart';
