@@ -258,6 +258,12 @@ enum ReferenceCategory {
   @JsonValue('ATS_SUPERVISORIO_REMOVE_CACL')
   atsSupervisorioRemoveCacl,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to the CACL export in supervisorio module
+  /// ATS_SUPERVISORIO_EXPORT_CACL
+  @JsonValue('ATS_SUPERVISORIO_EXPORT_CACL')
+  atsSupervisorioExportCacl,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR

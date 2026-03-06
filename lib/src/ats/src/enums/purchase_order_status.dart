@@ -23,7 +23,10 @@ enum AtsPurchaseOrderStatus {
   @JsonValue('LOADING_BOOKED')
   loadingBooked,
   @JsonValue('UNLOADING_BOOKED')
-  unloadingBooked;
+  unloadingBooked,
+  @JsonValue('VALIDATED')
+  validated
+  ;
 
   @override
   String toString() => toJson();
