@@ -1,6 +1,12 @@
 # Changelog
 
+## 3.6.15
+
+- Added new value `VALIDATED` in `AtsPurchaseOrderStatus` enum
+- Added new value `ATS_SUPERVISORIO_EXPORT_CACL` in `ReferenceCategory` enum
+
 ## 3.6.14
+
 - Added `density20` in `AtsLoadingParamsFormInput`
 
 ## 3.6.13
