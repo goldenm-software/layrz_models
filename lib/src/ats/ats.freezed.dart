@@ -23437,22 +23437,22 @@ as int,
 /// @nodoc
 mixin _$AtsCommandExecutionHistory {
 
-/// ID of the command execution history. This ID is unique.
- String? get id;/// UUID of the command
- String? get commandId;/// Asset from which the command was sent
- String? get fromAsset;/// Asset to which the command was sent
- String? get toAsset;/// Status of the command execution
-@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus get status;/// Application from which the command was sent
-@JsonKey(unknownEnumValue: FromApp.unknown) FromApp get fromApp;/// Father asset related to the command execution
- String? get fatherAsset;/// Error response if the command failed
- String? get errorResponse;/// User who generated the command execution
- String? get generatedBy;/// Queue ID associated with the command execution
- String? get queueId;/// Mileage of the to_asset at the time of command execution
- double? get toAssetMileage;/// Timestamp when the command execution history was created (Unix)
-@TimestampConverter() DateTime? get createdAt;/// Timestamp when the command execution history was last updated (Unix)
-@TimestampConverter() DateTime? get updatedAt;/// Payload of the command execution
- String? get payload;/// Type of the command executed
-@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType get commandType;/// Communication method used for the command execution
+/// [id]: ID of the command execution history. This ID is unique.
+ String? get id;/// [commandId]: UUID of the command
+ String? get commandId;/// [fromAsset]: Asset from which the command was sent.
+ Asset? get fromAsset;/// [toAsset]: Asset to which the command was sent.
+ Asset? get toAsset;/// [status]: Status of the command execution
+@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus get status;/// [fromApp]: Application from which the command was sent
+@JsonKey(unknownEnumValue: FromApp.unknown) FromApp get fromApp;/// [fatherAsset]: Father asset related to the command execution.
+ Asset? get fatherAsset;/// [errorResponse] Error response if the command failed
+ String? get errorResponse;/// [generatedBy]: User who generated the command execution.
+ User? get generatedBy;/// [queueId]: Queue ID associated with the command execution
+ String? get queueId;/// [toAssetMileage]: Mileage of the to_asset at the time of command execution
+ double? get toAssetMileage;/// [createdAt]: Timestamp when the command execution history was created (Unix)
+@TimestampConverter() DateTime? get createdAt;/// [updatedAt]: Timestamp when the command execution history was last updated (Unix).
+@TimestampConverter() DateTime? get updatedAt;/// [payload]: Payload of the command execution
+ String? get payload;/// [commandType]: Type of the command executed
+@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType get commandType;/// [communicationMethod]: Communication method used for the command execution
 @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod get communicationMethod;
 /// Create a copy of AtsCommandExecutionHistory
 /// with the given fields replaced by the non-null parameter values.
@@ -23486,11 +23486,11 @@ abstract mixin class $AtsCommandExecutionHistoryCopyWith<$Res>  {
   factory $AtsCommandExecutionHistoryCopyWith(AtsCommandExecutionHistory value, $Res Function(AtsCommandExecutionHistory) _then) = _$AtsCommandExecutionHistoryCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? commandId, String? fromAsset, String? toAsset,@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus status,@JsonKey(unknownEnumValue: FromApp.unknown) FromApp fromApp, String? fatherAsset, String? errorResponse, String? generatedBy, String? queueId, double? toAssetMileage,@TimestampConverter() DateTime? createdAt,@TimestampConverter() DateTime? updatedAt, String? payload,@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType commandType,@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod communicationMethod
+ String? id, String? commandId, Asset? fromAsset, Asset? toAsset,@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus status,@JsonKey(unknownEnumValue: FromApp.unknown) FromApp fromApp, Asset? fatherAsset, String? errorResponse, User? generatedBy, String? queueId, double? toAssetMileage,@TimestampConverter() DateTime? createdAt,@TimestampConverter() DateTime? updatedAt, String? payload,@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType commandType,@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod communicationMethod
 });
 
 
-
+$AssetCopyWith<$Res>? get fromAsset;$AssetCopyWith<$Res>? get toAsset;$AssetCopyWith<$Res>? get fatherAsset;$UserCopyWith<$Res>? get generatedBy;
 
 }
 /// @nodoc
@@ -23508,13 +23508,13 @@ class _$AtsCommandExecutionHistoryCopyWithImpl<$Res>
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,commandId: freezed == commandId ? _self.commandId : commandId // ignore: cast_nullable_to_non_nullable
 as String?,fromAsset: freezed == fromAsset ? _self.fromAsset : fromAsset // ignore: cast_nullable_to_non_nullable
-as String?,toAsset: freezed == toAsset ? _self.toAsset : toAsset // ignore: cast_nullable_to_non_nullable
-as String?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as Asset?,toAsset: freezed == toAsset ? _self.toAsset : toAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as AtsCommandExecutionStatus,fromApp: null == fromApp ? _self.fromApp : fromApp // ignore: cast_nullable_to_non_nullable
 as FromApp,fatherAsset: freezed == fatherAsset ? _self.fatherAsset : fatherAsset // ignore: cast_nullable_to_non_nullable
-as String?,errorResponse: freezed == errorResponse ? _self.errorResponse : errorResponse // ignore: cast_nullable_to_non_nullable
+as Asset?,errorResponse: freezed == errorResponse ? _self.errorResponse : errorResponse // ignore: cast_nullable_to_non_nullable
 as String?,generatedBy: freezed == generatedBy ? _self.generatedBy : generatedBy // ignore: cast_nullable_to_non_nullable
-as String?,queueId: freezed == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
+as User?,queueId: freezed == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
 as String?,toAssetMileage: freezed == toAssetMileage ? _self.toAssetMileage : toAssetMileage // ignore: cast_nullable_to_non_nullable
 as double?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -23524,7 +23524,55 @@ as AtsCommandExecutionType,communicationMethod: null == communicationMethod ? _s
 as AtsCommunicationMethod,
   ));
 }
+/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get fromAsset {
+    if (_self.fromAsset == null) {
+    return null;
+  }
 
+  return $AssetCopyWith<$Res>(_self.fromAsset!, (value) {
+    return _then(_self.copyWith(fromAsset: value));
+  });
+}/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get toAsset {
+    if (_self.toAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.toAsset!, (value) {
+    return _then(_self.copyWith(toAsset: value));
+  });
+}/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get fatherAsset {
+    if (_self.fatherAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.fatherAsset!, (value) {
+    return _then(_self.copyWith(fatherAsset: value));
+  });
+}/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserCopyWith<$Res>? get generatedBy {
+    if (_self.generatedBy == null) {
+    return null;
+  }
+
+  return $UserCopyWith<$Res>(_self.generatedBy!, (value) {
+    return _then(_self.copyWith(generatedBy: value));
+  });
+}
 }
 
 
@@ -23606,7 +23654,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? commandId,  String? fromAsset,  String? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? commandId,  Asset? fromAsset,  Asset? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  Asset? fatherAsset,  String? errorResponse,  User? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsCommandExecutionHistory() when $default != null:
 return $default(_that.id,_that.commandId,_that.fromAsset,_that.toAsset,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedBy,_that.queueId,_that.toAssetMileage,_that.createdAt,_that.updatedAt,_that.payload,_that.commandType,_that.communicationMethod);case _:
@@ -23627,7 +23675,7 @@ return $default(_that.id,_that.commandId,_that.fromAsset,_that.toAsset,_that.sta
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? commandId,  String? fromAsset,  String? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? commandId,  Asset? fromAsset,  Asset? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  Asset? fatherAsset,  String? errorResponse,  User? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)  $default,) {final _that = this;
 switch (_that) {
 case _AtsCommandExecutionHistory():
 return $default(_that.id,_that.commandId,_that.fromAsset,_that.toAsset,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedBy,_that.queueId,_that.toAssetMileage,_that.createdAt,_that.updatedAt,_that.payload,_that.commandType,_that.communicationMethod);case _:
@@ -23647,7 +23695,7 @@ return $default(_that.id,_that.commandId,_that.fromAsset,_that.toAsset,_that.sta
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? commandId,  String? fromAsset,  String? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  String? fatherAsset,  String? errorResponse,  String? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? commandId,  Asset? fromAsset,  Asset? toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown)  AtsCommandExecutionStatus status, @JsonKey(unknownEnumValue: FromApp.unknown)  FromApp fromApp,  Asset? fatherAsset,  String? errorResponse,  User? generatedBy,  String? queueId,  double? toAssetMileage, @TimestampConverter()  DateTime? createdAt, @TimestampConverter()  DateTime? updatedAt,  String? payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown)  AtsCommandExecutionType commandType, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown)  AtsCommunicationMethod communicationMethod)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsCommandExecutionHistory() when $default != null:
 return $default(_that.id,_that.commandId,_that.fromAsset,_that.toAsset,_that.status,_that.fromApp,_that.fatherAsset,_that.errorResponse,_that.generatedBy,_that.queueId,_that.toAssetMileage,_that.createdAt,_that.updatedAt,_that.payload,_that.commandType,_that.communicationMethod);case _:
@@ -23665,37 +23713,37 @@ class _AtsCommandExecutionHistory implements AtsCommandExecutionHistory {
    _AtsCommandExecutionHistory({this.id, this.commandId, this.fromAsset, this.toAsset, @JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) this.status = AtsCommandExecutionStatus.unknown, @JsonKey(unknownEnumValue: FromApp.unknown) this.fromApp = FromApp.unknown, this.fatherAsset, this.errorResponse, this.generatedBy, this.queueId, this.toAssetMileage, @TimestampConverter() this.createdAt, @TimestampConverter() this.updatedAt, this.payload, @JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) this.commandType = AtsCommandExecutionType.unknown, @JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) this.communicationMethod = AtsCommunicationMethod.unknown});
   factory _AtsCommandExecutionHistory.fromJson(Map<String, dynamic> json) => _$AtsCommandExecutionHistoryFromJson(json);
 
-/// ID of the command execution history. This ID is unique.
+/// [id]: ID of the command execution history. This ID is unique.
 @override final  String? id;
-/// UUID of the command
+/// [commandId]: UUID of the command
 @override final  String? commandId;
-/// Asset from which the command was sent
-@override final  String? fromAsset;
-/// Asset to which the command was sent
-@override final  String? toAsset;
-/// Status of the command execution
+/// [fromAsset]: Asset from which the command was sent.
+@override final  Asset? fromAsset;
+/// [toAsset]: Asset to which the command was sent.
+@override final  Asset? toAsset;
+/// [status]: Status of the command execution
 @override@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) final  AtsCommandExecutionStatus status;
-/// Application from which the command was sent
+/// [fromApp]: Application from which the command was sent
 @override@JsonKey(unknownEnumValue: FromApp.unknown) final  FromApp fromApp;
-/// Father asset related to the command execution
-@override final  String? fatherAsset;
-/// Error response if the command failed
+/// [fatherAsset]: Father asset related to the command execution.
+@override final  Asset? fatherAsset;
+/// [errorResponse] Error response if the command failed
 @override final  String? errorResponse;
-/// User who generated the command execution
-@override final  String? generatedBy;
-/// Queue ID associated with the command execution
+/// [generatedBy]: User who generated the command execution.
+@override final  User? generatedBy;
+/// [queueId]: Queue ID associated with the command execution
 @override final  String? queueId;
-/// Mileage of the to_asset at the time of command execution
+/// [toAssetMileage]: Mileage of the to_asset at the time of command execution
 @override final  double? toAssetMileage;
-/// Timestamp when the command execution history was created (Unix)
+/// [createdAt]: Timestamp when the command execution history was created (Unix)
 @override@TimestampConverter() final  DateTime? createdAt;
-/// Timestamp when the command execution history was last updated (Unix)
+/// [updatedAt]: Timestamp when the command execution history was last updated (Unix).
 @override@TimestampConverter() final  DateTime? updatedAt;
-/// Payload of the command execution
+/// [payload]: Payload of the command execution
 @override final  String? payload;
-/// Type of the command executed
+/// [commandType]: Type of the command executed
 @override@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) final  AtsCommandExecutionType commandType;
-/// Communication method used for the command execution
+/// [communicationMethod]: Communication method used for the command execution
 @override@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) final  AtsCommunicationMethod communicationMethod;
 
 /// Create a copy of AtsCommandExecutionHistory
@@ -23731,11 +23779,11 @@ abstract mixin class _$AtsCommandExecutionHistoryCopyWith<$Res> implements $AtsC
   factory _$AtsCommandExecutionHistoryCopyWith(_AtsCommandExecutionHistory value, $Res Function(_AtsCommandExecutionHistory) _then) = __$AtsCommandExecutionHistoryCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? commandId, String? fromAsset, String? toAsset,@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus status,@JsonKey(unknownEnumValue: FromApp.unknown) FromApp fromApp, String? fatherAsset, String? errorResponse, String? generatedBy, String? queueId, double? toAssetMileage,@TimestampConverter() DateTime? createdAt,@TimestampConverter() DateTime? updatedAt, String? payload,@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType commandType,@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod communicationMethod
+ String? id, String? commandId, Asset? fromAsset, Asset? toAsset,@JsonKey(unknownEnumValue: AtsCommandExecutionStatus.unknown) AtsCommandExecutionStatus status,@JsonKey(unknownEnumValue: FromApp.unknown) FromApp fromApp, Asset? fatherAsset, String? errorResponse, User? generatedBy, String? queueId, double? toAssetMileage,@TimestampConverter() DateTime? createdAt,@TimestampConverter() DateTime? updatedAt, String? payload,@JsonKey(unknownEnumValue: AtsCommandExecutionType.unknown) AtsCommandExecutionType commandType,@JsonKey(unknownEnumValue: AtsCommunicationMethod.unknown) AtsCommunicationMethod communicationMethod
 });
 
 
-
+@override $AssetCopyWith<$Res>? get fromAsset;@override $AssetCopyWith<$Res>? get toAsset;@override $AssetCopyWith<$Res>? get fatherAsset;@override $UserCopyWith<$Res>? get generatedBy;
 
 }
 /// @nodoc
@@ -23753,13 +23801,13 @@ class __$AtsCommandExecutionHistoryCopyWithImpl<$Res>
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,commandId: freezed == commandId ? _self.commandId : commandId // ignore: cast_nullable_to_non_nullable
 as String?,fromAsset: freezed == fromAsset ? _self.fromAsset : fromAsset // ignore: cast_nullable_to_non_nullable
-as String?,toAsset: freezed == toAsset ? _self.toAsset : toAsset // ignore: cast_nullable_to_non_nullable
-as String?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as Asset?,toAsset: freezed == toAsset ? _self.toAsset : toAsset // ignore: cast_nullable_to_non_nullable
+as Asset?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as AtsCommandExecutionStatus,fromApp: null == fromApp ? _self.fromApp : fromApp // ignore: cast_nullable_to_non_nullable
 as FromApp,fatherAsset: freezed == fatherAsset ? _self.fatherAsset : fatherAsset // ignore: cast_nullable_to_non_nullable
-as String?,errorResponse: freezed == errorResponse ? _self.errorResponse : errorResponse // ignore: cast_nullable_to_non_nullable
+as Asset?,errorResponse: freezed == errorResponse ? _self.errorResponse : errorResponse // ignore: cast_nullable_to_non_nullable
 as String?,generatedBy: freezed == generatedBy ? _self.generatedBy : generatedBy // ignore: cast_nullable_to_non_nullable
-as String?,queueId: freezed == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
+as User?,queueId: freezed == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
 as String?,toAssetMileage: freezed == toAssetMileage ? _self.toAssetMileage : toAssetMileage // ignore: cast_nullable_to_non_nullable
 as double?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -23770,7 +23818,55 @@ as AtsCommunicationMethod,
   ));
 }
 
+/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get fromAsset {
+    if (_self.fromAsset == null) {
+    return null;
+  }
 
+  return $AssetCopyWith<$Res>(_self.fromAsset!, (value) {
+    return _then(_self.copyWith(fromAsset: value));
+  });
+}/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get toAsset {
+    if (_self.toAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.toAsset!, (value) {
+    return _then(_self.copyWith(toAsset: value));
+  });
+}/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get fatherAsset {
+    if (_self.fatherAsset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.fatherAsset!, (value) {
+    return _then(_self.copyWith(fatherAsset: value));
+  });
+}/// Create a copy of AtsCommandExecutionHistory
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserCopyWith<$Res>? get generatedBy {
+    if (_self.generatedBy == null) {
+    return null;
+  }
+
+  return $UserCopyWith<$Res>(_self.generatedBy!, (value) {
+    return _then(_self.copyWith(generatedBy: value));
+  });
+}
 }
 
 
