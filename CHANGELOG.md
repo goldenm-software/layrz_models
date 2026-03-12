@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.17
+- Refactored AtsCommandExecutionHistory model:
+  - Replaced fields fromAsset, toAsset, and fatherAsset from String? to Asset?
+  - Replaced generatedBy from String? to User?
+
 ## 3.6.16
 
 - Added new model `AtsLoadingOrder`

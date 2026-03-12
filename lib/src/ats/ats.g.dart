@@ -2561,8 +2561,12 @@ _AtsCommandExecutionHistory _$AtsCommandExecutionHistoryFromJson(
 ) => _AtsCommandExecutionHistory(
   id: json['id'] as String?,
   commandId: json['commandId'] as String?,
-  fromAsset: json['fromAsset'] as String?,
-  toAsset: json['toAsset'] as String?,
+  fromAsset: json['fromAsset'] == null
+      ? null
+      : Asset.fromJson(json['fromAsset'] as Map<String, dynamic>),
+  toAsset: json['toAsset'] == null
+      ? null
+      : Asset.fromJson(json['toAsset'] as Map<String, dynamic>),
   status:
       $enumDecodeNullable(
         _$AtsCommandExecutionStatusEnumMap,
@@ -2577,9 +2581,13 @@ _AtsCommandExecutionHistory _$AtsCommandExecutionHistoryFromJson(
         unknownValue: FromApp.unknown,
       ) ??
       FromApp.unknown,
-  fatherAsset: json['fatherAsset'] as String?,
+  fatherAsset: json['fatherAsset'] == null
+      ? null
+      : Asset.fromJson(json['fatherAsset'] as Map<String, dynamic>),
   errorResponse: json['errorResponse'] as String?,
-  generatedBy: json['generatedBy'] as String?,
+  generatedBy: json['generatedBy'] == null
+      ? null
+      : User.fromJson(json['generatedBy'] as Map<String, dynamic>),
   queueId: json['queueId'] as String?,
   toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
   createdAt: _$JsonConverterFromJson<num, DateTime>(
@@ -2612,13 +2620,13 @@ Map<String, dynamic> _$AtsCommandExecutionHistoryToJson(
 ) => <String, dynamic>{
   'id': instance.id,
   'commandId': instance.commandId,
-  'fromAsset': instance.fromAsset,
-  'toAsset': instance.toAsset,
+  'fromAsset': instance.fromAsset?.toJson(),
+  'toAsset': instance.toAsset?.toJson(),
   'status': _$AtsCommandExecutionStatusEnumMap[instance.status]!,
   'fromApp': _$FromAppEnumMap[instance.fromApp]!,
-  'fatherAsset': instance.fatherAsset,
+  'fatherAsset': instance.fatherAsset?.toJson(),
   'errorResponse': instance.errorResponse,
-  'generatedBy': instance.generatedBy,
+  'generatedBy': instance.generatedBy?.toJson(),
   'queueId': instance.queueId,
   'toAssetMileage': instance.toAssetMileage,
   'createdAt': _$JsonConverterToJson<num, DateTime>(
