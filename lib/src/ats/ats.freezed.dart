@@ -7208,7 +7208,9 @@ mixin _$AtsIdeInformation {
  String? get ideType;/// Serie
  String? get serie;/// Model
  String? get model;/// CFOP
- String? get cfop; String? get operationType;
+ String? get cfop;/// Operation type
+ String? get operationType;/// Modal
+ String? get modal;
 /// Create a copy of AtsIdeInformation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7221,16 +7223,16 @@ $AtsIdeInformationCopyWith<AtsIdeInformation> get copyWith => _$AtsIdeInformatio
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsIdeInformation&&(identical(other.ideType, ideType) || other.ideType == ideType)&&(identical(other.serie, serie) || other.serie == serie)&&(identical(other.model, model) || other.model == model)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&(identical(other.operationType, operationType) || other.operationType == operationType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsIdeInformation&&(identical(other.ideType, ideType) || other.ideType == ideType)&&(identical(other.serie, serie) || other.serie == serie)&&(identical(other.model, model) || other.model == model)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.modal, modal) || other.modal == modal));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,ideType,serie,model,cfop,operationType);
+int get hashCode => Object.hash(runtimeType,ideType,serie,model,cfop,operationType,modal);
 
 @override
 String toString() {
-  return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType)';
+  return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType, modal: $modal)';
 }
 
 
@@ -7241,7 +7243,7 @@ abstract mixin class $AtsIdeInformationCopyWith<$Res>  {
   factory $AtsIdeInformationCopyWith(AtsIdeInformation value, $Res Function(AtsIdeInformation) _then) = _$AtsIdeInformationCopyWithImpl;
 @useResult
 $Res call({
- String? ideType, String? serie, String? model, String? cfop, String? operationType
+ String? ideType, String? serie, String? model, String? cfop, String? operationType, String? modal
 });
 
 
@@ -7258,13 +7260,14 @@ class _$AtsIdeInformationCopyWithImpl<$Res>
 
 /// Create a copy of AtsIdeInformation
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? ideType = freezed,Object? serie = freezed,Object? model = freezed,Object? cfop = freezed,Object? operationType = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? ideType = freezed,Object? serie = freezed,Object? model = freezed,Object? cfop = freezed,Object? operationType = freezed,Object? modal = freezed,}) {
   return _then(_self.copyWith(
 ideType: freezed == ideType ? _self.ideType : ideType // ignore: cast_nullable_to_non_nullable
 as String?,serie: freezed == serie ? _self.serie : serie // ignore: cast_nullable_to_non_nullable
 as String?,model: freezed == model ? _self.model : model // ignore: cast_nullable_to_non_nullable
 as String?,cfop: freezed == cfop ? _self.cfop : cfop // ignore: cast_nullable_to_non_nullable
 as String?,operationType: freezed == operationType ? _self.operationType : operationType // ignore: cast_nullable_to_non_nullable
+as String?,modal: freezed == modal ? _self.modal : modal // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -7350,10 +7353,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType,  String? modal)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsIdeInformation() when $default != null:
-return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType);case _:
+return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType,_that.modal);case _:
   return orElse();
 
 }
@@ -7371,10 +7374,10 @@ return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operation
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType,  String? modal)  $default,) {final _that = this;
 switch (_that) {
 case _AtsIdeInformation():
-return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType);case _:
+return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType,_that.modal);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -7391,10 +7394,10 @@ return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operation
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType,  String? modal)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsIdeInformation() when $default != null:
-return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType);case _:
+return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType,_that.modal);case _:
   return null;
 
 }
@@ -7406,7 +7409,7 @@ return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operation
 @JsonSerializable()
 
 class _AtsIdeInformation implements AtsIdeInformation {
-   _AtsIdeInformation({this.ideType, this.serie, this.model, this.cfop, this.operationType});
+   _AtsIdeInformation({this.ideType, this.serie, this.model, this.cfop, this.operationType, this.modal});
   factory _AtsIdeInformation.fromJson(Map<String, dynamic> json) => _$AtsIdeInformationFromJson(json);
 
 /// Ide type
@@ -7417,7 +7420,10 @@ class _AtsIdeInformation implements AtsIdeInformation {
 @override final  String? model;
 /// CFOP
 @override final  String? cfop;
+/// Operation type
 @override final  String? operationType;
+/// Modal
+@override final  String? modal;
 
 /// Create a copy of AtsIdeInformation
 /// with the given fields replaced by the non-null parameter values.
@@ -7432,16 +7438,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsIdeInformation&&(identical(other.ideType, ideType) || other.ideType == ideType)&&(identical(other.serie, serie) || other.serie == serie)&&(identical(other.model, model) || other.model == model)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&(identical(other.operationType, operationType) || other.operationType == operationType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsIdeInformation&&(identical(other.ideType, ideType) || other.ideType == ideType)&&(identical(other.serie, serie) || other.serie == serie)&&(identical(other.model, model) || other.model == model)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.modal, modal) || other.modal == modal));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,ideType,serie,model,cfop,operationType);
+int get hashCode => Object.hash(runtimeType,ideType,serie,model,cfop,operationType,modal);
 
 @override
 String toString() {
-  return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType)';
+  return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType, modal: $modal)';
 }
 
 
@@ -7452,7 +7458,7 @@ abstract mixin class _$AtsIdeInformationCopyWith<$Res> implements $AtsIdeInforma
   factory _$AtsIdeInformationCopyWith(_AtsIdeInformation value, $Res Function(_AtsIdeInformation) _then) = __$AtsIdeInformationCopyWithImpl;
 @override @useResult
 $Res call({
- String? ideType, String? serie, String? model, String? cfop, String? operationType
+ String? ideType, String? serie, String? model, String? cfop, String? operationType, String? modal
 });
 
 
@@ -7469,13 +7475,14 @@ class __$AtsIdeInformationCopyWithImpl<$Res>
 
 /// Create a copy of AtsIdeInformation
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? ideType = freezed,Object? serie = freezed,Object? model = freezed,Object? cfop = freezed,Object? operationType = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? ideType = freezed,Object? serie = freezed,Object? model = freezed,Object? cfop = freezed,Object? operationType = freezed,Object? modal = freezed,}) {
   return _then(_AtsIdeInformation(
 ideType: freezed == ideType ? _self.ideType : ideType // ignore: cast_nullable_to_non_nullable
 as String?,serie: freezed == serie ? _self.serie : serie // ignore: cast_nullable_to_non_nullable
 as String?,model: freezed == model ? _self.model : model // ignore: cast_nullable_to_non_nullable
 as String?,cfop: freezed == cfop ? _self.cfop : cfop // ignore: cast_nullable_to_non_nullable
 as String?,operationType: freezed == operationType ? _self.operationType : operationType // ignore: cast_nullable_to_non_nullable
+as String?,modal: freezed == modal ? _self.modal : modal // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

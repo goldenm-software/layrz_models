@@ -14,7 +14,12 @@ abstract class AtsIdeInformation with _$AtsIdeInformation {
 
     /// CFOP
     String? cfop,
+
+    /// Operation type
     String? operationType,
+
+    /// Modal
+    String? modal,
   }) = _AtsIdeInformation;
 
   factory AtsIdeInformation.fromJson(Map<String, dynamic> json) => _$AtsIdeInformationFromJson(json);
