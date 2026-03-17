@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.19
+
+-Added new value `modal` in `AtsIdeInformation`
+-Added new value `ORDER_RECEIVED` in `AtsPurchaseOrderStatus`
+
 ## 3.6.18
 
 - Added new `Poi` and `PoiInput` models to the `map` module
@@ -7,6 +12,7 @@
 - Added `poisIds` and `mapLayerId` fields to `LocatorInput` and `MapLayerInput`
 
 ## 3.6.17
+
 - Refactored AtsCommandExecutionHistory model:
   - Replaced fields fromAsset, toAsset, and fatherAsset from String? to Asset?
   - Replaced generatedBy from String? to User?

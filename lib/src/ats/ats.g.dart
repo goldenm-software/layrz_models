@@ -804,6 +804,7 @@ _AtsIdeInformation _$AtsIdeInformationFromJson(Map<String, dynamic> json) =>
       model: json['model'] as String?,
       cfop: json['cfop'] as String?,
       operationType: json['operationType'] as String?,
+      modal: json['modal'] as String?,
     );
 
 Map<String, dynamic> _$AtsIdeInformationToJson(_AtsIdeInformation instance) =>
@@ -813,6 +814,7 @@ Map<String, dynamic> _$AtsIdeInformationToJson(_AtsIdeInformation instance) =>
       'model': instance.model,
       'cfop': instance.cfop,
       'operationType': instance.operationType,
+      'modal': instance.modal,
     };
 
 _OperationProductInformation _$OperationProductInformationFromJson(
@@ -1444,6 +1446,7 @@ const _$AtsPurchaseOrderStatusEnumMap = {
   AtsPurchaseOrderStatus.loadingBooked: 'LOADING_BOOKED',
   AtsPurchaseOrderStatus.unloadingBooked: 'UNLOADING_BOOKED',
   AtsPurchaseOrderStatus.validated: 'VALIDATED',
+  AtsPurchaseOrderStatus.orderReceived: 'ORDER_RECEIVED',
 };
 
 _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
