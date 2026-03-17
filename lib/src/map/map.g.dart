@@ -160,6 +160,10 @@ _MapLayerInput _$MapLayerInputFromJson(
   appsIds:
       (json['appsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
+  mapLayerId: json['mapLayerId'] as String?,
+  poisIds:
+      (json['poisIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$MapLayerInputToJson(_MapLayerInput instance) =>
@@ -182,4 +186,38 @@ Map<String, dynamic> _$MapLayerInputToJson(_MapLayerInput instance) =>
       'attributionWidth': instance.attributionWidth,
       'attributionHeight': instance.attributionHeight,
       'appsIds': instance.appsIds,
+      'mapLayerId': instance.mapLayerId,
+      'poisIds': instance.poisIds,
     };
+
+_Poi _$PoiFromJson(Map<String, dynamic> json) => _Poi(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  latitude: (json['latitude'] as num).toDouble(),
+  longitude: (json['longitude'] as num).toDouble(),
+);
+
+Map<String, dynamic> _$PoiToJson(_Poi instance) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'description': instance.description,
+  'latitude': instance.latitude,
+  'longitude': instance.longitude,
+};
+
+_PoiInput _$PoiInputFromJson(Map<String, dynamic> json) => _PoiInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  description: json['description'] as String?,
+  latitude: (json['latitude'] as num?)?.toDouble() ?? 0.0,
+  longitude: (json['longitude'] as num?)?.toDouble() ?? 0.0,
+);
+
+Map<String, dynamic> _$PoiInputToJson(_PoiInput instance) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'description': instance.description,
+  'latitude': instance.latitude,
+  'longitude': instance.longitude,
+};
