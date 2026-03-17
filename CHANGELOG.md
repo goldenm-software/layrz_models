@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.6.18
+
+- Added new `Poi` and `PoiInput` models to the `map` module
+- Added `mapLayerId`, `mapLayer`, `pois`, and `poisIds` fields to `Locator` model
+- Added `poisIds` and `mapLayerId` fields to `LocatorInput` and `MapLayerInput`
+
 ## 3.6.17
 - Refactored AtsCommandExecutionHistory model:
   - Replaced fields fromAsset, toAsset, and fatherAsset from String? to Asset?
