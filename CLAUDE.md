@@ -15,15 +15,8 @@ Layrz Models is a Dart/Flutter package that provides data models and SDK for the
 
 ```bash
 # Code generation (standard build)
-make build
-# or: dart run build_runner build
-
-# Code generation with conflict resolution
-make build_delete
-# or: dart run build_runner build --delete-conflicting-outputs
-
-# Code generation (verbose output for debugging)
-make build_verbose
+make freezed
+# or: dart run build_runner freezed
 
 # Run linter in dry-run mode
 make lint
