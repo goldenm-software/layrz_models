@@ -52,6 +52,18 @@ _Locator _$LocatorFromJson(Map<String, dynamic> json) => _Locator(
       ? null
       : RegisteredApp.fromJson(json['customization'] as Map<String, dynamic>),
   customizationId: json['customizationId'] as String?,
+  mapLayerId: json['mapLayerId'] as String?,
+  mapLayer: json['mapLayer'] == null
+      ? null
+      : MapLayer.fromJson(json['mapLayer'] as Map<String, dynamic>),
+  pois:
+      (json['pois'] as List<dynamic>?)
+          ?.map((e) => Poi.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+  poisIds:
+      (json['poisIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
@@ -76,6 +88,10 @@ Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
   'updatedById': instance.updatedById,
   'customization': instance.customization?.toJson(),
   'customizationId': instance.customizationId,
+  'mapLayerId': instance.mapLayerId,
+  'mapLayer': instance.mapLayer?.toJson(),
+  'pois': instance.pois.map((e) => e.toJson()).toList(),
+  'poisIds': instance.poisIds,
 };
 
 _LocatorMqttConfig _$LocatorMqttConfigFromJson(Map<String, dynamic> json) =>
@@ -96,29 +112,32 @@ Map<String, dynamic> _$LocatorMqttConfigToJson(_LocatorMqttConfig instance) =>
       'topic': instance.topic,
     };
 
-_LocatorInput _$LocatorInputFromJson(Map<String, dynamic> json) =>
-    _LocatorInput(
-      id: json['id'] as String?,
-      assetsIds:
-          (json['assetsIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      geofencesIds:
-          (json['geofencesIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      triggersIds:
-          (json['triggersIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      expiresAt: const TimestampOrNullConverter().fromJson(
-        json['expiresAt'] as num?,
-      ),
-      customizationId: json['customizationId'] as String?,
-    );
+_LocatorInput _$LocatorInputFromJson(
+  Map<String, dynamic> json,
+) => _LocatorInput(
+  id: json['id'] as String?,
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  geofencesIds:
+      (json['geofencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  triggersIds:
+      (json['triggersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  expiresAt: const TimestampOrNullConverter().fromJson(
+    json['expiresAt'] as num?,
+  ),
+  customizationId: json['customizationId'] as String?,
+  poisIds:
+      (json['poisIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  mapLayerId: json['mapLayerId'] as String?,
+);
 
 Map<String, dynamic> _$LocatorInputToJson(_LocatorInput instance) =>
     <String, dynamic>{
@@ -128,4 +147,6 @@ Map<String, dynamic> _$LocatorInputToJson(_LocatorInput instance) =>
       'triggersIds': instance.triggersIds,
       'expiresAt': const TimestampOrNullConverter().toJson(instance.expiresAt),
       'customizationId': instance.customizationId,
+      'poisIds': instance.poisIds,
+      'mapLayerId': instance.mapLayerId,
     };

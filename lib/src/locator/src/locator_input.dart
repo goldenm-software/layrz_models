@@ -22,6 +22,12 @@ abstract class LocatorInput with _$LocatorInput {
 
     /// [customizationId] is the ID of the registered app that will act as a customization for this locator
     String? customizationId,
+
+    /// [poisIds] is the list of [Poi]s that are associated with the locator.
+    @Default([]) List<String> poisIds,
+
+    /// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
+    String? mapLayerId,
   }) = _LocatorInput;
 
   factory LocatorInput.fromJson(Map<String, dynamic> json) => _$LocatorInputFromJson(json);

@@ -478,7 +478,11 @@ mixin _$MapLayerInput {
  double get attributionHeight;/// [attributionHeight] is the height of the attribution of the layer.
  set attributionHeight(double value);/// [appsIds] is the list of [App]s that are associated with the layer.
  List<String> get appsIds;/// [appsIds] is the list of [App]s that are associated with the layer.
- set appsIds(List<String> value);
+ set appsIds(List<String> value);/// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
+ String? get mapLayerId;/// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
+ set mapLayerId(String? value);/// [poisIds] is the list of [Poi]s that are associated with the layer.
+ List<String> get poisIds;/// [poisIds] is the list of [Poi]s that are associated with the layer.
+ set poisIds(List<String> value);
 /// Create a copy of MapLayerInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -493,7 +497,7 @@ $MapLayerInputCopyWith<MapLayerInput> get copyWith => _$MapLayerInputCopyWithImp
 
 @override
 String toString() {
-  return 'MapLayerInput(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
+  return 'MapLayerInput(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds, mapLayerId: $mapLayerId, poisIds: $poisIds)';
 }
 
 
@@ -504,7 +508,7 @@ abstract mixin class $MapLayerInputCopyWith<$Res>  {
   factory $MapLayerInputCopyWith(MapLayerInput value, $Res Function(MapLayerInput) _then) = _$MapLayerInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: MapSource.custom) MapSource source, String? rasterServerLight, String? rasterServerDark, String? googleToken,@JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) List<GoogleMapLayer>? googleLayers, String? mapboxToken,@JsonKey(unknownEnumValue: MapboxStyle.navigation) List<MapboxStyle>? mapboxLayers, String? mapboxCustomUsername, String? mapboxCustomStyleId, String? hereToken,@JsonKey(unknownEnumValue: HereStyle.lite) List<HereStyle>? hereLayers, String attributionUrl, String? attributionUrlDark, double attributionWidth, double attributionHeight, List<String> appsIds
+ String? id, String name,@JsonKey(unknownEnumValue: MapSource.custom) MapSource source, String? rasterServerLight, String? rasterServerDark, String? googleToken,@JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) List<GoogleMapLayer>? googleLayers, String? mapboxToken,@JsonKey(unknownEnumValue: MapboxStyle.navigation) List<MapboxStyle>? mapboxLayers, String? mapboxCustomUsername, String? mapboxCustomStyleId, String? hereToken,@JsonKey(unknownEnumValue: HereStyle.lite) List<HereStyle>? hereLayers, String attributionUrl, String? attributionUrlDark, double attributionWidth, double attributionHeight, List<String> appsIds, String? mapLayerId, List<String> poisIds
 });
 
 
@@ -521,7 +525,7 @@ class _$MapLayerInputCopyWithImpl<$Res>
 
 /// Create a copy of MapLayerInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? source = null,Object? rasterServerLight = freezed,Object? rasterServerDark = freezed,Object? googleToken = freezed,Object? googleLayers = freezed,Object? mapboxToken = freezed,Object? mapboxLayers = freezed,Object? mapboxCustomUsername = freezed,Object? mapboxCustomStyleId = freezed,Object? hereToken = freezed,Object? hereLayers = freezed,Object? attributionUrl = null,Object? attributionUrlDark = freezed,Object? attributionWidth = null,Object? attributionHeight = null,Object? appsIds = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? source = null,Object? rasterServerLight = freezed,Object? rasterServerDark = freezed,Object? googleToken = freezed,Object? googleLayers = freezed,Object? mapboxToken = freezed,Object? mapboxLayers = freezed,Object? mapboxCustomUsername = freezed,Object? mapboxCustomStyleId = freezed,Object? hereToken = freezed,Object? hereLayers = freezed,Object? attributionUrl = null,Object? attributionUrlDark = freezed,Object? attributionWidth = null,Object? attributionHeight = null,Object? appsIds = null,Object? mapLayerId = freezed,Object? poisIds = null,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -541,6 +545,8 @@ as String,attributionUrlDark: freezed == attributionUrlDark ? _self.attributionU
 as String?,attributionWidth: null == attributionWidth ? _self.attributionWidth : attributionWidth // ignore: cast_nullable_to_non_nullable
 as double,attributionHeight: null == attributionHeight ? _self.attributionHeight : attributionHeight // ignore: cast_nullable_to_non_nullable
 as double,appsIds: null == appsIds ? _self.appsIds : appsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mapLayerId: freezed == mapLayerId ? _self.mapLayerId : mapLayerId // ignore: cast_nullable_to_non_nullable
+as String?,poisIds: null == poisIds ? _self.poisIds : poisIds // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
@@ -626,10 +632,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: MapSource.custom)  MapSource source,  String? rasterServerLight,  String? rasterServerDark,  String? googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)  List<GoogleMapLayer>? googleLayers,  String? mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation)  List<MapboxStyle>? mapboxLayers,  String? mapboxCustomUsername,  String? mapboxCustomStyleId,  String? hereToken, @JsonKey(unknownEnumValue: HereStyle.lite)  List<HereStyle>? hereLayers,  String attributionUrl,  String? attributionUrlDark,  double attributionWidth,  double attributionHeight,  List<String> appsIds)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: MapSource.custom)  MapSource source,  String? rasterServerLight,  String? rasterServerDark,  String? googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)  List<GoogleMapLayer>? googleLayers,  String? mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation)  List<MapboxStyle>? mapboxLayers,  String? mapboxCustomUsername,  String? mapboxCustomStyleId,  String? hereToken, @JsonKey(unknownEnumValue: HereStyle.lite)  List<HereStyle>? hereLayers,  String attributionUrl,  String? attributionUrlDark,  double attributionWidth,  double attributionHeight,  List<String> appsIds,  String? mapLayerId,  List<String> poisIds)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MapLayerInput() when $default != null:
-return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.rasterServerDark,_that.googleToken,_that.googleLayers,_that.mapboxToken,_that.mapboxLayers,_that.mapboxCustomUsername,_that.mapboxCustomStyleId,_that.hereToken,_that.hereLayers,_that.attributionUrl,_that.attributionUrlDark,_that.attributionWidth,_that.attributionHeight,_that.appsIds);case _:
+return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.rasterServerDark,_that.googleToken,_that.googleLayers,_that.mapboxToken,_that.mapboxLayers,_that.mapboxCustomUsername,_that.mapboxCustomStyleId,_that.hereToken,_that.hereLayers,_that.attributionUrl,_that.attributionUrlDark,_that.attributionWidth,_that.attributionHeight,_that.appsIds,_that.mapLayerId,_that.poisIds);case _:
   return orElse();
 
 }
@@ -647,10 +653,10 @@ return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.r
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: MapSource.custom)  MapSource source,  String? rasterServerLight,  String? rasterServerDark,  String? googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)  List<GoogleMapLayer>? googleLayers,  String? mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation)  List<MapboxStyle>? mapboxLayers,  String? mapboxCustomUsername,  String? mapboxCustomStyleId,  String? hereToken, @JsonKey(unknownEnumValue: HereStyle.lite)  List<HereStyle>? hereLayers,  String attributionUrl,  String? attributionUrlDark,  double attributionWidth,  double attributionHeight,  List<String> appsIds)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: MapSource.custom)  MapSource source,  String? rasterServerLight,  String? rasterServerDark,  String? googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)  List<GoogleMapLayer>? googleLayers,  String? mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation)  List<MapboxStyle>? mapboxLayers,  String? mapboxCustomUsername,  String? mapboxCustomStyleId,  String? hereToken, @JsonKey(unknownEnumValue: HereStyle.lite)  List<HereStyle>? hereLayers,  String attributionUrl,  String? attributionUrlDark,  double attributionWidth,  double attributionHeight,  List<String> appsIds,  String? mapLayerId,  List<String> poisIds)  $default,) {final _that = this;
 switch (_that) {
 case _MapLayerInput():
-return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.rasterServerDark,_that.googleToken,_that.googleLayers,_that.mapboxToken,_that.mapboxLayers,_that.mapboxCustomUsername,_that.mapboxCustomStyleId,_that.hereToken,_that.hereLayers,_that.attributionUrl,_that.attributionUrlDark,_that.attributionWidth,_that.attributionHeight,_that.appsIds);case _:
+return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.rasterServerDark,_that.googleToken,_that.googleLayers,_that.mapboxToken,_that.mapboxLayers,_that.mapboxCustomUsername,_that.mapboxCustomStyleId,_that.hereToken,_that.hereLayers,_that.attributionUrl,_that.attributionUrlDark,_that.attributionWidth,_that.attributionHeight,_that.appsIds,_that.mapLayerId,_that.poisIds);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -667,10 +673,10 @@ return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.r
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @JsonKey(unknownEnumValue: MapSource.custom)  MapSource source,  String? rasterServerLight,  String? rasterServerDark,  String? googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)  List<GoogleMapLayer>? googleLayers,  String? mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation)  List<MapboxStyle>? mapboxLayers,  String? mapboxCustomUsername,  String? mapboxCustomStyleId,  String? hereToken, @JsonKey(unknownEnumValue: HereStyle.lite)  List<HereStyle>? hereLayers,  String attributionUrl,  String? attributionUrlDark,  double attributionWidth,  double attributionHeight,  List<String> appsIds)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @JsonKey(unknownEnumValue: MapSource.custom)  MapSource source,  String? rasterServerLight,  String? rasterServerDark,  String? googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)  List<GoogleMapLayer>? googleLayers,  String? mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation)  List<MapboxStyle>? mapboxLayers,  String? mapboxCustomUsername,  String? mapboxCustomStyleId,  String? hereToken, @JsonKey(unknownEnumValue: HereStyle.lite)  List<HereStyle>? hereLayers,  String attributionUrl,  String? attributionUrlDark,  double attributionWidth,  double attributionHeight,  List<String> appsIds,  String? mapLayerId,  List<String> poisIds)?  $default,) {final _that = this;
 switch (_that) {
 case _MapLayerInput() when $default != null:
-return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.rasterServerDark,_that.googleToken,_that.googleLayers,_that.mapboxToken,_that.mapboxLayers,_that.mapboxCustomUsername,_that.mapboxCustomStyleId,_that.hereToken,_that.hereLayers,_that.attributionUrl,_that.attributionUrlDark,_that.attributionWidth,_that.attributionHeight,_that.appsIds);case _:
+return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.rasterServerDark,_that.googleToken,_that.googleLayers,_that.mapboxToken,_that.mapboxLayers,_that.mapboxCustomUsername,_that.mapboxCustomStyleId,_that.hereToken,_that.hereLayers,_that.attributionUrl,_that.attributionUrlDark,_that.attributionWidth,_that.attributionHeight,_that.appsIds,_that.mapLayerId,_that.poisIds);case _:
   return null;
 
 }
@@ -682,7 +688,7 @@ return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.r
 @JsonSerializable()
 
 class _MapLayerInput implements MapLayerInput {
-   _MapLayerInput({this.id, this.name = '', @JsonKey(unknownEnumValue: MapSource.custom) this.source = MapSource.custom, this.rasterServerLight, this.rasterServerDark, this.googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) this.googleLayers, this.mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation) this.mapboxLayers, this.mapboxCustomUsername, this.mapboxCustomStyleId, this.hereToken, @JsonKey(unknownEnumValue: HereStyle.lite) this.hereLayers, this.attributionUrl = 'https://cdn.layrz.com/resources/layrz/logo/normal.png', this.attributionUrlDark, this.attributionWidth = 100, this.attributionHeight = 30, this.appsIds = const []});
+   _MapLayerInput({this.id, this.name = '', @JsonKey(unknownEnumValue: MapSource.custom) this.source = MapSource.custom, this.rasterServerLight, this.rasterServerDark, this.googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) this.googleLayers, this.mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation) this.mapboxLayers, this.mapboxCustomUsername, this.mapboxCustomStyleId, this.hereToken, @JsonKey(unknownEnumValue: HereStyle.lite) this.hereLayers, this.attributionUrl = 'https://cdn.layrz.com/resources/layrz/logo/normal.png', this.attributionUrlDark, this.attributionWidth = 100, this.attributionHeight = 30, this.appsIds = const [], this.mapLayerId, this.poisIds = const []});
   factory _MapLayerInput.fromJson(Map<String, dynamic> json) => _$MapLayerInputFromJson(json);
 
 /// [id] is the unique identifier for the layer.
@@ -731,6 +737,10 @@ class _MapLayerInput implements MapLayerInput {
 @override@JsonKey()  double attributionHeight;
 /// [appsIds] is the list of [App]s that are associated with the layer.
 @override@JsonKey()  List<String> appsIds;
+/// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
+@override  String? mapLayerId;
+/// [poisIds] is the list of [Poi]s that are associated with the layer.
+@override@JsonKey()  List<String> poisIds;
 
 /// Create a copy of MapLayerInput
 /// with the given fields replaced by the non-null parameter values.
@@ -747,7 +757,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'MapLayerInput(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
+  return 'MapLayerInput(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds, mapLayerId: $mapLayerId, poisIds: $poisIds)';
 }
 
 
@@ -758,7 +768,7 @@ abstract mixin class _$MapLayerInputCopyWith<$Res> implements $MapLayerInputCopy
   factory _$MapLayerInputCopyWith(_MapLayerInput value, $Res Function(_MapLayerInput) _then) = __$MapLayerInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: MapSource.custom) MapSource source, String? rasterServerLight, String? rasterServerDark, String? googleToken,@JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) List<GoogleMapLayer>? googleLayers, String? mapboxToken,@JsonKey(unknownEnumValue: MapboxStyle.navigation) List<MapboxStyle>? mapboxLayers, String? mapboxCustomUsername, String? mapboxCustomStyleId, String? hereToken,@JsonKey(unknownEnumValue: HereStyle.lite) List<HereStyle>? hereLayers, String attributionUrl, String? attributionUrlDark, double attributionWidth, double attributionHeight, List<String> appsIds
+ String? id, String name,@JsonKey(unknownEnumValue: MapSource.custom) MapSource source, String? rasterServerLight, String? rasterServerDark, String? googleToken,@JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) List<GoogleMapLayer>? googleLayers, String? mapboxToken,@JsonKey(unknownEnumValue: MapboxStyle.navigation) List<MapboxStyle>? mapboxLayers, String? mapboxCustomUsername, String? mapboxCustomStyleId, String? hereToken,@JsonKey(unknownEnumValue: HereStyle.lite) List<HereStyle>? hereLayers, String attributionUrl, String? attributionUrlDark, double attributionWidth, double attributionHeight, List<String> appsIds, String? mapLayerId, List<String> poisIds
 });
 
 
@@ -775,7 +785,7 @@ class __$MapLayerInputCopyWithImpl<$Res>
 
 /// Create a copy of MapLayerInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? source = null,Object? rasterServerLight = freezed,Object? rasterServerDark = freezed,Object? googleToken = freezed,Object? googleLayers = freezed,Object? mapboxToken = freezed,Object? mapboxLayers = freezed,Object? mapboxCustomUsername = freezed,Object? mapboxCustomStyleId = freezed,Object? hereToken = freezed,Object? hereLayers = freezed,Object? attributionUrl = null,Object? attributionUrlDark = freezed,Object? attributionWidth = null,Object? attributionHeight = null,Object? appsIds = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? source = null,Object? rasterServerLight = freezed,Object? rasterServerDark = freezed,Object? googleToken = freezed,Object? googleLayers = freezed,Object? mapboxToken = freezed,Object? mapboxLayers = freezed,Object? mapboxCustomUsername = freezed,Object? mapboxCustomStyleId = freezed,Object? hereToken = freezed,Object? hereLayers = freezed,Object? attributionUrl = null,Object? attributionUrlDark = freezed,Object? attributionWidth = null,Object? attributionHeight = null,Object? appsIds = null,Object? mapLayerId = freezed,Object? poisIds = null,}) {
   return _then(_MapLayerInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -795,7 +805,570 @@ as String,attributionUrlDark: freezed == attributionUrlDark ? _self.attributionU
 as String?,attributionWidth: null == attributionWidth ? _self.attributionWidth : attributionWidth // ignore: cast_nullable_to_non_nullable
 as double,attributionHeight: null == attributionHeight ? _self.attributionHeight : attributionHeight // ignore: cast_nullable_to_non_nullable
 as double,appsIds: null == appsIds ? _self.appsIds : appsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mapLayerId: freezed == mapLayerId ? _self.mapLayerId : mapLayerId // ignore: cast_nullable_to_non_nullable
+as String?,poisIds: null == poisIds ? _self.poisIds : poisIds // ignore: cast_nullable_to_non_nullable
 as List<String>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$Poi {
+
+/// [id] is the unique identifier for the point of interest.
+ String get id;/// [name] is the name of the point of interest.
+ String get name;/// [description] is the description of the point of interest.
+ String? get description;/// [latitude] is the latitude of the point of interest.
+ double get latitude;/// [longitude] is the longitude of the point of interest.
+ double get longitude;
+/// Create a copy of Poi
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PoiCopyWith<Poi> get copyWith => _$PoiCopyWithImpl<Poi>(this as Poi, _$identity);
+
+  /// Serializes this Poi to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Poi&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,description,latitude,longitude);
+
+@override
+String toString() {
+  return 'Poi(id: $id, name: $name, description: $description, latitude: $latitude, longitude: $longitude)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PoiCopyWith<$Res>  {
+  factory $PoiCopyWith(Poi value, $Res Function(Poi) _then) = _$PoiCopyWithImpl;
+@useResult
+$Res call({
+ String id, String name, String? description, double latitude, double longitude
+});
+
+
+
+
+}
+/// @nodoc
+class _$PoiCopyWithImpl<$Res>
+    implements $PoiCopyWith<$Res> {
+  _$PoiCopyWithImpl(this._self, this._then);
+
+  final Poi _self;
+  final $Res Function(Poi) _then;
+
+/// Create a copy of Poi
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? description = freezed,Object? latitude = null,Object? longitude = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [Poi].
+extension PoiPatterns on Poi {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Poi value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Poi() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Poi value)  $default,){
+final _that = this;
+switch (_that) {
+case _Poi():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Poi value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Poi() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  double latitude,  double longitude)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Poi() when $default != null:
+return $default(_that.id,_that.name,_that.description,_that.latitude,_that.longitude);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  double latitude,  double longitude)  $default,) {final _that = this;
+switch (_that) {
+case _Poi():
+return $default(_that.id,_that.name,_that.description,_that.latitude,_that.longitude);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description,  double latitude,  double longitude)?  $default,) {final _that = this;
+switch (_that) {
+case _Poi() when $default != null:
+return $default(_that.id,_that.name,_that.description,_that.latitude,_that.longitude);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _Poi implements Poi {
+  const _Poi({required this.id, required this.name, this.description, required this.latitude, required this.longitude});
+  factory _Poi.fromJson(Map<String, dynamic> json) => _$PoiFromJson(json);
+
+/// [id] is the unique identifier for the point of interest.
+@override final  String id;
+/// [name] is the name of the point of interest.
+@override final  String name;
+/// [description] is the description of the point of interest.
+@override final  String? description;
+/// [latitude] is the latitude of the point of interest.
+@override final  double latitude;
+/// [longitude] is the longitude of the point of interest.
+@override final  double longitude;
+
+/// Create a copy of Poi
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PoiCopyWith<_Poi> get copyWith => __$PoiCopyWithImpl<_Poi>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PoiToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Poi&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,description,latitude,longitude);
+
+@override
+String toString() {
+  return 'Poi(id: $id, name: $name, description: $description, latitude: $latitude, longitude: $longitude)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PoiCopyWith<$Res> implements $PoiCopyWith<$Res> {
+  factory _$PoiCopyWith(_Poi value, $Res Function(_Poi) _then) = __$PoiCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String name, String? description, double latitude, double longitude
+});
+
+
+
+
+}
+/// @nodoc
+class __$PoiCopyWithImpl<$Res>
+    implements _$PoiCopyWith<$Res> {
+  __$PoiCopyWithImpl(this._self, this._then);
+
+  final _Poi _self;
+  final $Res Function(_Poi) _then;
+
+/// Create a copy of Poi
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? description = freezed,Object? latitude = null,Object? longitude = null,}) {
+  return _then(_Poi(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$PoiInput {
+
+/// [id] is the unique identifier for the point of interest.
+ String? get id;/// [id] is the unique identifier for the point of interest.
+ set id(String? value);/// [name] is the name of the point of interest.
+ String get name;/// [name] is the name of the point of interest.
+ set name(String value);/// [description] is the description of the point of interest.
+ String? get description;/// [description] is the description of the point of interest.
+ set description(String? value);/// [latitude] is the latitude of the point of interest.
+ double get latitude;/// [latitude] is the latitude of the point of interest.
+ set latitude(double value);/// [longitude] is the longitude of the point of interest.
+ double get longitude;/// [longitude] is the longitude of the point of interest.
+ set longitude(double value);
+/// Create a copy of PoiInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PoiInputCopyWith<PoiInput> get copyWith => _$PoiInputCopyWithImpl<PoiInput>(this as PoiInput, _$identity);
+
+  /// Serializes this PoiInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'PoiInput(id: $id, name: $name, description: $description, latitude: $latitude, longitude: $longitude)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PoiInputCopyWith<$Res>  {
+  factory $PoiInputCopyWith(PoiInput value, $Res Function(PoiInput) _then) = _$PoiInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String name, String? description, double latitude, double longitude
+});
+
+
+
+
+}
+/// @nodoc
+class _$PoiInputCopyWithImpl<$Res>
+    implements $PoiInputCopyWith<$Res> {
+  _$PoiInputCopyWithImpl(this._self, this._then);
+
+  final PoiInput _self;
+  final $Res Function(PoiInput) _then;
+
+/// Create a copy of PoiInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? description = freezed,Object? latitude = null,Object? longitude = null,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PoiInput].
+extension PoiInputPatterns on PoiInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PoiInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PoiInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PoiInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _PoiInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PoiInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PoiInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String? description,  double latitude,  double longitude)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PoiInput() when $default != null:
+return $default(_that.id,_that.name,_that.description,_that.latitude,_that.longitude);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String? description,  double latitude,  double longitude)  $default,) {final _that = this;
+switch (_that) {
+case _PoiInput():
+return $default(_that.id,_that.name,_that.description,_that.latitude,_that.longitude);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String? description,  double latitude,  double longitude)?  $default,) {final _that = this;
+switch (_that) {
+case _PoiInput() when $default != null:
+return $default(_that.id,_that.name,_that.description,_that.latitude,_that.longitude);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PoiInput implements PoiInput {
+   _PoiInput({this.id, this.name = '', this.description, this.latitude = 0.0, this.longitude = 0.0});
+  factory _PoiInput.fromJson(Map<String, dynamic> json) => _$PoiInputFromJson(json);
+
+/// [id] is the unique identifier for the point of interest.
+@override  String? id;
+/// [name] is the name of the point of interest.
+@override@JsonKey()  String name;
+/// [description] is the description of the point of interest.
+@override  String? description;
+/// [latitude] is the latitude of the point of interest.
+@override@JsonKey()  double latitude;
+/// [longitude] is the longitude of the point of interest.
+@override@JsonKey()  double longitude;
+
+/// Create a copy of PoiInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PoiInputCopyWith<_PoiInput> get copyWith => __$PoiInputCopyWithImpl<_PoiInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PoiInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'PoiInput(id: $id, name: $name, description: $description, latitude: $latitude, longitude: $longitude)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PoiInputCopyWith<$Res> implements $PoiInputCopyWith<$Res> {
+  factory _$PoiInputCopyWith(_PoiInput value, $Res Function(_PoiInput) _then) = __$PoiInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String name, String? description, double latitude, double longitude
+});
+
+
+
+
+}
+/// @nodoc
+class __$PoiInputCopyWithImpl<$Res>
+    implements _$PoiInputCopyWith<$Res> {
+  __$PoiInputCopyWithImpl(this._self, this._then);
+
+  final _PoiInput _self;
+  final $Res Function(_PoiInput) _then;
+
+/// Create a copy of PoiInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? description = freezed,Object? latitude = null,Object? longitude = null,}) {
+  return _then(_PoiInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,
   ));
 }
 

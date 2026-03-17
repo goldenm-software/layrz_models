@@ -67,6 +67,18 @@ abstract class Locator with _$Locator {
 
     /// [customizationId] is the ID of the registered app that will act as a customization for this locator
     String? customizationId,
+
+    /// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
+    String? mapLayerId,
+
+    /// [mapLayer] is the map layer to use for the locators that are using this layer.
+    MapLayer? mapLayer,
+
+    /// [pois] is the list of [Poi]s that are associated with the locator.
+    @Default([]) List<Poi> pois,
+
+    /// [poisIds] is the list of [Poi]s that are associated with the locator.
+    @Default([]) List<String> poisIds,
   }) = _Locator;
 
   factory Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
@@ -381,7 +393,7 @@ abstract class Locator with _$Locator {
         nickname
         technology
         sourceId
-        
+
         instances {
           id
           appId
@@ -418,8 +430,23 @@ abstract class Locator with _$Locator {
       }
       triggersIds
 
+      mapLayerId
+      mapLayer {
+        id
+        name
+        source
+      }
+
+      poisIds
+      pois {
+        id
+        name
+        latitude
+        longitude
+      }
+
       isExpired
-      
+
       expiresAt
       expiredBy {
         ...basicUserFields
