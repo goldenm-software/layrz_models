@@ -839,6 +839,7 @@ _Device _$DeviceFromJson(Map<String, dynamic> json) => _Device(
       ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
       .toList(),
   localIpAddress: json['localIpAddress'] as String?,
+  hasWorldwideCoverage: json['hasWorldwideCoverage'] as bool?,
 );
 
 Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
@@ -871,6 +872,7 @@ Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
   ),
   'peripherals': instance.peripherals?.map((e) => e.toJson()).toList(),
   'localIpAddress': instance.localIpAddress,
+  'hasWorldwideCoverage': instance.hasWorldwideCoverage,
 };
 
 _DeviceInput _$DeviceInputFromJson(Map<String, dynamic> json) => _DeviceInput(

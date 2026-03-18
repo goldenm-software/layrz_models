@@ -259,6 +259,7 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
           ?.map((e) => Passkey.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
+  hasGpsInsurance: json['hasGpsInsurance'] as bool?,
 );
 
 Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
@@ -311,6 +312,7 @@ Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
   'isPasswordExpired': instance.isPasswordExpired,
   'preferences': instance.preferences?.toJson(),
   'passkeys': instance.passkeys.map((e) => e.toJson()).toList(),
+  'hasGpsInsurance': instance.hasGpsInsurance,
 };
 
 _UserInput _$UserInputFromJson(Map<String, dynamic> json) => _UserInput(

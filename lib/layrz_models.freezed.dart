@@ -8074,7 +8074,8 @@ mixin _$Device {
 @DurationConverter() Duration? get visionCaptureThreshold;/// [peripherals] is the list of peripherals of the device. Only used when
 /// [protocol.operationMode] is [OperationMode.peripheral].
  List<Device>? get peripherals;/// [localIpAddress] is the local IP address of the device, used for local communication.
- String? get localIpAddress;
+ String? get localIpAddress;/// [hasWorldwideCoverage] represents if the device has worldwide coverag For the BHS use case, this field is used to identify if the device has GPS insurance.
+ bool? get hasWorldwideCoverage;
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -8087,16 +8088,16 @@ $DeviceCopyWith<Device> get copyWith => _$DeviceCopyWithImpl<Device>(this as Dev
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other.additionalFields, additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other.commands, commands)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other.configParams, configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other.peripherals, peripherals)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other.additionalFields, additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other.commands, commands)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other.configParams, configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other.peripherals, peripherals)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress)&&(identical(other.hasWorldwideCoverage, hasWorldwideCoverage) || other.hasWorldwideCoverage == hasWorldwideCoverage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(commands),const DeepCollectionEquality().hash(access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(peripherals),localIpAddress]);
+int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(commands),const DeepCollectionEquality().hash(access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(peripherals),localIpAddress,hasWorldwideCoverage]);
 
 @override
 String toString() {
-  return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress)';
+  return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress, hasWorldwideCoverage: $hasWorldwideCoverage)';
 }
 
 
@@ -8107,7 +8108,7 @@ abstract mixin class $DeviceCopyWith<$Res>  {
   factory $DeviceCopyWith(Device value, $Res Function(Device) _then) = _$DeviceCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, String? localIpAddress
+ String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, String? localIpAddress, bool? hasWorldwideCoverage
 });
 
 
@@ -8124,7 +8125,7 @@ class _$DeviceCopyWithImpl<$Res>
 
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? ident = null,Object? flespiToken = freezed,Object? modelId = freezed,Object? model = freezed,Object? protocolId = freezed,Object? protocol = freezed,Object? additionalFields = freezed,Object? qrCode = freezed,Object? linkQr = freezed,Object? commands = freezed,Object? access = freezed,Object? telemetry = freezed,Object? visionProfileId = freezed,Object? visionProfile = freezed,Object? phone = freezed,Object? modbus = freezed,Object? isSuspended = freezed,Object? hwModel = freezed,Object? hwModelId = freezed,Object? macAddress = freezed,Object? configParams = freezed,Object? visionCaptureThreshold = freezed,Object? peripherals = freezed,Object? localIpAddress = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? ident = null,Object? flespiToken = freezed,Object? modelId = freezed,Object? model = freezed,Object? protocolId = freezed,Object? protocol = freezed,Object? additionalFields = freezed,Object? qrCode = freezed,Object? linkQr = freezed,Object? commands = freezed,Object? access = freezed,Object? telemetry = freezed,Object? visionProfileId = freezed,Object? visionProfile = freezed,Object? phone = freezed,Object? modbus = freezed,Object? isSuspended = freezed,Object? hwModel = freezed,Object? hwModelId = freezed,Object? macAddress = freezed,Object? configParams = freezed,Object? visionCaptureThreshold = freezed,Object? peripherals = freezed,Object? localIpAddress = freezed,Object? hasWorldwideCoverage = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -8152,7 +8153,8 @@ as String?,configParams: freezed == configParams ? _self.configParams : configPa
 as Map<String, dynamic>?,visionCaptureThreshold: freezed == visionCaptureThreshold ? _self.visionCaptureThreshold : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
 as Duration?,peripherals: freezed == peripherals ? _self.peripherals : peripherals // ignore: cast_nullable_to_non_nullable
 as List<Device>?,localIpAddress: freezed == localIpAddress ? _self.localIpAddress : localIpAddress // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,hasWorldwideCoverage: freezed == hasWorldwideCoverage ? _self.hasWorldwideCoverage : hasWorldwideCoverage // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 /// Create a copy of Device
@@ -8321,10 +8323,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress,  bool? hasWorldwideCoverage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Device() when $default != null:
-return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress);case _:
+return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress,_that.hasWorldwideCoverage);case _:
   return orElse();
 
 }
@@ -8342,10 +8344,10 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress,  bool? hasWorldwideCoverage)  $default,) {final _that = this;
 switch (_that) {
 case _Device():
-return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress);case _:
+return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress,_that.hasWorldwideCoverage);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -8362,10 +8364,10 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress,  bool? hasWorldwideCoverage)?  $default,) {final _that = this;
 switch (_that) {
 case _Device() when $default != null:
-return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress);case _:
+return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress,_that.hasWorldwideCoverage);case _:
   return null;
 
 }
@@ -8377,7 +8379,7 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 @JsonSerializable()
 
 class _Device implements Device {
-  const _Device({required this.id, required this.name, required this.ident, this.flespiToken, this.modelId, this.model, this.protocolId, this.protocol, final  Map<String, dynamic>? additionalFields, this.qrCode, this.linkQr, final  List<DeviceCommand>? commands, final  List<Access>? access, this.telemetry, this.visionProfileId, this.visionProfile, this.phone, this.modbus, this.isSuspended, this.hwModel, this.hwModelId, this.macAddress, final  Map<String, dynamic>? configParams, @DurationConverter() this.visionCaptureThreshold, final  List<Device>? peripherals, this.localIpAddress}): _additionalFields = additionalFields,_commands = commands,_access = access,_configParams = configParams,_peripherals = peripherals;
+  const _Device({required this.id, required this.name, required this.ident, this.flespiToken, this.modelId, this.model, this.protocolId, this.protocol, final  Map<String, dynamic>? additionalFields, this.qrCode, this.linkQr, final  List<DeviceCommand>? commands, final  List<Access>? access, this.telemetry, this.visionProfileId, this.visionProfile, this.phone, this.modbus, this.isSuspended, this.hwModel, this.hwModelId, this.macAddress, final  Map<String, dynamic>? configParams, @DurationConverter() this.visionCaptureThreshold, final  List<Device>? peripherals, this.localIpAddress, this.hasWorldwideCoverage}): _additionalFields = additionalFields,_commands = commands,_access = access,_configParams = configParams,_peripherals = peripherals;
   factory _Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 
 @override final  String id;
@@ -8482,6 +8484,8 @@ class _Device implements Device {
 
 /// [localIpAddress] is the local IP address of the device, used for local communication.
 @override final  String? localIpAddress;
+/// [hasWorldwideCoverage] represents if the device has worldwide coverag For the BHS use case, this field is used to identify if the device has GPS insurance.
+@override final  bool? hasWorldwideCoverage;
 
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
@@ -8496,16 +8500,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other._additionalFields, _additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other._commands, _commands)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other._configParams, _configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other._peripherals, _peripherals)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other._additionalFields, _additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other._commands, _commands)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other._configParams, _configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other._peripherals, _peripherals)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress)&&(identical(other.hasWorldwideCoverage, hasWorldwideCoverage) || other.hasWorldwideCoverage == hasWorldwideCoverage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(_additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(_commands),const DeepCollectionEquality().hash(_access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(_configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(_peripherals),localIpAddress]);
+int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(_additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(_commands),const DeepCollectionEquality().hash(_access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(_configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(_peripherals),localIpAddress,hasWorldwideCoverage]);
 
 @override
 String toString() {
-  return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress)';
+  return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress, hasWorldwideCoverage: $hasWorldwideCoverage)';
 }
 
 
@@ -8516,7 +8520,7 @@ abstract mixin class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   factory _$DeviceCopyWith(_Device value, $Res Function(_Device) _then) = __$DeviceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, String? localIpAddress
+ String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, String? localIpAddress, bool? hasWorldwideCoverage
 });
 
 
@@ -8533,7 +8537,7 @@ class __$DeviceCopyWithImpl<$Res>
 
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? ident = null,Object? flespiToken = freezed,Object? modelId = freezed,Object? model = freezed,Object? protocolId = freezed,Object? protocol = freezed,Object? additionalFields = freezed,Object? qrCode = freezed,Object? linkQr = freezed,Object? commands = freezed,Object? access = freezed,Object? telemetry = freezed,Object? visionProfileId = freezed,Object? visionProfile = freezed,Object? phone = freezed,Object? modbus = freezed,Object? isSuspended = freezed,Object? hwModel = freezed,Object? hwModelId = freezed,Object? macAddress = freezed,Object? configParams = freezed,Object? visionCaptureThreshold = freezed,Object? peripherals = freezed,Object? localIpAddress = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? ident = null,Object? flespiToken = freezed,Object? modelId = freezed,Object? model = freezed,Object? protocolId = freezed,Object? protocol = freezed,Object? additionalFields = freezed,Object? qrCode = freezed,Object? linkQr = freezed,Object? commands = freezed,Object? access = freezed,Object? telemetry = freezed,Object? visionProfileId = freezed,Object? visionProfile = freezed,Object? phone = freezed,Object? modbus = freezed,Object? isSuspended = freezed,Object? hwModel = freezed,Object? hwModelId = freezed,Object? macAddress = freezed,Object? configParams = freezed,Object? visionCaptureThreshold = freezed,Object? peripherals = freezed,Object? localIpAddress = freezed,Object? hasWorldwideCoverage = freezed,}) {
   return _then(_Device(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -8561,7 +8565,8 @@ as String?,configParams: freezed == configParams ? _self._configParams : configP
 as Map<String, dynamic>?,visionCaptureThreshold: freezed == visionCaptureThreshold ? _self.visionCaptureThreshold : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
 as Duration?,peripherals: freezed == peripherals ? _self._peripherals : peripherals // ignore: cast_nullable_to_non_nullable
 as List<Device>?,localIpAddress: freezed == localIpAddress ? _self.localIpAddress : localIpAddress // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,hasWorldwideCoverage: freezed == hasWorldwideCoverage ? _self.hasWorldwideCoverage : hasWorldwideCoverage // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 

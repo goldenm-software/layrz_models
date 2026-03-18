@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.20
+- Added `hasWorldwideCoverage` to `Device` model to represent if the device has worldwide coverage, for the BHS use case, this field is used to identify if the device has GPS insurance.
+- Added `hasGpsInsurance` to `User` model to represent if the user has GPS insurance, for the BHS use case.
+
 ## 3.6.19
 
 -Added new value `modal` in `AtsIdeInformation`
