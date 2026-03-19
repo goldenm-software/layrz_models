@@ -146,3 +146,8 @@ Each test file typically tests:
 - Follow existing documentation patterns - all models and fields should have dartdoc comments
 - Use nullable fields (`String?`) liberally as API responses may have missing data
 - Deprecation: Use `@Deprecated("migration message")` for fields being phased out
+
+## Other considerations
+
+- "wrap it up" - Means review the changes, commit and push, and create a pull request if the user wants
+- Do not include Test plan on the PR body under any circumstances, the code should be tested before the PR.

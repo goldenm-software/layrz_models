@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../access.dart';
 
 enum AccessModule {
   /// Access to actions module
@@ -180,52 +180,4 @@ enum AccessModule {
     final found = _$AccessModuleEnumMap.entries.firstWhereOrNull((e) => e.value == json);
     return found?.key ?? AccessModule.unknown;
   }
-}
-
-@freezed
-
-/// AccessPermission
-/// Access Permission class
-abstract class Access with _$Access {
-  const factory Access({
-    required String id,
-    String? label,
-    bool? read,
-    bool? write,
-    bool? manage,
-    String? objectId,
-    required String userId,
-    User? user,
-    @JsonKey(unknownEnumValue: AccessModule.unknown) required AccessModule module,
-  }) = _Access;
-
-  factory Access.fromJson(Map<String, dynamic> json) => _$AccessFromJson(json);
-}
-
-@unfreezed
-abstract class AccessInput with _$AccessInput {
-  factory AccessInput({
-    /// Represents the id of the access.
-    String? id,
-
-    /// Represents the read permission.
-    @Default(false) bool read,
-
-    /// Represents the write permission.
-    @Default(false) bool write,
-
-    /// Represents the manage permission.
-    @Default(false) bool manage,
-
-    /// Represents the id of the object.
-    String? objectId,
-
-    /// Represents the id of the user.
-    String? userId,
-
-    /// Represents the module of the access.
-    @JsonKey(unknownEnumValue: AccessModule.unknown) required AccessModule module,
-  }) = _AccessInput;
-
-  factory AccessInput.fromJson(Map<String, dynamic> json) => _$AccessInputFromJson(json);
 }
