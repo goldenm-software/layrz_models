@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.21
+
+- Added `PoiInput` model to the `map` module with `save()` support for creating and editing points of interest via GraphQL.
+- Added `PoiApiResponse` helper class to the `map` module.
+
 ## 3.6.20
 - Added `hasWorldwideCoverage` to `Device` model to represent if the device has worldwide coverage, for the BHS use case, this field is used to identify if the device has GPS insurance.
 - Added `hasGpsInsurance` to `User` model to represent if the user has GPS insurance, for the BHS use case.

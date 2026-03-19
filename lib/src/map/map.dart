@@ -2,6 +2,11 @@ library;
 
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_icons/layrz_icons.dart';
+import 'package:layrz_logging/layrz_logging.dart';
+import 'package:layrz_models/src/access/access.dart';
+import 'package:layrz_models/src/converters/converters.dart';
+import 'package:layrz_models/src/utils/src/api_connector.dart';
 
 // Freezed
 part 'map.freezed.dart';
@@ -14,3 +19,11 @@ part 'src/google_layer.dart';
 part 'src/mapbox_style.dart';
 part 'src/map_source.dart';
 part 'src/poi.dart';
+part 'src/poi_input.dart';
+
+class PoiApiResponse {
+  final Poi? poi;
+  final Map<String, dynamic> errors;
+
+  PoiApiResponse({this.poi, this.errors = const {}});
+}
