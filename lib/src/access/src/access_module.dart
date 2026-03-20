@@ -1,5 +1,6 @@
 part of '../access.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum AccessModule {
   /// Access to actions module
   /// Layrz API Definition: `ACTIONS`
@@ -165,6 +166,11 @@ enum AccessModule {
   /// Layrz API Definition: `ATS_MONITORS`
   @JsonValue('ATS_MONITORS')
   atsMonitors,
+
+  /// Access to POIs module
+  /// Layrz API Definition: `POIS`
+  @JsonValue('POIS')
+  pois,
 
   /// Unknown access module
   @JsonValue('UNKNOWN')
