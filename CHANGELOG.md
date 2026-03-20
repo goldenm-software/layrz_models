@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.23
+
+- CI issues, no code changes.
+
 ## 3.6.22
 
 - Added `pois` enum value to `AccessModule` for access control to the POIs module.
