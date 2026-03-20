@@ -70,6 +70,7 @@ const _$AccessModuleEnumMap = {
   AccessModule.exchangeServices: 'EXCHANGE_SERVICES',
   AccessModule.reportSchedulers: 'REPORT_SCHEDULERS',
   AccessModule.atsMonitors: 'ATS_MONITORS',
+  AccessModule.pois: 'POIS',
   AccessModule.unknown: 'UNKNOWN',
 };
 
