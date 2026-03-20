@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.22
+
+- Added `pois` enum value to `AccessModule` for access control to the POIs module.
+
 ## 3.6.21
 
 - Added `PoiInput` model to the `map` module with `save()` support for creating and editing points of interest via GraphQL.
