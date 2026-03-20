@@ -61,7 +61,9 @@ Rules:
 Stage only `pubspec.yaml` and `CHANGELOG.md`, then commit:
 ```
 git add pubspec.yaml CHANGELOG.md
-git commit -m "chore: bump version to <version> and update changelog"
+git commit -m "chore: bump version to <version> and update changelog
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
 ```
 
 ### 6. Push and open PR
