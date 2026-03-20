@@ -208,7 +208,9 @@ abstract class Poi with _$Poi {
 
   /// [graphqlFragment] is the GraphQL fragment to fetch the POI data
   /// It includes the basic user fields fragment [basicUserFields] to get the user data
-  static String get graphqlFragment => '''
+  static String get graphqlFragment =>
+      '''
+    ${Access.graphqlUuidFragment}
     fragment poiFragment on Poi {
       id
       name
@@ -216,6 +218,10 @@ abstract class Poi with _$Poi {
       icon
       latitude
       longitude
+
+      access {
+        ...accessUuidFragment
+      }
     }
   ''';
 
