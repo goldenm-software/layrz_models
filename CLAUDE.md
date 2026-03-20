@@ -151,3 +151,4 @@ Each test file typically tests:
 
 - "wrap it up" - Means review the changes, commit and push, and create a pull request if the user wants
 - Do not include Test plan on the PR body under any circumstances, the code should be tested before the PR.
+- Always include `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>` as a footer in every git commit message.
