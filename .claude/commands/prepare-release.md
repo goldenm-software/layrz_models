@@ -25,9 +25,9 @@ Run:
 ```
 git log --oneline <current_version_tag>..HEAD
 ```
-or if tags are not present, compare with `main`:
+or if tags are not present, compare with `origin/main`:
 ```
-git log --oneline main..HEAD
+git log --oneline origin/main..HEAD
 ```
 Read the commit messages to understand what changed. Ignore pure chore/refactor commits
 (e.g. CLAUDE.md updates, code generation runs) unless they are meaningful to library consumers.
