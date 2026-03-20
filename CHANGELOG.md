@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.6.24
+
+- Added `graphqlIdFragment` and `graphqlUuidFragment` static constants to `Access` for GraphQL queries.
+- Added `save()` and `delete()` methods to `AccessInput` with full GraphQL mutation support (both ID and UUID variants).
+- Updated `Poi.graphqlFragment` to include the `access` field using the UUID access fragment.
+
 ## 3.6.23
 
 - CI issues, no code changes.

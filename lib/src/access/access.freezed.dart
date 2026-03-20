@@ -228,8 +228,8 @@ return $default(_that.id,_that.label,_that.read,_that.write,_that.manage,_that.o
 /// @nodoc
 @JsonSerializable()
 
-class _Access implements Access {
-  const _Access({required this.id, this.label, this.read, this.write, this.manage, this.objectId, required this.userId, this.user, @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module});
+class _Access extends Access {
+  const _Access({required this.id, this.label, this.read, this.write, this.manage, this.objectId, required this.userId, this.user, @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module}): super._();
   factory _Access.fromJson(Map<String, dynamic> json) => _$AccessFromJson(json);
 
 @override final  String id;
@@ -532,8 +532,8 @@ return $default(_that.id,_that.read,_that.write,_that.manage,_that.objectId,_tha
 /// @nodoc
 @JsonSerializable()
 
-class _AccessInput implements AccessInput {
-   _AccessInput({this.id, this.read = false, this.write = false, this.manage = false, this.objectId, this.userId, @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module});
+class _AccessInput extends AccessInput {
+   _AccessInput({this.id, this.read = false, this.write = false, this.manage = false, this.objectId, this.userId, @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module}): super._();
   factory _AccessInput.fromJson(Map<String, dynamic> json) => _$AccessInputFromJson(json);
 
 /// Represents the id of the access.

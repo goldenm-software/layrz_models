@@ -25,9 +25,9 @@ Run:
 ```
 git log --oneline <current_version_tag>..HEAD
 ```
-or if tags are not present, compare with `main`:
+or if tags are not present, compare with `origin/main`:
 ```
-git log --oneline main..HEAD
+git log --oneline origin/main..HEAD
 ```
 Read the commit messages to understand what changed. Ignore pure chore/refactor commits
 (e.g. CLAUDE.md updates, code generation runs) unless they are meaningful to library consumers.
@@ -61,7 +61,9 @@ Rules:
 Stage only `pubspec.yaml` and `CHANGELOG.md`, then commit:
 ```
 git add pubspec.yaml CHANGELOG.md
-git commit -m "chore: bump version to <version> and update changelog"
+git commit -m "chore: bump version to <version> and update changelog
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
 ```
 
 ### 6. Push and open PR
