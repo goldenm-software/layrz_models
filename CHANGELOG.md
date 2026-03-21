@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.25
+
+- Changed `pois` and `poisIds` fields in `Locator` from non-nullable with default empty list to nullable `List<Poi>?` and `List<String>?`.
+
 ## 3.6.24
 
 - Added `graphqlIdFragment` and `graphqlUuidFragment` static constants to `Access` for GraphQL queries.
