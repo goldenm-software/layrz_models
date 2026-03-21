@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.29
+
+- Updated `Locator.fetchAllGraphqlQuery` to include `description` in the query result fields.
+
 ## 3.6.28
 
 - Added `description` field to `Locator` and `LocatorInput` models.
