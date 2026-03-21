@@ -85,6 +85,9 @@ abstract class Locator with _$Locator {
 
     /// [boundary] is the geographic bounding box of the locator
     LocatorBoundary? boundary,
+
+    /// [description] is the description of the locator
+    String? description,
   }) = _Locator;
 
   factory Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
@@ -462,6 +465,7 @@ abstract class Locator with _$Locator {
           longitude
         }
       }
+      description
 
       isExpired
 

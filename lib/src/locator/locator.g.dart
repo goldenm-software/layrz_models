@@ -136,6 +136,7 @@ _Locator _$LocatorFromJson(Map<String, dynamic> json) => _Locator(
   boundary: json['boundary'] == null
       ? null
       : LocatorBoundary.fromJson(json['boundary'] as Map<String, dynamic>),
+  description: json['description'] as String?,
 );
 
 Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
@@ -166,6 +167,7 @@ Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
   'poisIds': instance.poisIds,
   'enableSidebar': instance.enableSidebar,
   'boundary': instance.boundary?.toJson(),
+  'description': instance.description,
 };
 
 _LocatorMqttConfig _$LocatorMqttConfigFromJson(Map<String, dynamic> json) =>
@@ -215,6 +217,7 @@ _LocatorInput _$LocatorInputFromJson(
   boundary: json['boundary'] == null
       ? null
       : LocatorBoundaryInput.fromJson(json['boundary'] as Map<String, dynamic>),
+  description: json['description'] as String?,
 );
 
 Map<String, dynamic> _$LocatorInputToJson(_LocatorInput instance) =>
@@ -229,4 +232,5 @@ Map<String, dynamic> _$LocatorInputToJson(_LocatorInput instance) =>
       'mapLayerId': instance.mapLayerId,
       'enableSidebar': instance.enableSidebar,
       'boundary': instance.boundary?.toJson(),
+      'description': instance.description,
     };

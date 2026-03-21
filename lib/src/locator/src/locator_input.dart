@@ -34,6 +34,9 @@ abstract class LocatorInput with _$LocatorInput {
 
     /// [boundary] is the geographic bounding box of the locator
     LocatorBoundaryInput? boundary,
+
+    /// [description] is the description of the locator
+    String? description,
   }) = _LocatorInput;
 
   factory LocatorInput.fromJson(Map<String, dynamic> json) => _$LocatorInputFromJson(json);
