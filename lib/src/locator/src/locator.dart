@@ -75,10 +75,10 @@ abstract class Locator with _$Locator {
     MapLayer? mapLayer,
 
     /// [pois] is the list of [Poi]s that are associated with the locator.
-    @Default([]) List<Poi> pois,
+    List<Poi>? pois,
 
     /// [poisIds] is the list of [Poi]s that are associated with the locator.
-    @Default([]) List<String> poisIds,
+    List<String>? poisIds,
   }) = _Locator;
 
   factory Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);

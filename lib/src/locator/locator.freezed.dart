@@ -39,8 +39,8 @@ mixin _$Locator {
  String? get customizationId;/// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
  String? get mapLayerId;/// [mapLayer] is the map layer to use for the locators that are using this layer.
  MapLayer? get mapLayer;/// [pois] is the list of [Poi]s that are associated with the locator.
- List<Poi> get pois;/// [poisIds] is the list of [Poi]s that are associated with the locator.
- List<String> get poisIds;
+ List<Poi>? get pois;/// [poisIds] is the list of [Poi]s that are associated with the locator.
+ List<String>? get poisIds;
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -73,7 +73,7 @@ abstract mixin class $LocatorCopyWith<$Res>  {
   factory $LocatorCopyWith(Locator value, $Res Function(Locator) _then) = _$LocatorCopyWithImpl;
 @useResult
 $Res call({
- String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId, String? mapLayerId, MapLayer? mapLayer, List<Poi> pois, List<String> poisIds
+ String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId, String? mapLayerId, MapLayer? mapLayer, List<Poi>? pois, List<String>? poisIds
 });
 
 
@@ -90,7 +90,7 @@ class _$LocatorCopyWithImpl<$Res>
 
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,Object? mapLayerId = freezed,Object? mapLayer = freezed,Object? pois = null,Object? poisIds = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,Object? mapLayerId = freezed,Object? mapLayer = freezed,Object? pois = freezed,Object? poisIds = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
@@ -115,9 +115,9 @@ as String?,customization: freezed == customization ? _self.customization : custo
 as RegisteredApp?,customizationId: freezed == customizationId ? _self.customizationId : customizationId // ignore: cast_nullable_to_non_nullable
 as String?,mapLayerId: freezed == mapLayerId ? _self.mapLayerId : mapLayerId // ignore: cast_nullable_to_non_nullable
 as String?,mapLayer: freezed == mapLayer ? _self.mapLayer : mapLayer // ignore: cast_nullable_to_non_nullable
-as MapLayer?,pois: null == pois ? _self.pois : pois // ignore: cast_nullable_to_non_nullable
-as List<Poi>,poisIds: null == poisIds ? _self.poisIds : poisIds // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as MapLayer?,pois: freezed == pois ? _self.pois : pois // ignore: cast_nullable_to_non_nullable
+as List<Poi>?,poisIds: freezed == poisIds ? _self.poisIds : poisIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,
   ));
 }
 /// Create a copy of Locator
@@ -274,7 +274,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi> pois,  List<String> poisIds)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Locator() when $default != null:
 return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds);case _:
@@ -295,7 +295,7 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi> pois,  List<String> poisIds)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds)  $default,) {final _that = this;
 switch (_that) {
 case _Locator():
 return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds);case _:
@@ -315,7 +315,7 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi> pois,  List<String> poisIds)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds)?  $default,) {final _that = this;
 switch (_that) {
 case _Locator() when $default != null:
 return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds);case _:
@@ -330,7 +330,7 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 @JsonSerializable()
 
 class _Locator extends Locator {
-  const _Locator({required this.id, required this.token, this.mqttConfig, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<Trigger>? triggers, final  List<String>? triggersIds, @TimestampOrNullConverter() this.expiresAt, this.expiredBy, this.expiredById, this.isExpired, @TimestampConverter() required this.createdAt, this.createdBy, this.createdById, @TimestampConverter() required this.updatedAt, this.updatedBy, this.updatedById, this.customization, this.customizationId, this.mapLayerId, this.mapLayer, final  List<Poi> pois = const [], final  List<String> poisIds = const []}): _assets = assets,_assetsIds = assetsIds,_geofences = geofences,_geofencesIds = geofencesIds,_triggers = triggers,_triggersIds = triggersIds,_pois = pois,_poisIds = poisIds,super._();
+  const _Locator({required this.id, required this.token, this.mqttConfig, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<Trigger>? triggers, final  List<String>? triggersIds, @TimestampOrNullConverter() this.expiresAt, this.expiredBy, this.expiredById, this.isExpired, @TimestampConverter() required this.createdAt, this.createdBy, this.createdById, @TimestampConverter() required this.updatedAt, this.updatedBy, this.updatedById, this.customization, this.customizationId, this.mapLayerId, this.mapLayer, final  List<Poi>? pois, final  List<String>? poisIds}): _assets = assets,_assetsIds = assetsIds,_geofences = geofences,_geofencesIds = geofencesIds,_triggers = triggers,_triggersIds = triggersIds,_pois = pois,_poisIds = poisIds,super._();
   factory _Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
 
 /// [id] is the UUIDv4 identifier of the locator
@@ -434,21 +434,25 @@ class _Locator extends Locator {
 /// [mapLayer] is the map layer to use for the locators that are using this layer.
 @override final  MapLayer? mapLayer;
 /// [pois] is the list of [Poi]s that are associated with the locator.
- final  List<Poi> _pois;
+ final  List<Poi>? _pois;
 /// [pois] is the list of [Poi]s that are associated with the locator.
-@override@JsonKey() List<Poi> get pois {
+@override List<Poi>? get pois {
+  final value = _pois;
+  if (value == null) return null;
   if (_pois is EqualUnmodifiableListView) return _pois;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_pois);
+  return EqualUnmodifiableListView(value);
 }
 
 /// [poisIds] is the list of [Poi]s that are associated with the locator.
- final  List<String> _poisIds;
+ final  List<String>? _poisIds;
 /// [poisIds] is the list of [Poi]s that are associated with the locator.
-@override@JsonKey() List<String> get poisIds {
+@override List<String>? get poisIds {
+  final value = _poisIds;
+  if (value == null) return null;
   if (_poisIds is EqualUnmodifiableListView) return _poisIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_poisIds);
+  return EqualUnmodifiableListView(value);
 }
 
 
@@ -485,7 +489,7 @@ abstract mixin class _$LocatorCopyWith<$Res> implements $LocatorCopyWith<$Res> {
   factory _$LocatorCopyWith(_Locator value, $Res Function(_Locator) _then) = __$LocatorCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId, String? mapLayerId, MapLayer? mapLayer, List<Poi> pois, List<String> poisIds
+ String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId, String? mapLayerId, MapLayer? mapLayer, List<Poi>? pois, List<String>? poisIds
 });
 
 
@@ -502,7 +506,7 @@ class __$LocatorCopyWithImpl<$Res>
 
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,Object? mapLayerId = freezed,Object? mapLayer = freezed,Object? pois = null,Object? poisIds = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,Object? mapLayerId = freezed,Object? mapLayer = freezed,Object? pois = freezed,Object? poisIds = freezed,}) {
   return _then(_Locator(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
@@ -527,9 +531,9 @@ as String?,customization: freezed == customization ? _self.customization : custo
 as RegisteredApp?,customizationId: freezed == customizationId ? _self.customizationId : customizationId // ignore: cast_nullable_to_non_nullable
 as String?,mapLayerId: freezed == mapLayerId ? _self.mapLayerId : mapLayerId // ignore: cast_nullable_to_non_nullable
 as String?,mapLayer: freezed == mapLayer ? _self.mapLayer : mapLayer // ignore: cast_nullable_to_non_nullable
-as MapLayer?,pois: null == pois ? _self._pois : pois // ignore: cast_nullable_to_non_nullable
-as List<Poi>,poisIds: null == poisIds ? _self._poisIds : poisIds // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as MapLayer?,pois: freezed == pois ? _self._pois : pois // ignore: cast_nullable_to_non_nullable
+as List<Poi>?,poisIds: freezed == poisIds ? _self._poisIds : poisIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,
   ));
 }
 

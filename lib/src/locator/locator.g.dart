@@ -56,14 +56,12 @@ _Locator _$LocatorFromJson(Map<String, dynamic> json) => _Locator(
   mapLayer: json['mapLayer'] == null
       ? null
       : MapLayer.fromJson(json['mapLayer'] as Map<String, dynamic>),
-  pois:
-      (json['pois'] as List<dynamic>?)
-          ?.map((e) => Poi.fromJson(e as Map<String, dynamic>))
-          .toList() ??
-      const [],
-  poisIds:
-      (json['poisIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-      const [],
+  pois: (json['pois'] as List<dynamic>?)
+      ?.map((e) => Poi.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  poisIds: (json['poisIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
 );
 
 Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
@@ -90,7 +88,7 @@ Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
   'customizationId': instance.customizationId,
   'mapLayerId': instance.mapLayerId,
   'mapLayer': instance.mapLayer?.toJson(),
-  'pois': instance.pois.map((e) => e.toJson()).toList(),
+  'pois': instance.pois?.map((e) => e.toJson()).toList(),
   'poisIds': instance.poisIds,
 };
 
