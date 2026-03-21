@@ -1194,7 +1194,8 @@ mixin _$Locator {
  List<Poi>? get pois;/// [poisIds] is the list of [Poi]s that are associated with the locator.
  List<String>? get poisIds;/// [enableSidebar] indicates if the sidebar is enabled for this locator
  bool? get enableSidebar;/// [boundary] is the geographic bounding box of the locator
- LocatorBoundary? get boundary;
+ LocatorBoundary? get boundary;/// [description] is the description of the locator
+ String? get description;
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1207,16 +1208,16 @@ $LocatorCopyWith<Locator> get copyWith => _$LocatorCopyWithImpl<Locator>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.customization, customization) || other.customization == customization)&&(identical(other.customizationId, customizationId) || other.customizationId == customizationId)&&(identical(other.mapLayerId, mapLayerId) || other.mapLayerId == mapLayerId)&&(identical(other.mapLayer, mapLayer) || other.mapLayer == mapLayer)&&const DeepCollectionEquality().equals(other.pois, pois)&&const DeepCollectionEquality().equals(other.poisIds, poisIds)&&(identical(other.enableSidebar, enableSidebar) || other.enableSidebar == enableSidebar)&&(identical(other.boundary, boundary) || other.boundary == boundary));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.customization, customization) || other.customization == customization)&&(identical(other.customizationId, customizationId) || other.customizationId == customizationId)&&(identical(other.mapLayerId, mapLayerId) || other.mapLayerId == mapLayerId)&&(identical(other.mapLayer, mapLayer) || other.mapLayer == mapLayer)&&const DeepCollectionEquality().equals(other.pois, pois)&&const DeepCollectionEquality().equals(other.poisIds, poisIds)&&(identical(other.enableSidebar, enableSidebar) || other.enableSidebar == enableSidebar)&&(identical(other.boundary, boundary) || other.boundary == boundary)&&(identical(other.description, description) || other.description == description));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById,customization,customizationId,mapLayerId,mapLayer,const DeepCollectionEquality().hash(pois),const DeepCollectionEquality().hash(poisIds),enableSidebar,boundary]);
+int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById,customization,customizationId,mapLayerId,mapLayer,const DeepCollectionEquality().hash(pois),const DeepCollectionEquality().hash(poisIds),enableSidebar,boundary,description]);
 
 @override
 String toString() {
-  return 'Locator(id: $id, token: $token, mqttConfig: $mqttConfig, assets: $assets, assetsIds: $assetsIds, geofences: $geofences, geofencesIds: $geofencesIds, triggers: $triggers, triggersIds: $triggersIds, expiresAt: $expiresAt, expiredBy: $expiredBy, expiredById: $expiredById, isExpired: $isExpired, createdAt: $createdAt, createdBy: $createdBy, createdById: $createdById, updatedAt: $updatedAt, updatedBy: $updatedBy, updatedById: $updatedById, customization: $customization, customizationId: $customizationId, mapLayerId: $mapLayerId, mapLayer: $mapLayer, pois: $pois, poisIds: $poisIds, enableSidebar: $enableSidebar, boundary: $boundary)';
+  return 'Locator(id: $id, token: $token, mqttConfig: $mqttConfig, assets: $assets, assetsIds: $assetsIds, geofences: $geofences, geofencesIds: $geofencesIds, triggers: $triggers, triggersIds: $triggersIds, expiresAt: $expiresAt, expiredBy: $expiredBy, expiredById: $expiredById, isExpired: $isExpired, createdAt: $createdAt, createdBy: $createdBy, createdById: $createdById, updatedAt: $updatedAt, updatedBy: $updatedBy, updatedById: $updatedById, customization: $customization, customizationId: $customizationId, mapLayerId: $mapLayerId, mapLayer: $mapLayer, pois: $pois, poisIds: $poisIds, enableSidebar: $enableSidebar, boundary: $boundary, description: $description)';
 }
 
 
@@ -1227,7 +1228,7 @@ abstract mixin class $LocatorCopyWith<$Res>  {
   factory $LocatorCopyWith(Locator value, $Res Function(Locator) _then) = _$LocatorCopyWithImpl;
 @useResult
 $Res call({
- String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId, String? mapLayerId, MapLayer? mapLayer, List<Poi>? pois, List<String>? poisIds, bool? enableSidebar, LocatorBoundary? boundary
+ String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId, String? mapLayerId, MapLayer? mapLayer, List<Poi>? pois, List<String>? poisIds, bool? enableSidebar, LocatorBoundary? boundary, String? description
 });
 
 
@@ -1244,7 +1245,7 @@ class _$LocatorCopyWithImpl<$Res>
 
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,Object? mapLayerId = freezed,Object? mapLayer = freezed,Object? pois = freezed,Object? poisIds = freezed,Object? enableSidebar = freezed,Object? boundary = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,Object? mapLayerId = freezed,Object? mapLayer = freezed,Object? pois = freezed,Object? poisIds = freezed,Object? enableSidebar = freezed,Object? boundary = freezed,Object? description = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
@@ -1273,7 +1274,8 @@ as MapLayer?,pois: freezed == pois ? _self.pois : pois // ignore: cast_nullable_
 as List<Poi>?,poisIds: freezed == poisIds ? _self.poisIds : poisIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,enableSidebar: freezed == enableSidebar ? _self.enableSidebar : enableSidebar // ignore: cast_nullable_to_non_nullable
 as bool?,boundary: freezed == boundary ? _self.boundary : boundary // ignore: cast_nullable_to_non_nullable
-as LocatorBoundary?,
+as LocatorBoundary?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 /// Create a copy of Locator
@@ -1442,10 +1444,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds,  bool? enableSidebar,  LocatorBoundary? boundary)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds,  bool? enableSidebar,  LocatorBoundary? boundary,  String? description)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Locator() when $default != null:
-return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds,_that.enableSidebar,_that.boundary);case _:
+return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds,_that.enableSidebar,_that.boundary,_that.description);case _:
   return orElse();
 
 }
@@ -1463,10 +1465,10 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds,  bool? enableSidebar,  LocatorBoundary? boundary)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds,  bool? enableSidebar,  LocatorBoundary? boundary,  String? description)  $default,) {final _that = this;
 switch (_that) {
 case _Locator():
-return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds,_that.enableSidebar,_that.boundary);case _:
+return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds,_that.enableSidebar,_that.boundary,_that.description);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1483,10 +1485,10 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds,  bool? enableSidebar,  LocatorBoundary? boundary)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  LocatorMqttConfig? mqttConfig,  List<Asset>? assets,  List<String>? assetsIds,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<Trigger>? triggers,  List<String>? triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  User? expiredBy,  String? expiredById,  bool? isExpired, @TimestampConverter()  DateTime createdAt,  User? createdBy,  String? createdById, @TimestampConverter()  DateTime updatedAt,  User? updatedBy,  String? updatedById,  RegisteredApp? customization,  String? customizationId,  String? mapLayerId,  MapLayer? mapLayer,  List<Poi>? pois,  List<String>? poisIds,  bool? enableSidebar,  LocatorBoundary? boundary,  String? description)?  $default,) {final _that = this;
 switch (_that) {
 case _Locator() when $default != null:
-return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds,_that.enableSidebar,_that.boundary);case _:
+return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsIds,_that.geofences,_that.geofencesIds,_that.triggers,_that.triggersIds,_that.expiresAt,_that.expiredBy,_that.expiredById,_that.isExpired,_that.createdAt,_that.createdBy,_that.createdById,_that.updatedAt,_that.updatedBy,_that.updatedById,_that.customization,_that.customizationId,_that.mapLayerId,_that.mapLayer,_that.pois,_that.poisIds,_that.enableSidebar,_that.boundary,_that.description);case _:
   return null;
 
 }
@@ -1498,7 +1500,7 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 @JsonSerializable()
 
 class _Locator extends Locator {
-  const _Locator({required this.id, required this.token, this.mqttConfig, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<Trigger>? triggers, final  List<String>? triggersIds, @TimestampOrNullConverter() this.expiresAt, this.expiredBy, this.expiredById, this.isExpired, @TimestampConverter() required this.createdAt, this.createdBy, this.createdById, @TimestampConverter() required this.updatedAt, this.updatedBy, this.updatedById, this.customization, this.customizationId, this.mapLayerId, this.mapLayer, final  List<Poi>? pois, final  List<String>? poisIds, this.enableSidebar, this.boundary}): _assets = assets,_assetsIds = assetsIds,_geofences = geofences,_geofencesIds = geofencesIds,_triggers = triggers,_triggersIds = triggersIds,_pois = pois,_poisIds = poisIds,super._();
+  const _Locator({required this.id, required this.token, this.mqttConfig, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<Trigger>? triggers, final  List<String>? triggersIds, @TimestampOrNullConverter() this.expiresAt, this.expiredBy, this.expiredById, this.isExpired, @TimestampConverter() required this.createdAt, this.createdBy, this.createdById, @TimestampConverter() required this.updatedAt, this.updatedBy, this.updatedById, this.customization, this.customizationId, this.mapLayerId, this.mapLayer, final  List<Poi>? pois, final  List<String>? poisIds, this.enableSidebar, this.boundary, this.description}): _assets = assets,_assetsIds = assetsIds,_geofences = geofences,_geofencesIds = geofencesIds,_triggers = triggers,_triggersIds = triggersIds,_pois = pois,_poisIds = poisIds,super._();
   factory _Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
 
 /// [id] is the UUIDv4 identifier of the locator
@@ -1627,6 +1629,8 @@ class _Locator extends Locator {
 @override final  bool? enableSidebar;
 /// [boundary] is the geographic bounding box of the locator
 @override final  LocatorBoundary? boundary;
+/// [description] is the description of the locator
+@override final  String? description;
 
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
@@ -1641,16 +1645,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.customization, customization) || other.customization == customization)&&(identical(other.customizationId, customizationId) || other.customizationId == customizationId)&&(identical(other.mapLayerId, mapLayerId) || other.mapLayerId == mapLayerId)&&(identical(other.mapLayer, mapLayer) || other.mapLayer == mapLayer)&&const DeepCollectionEquality().equals(other._pois, _pois)&&const DeepCollectionEquality().equals(other._poisIds, _poisIds)&&(identical(other.enableSidebar, enableSidebar) || other.enableSidebar == enableSidebar)&&(identical(other.boundary, boundary) || other.boundary == boundary));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.customization, customization) || other.customization == customization)&&(identical(other.customizationId, customizationId) || other.customizationId == customizationId)&&(identical(other.mapLayerId, mapLayerId) || other.mapLayerId == mapLayerId)&&(identical(other.mapLayer, mapLayer) || other.mapLayer == mapLayer)&&const DeepCollectionEquality().equals(other._pois, _pois)&&const DeepCollectionEquality().equals(other._poisIds, _poisIds)&&(identical(other.enableSidebar, enableSidebar) || other.enableSidebar == enableSidebar)&&(identical(other.boundary, boundary) || other.boundary == boundary)&&(identical(other.description, description) || other.description == description));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById,customization,customizationId,mapLayerId,mapLayer,const DeepCollectionEquality().hash(_pois),const DeepCollectionEquality().hash(_poisIds),enableSidebar,boundary]);
+int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById,customization,customizationId,mapLayerId,mapLayer,const DeepCollectionEquality().hash(_pois),const DeepCollectionEquality().hash(_poisIds),enableSidebar,boundary,description]);
 
 @override
 String toString() {
-  return 'Locator(id: $id, token: $token, mqttConfig: $mqttConfig, assets: $assets, assetsIds: $assetsIds, geofences: $geofences, geofencesIds: $geofencesIds, triggers: $triggers, triggersIds: $triggersIds, expiresAt: $expiresAt, expiredBy: $expiredBy, expiredById: $expiredById, isExpired: $isExpired, createdAt: $createdAt, createdBy: $createdBy, createdById: $createdById, updatedAt: $updatedAt, updatedBy: $updatedBy, updatedById: $updatedById, customization: $customization, customizationId: $customizationId, mapLayerId: $mapLayerId, mapLayer: $mapLayer, pois: $pois, poisIds: $poisIds, enableSidebar: $enableSidebar, boundary: $boundary)';
+  return 'Locator(id: $id, token: $token, mqttConfig: $mqttConfig, assets: $assets, assetsIds: $assetsIds, geofences: $geofences, geofencesIds: $geofencesIds, triggers: $triggers, triggersIds: $triggersIds, expiresAt: $expiresAt, expiredBy: $expiredBy, expiredById: $expiredById, isExpired: $isExpired, createdAt: $createdAt, createdBy: $createdBy, createdById: $createdById, updatedAt: $updatedAt, updatedBy: $updatedBy, updatedById: $updatedById, customization: $customization, customizationId: $customizationId, mapLayerId: $mapLayerId, mapLayer: $mapLayer, pois: $pois, poisIds: $poisIds, enableSidebar: $enableSidebar, boundary: $boundary, description: $description)';
 }
 
 
@@ -1661,7 +1665,7 @@ abstract mixin class _$LocatorCopyWith<$Res> implements $LocatorCopyWith<$Res> {
   factory _$LocatorCopyWith(_Locator value, $Res Function(_Locator) _then) = __$LocatorCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId, String? mapLayerId, MapLayer? mapLayer, List<Poi>? pois, List<String>? poisIds, bool? enableSidebar, LocatorBoundary? boundary
+ String id, String token, LocatorMqttConfig? mqttConfig, List<Asset>? assets, List<String>? assetsIds, List<Geofence>? geofences, List<String>? geofencesIds, List<Trigger>? triggers, List<String>? triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, User? expiredBy, String? expiredById, bool? isExpired,@TimestampConverter() DateTime createdAt, User? createdBy, String? createdById,@TimestampConverter() DateTime updatedAt, User? updatedBy, String? updatedById, RegisteredApp? customization, String? customizationId, String? mapLayerId, MapLayer? mapLayer, List<Poi>? pois, List<String>? poisIds, bool? enableSidebar, LocatorBoundary? boundary, String? description
 });
 
 
@@ -1678,7 +1682,7 @@ class __$LocatorCopyWithImpl<$Res>
 
 /// Create a copy of Locator
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,Object? mapLayerId = freezed,Object? mapLayer = freezed,Object? pois = freezed,Object? poisIds = freezed,Object? enableSidebar = freezed,Object? boundary = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? token = null,Object? mqttConfig = freezed,Object? assets = freezed,Object? assetsIds = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? expiresAt = freezed,Object? expiredBy = freezed,Object? expiredById = freezed,Object? isExpired = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? createdById = freezed,Object? updatedAt = null,Object? updatedBy = freezed,Object? updatedById = freezed,Object? customization = freezed,Object? customizationId = freezed,Object? mapLayerId = freezed,Object? mapLayer = freezed,Object? pois = freezed,Object? poisIds = freezed,Object? enableSidebar = freezed,Object? boundary = freezed,Object? description = freezed,}) {
   return _then(_Locator(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
@@ -1707,7 +1711,8 @@ as MapLayer?,pois: freezed == pois ? _self._pois : pois // ignore: cast_nullable
 as List<Poi>?,poisIds: freezed == poisIds ? _self._poisIds : poisIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,enableSidebar: freezed == enableSidebar ? _self.enableSidebar : enableSidebar // ignore: cast_nullable_to_non_nullable
 as bool?,boundary: freezed == boundary ? _self.boundary : boundary // ignore: cast_nullable_to_non_nullable
-as LocatorBoundary?,
+as LocatorBoundary?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -2107,7 +2112,9 @@ mixin _$LocatorInput {
  bool get enableSidebar;/// [enableSidebar] indicates if the sidebar is enabled for this locator
  set enableSidebar(bool value);/// [boundary] is the geographic bounding box of the locator
  LocatorBoundaryInput? get boundary;/// [boundary] is the geographic bounding box of the locator
- set boundary(LocatorBoundaryInput? value);
+ set boundary(LocatorBoundaryInput? value);/// [description] is the description of the locator
+ String? get description;/// [description] is the description of the locator
+ set description(String? value);
 /// Create a copy of LocatorInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2122,7 +2129,7 @@ $LocatorInputCopyWith<LocatorInput> get copyWith => _$LocatorInputCopyWithImpl<L
 
 @override
 String toString() {
-  return 'LocatorInput(id: $id, assetsIds: $assetsIds, geofencesIds: $geofencesIds, triggersIds: $triggersIds, expiresAt: $expiresAt, customizationId: $customizationId, poisIds: $poisIds, mapLayerId: $mapLayerId, enableSidebar: $enableSidebar, boundary: $boundary)';
+  return 'LocatorInput(id: $id, assetsIds: $assetsIds, geofencesIds: $geofencesIds, triggersIds: $triggersIds, expiresAt: $expiresAt, customizationId: $customizationId, poisIds: $poisIds, mapLayerId: $mapLayerId, enableSidebar: $enableSidebar, boundary: $boundary, description: $description)';
 }
 
 
@@ -2133,7 +2140,7 @@ abstract mixin class $LocatorInputCopyWith<$Res>  {
   factory $LocatorInputCopyWith(LocatorInput value, $Res Function(LocatorInput) _then) = _$LocatorInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, List<String> assetsIds, List<String> geofencesIds, List<String> triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, String? customizationId, List<String> poisIds, String? mapLayerId, bool enableSidebar, LocatorBoundaryInput? boundary
+ String? id, List<String> assetsIds, List<String> geofencesIds, List<String> triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, String? customizationId, List<String> poisIds, String? mapLayerId, bool enableSidebar, LocatorBoundaryInput? boundary, String? description
 });
 
 
@@ -2150,7 +2157,7 @@ class _$LocatorInputCopyWithImpl<$Res>
 
 /// Create a copy of LocatorInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetsIds = null,Object? geofencesIds = null,Object? triggersIds = null,Object? expiresAt = freezed,Object? customizationId = freezed,Object? poisIds = null,Object? mapLayerId = freezed,Object? enableSidebar = null,Object? boundary = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetsIds = null,Object? geofencesIds = null,Object? triggersIds = null,Object? expiresAt = freezed,Object? customizationId = freezed,Object? poisIds = null,Object? mapLayerId = freezed,Object? enableSidebar = null,Object? boundary = freezed,Object? description = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
@@ -2162,7 +2169,8 @@ as String?,poisIds: null == poisIds ? _self.poisIds : poisIds // ignore: cast_nu
 as List<String>,mapLayerId: freezed == mapLayerId ? _self.mapLayerId : mapLayerId // ignore: cast_nullable_to_non_nullable
 as String?,enableSidebar: null == enableSidebar ? _self.enableSidebar : enableSidebar // ignore: cast_nullable_to_non_nullable
 as bool,boundary: freezed == boundary ? _self.boundary : boundary // ignore: cast_nullable_to_non_nullable
-as LocatorBoundaryInput?,
+as LocatorBoundaryInput?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 /// Create a copy of LocatorInput
@@ -2259,10 +2267,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId,  List<String> poisIds,  String? mapLayerId,  bool enableSidebar,  LocatorBoundaryInput? boundary)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId,  List<String> poisIds,  String? mapLayerId,  bool enableSidebar,  LocatorBoundaryInput? boundary,  String? description)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LocatorInput() when $default != null:
-return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId,_that.poisIds,_that.mapLayerId,_that.enableSidebar,_that.boundary);case _:
+return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId,_that.poisIds,_that.mapLayerId,_that.enableSidebar,_that.boundary,_that.description);case _:
   return orElse();
 
 }
@@ -2280,10 +2288,10 @@ return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId,  List<String> poisIds,  String? mapLayerId,  bool enableSidebar,  LocatorBoundaryInput? boundary)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId,  List<String> poisIds,  String? mapLayerId,  bool enableSidebar,  LocatorBoundaryInput? boundary,  String? description)  $default,) {final _that = this;
 switch (_that) {
 case _LocatorInput():
-return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId,_that.poisIds,_that.mapLayerId,_that.enableSidebar,_that.boundary);case _:
+return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId,_that.poisIds,_that.mapLayerId,_that.enableSidebar,_that.boundary,_that.description);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -2300,10 +2308,10 @@ return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId,  List<String> poisIds,  String? mapLayerId,  bool enableSidebar,  LocatorBoundaryInput? boundary)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  List<String> assetsIds,  List<String> geofencesIds,  List<String> triggersIds, @TimestampOrNullConverter()  DateTime? expiresAt,  String? customizationId,  List<String> poisIds,  String? mapLayerId,  bool enableSidebar,  LocatorBoundaryInput? boundary,  String? description)?  $default,) {final _that = this;
 switch (_that) {
 case _LocatorInput() when $default != null:
-return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId,_that.poisIds,_that.mapLayerId,_that.enableSidebar,_that.boundary);case _:
+return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_that.expiresAt,_that.customizationId,_that.poisIds,_that.mapLayerId,_that.enableSidebar,_that.boundary,_that.description);case _:
   return null;
 
 }
@@ -2315,7 +2323,7 @@ return $default(_that.id,_that.assetsIds,_that.geofencesIds,_that.triggersIds,_t
 @JsonSerializable()
 
 class _LocatorInput extends LocatorInput {
-   _LocatorInput({this.id, this.assetsIds = const [], this.geofencesIds = const [], this.triggersIds = const [], @TimestampOrNullConverter() this.expiresAt, this.customizationId, this.poisIds = const [], this.mapLayerId, this.enableSidebar = false, this.boundary}): super._();
+   _LocatorInput({this.id, this.assetsIds = const [], this.geofencesIds = const [], this.triggersIds = const [], @TimestampOrNullConverter() this.expiresAt, this.customizationId, this.poisIds = const [], this.mapLayerId, this.enableSidebar = false, this.boundary, this.description}): super._();
   factory _LocatorInput.fromJson(Map<String, dynamic> json) => _$LocatorInputFromJson(json);
 
 /// [id] is the UUIDv4 identifier of the locator
@@ -2338,6 +2346,8 @@ class _LocatorInput extends LocatorInput {
 @override@JsonKey()  bool enableSidebar;
 /// [boundary] is the geographic bounding box of the locator
 @override  LocatorBoundaryInput? boundary;
+/// [description] is the description of the locator
+@override  String? description;
 
 /// Create a copy of LocatorInput
 /// with the given fields replaced by the non-null parameter values.
@@ -2354,7 +2364,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'LocatorInput(id: $id, assetsIds: $assetsIds, geofencesIds: $geofencesIds, triggersIds: $triggersIds, expiresAt: $expiresAt, customizationId: $customizationId, poisIds: $poisIds, mapLayerId: $mapLayerId, enableSidebar: $enableSidebar, boundary: $boundary)';
+  return 'LocatorInput(id: $id, assetsIds: $assetsIds, geofencesIds: $geofencesIds, triggersIds: $triggersIds, expiresAt: $expiresAt, customizationId: $customizationId, poisIds: $poisIds, mapLayerId: $mapLayerId, enableSidebar: $enableSidebar, boundary: $boundary, description: $description)';
 }
 
 
@@ -2365,7 +2375,7 @@ abstract mixin class _$LocatorInputCopyWith<$Res> implements $LocatorInputCopyWi
   factory _$LocatorInputCopyWith(_LocatorInput value, $Res Function(_LocatorInput) _then) = __$LocatorInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, List<String> assetsIds, List<String> geofencesIds, List<String> triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, String? customizationId, List<String> poisIds, String? mapLayerId, bool enableSidebar, LocatorBoundaryInput? boundary
+ String? id, List<String> assetsIds, List<String> geofencesIds, List<String> triggersIds,@TimestampOrNullConverter() DateTime? expiresAt, String? customizationId, List<String> poisIds, String? mapLayerId, bool enableSidebar, LocatorBoundaryInput? boundary, String? description
 });
 
 
@@ -2382,7 +2392,7 @@ class __$LocatorInputCopyWithImpl<$Res>
 
 /// Create a copy of LocatorInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetsIds = null,Object? geofencesIds = null,Object? triggersIds = null,Object? expiresAt = freezed,Object? customizationId = freezed,Object? poisIds = null,Object? mapLayerId = freezed,Object? enableSidebar = null,Object? boundary = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetsIds = null,Object? geofencesIds = null,Object? triggersIds = null,Object? expiresAt = freezed,Object? customizationId = freezed,Object? poisIds = null,Object? mapLayerId = freezed,Object? enableSidebar = null,Object? boundary = freezed,Object? description = freezed,}) {
   return _then(_LocatorInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
@@ -2394,7 +2404,8 @@ as String?,poisIds: null == poisIds ? _self.poisIds : poisIds // ignore: cast_nu
 as List<String>,mapLayerId: freezed == mapLayerId ? _self.mapLayerId : mapLayerId // ignore: cast_nullable_to_non_nullable
 as String?,enableSidebar: null == enableSidebar ? _self.enableSidebar : enableSidebar // ignore: cast_nullable_to_non_nullable
 as bool,boundary: freezed == boundary ? _self.boundary : boundary // ignore: cast_nullable_to_non_nullable
-as LocatorBoundaryInput?,
+as LocatorBoundaryInput?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
