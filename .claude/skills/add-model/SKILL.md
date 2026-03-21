@@ -20,6 +20,11 @@ Where `<module>` is the target sub-library directory name (e.g. `locator`, `asse
 
 ## Workflow
 
+### 0. Enter plan mode
+
+Use the `EnterPlanMode` tool immediately before doing any work. Present the full plan to the user
+and wait for approval via `ExitPlanMode` before writing any files or running any commands.
+
 ### 1. Collect the backend struct/schema
 
 Ask the user to paste or describe the backend definition (Python ObjectType, GraphQL schema,
@@ -145,6 +150,13 @@ make freezed
 ### 9. Report
 
 List the created and modified files and whether the build succeeded.
+
+If the model needs GraphQL API caller methods (`fetch`, `fetchAll`, `save`, `delete`/`expire`),
+suggest the user run:
+
+```
+/add-api-caller <module> <ModelName>
+```
 
 ## Rules
 
