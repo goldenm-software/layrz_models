@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.6.27
+
+- Added `LocatorBoundary` and `LocatorBoundaryPoint` models (freezed + unfreezed variants) for representing the geographic bounding box of a locator.
+- Added `boundary` field to `Locator` and `LocatorInput` models.
+- Updated `Locator` GraphQL fragment to include `boundary` data.
+
 ## 3.6.26
 
 - Added `operation` value in `CaclEntity` model
