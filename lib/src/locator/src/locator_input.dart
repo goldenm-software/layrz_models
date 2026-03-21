@@ -28,6 +28,12 @@ abstract class LocatorInput with _$LocatorInput {
 
     /// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
     String? mapLayerId,
+
+    /// [enableSidebar] indicates if the sidebar is enabled for this locator
+    @Default(false) bool enableSidebar,
+
+    /// [boundary] is the geographic bounding box of the locator
+    LocatorBoundaryInput? boundary,
   }) = _LocatorInput;
 
   factory LocatorInput.fromJson(Map<String, dynamic> json) => _$LocatorInputFromJson(json);

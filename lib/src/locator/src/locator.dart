@@ -79,6 +79,12 @@ abstract class Locator with _$Locator {
 
     /// [poisIds] is the list of [Poi]s that are associated with the locator.
     List<String>? poisIds,
+
+    /// [enableSidebar] indicates if the sidebar is enabled for this locator
+    bool? enableSidebar,
+
+    /// [boundary] is the geographic bounding box of the locator
+    LocatorBoundary? boundary,
   }) = _Locator;
 
   factory Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
@@ -443,6 +449,18 @@ abstract class Locator with _$Locator {
         name
         latitude
         longitude
+      }
+
+      enableSidebar
+      boundary {
+        topleft {
+          latitude
+          longitude
+        }
+        bottomright {
+          latitude
+          longitude
+        }
       }
 
       isExpired

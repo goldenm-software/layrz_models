@@ -6,6 +6,76 @@ part of 'locator.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_LocatorBoundaryPoint _$LocatorBoundaryPointFromJson(
+  Map<String, dynamic> json,
+) => _LocatorBoundaryPoint(
+  latitude: (json['latitude'] as num?)?.toDouble(),
+  longitude: (json['longitude'] as num?)?.toDouble(),
+);
+
+Map<String, dynamic> _$LocatorBoundaryPointToJson(
+  _LocatorBoundaryPoint instance,
+) => <String, dynamic>{
+  'latitude': instance.latitude,
+  'longitude': instance.longitude,
+};
+
+_LocatorBoundaryPointInput _$LocatorBoundaryPointInputFromJson(
+  Map<String, dynamic> json,
+) => _LocatorBoundaryPointInput(
+  latitude: (json['latitude'] as num?)?.toDouble(),
+  longitude: (json['longitude'] as num?)?.toDouble(),
+);
+
+Map<String, dynamic> _$LocatorBoundaryPointInputToJson(
+  _LocatorBoundaryPointInput instance,
+) => <String, dynamic>{
+  'latitude': instance.latitude,
+  'longitude': instance.longitude,
+};
+
+_LocatorBoundary _$LocatorBoundaryFromJson(Map<String, dynamic> json) =>
+    _LocatorBoundary(
+      topLeft: json['topleft'] == null
+          ? null
+          : LocatorBoundaryPoint.fromJson(
+              json['topleft'] as Map<String, dynamic>,
+            ),
+      bottomRight: json['bottomright'] == null
+          ? null
+          : LocatorBoundaryPoint.fromJson(
+              json['bottomright'] as Map<String, dynamic>,
+            ),
+    );
+
+Map<String, dynamic> _$LocatorBoundaryToJson(_LocatorBoundary instance) =>
+    <String, dynamic>{
+      'topleft': instance.topLeft?.toJson(),
+      'bottomright': instance.bottomRight?.toJson(),
+    };
+
+_LocatorBoundaryInput _$LocatorBoundaryInputFromJson(
+  Map<String, dynamic> json,
+) => _LocatorBoundaryInput(
+  topLeft: json['topleft'] == null
+      ? null
+      : LocatorBoundaryPointInput.fromJson(
+          json['topleft'] as Map<String, dynamic>,
+        ),
+  bottomRight: json['bottomright'] == null
+      ? null
+      : LocatorBoundaryPointInput.fromJson(
+          json['bottomright'] as Map<String, dynamic>,
+        ),
+);
+
+Map<String, dynamic> _$LocatorBoundaryInputToJson(
+  _LocatorBoundaryInput instance,
+) => <String, dynamic>{
+  'topleft': instance.topLeft?.toJson(),
+  'bottomright': instance.bottomRight?.toJson(),
+};
+
 _Locator _$LocatorFromJson(Map<String, dynamic> json) => _Locator(
   id: json['id'] as String,
   token: json['token'] as String,
@@ -62,6 +132,10 @@ _Locator _$LocatorFromJson(Map<String, dynamic> json) => _Locator(
   poisIds: (json['poisIds'] as List<dynamic>?)
       ?.map((e) => e as String)
       .toList(),
+  enableSidebar: json['enableSidebar'] as bool?,
+  boundary: json['boundary'] == null
+      ? null
+      : LocatorBoundary.fromJson(json['boundary'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
@@ -90,6 +164,8 @@ Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
   'mapLayer': instance.mapLayer?.toJson(),
   'pois': instance.pois?.map((e) => e.toJson()).toList(),
   'poisIds': instance.poisIds,
+  'enableSidebar': instance.enableSidebar,
+  'boundary': instance.boundary?.toJson(),
 };
 
 _LocatorMqttConfig _$LocatorMqttConfigFromJson(Map<String, dynamic> json) =>
@@ -135,6 +211,10 @@ _LocatorInput _$LocatorInputFromJson(
       (json['poisIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
   mapLayerId: json['mapLayerId'] as String?,
+  enableSidebar: json['enableSidebar'] as bool? ?? false,
+  boundary: json['boundary'] == null
+      ? null
+      : LocatorBoundaryInput.fromJson(json['boundary'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$LocatorInputToJson(_LocatorInput instance) =>
@@ -147,4 +227,6 @@ Map<String, dynamic> _$LocatorInputToJson(_LocatorInput instance) =>
       'customizationId': instance.customizationId,
       'poisIds': instance.poisIds,
       'mapLayerId': instance.mapLayerId,
+      'enableSidebar': instance.enableSidebar,
+      'boundary': instance.boundary?.toJson(),
     };
