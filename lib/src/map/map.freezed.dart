@@ -253,8 +253,8 @@ return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.r
 /// @nodoc
 @JsonSerializable()
 
-class _MapLayer implements MapLayer {
-  const _MapLayer({required this.id, required this.name, @JsonKey(unknownEnumValue: MapSource.custom) required this.source, this.rasterServerLight, this.rasterServerDark, this.googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) final  List<GoogleMapLayer>? googleLayers, this.mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation) final  List<MapboxStyle>? mapboxLayers, this.mapboxCustomUsername, this.mapboxCustomStyleId, this.hereToken, @JsonKey(unknownEnumValue: HereStyle.lite) final  List<HereStyle>? hereLayers, this.attributionUrl = 'https://cdn.layrz.com/resources/layrz/logo/normal.png', this.attributionUrlDark, this.attributionWidth = 100, this.attributionHeight = 30, final  List<String> appsIds = const []}): _googleLayers = googleLayers,_mapboxLayers = mapboxLayers,_hereLayers = hereLayers,_appsIds = appsIds;
+class _MapLayer extends MapLayer {
+  const _MapLayer({required this.id, required this.name, @JsonKey(unknownEnumValue: MapSource.custom) required this.source, this.rasterServerLight, this.rasterServerDark, this.googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) final  List<GoogleMapLayer>? googleLayers, this.mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation) final  List<MapboxStyle>? mapboxLayers, this.mapboxCustomUsername, this.mapboxCustomStyleId, this.hereToken, @JsonKey(unknownEnumValue: HereStyle.lite) final  List<HereStyle>? hereLayers, this.attributionUrl = 'https://cdn.layrz.com/resources/layrz/logo/normal.png', this.attributionUrlDark, this.attributionWidth = 100, this.attributionHeight = 30, final  List<String> appsIds = const []}): _googleLayers = googleLayers,_mapboxLayers = mapboxLayers,_hereLayers = hereLayers,_appsIds = appsIds,super._();
   factory _MapLayer.fromJson(Map<String, dynamic> json) => _$MapLayerFromJson(json);
 
 /// [id] is the unique identifier for the layer.
@@ -687,8 +687,8 @@ return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.r
 /// @nodoc
 @JsonSerializable()
 
-class _MapLayerInput implements MapLayerInput {
-   _MapLayerInput({this.id, this.name = '', @JsonKey(unknownEnumValue: MapSource.custom) this.source = MapSource.custom, this.rasterServerLight, this.rasterServerDark, this.googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) this.googleLayers, this.mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation) this.mapboxLayers, this.mapboxCustomUsername, this.mapboxCustomStyleId, this.hereToken, @JsonKey(unknownEnumValue: HereStyle.lite) this.hereLayers, this.attributionUrl = 'https://cdn.layrz.com/resources/layrz/logo/normal.png', this.attributionUrlDark, this.attributionWidth = 100, this.attributionHeight = 30, this.appsIds = const [], this.mapLayerId, this.poisIds = const []});
+class _MapLayerInput extends MapLayerInput {
+   _MapLayerInput({this.id, this.name = '', @JsonKey(unknownEnumValue: MapSource.custom) this.source = MapSource.custom, this.rasterServerLight, this.rasterServerDark, this.googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) this.googleLayers, this.mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation) this.mapboxLayers, this.mapboxCustomUsername, this.mapboxCustomStyleId, this.hereToken, @JsonKey(unknownEnumValue: HereStyle.lite) this.hereLayers, this.attributionUrl = 'https://cdn.layrz.com/resources/layrz/logo/normal.png', this.attributionUrlDark, this.attributionWidth = 100, this.attributionHeight = 30, this.appsIds = const [], this.mapLayerId, this.poisIds = const []}): super._();
   factory _MapLayerInput.fromJson(Map<String, dynamic> json) => _$MapLayerInputFromJson(json);
 
 /// [id] is the unique identifier for the layer.
