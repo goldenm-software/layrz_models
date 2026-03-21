@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.26
+
+- Added `operation` value in `CaclEntity` model
+
 ## 3.6.25
 
 - Changed `pois` and `poisIds` fields in `Locator` from non-nullable with default empty list to nullable `List<Poi>?` and `List<String>?`.
@@ -24,6 +28,7 @@
 - Added `PoiApiResponse` helper class to the `map` module.
 
 ## 3.6.20
+
 - Added `hasWorldwideCoverage` to `Device` model to represent if the device has worldwide coverage, for the BHS use case, this field is used to identify if the device has GPS insurance.
 - Added `hasGpsInsurance` to `User` model to represent if the user has GPS insurance, for the BHS use case.
 
