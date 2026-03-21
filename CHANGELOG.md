@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.28
+
+- Added `description` field to `Locator` and `LocatorInput` models.
+- Updated `Locator` GraphQL fragment to include `description`.
+
 ## 3.6.27
 
 - Added `LocatorBoundary` and `LocatorBoundaryPoint` models (freezed + unfreezed variants) for representing the geographic bounding box of a locator.
