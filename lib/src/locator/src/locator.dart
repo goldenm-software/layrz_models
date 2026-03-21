@@ -349,6 +349,8 @@ abstract class Locator with _$Locator {
               }
               updatedById
 
+              description
+
               customization {
                 id
                 name
