@@ -66,20 +66,21 @@ abstract class RegisteredApp with _$RegisteredApp {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/RegisteredApp/fetchAll(): No response from server");
         return [];
       }
 
       final result = data['data']['registeredApps'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/RegisteredApp/fetchAll(): No result from server");
         return [];
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return [];
       }
 

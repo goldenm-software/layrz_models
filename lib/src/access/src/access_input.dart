@@ -55,7 +55,7 @@ abstract class AccessInput with _$AccessInput {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/AccessInput/save(): No response from server");
         return false;
       }
@@ -64,13 +64,14 @@ abstract class AccessInput with _$AccessInput {
           ? (useUuid ? data['data']['addAccessPermissionUuid'] : data['data']['addAccessPermission'])
           : (useUuid ? data['data']['editAccessPermissionUuid'] : data['data']['editAccessPermission']);
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/AccessInput/save(): No result from server");
         return false;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return false;
       }
 
@@ -106,20 +107,21 @@ abstract class AccessInput with _$AccessInput {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Access/delete(): No response from server");
         return false;
       }
 
       final result = data['data'][useUuid ? 'deleteAccessPermissionUuid' : 'deleteAccessPermission'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Access/delete(): No result from server");
         return false;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return false;
       }
 
