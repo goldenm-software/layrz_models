@@ -51,8 +51,8 @@ abstract class LocatorInput with _$LocatorInput {
   }
 
   /// [save] saves the locator input to the server
-  /// It returns a [LocatorApiResponse] with the saved locator or errors if any
-  Future<LocatorApiResponse?> save({
+  /// It returns a [ApiResponse] with the saved locator or errors if any
+  Future<ApiResponse<Locator, Map<String, dynamic>>?> save({
     /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
     /// on the GraphQL API.
     required String apiToken,
@@ -72,24 +72,28 @@ abstract class LocatorInput with _$LocatorInput {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/LocatorInput/save(): No response from server");
         return null;
       }
 
       final result = id == null ? data['data']['addLocator'] : data['data']['editLocator'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/LocatorInput/save(): No result from server");
         return null;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
-        return LocatorApiResponse(errors: Map<String, dynamic>.from(result['errors'] ?? {}));
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return ApiResponse(
+          status: status,
+          errors: Map<String, dynamic>.from(result['errors'] ?? {}),
+        );
       }
 
-      return LocatorApiResponse(locator: Locator.fromJson(result['result']));
+      return ApiResponse(status: ApiStatus.ok, result: Locator.fromJson(result['result']));
     } catch (e, stack) {
       Log.critical("layrz_models/LocatorInput/save(): General exception => $e\n$stack");
       return null;

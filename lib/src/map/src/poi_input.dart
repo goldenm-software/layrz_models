@@ -30,8 +30,8 @@ abstract class PoiInput with _$PoiInput {
   factory PoiInput.fromJson(Map<String, dynamic> json) => _$PoiInputFromJson(json);
 
   /// [save] saves the POI input to the server
-  /// It returns a [PoiApiResponse] with the saved POI or errors if any
-  Future<PoiApiResponse?> save({
+  /// It returns a [ApiResponse] with the saved POI or errors if any
+  Future<ApiResponse<Poi, Map<String, dynamic>>?> save({
     /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
     /// on the GraphQL API.
     required String apiToken,
@@ -51,24 +51,28 @@ abstract class PoiInput with _$PoiInput {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/PoiInput/save(): No response from server");
         return null;
       }
 
       final result = id == null ? data['data']['addPoi'] : data['data']['editPoi'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/PoiInput/save(): No result from server");
         return null;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
-        return PoiApiResponse(errors: Map<String, dynamic>.from(result['errors'] ?? {}));
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return ApiResponse(
+          status: status,
+          errors: Map<String, dynamic>.from(result['errors'] ?? {}),
+        );
       }
 
-      return PoiApiResponse(poi: Poi.fromJson(result['result']));
+      return ApiResponse(status: ApiStatus.ok, result: Poi.fromJson(result['result']));
     } catch (e, stack) {
       Log.critical("layrz_models/PoiInput/save(): General exception => $e\n$stack");
       return null;

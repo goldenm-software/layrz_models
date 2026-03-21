@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.7.0
+
+- Added `unknown`, `userNotFound`, `wrongPassword`, `accountBlocked`, and `passwordUsedBefore` values to `ApiStatus`.
+- Removed deprecated `telegramUnauthorized` and `telegramBadRequest` values from `ApiStatus`.
+- Added `MapLayerInput` model with full API callers (`fetch`, `fetchAll`, `save`, `delete`).
+- Removed `LocatorApiResponse` in favour of the generic `ApiResponse<Locator, Map<String, dynamic>>`.
+- Removed `PoiApiResponse` in favour of the generic `ApiResponse<Poi, Map<String, dynamic>>`.
+- Replaced hardcoded `'INTERNAL_ERROR'` strings with `ApiStatus.internalError.toJson()` across all API callers.
+
 ## 3.6.29
 
 - Updated `Locator.fetchAllGraphqlQuery` to include `description` in the query result fields.

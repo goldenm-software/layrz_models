@@ -50,20 +50,21 @@ abstract class Poi with _$Poi {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Poi/fetch(): No response from server");
         return null;
       }
 
       final result = data['data']['pois'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Poi/fetch(): No result from server");
         return null;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return null;
       }
       if (result['result'] == null || (result['result'] as List).isEmpty) {
@@ -97,20 +98,21 @@ abstract class Poi with _$Poi {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Poi/fetchAll(): No response from server");
         return [];
       }
 
       final result = data['data']['pois'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Poi/fetchAll(): No result from server");
         return [];
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return [];
       }
 
@@ -149,20 +151,21 @@ abstract class Poi with _$Poi {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Poi/delete(): No response from server");
         return false;
       }
 
       final result = data['data']['deletePois'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Poi/delete(): No result from server");
         return false;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return false;
       }
 
