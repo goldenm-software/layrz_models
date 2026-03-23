@@ -1532,6 +1532,9 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
           .toList(),
       minEta: const TimestampOrNullConverter().fromJson(json['minEta'] as num?),
       etaStatus: $enumDecodeNullable(_$AtsEtaStatusEnumMap, json['etaStatus']),
+      loadingOrders: (json['loadingOrders'] as List<dynamic>?)
+          ?.map((e) => AtsLoadingOrder.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$AtsOperationToJson(
@@ -1567,6 +1570,7 @@ Map<String, dynamic> _$AtsOperationToJson(
   'history': instance.history?.map((e) => e.toJson()).toList(),
   'minEta': const TimestampOrNullConverter().toJson(instance.minEta),
   'etaStatus': instance.etaStatus?.toJson(),
+  'loadingOrders': instance.loadingOrders?.map((e) => e.toJson()).toList(),
 };
 
 const _$AtsPurchaseOrderCategoriesEntityEnumMap = {

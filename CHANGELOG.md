@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.1
+
+- Added `loadingOrders` value to `AtsOperation` model
+
 ## 3.7.0
 
 - Added `unknown`, `userNotFound`, `wrongPassword`, `accountBlocked`, and `passwordUsedBefore` values to `ApiStatus`.
