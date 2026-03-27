@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.2
+
+- Remove unused properties `mapLayerId` and `poisIds` from `MapLayerInput`
+
 ## 3.7.1
 
 - Added `loadingOrders` value to `AtsOperation` model
