@@ -2,7 +2,18 @@ part of '../../../ats.dart';
 
 /// A model class representing a results input.
 @unfreezed
-abstract class ResultsInput with _$ResultsInput {
+sealed class ResultsInput with _$ResultsInput {
+  ResultsInput._() {
+    environmentalTankVolume ??= MeasurementInput();
+    waterVolume ??= MeasurementInput();
+    densityAt20 ??= MeasurementInput();
+    volumeCorrectionFactor ??= MeasurementInput();
+    alcoholicContent ??= MeasurementInput();
+    environmentalVolume ??= MeasurementInput();
+    volumeAt20 ??= MeasurementInput();
+    kilogramsAt20 ??= MeasurementInput();
+  }
+
   /// Creates a new [ResultsInput] instance.
   factory ResultsInput({
     /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results input.

@@ -2,8 +2,17 @@ part of '../../../ats.dart';
 
 /// A model class representing a cacl input.
 @unfreezed
-abstract class CaclInput with _$CaclInput {
-  /// Creates a new [CaclInput] instance.
+sealed class CaclInput with _$CaclInput {
+  CaclInput._() {
+    // Inicialización de valores no constantes
+    measurements ??= MeasurementsInput();
+    results ??= ResultsInput();
+    volumeMoved ??= VolumeMovedInput();
+    measurer01 ??= CaclMeasurement();
+    measurer02 ??= CaclMeasurement();
+    equipments ??= CaclEquipmentInput();
+  }
+
   factory CaclInput({
     /// The [id] parameter is the id of the cacl input.
     String? id,
