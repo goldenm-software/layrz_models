@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.7.3
+- Refactor `CaclInput`.
+
 ## 3.7.2
 
 - Remove unused properties `mapLayerId` and `poisIds` from `MapLayerInput`
