@@ -1,6 +1,82 @@
 # Changelog
 
+## 3.7.2
+
+- Remove unused properties `mapLayerId` and `poisIds` from `MapLayerInput`
+
+## 3.7.1
+
+- Added `loadingOrders` value to `AtsOperation` model
+
+## 3.7.0
+
+- Added `unknown`, `userNotFound`, `wrongPassword`, `accountBlocked`, and `passwordUsedBefore` values to `ApiStatus`.
+- Removed deprecated `telegramUnauthorized` and `telegramBadRequest` values from `ApiStatus`.
+- Added `MapLayerInput` model with full API callers (`fetch`, `fetchAll`, `save`, `delete`).
+- Removed `LocatorApiResponse` in favour of the generic `ApiResponse<Locator, Map<String, dynamic>>`.
+- Removed `PoiApiResponse` in favour of the generic `ApiResponse<Poi, Map<String, dynamic>>`.
+- Replaced hardcoded `'INTERNAL_ERROR'` strings with `ApiStatus.internalError.toJson()` across all API callers.
+
+## 3.6.29
+
+- Updated `Locator.fetchAllGraphqlQuery` to include `description` in the query result fields.
+
+## 3.6.28
+
+- Added `description` field to `Locator` and `LocatorInput` models.
+- Updated `Locator` GraphQL fragment to include `description`.
+
+## 3.6.27
+
+- Added `LocatorBoundary` and `LocatorBoundaryPoint` models (freezed + unfreezed variants) for representing the geographic bounding box of a locator.
+- Added `boundary` field to `Locator` and `LocatorInput` models.
+- Updated `Locator` GraphQL fragment to include `boundary` data.
+
+## 3.6.26
+
+- Added `operation` value in `CaclEntity` model
+
+## 3.6.25
+
+- Changed `pois` and `poisIds` fields in `Locator` from non-nullable with default empty list to nullable `List<Poi>?` and `List<String>?`.
+
+## 3.6.24
+
+- Added `graphqlIdFragment` and `graphqlUuidFragment` static constants to `Access` for GraphQL queries.
+- Added `save()` and `delete()` methods to `AccessInput` with full GraphQL mutation support (both ID and UUID variants).
+- Updated `Poi.graphqlFragment` to include the `access` field using the UUID access fragment.
+
+## 3.6.23
+
+- CI issues, no code changes.
+
+## 3.6.22
+
+- Added `pois` enum value to `AccessModule` for access control to the POIs module.
+
+## 3.6.21
+
+- Added `PoiInput` model to the `map` module with `save()` support for creating and editing points of interest via GraphQL.
+- Added `PoiApiResponse` helper class to the `map` module.
+
+## 3.6.20
+
+- Added `hasWorldwideCoverage` to `Device` model to represent if the device has worldwide coverage, for the BHS use case, this field is used to identify if the device has GPS insurance.
+- Added `hasGpsInsurance` to `User` model to represent if the user has GPS insurance, for the BHS use case.
+
+## 3.6.19
+
+-Added new value `modal` in `AtsIdeInformation`
+-Added new value `ORDER_RECEIVED` in `AtsPurchaseOrderStatus`
+
+## 3.6.18
+
+- Added new `Poi` and `PoiInput` models to the `map` module
+- Added `mapLayerId`, `mapLayer`, `pois`, and `poisIds` fields to `Locator` model
+- Added `poisIds` and `mapLayerId` fields to `LocatorInput` and `MapLayerInput`
+
 ## 3.6.17
+
 - Refactored AtsCommandExecutionHistory model:
   - Replaced fields fromAsset, toAsset, and fatherAsset from String? to Asset?
   - Replaced generatedBy from String? to User?

@@ -2,6 +2,10 @@ part of '../api.dart';
 
 @JsonEnum(alwaysCreate: true)
 enum ApiStatus {
+  /// [unknown] - Unknown or unrecognized status. Used as the default fallback.
+  @JsonValue('UNKNOWN')
+  unknown,
+
   /// [ok] - The request was successful.
   @JsonValue('OK')
   ok,
@@ -9,6 +13,18 @@ enum ApiStatus {
   /// [notfound] - Entity not found or temporally disabled
   @JsonValue('NOTFOUND')
   notfound,
+
+  /// [userNotFound] - The user was not found, please check the credentials and try again.
+  @JsonValue('USER_NOT_FOUND')
+  userNotFound,
+
+  /// [wrongPassword] - The submitted password is incorrect. Please check your credentials and try again.
+  @JsonValue('WRONG_PASSWORD')
+  wrongPassword,
+
+  /// [accountBlocked] - Your account has been blocked due to too many wrong password attempts.
+  @JsonValue('ACCOUNT_BLOCKED')
+  accountBlocked,
 
   /// [internalError] - Internal server error, please try again later. If the problem persists,
   /// please contact us through support@layrz.com. (English or Spanish support)
@@ -55,29 +71,6 @@ enum ApiStatus {
   /// account owner. If you are the account owner, request an upgrade to sales@layrz.com
   @JsonValue('LIMITREACHED')
   limitReached,
-
-  /// [telegramUnauthorized] - We are sorry, but the request for telegram hooks failed, please verify the bot
-  /// token and chat id sended in the request. The 401 means that the token is invalid.
-  @JsonValue('TELEGRAMUNAUTHORIZED')
-  telegramUnauthorized,
-
-  /// [telegramBadRequest] - We are sorry, but the request for telegram hooks failed, please verify
-  /// the bot token and chat id sended in the request. The 400 means that the chat id provide is invalid.
-  @JsonValue('TELEGRAMBADREQUEST')
-  telegramBadRequest,
-
-  /// [malformedPlan] - The provided plan data is malformed or invalid.
-  @JsonValue('MALFORMEDPLAN')
-  malformedPlan,
-
-  /// [subscriptionAlreadyAdded] - Means the subscription what you want to add is already added previously.
-  @JsonValue('SUBSCRIPTIONALREADYADDED')
-  subscriptionAlreadyAdded,
-
-  /// [malformedSubscription] - Means the subscription item cannot be saved because it has more items in the
-  /// ecosystem than the quantity limit.
-  @JsonValue('MALFORMEDSUBSCRIPTION')
-  malformedSubscription,
 
   /// [fileNotFound] - The file was not found in our storage server.
   @JsonValue('FILE_NOT_FOUND')
@@ -169,19 +162,23 @@ enum ApiStatus {
 
   /// [gptDisabled] - Layo AI is disabled right now, please try again later
   @JsonValue('GPT_DISABLED')
-  gptDisabled;
+  gptDisabled,
+
+  /// [passwordUsedBefore] - The submitted password was used before, please choose a different password.
+  @JsonValue('PASSWORD_USED_BEFORE')
+  passwordUsedBefore;
 
   @override
   String toString() => toJson();
 
   /// [toJson] - Converts an [ApiStatus] to a JSON string.
-  String toJson() => _$ApiStatusEnumMap[this] ?? 'INTERNALERROR';
+  String toJson() => _$ApiStatusEnumMap[this] ?? 'UNKNOWN';
 
   /// [fromJson] - Converts a JSON string to an [ApiStatus].
   static ApiStatus fromJson(String json) => _$ApiStatusEnumMap.entries
       .firstWhere(
         (element) => element.value == json,
-        orElse: () => const MapEntry(ApiStatus.internalError, 'INTERNALERROR'),
+        orElse: () => const MapEntry(ApiStatus.unknown, 'UNKNOWN'),
       )
       .key;
 }

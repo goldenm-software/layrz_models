@@ -27,8 +27,12 @@ Map<String, dynamic> _$ApiResponseToJson<T, Q>(
 };
 
 const _$ApiStatusEnumMap = {
+  ApiStatus.unknown: 'UNKNOWN',
   ApiStatus.ok: 'OK',
   ApiStatus.notfound: 'NOTFOUND',
+  ApiStatus.userNotFound: 'USER_NOT_FOUND',
+  ApiStatus.wrongPassword: 'WRONG_PASSWORD',
+  ApiStatus.accountBlocked: 'ACCOUNT_BLOCKED',
   ApiStatus.internalError: 'INTERNALERROR',
   ApiStatus.unprocessable: 'UNPROCESSABLE',
   ApiStatus.unauthorized: 'UNAUTHORIZED',
@@ -39,11 +43,6 @@ const _$ApiStatusEnumMap = {
   ApiStatus.paymentRequired: 'PAYMENTREQUIRED',
   ApiStatus.serviceUnavailable: 'SERVICEUNAVAILABLE',
   ApiStatus.limitReached: 'LIMITREACHED',
-  ApiStatus.telegramUnauthorized: 'TELEGRAMUNAUTHORIZED',
-  ApiStatus.telegramBadRequest: 'TELEGRAMBADREQUEST',
-  ApiStatus.malformedPlan: 'MALFORMEDPLAN',
-  ApiStatus.subscriptionAlreadyAdded: 'SUBSCRIPTIONALREADYADDED',
-  ApiStatus.malformedSubscription: 'MALFORMEDSUBSCRIPTION',
   ApiStatus.fileNotFound: 'FILE_NOT_FOUND',
   ApiStatus.checkumError: 'CHECKUM_ERROR',
   ApiStatus.downloadDone: 'DOWNLOAD_DONE',
@@ -66,6 +65,7 @@ const _$ApiStatusEnumMap = {
   ApiStatus.cannotEdit: 'CANNOT_EDIT',
   ApiStatus.cannotDelete: 'CANNOT_DELETE',
   ApiStatus.gptDisabled: 'GPT_DISABLED',
+  ApiStatus.passwordUsedBefore: 'PASSWORD_USED_BEFORE',
 };
 
 T? _$nullableGenericFromJson<T>(

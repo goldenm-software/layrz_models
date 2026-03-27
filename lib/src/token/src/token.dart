@@ -45,20 +45,21 @@ abstract class Token with _$Token {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Token/fetchAll(): No response from server");
         return [];
       }
 
       final result = data['data']['tokens'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Token/fetchAll(): No result from server");
         return [];
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return [];
       }
 
@@ -97,20 +98,21 @@ abstract class Token with _$Token {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Token/expire(): No response from server");
         return false;
       }
 
       final result = data['data']['expireToken'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Token/expire(): No result from server");
         return false;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return false;
       }
 
@@ -151,20 +153,21 @@ abstract class Token with _$Token {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Token/createUsingDuration(): No response from server");
         return null;
       }
 
       final result = data['data']['createToken'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Token/createUsingDuration(): No result from server");
         return null;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return null;
       }
 

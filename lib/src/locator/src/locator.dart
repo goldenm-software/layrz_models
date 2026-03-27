@@ -67,6 +67,27 @@ abstract class Locator with _$Locator {
 
     /// [customizationId] is the ID of the registered app that will act as a customization for this locator
     String? customizationId,
+
+    /// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
+    String? mapLayerId,
+
+    /// [mapLayer] is the map layer to use for the locators that are using this layer.
+    MapLayer? mapLayer,
+
+    /// [pois] is the list of [Poi]s that are associated with the locator.
+    List<Poi>? pois,
+
+    /// [poisIds] is the list of [Poi]s that are associated with the locator.
+    List<String>? poisIds,
+
+    /// [enableSidebar] indicates if the sidebar is enabled for this locator
+    bool? enableSidebar,
+
+    /// [boundary] is the geographic bounding box of the locator
+    LocatorBoundary? boundary,
+
+    /// [description] is the description of the locator
+    String? description,
   }) = _Locator;
 
   factory Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
@@ -97,20 +118,21 @@ abstract class Locator with _$Locator {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Locator/fetch(): No response from server");
         return null;
       }
 
       final result = data['data']['locators'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Locator/fetch(): No result from server");
         return null;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return null;
       }
       if (result['result'] == null || (result['result'] as List).isEmpty) {
@@ -144,20 +166,21 @@ abstract class Locator with _$Locator {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Locator/fetchAll(): No response from server");
         return [];
       }
 
       final result = data['data']['locators'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Locator/fetchAll(): No result from server");
         return [];
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return [];
       }
 
@@ -197,20 +220,21 @@ abstract class Locator with _$Locator {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Locator/expire(): No response from server");
         return false;
       }
 
       final result = data['data']['expireLocators'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Locator/expire(): No result from server");
         return false;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return false;
       }
 
@@ -246,20 +270,21 @@ abstract class Locator with _$Locator {
 
       final data = response.data;
       if (data == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Locator/expireMultiple(): No response from server");
         return false;
       }
 
       final result = data['data']['expireLocators'];
       if (result == null) {
-        onResponse?.call('INTERNAL_ERROR');
+        onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Locator/expireMultiple(): No result from server");
         return false;
       }
 
-      if (result['status'] != 'OK') {
-        onResponse?.call(result['status']);
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
         return false;
       }
 
@@ -328,6 +353,8 @@ abstract class Locator with _$Locator {
               }
               updatedById
 
+              description
+
               customization {
                 id
                 name
@@ -381,7 +408,7 @@ abstract class Locator with _$Locator {
         nickname
         technology
         sourceId
-        
+
         instances {
           id
           appId
@@ -418,8 +445,36 @@ abstract class Locator with _$Locator {
       }
       triggersIds
 
+      mapLayerId
+      mapLayer {
+        id
+        name
+        source
+      }
+
+      poisIds
+      pois {
+        id
+        name
+        latitude
+        longitude
+      }
+
+      enableSidebar
+      boundary {
+        topleft {
+          latitude
+          longitude
+        }
+        bottomright {
+          latitude
+          longitude
+        }
+      }
+      description
+
       isExpired
-      
+
       expiresAt
       expiredBy {
         ...basicUserFields

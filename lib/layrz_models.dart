@@ -143,11 +143,13 @@ export 'src/token/token.dart';
 // import 'src/permissions/permissions.dart';
 export 'src/permissions/permissions.dart';
 
+import 'src/access/access.dart';
+export 'src/access/access.dart';
+
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
 
 /// Models that should be re-organized to sub-modules
-part 'src/access.dart';
 part 'src/accessibility/shortcut.dart';
 part 'src/algorithm.dart';
 part 'src/billing_plan.dart';

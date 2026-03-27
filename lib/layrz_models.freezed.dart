@@ -13,605 +13,6 @@ part of 'layrz_models.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$Access {
-
- String get id; String? get label; bool? get read; bool? get write; bool? get manage; String? get objectId; String get userId; User? get user;@JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule get module;
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AccessCopyWith<Access> get copyWith => _$AccessCopyWithImpl<Access>(this as Access, _$identity);
-
-  /// Serializes this Access to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Access&&(identical(other.id, id) || other.id == id)&&(identical(other.label, label) || other.label == label)&&(identical(other.read, read) || other.read == read)&&(identical(other.write, write) || other.write == write)&&(identical(other.manage, manage) || other.manage == manage)&&(identical(other.objectId, objectId) || other.objectId == objectId)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.user, user) || other.user == user)&&(identical(other.module, module) || other.module == module));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,label,read,write,manage,objectId,userId,user,module);
-
-@override
-String toString() {
-  return 'Access(id: $id, label: $label, read: $read, write: $write, manage: $manage, objectId: $objectId, userId: $userId, user: $user, module: $module)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $AccessCopyWith<$Res>  {
-  factory $AccessCopyWith(Access value, $Res Function(Access) _then) = _$AccessCopyWithImpl;
-@useResult
-$Res call({
- String id, String? label, bool? read, bool? write, bool? manage, String? objectId, String userId, User? user,@JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module
-});
-
-
-$UserCopyWith<$Res>? get user;
-
-}
-/// @nodoc
-class _$AccessCopyWithImpl<$Res>
-    implements $AccessCopyWith<$Res> {
-  _$AccessCopyWithImpl(this._self, this._then);
-
-  final Access _self;
-  final $Res Function(Access) _then;
-
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? label = freezed,Object? read = freezed,Object? write = freezed,Object? manage = freezed,Object? objectId = freezed,Object? userId = null,Object? user = freezed,Object? module = null,}) {
-  return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,label: freezed == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
-as String?,read: freezed == read ? _self.read : read // ignore: cast_nullable_to_non_nullable
-as bool?,write: freezed == write ? _self.write : write // ignore: cast_nullable_to_non_nullable
-as bool?,manage: freezed == manage ? _self.manage : manage // ignore: cast_nullable_to_non_nullable
-as bool?,objectId: freezed == objectId ? _self.objectId : objectId // ignore: cast_nullable_to_non_nullable
-as String?,userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
-as String,user: freezed == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as User?,module: null == module ? _self.module : module // ignore: cast_nullable_to_non_nullable
-as AccessModule,
-  ));
-}
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UserCopyWith<$Res>? get user {
-    if (_self.user == null) {
-    return null;
-  }
-
-  return $UserCopyWith<$Res>(_self.user!, (value) {
-    return _then(_self.copyWith(user: value));
-  });
-}
-}
-
-
-/// Adds pattern-matching-related methods to [Access].
-extension AccessPatterns on Access {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Access value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _Access() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Access value)  $default,){
-final _that = this;
-switch (_that) {
-case _Access():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Access value)?  $default,){
-final _that = this;
-switch (_that) {
-case _Access() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? label,  bool? read,  bool? write,  bool? manage,  String? objectId,  String userId,  User? user, @JsonKey(unknownEnumValue: AccessModule.unknown)  AccessModule module)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _Access() when $default != null:
-return $default(_that.id,_that.label,_that.read,_that.write,_that.manage,_that.objectId,_that.userId,_that.user,_that.module);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? label,  bool? read,  bool? write,  bool? manage,  String? objectId,  String userId,  User? user, @JsonKey(unknownEnumValue: AccessModule.unknown)  AccessModule module)  $default,) {final _that = this;
-switch (_that) {
-case _Access():
-return $default(_that.id,_that.label,_that.read,_that.write,_that.manage,_that.objectId,_that.userId,_that.user,_that.module);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? label,  bool? read,  bool? write,  bool? manage,  String? objectId,  String userId,  User? user, @JsonKey(unknownEnumValue: AccessModule.unknown)  AccessModule module)?  $default,) {final _that = this;
-switch (_that) {
-case _Access() when $default != null:
-return $default(_that.id,_that.label,_that.read,_that.write,_that.manage,_that.objectId,_that.userId,_that.user,_that.module);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _Access implements Access {
-  const _Access({required this.id, this.label, this.read, this.write, this.manage, this.objectId, required this.userId, this.user, @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module});
-  factory _Access.fromJson(Map<String, dynamic> json) => _$AccessFromJson(json);
-
-@override final  String id;
-@override final  String? label;
-@override final  bool? read;
-@override final  bool? write;
-@override final  bool? manage;
-@override final  String? objectId;
-@override final  String userId;
-@override final  User? user;
-@override@JsonKey(unknownEnumValue: AccessModule.unknown) final  AccessModule module;
-
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$AccessCopyWith<_Access> get copyWith => __$AccessCopyWithImpl<_Access>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$AccessToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Access&&(identical(other.id, id) || other.id == id)&&(identical(other.label, label) || other.label == label)&&(identical(other.read, read) || other.read == read)&&(identical(other.write, write) || other.write == write)&&(identical(other.manage, manage) || other.manage == manage)&&(identical(other.objectId, objectId) || other.objectId == objectId)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.user, user) || other.user == user)&&(identical(other.module, module) || other.module == module));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,label,read,write,manage,objectId,userId,user,module);
-
-@override
-String toString() {
-  return 'Access(id: $id, label: $label, read: $read, write: $write, manage: $manage, objectId: $objectId, userId: $userId, user: $user, module: $module)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$AccessCopyWith<$Res> implements $AccessCopyWith<$Res> {
-  factory _$AccessCopyWith(_Access value, $Res Function(_Access) _then) = __$AccessCopyWithImpl;
-@override @useResult
-$Res call({
- String id, String? label, bool? read, bool? write, bool? manage, String? objectId, String userId, User? user,@JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module
-});
-
-
-@override $UserCopyWith<$Res>? get user;
-
-}
-/// @nodoc
-class __$AccessCopyWithImpl<$Res>
-    implements _$AccessCopyWith<$Res> {
-  __$AccessCopyWithImpl(this._self, this._then);
-
-  final _Access _self;
-  final $Res Function(_Access) _then;
-
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? label = freezed,Object? read = freezed,Object? write = freezed,Object? manage = freezed,Object? objectId = freezed,Object? userId = null,Object? user = freezed,Object? module = null,}) {
-  return _then(_Access(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,label: freezed == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
-as String?,read: freezed == read ? _self.read : read // ignore: cast_nullable_to_non_nullable
-as bool?,write: freezed == write ? _self.write : write // ignore: cast_nullable_to_non_nullable
-as bool?,manage: freezed == manage ? _self.manage : manage // ignore: cast_nullable_to_non_nullable
-as bool?,objectId: freezed == objectId ? _self.objectId : objectId // ignore: cast_nullable_to_non_nullable
-as String?,userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
-as String,user: freezed == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as User?,module: null == module ? _self.module : module // ignore: cast_nullable_to_non_nullable
-as AccessModule,
-  ));
-}
-
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UserCopyWith<$Res>? get user {
-    if (_self.user == null) {
-    return null;
-  }
-
-  return $UserCopyWith<$Res>(_self.user!, (value) {
-    return _then(_self.copyWith(user: value));
-  });
-}
-}
-
-
-/// @nodoc
-mixin _$AccessInput {
-
-/// Represents the id of the access.
- String? get id;/// Represents the id of the access.
- set id(String? value);/// Represents the read permission.
- bool get read;/// Represents the read permission.
- set read(bool value);/// Represents the write permission.
- bool get write;/// Represents the write permission.
- set write(bool value);/// Represents the manage permission.
- bool get manage;/// Represents the manage permission.
- set manage(bool value);/// Represents the id of the object.
- String? get objectId;/// Represents the id of the object.
- set objectId(String? value);/// Represents the id of the user.
- String? get userId;/// Represents the id of the user.
- set userId(String? value);/// Represents the module of the access.
-@JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule get module;/// Represents the module of the access.
-@JsonKey(unknownEnumValue: AccessModule.unknown) set module(AccessModule value);
-/// Create a copy of AccessInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AccessInputCopyWith<AccessInput> get copyWith => _$AccessInputCopyWithImpl<AccessInput>(this as AccessInput, _$identity);
-
-  /// Serializes this AccessInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-
-
-@override
-String toString() {
-  return 'AccessInput(id: $id, read: $read, write: $write, manage: $manage, objectId: $objectId, userId: $userId, module: $module)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $AccessInputCopyWith<$Res>  {
-  factory $AccessInputCopyWith(AccessInput value, $Res Function(AccessInput) _then) = _$AccessInputCopyWithImpl;
-@useResult
-$Res call({
- String? id, bool read, bool write, bool manage, String? objectId, String? userId,@JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module
-});
-
-
-
-
-}
-/// @nodoc
-class _$AccessInputCopyWithImpl<$Res>
-    implements $AccessInputCopyWith<$Res> {
-  _$AccessInputCopyWithImpl(this._self, this._then);
-
-  final AccessInput _self;
-  final $Res Function(AccessInput) _then;
-
-/// Create a copy of AccessInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? read = null,Object? write = null,Object? manage = null,Object? objectId = freezed,Object? userId = freezed,Object? module = null,}) {
-  return _then(_self.copyWith(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,read: null == read ? _self.read : read // ignore: cast_nullable_to_non_nullable
-as bool,write: null == write ? _self.write : write // ignore: cast_nullable_to_non_nullable
-as bool,manage: null == manage ? _self.manage : manage // ignore: cast_nullable_to_non_nullable
-as bool,objectId: freezed == objectId ? _self.objectId : objectId // ignore: cast_nullable_to_non_nullable
-as String?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
-as String?,module: null == module ? _self.module : module // ignore: cast_nullable_to_non_nullable
-as AccessModule,
-  ));
-}
-
-}
-
-
-/// Adds pattern-matching-related methods to [AccessInput].
-extension AccessInputPatterns on AccessInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AccessInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _AccessInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AccessInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _AccessInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AccessInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _AccessInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  bool read,  bool write,  bool manage,  String? objectId,  String? userId, @JsonKey(unknownEnumValue: AccessModule.unknown)  AccessModule module)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _AccessInput() when $default != null:
-return $default(_that.id,_that.read,_that.write,_that.manage,_that.objectId,_that.userId,_that.module);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  bool read,  bool write,  bool manage,  String? objectId,  String? userId, @JsonKey(unknownEnumValue: AccessModule.unknown)  AccessModule module)  $default,) {final _that = this;
-switch (_that) {
-case _AccessInput():
-return $default(_that.id,_that.read,_that.write,_that.manage,_that.objectId,_that.userId,_that.module);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  bool read,  bool write,  bool manage,  String? objectId,  String? userId, @JsonKey(unknownEnumValue: AccessModule.unknown)  AccessModule module)?  $default,) {final _that = this;
-switch (_that) {
-case _AccessInput() when $default != null:
-return $default(_that.id,_that.read,_that.write,_that.manage,_that.objectId,_that.userId,_that.module);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _AccessInput implements AccessInput {
-   _AccessInput({this.id, this.read = false, this.write = false, this.manage = false, this.objectId, this.userId, @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module});
-  factory _AccessInput.fromJson(Map<String, dynamic> json) => _$AccessInputFromJson(json);
-
-/// Represents the id of the access.
-@override  String? id;
-/// Represents the read permission.
-@override@JsonKey()  bool read;
-/// Represents the write permission.
-@override@JsonKey()  bool write;
-/// Represents the manage permission.
-@override@JsonKey()  bool manage;
-/// Represents the id of the object.
-@override  String? objectId;
-/// Represents the id of the user.
-@override  String? userId;
-/// Represents the module of the access.
-@override@JsonKey(unknownEnumValue: AccessModule.unknown)  AccessModule module;
-
-/// Create a copy of AccessInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$AccessInputCopyWith<_AccessInput> get copyWith => __$AccessInputCopyWithImpl<_AccessInput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$AccessInputToJson(this, );
-}
-
-
-
-@override
-String toString() {
-  return 'AccessInput(id: $id, read: $read, write: $write, manage: $manage, objectId: $objectId, userId: $userId, module: $module)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$AccessInputCopyWith<$Res> implements $AccessInputCopyWith<$Res> {
-  factory _$AccessInputCopyWith(_AccessInput value, $Res Function(_AccessInput) _then) = __$AccessInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? id, bool read, bool write, bool manage, String? objectId, String? userId,@JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module
-});
-
-
-
-
-}
-/// @nodoc
-class __$AccessInputCopyWithImpl<$Res>
-    implements _$AccessInputCopyWith<$Res> {
-  __$AccessInputCopyWithImpl(this._self, this._then);
-
-  final _AccessInput _self;
-  final $Res Function(_AccessInput) _then;
-
-/// Create a copy of AccessInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? read = null,Object? write = null,Object? manage = null,Object? objectId = freezed,Object? userId = freezed,Object? module = null,}) {
-  return _then(_AccessInput(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,read: null == read ? _self.read : read // ignore: cast_nullable_to_non_nullable
-as bool,write: null == write ? _self.write : write // ignore: cast_nullable_to_non_nullable
-as bool,manage: null == manage ? _self.manage : manage // ignore: cast_nullable_to_non_nullable
-as bool,objectId: freezed == objectId ? _self.objectId : objectId // ignore: cast_nullable_to_non_nullable
-as String?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
-as String?,module: null == module ? _self.module : module // ignore: cast_nullable_to_non_nullable
-as AccessModule,
-  ));
-}
-
-
-}
-
-
-/// @nodoc
 mixin _$LinkShortcut {
 
 /// [id] is the unique identifier for the shortcut.
@@ -8074,7 +7475,8 @@ mixin _$Device {
 @DurationConverter() Duration? get visionCaptureThreshold;/// [peripherals] is the list of peripherals of the device. Only used when
 /// [protocol.operationMode] is [OperationMode.peripheral].
  List<Device>? get peripherals;/// [localIpAddress] is the local IP address of the device, used for local communication.
- String? get localIpAddress;
+ String? get localIpAddress;/// [hasWorldwideCoverage] represents if the device has worldwide coverag For the BHS use case, this field is used to identify if the device has GPS insurance.
+ bool? get hasWorldwideCoverage;
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -8087,16 +7489,16 @@ $DeviceCopyWith<Device> get copyWith => _$DeviceCopyWithImpl<Device>(this as Dev
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other.additionalFields, additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other.commands, commands)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other.configParams, configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other.peripherals, peripherals)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other.additionalFields, additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other.commands, commands)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other.configParams, configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other.peripherals, peripherals)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress)&&(identical(other.hasWorldwideCoverage, hasWorldwideCoverage) || other.hasWorldwideCoverage == hasWorldwideCoverage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(commands),const DeepCollectionEquality().hash(access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(peripherals),localIpAddress]);
+int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(commands),const DeepCollectionEquality().hash(access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(peripherals),localIpAddress,hasWorldwideCoverage]);
 
 @override
 String toString() {
-  return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress)';
+  return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress, hasWorldwideCoverage: $hasWorldwideCoverage)';
 }
 
 
@@ -8107,7 +7509,7 @@ abstract mixin class $DeviceCopyWith<$Res>  {
   factory $DeviceCopyWith(Device value, $Res Function(Device) _then) = _$DeviceCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, String? localIpAddress
+ String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, String? localIpAddress, bool? hasWorldwideCoverage
 });
 
 
@@ -8124,7 +7526,7 @@ class _$DeviceCopyWithImpl<$Res>
 
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? ident = null,Object? flespiToken = freezed,Object? modelId = freezed,Object? model = freezed,Object? protocolId = freezed,Object? protocol = freezed,Object? additionalFields = freezed,Object? qrCode = freezed,Object? linkQr = freezed,Object? commands = freezed,Object? access = freezed,Object? telemetry = freezed,Object? visionProfileId = freezed,Object? visionProfile = freezed,Object? phone = freezed,Object? modbus = freezed,Object? isSuspended = freezed,Object? hwModel = freezed,Object? hwModelId = freezed,Object? macAddress = freezed,Object? configParams = freezed,Object? visionCaptureThreshold = freezed,Object? peripherals = freezed,Object? localIpAddress = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? ident = null,Object? flespiToken = freezed,Object? modelId = freezed,Object? model = freezed,Object? protocolId = freezed,Object? protocol = freezed,Object? additionalFields = freezed,Object? qrCode = freezed,Object? linkQr = freezed,Object? commands = freezed,Object? access = freezed,Object? telemetry = freezed,Object? visionProfileId = freezed,Object? visionProfile = freezed,Object? phone = freezed,Object? modbus = freezed,Object? isSuspended = freezed,Object? hwModel = freezed,Object? hwModelId = freezed,Object? macAddress = freezed,Object? configParams = freezed,Object? visionCaptureThreshold = freezed,Object? peripherals = freezed,Object? localIpAddress = freezed,Object? hasWorldwideCoverage = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -8152,7 +7554,8 @@ as String?,configParams: freezed == configParams ? _self.configParams : configPa
 as Map<String, dynamic>?,visionCaptureThreshold: freezed == visionCaptureThreshold ? _self.visionCaptureThreshold : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
 as Duration?,peripherals: freezed == peripherals ? _self.peripherals : peripherals // ignore: cast_nullable_to_non_nullable
 as List<Device>?,localIpAddress: freezed == localIpAddress ? _self.localIpAddress : localIpAddress // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,hasWorldwideCoverage: freezed == hasWorldwideCoverage ? _self.hasWorldwideCoverage : hasWorldwideCoverage // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 /// Create a copy of Device
@@ -8321,10 +7724,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress,  bool? hasWorldwideCoverage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Device() when $default != null:
-return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress);case _:
+return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress,_that.hasWorldwideCoverage);case _:
   return orElse();
 
 }
@@ -8342,10 +7745,10 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress,  bool? hasWorldwideCoverage)  $default,) {final _that = this;
 switch (_that) {
 case _Device():
-return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress);case _:
+return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress,_that.hasWorldwideCoverage);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -8362,10 +7765,10 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  String? localIpAddress,  bool? hasWorldwideCoverage)?  $default,) {final _that = this;
 switch (_that) {
 case _Device() when $default != null:
-return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress);case _:
+return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.localIpAddress,_that.hasWorldwideCoverage);case _:
   return null;
 
 }
@@ -8377,7 +7780,7 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 @JsonSerializable()
 
 class _Device implements Device {
-  const _Device({required this.id, required this.name, required this.ident, this.flespiToken, this.modelId, this.model, this.protocolId, this.protocol, final  Map<String, dynamic>? additionalFields, this.qrCode, this.linkQr, final  List<DeviceCommand>? commands, final  List<Access>? access, this.telemetry, this.visionProfileId, this.visionProfile, this.phone, this.modbus, this.isSuspended, this.hwModel, this.hwModelId, this.macAddress, final  Map<String, dynamic>? configParams, @DurationConverter() this.visionCaptureThreshold, final  List<Device>? peripherals, this.localIpAddress}): _additionalFields = additionalFields,_commands = commands,_access = access,_configParams = configParams,_peripherals = peripherals;
+  const _Device({required this.id, required this.name, required this.ident, this.flespiToken, this.modelId, this.model, this.protocolId, this.protocol, final  Map<String, dynamic>? additionalFields, this.qrCode, this.linkQr, final  List<DeviceCommand>? commands, final  List<Access>? access, this.telemetry, this.visionProfileId, this.visionProfile, this.phone, this.modbus, this.isSuspended, this.hwModel, this.hwModelId, this.macAddress, final  Map<String, dynamic>? configParams, @DurationConverter() this.visionCaptureThreshold, final  List<Device>? peripherals, this.localIpAddress, this.hasWorldwideCoverage}): _additionalFields = additionalFields,_commands = commands,_access = access,_configParams = configParams,_peripherals = peripherals;
   factory _Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 
 @override final  String id;
@@ -8482,6 +7885,8 @@ class _Device implements Device {
 
 /// [localIpAddress] is the local IP address of the device, used for local communication.
 @override final  String? localIpAddress;
+/// [hasWorldwideCoverage] represents if the device has worldwide coverag For the BHS use case, this field is used to identify if the device has GPS insurance.
+@override final  bool? hasWorldwideCoverage;
 
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
@@ -8496,16 +7901,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other._additionalFields, _additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other._commands, _commands)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other._configParams, _configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other._peripherals, _peripherals)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other._additionalFields, _additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other._commands, _commands)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other._configParams, _configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other._peripherals, _peripherals)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress)&&(identical(other.hasWorldwideCoverage, hasWorldwideCoverage) || other.hasWorldwideCoverage == hasWorldwideCoverage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(_additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(_commands),const DeepCollectionEquality().hash(_access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(_configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(_peripherals),localIpAddress]);
+int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(_additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(_commands),const DeepCollectionEquality().hash(_access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(_configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(_peripherals),localIpAddress,hasWorldwideCoverage]);
 
 @override
 String toString() {
-  return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress)';
+  return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals, localIpAddress: $localIpAddress, hasWorldwideCoverage: $hasWorldwideCoverage)';
 }
 
 
@@ -8516,7 +7921,7 @@ abstract mixin class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   factory _$DeviceCopyWith(_Device value, $Res Function(_Device) _then) = __$DeviceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, String? localIpAddress
+ String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, String? localIpAddress, bool? hasWorldwideCoverage
 });
 
 
@@ -8533,7 +7938,7 @@ class __$DeviceCopyWithImpl<$Res>
 
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? ident = null,Object? flespiToken = freezed,Object? modelId = freezed,Object? model = freezed,Object? protocolId = freezed,Object? protocol = freezed,Object? additionalFields = freezed,Object? qrCode = freezed,Object? linkQr = freezed,Object? commands = freezed,Object? access = freezed,Object? telemetry = freezed,Object? visionProfileId = freezed,Object? visionProfile = freezed,Object? phone = freezed,Object? modbus = freezed,Object? isSuspended = freezed,Object? hwModel = freezed,Object? hwModelId = freezed,Object? macAddress = freezed,Object? configParams = freezed,Object? visionCaptureThreshold = freezed,Object? peripherals = freezed,Object? localIpAddress = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? ident = null,Object? flespiToken = freezed,Object? modelId = freezed,Object? model = freezed,Object? protocolId = freezed,Object? protocol = freezed,Object? additionalFields = freezed,Object? qrCode = freezed,Object? linkQr = freezed,Object? commands = freezed,Object? access = freezed,Object? telemetry = freezed,Object? visionProfileId = freezed,Object? visionProfile = freezed,Object? phone = freezed,Object? modbus = freezed,Object? isSuspended = freezed,Object? hwModel = freezed,Object? hwModelId = freezed,Object? macAddress = freezed,Object? configParams = freezed,Object? visionCaptureThreshold = freezed,Object? peripherals = freezed,Object? localIpAddress = freezed,Object? hasWorldwideCoverage = freezed,}) {
   return _then(_Device(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -8561,7 +7966,8 @@ as String?,configParams: freezed == configParams ? _self._configParams : configP
 as Map<String, dynamic>?,visionCaptureThreshold: freezed == visionCaptureThreshold ? _self.visionCaptureThreshold : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
 as Duration?,peripherals: freezed == peripherals ? _self._peripherals : peripherals // ignore: cast_nullable_to_non_nullable
 as List<Device>?,localIpAddress: freezed == localIpAddress ? _self.localIpAddress : localIpAddress // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,hasWorldwideCoverage: freezed == hasWorldwideCoverage ? _self.hasWorldwideCoverage : hasWorldwideCoverage // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 

@@ -83,6 +83,9 @@ abstract class Device with _$Device {
 
     /// [localIpAddress] is the local IP address of the device, used for local communication.
     String? localIpAddress,
+
+    /// [hasWorldwideCoverage] represents if the device has worldwide coverag For the BHS use case, this field is used to identify if the device has GPS insurance.
+    bool? hasWorldwideCoverage,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);

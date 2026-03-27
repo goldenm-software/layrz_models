@@ -7208,7 +7208,9 @@ mixin _$AtsIdeInformation {
  String? get ideType;/// Serie
  String? get serie;/// Model
  String? get model;/// CFOP
- String? get cfop; String? get operationType;
+ String? get cfop;/// Operation type
+ String? get operationType;/// Modal
+ String? get modal;
 /// Create a copy of AtsIdeInformation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7221,16 +7223,16 @@ $AtsIdeInformationCopyWith<AtsIdeInformation> get copyWith => _$AtsIdeInformatio
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsIdeInformation&&(identical(other.ideType, ideType) || other.ideType == ideType)&&(identical(other.serie, serie) || other.serie == serie)&&(identical(other.model, model) || other.model == model)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&(identical(other.operationType, operationType) || other.operationType == operationType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsIdeInformation&&(identical(other.ideType, ideType) || other.ideType == ideType)&&(identical(other.serie, serie) || other.serie == serie)&&(identical(other.model, model) || other.model == model)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.modal, modal) || other.modal == modal));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,ideType,serie,model,cfop,operationType);
+int get hashCode => Object.hash(runtimeType,ideType,serie,model,cfop,operationType,modal);
 
 @override
 String toString() {
-  return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType)';
+  return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType, modal: $modal)';
 }
 
 
@@ -7241,7 +7243,7 @@ abstract mixin class $AtsIdeInformationCopyWith<$Res>  {
   factory $AtsIdeInformationCopyWith(AtsIdeInformation value, $Res Function(AtsIdeInformation) _then) = _$AtsIdeInformationCopyWithImpl;
 @useResult
 $Res call({
- String? ideType, String? serie, String? model, String? cfop, String? operationType
+ String? ideType, String? serie, String? model, String? cfop, String? operationType, String? modal
 });
 
 
@@ -7258,13 +7260,14 @@ class _$AtsIdeInformationCopyWithImpl<$Res>
 
 /// Create a copy of AtsIdeInformation
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? ideType = freezed,Object? serie = freezed,Object? model = freezed,Object? cfop = freezed,Object? operationType = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? ideType = freezed,Object? serie = freezed,Object? model = freezed,Object? cfop = freezed,Object? operationType = freezed,Object? modal = freezed,}) {
   return _then(_self.copyWith(
 ideType: freezed == ideType ? _self.ideType : ideType // ignore: cast_nullable_to_non_nullable
 as String?,serie: freezed == serie ? _self.serie : serie // ignore: cast_nullable_to_non_nullable
 as String?,model: freezed == model ? _self.model : model // ignore: cast_nullable_to_non_nullable
 as String?,cfop: freezed == cfop ? _self.cfop : cfop // ignore: cast_nullable_to_non_nullable
 as String?,operationType: freezed == operationType ? _self.operationType : operationType // ignore: cast_nullable_to_non_nullable
+as String?,modal: freezed == modal ? _self.modal : modal // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -7350,10 +7353,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType,  String? modal)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsIdeInformation() when $default != null:
-return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType);case _:
+return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType,_that.modal);case _:
   return orElse();
 
 }
@@ -7371,10 +7374,10 @@ return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operation
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType,  String? modal)  $default,) {final _that = this;
 switch (_that) {
 case _AtsIdeInformation():
-return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType);case _:
+return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType,_that.modal);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -7391,10 +7394,10 @@ return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operation
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? ideType,  String? serie,  String? model,  String? cfop,  String? operationType,  String? modal)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsIdeInformation() when $default != null:
-return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType);case _:
+return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operationType,_that.modal);case _:
   return null;
 
 }
@@ -7406,7 +7409,7 @@ return $default(_that.ideType,_that.serie,_that.model,_that.cfop,_that.operation
 @JsonSerializable()
 
 class _AtsIdeInformation implements AtsIdeInformation {
-   _AtsIdeInformation({this.ideType, this.serie, this.model, this.cfop, this.operationType});
+   _AtsIdeInformation({this.ideType, this.serie, this.model, this.cfop, this.operationType, this.modal});
   factory _AtsIdeInformation.fromJson(Map<String, dynamic> json) => _$AtsIdeInformationFromJson(json);
 
 /// Ide type
@@ -7417,7 +7420,10 @@ class _AtsIdeInformation implements AtsIdeInformation {
 @override final  String? model;
 /// CFOP
 @override final  String? cfop;
+/// Operation type
 @override final  String? operationType;
+/// Modal
+@override final  String? modal;
 
 /// Create a copy of AtsIdeInformation
 /// with the given fields replaced by the non-null parameter values.
@@ -7432,16 +7438,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsIdeInformation&&(identical(other.ideType, ideType) || other.ideType == ideType)&&(identical(other.serie, serie) || other.serie == serie)&&(identical(other.model, model) || other.model == model)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&(identical(other.operationType, operationType) || other.operationType == operationType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsIdeInformation&&(identical(other.ideType, ideType) || other.ideType == ideType)&&(identical(other.serie, serie) || other.serie == serie)&&(identical(other.model, model) || other.model == model)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.modal, modal) || other.modal == modal));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,ideType,serie,model,cfop,operationType);
+int get hashCode => Object.hash(runtimeType,ideType,serie,model,cfop,operationType,modal);
 
 @override
 String toString() {
-  return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType)';
+  return 'AtsIdeInformation(ideType: $ideType, serie: $serie, model: $model, cfop: $cfop, operationType: $operationType, modal: $modal)';
 }
 
 
@@ -7452,7 +7458,7 @@ abstract mixin class _$AtsIdeInformationCopyWith<$Res> implements $AtsIdeInforma
   factory _$AtsIdeInformationCopyWith(_AtsIdeInformation value, $Res Function(_AtsIdeInformation) _then) = __$AtsIdeInformationCopyWithImpl;
 @override @useResult
 $Res call({
- String? ideType, String? serie, String? model, String? cfop, String? operationType
+ String? ideType, String? serie, String? model, String? cfop, String? operationType, String? modal
 });
 
 
@@ -7469,13 +7475,14 @@ class __$AtsIdeInformationCopyWithImpl<$Res>
 
 /// Create a copy of AtsIdeInformation
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? ideType = freezed,Object? serie = freezed,Object? model = freezed,Object? cfop = freezed,Object? operationType = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? ideType = freezed,Object? serie = freezed,Object? model = freezed,Object? cfop = freezed,Object? operationType = freezed,Object? modal = freezed,}) {
   return _then(_AtsIdeInformation(
 ideType: freezed == ideType ? _self.ideType : ideType // ignore: cast_nullable_to_non_nullable
 as String?,serie: freezed == serie ? _self.serie : serie // ignore: cast_nullable_to_non_nullable
 as String?,model: freezed == model ? _self.model : model // ignore: cast_nullable_to_non_nullable
 as String?,cfop: freezed == cfop ? _self.cfop : cfop // ignore: cast_nullable_to_non_nullable
 as String?,operationType: freezed == operationType ? _self.operationType : operationType // ignore: cast_nullable_to_non_nullable
+as String?,modal: freezed == modal ? _self.modal : modal // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -13129,7 +13136,8 @@ mixin _$AtsOperation {
  List<Manifest>? get manifests;/// [history] is the list of history linked to the operation.
  List<AtsOperationHistory>? get history;/// [minEta] is the minimum estimated time of arrival.
 @TimestampOrNullConverter() DateTime? get minEta;/// [etaStatus] is the estimated time of arrival status.
- AtsEtaStatus? get etaStatus;
+ AtsEtaStatus? get etaStatus;/// [loadingOrders] is the list of loading orders linked to the operation.
+ List<AtsLoadingOrder>? get loadingOrders;
 /// Create a copy of AtsOperation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -13142,16 +13150,16 @@ $AtsOperationCopyWith<AtsOperation> get copyWith => _$AtsOperationCopyWithImpl<A
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other.ordersIds, ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other.purchaseOrders, purchaseOrders)&&const DeepCollectionEquality().equals(other.statuses, statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other.productsInformation, productsInformation)&&const DeepCollectionEquality().equals(other.ctes, ctes)&&const DeepCollectionEquality().equals(other.caclFormsIds, caclFormsIds)&&const DeepCollectionEquality().equals(other.caclForms, caclForms)&&const DeepCollectionEquality().equals(other.manifests, manifests)&&const DeepCollectionEquality().equals(other.history, history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other.ordersIds, ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other.purchaseOrders, purchaseOrders)&&const DeepCollectionEquality().equals(other.statuses, statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other.productsInformation, productsInformation)&&const DeepCollectionEquality().equals(other.ctes, ctes)&&const DeepCollectionEquality().equals(other.caclFormsIds, caclFormsIds)&&const DeepCollectionEquality().equals(other.caclForms, caclForms)&&const DeepCollectionEquality().equals(other.manifests, manifests)&&const DeepCollectionEquality().equals(other.history, history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus)&&const DeepCollectionEquality().equals(other.loadingOrders, loadingOrders));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(purchaseOrders),const DeepCollectionEquality().hash(statuses),totalQuantity,const DeepCollectionEquality().hash(productsInformation),const DeepCollectionEquality().hash(ctes),const DeepCollectionEquality().hash(caclFormsIds),const DeepCollectionEquality().hash(caclForms),const DeepCollectionEquality().hash(manifests),const DeepCollectionEquality().hash(history),minEta,etaStatus]);
+int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(purchaseOrders),const DeepCollectionEquality().hash(statuses),totalQuantity,const DeepCollectionEquality().hash(productsInformation),const DeepCollectionEquality().hash(ctes),const DeepCollectionEquality().hash(caclFormsIds),const DeepCollectionEquality().hash(caclForms),const DeepCollectionEquality().hash(manifests),const DeepCollectionEquality().hash(history),minEta,etaStatus,const DeepCollectionEquality().hash(loadingOrders)]);
 
 @override
 String toString() {
-  return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history, minEta: $minEta, etaStatus: $etaStatus)';
+  return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history, minEta: $minEta, etaStatus: $etaStatus, loadingOrders: $loadingOrders)';
 }
 
 
@@ -13162,7 +13170,7 @@ abstract mixin class $AtsOperationCopyWith<$Res>  {
   factory $AtsOperationCopyWith(AtsOperation value, $Res Function(AtsOperation) _then) = _$AtsOperationCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? sellerAssetId, String? transportAssetId, String? transportCompanyAssetId,@TimestampOrNullConverter() DateTime? purchasedAt,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? finishedAt, bool? pendingToReview, List<String>? ordersIds, Asset? sellerAsset, Asset? transportAsset, Asset? transportCompanyAsset, AtsCompanyInformation? sellerInformation, AtsTransportInformation? transportInformation,@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,@JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory, List<AtsPurchaseOrder>? purchaseOrders, List<AtsOperationStatuses>? statuses, double? totalQuantity, List<OperationProductInformation>? productsInformation, List<String>? ctes, List<String>? caclFormsIds, List<CaclEntity>? caclForms, List<Manifest>? manifests, List<AtsOperationHistory>? history,@TimestampOrNullConverter() DateTime? minEta, AtsEtaStatus? etaStatus
+ String? id, String? sellerAssetId, String? transportAssetId, String? transportCompanyAssetId,@TimestampOrNullConverter() DateTime? purchasedAt,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? finishedAt, bool? pendingToReview, List<String>? ordersIds, Asset? sellerAsset, Asset? transportAsset, Asset? transportCompanyAsset, AtsCompanyInformation? sellerInformation, AtsTransportInformation? transportInformation,@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,@JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory, List<AtsPurchaseOrder>? purchaseOrders, List<AtsOperationStatuses>? statuses, double? totalQuantity, List<OperationProductInformation>? productsInformation, List<String>? ctes, List<String>? caclFormsIds, List<CaclEntity>? caclForms, List<Manifest>? manifests, List<AtsOperationHistory>? history,@TimestampOrNullConverter() DateTime? minEta, AtsEtaStatus? etaStatus, List<AtsLoadingOrder>? loadingOrders
 });
 
 
@@ -13179,7 +13187,7 @@ class _$AtsOperationCopyWithImpl<$Res>
 
 /// Create a copy of AtsOperation
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? sellerAssetId = freezed,Object? transportAssetId = freezed,Object? transportCompanyAssetId = freezed,Object? purchasedAt = freezed,Object? createdAt = freezed,Object? finishedAt = freezed,Object? pendingToReview = freezed,Object? ordersIds = freezed,Object? sellerAsset = freezed,Object? transportAsset = freezed,Object? transportCompanyAsset = freezed,Object? sellerInformation = freezed,Object? transportInformation = freezed,Object? orderStatus = freezed,Object? category = freezed,Object? deliverCategory = freezed,Object? purchaseOrders = freezed,Object? statuses = freezed,Object? totalQuantity = freezed,Object? productsInformation = freezed,Object? ctes = freezed,Object? caclFormsIds = freezed,Object? caclForms = freezed,Object? manifests = freezed,Object? history = freezed,Object? minEta = freezed,Object? etaStatus = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? sellerAssetId = freezed,Object? transportAssetId = freezed,Object? transportCompanyAssetId = freezed,Object? purchasedAt = freezed,Object? createdAt = freezed,Object? finishedAt = freezed,Object? pendingToReview = freezed,Object? ordersIds = freezed,Object? sellerAsset = freezed,Object? transportAsset = freezed,Object? transportCompanyAsset = freezed,Object? sellerInformation = freezed,Object? transportInformation = freezed,Object? orderStatus = freezed,Object? category = freezed,Object? deliverCategory = freezed,Object? purchaseOrders = freezed,Object? statuses = freezed,Object? totalQuantity = freezed,Object? productsInformation = freezed,Object? ctes = freezed,Object? caclFormsIds = freezed,Object? caclForms = freezed,Object? manifests = freezed,Object? history = freezed,Object? minEta = freezed,Object? etaStatus = freezed,Object? loadingOrders = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,sellerAssetId: freezed == sellerAssetId ? _self.sellerAssetId : sellerAssetId // ignore: cast_nullable_to_non_nullable
@@ -13209,7 +13217,8 @@ as List<CaclEntity>?,manifests: freezed == manifests ? _self.manifests : manifes
 as List<Manifest>?,history: freezed == history ? _self.history : history // ignore: cast_nullable_to_non_nullable
 as List<AtsOperationHistory>?,minEta: freezed == minEta ? _self.minEta : minEta // ignore: cast_nullable_to_non_nullable
 as DateTime?,etaStatus: freezed == etaStatus ? _self.etaStatus : etaStatus // ignore: cast_nullable_to_non_nullable
-as AtsEtaStatus?,
+as AtsEtaStatus?,loadingOrders: freezed == loadingOrders ? _self.loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
+as List<AtsLoadingOrder>?,
   ));
 }
 /// Create a copy of AtsOperation
@@ -13354,10 +13363,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsOperation() when $default != null:
-return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus);case _:
+return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders);case _:
   return orElse();
 
 }
@@ -13375,10 +13384,10 @@ return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transp
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders)  $default,) {final _that = this;
 switch (_that) {
 case _AtsOperation():
-return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus);case _:
+return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -13395,10 +13404,10 @@ return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transp
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsOperation() when $default != null:
-return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus);case _:
+return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders);case _:
   return null;
 
 }
@@ -13410,7 +13419,7 @@ return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transp
 @JsonSerializable()
 
 class _AtsOperation implements AtsOperation {
-  const _AtsOperation({this.id, this.sellerAssetId, this.transportAssetId, this.transportCompanyAssetId, @TimestampOrNullConverter() this.purchasedAt, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.finishedAt, this.pendingToReview, final  List<String>? ordersIds, this.sellerAsset, this.transportAsset, this.transportCompanyAsset, this.sellerInformation, this.transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) this.orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) this.category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) this.deliverCategory, final  List<AtsPurchaseOrder>? purchaseOrders, final  List<AtsOperationStatuses>? statuses, this.totalQuantity, final  List<OperationProductInformation>? productsInformation, final  List<String>? ctes, final  List<String>? caclFormsIds, final  List<CaclEntity>? caclForms, final  List<Manifest>? manifests, final  List<AtsOperationHistory>? history, @TimestampOrNullConverter() this.minEta, this.etaStatus}): _ordersIds = ordersIds,_purchaseOrders = purchaseOrders,_statuses = statuses,_productsInformation = productsInformation,_ctes = ctes,_caclFormsIds = caclFormsIds,_caclForms = caclForms,_manifests = manifests,_history = history;
+  const _AtsOperation({this.id, this.sellerAssetId, this.transportAssetId, this.transportCompanyAssetId, @TimestampOrNullConverter() this.purchasedAt, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.finishedAt, this.pendingToReview, final  List<String>? ordersIds, this.sellerAsset, this.transportAsset, this.transportCompanyAsset, this.sellerInformation, this.transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) this.orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) this.category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) this.deliverCategory, final  List<AtsPurchaseOrder>? purchaseOrders, final  List<AtsOperationStatuses>? statuses, this.totalQuantity, final  List<OperationProductInformation>? productsInformation, final  List<String>? ctes, final  List<String>? caclFormsIds, final  List<CaclEntity>? caclForms, final  List<Manifest>? manifests, final  List<AtsOperationHistory>? history, @TimestampOrNullConverter() this.minEta, this.etaStatus, final  List<AtsLoadingOrder>? loadingOrders}): _ordersIds = ordersIds,_purchaseOrders = purchaseOrders,_statuses = statuses,_productsInformation = productsInformation,_ctes = ctes,_caclFormsIds = caclFormsIds,_caclForms = caclForms,_manifests = manifests,_history = history,_loadingOrders = loadingOrders;
   factory _AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);
 
 /// `id` of the asset entity. This ID is unique.
@@ -13550,6 +13559,17 @@ class _AtsOperation implements AtsOperation {
 @override@TimestampOrNullConverter() final  DateTime? minEta;
 /// [etaStatus] is the estimated time of arrival status.
 @override final  AtsEtaStatus? etaStatus;
+/// [loadingOrders] is the list of loading orders linked to the operation.
+ final  List<AtsLoadingOrder>? _loadingOrders;
+/// [loadingOrders] is the list of loading orders linked to the operation.
+@override List<AtsLoadingOrder>? get loadingOrders {
+  final value = _loadingOrders;
+  if (value == null) return null;
+  if (_loadingOrders is EqualUnmodifiableListView) return _loadingOrders;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
 
 /// Create a copy of AtsOperation
 /// with the given fields replaced by the non-null parameter values.
@@ -13564,16 +13584,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other._ordersIds, _ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other._purchaseOrders, _purchaseOrders)&&const DeepCollectionEquality().equals(other._statuses, _statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other._productsInformation, _productsInformation)&&const DeepCollectionEquality().equals(other._ctes, _ctes)&&const DeepCollectionEquality().equals(other._caclFormsIds, _caclFormsIds)&&const DeepCollectionEquality().equals(other._caclForms, _caclForms)&&const DeepCollectionEquality().equals(other._manifests, _manifests)&&const DeepCollectionEquality().equals(other._history, _history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other._ordersIds, _ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other._purchaseOrders, _purchaseOrders)&&const DeepCollectionEquality().equals(other._statuses, _statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other._productsInformation, _productsInformation)&&const DeepCollectionEquality().equals(other._ctes, _ctes)&&const DeepCollectionEquality().equals(other._caclFormsIds, _caclFormsIds)&&const DeepCollectionEquality().equals(other._caclForms, _caclForms)&&const DeepCollectionEquality().equals(other._manifests, _manifests)&&const DeepCollectionEquality().equals(other._history, _history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus)&&const DeepCollectionEquality().equals(other._loadingOrders, _loadingOrders));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(_ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(_purchaseOrders),const DeepCollectionEquality().hash(_statuses),totalQuantity,const DeepCollectionEquality().hash(_productsInformation),const DeepCollectionEquality().hash(_ctes),const DeepCollectionEquality().hash(_caclFormsIds),const DeepCollectionEquality().hash(_caclForms),const DeepCollectionEquality().hash(_manifests),const DeepCollectionEquality().hash(_history),minEta,etaStatus]);
+int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(_ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(_purchaseOrders),const DeepCollectionEquality().hash(_statuses),totalQuantity,const DeepCollectionEquality().hash(_productsInformation),const DeepCollectionEquality().hash(_ctes),const DeepCollectionEquality().hash(_caclFormsIds),const DeepCollectionEquality().hash(_caclForms),const DeepCollectionEquality().hash(_manifests),const DeepCollectionEquality().hash(_history),minEta,etaStatus,const DeepCollectionEquality().hash(_loadingOrders)]);
 
 @override
 String toString() {
-  return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history, minEta: $minEta, etaStatus: $etaStatus)';
+  return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history, minEta: $minEta, etaStatus: $etaStatus, loadingOrders: $loadingOrders)';
 }
 
 
@@ -13584,7 +13604,7 @@ abstract mixin class _$AtsOperationCopyWith<$Res> implements $AtsOperationCopyWi
   factory _$AtsOperationCopyWith(_AtsOperation value, $Res Function(_AtsOperation) _then) = __$AtsOperationCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? sellerAssetId, String? transportAssetId, String? transportCompanyAssetId,@TimestampOrNullConverter() DateTime? purchasedAt,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? finishedAt, bool? pendingToReview, List<String>? ordersIds, Asset? sellerAsset, Asset? transportAsset, Asset? transportCompanyAsset, AtsCompanyInformation? sellerInformation, AtsTransportInformation? transportInformation,@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,@JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory, List<AtsPurchaseOrder>? purchaseOrders, List<AtsOperationStatuses>? statuses, double? totalQuantity, List<OperationProductInformation>? productsInformation, List<String>? ctes, List<String>? caclFormsIds, List<CaclEntity>? caclForms, List<Manifest>? manifests, List<AtsOperationHistory>? history,@TimestampOrNullConverter() DateTime? minEta, AtsEtaStatus? etaStatus
+ String? id, String? sellerAssetId, String? transportAssetId, String? transportCompanyAssetId,@TimestampOrNullConverter() DateTime? purchasedAt,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? finishedAt, bool? pendingToReview, List<String>? ordersIds, Asset? sellerAsset, Asset? transportAsset, Asset? transportCompanyAsset, AtsCompanyInformation? sellerInformation, AtsTransportInformation? transportInformation,@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,@JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory, List<AtsPurchaseOrder>? purchaseOrders, List<AtsOperationStatuses>? statuses, double? totalQuantity, List<OperationProductInformation>? productsInformation, List<String>? ctes, List<String>? caclFormsIds, List<CaclEntity>? caclForms, List<Manifest>? manifests, List<AtsOperationHistory>? history,@TimestampOrNullConverter() DateTime? minEta, AtsEtaStatus? etaStatus, List<AtsLoadingOrder>? loadingOrders
 });
 
 
@@ -13601,7 +13621,7 @@ class __$AtsOperationCopyWithImpl<$Res>
 
 /// Create a copy of AtsOperation
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? sellerAssetId = freezed,Object? transportAssetId = freezed,Object? transportCompanyAssetId = freezed,Object? purchasedAt = freezed,Object? createdAt = freezed,Object? finishedAt = freezed,Object? pendingToReview = freezed,Object? ordersIds = freezed,Object? sellerAsset = freezed,Object? transportAsset = freezed,Object? transportCompanyAsset = freezed,Object? sellerInformation = freezed,Object? transportInformation = freezed,Object? orderStatus = freezed,Object? category = freezed,Object? deliverCategory = freezed,Object? purchaseOrders = freezed,Object? statuses = freezed,Object? totalQuantity = freezed,Object? productsInformation = freezed,Object? ctes = freezed,Object? caclFormsIds = freezed,Object? caclForms = freezed,Object? manifests = freezed,Object? history = freezed,Object? minEta = freezed,Object? etaStatus = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? sellerAssetId = freezed,Object? transportAssetId = freezed,Object? transportCompanyAssetId = freezed,Object? purchasedAt = freezed,Object? createdAt = freezed,Object? finishedAt = freezed,Object? pendingToReview = freezed,Object? ordersIds = freezed,Object? sellerAsset = freezed,Object? transportAsset = freezed,Object? transportCompanyAsset = freezed,Object? sellerInformation = freezed,Object? transportInformation = freezed,Object? orderStatus = freezed,Object? category = freezed,Object? deliverCategory = freezed,Object? purchaseOrders = freezed,Object? statuses = freezed,Object? totalQuantity = freezed,Object? productsInformation = freezed,Object? ctes = freezed,Object? caclFormsIds = freezed,Object? caclForms = freezed,Object? manifests = freezed,Object? history = freezed,Object? minEta = freezed,Object? etaStatus = freezed,Object? loadingOrders = freezed,}) {
   return _then(_AtsOperation(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,sellerAssetId: freezed == sellerAssetId ? _self.sellerAssetId : sellerAssetId // ignore: cast_nullable_to_non_nullable
@@ -13631,7 +13651,8 @@ as List<CaclEntity>?,manifests: freezed == manifests ? _self._manifests : manife
 as List<Manifest>?,history: freezed == history ? _self._history : history // ignore: cast_nullable_to_non_nullable
 as List<AtsOperationHistory>?,minEta: freezed == minEta ? _self.minEta : minEta // ignore: cast_nullable_to_non_nullable
 as DateTime?,etaStatus: freezed == etaStatus ? _self.etaStatus : etaStatus // ignore: cast_nullable_to_non_nullable
-as AtsEtaStatus?,
+as AtsEtaStatus?,loadingOrders: freezed == loadingOrders ? _self._loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
+as List<AtsLoadingOrder>?,
   ));
 }
 
@@ -15387,7 +15408,8 @@ mixin _$CaclEntity {
 @TimestampOrNullConverter() DateTime? get startedAt;/// The [finishedAt] parameter is the finishedAt of the cacl entity.
 @TimestampOrNullConverter() DateTime? get finishedAt;/// The [createdAt] parameter is the createdAt of the cacl entity.
 @TimestampOrNullConverter() DateTime? get createdAt;/// The [operationId] parameter is the operationId of the cacl entity.
- String? get operationId;/// [localDateStart] is the local date start of the cacl entity.
+ String? get operationId;/// The [operation] parameter is the operation of the cacl entity.
+ AtsOperation? get operation;/// [localDateStart] is the local date start of the cacl entity.
 @TimestampOrNullConverter() DateTime? get localDateStart;/// [localDateEnd] is the local date end of the cacl entity.
 @TimestampOrNullConverter() DateTime? get localDateEnd;/// [lossPercentage] is the loss percentage of the cacl entity.
  double? get lossPercentage;
@@ -15403,16 +15425,16 @@ $CaclEntityCopyWith<CaclEntity> get copyWith => _$CaclEntityCopyWithImpl<CaclEnt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,operationId,localDateStart,localDateEnd,lossPercentage]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,operationId,operation,localDateStart,localDateEnd,lossPercentage]);
 
 @override
 String toString() {
-  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage)';
+  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage)';
 }
 
 
@@ -15423,11 +15445,11 @@ abstract mixin class $CaclEntityCopyWith<$Res>  {
   factory $CaclEntityCopyWith(CaclEntity value, $Res Function(CaclEntity) _then) = _$CaclEntityCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber, String? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage
+ String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber, String? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage
 });
 
 
-$AssetCopyWith<$Res>? get asset;$AssetCopyWith<$Res>? get transportAsset;$UserCopyWith<$Res>? get transportUser;$AssetCopyWith<$Res>? get clientAsset;$CaclEquipmentEntityCopyWith<$Res>? get equipments;$MeasurementsEntityCopyWith<$Res>? get measurements;$ResultsEntityCopyWith<$Res>? get results;$CaclMeasurementOutputCopyWith<$Res>? get measurer01;$CaclMeasurementOutputCopyWith<$Res>? get measurer02;$VolumeMovedEntityCopyWith<$Res>? get volumeMoved;
+$AssetCopyWith<$Res>? get asset;$AssetCopyWith<$Res>? get transportAsset;$UserCopyWith<$Res>? get transportUser;$AssetCopyWith<$Res>? get clientAsset;$CaclEquipmentEntityCopyWith<$Res>? get equipments;$MeasurementsEntityCopyWith<$Res>? get measurements;$ResultsEntityCopyWith<$Res>? get results;$CaclMeasurementOutputCopyWith<$Res>? get measurer01;$CaclMeasurementOutputCopyWith<$Res>? get measurer02;$VolumeMovedEntityCopyWith<$Res>? get volumeMoved;$AtsOperationCopyWith<$Res>? get operation;
 
 }
 /// @nodoc
@@ -15440,7 +15462,7 @@ class _$CaclEntityCopyWithImpl<$Res>
 
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -15468,7 +15490,8 @@ as String?,startedAt: freezed == startedAt ? _self.startedAt : startedAt // igno
 as DateTime?,finishedAt: freezed == finishedAt ? _self.finishedAt : finishedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
-as String?,localDateStart: freezed == localDateStart ? _self.localDateStart : localDateStart // ignore: cast_nullable_to_non_nullable
+as String?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,localDateStart: freezed == localDateStart ? _self.localDateStart : localDateStart // ignore: cast_nullable_to_non_nullable
 as DateTime?,localDateEnd: freezed == localDateEnd ? _self.localDateEnd : localDateEnd // ignore: cast_nullable_to_non_nullable
 as DateTime?,lossPercentage: freezed == lossPercentage ? _self.lossPercentage : lossPercentage // ignore: cast_nullable_to_non_nullable
 as double?,
@@ -15593,6 +15616,18 @@ $VolumeMovedEntityCopyWith<$Res>? get volumeMoved {
 
   return $VolumeMovedEntityCopyWith<$Res>(_self.volumeMoved!, (value) {
     return _then(_self.copyWith(volumeMoved: value));
+  });
+}/// Create a copy of CaclEntity
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+    return null;
+  }
+
+  return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+    return _then(_self.copyWith(operation: value));
   });
 }
 }
@@ -15676,10 +15711,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclEntity() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
   return orElse();
 
 }
@@ -15697,10 +15732,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)  $default,) {final _that = this;
 switch (_that) {
 case _CaclEntity():
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -15717,10 +15752,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclEntity() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
   return null;
 
 }
@@ -15732,7 +15767,7 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 @JsonSerializable()
 
 class _CaclEntity implements CaclEntity {
-   _CaclEntity({this.id, this.assetId, this.asset, this.transportAssetId, this.transportAsset, this.transportUserId, this.transportUser, this.caclNumber, this.category, this.product, this.clientAssetId, this.clientAsset, this.origin, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, @TimestampOrNullConverter() this.createdAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.lossPercentage});
+   _CaclEntity({this.id, this.assetId, this.asset, this.transportAssetId, this.transportAsset, this.transportUserId, this.transportUser, this.caclNumber, this.category, this.product, this.clientAssetId, this.clientAsset, this.origin, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, @TimestampOrNullConverter() this.createdAt, this.operationId, this.operation, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.lossPercentage});
   factory _CaclEntity.fromJson(Map<String, dynamic> json) => _$CaclEntityFromJson(json);
 
 /// The [id] parameter is the id of the cacl entity.
@@ -15787,6 +15822,8 @@ class _CaclEntity implements CaclEntity {
 @override@TimestampOrNullConverter() final  DateTime? createdAt;
 /// The [operationId] parameter is the operationId of the cacl entity.
 @override final  String? operationId;
+/// The [operation] parameter is the operation of the cacl entity.
+@override final  AtsOperation? operation;
 /// [localDateStart] is the local date start of the cacl entity.
 @override@TimestampOrNullConverter() final  DateTime? localDateStart;
 /// [localDateEnd] is the local date end of the cacl entity.
@@ -15807,16 +15844,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,operationId,localDateStart,localDateEnd,lossPercentage]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,operationId,operation,localDateStart,localDateEnd,lossPercentage]);
 
 @override
 String toString() {
-  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage)';
+  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage)';
 }
 
 
@@ -15827,11 +15864,11 @@ abstract mixin class _$CaclEntityCopyWith<$Res> implements $CaclEntityCopyWith<$
   factory _$CaclEntityCopyWith(_CaclEntity value, $Res Function(_CaclEntity) _then) = __$CaclEntityCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber, String? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage
+ String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber, String? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage
 });
 
 
-@override $AssetCopyWith<$Res>? get asset;@override $AssetCopyWith<$Res>? get transportAsset;@override $UserCopyWith<$Res>? get transportUser;@override $AssetCopyWith<$Res>? get clientAsset;@override $CaclEquipmentEntityCopyWith<$Res>? get equipments;@override $MeasurementsEntityCopyWith<$Res>? get measurements;@override $ResultsEntityCopyWith<$Res>? get results;@override $CaclMeasurementOutputCopyWith<$Res>? get measurer01;@override $CaclMeasurementOutputCopyWith<$Res>? get measurer02;@override $VolumeMovedEntityCopyWith<$Res>? get volumeMoved;
+@override $AssetCopyWith<$Res>? get asset;@override $AssetCopyWith<$Res>? get transportAsset;@override $UserCopyWith<$Res>? get transportUser;@override $AssetCopyWith<$Res>? get clientAsset;@override $CaclEquipmentEntityCopyWith<$Res>? get equipments;@override $MeasurementsEntityCopyWith<$Res>? get measurements;@override $ResultsEntityCopyWith<$Res>? get results;@override $CaclMeasurementOutputCopyWith<$Res>? get measurer01;@override $CaclMeasurementOutputCopyWith<$Res>? get measurer02;@override $VolumeMovedEntityCopyWith<$Res>? get volumeMoved;@override $AtsOperationCopyWith<$Res>? get operation;
 
 }
 /// @nodoc
@@ -15844,7 +15881,7 @@ class __$CaclEntityCopyWithImpl<$Res>
 
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,}) {
   return _then(_CaclEntity(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -15872,7 +15909,8 @@ as String?,startedAt: freezed == startedAt ? _self.startedAt : startedAt // igno
 as DateTime?,finishedAt: freezed == finishedAt ? _self.finishedAt : finishedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
-as String?,localDateStart: freezed == localDateStart ? _self.localDateStart : localDateStart // ignore: cast_nullable_to_non_nullable
+as String?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,localDateStart: freezed == localDateStart ? _self.localDateStart : localDateStart // ignore: cast_nullable_to_non_nullable
 as DateTime?,localDateEnd: freezed == localDateEnd ? _self.localDateEnd : localDateEnd // ignore: cast_nullable_to_non_nullable
 as DateTime?,lossPercentage: freezed == lossPercentage ? _self.lossPercentage : lossPercentage // ignore: cast_nullable_to_non_nullable
 as double?,
@@ -15998,6 +16036,18 @@ $VolumeMovedEntityCopyWith<$Res>? get volumeMoved {
 
   return $VolumeMovedEntityCopyWith<$Res>(_self.volumeMoved!, (value) {
     return _then(_self.copyWith(volumeMoved: value));
+  });
+}/// Create a copy of CaclEntity
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+    return null;
+  }
+
+  return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+    return _then(_self.copyWith(operation: value));
   });
 }
 }

@@ -150,6 +150,9 @@ abstract class User with _$User {
 
     /// [passkeys] is the list of passkeys registered for the user.
     @Default([]) List<Passkey> passkeys,
+
+    /// [hasGpsInsurance] represents if the user has GPS insurance, for the BHS use case.
+    bool? hasGpsInsurance,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

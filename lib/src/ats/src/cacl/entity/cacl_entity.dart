@@ -83,6 +83,9 @@ abstract class CaclEntity with _$CaclEntity {
     /// The [operationId] parameter is the operationId of the cacl entity.
     String? operationId,
 
+    /// The [operation] parameter is the operation of the cacl entity.
+    AtsOperation? operation,
+
     /// [localDateStart] is the local date start of the cacl entity.
     @TimestampOrNullConverter() DateTime? localDateStart,
 

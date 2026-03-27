@@ -108,6 +108,9 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// [etaStatus] is the estimated time of arrival status.
     AtsEtaStatus? etaStatus,
+
+    /// [loadingOrders] is the list of loading orders linked to the operation.
+    List<AtsLoadingOrder>? loadingOrders,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);

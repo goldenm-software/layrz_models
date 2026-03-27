@@ -22,6 +22,8 @@
 
 # Flutter/Dart/Pub related
 # Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
+.flutter-plugins
+.flutter-plugins-dependencies
 /pubspec.lock
 **/doc/api/
 .dart_tool/

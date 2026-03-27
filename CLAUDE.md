@@ -15,15 +15,8 @@ Layrz Models is a Dart/Flutter package that provides data models and SDK for the
 
 ```bash
 # Code generation (standard build)
-make build
-# or: dart run build_runner build
-
-# Code generation with conflict resolution
-make build_delete
-# or: dart run build_runner build --delete-conflicting-outputs
-
-# Code generation (verbose output for debugging)
-make build_verbose
+make freezed
+# or: dart run build_runner freezed
 
 # Run linter in dry-run mode
 make lint
@@ -153,3 +146,9 @@ Each test file typically tests:
 - Follow existing documentation patterns - all models and fields should have dartdoc comments
 - Use nullable fields (`String?`) liberally as API responses may have missing data
 - Deprecation: Use `@Deprecated("migration message")` for fields being phased out
+
+## Other considerations
+
+- "wrap it up" - Means review the changes, commit and push, and create a pull request if the user wants
+- Do not include Test plan on the PR body under any circumstances, the code should be tested before the PR.
+- Always include `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>` as a footer in every git commit message.

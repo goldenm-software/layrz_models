@@ -804,6 +804,7 @@ _AtsIdeInformation _$AtsIdeInformationFromJson(Map<String, dynamic> json) =>
       model: json['model'] as String?,
       cfop: json['cfop'] as String?,
       operationType: json['operationType'] as String?,
+      modal: json['modal'] as String?,
     );
 
 Map<String, dynamic> _$AtsIdeInformationToJson(_AtsIdeInformation instance) =>
@@ -813,6 +814,7 @@ Map<String, dynamic> _$AtsIdeInformationToJson(_AtsIdeInformation instance) =>
       'model': instance.model,
       'cfop': instance.cfop,
       'operationType': instance.operationType,
+      'modal': instance.modal,
     };
 
 _OperationProductInformation _$OperationProductInformationFromJson(
@@ -1444,6 +1446,7 @@ const _$AtsPurchaseOrderStatusEnumMap = {
   AtsPurchaseOrderStatus.loadingBooked: 'LOADING_BOOKED',
   AtsPurchaseOrderStatus.unloadingBooked: 'UNLOADING_BOOKED',
   AtsPurchaseOrderStatus.validated: 'VALIDATED',
+  AtsPurchaseOrderStatus.orderReceived: 'ORDER_RECEIVED',
 };
 
 _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
@@ -1529,6 +1532,9 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
           .toList(),
       minEta: const TimestampOrNullConverter().fromJson(json['minEta'] as num?),
       etaStatus: $enumDecodeNullable(_$AtsEtaStatusEnumMap, json['etaStatus']),
+      loadingOrders: (json['loadingOrders'] as List<dynamic>?)
+          ?.map((e) => AtsLoadingOrder.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$AtsOperationToJson(
@@ -1564,6 +1570,7 @@ Map<String, dynamic> _$AtsOperationToJson(
   'history': instance.history?.map((e) => e.toJson()).toList(),
   'minEta': const TimestampOrNullConverter().toJson(instance.minEta),
   'etaStatus': instance.etaStatus?.toJson(),
+  'loadingOrders': instance.loadingOrders?.map((e) => e.toJson()).toList(),
 };
 
 const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
@@ -1846,6 +1853,9 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
     json['createdAt'] as num?,
   ),
   operationId: json['operationId'] as String?,
+  operation: json['operation'] == null
+      ? null
+      : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
   localDateStart: const TimestampOrNullConverter().fromJson(
     json['localDateStart'] as num?,
   ),
@@ -1884,6 +1894,7 @@ Map<String, dynamic> _$CaclEntityToJson(
   'finishedAt': const TimestampOrNullConverter().toJson(instance.finishedAt),
   'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
   'operationId': instance.operationId,
+  'operation': instance.operation?.toJson(),
   'localDateStart': const TimestampOrNullConverter().toJson(
     instance.localDateStart,
   ),
