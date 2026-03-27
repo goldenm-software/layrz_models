@@ -2,7 +2,18 @@ part of '../../../ats.dart';
 
 /// A model class representing a measurements input.
 @unfreezed
-abstract class MeasurementsInput with _$MeasurementsInput {
+sealed class MeasurementsInput with _$MeasurementsInput {
+  MeasurementsInput._() {
+    referenceHeight ??= MeasurementInput();
+    productLevelHeight ??= MeasurementInput();
+    correctedLevelHeight ??= MeasurementInput();
+    waterHeight ??= MeasurementInput();
+    ambientLineVolume ??= MeasurementInput();
+    ambientDensity ??= MeasurementInput();
+    ambientTemperature ??= MeasurementInput();
+    averageTankTemperature ??= MeasurementInput();
+  }
+
   /// Creates a new [MeasurementsInput] instance.
   factory MeasurementsInput({
     /// The [referenceHeight] parameter is the referenceHeight of the measurements input.
@@ -33,6 +44,5 @@ abstract class MeasurementsInput with _$MeasurementsInput {
   /// Creates a new [MeasurementsInput] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory MeasurementsInput.fromJson(Map<String, dynamic> json) =>
-      _$MeasurementsInputFromJson(json);
+  factory MeasurementsInput.fromJson(Map<String, dynamic> json) => _$MeasurementsInputFromJson(json);
 }

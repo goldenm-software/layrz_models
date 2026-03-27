@@ -18722,10 +18722,7 @@ return $default(_that);case _:
 final _that = this;
 switch (_that) {
 case _CaclInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -18784,10 +18781,7 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)  $default,) {final _that = this;
 switch (_that) {
 case _CaclInput():
-return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -18815,8 +18809,8 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 /// @nodoc
 @JsonSerializable()
 
-class _CaclInput implements CaclInput {
-   _CaclInput({this.id, this.assetId, this.transportAssetId, this.transportUserId, this.caclNumber, this.category, this.product, this.clientAssetId, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd});
+class _CaclInput extends CaclInput {
+   _CaclInput({this.id, this.assetId, this.transportAssetId, this.transportUserId, this.caclNumber, this.category, this.product, this.clientAssetId, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd}): super._();
   factory _CaclInput.fromJson(Map<String, dynamic> json) => _$CaclInputFromJson(json);
 
 /// The [id] parameter is the id of the cacl input.
@@ -19244,8 +19238,8 @@ return $default(_that.measuringTape,_that.densimeter,_that.thermometer);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _CaclEquipmentInput implements CaclEquipmentInput {
-   _CaclEquipmentInput({this.measuringTape, this.densimeter, this.thermometer});
+class _CaclEquipmentInput extends CaclEquipmentInput {
+   _CaclEquipmentInput({this.measuringTape, this.densimeter, this.thermometer}): super._();
   factory _CaclEquipmentInput.fromJson(Map<String, dynamic> json) => _$CaclEquipmentInputFromJson(json);
 
 /// The [measuringTape] parameter is the measuringTape of the cacl equipment input.
@@ -19562,10 +19556,7 @@ return $default(_that);case _:
 final _that = this;
 switch (_that) {
 case _MeasurementsInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -19624,10 +19615,7 @@ return $default(_that.referenceHeight,_that.productLevelHeight,_that.correctedLe
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( MeasurementInput? referenceHeight,  MeasurementInput? productLevelHeight,  MeasurementInput? correctedLevelHeight,  MeasurementInput? waterHeight,  MeasurementInput? ambientLineVolume,  MeasurementInput? ambientDensity,  MeasurementInput? ambientTemperature,  MeasurementInput? averageTankTemperature)  $default,) {final _that = this;
 switch (_that) {
 case _MeasurementsInput():
-return $default(_that.referenceHeight,_that.productLevelHeight,_that.correctedLevelHeight,_that.waterHeight,_that.ambientLineVolume,_that.ambientDensity,_that.ambientTemperature,_that.averageTankTemperature);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that.referenceHeight,_that.productLevelHeight,_that.correctedLevelHeight,_that.waterHeight,_that.ambientLineVolume,_that.ambientDensity,_that.ambientTemperature,_that.averageTankTemperature);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -19655,8 +19643,8 @@ return $default(_that.referenceHeight,_that.productLevelHeight,_that.correctedLe
 /// @nodoc
 @JsonSerializable()
 
-class _MeasurementsInput implements MeasurementsInput {
-   _MeasurementsInput({this.referenceHeight, this.productLevelHeight, this.correctedLevelHeight, this.waterHeight, this.ambientLineVolume, this.ambientDensity, this.ambientTemperature, this.averageTankTemperature});
+class _MeasurementsInput extends MeasurementsInput {
+   _MeasurementsInput({this.referenceHeight, this.productLevelHeight, this.correctedLevelHeight, this.waterHeight, this.ambientLineVolume, this.ambientDensity, this.ambientTemperature, this.averageTankTemperature}): super._();
   factory _MeasurementsInput.fromJson(Map<String, dynamic> json) => _$MeasurementsInputFromJson(json);
 
 /// The [referenceHeight] parameter is the referenceHeight of the measurements input.
@@ -20048,10 +20036,7 @@ return $default(_that);case _:
 final _that = this;
 switch (_that) {
 case _ResultsInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -20110,10 +20095,7 @@ return $default(_that.environmentalTankVolume,_that.waterVolume,_that.densityAt2
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( MeasurementInput? environmentalTankVolume,  MeasurementInput? waterVolume,  MeasurementInput? densityAt20,  MeasurementInput? volumeCorrectionFactor,  MeasurementInput? alcoholicContent,  MeasurementInput? environmentalVolume,  MeasurementInput? volumeAt20,  MeasurementInput? kilogramsAt20)  $default,) {final _that = this;
 switch (_that) {
 case _ResultsInput():
-return $default(_that.environmentalTankVolume,_that.waterVolume,_that.densityAt20,_that.volumeCorrectionFactor,_that.alcoholicContent,_that.environmentalVolume,_that.volumeAt20,_that.kilogramsAt20);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that.environmentalTankVolume,_that.waterVolume,_that.densityAt20,_that.volumeCorrectionFactor,_that.alcoholicContent,_that.environmentalVolume,_that.volumeAt20,_that.kilogramsAt20);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -20141,8 +20123,8 @@ return $default(_that.environmentalTankVolume,_that.waterVolume,_that.densityAt2
 /// @nodoc
 @JsonSerializable()
 
-class _ResultsInput implements ResultsInput {
-   _ResultsInput({this.environmentalTankVolume, this.waterVolume, this.densityAt20, this.volumeCorrectionFactor, this.alcoholicContent, this.environmentalVolume, this.volumeAt20, this.kilogramsAt20});
+class _ResultsInput extends ResultsInput {
+   _ResultsInput({this.environmentalTankVolume, this.waterVolume, this.densityAt20, this.volumeCorrectionFactor, this.alcoholicContent, this.environmentalVolume, this.volumeAt20, this.kilogramsAt20}): super._();
   factory _ResultsInput.fromJson(Map<String, dynamic> json) => _$ResultsInputFromJson(json);
 
 /// The [environmentalTankVolume] parameter is the environmentalTankVolume of the results input.
