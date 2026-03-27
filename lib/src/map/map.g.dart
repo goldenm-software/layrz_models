@@ -160,10 +160,6 @@ _MapLayerInput _$MapLayerInputFromJson(
   appsIds:
       (json['appsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
-  mapLayerId: json['mapLayerId'] as String?,
-  poisIds:
-      (json['poisIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-      const [],
 );
 
 Map<String, dynamic> _$MapLayerInputToJson(_MapLayerInput instance) =>
@@ -186,8 +182,6 @@ Map<String, dynamic> _$MapLayerInputToJson(_MapLayerInput instance) =>
       'attributionWidth': instance.attributionWidth,
       'attributionHeight': instance.attributionHeight,
       'appsIds': instance.appsIds,
-      'mapLayerId': instance.mapLayerId,
-      'poisIds': instance.poisIds,
     };
 
 _Poi _$PoiFromJson(Map<String, dynamic> json) => _Poi(

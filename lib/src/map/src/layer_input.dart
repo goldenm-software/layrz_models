@@ -71,12 +71,6 @@ abstract class MapLayerInput with _$MapLayerInput {
 
     /// [appsIds] is the list of [App]s that are associated with the layer.
     @Default([]) List<String> appsIds,
-
-    /// [mapLayerId] is the id of the map layer to use for the locators that are using this layer.
-    String? mapLayerId,
-
-    /// [poisIds] is the list of [Poi]s that are associated with the layer.
-    @Default([]) List<String> poisIds,
   }) = _MapLayerInput;
 
   factory MapLayerInput.fromJson(Map<String, dynamic> json) => _$MapLayerInputFromJson(json);
