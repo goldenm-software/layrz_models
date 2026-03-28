@@ -133,6 +133,10 @@ _Locator _$LocatorFromJson(Map<String, dynamic> json) => _Locator(
       ?.map((e) => e as String)
       .toList(),
   enableSidebar: json['enableSidebar'] as bool?,
+  showAssetsLabels: json['showAssetsLabels'] as bool?,
+  showGeofencesLabels: json['showGeofencesLabels'] as bool?,
+  showPoisLabels: json['showPoisLabels'] as bool?,
+  showAssetsTrails: json['showAssetsTrails'] as bool?,
   boundary: json['boundary'] == null
       ? null
       : LocatorBoundary.fromJson(json['boundary'] as Map<String, dynamic>),
@@ -166,6 +170,10 @@ Map<String, dynamic> _$LocatorToJson(_Locator instance) => <String, dynamic>{
   'pois': instance.pois?.map((e) => e.toJson()).toList(),
   'poisIds': instance.poisIds,
   'enableSidebar': instance.enableSidebar,
+  'showAssetsLabels': instance.showAssetsLabels,
+  'showGeofencesLabels': instance.showGeofencesLabels,
+  'showPoisLabels': instance.showPoisLabels,
+  'showAssetsTrails': instance.showAssetsTrails,
   'boundary': instance.boundary?.toJson(),
   'description': instance.description,
 };
@@ -213,7 +221,11 @@ _LocatorInput _$LocatorInputFromJson(
       (json['poisIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
   mapLayerId: json['mapLayerId'] as String?,
-  enableSidebar: json['enableSidebar'] as bool? ?? false,
+  enableSidebar: json['enableSidebar'] as bool? ?? true,
+  showAssetsLabels: json['showAssetsLabels'] as bool? ?? false,
+  showGeofencesLabels: json['showGeofencesLabels'] as bool? ?? false,
+  showPoisLabels: json['showPoisLabels'] as bool? ?? false,
+  showAssetsTrails: json['showAssetsTrails'] as bool? ?? true,
   boundary: json['boundary'] == null
       ? null
       : LocatorBoundaryInput.fromJson(json['boundary'] as Map<String, dynamic>),
@@ -231,6 +243,10 @@ Map<String, dynamic> _$LocatorInputToJson(_LocatorInput instance) =>
       'poisIds': instance.poisIds,
       'mapLayerId': instance.mapLayerId,
       'enableSidebar': instance.enableSidebar,
+      'showAssetsLabels': instance.showAssetsLabels,
+      'showGeofencesLabels': instance.showGeofencesLabels,
+      'showPoisLabels': instance.showPoisLabels,
+      'showAssetsTrails': instance.showAssetsTrails,
       'boundary': instance.boundary?.toJson(),
       'description': instance.description,
     };
