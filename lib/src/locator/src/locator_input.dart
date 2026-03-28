@@ -30,7 +30,19 @@ abstract class LocatorInput with _$LocatorInput {
     String? mapLayerId,
 
     /// [enableSidebar] indicates if the sidebar is enabled for this locator
-    @Default(false) bool enableSidebar,
+    @Default(true) bool enableSidebar,
+
+    /// [showAssetsLabels] indicates if the asset label overlays are visible for this locator
+    @Default(false) bool showAssetsLabels,
+
+    /// [showGeofencesLabels] indicates if the geofence label overlays are visible for this locator
+    @Default(false) bool showGeofencesLabels,
+
+    /// [showPoisLabels] indicates if the POI label overlays are visible for this locator
+    @Default(false) bool showPoisLabels,
+
+    /// [showAssetsTrails] indicates if the asset trail lines are visible for this locator
+    @Default(true) bool showAssetsTrails,
 
     /// [boundary] is the geographic bounding box of the locator
     LocatorBoundaryInput? boundary,

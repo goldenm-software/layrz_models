@@ -83,6 +83,18 @@ abstract class Locator with _$Locator {
     /// [enableSidebar] indicates if the sidebar is enabled for this locator
     bool? enableSidebar,
 
+    /// [showAssetsLabels] indicates if the asset label overlays are visible for this locator
+    bool? showAssetsLabels,
+
+    /// [showGeofencesLabels] indicates if the geofence label overlays are visible for this locator
+    bool? showGeofencesLabels,
+
+    /// [showPoisLabels] indicates if the POI label overlays are visible for this locator
+    bool? showPoisLabels,
+
+    /// [showAssetsTrails] indicates if the asset trail lines are visible for this locator
+    bool? showAssetsTrails,
+
     /// [boundary] is the geographic bounding box of the locator
     LocatorBoundary? boundary,
 
@@ -461,6 +473,10 @@ abstract class Locator with _$Locator {
       }
 
       enableSidebar
+      showAssetsLabels
+      showGeofencesLabels
+      showPoisLabels
+      showAssetsTrails
       boundary {
         topleft {
           latitude
