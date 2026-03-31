@@ -1807,7 +1807,11 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
       ? null
       : User.fromJson(json['transportUser'] as Map<String, dynamic>),
   caclNumber: json['caclNumber'] as String?,
-  category: json['category'] as String?,
+  category: $enumDecodeNullable(
+    _$CaclCategoryEnumMap,
+    json['category'],
+    unknownValue: CaclCategory.load,
+  ),
   product: json['product'] as String?,
   clientAssetId: json['clientAssetId'] as String?,
   clientAsset: json['clientAsset'] == null
@@ -1863,6 +1867,7 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
     json['localDateEnd'] as num?,
   ),
   lossPercentage: (json['lossPercentage'] as num?)?.toDouble(),
+  isCombine: json['isCombine'] as bool?,
 );
 
 Map<String, dynamic> _$CaclEntityToJson(
@@ -1876,7 +1881,7 @@ Map<String, dynamic> _$CaclEntityToJson(
   'transportUserId': instance.transportUserId,
   'transportUser': instance.transportUser?.toJson(),
   'caclNumber': instance.caclNumber,
-  'category': instance.category,
+  'category': instance.category?.toJson(),
   'product': instance.product,
   'clientAssetId': instance.clientAssetId,
   'clientAsset': instance.clientAsset?.toJson(),
@@ -1902,6 +1907,14 @@ Map<String, dynamic> _$CaclEntityToJson(
     instance.localDateEnd,
   ),
   'lossPercentage': instance.lossPercentage,
+  'isCombine': instance.isCombine,
+};
+
+const _$CaclCategoryEnumMap = {
+  CaclCategory.load: 'LOAD',
+  CaclCategory.pumping: 'PUMPING',
+  CaclCategory.unload: 'UNLOAD',
+  CaclCategory.combinedLoad: 'COMBINED_LOAD',
 };
 
 _CaclEquipmentEntity _$CaclEquipmentEntityFromJson(Map<String, dynamic> json) =>
@@ -2102,7 +2115,11 @@ _CaclInput _$CaclInputFromJson(Map<String, dynamic> json) => _CaclInput(
   transportAssetId: json['transportAssetId'] as String?,
   transportUserId: json['transportUserId'] as String?,
   caclNumber: json['caclNumber'] as String?,
-  category: json['category'] as String?,
+  category: $enumDecodeNullable(
+    _$CaclCategoryEnumMap,
+    json['category'],
+    unknownValue: CaclCategory.load,
+  ),
   product: json['product'] as String?,
   clientAssetId: json['clientAssetId'] as String?,
   tankNumber: json['tankNumber'] as String?,
@@ -2151,7 +2168,7 @@ Map<String, dynamic> _$CaclInputToJson(
   'transportAssetId': instance.transportAssetId,
   'transportUserId': instance.transportUserId,
   'caclNumber': instance.caclNumber,
-  'category': instance.category,
+  'category': instance.category?.toJson(),
   'product': instance.product,
   'clientAssetId': instance.clientAssetId,
   'tankNumber': instance.tankNumber,

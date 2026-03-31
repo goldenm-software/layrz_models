@@ -110,6 +110,7 @@ part 'src/cacl/input/measurement_input.dart';
 part 'src/cacl/input/measurement.dart';
 part 'src/cacl/input/volume_moved_input.dart';
 part 'src/cacl/input/equipment_measurement_input.dart';
+part 'src/cacl/cacl_category.dart';
 
 // Monitor Entity
 part 'src/monitor/monitor.dart';

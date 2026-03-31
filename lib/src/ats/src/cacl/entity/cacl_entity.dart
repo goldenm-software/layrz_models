@@ -30,7 +30,7 @@ abstract class CaclEntity with _$CaclEntity {
     String? caclNumber,
 
     /// The [category] parameter is the category of the cacl entity.
-    String? category,
+    @JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category,
 
     /// The [product] parameter is the product of the cacl entity.
     String? product,
@@ -94,6 +94,9 @@ abstract class CaclEntity with _$CaclEntity {
 
     /// [lossPercentage] is the loss percentage of the cacl entity.
     double? lossPercentage,
+
+    /// [isCombine] indicates if the cacl is a combined form.
+    bool? isCombine,
   }) = _CaclEntity;
 
   /// Creates a new [CaclEntity] instance from a JSON map.

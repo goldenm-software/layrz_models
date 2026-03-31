@@ -1,11 +1,16 @@
 # Changelog
 
+## 3.7.5
+
+- Added `CaclCategory` enum to `category` value in `CaclEntity` and `CaclInput` models
+
 ## 3.7.4
 
 - Added `showAssetsLabels`, `showGeofencesLabels`, `showPoisLabels`, and `showAssetsTrails` boolean fields to `Locator` and `LocatorInput`.
 - `enableSidebar` and `showAssetsTrails` default to `true` in `LocatorInput`.
 
 ## 3.7.3
+
 - Refactor `CaclInput`.
 
 ## 3.7.2

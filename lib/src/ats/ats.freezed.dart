@@ -15391,7 +15391,7 @@ mixin _$CaclEntity {
  String? get transportUserId;/// The [transportUser] parameter is the transportUser of the cacl entity.
  User? get transportUser;/// The [caclNumber] parameter is the caclNumber of the cacl entity.
  String? get caclNumber;/// The [category] parameter is the category of the cacl entity.
- String? get category;/// The [product] parameter is the product of the cacl entity.
+@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? get category;/// The [product] parameter is the product of the cacl entity.
  String? get product;/// The [clientAssetId] parameter is the clientAssetId of the cacl entity.
  String? get clientAssetId;/// The [clientAsset] parameter is the clientAsset of the cacl entity.
  Asset? get clientAsset;/// The [origin] parameter is the origin of the cacl entity.
@@ -15412,7 +15412,8 @@ mixin _$CaclEntity {
  AtsOperation? get operation;/// [localDateStart] is the local date start of the cacl entity.
 @TimestampOrNullConverter() DateTime? get localDateStart;/// [localDateEnd] is the local date end of the cacl entity.
 @TimestampOrNullConverter() DateTime? get localDateEnd;/// [lossPercentage] is the loss percentage of the cacl entity.
- double? get lossPercentage;
+ double? get lossPercentage;/// [isCombine] indicates if the cacl is a combined form.
+ bool? get isCombine;
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -15425,16 +15426,16 @@ $CaclEntityCopyWith<CaclEntity> get copyWith => _$CaclEntityCopyWithImpl<CaclEnt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage)&&(identical(other.isCombine, isCombine) || other.isCombine == isCombine));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,operationId,operation,localDateStart,localDateEnd,lossPercentage]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,operationId,operation,localDateStart,localDateEnd,lossPercentage,isCombine]);
 
 @override
 String toString() {
-  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage)';
+  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage, isCombine: $isCombine)';
 }
 
 
@@ -15445,7 +15446,7 @@ abstract mixin class $CaclEntityCopyWith<$Res>  {
   factory $CaclEntityCopyWith(CaclEntity value, $Res Function(CaclEntity) _then) = _$CaclEntityCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber, String? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage
+ String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage, bool? isCombine
 });
 
 
@@ -15462,7 +15463,7 @@ class _$CaclEntityCopyWithImpl<$Res>
 
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,Object? isCombine = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -15473,7 +15474,7 @@ as Asset?,transportUserId: freezed == transportUserId ? _self.transportUserId : 
 as String?,transportUser: freezed == transportUser ? _self.transportUser : transportUser // ignore: cast_nullable_to_non_nullable
 as User?,caclNumber: freezed == caclNumber ? _self.caclNumber : caclNumber // ignore: cast_nullable_to_non_nullable
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
+as CaclCategory?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as String?,clientAssetId: freezed == clientAssetId ? _self.clientAssetId : clientAssetId // ignore: cast_nullable_to_non_nullable
 as String?,clientAsset: freezed == clientAsset ? _self.clientAsset : clientAsset // ignore: cast_nullable_to_non_nullable
 as Asset?,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
@@ -15494,7 +15495,8 @@ as String?,operation: freezed == operation ? _self.operation : operation // igno
 as AtsOperation?,localDateStart: freezed == localDateStart ? _self.localDateStart : localDateStart // ignore: cast_nullable_to_non_nullable
 as DateTime?,localDateEnd: freezed == localDateEnd ? _self.localDateEnd : localDateEnd // ignore: cast_nullable_to_non_nullable
 as DateTime?,lossPercentage: freezed == lossPercentage ? _self.lossPercentage : lossPercentage // ignore: cast_nullable_to_non_nullable
-as double?,
+as double?,isCombine: freezed == isCombine ? _self.isCombine : isCombine // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 /// Create a copy of CaclEntity
@@ -15711,10 +15713,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclEntity() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine);case _:
   return orElse();
 
 }
@@ -15732,10 +15734,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine)  $default,) {final _that = this;
 switch (_that) {
 case _CaclEntity():
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -15752,10 +15754,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclEntity() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine);case _:
   return null;
 
 }
@@ -15767,7 +15769,7 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 @JsonSerializable()
 
 class _CaclEntity implements CaclEntity {
-   _CaclEntity({this.id, this.assetId, this.asset, this.transportAssetId, this.transportAsset, this.transportUserId, this.transportUser, this.caclNumber, this.category, this.product, this.clientAssetId, this.clientAsset, this.origin, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, @TimestampOrNullConverter() this.createdAt, this.operationId, this.operation, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.lossPercentage});
+   _CaclEntity({this.id, this.assetId, this.asset, this.transportAssetId, this.transportAsset, this.transportUserId, this.transportUser, this.caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load) this.category, this.product, this.clientAssetId, this.clientAsset, this.origin, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, @TimestampOrNullConverter() this.createdAt, this.operationId, this.operation, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.lossPercentage, this.isCombine});
   factory _CaclEntity.fromJson(Map<String, dynamic> json) => _$CaclEntityFromJson(json);
 
 /// The [id] parameter is the id of the cacl entity.
@@ -15787,7 +15789,7 @@ class _CaclEntity implements CaclEntity {
 /// The [caclNumber] parameter is the caclNumber of the cacl entity.
 @override final  String? caclNumber;
 /// The [category] parameter is the category of the cacl entity.
-@override final  String? category;
+@override@JsonKey(unknownEnumValue: CaclCategory.load) final  CaclCategory? category;
 /// The [product] parameter is the product of the cacl entity.
 @override final  String? product;
 /// The [clientAssetId] parameter is the clientAssetId of the cacl entity.
@@ -15830,6 +15832,8 @@ class _CaclEntity implements CaclEntity {
 @override@TimestampOrNullConverter() final  DateTime? localDateEnd;
 /// [lossPercentage] is the loss percentage of the cacl entity.
 @override final  double? lossPercentage;
+/// [isCombine] indicates if the cacl is a combined form.
+@override final  bool? isCombine;
 
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
@@ -15844,16 +15848,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage)&&(identical(other.isCombine, isCombine) || other.isCombine == isCombine));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,operationId,operation,localDateStart,localDateEnd,lossPercentage]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,operationId,operation,localDateStart,localDateEnd,lossPercentage,isCombine]);
 
 @override
 String toString() {
-  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage)';
+  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage, isCombine: $isCombine)';
 }
 
 
@@ -15864,7 +15868,7 @@ abstract mixin class _$CaclEntityCopyWith<$Res> implements $CaclEntityCopyWith<$
   factory _$CaclEntityCopyWith(_CaclEntity value, $Res Function(_CaclEntity) _then) = __$CaclEntityCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber, String? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage
+ String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage, bool? isCombine
 });
 
 
@@ -15881,7 +15885,7 @@ class __$CaclEntityCopyWithImpl<$Res>
 
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,Object? isCombine = freezed,}) {
   return _then(_CaclEntity(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -15892,7 +15896,7 @@ as Asset?,transportUserId: freezed == transportUserId ? _self.transportUserId : 
 as String?,transportUser: freezed == transportUser ? _self.transportUser : transportUser // ignore: cast_nullable_to_non_nullable
 as User?,caclNumber: freezed == caclNumber ? _self.caclNumber : caclNumber // ignore: cast_nullable_to_non_nullable
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
+as CaclCategory?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as String?,clientAssetId: freezed == clientAssetId ? _self.clientAssetId : clientAssetId // ignore: cast_nullable_to_non_nullable
 as String?,clientAsset: freezed == clientAsset ? _self.clientAsset : clientAsset // ignore: cast_nullable_to_non_nullable
 as Asset?,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
@@ -15913,7 +15917,8 @@ as String?,operation: freezed == operation ? _self.operation : operation // igno
 as AtsOperation?,localDateStart: freezed == localDateStart ? _self.localDateStart : localDateStart // ignore: cast_nullable_to_non_nullable
 as DateTime?,localDateEnd: freezed == localDateEnd ? _self.localDateEnd : localDateEnd // ignore: cast_nullable_to_non_nullable
 as DateTime?,lossPercentage: freezed == lossPercentage ? _self.lossPercentage : lossPercentage // ignore: cast_nullable_to_non_nullable
-as double?,
+as double?,isCombine: freezed == isCombine ? _self.isCombine : isCombine // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 
@@ -18503,8 +18508,8 @@ mixin _$CaclInput {
  set transportUserId(String? value);/// The [caclNumber] parameter is the caclNumber of the cacl input.
  String? get caclNumber;/// The [caclNumber] parameter is the caclNumber of the cacl input.
  set caclNumber(String? value);/// The [category] parameter is the category of the cacl input.
- String? get category;/// The [category] parameter is the category of the cacl input.
- set category(String? value);/// The [product] parameter is the product of the cacl input.
+@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? get category;/// The [category] parameter is the category of the cacl input.
+@JsonKey(unknownEnumValue: CaclCategory.load) set category(CaclCategory? value);/// The [product] parameter is the product of the cacl input.
  String? get product;/// The [product] parameter is the product of the cacl input.
  set product(String? value);/// The [clientAssetId] parameter is the clientAssetId of the cacl input.
  String? get clientAssetId;/// The [clientAssetId] parameter is the clientAssetId of the cacl input.
@@ -18562,7 +18567,7 @@ abstract mixin class $CaclInputCopyWith<$Res>  {
   factory $CaclInputCopyWith(CaclInput value, $Res Function(CaclInput) _then) = _$CaclInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber, String? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd
+ String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd
 });
 
 
@@ -18587,7 +18592,7 @@ as String?,transportAssetId: freezed == transportAssetId ? _self.transportAssetI
 as String?,transportUserId: freezed == transportUserId ? _self.transportUserId : transportUserId // ignore: cast_nullable_to_non_nullable
 as String?,caclNumber: freezed == caclNumber ? _self.caclNumber : caclNumber // ignore: cast_nullable_to_non_nullable
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
+as CaclCategory?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as String?,clientAssetId: freezed == clientAssetId ? _self.clientAssetId : clientAssetId // ignore: cast_nullable_to_non_nullable
 as String?,tankNumber: freezed == tankNumber ? _self.tankNumber : tankNumber // ignore: cast_nullable_to_non_nullable
 as String?,transport: freezed == transport ? _self.transport : transport // ignore: cast_nullable_to_non_nullable
@@ -18757,7 +18762,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclInput() when $default != null:
 return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd);case _:
@@ -18778,7 +18783,7 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)  $default,) {final _that = this;
 switch (_that) {
 case _CaclInput():
 return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd);}
@@ -18795,7 +18800,7 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber,  String? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclInput() when $default != null:
 return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd);case _:
@@ -18810,7 +18815,7 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 @JsonSerializable()
 
 class _CaclInput extends CaclInput {
-   _CaclInput({this.id, this.assetId, this.transportAssetId, this.transportUserId, this.caclNumber, this.category, this.product, this.clientAssetId, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd}): super._();
+   _CaclInput({this.id, this.assetId, this.transportAssetId, this.transportUserId, this.caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load) this.category, this.product, this.clientAssetId, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd}): super._();
   factory _CaclInput.fromJson(Map<String, dynamic> json) => _$CaclInputFromJson(json);
 
 /// The [id] parameter is the id of the cacl input.
@@ -18824,7 +18829,7 @@ class _CaclInput extends CaclInput {
 /// The [caclNumber] parameter is the caclNumber of the cacl input.
 @override  String? caclNumber;
 /// The [category] parameter is the category of the cacl input.
-@override  String? category;
+@override@JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category;
 /// The [product] parameter is the product of the cacl input.
 @override  String? product;
 /// The [clientAssetId] parameter is the clientAssetId of the cacl input.
@@ -18884,7 +18889,7 @@ abstract mixin class _$CaclInputCopyWith<$Res> implements $CaclInputCopyWith<$Re
   factory _$CaclInputCopyWith(_CaclInput value, $Res Function(_CaclInput) _then) = __$CaclInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber, String? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd
+ String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd
 });
 
 
@@ -18909,7 +18914,7 @@ as String?,transportAssetId: freezed == transportAssetId ? _self.transportAssetI
 as String?,transportUserId: freezed == transportUserId ? _self.transportUserId : transportUserId // ignore: cast_nullable_to_non_nullable
 as String?,caclNumber: freezed == caclNumber ? _self.caclNumber : caclNumber // ignore: cast_nullable_to_non_nullable
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
+as CaclCategory?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as String?,clientAssetId: freezed == clientAssetId ? _self.clientAssetId : clientAssetId // ignore: cast_nullable_to_non_nullable
 as String?,tankNumber: freezed == tankNumber ? _self.tankNumber : tankNumber // ignore: cast_nullable_to_non_nullable
 as String?,transport: freezed == transport ? _self.transport : transport // ignore: cast_nullable_to_non_nullable
