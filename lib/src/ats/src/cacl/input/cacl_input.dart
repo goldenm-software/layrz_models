@@ -30,7 +30,7 @@ sealed class CaclInput with _$CaclInput {
     String? caclNumber,
 
     /// The [category] parameter is the category of the cacl input.
-    String? category,
+    @JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category,
 
     /// The [product] parameter is the product of the cacl input.
     String? product,
