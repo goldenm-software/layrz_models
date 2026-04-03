@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.6
+
+- Added `ATS_PREVENT_CHANGES_IN_CACL_TELEMETRY_INPUTS` value to `ReferenceCategory` enum
+
 ## 3.7.5
 
 - Added `CaclCategory` enum to `category` value in `CaclEntity` and `CaclInput` models

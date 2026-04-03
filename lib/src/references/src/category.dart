@@ -264,6 +264,12 @@ enum ReferenceCategory {
   @JsonValue('ATS_SUPERVISORIO_EXPORT_CACL')
   atsSupervisorioExportCacl,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to prevent changes in CACL telemetry inputs
+  /// ATS_PREVENT_CHANGES_IN_CACL_TELEMETRY_INPUTS
+  @JsonValue('ATS_PREVENT_CHANGES_IN_CACL_TELEMETRY_INPUTS')
+  atsPreventChangesInCaclTelemetryInputs,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR
