@@ -26,6 +26,9 @@ export 'src/brickhouse/brickhouse.dart';
 // import 'src/builder/builder.dart';
 export 'src/builder/builder.dart';
 
+// import 'src/realtime/realtime.dart';
+export 'src/realtime/realtime.dart';
+
 import 'src/care_protocols/care_protocols.dart';
 export 'src/care_protocols/care_protocols.dart';
 

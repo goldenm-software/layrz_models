@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.7
+
+- Added `RealtimeMessage` model with `topic` and `payload` fields in the new `realtime` module.
+
 ## 3.7.6
 
 - Added `ATS_PREVENT_CHANGES_IN_CACL_TELEMETRY_INPUTS` value to `ReferenceCategory` enum
