@@ -15,13 +15,19 @@ abstract class TankMeasurementInput with _$TankMeasurementInput {
     @Default(0.0) double height,
 
     /// The [temperature] parameter is the temperature of the tank measurement.
-    double? temperature,
+    @Deprecated('Use sampleTemperature instead') double? temperature,
 
     /// The [volume] parameter is the volume of the tank measurement.
     @Default(0.0) double volume,
 
     /// The [fuelDensity] parameter is the fuel density of the tank measurement.
     @Default(0.0) double fuelDensity,
+
+    /// The [sampleTemperature] parameter is the sample temperature of the tank measurement.
+    double? sampleTemperature,
+
+    /// The [tankTemperature] parameter is the tank temperature of the tank measurement.
+    double? tankTemperature,
   }) = _TankMeasurementInput;
 
   /// Creates a new [TankMeasurementInput] instance from a JSON map.
