@@ -1779,6 +1779,8 @@ _TankMeasurementInput _$TankMeasurementInputFromJson(
   temperature: (json['temperature'] as num?)?.toDouble(),
   volume: (json['volume'] as num?)?.toDouble() ?? 0.0,
   fuelDensity: (json['fuelDensity'] as num?)?.toDouble() ?? 0.0,
+  sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
+  tankTemperature: (json['tankTemperature'] as num?)?.toDouble(),
 );
 
 Map<String, dynamic> _$TankMeasurementInputToJson(
@@ -1790,6 +1792,8 @@ Map<String, dynamic> _$TankMeasurementInputToJson(
   'temperature': instance.temperature,
   'volume': instance.volume,
   'fuelDensity': instance.fuelDensity,
+  'sampleTemperature': instance.sampleTemperature,
+  'tankTemperature': instance.tankTemperature,
 };
 
 _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(

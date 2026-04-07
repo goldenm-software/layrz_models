@@ -15107,12 +15107,16 @@ mixin _$TankMeasurementInput {
  set fuelSubtype(String value);/// The [height] parameter is the height of the tank measurement.
  double get height;/// The [height] parameter is the height of the tank measurement.
  set height(double value);/// The [temperature] parameter is the temperature of the tank measurement.
- double? get temperature;/// The [temperature] parameter is the temperature of the tank measurement.
- set temperature(double? value);/// The [volume] parameter is the volume of the tank measurement.
+@Deprecated('Use sampleTemperature instead') double? get temperature;/// The [temperature] parameter is the temperature of the tank measurement.
+@Deprecated('Use sampleTemperature instead') set temperature(double? value);/// The [volume] parameter is the volume of the tank measurement.
  double get volume;/// The [volume] parameter is the volume of the tank measurement.
  set volume(double value);/// The [fuelDensity] parameter is the fuel density of the tank measurement.
  double get fuelDensity;/// The [fuelDensity] parameter is the fuel density of the tank measurement.
- set fuelDensity(double value);
+ set fuelDensity(double value);/// The [sampleTemperature] parameter is the sample temperature of the tank measurement.
+ double? get sampleTemperature;/// The [sampleTemperature] parameter is the sample temperature of the tank measurement.
+ set sampleTemperature(double? value);/// The [tankTemperature] parameter is the tank temperature of the tank measurement.
+ double? get tankTemperature;/// The [tankTemperature] parameter is the tank temperature of the tank measurement.
+ set tankTemperature(double? value);
 /// Create a copy of TankMeasurementInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -15127,7 +15131,7 @@ $TankMeasurementInputCopyWith<TankMeasurementInput> get copyWith => _$TankMeasur
 
 @override
 String toString() {
-  return 'TankMeasurementInput(tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity)';
+  return 'TankMeasurementInput(tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity, sampleTemperature: $sampleTemperature, tankTemperature: $tankTemperature)';
 }
 
 
@@ -15138,7 +15142,7 @@ abstract mixin class $TankMeasurementInputCopyWith<$Res>  {
   factory $TankMeasurementInputCopyWith(TankMeasurementInput value, $Res Function(TankMeasurementInput) _then) = _$TankMeasurementInputCopyWithImpl;
 @useResult
 $Res call({
- String tankSlug, String fuelSubtype, double height, double? temperature, double volume, double fuelDensity
+ String tankSlug, String fuelSubtype, double height,@Deprecated('Use sampleTemperature instead') double? temperature, double volume, double fuelDensity, double? sampleTemperature, double? tankTemperature
 });
 
 
@@ -15155,7 +15159,7 @@ class _$TankMeasurementInputCopyWithImpl<$Res>
 
 /// Create a copy of TankMeasurementInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? tankSlug = null,Object? fuelSubtype = null,Object? height = null,Object? temperature = freezed,Object? volume = null,Object? fuelDensity = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? tankSlug = null,Object? fuelSubtype = null,Object? height = null,Object? temperature = freezed,Object? volume = null,Object? fuelDensity = null,Object? sampleTemperature = freezed,Object? tankTemperature = freezed,}) {
   return _then(_self.copyWith(
 tankSlug: null == tankSlug ? _self.tankSlug : tankSlug // ignore: cast_nullable_to_non_nullable
 as String,fuelSubtype: null == fuelSubtype ? _self.fuelSubtype : fuelSubtype // ignore: cast_nullable_to_non_nullable
@@ -15163,7 +15167,9 @@ as String,height: null == height ? _self.height : height // ignore: cast_nullabl
 as double,temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
 as double?,volume: null == volume ? _self.volume : volume // ignore: cast_nullable_to_non_nullable
 as double,fuelDensity: null == fuelDensity ? _self.fuelDensity : fuelDensity // ignore: cast_nullable_to_non_nullable
-as double,
+as double,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,tankTemperature: freezed == tankTemperature ? _self.tankTemperature : tankTemperature // ignore: cast_nullable_to_non_nullable
+as double?,
   ));
 }
 
@@ -15248,10 +15254,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String tankSlug,  String fuelSubtype,  double height,  double? temperature,  double volume,  double fuelDensity)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String tankSlug,  String fuelSubtype,  double height, @Deprecated('Use sampleTemperature instead')  double? temperature,  double volume,  double fuelDensity,  double? sampleTemperature,  double? tankTemperature)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TankMeasurementInput() when $default != null:
-return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,_that.volume,_that.fuelDensity);case _:
+return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,_that.volume,_that.fuelDensity,_that.sampleTemperature,_that.tankTemperature);case _:
   return orElse();
 
 }
@@ -15269,10 +15275,10 @@ return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String tankSlug,  String fuelSubtype,  double height,  double? temperature,  double volume,  double fuelDensity)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String tankSlug,  String fuelSubtype,  double height, @Deprecated('Use sampleTemperature instead')  double? temperature,  double volume,  double fuelDensity,  double? sampleTemperature,  double? tankTemperature)  $default,) {final _that = this;
 switch (_that) {
 case _TankMeasurementInput():
-return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,_that.volume,_that.fuelDensity);case _:
+return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,_that.volume,_that.fuelDensity,_that.sampleTemperature,_that.tankTemperature);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -15289,10 +15295,10 @@ return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String tankSlug,  String fuelSubtype,  double height,  double? temperature,  double volume,  double fuelDensity)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String tankSlug,  String fuelSubtype,  double height, @Deprecated('Use sampleTemperature instead')  double? temperature,  double volume,  double fuelDensity,  double? sampleTemperature,  double? tankTemperature)?  $default,) {final _that = this;
 switch (_that) {
 case _TankMeasurementInput() when $default != null:
-return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,_that.volume,_that.fuelDensity);case _:
+return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,_that.volume,_that.fuelDensity,_that.sampleTemperature,_that.tankTemperature);case _:
   return null;
 
 }
@@ -15304,7 +15310,7 @@ return $default(_that.tankSlug,_that.fuelSubtype,_that.height,_that.temperature,
 @JsonSerializable()
 
 class _TankMeasurementInput extends TankMeasurementInput {
-   _TankMeasurementInput({this.tankSlug = '', this.fuelSubtype = '', this.height = 0.0, this.temperature, this.volume = 0.0, this.fuelDensity = 0.0}): super._();
+   _TankMeasurementInput({this.tankSlug = '', this.fuelSubtype = '', this.height = 0.0, @Deprecated('Use sampleTemperature instead') this.temperature, this.volume = 0.0, this.fuelDensity = 0.0, this.sampleTemperature, this.tankTemperature}): super._();
   factory _TankMeasurementInput.fromJson(Map<String, dynamic> json) => _$TankMeasurementInputFromJson(json);
 
 /// The [tankSlug] parameter is the tank slug.
@@ -15314,11 +15320,15 @@ class _TankMeasurementInput extends TankMeasurementInput {
 /// The [height] parameter is the height of the tank measurement.
 @override@JsonKey()  double height;
 /// The [temperature] parameter is the temperature of the tank measurement.
-@override  double? temperature;
+@override@Deprecated('Use sampleTemperature instead')  double? temperature;
 /// The [volume] parameter is the volume of the tank measurement.
 @override@JsonKey()  double volume;
 /// The [fuelDensity] parameter is the fuel density of the tank measurement.
 @override@JsonKey()  double fuelDensity;
+/// The [sampleTemperature] parameter is the sample temperature of the tank measurement.
+@override  double? sampleTemperature;
+/// The [tankTemperature] parameter is the tank temperature of the tank measurement.
+@override  double? tankTemperature;
 
 /// Create a copy of TankMeasurementInput
 /// with the given fields replaced by the non-null parameter values.
@@ -15335,7 +15345,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'TankMeasurementInput(tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity)';
+  return 'TankMeasurementInput(tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity, sampleTemperature: $sampleTemperature, tankTemperature: $tankTemperature)';
 }
 
 
@@ -15346,7 +15356,7 @@ abstract mixin class _$TankMeasurementInputCopyWith<$Res> implements $TankMeasur
   factory _$TankMeasurementInputCopyWith(_TankMeasurementInput value, $Res Function(_TankMeasurementInput) _then) = __$TankMeasurementInputCopyWithImpl;
 @override @useResult
 $Res call({
- String tankSlug, String fuelSubtype, double height, double? temperature, double volume, double fuelDensity
+ String tankSlug, String fuelSubtype, double height,@Deprecated('Use sampleTemperature instead') double? temperature, double volume, double fuelDensity, double? sampleTemperature, double? tankTemperature
 });
 
 
@@ -15363,7 +15373,7 @@ class __$TankMeasurementInputCopyWithImpl<$Res>
 
 /// Create a copy of TankMeasurementInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? tankSlug = null,Object? fuelSubtype = null,Object? height = null,Object? temperature = freezed,Object? volume = null,Object? fuelDensity = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? tankSlug = null,Object? fuelSubtype = null,Object? height = null,Object? temperature = freezed,Object? volume = null,Object? fuelDensity = null,Object? sampleTemperature = freezed,Object? tankTemperature = freezed,}) {
   return _then(_TankMeasurementInput(
 tankSlug: null == tankSlug ? _self.tankSlug : tankSlug // ignore: cast_nullable_to_non_nullable
 as String,fuelSubtype: null == fuelSubtype ? _self.fuelSubtype : fuelSubtype // ignore: cast_nullable_to_non_nullable
@@ -15371,7 +15381,9 @@ as String,height: null == height ? _self.height : height // ignore: cast_nullabl
 as double,temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
 as double?,volume: null == volume ? _self.volume : volume // ignore: cast_nullable_to_non_nullable
 as double,fuelDensity: null == fuelDensity ? _self.fuelDensity : fuelDensity // ignore: cast_nullable_to_non_nullable
-as double,
+as double,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,tankTemperature: freezed == tankTemperature ? _self.tankTemperature : tankTemperature // ignore: cast_nullable_to_non_nullable
+as double?,
   ));
 }
 

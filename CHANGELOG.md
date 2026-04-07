@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.7.8
+
+- Deprecated `temperature` value in `TankMeasurementInput` model
+- Added `sampleTemperature` and `tankTemperature` in `TankMeasurementInput` model
+
 ## 3.7.7
 
 - Added `RealtimeMessage` model with `topic` and `payload` fields in the new `realtime` module.
