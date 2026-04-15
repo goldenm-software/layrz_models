@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.9
+
+- Added `terminalEntryAt` and `terminalExitAt` values in `AtsOperation` model
+
 ## 3.7.8
 
 - Deprecated `temperature` value in `TankMeasurementInput` model
