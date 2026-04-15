@@ -1535,6 +1535,12 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       loadingOrders: (json['loadingOrders'] as List<dynamic>?)
           ?.map((e) => AtsLoadingOrder.fromJson(e as Map<String, dynamic>))
           .toList(),
+      terminalEntryAt: const TimestampOrNullConverter().fromJson(
+        json['terminalEntryAt'] as num?,
+      ),
+      terminalExitAt: const TimestampOrNullConverter().fromJson(
+        json['terminalExitAt'] as num?,
+      ),
     );
 
 Map<String, dynamic> _$AtsOperationToJson(
@@ -1571,6 +1577,12 @@ Map<String, dynamic> _$AtsOperationToJson(
   'minEta': const TimestampOrNullConverter().toJson(instance.minEta),
   'etaStatus': instance.etaStatus?.toJson(),
   'loadingOrders': instance.loadingOrders?.map((e) => e.toJson()).toList(),
+  'terminalEntryAt': const TimestampOrNullConverter().toJson(
+    instance.terminalEntryAt,
+  ),
+  'terminalExitAt': const TimestampOrNullConverter().toJson(
+    instance.terminalExitAt,
+  ),
 };
 
 const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
