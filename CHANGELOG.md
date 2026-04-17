@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.7.10
+
+- Added `StockClosing` entity model
+- Added `StockClosingTank` entity model
+- Added `TankChangesType` entity model
+- Added `StockClosingInput` input model
+- Added `StockClosingTankInput` input model
+
 ## 3.7.9
 
 - Added `terminalEntryAt` and `terminalExitAt` values in `AtsOperation` model
