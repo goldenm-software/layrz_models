@@ -3,6 +3,7 @@ library;
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
+import 'package:layrz_models/src/api/api.dart';
 import 'package:layrz_models/src/converters/converters.dart';
 
 part 'avatar.freezed.dart';

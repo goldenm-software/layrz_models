@@ -43,10 +43,21 @@ abstract class PoiInput with _$PoiInput {
     void Function(String statusCode)? onResponse,
   }) async {
     final connector = LayrzConnector(uri: uri);
+    final opName = id == null ? 'addPoi' : 'editPoi';
     try {
       final response = await connector.perform(
-        query: id == null ? addGraphqlMutation : editGraphqlMutation,
-        variables: {'apiToken': apiToken, 'data': toJson()},
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'data', type: .input, req: true, inputName: 'PoiInput', value: toJson()),
+          ],
+          name: opName,
+        )..add(
+          GqlField(name: opName, args: {'apiToken': 'apiToken', 'data': 'data'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(GqlField(name: 'result', fragment: Poi.gqlFragment)),
+        ),
       );
 
       final data = response.data;
@@ -56,7 +67,7 @@ abstract class PoiInput with _$PoiInput {
         return null;
       }
 
-      final result = id == null ? data['data']['addPoi'] : data['data']['editPoi'];
+      final result = data['data'][opName];
       if (result == null) {
         onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/PoiInput/save(): No result from server");
@@ -78,36 +89,4 @@ abstract class PoiInput with _$PoiInput {
       return null;
     }
   }
-
-  /// [addGraphqlMutation] is the GraphQL mutation to add a POI
-  /// It uses the [Poi.graphqlFragment] to get the POI data
-  static String get addGraphqlMutation =>
-      '${Poi.graphqlFragment}'
-      r'''
-        mutation addPoi($apiToken: String!, $data: PoiInput!) {
-          addPoi(data: $data, apiToken: $apiToken) {
-            status
-            errors
-            result {
-              ...poiFragment
-            }
-          }
-        }
-      ''';
-
-  /// [editGraphqlMutation] is the GraphQL mutation to edit a POI
-  /// It uses the [Poi.graphqlFragment] to get the POI data
-  static String get editGraphqlMutation =>
-      '${Poi.graphqlFragment}'
-      r'''
-        mutation editPoi($apiToken: String!, $data: PoiInput!) {
-          editPoi(data: $data, apiToken: $apiToken) {
-            status
-            errors
-            result {
-              ...poiFragment
-            }
-          }
-        }
-      ''';
 }

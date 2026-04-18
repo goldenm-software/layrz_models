@@ -1,6 +1,4 @@
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
+part of '../api.dart';
 
 class LayrzConnector {
   final Uri uri;
@@ -40,13 +38,18 @@ class LayrzConnector {
 
   late final Dio _dio;
 
-  Future<Response> perform({
-    required String query,
-    required Map<String, dynamic> variables,
-  }) =>
-      _dio.post('', data: {
-        'query': query,
-        'variables': variables,
-        'operationName': null,
-      });
+  /// [perform] executes a [Gql] object built with the gql_builder.
+  /// Each [GqlVariable] with a non-null `value` is included in the variables map;
+  /// variables without a value are omitted from the wire payload.
+  Future<Response> perform(Gql gql) {
+    final variables = <String, dynamic>{
+      for (final v in gql.variables)
+        if (v.value != null) v.name: v.value,
+    };
+    return _dio.post('', data: {
+      'query': gql.generated,
+      'variables': variables,
+      'operationName': null,
+    });
+  }
 }
