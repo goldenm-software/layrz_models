@@ -63,9 +63,9 @@ abstract class LayrzChart with _$LayrzChart {
         GqlQuery(
           variables: [
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'id', type: .string, req: true, value: id),
+            GqlVariable(name: 'id', type: .id, req: true, value: id),
           ],
-          name: 'fetchCharts',
+          name: 'charts',
         )..add(
           GqlField(name: 'charts', args: {'apiToken': 'apiToken', 'id': 'id'})
             ..add(GqlField(name: 'status'))
@@ -122,7 +122,7 @@ abstract class LayrzChart with _$LayrzChart {
           variables: [
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
           ],
-          name: 'fetchCharts',
+          name: 'charts',
         )..add(
           GqlField(name: 'charts', args: {'apiToken': 'apiToken'})
             ..add(GqlField(name: 'status'))
@@ -179,7 +179,7 @@ abstract class LayrzChart with _$LayrzChart {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        GqlQuery(
+        GqlMutation(
           variables: [
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
             GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, value: [id]),
@@ -236,7 +236,7 @@ abstract class LayrzChart with _$LayrzChart {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        GqlQuery(
+        GqlMutation(
           variables: [
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
             GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, value: ids),
@@ -291,7 +291,8 @@ abstract class LayrzChart with _$LayrzChart {
       GqlField(name: 'assets')
         ..add(GqlField(name: 'id'))
         ..add(GqlField(name: 'name'))
-        ..add(GqlField(name: 'operationMode')),
+        ..add(GqlField(name: 'dynamicIcon', fragment: Avatar.gqlFragment))
+        ..add(GqlField(name: 'mode')),
     )
     ..add(GqlField(name: 'assetsIds'))
     ..add(GqlField(name: 'enableLttb'))

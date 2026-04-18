@@ -68,7 +68,6 @@ abstract class RegisteredApp with _$RegisteredApp {
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
           ],
           name: 'fetchRegisteredApps',
-          fragments: [gqlFragment],
         )..add(
           GqlField(name: 'registeredApps', args: {'apiToken': 'apiToken'})
             ..add(GqlField(name: 'status'))

@@ -85,7 +85,6 @@ abstract class LocatorInput with _$LocatorInput {
             GqlVariable(name: 'data', type: .input, req: true, inputName: 'LocatorInput', value: toJson()),
           ],
           name: opName,
-          fragments: [Avatar.gqlFragment, RegisteredApp.gqlFragment, Locator.basicUserFields, Locator.gqlFragment],
         )..add(
           GqlField(name: opName, args: {'apiToken': 'apiToken', 'data': 'data'})
             ..add(GqlField(name: 'status'))

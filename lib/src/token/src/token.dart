@@ -44,7 +44,6 @@ abstract class Token with _$Token {
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
           ],
           name: 'fetchTokens',
-          fragments: [gqlFragment],
         )..add(
           GqlField(name: 'tokens', args: {'apiToken': 'apiToken'})
             ..add(GqlField(name: 'status'))
@@ -166,7 +165,6 @@ abstract class Token with _$Token {
             GqlVariable(name: 'duration', type: .int, value: duration?.inSeconds),
           ],
           name: 'createToken',
-          fragments: [gqlFragment],
         )..add(
           GqlField(name: 'createToken', args: {'apiToken': 'apiToken', 'duration': 'duration'})
             ..add(GqlField(name: 'status'))

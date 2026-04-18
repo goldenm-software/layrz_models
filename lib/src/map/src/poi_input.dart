@@ -52,7 +52,6 @@ abstract class PoiInput with _$PoiInput {
             GqlVariable(name: 'data', type: .input, req: true, inputName: 'PoiInput', value: toJson()),
           ],
           name: opName,
-          fragments: [Access.graphqlUuidFragment, Poi.gqlFragment],
         )..add(
           GqlField(name: opName, args: {'apiToken': 'apiToken', 'data': 'data'})
             ..add(GqlField(name: 'status'))

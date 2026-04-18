@@ -170,7 +170,6 @@ abstract class User with _$User {
       variables: [
         GqlVariable(name: 'apiToken', type: GqlVariableType.string, req: true, value: apiToken),
       ],
-      fragments: [Avatar.gqlFragment, gqlFragment],
     )..add(
         GqlField(name: 'users', args: {'apiToken': 'apiToken'})
           ..add(GqlField(name: 'status'))

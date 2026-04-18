@@ -133,7 +133,6 @@ abstract class Locator with _$Locator {
             GqlVariable(name: 'id', type: .id, value: id),
           ],
           name: 'fetchLocators',
-          fragments: [Avatar.gqlFragment, RegisteredApp.gqlFragment, basicUserFields, gqlFragment],
         )..add(
           GqlField(name: 'locators', args: {'apiToken': 'apiToken', 'id': 'id'})
             ..add(GqlField(name: 'status'))
@@ -194,7 +193,6 @@ abstract class Locator with _$Locator {
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
           ],
           name: 'fetchLocators',
-          fragments: [Avatar.gqlFragment, basicUserFields],
         )..add(
           GqlField(name: 'locators', args: {'apiToken': 'apiToken'})
             ..add(GqlField(name: 'status'))

@@ -99,7 +99,6 @@ abstract class MapLayerInput with _$MapLayerInput {
             GqlVariable(name: 'data', type: .input, req: true, inputName: 'MapLayerInput', value: toJson()),
           ],
           name: opName,
-          fragments: [MapLayer.gqlFragment],
         )..add(
           GqlField(name: opName, args: {'apiToken': 'apiToken', 'data': 'data'})
             ..add(GqlField(name: 'status'))

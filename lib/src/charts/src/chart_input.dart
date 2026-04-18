@@ -59,7 +59,6 @@ abstract class LayrzChartInput with _$LayrzChartInput {
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
             GqlVariable(name: 'data', type: .input, req: true, inputName: 'ChartInput', value: toJson()),
           ],
-          fragments: [LayrzChart.gqlFragment],
           name: id == null ? 'addChart' : 'editChart',
         )..add(
           GqlField(name: id == null ? 'addChart' : 'editChart', args: {'apiToken': 'apiToken', 'data': 'data'})

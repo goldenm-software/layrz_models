@@ -96,7 +96,6 @@ abstract class MapLayer with _$MapLayer {
             GqlVariable(name: 'id', type: .id, value: id),
           ],
           name: 'mapLayers',
-          fragments: [gqlFragment],
         )..add(
           GqlField(name: 'mapLayers', args: {'apiToken': 'apiToken', 'id': 'id'})
             ..add(GqlField(name: 'status'))

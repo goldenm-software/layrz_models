@@ -11,15 +11,15 @@ abstract class Gql {
   /// or `addChart(data: $data) { id name }`.
   late List<GqlField> fields;
 
-  /// [fragments] are the reusable fragments included in this query or mutation, e.g. `...ChartFragment`.
-  late List<GqlFragment> fragments;
+  /// [includeTypename] indicates whether to automatically include `__typename` in every selection set.
+  final bool includeTypename;
 
   /// [Gql] represents a GraphQL query or mutation, with support for variables, nested fields, and fragments.
   Gql({
     this.name,
     required this.variables,
     List<GqlField>? fields,
-    this.fragments = const [],
+    this.includeTypename = false,
   }) {
     this.fields = List.from(fields ?? [], growable: true);
   }
@@ -29,20 +29,19 @@ abstract class Gql {
   String get generated {
     final buffer = StringBuffer();
 
+    // Collect all fragments referenced anywhere in the field tree, in encounter order,
+    // deduped by name so each fragment block is only rendered once.
+    final fragments = _collectFragments(fields);
     for (final fragment in fragments) {
       buffer.write('fragment ${fragment.name} on ${fragment.onType} {\n');
-      buffer.write('  __typename\n');
+      if (includeTypename) buffer.write('  __typename\n');
       for (final field in fragment.fields) {
-        buffer.write('${_writeField(field, depth: 0)}\n');
+        buffer.write('${_writeField(field)}\n');
       }
       buffer.write('}\n\n');
     }
 
-    if (this is GqlMutation) {
-      buffer.write('mutation');
-    } else {
-      buffer.write('query');
-    }
+    buffer.write(this is GqlMutation ? 'mutation' : 'query');
 
     if (name != null) {
       buffer.write(' $name');
@@ -55,15 +54,35 @@ abstract class Gql {
     }
 
     for (final field in fields) {
-      buffer.write('${_writeField(field, depth: 0)}\n');
+      buffer.write('${_writeField(field)}\n');
     }
     buffer.write('}\n');
 
     return buffer.toString();
   }
 
-  /// [add] adds a top-level field to this query or mutation, e.g. adding `charts { id name }` to a query.
+  /// [add] adds a top-level field to this query or mutation.
   void add(GqlField field) => fields.add(field);
+
+  /// Recursively walks [fields] and collects every [GqlFragment] referenced, deduped by name.
+  List<GqlFragment> _collectFragments(List<GqlField> fields) {
+    final seen = <String>{};
+    final result = <GqlFragment>[];
+
+    void visit(List<GqlField> fs) {
+      for (final f in fs) {
+        if (f.fragment != null && seen.add(f.fragment!.name)) {
+          result.add(f.fragment!);
+          // Also collect any fragments referenced inside the fragment's own fields.
+          visit(f.fragment!.fields);
+        }
+        visit(f.fields);
+      }
+    }
+
+    visit(fields);
+    return result;
+  }
 
   String _renderType(GqlVariable v) {
     String base;
@@ -98,7 +117,7 @@ abstract class Gql {
     return v.req ? '$base!' : base;
   }
 
-  String _writeField(GqlField field, {required int depth}) {
+  String _writeField(GqlField field, {int depth = 0}) {
     final buffer = StringBuffer();
     final indent = '  ' * (depth + 1);
 
@@ -115,19 +134,16 @@ abstract class Gql {
 
     if (field.fields.isNotEmpty) {
       buffer.write(' {\n');
-      buffer.write('$indent  __typename\n');
+      if (includeTypename) buffer.write('$indent  __typename\n');
       for (final subField in field.fields) {
         buffer.write('${_writeField(subField, depth: depth + 1)}\n');
       }
       buffer.write('$indent}');
-    } else {
-      if (field.fragment != null) {
-        assert(fragments.contains(field.fragment), 'Fragment ${field.fragment!.name} not found in query fragments.');
-        buffer.write(' {\n');
-        buffer.write('$indent  __typename\n');
-        buffer.write('$indent  ...${field.fragment!.name}\n');
-        buffer.write('$indent}');
-      }
+    } else if (field.fragment != null) {
+      buffer.write(' {\n');
+      if (includeTypename) buffer.write('$indent  __typename\n');
+      buffer.write('$indent  ...${field.fragment!.name}\n');
+      buffer.write('$indent}');
     }
 
     return buffer.toString();
@@ -136,10 +152,10 @@ abstract class Gql {
 
 /// [GqlQuery] represents a GraphQL query operation, which is used to fetch data from the server.
 class GqlQuery extends Gql {
-  GqlQuery({super.name, required super.variables, super.fields, super.fragments});
+  GqlQuery({super.name, required super.variables, super.fields, super.includeTypename});
 }
 
 /// [GqlMutation] represents a GraphQL mutation operation, which is used to modify data on the server.
 class GqlMutation extends Gql {
-  GqlMutation({super.name, required super.variables, super.fields, super.fragments});
+  GqlMutation({super.name, required super.variables, super.fields, super.includeTypename});
 }

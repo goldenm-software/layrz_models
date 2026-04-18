@@ -53,7 +53,6 @@ abstract class Poi with _$Poi {
             GqlVariable(name: 'id', type: .id, value: id),
           ],
           name: 'pois',
-          fragments: [Access.graphqlUuidFragment, gqlFragment],
         )..add(
           GqlField(name: 'pois', args: {'apiToken': 'apiToken', 'id': 'id'})
             ..add(GqlField(name: 'status'))
