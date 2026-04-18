@@ -7,7 +7,6 @@ import 'package:layrz_logging/layrz_logging.dart';
 import 'package:layrz_models/src/access/access.dart';
 import 'package:layrz_models/src/api/api.dart';
 import 'package:layrz_models/src/converters/converters.dart';
-import 'package:layrz_models/src/utils/src/api_connector.dart';
 
 // Freezed
 part 'map.freezed.dart';
