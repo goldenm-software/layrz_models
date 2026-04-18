@@ -48,8 +48,7 @@ abstract class LayrzChart with _$LayrzChart {
 
   /// [fetch] fetches the full chart data from the API using this instance's id.
   Future<LayrzChart?> fetch({
-    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
-    /// on the GraphQL API.
+    /// [apiToken] is the API token to use for authentication.
     required String apiToken,
 
     /// [uri] is the GraphQL endpoint to use
@@ -60,7 +59,19 @@ abstract class LayrzChart with _$LayrzChart {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(query: fetchSingleQuery, variables: {'apiToken': apiToken, 'id': id});
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'id', type: .string, req: true, value: id),
+          ],
+          name: 'fetchCharts',
+        )..add(
+          GqlField(name: 'charts', args: {'apiToken': 'apiToken', 'id': 'id'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
+      );
 
       final data = response.data;
       if (data == null) {
@@ -93,10 +104,9 @@ abstract class LayrzChart with _$LayrzChart {
     }
   }
 
-  /// [fetchAll] fetches all charts from the API using the full fragment. Heavier payload — use for detail-oriented views.
+  /// [fetchAll] fetches all charts from the API with a lightweight payload, suitable for listings and pickers.
   static Future<List<LayrzChart>> fetchAll({
-    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
-    /// on the GraphQL API.
+    /// [apiToken] is the API token to use for authentication.
     required String apiToken,
 
     /// [uri] is the GraphQL endpoint to use
@@ -107,7 +117,23 @@ abstract class LayrzChart with _$LayrzChart {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(query: fetchAllGraphqlQuery, variables: {'apiToken': apiToken});
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+          ],
+          name: 'fetchCharts',
+        )..add(
+          GqlField(name: 'charts', args: {'apiToken': 'apiToken'})
+            ..add(GqlField(name: 'status'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'type')),
+            ),
+        ),
+      );
 
       final data = response.data;
       if (data == null) {
@@ -139,56 +165,9 @@ abstract class LayrzChart with _$LayrzChart {
     }
   }
 
-  /// [fetchAllLight] fetches all charts with only the fields needed for listing views. Prefer this for tables and pickers.
-  static Future<List<LayrzChart>> fetchAllLight({
-    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
-    /// on the GraphQL API.
-    required String apiToken,
-
-    /// [uri] is the GraphQL endpoint to use
-    required Uri uri,
-
-    /// [onResponse] is the callback to call when the response is received
-    void Function(String statusCode)? onResponse,
-  }) async {
-    final connector = LayrzConnector(uri: uri);
-    try {
-      final response = await connector.perform(query: fetchAllLightGraphqlQuery, variables: {'apiToken': apiToken});
-
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/LayrzChart/fetchAllLight(): No response from server");
-        return [];
-      }
-
-      final result = data['data']['charts'];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/LayrzChart/fetchAllLight(): No result from server");
-        return [];
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      if (status != ApiStatus.ok) {
-        onResponse?.call(status.toJson());
-        return [];
-      }
-
-      return (result['result'] as List<dynamic>?)
-              ?.map((e) => LayrzChart.fromJson(Map<String, dynamic>.from(e as Map)))
-              .toList() ??
-          [];
-    } catch (e, stack) {
-      Log.critical("layrz_models/LayrzChart/fetchAllLight(): General exception => $e\n$stack");
-      return [];
-    }
-  }
-
   /// [delete] deletes this chart via the API.
   Future<bool> delete({
-    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
-    /// on the GraphQL API.
+    /// [apiToken] is the API token to use for authentication.
     required String apiToken,
 
     /// [uri] is the GraphQL endpoint to use
@@ -200,11 +179,17 @@ abstract class LayrzChart with _$LayrzChart {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        query: deleteGraphqlMutation,
-        variables: {
-          'apiToken': apiToken,
-          'ids': [id],
-        },
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, value: [id]),
+          ],
+          name: 'deleteChart',
+        )..add(
+          GqlField(name: 'deleteChart', args: {'apiToken': 'apiToken', 'ids': 'ids'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -236,8 +221,7 @@ abstract class LayrzChart with _$LayrzChart {
 
   /// [deleteMultiple] deletes a batch of charts by their IDs.
   static Future<bool> deleteMultiple({
-    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
-    /// on the GraphQL API.
+    /// [apiToken] is the API token to use for authentication.
     required String apiToken,
 
     /// [uri] is the GraphQL endpoint to use
@@ -252,8 +236,17 @@ abstract class LayrzChart with _$LayrzChart {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        query: deleteGraphqlMutation,
-        variables: {'apiToken': apiToken, 'ids': ids},
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, value: ids),
+          ],
+          name: 'deleteCharts',
+        )..add(
+          GqlField(name: 'deleteCharts', args: {'apiToken': 'apiToken', 'ids': 'ids'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -283,91 +276,24 @@ abstract class LayrzChart with _$LayrzChart {
     }
   }
 
-  /// [graphqlFragment] is the full GraphQL fragment for a chart, including nested access permissions.
-  static String get graphqlFragment => '''
-    fragment chartFragment on Chart {
-      id
-      name
-      description
-      type
-      algorithm
-      dataSource
-      formula
-      script
-      sensors
-      assets { id name }
-      assetsIds
-      enableLttb
-      access {
-        id
-        read
-        write
-        manage
-        objectId
-        userId
-        module
-      }
-    }
-  ''';
-
-  /// [fetchSingleQuery] is the GraphQL query to fetch a single chart by its ID.
-  /// It uses the [LayrzChart.graphqlFragment] to get the chart data.
-  static String get fetchSingleQuery =>
-      '${LayrzChart.graphqlFragment}'
-      r'''
-        query fetchChart($apiToken: String!, $id: ID) {
-          charts(apiToken: $apiToken, id: $id) {
-            status
-            errors
-            result {
-              ...chartFragment
-            }
-          }
-        }
-      ''';
-
-  /// [fetchAllGraphqlQuery] is the GraphQL query to fetch all charts using the full fragment. Heavy payload.
-  /// It uses the [LayrzChart.graphqlFragment] to get the chart data.
-  static String get fetchAllGraphqlQuery =>
-      '${LayrzChart.graphqlFragment}'
-      r'''
-        query fetchAllCharts($apiToken: String!) {
-          charts(apiToken: $apiToken) {
-            status
-            errors
-            result {
-              ...chartFragment
-            }
-          }
-        }
-      ''';
-
-  /// [fetchAllLightGraphqlQuery] is the GraphQL query to fetch all charts with only the fields needed for listing views.
-  /// It does not use the [LayrzChart.graphqlFragment] to reduce the amount of data.
-  static String get fetchAllLightGraphqlQuery => r'''
-    query fetchAllChartsLight($apiToken: String!) {
-      charts(apiToken: $apiToken) {
-        status
-        errors
-        result {
-          id
-          name
-          description
-          type
-          algorithm
-          dataSource
-        }
-      }
-    }
-  ''';
-
-  /// [deleteGraphqlMutation] is the GraphQL mutation to delete one or more charts by ID.
-  static String get deleteGraphqlMutation => r'''
-    mutation deleteCharts($apiToken: String!, $ids: [ID]!) {
-      deleteCharts(apiToken: $apiToken, ids: $ids) {
-        status
-        errors
-      }
-    }
-  ''';
+  /// [gqlFragment] is the GqlFragment for a chart, including nested access permissions.
+  static GqlFragment get gqlFragment => GqlFragment(name: 'chartFragment', onType: 'Chart')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'description'))
+    ..add(GqlField(name: 'type'))
+    ..add(GqlField(name: 'algorithm'))
+    ..add(GqlField(name: 'dataSource'))
+    ..add(GqlField(name: 'formula'))
+    ..add(GqlField(name: 'script'))
+    ..add(GqlField(name: 'sensors'))
+    ..add(
+      GqlField(name: 'assets')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'operationMode')),
+    )
+    ..add(GqlField(name: 'assetsIds'))
+    ..add(GqlField(name: 'enableLttb'))
+    ..add(GqlField(name: 'access', fragment: Access.graphqlIdFragment));
 }

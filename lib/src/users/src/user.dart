@@ -156,6 +156,68 @@ abstract class User with _$User {
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  /// [gqlFragment] is the lightweight GqlFragment for a user, suitable for listings and pickers.
+  static final GqlFragment gqlFragment = GqlFragment(name: 'userFragment', onType: 'User')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'dynamicAvatar', fragment: Avatar.gqlFragment));
+
+  /// [buildFetchAllQuery] builds the GqlQuery to fetch all users with listing-level fields.
+  static GqlQuery buildFetchAllQuery({required String apiToken}) {
+    return GqlQuery(
+      name: 'users',
+      variables: [
+        GqlVariable(name: 'apiToken', type: GqlVariableType.string, req: true, value: apiToken),
+      ],
+      fragments: [Avatar.gqlFragment, gqlFragment],
+    )..add(
+        GqlField(name: 'users', args: {'apiToken': 'apiToken'})
+          ..add(GqlField(name: 'status'))
+          ..add(GqlField(name: 'errors'))
+          ..add(GqlField(name: 'result', fragment: gqlFragment)),
+      );
+  }
+
+  /// [fetchAll] fetches all users from the API with a lightweight payload.
+  static Future<List<User>> fetchAll({
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri);
+    try {
+      final response = await connector.perform(buildFetchAllQuery(apiToken: apiToken));
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/User/fetchAll(): No response from server");
+        return [];
+      }
+
+      final result = data['data']['users'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/User/fetchAll(): No result from server");
+        return [];
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return [];
+      }
+
+      return (result['result'] as List<dynamic>?)
+              ?.map((e) => User.fromJson(Map<String, dynamic>.from(e as Map)))
+              .toList() ??
+          [];
+    } catch (e, stack) {
+      Log.critical("layrz_models/User/fetchAll(): General exception => $e\n$stack");
+      return [];
+    }
+  }
 }
 
 @unfreezed

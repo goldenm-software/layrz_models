@@ -42,8 +42,7 @@ abstract class LayrzChartInput with _$LayrzChartInput {
 
   /// [save] saves the chart input to the API, creating a new chart when [id] is null or editing the existing one otherwise.
   Future<ApiResponse<LayrzChart, Map<String, dynamic>>?> save({
-    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
-    /// on the GraphQL API.
+    /// [apiToken] is the API token to use for authentication.
     required String apiToken,
 
     /// [uri] is the GraphQL endpoint to use
@@ -55,8 +54,19 @@ abstract class LayrzChartInput with _$LayrzChartInput {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        query: id == null ? addGraphqlMutation : editGraphqlMutation,
-        variables: {'apiToken': apiToken, 'data': toJson()},
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'data', type: .input, req: true, inputName: 'ChartInput', value: toJson()),
+          ],
+          fragments: [LayrzChart.gqlFragment],
+          name: id == null ? 'addChart' : 'editChart',
+        )..add(
+          GqlField(name: id == null ? 'addChart' : 'editChart', args: {'apiToken': 'apiToken', 'data': 'data'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(GqlField(name: 'result', fragment: LayrzChart.gqlFragment)),
+        ),
       );
 
       final data = response.data;
@@ -88,36 +98,4 @@ abstract class LayrzChartInput with _$LayrzChartInput {
       return null;
     }
   }
-
-  /// [addGraphqlMutation] is the GraphQL mutation to create a new chart.
-  /// It uses the [LayrzChart.graphqlFragment] to get the chart data.
-  static String get addGraphqlMutation =>
-      '${LayrzChart.graphqlFragment}'
-      r'''
-        mutation addChart($apiToken: String!, $data: ChartInput!) {
-          addChart(apiToken: $apiToken, data: $data) {
-            status
-            errors
-            result {
-              ...chartFragment
-            }
-          }
-        }
-      ''';
-
-  /// [editGraphqlMutation] is the GraphQL mutation to edit an existing chart.
-  /// It uses the [LayrzChart.graphqlFragment] to get the chart data.
-  static String get editGraphqlMutation =>
-      '${LayrzChart.graphqlFragment}'
-      r'''
-        mutation editChart($apiToken: String!, $data: ChartInput!) {
-          editChart(apiToken: $apiToken, data: $data) {
-            status
-            errors
-            result {
-              ...chartFragment
-            }
-          }
-        }
-      ''';
 }

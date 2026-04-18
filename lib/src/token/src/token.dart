@@ -39,8 +39,18 @@ abstract class Token with _$Token {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        query: fetchAllGraphqlQuery,
-        variables: {'apiToken': apiToken},
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+          ],
+          name: 'fetchTokens',
+          fragments: [gqlFragment],
+        )..add(
+          GqlField(name: 'tokens', args: {'apiToken': 'apiToken'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
       );
 
       final data = response.data;
@@ -89,11 +99,17 @@ abstract class Token with _$Token {
 
     try {
       final response = await connector.perform(
-        query: expireGraphqlMutation,
-        variables: {
-          'apiToken': apiToken,
-          'tokenToExpire': token,
-        },
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'tokenToExpire', type: .string, req: true, value: token),
+          ],
+          name: 'expireToken',
+        )..add(
+          GqlField(name: 'expireToken', args: {'apiToken': 'apiToken', 'tokenToExpire': 'tokenToExpire'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -144,11 +160,19 @@ abstract class Token with _$Token {
 
     try {
       final response = await connector.perform(
-        query: createGraphqlMutation,
-        variables: {
-          'apiToken': apiToken,
-          'duration': duration?.inSeconds,
-        },
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'duration', type: .int, value: duration?.inSeconds),
+          ],
+          name: 'createToken',
+          fragments: [gqlFragment],
+        )..add(
+          GqlField(name: 'createToken', args: {'apiToken': 'apiToken', 'duration': 'duration'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
       );
 
       final data = response.data;
@@ -178,55 +202,11 @@ abstract class Token with _$Token {
     }
   }
 
-  /// [fragment] is the GraphQL fragment for the token model, which can be used in
-  /// GraphQL queries and mutations to specify the fields to retrieve or manipulate.
-  static String get fragment => r'''
-        fragment tokenFragment on Token {
-          id
-          token
-          validBefore
-          issuedAt
-          audience
-        }
-      ''';
-
-  /// [fetchAllGraphqlQuery] is the GraphQL query to fetch all tokens for the authenticated user.
-  static String get fetchAllGraphqlQuery =>
-      '$fragment'
-      r'''
-        query ($apiToken: String!) {
-          tokens(apiToken: $apiToken) {
-            status
-            errors
-            result {
-              ...tokenFragment
-            }
-          }
-        }
-      ''';
-
-  /// [expireGraphqlMutation] is the GraphQL mutation to expire a token immediately.
-  static String get expireGraphqlMutation => r'''
-        mutation ($apiToken: String!, $tokenToExpire: String!) {
-          expireToken(apiToken: $apiToken, tokenToExpire: $tokenToExpire) {
-            status
-            errors
-          }
-        }
-      ''';
-
-  /// [createGraphqlMutation] is the GraphQL mutation to create a new token.
-  static String get createGraphqlMutation =>
-      '$fragment'
-      r'''
-        mutation ($apiToken: String!, $duration: Duration) {
-          createToken(apiToken: $apiToken, duration: $duration) {
-            status
-            errors
-            result {
-              ...tokenFragment
-            }
-          }
-        }
-      ''';
+  /// [gqlFragment] is the GqlFragment for a token.
+  static GqlFragment get gqlFragment => GqlFragment(name: 'tokenFragment', onType: 'Token')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'token'))
+    ..add(GqlField(name: 'validBefore'))
+    ..add(GqlField(name: 'issuedAt'))
+    ..add(GqlField(name: 'audience'));
 }

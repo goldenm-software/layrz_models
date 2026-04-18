@@ -90,10 +90,22 @@ abstract class MapLayerInput with _$MapLayerInput {
     void Function(String statusCode)? onResponse,
   }) async {
     final connector = LayrzConnector(uri: uri);
+    final opName = id == null ? 'addMapLayer' : 'editMapLayer';
     try {
       final response = await connector.perform(
-        query: id == null ? addGraphqlMutation : editGraphqlMutation,
-        variables: {'apiToken': apiToken, 'data': toJson()},
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'data', type: .input, req: true, inputName: 'MapLayerInput', value: toJson()),
+          ],
+          name: opName,
+          fragments: [MapLayer.gqlFragment],
+        )..add(
+          GqlField(name: opName, args: {'apiToken': 'apiToken', 'data': 'data'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(GqlField(name: 'result', fragment: MapLayer.gqlFragment)),
+        ),
       );
 
       final data = response.data;
@@ -103,7 +115,7 @@ abstract class MapLayerInput with _$MapLayerInput {
         return null;
       }
 
-      final result = id == null ? data['data']['addMapLayer'] : data['data']['editMapLayer'];
+      final result = data['data'][opName];
       if (result == null) {
         onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/MapLayerInput/save(): No result from server");
@@ -125,36 +137,4 @@ abstract class MapLayerInput with _$MapLayerInput {
       return null;
     }
   }
-
-  /// [addGraphqlMutation] is the GraphQL mutation to add a [MapLayer]
-  /// It uses the [MapLayer.graphqlFragment] to get the map layer data
-  static String get addGraphqlMutation =>
-      '${MapLayer.graphqlFragment}'
-      r'''
-        mutation addMapLayer($apiToken: String!, $data: MapLayerInput!) {
-          addMapLayer(data: $data, apiToken: $apiToken) {
-            status
-            errors
-            result {
-              ...mapLayerFragment
-            }
-          }
-        }
-      ''';
-
-  /// [editGraphqlMutation] is the GraphQL mutation to edit a [MapLayer]
-  /// It uses the [MapLayer.graphqlFragment] to get the map layer data
-  static String get editGraphqlMutation =>
-      '${MapLayer.graphqlFragment}'
-      r'''
-        mutation editMapLayer($apiToken: String!, $data: MapLayerInput!) {
-          editMapLayer(data: $data, apiToken: $apiToken) {
-            status
-            errors
-            result {
-              ...mapLayerFragment
-            }
-          }
-        }
-      ''';
 }

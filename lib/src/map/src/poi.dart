@@ -46,7 +46,21 @@ abstract class Poi with _$Poi {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(query: fetchSingleQuery, variables: {'apiToken': apiToken, 'id': id});
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'id', type: .id, value: id),
+          ],
+          name: 'pois',
+          fragments: [Access.graphqlUuidFragment, gqlFragment],
+        )..add(
+          GqlField(name: 'pois', args: {'apiToken': 'apiToken', 'id': 'id'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
+      );
 
       final data = response.data;
       if (data == null) {
@@ -94,7 +108,24 @@ abstract class Poi with _$Poi {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(query: fetchAllGraphqlQuery, variables: {'apiToken': apiToken});
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+          ],
+          name: 'pois',
+        )..add(
+          GqlField(name: 'pois', args: {'apiToken': 'apiToken'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'icon')),
+            ),
+        ),
+      );
 
       final data = response.data;
       if (data == null) {
@@ -145,8 +176,17 @@ abstract class Poi with _$Poi {
 
     try {
       final response = await connector.perform(
-        query: deletePois,
-        variables: {'apiToken': apiToken, 'ids': ids},
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: ids),
+          ],
+          name: 'deletePois',
+        )..add(
+          GqlField(name: 'deletePois', args: {'apiToken': 'apiToken', 'ids': 'ids'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -176,65 +216,13 @@ abstract class Poi with _$Poi {
     }
   }
 
-  /// [fetchSingleQuery] is the GraphQL query to fetch a single POI by its ID
-  /// It uses the [Poi.graphqlFragment] to get the POI data
-  static String get fetchSingleQuery =>
-      '${Poi.graphqlFragment}'
-      r'''
-        query pois($apiToken: String!, $id: ID) {
-          pois(apiToken: $apiToken, id: $id) {
-            status
-            errors
-            result {
-              ...poiFragment
-            }
-          }
-        }
-      ''';
-
-  /// [fetchAllGraphqlQuery] is the GraphQL query to fetch all POIs
-  /// It includes the basic user fields fragment [basicUserFields] to get the user data
-  /// It does not use the [Poi.graphqlFragment] to reduce the amount of data
-  static String get fetchAllGraphqlQuery => r'''
-        query pois($apiToken: String!) {
-          pois(apiToken: $apiToken) {
-            status
-            errors
-            result {
-              id
-              name
-              icon
-            }
-          }
-        }
-      ''';
-
-  /// [graphqlFragment] is the GraphQL fragment to fetch the POI data
-  /// It includes the basic user fields fragment [basicUserFields] to get the user data
-  static String get graphqlFragment =>
-      '''
-    ${Access.graphqlUuidFragment}
-    fragment poiFragment on Poi {
-      id
-      name
-      description
-      icon
-      latitude
-      longitude
-
-      access {
-        ...accessUuidFragment
-      }
-    }
-  ''';
-
-  /// [deletePois] is the GraphQL mutation to delete one or more POIs by their IDs
-  static String get deletePois => r'''
-        mutation deletePois($apiToken: String!, $ids: [ID!]!) {
-          deletePois(apiToken: $apiToken, ids: $ids) {
-            status
-            errors
-          }
-        }
-      ''';
+  /// [gqlFragment] is the GqlFragment for a POI, including access permissions.
+  static GqlFragment get gqlFragment => GqlFragment(name: 'poiFragment', onType: 'Poi')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'description'))
+    ..add(GqlField(name: 'icon'))
+    ..add(GqlField(name: 'latitude'))
+    ..add(GqlField(name: 'longitude'))
+    ..add(GqlField(name: 'access', fragment: Access.graphqlUuidFragment));
 }
