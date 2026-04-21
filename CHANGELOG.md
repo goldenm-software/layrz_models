@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.8.1
+
+- Added `linkedStorageTerminals` and `linkedStorageTerminalsIds` fields to `Asset` model.
+- Added `linkedStorageTerminalsIds` field to `AssetInput` model.
+- Added `invoiceId` field to `AtsPurchaseOrder` model.
+- Added `atsGetAllTerminals` and `atsStorageReceptionAccess` values to `ReferenceCategory` enum.
+- Bumped `json_annotation` to `^4.11.0`.
+
 ## 3.8.0
 
 - Added `gql_builder` module (`GqlQuery`, `GqlMutation`, `GqlFragment`, `GqlField`, `GqlVariable`) for composable, type-safe GraphQL query construction.
