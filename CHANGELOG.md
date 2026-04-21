@@ -6,7 +6,6 @@
 - Added `linkedStorageTerminalsIds` field to `AssetInput` model.
 - Added `invoiceId` field to `AtsPurchaseOrder` model.
 - Added `atsGetAllTerminals` and `atsStorageReceptionAccess` values to `ReferenceCategory` enum.
-- Bumped `json_annotation` to `^4.11.0`.
 
 ## 3.8.0
 
