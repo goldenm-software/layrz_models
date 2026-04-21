@@ -7086,7 +7086,8 @@ mixin _$TableItem {
 
 /// [assetsIds] is the list of ids of the [assets] associated with the table
  List<String> get assetsIds;/// [sensorsIds] is the list of ids of the [sensors] associated with the table
- List<String> get sensorsIds;
+ List<String> get sensorsIds;/// [attributes] is the list of  assets [attributes] associated with the table
+ List<String> get attributes;
 /// Create a copy of TableItem
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7099,16 +7100,16 @@ $TableItemCopyWith<TableItem> get copyWith => _$TableItemCopyWithImpl<TableItem>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TableItem&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.sensorsIds, sensorsIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TableItem&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.sensorsIds, sensorsIds)&&const DeepCollectionEquality().equals(other.attributes, attributes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(sensorsIds));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(sensorsIds),const DeepCollectionEquality().hash(attributes));
 
 @override
 String toString() {
-  return 'TableItem(assetsIds: $assetsIds, sensorsIds: $sensorsIds)';
+  return 'TableItem(assetsIds: $assetsIds, sensorsIds: $sensorsIds, attributes: $attributes)';
 }
 
 
@@ -7119,7 +7120,7 @@ abstract mixin class $TableItemCopyWith<$Res>  {
   factory $TableItemCopyWith(TableItem value, $Res Function(TableItem) _then) = _$TableItemCopyWithImpl;
 @useResult
 $Res call({
- List<String> assetsIds, List<String> sensorsIds
+ List<String> assetsIds, List<String> sensorsIds, List<String> attributes
 });
 
 
@@ -7136,10 +7137,11 @@ class _$TableItemCopyWithImpl<$Res>
 
 /// Create a copy of TableItem
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? assetsIds = null,Object? sensorsIds = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? assetsIds = null,Object? sensorsIds = null,Object? attributes = null,}) {
   return _then(_self.copyWith(
 assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,sensorsIds: null == sensorsIds ? _self.sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,attributes: null == attributes ? _self.attributes : attributes // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
@@ -7225,10 +7227,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds,  List<String> attributes)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TableItem() when $default != null:
-return $default(_that.assetsIds,_that.sensorsIds);case _:
+return $default(_that.assetsIds,_that.sensorsIds,_that.attributes);case _:
   return orElse();
 
 }
@@ -7246,10 +7248,10 @@ return $default(_that.assetsIds,_that.sensorsIds);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds,  List<String> attributes)  $default,) {final _that = this;
 switch (_that) {
 case _TableItem():
-return $default(_that.assetsIds,_that.sensorsIds);case _:
+return $default(_that.assetsIds,_that.sensorsIds,_that.attributes);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -7266,10 +7268,10 @@ return $default(_that.assetsIds,_that.sensorsIds);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> assetsIds,  List<String> sensorsIds)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> assetsIds,  List<String> sensorsIds,  List<String> attributes)?  $default,) {final _that = this;
 switch (_that) {
 case _TableItem() when $default != null:
-return $default(_that.assetsIds,_that.sensorsIds);case _:
+return $default(_that.assetsIds,_that.sensorsIds,_that.attributes);case _:
   return null;
 
 }
@@ -7281,7 +7283,7 @@ return $default(_that.assetsIds,_that.sensorsIds);case _:
 @JsonSerializable()
 
 class _TableItem extends TableItem {
-  const _TableItem({final  List<String> assetsIds = const [], final  List<String> sensorsIds = const []}): _assetsIds = assetsIds,_sensorsIds = sensorsIds,super._();
+  const _TableItem({final  List<String> assetsIds = const [], final  List<String> sensorsIds = const [], final  List<String> attributes = const []}): _assetsIds = assetsIds,_sensorsIds = sensorsIds,_attributes = attributes,super._();
   factory _TableItem.fromJson(Map<String, dynamic> json) => _$TableItemFromJson(json);
 
 /// [assetsIds] is the list of ids of the [assets] associated with the table
@@ -7302,6 +7304,15 @@ class _TableItem extends TableItem {
   return EqualUnmodifiableListView(_sensorsIds);
 }
 
+/// [attributes] is the list of  assets [attributes] associated with the table
+ final  List<String> _attributes;
+/// [attributes] is the list of  assets [attributes] associated with the table
+@override@JsonKey() List<String> get attributes {
+  if (_attributes is EqualUnmodifiableListView) return _attributes;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_attributes);
+}
+
 
 /// Create a copy of TableItem
 /// with the given fields replaced by the non-null parameter values.
@@ -7316,16 +7327,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TableItem&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._sensorsIds, _sensorsIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TableItem&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._sensorsIds, _sensorsIds)&&const DeepCollectionEquality().equals(other._attributes, _attributes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_sensorsIds));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_sensorsIds),const DeepCollectionEquality().hash(_attributes));
 
 @override
 String toString() {
-  return 'TableItem(assetsIds: $assetsIds, sensorsIds: $sensorsIds)';
+  return 'TableItem(assetsIds: $assetsIds, sensorsIds: $sensorsIds, attributes: $attributes)';
 }
 
 
@@ -7336,7 +7347,7 @@ abstract mixin class _$TableItemCopyWith<$Res> implements $TableItemCopyWith<$Re
   factory _$TableItemCopyWith(_TableItem value, $Res Function(_TableItem) _then) = __$TableItemCopyWithImpl;
 @override @useResult
 $Res call({
- List<String> assetsIds, List<String> sensorsIds
+ List<String> assetsIds, List<String> sensorsIds, List<String> attributes
 });
 
 
@@ -7353,10 +7364,11 @@ class __$TableItemCopyWithImpl<$Res>
 
 /// Create a copy of TableItem
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? assetsIds = null,Object? sensorsIds = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? assetsIds = null,Object? sensorsIds = null,Object? attributes = null,}) {
   return _then(_TableItem(
 assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,sensorsIds: null == sensorsIds ? _self._sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,attributes: null == attributes ? _self._attributes : attributes // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
@@ -7372,7 +7384,9 @@ mixin _$TableItemInput {
  List<String> get assetsIds;/// [assetsIds] is the list of ids of the [assets] associated with the table
  set assetsIds(List<String> value);/// [sensorsIds] is the list of ids of the [sensors] associated with the table
  List<String> get sensorsIds;/// [sensorsIds] is the list of ids of the [sensors] associated with the table
- set sensorsIds(List<String> value);
+ set sensorsIds(List<String> value);/// [attributes] is the list of  assets [attributes] associated with the table
+ List<String> get attributes;/// [attributes] is the list of  assets [attributes] associated with the table
+ set attributes(List<String> value);
 /// Create a copy of TableItemInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7387,7 +7401,7 @@ $TableItemInputCopyWith<TableItemInput> get copyWith => _$TableItemInputCopyWith
 
 @override
 String toString() {
-  return 'TableItemInput(assetsIds: $assetsIds, sensorsIds: $sensorsIds)';
+  return 'TableItemInput(assetsIds: $assetsIds, sensorsIds: $sensorsIds, attributes: $attributes)';
 }
 
 
@@ -7398,7 +7412,7 @@ abstract mixin class $TableItemInputCopyWith<$Res>  {
   factory $TableItemInputCopyWith(TableItemInput value, $Res Function(TableItemInput) _then) = _$TableItemInputCopyWithImpl;
 @useResult
 $Res call({
- List<String> assetsIds, List<String> sensorsIds
+ List<String> assetsIds, List<String> sensorsIds, List<String> attributes
 });
 
 
@@ -7415,10 +7429,11 @@ class _$TableItemInputCopyWithImpl<$Res>
 
 /// Create a copy of TableItemInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? assetsIds = null,Object? sensorsIds = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? assetsIds = null,Object? sensorsIds = null,Object? attributes = null,}) {
   return _then(_self.copyWith(
 assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,sensorsIds: null == sensorsIds ? _self.sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,attributes: null == attributes ? _self.attributes : attributes // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
@@ -7504,10 +7519,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds,  List<String> attributes)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TableItemInput() when $default != null:
-return $default(_that.assetsIds,_that.sensorsIds);case _:
+return $default(_that.assetsIds,_that.sensorsIds,_that.attributes);case _:
   return orElse();
 
 }
@@ -7525,10 +7540,10 @@ return $default(_that.assetsIds,_that.sensorsIds);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> assetsIds,  List<String> sensorsIds,  List<String> attributes)  $default,) {final _that = this;
 switch (_that) {
 case _TableItemInput():
-return $default(_that.assetsIds,_that.sensorsIds);case _:
+return $default(_that.assetsIds,_that.sensorsIds,_that.attributes);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -7545,10 +7560,10 @@ return $default(_that.assetsIds,_that.sensorsIds);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> assetsIds,  List<String> sensorsIds)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> assetsIds,  List<String> sensorsIds,  List<String> attributes)?  $default,) {final _that = this;
 switch (_that) {
 case _TableItemInput() when $default != null:
-return $default(_that.assetsIds,_that.sensorsIds);case _:
+return $default(_that.assetsIds,_that.sensorsIds,_that.attributes);case _:
   return null;
 
 }
@@ -7560,13 +7575,15 @@ return $default(_that.assetsIds,_that.sensorsIds);case _:
 @JsonSerializable()
 
 class _TableItemInput extends TableItemInput {
-   _TableItemInput({this.assetsIds = const [], this.sensorsIds = const []}): super._();
+   _TableItemInput({this.assetsIds = const [], this.sensorsIds = const [], this.attributes = const []}): super._();
   factory _TableItemInput.fromJson(Map<String, dynamic> json) => _$TableItemInputFromJson(json);
 
 /// [assetsIds] is the list of ids of the [assets] associated with the table
 @override@JsonKey()  List<String> assetsIds;
 /// [sensorsIds] is the list of ids of the [sensors] associated with the table
 @override@JsonKey()  List<String> sensorsIds;
+/// [attributes] is the list of  assets [attributes] associated with the table
+@override@JsonKey()  List<String> attributes;
 
 /// Create a copy of TableItemInput
 /// with the given fields replaced by the non-null parameter values.
@@ -7583,7 +7600,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'TableItemInput(assetsIds: $assetsIds, sensorsIds: $sensorsIds)';
+  return 'TableItemInput(assetsIds: $assetsIds, sensorsIds: $sensorsIds, attributes: $attributes)';
 }
 
 
@@ -7594,7 +7611,7 @@ abstract mixin class _$TableItemInputCopyWith<$Res> implements $TableItemInputCo
   factory _$TableItemInputCopyWith(_TableItemInput value, $Res Function(_TableItemInput) _then) = __$TableItemInputCopyWithImpl;
 @override @useResult
 $Res call({
- List<String> assetsIds, List<String> sensorsIds
+ List<String> assetsIds, List<String> sensorsIds, List<String> attributes
 });
 
 
@@ -7611,10 +7628,11 @@ class __$TableItemInputCopyWithImpl<$Res>
 
 /// Create a copy of TableItemInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? assetsIds = null,Object? sensorsIds = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? assetsIds = null,Object? sensorsIds = null,Object? attributes = null,}) {
   return _then(_TableItemInput(
 assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,sensorsIds: null == sensorsIds ? _self.sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,attributes: null == attributes ? _self.attributes : attributes // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
