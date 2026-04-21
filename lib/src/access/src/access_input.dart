@@ -45,12 +45,24 @@ abstract class AccessInput with _$AccessInput {
     bool useUuid = false,
   }) async {
     final connector = LayrzConnector(uri: uri);
+    final isNew = id == null;
+    final opName = isNew
+        ? (useUuid ? 'addAccessPermissionUuid' : 'addAccessPermission')
+        : (useUuid ? 'editAccessPermissionUuid' : 'editAccessPermission');
+    final inputName = useUuid ? 'AccessPermissionUuidInput' : 'AccessPermissionInput';
     try {
       final response = await connector.perform(
-        query: id == null
-            ? (useUuid ? AccessInput.addUuidGraphqlMutation : AccessInput.addIdGraphqlMutation)
-            : (useUuid ? AccessInput.editUuidGraphqlMutation : AccessInput.editIdGraphqlMutation),
-        variables: {'apiToken': apiToken, 'data': toJson()},
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'data', type: .input, req: true, inputName: inputName, value: toJson()),
+          ],
+          name: opName,
+        )..add(
+          GqlField(name: opName, args: {'apiToken': 'apiToken', 'data': 'data'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -60,9 +72,7 @@ abstract class AccessInput with _$AccessInput {
         return false;
       }
 
-      final result = id == null
-          ? (useUuid ? data['data']['addAccessPermissionUuid'] : data['data']['addAccessPermission'])
-          : (useUuid ? data['data']['editAccessPermissionUuid'] : data['data']['editAccessPermission']);
+      final result = data['data'][opName];
       if (result == null) {
         onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/AccessInput/save(): No result from server");
@@ -98,11 +108,22 @@ abstract class AccessInput with _$AccessInput {
     bool useUuid = false,
   }) async {
     final connector = LayrzConnector(uri: uri);
+    final opName = useUuid ? 'deleteAccessPermissionUuid' : 'deleteAccessPermission';
+    final inputName = useUuid ? 'AccessPermissionUuidInput' : 'AccessPermissionInput';
 
     try {
       final response = await connector.perform(
-        query: useUuid ? AccessInput.deleteUuidGraphqlMutation : AccessInput.deleteIdGraphqlMutation,
-        variables: {'apiToken': apiToken, 'data': toJson()},
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'data', type: .input, req: true, inputName: inputName, value: toJson()),
+          ],
+          name: opName,
+        )..add(
+          GqlField(name: opName, args: {'apiToken': 'apiToken', 'data': 'data'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -112,7 +133,7 @@ abstract class AccessInput with _$AccessInput {
         return false;
       }
 
-      final result = data['data'][useUuid ? 'deleteAccessPermissionUuid' : 'deleteAccessPermission'];
+      final result = data['data'][opName];
       if (result == null) {
         onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Access/delete(): No result from server");
@@ -131,64 +152,4 @@ abstract class AccessInput with _$AccessInput {
       return false;
     }
   }
-
-  /// [addIdGraphqlMutation] GraphQL mutation for adding an access permission
-  static String get addIdGraphqlMutation => r'''
-    mutation($apiToken: String!, $data: AccessPermissionInput!) {
-      addAccessPermission(apiToken: $apiToken, data: $data) {
-        status
-        errors
-      }
-    }
-  ''';
-
-  /// [addUuidGraphqlMutation] GraphQL mutation for adding an access permission
-  static String get addUuidGraphqlMutation => r'''
-    mutation($apiToken: String!, $data: AccessPermissionUuidInput!) {
-      addAccessPermissionUuid(apiToken: $apiToken, data: $data) {
-        status
-        errors
-      }
-    }
-  ''';
-
-  /// [editIdGraphqlMutation] GraphQL mutation for updating an access permission
-  static String get editIdGraphqlMutation => r'''
-    mutation($apiToken: String!, $data: AccessPermissionInput!) {
-      editAccessPermission(apiToken: $apiToken, data: $data) {
-        status
-        errors
-      }
-    }
-  ''';
-
-  /// [editUuidGraphqlMutation] GraphQL mutation for updating an access permission
-  static String get editUuidGraphqlMutation => r'''
-    mutation($apiToken: String!, $data: AccessPermissionUuidInput!) {
-      editAccessPermissionUuid(apiToken: $apiToken, data: $data) {
-        status
-        errors
-      }
-    }
-  ''';
-
-  /// [deleteIdGraphqlMutation] GraphQL mutation for deleting an access permission
-  static String get deleteIdGraphqlMutation => r'''
-    mutation($apiToken: String!, $data: AccessPermissionInput!) {
-      deleteAccessPermission(apiToken: $apiToken, data: $data) {
-        status
-        errors
-      }
-    }
-  ''';
-
-  /// [deleteUuidGraphqlMutation] GraphQL mutation for deleting an access permission
-  static String get deleteUuidGraphqlMutation => r'''
-    mutation($apiToken: String!, $data: AccessPermissionUuidInput!) {
-      deleteAccessPermissionUuid(apiToken: $apiToken, data: $data) {
-        status
-        errors
-      }
-    }
-  ''';
 }

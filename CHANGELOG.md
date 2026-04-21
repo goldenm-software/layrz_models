@@ -1,5 +1,30 @@
 # Changelog
 
+## 3.8.0
+
+- Added `gql_builder` module (`GqlQuery`, `GqlMutation`, `GqlFragment`, `GqlField`, `GqlVariable`) for composable, type-safe GraphQL query construction.
+- Moved `LayrzConnector` from `lib/src/utils/` into the `api/` module; still accessible via the top-level barrel.
+- Added `LayrzConnector.perform(Gql)` replacing the raw-string `perform(query:, variables:)` method.
+- Added `GqlVariableType.list` with `listOf` and `nestedRequired` for `[ID]!` and `[ID!]!` list types.
+- Added `GqlVariableType.input` with `inputName` for GraphQL input object variables.
+- Added `GqlField.args` for rendering field-level arguments (e.g. `charts(apiToken: $apiToken)`).
+- Added `Avatar.gqlFragment` reusable fragment.
+- Migrated all API callers (`LayrzChart`, `LayrzChartInput`, `Access`, `User`, `Locator`, `LocatorInput`, `MapLayer`, `MapLayerInput`, `Poi`, `PoiInput`, `Token`, `RegisteredApp`) to the `gql_builder`.
+- Added `assets`, `assetsIds`, and `enableLttb` fields to `LayrzChart` and `LayrzChartInput`.
+- Fragment collection is now automatic — the builder walks the field tree at generation time; no explicit `fragments:` list required.
+
+## 3.7.10
+
+- Added `StockClosing` entity model
+- Added `StockClosingTank` entity model
+- Added `TankChangesType` entity model
+- Added `StockClosingInput` input model
+- Added `StockClosingTankInput` input model
+
+## 3.7.9
+
+- Added `terminalEntryAt` and `terminalExitAt` values in `AtsOperation` model
+
 ## 3.7.8
 
 - Deprecated `temperature` value in `TankMeasurementInput` model

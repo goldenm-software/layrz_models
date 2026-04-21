@@ -62,7 +62,18 @@ abstract class RegisteredApp with _$RegisteredApp {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(query: fetchAllGraphqlQuery, variables: {'apiToken': apiToken});
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+          ],
+          name: 'fetchRegisteredApps',
+        )..add(
+          GqlField(name: 'registeredApps', args: {'apiToken': 'apiToken'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
+      );
 
       final data = response.data;
       if (data == null) {
@@ -94,55 +105,36 @@ abstract class RegisteredApp with _$RegisteredApp {
     }
   }
 
-  /// [fetchAllGraphqlQuery] is the GraphQL query to fetch all the registered apps.
-  /// This query requires the `apiToken` parameter.
-  static String get fetchAllGraphqlQuery =>
-      '$registeredAppFragment'
-      r'''
-    query($apiToken: String!) {
-      registeredApps(apiToken: $apiToken) {
-        status
-        result {
-          ...registeredAppFragment
-        }
-      }
-    }
-  ''';
-
-  /// [registeredAppFragment] is the GraphQL fragment to fetch a registered app.
-  static String get registeredAppFragment => r'''
-    fragment registeredAppFragment on RegisteredApp {
-      id
-      name
-      nickname
-      isCustomized
-      technology
-      sourceId
-
-      instances {
-        id
-        appId
-        platform
-        host
-        status
-      }
-
-      designInformation {
-        theme
-        mainColor
-
-        favicons {
-          normal
-          white
-        }
-
-        logos {
-          normal
-          white
-        }
-
-        appicon
-      }
-    }
-  ''';
+  /// [gqlFragment] is the GqlFragment for a registered app.
+  static GqlFragment get gqlFragment => GqlFragment(name: 'registeredAppFragment', onType: 'RegisteredApp')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'nickname'))
+    ..add(GqlField(name: 'isCustomized'))
+    ..add(GqlField(name: 'technology'))
+    ..add(GqlField(name: 'sourceId'))
+    ..add(
+      GqlField(name: 'instances')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'appId'))
+        ..add(GqlField(name: 'platform'))
+        ..add(GqlField(name: 'host'))
+        ..add(GqlField(name: 'status')),
+    )
+    ..add(
+      GqlField(name: 'designInformation')
+        ..add(GqlField(name: 'theme'))
+        ..add(GqlField(name: 'mainColor'))
+        ..add(
+          GqlField(name: 'favicons')
+            ..add(GqlField(name: 'normal'))
+            ..add(GqlField(name: 'white')),
+        )
+        ..add(
+          GqlField(name: 'logos')
+            ..add(GqlField(name: 'normal'))
+            ..add(GqlField(name: 'white')),
+        )
+        ..add(GqlField(name: 'appicon')),
+    );
 }

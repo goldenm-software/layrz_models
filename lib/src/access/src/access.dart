@@ -20,29 +20,23 @@ abstract class Access with _$Access {
 
   factory Access.fromJson(Map<String, dynamic> json) => _$AccessFromJson(json);
 
-  /// [graphqlIdFragment] GraphQL fragment for Access
-  static const String graphqlIdFragment = '''
-    fragment accessFragment on AccessPermission {
-      id
-      read
-      write
-      manage
-      objectId
-      userId
-      module
-    }
-  ''';
+  /// [graphqlIdFragment] GqlFragment for Access using integer ID
+  static GqlFragment get graphqlIdFragment => GqlFragment(name: 'accessFragment', onType: 'AccessPermission')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'read'))
+    ..add(GqlField(name: 'write'))
+    ..add(GqlField(name: 'manage'))
+    ..add(GqlField(name: 'objectId'))
+    ..add(GqlField(name: 'userId'))
+    ..add(GqlField(name: 'module'));
 
-  /// [graphqlUuidFragment] GraphQL fragment for Access using UUID
-  static const String graphqlUuidFragment = '''
-    fragment accessUuidFragment on AccessPermissionUuid {
-      id
-      read
-      write
-      manage
-      objectId
-      userId
-      module
-    }
-  ''';
+  /// [graphqlUuidFragment] GqlFragment for Access using UUID
+  static GqlFragment get graphqlUuidFragment => GqlFragment(name: 'accessUuidFragment', onType: 'AccessPermissionUuid')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'read'))
+    ..add(GqlField(name: 'write'))
+    ..add(GqlField(name: 'manage'))
+    ..add(GqlField(name: 'objectId'))
+    ..add(GqlField(name: 'userId'))
+    ..add(GqlField(name: 'module'));
 }

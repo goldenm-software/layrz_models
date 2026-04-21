@@ -111,6 +111,12 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// [loadingOrders] is the list of loading orders linked to the operation.
     List<AtsLoadingOrder>? loadingOrders,
+
+    /// [terminalEntryAt] is the timestamp of the terminal entry.
+    @TimestampOrNullConverter() DateTime? terminalEntryAt,
+
+    /// [terminalExitAt] is the timestamp of the terminal exit.
+    @TimestampOrNullConverter() DateTime? terminalExitAt,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);

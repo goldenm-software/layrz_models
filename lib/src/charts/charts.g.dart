@@ -15,6 +15,12 @@ _LayrzChart _$LayrzChartFromJson(Map<String, dynamic> json) => _LayrzChart(
   sensors: (json['sensors'] as List<dynamic>?)
       ?.map((e) => e as String)
       .toList(),
+  assets: (json['assets'] as List<dynamic>?)
+      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  assetsIds: (json['assetsIds'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
   type: $enumDecodeNullable(
     _$ChartTypeEnumMap,
     json['type'],
@@ -30,6 +36,7 @@ _LayrzChart _$LayrzChartFromJson(Map<String, dynamic> json) => _LayrzChart(
     json['dataSource'],
     unknownValue: ChartDataSource.messages,
   ),
+  enableLttb: json['enableLttb'] as bool?,
   access: (json['access'] as List<dynamic>?)
       ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
       .toList(),
@@ -43,9 +50,12 @@ Map<String, dynamic> _$LayrzChartToJson(_LayrzChart instance) =>
       'formula': instance.formula,
       'script': instance.script,
       'sensors': instance.sensors,
+      'assets': instance.assets?.map((e) => e.toJson()).toList(),
+      'assetsIds': instance.assetsIds,
       'type': instance.type?.toJson(),
       'algorithm': instance.algorithm?.toJson(),
       'dataSource': instance.dataSource?.toJson(),
+      'enableLttb': instance.enableLttb,
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
@@ -81,40 +91,43 @@ const _$ChartDataSourceEnumMap = {
   ChartDataSource.lastMessages: 'LAST_MESSAGES',
 };
 
-_LayrzChartInput _$LayrzChartInputFromJson(Map<String, dynamic> json) =>
-    _LayrzChartInput(
-      id: json['id'] as String?,
-      name: json['name'] as String? ?? '',
-      description: json['description'] as String? ?? '',
-      formula: json['formula'] as String? ?? '',
-      script: json['script'] as String? ?? '',
-      sensors:
-          (json['sensors'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      type:
-          $enumDecodeNullable(
-            _$ChartTypeEnumMap,
-            json['type'],
-            unknownValue: ChartType.area,
-          ) ??
-          ChartType.area,
-      algorithm:
-          $enumDecodeNullable(
-            _$ChartAlgorithmEnumMap,
-            json['algorithm'],
-            unknownValue: ChartAlgorithm.auto,
-          ) ??
-          ChartAlgorithm.auto,
-      dataSource:
-          $enumDecodeNullable(
-            _$ChartDataSourceEnumMap,
-            json['dataSource'],
-            unknownValue: ChartDataSource.messages,
-          ) ??
-          ChartDataSource.messages,
-    );
+_LayrzChartInput _$LayrzChartInputFromJson(
+  Map<String, dynamic> json,
+) => _LayrzChartInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  description: json['description'] as String? ?? '',
+  formula: json['formula'] as String? ?? '',
+  script: json['script'] as String? ?? '',
+  sensors:
+      (json['sensors'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  assetsIds:
+      (json['assetsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  type:
+      $enumDecodeNullable(
+        _$ChartTypeEnumMap,
+        json['type'],
+        unknownValue: ChartType.area,
+      ) ??
+      ChartType.area,
+  algorithm:
+      $enumDecodeNullable(
+        _$ChartAlgorithmEnumMap,
+        json['algorithm'],
+        unknownValue: ChartAlgorithm.auto,
+      ) ??
+      ChartAlgorithm.auto,
+  dataSource:
+      $enumDecodeNullable(
+        _$ChartDataSourceEnumMap,
+        json['dataSource'],
+        unknownValue: ChartDataSource.messages,
+      ) ??
+      ChartDataSource.messages,
+  enableLttb: json['enableLttb'] as bool? ?? true,
+);
 
 Map<String, dynamic> _$LayrzChartInputToJson(_LayrzChartInput instance) =>
     <String, dynamic>{
@@ -124,9 +137,11 @@ Map<String, dynamic> _$LayrzChartInputToJson(_LayrzChartInput instance) =>
       'formula': instance.formula,
       'script': instance.script,
       'sensors': instance.sensors,
+      'assetsIds': instance.assetsIds,
       'type': instance.type.toJson(),
       'algorithm': instance.algorithm.toJson(),
       'dataSource': instance.dataSource.toJson(),
+      'enableLttb': instance.enableLttb,
     };
 
 _AxisConfig _$AxisConfigFromJson(Map<String, dynamic> json) => _AxisConfig(

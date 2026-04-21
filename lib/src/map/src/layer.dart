@@ -90,8 +90,18 @@ abstract class MapLayer with _$MapLayer {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        query: fetchSingleQuery,
-        variables: {'apiToken': apiToken, 'id': id},
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'id', type: .id, value: id),
+          ],
+          name: 'mapLayers',
+        )..add(
+          GqlField(name: 'mapLayers', args: {'apiToken': 'apiToken', 'id': 'id'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
       );
 
       final data = response.data;
@@ -140,8 +150,22 @@ abstract class MapLayer with _$MapLayer {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        query: fetchAllGraphqlQuery,
-        variables: {'apiToken': apiToken},
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+          ],
+          name: 'mapLayers',
+        )..add(
+          GqlField(name: 'mapLayers', args: {'apiToken': 'apiToken'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'source')),
+            ),
+        ),
       );
 
       final data = response.data;
@@ -192,8 +216,17 @@ abstract class MapLayer with _$MapLayer {
     final connector = LayrzConnector(uri: uri);
     try {
       final response = await connector.perform(
-        query: deleteMapLayers,
-        variables: {'apiToken': apiToken, 'ids': ids},
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: ids),
+          ],
+          name: 'deleteMapLayers',
+        )..add(
+          GqlField(name: 'deleteMapLayers', args: {'apiToken': 'apiToken', 'ids': 'ids'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -223,69 +256,24 @@ abstract class MapLayer with _$MapLayer {
     }
   }
 
-  /// [fetchSingleQuery] is the GraphQL query to fetch a single [MapLayer] by its ID
-  /// It uses the [MapLayer.graphqlFragment] to get the map layer data
-  static String get fetchSingleQuery =>
-      '${MapLayer.graphqlFragment}'
-      r'''
-        query mapLayers($apiToken: String!, $id: ID) {
-          mapLayers(apiToken: $apiToken, id: $id) {
-            status
-            errors
-            result {
-              ...mapLayerFragment
-            }
-          }
-        }
-      ''';
-
-  /// [fetchAllGraphqlQuery] is the GraphQL query to fetch all [MapLayer]s
-  /// It uses a lighter subset of fields to reduce the amount of data transferred
-  static String get fetchAllGraphqlQuery => r'''
-        query mapLayers($apiToken: String!) {
-          mapLayers(apiToken: $apiToken) {
-            status
-            errors
-            result {
-              id
-              name
-              source
-            }
-          }
-        }
-      ''';
-
-  /// [graphqlFragment] is the GraphQL fragment to fetch the [MapLayer] data
-  static String get graphqlFragment => '''
-    fragment mapLayerFragment on MapLayer {
-      id
-      name
-      source
-      rasterServerLight
-      rasterServerDark
-      googleToken
-      googleLayers
-      mapboxToken
-      mapboxLayers
-      mapboxCustomUsername
-      mapboxCustomStyleId
-      hereToken
-      hereLayers
-      attributionUrl
-      attributionUrlDark
-      attributionWidth
-      attributionHeight
-      appsIds
-    }
-  ''';
-
-  /// [deleteMapLayers] is the GraphQL mutation to delete one or more [MapLayer]s by their IDs
-  static String get deleteMapLayers => r'''
-        mutation deleteMapLayers($apiToken: String!, $ids: [ID!]!) {
-          deleteMapLayers(apiToken: $apiToken, ids: $ids) {
-            status
-            errors
-          }
-        }
-      ''';
+  /// [gqlFragment] is the GqlFragment for a [MapLayer].
+  static GqlFragment get gqlFragment => GqlFragment(name: 'mapLayerFragment', onType: 'MapLayer')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'source'))
+    ..add(GqlField(name: 'rasterServerLight'))
+    ..add(GqlField(name: 'rasterServerDark'))
+    ..add(GqlField(name: 'googleToken'))
+    ..add(GqlField(name: 'googleLayers'))
+    ..add(GqlField(name: 'mapboxToken'))
+    ..add(GqlField(name: 'mapboxLayers'))
+    ..add(GqlField(name: 'mapboxCustomUsername'))
+    ..add(GqlField(name: 'mapboxCustomStyleId'))
+    ..add(GqlField(name: 'hereToken'))
+    ..add(GqlField(name: 'hereLayers'))
+    ..add(GqlField(name: 'attributionUrl'))
+    ..add(GqlField(name: 'attributionUrlDark'))
+    ..add(GqlField(name: 'attributionWidth'))
+    ..add(GqlField(name: 'attributionHeight'))
+    ..add(GqlField(name: 'appsIds'));
 }

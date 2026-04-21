@@ -126,7 +126,20 @@ abstract class Locator with _$Locator {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(query: fetchSingleQuery, variables: {'apiToken': apiToken, 'id': id});
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'id', type: .id, value: id),
+          ],
+          name: 'fetchLocators',
+        )..add(
+          GqlField(name: 'locators', args: {'apiToken': 'apiToken', 'id': 'id'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
+      );
 
       final data = response.data;
       if (data == null) {
@@ -174,7 +187,49 @@ abstract class Locator with _$Locator {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.perform(query: fetchAllGraphqlQuery, variables: {'apiToken': apiToken});
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+          ],
+          name: 'fetchLocators',
+        )..add(
+          GqlField(name: 'locators', args: {'apiToken': 'apiToken'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'token'))
+                ..add(GqlField(name: 'isExpired'))
+                ..add(GqlField(name: 'expiresAt'))
+                ..add(GqlField(name: 'expiredBy', fragment: basicUserFields))
+                ..add(GqlField(name: 'expiredById'))
+                ..add(GqlField(name: 'createdAt'))
+                ..add(GqlField(name: 'createdBy', fragment: basicUserFields))
+                ..add(GqlField(name: 'createdById'))
+                ..add(GqlField(name: 'updatedAt'))
+                ..add(GqlField(name: 'updatedBy', fragment: basicUserFields))
+                ..add(GqlField(name: 'updatedById'))
+                ..add(GqlField(name: 'description'))
+                ..add(
+                  GqlField(name: 'customization')
+                    ..add(GqlField(name: 'id'))
+                    ..add(GqlField(name: 'name'))
+                    ..add(GqlField(name: 'nickname'))
+                    ..add(GqlField(name: 'technology'))
+                    ..add(GqlField(name: 'sourceId'))
+                    ..add(
+                      GqlField(name: 'instances')
+                        ..add(GqlField(name: 'id'))
+                        ..add(GqlField(name: 'appId'))
+                        ..add(GqlField(name: 'platform'))
+                        ..add(GqlField(name: 'host')),
+                    ),
+                ),
+            ),
+        ),
+      );
 
       final data = response.data;
       if (data == null) {
@@ -223,11 +278,17 @@ abstract class Locator with _$Locator {
 
     try {
       final response = await connector.perform(
-        query: expireGraphqlMutation,
-        variables: {
-          'apiToken': apiToken,
-          'ids': [id],
-        },
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: [id]),
+          ],
+          name: 'expireLocator',
+        )..add(
+          GqlField(name: 'expireLocators', args: {'apiToken': 'apiToken', 'ids': 'ids'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -276,8 +337,17 @@ abstract class Locator with _$Locator {
 
     try {
       final response = await connector.perform(
-        query: expireGraphqlMutation,
-        variables: {'apiToken': apiToken, 'ids': ids},
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: ids),
+          ],
+          name: 'expireLocators',
+        )..add(
+          GqlField(name: 'expireLocators', args: {'apiToken': 'apiToken', 'ids': 'ids'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
+        ),
       );
 
       final data = response.data;
@@ -307,221 +377,113 @@ abstract class Locator with _$Locator {
     }
   }
 
-  /// [fetchSingleQuery] is the GraphQL query to fetch a single locator by its ID
-  /// It uses the [Locator.graphqlFragment] to get the locator data
-  static String get fetchSingleQuery =>
-      '${Locator.graphqlFragment}'
-      r'''
-        query fetchLocators($apiToken: String!, $id: ID) {
-          locators(apiToken: $apiToken, id: $id) {
-            status
-            errors
-            result {
-              ...locatorFragment
-            }
-          }
-        }
-      ''';
+  /// [basicUserFields] is a lightweight GqlFragment for user references within locator responses.
+  static GqlFragment get basicUserFields => GqlFragment(name: 'basicUserFields', onType: 'User')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'dynamicAvatar', fragment: Avatar.gqlFragment));
 
-  /// [fetchAllGraphqlQuery] is the GraphQL query to fetch all locators
-  /// It includes the basic user fields fragment [basicUserFields] to get the user data
-  /// It does not use the [Locator.graphqlFragment] to reduce the amount of data
-  static String get fetchAllGraphqlQuery => r'''
-        fragment basicUserFields on User {
-          id
-          name
-          dynamicAvatar {
-            type
-            icon
-            emoji
-            url
-          }
-        }
-
-        query fetchLocators($apiToken: String!) {
-          locators(apiToken: $apiToken) {
-            status
-            errors
-            result {
-              id
-              token
-
-              isExpired
-
-              expiresAt
-              expiredBy {
-                ...basicUserFields
-              }
-              expiredById
-
-              createdAt
-              createdBy {
-                ...basicUserFields
-              }
-              createdById
-              updatedAt
-              updatedBy {
-                ...basicUserFields
-              }
-              updatedById
-
-              description
-
-              customization {
-                id
-                name
-                nickname
-                technology
-                sourceId
-                
-                instances {
-                  id
-                  appId
-                  platform
-                  host
-                }
-              }
-            }
-          }
-        }
-      ''';
-
-  /// [graphqlFragment] is the GraphQL fragment to fetch the locator data
-  /// It includes the basic user fields fragment [basicUserFields] to get the user data
-  static String get graphqlFragment =>
-      '''
-    ${RegisteredApp.registeredAppFragment}
-
-    fragment basicUserFields on User {
-      id
-      name
-      dynamicAvatar {
-        type
-        icon
-        emoji
-        url
-      }
-    }
-
-    fragment locatorFragment on Locator {
-      id
-      token
-      mqttConfig {
-        host
-        port
-        username
-        password
-        topic
-      }
-
-      customization {
-        id
-        name
-        nickname
-        technology
-        sourceId
-
-        instances {
-          id
-          appId
-          platform
-          host
-        }
-      }
-
-      assets {
-        id
-        name
-        mode
-        dynamicIcon {
-          type
-          icon
-          emoji
-          url
-        }
-      }
-      assetsIds
-      geofences {
-        id
-        name
-        mode
-        color
-      }
-      geofencesIds
-      triggers {
-        id
-        name
-        code
-        color
-        kind
-      }
-      triggersIds
-
-      mapLayerId
-      mapLayer {
-        id
-        name
-        source
-      }
-
-      poisIds
-      pois {
-        id
-        name
-        latitude
-        longitude
-      }
-
-      enableSidebar
-      showAssetsLabels
-      showGeofencesLabels
-      showPoisLabels
-      showAssetsTrails
-      boundary {
-        topleft {
-          latitude
-          longitude
-        }
-        bottomright {
-          latitude
-          longitude
-        }
-      }
-      description
-
-      isExpired
-
-      expiresAt
-      expiredBy {
-        ...basicUserFields
-      }
-      expiredById
-
-      createdAt
-      createdBy {
-        ...basicUserFields
-      }
-      createdById
-      updatedAt
-      updatedBy {
-        ...basicUserFields
-      }
-      updatedById
-
-      customization {
-        ...registeredAppFragment
-      }
-      customizationId
-    }
-  ''';
-
-  /// [expireGraphqlMutation] is the GraphQL mutation to expire one or more locators by their IDs
-  static String get expireGraphqlMutation => r'''
-        mutation expireLocator($apiToken: String!, $ids: [ID!]!) {
-          expireLocators(apiToken: $apiToken, ids: $ids) {
-            status
-            errors
-          }
-        }
-      ''';
+  /// [gqlFragment] is the GqlFragment for a locator, including nested associations.
+  static GqlFragment get gqlFragment => GqlFragment(name: 'locatorFragment', onType: 'Locator')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'token'))
+    ..add(
+      GqlField(name: 'mqttConfig')
+        ..add(GqlField(name: 'host'))
+        ..add(GqlField(name: 'port'))
+        ..add(GqlField(name: 'username'))
+        ..add(GqlField(name: 'password'))
+        ..add(GqlField(name: 'topic')),
+    )
+    ..add(
+      GqlField(name: 'customization')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'nickname'))
+        ..add(GqlField(name: 'technology'))
+        ..add(GqlField(name: 'sourceId'))
+        ..add(
+          GqlField(name: 'instances')
+            ..add(GqlField(name: 'id'))
+            ..add(GqlField(name: 'appId'))
+            ..add(GqlField(name: 'platform'))
+            ..add(GqlField(name: 'host')),
+        ),
+    )
+    ..add(
+      GqlField(name: 'assets')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'mode'))
+        ..add(
+          GqlField(name: 'dynamicIcon')
+            ..add(GqlField(name: 'type'))
+            ..add(GqlField(name: 'icon'))
+            ..add(GqlField(name: 'emoji'))
+            ..add(GqlField(name: 'url')),
+        ),
+    )
+    ..add(GqlField(name: 'assetsIds'))
+    ..add(
+      GqlField(name: 'geofences')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'mode'))
+        ..add(GqlField(name: 'color')),
+    )
+    ..add(GqlField(name: 'geofencesIds'))
+    ..add(
+      GqlField(name: 'triggers')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'code'))
+        ..add(GqlField(name: 'color'))
+        ..add(GqlField(name: 'kind')),
+    )
+    ..add(GqlField(name: 'triggersIds'))
+    ..add(GqlField(name: 'mapLayerId'))
+    ..add(
+      GqlField(name: 'mapLayer')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'source')),
+    )
+    ..add(GqlField(name: 'poisIds'))
+    ..add(
+      GqlField(name: 'pois')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'latitude'))
+        ..add(GqlField(name: 'longitude')),
+    )
+    ..add(GqlField(name: 'enableSidebar'))
+    ..add(GqlField(name: 'showAssetsLabels'))
+    ..add(GqlField(name: 'showGeofencesLabels'))
+    ..add(GqlField(name: 'showPoisLabels'))
+    ..add(GqlField(name: 'showAssetsTrails'))
+    ..add(
+      GqlField(name: 'boundary')
+        ..add(
+          GqlField(name: 'topleft')
+            ..add(GqlField(name: 'latitude'))
+            ..add(GqlField(name: 'longitude')),
+        )
+        ..add(
+          GqlField(name: 'bottomright')
+            ..add(GqlField(name: 'latitude'))
+            ..add(GqlField(name: 'longitude')),
+        ),
+    )
+    ..add(GqlField(name: 'description'))
+    ..add(GqlField(name: 'isExpired'))
+    ..add(GqlField(name: 'expiresAt'))
+    ..add(GqlField(name: 'expiredBy', fragment: basicUserFields))
+    ..add(GqlField(name: 'expiredById'))
+    ..add(GqlField(name: 'createdAt'))
+    ..add(GqlField(name: 'createdBy', fragment: basicUserFields))
+    ..add(GqlField(name: 'createdById'))
+    ..add(GqlField(name: 'updatedAt'))
+    ..add(GqlField(name: 'updatedBy', fragment: basicUserFields))
+    ..add(GqlField(name: 'updatedById'))
+    ..add(GqlField(name: 'customizationId'));
 }
