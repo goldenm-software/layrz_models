@@ -270,6 +270,18 @@ enum ReferenceCategory {
   @JsonValue('ATS_PREVENT_CHANGES_IN_CACL_TELEMETRY_INPUTS')
   atsPreventChangesInCaclTelemetryInputs,
 
+  @JsonValue('ATS_GET_ALL_TERMINALS')
+  /// !ATS Reference
+  /// [AllTank Systems] Access to get all terminals in terminal operations module
+  /// Layrz API Reference: ATS_GET_ALL_TERMINALS
+  atsGetAllTerminals,
+
+  @JsonValue('ATS_STORAGE_RECEPTION_ACCESS')
+  /// !ATS Reference
+  /// [AllTank Systems] Access to the storage reception module
+  /// Layrz API Reference: ATS_STORAGE_RECEPTION_ACCESS
+  atsStorageReceptionAccess,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR

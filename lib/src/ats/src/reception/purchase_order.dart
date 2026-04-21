@@ -113,6 +113,9 @@ abstract class AtsPurchaseOrder with _$AtsPurchaseOrder {
     /// Invoice type (NFe, CTe)
     String? invoiceType,
 
+    /// Invoice identifier (chNFe/chCTe)
+    String? invoiceId,
+
     /// Parent invoice
     AtsPurchaseOrder? parentInvoice,
 
