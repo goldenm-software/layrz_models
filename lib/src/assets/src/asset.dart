@@ -138,6 +138,14 @@ abstract class Asset with _$Asset {
     /// Only used in ATS apps.
     List<String>? linkedSupplyPointAssetsIds,
 
+    /// [linkedStorageTerminals] refers to the list of storage terminals assets linked to this asset.
+    /// Only used in ATS apps.
+    List<Asset>? linkedStorageTerminals,
+
+    /// [linkedStorageTerminalsIds] refers to the list of storage terminals assets IDs linked to this asset.
+    /// Only used in ATS apps.
+    List<String>? linkedStorageTerminalsIds,
+
     /// [staticPosition] refers to the static position of the asset.
     /// Only used when mode is [AssetMode.fixed].
     StaticPosition? staticPosition,
@@ -223,6 +231,7 @@ abstract class AssetInput with _$AssetInput {
     @Default('') String nfcIdentifier,
     String? authenticationCardId,
     @Default([]) List<String> linkedSupplyPointAssetsIds,
+    @Default([]) List<String> linkedStorageTerminalsIds,
     @Default([]) List<String> geofencesIds,
     String? authenticationCardCardboardId,
     String? authenticationCardTagId,

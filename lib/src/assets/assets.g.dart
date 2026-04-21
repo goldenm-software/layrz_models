@@ -163,6 +163,13 @@ _Asset _$AssetFromJson(Map<String, dynamic> json) => _Asset(
       (json['linkedSupplyPointAssetsIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+  linkedStorageTerminals: (json['linkedStorageTerminals'] as List<dynamic>?)
+      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  linkedStorageTerminalsIds:
+      (json['linkedStorageTerminalsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
   staticPosition: json['staticPosition'] == null
       ? null
       : StaticPosition.fromJson(json['staticPosition'] as Map<String, dynamic>),
@@ -260,6 +267,10 @@ Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
       ?.map((e) => e.toJson())
       .toList(),
   'linkedSupplyPointAssetsIds': instance.linkedSupplyPointAssetsIds,
+  'linkedStorageTerminals': instance.linkedStorageTerminals
+      ?.map((e) => e.toJson())
+      .toList(),
+  'linkedStorageTerminalsIds': instance.linkedStorageTerminalsIds,
   'staticPosition': instance.staticPosition?.toJson(),
   'points': instance.points?.map((e) => e.toJson()).toList(),
   'parameters': instance.parameters,
@@ -360,6 +371,11 @@ _AssetInput _$AssetInputFromJson(Map<String, dynamic> json) => _AssetInput(
           ?.map((e) => e as String)
           .toList() ??
       const [],
+  linkedStorageTerminalsIds:
+      (json['linkedStorageTerminalsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
   geofencesIds:
       (json['geofencesIds'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -418,6 +434,7 @@ Map<String, dynamic> _$AssetInputToJson(
   'nfcIdentifier': instance.nfcIdentifier,
   'authenticationCardId': instance.authenticationCardId,
   'linkedSupplyPointAssetsIds': instance.linkedSupplyPointAssetsIds,
+  'linkedStorageTerminalsIds': instance.linkedStorageTerminalsIds,
   'geofencesIds': instance.geofencesIds,
   'authenticationCardCardboardId': instance.authenticationCardCardboardId,
   'authenticationCardTagId': instance.authenticationCardTagId,

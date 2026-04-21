@@ -87,6 +87,8 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.atsSupervisorioExportCacl: 'ATS_SUPERVISORIO_EXPORT_CACL',
   ReferenceCategory.atsPreventChangesInCaclTelemetryInputs:
       'ATS_PREVENT_CHANGES_IN_CACL_TELEMETRY_INPUTS',
+  ReferenceCategory.atsGetAllTerminals: 'ATS_GET_ALL_TERMINALS',
+  ReferenceCategory.atsStorageReceptionAccess: 'ATS_STORAGE_RECEPTION_ACCESS',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',

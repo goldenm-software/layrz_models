@@ -587,6 +587,7 @@ _AtsPurchaseOrder _$AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
             ),
       hasRawXml: json['hasRawXml'] as bool?,
       invoiceType: json['invoiceType'] as String?,
+      invoiceId: json['invoiceId'] as String?,
       parentInvoice: json['parentInvoice'] == null
           ? null
           : AtsPurchaseOrder.fromJson(
@@ -657,6 +658,7 @@ Map<String, dynamic> _$AtsPurchaseOrderToJson(
   'transportInformation': instance.transportInformation?.toJson(),
   'hasRawXml': instance.hasRawXml,
   'invoiceType': instance.invoiceType,
+  'invoiceId': instance.invoiceId,
   'parentInvoice': instance.parentInvoice?.toJson(),
   'ideInformation': instance.ideInformation?.toJson(),
   'receptionAt': const TimestampOrNullConverter().toJson(instance.receptionAt),
