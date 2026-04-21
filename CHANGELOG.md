@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.3
+
+- Added `attributes` field to `TableItem` and `TableItemInput` models to support asset attributes in workspace tables.
+
 ## 3.8.2
 
 - Removed `stockClosingId` to `StockClosingTankInput` model

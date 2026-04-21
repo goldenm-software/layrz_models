@@ -10,6 +10,9 @@ abstract class TableItem with _$TableItem {
 
     /// [sensorsIds] is the list of ids of the [sensors] associated with the table
     @Default([]) List<String> sensorsIds,
+
+    /// [attributes] is the list of  assets [attributes] associated with the table
+    @Default([]) List<String> attributes,
   }) = _TableItem;
 
   factory TableItem.fromJson(Map<String, dynamic> json) => _$TableItemFromJson(json);
@@ -24,6 +27,9 @@ abstract class TableItemInput with _$TableItemInput {
 
     /// [sensorsIds] is the list of ids of the [sensors] associated with the table
     @Default([]) List<String> sensorsIds,
+
+    /// [attributes] is the list of  assets [attributes] associated with the table
+    @Default([]) List<String> attributes,
   }) = _TableItemInput;
 
   factory TableItemInput.fromJson(Map<String, dynamic> json) => _$TableItemInputFromJson(json);
