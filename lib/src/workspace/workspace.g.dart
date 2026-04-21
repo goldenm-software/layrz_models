@@ -892,12 +892,18 @@ _TableItem _$TableItemFromJson(Map<String, dynamic> json) => _TableItem(
           ?.map((e) => e as String)
           .toList() ??
       const [],
+  attributes:
+      (json['attributes'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$TableItemToJson(_TableItem instance) =>
     <String, dynamic>{
       'assetsIds': instance.assetsIds,
       'sensorsIds': instance.sensorsIds,
+      'attributes': instance.attributes,
     };
 
 _TableItemInput _$TableItemInputFromJson(Map<String, dynamic> json) =>
@@ -912,10 +918,16 @@ _TableItemInput _$TableItemInputFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      attributes:
+          (json['attributes'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$TableItemInputToJson(_TableItemInput instance) =>
     <String, dynamic>{
       'assetsIds': instance.assetsIds,
       'sensorsIds': instance.sensorsIds,
+      'attributes': instance.attributes,
     };
