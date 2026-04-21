@@ -9,9 +9,6 @@ abstract class StockClosingTankInput with _$StockClosingTankInput {
     /// The [id] parameter is the id of the stock closing tank input.
     String? id,
 
-    /// The [stockClosingId] parameter is the stockClosingId of the stock closing tank input.
-    String? stockClosingId,
-
     /// The [tankId] parameter is the tankId of the stock closing tank input.
     String? tankId,
 

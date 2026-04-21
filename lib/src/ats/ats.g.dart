@@ -3179,7 +3179,6 @@ _StockClosingTankInput _$StockClosingTankInputFromJson(
   Map<String, dynamic> json,
 ) => _StockClosingTankInput(
   id: json['id'] as String?,
-  stockClosingId: json['stockClosingId'] as String?,
   tankId: json['tankId'] as String?,
   tankMessageId: json['tankMessageId'] as String?,
   volumeHeight: (json['volumeHeight'] as num?)?.toDouble(),
@@ -3210,7 +3209,6 @@ Map<String, dynamic> _$StockClosingTankInputToJson(
   _StockClosingTankInput instance,
 ) => <String, dynamic>{
   'id': instance.id,
-  'stockClosingId': instance.stockClosingId,
   'tankId': instance.tankId,
   'tankMessageId': instance.tankMessageId,
   'volumeHeight': instance.volumeHeight,

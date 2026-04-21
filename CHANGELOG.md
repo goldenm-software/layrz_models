@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.2
+
+- Removed `stockClosingId` to `StockClosingTankInput` model
+
 ## 3.8.1
 
 - Added `linkedStorageTerminals` and `linkedStorageTerminalsIds` fields to `Asset` model.
