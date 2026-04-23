@@ -41,7 +41,7 @@ abstract class Gql {
       buffer.write('}\n\n');
     }
 
-    buffer.write(this is GqlMutation ? 'mutation' : 'query');
+    buffer.write(this is GqlMutation ? 'mutation' : this is GqlSubscription ? 'subscription' : 'query');
 
     if (name != null) {
       buffer.write(' $name');
@@ -50,8 +50,9 @@ abstract class Gql {
     if (variables.isNotEmpty) {
       buffer.write('(');
       buffer.write(variables.map((v) => '\$${v.name}: ${_renderType(v)}').join(', '));
-      buffer.write(') {\n');
+      buffer.write(')');
     }
+    buffer.write(' {\n');
 
     for (final field in fields) {
       buffer.write('${_writeField(field)}\n');
@@ -158,4 +159,9 @@ class GqlQuery extends Gql {
 /// [GqlMutation] represents a GraphQL mutation operation, which is used to modify data on the server.
 class GqlMutation extends Gql {
   GqlMutation({super.name, required super.variables, super.fields, super.includeTypename});
+}
+
+/// [GqlSubscription] represents a GraphQL subscription operation, used with [LayrzConnector.subscribe].
+class GqlSubscription extends Gql {
+  GqlSubscription({super.name, required super.variables, super.fields, super.includeTypename});
 }
