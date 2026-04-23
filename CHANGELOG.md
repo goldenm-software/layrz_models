@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.8.5
+
+- Added `thirdPartyStorage` value to `AtsLoadingParamsSample` enum, mapped to `THIRD_PARTY_STORAGE` JSON value.
+- Added `correctionFactor` and `liquidWeight` fields to `AtsLoadingParamsFormInput` model for third-party storage support.
+
 ## 3.8.4
 
 - Added `GqlSubscription` class for composable GraphQL subscription query construction.

@@ -57,6 +57,12 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
     /// `density20` Density at 20
     double? density20,
 
+    /// `correctionFactor` Correction factor for third-party storage
+    double? correctionFactor,
+
+    /// `liquidWeight` Liquid weight for third-party storage
+    double? liquidWeight,
+
     /// `destinyInformation` Destiny information only on modality seta
     List<AtsDestinyInformationInput>? destinyInformation,
   }) = _AtsLoadingParamsFormInput;
