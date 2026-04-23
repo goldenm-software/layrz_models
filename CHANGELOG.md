@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.8.4
+
+- Added `GqlSubscription` class for composable GraphQL subscription query construction.
+- Added `LayrzConnector.subscribe()` method to open WebSocket subscriptions using the `graphql-transport-ws` protocol.
+
 ## 3.8.3
 
 - Added `attributes` field to `TableItem` and `TableItemInput` models to support asset attributes in workspace tables.
