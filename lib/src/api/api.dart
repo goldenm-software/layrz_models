@@ -1,9 +1,11 @@
 library;
 
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 
 part 'api.freezed.dart';
 part 'api.g.dart';
