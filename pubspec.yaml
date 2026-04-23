@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
 
   dio: ^5.9.0
+  web_socket_channel: ^3.0.1
   web: ^1.1.0
   collection: ^1.18.0
   recase: ^4.1.0
