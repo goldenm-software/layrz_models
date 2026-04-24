@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.8.7
+
+- Updated `openingBalance` to `openingBalance20` in `StockClosingTank` model
+- Updated `totalEntries` to `totalEntries20` in `StockClosingTank` model
+- Updated `totalWithdrawals` to `totalWithdrawals20` in `StockClosingTank` model
+- Updated `closingBalance` to `closingBalance20` in `StockClosingTank` model
+
 ## 3.8.6
 
 - Refactor `StockClosing` and `StockClosingTank` models
