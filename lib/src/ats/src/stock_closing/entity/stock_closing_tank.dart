@@ -56,17 +56,17 @@ abstract class StockClosingTank with _$StockClosingTank {
     /// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing tank entity.
     double? accountingVolumeDifference,
 
-    /// The [openingBalance] parameter is the openingBalance of the stock closing tank entity.
-    double? openingBalance,
+    /// The [openingBalance20] parameter is the openingBalance20 of the stock closing tank entity.
+    double? openingBalance20,
 
-    /// The [totalEntries] parameter is the totalEntries of the stock closing tank entity.
-    double? totalEntries,
+    /// The [totalEntries20] parameter is the totalEntries20 of the stock closing tank entity.
+    double? totalEntries20,
 
-    /// The [totalWithdrawals] parameter is the totalWithdrawals of the stock closing tank entity.
-    double? totalWithdrawals,
+    /// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing tank entity.
+    double? totalWithdrawals20,
 
-    /// The [closingBalance] parameter is the closingBalance of the stock closing tank entity.
-    double? closingBalance,
+    /// The [closingBalance20] parameter is the closingBalance20 of the stock closing tank entity.
+    double? closingBalance20,
 
     /// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing tank entity.
     double? openingAccountingBalance,
