@@ -126,7 +126,6 @@ part 'src/orders/loading_order.dart';
 
 // Stock closing
 part 'src/stock_closing/entity/stock_closing.dart';
-part 'src/stock_closing/entity/tank_changes_type.dart';
 part 'src/stock_closing/entity/stock_closing_tank.dart';
 part 'src/stock_closing/input/stock_closing_input.dart';
 part 'src/stock_closing/input/stock_closing_tank_input.dart';

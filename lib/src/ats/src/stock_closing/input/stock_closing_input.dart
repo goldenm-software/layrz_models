@@ -51,8 +51,8 @@ abstract class StockClosingInput with _$StockClosingInput {
     /// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing input.
     double? closingAccountingBalance,
 
-    /// The [tanks] parameter is the tanks of the stock closing input.
-    @Default([]) List<StockClosingTankInput> tanks,
+    /// The [closingDetails] parameter is the closingDetails of the stock closing input.
+    @Default([]) List<StockClosingTankInput> closingDetails,
   }) = _StockClosingInput;
 
   /// Creates a new [StockClosingInput] instance from a JSON map.

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.8.6
+
+- Refactor `StockClosing` and `StockClosingTank` models
+- Rename `tanks` to `closingDetails` value in `StockClosingInput`
+
 ## 3.8.5
 
 - Added `thirdPartyStorage` value to `AtsLoadingParamsSample` enum, mapped to `THIRD_PARTY_STORAGE` JSON value.
