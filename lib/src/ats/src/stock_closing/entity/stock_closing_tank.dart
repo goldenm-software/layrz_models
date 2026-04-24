@@ -57,16 +57,28 @@ abstract class StockClosingTank with _$StockClosingTank {
     double? accountingVolumeDifference,
 
     /// The [openingBalance] parameter is the openingBalance of the stock closing tank entity.
-    TankChangesType? openingBalance,
+    double? openingBalance,
 
     /// The [totalEntries] parameter is the totalEntries of the stock closing tank entity.
-    TankChangesType? totalEntries,
+    double? totalEntries,
 
     /// The [totalWithdrawals] parameter is the totalWithdrawals of the stock closing tank entity.
-    TankChangesType? totalWithdrawals,
+    double? totalWithdrawals,
 
     /// The [closingBalance] parameter is the closingBalance of the stock closing tank entity.
-    TankChangesType? closingBalance,
+    double? closingBalance,
+
+    /// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing tank entity.
+    double? openingAccountingBalance,
+
+    /// The [totalAccountingEntries] parameter is the totalAccountingEntries of the stock closing tank entity.
+    double? totalAccountingEntries,
+
+    /// The [totalAccountingWithdrawals] parameter is the totalAccountingWithdrawals of the stock closing tank entity.
+    double? totalAccountingWithdrawals,
+
+    /// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing tank entity.
+    double? closingAccountingBalance,
 
     /// The [createdAt] parameter is the createdAt of the stock closing tank entity.
     @TimestampOrNullConverter() DateTime? createdAt,

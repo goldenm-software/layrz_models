@@ -35,17 +35,29 @@ abstract class StockClosing with _$StockClosing {
     /// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing entity.
     double? accountingVolumeDifference,
 
-    /// The [openingBalance] parameter is the openingBalance of the stock closing entity.
-    TankChangesType? openingBalance,
+    /// The [openingBalance20] parameter is the openingBalance20 of the stock closing entity.
+    double? openingBalance20,
 
-    /// The [totalEntries] parameter is the totalEntries of the stock closing entity.
-    TankChangesType? totalEntries,
+    /// The [totalEntries20] parameter is the totalEntries20 of the stock closing entity.
+    double? totalEntries20,
 
-    /// The [totalWithdrawals] parameter is the totalWithdrawals of the stock closing entity.
-    TankChangesType? totalWithdrawals,
+    /// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing entity.
+    double? totalWithdrawals20,
 
-    /// The [closingBalance] parameter is the closingBalance of the stock closing entity.
-    TankChangesType? closingBalance,
+    /// The [closingBalance20] parameter is the closingBalance20 of the stock closing entity.
+    double? closingBalance20,
+
+    /// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing entity.
+    double? openingAccountingBalance,
+
+    /// The [totalAccountingEntries] parameter is the totalAccountingEntries of the stock closing entity.
+    double? totalAccountingEntries,
+
+    /// The [totalAccountingWithdrawals] parameter is the totalAccountingWithdrawals of the stock closing entity.
+    double? totalAccountingWithdrawals,
+
+    /// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing entity.
+    double? closingAccountingBalance,
 
     /// The [createdAt] parameter is the createdAt of the stock closing entity.
     @TimestampOrNullConverter() DateTime? createdAt,
@@ -59,39 +71,3 @@ abstract class StockClosing with _$StockClosing {
   /// The [json] parameter is the JSON map to create the instance from.
   factory StockClosing.fromJson(Map<String, dynamic> json) => _$StockClosingFromJson(json);
 }
-
-// StockClosing
-// Fields
-
-// None
-// id ID
-// Add Fragment
-// terminalId ID
-// Add Fragment
-// terminal Asset
-// Add Fragment
-// product FuelSubtype
-// Add Fragment
-// description String
-// Add Fragment
-// tanksIds [ID]
-// Add Fragment
-// closingDetails [StockClosingTank]
-// Add Fragment
-// totalVolume20 Float
-// Add Fragment
-// volume20Difference Float
-// Add Fragment
-// accountingVolumeDifference Float
-// Add Fragment
-// openingBalance TankChangesType
-// Add Fragment
-// totalEntries TankChangesType
-// Add Fragment
-// totalWithdrawals TankChangesType
-// Add Fragment
-// closingBalance TankChangesType
-// Add Fragment
-// createdAt Unix
-// Add Fragment
-// updatedAt Unix
