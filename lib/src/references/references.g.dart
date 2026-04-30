@@ -89,6 +89,7 @@ const _$ReferenceCategoryEnumMap = {
       'ATS_PREVENT_CHANGES_IN_CACL_TELEMETRY_INPUTS',
   ReferenceCategory.atsGetAllTerminals: 'ATS_GET_ALL_TERMINALS',
   ReferenceCategory.atsStorageReceptionAccess: 'ATS_STORAGE_RECEPTION_ACCESS',
+  ReferenceCategory.atsInvoiceSwap: 'ATS_INVOICE_SWAP',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',

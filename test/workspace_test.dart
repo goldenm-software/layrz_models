@@ -2,7 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 void main() {
-
   test('Workspace.fromJson', () {
     final data = {
       "__typename": "Workspace",
@@ -40,7 +39,7 @@ void main() {
                 "x": 0,
                 "y": 0,
                 "moved": false,
-                "content": {"sensorId": "4", "disableMask": false}
+                "content": {"sensorId": "4", "disableMask": false},
               },
               {
                 "h": 1,
@@ -49,7 +48,7 @@ void main() {
                 "x": 2,
                 "y": 0,
                 "moved": false,
-                "content": {"sensorId": "5", "disableMask": false}
+                "content": {"sensorId": "5", "disableMask": false},
               },
               {
                 "h": 1,
@@ -58,7 +57,7 @@ void main() {
                 "x": 1,
                 "y": 0,
                 "moved": false,
-                "content": {"sensorId": "6", "disableMask": false}
+                "content": {"sensorId": "6", "disableMask": false},
               },
               {
                 "h": 1,
@@ -67,7 +66,7 @@ void main() {
                 "x": 0,
                 "y": 1,
                 "moved": false,
-                "content": {"sensorId": null, "disableMask": false}
+                "content": {"sensorId": null, "disableMask": false},
               },
               {
                 "h": 1,
@@ -76,10 +75,10 @@ void main() {
                 "x": 1,
                 "y": 1,
                 "moved": false,
-                "content": {"sensorId": null, "disableMask": false}
-              }
-            ]
-          }
+                "content": {"sensorId": null, "disableMask": false},
+              },
+            ],
+          },
         },
         {
           "h": 3,
@@ -99,7 +98,7 @@ void main() {
                 "x": 0,
                 "y": 0,
                 "moved": false,
-                "content": {"sensorId": "1", "disableMask": false}
+                "content": {"sensorId": "1", "disableMask": false},
               },
               {
                 "h": 1,
@@ -108,7 +107,7 @@ void main() {
                 "x": 2,
                 "y": 2,
                 "moved": false,
-                "content": {"sensorId": "2", "disableMask": false}
+                "content": {"sensorId": "2", "disableMask": false},
               },
               {
                 "h": 1,
@@ -117,7 +116,7 @@ void main() {
                 "x": 2,
                 "y": 0,
                 "moved": false,
-                "content": {"sensorId": "3", "disableMask": false}
+                "content": {"sensorId": "3", "disableMask": false},
               },
               {
                 "h": 1,
@@ -126,7 +125,7 @@ void main() {
                 "x": 1,
                 "y": 0,
                 "moved": false,
-                "content": {"sensorId": "7", "disableMask": false}
+                "content": {"sensorId": "7", "disableMask": false},
               },
               {
                 "h": 1,
@@ -135,7 +134,7 @@ void main() {
                 "x": 1,
                 "y": 1,
                 "moved": false,
-                "content": {"sensorId": "8", "disableMask": false}
+                "content": {"sensorId": "8", "disableMask": false},
               },
               {
                 "h": 1,
@@ -144,7 +143,7 @@ void main() {
                 "x": 2,
                 "y": 1,
                 "moved": false,
-                "content": {"sensorId": "9", "disableMask": false}
+                "content": {"sensorId": "9", "disableMask": false},
               },
               {
                 "h": 1,
@@ -153,7 +152,7 @@ void main() {
                 "x": 0,
                 "y": 2,
                 "moved": false,
-                "content": {"sensorId": "10", "disableMask": false}
+                "content": {"sensorId": "10", "disableMask": false},
               },
               {
                 "h": 1,
@@ -162,11 +161,11 @@ void main() {
                 "x": 1,
                 "y": 2,
                 "moved": false,
-                "content": {"sensorId": "12", "disableMask": false}
-              }
-            ]
-          }
-        }
+                "content": {"sensorId": "12", "disableMask": false},
+              },
+            ],
+          },
+        },
       ],
       "mapEnabled": true,
       "mapCenterMode": "BOUNDS",
@@ -177,9 +176,9 @@ void main() {
           "sensors": {
             "mode": "GRID",
             "values": ["8", "9", "10"],
-            "enabled": true
+            "enabled": true,
           },
-          "connection": {"time": false, "address": true, "indicator": true}
+          "connection": {"time": false, "address": true, "indicator": true},
         },
         {
           "alerts": {"count": true, "range": "H24", "enabled": true},
@@ -187,10 +186,10 @@ void main() {
           "sensors": {
             "mode": "LIST",
             "values": ["5", "6"],
-            "enabled": true
+            "enabled": true,
           },
-          "connection": {"time": false, "address": false, "indicator": false}
-        }
+          "connection": {"time": false, "address": false, "indicator": false},
+        },
       ],
       "mapCenterCoordinates": {"__typename": "GeocodeCoordinates", "latitude": 0.0, "longitude": 0.0},
       "geofencesIds": ["2"],
@@ -208,7 +207,7 @@ void main() {
           "x": 0,
           "y": 1,
           "moved": false,
-          "content": {"chartId": "1"}
+          "content": {"chartId": "1"},
         },
         {
           "h": 1,
@@ -217,7 +216,7 @@ void main() {
           "x": 2,
           "y": 1,
           "moved": false,
-          "content": {"chartId": "2"}
+          "content": {"chartId": "2"},
         },
         {
           "h": 1,
@@ -226,7 +225,7 @@ void main() {
           "x": 2,
           "y": 2,
           "moved": false,
-          "content": {"chartId": "3"}
+          "content": {"chartId": "3"},
         },
         {
           "h": 1,
@@ -235,7 +234,7 @@ void main() {
           "x": 0,
           "y": 2,
           "moved": false,
-          "content": {"chartId": "4"}
+          "content": {"chartId": "4"},
         },
         {
           "h": 1,
@@ -244,9 +243,477 @@ void main() {
           "x": 0,
           "y": 0,
           "moved": false,
-          "content": {"chartId": "5"}
-        }
+          "content": {"chartId": "5"},
+        },
       ],
+    };
+
+    final obj = Workspace.fromJson(data);
+
+    expect(obj, isA<Workspace>());
+  });
+
+  test('Sugoi workspace from JSON', () {
+    final data = {
+      "id": "13238",
+      "name": "Sugoi Brisas del Golf",
+      "icon": "mdi-briefcase",
+      "color": "#2196f3",
+      "background": "https://cdn.layrz.com/avatars/Sugoi_-13238.png",
+      "isFavorite": false,
+      "assetsIds": [
+        "74347",
+        "74327",
+        "74334",
+        "74321",
+        "74333",
+        "74330",
+        "74338",
+        "74335",
+        "74332",
+        "74326",
+        "74349",
+        "74340",
+        "74337",
+      ],
+      "inboundServicesIds": [],
+      "outboundServicesIds": [],
+      "mainView": "/Main/Grid",
+      "sensorsEnabled": true,
+      "sensorsGridStructure": [
+        {
+          "objectId": "74326",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 2, "height": 1},
+          "sensors": [
+            {
+              "sensorId": "166685",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166686",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74327",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 2, "height": 1},
+          "sensors": [
+            {
+              "sensorId": "166687",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166688",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74330",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 2, "height": 2},
+          "sensors": [
+            {
+              "sensorId": "166689",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166690",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74340",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 2, "height": 2},
+          "sensors": [
+            {
+              "sensorId": "166723",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 1, "height": 1},
+            },
+            {
+              "sensorId": "166724",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 1, "height": 1},
+            },
+            {
+              "sensorId": "166729",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 1, "height": 1},
+            },
+            {
+              "sensorId": "166730",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 1, "height": 1},
+            },
+            {
+              "sensorId": "166731",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "global-169243",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74334",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 2, "height": 2},
+          "sensors": [
+            {
+              "sensorId": "166717",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166718",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166771",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "global-169243",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74347",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 2, "height": 2},
+          "sensors": [
+            {
+              "sensorId": "166725",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166726",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74349",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 2, "height": 2},
+          "sensors": [
+            {
+              "sensorId": "166727",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166728",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166772",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "global-169243",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74321",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 2, "height": 2},
+          "sensors": [
+            {
+              "sensorId": "166683",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166684",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74335",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 1, "height": 1},
+          "sensors": [
+            {
+              "sensorId": "166715",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166716",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74337",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 1, "height": 1},
+          "sensors": [
+            {
+              "sensorId": "166721",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166722",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74332",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 1, "height": 1},
+          "sensors": [
+            {
+              "sensorId": "166701",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166702",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74338",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 1, "height": 1},
+          "sensors": [
+            {
+              "sensorId": "166719",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166720",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+        {
+          "objectId": "74333",
+          "kind": "ASSET",
+          "color": "#ffffff",
+          "dimensions": {"width": 1, "height": 1},
+          "sensors": [
+            {
+              "sensorId": "166703",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+            {
+              "sensorId": "166704",
+              "maskEnabled": true,
+              "type": "PLAIN",
+              "minimum": null,
+              "maximum": null,
+              "dimensions": {"width": 2, "height": 1},
+            },
+          ],
+        },
+      ],
+      "tableEnabled": true,
+      "tableStructure": {
+        "assetsIds": [
+          "74321",
+          "74326",
+          "74327",
+          "74330",
+          "74332",
+          "74333",
+          "74334",
+          "74335",
+          "74337",
+          "74338",
+          "74340",
+          "74347",
+          "74349",
+        ],
+        "sensorsIds": ["temperature.celsius", "humidity.percent", "door.status"],
+        "attributes": [],
+      },
+      "mapEnabled": false,
+      "mapCenterMode": "BOUNDS",
+      "mapCardCustomization": [],
+      "mapCenterCoordinates": {"latitude": null, "longitude": null},
+      "geofencesIds": [],
+      "casesEnabled": true,
+      "triggersIds": [],
+      "casesMonitorConfig": [
+        null,
+        {"type": "SPECIFIC_ASSET", "assetId": null},
+        {"type": "PIE_CHART", "assetId": null},
+        {"type": "EXPIRED_LAST_24_HOURS", "assetId": null},
+      ],
+      "checkpointsEnabled": false,
+      "checkpointsIds": [],
+      "analyticsEnabled": true,
+      "chartsIds": ["678", "679", "680", "681"],
+      "analyticsGridStructure": [
+        {
+          "chartId": "678",
+          "dimensions": {"width": 4, "height": 2},
+        },
+        {
+          "chartId": "679",
+          "dimensions": {"width": 4, "height": 2},
+        },
+        {
+          "chartId": "680",
+          "dimensions": {"width": 8, "height": 2},
+        },
+        {
+          "chartId": "681",
+          "dimensions": {"width": 5, "height": 2},
+        },
+      ],
+      "access": [],
     };
 
     final obj = Workspace.fromJson(data);
