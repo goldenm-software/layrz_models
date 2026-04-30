@@ -57,7 +57,7 @@ abstract class Workspace with _$Workspace {
     @Default(false) bool casesEnabled,
     @Default([]) List<Trigger> triggers,
     @Default([]) List<String> triggersIds,
-    @Default([]) List<CaseMonitorCard> casesMonitorConfig,
+    @Default([]) List<CaseMonitorCard?> casesMonitorConfig,
 
     /// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
     /// if the checkpoints monitor is enabled

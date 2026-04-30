@@ -66,7 +66,11 @@ _Workspace _$WorkspaceFromJson(Map<String, dynamic> json) => _Workspace(
       const [],
   casesMonitorConfig:
       (json['casesMonitorConfig'] as List<dynamic>?)
-          ?.map((e) => CaseMonitorCard.fromJson(e as Map<String, dynamic>))
+          ?.map(
+            (e) => e == null
+                ? null
+                : CaseMonitorCard.fromJson(e as Map<String, dynamic>),
+          )
           .toList() ??
       const [],
   checkpointsEnabled: json['checkpointsEnabled'] as bool? ?? false,
@@ -162,7 +166,7 @@ Map<String, dynamic> _$WorkspaceToJson(
   'triggers': instance.triggers.map((e) => e.toJson()).toList(),
   'triggersIds': instance.triggersIds,
   'casesMonitorConfig': instance.casesMonitorConfig
-      .map((e) => e.toJson())
+      .map((e) => e?.toJson())
       .toList(),
   'checkpointsEnabled': instance.checkpointsEnabled,
   'checkpoints': instance.checkpoints.map((e) => e.toJson()).toList(),

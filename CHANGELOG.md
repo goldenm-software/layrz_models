@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.8
+
+- Fixed `casesMonitorConfig` type in `Workspace` model to be a list of nullable `CaseMonitorCard?` instead of non-nullable `CaseMonitorCard`.
+
 ## 3.8.7
 
 - Updated `openingBalance` to `openingBalance20` in `StockClosingTank` model
