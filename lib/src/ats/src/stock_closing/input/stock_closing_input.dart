@@ -19,37 +19,37 @@ abstract class StockClosingInput with _$StockClosingInput {
     String? description,
 
     /// The [totalVolume20] parameter is the totalVolume20 of the stock closing input.
-    double? totalVolume20,
+    @Default(0.0) double totalVolume20,
 
     /// The [volume20Difference] parameter is the volume20Difference of the stock closing input.
-    double? volume20Difference,
+    @Default(0.0) double volume20Difference,
 
     /// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing input.
-    double? accountingVolumeDifference,
+    @Default(0.0) double accountingVolumeDifference,
 
     /// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
-    double? openingBalance20,
+    @Default(0.0) double openingBalance20,
 
     /// The [totalEntries20] parameter is the totalEntries20 of the stock closing input.
-    double? totalEntries20,
+    @Default(0.0) double totalEntries20,
 
     /// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing input.
-    double? totalWithdrawals20,
+    @Default(0.0) double totalWithdrawals20,
 
     /// The [closingBalance20] parameter is the closingBalance20 of the stock closing input.
-    double? closingBalance20,
+    @Default(0.0) double closingBalance20,
 
     /// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing input.
-    double? openingAccountingBalance,
+    @Default(0.0) double openingAccountingBalance,
 
     /// The [totalAccountingEntries] parameter is the totalAccountingEntries of the stock closing input.
-    double? totalAccountingEntries,
+    @Default(0.0) double totalAccountingEntries,
 
     /// The [totalAccountingWithdrawals] parameter is the totalAccountingWithdrawals of the stock closing input.
-    double? totalAccountingWithdrawals,
+    @Default(0.0) double totalAccountingWithdrawals,
 
     /// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing input.
-    double? closingAccountingBalance,
+    @Default(0.0) double closingAccountingBalance,
 
     /// The [closingDetails] parameter is the closingDetails of the stock closing input.
     @Default([]) List<StockClosingTankInput> closingDetails,

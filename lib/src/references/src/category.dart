@@ -282,6 +282,12 @@ enum ReferenceCategory {
   /// Layrz API Reference: ATS_STORAGE_RECEPTION_ACCESS
   atsStorageReceptionAccess,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to swap invoice in purchase order
+  /// Layrz API Reference: ATS_INVOICE_SWAP
+  @JsonValue('ATS_INVOICE_SWAP')
+  atsInvoiceSwap,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR

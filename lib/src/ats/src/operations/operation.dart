@@ -117,6 +117,15 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// [terminalExitAt] is the timestamp of the terminal exit.
     @TimestampOrNullConverter() DateTime? terminalExitAt,
+
+    /// [mdfeId] is the ID of the MDF-e linked to the operation.
+    String? mdfeId,
+
+    /// [mdfe] is the MDF-e linked to the operation.
+    AtsMdfe? mdfe,
+
+    /// [mdfes] is the list of MDF-e linked to the operation.
+    List<AtsMdfe>? mdfes,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);
