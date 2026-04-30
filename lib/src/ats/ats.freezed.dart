@@ -13156,7 +13156,10 @@ mixin _$AtsOperation {
  AtsEtaStatus? get etaStatus;/// [loadingOrders] is the list of loading orders linked to the operation.
  List<AtsLoadingOrder>? get loadingOrders;/// [terminalEntryAt] is the timestamp of the terminal entry.
 @TimestampOrNullConverter() DateTime? get terminalEntryAt;/// [terminalExitAt] is the timestamp of the terminal exit.
-@TimestampOrNullConverter() DateTime? get terminalExitAt;
+@TimestampOrNullConverter() DateTime? get terminalExitAt;/// [mdfeId] is the ID of the MDF-e linked to the operation.
+ String? get mdfeId;/// [mdfe] is the MDF-e linked to the operation.
+ AtsMdfe? get mdfe;/// [mdfes] is the list of MDF-e linked to the operation.
+ List<AtsMdfe>? get mdfes;
 /// Create a copy of AtsOperation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -13169,16 +13172,16 @@ $AtsOperationCopyWith<AtsOperation> get copyWith => _$AtsOperationCopyWithImpl<A
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other.ordersIds, ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other.purchaseOrders, purchaseOrders)&&const DeepCollectionEquality().equals(other.statuses, statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other.productsInformation, productsInformation)&&const DeepCollectionEquality().equals(other.ctes, ctes)&&const DeepCollectionEquality().equals(other.caclFormsIds, caclFormsIds)&&const DeepCollectionEquality().equals(other.caclForms, caclForms)&&const DeepCollectionEquality().equals(other.manifests, manifests)&&const DeepCollectionEquality().equals(other.history, history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus)&&const DeepCollectionEquality().equals(other.loadingOrders, loadingOrders)&&(identical(other.terminalEntryAt, terminalEntryAt) || other.terminalEntryAt == terminalEntryAt)&&(identical(other.terminalExitAt, terminalExitAt) || other.terminalExitAt == terminalExitAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other.ordersIds, ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other.purchaseOrders, purchaseOrders)&&const DeepCollectionEquality().equals(other.statuses, statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other.productsInformation, productsInformation)&&const DeepCollectionEquality().equals(other.ctes, ctes)&&const DeepCollectionEquality().equals(other.caclFormsIds, caclFormsIds)&&const DeepCollectionEquality().equals(other.caclForms, caclForms)&&const DeepCollectionEquality().equals(other.manifests, manifests)&&const DeepCollectionEquality().equals(other.history, history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus)&&const DeepCollectionEquality().equals(other.loadingOrders, loadingOrders)&&(identical(other.terminalEntryAt, terminalEntryAt) || other.terminalEntryAt == terminalEntryAt)&&(identical(other.terminalExitAt, terminalExitAt) || other.terminalExitAt == terminalExitAt)&&(identical(other.mdfeId, mdfeId) || other.mdfeId == mdfeId)&&(identical(other.mdfe, mdfe) || other.mdfe == mdfe)&&const DeepCollectionEquality().equals(other.mdfes, mdfes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(purchaseOrders),const DeepCollectionEquality().hash(statuses),totalQuantity,const DeepCollectionEquality().hash(productsInformation),const DeepCollectionEquality().hash(ctes),const DeepCollectionEquality().hash(caclFormsIds),const DeepCollectionEquality().hash(caclForms),const DeepCollectionEquality().hash(manifests),const DeepCollectionEquality().hash(history),minEta,etaStatus,const DeepCollectionEquality().hash(loadingOrders),terminalEntryAt,terminalExitAt]);
+int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(purchaseOrders),const DeepCollectionEquality().hash(statuses),totalQuantity,const DeepCollectionEquality().hash(productsInformation),const DeepCollectionEquality().hash(ctes),const DeepCollectionEquality().hash(caclFormsIds),const DeepCollectionEquality().hash(caclForms),const DeepCollectionEquality().hash(manifests),const DeepCollectionEquality().hash(history),minEta,etaStatus,const DeepCollectionEquality().hash(loadingOrders),terminalEntryAt,terminalExitAt,mdfeId,mdfe,const DeepCollectionEquality().hash(mdfes)]);
 
 @override
 String toString() {
-  return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history, minEta: $minEta, etaStatus: $etaStatus, loadingOrders: $loadingOrders, terminalEntryAt: $terminalEntryAt, terminalExitAt: $terminalExitAt)';
+  return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history, minEta: $minEta, etaStatus: $etaStatus, loadingOrders: $loadingOrders, terminalEntryAt: $terminalEntryAt, terminalExitAt: $terminalExitAt, mdfeId: $mdfeId, mdfe: $mdfe, mdfes: $mdfes)';
 }
 
 
@@ -13189,11 +13192,11 @@ abstract mixin class $AtsOperationCopyWith<$Res>  {
   factory $AtsOperationCopyWith(AtsOperation value, $Res Function(AtsOperation) _then) = _$AtsOperationCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? sellerAssetId, String? transportAssetId, String? transportCompanyAssetId,@TimestampOrNullConverter() DateTime? purchasedAt,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? finishedAt, bool? pendingToReview, List<String>? ordersIds, Asset? sellerAsset, Asset? transportAsset, Asset? transportCompanyAsset, AtsCompanyInformation? sellerInformation, AtsTransportInformation? transportInformation,@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,@JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory, List<AtsPurchaseOrder>? purchaseOrders, List<AtsOperationStatuses>? statuses, double? totalQuantity, List<OperationProductInformation>? productsInformation, List<String>? ctes, List<String>? caclFormsIds, List<CaclEntity>? caclForms, List<Manifest>? manifests, List<AtsOperationHistory>? history,@TimestampOrNullConverter() DateTime? minEta, AtsEtaStatus? etaStatus, List<AtsLoadingOrder>? loadingOrders,@TimestampOrNullConverter() DateTime? terminalEntryAt,@TimestampOrNullConverter() DateTime? terminalExitAt
+ String? id, String? sellerAssetId, String? transportAssetId, String? transportCompanyAssetId,@TimestampOrNullConverter() DateTime? purchasedAt,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? finishedAt, bool? pendingToReview, List<String>? ordersIds, Asset? sellerAsset, Asset? transportAsset, Asset? transportCompanyAsset, AtsCompanyInformation? sellerInformation, AtsTransportInformation? transportInformation,@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,@JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory, List<AtsPurchaseOrder>? purchaseOrders, List<AtsOperationStatuses>? statuses, double? totalQuantity, List<OperationProductInformation>? productsInformation, List<String>? ctes, List<String>? caclFormsIds, List<CaclEntity>? caclForms, List<Manifest>? manifests, List<AtsOperationHistory>? history,@TimestampOrNullConverter() DateTime? minEta, AtsEtaStatus? etaStatus, List<AtsLoadingOrder>? loadingOrders,@TimestampOrNullConverter() DateTime? terminalEntryAt,@TimestampOrNullConverter() DateTime? terminalExitAt, String? mdfeId, AtsMdfe? mdfe, List<AtsMdfe>? mdfes
 });
 
 
-$AssetCopyWith<$Res>? get sellerAsset;$AssetCopyWith<$Res>? get transportAsset;$AssetCopyWith<$Res>? get transportCompanyAsset;$AtsCompanyInformationCopyWith<$Res>? get sellerInformation;$AtsTransportInformationCopyWith<$Res>? get transportInformation;
+$AssetCopyWith<$Res>? get sellerAsset;$AssetCopyWith<$Res>? get transportAsset;$AssetCopyWith<$Res>? get transportCompanyAsset;$AtsCompanyInformationCopyWith<$Res>? get sellerInformation;$AtsTransportInformationCopyWith<$Res>? get transportInformation;$AtsMdfeCopyWith<$Res>? get mdfe;
 
 }
 /// @nodoc
@@ -13206,7 +13209,7 @@ class _$AtsOperationCopyWithImpl<$Res>
 
 /// Create a copy of AtsOperation
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? sellerAssetId = freezed,Object? transportAssetId = freezed,Object? transportCompanyAssetId = freezed,Object? purchasedAt = freezed,Object? createdAt = freezed,Object? finishedAt = freezed,Object? pendingToReview = freezed,Object? ordersIds = freezed,Object? sellerAsset = freezed,Object? transportAsset = freezed,Object? transportCompanyAsset = freezed,Object? sellerInformation = freezed,Object? transportInformation = freezed,Object? orderStatus = freezed,Object? category = freezed,Object? deliverCategory = freezed,Object? purchaseOrders = freezed,Object? statuses = freezed,Object? totalQuantity = freezed,Object? productsInformation = freezed,Object? ctes = freezed,Object? caclFormsIds = freezed,Object? caclForms = freezed,Object? manifests = freezed,Object? history = freezed,Object? minEta = freezed,Object? etaStatus = freezed,Object? loadingOrders = freezed,Object? terminalEntryAt = freezed,Object? terminalExitAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? sellerAssetId = freezed,Object? transportAssetId = freezed,Object? transportCompanyAssetId = freezed,Object? purchasedAt = freezed,Object? createdAt = freezed,Object? finishedAt = freezed,Object? pendingToReview = freezed,Object? ordersIds = freezed,Object? sellerAsset = freezed,Object? transportAsset = freezed,Object? transportCompanyAsset = freezed,Object? sellerInformation = freezed,Object? transportInformation = freezed,Object? orderStatus = freezed,Object? category = freezed,Object? deliverCategory = freezed,Object? purchaseOrders = freezed,Object? statuses = freezed,Object? totalQuantity = freezed,Object? productsInformation = freezed,Object? ctes = freezed,Object? caclFormsIds = freezed,Object? caclForms = freezed,Object? manifests = freezed,Object? history = freezed,Object? minEta = freezed,Object? etaStatus = freezed,Object? loadingOrders = freezed,Object? terminalEntryAt = freezed,Object? terminalExitAt = freezed,Object? mdfeId = freezed,Object? mdfe = freezed,Object? mdfes = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,sellerAssetId: freezed == sellerAssetId ? _self.sellerAssetId : sellerAssetId // ignore: cast_nullable_to_non_nullable
@@ -13239,7 +13242,10 @@ as DateTime?,etaStatus: freezed == etaStatus ? _self.etaStatus : etaStatus // ig
 as AtsEtaStatus?,loadingOrders: freezed == loadingOrders ? _self.loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
 as List<AtsLoadingOrder>?,terminalEntryAt: freezed == terminalEntryAt ? _self.terminalEntryAt : terminalEntryAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,terminalExitAt: freezed == terminalExitAt ? _self.terminalExitAt : terminalExitAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime?,mdfeId: freezed == mdfeId ? _self.mdfeId : mdfeId // ignore: cast_nullable_to_non_nullable
+as String?,mdfe: freezed == mdfe ? _self.mdfe : mdfe // ignore: cast_nullable_to_non_nullable
+as AtsMdfe?,mdfes: freezed == mdfes ? _self.mdfes : mdfes // ignore: cast_nullable_to_non_nullable
+as List<AtsMdfe>?,
   ));
 }
 /// Create a copy of AtsOperation
@@ -13301,6 +13307,18 @@ $AtsTransportInformationCopyWith<$Res>? get transportInformation {
 
   return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!, (value) {
     return _then(_self.copyWith(transportInformation: value));
+  });
+}/// Create a copy of AtsOperation
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsMdfeCopyWith<$Res>? get mdfe {
+    if (_self.mdfe == null) {
+    return null;
+  }
+
+  return $AtsMdfeCopyWith<$Res>(_self.mdfe!, (value) {
+    return _then(_self.copyWith(mdfe: value));
   });
 }
 }
@@ -13384,10 +13402,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter()  DateTime? terminalEntryAt, @TimestampOrNullConverter()  DateTime? terminalExitAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter()  DateTime? terminalEntryAt, @TimestampOrNullConverter()  DateTime? terminalExitAt,  String? mdfeId,  AtsMdfe? mdfe,  List<AtsMdfe>? mdfes)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsOperation() when $default != null:
-return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders,_that.terminalEntryAt,_that.terminalExitAt);case _:
+return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders,_that.terminalEntryAt,_that.terminalExitAt,_that.mdfeId,_that.mdfe,_that.mdfes);case _:
   return orElse();
 
 }
@@ -13405,10 +13423,10 @@ return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transp
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter()  DateTime? terminalEntryAt, @TimestampOrNullConverter()  DateTime? terminalExitAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter()  DateTime? terminalEntryAt, @TimestampOrNullConverter()  DateTime? terminalExitAt,  String? mdfeId,  AtsMdfe? mdfe,  List<AtsMdfe>? mdfes)  $default,) {final _that = this;
 switch (_that) {
 case _AtsOperation():
-return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders,_that.terminalEntryAt,_that.terminalExitAt);case _:
+return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders,_that.terminalEntryAt,_that.terminalExitAt,_that.mdfeId,_that.mdfe,_that.mdfes);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -13425,10 +13443,10 @@ return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transp
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter()  DateTime? terminalEntryAt, @TimestampOrNullConverter()  DateTime? terminalExitAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? sellerAssetId,  String? transportAssetId,  String? transportCompanyAssetId, @TimestampOrNullConverter()  DateTime? purchasedAt, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? finishedAt,  bool? pendingToReview,  List<String>? ordersIds,  Asset? sellerAsset,  Asset? transportAsset,  Asset? transportCompanyAsset,  AtsCompanyInformation? sellerInformation,  AtsTransportInformation? transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated)  AtsPurchaseOrderStatus? orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined)  AtsPurchaseOrderCategoriesEntity? category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined)  AtsPurchaseOrderSubCategories? deliverCategory,  List<AtsPurchaseOrder>? purchaseOrders,  List<AtsOperationStatuses>? statuses,  double? totalQuantity,  List<OperationProductInformation>? productsInformation,  List<String>? ctes,  List<String>? caclFormsIds,  List<CaclEntity>? caclForms,  List<Manifest>? manifests,  List<AtsOperationHistory>? history, @TimestampOrNullConverter()  DateTime? minEta,  AtsEtaStatus? etaStatus,  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter()  DateTime? terminalEntryAt, @TimestampOrNullConverter()  DateTime? terminalExitAt,  String? mdfeId,  AtsMdfe? mdfe,  List<AtsMdfe>? mdfes)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsOperation() when $default != null:
-return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders,_that.terminalEntryAt,_that.terminalExitAt);case _:
+return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transportCompanyAssetId,_that.purchasedAt,_that.createdAt,_that.finishedAt,_that.pendingToReview,_that.ordersIds,_that.sellerAsset,_that.transportAsset,_that.transportCompanyAsset,_that.sellerInformation,_that.transportInformation,_that.orderStatus,_that.category,_that.deliverCategory,_that.purchaseOrders,_that.statuses,_that.totalQuantity,_that.productsInformation,_that.ctes,_that.caclFormsIds,_that.caclForms,_that.manifests,_that.history,_that.minEta,_that.etaStatus,_that.loadingOrders,_that.terminalEntryAt,_that.terminalExitAt,_that.mdfeId,_that.mdfe,_that.mdfes);case _:
   return null;
 
 }
@@ -13440,7 +13458,7 @@ return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transp
 @JsonSerializable()
 
 class _AtsOperation implements AtsOperation {
-  const _AtsOperation({this.id, this.sellerAssetId, this.transportAssetId, this.transportCompanyAssetId, @TimestampOrNullConverter() this.purchasedAt, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.finishedAt, this.pendingToReview, final  List<String>? ordersIds, this.sellerAsset, this.transportAsset, this.transportCompanyAsset, this.sellerInformation, this.transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) this.orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) this.category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) this.deliverCategory, final  List<AtsPurchaseOrder>? purchaseOrders, final  List<AtsOperationStatuses>? statuses, this.totalQuantity, final  List<OperationProductInformation>? productsInformation, final  List<String>? ctes, final  List<String>? caclFormsIds, final  List<CaclEntity>? caclForms, final  List<Manifest>? manifests, final  List<AtsOperationHistory>? history, @TimestampOrNullConverter() this.minEta, this.etaStatus, final  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter() this.terminalEntryAt, @TimestampOrNullConverter() this.terminalExitAt}): _ordersIds = ordersIds,_purchaseOrders = purchaseOrders,_statuses = statuses,_productsInformation = productsInformation,_ctes = ctes,_caclFormsIds = caclFormsIds,_caclForms = caclForms,_manifests = manifests,_history = history,_loadingOrders = loadingOrders;
+  const _AtsOperation({this.id, this.sellerAssetId, this.transportAssetId, this.transportCompanyAssetId, @TimestampOrNullConverter() this.purchasedAt, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.finishedAt, this.pendingToReview, final  List<String>? ordersIds, this.sellerAsset, this.transportAsset, this.transportCompanyAsset, this.sellerInformation, this.transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) this.orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) this.category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) this.deliverCategory, final  List<AtsPurchaseOrder>? purchaseOrders, final  List<AtsOperationStatuses>? statuses, this.totalQuantity, final  List<OperationProductInformation>? productsInformation, final  List<String>? ctes, final  List<String>? caclFormsIds, final  List<CaclEntity>? caclForms, final  List<Manifest>? manifests, final  List<AtsOperationHistory>? history, @TimestampOrNullConverter() this.minEta, this.etaStatus, final  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter() this.terminalEntryAt, @TimestampOrNullConverter() this.terminalExitAt, this.mdfeId, this.mdfe, final  List<AtsMdfe>? mdfes}): _ordersIds = ordersIds,_purchaseOrders = purchaseOrders,_statuses = statuses,_productsInformation = productsInformation,_ctes = ctes,_caclFormsIds = caclFormsIds,_caclForms = caclForms,_manifests = manifests,_history = history,_loadingOrders = loadingOrders,_mdfes = mdfes;
   factory _AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);
 
 /// `id` of the asset entity. This ID is unique.
@@ -13595,6 +13613,21 @@ class _AtsOperation implements AtsOperation {
 @override@TimestampOrNullConverter() final  DateTime? terminalEntryAt;
 /// [terminalExitAt] is the timestamp of the terminal exit.
 @override@TimestampOrNullConverter() final  DateTime? terminalExitAt;
+/// [mdfeId] is the ID of the MDF-e linked to the operation.
+@override final  String? mdfeId;
+/// [mdfe] is the MDF-e linked to the operation.
+@override final  AtsMdfe? mdfe;
+/// [mdfes] is the list of MDF-e linked to the operation.
+ final  List<AtsMdfe>? _mdfes;
+/// [mdfes] is the list of MDF-e linked to the operation.
+@override List<AtsMdfe>? get mdfes {
+  final value = _mdfes;
+  if (value == null) return null;
+  if (_mdfes is EqualUnmodifiableListView) return _mdfes;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
 
 /// Create a copy of AtsOperation
 /// with the given fields replaced by the non-null parameter values.
@@ -13609,16 +13642,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other._ordersIds, _ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other._purchaseOrders, _purchaseOrders)&&const DeepCollectionEquality().equals(other._statuses, _statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other._productsInformation, _productsInformation)&&const DeepCollectionEquality().equals(other._ctes, _ctes)&&const DeepCollectionEquality().equals(other._caclFormsIds, _caclFormsIds)&&const DeepCollectionEquality().equals(other._caclForms, _caclForms)&&const DeepCollectionEquality().equals(other._manifests, _manifests)&&const DeepCollectionEquality().equals(other._history, _history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus)&&const DeepCollectionEquality().equals(other._loadingOrders, _loadingOrders)&&(identical(other.terminalEntryAt, terminalEntryAt) || other.terminalEntryAt == terminalEntryAt)&&(identical(other.terminalExitAt, terminalExitAt) || other.terminalExitAt == terminalExitAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other._ordersIds, _ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other._purchaseOrders, _purchaseOrders)&&const DeepCollectionEquality().equals(other._statuses, _statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other._productsInformation, _productsInformation)&&const DeepCollectionEquality().equals(other._ctes, _ctes)&&const DeepCollectionEquality().equals(other._caclFormsIds, _caclFormsIds)&&const DeepCollectionEquality().equals(other._caclForms, _caclForms)&&const DeepCollectionEquality().equals(other._manifests, _manifests)&&const DeepCollectionEquality().equals(other._history, _history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus)&&const DeepCollectionEquality().equals(other._loadingOrders, _loadingOrders)&&(identical(other.terminalEntryAt, terminalEntryAt) || other.terminalEntryAt == terminalEntryAt)&&(identical(other.terminalExitAt, terminalExitAt) || other.terminalExitAt == terminalExitAt)&&(identical(other.mdfeId, mdfeId) || other.mdfeId == mdfeId)&&(identical(other.mdfe, mdfe) || other.mdfe == mdfe)&&const DeepCollectionEquality().equals(other._mdfes, _mdfes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(_ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(_purchaseOrders),const DeepCollectionEquality().hash(_statuses),totalQuantity,const DeepCollectionEquality().hash(_productsInformation),const DeepCollectionEquality().hash(_ctes),const DeepCollectionEquality().hash(_caclFormsIds),const DeepCollectionEquality().hash(_caclForms),const DeepCollectionEquality().hash(_manifests),const DeepCollectionEquality().hash(_history),minEta,etaStatus,const DeepCollectionEquality().hash(_loadingOrders),terminalEntryAt,terminalExitAt]);
+int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(_ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(_purchaseOrders),const DeepCollectionEquality().hash(_statuses),totalQuantity,const DeepCollectionEquality().hash(_productsInformation),const DeepCollectionEquality().hash(_ctes),const DeepCollectionEquality().hash(_caclFormsIds),const DeepCollectionEquality().hash(_caclForms),const DeepCollectionEquality().hash(_manifests),const DeepCollectionEquality().hash(_history),minEta,etaStatus,const DeepCollectionEquality().hash(_loadingOrders),terminalEntryAt,terminalExitAt,mdfeId,mdfe,const DeepCollectionEquality().hash(_mdfes)]);
 
 @override
 String toString() {
-  return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history, minEta: $minEta, etaStatus: $etaStatus, loadingOrders: $loadingOrders, terminalEntryAt: $terminalEntryAt, terminalExitAt: $terminalExitAt)';
+  return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, transportCompanyAssetId: $transportCompanyAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, transportCompanyAsset: $transportCompanyAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclFormsIds: $caclFormsIds, caclForms: $caclForms, manifests: $manifests, history: $history, minEta: $minEta, etaStatus: $etaStatus, loadingOrders: $loadingOrders, terminalEntryAt: $terminalEntryAt, terminalExitAt: $terminalExitAt, mdfeId: $mdfeId, mdfe: $mdfe, mdfes: $mdfes)';
 }
 
 
@@ -13629,11 +13662,11 @@ abstract mixin class _$AtsOperationCopyWith<$Res> implements $AtsOperationCopyWi
   factory _$AtsOperationCopyWith(_AtsOperation value, $Res Function(_AtsOperation) _then) = __$AtsOperationCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? sellerAssetId, String? transportAssetId, String? transportCompanyAssetId,@TimestampOrNullConverter() DateTime? purchasedAt,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? finishedAt, bool? pendingToReview, List<String>? ordersIds, Asset? sellerAsset, Asset? transportAsset, Asset? transportCompanyAsset, AtsCompanyInformation? sellerInformation, AtsTransportInformation? transportInformation,@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,@JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory, List<AtsPurchaseOrder>? purchaseOrders, List<AtsOperationStatuses>? statuses, double? totalQuantity, List<OperationProductInformation>? productsInformation, List<String>? ctes, List<String>? caclFormsIds, List<CaclEntity>? caclForms, List<Manifest>? manifests, List<AtsOperationHistory>? history,@TimestampOrNullConverter() DateTime? minEta, AtsEtaStatus? etaStatus, List<AtsLoadingOrder>? loadingOrders,@TimestampOrNullConverter() DateTime? terminalEntryAt,@TimestampOrNullConverter() DateTime? terminalExitAt
+ String? id, String? sellerAssetId, String? transportAssetId, String? transportCompanyAssetId,@TimestampOrNullConverter() DateTime? purchasedAt,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? finishedAt, bool? pendingToReview, List<String>? ordersIds, Asset? sellerAsset, Asset? transportAsset, Asset? transportCompanyAsset, AtsCompanyInformation? sellerInformation, AtsTransportInformation? transportInformation,@JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,@JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory, List<AtsPurchaseOrder>? purchaseOrders, List<AtsOperationStatuses>? statuses, double? totalQuantity, List<OperationProductInformation>? productsInformation, List<String>? ctes, List<String>? caclFormsIds, List<CaclEntity>? caclForms, List<Manifest>? manifests, List<AtsOperationHistory>? history,@TimestampOrNullConverter() DateTime? minEta, AtsEtaStatus? etaStatus, List<AtsLoadingOrder>? loadingOrders,@TimestampOrNullConverter() DateTime? terminalEntryAt,@TimestampOrNullConverter() DateTime? terminalExitAt, String? mdfeId, AtsMdfe? mdfe, List<AtsMdfe>? mdfes
 });
 
 
-@override $AssetCopyWith<$Res>? get sellerAsset;@override $AssetCopyWith<$Res>? get transportAsset;@override $AssetCopyWith<$Res>? get transportCompanyAsset;@override $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;@override $AtsTransportInformationCopyWith<$Res>? get transportInformation;
+@override $AssetCopyWith<$Res>? get sellerAsset;@override $AssetCopyWith<$Res>? get transportAsset;@override $AssetCopyWith<$Res>? get transportCompanyAsset;@override $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;@override $AtsTransportInformationCopyWith<$Res>? get transportInformation;@override $AtsMdfeCopyWith<$Res>? get mdfe;
 
 }
 /// @nodoc
@@ -13646,7 +13679,7 @@ class __$AtsOperationCopyWithImpl<$Res>
 
 /// Create a copy of AtsOperation
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? sellerAssetId = freezed,Object? transportAssetId = freezed,Object? transportCompanyAssetId = freezed,Object? purchasedAt = freezed,Object? createdAt = freezed,Object? finishedAt = freezed,Object? pendingToReview = freezed,Object? ordersIds = freezed,Object? sellerAsset = freezed,Object? transportAsset = freezed,Object? transportCompanyAsset = freezed,Object? sellerInformation = freezed,Object? transportInformation = freezed,Object? orderStatus = freezed,Object? category = freezed,Object? deliverCategory = freezed,Object? purchaseOrders = freezed,Object? statuses = freezed,Object? totalQuantity = freezed,Object? productsInformation = freezed,Object? ctes = freezed,Object? caclFormsIds = freezed,Object? caclForms = freezed,Object? manifests = freezed,Object? history = freezed,Object? minEta = freezed,Object? etaStatus = freezed,Object? loadingOrders = freezed,Object? terminalEntryAt = freezed,Object? terminalExitAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? sellerAssetId = freezed,Object? transportAssetId = freezed,Object? transportCompanyAssetId = freezed,Object? purchasedAt = freezed,Object? createdAt = freezed,Object? finishedAt = freezed,Object? pendingToReview = freezed,Object? ordersIds = freezed,Object? sellerAsset = freezed,Object? transportAsset = freezed,Object? transportCompanyAsset = freezed,Object? sellerInformation = freezed,Object? transportInformation = freezed,Object? orderStatus = freezed,Object? category = freezed,Object? deliverCategory = freezed,Object? purchaseOrders = freezed,Object? statuses = freezed,Object? totalQuantity = freezed,Object? productsInformation = freezed,Object? ctes = freezed,Object? caclFormsIds = freezed,Object? caclForms = freezed,Object? manifests = freezed,Object? history = freezed,Object? minEta = freezed,Object? etaStatus = freezed,Object? loadingOrders = freezed,Object? terminalEntryAt = freezed,Object? terminalExitAt = freezed,Object? mdfeId = freezed,Object? mdfe = freezed,Object? mdfes = freezed,}) {
   return _then(_AtsOperation(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,sellerAssetId: freezed == sellerAssetId ? _self.sellerAssetId : sellerAssetId // ignore: cast_nullable_to_non_nullable
@@ -13679,7 +13712,10 @@ as DateTime?,etaStatus: freezed == etaStatus ? _self.etaStatus : etaStatus // ig
 as AtsEtaStatus?,loadingOrders: freezed == loadingOrders ? _self._loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
 as List<AtsLoadingOrder>?,terminalEntryAt: freezed == terminalEntryAt ? _self.terminalEntryAt : terminalEntryAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,terminalExitAt: freezed == terminalExitAt ? _self.terminalExitAt : terminalExitAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime?,mdfeId: freezed == mdfeId ? _self.mdfeId : mdfeId // ignore: cast_nullable_to_non_nullable
+as String?,mdfe: freezed == mdfe ? _self.mdfe : mdfe // ignore: cast_nullable_to_non_nullable
+as AtsMdfe?,mdfes: freezed == mdfes ? _self._mdfes : mdfes // ignore: cast_nullable_to_non_nullable
+as List<AtsMdfe>?,
   ));
 }
 
@@ -13742,6 +13778,18 @@ $AtsTransportInformationCopyWith<$Res>? get transportInformation {
 
   return $AtsTransportInformationCopyWith<$Res>(_self.transportInformation!, (value) {
     return _then(_self.copyWith(transportInformation: value));
+  });
+}/// Create a copy of AtsOperation
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsMdfeCopyWith<$Res>? get mdfe {
+    if (_self.mdfe == null) {
+    return null;
+  }
+
+  return $AtsMdfeCopyWith<$Res>(_self.mdfe!, (value) {
+    return _then(_self.copyWith(mdfe: value));
   });
 }
 }
@@ -14061,6 +14109,315 @@ $AssetCopyWith<$Res>? get asset {
 
   return $AssetCopyWith<$Res>(_self.asset!, (value) {
     return _then(_self.copyWith(asset: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AtsMdfe {
+
+/// The [id] parameter is the id of the ats mdfe entity.
+ String? get id;/// The [manifestId] parameter is the manifestId of the ats mdfe entity.
+ String? get manifestId;/// The [createdAt] parameter is the createdAt of the ats mdfe entity.
+@TimestampOrNullConverter() DateTime? get createdAt;/// The [updatedAt] parameter is the updatedAt of the ats mdfe entity.
+@TimestampOrNullConverter() DateTime? get updatedAt;/// The [operation] parameter is the operation of the ats mdfe entity.
+ AtsOperation? get operation;
+/// Create a copy of AtsMdfe
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsMdfeCopyWith<AtsMdfe> get copyWith => _$AtsMdfeCopyWithImpl<AtsMdfe>(this as AtsMdfe, _$identity);
+
+  /// Serializes this AtsMdfe to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsMdfe&&(identical(other.id, id) || other.id == id)&&(identical(other.manifestId, manifestId) || other.manifestId == manifestId)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.operation, operation) || other.operation == operation));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,manifestId,createdAt,updatedAt,operation);
+
+@override
+String toString() {
+  return 'AtsMdfe(id: $id, manifestId: $manifestId, createdAt: $createdAt, updatedAt: $updatedAt, operation: $operation)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsMdfeCopyWith<$Res>  {
+  factory $AtsMdfeCopyWith(AtsMdfe value, $Res Function(AtsMdfe) _then) = _$AtsMdfeCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? manifestId,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? updatedAt, AtsOperation? operation
+});
+
+
+$AtsOperationCopyWith<$Res>? get operation;
+
+}
+/// @nodoc
+class _$AtsMdfeCopyWithImpl<$Res>
+    implements $AtsMdfeCopyWith<$Res> {
+  _$AtsMdfeCopyWithImpl(this._self, this._then);
+
+  final AtsMdfe _self;
+  final $Res Function(AtsMdfe) _then;
+
+/// Create a copy of AtsMdfe
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? manifestId = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? operation = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,manifestId: freezed == manifestId ? _self.manifestId : manifestId // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,
+  ));
+}
+/// Create a copy of AtsMdfe
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+    return null;
+  }
+
+  return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+    return _then(_self.copyWith(operation: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AtsMdfe].
+extension AtsMdfePatterns on AtsMdfe {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsMdfe value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsMdfe() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsMdfe value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsMdfe():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsMdfe value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsMdfe() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? manifestId, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt,  AtsOperation? operation)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsMdfe() when $default != null:
+return $default(_that.id,_that.manifestId,_that.createdAt,_that.updatedAt,_that.operation);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? manifestId, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt,  AtsOperation? operation)  $default,) {final _that = this;
+switch (_that) {
+case _AtsMdfe():
+return $default(_that.id,_that.manifestId,_that.createdAt,_that.updatedAt,_that.operation);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? manifestId, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt,  AtsOperation? operation)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsMdfe() when $default != null:
+return $default(_that.id,_that.manifestId,_that.createdAt,_that.updatedAt,_that.operation);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsMdfe implements AtsMdfe {
+   _AtsMdfe({this.id, this.manifestId, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt, this.operation});
+  factory _AtsMdfe.fromJson(Map<String, dynamic> json) => _$AtsMdfeFromJson(json);
+
+/// The [id] parameter is the id of the ats mdfe entity.
+@override final  String? id;
+/// The [manifestId] parameter is the manifestId of the ats mdfe entity.
+@override final  String? manifestId;
+/// The [createdAt] parameter is the createdAt of the ats mdfe entity.
+@override@TimestampOrNullConverter() final  DateTime? createdAt;
+/// The [updatedAt] parameter is the updatedAt of the ats mdfe entity.
+@override@TimestampOrNullConverter() final  DateTime? updatedAt;
+/// The [operation] parameter is the operation of the ats mdfe entity.
+@override final  AtsOperation? operation;
+
+/// Create a copy of AtsMdfe
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsMdfeCopyWith<_AtsMdfe> get copyWith => __$AtsMdfeCopyWithImpl<_AtsMdfe>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsMdfeToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsMdfe&&(identical(other.id, id) || other.id == id)&&(identical(other.manifestId, manifestId) || other.manifestId == manifestId)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.operation, operation) || other.operation == operation));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,manifestId,createdAt,updatedAt,operation);
+
+@override
+String toString() {
+  return 'AtsMdfe(id: $id, manifestId: $manifestId, createdAt: $createdAt, updatedAt: $updatedAt, operation: $operation)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsMdfeCopyWith<$Res> implements $AtsMdfeCopyWith<$Res> {
+  factory _$AtsMdfeCopyWith(_AtsMdfe value, $Res Function(_AtsMdfe) _then) = __$AtsMdfeCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? manifestId,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? updatedAt, AtsOperation? operation
+});
+
+
+@override $AtsOperationCopyWith<$Res>? get operation;
+
+}
+/// @nodoc
+class __$AtsMdfeCopyWithImpl<$Res>
+    implements _$AtsMdfeCopyWith<$Res> {
+  __$AtsMdfeCopyWithImpl(this._self, this._then);
+
+  final _AtsMdfe _self;
+  final $Res Function(_AtsMdfe) _then;
+
+/// Create a copy of AtsMdfe
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? manifestId = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? operation = freezed,}) {
+  return _then(_AtsMdfe(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,manifestId: freezed == manifestId ? _self.manifestId : manifestId // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,
+  ));
+}
+
+/// Create a copy of AtsMdfe
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+    return null;
+  }
+
+  return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+    return _then(_self.copyWith(operation: value));
   });
 }
 }
@@ -26316,28 +26673,28 @@ mixin _$StockClosingInput {
 @AtsFuelSubTypeOrNullConverter() set product(AtsFuelSubType? value);/// The [description] parameter is the description of the stock closing input.
  String? get description;/// The [description] parameter is the description of the stock closing input.
  set description(String? value);/// The [totalVolume20] parameter is the totalVolume20 of the stock closing input.
- double? get totalVolume20;/// The [totalVolume20] parameter is the totalVolume20 of the stock closing input.
- set totalVolume20(double? value);/// The [volume20Difference] parameter is the volume20Difference of the stock closing input.
- double? get volume20Difference;/// The [volume20Difference] parameter is the volume20Difference of the stock closing input.
- set volume20Difference(double? value);/// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing input.
- double? get accountingVolumeDifference;/// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing input.
- set accountingVolumeDifference(double? value);/// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
- double? get openingBalance20;/// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
- set openingBalance20(double? value);/// The [totalEntries20] parameter is the totalEntries20 of the stock closing input.
- double? get totalEntries20;/// The [totalEntries20] parameter is the totalEntries20 of the stock closing input.
- set totalEntries20(double? value);/// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing input.
- double? get totalWithdrawals20;/// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing input.
- set totalWithdrawals20(double? value);/// The [closingBalance20] parameter is the closingBalance20 of the stock closing input.
- double? get closingBalance20;/// The [closingBalance20] parameter is the closingBalance20 of the stock closing input.
- set closingBalance20(double? value);/// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing input.
- double? get openingAccountingBalance;/// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing input.
- set openingAccountingBalance(double? value);/// The [totalAccountingEntries] parameter is the totalAccountingEntries of the stock closing input.
- double? get totalAccountingEntries;/// The [totalAccountingEntries] parameter is the totalAccountingEntries of the stock closing input.
- set totalAccountingEntries(double? value);/// The [totalAccountingWithdrawals] parameter is the totalAccountingWithdrawals of the stock closing input.
- double? get totalAccountingWithdrawals;/// The [totalAccountingWithdrawals] parameter is the totalAccountingWithdrawals of the stock closing input.
- set totalAccountingWithdrawals(double? value);/// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing input.
- double? get closingAccountingBalance;/// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing input.
- set closingAccountingBalance(double? value);/// The [closingDetails] parameter is the closingDetails of the stock closing input.
+ double get totalVolume20;/// The [totalVolume20] parameter is the totalVolume20 of the stock closing input.
+ set totalVolume20(double value);/// The [volume20Difference] parameter is the volume20Difference of the stock closing input.
+ double get volume20Difference;/// The [volume20Difference] parameter is the volume20Difference of the stock closing input.
+ set volume20Difference(double value);/// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing input.
+ double get accountingVolumeDifference;/// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing input.
+ set accountingVolumeDifference(double value);/// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
+ double get openingBalance20;/// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
+ set openingBalance20(double value);/// The [totalEntries20] parameter is the totalEntries20 of the stock closing input.
+ double get totalEntries20;/// The [totalEntries20] parameter is the totalEntries20 of the stock closing input.
+ set totalEntries20(double value);/// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing input.
+ double get totalWithdrawals20;/// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing input.
+ set totalWithdrawals20(double value);/// The [closingBalance20] parameter is the closingBalance20 of the stock closing input.
+ double get closingBalance20;/// The [closingBalance20] parameter is the closingBalance20 of the stock closing input.
+ set closingBalance20(double value);/// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing input.
+ double get openingAccountingBalance;/// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing input.
+ set openingAccountingBalance(double value);/// The [totalAccountingEntries] parameter is the totalAccountingEntries of the stock closing input.
+ double get totalAccountingEntries;/// The [totalAccountingEntries] parameter is the totalAccountingEntries of the stock closing input.
+ set totalAccountingEntries(double value);/// The [totalAccountingWithdrawals] parameter is the totalAccountingWithdrawals of the stock closing input.
+ double get totalAccountingWithdrawals;/// The [totalAccountingWithdrawals] parameter is the totalAccountingWithdrawals of the stock closing input.
+ set totalAccountingWithdrawals(double value);/// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing input.
+ double get closingAccountingBalance;/// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing input.
+ set closingAccountingBalance(double value);/// The [closingDetails] parameter is the closingDetails of the stock closing input.
  List<StockClosingTankInput> get closingDetails;/// The [closingDetails] parameter is the closingDetails of the stock closing input.
  set closingDetails(List<StockClosingTankInput> value);
 /// Create a copy of StockClosingInput
@@ -26365,7 +26722,7 @@ abstract mixin class $StockClosingInputCopyWith<$Res>  {
   factory $StockClosingInputCopyWith(StockClosingInput value, $Res Function(StockClosingInput) _then) = _$StockClosingInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? terminalId,@AtsFuelSubTypeOrNullConverter() AtsFuelSubType? product, String? description, double? totalVolume20, double? volume20Difference, double? accountingVolumeDifference, double? openingBalance20, double? totalEntries20, double? totalWithdrawals20, double? closingBalance20, double? openingAccountingBalance, double? totalAccountingEntries, double? totalAccountingWithdrawals, double? closingAccountingBalance, List<StockClosingTankInput> closingDetails
+ String? id, String? terminalId,@AtsFuelSubTypeOrNullConverter() AtsFuelSubType? product, String? description, double totalVolume20, double volume20Difference, double accountingVolumeDifference, double openingBalance20, double totalEntries20, double totalWithdrawals20, double closingBalance20, double openingAccountingBalance, double totalAccountingEntries, double totalAccountingWithdrawals, double closingAccountingBalance, List<StockClosingTankInput> closingDetails
 });
 
 
@@ -26382,24 +26739,24 @@ class _$StockClosingInputCopyWithImpl<$Res>
 
 /// Create a copy of StockClosingInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? terminalId = freezed,Object? product = freezed,Object? description = freezed,Object? totalVolume20 = freezed,Object? volume20Difference = freezed,Object? accountingVolumeDifference = freezed,Object? openingBalance20 = freezed,Object? totalEntries20 = freezed,Object? totalWithdrawals20 = freezed,Object? closingBalance20 = freezed,Object? openingAccountingBalance = freezed,Object? totalAccountingEntries = freezed,Object? totalAccountingWithdrawals = freezed,Object? closingAccountingBalance = freezed,Object? closingDetails = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? terminalId = freezed,Object? product = freezed,Object? description = freezed,Object? totalVolume20 = null,Object? volume20Difference = null,Object? accountingVolumeDifference = null,Object? openingBalance20 = null,Object? totalEntries20 = null,Object? totalWithdrawals20 = null,Object? closingBalance20 = null,Object? openingAccountingBalance = null,Object? totalAccountingEntries = null,Object? totalAccountingWithdrawals = null,Object? closingAccountingBalance = null,Object? closingDetails = null,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,terminalId: freezed == terminalId ? _self.terminalId : terminalId // ignore: cast_nullable_to_non_nullable
 as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as AtsFuelSubType?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,totalVolume20: freezed == totalVolume20 ? _self.totalVolume20 : totalVolume20 // ignore: cast_nullable_to_non_nullable
-as double?,volume20Difference: freezed == volume20Difference ? _self.volume20Difference : volume20Difference // ignore: cast_nullable_to_non_nullable
-as double?,accountingVolumeDifference: freezed == accountingVolumeDifference ? _self.accountingVolumeDifference : accountingVolumeDifference // ignore: cast_nullable_to_non_nullable
-as double?,openingBalance20: freezed == openingBalance20 ? _self.openingBalance20 : openingBalance20 // ignore: cast_nullable_to_non_nullable
-as double?,totalEntries20: freezed == totalEntries20 ? _self.totalEntries20 : totalEntries20 // ignore: cast_nullable_to_non_nullable
-as double?,totalWithdrawals20: freezed == totalWithdrawals20 ? _self.totalWithdrawals20 : totalWithdrawals20 // ignore: cast_nullable_to_non_nullable
-as double?,closingBalance20: freezed == closingBalance20 ? _self.closingBalance20 : closingBalance20 // ignore: cast_nullable_to_non_nullable
-as double?,openingAccountingBalance: freezed == openingAccountingBalance ? _self.openingAccountingBalance : openingAccountingBalance // ignore: cast_nullable_to_non_nullable
-as double?,totalAccountingEntries: freezed == totalAccountingEntries ? _self.totalAccountingEntries : totalAccountingEntries // ignore: cast_nullable_to_non_nullable
-as double?,totalAccountingWithdrawals: freezed == totalAccountingWithdrawals ? _self.totalAccountingWithdrawals : totalAccountingWithdrawals // ignore: cast_nullable_to_non_nullable
-as double?,closingAccountingBalance: freezed == closingAccountingBalance ? _self.closingAccountingBalance : closingAccountingBalance // ignore: cast_nullable_to_non_nullable
-as double?,closingDetails: null == closingDetails ? _self.closingDetails : closingDetails // ignore: cast_nullable_to_non_nullable
+as String?,totalVolume20: null == totalVolume20 ? _self.totalVolume20 : totalVolume20 // ignore: cast_nullable_to_non_nullable
+as double,volume20Difference: null == volume20Difference ? _self.volume20Difference : volume20Difference // ignore: cast_nullable_to_non_nullable
+as double,accountingVolumeDifference: null == accountingVolumeDifference ? _self.accountingVolumeDifference : accountingVolumeDifference // ignore: cast_nullable_to_non_nullable
+as double,openingBalance20: null == openingBalance20 ? _self.openingBalance20 : openingBalance20 // ignore: cast_nullable_to_non_nullable
+as double,totalEntries20: null == totalEntries20 ? _self.totalEntries20 : totalEntries20 // ignore: cast_nullable_to_non_nullable
+as double,totalWithdrawals20: null == totalWithdrawals20 ? _self.totalWithdrawals20 : totalWithdrawals20 // ignore: cast_nullable_to_non_nullable
+as double,closingBalance20: null == closingBalance20 ? _self.closingBalance20 : closingBalance20 // ignore: cast_nullable_to_non_nullable
+as double,openingAccountingBalance: null == openingAccountingBalance ? _self.openingAccountingBalance : openingAccountingBalance // ignore: cast_nullable_to_non_nullable
+as double,totalAccountingEntries: null == totalAccountingEntries ? _self.totalAccountingEntries : totalAccountingEntries // ignore: cast_nullable_to_non_nullable
+as double,totalAccountingWithdrawals: null == totalAccountingWithdrawals ? _self.totalAccountingWithdrawals : totalAccountingWithdrawals // ignore: cast_nullable_to_non_nullable
+as double,closingAccountingBalance: null == closingAccountingBalance ? _self.closingAccountingBalance : closingAccountingBalance // ignore: cast_nullable_to_non_nullable
+as double,closingDetails: null == closingDetails ? _self.closingDetails : closingDetails // ignore: cast_nullable_to_non_nullable
 as List<StockClosingTankInput>,
   ));
 }
@@ -26485,7 +26842,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double? totalVolume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance,  List<StockClosingTankInput> closingDetails)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockClosingInput() when $default != null:
 return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails);case _:
@@ -26506,7 +26863,7 @@ return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double? totalVolume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance,  List<StockClosingTankInput> closingDetails)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails)  $default,) {final _that = this;
 switch (_that) {
 case _StockClosingInput():
 return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails);case _:
@@ -26526,7 +26883,7 @@ return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double? totalVolume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance,  List<StockClosingTankInput> closingDetails)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails)?  $default,) {final _that = this;
 switch (_that) {
 case _StockClosingInput() when $default != null:
 return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails);case _:
@@ -26541,7 +26898,7 @@ return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.
 @JsonSerializable()
 
 class _StockClosingInput extends StockClosingInput {
-   _StockClosingInput({this.id, this.terminalId, @AtsFuelSubTypeOrNullConverter() this.product, this.description, this.totalVolume20, this.volume20Difference, this.accountingVolumeDifference, this.openingBalance20, this.totalEntries20, this.totalWithdrawals20, this.closingBalance20, this.openingAccountingBalance, this.totalAccountingEntries, this.totalAccountingWithdrawals, this.closingAccountingBalance, this.closingDetails = const []}): super._();
+   _StockClosingInput({this.id, this.terminalId, @AtsFuelSubTypeOrNullConverter() this.product, this.description, this.totalVolume20 = 0.0, this.volume20Difference = 0.0, this.accountingVolumeDifference = 0.0, this.openingBalance20 = 0.0, this.totalEntries20 = 0.0, this.totalWithdrawals20 = 0.0, this.closingBalance20 = 0.0, this.openingAccountingBalance = 0.0, this.totalAccountingEntries = 0.0, this.totalAccountingWithdrawals = 0.0, this.closingAccountingBalance = 0.0, this.closingDetails = const []}): super._();
   factory _StockClosingInput.fromJson(Map<String, dynamic> json) => _$StockClosingInputFromJson(json);
 
 /// The [id] parameter is the id of the stock closing input.
@@ -26553,27 +26910,27 @@ class _StockClosingInput extends StockClosingInput {
 /// The [description] parameter is the description of the stock closing input.
 @override  String? description;
 /// The [totalVolume20] parameter is the totalVolume20 of the stock closing input.
-@override  double? totalVolume20;
+@override@JsonKey()  double totalVolume20;
 /// The [volume20Difference] parameter is the volume20Difference of the stock closing input.
-@override  double? volume20Difference;
+@override@JsonKey()  double volume20Difference;
 /// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing input.
-@override  double? accountingVolumeDifference;
+@override@JsonKey()  double accountingVolumeDifference;
 /// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
-@override  double? openingBalance20;
+@override@JsonKey()  double openingBalance20;
 /// The [totalEntries20] parameter is the totalEntries20 of the stock closing input.
-@override  double? totalEntries20;
+@override@JsonKey()  double totalEntries20;
 /// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing input.
-@override  double? totalWithdrawals20;
+@override@JsonKey()  double totalWithdrawals20;
 /// The [closingBalance20] parameter is the closingBalance20 of the stock closing input.
-@override  double? closingBalance20;
+@override@JsonKey()  double closingBalance20;
 /// The [openingAccountingBalance] parameter is the openingAccountingBalance of the stock closing input.
-@override  double? openingAccountingBalance;
+@override@JsonKey()  double openingAccountingBalance;
 /// The [totalAccountingEntries] parameter is the totalAccountingEntries of the stock closing input.
-@override  double? totalAccountingEntries;
+@override@JsonKey()  double totalAccountingEntries;
 /// The [totalAccountingWithdrawals] parameter is the totalAccountingWithdrawals of the stock closing input.
-@override  double? totalAccountingWithdrawals;
+@override@JsonKey()  double totalAccountingWithdrawals;
 /// The [closingAccountingBalance] parameter is the closingAccountingBalance of the stock closing input.
-@override  double? closingAccountingBalance;
+@override@JsonKey()  double closingAccountingBalance;
 /// The [closingDetails] parameter is the closingDetails of the stock closing input.
 @override@JsonKey()  List<StockClosingTankInput> closingDetails;
 
@@ -26603,7 +26960,7 @@ abstract mixin class _$StockClosingInputCopyWith<$Res> implements $StockClosingI
   factory _$StockClosingInputCopyWith(_StockClosingInput value, $Res Function(_StockClosingInput) _then) = __$StockClosingInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? terminalId,@AtsFuelSubTypeOrNullConverter() AtsFuelSubType? product, String? description, double? totalVolume20, double? volume20Difference, double? accountingVolumeDifference, double? openingBalance20, double? totalEntries20, double? totalWithdrawals20, double? closingBalance20, double? openingAccountingBalance, double? totalAccountingEntries, double? totalAccountingWithdrawals, double? closingAccountingBalance, List<StockClosingTankInput> closingDetails
+ String? id, String? terminalId,@AtsFuelSubTypeOrNullConverter() AtsFuelSubType? product, String? description, double totalVolume20, double volume20Difference, double accountingVolumeDifference, double openingBalance20, double totalEntries20, double totalWithdrawals20, double closingBalance20, double openingAccountingBalance, double totalAccountingEntries, double totalAccountingWithdrawals, double closingAccountingBalance, List<StockClosingTankInput> closingDetails
 });
 
 
@@ -26620,24 +26977,24 @@ class __$StockClosingInputCopyWithImpl<$Res>
 
 /// Create a copy of StockClosingInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? terminalId = freezed,Object? product = freezed,Object? description = freezed,Object? totalVolume20 = freezed,Object? volume20Difference = freezed,Object? accountingVolumeDifference = freezed,Object? openingBalance20 = freezed,Object? totalEntries20 = freezed,Object? totalWithdrawals20 = freezed,Object? closingBalance20 = freezed,Object? openingAccountingBalance = freezed,Object? totalAccountingEntries = freezed,Object? totalAccountingWithdrawals = freezed,Object? closingAccountingBalance = freezed,Object? closingDetails = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? terminalId = freezed,Object? product = freezed,Object? description = freezed,Object? totalVolume20 = null,Object? volume20Difference = null,Object? accountingVolumeDifference = null,Object? openingBalance20 = null,Object? totalEntries20 = null,Object? totalWithdrawals20 = null,Object? closingBalance20 = null,Object? openingAccountingBalance = null,Object? totalAccountingEntries = null,Object? totalAccountingWithdrawals = null,Object? closingAccountingBalance = null,Object? closingDetails = null,}) {
   return _then(_StockClosingInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,terminalId: freezed == terminalId ? _self.terminalId : terminalId // ignore: cast_nullable_to_non_nullable
 as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as AtsFuelSubType?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,totalVolume20: freezed == totalVolume20 ? _self.totalVolume20 : totalVolume20 // ignore: cast_nullable_to_non_nullable
-as double?,volume20Difference: freezed == volume20Difference ? _self.volume20Difference : volume20Difference // ignore: cast_nullable_to_non_nullable
-as double?,accountingVolumeDifference: freezed == accountingVolumeDifference ? _self.accountingVolumeDifference : accountingVolumeDifference // ignore: cast_nullable_to_non_nullable
-as double?,openingBalance20: freezed == openingBalance20 ? _self.openingBalance20 : openingBalance20 // ignore: cast_nullable_to_non_nullable
-as double?,totalEntries20: freezed == totalEntries20 ? _self.totalEntries20 : totalEntries20 // ignore: cast_nullable_to_non_nullable
-as double?,totalWithdrawals20: freezed == totalWithdrawals20 ? _self.totalWithdrawals20 : totalWithdrawals20 // ignore: cast_nullable_to_non_nullable
-as double?,closingBalance20: freezed == closingBalance20 ? _self.closingBalance20 : closingBalance20 // ignore: cast_nullable_to_non_nullable
-as double?,openingAccountingBalance: freezed == openingAccountingBalance ? _self.openingAccountingBalance : openingAccountingBalance // ignore: cast_nullable_to_non_nullable
-as double?,totalAccountingEntries: freezed == totalAccountingEntries ? _self.totalAccountingEntries : totalAccountingEntries // ignore: cast_nullable_to_non_nullable
-as double?,totalAccountingWithdrawals: freezed == totalAccountingWithdrawals ? _self.totalAccountingWithdrawals : totalAccountingWithdrawals // ignore: cast_nullable_to_non_nullable
-as double?,closingAccountingBalance: freezed == closingAccountingBalance ? _self.closingAccountingBalance : closingAccountingBalance // ignore: cast_nullable_to_non_nullable
-as double?,closingDetails: null == closingDetails ? _self.closingDetails : closingDetails // ignore: cast_nullable_to_non_nullable
+as String?,totalVolume20: null == totalVolume20 ? _self.totalVolume20 : totalVolume20 // ignore: cast_nullable_to_non_nullable
+as double,volume20Difference: null == volume20Difference ? _self.volume20Difference : volume20Difference // ignore: cast_nullable_to_non_nullable
+as double,accountingVolumeDifference: null == accountingVolumeDifference ? _self.accountingVolumeDifference : accountingVolumeDifference // ignore: cast_nullable_to_non_nullable
+as double,openingBalance20: null == openingBalance20 ? _self.openingBalance20 : openingBalance20 // ignore: cast_nullable_to_non_nullable
+as double,totalEntries20: null == totalEntries20 ? _self.totalEntries20 : totalEntries20 // ignore: cast_nullable_to_non_nullable
+as double,totalWithdrawals20: null == totalWithdrawals20 ? _self.totalWithdrawals20 : totalWithdrawals20 // ignore: cast_nullable_to_non_nullable
+as double,closingBalance20: null == closingBalance20 ? _self.closingBalance20 : closingBalance20 // ignore: cast_nullable_to_non_nullable
+as double,openingAccountingBalance: null == openingAccountingBalance ? _self.openingAccountingBalance : openingAccountingBalance // ignore: cast_nullable_to_non_nullable
+as double,totalAccountingEntries: null == totalAccountingEntries ? _self.totalAccountingEntries : totalAccountingEntries // ignore: cast_nullable_to_non_nullable
+as double,totalAccountingWithdrawals: null == totalAccountingWithdrawals ? _self.totalAccountingWithdrawals : totalAccountingWithdrawals // ignore: cast_nullable_to_non_nullable
+as double,closingAccountingBalance: null == closingAccountingBalance ? _self.closingAccountingBalance : closingAccountingBalance // ignore: cast_nullable_to_non_nullable
+as double,closingDetails: null == closingDetails ? _self.closingDetails : closingDetails // ignore: cast_nullable_to_non_nullable
 as List<StockClosingTankInput>,
   ));
 }

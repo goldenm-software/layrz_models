@@ -3,6 +3,10 @@
 ## 3.8.8
 
 - Fixed `casesMonitorConfig` type in `Workspace` model to be a list of nullable `CaseMonitorCard?` instead of non-nullable `CaseMonitorCard`.
+- Added `AtsMdfe` model
+- Added `mdfeId`, `mdfe` and `mdfes` values in `AtsOperation` model
+- Added default values to `StockClosingInput` model
+- Added `ATS_INVOICE_SWAP` value in `ReferenceCategory` enum
 
 ## 3.8.7
 

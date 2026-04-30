@@ -51,6 +51,7 @@ part 'src/entries/entry_input.dart';
 // ATS Operations Models
 part 'src/operations/operation.dart';
 part 'src/operations/status.dart';
+part 'src/operations/ats_mdfe.dart';
 
 // ATS Converters
 part 'src/converters/order_status.dart';

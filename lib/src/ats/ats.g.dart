@@ -1547,6 +1547,13 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       terminalExitAt: const TimestampOrNullConverter().fromJson(
         json['terminalExitAt'] as num?,
       ),
+      mdfeId: json['mdfeId'] as String?,
+      mdfe: json['mdfe'] == null
+          ? null
+          : AtsMdfe.fromJson(json['mdfe'] as Map<String, dynamic>),
+      mdfes: (json['mdfes'] as List<dynamic>?)
+          ?.map((e) => AtsMdfe.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$AtsOperationToJson(
@@ -1589,6 +1596,9 @@ Map<String, dynamic> _$AtsOperationToJson(
   'terminalExitAt': const TimestampOrNullConverter().toJson(
     instance.terminalExitAt,
   ),
+  'mdfeId': instance.mdfeId,
+  'mdfe': instance.mdfe?.toJson(),
+  'mdfes': instance.mdfes?.map((e) => e.toJson()).toList(),
 };
 
 const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
@@ -1659,6 +1669,28 @@ Map<String, dynamic> _$AtsOperationStatusesToJson(
     instance.readyToOperateAt,
   ),
   'eta': const TimestampOrNullConverter().toJson(instance.eta),
+};
+
+_AtsMdfe _$AtsMdfeFromJson(Map<String, dynamic> json) => _AtsMdfe(
+  id: json['id'] as String?,
+  manifestId: json['manifestId'] as String?,
+  createdAt: const TimestampOrNullConverter().fromJson(
+    json['createdAt'] as num?,
+  ),
+  updatedAt: const TimestampOrNullConverter().fromJson(
+    json['updatedAt'] as num?,
+  ),
+  operation: json['operation'] == null
+      ? null
+      : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$AtsMdfeToJson(_AtsMdfe instance) => <String, dynamic>{
+  'id': instance.id,
+  'manifestId': instance.manifestId,
+  'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+  'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
+  'operation': instance.operation?.toJson(),
 };
 
 _Manifest _$ManifestFromJson(Map<String, dynamic> json) => _Manifest(
@@ -3107,39 +3139,39 @@ Map<String, dynamic> _$StockClosingTankToJson(_StockClosingTank instance) =>
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
     };
 
-_StockClosingInput _$StockClosingInputFromJson(Map<String, dynamic> json) =>
-    _StockClosingInput(
-      id: json['id'] as String?,
-      terminalId: json['terminalId'] as String?,
-      product: const AtsFuelSubTypeOrNullConverter().fromJson(
-        json['product'] as String?,
-      ),
-      description: json['description'] as String?,
-      totalVolume20: (json['totalVolume20'] as num?)?.toDouble(),
-      volume20Difference: (json['volume20Difference'] as num?)?.toDouble(),
-      accountingVolumeDifference: (json['accountingVolumeDifference'] as num?)
-          ?.toDouble(),
-      openingBalance20: (json['openingBalance20'] as num?)?.toDouble(),
-      totalEntries20: (json['totalEntries20'] as num?)?.toDouble(),
-      totalWithdrawals20: (json['totalWithdrawals20'] as num?)?.toDouble(),
-      closingBalance20: (json['closingBalance20'] as num?)?.toDouble(),
-      openingAccountingBalance: (json['openingAccountingBalance'] as num?)
-          ?.toDouble(),
-      totalAccountingEntries: (json['totalAccountingEntries'] as num?)
-          ?.toDouble(),
-      totalAccountingWithdrawals: (json['totalAccountingWithdrawals'] as num?)
-          ?.toDouble(),
-      closingAccountingBalance: (json['closingAccountingBalance'] as num?)
-          ?.toDouble(),
-      closingDetails:
-          (json['closingDetails'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    StockClosingTankInput.fromJson(e as Map<String, dynamic>),
-              )
-              .toList() ??
-          const [],
-    );
+_StockClosingInput _$StockClosingInputFromJson(
+  Map<String, dynamic> json,
+) => _StockClosingInput(
+  id: json['id'] as String?,
+  terminalId: json['terminalId'] as String?,
+  product: const AtsFuelSubTypeOrNullConverter().fromJson(
+    json['product'] as String?,
+  ),
+  description: json['description'] as String?,
+  totalVolume20: (json['totalVolume20'] as num?)?.toDouble() ?? 0.0,
+  volume20Difference: (json['volume20Difference'] as num?)?.toDouble() ?? 0.0,
+  accountingVolumeDifference:
+      (json['accountingVolumeDifference'] as num?)?.toDouble() ?? 0.0,
+  openingBalance20: (json['openingBalance20'] as num?)?.toDouble() ?? 0.0,
+  totalEntries20: (json['totalEntries20'] as num?)?.toDouble() ?? 0.0,
+  totalWithdrawals20: (json['totalWithdrawals20'] as num?)?.toDouble() ?? 0.0,
+  closingBalance20: (json['closingBalance20'] as num?)?.toDouble() ?? 0.0,
+  openingAccountingBalance:
+      (json['openingAccountingBalance'] as num?)?.toDouble() ?? 0.0,
+  totalAccountingEntries:
+      (json['totalAccountingEntries'] as num?)?.toDouble() ?? 0.0,
+  totalAccountingWithdrawals:
+      (json['totalAccountingWithdrawals'] as num?)?.toDouble() ?? 0.0,
+  closingAccountingBalance:
+      (json['closingAccountingBalance'] as num?)?.toDouble() ?? 0.0,
+  closingDetails:
+      (json['closingDetails'] as List<dynamic>?)
+          ?.map(
+            (e) => StockClosingTankInput.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      const [],
+);
 
 Map<String, dynamic> _$StockClosingInputToJson(_StockClosingInput instance) =>
     <String, dynamic>{
