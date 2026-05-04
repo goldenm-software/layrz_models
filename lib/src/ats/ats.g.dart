@@ -1453,6 +1453,7 @@ const _$AtsPurchaseOrderStatusEnumMap = {
   AtsPurchaseOrderStatus.unloadingBooked: 'UNLOADING_BOOKED',
   AtsPurchaseOrderStatus.validated: 'VALIDATED',
   AtsPurchaseOrderStatus.orderReceived: 'ORDER_RECEIVED',
+  AtsPurchaseOrderStatus.nfeChanged: 'NFE_CHANGED',
 };
 
 _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
@@ -1554,6 +1555,9 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       mdfes: (json['mdfes'] as List<dynamic>?)
           ?.map((e) => AtsMdfe.fromJson(e as Map<String, dynamic>))
           .toList(),
+      checkInAt: const TimestampOrNullConverter().fromJson(
+        json['checkInAt'] as num?,
+      ),
     );
 
 Map<String, dynamic> _$AtsOperationToJson(
@@ -1599,6 +1603,7 @@ Map<String, dynamic> _$AtsOperationToJson(
   'mdfeId': instance.mdfeId,
   'mdfe': instance.mdfe?.toJson(),
   'mdfes': instance.mdfes?.map((e) => e.toJson()).toList(),
+  'checkInAt': const TimestampOrNullConverter().toJson(instance.checkInAt),
 };
 
 const _$AtsPurchaseOrderCategoriesEntityEnumMap = {

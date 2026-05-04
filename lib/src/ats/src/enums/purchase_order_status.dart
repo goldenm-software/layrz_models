@@ -27,7 +27,9 @@ enum AtsPurchaseOrderStatus {
   @JsonValue('VALIDATED')
   validated,
   @JsonValue('ORDER_RECEIVED')
-  orderReceived
+  orderReceived,
+  @JsonValue('NFE_CHANGED')
+  nfeChanged
   ;
 
   @override
