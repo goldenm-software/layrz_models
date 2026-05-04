@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.8.9
+
+- Added new value `NFE_CHANGED` in `AtsPurchaseOrderStatus` enum
+- Added new value `checkInAt` in `AtsOperation` model
+
 ## 3.8.8
 
 - Fixed `casesMonitorConfig` type in `Workspace` model to be a list of nullable `CaseMonitorCard?` instead of non-nullable `CaseMonitorCard`.
