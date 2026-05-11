@@ -132,6 +132,7 @@ const _$OperationModeEnumMap = {
   OperationMode.simulation: 'SIMULATION',
   OperationMode.mqtt: 'MQTT',
   OperationMode.peripheral: 'PERIPHERAL',
+  OperationMode.zigbee: 'ZIGBEE',
   OperationMode.unknown: 'UNKNOWN',
 };
 

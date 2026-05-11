@@ -81,7 +81,8 @@ enum ConfigSource {
   /// [unknown] refers that the command definition is unknown.
   /// Layrz API Definition: `UNKNOWN`
   @JsonValue('UNKNOWN')
-  unknown;
+  unknown
+  ;
 
   @override
   String toString() => toJson();
@@ -180,6 +181,10 @@ enum OperationMode {
   /// Layrz API Reference: PERIPHERAL
   @JsonValue('PERIPHERAL')
   peripheral,
+
+  /// Zigbee operation mode
+  @JsonValue('ZIGBEE')
+  zigbee,
 
   /// [unknown] is the default value for the operation mode.
   @JsonValue('UNKNOWN')

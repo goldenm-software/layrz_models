@@ -48,6 +48,12 @@ abstract class Model with _$Model {
 
     /// [firmwares] is the list of firmwares for the model.
     @Default([]) List<FirmwareBuild> firmwares,
+
+    /// The icon of the model, if not exists, you must render the protocol icon
+    @IconOrNullConverter() LayrzIcon? icon,
+
+    /// Indicates the rendering widget, useful to render visually the kind of device
+    @JsonKey(unknownEnumValue: RenderWidget.unknown) @Default(RenderWidget.unknown) RenderWidget widget,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);

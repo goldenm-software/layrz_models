@@ -41,6 +41,14 @@ _Model _$ModelFromJson(Map<String, dynamic> json) => _Model(
           ?.map((e) => FirmwareBuild.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
+  icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
+  widget:
+      $enumDecodeNullable(
+        _$RenderWidgetEnumMap,
+        json['widget'],
+        unknownValue: RenderWidget.unknown,
+      ) ??
+      RenderWidget.unknown,
 );
 
 Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
@@ -60,11 +68,39 @@ Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
   'peripheralIdentifier': instance.peripheralIdentifier,
   'peripheralParserSpec': instance.peripheralParserSpec,
   'firmwares': instance.firmwares.map((e) => e.toJson()).toList(),
+  'icon': const IconOrNullConverter().toJson(instance.icon),
+  'widget': instance.widget.toJson(),
 };
 
 const _$ConfIoTLayoutEnumMap = {
   ConfIoTLayout.standard: 'STANDARD',
   ConfIoTLayout.sdmMonitor: 'SDM_MONITOR',
+};
+
+const _$RenderWidgetEnumMap = {
+  RenderWidget.thermometer: 'THERMOMETER',
+  RenderWidget.humidity: 'HUMIDITY',
+  RenderWidget.pressure: 'PRESSURE',
+  RenderWidget.illuminance: 'ILLUMINANCE',
+  RenderWidget.airQuality: 'AIR_QUALITY',
+  RenderWidget.battery: 'BATTERY',
+  RenderWidget.linkQuality: 'LINK_QUALITY',
+  RenderWidget.binarySensor: 'BINARY_SENSOR',
+  RenderWidget.switch_: 'SWITCH',
+  RenderWidget.dimmer: 'DIMMER',
+  RenderWidget.colorTemperature: 'COLOR_TEMPERATURE',
+  RenderWidget.setpoint: 'SETPOINT',
+  RenderWidget.fanSpeed: 'FAN_SPEED',
+  RenderWidget.colorPicker: 'COLOR_PICKER',
+  RenderWidget.modeSelector: 'MODE_SELECTOR',
+  RenderWidget.sceneSelector: 'SCENE_SELECTOR',
+  RenderWidget.cover: 'COVER',
+  RenderWidget.lock: 'LOCK',
+  RenderWidget.powerMeter: 'POWER_METER',
+  RenderWidget.energyMeter: 'ENERGY_METER',
+  RenderWidget.voltage: 'VOLTAGE',
+  RenderWidget.current: 'CURRENT',
+  RenderWidget.unknown: 'UNKNOWN',
 };
 
 _ModelInput _$ModelInputFromJson(Map<String, dynamic> json) => _ModelInput(
