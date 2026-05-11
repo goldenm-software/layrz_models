@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.9
+
+- Added new fields on `InboundProtocol` and `Model` to support Zigbee and ConfIoT related configurations
+
 ## 3.8.8
 
 - Fixed `casesMonitorConfig` type in `Workspace` model to be a list of nullable `CaseMonitorCard?` instead of non-nullable `CaseMonitorCard`.
