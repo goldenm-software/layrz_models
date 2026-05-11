@@ -126,6 +126,9 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// [mdfes] is the list of MDF-e linked to the operation.
     List<AtsMdfe>? mdfes,
+
+    /// [checkInAt] is the timestamp of the check-in.
+    @TimestampOrNullConverter() DateTime? checkInAt,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);

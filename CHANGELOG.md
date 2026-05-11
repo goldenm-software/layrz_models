@@ -1,8 +1,13 @@
 # Changelog
 
-## 3.8.9
+## 3.8.10
 
 - Added new fields on `InboundProtocol` and `Model` to support Zigbee and ConfIoT related configurations
+
+## 3.8.9
+
+- Added new value `NFE_CHANGED` in `AtsPurchaseOrderStatus` enum
+- Added new value `checkInAt` in `AtsOperation` model
 
 ## 3.8.8
 
