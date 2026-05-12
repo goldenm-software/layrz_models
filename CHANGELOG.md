@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.11
+
+- Adjustments on `Model`, now `widget` is `List<RenderWidget>` instead of plain `RenderWidget`.
+
 ## 3.8.10
 
 - Added new fields on `InboundProtocol` and `Model` to support Zigbee and ConfIoT related configurations

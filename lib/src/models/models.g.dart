@@ -43,12 +43,16 @@ _Model _$ModelFromJson(Map<String, dynamic> json) => _Model(
       const [],
   icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
   widget:
-      $enumDecodeNullable(
-        _$RenderWidgetEnumMap,
-        json['widget'],
-        unknownValue: RenderWidget.unknown,
-      ) ??
-      RenderWidget.unknown,
+      (json['widget'] as List<dynamic>?)
+          ?.map(
+            (e) => $enumDecode(
+              _$RenderWidgetEnumMap,
+              e,
+              unknownValue: RenderWidget.unknown,
+            ),
+          )
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
@@ -69,7 +73,7 @@ Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
   'peripheralParserSpec': instance.peripheralParserSpec,
   'firmwares': instance.firmwares.map((e) => e.toJson()).toList(),
   'icon': const IconOrNullConverter().toJson(instance.icon),
-  'widget': instance.widget.toJson(),
+  'widget': instance.widget.map((e) => e.toJson()).toList(),
 };
 
 const _$ConfIoTLayoutEnumMap = {
