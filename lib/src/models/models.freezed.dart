@@ -32,7 +32,7 @@ mixin _$Model {
  Map<String, dynamic>? get peripheralParserSpec;/// [firmwares] is the list of firmwares for the model.
  List<FirmwareBuild> get firmwares;/// The icon of the model, if not exists, you must render the protocol icon
 @IconOrNullConverter() LayrzIcon? get icon;/// Indicates the rendering widget, useful to render visually the kind of device
-@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget get widget;
+@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> get widget;
 /// Create a copy of Model
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -45,12 +45,12 @@ $ModelCopyWith<Model> get copyWith => _$ModelCopyWithImpl<Model>(this as Model, 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Model&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.flespiId, flespiId) || other.flespiId == flespiId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isGeneric, isGeneric) || other.isGeneric == isGeneric)&&const DeepCollectionEquality().equals(other.commandsStructure, commandsStructure)&&const DeepCollectionEquality().equals(other.configStructure, configStructure)&&(identical(other.confiotCapable, confiotCapable) || other.confiotCapable == confiotCapable)&&(identical(other.confiotLayout, confiotLayout) || other.confiotLayout == confiotLayout)&&(identical(other.confiotName, confiotName) || other.confiotName == confiotName)&&(identical(other.peripheralIdentifier, peripheralIdentifier) || other.peripheralIdentifier == peripheralIdentifier)&&const DeepCollectionEquality().equals(other.peripheralParserSpec, peripheralParserSpec)&&const DeepCollectionEquality().equals(other.firmwares, firmwares)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.widget, widget) || other.widget == widget));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Model&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.flespiId, flespiId) || other.flespiId == flespiId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isGeneric, isGeneric) || other.isGeneric == isGeneric)&&const DeepCollectionEquality().equals(other.commandsStructure, commandsStructure)&&const DeepCollectionEquality().equals(other.configStructure, configStructure)&&(identical(other.confiotCapable, confiotCapable) || other.confiotCapable == confiotCapable)&&(identical(other.confiotLayout, confiotLayout) || other.confiotLayout == confiotLayout)&&(identical(other.confiotName, confiotName) || other.confiotName == confiotName)&&(identical(other.peripheralIdentifier, peripheralIdentifier) || other.peripheralIdentifier == peripheralIdentifier)&&const DeepCollectionEquality().equals(other.peripheralParserSpec, peripheralParserSpec)&&const DeepCollectionEquality().equals(other.firmwares, firmwares)&&(identical(other.icon, icon) || other.icon == icon)&&const DeepCollectionEquality().equals(other.widget, widget));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,flespiId,protocol,protocolId,isGeneric,const DeepCollectionEquality().hash(commandsStructure),const DeepCollectionEquality().hash(configStructure),confiotCapable,confiotLayout,confiotName,peripheralIdentifier,const DeepCollectionEquality().hash(peripheralParserSpec),const DeepCollectionEquality().hash(firmwares),icon,widget);
+int get hashCode => Object.hash(runtimeType,id,name,flespiId,protocol,protocolId,isGeneric,const DeepCollectionEquality().hash(commandsStructure),const DeepCollectionEquality().hash(configStructure),confiotCapable,confiotLayout,confiotName,peripheralIdentifier,const DeepCollectionEquality().hash(peripheralParserSpec),const DeepCollectionEquality().hash(firmwares),icon,const DeepCollectionEquality().hash(widget));
 
 @override
 String toString() {
@@ -65,7 +65,7 @@ abstract mixin class $ModelCopyWith<$Res>  {
   factory $ModelCopyWith(Model value, $Res Function(Model) _then) = _$ModelCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric, List<CommandDefinition> commandsStructure, List<ConfigGrouping> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<FirmwareBuild> firmwares,@IconOrNullConverter() LayrzIcon? icon,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget
+ String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric, List<CommandDefinition> commandsStructure, List<ConfigGrouping> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<FirmwareBuild> firmwares,@IconOrNullConverter() LayrzIcon? icon,@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> widget
 });
 
 
@@ -100,7 +100,7 @@ as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.periphe
 as Map<String, dynamic>?,firmwares: null == firmwares ? _self.firmwares : firmwares // ignore: cast_nullable_to_non_nullable
 as List<FirmwareBuild>,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as LayrzIcon?,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
-as RenderWidget,
+as List<RenderWidget>,
   ));
 }
 /// Create a copy of Model
@@ -197,7 +197,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Model() when $default != null:
 return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.firmwares,_that.icon,_that.widget);case _:
@@ -218,7 +218,7 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocol
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget)  $default,) {final _that = this;
 switch (_that) {
 case _Model():
 return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.firmwares,_that.icon,_that.widget);case _:
@@ -238,7 +238,7 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocol
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget)?  $default,) {final _that = this;
 switch (_that) {
 case _Model() when $default != null:
 return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.firmwares,_that.icon,_that.widget);case _:
@@ -253,7 +253,7 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocol
 @JsonSerializable()
 
 class _Model implements Model {
-  const _Model({required this.id, required this.name, this.flespiId, this.protocol, this.protocolId, this.isGeneric, final  List<CommandDefinition> commandsStructure = const [], final  List<ConfigGrouping> configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, final  Map<String, dynamic>? peripheralParserSpec, final  List<FirmwareBuild> firmwares = const [], @IconOrNullConverter() this.icon, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget = RenderWidget.unknown}): _commandsStructure = commandsStructure,_configStructure = configStructure,_peripheralParserSpec = peripheralParserSpec,_firmwares = firmwares;
+  const _Model({required this.id, required this.name, this.flespiId, this.protocol, this.protocolId, this.isGeneric, final  List<CommandDefinition> commandsStructure = const [], final  List<ConfigGrouping> configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, final  Map<String, dynamic>? peripheralParserSpec, final  List<FirmwareBuild> firmwares = const [], @IconOrNullConverter() this.icon, @JsonKey(unknownEnumValue: RenderWidget.unknown) final  List<RenderWidget> widget = const []}): _commandsStructure = commandsStructure,_configStructure = configStructure,_peripheralParserSpec = peripheralParserSpec,_firmwares = firmwares,_widget = widget;
   factory _Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
 
 /// [id] is the unique identifier of the model.
@@ -318,7 +318,14 @@ class _Model implements Model {
 /// The icon of the model, if not exists, you must render the protocol icon
 @override@IconOrNullConverter() final  LayrzIcon? icon;
 /// Indicates the rendering widget, useful to render visually the kind of device
-@override@JsonKey(unknownEnumValue: RenderWidget.unknown) final  RenderWidget widget;
+ final  List<RenderWidget> _widget;
+/// Indicates the rendering widget, useful to render visually the kind of device
+@override@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> get widget {
+  if (_widget is EqualUnmodifiableListView) return _widget;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_widget);
+}
+
 
 /// Create a copy of Model
 /// with the given fields replaced by the non-null parameter values.
@@ -333,12 +340,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Model&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.flespiId, flespiId) || other.flespiId == flespiId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isGeneric, isGeneric) || other.isGeneric == isGeneric)&&const DeepCollectionEquality().equals(other._commandsStructure, _commandsStructure)&&const DeepCollectionEquality().equals(other._configStructure, _configStructure)&&(identical(other.confiotCapable, confiotCapable) || other.confiotCapable == confiotCapable)&&(identical(other.confiotLayout, confiotLayout) || other.confiotLayout == confiotLayout)&&(identical(other.confiotName, confiotName) || other.confiotName == confiotName)&&(identical(other.peripheralIdentifier, peripheralIdentifier) || other.peripheralIdentifier == peripheralIdentifier)&&const DeepCollectionEquality().equals(other._peripheralParserSpec, _peripheralParserSpec)&&const DeepCollectionEquality().equals(other._firmwares, _firmwares)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.widget, widget) || other.widget == widget));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Model&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.flespiId, flespiId) || other.flespiId == flespiId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isGeneric, isGeneric) || other.isGeneric == isGeneric)&&const DeepCollectionEquality().equals(other._commandsStructure, _commandsStructure)&&const DeepCollectionEquality().equals(other._configStructure, _configStructure)&&(identical(other.confiotCapable, confiotCapable) || other.confiotCapable == confiotCapable)&&(identical(other.confiotLayout, confiotLayout) || other.confiotLayout == confiotLayout)&&(identical(other.confiotName, confiotName) || other.confiotName == confiotName)&&(identical(other.peripheralIdentifier, peripheralIdentifier) || other.peripheralIdentifier == peripheralIdentifier)&&const DeepCollectionEquality().equals(other._peripheralParserSpec, _peripheralParserSpec)&&const DeepCollectionEquality().equals(other._firmwares, _firmwares)&&(identical(other.icon, icon) || other.icon == icon)&&const DeepCollectionEquality().equals(other._widget, _widget));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,flespiId,protocol,protocolId,isGeneric,const DeepCollectionEquality().hash(_commandsStructure),const DeepCollectionEquality().hash(_configStructure),confiotCapable,confiotLayout,confiotName,peripheralIdentifier,const DeepCollectionEquality().hash(_peripheralParserSpec),const DeepCollectionEquality().hash(_firmwares),icon,widget);
+int get hashCode => Object.hash(runtimeType,id,name,flespiId,protocol,protocolId,isGeneric,const DeepCollectionEquality().hash(_commandsStructure),const DeepCollectionEquality().hash(_configStructure),confiotCapable,confiotLayout,confiotName,peripheralIdentifier,const DeepCollectionEquality().hash(_peripheralParserSpec),const DeepCollectionEquality().hash(_firmwares),icon,const DeepCollectionEquality().hash(_widget));
 
 @override
 String toString() {
@@ -353,7 +360,7 @@ abstract mixin class _$ModelCopyWith<$Res> implements $ModelCopyWith<$Res> {
   factory _$ModelCopyWith(_Model value, $Res Function(_Model) _then) = __$ModelCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric, List<CommandDefinition> commandsStructure, List<ConfigGrouping> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<FirmwareBuild> firmwares,@IconOrNullConverter() LayrzIcon? icon,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget
+ String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric, List<CommandDefinition> commandsStructure, List<ConfigGrouping> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<FirmwareBuild> firmwares,@IconOrNullConverter() LayrzIcon? icon,@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> widget
 });
 
 
@@ -387,8 +394,8 @@ as String?,peripheralIdentifier: freezed == peripheralIdentifier ? _self.periphe
 as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self._peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,firmwares: null == firmwares ? _self._firmwares : firmwares // ignore: cast_nullable_to_non_nullable
 as List<FirmwareBuild>,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
-as RenderWidget,
+as LayrzIcon?,widget: null == widget ? _self._widget : widget // ignore: cast_nullable_to_non_nullable
+as List<RenderWidget>,
   ));
 }
 

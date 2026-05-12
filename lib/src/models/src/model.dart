@@ -53,7 +53,7 @@ abstract class Model with _$Model {
     @IconOrNullConverter() LayrzIcon? icon,
 
     /// Indicates the rendering widget, useful to render visually the kind of device
-    @JsonKey(unknownEnumValue: RenderWidget.unknown) @Default(RenderWidget.unknown) RenderWidget widget,
+    @JsonKey(unknownEnumValue: RenderWidget.unknown) @Default([]) List<RenderWidget> widget,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
