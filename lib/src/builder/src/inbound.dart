@@ -4,7 +4,7 @@ part of '../builder.dart';
 abstract class InboundStructure with _$InboundStructure {
   const factory InboundStructure({
     required bool hasPosition,
-    required InboundPositionStructure position,
+    required InboundPositionStructure? position,
     required bool hasPayload,
     required List<InboundPayloadStructure> payload,
   }) = _InboundStructure;
@@ -19,7 +19,7 @@ abstract class InboundStructureInput with _$InboundStructureInput {
     @Default(true) bool hasPosition,
 
     /// [position] defines the structure of the position.
-    required InboundPositionStructureInput position,
+    required InboundPositionStructureInput? position,
 
     /// [hasPayload] defines if the structure has a payload.
     @Default(false) bool hasPayload,
@@ -90,7 +90,8 @@ enum InboundPayloadStructureType {
   string,
   integer,
   boolean,
-  float;
+  float
+  ;
 
   @override
   String toString() => toJson();

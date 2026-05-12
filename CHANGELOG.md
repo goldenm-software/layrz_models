@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.8.12
+
+- Made `position` field nullable (`InboundPositionStructure?`) in `InboundStructure` and `InboundStructureInput` to support services without a position structure.
+- Added `DynamicMapConverter` and `DynamicMapConverterNullable` converters to safely deserialize `Map<dynamic, dynamic>` (e.g. Dart literal `{}`) into `Map<String, dynamic>`.
+- Applied `@DynamicMapConverterNullable()` to `InboundService.credentials` and `@DynamicMapConverter()` to `InboundServiceInput.credentials` to fix deserialization failures when credentials arrive as an empty map literal.
+
 ## 3.8.11
 
 - Adjustments on `Model`, now `widget` is `List<RenderWidget>` instead of plain `RenderWidget`.
