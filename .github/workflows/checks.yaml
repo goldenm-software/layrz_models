@@ -2,8 +2,8 @@ name: "Checks"
 
 on:
   pull_request:
-    branches: [ main ]
-    types: [ opened, synchronize, reopened ]
+    branches: [main]
+    types: [opened, synchronize, reopened]
 
 jobs:
   lint-dart:
@@ -15,7 +15,7 @@ jobs:
         uses: flutter-actions/setup-flutter@v4
         with:
           channel: stable
-          version: '3.38.8'
+          version: "3.41.6"
           cache: true
           cache-sdk: true
           cache-key: ${{ runner.os }}-flutter-${{ hashFiles('pubspec.yaml') }}
@@ -53,7 +53,7 @@ jobs:
           name: dart-coverage-${{ github.run_id }}
           path: coverage/lcov.info
           retention-days: 1
-  
+
   coverage-comment:
     needs: lint-dart
     if: always() && github.event_name == 'pull_request'

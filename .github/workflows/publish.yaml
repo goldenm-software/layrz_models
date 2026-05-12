@@ -3,7 +3,7 @@ name: Publish to pub.dev
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
   prechecks:
@@ -18,7 +18,7 @@ jobs:
             echo "Tag ${GITHUB_REF} does not match required format vX.Y.Z"
             exit 1
           fi
-      
+
       - name: Check main branch
         run: |
           git fetch origin main
@@ -39,11 +39,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-
       - uses: flutter-actions/setup-flutter@v4
         with:
           channel: stable
-          version: 3.38.8
+          version: 3.41.6
           cache: true
           cache-sdk: true
           cache-key: ${{ runner.os }}-flutter-${{ hashFiles('pubspec.yaml') }}
@@ -92,8 +91,8 @@ jobs:
         uses: ./.github/actions/changelog
         with:
           post-comment: false # Don't post comment for releases
-          exclude-types: 'chore,style'
-          comment-header: '## 📋 Release Notes'
+          exclude-types: "chore,style"
+          comment-header: "## 📋 Release Notes"
 
       - name: Determine if pre-release
         id: prerelease
