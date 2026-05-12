@@ -10,7 +10,7 @@ abstract class InboundService with _$InboundService {
     required String name,
 
     /// Is the Credential object, check the documentation for more information.
-    Map<String, dynamic>? credentials,
+    @DynamicMapConverterNullable() Map<String, dynamic>? credentials,
 
     /// Is the ID of the External Account.
     String? externalAccountId,
@@ -54,7 +54,7 @@ abstract class InboundServiceInput with _$InboundServiceInput {
     @Default('') String name,
 
     /// [credentials] is the Credential object, check the documentation for more information.
-    @Default({}) Map<String, dynamic> credentials,
+    @Default(<String, dynamic>{}) @DynamicMapConverter() Map<String, dynamic> credentials,
 
     /// [externalAccountId] is the ID of the External Account.
     String? externalAccountId,

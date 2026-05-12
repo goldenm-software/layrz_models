@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$InboundStructure {
 
- bool get hasPosition; InboundPositionStructure get position; bool get hasPayload; List<InboundPayloadStructure> get payload;
+ bool get hasPosition; InboundPositionStructure? get position; bool get hasPayload; List<InboundPayloadStructure> get payload;
 /// Create a copy of InboundStructure
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,11 +48,11 @@ abstract mixin class $InboundStructureCopyWith<$Res>  {
   factory $InboundStructureCopyWith(InboundStructure value, $Res Function(InboundStructure) _then) = _$InboundStructureCopyWithImpl;
 @useResult
 $Res call({
- bool hasPosition, InboundPositionStructure position, bool hasPayload, List<InboundPayloadStructure> payload
+ bool hasPosition, InboundPositionStructure? position, bool hasPayload, List<InboundPayloadStructure> payload
 });
 
 
-$InboundPositionStructureCopyWith<$Res> get position;
+$InboundPositionStructureCopyWith<$Res>? get position;
 
 }
 /// @nodoc
@@ -65,11 +65,11 @@ class _$InboundStructureCopyWithImpl<$Res>
 
 /// Create a copy of InboundStructure
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? hasPosition = null,Object? position = null,Object? hasPayload = null,Object? payload = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? hasPosition = null,Object? position = freezed,Object? hasPayload = null,Object? payload = null,}) {
   return _then(_self.copyWith(
 hasPosition: null == hasPosition ? _self.hasPosition : hasPosition // ignore: cast_nullable_to_non_nullable
-as bool,position: null == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as InboundPositionStructure,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
+as bool,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
+as InboundPositionStructure?,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
 as bool,payload: null == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as List<InboundPayloadStructure>,
   ));
@@ -78,9 +78,12 @@ as List<InboundPayloadStructure>,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$InboundPositionStructureCopyWith<$Res> get position {
-  
-  return $InboundPositionStructureCopyWith<$Res>(_self.position, (value) {
+$InboundPositionStructureCopyWith<$Res>? get position {
+    if (_self.position == null) {
+    return null;
+  }
+
+  return $InboundPositionStructureCopyWith<$Res>(_self.position!, (value) {
     return _then(_self.copyWith(position: value));
   });
 }
@@ -165,7 +168,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool hasPosition,  InboundPositionStructure position,  bool hasPayload,  List<InboundPayloadStructure> payload)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool hasPosition,  InboundPositionStructure? position,  bool hasPayload,  List<InboundPayloadStructure> payload)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _InboundStructure() when $default != null:
 return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload);case _:
@@ -186,7 +189,7 @@ return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload)
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool hasPosition,  InboundPositionStructure position,  bool hasPayload,  List<InboundPayloadStructure> payload)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool hasPosition,  InboundPositionStructure? position,  bool hasPayload,  List<InboundPayloadStructure> payload)  $default,) {final _that = this;
 switch (_that) {
 case _InboundStructure():
 return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload);case _:
@@ -206,7 +209,7 @@ return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload)
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool hasPosition,  InboundPositionStructure position,  bool hasPayload,  List<InboundPayloadStructure> payload)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool hasPosition,  InboundPositionStructure? position,  bool hasPayload,  List<InboundPayloadStructure> payload)?  $default,) {final _that = this;
 switch (_that) {
 case _InboundStructure() when $default != null:
 return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload);case _:
@@ -225,7 +228,7 @@ class _InboundStructure implements InboundStructure {
   factory _InboundStructure.fromJson(Map<String, dynamic> json) => _$InboundStructureFromJson(json);
 
 @override final  bool hasPosition;
-@override final  InboundPositionStructure position;
+@override final  InboundPositionStructure? position;
 @override final  bool hasPayload;
  final  List<InboundPayloadStructure> _payload;
 @override List<InboundPayloadStructure> get payload {
@@ -268,11 +271,11 @@ abstract mixin class _$InboundStructureCopyWith<$Res> implements $InboundStructu
   factory _$InboundStructureCopyWith(_InboundStructure value, $Res Function(_InboundStructure) _then) = __$InboundStructureCopyWithImpl;
 @override @useResult
 $Res call({
- bool hasPosition, InboundPositionStructure position, bool hasPayload, List<InboundPayloadStructure> payload
+ bool hasPosition, InboundPositionStructure? position, bool hasPayload, List<InboundPayloadStructure> payload
 });
 
 
-@override $InboundPositionStructureCopyWith<$Res> get position;
+@override $InboundPositionStructureCopyWith<$Res>? get position;
 
 }
 /// @nodoc
@@ -285,11 +288,11 @@ class __$InboundStructureCopyWithImpl<$Res>
 
 /// Create a copy of InboundStructure
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? hasPosition = null,Object? position = null,Object? hasPayload = null,Object? payload = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? hasPosition = null,Object? position = freezed,Object? hasPayload = null,Object? payload = null,}) {
   return _then(_InboundStructure(
 hasPosition: null == hasPosition ? _self.hasPosition : hasPosition // ignore: cast_nullable_to_non_nullable
-as bool,position: null == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as InboundPositionStructure,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
+as bool,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
+as InboundPositionStructure?,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
 as bool,payload: null == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
 as List<InboundPayloadStructure>,
   ));
@@ -299,9 +302,12 @@ as List<InboundPayloadStructure>,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$InboundPositionStructureCopyWith<$Res> get position {
-  
-  return $InboundPositionStructureCopyWith<$Res>(_self.position, (value) {
+$InboundPositionStructureCopyWith<$Res>? get position {
+    if (_self.position == null) {
+    return null;
+  }
+
+  return $InboundPositionStructureCopyWith<$Res>(_self.position!, (value) {
     return _then(_self.copyWith(position: value));
   });
 }
@@ -314,8 +320,8 @@ mixin _$InboundStructureInput {
 /// [hasPosition] defines if the structure has a position.
  bool get hasPosition;/// [hasPosition] defines if the structure has a position.
  set hasPosition(bool value);/// [position] defines the structure of the position.
- InboundPositionStructureInput get position;/// [position] defines the structure of the position.
- set position(InboundPositionStructureInput value);/// [hasPayload] defines if the structure has a payload.
+ InboundPositionStructureInput? get position;/// [position] defines the structure of the position.
+ set position(InboundPositionStructureInput? value);/// [hasPayload] defines if the structure has a payload.
  bool get hasPayload;/// [hasPayload] defines if the structure has a payload.
  set hasPayload(bool value);/// [payload] defines the structure of the payload.
  List<InboundPayloadStructureInput> get payload;/// [payload] defines the structure of the payload.
@@ -345,11 +351,11 @@ abstract mixin class $InboundStructureInputCopyWith<$Res>  {
   factory $InboundStructureInputCopyWith(InboundStructureInput value, $Res Function(InboundStructureInput) _then) = _$InboundStructureInputCopyWithImpl;
 @useResult
 $Res call({
- bool hasPosition, InboundPositionStructureInput position, bool hasPayload, List<InboundPayloadStructureInput> payload
+ bool hasPosition, InboundPositionStructureInput? position, bool hasPayload, List<InboundPayloadStructureInput> payload
 });
 
 
-$InboundPositionStructureInputCopyWith<$Res> get position;
+$InboundPositionStructureInputCopyWith<$Res>? get position;
 
 }
 /// @nodoc
@@ -362,11 +368,11 @@ class _$InboundStructureInputCopyWithImpl<$Res>
 
 /// Create a copy of InboundStructureInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? hasPosition = null,Object? position = null,Object? hasPayload = null,Object? payload = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? hasPosition = null,Object? position = freezed,Object? hasPayload = null,Object? payload = null,}) {
   return _then(_self.copyWith(
 hasPosition: null == hasPosition ? _self.hasPosition : hasPosition // ignore: cast_nullable_to_non_nullable
-as bool,position: null == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as InboundPositionStructureInput,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
+as bool,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
+as InboundPositionStructureInput?,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
 as bool,payload: null == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as List<InboundPayloadStructureInput>,
   ));
@@ -375,9 +381,12 @@ as List<InboundPayloadStructureInput>,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$InboundPositionStructureInputCopyWith<$Res> get position {
-  
-  return $InboundPositionStructureInputCopyWith<$Res>(_self.position, (value) {
+$InboundPositionStructureInputCopyWith<$Res>? get position {
+    if (_self.position == null) {
+    return null;
+  }
+
+  return $InboundPositionStructureInputCopyWith<$Res>(_self.position!, (value) {
     return _then(_self.copyWith(position: value));
   });
 }
@@ -462,7 +471,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool hasPosition,  InboundPositionStructureInput position,  bool hasPayload,  List<InboundPayloadStructureInput> payload)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool hasPosition,  InboundPositionStructureInput? position,  bool hasPayload,  List<InboundPayloadStructureInput> payload)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _InboundStructureInput() when $default != null:
 return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload);case _:
@@ -483,7 +492,7 @@ return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload)
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool hasPosition,  InboundPositionStructureInput position,  bool hasPayload,  List<InboundPayloadStructureInput> payload)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool hasPosition,  InboundPositionStructureInput? position,  bool hasPayload,  List<InboundPayloadStructureInput> payload)  $default,) {final _that = this;
 switch (_that) {
 case _InboundStructureInput():
 return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload);case _:
@@ -503,7 +512,7 @@ return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload)
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool hasPosition,  InboundPositionStructureInput position,  bool hasPayload,  List<InboundPayloadStructureInput> payload)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool hasPosition,  InboundPositionStructureInput? position,  bool hasPayload,  List<InboundPayloadStructureInput> payload)?  $default,) {final _that = this;
 switch (_that) {
 case _InboundStructureInput() when $default != null:
 return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload);case _:
@@ -524,7 +533,7 @@ class _InboundStructureInput implements InboundStructureInput {
 /// [hasPosition] defines if the structure has a position.
 @override@JsonKey()  bool hasPosition;
 /// [position] defines the structure of the position.
-@override  InboundPositionStructureInput position;
+@override  InboundPositionStructureInput? position;
 /// [hasPayload] defines if the structure has a payload.
 @override@JsonKey()  bool hasPayload;
 /// [payload] defines the structure of the payload.
@@ -556,11 +565,11 @@ abstract mixin class _$InboundStructureInputCopyWith<$Res> implements $InboundSt
   factory _$InboundStructureInputCopyWith(_InboundStructureInput value, $Res Function(_InboundStructureInput) _then) = __$InboundStructureInputCopyWithImpl;
 @override @useResult
 $Res call({
- bool hasPosition, InboundPositionStructureInput position, bool hasPayload, List<InboundPayloadStructureInput> payload
+ bool hasPosition, InboundPositionStructureInput? position, bool hasPayload, List<InboundPayloadStructureInput> payload
 });
 
 
-@override $InboundPositionStructureInputCopyWith<$Res> get position;
+@override $InboundPositionStructureInputCopyWith<$Res>? get position;
 
 }
 /// @nodoc
@@ -573,11 +582,11 @@ class __$InboundStructureInputCopyWithImpl<$Res>
 
 /// Create a copy of InboundStructureInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? hasPosition = null,Object? position = null,Object? hasPayload = null,Object? payload = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? hasPosition = null,Object? position = freezed,Object? hasPayload = null,Object? payload = null,}) {
   return _then(_InboundStructureInput(
 hasPosition: null == hasPosition ? _self.hasPosition : hasPosition // ignore: cast_nullable_to_non_nullable
-as bool,position: null == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as InboundPositionStructureInput,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
+as bool,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
+as InboundPositionStructureInput?,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
 as bool,payload: null == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as List<InboundPayloadStructureInput>,
   ));
@@ -587,9 +596,12 @@ as List<InboundPayloadStructureInput>,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$InboundPositionStructureInputCopyWith<$Res> get position {
-  
-  return $InboundPositionStructureInputCopyWith<$Res>(_self.position, (value) {
+$InboundPositionStructureInputCopyWith<$Res>? get position {
+    if (_self.position == null) {
+    return null;
+  }
+
+  return $InboundPositionStructureInputCopyWith<$Res>(_self.position!, (value) {
     return _then(_self.copyWith(position: value));
   });
 }

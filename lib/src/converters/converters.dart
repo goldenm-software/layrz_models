@@ -15,3 +15,4 @@ part 'src/time_of_day.dart';
 part 'src/regex.dart';
 part 'src/byte_list.dart';
 part 'src/param_converter.dart';
+part 'src/dynamic_map.dart';

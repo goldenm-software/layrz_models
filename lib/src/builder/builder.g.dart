@@ -9,9 +9,11 @@ part of 'builder.dart';
 _InboundStructure _$InboundStructureFromJson(Map<String, dynamic> json) =>
     _InboundStructure(
       hasPosition: json['hasPosition'] as bool,
-      position: InboundPositionStructure.fromJson(
-        json['position'] as Map<String, dynamic>,
-      ),
+      position: json['position'] == null
+          ? null
+          : InboundPositionStructure.fromJson(
+              json['position'] as Map<String, dynamic>,
+            ),
       hasPayload: json['hasPayload'] as bool,
       payload: (json['payload'] as List<dynamic>)
           .map(
@@ -23,7 +25,7 @@ _InboundStructure _$InboundStructureFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$InboundStructureToJson(_InboundStructure instance) =>
     <String, dynamic>{
       'hasPosition': instance.hasPosition,
-      'position': instance.position.toJson(),
+      'position': instance.position?.toJson(),
       'hasPayload': instance.hasPayload,
       'payload': instance.payload.map((e) => e.toJson()).toList(),
     };
@@ -32,9 +34,11 @@ _InboundStructureInput _$InboundStructureInputFromJson(
   Map<String, dynamic> json,
 ) => _InboundStructureInput(
   hasPosition: json['hasPosition'] as bool? ?? true,
-  position: InboundPositionStructureInput.fromJson(
-    json['position'] as Map<String, dynamic>,
-  ),
+  position: json['position'] == null
+      ? null
+      : InboundPositionStructureInput.fromJson(
+          json['position'] as Map<String, dynamic>,
+        ),
   hasPayload: json['hasPayload'] as bool? ?? false,
   payload:
       (json['payload'] as List<dynamic>?)
@@ -51,7 +55,7 @@ Map<String, dynamic> _$InboundStructureInputToJson(
   _InboundStructureInput instance,
 ) => <String, dynamic>{
   'hasPosition': instance.hasPosition,
-  'position': instance.position.toJson(),
+  'position': instance.position?.toJson(),
   'hasPayload': instance.hasPayload,
   'payload': instance.payload.map((e) => e.toJson()).toList(),
 };
