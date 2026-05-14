@@ -2,27 +2,39 @@ part of '../models.dart';
 
 @JsonEnum(alwaysCreate: true)
 enum RenderWidget {
-  /// Renders a Thermometer
+  /// Temperature display (°C)
   @JsonValue('THERMOMETER')
   thermometer,
 
-  /// Renders a Humidity display
+  /// Humidity display (%)
   @JsonValue('HUMIDITY')
   humidity,
 
-  /// Renders a Pressure display
+  /// Magnet sensor state display
+  @JsonValue('MAGNET_SENSOR')
+  magnetSensor,
+
+  /// Magnet sensor count display
+  @JsonValue('MAGNET_COUNT')
+  magnetCount,
+
+  /// Accelerometer display
+  @JsonValue('ACCELERATION')
+  accelerometer,
+
+  /// Atmospheric Pressure display (hPa)
   @JsonValue('PRESSURE')
   pressure,
 
-  /// Renders an Illuminance display
+  /// Illuminance display (lux)
   @JsonValue('ILLUMINANCE')
   illuminance,
 
-  /// Renders an Air Quality / CO2 display
+  /// Air Quality / CO2 display
   @JsonValue('AIR_QUALITY')
   airQuality,
 
-  /// Renders a Battery level display
+  /// Battery level display (%)
   @JsonValue('BATTERY')
   battery,
 
@@ -30,15 +42,31 @@ enum RenderWidget {
   @JsonValue('LINK_QUALITY')
   linkQuality,
 
-  /// Renders a read-only binary state indicator
+  /// On/Off state display
   @JsonValue('BINARY_SENSOR')
   binarySensor,
 
-  /// Renders a Switch
+  /// Presence indicator
+  @JsonValue('PRESENCE')
+  presence,
+
+  /// Presence count display
+  @JsonValue('PRESENCE_COUNT')
+  presenceCount,
+
+  /// Touch button state
+  @JsonValue('TOUCH')
+  touch,
+
+  /// Touch button count display
+  @JsonValue('TOUCH_COUNT')
+  touchCount,
+
+  /// On/Off switch control (toggable)
   @JsonValue('SWITCH')
   switch_,
 
-  /// Renders a Dimmer slider
+  /// Dimmer slider control (0-100%)
   @JsonValue('DIMMER')
   dimmer,
 
@@ -46,19 +74,19 @@ enum RenderWidget {
   @JsonValue('COLOR_TEMPERATURE')
   colorTemperature,
 
-  /// Renders a Thermostat Setpoint slider
+  /// Setpoint control
   @JsonValue('SETPOINT')
   setpoint,
 
-  /// Renders a Fan Speed slider
+  /// Fan speed control (rpm)
   @JsonValue('FAN_SPEED')
   fanSpeed,
 
-  /// Renders an RGB/RGBW Color Picker
+  /// RBG Color Picker control
   @JsonValue('COLOR_PICKER')
   colorPicker,
 
-  /// Renders a Mode Selector (e.g. heat/cool/auto)
+  /// Renders a Mode Selector (list of modes, only one can be active)
   @JsonValue('MODE_SELECTOR')
   modeSelector,
 

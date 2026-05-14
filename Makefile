@@ -9,3 +9,11 @@ lint:
 .PHONY: test
 test:
 	flutter test
+
+.PHONY: tag
+tag:
+	@git checkout main
+	@git pull
+	@git tag -a v$(VERSION) -m "Release v$(VERSION)"
+	@git push origin v$(VERSION)
+	@git checkout development
