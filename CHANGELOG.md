@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.14
+
+- Added new widgets on `RenderWidget` enum
+
 ## 3.8.13
 
 - Changed `destinyInformation` field in `AtsLoadingParamsFormInput` from nullable `List<AtsDestinyInformationInput>?` to non-nullable `List<AtsDestinyInformationInput>` with `@Default([])` to ensure it always defaults to an empty list.
