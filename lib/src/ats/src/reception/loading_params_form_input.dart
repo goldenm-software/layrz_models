@@ -64,7 +64,7 @@ abstract class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
     double? liquidWeight,
 
     /// `destinyInformation` Destiny information only on modality seta
-    List<AtsDestinyInformationInput>? destinyInformation,
+    @Default([]) List<AtsDestinyInformationInput> destinyInformation,
   }) = _AtsLoadingParamsFormInput;
 
   factory AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormInputFromJson(json);
