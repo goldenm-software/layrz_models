@@ -864,11 +864,14 @@ _AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
   density20: (json['density20'] as num?)?.toDouble(),
   correctionFactor: (json['correctionFactor'] as num?)?.toDouble(),
   liquidWeight: (json['liquidWeight'] as num?)?.toDouble(),
-  destinyInformation: (json['destinyInformation'] as List<dynamic>?)
-      ?.map(
-        (e) => AtsDestinyInformationInput.fromJson(e as Map<String, dynamic>),
-      )
-      .toList(),
+  destinyInformation:
+      (json['destinyInformation'] as List<dynamic>?)
+          ?.map(
+            (e) =>
+                AtsDestinyInformationInput.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$AtsLoadingParamsFormInputToJson(
@@ -899,7 +902,7 @@ Map<String, dynamic> _$AtsLoadingParamsFormInputToJson(
   'correctionFactor': instance.correctionFactor,
   'liquidWeight': instance.liquidWeight,
   'destinyInformation': instance.destinyInformation
-      ?.map((e) => e.toJson())
+      .map((e) => e.toJson())
       .toList(),
 };
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.13
+
+- Changed `destinyInformation` field in `AtsLoadingParamsFormInput` from nullable `List<AtsDestinyInformationInput>?` to non-nullable `List<AtsDestinyInformationInput>` with `@Default([])` to ensure it always defaults to an empty list.
+
 ## 3.8.12
 
 - Made `position` field nullable (`InboundPositionStructure?`) in `InboundStructure` and `InboundStructureInput` to support services without a position structure.
