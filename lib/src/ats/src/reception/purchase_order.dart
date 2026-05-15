@@ -160,6 +160,9 @@ abstract class AtsPurchaseOrder with _$AtsPurchaseOrder {
 
     /// [etaUpdatedAt] defines the estimated time of arrival updated at.
     @TimestampOrNullConverter() DateTime? etaUpdatedAt,
+
+    /// Original buyer Asset linked to the purchase order.
+    Asset? originalBuyerAsset,
   }) = _AtsPurchaseOrder;
 
   /// from json factory
