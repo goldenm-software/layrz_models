@@ -633,6 +633,9 @@ _AtsPurchaseOrder _$AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
       etaUpdatedAt: const TimestampOrNullConverter().fromJson(
         json['etaUpdatedAt'] as num?,
       ),
+      originalBuyerAsset: json['originalBuyerAsset'] == null
+          ? null
+          : Asset.fromJson(json['originalBuyerAsset'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AtsPurchaseOrderToJson(
@@ -685,6 +688,7 @@ Map<String, dynamic> _$AtsPurchaseOrderToJson(
   'etaUpdatedAt': const TimestampOrNullConverter().toJson(
     instance.etaUpdatedAt,
   ),
+  'originalBuyerAsset': instance.originalBuyerAsset?.toJson(),
 };
 
 _AtsPurchaseTotal _$AtsPurchaseTotalFromJson(Map<String, dynamic> json) =>

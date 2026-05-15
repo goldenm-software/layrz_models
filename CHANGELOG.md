@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.15
+
+- Added `originalBuyerAsset` field (`Asset?`) to `AtsPurchaseOrder` to expose the original buyer asset linked to the purchase order.
+
 ## 3.8.14
 
 - Added new widgets on `RenderWidget` enum
