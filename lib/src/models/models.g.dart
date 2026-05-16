@@ -84,7 +84,7 @@ const _$ConfIoTLayoutEnumMap = {
 const _$RenderWidgetEnumMap = {
   RenderWidget.thermometer: 'THERMOMETER',
   RenderWidget.humidity: 'HUMIDITY',
-  RenderWidget.magnetSensor: 'MAGNET_SENSOR',
+  RenderWidget.magnet: 'MAGNET',
   RenderWidget.magnetCount: 'MAGNET_COUNT',
   RenderWidget.accelerometer: 'ACCELERATION',
   RenderWidget.pressure: 'PRESSURE',
