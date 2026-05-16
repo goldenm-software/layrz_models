@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.16
+
+- Fixed `RenderWidget.magnet` enum value: corrected `@JsonValue` from `'MAGNET_SENSOR'` to `'MAGNET'` to match the backend `Widget` enum.
+
 ## 3.8.15
 
 - Added `originalBuyerAsset` field (`Asset?`) to `AtsPurchaseOrder` to expose the original buyer asset linked to the purchase order.

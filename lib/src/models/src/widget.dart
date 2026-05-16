@@ -11,8 +11,8 @@ enum RenderWidget {
   humidity,
 
   /// Magnet sensor state display
-  @JsonValue('MAGNET_SENSOR')
-  magnetSensor,
+  @JsonValue('MAGNET')
+  magnet,
 
   /// Magnet sensor count display
   @JsonValue('MAGNET_COUNT')
