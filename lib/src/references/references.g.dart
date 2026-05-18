@@ -90,6 +90,7 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.atsGetAllTerminals: 'ATS_GET_ALL_TERMINALS',
   ReferenceCategory.atsStorageReceptionAccess: 'ATS_STORAGE_RECEPTION_ACCESS',
   ReferenceCategory.atsInvoiceSwap: 'ATS_INVOICE_SWAP',
+  ReferenceCategory.atsShowOnlyLastExit: 'ATS_SHOW_ONLY_LAST_EXIT',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',
