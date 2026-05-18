@@ -288,6 +288,13 @@ enum ReferenceCategory {
   @JsonValue('ATS_INVOICE_SWAP')
   atsInvoiceSwap,
 
+  /// !ATS Reference
+  /// [AllTank Systems] When present on a pump asset, the history view must
+  /// show only the most recent exit instead of the full list.
+  /// Layrz API Reference: ATS_SHOW_ONLY_LAST_EXIT
+  @JsonValue('ATS_SHOW_ONLY_LAST_EXIT')
+  atsShowOnlyLastExit,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR

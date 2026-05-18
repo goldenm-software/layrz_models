@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.17
+
+- Added `ReferenceCategory.atsShowOnlyLastExit` (`ATS_SHOW_ONLY_LAST_EXIT`) to flag pump assets whose exit history should be limited to the most recent record.
+
 ## 3.8.16
 
 - Fixed `RenderWidget.magnet` enum value: corrected `@JsonValue` from `'MAGNET_SENSOR'` to `'MAGNET'` to match the backend `Widget` enum.
