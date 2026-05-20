@@ -603,8 +603,8 @@ mixin _$AtsReceptionInput {
 ///ID of the [AtsReception]. This ID is unique.
  String? get id;///ID of the [AtsReception]. This ID is unique.
  set id(String? value);/// List of [AtsPurchaseOrder] IDs.
- List<String>? get ordersIds;/// List of [AtsPurchaseOrder] IDs.
- set ordersIds(List<String>? value);/// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
+@Deprecated('Use purchaseOrderIds instead') List<String>? get ordersIds;/// List of [AtsPurchaseOrder] IDs.
+@Deprecated('Use purchaseOrderIds instead') set ordersIds(List<String>? value);/// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
  List<AtsReceptionProductInput>? get products;/// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
  set products(List<AtsReceptionProductInput>? value);/// ID of the [Asset] supply point
  String? get assetId;/// ID of the [Asset] supply point
@@ -612,7 +612,9 @@ mixin _$AtsReceptionInput {
 @DurationOrNullConverter() Duration? get operationTime;/// [AtsReception] operation time
 @DurationOrNullConverter() set operationTime(Duration? value);/// App used to create the [AtsReception].
 @AtsFromAppOrNullConverter() AtsFromApp? get app;/// App used to create the [AtsReception].
-@AtsFromAppOrNullConverter() set app(AtsFromApp? value);
+@AtsFromAppOrNullConverter() set app(AtsFromApp? value);/// IDs of the [AtsPurchaseOrder]s.
+ List<String>? get purchaseOrderIds;/// IDs of the [AtsPurchaseOrder]s.
+ set purchaseOrderIds(List<String>? value);
 /// Create a copy of AtsReceptionInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -627,7 +629,7 @@ $AtsReceptionInputCopyWith<AtsReceptionInput> get copyWith => _$AtsReceptionInpu
 
 @override
 String toString() {
-  return 'AtsReceptionInput(id: $id, ordersIds: $ordersIds, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app)';
+  return 'AtsReceptionInput(id: $id, ordersIds: $ordersIds, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app, purchaseOrderIds: $purchaseOrderIds)';
 }
 
 
@@ -638,7 +640,7 @@ abstract mixin class $AtsReceptionInputCopyWith<$Res>  {
   factory $AtsReceptionInputCopyWith(AtsReceptionInput value, $Res Function(AtsReceptionInput) _then) = _$AtsReceptionInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, List<String>? ordersIds, List<AtsReceptionProductInput>? products, String? assetId,@DurationOrNullConverter() Duration? operationTime,@AtsFromAppOrNullConverter() AtsFromApp? app
+ String? id,@Deprecated('Use purchaseOrderIds instead') List<String>? ordersIds, List<AtsReceptionProductInput>? products, String? assetId,@DurationOrNullConverter() Duration? operationTime,@AtsFromAppOrNullConverter() AtsFromApp? app, List<String>? purchaseOrderIds
 });
 
 
@@ -655,7 +657,7 @@ class _$AtsReceptionInputCopyWithImpl<$Res>
 
 /// Create a copy of AtsReceptionInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? ordersIds = freezed,Object? products = freezed,Object? assetId = freezed,Object? operationTime = freezed,Object? app = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? ordersIds = freezed,Object? products = freezed,Object? assetId = freezed,Object? operationTime = freezed,Object? app = freezed,Object? purchaseOrderIds = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,ordersIds: freezed == ordersIds ? _self.ordersIds : ordersIds // ignore: cast_nullable_to_non_nullable
@@ -663,7 +665,8 @@ as List<String>?,products: freezed == products ? _self.products : products // ig
 as List<AtsReceptionProductInput>?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String?,operationTime: freezed == operationTime ? _self.operationTime : operationTime // ignore: cast_nullable_to_non_nullable
 as Duration?,app: freezed == app ? _self.app : app // ignore: cast_nullable_to_non_nullable
-as AtsFromApp?,
+as AtsFromApp?,purchaseOrderIds: freezed == purchaseOrderIds ? _self.purchaseOrderIds : purchaseOrderIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,
   ));
 }
 
@@ -748,10 +751,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  List<String>? ordersIds,  List<AtsReceptionProductInput>? products,  String? assetId, @DurationOrNullConverter()  Duration? operationTime, @AtsFromAppOrNullConverter()  AtsFromApp? app)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id, @Deprecated('Use purchaseOrderIds instead')  List<String>? ordersIds,  List<AtsReceptionProductInput>? products,  String? assetId, @DurationOrNullConverter()  Duration? operationTime, @AtsFromAppOrNullConverter()  AtsFromApp? app,  List<String>? purchaseOrderIds)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsReceptionInput() when $default != null:
-return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.operationTime,_that.app);case _:
+return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.operationTime,_that.app,_that.purchaseOrderIds);case _:
   return orElse();
 
 }
@@ -769,10 +772,10 @@ return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.oper
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  List<String>? ordersIds,  List<AtsReceptionProductInput>? products,  String? assetId, @DurationOrNullConverter()  Duration? operationTime, @AtsFromAppOrNullConverter()  AtsFromApp? app)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id, @Deprecated('Use purchaseOrderIds instead')  List<String>? ordersIds,  List<AtsReceptionProductInput>? products,  String? assetId, @DurationOrNullConverter()  Duration? operationTime, @AtsFromAppOrNullConverter()  AtsFromApp? app,  List<String>? purchaseOrderIds)  $default,) {final _that = this;
 switch (_that) {
 case _AtsReceptionInput():
-return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.operationTime,_that.app);case _:
+return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.operationTime,_that.app,_that.purchaseOrderIds);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -789,10 +792,10 @@ return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.oper
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  List<String>? ordersIds,  List<AtsReceptionProductInput>? products,  String? assetId, @DurationOrNullConverter()  Duration? operationTime, @AtsFromAppOrNullConverter()  AtsFromApp? app)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id, @Deprecated('Use purchaseOrderIds instead')  List<String>? ordersIds,  List<AtsReceptionProductInput>? products,  String? assetId, @DurationOrNullConverter()  Duration? operationTime, @AtsFromAppOrNullConverter()  AtsFromApp? app,  List<String>? purchaseOrderIds)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsReceptionInput() when $default != null:
-return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.operationTime,_that.app);case _:
+return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.operationTime,_that.app,_that.purchaseOrderIds);case _:
   return null;
 
 }
@@ -804,13 +807,13 @@ return $default(_that.id,_that.ordersIds,_that.products,_that.assetId,_that.oper
 @JsonSerializable()
 
 class _AtsReceptionInput implements AtsReceptionInput {
-   _AtsReceptionInput({this.id, this.ordersIds, this.products, this.assetId, @DurationOrNullConverter() this.operationTime, @AtsFromAppOrNullConverter() this.app});
+   _AtsReceptionInput({this.id, @Deprecated('Use purchaseOrderIds instead') this.ordersIds, this.products, this.assetId, @DurationOrNullConverter() this.operationTime, @AtsFromAppOrNullConverter() this.app, this.purchaseOrderIds});
   factory _AtsReceptionInput.fromJson(Map<String, dynamic> json) => _$AtsReceptionInputFromJson(json);
 
 ///ID of the [AtsReception]. This ID is unique.
 @override  String? id;
 /// List of [AtsPurchaseOrder] IDs.
-@override  List<String>? ordersIds;
+@override@Deprecated('Use purchaseOrderIds instead')  List<String>? ordersIds;
 /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
 @override  List<AtsReceptionProductInput>? products;
 /// ID of the [Asset] supply point
@@ -819,6 +822,8 @@ class _AtsReceptionInput implements AtsReceptionInput {
 @override@DurationOrNullConverter()  Duration? operationTime;
 /// App used to create the [AtsReception].
 @override@AtsFromAppOrNullConverter()  AtsFromApp? app;
+/// IDs of the [AtsPurchaseOrder]s.
+@override  List<String>? purchaseOrderIds;
 
 /// Create a copy of AtsReceptionInput
 /// with the given fields replaced by the non-null parameter values.
@@ -835,7 +840,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'AtsReceptionInput(id: $id, ordersIds: $ordersIds, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app)';
+  return 'AtsReceptionInput(id: $id, ordersIds: $ordersIds, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app, purchaseOrderIds: $purchaseOrderIds)';
 }
 
 
@@ -846,7 +851,7 @@ abstract mixin class _$AtsReceptionInputCopyWith<$Res> implements $AtsReceptionI
   factory _$AtsReceptionInputCopyWith(_AtsReceptionInput value, $Res Function(_AtsReceptionInput) _then) = __$AtsReceptionInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, List<String>? ordersIds, List<AtsReceptionProductInput>? products, String? assetId,@DurationOrNullConverter() Duration? operationTime,@AtsFromAppOrNullConverter() AtsFromApp? app
+ String? id,@Deprecated('Use purchaseOrderIds instead') List<String>? ordersIds, List<AtsReceptionProductInput>? products, String? assetId,@DurationOrNullConverter() Duration? operationTime,@AtsFromAppOrNullConverter() AtsFromApp? app, List<String>? purchaseOrderIds
 });
 
 
@@ -863,7 +868,7 @@ class __$AtsReceptionInputCopyWithImpl<$Res>
 
 /// Create a copy of AtsReceptionInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? ordersIds = freezed,Object? products = freezed,Object? assetId = freezed,Object? operationTime = freezed,Object? app = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? ordersIds = freezed,Object? products = freezed,Object? assetId = freezed,Object? operationTime = freezed,Object? app = freezed,Object? purchaseOrderIds = freezed,}) {
   return _then(_AtsReceptionInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,ordersIds: freezed == ordersIds ? _self.ordersIds : ordersIds // ignore: cast_nullable_to_non_nullable
@@ -871,7 +876,8 @@ as List<String>?,products: freezed == products ? _self.products : products // ig
 as List<AtsReceptionProductInput>?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String?,operationTime: freezed == operationTime ? _self.operationTime : operationTime // ignore: cast_nullable_to_non_nullable
 as Duration?,app: freezed == app ? _self.app : app // ignore: cast_nullable_to_non_nullable
-as AtsFromApp?,
+as AtsFromApp?,purchaseOrderIds: freezed == purchaseOrderIds ? _self.purchaseOrderIds : purchaseOrderIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,
   ));
 }
 

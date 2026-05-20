@@ -65,7 +65,7 @@ abstract class AtsReceptionInput with _$AtsReceptionInput {
     String? id,
 
     /// List of [AtsPurchaseOrder] IDs.
-    List<String>? ordersIds,
+    @Deprecated('Use purchaseOrderIds instead') List<String>? ordersIds,
 
     /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
     List<AtsReceptionProductInput>? products,
@@ -78,6 +78,9 @@ abstract class AtsReceptionInput with _$AtsReceptionInput {
 
     /// App used to create the [AtsReception].
     @AtsFromAppOrNullConverter() AtsFromApp? app,
+
+    /// IDs of the [AtsPurchaseOrder]s.
+    List<String>? purchaseOrderIds,
   }) = _AtsReceptionInput;
 
   factory AtsReceptionInput.fromJson(Map<String, dynamic> json) => _$AtsReceptionInputFromJson(json);
