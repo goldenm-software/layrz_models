@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.8.18
+
+- Added `purchaseOrderIds` field (`List<String>?`) to `AtsReceptionInput` to align with the GraphQL `ReceptionInput` schema.
+- Deprecated `ordersIds` field in `AtsReceptionInput` in favor of `purchaseOrderIds`.
+
 ## 3.8.17
 
 - Added `ReferenceCategory.atsShowOnlyLastExit` (`ATS_SHOW_ONLY_LAST_EXIT`) to flag pump assets whose exit history should be limited to the most recent record.

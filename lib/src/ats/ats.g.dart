@@ -83,6 +83,9 @@ _AtsReceptionInput _$AtsReceptionInputFromJson(Map<String, dynamic> json) =>
         json['operationTime'] as num?,
       ),
       app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
+      purchaseOrderIds: (json['purchaseOrderIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$AtsReceptionInputToJson(_AtsReceptionInput instance) =>
@@ -95,6 +98,7 @@ Map<String, dynamic> _$AtsReceptionInputToJson(_AtsReceptionInput instance) =>
         instance.operationTime,
       ),
       'app': const AtsFromAppOrNullConverter().toJson(instance.app),
+      'purchaseOrderIds': instance.purchaseOrderIds,
     };
 
 _AtsAuthenticationIdentifier _$AtsAuthenticationIdentifierFromJson(
