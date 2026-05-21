@@ -16,7 +16,7 @@ abstract class TankMeasurement with _$TankMeasurement {
     double? height,
 
     /// The [temperature] parameter is the temperature of the tank measurement.
-    double? temperature,
+    @Deprecated('Use sampleTemperature instead') double? temperature,
 
     /// The [volume] parameter is the volume of the tank measurement.
     double? volume,
@@ -32,6 +32,12 @@ abstract class TankMeasurement with _$TankMeasurement {
 
     /// The [convertedVolume] parameter is the converted volume of the tank measurement.
     double? convertedVolume,
+
+    /// The [sampleTemperature] parameter is the sample temperature of the tank measurement.
+    double? sampleTemperature,
+
+    /// The [tankTemperature] parameter is the tank temperature of the tank measurement.
+    double? tankTemperature,
   }) = _TankMeasurement;
 
   /// Creates a new [TankMeasurement] instance from a JSON map.

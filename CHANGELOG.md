@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.8.19
+
+- Added new value `executedAt` in `ManifestInput` and `Manifest` models
+- Added new values `sampleTemperature` and `tankTemperature` in `TankMeasurement` models, and deprecated `temperature` value
+
 ## 3.8.18
 
 - Added `purchaseOrderIds` field (`List<String>?`) to `AtsReceptionInput` to align with the GraphQL `ReceptionInput` schema.
