@@ -1728,6 +1728,9 @@ _Manifest _$ManifestFromJson(Map<String, dynamic> json) => _Manifest(
   createdAt: const TimestampOrNullConverter().fromJson(
     json['createdAt'] as num?,
   ),
+  executedAt: const TimestampOrNullConverter().fromJson(
+    json['executedAt'] as num?,
+  ),
   trim: (json['trim'] as num?)?.toDouble(),
   banda: (json['banda'] as num?)?.toDouble(),
   tankMeasurements: (json['tankMeasurements'] as List<dynamic>?)
@@ -1758,6 +1761,7 @@ Map<String, dynamic> _$ManifestToJson(_Manifest instance) => <String, dynamic>{
   'operationId': instance.operationId,
   'operation': instance.operation?.toJson(),
   'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+  'executedAt': const TimestampOrNullConverter().toJson(instance.executedAt),
   'trim': instance.trim,
   'banda': instance.banda,
   'tankMeasurements': instance.tankMeasurements
@@ -1795,6 +1799,9 @@ _ManifestInput _$ManifestInputFromJson(Map<String, dynamic> json) =>
       createdAt: const TimestampOrNullConverter().fromJson(
         json['createdAt'] as num?,
       ),
+      executedAt: const TimestampOrNullConverter().fromJson(
+        json['executedAt'] as num?,
+      ),
     );
 
 Map<String, dynamic> _$ManifestInputToJson(
@@ -1808,6 +1815,7 @@ Map<String, dynamic> _$ManifestInputToJson(
   'banda': instance.banda,
   'tankMeasurements': instance.tankMeasurements.map((e) => e.toJson()).toList(),
   'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+  'executedAt': const TimestampOrNullConverter().toJson(instance.executedAt),
 };
 
 _TankMeasurement _$TankMeasurementFromJson(Map<String, dynamic> json) =>
@@ -1821,6 +1829,8 @@ _TankMeasurement _$TankMeasurementFromJson(Map<String, dynamic> json) =>
       conversionFactor: (json['conversionFactor'] as num?)?.toDouble(),
       convertedDensity: (json['convertedDensity'] as num?)?.toDouble(),
       convertedVolume: (json['convertedVolume'] as num?)?.toDouble(),
+      sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
+      tankTemperature: (json['tankTemperature'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$TankMeasurementToJson(_TankMeasurement instance) =>
@@ -1834,6 +1844,8 @@ Map<String, dynamic> _$TankMeasurementToJson(_TankMeasurement instance) =>
       'conversionFactor': instance.conversionFactor,
       'convertedDensity': instance.convertedDensity,
       'convertedVolume': instance.convertedVolume,
+      'sampleTemperature': instance.sampleTemperature,
+      'tankTemperature': instance.tankTemperature,
     };
 
 _TankMeasurementInput _$TankMeasurementInputFromJson(

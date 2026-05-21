@@ -36,6 +36,9 @@ abstract class Manifest with _$Manifest {
     /// The [createdAt] parameter is the date of the manifest entity.
     @TimestampOrNullConverter() DateTime? createdAt,
 
+    /// [executedAt] is the timestamp when the manifest was executed.
+    @TimestampOrNullConverter() DateTime? executedAt,
+
     /// The [trim] parameter is the trim of the manifest entity.
     double? trim,
 

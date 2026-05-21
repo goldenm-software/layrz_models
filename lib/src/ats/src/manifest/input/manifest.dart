@@ -29,6 +29,9 @@ abstract class ManifestInput with _$ManifestInput {
 
     /// [createdAt] is the timestamp when the manifest was created.
     @TimestampOrNullConverter() DateTime? createdAt,
+
+    /// [executedAt] is the timestamp when the manifest was executed.
+    @TimestampOrNullConverter() DateTime? executedAt,
   }) = _ManifestInput;
 
   /// Creates a new [ManifestInput] instance from a JSON map.
