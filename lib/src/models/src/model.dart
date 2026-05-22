@@ -105,6 +105,9 @@ abstract class ModelInput with _$ModelInput {
     /// [peripheralParserSpec] is the parser specification for the peripheral device.
     Map<String, dynamic>? peripheralParserSpec,
 
+    /// [widget] is the list of render widgets for this model.
+    @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) @Default([]) List<RenderWidget> widget,
+
     /// [zigbeeParameters] list of Zigbee parameters defined for this model.
     @Default([]) List<ZigbeeParameterInput> zigbeeParameters,
   }) = _ModelInput;

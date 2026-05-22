@@ -456,7 +456,9 @@ mixin _$ModelInput {
  String? get peripheralIdentifier;/// [peripheralIdentifier] is the identifier of the peripheral device.
  set peripheralIdentifier(String? value);/// [peripheralParserSpec] is the parser specification for the peripheral device.
  Map<String, dynamic>? get peripheralParserSpec;/// [peripheralParserSpec] is the parser specification for the peripheral device.
- set peripheralParserSpec(Map<String, dynamic>? value);/// [zigbeeParameters] list of Zigbee parameters defined for this model.
+ set peripheralParserSpec(Map<String, dynamic>? value);/// [widget] is the list of render widgets for this model.
+@JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) List<RenderWidget> get widget;/// [widget] is the list of render widgets for this model.
+@JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) set widget(List<RenderWidget> value);/// [zigbeeParameters] list of Zigbee parameters defined for this model.
  List<ZigbeeParameterInput> get zigbeeParameters;/// [zigbeeParameters] list of Zigbee parameters defined for this model.
  set zigbeeParameters(List<ZigbeeParameterInput> value);
 /// Create a copy of ModelInput
@@ -473,7 +475,7 @@ $ModelInputCopyWith<ModelInput> get copyWith => _$ModelInputCopyWithImpl<ModelIn
 
 @override
 String toString() {
-  return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec, zigbeeParameters: $zigbeeParameters)';
+  return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec, widget: $widget, zigbeeParameters: $zigbeeParameters)';
 }
 
 
@@ -484,7 +486,7 @@ abstract mixin class $ModelInputCopyWith<$Res>  {
   factory $ModelInputCopyWith(ModelInput value, $Res Function(ModelInput) _then) = _$ModelInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name, String? flespiId, String? protocolId, bool isGeneric, List<CommandDefinitionInput> commandsStructure, List<ConfigGroupingInput> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<ZigbeeParameterInput> zigbeeParameters
+ String? id, String name, String? flespiId, String? protocolId, bool isGeneric, List<CommandDefinitionInput> commandsStructure, List<ConfigGroupingInput> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec,@JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) List<RenderWidget> widget, List<ZigbeeParameterInput> zigbeeParameters
 });
 
 
@@ -501,7 +503,7 @@ class _$ModelInputCopyWithImpl<$Res>
 
 /// Create a copy of ModelInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? flespiId = freezed,Object? protocolId = freezed,Object? isGeneric = null,Object? commandsStructure = null,Object? configStructure = null,Object? confiotCapable = null,Object? confiotLayout = null,Object? confiotName = freezed,Object? peripheralIdentifier = freezed,Object? peripheralParserSpec = freezed,Object? zigbeeParameters = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? flespiId = freezed,Object? protocolId = freezed,Object? isGeneric = null,Object? commandsStructure = null,Object? configStructure = null,Object? confiotCapable = null,Object? confiotLayout = null,Object? confiotName = freezed,Object? peripheralIdentifier = freezed,Object? peripheralParserSpec = freezed,Object? widget = null,Object? zigbeeParameters = null,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -515,7 +517,8 @@ as bool,confiotLayout: null == confiotLayout ? _self.confiotLayout : confiotLayo
 as ConfIoTLayout,confiotName: freezed == confiotName ? _self.confiotName : confiotName // ignore: cast_nullable_to_non_nullable
 as String?,peripheralIdentifier: freezed == peripheralIdentifier ? _self.peripheralIdentifier : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
 as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,zigbeeParameters: null == zigbeeParameters ? _self.zigbeeParameters : zigbeeParameters // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
+as List<RenderWidget>,zigbeeParameters: null == zigbeeParameters ? _self.zigbeeParameters : zigbeeParameters // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeParameterInput>,
   ));
 }
@@ -601,10 +604,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String? flespiId,  String? protocolId,  bool isGeneric,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<ZigbeeParameterInput> zigbeeParameters)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String? flespiId,  String? protocolId,  bool isGeneric,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec, @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  List<ZigbeeParameterInput> zigbeeParameters)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ModelInput() when $default != null:
-return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.zigbeeParameters);case _:
+return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.widget,_that.zigbeeParameters);case _:
   return orElse();
 
 }
@@ -622,10 +625,10 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGene
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String? flespiId,  String? protocolId,  bool isGeneric,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<ZigbeeParameterInput> zigbeeParameters)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String? flespiId,  String? protocolId,  bool isGeneric,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec, @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  List<ZigbeeParameterInput> zigbeeParameters)  $default,) {final _that = this;
 switch (_that) {
 case _ModelInput():
-return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.zigbeeParameters);case _:
+return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.widget,_that.zigbeeParameters);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -642,10 +645,10 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGene
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String? flespiId,  String? protocolId,  bool isGeneric,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<ZigbeeParameterInput> zigbeeParameters)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String? flespiId,  String? protocolId,  bool isGeneric,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec, @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  List<ZigbeeParameterInput> zigbeeParameters)?  $default,) {final _that = this;
 switch (_that) {
 case _ModelInput() when $default != null:
-return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.zigbeeParameters);case _:
+return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.widget,_that.zigbeeParameters);case _:
   return null;
 
 }
@@ -657,7 +660,7 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGene
 @JsonSerializable()
 
 class _ModelInput implements ModelInput {
-   _ModelInput({this.id, this.name = '', this.flespiId, this.protocolId, this.isGeneric = false, this.commandsStructure = const [], this.configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, this.peripheralParserSpec, this.zigbeeParameters = const []});
+   _ModelInput({this.id, this.name = '', this.flespiId, this.protocolId, this.isGeneric = false, this.commandsStructure = const [], this.configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, this.peripheralParserSpec, @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) this.widget = const [], this.zigbeeParameters = const []});
   factory _ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);
 
 /// [id] is the unique identifier of the model.
@@ -685,6 +688,8 @@ class _ModelInput implements ModelInput {
 @override  String? peripheralIdentifier;
 /// [peripheralParserSpec] is the parser specification for the peripheral device.
 @override  Map<String, dynamic>? peripheralParserSpec;
+/// [widget] is the list of render widgets for this model.
+@override@JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget;
 /// [zigbeeParameters] list of Zigbee parameters defined for this model.
 @override@JsonKey()  List<ZigbeeParameterInput> zigbeeParameters;
 
@@ -703,7 +708,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec, zigbeeParameters: $zigbeeParameters)';
+  return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec, widget: $widget, zigbeeParameters: $zigbeeParameters)';
 }
 
 
@@ -714,7 +719,7 @@ abstract mixin class _$ModelInputCopyWith<$Res> implements $ModelInputCopyWith<$
   factory _$ModelInputCopyWith(_ModelInput value, $Res Function(_ModelInput) _then) = __$ModelInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name, String? flespiId, String? protocolId, bool isGeneric, List<CommandDefinitionInput> commandsStructure, List<ConfigGroupingInput> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<ZigbeeParameterInput> zigbeeParameters
+ String? id, String name, String? flespiId, String? protocolId, bool isGeneric, List<CommandDefinitionInput> commandsStructure, List<ConfigGroupingInput> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec,@JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) List<RenderWidget> widget, List<ZigbeeParameterInput> zigbeeParameters
 });
 
 
@@ -731,7 +736,7 @@ class __$ModelInputCopyWithImpl<$Res>
 
 /// Create a copy of ModelInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? flespiId = freezed,Object? protocolId = freezed,Object? isGeneric = null,Object? commandsStructure = null,Object? configStructure = null,Object? confiotCapable = null,Object? confiotLayout = null,Object? confiotName = freezed,Object? peripheralIdentifier = freezed,Object? peripheralParserSpec = freezed,Object? zigbeeParameters = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? flespiId = freezed,Object? protocolId = freezed,Object? isGeneric = null,Object? commandsStructure = null,Object? configStructure = null,Object? confiotCapable = null,Object? confiotLayout = null,Object? confiotName = freezed,Object? peripheralIdentifier = freezed,Object? peripheralParserSpec = freezed,Object? widget = null,Object? zigbeeParameters = null,}) {
   return _then(_ModelInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -745,7 +750,8 @@ as bool,confiotLayout: null == confiotLayout ? _self.confiotLayout : confiotLayo
 as ConfIoTLayout,confiotName: freezed == confiotName ? _self.confiotName : confiotName // ignore: cast_nullable_to_non_nullable
 as String?,peripheralIdentifier: freezed == peripheralIdentifier ? _self.peripheralIdentifier : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
 as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,zigbeeParameters: null == zigbeeParameters ? _self.zigbeeParameters : zigbeeParameters // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
+as List<RenderWidget>,zigbeeParameters: null == zigbeeParameters ? _self.zigbeeParameters : zigbeeParameters // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeParameterInput>,
   ));
 }

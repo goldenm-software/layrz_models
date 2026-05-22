@@ -149,6 +149,17 @@ _ModelInput _$ModelInputFromJson(Map<String, dynamic> json) => _ModelInput(
   confiotName: json['confiotName'] as String?,
   peripheralIdentifier: json['peripheralIdentifier'] as String?,
   peripheralParserSpec: json['peripheralParserSpec'] as Map<String, dynamic>?,
+  widget:
+      (json['widgetRender'] as List<dynamic>?)
+          ?.map(
+            (e) => $enumDecode(
+              _$RenderWidgetEnumMap,
+              e,
+              unknownValue: RenderWidget.unknown,
+            ),
+          )
+          .toList() ??
+      const [],
   zigbeeParameters:
       (json['zigbeeParameters'] as List<dynamic>?)
           ?.map((e) => ZigbeeParameterInput.fromJson(e as Map<String, dynamic>))
@@ -173,6 +184,7 @@ Map<String, dynamic> _$ModelInputToJson(
   'confiotName': instance.confiotName,
   'peripheralIdentifier': instance.peripheralIdentifier,
   'peripheralParserSpec': instance.peripheralParserSpec,
+  'widgetRender': instance.widget.map((e) => e.toJson()).toList(),
   'zigbeeParameters': instance.zigbeeParameters.map((e) => e.toJson()).toList(),
 };
 
