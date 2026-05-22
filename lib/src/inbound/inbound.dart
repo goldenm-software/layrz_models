@@ -13,4 +13,5 @@ part 'inbound.g.dart';
 part 'src/protocol.dart';
 part 'src/service.dart';
 part 'src/enums.dart';
+part 'src/zigbee_data_type.dart';
 part 'src/definitions.dart';

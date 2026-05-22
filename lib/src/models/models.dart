@@ -13,3 +13,4 @@ part 'src/hw_model.dart';
 part 'src/firmware_build.dart';
 part 'src/firmware_branch.dart';
 part 'src/widget.dart';
+part 'src/zigbee_parameter.dart';

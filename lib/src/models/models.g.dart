@@ -53,6 +53,11 @@ _Model _$ModelFromJson(Map<String, dynamic> json) => _Model(
           )
           .toList() ??
       const [],
+  zigbeeParameters:
+      (json['zigbeeParameters'] as List<dynamic>?)
+          ?.map((e) => ZigbeeParameter.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
@@ -74,6 +79,7 @@ Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
   'firmwares': instance.firmwares.map((e) => e.toJson()).toList(),
   'icon': const IconOrNullConverter().toJson(instance.icon),
   'widget': instance.widget.map((e) => e.toJson()).toList(),
+  'zigbeeParameters': instance.zigbeeParameters.map((e) => e.toJson()).toList(),
 };
 
 const _$ConfIoTLayoutEnumMap = {
@@ -143,6 +149,11 @@ _ModelInput _$ModelInputFromJson(Map<String, dynamic> json) => _ModelInput(
   confiotName: json['confiotName'] as String?,
   peripheralIdentifier: json['peripheralIdentifier'] as String?,
   peripheralParserSpec: json['peripheralParserSpec'] as Map<String, dynamic>?,
+  zigbeeParameters:
+      (json['zigbeeParameters'] as List<dynamic>?)
+          ?.map((e) => ZigbeeParameterInput.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$ModelInputToJson(
@@ -162,6 +173,7 @@ Map<String, dynamic> _$ModelInputToJson(
   'confiotName': instance.confiotName,
   'peripheralIdentifier': instance.peripheralIdentifier,
   'peripheralParserSpec': instance.peripheralParserSpec,
+  'zigbeeParameters': instance.zigbeeParameters.map((e) => e.toJson()).toList(),
 };
 
 _HwModel _$HwModelFromJson(Map<String, dynamic> json) => _HwModel(
@@ -237,4 +249,69 @@ Map<String, dynamic> _$FirmwareBuildToJson(_FirmwareBuild instance) =>
 const _$FirmwareBranchEnumMap = {
   FirmwareBranch.stable: 'STABLE',
   FirmwareBranch.development: 'DEVELOPMENT',
+};
+
+_ZigbeeParameter _$ZigbeeParameterFromJson(Map<String, dynamic> json) =>
+    _ZigbeeParameter(
+      id: json['id'] as String?,
+      name: json['name'] as String,
+      dataType: $enumDecode(
+        _$ZigbeeDataTypeEnumMap,
+        json['dataType'],
+        unknownValue: ZigbeeDataType.string,
+      ),
+      widget: $enumDecode(
+        _$RenderWidgetEnumMap,
+        json['widget'],
+        unknownValue: RenderWidget.unknown,
+      ),
+      extra: json['extra'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$ZigbeeParameterToJson(_ZigbeeParameter instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'dataType': instance.dataType.toJson(),
+      'widget': instance.widget.toJson(),
+      'extra': instance.extra,
+    };
+
+const _$ZigbeeDataTypeEnumMap = {
+  ZigbeeDataType.boolean: 'BOOLEAN',
+  ZigbeeDataType.number: 'NUMBER',
+  ZigbeeDataType.string: 'STRING',
+  ZigbeeDataType.enum_: 'ENUM',
+};
+
+_ZigbeeParameterInput _$ZigbeeParameterInputFromJson(
+  Map<String, dynamic> json,
+) => _ZigbeeParameterInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  dataType:
+      $enumDecodeNullable(
+        _$ZigbeeDataTypeEnumMap,
+        json['dataType'],
+        unknownValue: ZigbeeDataType.string,
+      ) ??
+      ZigbeeDataType.string,
+  widget:
+      $enumDecodeNullable(
+        _$RenderWidgetEnumMap,
+        json['widget'],
+        unknownValue: RenderWidget.unknown,
+      ) ??
+      RenderWidget.unknown,
+  extra: json['extra'] as Map<String, dynamic>?,
+);
+
+Map<String, dynamic> _$ZigbeeParameterInputToJson(
+  _ZigbeeParameterInput instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'dataType': instance.dataType.toJson(),
+  'widget': instance.widget.toJson(),
+  'extra': instance.extra,
 };
