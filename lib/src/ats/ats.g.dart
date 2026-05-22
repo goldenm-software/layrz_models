@@ -1938,6 +1938,10 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
   createdAt: const TimestampOrNullConverter().fromJson(
     json['createdAt'] as num?,
   ),
+  createdByUserId: json['createdByUserId'] as String?,
+  createdByUser: json['createdByUser'] == null
+      ? null
+      : User.fromJson(json['createdByUser'] as Map<String, dynamic>),
   operationId: json['operationId'] as String?,
   operation: json['operation'] == null
       ? null
@@ -1980,6 +1984,8 @@ Map<String, dynamic> _$CaclEntityToJson(
   'startedAt': const TimestampOrNullConverter().toJson(instance.startedAt),
   'finishedAt': const TimestampOrNullConverter().toJson(instance.finishedAt),
   'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+  'createdByUserId': instance.createdByUserId,
+  'createdByUser': instance.createdByUser?.toJson(),
   'operationId': instance.operationId,
   'operation': instance.operation?.toJson(),
   'localDateStart': const TimestampOrNullConverter().toJson(
