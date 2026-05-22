@@ -2,6 +2,7 @@
 
 ## 3.8.20
 
+- Added `createdByUserId` field `String` to `CaclEntity` to expose the id of the user who created the cacl form.
 - Added `createdByUser` field `User` to `CaclEntity` to expose the user who created the cacl form.
 
 ## 3.8.19
