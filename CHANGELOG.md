@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.20
+
+- Added `createdByUser` field `User` to `CaclEntity` to expose the user who created the cacl form.
+
 ## 3.8.19
 
 - Added new value `executedAt` in `ManifestInput` and `Manifest` models
