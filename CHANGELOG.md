@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.9.0
+
+- Added `ZigbeeDataType` enum (`BOOLEAN`, `NUMBER`, `STRING`, `ENUM`) mirroring `connectivity/constants/zigbee_data_type.py`.
+- Added `ZigbeeParameter` (Freezed) and `ZigbeeParameterInput` (@unfreezed) models with fields: `id`, `name`, `dataType`, `widget`, `extra`.
+- Added `zigbeeParameters` field (`List<ZigbeeParameter>` / `List<ZigbeeParameterInput>`) to both `Model` and `ModelInput`.
+- Added `widget` field (`List<RenderWidget>`) to `ModelInput` with `@JsonKey(name: 'widgetRender')`.
+
 ## 3.8.20
 
 - Added `createdByUserId` field `String` to `CaclEntity` to expose the id of the user who created the cacl form.
