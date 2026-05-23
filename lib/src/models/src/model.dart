@@ -54,6 +54,9 @@ abstract class Model with _$Model {
 
     /// Indicates the rendering widget, useful to render visually the kind of device
     @JsonKey(unknownEnumValue: RenderWidget.unknown) @Default([]) List<RenderWidget> widget,
+
+    /// [zigbeeParameters] list of Zigbee parameters defined for this model.
+    @Default([]) List<ZigbeeParameter> zigbeeParameters,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
@@ -101,6 +104,12 @@ abstract class ModelInput with _$ModelInput {
 
     /// [peripheralParserSpec] is the parser specification for the peripheral device.
     Map<String, dynamic>? peripheralParserSpec,
+
+    /// [widget] is the list of render widgets for this model.
+    @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) @Default([]) List<RenderWidget> widget,
+
+    /// [zigbeeParameters] list of Zigbee parameters defined for this model.
+    @Default([]) List<ZigbeeParameterInput> zigbeeParameters,
   }) = _ModelInput;
 
   factory ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);
