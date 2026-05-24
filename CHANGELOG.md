@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.9.1
+
+- Added `zigbeeCompatible` field (`bool`, default `false`) to `Model` and `ModelInput` to indicate Zigbee capability (only meaningful for REALTIME protocols).
+- Added `zigbeeZoneId` field (`String`, default `''`) to `Device` for auto-generated Zigbee zone ID (10 chars).
+- Added `zigbeeToken` field (`String`, default `''`) to `Device` for auto-generated Zigbee token (72 chars).
+
 ## 3.9.0
 
 - Added `ZigbeeDataType` enum (`BOOLEAN`, `NUMBER`, `STRING`, `ENUM`) mirroring `connectivity/constants/zigbee_data_type.py`.

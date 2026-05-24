@@ -748,6 +748,8 @@ _Device _$DeviceFromJson(Map<String, dynamic> json) => _Device(
       .toList(),
   localIpAddress: json['localIpAddress'] as String?,
   hasWorldwideCoverage: json['hasWorldwideCoverage'] as bool?,
+  zigbeeZoneId: json['zigbeeZoneId'] as String? ?? '',
+  zigbeeToken: json['zigbeeToken'] as String? ?? '',
 );
 
 Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
@@ -781,6 +783,8 @@ Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
   'peripherals': instance.peripherals?.map((e) => e.toJson()).toList(),
   'localIpAddress': instance.localIpAddress,
   'hasWorldwideCoverage': instance.hasWorldwideCoverage,
+  'zigbeeZoneId': instance.zigbeeZoneId,
+  'zigbeeToken': instance.zigbeeToken,
 };
 
 _DeviceInput _$DeviceInputFromJson(Map<String, dynamic> json) => _DeviceInput(
