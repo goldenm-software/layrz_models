@@ -119,6 +119,7 @@ const _$RenderWidgetEnumMap = {
   RenderWidget.energyMeter: 'ENERGY_METER',
   RenderWidget.voltage: 'VOLTAGE',
   RenderWidget.current: 'CURRENT',
+  RenderWidget.gasValue: 'GAS_VALUE',
   RenderWidget.unknown: 'UNKNOWN',
 };
 

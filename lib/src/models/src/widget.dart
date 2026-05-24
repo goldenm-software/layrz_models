@@ -118,6 +118,10 @@ enum RenderWidget {
   @JsonValue('CURRENT')
   current,
 
+  /// Renders a Gas detection value display
+  @JsonValue('GAS_VALUE')
+  gasValue,
+
   /// Unknown render widget
   @JsonValue('UNKNOWN')
   unknown,

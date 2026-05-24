@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.9.2
+
+- Added `gasValue` (`GAS_VALUE`) to `RenderWidget` enum for gas detection value display.
+
 ## 3.9.1
 
 - Added `zigbeeCompatible` field (`bool`, default `false`) to `Model` and `ModelInput` to indicate Zigbee capability (only meaningful for REALTIME protocols).
