@@ -86,6 +86,12 @@ abstract class Device with _$Device {
 
     /// [hasWorldwideCoverage] represents if the device has worldwide coverag For the BHS use case, this field is used to identify if the device has GPS insurance.
     bool? hasWorldwideCoverage,
+
+    /// Auto-generated Zigbee zone ID (10 chars). Empty for non-Zigbee devices.
+    @Default('') String zigbeeZoneId,
+
+    /// Auto-generated Zigbee token (72 chars). Empty for non-Zigbee devices.
+    @Default('') String zigbeeToken,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);

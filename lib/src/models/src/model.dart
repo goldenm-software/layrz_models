@@ -55,6 +55,9 @@ abstract class Model with _$Model {
     /// Indicates the rendering widget, useful to render visually the kind of device
     @JsonKey(unknownEnumValue: RenderWidget.unknown) @Default([]) List<RenderWidget> widget,
 
+    /// Whether the model is Zigbee-capable. Only meaningful for REALTIME protocols.
+    @Default(false) bool zigbeeCompatible,
+
     /// [zigbeeParameters] list of Zigbee parameters defined for this model.
     @Default([]) List<ZigbeeParameter> zigbeeParameters,
   }) = _Model;
@@ -107,6 +110,9 @@ abstract class ModelInput with _$ModelInput {
 
     /// [widget] is the list of render widgets for this model.
     @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) @Default([]) List<RenderWidget> widget,
+
+    /// Whether the model is Zigbee-capable. Only meaningful for REALTIME protocols.
+    @Default(false) bool zigbeeCompatible,
 
     /// [zigbeeParameters] list of Zigbee parameters defined for this model.
     @Default([]) List<ZigbeeParameterInput> zigbeeParameters,

@@ -53,6 +53,7 @@ _Model _$ModelFromJson(Map<String, dynamic> json) => _Model(
           )
           .toList() ??
       const [],
+  zigbeeCompatible: json['zigbeeCompatible'] as bool? ?? false,
   zigbeeParameters:
       (json['zigbeeParameters'] as List<dynamic>?)
           ?.map((e) => ZigbeeParameter.fromJson(e as Map<String, dynamic>))
@@ -79,6 +80,7 @@ Map<String, dynamic> _$ModelToJson(_Model instance) => <String, dynamic>{
   'firmwares': instance.firmwares.map((e) => e.toJson()).toList(),
   'icon': const IconOrNullConverter().toJson(instance.icon),
   'widget': instance.widget.map((e) => e.toJson()).toList(),
+  'zigbeeCompatible': instance.zigbeeCompatible,
   'zigbeeParameters': instance.zigbeeParameters.map((e) => e.toJson()).toList(),
 };
 
@@ -117,6 +119,7 @@ const _$RenderWidgetEnumMap = {
   RenderWidget.energyMeter: 'ENERGY_METER',
   RenderWidget.voltage: 'VOLTAGE',
   RenderWidget.current: 'CURRENT',
+  RenderWidget.gasValue: 'GAS_VALUE',
   RenderWidget.unknown: 'UNKNOWN',
 };
 
@@ -160,6 +163,7 @@ _ModelInput _$ModelInputFromJson(Map<String, dynamic> json) => _ModelInput(
           )
           .toList() ??
       const [],
+  zigbeeCompatible: json['zigbeeCompatible'] as bool? ?? false,
   zigbeeParameters:
       (json['zigbeeParameters'] as List<dynamic>?)
           ?.map((e) => ZigbeeParameterInput.fromJson(e as Map<String, dynamic>))
@@ -185,6 +189,7 @@ Map<String, dynamic> _$ModelInputToJson(
   'peripheralIdentifier': instance.peripheralIdentifier,
   'peripheralParserSpec': instance.peripheralParserSpec,
   'widgetRender': instance.widget.map((e) => e.toJson()).toList(),
+  'zigbeeCompatible': instance.zigbeeCompatible,
   'zigbeeParameters': instance.zigbeeParameters.map((e) => e.toJson()).toList(),
 };
 
