@@ -1,0 +1,9 @@
+library;
+
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_models/layrz_models.dart';
+
+part 'zigbee.freezed.dart';
+part 'zigbee.g.dart';
+
+part 'src/zigbee_device.dart';

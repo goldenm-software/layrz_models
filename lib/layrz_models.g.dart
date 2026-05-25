@@ -746,6 +746,9 @@ _Device _$DeviceFromJson(Map<String, dynamic> json) => _Device(
   peripherals: (json['peripherals'] as List<dynamic>?)
       ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
       .toList(),
+  zigbeeDevices: (json['zigbeeDevices'] as List<dynamic>?)
+      ?.map((e) => ZigbeeDevice.fromJson(e as Map<String, dynamic>))
+      .toList(),
   localIpAddress: json['localIpAddress'] as String?,
   hasWorldwideCoverage: json['hasWorldwideCoverage'] as bool?,
   zigbeeZoneId: json['zigbeeZoneId'] as String? ?? '',
@@ -781,6 +784,7 @@ Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
     const DurationConverter().toJson,
   ),
   'peripherals': instance.peripherals?.map((e) => e.toJson()).toList(),
+  'zigbeeDevices': instance.zigbeeDevices?.map((e) => e.toJson()).toList(),
   'localIpAddress': instance.localIpAddress,
   'hasWorldwideCoverage': instance.hasWorldwideCoverage,
   'zigbeeZoneId': instance.zigbeeZoneId,
