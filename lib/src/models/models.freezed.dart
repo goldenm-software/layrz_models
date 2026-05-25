@@ -1644,9 +1644,11 @@ mixin _$ZigbeeParameter {
 
 /// [id] unique identifier
  String? get id;/// [name] human-readable parameter name
- String get name;/// [dataType] data type of the parameter
+ String get name;/// [alias] optional alias for the parameter
+ String? get alias;/// [dataType] data type of the parameter
 @JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType get dataType;/// [widget] rendering widget
-@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget get widget;/// [extra] optional extra configuration (e.g. enum options, range bounds)
+@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget get widget;/// [access] access level (bit flags: read=1, write=2, default=3)
+ int get access;/// [extra] optional extra configuration (e.g. enum options, range bounds)
  Map<String, dynamic>? get extra;
 /// Create a copy of ZigbeeParameter
 /// with the given fields replaced by the non-null parameter values.
@@ -1660,16 +1662,16 @@ $ZigbeeParameterCopyWith<ZigbeeParameter> get copyWith => _$ZigbeeParameterCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZigbeeParameter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.widget, widget) || other.widget == widget)&&const DeepCollectionEquality().equals(other.extra, extra));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZigbeeParameter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.alias, alias) || other.alias == alias)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.widget, widget) || other.widget == widget)&&(identical(other.access, access) || other.access == access)&&const DeepCollectionEquality().equals(other.extra, extra));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,dataType,widget,const DeepCollectionEquality().hash(extra));
+int get hashCode => Object.hash(runtimeType,id,name,alias,dataType,widget,access,const DeepCollectionEquality().hash(extra));
 
 @override
 String toString() {
-  return 'ZigbeeParameter(id: $id, name: $name, dataType: $dataType, widget: $widget, extra: $extra)';
+  return 'ZigbeeParameter(id: $id, name: $name, alias: $alias, dataType: $dataType, widget: $widget, access: $access, extra: $extra)';
 }
 
 
@@ -1680,7 +1682,7 @@ abstract mixin class $ZigbeeParameterCopyWith<$Res>  {
   factory $ZigbeeParameterCopyWith(ZigbeeParameter value, $Res Function(ZigbeeParameter) _then) = _$ZigbeeParameterCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType dataType,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, Map<String, dynamic>? extra
+ String? id, String name, String? alias,@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType dataType,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, int access, Map<String, dynamic>? extra
 });
 
 
@@ -1697,13 +1699,15 @@ class _$ZigbeeParameterCopyWithImpl<$Res>
 
 /// Create a copy of ZigbeeParameter
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? dataType = null,Object? widget = null,Object? extra = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? alias = freezed,Object? dataType = null,Object? widget = null,Object? access = null,Object? extra = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
+as String,alias: freezed == alias ? _self.alias : alias // ignore: cast_nullable_to_non_nullable
+as String?,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
 as ZigbeeDataType,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
-as RenderWidget,extra: freezed == extra ? _self.extra : extra // ignore: cast_nullable_to_non_nullable
+as RenderWidget,access: null == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as int,extra: freezed == extra ? _self.extra : extra // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -1789,10 +1793,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  Map<String, dynamic>? extra)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String? alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  int access,  Map<String, dynamic>? extra)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ZigbeeParameter() when $default != null:
-return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);case _:
+return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_that.access,_that.extra);case _:
   return orElse();
 
 }
@@ -1810,10 +1814,10 @@ return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);cas
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  Map<String, dynamic>? extra)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String? alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  int access,  Map<String, dynamic>? extra)  $default,) {final _that = this;
 switch (_that) {
 case _ZigbeeParameter():
-return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);case _:
+return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_that.access,_that.extra);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1830,10 +1834,10 @@ return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);cas
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  Map<String, dynamic>? extra)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String? alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  int access,  Map<String, dynamic>? extra)?  $default,) {final _that = this;
 switch (_that) {
 case _ZigbeeParameter() when $default != null:
-return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);case _:
+return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_that.access,_that.extra);case _:
   return null;
 
 }
@@ -1845,17 +1849,21 @@ return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);cas
 @JsonSerializable()
 
 class _ZigbeeParameter implements ZigbeeParameter {
-  const _ZigbeeParameter({this.id, required this.name, @JsonKey(unknownEnumValue: ZigbeeDataType.string) required this.dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown) required this.widget, final  Map<String, dynamic>? extra}): _extra = extra;
+  const _ZigbeeParameter({this.id, required this.name, this.alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string) required this.dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown) required this.widget, this.access = 3, final  Map<String, dynamic>? extra}): _extra = extra;
   factory _ZigbeeParameter.fromJson(Map<String, dynamic> json) => _$ZigbeeParameterFromJson(json);
 
 /// [id] unique identifier
 @override final  String? id;
 /// [name] human-readable parameter name
 @override final  String name;
+/// [alias] optional alias for the parameter
+@override final  String? alias;
 /// [dataType] data type of the parameter
 @override@JsonKey(unknownEnumValue: ZigbeeDataType.string) final  ZigbeeDataType dataType;
 /// [widget] rendering widget
 @override@JsonKey(unknownEnumValue: RenderWidget.unknown) final  RenderWidget widget;
+/// [access] access level (bit flags: read=1, write=2, default=3)
+@override@JsonKey() final  int access;
 /// [extra] optional extra configuration (e.g. enum options, range bounds)
  final  Map<String, dynamic>? _extra;
 /// [extra] optional extra configuration (e.g. enum options, range bounds)
@@ -1881,16 +1889,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeParameter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.widget, widget) || other.widget == widget)&&const DeepCollectionEquality().equals(other._extra, _extra));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeParameter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.alias, alias) || other.alias == alias)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.widget, widget) || other.widget == widget)&&(identical(other.access, access) || other.access == access)&&const DeepCollectionEquality().equals(other._extra, _extra));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,dataType,widget,const DeepCollectionEquality().hash(_extra));
+int get hashCode => Object.hash(runtimeType,id,name,alias,dataType,widget,access,const DeepCollectionEquality().hash(_extra));
 
 @override
 String toString() {
-  return 'ZigbeeParameter(id: $id, name: $name, dataType: $dataType, widget: $widget, extra: $extra)';
+  return 'ZigbeeParameter(id: $id, name: $name, alias: $alias, dataType: $dataType, widget: $widget, access: $access, extra: $extra)';
 }
 
 
@@ -1901,7 +1909,7 @@ abstract mixin class _$ZigbeeParameterCopyWith<$Res> implements $ZigbeeParameter
   factory _$ZigbeeParameterCopyWith(_ZigbeeParameter value, $Res Function(_ZigbeeParameter) _then) = __$ZigbeeParameterCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType dataType,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, Map<String, dynamic>? extra
+ String? id, String name, String? alias,@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType dataType,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, int access, Map<String, dynamic>? extra
 });
 
 
@@ -1918,13 +1926,15 @@ class __$ZigbeeParameterCopyWithImpl<$Res>
 
 /// Create a copy of ZigbeeParameter
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? dataType = null,Object? widget = null,Object? extra = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? alias = freezed,Object? dataType = null,Object? widget = null,Object? access = null,Object? extra = freezed,}) {
   return _then(_ZigbeeParameter(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
+as String,alias: freezed == alias ? _self.alias : alias // ignore: cast_nullable_to_non_nullable
+as String?,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
 as ZigbeeDataType,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
-as RenderWidget,extra: freezed == extra ? _self._extra : extra // ignore: cast_nullable_to_non_nullable
+as RenderWidget,access: null == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as int,extra: freezed == extra ? _self._extra : extra // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -1936,7 +1946,7 @@ as Map<String, dynamic>?,
 /// @nodoc
 mixin _$ZigbeeParameterInput {
 
- String? get id; set id(String? value); String get name; set name(String value);@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType get dataType;@JsonKey(unknownEnumValue: ZigbeeDataType.string) set dataType(ZigbeeDataType value);@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget get widget;@JsonKey(unknownEnumValue: RenderWidget.unknown) set widget(RenderWidget value); Map<String, dynamic>? get extra; set extra(Map<String, dynamic>? value);
+ String? get id; set id(String? value); String get name; set name(String value); String? get alias; set alias(String? value);@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType get dataType;@JsonKey(unknownEnumValue: ZigbeeDataType.string) set dataType(ZigbeeDataType value);@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget get widget;@JsonKey(unknownEnumValue: RenderWidget.unknown) set widget(RenderWidget value); int? get access; set access(int? value); Map<String, dynamic>? get extra; set extra(Map<String, dynamic>? value);
 /// Create a copy of ZigbeeParameterInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1951,7 +1961,7 @@ $ZigbeeParameterInputCopyWith<ZigbeeParameterInput> get copyWith => _$ZigbeePara
 
 @override
 String toString() {
-  return 'ZigbeeParameterInput(id: $id, name: $name, dataType: $dataType, widget: $widget, extra: $extra)';
+  return 'ZigbeeParameterInput(id: $id, name: $name, alias: $alias, dataType: $dataType, widget: $widget, access: $access, extra: $extra)';
 }
 
 
@@ -1962,7 +1972,7 @@ abstract mixin class $ZigbeeParameterInputCopyWith<$Res>  {
   factory $ZigbeeParameterInputCopyWith(ZigbeeParameterInput value, $Res Function(ZigbeeParameterInput) _then) = _$ZigbeeParameterInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType dataType,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, Map<String, dynamic>? extra
+ String? id, String name, String? alias,@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType dataType,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, int? access, Map<String, dynamic>? extra
 });
 
 
@@ -1979,13 +1989,15 @@ class _$ZigbeeParameterInputCopyWithImpl<$Res>
 
 /// Create a copy of ZigbeeParameterInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? dataType = null,Object? widget = null,Object? extra = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? alias = freezed,Object? dataType = null,Object? widget = null,Object? access = freezed,Object? extra = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
+as String,alias: freezed == alias ? _self.alias : alias // ignore: cast_nullable_to_non_nullable
+as String?,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
 as ZigbeeDataType,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
-as RenderWidget,extra: freezed == extra ? _self.extra : extra // ignore: cast_nullable_to_non_nullable
+as RenderWidget,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as int?,extra: freezed == extra ? _self.extra : extra // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -2071,10 +2083,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  Map<String, dynamic>? extra)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String? alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  int? access,  Map<String, dynamic>? extra)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ZigbeeParameterInput() when $default != null:
-return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);case _:
+return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_that.access,_that.extra);case _:
   return orElse();
 
 }
@@ -2092,10 +2104,10 @@ return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);cas
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  Map<String, dynamic>? extra)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String? alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  int? access,  Map<String, dynamic>? extra)  $default,) {final _that = this;
 switch (_that) {
 case _ZigbeeParameterInput():
-return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);case _:
+return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_that.access,_that.extra);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -2112,10 +2124,10 @@ return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);cas
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  Map<String, dynamic>? extra)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String? alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  int? access,  Map<String, dynamic>? extra)?  $default,) {final _that = this;
 switch (_that) {
 case _ZigbeeParameterInput() when $default != null:
-return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);case _:
+return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_that.access,_that.extra);case _:
   return null;
 
 }
@@ -2127,13 +2139,15 @@ return $default(_that.id,_that.name,_that.dataType,_that.widget,_that.extra);cas
 @JsonSerializable()
 
 class _ZigbeeParameterInput implements ZigbeeParameterInput {
-   _ZigbeeParameterInput({this.id, this.name = '', @JsonKey(unknownEnumValue: ZigbeeDataType.string) this.dataType = ZigbeeDataType.string, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget = RenderWidget.unknown, this.extra});
+   _ZigbeeParameterInput({this.id, this.name = '', this.alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string) this.dataType = ZigbeeDataType.string, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget = RenderWidget.unknown, this.access, this.extra});
   factory _ZigbeeParameterInput.fromJson(Map<String, dynamic> json) => _$ZigbeeParameterInputFromJson(json);
 
 @override  String? id;
 @override@JsonKey()  String name;
+@override  String? alias;
 @override@JsonKey(unknownEnumValue: ZigbeeDataType.string)  ZigbeeDataType dataType;
 @override@JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget;
+@override  int? access;
 @override  Map<String, dynamic>? extra;
 
 /// Create a copy of ZigbeeParameterInput
@@ -2151,7 +2165,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'ZigbeeParameterInput(id: $id, name: $name, dataType: $dataType, widget: $widget, extra: $extra)';
+  return 'ZigbeeParameterInput(id: $id, name: $name, alias: $alias, dataType: $dataType, widget: $widget, access: $access, extra: $extra)';
 }
 
 
@@ -2162,7 +2176,7 @@ abstract mixin class _$ZigbeeParameterInputCopyWith<$Res> implements $ZigbeePara
   factory _$ZigbeeParameterInputCopyWith(_ZigbeeParameterInput value, $Res Function(_ZigbeeParameterInput) _then) = __$ZigbeeParameterInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType dataType,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, Map<String, dynamic>? extra
+ String? id, String name, String? alias,@JsonKey(unknownEnumValue: ZigbeeDataType.string) ZigbeeDataType dataType,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, int? access, Map<String, dynamic>? extra
 });
 
 
@@ -2179,13 +2193,15 @@ class __$ZigbeeParameterInputCopyWithImpl<$Res>
 
 /// Create a copy of ZigbeeParameterInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? dataType = null,Object? widget = null,Object? extra = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? alias = freezed,Object? dataType = null,Object? widget = null,Object? access = freezed,Object? extra = freezed,}) {
   return _then(_ZigbeeParameterInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
+as String,alias: freezed == alias ? _self.alias : alias // ignore: cast_nullable_to_non_nullable
+as String?,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
 as ZigbeeDataType,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
-as RenderWidget,extra: freezed == extra ? _self.extra : extra // ignore: cast_nullable_to_non_nullable
+as RenderWidget,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as int?,extra: freezed == extra ? _self.extra : extra // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }

@@ -272,6 +272,7 @@ _ZigbeeParameter _$ZigbeeParameterFromJson(Map<String, dynamic> json) =>
     _ZigbeeParameter(
       id: json['id'] as String?,
       name: json['name'] as String,
+      alias: json['alias'] as String?,
       dataType: $enumDecode(
         _$ZigbeeDataTypeEnumMap,
         json['dataType'],
@@ -282,6 +283,7 @@ _ZigbeeParameter _$ZigbeeParameterFromJson(Map<String, dynamic> json) =>
         json['widget'],
         unknownValue: RenderWidget.unknown,
       ),
+      access: (json['access'] as num?)?.toInt() ?? 3,
       extra: json['extra'] as Map<String, dynamic>?,
     );
 
@@ -289,8 +291,10 @@ Map<String, dynamic> _$ZigbeeParameterToJson(_ZigbeeParameter instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'alias': instance.alias,
       'dataType': instance.dataType.toJson(),
       'widget': instance.widget.toJson(),
+      'access': instance.access,
       'extra': instance.extra,
     };
 
@@ -306,6 +310,7 @@ _ZigbeeParameterInput _$ZigbeeParameterInputFromJson(
 ) => _ZigbeeParameterInput(
   id: json['id'] as String?,
   name: json['name'] as String? ?? '',
+  alias: json['alias'] as String?,
   dataType:
       $enumDecodeNullable(
         _$ZigbeeDataTypeEnumMap,
@@ -320,6 +325,7 @@ _ZigbeeParameterInput _$ZigbeeParameterInputFromJson(
         unknownValue: RenderWidget.unknown,
       ) ??
       RenderWidget.unknown,
+  access: (json['access'] as num?)?.toInt(),
   extra: json['extra'] as Map<String, dynamic>?,
 );
 
@@ -328,7 +334,9 @@ Map<String, dynamic> _$ZigbeeParameterInputToJson(
 ) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
+  'alias': instance.alias,
   'dataType': instance.dataType.toJson(),
   'widget': instance.widget.toJson(),
+  'access': instance.access,
   'extra': instance.extra,
 };

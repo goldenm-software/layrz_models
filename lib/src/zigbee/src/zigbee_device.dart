@@ -10,6 +10,7 @@ abstract class ZigbeeDevice with _$ZigbeeDevice {
     DateTime? lastSeen,
     String? bindedDeviceId,
     required String zoneId,
+    List<ZigbeeDeviceExpose>? exposes,
   }) = _ZigbeeDevice;
 
   factory ZigbeeDevice.fromJson(Map<String, dynamic> json) => _$ZigbeeDeviceFromJson(json);
