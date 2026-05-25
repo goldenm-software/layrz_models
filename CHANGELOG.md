@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.10.0
+
+- Added `ZigbeeDevice` freezed class with fields `id`, `ieeeAddress`, `manufacturer`, `model`, `lastSeen`, `bindedDeviceId`, and `zoneId`.
+- Added `zigbeeDevices` field (`List<ZigbeeDevice>?`) to `Device` for hub-scoped Zigbee device hydration alongside existing `peripherals`.
+
 ## 3.9.2
 
 - Added `gasValue` (`GAS_VALUE`) to `RenderWidget` enum for gas detection value display.
