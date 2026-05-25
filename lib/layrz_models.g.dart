@@ -753,6 +753,9 @@ _Device _$DeviceFromJson(Map<String, dynamic> json) => _Device(
   hasWorldwideCoverage: json['hasWorldwideCoverage'] as bool?,
   zigbeeZoneId: json['zigbeeZoneId'] as String? ?? '',
   zigbeeToken: json['zigbeeToken'] as String? ?? '',
+  zigbeePermitJoinExpiresAt: json['zigbee_permit_join_expires_at'] == null
+      ? null
+      : DateTime.parse(json['zigbee_permit_join_expires_at'] as String),
 );
 
 Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
@@ -789,6 +792,8 @@ Map<String, dynamic> _$DeviceToJson(_Device instance) => <String, dynamic>{
   'hasWorldwideCoverage': instance.hasWorldwideCoverage,
   'zigbeeZoneId': instance.zigbeeZoneId,
   'zigbeeToken': instance.zigbeeToken,
+  'zigbee_permit_join_expires_at': instance.zigbeePermitJoinExpiresAt
+      ?.toIso8601String(),
 };
 
 _DeviceInput _$DeviceInputFromJson(Map<String, dynamic> json) => _DeviceInput(

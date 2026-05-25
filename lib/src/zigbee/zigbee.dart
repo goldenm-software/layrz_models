@@ -6,3 +6,4 @@ part 'zigbee.freezed.dart';
 part 'zigbee.g.dart';
 
 part 'src/zigbee_device.dart';
+part 'src/zigbee_device_expose.dart';

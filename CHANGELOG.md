@@ -1,3 +1,15 @@
+## 3.10.2
+
+- Added `ZigbeeDeviceExpose` freezed class with fields `id`, `name`, `type`, `access`, `params`, and `updatedAt`.
+- Added `exposes` field (`List<ZigbeeDeviceExpose>?`) to `ZigbeeDevice` for storing device capability exposes.
+- Added `alias` field (`String?`) to `ZigbeeParameter` and `ZigbeeParameterInput` for optional parameter aliasing.
+- Added `access` field (`int`, default `3`) to `ZigbeeParameter` for access control (bit flags: read=1, write=2).
+- Added `access` field (`int?`) to `ZigbeeParameterInput` for mutable form editing.
+
+## 3.10.1
+
+- Add `zigbeePermitJoinExpiresAt` field to Device for permit-join persistence
+
 # Changelog
 
 ## 3.10.0

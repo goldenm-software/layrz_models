@@ -95,6 +95,9 @@ abstract class Device with _$Device {
 
     /// Auto-generated Zigbee token (72 chars). Empty for non-Zigbee devices.
     @Default('') String zigbeeToken,
+
+    /// When permit-join expires on the Zigbee coordinator. Null if not active.
+    @JsonKey(name: 'zigbee_permit_join_expires_at') DateTime? zigbeePermitJoinExpiresAt,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
