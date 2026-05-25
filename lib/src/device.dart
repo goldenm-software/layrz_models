@@ -81,6 +81,9 @@ abstract class Device with _$Device {
     /// [protocol.operationMode] is [OperationMode.peripheral].
     List<Device>? peripherals,
 
+    /// [zigbeeDevices] is the list of Zigbee devices connected to this hub.
+    List<ZigbeeDevice>? zigbeeDevices,
+
     /// [localIpAddress] is the local IP address of the device, used for local communication.
     String? localIpAddress,
 
