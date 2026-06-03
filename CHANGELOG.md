@@ -1,3 +1,7 @@
+## 3.10.5
+
+- Added `widget` field (`RenderWidget?`) to `ZigbeeDeviceExpose` for specifying the UI widget type associated with an exposed property.
+
 ## 3.10.4
 
 - Updated `AtsFuelSubType.getColor()` colors to match ATS tank product reclassification:
