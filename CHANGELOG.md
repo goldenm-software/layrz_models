@@ -1,3 +1,9 @@
+## 3.10.4
+
+- Updated `AtsFuelSubType.getColor()` colors to match ATS tank product reclassification:
+  - Diesel S10 (`dieselS10A`, `dieselS10ComunB`, `dieselS10BAditivado`) changed to `#F0E1B4`.
+  - Ethanol (`ethanol`, `ethanolAditivado`) changed to `#2274D7`.
+
 ## 3.10.3
 
 - Added `tankAsset` field to `CaclEntity` model
