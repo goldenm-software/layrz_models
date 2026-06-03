@@ -8,6 +8,8 @@ abstract class ZigbeeDeviceExpose with _$ZigbeeDeviceExpose {
     required String type,
     required String access,
     Map<String, dynamic>? params,
+    @JsonKey(unknownEnumValue: RenderWidget.unknown)
+    RenderWidget? widget,
     DateTime? updatedAt,
   }) = _ZigbeeDeviceExpose;
 
