@@ -188,7 +188,7 @@ enum AtsFuelSubType {
       case AtsFuelSubType.dieselS10A:
       case AtsFuelSubType.dieselS10ComunB:
       case AtsFuelSubType.dieselS10BAditivado:
-        return const Color(0xffBEFA79);
+        return const Color(0xffF0E1B4);
       case AtsFuelSubType.gasolineComunA:
       case AtsFuelSubType.gasolineComunC:
       case AtsFuelSubType.gasolineCAditivada:
@@ -196,7 +196,7 @@ enum AtsFuelSubType {
         return const Color(0xFFF1C202);
       case AtsFuelSubType.ethanol:
       case AtsFuelSubType.ethanolAditivado:
-        return const Color(0xFFFFFFFF);
+        return const Color(0xFF2274D7);
       case AtsFuelSubType.biodieselB100:
         return const Color(0xFF016B2E);
       case AtsFuelSubType.anidro:
