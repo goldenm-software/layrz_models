@@ -1954,6 +1954,9 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
   ),
   lossPercentage: (json['lossPercentage'] as num?)?.toDouble(),
   isCombine: json['isCombine'] as bool?,
+  tankAsset: json['tankAsset'] == null
+      ? null
+      : Asset.fromJson(json['tankAsset'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$CaclEntityToJson(
@@ -1996,6 +1999,7 @@ Map<String, dynamic> _$CaclEntityToJson(
   ),
   'lossPercentage': instance.lossPercentage,
   'isCombine': instance.isCombine,
+  'tankAsset': instance.tankAsset?.toJson(),
 };
 
 const _$CaclCategoryEnumMap = {
