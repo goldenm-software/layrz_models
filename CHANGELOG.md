@@ -1,3 +1,7 @@
+## 3.10.3
+
+- Added `tankAsset` field to `CaclEntity` model
+
 ## 3.10.2
 
 - Added `ZigbeeDeviceExpose` freezed class with fields `id`, `name`, `type`, `access`, `params`, and `updatedAt`.

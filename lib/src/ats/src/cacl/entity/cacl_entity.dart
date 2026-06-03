@@ -103,6 +103,9 @@ abstract class CaclEntity with _$CaclEntity {
 
     /// [isCombine] indicates if the cacl is a combined form.
     bool? isCombine,
+
+    /// The [tankAsset] parameter is the tankAsset of the cacl entity.
+    Asset? tankAsset,
   }) = _CaclEntity;
 
   /// Creates a new [CaclEntity] instance from a JSON map.
