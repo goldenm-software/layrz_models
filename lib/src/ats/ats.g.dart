@@ -3286,3 +3286,30 @@ Map<String, dynamic> _$StockClosingTankInputToJson(
   'totalAccountingWithdrawals': instance.totalAccountingWithdrawals,
   'closingAccountingBalance': instance.closingAccountingBalance,
 };
+
+const _$AtsStreamModelEnumMap = {AtsStreamModel.exit: 'EXIT'};
+
+const _$AtsStreamExitStructureTypeEnumMap = {
+  AtsStreamExitStructureType.constant: 'constant',
+  AtsStreamExitStructureType.fromAssetName: 'fromAsset.name',
+  AtsStreamExitStructureType.fromAssetVin: 'fromAsset.vin',
+  AtsStreamExitStructureType.fromAssetPlate: 'fromAsset.plate',
+  AtsStreamExitStructureType.fromAssetCustomField: 'fromAsset.custom.field',
+  AtsStreamExitStructureType.toAssetName: 'toAsset.name',
+  AtsStreamExitStructureType.toAssetVin: 'toAsset.vin',
+  AtsStreamExitStructureType.toAssetPlate: 'toAsset.plate',
+  AtsStreamExitStructureType.toAssetCustomField: 'toAsset.custom.field',
+  AtsStreamExitStructureType.startAt: 'startAt',
+  AtsStreamExitStructureType.endAt: 'endAt',
+  AtsStreamExitStructureType.identifier: 'identifier',
+  AtsStreamExitStructureType.initialFluxometer: 'initial.fluxometer',
+  AtsStreamExitStructureType.finalFluxometer: 'final.fluxometer',
+  AtsStreamExitStructureType.totalLiters: 'total.liters',
+  AtsStreamExitStructureType.initialTankVolume: 'initial.tank.volume',
+  AtsStreamExitStructureType.finalTankVolume: 'final.tank.volume',
+  AtsStreamExitStructureType.toAssetMileage: 'toAsset.mileage',
+  AtsStreamExitStructureType.density: 'density',
+  AtsStreamExitStructureType.temperature: 'temperature',
+  AtsStreamExitStructureType.fuelType: 'fuel.type',
+  AtsStreamExitStructureType.fuelSubtype: 'fuel.subtype',
+};

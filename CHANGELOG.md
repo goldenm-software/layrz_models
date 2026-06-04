@@ -1,3 +1,8 @@
+## 3.10.7
+
+- Added `AtsStreamModel` and `AtsStreamExitStructureType` enums
+- added field `atsModel` to `OutboundService` and `OutboundServiceInput` models
+
 ## 3.10.6
 
 - Added `exposes` field (`List<ZigbeeDeviceExpose>?`) to the `Device` model, flattening Zigbee exposes across the device's bound Zigbee device(s).

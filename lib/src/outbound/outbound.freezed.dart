@@ -395,7 +395,8 @@ mixin _$OutboundService {
  List<String>? get groupsIds;/// Is the Groups (Tags) linked to the service.
  List<Tag>? get groups;/// A list of custom access permissions.
  List<Access>? get access;/// Is the Metrics object.
- OutboundMetrics? get metrics;
+ OutboundMetrics? get metrics;/// Is the ATS Stream Model, only used for ATS Stream Outbound protocol
+@JsonKey(unknownEnumValue: AtsStreamModel.exit) AtsStreamModel? get atsModel;
 /// Create a copy of OutboundService
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -408,16 +409,16 @@ $OutboundServiceCopyWith<OutboundService> get copyWith => _$OutboundServiceCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is OutboundService&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.credentials, credentials)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other.structure, structure)&&(identical(other.token, token) || other.token == token)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.groupsIds, groupsIds)&&const DeepCollectionEquality().equals(other.groups, groups)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.metrics, metrics) || other.metrics == metrics));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OutboundService&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.credentials, credentials)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other.structure, structure)&&(identical(other.token, token) || other.token == token)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.groupsIds, groupsIds)&&const DeepCollectionEquality().equals(other.groups, groups)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.metrics, metrics) || other.metrics == metrics)&&(identical(other.atsModel, atsModel) || other.atsModel == atsModel));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(credentials),protocol,protocolId,isEnabled,const DeepCollectionEquality().hash(structure),token,const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(groupsIds),const DeepCollectionEquality().hash(groups),const DeepCollectionEquality().hash(access),metrics);
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(credentials),protocol,protocolId,isEnabled,const DeepCollectionEquality().hash(structure),token,const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(groupsIds),const DeepCollectionEquality().hash(groups),const DeepCollectionEquality().hash(access),metrics,atsModel);
 
 @override
 String toString() {
-  return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access, metrics: $metrics)';
+  return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access, metrics: $metrics, atsModel: $atsModel)';
 }
 
 
@@ -428,7 +429,7 @@ abstract mixin class $OutboundServiceCopyWith<$Res>  {
   factory $OutboundServiceCopyWith(OutboundService value, $Res Function(OutboundService) _then) = _$OutboundServiceCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, Map<String, dynamic>? credentials, OutboundProtocol? protocol, String? protocolId, bool? isEnabled, List<OutboundStructure>? structure, String? token, List<String>? assetsIds, List<Asset>? assets, List<String>? groupsIds, List<Tag>? groups, List<Access>? access, OutboundMetrics? metrics
+ String id, String name, Map<String, dynamic>? credentials, OutboundProtocol? protocol, String? protocolId, bool? isEnabled, List<OutboundStructure>? structure, String? token, List<String>? assetsIds, List<Asset>? assets, List<String>? groupsIds, List<Tag>? groups, List<Access>? access, OutboundMetrics? metrics,@JsonKey(unknownEnumValue: AtsStreamModel.exit) AtsStreamModel? atsModel
 });
 
 
@@ -445,7 +446,7 @@ class _$OutboundServiceCopyWithImpl<$Res>
 
 /// Create a copy of OutboundService
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? credentials = freezed,Object? protocol = freezed,Object? protocolId = freezed,Object? isEnabled = freezed,Object? structure = freezed,Object? token = freezed,Object? assetsIds = freezed,Object? assets = freezed,Object? groupsIds = freezed,Object? groups = freezed,Object? access = freezed,Object? metrics = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? credentials = freezed,Object? protocol = freezed,Object? protocolId = freezed,Object? isEnabled = freezed,Object? structure = freezed,Object? token = freezed,Object? assetsIds = freezed,Object? assets = freezed,Object? groupsIds = freezed,Object? groups = freezed,Object? access = freezed,Object? metrics = freezed,Object? atsModel = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -461,7 +462,8 @@ as List<Asset>?,groupsIds: freezed == groupsIds ? _self.groupsIds : groupsIds //
 as List<String>?,groups: freezed == groups ? _self.groups : groups // ignore: cast_nullable_to_non_nullable
 as List<Tag>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,metrics: freezed == metrics ? _self.metrics : metrics // ignore: cast_nullable_to_non_nullable
-as OutboundMetrics?,
+as OutboundMetrics?,atsModel: freezed == atsModel ? _self.atsModel : atsModel // ignore: cast_nullable_to_non_nullable
+as AtsStreamModel?,
   ));
 }
 /// Create a copy of OutboundService
@@ -570,10 +572,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  Map<String, dynamic>? credentials,  OutboundProtocol? protocol,  String? protocolId,  bool? isEnabled,  List<OutboundStructure>? structure,  String? token,  List<String>? assetsIds,  List<Asset>? assets,  List<String>? groupsIds,  List<Tag>? groups,  List<Access>? access,  OutboundMetrics? metrics)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  Map<String, dynamic>? credentials,  OutboundProtocol? protocol,  String? protocolId,  bool? isEnabled,  List<OutboundStructure>? structure,  String? token,  List<String>? assetsIds,  List<Asset>? assets,  List<String>? groupsIds,  List<Tag>? groups,  List<Access>? access,  OutboundMetrics? metrics, @JsonKey(unknownEnumValue: AtsStreamModel.exit)  AtsStreamModel? atsModel)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OutboundService() when $default != null:
-return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.protocolId,_that.isEnabled,_that.structure,_that.token,_that.assetsIds,_that.assets,_that.groupsIds,_that.groups,_that.access,_that.metrics);case _:
+return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.protocolId,_that.isEnabled,_that.structure,_that.token,_that.assetsIds,_that.assets,_that.groupsIds,_that.groups,_that.access,_that.metrics,_that.atsModel);case _:
   return orElse();
 
 }
@@ -591,10 +593,10 @@ return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.proto
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  Map<String, dynamic>? credentials,  OutboundProtocol? protocol,  String? protocolId,  bool? isEnabled,  List<OutboundStructure>? structure,  String? token,  List<String>? assetsIds,  List<Asset>? assets,  List<String>? groupsIds,  List<Tag>? groups,  List<Access>? access,  OutboundMetrics? metrics)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  Map<String, dynamic>? credentials,  OutboundProtocol? protocol,  String? protocolId,  bool? isEnabled,  List<OutboundStructure>? structure,  String? token,  List<String>? assetsIds,  List<Asset>? assets,  List<String>? groupsIds,  List<Tag>? groups,  List<Access>? access,  OutboundMetrics? metrics, @JsonKey(unknownEnumValue: AtsStreamModel.exit)  AtsStreamModel? atsModel)  $default,) {final _that = this;
 switch (_that) {
 case _OutboundService():
-return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.protocolId,_that.isEnabled,_that.structure,_that.token,_that.assetsIds,_that.assets,_that.groupsIds,_that.groups,_that.access,_that.metrics);case _:
+return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.protocolId,_that.isEnabled,_that.structure,_that.token,_that.assetsIds,_that.assets,_that.groupsIds,_that.groups,_that.access,_that.metrics,_that.atsModel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -611,10 +613,10 @@ return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.proto
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  Map<String, dynamic>? credentials,  OutboundProtocol? protocol,  String? protocolId,  bool? isEnabled,  List<OutboundStructure>? structure,  String? token,  List<String>? assetsIds,  List<Asset>? assets,  List<String>? groupsIds,  List<Tag>? groups,  List<Access>? access,  OutboundMetrics? metrics)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  Map<String, dynamic>? credentials,  OutboundProtocol? protocol,  String? protocolId,  bool? isEnabled,  List<OutboundStructure>? structure,  String? token,  List<String>? assetsIds,  List<Asset>? assets,  List<String>? groupsIds,  List<Tag>? groups,  List<Access>? access,  OutboundMetrics? metrics, @JsonKey(unknownEnumValue: AtsStreamModel.exit)  AtsStreamModel? atsModel)?  $default,) {final _that = this;
 switch (_that) {
 case _OutboundService() when $default != null:
-return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.protocolId,_that.isEnabled,_that.structure,_that.token,_that.assetsIds,_that.assets,_that.groupsIds,_that.groups,_that.access,_that.metrics);case _:
+return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.protocolId,_that.isEnabled,_that.structure,_that.token,_that.assetsIds,_that.assets,_that.groupsIds,_that.groups,_that.access,_that.metrics,_that.atsModel);case _:
   return null;
 
 }
@@ -626,7 +628,7 @@ return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.proto
 @JsonSerializable()
 
 class _OutboundService implements OutboundService {
-  const _OutboundService({required this.id, required this.name, final  Map<String, dynamic>? credentials, this.protocol, this.protocolId, this.isEnabled, final  List<OutboundStructure>? structure, this.token, final  List<String>? assetsIds, final  List<Asset>? assets, final  List<String>? groupsIds, final  List<Tag>? groups, final  List<Access>? access, this.metrics}): _credentials = credentials,_structure = structure,_assetsIds = assetsIds,_assets = assets,_groupsIds = groupsIds,_groups = groups,_access = access;
+  const _OutboundService({required this.id, required this.name, final  Map<String, dynamic>? credentials, this.protocol, this.protocolId, this.isEnabled, final  List<OutboundStructure>? structure, this.token, final  List<String>? assetsIds, final  List<Asset>? assets, final  List<String>? groupsIds, final  List<Tag>? groups, final  List<Access>? access, this.metrics, @JsonKey(unknownEnumValue: AtsStreamModel.exit) this.atsModel}): _credentials = credentials,_structure = structure,_assetsIds = assetsIds,_assets = assets,_groupsIds = groupsIds,_groups = groups,_access = access;
   factory _OutboundService.fromJson(Map<String, dynamic> json) => _$OutboundServiceFromJson(json);
 
 /// IS the ID of the entity. This ID is unique.
@@ -720,6 +722,8 @@ class _OutboundService implements OutboundService {
 
 /// Is the Metrics object.
 @override final  OutboundMetrics? metrics;
+/// Is the ATS Stream Model, only used for ATS Stream Outbound protocol
+@override@JsonKey(unknownEnumValue: AtsStreamModel.exit) final  AtsStreamModel? atsModel;
 
 /// Create a copy of OutboundService
 /// with the given fields replaced by the non-null parameter values.
@@ -734,16 +738,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundService&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._credentials, _credentials)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other._structure, _structure)&&(identical(other.token, token) || other.token == token)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._groupsIds, _groupsIds)&&const DeepCollectionEquality().equals(other._groups, _groups)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.metrics, metrics) || other.metrics == metrics));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundService&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._credentials, _credentials)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other._structure, _structure)&&(identical(other.token, token) || other.token == token)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._groupsIds, _groupsIds)&&const DeepCollectionEquality().equals(other._groups, _groups)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.metrics, metrics) || other.metrics == metrics)&&(identical(other.atsModel, atsModel) || other.atsModel == atsModel));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_credentials),protocol,protocolId,isEnabled,const DeepCollectionEquality().hash(_structure),token,const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_groupsIds),const DeepCollectionEquality().hash(_groups),const DeepCollectionEquality().hash(_access),metrics);
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_credentials),protocol,protocolId,isEnabled,const DeepCollectionEquality().hash(_structure),token,const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_groupsIds),const DeepCollectionEquality().hash(_groups),const DeepCollectionEquality().hash(_access),metrics,atsModel);
 
 @override
 String toString() {
-  return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access, metrics: $metrics)';
+  return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access, metrics: $metrics, atsModel: $atsModel)';
 }
 
 
@@ -754,7 +758,7 @@ abstract mixin class _$OutboundServiceCopyWith<$Res> implements $OutboundService
   factory _$OutboundServiceCopyWith(_OutboundService value, $Res Function(_OutboundService) _then) = __$OutboundServiceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, Map<String, dynamic>? credentials, OutboundProtocol? protocol, String? protocolId, bool? isEnabled, List<OutboundStructure>? structure, String? token, List<String>? assetsIds, List<Asset>? assets, List<String>? groupsIds, List<Tag>? groups, List<Access>? access, OutboundMetrics? metrics
+ String id, String name, Map<String, dynamic>? credentials, OutboundProtocol? protocol, String? protocolId, bool? isEnabled, List<OutboundStructure>? structure, String? token, List<String>? assetsIds, List<Asset>? assets, List<String>? groupsIds, List<Tag>? groups, List<Access>? access, OutboundMetrics? metrics,@JsonKey(unknownEnumValue: AtsStreamModel.exit) AtsStreamModel? atsModel
 });
 
 
@@ -771,7 +775,7 @@ class __$OutboundServiceCopyWithImpl<$Res>
 
 /// Create a copy of OutboundService
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? credentials = freezed,Object? protocol = freezed,Object? protocolId = freezed,Object? isEnabled = freezed,Object? structure = freezed,Object? token = freezed,Object? assetsIds = freezed,Object? assets = freezed,Object? groupsIds = freezed,Object? groups = freezed,Object? access = freezed,Object? metrics = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? credentials = freezed,Object? protocol = freezed,Object? protocolId = freezed,Object? isEnabled = freezed,Object? structure = freezed,Object? token = freezed,Object? assetsIds = freezed,Object? assets = freezed,Object? groupsIds = freezed,Object? groups = freezed,Object? access = freezed,Object? metrics = freezed,Object? atsModel = freezed,}) {
   return _then(_OutboundService(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -787,7 +791,8 @@ as List<Asset>?,groupsIds: freezed == groupsIds ? _self._groupsIds : groupsIds /
 as List<String>?,groups: freezed == groups ? _self._groups : groups // ignore: cast_nullable_to_non_nullable
 as List<Tag>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,metrics: freezed == metrics ? _self.metrics : metrics // ignore: cast_nullable_to_non_nullable
-as OutboundMetrics?,
+as OutboundMetrics?,atsModel: freezed == atsModel ? _self.atsModel : atsModel // ignore: cast_nullable_to_non_nullable
+as AtsStreamModel?,
   ));
 }
 
@@ -1631,7 +1636,7 @@ as String,
 /// @nodoc
 mixin _$OutboundServiceInput {
 
- String? get id; set id(String? value); String get name; set name(String value); Map<String, dynamic> get credentials; set credentials(Map<String, dynamic> value); String? get protocolId; set protocolId(String? value); List<String> get assetsIds; set assetsIds(List<String> value); List<String> get groupsIds; set groupsIds(List<String> value); List<OutboundStructureInput> get structure; set structure(List<OutboundStructureInput> value); String? get token; set token(String? value);
+ String? get id; set id(String? value); String get name; set name(String value); Map<String, dynamic> get credentials; set credentials(Map<String, dynamic> value); String? get protocolId; set protocolId(String? value); List<String> get assetsIds; set assetsIds(List<String> value); List<String> get groupsIds; set groupsIds(List<String> value); List<OutboundStructureInput> get structure; set structure(List<OutboundStructureInput> value); String? get token; set token(String? value);@JsonKey(unknownEnumValue: AtsStreamModel.exit) AtsStreamModel? get atsModel;@JsonKey(unknownEnumValue: AtsStreamModel.exit) set atsModel(AtsStreamModel? value);
 /// Create a copy of OutboundServiceInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1646,7 +1651,7 @@ $OutboundServiceInputCopyWith<OutboundServiceInput> get copyWith => _$OutboundSe
 
 @override
 String toString() {
-  return 'OutboundServiceInput(id: $id, name: $name, credentials: $credentials, protocolId: $protocolId, assetsIds: $assetsIds, groupsIds: $groupsIds, structure: $structure, token: $token)';
+  return 'OutboundServiceInput(id: $id, name: $name, credentials: $credentials, protocolId: $protocolId, assetsIds: $assetsIds, groupsIds: $groupsIds, structure: $structure, token: $token, atsModel: $atsModel)';
 }
 
 
@@ -1657,7 +1662,7 @@ abstract mixin class $OutboundServiceInputCopyWith<$Res>  {
   factory $OutboundServiceInputCopyWith(OutboundServiceInput value, $Res Function(OutboundServiceInput) _then) = _$OutboundServiceInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name, Map<String, dynamic> credentials, String? protocolId, List<String> assetsIds, List<String> groupsIds, List<OutboundStructureInput> structure, String? token
+ String? id, String name, Map<String, dynamic> credentials, String? protocolId, List<String> assetsIds, List<String> groupsIds, List<OutboundStructureInput> structure, String? token,@JsonKey(unknownEnumValue: AtsStreamModel.exit) AtsStreamModel? atsModel
 });
 
 
@@ -1674,7 +1679,7 @@ class _$OutboundServiceInputCopyWithImpl<$Res>
 
 /// Create a copy of OutboundServiceInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? credentials = null,Object? protocolId = freezed,Object? assetsIds = null,Object? groupsIds = null,Object? structure = null,Object? token = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? credentials = null,Object? protocolId = freezed,Object? assetsIds = null,Object? groupsIds = null,Object? structure = null,Object? token = freezed,Object? atsModel = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1684,7 +1689,8 @@ as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore:
 as List<String>,groupsIds: null == groupsIds ? _self.groupsIds : groupsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,structure: null == structure ? _self.structure : structure // ignore: cast_nullable_to_non_nullable
 as List<OutboundStructureInput>,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,atsModel: freezed == atsModel ? _self.atsModel : atsModel // ignore: cast_nullable_to_non_nullable
+as AtsStreamModel?,
   ));
 }
 
@@ -1769,10 +1775,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  Map<String, dynamic> credentials,  String? protocolId,  List<String> assetsIds,  List<String> groupsIds,  List<OutboundStructureInput> structure,  String? token)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  Map<String, dynamic> credentials,  String? protocolId,  List<String> assetsIds,  List<String> groupsIds,  List<OutboundStructureInput> structure,  String? token, @JsonKey(unknownEnumValue: AtsStreamModel.exit)  AtsStreamModel? atsModel)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OutboundServiceInput() when $default != null:
-return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.assetsIds,_that.groupsIds,_that.structure,_that.token);case _:
+return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.assetsIds,_that.groupsIds,_that.structure,_that.token,_that.atsModel);case _:
   return orElse();
 
 }
@@ -1790,10 +1796,10 @@ return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.ass
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  Map<String, dynamic> credentials,  String? protocolId,  List<String> assetsIds,  List<String> groupsIds,  List<OutboundStructureInput> structure,  String? token)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  Map<String, dynamic> credentials,  String? protocolId,  List<String> assetsIds,  List<String> groupsIds,  List<OutboundStructureInput> structure,  String? token, @JsonKey(unknownEnumValue: AtsStreamModel.exit)  AtsStreamModel? atsModel)  $default,) {final _that = this;
 switch (_that) {
 case _OutboundServiceInput():
-return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.assetsIds,_that.groupsIds,_that.structure,_that.token);case _:
+return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.assetsIds,_that.groupsIds,_that.structure,_that.token,_that.atsModel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1810,10 +1816,10 @@ return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.ass
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  Map<String, dynamic> credentials,  String? protocolId,  List<String> assetsIds,  List<String> groupsIds,  List<OutboundStructureInput> structure,  String? token)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  Map<String, dynamic> credentials,  String? protocolId,  List<String> assetsIds,  List<String> groupsIds,  List<OutboundStructureInput> structure,  String? token, @JsonKey(unknownEnumValue: AtsStreamModel.exit)  AtsStreamModel? atsModel)?  $default,) {final _that = this;
 switch (_that) {
 case _OutboundServiceInput() when $default != null:
-return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.assetsIds,_that.groupsIds,_that.structure,_that.token);case _:
+return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.assetsIds,_that.groupsIds,_that.structure,_that.token,_that.atsModel);case _:
   return null;
 
 }
@@ -1825,7 +1831,7 @@ return $default(_that.id,_that.name,_that.credentials,_that.protocolId,_that.ass
 @JsonSerializable()
 
 class _OutboundServiceInput extends OutboundServiceInput {
-   _OutboundServiceInput({this.id, this.name = '', this.credentials = const {}, this.protocolId, this.assetsIds = const [], this.groupsIds = const [], this.structure = const [], this.token}): super._();
+   _OutboundServiceInput({this.id, this.name = '', this.credentials = const {}, this.protocolId, this.assetsIds = const [], this.groupsIds = const [], this.structure = const [], this.token, @JsonKey(unknownEnumValue: AtsStreamModel.exit) this.atsModel}): super._();
   factory _OutboundServiceInput.fromJson(Map<String, dynamic> json) => _$OutboundServiceInputFromJson(json);
 
 @override  String? id;
@@ -1836,6 +1842,7 @@ class _OutboundServiceInput extends OutboundServiceInput {
 @override@JsonKey()  List<String> groupsIds;
 @override@JsonKey()  List<OutboundStructureInput> structure;
 @override  String? token;
+@override@JsonKey(unknownEnumValue: AtsStreamModel.exit)  AtsStreamModel? atsModel;
 
 /// Create a copy of OutboundServiceInput
 /// with the given fields replaced by the non-null parameter values.
@@ -1852,7 +1859,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'OutboundServiceInput(id: $id, name: $name, credentials: $credentials, protocolId: $protocolId, assetsIds: $assetsIds, groupsIds: $groupsIds, structure: $structure, token: $token)';
+  return 'OutboundServiceInput(id: $id, name: $name, credentials: $credentials, protocolId: $protocolId, assetsIds: $assetsIds, groupsIds: $groupsIds, structure: $structure, token: $token, atsModel: $atsModel)';
 }
 
 
@@ -1863,7 +1870,7 @@ abstract mixin class _$OutboundServiceInputCopyWith<$Res> implements $OutboundSe
   factory _$OutboundServiceInputCopyWith(_OutboundServiceInput value, $Res Function(_OutboundServiceInput) _then) = __$OutboundServiceInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name, Map<String, dynamic> credentials, String? protocolId, List<String> assetsIds, List<String> groupsIds, List<OutboundStructureInput> structure, String? token
+ String? id, String name, Map<String, dynamic> credentials, String? protocolId, List<String> assetsIds, List<String> groupsIds, List<OutboundStructureInput> structure, String? token,@JsonKey(unknownEnumValue: AtsStreamModel.exit) AtsStreamModel? atsModel
 });
 
 
@@ -1880,7 +1887,7 @@ class __$OutboundServiceInputCopyWithImpl<$Res>
 
 /// Create a copy of OutboundServiceInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? credentials = null,Object? protocolId = freezed,Object? assetsIds = null,Object? groupsIds = null,Object? structure = null,Object? token = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? credentials = null,Object? protocolId = freezed,Object? assetsIds = null,Object? groupsIds = null,Object? structure = null,Object? token = freezed,Object? atsModel = freezed,}) {
   return _then(_OutboundServiceInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1890,7 +1897,8 @@ as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore:
 as List<String>,groupsIds: null == groupsIds ? _self.groupsIds : groupsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,structure: null == structure ? _self.structure : structure // ignore: cast_nullable_to_non_nullable
 as List<OutboundStructureInput>,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,atsModel: freezed == atsModel ? _self.atsModel : atsModel // ignore: cast_nullable_to_non_nullable
+as AtsStreamModel?,
   ));
 }
 
