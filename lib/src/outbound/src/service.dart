@@ -44,6 +44,9 @@ abstract class OutboundService with _$OutboundService {
 
     /// Is the Metrics object.
     OutboundMetrics? metrics,
+
+    /// Is the ATS Stream Model, only used for ATS Stream Outbound protocol
+    @JsonKey(unknownEnumValue: AtsStreamModel.exit) AtsStreamModel? atsModel,
   }) = _OutboundService;
 
   /// From json

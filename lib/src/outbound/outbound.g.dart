@@ -80,6 +80,11 @@ _OutboundService _$OutboundServiceFromJson(Map<String, dynamic> json) =>
       metrics: json['metrics'] == null
           ? null
           : OutboundMetrics.fromJson(json['metrics'] as Map<String, dynamic>),
+      atsModel: $enumDecodeNullable(
+        _$AtsStreamModelEnumMap,
+        json['atsModel'],
+        unknownValue: AtsStreamModel.exit,
+      ),
     );
 
 Map<String, dynamic> _$OutboundServiceToJson(_OutboundService instance) =>
@@ -98,7 +103,10 @@ Map<String, dynamic> _$OutboundServiceToJson(_OutboundService instance) =>
       'groups': instance.groups?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'metrics': instance.metrics?.toJson(),
+      'atsModel': instance.atsModel?.toJson(),
     };
+
+const _$AtsStreamModelEnumMap = {AtsStreamModel.exit: 'EXIT'};
 
 _OutboundStructure _$OutboundStructureFromJson(Map<String, dynamic> json) =>
     _OutboundStructure(
@@ -169,6 +177,11 @@ _OutboundServiceInput _$OutboundServiceInputFromJson(
           .toList() ??
       const [],
   token: json['token'] as String?,
+  atsModel: $enumDecodeNullable(
+    _$AtsStreamModelEnumMap,
+    json['atsModel'],
+    unknownValue: AtsStreamModel.exit,
+  ),
 );
 
 Map<String, dynamic> _$OutboundServiceInputToJson(
@@ -182,6 +195,7 @@ Map<String, dynamic> _$OutboundServiceInputToJson(
   'groupsIds': instance.groupsIds,
   'structure': instance.structure.map((e) => e.toJson()).toList(),
   'token': instance.token,
+  'atsModel': instance.atsModel?.toJson(),
 };
 
 const _$OutboundStructureTypeEnumMap = {

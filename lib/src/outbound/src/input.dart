@@ -25,6 +25,7 @@ abstract class OutboundServiceInput with _$OutboundServiceInput {
     @Default([]) List<String> groupsIds,
     @Default([]) List<OutboundStructureInput> structure,
     String? token,
+    @JsonKey(unknownEnumValue: AtsStreamModel.exit) AtsStreamModel? atsModel,
   }) = _OutboundServiceInput;
 
   factory OutboundServiceInput.fromJson(Map<String, dynamic> json) => _$OutboundServiceInputFromJson(json);
