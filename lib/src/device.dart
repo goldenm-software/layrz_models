@@ -84,6 +84,10 @@ abstract class Device with _$Device {
     /// [zigbeeDevices] is the list of Zigbee devices connected to this hub.
     List<ZigbeeDevice>? zigbeeDevices,
 
+    /// [exposes] is the list of Zigbee exposes of this device, flattened across its bound
+    /// Zigbee device(s). Populated for leaf Zigbee devices; empty/null for non-Zigbee devices.
+    List<ZigbeeDeviceExpose>? exposes,
+
     /// [localIpAddress] is the local IP address of the device, used for local communication.
     String? localIpAddress,
 
