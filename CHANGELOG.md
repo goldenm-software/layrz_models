@@ -1,3 +1,7 @@
+## 3.10.6
+
+- Added `exposes` field (`List<ZigbeeDeviceExpose>?`) to the `Device` model, flattening Zigbee exposes across the device's bound Zigbee device(s).
+
 ## 3.10.5
 
 - Added `widget` field (`RenderWidget?`) to `ZigbeeDeviceExpose` for specifying the UI widget type associated with an exposed property.
