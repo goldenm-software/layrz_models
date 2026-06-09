@@ -91,6 +91,8 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.atsStorageReceptionAccess: 'ATS_STORAGE_RECEPTION_ACCESS',
   ReferenceCategory.atsInvoiceSwap: 'ATS_INVOICE_SWAP',
   ReferenceCategory.atsShowOnlyLastExit: 'ATS_SHOW_ONLY_LAST_EXIT',
+  ReferenceCategory.atsSupervisorioAllowCloseRaftOperation:
+      'ATS_SUPERVISORIO_ALLOW_CLOSE_RAFT_OPERATION',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',

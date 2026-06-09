@@ -295,6 +295,12 @@ enum ReferenceCategory {
   @JsonValue('ATS_SHOW_ONLY_LAST_EXIT')
   atsShowOnlyLastExit,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to close raft operation in supervisorio module
+  /// Layrz API Reference: ATS_SUPERVISORIO_ALLOW_CLOSE_RAFT_OPERATION
+  @JsonValue('ATS_SUPERVISORIO_ALLOW_CLOSE_RAFT_OPERATION')
+  atsSupervisorioAllowCloseRaftOperation,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR
