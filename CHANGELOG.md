@@ -1,3 +1,7 @@
+## 3.10.8
+
+- Added `ATS_SUPERVISORIO_ALLOW_CLOSE_RAFT_OPERATION` value in `ReferenceCategory` enum
+
 ## 3.10.7
 
 - Added `AtsStreamModel` and `AtsStreamExitStructureType` enums
