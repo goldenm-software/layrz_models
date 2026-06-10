@@ -1957,6 +1957,7 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
   tankAsset: json['tankAsset'] == null
       ? null
       : Asset.fromJson(json['tankAsset'] as Map<String, dynamic>),
+  signedAt: const TimestampOrNullConverter().fromJson(json['signedAt'] as num?),
 );
 
 Map<String, dynamic> _$CaclEntityToJson(
@@ -2000,6 +2001,7 @@ Map<String, dynamic> _$CaclEntityToJson(
   'lossPercentage': instance.lossPercentage,
   'isCombine': instance.isCombine,
   'tankAsset': instance.tankAsset?.toJson(),
+  'signedAt': const TimestampOrNullConverter().toJson(instance.signedAt),
 };
 
 const _$CaclCategoryEnumMap = {

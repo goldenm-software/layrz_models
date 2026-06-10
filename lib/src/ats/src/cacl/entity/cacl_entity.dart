@@ -106,6 +106,9 @@ abstract class CaclEntity with _$CaclEntity {
 
     /// The [tankAsset] parameter is the tankAsset of the cacl entity.
     Asset? tankAsset,
+
+    /// The [signedAt] parameter is the signedAt of the cacl entity.
+    @TimestampOrNullConverter() DateTime? signedAt,
   }) = _CaclEntity;
 
   /// Creates a new [CaclEntity] instance from a JSON map.
