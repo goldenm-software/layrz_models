@@ -4092,4 +4092,587 @@ as List<String>?,
 
 }
 
+
+/// @nodoc
+mixin _$MessageOfTheDay {
+
+/// [id] ID of the Message of the Day entity. This ID is unique.
+ String? get id;/// [name] Name of the Message of the Day.
+ String? get name;/// [content] Content of the Message of the Day.
+ String? get content;/// [title] Title of the Message of the Day.
+ String? get title;/// [color] Color of the Message of the Day.
+@ColorOrNullConverter() Color? get color;/// [isActive] Whether the Message of the Day is active.
+ bool? get isActive;/// [expiresAt] Date of expiration of the Message of the Day.
+@TimestampOrNullConverter() DateTime? get expiresAt;
+/// Create a copy of MessageOfTheDay
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$MessageOfTheDayCopyWith<MessageOfTheDay> get copyWith => _$MessageOfTheDayCopyWithImpl<MessageOfTheDay>(this as MessageOfTheDay, _$identity);
+
+  /// Serializes this MessageOfTheDay to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MessageOfTheDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.content, content) || other.content == content)&&(identical(other.title, title) || other.title == title)&&(identical(other.color, color) || other.color == color)&&(identical(other.isActive, isActive) || other.isActive == isActive)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,content,title,color,isActive,expiresAt);
+
+@override
+String toString() {
+  return 'MessageOfTheDay(id: $id, name: $name, content: $content, title: $title, color: $color, isActive: $isActive, expiresAt: $expiresAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $MessageOfTheDayCopyWith<$Res>  {
+  factory $MessageOfTheDayCopyWith(MessageOfTheDay value, $Res Function(MessageOfTheDay) _then) = _$MessageOfTheDayCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? name, String? content, String? title,@ColorOrNullConverter() Color? color, bool? isActive,@TimestampOrNullConverter() DateTime? expiresAt
+});
+
+
+
+
+}
+/// @nodoc
+class _$MessageOfTheDayCopyWithImpl<$Res>
+    implements $MessageOfTheDayCopyWith<$Res> {
+  _$MessageOfTheDayCopyWithImpl(this._self, this._then);
+
+  final MessageOfTheDay _self;
+  final $Res Function(MessageOfTheDay) _then;
+
+/// Create a copy of MessageOfTheDay
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? content = freezed,Object? title = freezed,Object? color = freezed,Object? isActive = freezed,Object? expiresAt = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as Color?,isActive: freezed == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
+as bool?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [MessageOfTheDay].
+extension MessageOfTheDayPatterns on MessageOfTheDay {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MessageOfTheDay value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _MessageOfTheDay() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MessageOfTheDay value)  $default,){
+final _that = this;
+switch (_that) {
+case _MessageOfTheDay():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MessageOfTheDay value)?  $default,){
+final _that = this;
+switch (_that) {
+case _MessageOfTheDay() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _MessageOfTheDay() when $default != null:
+return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)  $default,) {final _that = this;
+switch (_that) {
+case _MessageOfTheDay():
+return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,) {final _that = this;
+switch (_that) {
+case _MessageOfTheDay() when $default != null:
+return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _MessageOfTheDay implements MessageOfTheDay {
+  const _MessageOfTheDay({this.id, this.name, this.content, this.title, @ColorOrNullConverter() this.color, this.isActive, @TimestampOrNullConverter() this.expiresAt});
+  factory _MessageOfTheDay.fromJson(Map<String, dynamic> json) => _$MessageOfTheDayFromJson(json);
+
+/// [id] ID of the Message of the Day entity. This ID is unique.
+@override final  String? id;
+/// [name] Name of the Message of the Day.
+@override final  String? name;
+/// [content] Content of the Message of the Day.
+@override final  String? content;
+/// [title] Title of the Message of the Day.
+@override final  String? title;
+/// [color] Color of the Message of the Day.
+@override@ColorOrNullConverter() final  Color? color;
+/// [isActive] Whether the Message of the Day is active.
+@override final  bool? isActive;
+/// [expiresAt] Date of expiration of the Message of the Day.
+@override@TimestampOrNullConverter() final  DateTime? expiresAt;
+
+/// Create a copy of MessageOfTheDay
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$MessageOfTheDayCopyWith<_MessageOfTheDay> get copyWith => __$MessageOfTheDayCopyWithImpl<_MessageOfTheDay>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$MessageOfTheDayToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MessageOfTheDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.content, content) || other.content == content)&&(identical(other.title, title) || other.title == title)&&(identical(other.color, color) || other.color == color)&&(identical(other.isActive, isActive) || other.isActive == isActive)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,content,title,color,isActive,expiresAt);
+
+@override
+String toString() {
+  return 'MessageOfTheDay(id: $id, name: $name, content: $content, title: $title, color: $color, isActive: $isActive, expiresAt: $expiresAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$MessageOfTheDayCopyWith<$Res> implements $MessageOfTheDayCopyWith<$Res> {
+  factory _$MessageOfTheDayCopyWith(_MessageOfTheDay value, $Res Function(_MessageOfTheDay) _then) = __$MessageOfTheDayCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? name, String? content, String? title,@ColorOrNullConverter() Color? color, bool? isActive,@TimestampOrNullConverter() DateTime? expiresAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$MessageOfTheDayCopyWithImpl<$Res>
+    implements _$MessageOfTheDayCopyWith<$Res> {
+  __$MessageOfTheDayCopyWithImpl(this._self, this._then);
+
+  final _MessageOfTheDay _self;
+  final $Res Function(_MessageOfTheDay) _then;
+
+/// Create a copy of MessageOfTheDay
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? content = freezed,Object? title = freezed,Object? color = freezed,Object? isActive = freezed,Object? expiresAt = freezed,}) {
+  return _then(_MessageOfTheDay(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as Color?,isActive: freezed == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
+as bool?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$MessageOfTheDayInput {
+
+/// [id] ID of the Message of the Day entity. This ID is unique.
+ String? get id;/// [id] ID of the Message of the Day entity. This ID is unique.
+ set id(String? value);/// [name] Name of the Message of the Day.
+ String? get name;/// [name] Name of the Message of the Day.
+ set name(String? value);/// [content] Content of the Message of the Day.
+ String? get content;/// [content] Content of the Message of the Day.
+ set content(String? value);/// [title] Title of the Message of the Day.
+ String? get title;/// [title] Title of the Message of the Day.
+ set title(String? value);/// [color] Color of the Message of the Day.
+@ColorOrNullConverter() Color? get color;/// [color] Color of the Message of the Day.
+@ColorOrNullConverter() set color(Color? value);/// [isActive] Whether the Message of the Day is active.
+ bool get isActive;/// [isActive] Whether the Message of the Day is active.
+ set isActive(bool value);/// [expiresAt] Date of expiration of the Message of the Day.
+@TimestampOrNullConverter() DateTime? get expiresAt;/// [expiresAt] Date of expiration of the Message of the Day.
+@TimestampOrNullConverter() set expiresAt(DateTime? value);
+/// Create a copy of MessageOfTheDayInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$MessageOfTheDayInputCopyWith<MessageOfTheDayInput> get copyWith => _$MessageOfTheDayInputCopyWithImpl<MessageOfTheDayInput>(this as MessageOfTheDayInput, _$identity);
+
+  /// Serializes this MessageOfTheDayInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'MessageOfTheDayInput(id: $id, name: $name, content: $content, title: $title, color: $color, isActive: $isActive, expiresAt: $expiresAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $MessageOfTheDayInputCopyWith<$Res>  {
+  factory $MessageOfTheDayInputCopyWith(MessageOfTheDayInput value, $Res Function(MessageOfTheDayInput) _then) = _$MessageOfTheDayInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? name, String? content, String? title,@ColorOrNullConverter() Color? color, bool isActive,@TimestampOrNullConverter() DateTime? expiresAt
+});
+
+
+
+
+}
+/// @nodoc
+class _$MessageOfTheDayInputCopyWithImpl<$Res>
+    implements $MessageOfTheDayInputCopyWith<$Res> {
+  _$MessageOfTheDayInputCopyWithImpl(this._self, this._then);
+
+  final MessageOfTheDayInput _self;
+  final $Res Function(MessageOfTheDayInput) _then;
+
+/// Create a copy of MessageOfTheDayInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? content = freezed,Object? title = freezed,Object? color = freezed,Object? isActive = null,Object? expiresAt = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as Color?,isActive: null == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
+as bool,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [MessageOfTheDayInput].
+extension MessageOfTheDayInputPatterns on MessageOfTheDayInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MessageOfTheDayInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _MessageOfTheDayInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MessageOfTheDayInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _MessageOfTheDayInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MessageOfTheDayInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _MessageOfTheDayInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool isActive, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _MessageOfTheDayInput() when $default != null:
+return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool isActive, @TimestampOrNullConverter()  DateTime? expiresAt)  $default,) {final _that = this;
+switch (_that) {
+case _MessageOfTheDayInput():
+return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool isActive, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,) {final _that = this;
+switch (_that) {
+case _MessageOfTheDayInput() when $default != null:
+return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _MessageOfTheDayInput implements MessageOfTheDayInput {
+   _MessageOfTheDayInput({this.id, this.name, this.content, this.title, @ColorOrNullConverter() this.color, this.isActive = false, @TimestampOrNullConverter() this.expiresAt});
+  factory _MessageOfTheDayInput.fromJson(Map<String, dynamic> json) => _$MessageOfTheDayInputFromJson(json);
+
+/// [id] ID of the Message of the Day entity. This ID is unique.
+@override  String? id;
+/// [name] Name of the Message of the Day.
+@override  String? name;
+/// [content] Content of the Message of the Day.
+@override  String? content;
+/// [title] Title of the Message of the Day.
+@override  String? title;
+/// [color] Color of the Message of the Day.
+@override@ColorOrNullConverter()  Color? color;
+/// [isActive] Whether the Message of the Day is active.
+@override@JsonKey()  bool isActive;
+/// [expiresAt] Date of expiration of the Message of the Day.
+@override@TimestampOrNullConverter()  DateTime? expiresAt;
+
+/// Create a copy of MessageOfTheDayInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$MessageOfTheDayInputCopyWith<_MessageOfTheDayInput> get copyWith => __$MessageOfTheDayInputCopyWithImpl<_MessageOfTheDayInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$MessageOfTheDayInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'MessageOfTheDayInput(id: $id, name: $name, content: $content, title: $title, color: $color, isActive: $isActive, expiresAt: $expiresAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$MessageOfTheDayInputCopyWith<$Res> implements $MessageOfTheDayInputCopyWith<$Res> {
+  factory _$MessageOfTheDayInputCopyWith(_MessageOfTheDayInput value, $Res Function(_MessageOfTheDayInput) _then) = __$MessageOfTheDayInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? name, String? content, String? title,@ColorOrNullConverter() Color? color, bool isActive,@TimestampOrNullConverter() DateTime? expiresAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$MessageOfTheDayInputCopyWithImpl<$Res>
+    implements _$MessageOfTheDayInputCopyWith<$Res> {
+  __$MessageOfTheDayInputCopyWithImpl(this._self, this._then);
+
+  final _MessageOfTheDayInput _self;
+  final $Res Function(_MessageOfTheDayInput) _then;
+
+/// Create a copy of MessageOfTheDayInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? content = freezed,Object? title = freezed,Object? color = freezed,Object? isActive = null,Object? expiresAt = freezed,}) {
+  return _then(_MessageOfTheDayInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as Color?,isActive: null == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
+as bool,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+
+}
+
 // dart format on

@@ -560,3 +560,53 @@ const _$AppInternalIdentifierEnumMap = {
   AppInternalIdentifier.locator: 'LOCATOR',
   AppInternalIdentifier.unknown: 'UNKNOWN',
 };
+
+_MessageOfTheDay _$MessageOfTheDayFromJson(Map<String, dynamic> json) =>
+    _MessageOfTheDay(
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      content: json['content'] as String?,
+      title: json['title'] as String?,
+      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+      isActive: json['isActive'] as bool?,
+      expiresAt: const TimestampOrNullConverter().fromJson(
+        json['expiresAt'] as num?,
+      ),
+    );
+
+Map<String, dynamic> _$MessageOfTheDayToJson(_MessageOfTheDay instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'content': instance.content,
+      'title': instance.title,
+      'color': const ColorOrNullConverter().toJson(instance.color),
+      'isActive': instance.isActive,
+      'expiresAt': const TimestampOrNullConverter().toJson(instance.expiresAt),
+    };
+
+_MessageOfTheDayInput _$MessageOfTheDayInputFromJson(
+  Map<String, dynamic> json,
+) => _MessageOfTheDayInput(
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  content: json['content'] as String?,
+  title: json['title'] as String?,
+  color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+  isActive: json['isActive'] as bool? ?? false,
+  expiresAt: const TimestampOrNullConverter().fromJson(
+    json['expiresAt'] as num?,
+  ),
+);
+
+Map<String, dynamic> _$MessageOfTheDayInputToJson(
+  _MessageOfTheDayInput instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'content': instance.content,
+  'title': instance.title,
+  'color': const ColorOrNullConverter().toJson(instance.color),
+  'isActive': instance.isActive,
+  'expiresAt': const TimestampOrNullConverter().toJson(instance.expiresAt),
+};

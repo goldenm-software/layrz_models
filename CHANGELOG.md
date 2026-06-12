@@ -1,3 +1,8 @@
+# Changelog
+
+## 3.10.10
+- Added `MessageOfTheDay` and `MessageOfTheDayInput` models to the `brickhouse` module.
+
 ## 3.10.9
 
 - Added `signedAt` value in `CaclEntity` model
