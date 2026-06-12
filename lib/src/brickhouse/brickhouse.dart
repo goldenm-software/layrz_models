@@ -14,3 +14,4 @@ part 'src/driver_safety.dart';
 part 'src/encoded_trip.dart';
 part 'src/permission_tier.dart';
 part 'src/workspace.dart';
+part 'src/message_of_the_day.dart';

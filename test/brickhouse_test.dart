@@ -80,6 +80,77 @@ void main() {
     expect(data.tierLevel, equals(1));
   });
 
+  /// From json test for [MessageOfTheDay]
+  test('MessageOfTheDay from json', () {
+    final data = {
+      'id': '42',
+      'name': 'Daily Message',
+      'content': 'Have a great day!',
+      'title': 'Welcome',
+      'color': '#F27221',
+      'isActive': true,
+      'expiresAt': 1893456000,
+    };
+
+    final motd = MessageOfTheDay.fromJson(data);
+
+    expect(motd, isA<MessageOfTheDay>());
+    expect(motd.id, equals('42'));
+    expect(motd.name, equals('Daily Message'));
+    expect(motd.content, equals('Have a great day!'));
+    expect(motd.title, equals('Welcome'));
+    expect(motd.color, isNotNull);
+    expect(motd.isActive, isTrue);
+    expect(motd.expiresAt, isNotNull);
+  });
+
+  /// Nullable fields test for [MessageOfTheDay]
+  test('MessageOfTheDay with nullable fields', () {
+    final data = {
+      'id': '1',
+      'name': 'Minimal',
+      'content': 'Content',
+      'title': 'Title',
+      'color': null,
+      'isActive': false,
+      'expiresAt': null,
+    };
+
+    final motd = MessageOfTheDay.fromJson(data);
+
+    expect(motd, isA<MessageOfTheDay>());
+    expect(motd.color, isNull);
+    expect(motd.expiresAt, isNull);
+    expect(motd.isActive, isFalse);
+  });
+
+  /// From json test for [MessageOfTheDayInput]
+  test('MessageOfTheDayInput from json', () {
+    final data = {
+      'id': '42',
+      'name': 'Daily Message',
+      'content': 'Have a great day!',
+      'title': 'Welcome',
+      'color': '#F27221',
+      'isActive': true,
+      'expiresAt': 1893456000,
+    };
+
+    final input = MessageOfTheDayInput.fromJson(data);
+
+    expect(input, isA<MessageOfTheDayInput>());
+    expect(input.id, equals('42'));
+    expect(input.isActive, isTrue);
+    expect(input.expiresAt, isNotNull);
+  });
+
+  /// Default values test for [MessageOfTheDayInput]
+  test('MessageOfTheDayInput defaults', () {
+    final input = MessageOfTheDayInput();
+
+    expect(input.isActive, isFalse);
+  });
+
   /// From json Test for the class [BrickhouseAlert]
   test('BrickhouseAlert from json', () {
     final data = {
@@ -107,7 +178,7 @@ void main() {
       "maxSpeedMaxValue": null,
       "sosMessage": null,
       "cooldownTime": null,
-      "isMuted": false
+      "isMuted": false,
     };
 
     final alert = BrickhouseAlert.fromJson(data);
