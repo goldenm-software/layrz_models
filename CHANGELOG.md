@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.10.11
+- Added `SensorDataType` enum (`INT`, `FLOAT`, `STR`, `BOOL`) to the `sensors` module.
+
 ## 3.10.10
 - Added `MessageOfTheDay` and `MessageOfTheDayInput` models to the `brickhouse` module.
 
