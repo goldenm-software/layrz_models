@@ -277,3 +277,10 @@ Map<String, dynamic> _$MaskPointInputToJson(_MaskPointInput instance) =>
       'value': instance.value,
       'icon': const IconOrNullConverter().toJson(instance.icon),
     };
+
+const _$SensorDataTypeEnumMap = {
+  SensorDataType.integer: 'INT',
+  SensorDataType.float: 'FLOAT',
+  SensorDataType.string: 'STR',
+  SensorDataType.boolean: 'BOOL',
+};
