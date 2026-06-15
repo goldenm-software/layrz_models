@@ -14,3 +14,4 @@ part 'src/range.dart';
 part 'src/mask.dart';
 part 'src/type.dart';
 part 'src/subtype.dart';
+part 'src/data_type.dart';
