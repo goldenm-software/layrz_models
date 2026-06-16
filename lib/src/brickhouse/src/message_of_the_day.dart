@@ -5,16 +5,16 @@ part of '../brickhouse.dart';
 abstract class MessageOfTheDay with _$MessageOfTheDay {
   const factory MessageOfTheDay({
     /// [id] ID of the Message of the Day entity. This ID is unique.
-    String? id,
+    required String id,
 
     /// [name] Name of the Message of the Day.
-    String? name,
+    required String name,
+
+    /// [title] Title of the Message of the Day.
+    required String title,
 
     /// [content] Content of the Message of the Day.
     String? content,
-
-    /// [title] Title of the Message of the Day.
-    String? title,
 
     /// [color] Color of the Message of the Day.
     @ColorOrNullConverter() Color? color,

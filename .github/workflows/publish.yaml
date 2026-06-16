@@ -88,7 +88,7 @@ jobs:
 
       - name: Generate changelog
         id: changelog
-        uses: ./.github/actions/changelog
+        uses: goldenm-software/layrz-actions/.github/actions/changelog@v1
         with:
           post-comment: false # Don't post comment for releases
           exclude-types: "chore,style"

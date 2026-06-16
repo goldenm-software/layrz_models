@@ -563,10 +563,10 @@ const _$AppInternalIdentifierEnumMap = {
 
 _MessageOfTheDay _$MessageOfTheDayFromJson(Map<String, dynamic> json) =>
     _MessageOfTheDay(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
+      id: json['id'] as String,
+      name: json['name'] as String,
+      title: json['title'] as String,
       content: json['content'] as String?,
-      title: json['title'] as String?,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       isActive: json['isActive'] as bool?,
       expiresAt: const TimestampOrNullConverter().fromJson(
@@ -578,8 +578,8 @@ Map<String, dynamic> _$MessageOfTheDayToJson(_MessageOfTheDay instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'content': instance.content,
       'title': instance.title,
+      'content': instance.content,
       'color': const ColorOrNullConverter().toJson(instance.color),
       'isActive': instance.isActive,
       'expiresAt': const TimestampOrNullConverter().toJson(instance.expiresAt),
