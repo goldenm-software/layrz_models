@@ -4097,10 +4097,10 @@ as List<String>?,
 mixin _$MessageOfTheDay {
 
 /// [id] ID of the Message of the Day entity. This ID is unique.
- String? get id;/// [name] Name of the Message of the Day.
- String? get name;/// [content] Content of the Message of the Day.
- String? get content;/// [title] Title of the Message of the Day.
- String? get title;/// [color] Color of the Message of the Day.
+ String get id;/// [name] Name of the Message of the Day.
+ String get name;/// [title] Title of the Message of the Day.
+ String get title;/// [content] Content of the Message of the Day.
+ String? get content;/// [color] Color of the Message of the Day.
 @ColorOrNullConverter() Color? get color;/// [isActive] Whether the Message of the Day is active.
  bool? get isActive;/// [expiresAt] Date of expiration of the Message of the Day.
 @TimestampOrNullConverter() DateTime? get expiresAt;
@@ -4116,16 +4116,16 @@ $MessageOfTheDayCopyWith<MessageOfTheDay> get copyWith => _$MessageOfTheDayCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MessageOfTheDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.content, content) || other.content == content)&&(identical(other.title, title) || other.title == title)&&(identical(other.color, color) || other.color == color)&&(identical(other.isActive, isActive) || other.isActive == isActive)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MessageOfTheDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.title, title) || other.title == title)&&(identical(other.content, content) || other.content == content)&&(identical(other.color, color) || other.color == color)&&(identical(other.isActive, isActive) || other.isActive == isActive)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,content,title,color,isActive,expiresAt);
+int get hashCode => Object.hash(runtimeType,id,name,title,content,color,isActive,expiresAt);
 
 @override
 String toString() {
-  return 'MessageOfTheDay(id: $id, name: $name, content: $content, title: $title, color: $color, isActive: $isActive, expiresAt: $expiresAt)';
+  return 'MessageOfTheDay(id: $id, name: $name, title: $title, content: $content, color: $color, isActive: $isActive, expiresAt: $expiresAt)';
 }
 
 
@@ -4136,7 +4136,7 @@ abstract mixin class $MessageOfTheDayCopyWith<$Res>  {
   factory $MessageOfTheDayCopyWith(MessageOfTheDay value, $Res Function(MessageOfTheDay) _then) = _$MessageOfTheDayCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? name, String? content, String? title,@ColorOrNullConverter() Color? color, bool? isActive,@TimestampOrNullConverter() DateTime? expiresAt
+ String id, String name, String title, String? content,@ColorOrNullConverter() Color? color, bool? isActive,@TimestampOrNullConverter() DateTime? expiresAt
 });
 
 
@@ -4153,12 +4153,12 @@ class _$MessageOfTheDayCopyWithImpl<$Res>
 
 /// Create a copy of MessageOfTheDay
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? content = freezed,Object? title = freezed,Object? color = freezed,Object? isActive = freezed,Object? expiresAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? title = null,Object? content = freezed,Object? color = freezed,Object? isActive = freezed,Object? expiresAt = freezed,}) {
   return _then(_self.copyWith(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String?,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
-as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
 as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,isActive: freezed == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
 as bool?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
@@ -4247,10 +4247,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String title,  String? content, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MessageOfTheDay() when $default != null:
-return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+return $default(_that.id,_that.name,_that.title,_that.content,_that.color,_that.isActive,_that.expiresAt);case _:
   return orElse();
 
 }
@@ -4268,10 +4268,10 @@ return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String title,  String? content, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)  $default,) {final _that = this;
 switch (_that) {
 case _MessageOfTheDay():
-return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+return $default(_that.id,_that.name,_that.title,_that.content,_that.color,_that.isActive,_that.expiresAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -4288,10 +4288,10 @@ return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? content,  String? title, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String title,  String? content, @ColorOrNullConverter()  Color? color,  bool? isActive, @TimestampOrNullConverter()  DateTime? expiresAt)?  $default,) {final _that = this;
 switch (_that) {
 case _MessageOfTheDay() when $default != null:
-return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.isActive,_that.expiresAt);case _:
+return $default(_that.id,_that.name,_that.title,_that.content,_that.color,_that.isActive,_that.expiresAt);case _:
   return null;
 
 }
@@ -4303,17 +4303,17 @@ return $default(_that.id,_that.name,_that.content,_that.title,_that.color,_that.
 @JsonSerializable()
 
 class _MessageOfTheDay implements MessageOfTheDay {
-  const _MessageOfTheDay({this.id, this.name, this.content, this.title, @ColorOrNullConverter() this.color, this.isActive, @TimestampOrNullConverter() this.expiresAt});
+  const _MessageOfTheDay({required this.id, required this.name, required this.title, this.content, @ColorOrNullConverter() this.color, this.isActive, @TimestampOrNullConverter() this.expiresAt});
   factory _MessageOfTheDay.fromJson(Map<String, dynamic> json) => _$MessageOfTheDayFromJson(json);
 
 /// [id] ID of the Message of the Day entity. This ID is unique.
-@override final  String? id;
+@override final  String id;
 /// [name] Name of the Message of the Day.
-@override final  String? name;
+@override final  String name;
+/// [title] Title of the Message of the Day.
+@override final  String title;
 /// [content] Content of the Message of the Day.
 @override final  String? content;
-/// [title] Title of the Message of the Day.
-@override final  String? title;
 /// [color] Color of the Message of the Day.
 @override@ColorOrNullConverter() final  Color? color;
 /// [isActive] Whether the Message of the Day is active.
@@ -4334,16 +4334,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MessageOfTheDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.content, content) || other.content == content)&&(identical(other.title, title) || other.title == title)&&(identical(other.color, color) || other.color == color)&&(identical(other.isActive, isActive) || other.isActive == isActive)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MessageOfTheDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.title, title) || other.title == title)&&(identical(other.content, content) || other.content == content)&&(identical(other.color, color) || other.color == color)&&(identical(other.isActive, isActive) || other.isActive == isActive)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,content,title,color,isActive,expiresAt);
+int get hashCode => Object.hash(runtimeType,id,name,title,content,color,isActive,expiresAt);
 
 @override
 String toString() {
-  return 'MessageOfTheDay(id: $id, name: $name, content: $content, title: $title, color: $color, isActive: $isActive, expiresAt: $expiresAt)';
+  return 'MessageOfTheDay(id: $id, name: $name, title: $title, content: $content, color: $color, isActive: $isActive, expiresAt: $expiresAt)';
 }
 
 
@@ -4354,7 +4354,7 @@ abstract mixin class _$MessageOfTheDayCopyWith<$Res> implements $MessageOfTheDay
   factory _$MessageOfTheDayCopyWith(_MessageOfTheDay value, $Res Function(_MessageOfTheDay) _then) = __$MessageOfTheDayCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? name, String? content, String? title,@ColorOrNullConverter() Color? color, bool? isActive,@TimestampOrNullConverter() DateTime? expiresAt
+ String id, String name, String title, String? content,@ColorOrNullConverter() Color? color, bool? isActive,@TimestampOrNullConverter() DateTime? expiresAt
 });
 
 
@@ -4371,12 +4371,12 @@ class __$MessageOfTheDayCopyWithImpl<$Res>
 
 /// Create a copy of MessageOfTheDay
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? content = freezed,Object? title = freezed,Object? color = freezed,Object? isActive = freezed,Object? expiresAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? title = null,Object? content = freezed,Object? color = freezed,Object? isActive = freezed,Object? expiresAt = freezed,}) {
   return _then(_MessageOfTheDay(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String?,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
-as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
 as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,isActive: freezed == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
 as bool?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable

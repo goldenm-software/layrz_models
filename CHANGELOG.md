@@ -1,5 +1,9 @@
 # Changelog
 
+##  3.10.12
+
+- Changed `MessageOfTheDay`'s `id`, `name` and `title` fields to be non-nullable, and required for declaration.
+
 ## 3.10.11
 - Added `SensorDataType` enum (`INT`, `FLOAT`, `STR`, `BOOL`) to the `sensors` module.
 
