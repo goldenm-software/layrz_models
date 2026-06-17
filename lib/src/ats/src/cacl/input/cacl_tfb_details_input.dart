@@ -37,6 +37,12 @@ abstract class CaclTFBDetailsInput with _$CaclTFBDetailsInput {
 
     /// The [reason] parameter is the reason of the CACL TFB details input.
     String? reason,
+
+    /// The [btInscription] parameter is the btInscription of the CACL TFB details input.
+    String? btInscription,
+
+    /// The [vgNavio] parameter is the vgNavio of the CACL TFB details input.
+    int? vgNavio,
   }) = _CaclTFBDetailsInput;
 
   /// Creates a new [CaclTFBDetailsInput] instance from a JSON map.

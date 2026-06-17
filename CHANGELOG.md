@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.10.14
+
+- Added `btInscription` and `vgNavio` values in `CaclTFBDetails` and `CaclTFBDetailsInput` models
+
 ## 3.10.13
 
 - Added new models `CaclTFBDetails` and `CaclTFBDetailsInput`

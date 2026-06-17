@@ -2504,6 +2504,8 @@ _CaclTFBDetailsInput _$CaclTFBDetailsInputFromJson(
   valvesSealed: json['valvesSealed'] as bool?,
   finalStopBoard: json['finalStopBoard'] as bool?,
   reason: json['reason'] as String?,
+  btInscription: json['btInscription'] as String?,
+  vgNavio: (json['vgNavio'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$CaclTFBDetailsInputToJson(
@@ -2520,6 +2522,8 @@ Map<String, dynamic> _$CaclTFBDetailsInputToJson(
   'valvesSealed': instance.valvesSealed,
   'finalStopBoard': instance.finalStopBoard,
   'reason': instance.reason,
+  'btInscription': instance.btInscription,
+  'vgNavio': instance.vgNavio,
 };
 
 _CaclTFBDetails _$CaclTFBDetailsFromJson(
@@ -2542,6 +2546,8 @@ _CaclTFBDetails _$CaclTFBDetailsFromJson(
   valvesSealed: json['valvesSealed'] as bool?,
   finalStopBoard: json['finalStopBoard'] as bool?,
   reason: json['reason'] as String?,
+  btInscription: json['btInscription'] as String?,
+  vgNavio: (json['vgNavio'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$CaclTFBDetailsToJson(
@@ -2558,6 +2564,8 @@ Map<String, dynamic> _$CaclTFBDetailsToJson(
   'valvesSealed': instance.valvesSealed,
   'finalStopBoard': instance.finalStopBoard,
   'reason': instance.reason,
+  'btInscription': instance.btInscription,
+  'vgNavio': instance.vgNavio,
 };
 
 _AtsMonitor _$AtsMonitorFromJson(Map<String, dynamic> json) => _AtsMonitor(
