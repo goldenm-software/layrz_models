@@ -11,6 +11,7 @@ sealed class CaclInput with _$CaclInput {
     measurer01 ??= CaclMeasurement();
     measurer02 ??= CaclMeasurement();
     equipments ??= CaclEquipmentInput();
+    tfbDetails ??= CaclTFBDetailsInput();
   }
 
   factory CaclInput({
@@ -79,6 +80,9 @@ sealed class CaclInput with _$CaclInput {
 
     /// [localDateEnd] is the local date end of the cacl input.
     @TimestampOrNullConverter() DateTime? localDateEnd,
+
+    /// The [tfbDetails] parameter is the tfbDetails of the cacl input.
+    CaclTFBDetailsInput? tfbDetails,
   }) = _CaclInput;
 
   /// Creates a new [CaclInput] instance from a JSON map.

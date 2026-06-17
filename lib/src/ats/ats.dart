@@ -111,6 +111,8 @@ part 'src/cacl/input/measurement_input.dart';
 part 'src/cacl/input/measurement.dart';
 part 'src/cacl/input/volume_moved_input.dart';
 part 'src/cacl/input/equipment_measurement_input.dart';
+part 'src/cacl/input/cacl_tfb_details_input.dart';
+part 'src/cacl/entity/cacl_tfb_details.dart';
 part 'src/cacl/cacl_category.dart';
 
 // Monitor Entity

@@ -15874,7 +15874,8 @@ mixin _$CaclEntity {
  double? get lossPercentage;/// [isCombine] indicates if the cacl is a combined form.
  bool? get isCombine;/// The [tankAsset] parameter is the tankAsset of the cacl entity.
  Asset? get tankAsset;/// The [signedAt] parameter is the signedAt of the cacl entity.
-@TimestampOrNullConverter() DateTime? get signedAt;
+@TimestampOrNullConverter() DateTime? get signedAt;/// The [tfbDetails] parameter is the tfbDetails of the cacl entity.
+ CaclTFBDetails? get tfbDetails;
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -15887,16 +15888,16 @@ $CaclEntityCopyWith<CaclEntity> get copyWith => _$CaclEntityCopyWithImpl<CaclEnt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdByUserId, createdByUserId) || other.createdByUserId == createdByUserId)&&(identical(other.createdByUser, createdByUser) || other.createdByUser == createdByUser)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage)&&(identical(other.isCombine, isCombine) || other.isCombine == isCombine)&&(identical(other.tankAsset, tankAsset) || other.tankAsset == tankAsset)&&(identical(other.signedAt, signedAt) || other.signedAt == signedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdByUserId, createdByUserId) || other.createdByUserId == createdByUserId)&&(identical(other.createdByUser, createdByUser) || other.createdByUser == createdByUser)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage)&&(identical(other.isCombine, isCombine) || other.isCombine == isCombine)&&(identical(other.tankAsset, tankAsset) || other.tankAsset == tankAsset)&&(identical(other.signedAt, signedAt) || other.signedAt == signedAt)&&(identical(other.tfbDetails, tfbDetails) || other.tfbDetails == tfbDetails));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,createdByUserId,createdByUser,operationId,operation,localDateStart,localDateEnd,lossPercentage,isCombine,tankAsset,signedAt]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,createdByUserId,createdByUser,operationId,operation,localDateStart,localDateEnd,lossPercentage,isCombine,tankAsset,signedAt,tfbDetails]);
 
 @override
 String toString() {
-  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, createdByUserId: $createdByUserId, createdByUser: $createdByUser, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage, isCombine: $isCombine, tankAsset: $tankAsset, signedAt: $signedAt)';
+  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, createdByUserId: $createdByUserId, createdByUser: $createdByUser, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage, isCombine: $isCombine, tankAsset: $tankAsset, signedAt: $signedAt, tfbDetails: $tfbDetails)';
 }
 
 
@@ -15907,11 +15908,11 @@ abstract mixin class $CaclEntityCopyWith<$Res>  {
   factory $CaclEntityCopyWith(CaclEntity value, $Res Function(CaclEntity) _then) = _$CaclEntityCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? createdByUserId, User? createdByUser, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage, bool? isCombine, Asset? tankAsset,@TimestampOrNullConverter() DateTime? signedAt
+ String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? createdByUserId, User? createdByUser, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage, bool? isCombine, Asset? tankAsset,@TimestampOrNullConverter() DateTime? signedAt, CaclTFBDetails? tfbDetails
 });
 
 
-$AssetCopyWith<$Res>? get asset;$AssetCopyWith<$Res>? get transportAsset;$UserCopyWith<$Res>? get transportUser;$AssetCopyWith<$Res>? get clientAsset;$CaclEquipmentEntityCopyWith<$Res>? get equipments;$MeasurementsEntityCopyWith<$Res>? get measurements;$ResultsEntityCopyWith<$Res>? get results;$CaclMeasurementOutputCopyWith<$Res>? get measurer01;$CaclMeasurementOutputCopyWith<$Res>? get measurer02;$VolumeMovedEntityCopyWith<$Res>? get volumeMoved;$UserCopyWith<$Res>? get createdByUser;$AtsOperationCopyWith<$Res>? get operation;$AssetCopyWith<$Res>? get tankAsset;
+$AssetCopyWith<$Res>? get asset;$AssetCopyWith<$Res>? get transportAsset;$UserCopyWith<$Res>? get transportUser;$AssetCopyWith<$Res>? get clientAsset;$CaclEquipmentEntityCopyWith<$Res>? get equipments;$MeasurementsEntityCopyWith<$Res>? get measurements;$ResultsEntityCopyWith<$Res>? get results;$CaclMeasurementOutputCopyWith<$Res>? get measurer01;$CaclMeasurementOutputCopyWith<$Res>? get measurer02;$VolumeMovedEntityCopyWith<$Res>? get volumeMoved;$UserCopyWith<$Res>? get createdByUser;$AtsOperationCopyWith<$Res>? get operation;$AssetCopyWith<$Res>? get tankAsset;$CaclTFBDetailsCopyWith<$Res>? get tfbDetails;
 
 }
 /// @nodoc
@@ -15924,7 +15925,7 @@ class _$CaclEntityCopyWithImpl<$Res>
 
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? createdByUserId = freezed,Object? createdByUser = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,Object? isCombine = freezed,Object? tankAsset = freezed,Object? signedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? createdByUserId = freezed,Object? createdByUser = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,Object? isCombine = freezed,Object? tankAsset = freezed,Object? signedAt = freezed,Object? tfbDetails = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -15961,7 +15962,8 @@ as DateTime?,lossPercentage: freezed == lossPercentage ? _self.lossPercentage : 
 as double?,isCombine: freezed == isCombine ? _self.isCombine : isCombine // ignore: cast_nullable_to_non_nullable
 as bool?,tankAsset: freezed == tankAsset ? _self.tankAsset : tankAsset // ignore: cast_nullable_to_non_nullable
 as Asset?,signedAt: freezed == signedAt ? _self.signedAt : signedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime?,tfbDetails: freezed == tfbDetails ? _self.tfbDetails : tfbDetails // ignore: cast_nullable_to_non_nullable
+as CaclTFBDetails?,
   ));
 }
 /// Create a copy of CaclEntity
@@ -16119,6 +16121,18 @@ $AssetCopyWith<$Res>? get tankAsset {
 
   return $AssetCopyWith<$Res>(_self.tankAsset!, (value) {
     return _then(_self.copyWith(tankAsset: value));
+  });
+}/// Create a copy of CaclEntity
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CaclTFBDetailsCopyWith<$Res>? get tfbDetails {
+    if (_self.tfbDetails == null) {
+    return null;
+  }
+
+  return $CaclTFBDetailsCopyWith<$Res>(_self.tfbDetails!, (value) {
+    return _then(_self.copyWith(tfbDetails: value));
   });
 }
 }
@@ -16202,10 +16216,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? createdByUserId,  User? createdByUser,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine,  Asset? tankAsset, @TimestampOrNullConverter()  DateTime? signedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? createdByUserId,  User? createdByUser,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine,  Asset? tankAsset, @TimestampOrNullConverter()  DateTime? signedAt,  CaclTFBDetails? tfbDetails)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclEntity() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.createdByUserId,_that.createdByUser,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine,_that.tankAsset,_that.signedAt);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.createdByUserId,_that.createdByUser,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine,_that.tankAsset,_that.signedAt,_that.tfbDetails);case _:
   return orElse();
 
 }
@@ -16223,10 +16237,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? createdByUserId,  User? createdByUser,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine,  Asset? tankAsset, @TimestampOrNullConverter()  DateTime? signedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? createdByUserId,  User? createdByUser,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine,  Asset? tankAsset, @TimestampOrNullConverter()  DateTime? signedAt,  CaclTFBDetails? tfbDetails)  $default,) {final _that = this;
 switch (_that) {
 case _CaclEntity():
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.createdByUserId,_that.createdByUser,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine,_that.tankAsset,_that.signedAt);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.createdByUserId,_that.createdByUser,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine,_that.tankAsset,_that.signedAt,_that.tfbDetails);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -16243,10 +16257,10 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? createdByUserId,  User? createdByUser,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine,  Asset? tankAsset, @TimestampOrNullConverter()  DateTime? signedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  Asset? asset,  String? transportAssetId,  Asset? transportAsset,  String? transportUserId,  User? transportUser,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  Asset? clientAsset,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentEntity? equipments,  MeasurementsEntity? measurements,  ResultsEntity? results,  CaclMeasurementOutput? measurer01,  CaclMeasurementOutput? measurer02,  VolumeMovedEntity? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt, @TimestampOrNullConverter()  DateTime? createdAt,  String? createdByUserId,  User? createdByUser,  String? operationId,  AtsOperation? operation, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  double? lossPercentage,  bool? isCombine,  Asset? tankAsset, @TimestampOrNullConverter()  DateTime? signedAt,  CaclTFBDetails? tfbDetails)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclEntity() when $default != null:
-return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.createdByUserId,_that.createdByUser,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine,_that.tankAsset,_that.signedAt);case _:
+return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.transportAsset,_that.transportUserId,_that.transportUser,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.clientAsset,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.createdAt,_that.createdByUserId,_that.createdByUser,_that.operationId,_that.operation,_that.localDateStart,_that.localDateEnd,_that.lossPercentage,_that.isCombine,_that.tankAsset,_that.signedAt,_that.tfbDetails);case _:
   return null;
 
 }
@@ -16258,7 +16272,7 @@ return $default(_that.id,_that.assetId,_that.asset,_that.transportAssetId,_that.
 @JsonSerializable()
 
 class _CaclEntity implements CaclEntity {
-   _CaclEntity({this.id, this.assetId, this.asset, this.transportAssetId, this.transportAsset, this.transportUserId, this.transportUser, this.caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load) this.category, this.product, this.clientAssetId, this.clientAsset, this.origin, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, @TimestampOrNullConverter() this.createdAt, this.createdByUserId, this.createdByUser, this.operationId, this.operation, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.lossPercentage, this.isCombine, this.tankAsset, @TimestampOrNullConverter() this.signedAt});
+   _CaclEntity({this.id, this.assetId, this.asset, this.transportAssetId, this.transportAsset, this.transportUserId, this.transportUser, this.caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load) this.category, this.product, this.clientAssetId, this.clientAsset, this.origin, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, @TimestampOrNullConverter() this.createdAt, this.createdByUserId, this.createdByUser, this.operationId, this.operation, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.lossPercentage, this.isCombine, this.tankAsset, @TimestampOrNullConverter() this.signedAt, this.tfbDetails});
   factory _CaclEntity.fromJson(Map<String, dynamic> json) => _$CaclEntityFromJson(json);
 
 /// The [id] parameter is the id of the cacl entity.
@@ -16331,6 +16345,8 @@ class _CaclEntity implements CaclEntity {
 @override final  Asset? tankAsset;
 /// The [signedAt] parameter is the signedAt of the cacl entity.
 @override@TimestampOrNullConverter() final  DateTime? signedAt;
+/// The [tfbDetails] parameter is the tfbDetails of the cacl entity.
+@override final  CaclTFBDetails? tfbDetails;
 
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
@@ -16345,16 +16361,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdByUserId, createdByUserId) || other.createdByUserId == createdByUserId)&&(identical(other.createdByUser, createdByUser) || other.createdByUser == createdByUser)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage)&&(identical(other.isCombine, isCombine) || other.isCombine == isCombine)&&(identical(other.tankAsset, tankAsset) || other.tankAsset == tankAsset)&&(identical(other.signedAt, signedAt) || other.signedAt == signedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaclEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportUserId, transportUserId) || other.transportUserId == transportUserId)&&(identical(other.transportUser, transportUser) || other.transportUser == transportUser)&&(identical(other.caclNumber, caclNumber) || other.caclNumber == caclNumber)&&(identical(other.category, category) || other.category == category)&&(identical(other.product, product) || other.product == product)&&(identical(other.clientAssetId, clientAssetId) || other.clientAssetId == clientAssetId)&&(identical(other.clientAsset, clientAsset) || other.clientAsset == clientAsset)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.tankNumber, tankNumber) || other.tankNumber == tankNumber)&&(identical(other.transport, transport) || other.transport == transport)&&(identical(other.equipments, equipments) || other.equipments == equipments)&&(identical(other.measurements, measurements) || other.measurements == measurements)&&(identical(other.results, results) || other.results == results)&&(identical(other.measurer01, measurer01) || other.measurer01 == measurer01)&&(identical(other.measurer02, measurer02) || other.measurer02 == measurer02)&&(identical(other.volumeMoved, volumeMoved) || other.volumeMoved == volumeMoved)&&(identical(other.observations, observations) || other.observations == observations)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdByUserId, createdByUserId) || other.createdByUserId == createdByUserId)&&(identical(other.createdByUser, createdByUser) || other.createdByUser == createdByUser)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.localDateStart, localDateStart) || other.localDateStart == localDateStart)&&(identical(other.localDateEnd, localDateEnd) || other.localDateEnd == localDateEnd)&&(identical(other.lossPercentage, lossPercentage) || other.lossPercentage == lossPercentage)&&(identical(other.isCombine, isCombine) || other.isCombine == isCombine)&&(identical(other.tankAsset, tankAsset) || other.tankAsset == tankAsset)&&(identical(other.signedAt, signedAt) || other.signedAt == signedAt)&&(identical(other.tfbDetails, tfbDetails) || other.tfbDetails == tfbDetails));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,createdByUserId,createdByUser,operationId,operation,localDateStart,localDateEnd,lossPercentage,isCombine,tankAsset,signedAt]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,transportAssetId,transportAsset,transportUserId,transportUser,caclNumber,category,product,clientAssetId,clientAsset,origin,tankNumber,transport,equipments,measurements,results,measurer01,measurer02,volumeMoved,observations,startedAt,finishedAt,createdAt,createdByUserId,createdByUser,operationId,operation,localDateStart,localDateEnd,lossPercentage,isCombine,tankAsset,signedAt,tfbDetails]);
 
 @override
 String toString() {
-  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, createdByUserId: $createdByUserId, createdByUser: $createdByUser, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage, isCombine: $isCombine, tankAsset: $tankAsset, signedAt: $signedAt)';
+  return 'CaclEntity(id: $id, assetId: $assetId, asset: $asset, transportAssetId: $transportAssetId, transportAsset: $transportAsset, transportUserId: $transportUserId, transportUser: $transportUser, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, clientAsset: $clientAsset, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, createdAt: $createdAt, createdByUserId: $createdByUserId, createdByUser: $createdByUser, operationId: $operationId, operation: $operation, localDateStart: $localDateStart, localDateEnd: $localDateEnd, lossPercentage: $lossPercentage, isCombine: $isCombine, tankAsset: $tankAsset, signedAt: $signedAt, tfbDetails: $tfbDetails)';
 }
 
 
@@ -16365,11 +16381,11 @@ abstract mixin class _$CaclEntityCopyWith<$Res> implements $CaclEntityCopyWith<$
   factory _$CaclEntityCopyWith(_CaclEntity value, $Res Function(_CaclEntity) _then) = __$CaclEntityCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? createdByUserId, User? createdByUser, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage, bool? isCombine, Asset? tankAsset,@TimestampOrNullConverter() DateTime? signedAt
+ String? id, String? assetId, Asset? asset, String? transportAssetId, Asset? transportAsset, String? transportUserId, User? transportUser, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, Asset? clientAsset, String? origin, String? tankNumber, String? transport, CaclEquipmentEntity? equipments, MeasurementsEntity? measurements, ResultsEntity? results, CaclMeasurementOutput? measurer01, CaclMeasurementOutput? measurer02, VolumeMovedEntity? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt,@TimestampOrNullConverter() DateTime? createdAt, String? createdByUserId, User? createdByUser, String? operationId, AtsOperation? operation,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, double? lossPercentage, bool? isCombine, Asset? tankAsset,@TimestampOrNullConverter() DateTime? signedAt, CaclTFBDetails? tfbDetails
 });
 
 
-@override $AssetCopyWith<$Res>? get asset;@override $AssetCopyWith<$Res>? get transportAsset;@override $UserCopyWith<$Res>? get transportUser;@override $AssetCopyWith<$Res>? get clientAsset;@override $CaclEquipmentEntityCopyWith<$Res>? get equipments;@override $MeasurementsEntityCopyWith<$Res>? get measurements;@override $ResultsEntityCopyWith<$Res>? get results;@override $CaclMeasurementOutputCopyWith<$Res>? get measurer01;@override $CaclMeasurementOutputCopyWith<$Res>? get measurer02;@override $VolumeMovedEntityCopyWith<$Res>? get volumeMoved;@override $UserCopyWith<$Res>? get createdByUser;@override $AtsOperationCopyWith<$Res>? get operation;@override $AssetCopyWith<$Res>? get tankAsset;
+@override $AssetCopyWith<$Res>? get asset;@override $AssetCopyWith<$Res>? get transportAsset;@override $UserCopyWith<$Res>? get transportUser;@override $AssetCopyWith<$Res>? get clientAsset;@override $CaclEquipmentEntityCopyWith<$Res>? get equipments;@override $MeasurementsEntityCopyWith<$Res>? get measurements;@override $ResultsEntityCopyWith<$Res>? get results;@override $CaclMeasurementOutputCopyWith<$Res>? get measurer01;@override $CaclMeasurementOutputCopyWith<$Res>? get measurer02;@override $VolumeMovedEntityCopyWith<$Res>? get volumeMoved;@override $UserCopyWith<$Res>? get createdByUser;@override $AtsOperationCopyWith<$Res>? get operation;@override $AssetCopyWith<$Res>? get tankAsset;@override $CaclTFBDetailsCopyWith<$Res>? get tfbDetails;
 
 }
 /// @nodoc
@@ -16382,7 +16398,7 @@ class __$CaclEntityCopyWithImpl<$Res>
 
 /// Create a copy of CaclEntity
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? createdByUserId = freezed,Object? createdByUser = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,Object? isCombine = freezed,Object? tankAsset = freezed,Object? signedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? asset = freezed,Object? transportAssetId = freezed,Object? transportAsset = freezed,Object? transportUserId = freezed,Object? transportUser = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? clientAsset = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? createdAt = freezed,Object? createdByUserId = freezed,Object? createdByUser = freezed,Object? operationId = freezed,Object? operation = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? lossPercentage = freezed,Object? isCombine = freezed,Object? tankAsset = freezed,Object? signedAt = freezed,Object? tfbDetails = freezed,}) {
   return _then(_CaclEntity(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -16419,7 +16435,8 @@ as DateTime?,lossPercentage: freezed == lossPercentage ? _self.lossPercentage : 
 as double?,isCombine: freezed == isCombine ? _self.isCombine : isCombine // ignore: cast_nullable_to_non_nullable
 as bool?,tankAsset: freezed == tankAsset ? _self.tankAsset : tankAsset // ignore: cast_nullable_to_non_nullable
 as Asset?,signedAt: freezed == signedAt ? _self.signedAt : signedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime?,tfbDetails: freezed == tfbDetails ? _self.tfbDetails : tfbDetails // ignore: cast_nullable_to_non_nullable
+as CaclTFBDetails?,
   ));
 }
 
@@ -16578,6 +16595,18 @@ $AssetCopyWith<$Res>? get tankAsset {
 
   return $AssetCopyWith<$Res>(_self.tankAsset!, (value) {
     return _then(_self.copyWith(tankAsset: value));
+  });
+}/// Create a copy of CaclEntity
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CaclTFBDetailsCopyWith<$Res>? get tfbDetails {
+    if (_self.tfbDetails == null) {
+    return null;
+  }
+
+  return $CaclTFBDetailsCopyWith<$Res>(_self.tfbDetails!, (value) {
+    return _then(_self.copyWith(tfbDetails: value));
   });
 }
 }
@@ -19066,7 +19095,9 @@ mixin _$CaclInput {
 @TimestampOrNullConverter() DateTime? get localDateStart;/// [localDateStart] is the local date start of the cacl input.
 @TimestampOrNullConverter() set localDateStart(DateTime? value);/// [localDateEnd] is the local date end of the cacl input.
 @TimestampOrNullConverter() DateTime? get localDateEnd;/// [localDateEnd] is the local date end of the cacl input.
-@TimestampOrNullConverter() set localDateEnd(DateTime? value);
+@TimestampOrNullConverter() set localDateEnd(DateTime? value);/// The [tfbDetails] parameter is the tfbDetails of the cacl input.
+ CaclTFBDetailsInput? get tfbDetails;/// The [tfbDetails] parameter is the tfbDetails of the cacl input.
+ set tfbDetails(CaclTFBDetailsInput? value);
 /// Create a copy of CaclInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -19081,7 +19112,7 @@ $CaclInputCopyWith<CaclInput> get copyWith => _$CaclInputCopyWithImpl<CaclInput>
 
 @override
 String toString() {
-  return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd)';
+  return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd, tfbDetails: $tfbDetails)';
 }
 
 
@@ -19092,11 +19123,11 @@ abstract mixin class $CaclInputCopyWith<$Res>  {
   factory $CaclInputCopyWith(CaclInput value, $Res Function(CaclInput) _then) = _$CaclInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd
+ String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, CaclTFBDetailsInput? tfbDetails
 });
 
 
-$CaclEquipmentInputCopyWith<$Res>? get equipments;$MeasurementsInputCopyWith<$Res>? get measurements;$ResultsInputCopyWith<$Res>? get results;$CaclMeasurementCopyWith<$Res>? get measurer01;$CaclMeasurementCopyWith<$Res>? get measurer02;$VolumeMovedInputCopyWith<$Res>? get volumeMoved;
+$CaclEquipmentInputCopyWith<$Res>? get equipments;$MeasurementsInputCopyWith<$Res>? get measurements;$ResultsInputCopyWith<$Res>? get results;$CaclMeasurementCopyWith<$Res>? get measurer01;$CaclMeasurementCopyWith<$Res>? get measurer02;$VolumeMovedInputCopyWith<$Res>? get volumeMoved;$CaclTFBDetailsInputCopyWith<$Res>? get tfbDetails;
 
 }
 /// @nodoc
@@ -19109,7 +19140,7 @@ class _$CaclInputCopyWithImpl<$Res>
 
 /// Create a copy of CaclInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? transportAssetId = freezed,Object? transportUserId = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? transportAssetId = freezed,Object? transportUserId = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? tfbDetails = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -19133,7 +19164,8 @@ as DateTime?,finishedAt: freezed == finishedAt ? _self.finishedAt : finishedAt /
 as DateTime?,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
 as String?,localDateStart: freezed == localDateStart ? _self.localDateStart : localDateStart // ignore: cast_nullable_to_non_nullable
 as DateTime?,localDateEnd: freezed == localDateEnd ? _self.localDateEnd : localDateEnd // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime?,tfbDetails: freezed == tfbDetails ? _self.tfbDetails : tfbDetails // ignore: cast_nullable_to_non_nullable
+as CaclTFBDetailsInput?,
   ));
 }
 /// Create a copy of CaclInput
@@ -19207,6 +19239,18 @@ $VolumeMovedInputCopyWith<$Res>? get volumeMoved {
 
   return $VolumeMovedInputCopyWith<$Res>(_self.volumeMoved!, (value) {
     return _then(_self.copyWith(volumeMoved: value));
+  });
+}/// Create a copy of CaclInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CaclTFBDetailsInputCopyWith<$Res>? get tfbDetails {
+    if (_self.tfbDetails == null) {
+    return null;
+  }
+
+  return $CaclTFBDetailsInputCopyWith<$Res>(_self.tfbDetails!, (value) {
+    return _then(_self.copyWith(tfbDetails: value));
   });
 }
 }
@@ -19287,10 +19331,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclInput() when $default != null:
-return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd);case _:
+return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);case _:
   return orElse();
 
 }
@@ -19308,10 +19352,10 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)  $default,) {final _that = this;
 switch (_that) {
 case _CaclInput():
-return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd);}
+return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -19325,10 +19369,10 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclInput() when $default != null:
-return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd);case _:
+return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);case _:
   return null;
 
 }
@@ -19340,7 +19384,7 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 @JsonSerializable()
 
 class _CaclInput extends CaclInput {
-   _CaclInput({this.id, this.assetId, this.transportAssetId, this.transportUserId, this.caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load) this.category, this.product, this.clientAssetId, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd}): super._();
+   _CaclInput({this.id, this.assetId, this.transportAssetId, this.transportUserId, this.caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load) this.category, this.product, this.clientAssetId, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.tfbDetails}): super._();
   factory _CaclInput.fromJson(Map<String, dynamic> json) => _$CaclInputFromJson(json);
 
 /// The [id] parameter is the id of the cacl input.
@@ -19387,6 +19431,8 @@ class _CaclInput extends CaclInput {
 @override@TimestampOrNullConverter()  DateTime? localDateStart;
 /// [localDateEnd] is the local date end of the cacl input.
 @override@TimestampOrNullConverter()  DateTime? localDateEnd;
+/// The [tfbDetails] parameter is the tfbDetails of the cacl input.
+@override  CaclTFBDetailsInput? tfbDetails;
 
 /// Create a copy of CaclInput
 /// with the given fields replaced by the non-null parameter values.
@@ -19403,7 +19449,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd)';
+  return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd, tfbDetails: $tfbDetails)';
 }
 
 
@@ -19414,11 +19460,11 @@ abstract mixin class _$CaclInputCopyWith<$Res> implements $CaclInputCopyWith<$Re
   factory _$CaclInputCopyWith(_CaclInput value, $Res Function(_CaclInput) _then) = __$CaclInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd
+ String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, CaclTFBDetailsInput? tfbDetails
 });
 
 
-@override $CaclEquipmentInputCopyWith<$Res>? get equipments;@override $MeasurementsInputCopyWith<$Res>? get measurements;@override $ResultsInputCopyWith<$Res>? get results;@override $CaclMeasurementCopyWith<$Res>? get measurer01;@override $CaclMeasurementCopyWith<$Res>? get measurer02;@override $VolumeMovedInputCopyWith<$Res>? get volumeMoved;
+@override $CaclEquipmentInputCopyWith<$Res>? get equipments;@override $MeasurementsInputCopyWith<$Res>? get measurements;@override $ResultsInputCopyWith<$Res>? get results;@override $CaclMeasurementCopyWith<$Res>? get measurer01;@override $CaclMeasurementCopyWith<$Res>? get measurer02;@override $VolumeMovedInputCopyWith<$Res>? get volumeMoved;@override $CaclTFBDetailsInputCopyWith<$Res>? get tfbDetails;
 
 }
 /// @nodoc
@@ -19431,7 +19477,7 @@ class __$CaclInputCopyWithImpl<$Res>
 
 /// Create a copy of CaclInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? transportAssetId = freezed,Object? transportUserId = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? transportAssetId = freezed,Object? transportUserId = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? tfbDetails = freezed,}) {
   return _then(_CaclInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -19455,7 +19501,8 @@ as DateTime?,finishedAt: freezed == finishedAt ? _self.finishedAt : finishedAt /
 as DateTime?,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
 as String?,localDateStart: freezed == localDateStart ? _self.localDateStart : localDateStart // ignore: cast_nullable_to_non_nullable
 as DateTime?,localDateEnd: freezed == localDateEnd ? _self.localDateEnd : localDateEnd // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime?,tfbDetails: freezed == tfbDetails ? _self.tfbDetails : tfbDetails // ignore: cast_nullable_to_non_nullable
+as CaclTFBDetailsInput?,
   ));
 }
 
@@ -19530,6 +19577,18 @@ $VolumeMovedInputCopyWith<$Res>? get volumeMoved {
 
   return $VolumeMovedInputCopyWith<$Res>(_self.volumeMoved!, (value) {
     return _then(_self.copyWith(volumeMoved: value));
+  });
+}/// Create a copy of CaclInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CaclTFBDetailsInputCopyWith<$Res>? get tfbDetails {
+    if (_self.tfbDetails == null) {
+    return null;
+  }
+
+  return $CaclTFBDetailsInputCopyWith<$Res>(_self.tfbDetails!, (value) {
+    return _then(_self.copyWith(tfbDetails: value));
   });
 }
 }
@@ -21885,6 +21944,630 @@ class __$EquipmentMeasurementInputCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? serialNumber = freezed,}) {
   return _then(_EquipmentMeasurementInput(
 serialNumber: freezed == serialNumber ? _self.serialNumber : serialNumber // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$CaclTFBDetailsInput {
+
+/// The [dockedAt] parameter is the dockedAt of the CACL TFB details input.
+@TimestampOrNullConverter() DateTime? get dockedAt;/// The [dockedAt] parameter is the dockedAt of the CACL TFB details input.
+@TimestampOrNullConverter() set dockedAt(DateTime? value);/// The [arrivalAt] parameter is the arrivalAt of the CACL TFB details input.
+@TimestampOrNullConverter() DateTime? get arrivalAt;/// The [arrivalAt] parameter is the arrivalAt of the CACL TFB details input.
+@TimestampOrNullConverter() set arrivalAt(DateTime? value);/// The [checklistAt] parameter is the checklistAt of the CACL TFB details input.
+@TimestampOrNullConverter() DateTime? get checklistAt;/// The [checklistAt] parameter is the checklistAt of the CACL TFB details input.
+@TimestampOrNullConverter() set checklistAt(DateTime? value);/// The [cradle] parameter is the cradle of the CACL TFB details input.
+ int? get cradle;/// The [cradle] parameter is the cradle of the CACL TFB details input.
+ set cradle(int? value);/// The [pumpStart] parameter is the pumpStart of the CACL TFB details input.
+@TimestampOrNullConverter() DateTime? get pumpStart;/// The [pumpStart] parameter is the pumpStart of the CACL TFB details input.
+@TimestampOrNullConverter() set pumpStart(DateTime? value);/// The [pumpEnd] parameter is the pumpEnd of the CACL TFB details input.
+@TimestampOrNullConverter() DateTime? get pumpEnd;/// The [pumpEnd] parameter is the pumpEnd of the CACL TFB details input.
+@TimestampOrNullConverter() set pumpEnd(DateTime? value);/// The [linePressure] parameter is the linePressure of the CACL TFB details input.
+ bool? get linePressure;/// The [linePressure] parameter is the linePressure of the CACL TFB details input.
+ set linePressure(bool? value);/// The [ventCheck] parameter is the ventCheck of the CACL TFB details input.
+ bool? get ventCheck;/// The [ventCheck] parameter is the ventCheck of the CACL TFB details input.
+ set ventCheck(bool? value);/// The [valvesSealed] parameter is the valvesSealed of the CACL TFB details input.
+ bool? get valvesSealed;/// The [valvesSealed] parameter is the valvesSealed of the CACL TFB details input.
+ set valvesSealed(bool? value);/// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details input.
+ bool? get finalStopBoard;/// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details input.
+ set finalStopBoard(bool? value);/// The [reason] parameter is the reason of the CACL TFB details input.
+ String? get reason;/// The [reason] parameter is the reason of the CACL TFB details input.
+ set reason(String? value);
+/// Create a copy of CaclTFBDetailsInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CaclTFBDetailsInputCopyWith<CaclTFBDetailsInput> get copyWith => _$CaclTFBDetailsInputCopyWithImpl<CaclTFBDetailsInput>(this as CaclTFBDetailsInput, _$identity);
+
+  /// Serializes this CaclTFBDetailsInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'CaclTFBDetailsInput(dockedAt: $dockedAt, arrivalAt: $arrivalAt, checklistAt: $checklistAt, cradle: $cradle, pumpStart: $pumpStart, pumpEnd: $pumpEnd, linePressure: $linePressure, ventCheck: $ventCheck, valvesSealed: $valvesSealed, finalStopBoard: $finalStopBoard, reason: $reason)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $CaclTFBDetailsInputCopyWith<$Res>  {
+  factory $CaclTFBDetailsInputCopyWith(CaclTFBDetailsInput value, $Res Function(CaclTFBDetailsInput) _then) = _$CaclTFBDetailsInputCopyWithImpl;
+@useResult
+$Res call({
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard, String? reason
+});
+
+
+
+
+}
+/// @nodoc
+class _$CaclTFBDetailsInputCopyWithImpl<$Res>
+    implements $CaclTFBDetailsInputCopyWith<$Res> {
+  _$CaclTFBDetailsInputCopyWithImpl(this._self, this._then);
+
+  final CaclTFBDetailsInput _self;
+  final $Res Function(CaclTFBDetailsInput) _then;
+
+/// Create a copy of CaclTFBDetailsInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? dockedAt = freezed,Object? arrivalAt = freezed,Object? checklistAt = freezed,Object? cradle = freezed,Object? pumpStart = freezed,Object? pumpEnd = freezed,Object? linePressure = freezed,Object? ventCheck = freezed,Object? valvesSealed = freezed,Object? finalStopBoard = freezed,Object? reason = freezed,}) {
+  return _then(_self.copyWith(
+dockedAt: freezed == dockedAt ? _self.dockedAt : dockedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,arrivalAt: freezed == arrivalAt ? _self.arrivalAt : arrivalAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,checklistAt: freezed == checklistAt ? _self.checklistAt : checklistAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,cradle: freezed == cradle ? _self.cradle : cradle // ignore: cast_nullable_to_non_nullable
+as int?,pumpStart: freezed == pumpStart ? _self.pumpStart : pumpStart // ignore: cast_nullable_to_non_nullable
+as DateTime?,pumpEnd: freezed == pumpEnd ? _self.pumpEnd : pumpEnd // ignore: cast_nullable_to_non_nullable
+as DateTime?,linePressure: freezed == linePressure ? _self.linePressure : linePressure // ignore: cast_nullable_to_non_nullable
+as bool?,ventCheck: freezed == ventCheck ? _self.ventCheck : ventCheck // ignore: cast_nullable_to_non_nullable
+as bool?,valvesSealed: freezed == valvesSealed ? _self.valvesSealed : valvesSealed // ignore: cast_nullable_to_non_nullable
+as bool?,finalStopBoard: freezed == finalStopBoard ? _self.finalStopBoard : finalStopBoard // ignore: cast_nullable_to_non_nullable
+as bool?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [CaclTFBDetailsInput].
+extension CaclTFBDetailsInputPatterns on CaclTFBDetailsInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CaclTFBDetailsInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CaclTFBDetailsInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CaclTFBDetailsInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _CaclTFBDetailsInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CaclTFBDetailsInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CaclTFBDetailsInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _CaclTFBDetailsInput() when $default != null:
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason)  $default,) {final _that = this;
+switch (_that) {
+case _CaclTFBDetailsInput():
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason)?  $default,) {final _that = this;
+switch (_that) {
+case _CaclTFBDetailsInput() when $default != null:
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _CaclTFBDetailsInput implements CaclTFBDetailsInput {
+   _CaclTFBDetailsInput({@TimestampOrNullConverter() this.dockedAt, @TimestampOrNullConverter() this.arrivalAt, @TimestampOrNullConverter() this.checklistAt, this.cradle, @TimestampOrNullConverter() this.pumpStart, @TimestampOrNullConverter() this.pumpEnd, this.linePressure, this.ventCheck, this.valvesSealed, this.finalStopBoard, this.reason});
+  factory _CaclTFBDetailsInput.fromJson(Map<String, dynamic> json) => _$CaclTFBDetailsInputFromJson(json);
+
+/// The [dockedAt] parameter is the dockedAt of the CACL TFB details input.
+@override@TimestampOrNullConverter()  DateTime? dockedAt;
+/// The [arrivalAt] parameter is the arrivalAt of the CACL TFB details input.
+@override@TimestampOrNullConverter()  DateTime? arrivalAt;
+/// The [checklistAt] parameter is the checklistAt of the CACL TFB details input.
+@override@TimestampOrNullConverter()  DateTime? checklistAt;
+/// The [cradle] parameter is the cradle of the CACL TFB details input.
+@override  int? cradle;
+/// The [pumpStart] parameter is the pumpStart of the CACL TFB details input.
+@override@TimestampOrNullConverter()  DateTime? pumpStart;
+/// The [pumpEnd] parameter is the pumpEnd of the CACL TFB details input.
+@override@TimestampOrNullConverter()  DateTime? pumpEnd;
+/// The [linePressure] parameter is the linePressure of the CACL TFB details input.
+@override  bool? linePressure;
+/// The [ventCheck] parameter is the ventCheck of the CACL TFB details input.
+@override  bool? ventCheck;
+/// The [valvesSealed] parameter is the valvesSealed of the CACL TFB details input.
+@override  bool? valvesSealed;
+/// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details input.
+@override  bool? finalStopBoard;
+/// The [reason] parameter is the reason of the CACL TFB details input.
+@override  String? reason;
+
+/// Create a copy of CaclTFBDetailsInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CaclTFBDetailsInputCopyWith<_CaclTFBDetailsInput> get copyWith => __$CaclTFBDetailsInputCopyWithImpl<_CaclTFBDetailsInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$CaclTFBDetailsInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'CaclTFBDetailsInput(dockedAt: $dockedAt, arrivalAt: $arrivalAt, checklistAt: $checklistAt, cradle: $cradle, pumpStart: $pumpStart, pumpEnd: $pumpEnd, linePressure: $linePressure, ventCheck: $ventCheck, valvesSealed: $valvesSealed, finalStopBoard: $finalStopBoard, reason: $reason)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CaclTFBDetailsInputCopyWith<$Res> implements $CaclTFBDetailsInputCopyWith<$Res> {
+  factory _$CaclTFBDetailsInputCopyWith(_CaclTFBDetailsInput value, $Res Function(_CaclTFBDetailsInput) _then) = __$CaclTFBDetailsInputCopyWithImpl;
+@override @useResult
+$Res call({
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard, String? reason
+});
+
+
+
+
+}
+/// @nodoc
+class __$CaclTFBDetailsInputCopyWithImpl<$Res>
+    implements _$CaclTFBDetailsInputCopyWith<$Res> {
+  __$CaclTFBDetailsInputCopyWithImpl(this._self, this._then);
+
+  final _CaclTFBDetailsInput _self;
+  final $Res Function(_CaclTFBDetailsInput) _then;
+
+/// Create a copy of CaclTFBDetailsInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? dockedAt = freezed,Object? arrivalAt = freezed,Object? checklistAt = freezed,Object? cradle = freezed,Object? pumpStart = freezed,Object? pumpEnd = freezed,Object? linePressure = freezed,Object? ventCheck = freezed,Object? valvesSealed = freezed,Object? finalStopBoard = freezed,Object? reason = freezed,}) {
+  return _then(_CaclTFBDetailsInput(
+dockedAt: freezed == dockedAt ? _self.dockedAt : dockedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,arrivalAt: freezed == arrivalAt ? _self.arrivalAt : arrivalAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,checklistAt: freezed == checklistAt ? _self.checklistAt : checklistAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,cradle: freezed == cradle ? _self.cradle : cradle // ignore: cast_nullable_to_non_nullable
+as int?,pumpStart: freezed == pumpStart ? _self.pumpStart : pumpStart // ignore: cast_nullable_to_non_nullable
+as DateTime?,pumpEnd: freezed == pumpEnd ? _self.pumpEnd : pumpEnd // ignore: cast_nullable_to_non_nullable
+as DateTime?,linePressure: freezed == linePressure ? _self.linePressure : linePressure // ignore: cast_nullable_to_non_nullable
+as bool?,ventCheck: freezed == ventCheck ? _self.ventCheck : ventCheck // ignore: cast_nullable_to_non_nullable
+as bool?,valvesSealed: freezed == valvesSealed ? _self.valvesSealed : valvesSealed // ignore: cast_nullable_to_non_nullable
+as bool?,finalStopBoard: freezed == finalStopBoard ? _self.finalStopBoard : finalStopBoard // ignore: cast_nullable_to_non_nullable
+as bool?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$CaclTFBDetails {
+
+/// The [dockedAt] parameter is the dockedAt of the CACL TFB details.
+@TimestampOrNullConverter() DateTime? get dockedAt;/// The [dockedAt] parameter is the dockedAt of the CACL TFB details.
+@TimestampOrNullConverter() set dockedAt(DateTime? value);/// The [arrivalAt] parameter is the arrivalAt of the CACL TFB details.
+@TimestampOrNullConverter() DateTime? get arrivalAt;/// The [arrivalAt] parameter is the arrivalAt of the CACL TFB details.
+@TimestampOrNullConverter() set arrivalAt(DateTime? value);/// The [checklistAt] parameter is the checklistAt of the CACL TFB details.
+@TimestampOrNullConverter() DateTime? get checklistAt;/// The [checklistAt] parameter is the checklistAt of the CACL TFB details.
+@TimestampOrNullConverter() set checklistAt(DateTime? value);/// The [cradle] parameter is the cradle of the CACL TFB details.
+ int? get cradle;/// The [cradle] parameter is the cradle of the CACL TFB details.
+ set cradle(int? value);/// The [pumpStart] parameter is the pumpStart of the CACL TFB details.
+@TimestampOrNullConverter() DateTime? get pumpStart;/// The [pumpStart] parameter is the pumpStart of the CACL TFB details.
+@TimestampOrNullConverter() set pumpStart(DateTime? value);/// The [pumpEnd] parameter is the pumpEnd of the CACL TFB details.
+@TimestampOrNullConverter() DateTime? get pumpEnd;/// The [pumpEnd] parameter is the pumpEnd of the CACL TFB details.
+@TimestampOrNullConverter() set pumpEnd(DateTime? value);/// The [linePressure] parameter is the linePressure of the CACL TFB details.
+ bool? get linePressure;/// The [linePressure] parameter is the linePressure of the CACL TFB details.
+ set linePressure(bool? value);/// The [ventCheck] parameter is the ventCheck of the CACL TFB details.
+ bool? get ventCheck;/// The [ventCheck] parameter is the ventCheck of the CACL TFB details.
+ set ventCheck(bool? value);/// The [valvesSealed] parameter is the valvesSealed of the CACL TFB details.
+ bool? get valvesSealed;/// The [valvesSealed] parameter is the valvesSealed of the CACL TFB details.
+ set valvesSealed(bool? value);/// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details.
+ bool? get finalStopBoard;/// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details.
+ set finalStopBoard(bool? value);/// The [reason] parameter is the reason of the CACL TFB details.
+ String? get reason;/// The [reason] parameter is the reason of the CACL TFB details.
+ set reason(String? value);
+/// Create a copy of CaclTFBDetails
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CaclTFBDetailsCopyWith<CaclTFBDetails> get copyWith => _$CaclTFBDetailsCopyWithImpl<CaclTFBDetails>(this as CaclTFBDetails, _$identity);
+
+  /// Serializes this CaclTFBDetails to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'CaclTFBDetails(dockedAt: $dockedAt, arrivalAt: $arrivalAt, checklistAt: $checklistAt, cradle: $cradle, pumpStart: $pumpStart, pumpEnd: $pumpEnd, linePressure: $linePressure, ventCheck: $ventCheck, valvesSealed: $valvesSealed, finalStopBoard: $finalStopBoard, reason: $reason)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $CaclTFBDetailsCopyWith<$Res>  {
+  factory $CaclTFBDetailsCopyWith(CaclTFBDetails value, $Res Function(CaclTFBDetails) _then) = _$CaclTFBDetailsCopyWithImpl;
+@useResult
+$Res call({
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard, String? reason
+});
+
+
+
+
+}
+/// @nodoc
+class _$CaclTFBDetailsCopyWithImpl<$Res>
+    implements $CaclTFBDetailsCopyWith<$Res> {
+  _$CaclTFBDetailsCopyWithImpl(this._self, this._then);
+
+  final CaclTFBDetails _self;
+  final $Res Function(CaclTFBDetails) _then;
+
+/// Create a copy of CaclTFBDetails
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? dockedAt = freezed,Object? arrivalAt = freezed,Object? checklistAt = freezed,Object? cradle = freezed,Object? pumpStart = freezed,Object? pumpEnd = freezed,Object? linePressure = freezed,Object? ventCheck = freezed,Object? valvesSealed = freezed,Object? finalStopBoard = freezed,Object? reason = freezed,}) {
+  return _then(_self.copyWith(
+dockedAt: freezed == dockedAt ? _self.dockedAt : dockedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,arrivalAt: freezed == arrivalAt ? _self.arrivalAt : arrivalAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,checklistAt: freezed == checklistAt ? _self.checklistAt : checklistAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,cradle: freezed == cradle ? _self.cradle : cradle // ignore: cast_nullable_to_non_nullable
+as int?,pumpStart: freezed == pumpStart ? _self.pumpStart : pumpStart // ignore: cast_nullable_to_non_nullable
+as DateTime?,pumpEnd: freezed == pumpEnd ? _self.pumpEnd : pumpEnd // ignore: cast_nullable_to_non_nullable
+as DateTime?,linePressure: freezed == linePressure ? _self.linePressure : linePressure // ignore: cast_nullable_to_non_nullable
+as bool?,ventCheck: freezed == ventCheck ? _self.ventCheck : ventCheck // ignore: cast_nullable_to_non_nullable
+as bool?,valvesSealed: freezed == valvesSealed ? _self.valvesSealed : valvesSealed // ignore: cast_nullable_to_non_nullable
+as bool?,finalStopBoard: freezed == finalStopBoard ? _self.finalStopBoard : finalStopBoard // ignore: cast_nullable_to_non_nullable
+as bool?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [CaclTFBDetails].
+extension CaclTFBDetailsPatterns on CaclTFBDetails {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CaclTFBDetails value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CaclTFBDetails() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CaclTFBDetails value)  $default,){
+final _that = this;
+switch (_that) {
+case _CaclTFBDetails():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CaclTFBDetails value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CaclTFBDetails() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _CaclTFBDetails() when $default != null:
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason)  $default,) {final _that = this;
+switch (_that) {
+case _CaclTFBDetails():
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason)?  $default,) {final _that = this;
+switch (_that) {
+case _CaclTFBDetails() when $default != null:
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _CaclTFBDetails implements CaclTFBDetails {
+   _CaclTFBDetails({@TimestampOrNullConverter() this.dockedAt, @TimestampOrNullConverter() this.arrivalAt, @TimestampOrNullConverter() this.checklistAt, this.cradle, @TimestampOrNullConverter() this.pumpStart, @TimestampOrNullConverter() this.pumpEnd, this.linePressure, this.ventCheck, this.valvesSealed, this.finalStopBoard, this.reason});
+  factory _CaclTFBDetails.fromJson(Map<String, dynamic> json) => _$CaclTFBDetailsFromJson(json);
+
+/// The [dockedAt] parameter is the dockedAt of the CACL TFB details.
+@override@TimestampOrNullConverter()  DateTime? dockedAt;
+/// The [arrivalAt] parameter is the arrivalAt of the CACL TFB details.
+@override@TimestampOrNullConverter()  DateTime? arrivalAt;
+/// The [checklistAt] parameter is the checklistAt of the CACL TFB details.
+@override@TimestampOrNullConverter()  DateTime? checklistAt;
+/// The [cradle] parameter is the cradle of the CACL TFB details.
+@override  int? cradle;
+/// The [pumpStart] parameter is the pumpStart of the CACL TFB details.
+@override@TimestampOrNullConverter()  DateTime? pumpStart;
+/// The [pumpEnd] parameter is the pumpEnd of the CACL TFB details.
+@override@TimestampOrNullConverter()  DateTime? pumpEnd;
+/// The [linePressure] parameter is the linePressure of the CACL TFB details.
+@override  bool? linePressure;
+/// The [ventCheck] parameter is the ventCheck of the CACL TFB details.
+@override  bool? ventCheck;
+/// The [valvesSealed] parameter is the valvesSealed of the CACL TFB details.
+@override  bool? valvesSealed;
+/// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details.
+@override  bool? finalStopBoard;
+/// The [reason] parameter is the reason of the CACL TFB details.
+@override  String? reason;
+
+/// Create a copy of CaclTFBDetails
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CaclTFBDetailsCopyWith<_CaclTFBDetails> get copyWith => __$CaclTFBDetailsCopyWithImpl<_CaclTFBDetails>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$CaclTFBDetailsToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'CaclTFBDetails(dockedAt: $dockedAt, arrivalAt: $arrivalAt, checklistAt: $checklistAt, cradle: $cradle, pumpStart: $pumpStart, pumpEnd: $pumpEnd, linePressure: $linePressure, ventCheck: $ventCheck, valvesSealed: $valvesSealed, finalStopBoard: $finalStopBoard, reason: $reason)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CaclTFBDetailsCopyWith<$Res> implements $CaclTFBDetailsCopyWith<$Res> {
+  factory _$CaclTFBDetailsCopyWith(_CaclTFBDetails value, $Res Function(_CaclTFBDetails) _then) = __$CaclTFBDetailsCopyWithImpl;
+@override @useResult
+$Res call({
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard, String? reason
+});
+
+
+
+
+}
+/// @nodoc
+class __$CaclTFBDetailsCopyWithImpl<$Res>
+    implements _$CaclTFBDetailsCopyWith<$Res> {
+  __$CaclTFBDetailsCopyWithImpl(this._self, this._then);
+
+  final _CaclTFBDetails _self;
+  final $Res Function(_CaclTFBDetails) _then;
+
+/// Create a copy of CaclTFBDetails
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? dockedAt = freezed,Object? arrivalAt = freezed,Object? checklistAt = freezed,Object? cradle = freezed,Object? pumpStart = freezed,Object? pumpEnd = freezed,Object? linePressure = freezed,Object? ventCheck = freezed,Object? valvesSealed = freezed,Object? finalStopBoard = freezed,Object? reason = freezed,}) {
+  return _then(_CaclTFBDetails(
+dockedAt: freezed == dockedAt ? _self.dockedAt : dockedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,arrivalAt: freezed == arrivalAt ? _self.arrivalAt : arrivalAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,checklistAt: freezed == checklistAt ? _self.checklistAt : checklistAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,cradle: freezed == cradle ? _self.cradle : cradle // ignore: cast_nullable_to_non_nullable
+as int?,pumpStart: freezed == pumpStart ? _self.pumpStart : pumpStart // ignore: cast_nullable_to_non_nullable
+as DateTime?,pumpEnd: freezed == pumpEnd ? _self.pumpEnd : pumpEnd // ignore: cast_nullable_to_non_nullable
+as DateTime?,linePressure: freezed == linePressure ? _self.linePressure : linePressure // ignore: cast_nullable_to_non_nullable
+as bool?,ventCheck: freezed == ventCheck ? _self.ventCheck : ventCheck // ignore: cast_nullable_to_non_nullable
+as bool?,valvesSealed: freezed == valvesSealed ? _self.valvesSealed : valvesSealed // ignore: cast_nullable_to_non_nullable
+as bool?,finalStopBoard: freezed == finalStopBoard ? _self.finalStopBoard : finalStopBoard // ignore: cast_nullable_to_non_nullable
+as bool?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

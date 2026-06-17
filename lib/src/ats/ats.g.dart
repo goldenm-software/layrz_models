@@ -1958,6 +1958,9 @@ _CaclEntity _$CaclEntityFromJson(Map<String, dynamic> json) => _CaclEntity(
       ? null
       : Asset.fromJson(json['tankAsset'] as Map<String, dynamic>),
   signedAt: const TimestampOrNullConverter().fromJson(json['signedAt'] as num?),
+  tfbDetails: json['tfbDetails'] == null
+      ? null
+      : CaclTFBDetails.fromJson(json['tfbDetails'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$CaclEntityToJson(
@@ -2002,6 +2005,7 @@ Map<String, dynamic> _$CaclEntityToJson(
   'isCombine': instance.isCombine,
   'tankAsset': instance.tankAsset?.toJson(),
   'signedAt': const TimestampOrNullConverter().toJson(instance.signedAt),
+  'tfbDetails': instance.tfbDetails?.toJson(),
 };
 
 const _$CaclCategoryEnumMap = {
@@ -2252,6 +2256,11 @@ _CaclInput _$CaclInputFromJson(Map<String, dynamic> json) => _CaclInput(
   localDateEnd: const TimestampOrNullConverter().fromJson(
     json['localDateEnd'] as num?,
   ),
+  tfbDetails: json['tfbDetails'] == null
+      ? null
+      : CaclTFBDetailsInput.fromJson(
+          json['tfbDetails'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$CaclInputToJson(
@@ -2283,6 +2292,7 @@ Map<String, dynamic> _$CaclInputToJson(
   'localDateEnd': const TimestampOrNullConverter().toJson(
     instance.localDateEnd,
   ),
+  'tfbDetails': instance.tfbDetails?.toJson(),
 };
 
 _CaclEquipmentInput _$CaclEquipmentInputFromJson(Map<String, dynamic> json) =>
@@ -2473,6 +2483,82 @@ _EquipmentMeasurementInput _$EquipmentMeasurementInputFromJson(
 Map<String, dynamic> _$EquipmentMeasurementInputToJson(
   _EquipmentMeasurementInput instance,
 ) => <String, dynamic>{'serialNumber': instance.serialNumber};
+
+_CaclTFBDetailsInput _$CaclTFBDetailsInputFromJson(
+  Map<String, dynamic> json,
+) => _CaclTFBDetailsInput(
+  dockedAt: const TimestampOrNullConverter().fromJson(json['dockedAt'] as num?),
+  arrivalAt: const TimestampOrNullConverter().fromJson(
+    json['arrivalAt'] as num?,
+  ),
+  checklistAt: const TimestampOrNullConverter().fromJson(
+    json['checklistAt'] as num?,
+  ),
+  cradle: (json['cradle'] as num?)?.toInt(),
+  pumpStart: const TimestampOrNullConverter().fromJson(
+    json['pumpStart'] as num?,
+  ),
+  pumpEnd: const TimestampOrNullConverter().fromJson(json['pumpEnd'] as num?),
+  linePressure: json['linePressure'] as bool?,
+  ventCheck: json['ventCheck'] as bool?,
+  valvesSealed: json['valvesSealed'] as bool?,
+  finalStopBoard: json['finalStopBoard'] as bool?,
+  reason: json['reason'] as String?,
+);
+
+Map<String, dynamic> _$CaclTFBDetailsInputToJson(
+  _CaclTFBDetailsInput instance,
+) => <String, dynamic>{
+  'dockedAt': const TimestampOrNullConverter().toJson(instance.dockedAt),
+  'arrivalAt': const TimestampOrNullConverter().toJson(instance.arrivalAt),
+  'checklistAt': const TimestampOrNullConverter().toJson(instance.checklistAt),
+  'cradle': instance.cradle,
+  'pumpStart': const TimestampOrNullConverter().toJson(instance.pumpStart),
+  'pumpEnd': const TimestampOrNullConverter().toJson(instance.pumpEnd),
+  'linePressure': instance.linePressure,
+  'ventCheck': instance.ventCheck,
+  'valvesSealed': instance.valvesSealed,
+  'finalStopBoard': instance.finalStopBoard,
+  'reason': instance.reason,
+};
+
+_CaclTFBDetails _$CaclTFBDetailsFromJson(
+  Map<String, dynamic> json,
+) => _CaclTFBDetails(
+  dockedAt: const TimestampOrNullConverter().fromJson(json['dockedAt'] as num?),
+  arrivalAt: const TimestampOrNullConverter().fromJson(
+    json['arrivalAt'] as num?,
+  ),
+  checklistAt: const TimestampOrNullConverter().fromJson(
+    json['checklistAt'] as num?,
+  ),
+  cradle: (json['cradle'] as num?)?.toInt(),
+  pumpStart: const TimestampOrNullConverter().fromJson(
+    json['pumpStart'] as num?,
+  ),
+  pumpEnd: const TimestampOrNullConverter().fromJson(json['pumpEnd'] as num?),
+  linePressure: json['linePressure'] as bool?,
+  ventCheck: json['ventCheck'] as bool?,
+  valvesSealed: json['valvesSealed'] as bool?,
+  finalStopBoard: json['finalStopBoard'] as bool?,
+  reason: json['reason'] as String?,
+);
+
+Map<String, dynamic> _$CaclTFBDetailsToJson(
+  _CaclTFBDetails instance,
+) => <String, dynamic>{
+  'dockedAt': const TimestampOrNullConverter().toJson(instance.dockedAt),
+  'arrivalAt': const TimestampOrNullConverter().toJson(instance.arrivalAt),
+  'checklistAt': const TimestampOrNullConverter().toJson(instance.checklistAt),
+  'cradle': instance.cradle,
+  'pumpStart': const TimestampOrNullConverter().toJson(instance.pumpStart),
+  'pumpEnd': const TimestampOrNullConverter().toJson(instance.pumpEnd),
+  'linePressure': instance.linePressure,
+  'ventCheck': instance.ventCheck,
+  'valvesSealed': instance.valvesSealed,
+  'finalStopBoard': instance.finalStopBoard,
+  'reason': instance.reason,
+};
 
 _AtsMonitor _$AtsMonitorFromJson(Map<String, dynamic> json) => _AtsMonitor(
   id: json['id'] as String,

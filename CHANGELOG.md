@@ -1,13 +1,20 @@
 # Changelog
 
-##  3.10.12
+## 3.10.13
+
+- Added new models `CaclTFBDetails` and `CaclTFBDetailsInput`
+- Added new value `tfbdetails` to `CaclEntity` and `CaclInput` models
+
+## 3.10.12
 
 - Changed `MessageOfTheDay`'s `id`, `name` and `title` fields to be non-nullable, and required for declaration.
 
 ## 3.10.11
+
 - Added `SensorDataType` enum (`INT`, `FLOAT`, `STR`, `BOOL`) to the `sensors` module.
 
 ## 3.10.10
+
 - Added `MessageOfTheDay` and `MessageOfTheDayInput` models to the `brickhouse` module.
 
 ## 3.10.9
