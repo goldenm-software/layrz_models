@@ -109,6 +109,9 @@ abstract class CaclEntity with _$CaclEntity {
 
     /// The [signedAt] parameter is the signedAt of the cacl entity.
     @TimestampOrNullConverter() DateTime? signedAt,
+
+    /// The [tfbDetails] parameter is the tfbDetails of the cacl entity.
+    CaclTFBDetails? tfbDetails,
   }) = _CaclEntity;
 
   /// Creates a new [CaclEntity] instance from a JSON map.
