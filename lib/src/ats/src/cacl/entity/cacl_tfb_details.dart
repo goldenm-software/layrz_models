@@ -37,6 +37,12 @@ abstract class CaclTFBDetails with _$CaclTFBDetails {
 
     /// The [reason] parameter is the reason of the CACL TFB details.
     String? reason,
+
+    /// The [btInscription] parameter is the btInscription of the CACL TFB details.
+    String? btInscription,
+
+    /// The [vgNavio] parameter is the vgNavio of the CACL TFB details.
+    int? vgNavio,
   }) = _CaclTFBDetails;
 
   /// Creates a new [CaclTFBDetails] instance from a JSON map.
