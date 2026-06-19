@@ -1424,7 +1424,8 @@ mixin _$MaskPoint {
  String? get text;/// [value] of the mask point.
  String get value;/// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
 /// will convert to LayrzIcon entity.
-@IconOrNullConverter() LayrzIcon? get icon;
+@IconOrNullConverter() LayrzIcon? get icon;/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
+@DurationConverter() Duration? get duration;
 /// Create a copy of MaskPoint
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1437,16 +1438,16 @@ $MaskPointCopyWith<MaskPoint> get copyWith => _$MaskPointCopyWithImpl<MaskPoint>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MaskPoint&&(identical(other.color, color) || other.color == color)&&(identical(other.text, text) || other.text == text)&&(identical(other.value, value) || other.value == value)&&(identical(other.icon, icon) || other.icon == icon));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MaskPoint&&(identical(other.color, color) || other.color == color)&&(identical(other.text, text) || other.text == text)&&(identical(other.value, value) || other.value == value)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.duration, duration) || other.duration == duration));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,color,text,value,icon);
+int get hashCode => Object.hash(runtimeType,color,text,value,icon,duration);
 
 @override
 String toString() {
-  return 'MaskPoint(color: $color, text: $text, value: $value, icon: $icon)';
+  return 'MaskPoint(color: $color, text: $text, value: $value, icon: $icon, duration: $duration)';
 }
 
 
@@ -1457,7 +1458,7 @@ abstract mixin class $MaskPointCopyWith<$Res>  {
   factory $MaskPointCopyWith(MaskPoint value, $Res Function(MaskPoint) _then) = _$MaskPointCopyWithImpl;
 @useResult
 $Res call({
-@ColorOrNullConverter() Color? color, String? text, String value,@IconOrNullConverter() LayrzIcon? icon
+@ColorOrNullConverter() Color? color, String? text, String value,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration? duration
 });
 
 
@@ -1474,13 +1475,14 @@ class _$MaskPointCopyWithImpl<$Res>
 
 /// Create a copy of MaskPoint
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? color = freezed,Object? text = freezed,Object? value = null,Object? icon = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? color = freezed,Object? text = freezed,Object? value = null,Object? icon = freezed,Object? duration = freezed,}) {
   return _then(_self.copyWith(
 color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String?,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,
+as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as Duration?,
   ));
 }
 
@@ -1565,10 +1567,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MaskPoint() when $default != null:
-return $default(_that.color,_that.text,_that.value,_that.icon);case _:
+return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
   return orElse();
 
 }
@@ -1586,10 +1588,10 @@ return $default(_that.color,_that.text,_that.value,_that.icon);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)  $default,) {final _that = this;
 switch (_that) {
 case _MaskPoint():
-return $default(_that.color,_that.text,_that.value,_that.icon);case _:
+return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1606,10 +1608,10 @@ return $default(_that.color,_that.text,_that.value,_that.icon);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)?  $default,) {final _that = this;
 switch (_that) {
 case _MaskPoint() when $default != null:
-return $default(_that.color,_that.text,_that.value,_that.icon);case _:
+return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
   return null;
 
 }
@@ -1621,7 +1623,7 @@ return $default(_that.color,_that.text,_that.value,_that.icon);case _:
 @JsonSerializable()
 
 class _MaskPoint implements MaskPoint {
-  const _MaskPoint({@ColorOrNullConverter() this.color, this.text, required this.value, @IconOrNullConverter() this.icon});
+  const _MaskPoint({@ColorOrNullConverter() this.color, this.text, required this.value, @IconOrNullConverter() this.icon, @DurationConverter() this.duration});
   factory _MaskPoint.fromJson(Map<String, dynamic> json) => _$MaskPointFromJson(json);
 
 /// [color] of the mask point, will convert the color ignoring the dark/light theme setting.
@@ -1633,6 +1635,8 @@ class _MaskPoint implements MaskPoint {
 /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
 /// will convert to LayrzIcon entity.
 @override@IconOrNullConverter() final  LayrzIcon? icon;
+/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
+@override@DurationConverter() final  Duration? duration;
 
 /// Create a copy of MaskPoint
 /// with the given fields replaced by the non-null parameter values.
@@ -1647,16 +1651,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MaskPoint&&(identical(other.color, color) || other.color == color)&&(identical(other.text, text) || other.text == text)&&(identical(other.value, value) || other.value == value)&&(identical(other.icon, icon) || other.icon == icon));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MaskPoint&&(identical(other.color, color) || other.color == color)&&(identical(other.text, text) || other.text == text)&&(identical(other.value, value) || other.value == value)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.duration, duration) || other.duration == duration));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,color,text,value,icon);
+int get hashCode => Object.hash(runtimeType,color,text,value,icon,duration);
 
 @override
 String toString() {
-  return 'MaskPoint(color: $color, text: $text, value: $value, icon: $icon)';
+  return 'MaskPoint(color: $color, text: $text, value: $value, icon: $icon, duration: $duration)';
 }
 
 
@@ -1667,7 +1671,7 @@ abstract mixin class _$MaskPointCopyWith<$Res> implements $MaskPointCopyWith<$Re
   factory _$MaskPointCopyWith(_MaskPoint value, $Res Function(_MaskPoint) _then) = __$MaskPointCopyWithImpl;
 @override @useResult
 $Res call({
-@ColorOrNullConverter() Color? color, String? text, String value,@IconOrNullConverter() LayrzIcon? icon
+@ColorOrNullConverter() Color? color, String? text, String value,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration? duration
 });
 
 
@@ -1684,13 +1688,14 @@ class __$MaskPointCopyWithImpl<$Res>
 
 /// Create a copy of MaskPoint
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? color = freezed,Object? text = freezed,Object? value = null,Object? icon = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? color = freezed,Object? text = freezed,Object? value = null,Object? icon = freezed,Object? duration = freezed,}) {
   return _then(_MaskPoint(
 color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String?,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,
+as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as Duration?,
   ));
 }
 
@@ -1701,7 +1706,9 @@ as LayrzIcon?,
 /// @nodoc
 mixin _$MaskPointInput {
 
-@ColorOrNullConverter() Color? get color;@ColorOrNullConverter() set color(Color? value); String? get text; set text(String? value); String? get value; set value(String? value);@IconOrNullConverter() LayrzIcon? get icon;@IconOrNullConverter() set icon(LayrzIcon? value);
+@ColorOrNullConverter() Color? get color;@ColorOrNullConverter() set color(Color? value); String? get text; set text(String? value); String? get value; set value(String? value);@IconOrNullConverter() LayrzIcon? get icon;@IconOrNullConverter() set icon(LayrzIcon? value);/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
+@DurationConverter() Duration? get duration;/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
+@DurationConverter() set duration(Duration? value);
 /// Create a copy of MaskPointInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1716,7 +1723,7 @@ $MaskPointInputCopyWith<MaskPointInput> get copyWith => _$MaskPointInputCopyWith
 
 @override
 String toString() {
-  return 'MaskPointInput(color: $color, text: $text, value: $value, icon: $icon)';
+  return 'MaskPointInput(color: $color, text: $text, value: $value, icon: $icon, duration: $duration)';
 }
 
 
@@ -1727,7 +1734,7 @@ abstract mixin class $MaskPointInputCopyWith<$Res>  {
   factory $MaskPointInputCopyWith(MaskPointInput value, $Res Function(MaskPointInput) _then) = _$MaskPointInputCopyWithImpl;
 @useResult
 $Res call({
-@ColorOrNullConverter() Color? color, String? text, String? value,@IconOrNullConverter() LayrzIcon? icon
+@ColorOrNullConverter() Color? color, String? text, String? value,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration? duration
 });
 
 
@@ -1744,13 +1751,14 @@ class _$MaskPointInputCopyWithImpl<$Res>
 
 /// Create a copy of MaskPointInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? color = freezed,Object? text = freezed,Object? value = freezed,Object? icon = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? color = freezed,Object? text = freezed,Object? value = freezed,Object? icon = freezed,Object? duration = freezed,}) {
   return _then(_self.copyWith(
 color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String?,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,
+as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as Duration?,
   ));
 }
 
@@ -1835,10 +1843,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MaskPointInput() when $default != null:
-return $default(_that.color,_that.text,_that.value,_that.icon);case _:
+return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
   return orElse();
 
 }
@@ -1856,10 +1864,10 @@ return $default(_that.color,_that.text,_that.value,_that.icon);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)  $default,) {final _that = this;
 switch (_that) {
 case _MaskPointInput():
-return $default(_that.color,_that.text,_that.value,_that.icon);case _:
+return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1876,10 +1884,10 @@ return $default(_that.color,_that.text,_that.value,_that.icon);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)?  $default,) {final _that = this;
 switch (_that) {
 case _MaskPointInput() when $default != null:
-return $default(_that.color,_that.text,_that.value,_that.icon);case _:
+return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
   return null;
 
 }
@@ -1891,13 +1899,15 @@ return $default(_that.color,_that.text,_that.value,_that.icon);case _:
 @JsonSerializable()
 
 class _MaskPointInput implements MaskPointInput {
-   _MaskPointInput({@ColorOrNullConverter() this.color, this.text, this.value, @IconOrNullConverter() this.icon});
+   _MaskPointInput({@ColorOrNullConverter() this.color, this.text, this.value, @IconOrNullConverter() this.icon, @DurationConverter() this.duration});
   factory _MaskPointInput.fromJson(Map<String, dynamic> json) => _$MaskPointInputFromJson(json);
 
 @override@ColorOrNullConverter()  Color? color;
 @override  String? text;
 @override  String? value;
 @override@IconOrNullConverter()  LayrzIcon? icon;
+/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
+@override@DurationConverter()  Duration? duration;
 
 /// Create a copy of MaskPointInput
 /// with the given fields replaced by the non-null parameter values.
@@ -1914,7 +1924,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'MaskPointInput(color: $color, text: $text, value: $value, icon: $icon)';
+  return 'MaskPointInput(color: $color, text: $text, value: $value, icon: $icon, duration: $duration)';
 }
 
 
@@ -1925,7 +1935,7 @@ abstract mixin class _$MaskPointInputCopyWith<$Res> implements $MaskPointInputCo
   factory _$MaskPointInputCopyWith(_MaskPointInput value, $Res Function(_MaskPointInput) _then) = __$MaskPointInputCopyWithImpl;
 @override @useResult
 $Res call({
-@ColorOrNullConverter() Color? color, String? text, String? value,@IconOrNullConverter() LayrzIcon? icon
+@ColorOrNullConverter() Color? color, String? text, String? value,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration? duration
 });
 
 
@@ -1942,13 +1952,14 @@ class __$MaskPointInputCopyWithImpl<$Res>
 
 /// Create a copy of MaskPointInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? color = freezed,Object? text = freezed,Object? value = freezed,Object? icon = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? color = freezed,Object? text = freezed,Object? value = freezed,Object? icon = freezed,Object? duration = freezed,}) {
   return _then(_MaskPointInput(
 color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String?,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,
+as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as Duration?,
   ));
 }
 
