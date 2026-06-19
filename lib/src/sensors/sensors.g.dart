@@ -252,6 +252,10 @@ _MaskPoint _$MaskPointFromJson(Map<String, dynamic> json) => _MaskPoint(
   text: json['text'] as String?,
   value: json['value'] as String,
   icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
+  duration: _$JsonConverterFromJson<num, Duration>(
+    json['duration'],
+    const DurationConverter().fromJson,
+  ),
 );
 
 Map<String, dynamic> _$MaskPointToJson(_MaskPoint instance) =>
@@ -260,7 +264,21 @@ Map<String, dynamic> _$MaskPointToJson(_MaskPoint instance) =>
       'text': instance.text,
       'value': instance.value,
       'icon': const IconOrNullConverter().toJson(instance.icon),
+      'duration': _$JsonConverterToJson<num, Duration>(
+        instance.duration,
+        const DurationConverter().toJson,
+      ),
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) => json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) => value == null ? null : toJson(value);
 
 _MaskPointInput _$MaskPointInputFromJson(Map<String, dynamic> json) =>
     _MaskPointInput(
@@ -268,6 +286,10 @@ _MaskPointInput _$MaskPointInputFromJson(Map<String, dynamic> json) =>
       text: json['text'] as String?,
       value: json['value'] as String?,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
+      duration: _$JsonConverterFromJson<num, Duration>(
+        json['duration'],
+        const DurationConverter().fromJson,
+      ),
     );
 
 Map<String, dynamic> _$MaskPointInputToJson(_MaskPointInput instance) =>
@@ -276,6 +298,10 @@ Map<String, dynamic> _$MaskPointInputToJson(_MaskPointInput instance) =>
       'text': instance.text,
       'value': instance.value,
       'icon': const IconOrNullConverter().toJson(instance.icon),
+      'duration': _$JsonConverterToJson<num, Duration>(
+        instance.duration,
+        const DurationConverter().toJson,
+      ),
     };
 
 const _$SensorDataTypeEnumMap = {

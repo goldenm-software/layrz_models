@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.10.16
+
+- Added `duration` field (`Duration?`) to `MaskPoint` and `MaskPointInput` models, with `@DurationConverter()` for JSON serialization/deserialization.
+
 ## 3.10.15
 
 - Added new value `SALE_FROM_THIRD_PARTY_TANK` in `AtsPurchaseOrderCategoriesEntity` enum
