@@ -1628,6 +1628,8 @@ const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
   AtsPurchaseOrderCategoriesEntity.returnFromStorage: 'RETURN_FROM_STORAGE',
   AtsPurchaseOrderCategoriesEntity.productionSaleToFreeTradeZone:
       'PRODUCTION_SALE_TO_FREE_TRADE_ZONE',
+  AtsPurchaseOrderCategoriesEntity.saleFromThirdPartyTank:
+      'SALE_FROM_THIRD_PARTY_TANK',
   AtsPurchaseOrderCategoriesEntity.notDefined: 'NOT_DEFINED',
 };
 
