@@ -29,6 +29,9 @@ enum AtsPurchaseOrderCategoriesEntity {
   // Fuel delivery to free trade zone (5901 / 6901)
   @JsonValue('PRODUCTION_SALE_TO_FREE_TRADE_ZONE')
   productionSaleToFreeTradeZone,
+  // Venda de tanque de terceiros (5106 / 6106)
+  @JsonValue('SALE_FROM_THIRD_PARTY_TANK')
+  saleFromThirdPartyTank,
   // Not defined
   @JsonValue('NOT_DEFINED')
   notDefined,

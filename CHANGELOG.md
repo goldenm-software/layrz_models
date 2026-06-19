@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.10.15
+
+- Added new value `SALE_FROM_THIRD_PARTY_TANK` in `AtsPurchaseOrderCategoriesEntity` enum
+
 ## 3.10.14
 
 - Added `btInscription` and `vgNavio` values in `CaclTFBDetails` and `CaclTFBDetailsInput` models
