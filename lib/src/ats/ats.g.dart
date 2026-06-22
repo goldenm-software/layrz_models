@@ -3410,4 +3410,11 @@ const _$AtsStreamExitStructureTypeEnumMap = {
   AtsStreamExitStructureType.temperature: 'temperature',
   AtsStreamExitStructureType.fuelType: 'fuel.type',
   AtsStreamExitStructureType.fuelSubtype: 'fuel.subtype',
+  AtsStreamExitStructureType.unitValue: 'unit.value',
+  AtsStreamExitStructureType.totalValue: 'total.value',
+  AtsStreamExitStructureType.registerDate: 'registerDate',
+  AtsStreamExitStructureType.attendantName: 'attendant.name',
+  AtsStreamExitStructureType.attendantVin: 'attendant.vin',
+  AtsStreamExitStructureType.attendantPlate: 'attendant.plate',
+  AtsStreamExitStructureType.attendantCustomField: 'attendant.custom.field',
 };
