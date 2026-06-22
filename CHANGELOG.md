@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.11.0
+
+- Bumped minimum SDK constraints to Dart `>=3.12.0` and Flutter `>=3.44.0`
+- Upgraded `layrz_icons` dependency to `^1.1.0`
+- Updated `mobilePopupNotification` icon in `OperationType` to `solarOutlineSmartphoneN2`
+
 ## 3.10.16
 
 - Added `duration` field (`Duration?`) to `MaskPoint` and `MaskPointInput` models, with `@DurationConverter()` for JSON serialization/deserialization.

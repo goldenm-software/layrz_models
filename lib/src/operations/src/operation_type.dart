@@ -119,7 +119,7 @@ enum OperationType {
         return LayrzIcons.solarOutlinePhoneCallingRounded;
 
       case .mobilePopupNotification:
-        return LayrzIcons.solarOutlineSmartphone2;
+        return LayrzIcons.solarOutlineSmartphoneN2;
 
       case .bhsPush:
         return LayrzIcons.mdiFirebase;
