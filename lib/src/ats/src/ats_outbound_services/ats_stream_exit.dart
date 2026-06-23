@@ -93,6 +93,34 @@ enum AtsStreamExitStructureType {
   /// Layrz API equivalence: `fuel.subtype`. Means the subtype of the fuel that is being moved.
   @JsonValue('fuel.subtype')
   fuelSubtype,
+
+  /// Layrz API equivalence: `unit.value`. Means the unit value of the movement.
+  @JsonValue('unit.value')
+  unitValue,
+
+  /// Layrz API equivalence: `total.value`. Means the total value of the movement.
+  @JsonValue('total.value')
+  totalValue,
+
+  /// Layrz API equivalence: `registerDate`. Means the register date of the movement.
+  @JsonValue('registerDate')
+  registerDate,
+
+  /// Layrz API equivalence: `attendant.name`. Means the name of the attendant.
+  @JsonValue('attendant.name')
+  attendantName,
+
+  /// Layrz API equivalence: `attendant.vin`. Means the vin of the attendant.
+  @JsonValue('attendant.vin')
+  attendantVin,
+
+  /// Layrz API equivalence: `attendant.plate`. Means the plate of the attendant.
+  @JsonValue('attendant.plate')
+  attendantPlate,
+
+  /// Layrz API equivalence: `attendant.custom.field`. Means a custom field of the attendant.
+  @JsonValue('attendant.custom.field')
+  attendantCustomField,
   ;
 
   /// Validates if the [search] is a custom value or not.

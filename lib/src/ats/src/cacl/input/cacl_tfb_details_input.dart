@@ -24,16 +24,16 @@ abstract class CaclTFBDetailsInput with _$CaclTFBDetailsInput {
     @TimestampOrNullConverter() DateTime? pumpEnd,
 
     /// The [linePressure] parameter is the linePressure of the CACL TFB details input.
-    bool? linePressure,
+    @Default(false) bool linePressure,
 
     /// The [ventCheck] parameter is the ventCheck of the CACL TFB details input.
-    bool? ventCheck,
+    @Default(false) bool ventCheck,
 
     /// The [valvesSealed] parameter is the valvesSealed of the CACL TFB details input.
-    bool? valvesSealed,
+    @Default(false) bool valvesSealed,
 
-    /// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details input.
-    bool? finalStopBoard,
+    /// The [finalStop] parameter is the finalStop of the CACL TFB details input.
+    @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop,
 
     /// The [reason] parameter is the reason of the CACL TFB details input.
     String? reason,
@@ -49,4 +49,21 @@ abstract class CaclTFBDetailsInput with _$CaclTFBDetailsInput {
   ///
   /// The [json] parameter is the JSON map to create the instance from.
   factory CaclTFBDetailsInput.fromJson(Map<String, dynamic> json) => _$CaclTFBDetailsInputFromJson(json);
+}
+
+@JsonEnum(alwaysCreate: true)
+enum CaclTFBFinalStop {
+  @JsonValue('BORDO')
+  bordo,
+  @JsonValue('TERRA')
+  terra;
+
+  @override
+  String toString() => toJson();
+
+  String toJson() => _$CaclTFBFinalStopEnumMap[this] ?? 'BORDO';
+
+  static CaclTFBFinalStop? fromJson(String value) {
+    return _$CaclTFBFinalStopEnumMap.entries.firstWhereOrNull((element) => element.value == value)?.key;
+  }
 }
