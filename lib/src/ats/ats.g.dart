@@ -2501,10 +2501,14 @@ _CaclTFBDetailsInput _$CaclTFBDetailsInputFromJson(
     json['pumpStart'] as num?,
   ),
   pumpEnd: const TimestampOrNullConverter().fromJson(json['pumpEnd'] as num?),
-  linePressure: json['linePressure'] as bool?,
-  ventCheck: json['ventCheck'] as bool?,
-  valvesSealed: json['valvesSealed'] as bool?,
-  finalStopBoard: json['finalStopBoard'] as bool?,
+  linePressure: json['linePressure'] as bool? ?? false,
+  ventCheck: json['ventCheck'] as bool? ?? false,
+  valvesSealed: json['valvesSealed'] as bool? ?? false,
+  finalStop: $enumDecodeNullable(
+    _$CaclTFBFinalStopEnumMap,
+    json['finalStop'],
+    unknownValue: CaclTFBFinalStop.bordo,
+  ),
   reason: json['reason'] as String?,
   btInscription: json['btInscription'] as String?,
   vgNavio: (json['vgNavio'] as num?)?.toInt(),
@@ -2522,10 +2526,15 @@ Map<String, dynamic> _$CaclTFBDetailsInputToJson(
   'linePressure': instance.linePressure,
   'ventCheck': instance.ventCheck,
   'valvesSealed': instance.valvesSealed,
-  'finalStopBoard': instance.finalStopBoard,
+  'finalStop': instance.finalStop?.toJson(),
   'reason': instance.reason,
   'btInscription': instance.btInscription,
   'vgNavio': instance.vgNavio,
+};
+
+const _$CaclTFBFinalStopEnumMap = {
+  CaclTFBFinalStop.bordo: 'BORDO',
+  CaclTFBFinalStop.terra: 'TERRA',
 };
 
 _CaclTFBDetails _$CaclTFBDetailsFromJson(

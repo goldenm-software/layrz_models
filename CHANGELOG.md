@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.11.2
+
+- Removed `finalStopBoard` and added `finalStop` as enum value in `CaclTFBDetailsInput` model
+- Added default value `false` to boolean values in `CaclTFBDetailsInput` model
+
 ## 3.11.0
 
 - Bumped minimum SDK constraints to Dart `>=3.12.0` and Flutter `>=3.44.0`
