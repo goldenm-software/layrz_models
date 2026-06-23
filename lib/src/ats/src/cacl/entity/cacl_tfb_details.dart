@@ -35,6 +35,9 @@ abstract class CaclTFBDetails with _$CaclTFBDetails {
     /// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details.
     bool? finalStopBoard,
 
+    /// The [finalStop] parameter is the finalStop of the CACL TFB details.
+    @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop,
+
     /// The [reason] parameter is the reason of the CACL TFB details.
     String? reason,
 

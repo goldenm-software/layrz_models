@@ -2556,6 +2556,11 @@ _CaclTFBDetails _$CaclTFBDetailsFromJson(
   ventCheck: json['ventCheck'] as bool?,
   valvesSealed: json['valvesSealed'] as bool?,
   finalStopBoard: json['finalStopBoard'] as bool?,
+  finalStop: $enumDecodeNullable(
+    _$CaclTFBFinalStopEnumMap,
+    json['finalStop'],
+    unknownValue: CaclTFBFinalStop.bordo,
+  ),
   reason: json['reason'] as String?,
   btInscription: json['btInscription'] as String?,
   vgNavio: (json['vgNavio'] as num?)?.toInt(),
@@ -2574,10 +2579,25 @@ Map<String, dynamic> _$CaclTFBDetailsToJson(
   'ventCheck': instance.ventCheck,
   'valvesSealed': instance.valvesSealed,
   'finalStopBoard': instance.finalStopBoard,
+  'finalStop': instance.finalStop?.toJson(),
   'reason': instance.reason,
   'btInscription': instance.btInscription,
   'vgNavio': instance.vgNavio,
 };
+
+_AtsCaclAsset _$AtsCaclAssetFromJson(Map<String, dynamic> json) =>
+    _AtsCaclAsset(
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      kindId: json['kindId'] as String?,
+    );
+
+Map<String, dynamic> _$AtsCaclAssetToJson(_AtsCaclAsset instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'kindId': instance.kindId,
+    };
 
 _AtsMonitor _$AtsMonitorFromJson(Map<String, dynamic> json) => _AtsMonitor(
   id: json['id'] as String,
