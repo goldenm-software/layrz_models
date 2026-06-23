@@ -22299,7 +22299,9 @@ mixin _$CaclTFBDetails {
  bool? get valvesSealed;/// The [valvesSealed] parameter is the valvesSealed of the CACL TFB details.
  set valvesSealed(bool? value);/// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details.
  bool? get finalStopBoard;/// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details.
- set finalStopBoard(bool? value);/// The [reason] parameter is the reason of the CACL TFB details.
+ set finalStopBoard(bool? value);/// The [finalStop] parameter is the finalStop of the CACL TFB details.
+@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? get finalStop;/// The [finalStop] parameter is the finalStop of the CACL TFB details.
+@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) set finalStop(CaclTFBFinalStop? value);/// The [reason] parameter is the reason of the CACL TFB details.
  String? get reason;/// The [reason] parameter is the reason of the CACL TFB details.
  set reason(String? value);/// The [btInscription] parameter is the btInscription of the CACL TFB details.
  String? get btInscription;/// The [btInscription] parameter is the btInscription of the CACL TFB details.
@@ -22320,7 +22322,7 @@ $CaclTFBDetailsCopyWith<CaclTFBDetails> get copyWith => _$CaclTFBDetailsCopyWith
 
 @override
 String toString() {
-  return 'CaclTFBDetails(dockedAt: $dockedAt, arrivalAt: $arrivalAt, checklistAt: $checklistAt, cradle: $cradle, pumpStart: $pumpStart, pumpEnd: $pumpEnd, linePressure: $linePressure, ventCheck: $ventCheck, valvesSealed: $valvesSealed, finalStopBoard: $finalStopBoard, reason: $reason, btInscription: $btInscription, vgNavio: $vgNavio)';
+  return 'CaclTFBDetails(dockedAt: $dockedAt, arrivalAt: $arrivalAt, checklistAt: $checklistAt, cradle: $cradle, pumpStart: $pumpStart, pumpEnd: $pumpEnd, linePressure: $linePressure, ventCheck: $ventCheck, valvesSealed: $valvesSealed, finalStopBoard: $finalStopBoard, finalStop: $finalStop, reason: $reason, btInscription: $btInscription, vgNavio: $vgNavio)';
 }
 
 
@@ -22331,7 +22333,7 @@ abstract mixin class $CaclTFBDetailsCopyWith<$Res>  {
   factory $CaclTFBDetailsCopyWith(CaclTFBDetails value, $Res Function(CaclTFBDetails) _then) = _$CaclTFBDetailsCopyWithImpl;
 @useResult
 $Res call({
-@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard, String? reason, String? btInscription, int? vgNavio
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, int? vgNavio
 });
 
 
@@ -22348,7 +22350,7 @@ class _$CaclTFBDetailsCopyWithImpl<$Res>
 
 /// Create a copy of CaclTFBDetails
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? dockedAt = freezed,Object? arrivalAt = freezed,Object? checklistAt = freezed,Object? cradle = freezed,Object? pumpStart = freezed,Object? pumpEnd = freezed,Object? linePressure = freezed,Object? ventCheck = freezed,Object? valvesSealed = freezed,Object? finalStopBoard = freezed,Object? reason = freezed,Object? btInscription = freezed,Object? vgNavio = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? dockedAt = freezed,Object? arrivalAt = freezed,Object? checklistAt = freezed,Object? cradle = freezed,Object? pumpStart = freezed,Object? pumpEnd = freezed,Object? linePressure = freezed,Object? ventCheck = freezed,Object? valvesSealed = freezed,Object? finalStopBoard = freezed,Object? finalStop = freezed,Object? reason = freezed,Object? btInscription = freezed,Object? vgNavio = freezed,}) {
   return _then(_self.copyWith(
 dockedAt: freezed == dockedAt ? _self.dockedAt : dockedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,arrivalAt: freezed == arrivalAt ? _self.arrivalAt : arrivalAt // ignore: cast_nullable_to_non_nullable
@@ -22360,7 +22362,8 @@ as DateTime?,linePressure: freezed == linePressure ? _self.linePressure : linePr
 as bool?,ventCheck: freezed == ventCheck ? _self.ventCheck : ventCheck // ignore: cast_nullable_to_non_nullable
 as bool?,valvesSealed: freezed == valvesSealed ? _self.valvesSealed : valvesSealed // ignore: cast_nullable_to_non_nullable
 as bool?,finalStopBoard: freezed == finalStopBoard ? _self.finalStopBoard : finalStopBoard // ignore: cast_nullable_to_non_nullable
-as bool?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
+as bool?,finalStop: freezed == finalStop ? _self.finalStop : finalStop // ignore: cast_nullable_to_non_nullable
+as CaclTFBFinalStop?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,btInscription: freezed == btInscription ? _self.btInscription : btInscription // ignore: cast_nullable_to_non_nullable
 as String?,vgNavio: freezed == vgNavio ? _self.vgNavio : vgNavio // ignore: cast_nullable_to_non_nullable
 as int?,
@@ -22448,10 +22451,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason,  String? btInscription,  int? vgNavio)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclTFBDetails() when $default != null:
-return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason,_that.btInscription,_that.vgNavio);case _:
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
   return orElse();
 
 }
@@ -22469,10 +22472,10 @@ return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason,  String? btInscription,  int? vgNavio)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)  $default,) {final _that = this;
 switch (_that) {
 case _CaclTFBDetails():
-return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason,_that.btInscription,_that.vgNavio);case _:
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -22489,10 +22492,10 @@ return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard,  String? reason,  String? btInscription,  int? vgNavio)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclTFBDetails() when $default != null:
-return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.reason,_that.btInscription,_that.vgNavio);case _:
+return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
   return null;
 
 }
@@ -22504,7 +22507,7 @@ return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_t
 @JsonSerializable()
 
 class _CaclTFBDetails implements CaclTFBDetails {
-   _CaclTFBDetails({@TimestampOrNullConverter() this.dockedAt, @TimestampOrNullConverter() this.arrivalAt, @TimestampOrNullConverter() this.checklistAt, this.cradle, @TimestampOrNullConverter() this.pumpStart, @TimestampOrNullConverter() this.pumpEnd, this.linePressure, this.ventCheck, this.valvesSealed, this.finalStopBoard, this.reason, this.btInscription, this.vgNavio});
+   _CaclTFBDetails({@TimestampOrNullConverter() this.dockedAt, @TimestampOrNullConverter() this.arrivalAt, @TimestampOrNullConverter() this.checklistAt, this.cradle, @TimestampOrNullConverter() this.pumpStart, @TimestampOrNullConverter() this.pumpEnd, this.linePressure, this.ventCheck, this.valvesSealed, this.finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) this.finalStop, this.reason, this.btInscription, this.vgNavio});
   factory _CaclTFBDetails.fromJson(Map<String, dynamic> json) => _$CaclTFBDetailsFromJson(json);
 
 /// The [dockedAt] parameter is the dockedAt of the CACL TFB details.
@@ -22527,6 +22530,8 @@ class _CaclTFBDetails implements CaclTFBDetails {
 @override  bool? valvesSealed;
 /// The [finalStopBoard] parameter is the finalStopBoard of the CACL TFB details.
 @override  bool? finalStopBoard;
+/// The [finalStop] parameter is the finalStop of the CACL TFB details.
+@override@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop;
 /// The [reason] parameter is the reason of the CACL TFB details.
 @override  String? reason;
 /// The [btInscription] parameter is the btInscription of the CACL TFB details.
@@ -22549,7 +22554,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'CaclTFBDetails(dockedAt: $dockedAt, arrivalAt: $arrivalAt, checklistAt: $checklistAt, cradle: $cradle, pumpStart: $pumpStart, pumpEnd: $pumpEnd, linePressure: $linePressure, ventCheck: $ventCheck, valvesSealed: $valvesSealed, finalStopBoard: $finalStopBoard, reason: $reason, btInscription: $btInscription, vgNavio: $vgNavio)';
+  return 'CaclTFBDetails(dockedAt: $dockedAt, arrivalAt: $arrivalAt, checklistAt: $checklistAt, cradle: $cradle, pumpStart: $pumpStart, pumpEnd: $pumpEnd, linePressure: $linePressure, ventCheck: $ventCheck, valvesSealed: $valvesSealed, finalStopBoard: $finalStopBoard, finalStop: $finalStop, reason: $reason, btInscription: $btInscription, vgNavio: $vgNavio)';
 }
 
 
@@ -22560,7 +22565,7 @@ abstract mixin class _$CaclTFBDetailsCopyWith<$Res> implements $CaclTFBDetailsCo
   factory _$CaclTFBDetailsCopyWith(_CaclTFBDetails value, $Res Function(_CaclTFBDetails) _then) = __$CaclTFBDetailsCopyWithImpl;
 @override @useResult
 $Res call({
-@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard, String? reason, String? btInscription, int? vgNavio
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, int? vgNavio
 });
 
 
@@ -22577,7 +22582,7 @@ class __$CaclTFBDetailsCopyWithImpl<$Res>
 
 /// Create a copy of CaclTFBDetails
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? dockedAt = freezed,Object? arrivalAt = freezed,Object? checklistAt = freezed,Object? cradle = freezed,Object? pumpStart = freezed,Object? pumpEnd = freezed,Object? linePressure = freezed,Object? ventCheck = freezed,Object? valvesSealed = freezed,Object? finalStopBoard = freezed,Object? reason = freezed,Object? btInscription = freezed,Object? vgNavio = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? dockedAt = freezed,Object? arrivalAt = freezed,Object? checklistAt = freezed,Object? cradle = freezed,Object? pumpStart = freezed,Object? pumpEnd = freezed,Object? linePressure = freezed,Object? ventCheck = freezed,Object? valvesSealed = freezed,Object? finalStopBoard = freezed,Object? finalStop = freezed,Object? reason = freezed,Object? btInscription = freezed,Object? vgNavio = freezed,}) {
   return _then(_CaclTFBDetails(
 dockedAt: freezed == dockedAt ? _self.dockedAt : dockedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,arrivalAt: freezed == arrivalAt ? _self.arrivalAt : arrivalAt // ignore: cast_nullable_to_non_nullable
@@ -22589,10 +22594,286 @@ as DateTime?,linePressure: freezed == linePressure ? _self.linePressure : linePr
 as bool?,ventCheck: freezed == ventCheck ? _self.ventCheck : ventCheck // ignore: cast_nullable_to_non_nullable
 as bool?,valvesSealed: freezed == valvesSealed ? _self.valvesSealed : valvesSealed // ignore: cast_nullable_to_non_nullable
 as bool?,finalStopBoard: freezed == finalStopBoard ? _self.finalStopBoard : finalStopBoard // ignore: cast_nullable_to_non_nullable
-as bool?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
+as bool?,finalStop: freezed == finalStop ? _self.finalStop : finalStop // ignore: cast_nullable_to_non_nullable
+as CaclTFBFinalStop?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,btInscription: freezed == btInscription ? _self.btInscription : btInscription // ignore: cast_nullable_to_non_nullable
 as String?,vgNavio: freezed == vgNavio ? _self.vgNavio : vgNavio // ignore: cast_nullable_to_non_nullable
 as int?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$AtsCaclAsset {
+
+/// The [id] parameter is the ID of the ats cacl asset.
+ String? get id;/// The [name] parameter is the name of the ats cacl asset.
+ String? get name;/// The [kindId] parameter is the kind ID of the ats cacl asset.
+ String? get kindId;
+/// Create a copy of AtsCaclAsset
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsCaclAssetCopyWith<AtsCaclAsset> get copyWith => _$AtsCaclAssetCopyWithImpl<AtsCaclAsset>(this as AtsCaclAsset, _$identity);
+
+  /// Serializes this AtsCaclAsset to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsCaclAsset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kindId, kindId) || other.kindId == kindId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,kindId);
+
+@override
+String toString() {
+  return 'AtsCaclAsset(id: $id, name: $name, kindId: $kindId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsCaclAssetCopyWith<$Res>  {
+  factory $AtsCaclAssetCopyWith(AtsCaclAsset value, $Res Function(AtsCaclAsset) _then) = _$AtsCaclAssetCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? name, String? kindId
+});
+
+
+
+
+}
+/// @nodoc
+class _$AtsCaclAssetCopyWithImpl<$Res>
+    implements $AtsCaclAssetCopyWith<$Res> {
+  _$AtsCaclAssetCopyWithImpl(this._self, this._then);
+
+  final AtsCaclAsset _self;
+  final $Res Function(AtsCaclAsset) _then;
+
+/// Create a copy of AtsCaclAsset
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? kindId = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,kindId: freezed == kindId ? _self.kindId : kindId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AtsCaclAsset].
+extension AtsCaclAssetPatterns on AtsCaclAsset {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsCaclAsset value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsCaclAsset() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsCaclAsset value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsCaclAsset():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsCaclAsset value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsCaclAsset() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? kindId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsCaclAsset() when $default != null:
+return $default(_that.id,_that.name,_that.kindId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? kindId)  $default,) {final _that = this;
+switch (_that) {
+case _AtsCaclAsset():
+return $default(_that.id,_that.name,_that.kindId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? kindId)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsCaclAsset() when $default != null:
+return $default(_that.id,_that.name,_that.kindId);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsCaclAsset implements AtsCaclAsset {
+   _AtsCaclAsset({this.id, this.name, this.kindId});
+  factory _AtsCaclAsset.fromJson(Map<String, dynamic> json) => _$AtsCaclAssetFromJson(json);
+
+/// The [id] parameter is the ID of the ats cacl asset.
+@override final  String? id;
+/// The [name] parameter is the name of the ats cacl asset.
+@override final  String? name;
+/// The [kindId] parameter is the kind ID of the ats cacl asset.
+@override final  String? kindId;
+
+/// Create a copy of AtsCaclAsset
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsCaclAssetCopyWith<_AtsCaclAsset> get copyWith => __$AtsCaclAssetCopyWithImpl<_AtsCaclAsset>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsCaclAssetToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsCaclAsset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kindId, kindId) || other.kindId == kindId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,kindId);
+
+@override
+String toString() {
+  return 'AtsCaclAsset(id: $id, name: $name, kindId: $kindId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsCaclAssetCopyWith<$Res> implements $AtsCaclAssetCopyWith<$Res> {
+  factory _$AtsCaclAssetCopyWith(_AtsCaclAsset value, $Res Function(_AtsCaclAsset) _then) = __$AtsCaclAssetCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? name, String? kindId
+});
+
+
+
+
+}
+/// @nodoc
+class __$AtsCaclAssetCopyWithImpl<$Res>
+    implements _$AtsCaclAssetCopyWith<$Res> {
+  __$AtsCaclAssetCopyWithImpl(this._self, this._then);
+
+  final _AtsCaclAsset _self;
+  final $Res Function(_AtsCaclAsset) _then;
+
+/// Create a copy of AtsCaclAsset
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? kindId = freezed,}) {
+  return _then(_AtsCaclAsset(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,kindId: freezed == kindId ? _self.kindId : kindId // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

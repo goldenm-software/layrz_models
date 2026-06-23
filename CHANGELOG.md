@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.11.3
+
+- Added `finalStop` value in `CaclTFBDetails` model
+- Added `AtsCaclAsset` model
+
 ## 3.11.2
 
 - Removed `finalStopBoard` and added `finalStop` as enum value in `CaclTFBDetailsInput` model

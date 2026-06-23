@@ -50,20 +50,3 @@ abstract class CaclTFBDetailsInput with _$CaclTFBDetailsInput {
   /// The [json] parameter is the JSON map to create the instance from.
   factory CaclTFBDetailsInput.fromJson(Map<String, dynamic> json) => _$CaclTFBDetailsInputFromJson(json);
 }
-
-@JsonEnum(alwaysCreate: true)
-enum CaclTFBFinalStop {
-  @JsonValue('BORDO')
-  bordo,
-  @JsonValue('TERRA')
-  terra;
-
-  @override
-  String toString() => toJson();
-
-  String toJson() => _$CaclTFBFinalStopEnumMap[this] ?? 'BORDO';
-
-  static CaclTFBFinalStop? fromJson(String value) {
-    return _$CaclTFBFinalStopEnumMap.entries.firstWhereOrNull((element) => element.value == value)?.key;
-  }
-}

@@ -114,6 +114,8 @@ part 'src/cacl/input/equipment_measurement_input.dart';
 part 'src/cacl/input/cacl_tfb_details_input.dart';
 part 'src/cacl/entity/cacl_tfb_details.dart';
 part 'src/cacl/cacl_category.dart';
+part 'src/cacl/cacl_tfb_final_stop.dart';
+part 'src/cacl/ats_cacl_asset.dart';
 
 // Monitor Entity
 part 'src/monitor/monitor.dart';
