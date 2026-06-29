@@ -41,7 +41,13 @@ abstract class Gql {
       buffer.write('}\n\n');
     }
 
-    buffer.write(this is GqlMutation ? 'mutation' : this is GqlSubscription ? 'subscription' : 'query');
+    buffer.write(
+      this is GqlMutation
+          ? 'mutation'
+          : this is GqlSubscription
+          ? 'subscription'
+          : 'query',
+    );
 
     if (name != null) {
       buffer.write(' $name');
@@ -104,6 +110,8 @@ abstract class Gql {
         base = 'Uuid';
       case GqlVariableType.input:
         base = v.inputName!;
+      case GqlVariableType.duration:
+        base = 'Duration';
       case GqlVariableType.list:
         final inner = _renderType(
           GqlVariable(

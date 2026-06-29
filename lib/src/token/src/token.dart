@@ -162,7 +162,7 @@ abstract class Token with _$Token {
         GqlMutation(
           variables: [
             GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'duration', type: .int, value: duration?.inSeconds),
+            GqlVariable(name: 'duration', type: .duration, value: duration?.inSeconds),
           ],
           name: 'createToken',
         )..add(
