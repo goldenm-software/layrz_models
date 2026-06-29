@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.11.4
+
+- Fixed issue on `Token.create` where `duration` variable was being sent as `int` instead of `Duration` type, causing GraphQL validation errors. Now, the `duration` variable is correctly sent as a `Duration` type in seconds.
+
 ## 3.11.3
 
 - Added `finalStop` value in `CaclTFBDetails` model

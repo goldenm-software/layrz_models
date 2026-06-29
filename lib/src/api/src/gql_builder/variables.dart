@@ -10,6 +10,7 @@ enum GqlVariableType {
   uuid,
   list,
   input,
+  duration,
 }
 
 class GqlVariable {
