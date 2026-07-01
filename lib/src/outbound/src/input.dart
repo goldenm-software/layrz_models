@@ -8,6 +8,12 @@ abstract class OutboundStructureInput with _$OutboundStructureInput {
     @Default('newField') String field,
     @Default('constant') String type,
     @Default('') String value,
+
+    /// Source collection to iterate, only used when [type] is `json.array`. ATAK protocol only.
+    String? source,
+
+    /// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
+    @Default([]) List<OutboundStructureInput> nested,
   }) = _OutboundStructureInput;
 
   factory OutboundStructureInput.fromJson(Map<String, dynamic> json) => _$OutboundStructureInputFromJson(json);

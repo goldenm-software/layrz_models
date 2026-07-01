@@ -827,7 +827,9 @@ $OutboundMetricsCopyWith<$Res>? get metrics {
 /// @nodoc
 mixin _$OutboundStructure {
 
- String get field; String get type; String get value;
+ String get field; String get type; String get value;/// Source collection to iterate, only used when [type] is `json.array`. ATAK protocol only.
+ String? get source;/// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
+ List<OutboundStructure> get nested;
 /// Create a copy of OutboundStructure
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -840,16 +842,16 @@ $OutboundStructureCopyWith<OutboundStructure> get copyWith => _$OutboundStructur
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is OutboundStructure&&(identical(other.field, field) || other.field == field)&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OutboundStructure&&(identical(other.field, field) || other.field == field)&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other.nested, nested));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,field,type,value);
+int get hashCode => Object.hash(runtimeType,field,type,value,source,const DeepCollectionEquality().hash(nested));
 
 @override
 String toString() {
-  return 'OutboundStructure(field: $field, type: $type, value: $value)';
+  return 'OutboundStructure(field: $field, type: $type, value: $value, source: $source, nested: $nested)';
 }
 
 
@@ -860,7 +862,7 @@ abstract mixin class $OutboundStructureCopyWith<$Res>  {
   factory $OutboundStructureCopyWith(OutboundStructure value, $Res Function(OutboundStructure) _then) = _$OutboundStructureCopyWithImpl;
 @useResult
 $Res call({
- String field, String type, String value
+ String field, String type, String value, String? source, List<OutboundStructure> nested
 });
 
 
@@ -877,12 +879,14 @@ class _$OutboundStructureCopyWithImpl<$Res>
 
 /// Create a copy of OutboundStructure
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? field = null,Object? type = null,Object? value = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? field = null,Object? type = null,Object? value = null,Object? source = freezed,Object? nested = null,}) {
   return _then(_self.copyWith(
 field: null == field ? _self.field : field // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as String,
+as String,source: freezed == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String?,nested: null == nested ? _self.nested : nested // ignore: cast_nullable_to_non_nullable
+as List<OutboundStructure>,
   ));
 }
 
@@ -967,10 +971,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String field,  String type,  String value)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String field,  String type,  String value,  String? source,  List<OutboundStructure> nested)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OutboundStructure() when $default != null:
-return $default(_that.field,_that.type,_that.value);case _:
+return $default(_that.field,_that.type,_that.value,_that.source,_that.nested);case _:
   return orElse();
 
 }
@@ -988,10 +992,10 @@ return $default(_that.field,_that.type,_that.value);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String field,  String type,  String value)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String field,  String type,  String value,  String? source,  List<OutboundStructure> nested)  $default,) {final _that = this;
 switch (_that) {
 case _OutboundStructure():
-return $default(_that.field,_that.type,_that.value);case _:
+return $default(_that.field,_that.type,_that.value,_that.source,_that.nested);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1008,10 +1012,10 @@ return $default(_that.field,_that.type,_that.value);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String field,  String type,  String value)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String field,  String type,  String value,  String? source,  List<OutboundStructure> nested)?  $default,) {final _that = this;
 switch (_that) {
 case _OutboundStructure() when $default != null:
-return $default(_that.field,_that.type,_that.value);case _:
+return $default(_that.field,_that.type,_that.value,_that.source,_that.nested);case _:
   return null;
 
 }
@@ -1023,12 +1027,23 @@ return $default(_that.field,_that.type,_that.value);case _:
 @JsonSerializable()
 
 class _OutboundStructure implements OutboundStructure {
-  const _OutboundStructure({required this.field, required this.type, required this.value});
+  const _OutboundStructure({required this.field, required this.type, required this.value, this.source, final  List<OutboundStructure> nested = const []}): _nested = nested;
   factory _OutboundStructure.fromJson(Map<String, dynamic> json) => _$OutboundStructureFromJson(json);
 
 @override final  String field;
 @override final  String type;
 @override final  String value;
+/// Source collection to iterate, only used when [type] is `json.array`. ATAK protocol only.
+@override final  String? source;
+/// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
+ final  List<OutboundStructure> _nested;
+/// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
+@override@JsonKey() List<OutboundStructure> get nested {
+  if (_nested is EqualUnmodifiableListView) return _nested;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_nested);
+}
+
 
 /// Create a copy of OutboundStructure
 /// with the given fields replaced by the non-null parameter values.
@@ -1043,16 +1058,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundStructure&&(identical(other.field, field) || other.field == field)&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundStructure&&(identical(other.field, field) || other.field == field)&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other._nested, _nested));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,field,type,value);
+int get hashCode => Object.hash(runtimeType,field,type,value,source,const DeepCollectionEquality().hash(_nested));
 
 @override
 String toString() {
-  return 'OutboundStructure(field: $field, type: $type, value: $value)';
+  return 'OutboundStructure(field: $field, type: $type, value: $value, source: $source, nested: $nested)';
 }
 
 
@@ -1063,7 +1078,7 @@ abstract mixin class _$OutboundStructureCopyWith<$Res> implements $OutboundStruc
   factory _$OutboundStructureCopyWith(_OutboundStructure value, $Res Function(_OutboundStructure) _then) = __$OutboundStructureCopyWithImpl;
 @override @useResult
 $Res call({
- String field, String type, String value
+ String field, String type, String value, String? source, List<OutboundStructure> nested
 });
 
 
@@ -1080,12 +1095,14 @@ class __$OutboundStructureCopyWithImpl<$Res>
 
 /// Create a copy of OutboundStructure
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? field = null,Object? type = null,Object? value = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? field = null,Object? type = null,Object? value = null,Object? source = freezed,Object? nested = null,}) {
   return _then(_OutboundStructure(
 field: null == field ? _self.field : field // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as String,
+as String,source: freezed == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String?,nested: null == nested ? _self._nested : nested // ignore: cast_nullable_to_non_nullable
+as List<OutboundStructure>,
   ));
 }
 
@@ -1381,7 +1398,11 @@ as bool,
 /// @nodoc
 mixin _$OutboundStructureInput {
 
- String get field; set field(String value); String get type; set type(String value); String get value; set value(String value);
+ String get field; set field(String value); String get type; set type(String value); String get value; set value(String value);/// Source collection to iterate, only used when [type] is `json.array`. ATAK protocol only.
+ String? get source;/// Source collection to iterate, only used when [type] is `json.array`. ATAK protocol only.
+ set source(String? value);/// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
+ List<OutboundStructureInput> get nested;/// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
+ set nested(List<OutboundStructureInput> value);
 /// Create a copy of OutboundStructureInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1396,7 +1417,7 @@ $OutboundStructureInputCopyWith<OutboundStructureInput> get copyWith => _$Outbou
 
 @override
 String toString() {
-  return 'OutboundStructureInput(field: $field, type: $type, value: $value)';
+  return 'OutboundStructureInput(field: $field, type: $type, value: $value, source: $source, nested: $nested)';
 }
 
 
@@ -1407,7 +1428,7 @@ abstract mixin class $OutboundStructureInputCopyWith<$Res>  {
   factory $OutboundStructureInputCopyWith(OutboundStructureInput value, $Res Function(OutboundStructureInput) _then) = _$OutboundStructureInputCopyWithImpl;
 @useResult
 $Res call({
- String field, String type, String value
+ String field, String type, String value, String? source, List<OutboundStructureInput> nested
 });
 
 
@@ -1424,12 +1445,14 @@ class _$OutboundStructureInputCopyWithImpl<$Res>
 
 /// Create a copy of OutboundStructureInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? field = null,Object? type = null,Object? value = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? field = null,Object? type = null,Object? value = null,Object? source = freezed,Object? nested = null,}) {
   return _then(_self.copyWith(
 field: null == field ? _self.field : field // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as String,
+as String,source: freezed == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String?,nested: null == nested ? _self.nested : nested // ignore: cast_nullable_to_non_nullable
+as List<OutboundStructureInput>,
   ));
 }
 
@@ -1514,10 +1537,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String field,  String type,  String value)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String field,  String type,  String value,  String? source,  List<OutboundStructureInput> nested)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OutboundStructureInput() when $default != null:
-return $default(_that.field,_that.type,_that.value);case _:
+return $default(_that.field,_that.type,_that.value,_that.source,_that.nested);case _:
   return orElse();
 
 }
@@ -1535,10 +1558,10 @@ return $default(_that.field,_that.type,_that.value);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String field,  String type,  String value)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String field,  String type,  String value,  String? source,  List<OutboundStructureInput> nested)  $default,) {final _that = this;
 switch (_that) {
 case _OutboundStructureInput():
-return $default(_that.field,_that.type,_that.value);case _:
+return $default(_that.field,_that.type,_that.value,_that.source,_that.nested);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1555,10 +1578,10 @@ return $default(_that.field,_that.type,_that.value);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String field,  String type,  String value)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String field,  String type,  String value,  String? source,  List<OutboundStructureInput> nested)?  $default,) {final _that = this;
 switch (_that) {
 case _OutboundStructureInput() when $default != null:
-return $default(_that.field,_that.type,_that.value);case _:
+return $default(_that.field,_that.type,_that.value,_that.source,_that.nested);case _:
   return null;
 
 }
@@ -1570,12 +1593,16 @@ return $default(_that.field,_that.type,_that.value);case _:
 @JsonSerializable()
 
 class _OutboundStructureInput extends OutboundStructureInput {
-   _OutboundStructureInput({this.field = 'newField', this.type = 'constant', this.value = ''}): super._();
+   _OutboundStructureInput({this.field = 'newField', this.type = 'constant', this.value = '', this.source, this.nested = const []}): super._();
   factory _OutboundStructureInput.fromJson(Map<String, dynamic> json) => _$OutboundStructureInputFromJson(json);
 
 @override@JsonKey()  String field;
 @override@JsonKey()  String type;
 @override@JsonKey()  String value;
+/// Source collection to iterate, only used when [type] is `json.array`. ATAK protocol only.
+@override  String? source;
+/// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
+@override@JsonKey()  List<OutboundStructureInput> nested;
 
 /// Create a copy of OutboundStructureInput
 /// with the given fields replaced by the non-null parameter values.
@@ -1592,7 +1619,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'OutboundStructureInput(field: $field, type: $type, value: $value)';
+  return 'OutboundStructureInput(field: $field, type: $type, value: $value, source: $source, nested: $nested)';
 }
 
 
@@ -1603,7 +1630,7 @@ abstract mixin class _$OutboundStructureInputCopyWith<$Res> implements $Outbound
   factory _$OutboundStructureInputCopyWith(_OutboundStructureInput value, $Res Function(_OutboundStructureInput) _then) = __$OutboundStructureInputCopyWithImpl;
 @override @useResult
 $Res call({
- String field, String type, String value
+ String field, String type, String value, String? source, List<OutboundStructureInput> nested
 });
 
 
@@ -1620,12 +1647,14 @@ class __$OutboundStructureInputCopyWithImpl<$Res>
 
 /// Create a copy of OutboundStructureInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? field = null,Object? type = null,Object? value = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? field = null,Object? type = null,Object? value = null,Object? source = freezed,Object? nested = null,}) {
   return _then(_OutboundStructureInput(
 field: null == field ? _self.field : field // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as String,
+as String,source: freezed == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String?,nested: null == nested ? _self.nested : nested // ignore: cast_nullable_to_non_nullable
+as List<OutboundStructureInput>,
   ));
 }
 

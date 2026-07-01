@@ -113,6 +113,14 @@ _OutboundStructure _$OutboundStructureFromJson(Map<String, dynamic> json) =>
       field: json['field'] as String,
       type: json['type'] as String,
       value: json['value'] as String,
+      source: json['source'] as String?,
+      nested:
+          (json['nested'] as List<dynamic>?)
+              ?.map(
+                (e) => OutboundStructure.fromJson(e as Map<String, dynamic>),
+              )
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$OutboundStructureToJson(_OutboundStructure instance) =>
@@ -120,6 +128,8 @@ Map<String, dynamic> _$OutboundStructureToJson(_OutboundStructure instance) =>
       'field': instance.field,
       'type': instance.type,
       'value': instance.value,
+      'source': instance.source,
+      'nested': instance.nested.map((e) => e.toJson()).toList(),
     };
 
 _OutboundMetrics _$OutboundMetricsFromJson(Map<String, dynamic> json) =>
@@ -146,6 +156,14 @@ _OutboundStructureInput _$OutboundStructureInputFromJson(
   field: json['field'] as String? ?? 'newField',
   type: json['type'] as String? ?? 'constant',
   value: json['value'] as String? ?? '',
+  source: json['source'] as String?,
+  nested:
+      (json['nested'] as List<dynamic>?)
+          ?.map(
+            (e) => OutboundStructureInput.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$OutboundStructureInputToJson(
@@ -154,6 +172,8 @@ Map<String, dynamic> _$OutboundStructureInputToJson(
   'field': instance.field,
   'type': instance.type,
   'value': instance.value,
+  'source': instance.source,
+  'nested': instance.nested.map((e) => e.toJson()).toList(),
 };
 
 _OutboundServiceInput _$OutboundServiceInputFromJson(

@@ -59,6 +59,12 @@ abstract class OutboundStructure with _$OutboundStructure {
     required String field,
     required String type,
     required String value,
+
+    /// Source collection to iterate, only used when [type] is `json.array`. ATAK protocol only.
+    String? source,
+
+    /// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
+    @Default([]) List<OutboundStructure> nested,
   }) = _OutboundStructure;
 
   /// From json

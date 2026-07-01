@@ -3446,4 +3446,8 @@ const _$AtsStreamExitStructureTypeEnumMap = {
   AtsStreamExitStructureType.attendantVin: 'attendant.vin',
   AtsStreamExitStructureType.attendantPlate: 'attendant.plate',
   AtsStreamExitStructureType.attendantCustomField: 'attendant.custom.field',
+  AtsStreamExitStructureType.attendantId: 'attendant.id',
+  AtsStreamExitStructureType.attendantUserId: 'attendant.user.id',
+  AtsStreamExitStructureType.json: 'json',
+  AtsStreamExitStructureType.jsonArray: 'json.array',
 };
