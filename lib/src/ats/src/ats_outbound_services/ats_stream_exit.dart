@@ -121,6 +121,23 @@ enum AtsStreamExitStructureType {
   /// Layrz API equivalence: `attendant.custom.field`. Means a custom field of the attendant.
   @JsonValue('attendant.custom.field')
   attendantCustomField,
+
+  /// Layrz API equivalence: `attendant.id`. Means the ID of the attendant.
+  @JsonValue('attendant.id')
+  attendantId,
+
+  /// Layrz API equivalence: `attendant.user.id`. Means the User ID of the attendant.
+  @JsonValue('attendant.user.id')
+  attendantUserId,
+
+  /// Layrz API equivalence: `json`. Means a nested object, built from the entries in `nested`.
+  @JsonValue('json')
+  json,
+
+  /// Layrz API equivalence: `json.array`. Means an array of objects, one per entry of the `source`
+  /// collection, each built from the entries in `nested`.
+  @JsonValue('json.array')
+  jsonArray,
   ;
 
   /// Validates if the [search] is a custom value or not.

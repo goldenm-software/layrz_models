@@ -15,6 +15,7 @@ jobs:
         with:
           flutter-version: "3.44.2"
           run-tests: true
+          artifact-name: 'dart-coverage-${{ github.run_id }}'
 
   coverage-comment:
     needs: lint-dart

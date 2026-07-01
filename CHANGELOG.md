@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.11.5
+
+- Added `json` and `json.array` values to `AtsStreamExitStructureType` enum, allowing ATAK outbound services to nest a group of structure fields into a single JSON object or a single-element JSON array.
+- Added `attendant.id` and `attendant.user.id` values to `AtsStreamExitStructureType` enum.
+- Added `source` (`String?`) and `nested` (`List<OutboundStructureInput>`/`List<OutboundStructure>`) fields to `OutboundStructureInput` and `OutboundStructure` models, to support the new `json`/`json.array` structure types.
+
 ## 3.11.4
 
 - Fixed issue on `Token.create` where `duration` variable was being sent as `int` instead of `Duration` type, causing GraphQL validation errors. Now, the `duration` variable is correctly sent as a `Duration` type in seconds.
