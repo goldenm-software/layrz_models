@@ -134,6 +134,7 @@ part 'src/stock_closing/entity/stock_closing.dart';
 part 'src/stock_closing/entity/stock_closing_tank.dart';
 part 'src/stock_closing/input/stock_closing_input.dart';
 part 'src/stock_closing/input/stock_closing_tank_input.dart';
+part 'src/stock_closing/stock_closing_general_info.dart';
 
 // ATS Outbound Services
 part 'src/ats_outbound_services/ats_stream_model.dart';

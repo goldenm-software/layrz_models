@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.11.6
+
+- Added `StockClosingGeneralInfo` new model
+- Updated `StockClosing`, `StockClosingInput`, `StockClosingTank` and `StockClosingTankInput` with new values `openingBalanceAmbient`, `totalEntriesAmbient`, `totalWithdrawalsAmbient` and `closingBalanceAmbient`
+
 ## 3.11.5
 
 - Added `json` and `json.array` values to `AtsStreamExitStructureType` enum, allowing ATAK outbound services to nest a group of structure fields into a single JSON object or a single-element JSON array.
