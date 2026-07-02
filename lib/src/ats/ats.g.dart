@@ -3184,6 +3184,11 @@ _StockClosing _$StockClosingFromJson(
   volume20Difference: (json['volume20Difference'] as num?)?.toDouble(),
   accountingVolumeDifference: (json['accountingVolumeDifference'] as num?)
       ?.toDouble(),
+  openingBalanceAmbient: (json['openingBalanceAmbient'] as num?)?.toDouble(),
+  totalEntriesAmbient: (json['totalEntriesAmbient'] as num?)?.toDouble(),
+  totalWithdrawalsAmbient: (json['totalWithdrawalsAmbient'] as num?)
+      ?.toDouble(),
+  closingBalanceAmbient: (json['closingBalanceAmbient'] as num?)?.toDouble(),
   openingBalance20: (json['openingBalance20'] as num?)?.toDouble(),
   totalEntries20: (json['totalEntries20'] as num?)?.toDouble(),
   totalWithdrawals20: (json['totalWithdrawals20'] as num?)?.toDouble(),
@@ -3201,6 +3206,9 @@ _StockClosing _$StockClosingFromJson(
   updatedAt: const TimestampOrNullConverter().fromJson(
     json['updatedAt'] as num?,
   ),
+  sinceDate: const TimestampOrNullConverter().fromJson(
+    json['sinceDate'] as num?,
+  ),
 );
 
 Map<String, dynamic> _$StockClosingToJson(_StockClosing instance) =>
@@ -3215,6 +3223,10 @@ Map<String, dynamic> _$StockClosingToJson(_StockClosing instance) =>
       'totalVolume20': instance.totalVolume20,
       'volume20Difference': instance.volume20Difference,
       'accountingVolumeDifference': instance.accountingVolumeDifference,
+      'openingBalanceAmbient': instance.openingBalanceAmbient,
+      'totalEntriesAmbient': instance.totalEntriesAmbient,
+      'totalWithdrawalsAmbient': instance.totalWithdrawalsAmbient,
+      'closingBalanceAmbient': instance.closingBalanceAmbient,
       'openingBalance20': instance.openingBalance20,
       'totalEntries20': instance.totalEntries20,
       'totalWithdrawals20': instance.totalWithdrawals20,
@@ -3225,6 +3237,7 @@ Map<String, dynamic> _$StockClosingToJson(_StockClosing instance) =>
       'closingAccountingBalance': instance.closingAccountingBalance,
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
+      'sinceDate': const TimestampOrNullConverter().toJson(instance.sinceDate),
     };
 
 _StockClosingTank _$StockClosingTankFromJson(
@@ -3254,6 +3267,11 @@ _StockClosingTank _$StockClosingTankFromJson(
   volume20Difference: (json['volume20Difference'] as num?)?.toDouble(),
   accountingVolumeDifference: (json['accountingVolumeDifference'] as num?)
       ?.toDouble(),
+  openingBalanceAmbient: (json['openingBalanceAmbient'] as num?)?.toDouble(),
+  totalEntriesAmbient: (json['totalEntriesAmbient'] as num?)?.toDouble(),
+  totalWithdrawalsAmbient: (json['totalWithdrawalsAmbient'] as num?)
+      ?.toDouble(),
+  closingBalanceAmbient: (json['closingBalanceAmbient'] as num?)?.toDouble(),
   openingBalance20: (json['openingBalance20'] as num?)?.toDouble(),
   totalEntries20: (json['totalEntries20'] as num?)?.toDouble(),
   totalWithdrawals20: (json['totalWithdrawals20'] as num?)?.toDouble(),
@@ -3292,6 +3310,10 @@ Map<String, dynamic> _$StockClosingTankToJson(_StockClosingTank instance) =>
       'volume20': instance.volume20,
       'volume20Difference': instance.volume20Difference,
       'accountingVolumeDifference': instance.accountingVolumeDifference,
+      'openingBalanceAmbient': instance.openingBalanceAmbient,
+      'totalEntriesAmbient': instance.totalEntriesAmbient,
+      'totalWithdrawalsAmbient': instance.totalWithdrawalsAmbient,
+      'closingBalanceAmbient': instance.closingBalanceAmbient,
       'openingBalance20': instance.openingBalance20,
       'totalEntries20': instance.totalEntries20,
       'totalWithdrawals20': instance.totalWithdrawals20,
@@ -3317,6 +3339,13 @@ _StockClosingInput _$StockClosingInputFromJson(
   volume20Difference: (json['volume20Difference'] as num?)?.toDouble() ?? 0.0,
   accountingVolumeDifference:
       (json['accountingVolumeDifference'] as num?)?.toDouble() ?? 0.0,
+  openingBalanceAmbient:
+      (json['openingBalanceAmbient'] as num?)?.toDouble() ?? 0.0,
+  totalEntriesAmbient: (json['totalEntriesAmbient'] as num?)?.toDouble() ?? 0.0,
+  totalWithdrawalsAmbient:
+      (json['totalWithdrawalsAmbient'] as num?)?.toDouble() ?? 0.0,
+  closingBalanceAmbient:
+      (json['closingBalanceAmbient'] as num?)?.toDouble() ?? 0.0,
   openingBalance20: (json['openingBalance20'] as num?)?.toDouble() ?? 0.0,
   totalEntries20: (json['totalEntries20'] as num?)?.toDouble() ?? 0.0,
   totalWithdrawals20: (json['totalWithdrawals20'] as num?)?.toDouble() ?? 0.0,
@@ -3336,6 +3365,9 @@ _StockClosingInput _$StockClosingInputFromJson(
           )
           .toList() ??
       const [],
+  sinceDate: const TimestampOrNullConverter().fromJson(
+    json['sinceDate'] as num?,
+  ),
 );
 
 Map<String, dynamic> _$StockClosingInputToJson(_StockClosingInput instance) =>
@@ -3347,6 +3379,10 @@ Map<String, dynamic> _$StockClosingInputToJson(_StockClosingInput instance) =>
       'totalVolume20': instance.totalVolume20,
       'volume20Difference': instance.volume20Difference,
       'accountingVolumeDifference': instance.accountingVolumeDifference,
+      'openingBalanceAmbient': instance.openingBalanceAmbient,
+      'totalEntriesAmbient': instance.totalEntriesAmbient,
+      'totalWithdrawalsAmbient': instance.totalWithdrawalsAmbient,
+      'closingBalanceAmbient': instance.closingBalanceAmbient,
       'openingBalance20': instance.openingBalance20,
       'totalEntries20': instance.totalEntries20,
       'totalWithdrawals20': instance.totalWithdrawals20,
@@ -3356,6 +3392,7 @@ Map<String, dynamic> _$StockClosingInputToJson(_StockClosingInput instance) =>
       'totalAccountingWithdrawals': instance.totalAccountingWithdrawals,
       'closingAccountingBalance': instance.closingAccountingBalance,
       'closingDetails': instance.closingDetails.map((e) => e.toJson()).toList(),
+      'sinceDate': const TimestampOrNullConverter().toJson(instance.sinceDate),
     };
 
 _StockClosingTankInput _$StockClosingTankInputFromJson(
@@ -3375,6 +3412,11 @@ _StockClosingTankInput _$StockClosingTankInputFromJson(
   volume20Difference: (json['volume20Difference'] as num?)?.toDouble(),
   accountingVolumeDifference: (json['accountingVolumeDifference'] as num?)
       ?.toDouble(),
+  openingBalanceAmbient: (json['openingBalanceAmbient'] as num?)?.toDouble(),
+  totalEntriesAmbient: (json['totalEntriesAmbient'] as num?)?.toDouble(),
+  totalWithdrawalsAmbient: (json['totalWithdrawalsAmbient'] as num?)
+      ?.toDouble(),
+  closingBalanceAmbient: (json['closingBalanceAmbient'] as num?)?.toDouble(),
   openingBalance20: (json['openingBalance20'] as num?)?.toDouble(),
   totalEntries20: (json['totalEntries20'] as num?)?.toDouble(),
   totalWithdrawals20: (json['totalWithdrawals20'] as num?)?.toDouble(),
@@ -3404,10 +3446,51 @@ Map<String, dynamic> _$StockClosingTankInputToJson(
   'volume20': instance.volume20,
   'volume20Difference': instance.volume20Difference,
   'accountingVolumeDifference': instance.accountingVolumeDifference,
+  'openingBalanceAmbient': instance.openingBalanceAmbient,
+  'totalEntriesAmbient': instance.totalEntriesAmbient,
+  'totalWithdrawalsAmbient': instance.totalWithdrawalsAmbient,
+  'closingBalanceAmbient': instance.closingBalanceAmbient,
   'openingBalance20': instance.openingBalance20,
   'totalEntries20': instance.totalEntries20,
   'totalWithdrawals20': instance.totalWithdrawals20,
   'closingBalance20': instance.closingBalance20,
+  'openingAccountingBalance': instance.openingAccountingBalance,
+  'totalAccountingEntries': instance.totalAccountingEntries,
+  'totalAccountingWithdrawals': instance.totalAccountingWithdrawals,
+  'closingAccountingBalance': instance.closingAccountingBalance,
+};
+
+_StockClosingGeneralInfo _$StockClosingGeneralInfoFromJson(
+  Map<String, dynamic> json,
+) => _StockClosingGeneralInfo(
+  openingBalance20: (json['openingBalance20'] as num?)?.toDouble(),
+  openingBalance: (json['openingBalance'] as num?)?.toDouble(),
+  totalEntries20: (json['totalEntries20'] as num?)?.toDouble(),
+  totalEntries: (json['totalEntries'] as num?)?.toDouble(),
+  totalWithdrawals20: (json['totalWithdrawals20'] as num?)?.toDouble(),
+  totalWithdrawals: (json['totalWithdrawals'] as num?)?.toDouble(),
+  closingBalance20: (json['closingBalance20'] as num?)?.toDouble(),
+  closingBalance: (json['closingBalance'] as num?)?.toDouble(),
+  openingAccountingBalance: (json['openingAccountingBalance'] as num?)
+      ?.toDouble(),
+  totalAccountingEntries: (json['totalAccountingEntries'] as num?)?.toDouble(),
+  totalAccountingWithdrawals: (json['totalAccountingWithdrawals'] as num?)
+      ?.toDouble(),
+  closingAccountingBalance: (json['closingAccountingBalance'] as num?)
+      ?.toDouble(),
+);
+
+Map<String, dynamic> _$StockClosingGeneralInfoToJson(
+  _StockClosingGeneralInfo instance,
+) => <String, dynamic>{
+  'openingBalance20': instance.openingBalance20,
+  'openingBalance': instance.openingBalance,
+  'totalEntries20': instance.totalEntries20,
+  'totalEntries': instance.totalEntries,
+  'totalWithdrawals20': instance.totalWithdrawals20,
+  'totalWithdrawals': instance.totalWithdrawals,
+  'closingBalance20': instance.closingBalance20,
+  'closingBalance': instance.closingBalance,
   'openingAccountingBalance': instance.openingAccountingBalance,
   'totalAccountingEntries': instance.totalAccountingEntries,
   'totalAccountingWithdrawals': instance.totalAccountingWithdrawals,

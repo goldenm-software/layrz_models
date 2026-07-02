@@ -35,6 +35,18 @@ abstract class StockClosing with _$StockClosing {
     /// The [accountingVolumeDifference] parameter is the accountingVolumeDifference of the stock closing entity.
     double? accountingVolumeDifference,
 
+    /// The [openingBalanceAmbient] parameter is the openingBalanceAmbient of the stock closing entity.
+    double? openingBalanceAmbient,
+
+    /// The [totalEntriesAmbient] parameter is the totalEntriesAmbient of the stock closing entity.
+    double? totalEntriesAmbient,
+
+    /// The [totalWithdrawalsAmbient] parameter is the totalWithdrawalsAmbient of the stock closing entity.
+    double? totalWithdrawalsAmbient,
+
+    /// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing entity.
+    double? closingBalanceAmbient,
+
     /// The [openingBalance20] parameter is the openingBalance20 of the stock closing entity.
     double? openingBalance20,
 
@@ -64,6 +76,9 @@ abstract class StockClosing with _$StockClosing {
 
     /// The [updatedAt] parameter is the updatedAt of the stock closing entity.
     @TimestampOrNullConverter() DateTime? updatedAt,
+
+    /// The [sinceDate] parameter is the sinceDate of the stock closing entity.
+    @TimestampOrNullConverter() DateTime? sinceDate,
   }) = _StockClosing;
 
   /// Creates a new [StockClosing] instance from a JSON map.
