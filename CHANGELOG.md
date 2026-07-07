@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.11.7
+
+- Added `receptionAssetId` (`String?`) field to `AtsPurchaseOrder` model.
+
 ## 3.11.6
 
 - Added `StockClosingGeneralInfo` new model
