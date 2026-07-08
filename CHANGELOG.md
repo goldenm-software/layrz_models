@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.11.7
+
+- Added `numericSlider`, `enumSelector`, `textCommand` and `rawValue` values to `RenderWidget` enum.
+
 ## 3.11.6
 
 - Added `StockClosingGeneralInfo` new model

@@ -122,6 +122,22 @@ enum RenderWidget {
   @JsonValue('GAS_VALUE')
   gasValue,
 
+  /// Generic numeric control rendered as a slider (arbitrary min/max/step, no domain-specific unit)
+  @JsonValue('NUMERIC_SLIDER')
+  numericSlider,
+
+  /// Generic enum control rendered as a dropdown (arbitrary option list)
+  @JsonValue('ENUM_SELECTOR')
+  enumSelector,
+
+  /// Generic free-text input paired with a send button (e.g. IR code transmission)
+  @JsonValue('TEXT_COMMAND')
+  textCommand,
+
+  /// Universal read-only fallback: displays the raw value with a label derived from the parameter name
+  @JsonValue('RAW_VALUE')
+  rawValue,
+
   /// Unknown render widget
   @JsonValue('UNKNOWN')
   unknown,

@@ -93,5 +93,9 @@ const _$RenderWidgetEnumMap = {
   RenderWidget.voltage: 'VOLTAGE',
   RenderWidget.current: 'CURRENT',
   RenderWidget.gasValue: 'GAS_VALUE',
+  RenderWidget.numericSlider: 'NUMERIC_SLIDER',
+  RenderWidget.enumSelector: 'ENUM_SELECTOR',
+  RenderWidget.textCommand: 'TEXT_COMMAND',
+  RenderWidget.rawValue: 'RAW_VALUE',
   RenderWidget.unknown: 'UNKNOWN',
 };
