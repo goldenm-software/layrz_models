@@ -640,6 +640,7 @@ _AtsPurchaseOrder _$AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
       originalBuyerAsset: json['originalBuyerAsset'] == null
           ? null
           : Asset.fromJson(json['originalBuyerAsset'] as Map<String, dynamic>),
+      receptionAssetId: json['receptionAssetId'] as String?,
     );
 
 Map<String, dynamic> _$AtsPurchaseOrderToJson(
@@ -693,6 +694,7 @@ Map<String, dynamic> _$AtsPurchaseOrderToJson(
     instance.etaUpdatedAt,
   ),
   'originalBuyerAsset': instance.originalBuyerAsset?.toJson(),
+  'receptionAssetId': instance.receptionAssetId,
 };
 
 _AtsPurchaseTotal _$AtsPurchaseTotalFromJson(Map<String, dynamic> json) =>
