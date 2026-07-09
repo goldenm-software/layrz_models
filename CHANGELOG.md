@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.11.8 ⚠️ Breaking Change
+## 3.11.9 ⚠️ Breaking Change
 
 - **Breaking**: Fixed null icon handling in `WorkspaceInput.fromJson`. Previously, workspaces with no icon set would crash with a `Null check operator used on a null value` error during JSON deserialization. The icon field now falls back to `solarOutlineQuestionSquare` when null. This is a breaking change because any workspace that had a null icon will now render with the default icon instead of its previously expected icon — verify your workspace icon assignments.
 
