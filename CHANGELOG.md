@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.1
+
+- Changed vgNavio value type from `int` to `String` in `CaclTFBDetails` and `CaclTFBDetailsInput` models
+
 ## 3.12.0
 
 - Added `AssetWidget`, `AssetWidgetConfig`, and `AssetWidgetRange` models (with matching input variants) plus a read-only `widgets` field on `Asset`, backing the per-asset live-data widgets feature. Writes go through the dedicated `updateAssetWidgets` mutation, not the asset model.

@@ -2513,7 +2513,7 @@ _CaclTFBDetailsInput _$CaclTFBDetailsInputFromJson(
   ),
   reason: json['reason'] as String?,
   btInscription: json['btInscription'] as String?,
-  vgNavio: (json['vgNavio'] as num?)?.toInt(),
+  vgNavio: json['vgNavio'] as String?,
 );
 
 Map<String, dynamic> _$CaclTFBDetailsInputToJson(
@@ -2565,7 +2565,7 @@ _CaclTFBDetails _$CaclTFBDetailsFromJson(
   ),
   reason: json['reason'] as String?,
   btInscription: json['btInscription'] as String?,
-  vgNavio: (json['vgNavio'] as num?)?.toInt(),
+  vgNavio: json['vgNavio'] as String?,
 );
 
 Map<String, dynamic> _$CaclTFBDetailsToJson(
