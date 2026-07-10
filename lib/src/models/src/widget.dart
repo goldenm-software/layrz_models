@@ -138,6 +138,14 @@ enum RenderWidget {
   @JsonValue('RAW_VALUE')
   rawValue,
 
+  /// Read-only numeric readout that honors color ranges (like [rawValue], but numeric + range coloring)
+  @JsonValue('NUMERIC')
+  numeric,
+
+  /// Read-only line chart of the value history
+  @JsonValue('LINE_CHART')
+  line,
+
   /// Unknown render widget
   @JsonValue('UNKNOWN')
   unknown,

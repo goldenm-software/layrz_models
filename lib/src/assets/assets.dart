@@ -11,6 +11,7 @@ part 'assets.g.dart';
 part 'src/contact_info.dart';
 part 'src/connection.dart';
 part 'src/asset.dart';
+part 'src/asset_widget.dart';
 part 'src/mode.dart';
 part 'src/login_info.dart';
 part 'src/static_position.dart';

@@ -193,6 +193,10 @@ abstract class Asset with _$Asset {
 
     /// [authenticationCardNfc] is the NFC of the authentication card id.
     AtsAuthenticationCard? authenticationCardNfc,
+
+    /// [widgets] is the curated, ordered list of live-data visualization widgets configured for this
+    /// asset. Read-only on this model — writes go through the dedicated `updateAssetWidgets` mutation.
+    @Default([]) List<AssetWidget> widgets,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);

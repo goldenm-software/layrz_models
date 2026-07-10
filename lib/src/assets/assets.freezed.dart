@@ -1134,7 +1134,9 @@ mixin _$Asset {
  String? get authenticationCardNfcId;/// [authenticationCardboard] is the cardboard ID of the authentication card id.
  AtsAuthenticationCard? get authenticationCardCardboard;/// [authenticationCardTag] is the tag of the authentication card id.
  AtsAuthenticationCard? get authenticationCardTag;/// [authenticationCardNfc] is the NFC of the authentication card id.
- AtsAuthenticationCard? get authenticationCardNfc;
+ AtsAuthenticationCard? get authenticationCardNfc;/// [widgets] is the curated, ordered list of live-data visualization widgets configured for this
+/// asset. Read-only on this model — writes go through the dedicated `updateAssetWidgets` mutation.
+ List<AssetWidget> get widgets;
 /// Create a copy of Asset
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1147,16 +1149,16 @@ $AssetCopyWith<Asset> get copyWith => _$AssetCopyWithImpl<Asset>(this as Asset, 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Asset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.plate, plate) || other.plate == plate)&&(identical(other.vin, vin) || other.vin == vin)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other.childrenIds, childrenIds)&&const DeepCollectionEquality().equals(other.children, children)&&const DeepCollectionEquality().equals(other.commands, commands)&&const DeepCollectionEquality().equals(other.referencesIds, referencesIds)&&const DeepCollectionEquality().equals(other.references, references)&&const DeepCollectionEquality().equals(other.authenticatedAssetsIds, authenticatedAssetsIds)&&const DeepCollectionEquality().equals(other.authenticatedAssets, authenticatedAssets)&&const DeepCollectionEquality().equals(other.authenticatedUsersIds, authenticatedUsersIds)&&const DeepCollectionEquality().equals(other.authenticatedUsers, authenticatedUsers)&&(identical(other.kindId, kindId) || other.kindId == kindId)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.primaryId, primaryId) || other.primaryId == primaryId)&&(identical(other.primary, primary) || other.primary == primary)&&const DeepCollectionEquality().equals(other.devicesIds, devicesIds)&&const DeepCollectionEquality().equals(other.devices, devices)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other.externalIdentifiers, externalIdentifiers)&&(identical(other.connection, connection) || other.connection == connection)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&const DeepCollectionEquality().equals(other.tags, tags)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.lastExits, lastExits)&&(identical(other.activeTime, activeTime) || other.activeTime == activeTime)&&const DeepCollectionEquality().equals(other.contacts, contacts)&&const DeepCollectionEquality().equals(other.mappitLaborHours, mappitLaborHours)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.loginInfo, loginInfo) || other.loginInfo == loginInfo)&&(identical(other.authenticationCard, authenticationCard) || other.authenticationCard == authenticationCard)&&(identical(other.authenticationCardId, authenticationCardId) || other.authenticationCardId == authenticationCardId)&&(identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier)&&const DeepCollectionEquality().equals(other.linkedSupplyPointAssets, linkedSupplyPointAssets)&&const DeepCollectionEquality().equals(other.linkedSupplyPointAssetsIds, linkedSupplyPointAssetsIds)&&const DeepCollectionEquality().equals(other.linkedStorageTerminals, linkedStorageTerminals)&&const DeepCollectionEquality().equals(other.linkedStorageTerminalsIds, linkedStorageTerminalsIds)&&(identical(other.staticPosition, staticPosition) || other.staticPosition == staticPosition)&&const DeepCollectionEquality().equals(other.points, points)&&const DeepCollectionEquality().equals(other.parameters, parameters)&&const DeepCollectionEquality().equals(other.globalSensors, globalSensors)&&(identical(other.mappitLaborStartTime, mappitLaborStartTime) || other.mappitLaborStartTime == mappitLaborStartTime)&&(identical(other.mappitLaborEndTime, mappitLaborEndTime) || other.mappitLaborEndTime == mappitLaborEndTime)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.authenticationCardCardboardId, authenticationCardCardboardId) || other.authenticationCardCardboardId == authenticationCardCardboardId)&&(identical(other.authenticationCardTagId, authenticationCardTagId) || other.authenticationCardTagId == authenticationCardTagId)&&(identical(other.authenticationCardNfcId, authenticationCardNfcId) || other.authenticationCardNfcId == authenticationCardNfcId)&&(identical(other.authenticationCardCardboard, authenticationCardCardboard) || other.authenticationCardCardboard == authenticationCardCardboard)&&(identical(other.authenticationCardTag, authenticationCardTag) || other.authenticationCardTag == authenticationCardTag)&&(identical(other.authenticationCardNfc, authenticationCardNfc) || other.authenticationCardNfc == authenticationCardNfc));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Asset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.plate, plate) || other.plate == plate)&&(identical(other.vin, vin) || other.vin == vin)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other.childrenIds, childrenIds)&&const DeepCollectionEquality().equals(other.children, children)&&const DeepCollectionEquality().equals(other.commands, commands)&&const DeepCollectionEquality().equals(other.referencesIds, referencesIds)&&const DeepCollectionEquality().equals(other.references, references)&&const DeepCollectionEquality().equals(other.authenticatedAssetsIds, authenticatedAssetsIds)&&const DeepCollectionEquality().equals(other.authenticatedAssets, authenticatedAssets)&&const DeepCollectionEquality().equals(other.authenticatedUsersIds, authenticatedUsersIds)&&const DeepCollectionEquality().equals(other.authenticatedUsers, authenticatedUsers)&&(identical(other.kindId, kindId) || other.kindId == kindId)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.primaryId, primaryId) || other.primaryId == primaryId)&&(identical(other.primary, primary) || other.primary == primary)&&const DeepCollectionEquality().equals(other.devicesIds, devicesIds)&&const DeepCollectionEquality().equals(other.devices, devices)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other.externalIdentifiers, externalIdentifiers)&&(identical(other.connection, connection) || other.connection == connection)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&const DeepCollectionEquality().equals(other.tags, tags)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.lastExits, lastExits)&&(identical(other.activeTime, activeTime) || other.activeTime == activeTime)&&const DeepCollectionEquality().equals(other.contacts, contacts)&&const DeepCollectionEquality().equals(other.mappitLaborHours, mappitLaborHours)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.loginInfo, loginInfo) || other.loginInfo == loginInfo)&&(identical(other.authenticationCard, authenticationCard) || other.authenticationCard == authenticationCard)&&(identical(other.authenticationCardId, authenticationCardId) || other.authenticationCardId == authenticationCardId)&&(identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier)&&const DeepCollectionEquality().equals(other.linkedSupplyPointAssets, linkedSupplyPointAssets)&&const DeepCollectionEquality().equals(other.linkedSupplyPointAssetsIds, linkedSupplyPointAssetsIds)&&const DeepCollectionEquality().equals(other.linkedStorageTerminals, linkedStorageTerminals)&&const DeepCollectionEquality().equals(other.linkedStorageTerminalsIds, linkedStorageTerminalsIds)&&(identical(other.staticPosition, staticPosition) || other.staticPosition == staticPosition)&&const DeepCollectionEquality().equals(other.points, points)&&const DeepCollectionEquality().equals(other.parameters, parameters)&&const DeepCollectionEquality().equals(other.globalSensors, globalSensors)&&(identical(other.mappitLaborStartTime, mappitLaborStartTime) || other.mappitLaborStartTime == mappitLaborStartTime)&&(identical(other.mappitLaborEndTime, mappitLaborEndTime) || other.mappitLaborEndTime == mappitLaborEndTime)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.authenticationCardCardboardId, authenticationCardCardboardId) || other.authenticationCardCardboardId == authenticationCardCardboardId)&&(identical(other.authenticationCardTagId, authenticationCardTagId) || other.authenticationCardTagId == authenticationCardTagId)&&(identical(other.authenticationCardNfcId, authenticationCardNfcId) || other.authenticationCardNfcId == authenticationCardNfcId)&&(identical(other.authenticationCardCardboard, authenticationCardCardboard) || other.authenticationCardCardboard == authenticationCardCardboard)&&(identical(other.authenticationCardTag, authenticationCardTag) || other.authenticationCardTag == authenticationCardTag)&&(identical(other.authenticationCardNfc, authenticationCardNfc) || other.authenticationCardNfc == authenticationCardNfc)&&const DeepCollectionEquality().equals(other.widgets, widgets));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,plate,vin,dynamicIcon,mode,const DeepCollectionEquality().hash(childrenIds),const DeepCollectionEquality().hash(children),const DeepCollectionEquality().hash(commands),const DeepCollectionEquality().hash(referencesIds),const DeepCollectionEquality().hash(references),const DeepCollectionEquality().hash(authenticatedAssetsIds),const DeepCollectionEquality().hash(authenticatedAssets),const DeepCollectionEquality().hash(authenticatedUsersIds),const DeepCollectionEquality().hash(authenticatedUsers),kindId,kind,const DeepCollectionEquality().hash(customFields),const DeepCollectionEquality().hash(sensors),primaryId,primary,const DeepCollectionEquality().hash(devicesIds),const DeepCollectionEquality().hash(devices),qrCode,const DeepCollectionEquality().hash(externalIdentifiers),connection,telemetry,const DeepCollectionEquality().hash(tags),const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(lastExits),activeTime,const DeepCollectionEquality().hash(contacts),const DeepCollectionEquality().hash(mappitLaborHours),ownerId,loginInfo,authenticationCard,authenticationCardId,nfcIdentifier,const DeepCollectionEquality().hash(linkedSupplyPointAssets),const DeepCollectionEquality().hash(linkedSupplyPointAssetsIds),const DeepCollectionEquality().hash(linkedStorageTerminals),const DeepCollectionEquality().hash(linkedStorageTerminalsIds),staticPosition,const DeepCollectionEquality().hash(points),const DeepCollectionEquality().hash(parameters),const DeepCollectionEquality().hash(globalSensors),mappitLaborStartTime,mappitLaborEndTime,const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),isSuspended,authenticationCardCardboardId,authenticationCardTagId,authenticationCardNfcId,authenticationCardCardboard,authenticationCardTag,authenticationCardNfc]);
+int get hashCode => Object.hashAll([runtimeType,id,name,plate,vin,dynamicIcon,mode,const DeepCollectionEquality().hash(childrenIds),const DeepCollectionEquality().hash(children),const DeepCollectionEquality().hash(commands),const DeepCollectionEquality().hash(referencesIds),const DeepCollectionEquality().hash(references),const DeepCollectionEquality().hash(authenticatedAssetsIds),const DeepCollectionEquality().hash(authenticatedAssets),const DeepCollectionEquality().hash(authenticatedUsersIds),const DeepCollectionEquality().hash(authenticatedUsers),kindId,kind,const DeepCollectionEquality().hash(customFields),const DeepCollectionEquality().hash(sensors),primaryId,primary,const DeepCollectionEquality().hash(devicesIds),const DeepCollectionEquality().hash(devices),qrCode,const DeepCollectionEquality().hash(externalIdentifiers),connection,telemetry,const DeepCollectionEquality().hash(tags),const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(lastExits),activeTime,const DeepCollectionEquality().hash(contacts),const DeepCollectionEquality().hash(mappitLaborHours),ownerId,loginInfo,authenticationCard,authenticationCardId,nfcIdentifier,const DeepCollectionEquality().hash(linkedSupplyPointAssets),const DeepCollectionEquality().hash(linkedSupplyPointAssetsIds),const DeepCollectionEquality().hash(linkedStorageTerminals),const DeepCollectionEquality().hash(linkedStorageTerminalsIds),staticPosition,const DeepCollectionEquality().hash(points),const DeepCollectionEquality().hash(parameters),const DeepCollectionEquality().hash(globalSensors),mappitLaborStartTime,mappitLaborEndTime,const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),isSuspended,authenticationCardCardboardId,authenticationCardTagId,authenticationCardNfcId,authenticationCardCardboard,authenticationCardTag,authenticationCardNfc,const DeepCollectionEquality().hash(widgets)]);
 
 @override
 String toString() {
-  return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, linkedStorageTerminals: $linkedStorageTerminals, linkedStorageTerminalsIds: $linkedStorageTerminalsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended, authenticationCardCardboardId: $authenticationCardCardboardId, authenticationCardTagId: $authenticationCardTagId, authenticationCardNfcId: $authenticationCardNfcId, authenticationCardCardboard: $authenticationCardCardboard, authenticationCardTag: $authenticationCardTag, authenticationCardNfc: $authenticationCardNfc)';
+  return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, linkedStorageTerminals: $linkedStorageTerminals, linkedStorageTerminalsIds: $linkedStorageTerminalsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended, authenticationCardCardboardId: $authenticationCardCardboardId, authenticationCardTagId: $authenticationCardTagId, authenticationCardNfcId: $authenticationCardNfcId, authenticationCardCardboard: $authenticationCardCardboard, authenticationCardTag: $authenticationCardTag, authenticationCardNfc: $authenticationCardNfc, widgets: $widgets)';
 }
 
 
@@ -1167,7 +1169,7 @@ abstract mixin class $AssetCopyWith<$Res>  {
   factory $AssetCopyWith(Asset value, $Res Function(Asset) _then) = _$AssetCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String? plate, String? vin, Avatar? dynamicIcon,@AssetModeOrNullConverter() AssetMode? mode, List<String>? childrenIds, List<Asset>? children, List<DeviceCommand>? commands, List<String>? referencesIds, List<Reference>? references, List<String>? authenticatedAssetsIds, List<Asset>? authenticatedAssets, List<String>? authenticatedUsersIds, List<User>? authenticatedUsers, String? kindId, Category? kind, List<CustomField>? customFields, List<Sensor>? sensors, String? primaryId, Device? primary, List<String>? devicesIds, List<Device>? devices, String? qrCode, List<String>? externalIdentifiers, Connection? connection, AssetTelemetry? telemetry, List<Tag>? tags, List<Access>? access, List<AtsExit>? lastExits, String? activeTime, List<ContactInfo>? contacts, List<MappitLaborHour>? mappitLaborHours, String? ownerId, AssetLoginInfo? loginInfo,@Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') AtsAuthenticationCard? authenticationCard,@Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') String? authenticationCardId, String? nfcIdentifier, List<Asset>? linkedSupplyPointAssets, List<String>? linkedSupplyPointAssetsIds, List<Asset>? linkedStorageTerminals, List<String>? linkedStorageTerminalsIds, StaticPosition? staticPosition, List<ZonePoint>? points, List<String> parameters, List<Sensor>? globalSensors,@TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,@TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime, List<Geofence>? geofences, List<String>? mappitSecondaryRoutesIds, bool? isSuspended, String? authenticationCardCardboardId, String? authenticationCardTagId, String? authenticationCardNfcId, AtsAuthenticationCard? authenticationCardCardboard, AtsAuthenticationCard? authenticationCardTag, AtsAuthenticationCard? authenticationCardNfc
+ String id, String name, String? plate, String? vin, Avatar? dynamicIcon,@AssetModeOrNullConverter() AssetMode? mode, List<String>? childrenIds, List<Asset>? children, List<DeviceCommand>? commands, List<String>? referencesIds, List<Reference>? references, List<String>? authenticatedAssetsIds, List<Asset>? authenticatedAssets, List<String>? authenticatedUsersIds, List<User>? authenticatedUsers, String? kindId, Category? kind, List<CustomField>? customFields, List<Sensor>? sensors, String? primaryId, Device? primary, List<String>? devicesIds, List<Device>? devices, String? qrCode, List<String>? externalIdentifiers, Connection? connection, AssetTelemetry? telemetry, List<Tag>? tags, List<Access>? access, List<AtsExit>? lastExits, String? activeTime, List<ContactInfo>? contacts, List<MappitLaborHour>? mappitLaborHours, String? ownerId, AssetLoginInfo? loginInfo,@Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') AtsAuthenticationCard? authenticationCard,@Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') String? authenticationCardId, String? nfcIdentifier, List<Asset>? linkedSupplyPointAssets, List<String>? linkedSupplyPointAssetsIds, List<Asset>? linkedStorageTerminals, List<String>? linkedStorageTerminalsIds, StaticPosition? staticPosition, List<ZonePoint>? points, List<String> parameters, List<Sensor>? globalSensors,@TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,@TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime, List<Geofence>? geofences, List<String>? mappitSecondaryRoutesIds, bool? isSuspended, String? authenticationCardCardboardId, String? authenticationCardTagId, String? authenticationCardNfcId, AtsAuthenticationCard? authenticationCardCardboard, AtsAuthenticationCard? authenticationCardTag, AtsAuthenticationCard? authenticationCardNfc, List<AssetWidget> widgets
 });
 
 
@@ -1184,7 +1186,7 @@ class _$AssetCopyWithImpl<$Res>
 
 /// Create a copy of Asset
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? plate = freezed,Object? vin = freezed,Object? dynamicIcon = freezed,Object? mode = freezed,Object? childrenIds = freezed,Object? children = freezed,Object? commands = freezed,Object? referencesIds = freezed,Object? references = freezed,Object? authenticatedAssetsIds = freezed,Object? authenticatedAssets = freezed,Object? authenticatedUsersIds = freezed,Object? authenticatedUsers = freezed,Object? kindId = freezed,Object? kind = freezed,Object? customFields = freezed,Object? sensors = freezed,Object? primaryId = freezed,Object? primary = freezed,Object? devicesIds = freezed,Object? devices = freezed,Object? qrCode = freezed,Object? externalIdentifiers = freezed,Object? connection = freezed,Object? telemetry = freezed,Object? tags = freezed,Object? access = freezed,Object? lastExits = freezed,Object? activeTime = freezed,Object? contacts = freezed,Object? mappitLaborHours = freezed,Object? ownerId = freezed,Object? loginInfo = freezed,Object? authenticationCard = freezed,Object? authenticationCardId = freezed,Object? nfcIdentifier = freezed,Object? linkedSupplyPointAssets = freezed,Object? linkedSupplyPointAssetsIds = freezed,Object? linkedStorageTerminals = freezed,Object? linkedStorageTerminalsIds = freezed,Object? staticPosition = freezed,Object? points = freezed,Object? parameters = null,Object? globalSensors = freezed,Object? mappitLaborStartTime = freezed,Object? mappitLaborEndTime = freezed,Object? geofences = freezed,Object? mappitSecondaryRoutesIds = freezed,Object? isSuspended = freezed,Object? authenticationCardCardboardId = freezed,Object? authenticationCardTagId = freezed,Object? authenticationCardNfcId = freezed,Object? authenticationCardCardboard = freezed,Object? authenticationCardTag = freezed,Object? authenticationCardNfc = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? plate = freezed,Object? vin = freezed,Object? dynamicIcon = freezed,Object? mode = freezed,Object? childrenIds = freezed,Object? children = freezed,Object? commands = freezed,Object? referencesIds = freezed,Object? references = freezed,Object? authenticatedAssetsIds = freezed,Object? authenticatedAssets = freezed,Object? authenticatedUsersIds = freezed,Object? authenticatedUsers = freezed,Object? kindId = freezed,Object? kind = freezed,Object? customFields = freezed,Object? sensors = freezed,Object? primaryId = freezed,Object? primary = freezed,Object? devicesIds = freezed,Object? devices = freezed,Object? qrCode = freezed,Object? externalIdentifiers = freezed,Object? connection = freezed,Object? telemetry = freezed,Object? tags = freezed,Object? access = freezed,Object? lastExits = freezed,Object? activeTime = freezed,Object? contacts = freezed,Object? mappitLaborHours = freezed,Object? ownerId = freezed,Object? loginInfo = freezed,Object? authenticationCard = freezed,Object? authenticationCardId = freezed,Object? nfcIdentifier = freezed,Object? linkedSupplyPointAssets = freezed,Object? linkedSupplyPointAssetsIds = freezed,Object? linkedStorageTerminals = freezed,Object? linkedStorageTerminalsIds = freezed,Object? staticPosition = freezed,Object? points = freezed,Object? parameters = null,Object? globalSensors = freezed,Object? mappitLaborStartTime = freezed,Object? mappitLaborEndTime = freezed,Object? geofences = freezed,Object? mappitSecondaryRoutesIds = freezed,Object? isSuspended = freezed,Object? authenticationCardCardboardId = freezed,Object? authenticationCardTagId = freezed,Object? authenticationCardNfcId = freezed,Object? authenticationCardCardboard = freezed,Object? authenticationCardTag = freezed,Object? authenticationCardNfc = freezed,Object? widgets = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1243,7 +1245,8 @@ as String?,authenticationCardNfcId: freezed == authenticationCardNfcId ? _self.a
 as String?,authenticationCardCardboard: freezed == authenticationCardCardboard ? _self.authenticationCardCardboard : authenticationCardCardboard // ignore: cast_nullable_to_non_nullable
 as AtsAuthenticationCard?,authenticationCardTag: freezed == authenticationCardTag ? _self.authenticationCardTag : authenticationCardTag // ignore: cast_nullable_to_non_nullable
 as AtsAuthenticationCard?,authenticationCardNfc: freezed == authenticationCardNfc ? _self.authenticationCardNfc : authenticationCardNfc // ignore: cast_nullable_to_non_nullable
-as AtsAuthenticationCard?,
+as AtsAuthenticationCard?,widgets: null == widgets ? _self.widgets : widgets // ignore: cast_nullable_to_non_nullable
+as List<AssetWidget>,
   ));
 }
 /// Create a copy of Asset
@@ -1460,10 +1463,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? plate,  String? vin,  Avatar? dynamicIcon, @AssetModeOrNullConverter()  AssetMode? mode,  List<String>? childrenIds,  List<Asset>? children,  List<DeviceCommand>? commands,  List<String>? referencesIds,  List<Reference>? references,  List<String>? authenticatedAssetsIds,  List<Asset>? authenticatedAssets,  List<String>? authenticatedUsersIds,  List<User>? authenticatedUsers,  String? kindId,  Category? kind,  List<CustomField>? customFields,  List<Sensor>? sensors,  String? primaryId,  Device? primary,  List<String>? devicesIds,  List<Device>? devices,  String? qrCode,  List<String>? externalIdentifiers,  Connection? connection,  AssetTelemetry? telemetry,  List<Tag>? tags,  List<Access>? access,  List<AtsExit>? lastExits,  String? activeTime,  List<ContactInfo>? contacts,  List<MappitLaborHour>? mappitLaborHours,  String? ownerId,  AssetLoginInfo? loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  AtsAuthenticationCard? authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  String? authenticationCardId,  String? nfcIdentifier,  List<Asset>? linkedSupplyPointAssets,  List<String>? linkedSupplyPointAssetsIds,  List<Asset>? linkedStorageTerminals,  List<String>? linkedStorageTerminalsIds,  StaticPosition? staticPosition,  List<ZonePoint>? points,  List<String> parameters,  List<Sensor>? globalSensors, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborStartTime, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborEndTime,  List<Geofence>? geofences,  List<String>? mappitSecondaryRoutesIds,  bool? isSuspended,  String? authenticationCardCardboardId,  String? authenticationCardTagId,  String? authenticationCardNfcId,  AtsAuthenticationCard? authenticationCardCardboard,  AtsAuthenticationCard? authenticationCardTag,  AtsAuthenticationCard? authenticationCardNfc)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? plate,  String? vin,  Avatar? dynamicIcon, @AssetModeOrNullConverter()  AssetMode? mode,  List<String>? childrenIds,  List<Asset>? children,  List<DeviceCommand>? commands,  List<String>? referencesIds,  List<Reference>? references,  List<String>? authenticatedAssetsIds,  List<Asset>? authenticatedAssets,  List<String>? authenticatedUsersIds,  List<User>? authenticatedUsers,  String? kindId,  Category? kind,  List<CustomField>? customFields,  List<Sensor>? sensors,  String? primaryId,  Device? primary,  List<String>? devicesIds,  List<Device>? devices,  String? qrCode,  List<String>? externalIdentifiers,  Connection? connection,  AssetTelemetry? telemetry,  List<Tag>? tags,  List<Access>? access,  List<AtsExit>? lastExits,  String? activeTime,  List<ContactInfo>? contacts,  List<MappitLaborHour>? mappitLaborHours,  String? ownerId,  AssetLoginInfo? loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  AtsAuthenticationCard? authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  String? authenticationCardId,  String? nfcIdentifier,  List<Asset>? linkedSupplyPointAssets,  List<String>? linkedSupplyPointAssetsIds,  List<Asset>? linkedStorageTerminals,  List<String>? linkedStorageTerminalsIds,  StaticPosition? staticPosition,  List<ZonePoint>? points,  List<String> parameters,  List<Sensor>? globalSensors, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborStartTime, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborEndTime,  List<Geofence>? geofences,  List<String>? mappitSecondaryRoutesIds,  bool? isSuspended,  String? authenticationCardCardboardId,  String? authenticationCardTagId,  String? authenticationCardNfcId,  AtsAuthenticationCard? authenticationCardCardboard,  AtsAuthenticationCard? authenticationCardTag,  AtsAuthenticationCard? authenticationCardNfc,  List<AssetWidget> widgets)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Asset() when $default != null:
-return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_that.mode,_that.childrenIds,_that.children,_that.commands,_that.referencesIds,_that.references,_that.authenticatedAssetsIds,_that.authenticatedAssets,_that.authenticatedUsersIds,_that.authenticatedUsers,_that.kindId,_that.kind,_that.customFields,_that.sensors,_that.primaryId,_that.primary,_that.devicesIds,_that.devices,_that.qrCode,_that.externalIdentifiers,_that.connection,_that.telemetry,_that.tags,_that.access,_that.lastExits,_that.activeTime,_that.contacts,_that.mappitLaborHours,_that.ownerId,_that.loginInfo,_that.authenticationCard,_that.authenticationCardId,_that.nfcIdentifier,_that.linkedSupplyPointAssets,_that.linkedSupplyPointAssetsIds,_that.linkedStorageTerminals,_that.linkedStorageTerminalsIds,_that.staticPosition,_that.points,_that.parameters,_that.globalSensors,_that.mappitLaborStartTime,_that.mappitLaborEndTime,_that.geofences,_that.mappitSecondaryRoutesIds,_that.isSuspended,_that.authenticationCardCardboardId,_that.authenticationCardTagId,_that.authenticationCardNfcId,_that.authenticationCardCardboard,_that.authenticationCardTag,_that.authenticationCardNfc);case _:
+return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_that.mode,_that.childrenIds,_that.children,_that.commands,_that.referencesIds,_that.references,_that.authenticatedAssetsIds,_that.authenticatedAssets,_that.authenticatedUsersIds,_that.authenticatedUsers,_that.kindId,_that.kind,_that.customFields,_that.sensors,_that.primaryId,_that.primary,_that.devicesIds,_that.devices,_that.qrCode,_that.externalIdentifiers,_that.connection,_that.telemetry,_that.tags,_that.access,_that.lastExits,_that.activeTime,_that.contacts,_that.mappitLaborHours,_that.ownerId,_that.loginInfo,_that.authenticationCard,_that.authenticationCardId,_that.nfcIdentifier,_that.linkedSupplyPointAssets,_that.linkedSupplyPointAssetsIds,_that.linkedStorageTerminals,_that.linkedStorageTerminalsIds,_that.staticPosition,_that.points,_that.parameters,_that.globalSensors,_that.mappitLaborStartTime,_that.mappitLaborEndTime,_that.geofences,_that.mappitSecondaryRoutesIds,_that.isSuspended,_that.authenticationCardCardboardId,_that.authenticationCardTagId,_that.authenticationCardNfcId,_that.authenticationCardCardboard,_that.authenticationCardTag,_that.authenticationCardNfc,_that.widgets);case _:
   return orElse();
 
 }
@@ -1481,10 +1484,10 @@ return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? plate,  String? vin,  Avatar? dynamicIcon, @AssetModeOrNullConverter()  AssetMode? mode,  List<String>? childrenIds,  List<Asset>? children,  List<DeviceCommand>? commands,  List<String>? referencesIds,  List<Reference>? references,  List<String>? authenticatedAssetsIds,  List<Asset>? authenticatedAssets,  List<String>? authenticatedUsersIds,  List<User>? authenticatedUsers,  String? kindId,  Category? kind,  List<CustomField>? customFields,  List<Sensor>? sensors,  String? primaryId,  Device? primary,  List<String>? devicesIds,  List<Device>? devices,  String? qrCode,  List<String>? externalIdentifiers,  Connection? connection,  AssetTelemetry? telemetry,  List<Tag>? tags,  List<Access>? access,  List<AtsExit>? lastExits,  String? activeTime,  List<ContactInfo>? contacts,  List<MappitLaborHour>? mappitLaborHours,  String? ownerId,  AssetLoginInfo? loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  AtsAuthenticationCard? authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  String? authenticationCardId,  String? nfcIdentifier,  List<Asset>? linkedSupplyPointAssets,  List<String>? linkedSupplyPointAssetsIds,  List<Asset>? linkedStorageTerminals,  List<String>? linkedStorageTerminalsIds,  StaticPosition? staticPosition,  List<ZonePoint>? points,  List<String> parameters,  List<Sensor>? globalSensors, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborStartTime, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborEndTime,  List<Geofence>? geofences,  List<String>? mappitSecondaryRoutesIds,  bool? isSuspended,  String? authenticationCardCardboardId,  String? authenticationCardTagId,  String? authenticationCardNfcId,  AtsAuthenticationCard? authenticationCardCardboard,  AtsAuthenticationCard? authenticationCardTag,  AtsAuthenticationCard? authenticationCardNfc)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? plate,  String? vin,  Avatar? dynamicIcon, @AssetModeOrNullConverter()  AssetMode? mode,  List<String>? childrenIds,  List<Asset>? children,  List<DeviceCommand>? commands,  List<String>? referencesIds,  List<Reference>? references,  List<String>? authenticatedAssetsIds,  List<Asset>? authenticatedAssets,  List<String>? authenticatedUsersIds,  List<User>? authenticatedUsers,  String? kindId,  Category? kind,  List<CustomField>? customFields,  List<Sensor>? sensors,  String? primaryId,  Device? primary,  List<String>? devicesIds,  List<Device>? devices,  String? qrCode,  List<String>? externalIdentifiers,  Connection? connection,  AssetTelemetry? telemetry,  List<Tag>? tags,  List<Access>? access,  List<AtsExit>? lastExits,  String? activeTime,  List<ContactInfo>? contacts,  List<MappitLaborHour>? mappitLaborHours,  String? ownerId,  AssetLoginInfo? loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  AtsAuthenticationCard? authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  String? authenticationCardId,  String? nfcIdentifier,  List<Asset>? linkedSupplyPointAssets,  List<String>? linkedSupplyPointAssetsIds,  List<Asset>? linkedStorageTerminals,  List<String>? linkedStorageTerminalsIds,  StaticPosition? staticPosition,  List<ZonePoint>? points,  List<String> parameters,  List<Sensor>? globalSensors, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborStartTime, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborEndTime,  List<Geofence>? geofences,  List<String>? mappitSecondaryRoutesIds,  bool? isSuspended,  String? authenticationCardCardboardId,  String? authenticationCardTagId,  String? authenticationCardNfcId,  AtsAuthenticationCard? authenticationCardCardboard,  AtsAuthenticationCard? authenticationCardTag,  AtsAuthenticationCard? authenticationCardNfc,  List<AssetWidget> widgets)  $default,) {final _that = this;
 switch (_that) {
 case _Asset():
-return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_that.mode,_that.childrenIds,_that.children,_that.commands,_that.referencesIds,_that.references,_that.authenticatedAssetsIds,_that.authenticatedAssets,_that.authenticatedUsersIds,_that.authenticatedUsers,_that.kindId,_that.kind,_that.customFields,_that.sensors,_that.primaryId,_that.primary,_that.devicesIds,_that.devices,_that.qrCode,_that.externalIdentifiers,_that.connection,_that.telemetry,_that.tags,_that.access,_that.lastExits,_that.activeTime,_that.contacts,_that.mappitLaborHours,_that.ownerId,_that.loginInfo,_that.authenticationCard,_that.authenticationCardId,_that.nfcIdentifier,_that.linkedSupplyPointAssets,_that.linkedSupplyPointAssetsIds,_that.linkedStorageTerminals,_that.linkedStorageTerminalsIds,_that.staticPosition,_that.points,_that.parameters,_that.globalSensors,_that.mappitLaborStartTime,_that.mappitLaborEndTime,_that.geofences,_that.mappitSecondaryRoutesIds,_that.isSuspended,_that.authenticationCardCardboardId,_that.authenticationCardTagId,_that.authenticationCardNfcId,_that.authenticationCardCardboard,_that.authenticationCardTag,_that.authenticationCardNfc);case _:
+return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_that.mode,_that.childrenIds,_that.children,_that.commands,_that.referencesIds,_that.references,_that.authenticatedAssetsIds,_that.authenticatedAssets,_that.authenticatedUsersIds,_that.authenticatedUsers,_that.kindId,_that.kind,_that.customFields,_that.sensors,_that.primaryId,_that.primary,_that.devicesIds,_that.devices,_that.qrCode,_that.externalIdentifiers,_that.connection,_that.telemetry,_that.tags,_that.access,_that.lastExits,_that.activeTime,_that.contacts,_that.mappitLaborHours,_that.ownerId,_that.loginInfo,_that.authenticationCard,_that.authenticationCardId,_that.nfcIdentifier,_that.linkedSupplyPointAssets,_that.linkedSupplyPointAssetsIds,_that.linkedStorageTerminals,_that.linkedStorageTerminalsIds,_that.staticPosition,_that.points,_that.parameters,_that.globalSensors,_that.mappitLaborStartTime,_that.mappitLaborEndTime,_that.geofences,_that.mappitSecondaryRoutesIds,_that.isSuspended,_that.authenticationCardCardboardId,_that.authenticationCardTagId,_that.authenticationCardNfcId,_that.authenticationCardCardboard,_that.authenticationCardTag,_that.authenticationCardNfc,_that.widgets);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1501,10 +1504,10 @@ return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? plate,  String? vin,  Avatar? dynamicIcon, @AssetModeOrNullConverter()  AssetMode? mode,  List<String>? childrenIds,  List<Asset>? children,  List<DeviceCommand>? commands,  List<String>? referencesIds,  List<Reference>? references,  List<String>? authenticatedAssetsIds,  List<Asset>? authenticatedAssets,  List<String>? authenticatedUsersIds,  List<User>? authenticatedUsers,  String? kindId,  Category? kind,  List<CustomField>? customFields,  List<Sensor>? sensors,  String? primaryId,  Device? primary,  List<String>? devicesIds,  List<Device>? devices,  String? qrCode,  List<String>? externalIdentifiers,  Connection? connection,  AssetTelemetry? telemetry,  List<Tag>? tags,  List<Access>? access,  List<AtsExit>? lastExits,  String? activeTime,  List<ContactInfo>? contacts,  List<MappitLaborHour>? mappitLaborHours,  String? ownerId,  AssetLoginInfo? loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  AtsAuthenticationCard? authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  String? authenticationCardId,  String? nfcIdentifier,  List<Asset>? linkedSupplyPointAssets,  List<String>? linkedSupplyPointAssetsIds,  List<Asset>? linkedStorageTerminals,  List<String>? linkedStorageTerminalsIds,  StaticPosition? staticPosition,  List<ZonePoint>? points,  List<String> parameters,  List<Sensor>? globalSensors, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborStartTime, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborEndTime,  List<Geofence>? geofences,  List<String>? mappitSecondaryRoutesIds,  bool? isSuspended,  String? authenticationCardCardboardId,  String? authenticationCardTagId,  String? authenticationCardNfcId,  AtsAuthenticationCard? authenticationCardCardboard,  AtsAuthenticationCard? authenticationCardTag,  AtsAuthenticationCard? authenticationCardNfc)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? plate,  String? vin,  Avatar? dynamicIcon, @AssetModeOrNullConverter()  AssetMode? mode,  List<String>? childrenIds,  List<Asset>? children,  List<DeviceCommand>? commands,  List<String>? referencesIds,  List<Reference>? references,  List<String>? authenticatedAssetsIds,  List<Asset>? authenticatedAssets,  List<String>? authenticatedUsersIds,  List<User>? authenticatedUsers,  String? kindId,  Category? kind,  List<CustomField>? customFields,  List<Sensor>? sensors,  String? primaryId,  Device? primary,  List<String>? devicesIds,  List<Device>? devices,  String? qrCode,  List<String>? externalIdentifiers,  Connection? connection,  AssetTelemetry? telemetry,  List<Tag>? tags,  List<Access>? access,  List<AtsExit>? lastExits,  String? activeTime,  List<ContactInfo>? contacts,  List<MappitLaborHour>? mappitLaborHours,  String? ownerId,  AssetLoginInfo? loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  AtsAuthenticationCard? authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead')  String? authenticationCardId,  String? nfcIdentifier,  List<Asset>? linkedSupplyPointAssets,  List<String>? linkedSupplyPointAssetsIds,  List<Asset>? linkedStorageTerminals,  List<String>? linkedStorageTerminalsIds,  StaticPosition? staticPosition,  List<ZonePoint>? points,  List<String> parameters,  List<Sensor>? globalSensors, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborStartTime, @TimeOfDayOrNullConverter()  TimeOfDay? mappitLaborEndTime,  List<Geofence>? geofences,  List<String>? mappitSecondaryRoutesIds,  bool? isSuspended,  String? authenticationCardCardboardId,  String? authenticationCardTagId,  String? authenticationCardNfcId,  AtsAuthenticationCard? authenticationCardCardboard,  AtsAuthenticationCard? authenticationCardTag,  AtsAuthenticationCard? authenticationCardNfc,  List<AssetWidget> widgets)?  $default,) {final _that = this;
 switch (_that) {
 case _Asset() when $default != null:
-return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_that.mode,_that.childrenIds,_that.children,_that.commands,_that.referencesIds,_that.references,_that.authenticatedAssetsIds,_that.authenticatedAssets,_that.authenticatedUsersIds,_that.authenticatedUsers,_that.kindId,_that.kind,_that.customFields,_that.sensors,_that.primaryId,_that.primary,_that.devicesIds,_that.devices,_that.qrCode,_that.externalIdentifiers,_that.connection,_that.telemetry,_that.tags,_that.access,_that.lastExits,_that.activeTime,_that.contacts,_that.mappitLaborHours,_that.ownerId,_that.loginInfo,_that.authenticationCard,_that.authenticationCardId,_that.nfcIdentifier,_that.linkedSupplyPointAssets,_that.linkedSupplyPointAssetsIds,_that.linkedStorageTerminals,_that.linkedStorageTerminalsIds,_that.staticPosition,_that.points,_that.parameters,_that.globalSensors,_that.mappitLaborStartTime,_that.mappitLaborEndTime,_that.geofences,_that.mappitSecondaryRoutesIds,_that.isSuspended,_that.authenticationCardCardboardId,_that.authenticationCardTagId,_that.authenticationCardNfcId,_that.authenticationCardCardboard,_that.authenticationCardTag,_that.authenticationCardNfc);case _:
+return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_that.mode,_that.childrenIds,_that.children,_that.commands,_that.referencesIds,_that.references,_that.authenticatedAssetsIds,_that.authenticatedAssets,_that.authenticatedUsersIds,_that.authenticatedUsers,_that.kindId,_that.kind,_that.customFields,_that.sensors,_that.primaryId,_that.primary,_that.devicesIds,_that.devices,_that.qrCode,_that.externalIdentifiers,_that.connection,_that.telemetry,_that.tags,_that.access,_that.lastExits,_that.activeTime,_that.contacts,_that.mappitLaborHours,_that.ownerId,_that.loginInfo,_that.authenticationCard,_that.authenticationCardId,_that.nfcIdentifier,_that.linkedSupplyPointAssets,_that.linkedSupplyPointAssetsIds,_that.linkedStorageTerminals,_that.linkedStorageTerminalsIds,_that.staticPosition,_that.points,_that.parameters,_that.globalSensors,_that.mappitLaborStartTime,_that.mappitLaborEndTime,_that.geofences,_that.mappitSecondaryRoutesIds,_that.isSuspended,_that.authenticationCardCardboardId,_that.authenticationCardTagId,_that.authenticationCardNfcId,_that.authenticationCardCardboard,_that.authenticationCardTag,_that.authenticationCardNfc,_that.widgets);case _:
   return null;
 
 }
@@ -1516,7 +1519,7 @@ return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_tha
 @JsonSerializable()
 
 class _Asset extends Asset {
-  const _Asset({required this.id, required this.name, this.plate, this.vin, this.dynamicIcon, @AssetModeOrNullConverter() this.mode, final  List<String>? childrenIds, final  List<Asset>? children, final  List<DeviceCommand>? commands, final  List<String>? referencesIds, final  List<Reference>? references, final  List<String>? authenticatedAssetsIds, final  List<Asset>? authenticatedAssets, final  List<String>? authenticatedUsersIds, final  List<User>? authenticatedUsers, this.kindId, this.kind, final  List<CustomField>? customFields, final  List<Sensor>? sensors, this.primaryId, this.primary, final  List<String>? devicesIds, final  List<Device>? devices, this.qrCode, final  List<String>? externalIdentifiers, this.connection, this.telemetry, final  List<Tag>? tags, final  List<Access>? access, final  List<AtsExit>? lastExits, this.activeTime, final  List<ContactInfo>? contacts, final  List<MappitLaborHour>? mappitLaborHours, this.ownerId, this.loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') this.authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') this.authenticationCardId, this.nfcIdentifier, final  List<Asset>? linkedSupplyPointAssets, final  List<String>? linkedSupplyPointAssetsIds, final  List<Asset>? linkedStorageTerminals, final  List<String>? linkedStorageTerminalsIds, this.staticPosition, final  List<ZonePoint>? points, final  List<String> parameters = const [], final  List<Sensor>? globalSensors, @TimeOfDayOrNullConverter() this.mappitLaborStartTime, @TimeOfDayOrNullConverter() this.mappitLaborEndTime, final  List<Geofence>? geofences, final  List<String>? mappitSecondaryRoutesIds, this.isSuspended, this.authenticationCardCardboardId, this.authenticationCardTagId, this.authenticationCardNfcId, this.authenticationCardCardboard, this.authenticationCardTag, this.authenticationCardNfc}): _childrenIds = childrenIds,_children = children,_commands = commands,_referencesIds = referencesIds,_references = references,_authenticatedAssetsIds = authenticatedAssetsIds,_authenticatedAssets = authenticatedAssets,_authenticatedUsersIds = authenticatedUsersIds,_authenticatedUsers = authenticatedUsers,_customFields = customFields,_sensors = sensors,_devicesIds = devicesIds,_devices = devices,_externalIdentifiers = externalIdentifiers,_tags = tags,_access = access,_lastExits = lastExits,_contacts = contacts,_mappitLaborHours = mappitLaborHours,_linkedSupplyPointAssets = linkedSupplyPointAssets,_linkedSupplyPointAssetsIds = linkedSupplyPointAssetsIds,_linkedStorageTerminals = linkedStorageTerminals,_linkedStorageTerminalsIds = linkedStorageTerminalsIds,_points = points,_parameters = parameters,_globalSensors = globalSensors,_geofences = geofences,_mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,super._();
+  const _Asset({required this.id, required this.name, this.plate, this.vin, this.dynamicIcon, @AssetModeOrNullConverter() this.mode, final  List<String>? childrenIds, final  List<Asset>? children, final  List<DeviceCommand>? commands, final  List<String>? referencesIds, final  List<Reference>? references, final  List<String>? authenticatedAssetsIds, final  List<Asset>? authenticatedAssets, final  List<String>? authenticatedUsersIds, final  List<User>? authenticatedUsers, this.kindId, this.kind, final  List<CustomField>? customFields, final  List<Sensor>? sensors, this.primaryId, this.primary, final  List<String>? devicesIds, final  List<Device>? devices, this.qrCode, final  List<String>? externalIdentifiers, this.connection, this.telemetry, final  List<Tag>? tags, final  List<Access>? access, final  List<AtsExit>? lastExits, this.activeTime, final  List<ContactInfo>? contacts, final  List<MappitLaborHour>? mappitLaborHours, this.ownerId, this.loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') this.authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') this.authenticationCardId, this.nfcIdentifier, final  List<Asset>? linkedSupplyPointAssets, final  List<String>? linkedSupplyPointAssetsIds, final  List<Asset>? linkedStorageTerminals, final  List<String>? linkedStorageTerminalsIds, this.staticPosition, final  List<ZonePoint>? points, final  List<String> parameters = const [], final  List<Sensor>? globalSensors, @TimeOfDayOrNullConverter() this.mappitLaborStartTime, @TimeOfDayOrNullConverter() this.mappitLaborEndTime, final  List<Geofence>? geofences, final  List<String>? mappitSecondaryRoutesIds, this.isSuspended, this.authenticationCardCardboardId, this.authenticationCardTagId, this.authenticationCardNfcId, this.authenticationCardCardboard, this.authenticationCardTag, this.authenticationCardNfc, final  List<AssetWidget> widgets = const []}): _childrenIds = childrenIds,_children = children,_commands = commands,_referencesIds = referencesIds,_references = references,_authenticatedAssetsIds = authenticatedAssetsIds,_authenticatedAssets = authenticatedAssets,_authenticatedUsersIds = authenticatedUsersIds,_authenticatedUsers = authenticatedUsers,_customFields = customFields,_sensors = sensors,_devicesIds = devicesIds,_devices = devices,_externalIdentifiers = externalIdentifiers,_tags = tags,_access = access,_lastExits = lastExits,_contacts = contacts,_mappitLaborHours = mappitLaborHours,_linkedSupplyPointAssets = linkedSupplyPointAssets,_linkedSupplyPointAssetsIds = linkedSupplyPointAssetsIds,_linkedStorageTerminals = linkedStorageTerminals,_linkedStorageTerminalsIds = linkedStorageTerminalsIds,_points = points,_parameters = parameters,_globalSensors = globalSensors,_geofences = geofences,_mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,_widgets = widgets,super._();
   factory _Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
 
 /// [id] of the asset entity. This ID is unique.
@@ -1909,6 +1912,17 @@ class _Asset extends Asset {
 @override final  AtsAuthenticationCard? authenticationCardTag;
 /// [authenticationCardNfc] is the NFC of the authentication card id.
 @override final  AtsAuthenticationCard? authenticationCardNfc;
+/// [widgets] is the curated, ordered list of live-data visualization widgets configured for this
+/// asset. Read-only on this model — writes go through the dedicated `updateAssetWidgets` mutation.
+ final  List<AssetWidget> _widgets;
+/// [widgets] is the curated, ordered list of live-data visualization widgets configured for this
+/// asset. Read-only on this model — writes go through the dedicated `updateAssetWidgets` mutation.
+@override@JsonKey() List<AssetWidget> get widgets {
+  if (_widgets is EqualUnmodifiableListView) return _widgets;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_widgets);
+}
+
 
 /// Create a copy of Asset
 /// with the given fields replaced by the non-null parameter values.
@@ -1923,16 +1937,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Asset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.plate, plate) || other.plate == plate)&&(identical(other.vin, vin) || other.vin == vin)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other._childrenIds, _childrenIds)&&const DeepCollectionEquality().equals(other._children, _children)&&const DeepCollectionEquality().equals(other._commands, _commands)&&const DeepCollectionEquality().equals(other._referencesIds, _referencesIds)&&const DeepCollectionEquality().equals(other._references, _references)&&const DeepCollectionEquality().equals(other._authenticatedAssetsIds, _authenticatedAssetsIds)&&const DeepCollectionEquality().equals(other._authenticatedAssets, _authenticatedAssets)&&const DeepCollectionEquality().equals(other._authenticatedUsersIds, _authenticatedUsersIds)&&const DeepCollectionEquality().equals(other._authenticatedUsers, _authenticatedUsers)&&(identical(other.kindId, kindId) || other.kindId == kindId)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.primaryId, primaryId) || other.primaryId == primaryId)&&(identical(other.primary, primary) || other.primary == primary)&&const DeepCollectionEquality().equals(other._devicesIds, _devicesIds)&&const DeepCollectionEquality().equals(other._devices, _devices)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other._externalIdentifiers, _externalIdentifiers)&&(identical(other.connection, connection) || other.connection == connection)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&const DeepCollectionEquality().equals(other._tags, _tags)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._lastExits, _lastExits)&&(identical(other.activeTime, activeTime) || other.activeTime == activeTime)&&const DeepCollectionEquality().equals(other._contacts, _contacts)&&const DeepCollectionEquality().equals(other._mappitLaborHours, _mappitLaborHours)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.loginInfo, loginInfo) || other.loginInfo == loginInfo)&&(identical(other.authenticationCard, authenticationCard) || other.authenticationCard == authenticationCard)&&(identical(other.authenticationCardId, authenticationCardId) || other.authenticationCardId == authenticationCardId)&&(identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier)&&const DeepCollectionEquality().equals(other._linkedSupplyPointAssets, _linkedSupplyPointAssets)&&const DeepCollectionEquality().equals(other._linkedSupplyPointAssetsIds, _linkedSupplyPointAssetsIds)&&const DeepCollectionEquality().equals(other._linkedStorageTerminals, _linkedStorageTerminals)&&const DeepCollectionEquality().equals(other._linkedStorageTerminalsIds, _linkedStorageTerminalsIds)&&(identical(other.staticPosition, staticPosition) || other.staticPosition == staticPosition)&&const DeepCollectionEquality().equals(other._points, _points)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&const DeepCollectionEquality().equals(other._globalSensors, _globalSensors)&&(identical(other.mappitLaborStartTime, mappitLaborStartTime) || other.mappitLaborStartTime == mappitLaborStartTime)&&(identical(other.mappitLaborEndTime, mappitLaborEndTime) || other.mappitLaborEndTime == mappitLaborEndTime)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.authenticationCardCardboardId, authenticationCardCardboardId) || other.authenticationCardCardboardId == authenticationCardCardboardId)&&(identical(other.authenticationCardTagId, authenticationCardTagId) || other.authenticationCardTagId == authenticationCardTagId)&&(identical(other.authenticationCardNfcId, authenticationCardNfcId) || other.authenticationCardNfcId == authenticationCardNfcId)&&(identical(other.authenticationCardCardboard, authenticationCardCardboard) || other.authenticationCardCardboard == authenticationCardCardboard)&&(identical(other.authenticationCardTag, authenticationCardTag) || other.authenticationCardTag == authenticationCardTag)&&(identical(other.authenticationCardNfc, authenticationCardNfc) || other.authenticationCardNfc == authenticationCardNfc));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Asset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.plate, plate) || other.plate == plate)&&(identical(other.vin, vin) || other.vin == vin)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other._childrenIds, _childrenIds)&&const DeepCollectionEquality().equals(other._children, _children)&&const DeepCollectionEquality().equals(other._commands, _commands)&&const DeepCollectionEquality().equals(other._referencesIds, _referencesIds)&&const DeepCollectionEquality().equals(other._references, _references)&&const DeepCollectionEquality().equals(other._authenticatedAssetsIds, _authenticatedAssetsIds)&&const DeepCollectionEquality().equals(other._authenticatedAssets, _authenticatedAssets)&&const DeepCollectionEquality().equals(other._authenticatedUsersIds, _authenticatedUsersIds)&&const DeepCollectionEquality().equals(other._authenticatedUsers, _authenticatedUsers)&&(identical(other.kindId, kindId) || other.kindId == kindId)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.primaryId, primaryId) || other.primaryId == primaryId)&&(identical(other.primary, primary) || other.primary == primary)&&const DeepCollectionEquality().equals(other._devicesIds, _devicesIds)&&const DeepCollectionEquality().equals(other._devices, _devices)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other._externalIdentifiers, _externalIdentifiers)&&(identical(other.connection, connection) || other.connection == connection)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&const DeepCollectionEquality().equals(other._tags, _tags)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._lastExits, _lastExits)&&(identical(other.activeTime, activeTime) || other.activeTime == activeTime)&&const DeepCollectionEquality().equals(other._contacts, _contacts)&&const DeepCollectionEquality().equals(other._mappitLaborHours, _mappitLaborHours)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.loginInfo, loginInfo) || other.loginInfo == loginInfo)&&(identical(other.authenticationCard, authenticationCard) || other.authenticationCard == authenticationCard)&&(identical(other.authenticationCardId, authenticationCardId) || other.authenticationCardId == authenticationCardId)&&(identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier)&&const DeepCollectionEquality().equals(other._linkedSupplyPointAssets, _linkedSupplyPointAssets)&&const DeepCollectionEquality().equals(other._linkedSupplyPointAssetsIds, _linkedSupplyPointAssetsIds)&&const DeepCollectionEquality().equals(other._linkedStorageTerminals, _linkedStorageTerminals)&&const DeepCollectionEquality().equals(other._linkedStorageTerminalsIds, _linkedStorageTerminalsIds)&&(identical(other.staticPosition, staticPosition) || other.staticPosition == staticPosition)&&const DeepCollectionEquality().equals(other._points, _points)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&const DeepCollectionEquality().equals(other._globalSensors, _globalSensors)&&(identical(other.mappitLaborStartTime, mappitLaborStartTime) || other.mappitLaborStartTime == mappitLaborStartTime)&&(identical(other.mappitLaborEndTime, mappitLaborEndTime) || other.mappitLaborEndTime == mappitLaborEndTime)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.authenticationCardCardboardId, authenticationCardCardboardId) || other.authenticationCardCardboardId == authenticationCardCardboardId)&&(identical(other.authenticationCardTagId, authenticationCardTagId) || other.authenticationCardTagId == authenticationCardTagId)&&(identical(other.authenticationCardNfcId, authenticationCardNfcId) || other.authenticationCardNfcId == authenticationCardNfcId)&&(identical(other.authenticationCardCardboard, authenticationCardCardboard) || other.authenticationCardCardboard == authenticationCardCardboard)&&(identical(other.authenticationCardTag, authenticationCardTag) || other.authenticationCardTag == authenticationCardTag)&&(identical(other.authenticationCardNfc, authenticationCardNfc) || other.authenticationCardNfc == authenticationCardNfc)&&const DeepCollectionEquality().equals(other._widgets, _widgets));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,plate,vin,dynamicIcon,mode,const DeepCollectionEquality().hash(_childrenIds),const DeepCollectionEquality().hash(_children),const DeepCollectionEquality().hash(_commands),const DeepCollectionEquality().hash(_referencesIds),const DeepCollectionEquality().hash(_references),const DeepCollectionEquality().hash(_authenticatedAssetsIds),const DeepCollectionEquality().hash(_authenticatedAssets),const DeepCollectionEquality().hash(_authenticatedUsersIds),const DeepCollectionEquality().hash(_authenticatedUsers),kindId,kind,const DeepCollectionEquality().hash(_customFields),const DeepCollectionEquality().hash(_sensors),primaryId,primary,const DeepCollectionEquality().hash(_devicesIds),const DeepCollectionEquality().hash(_devices),qrCode,const DeepCollectionEquality().hash(_externalIdentifiers),connection,telemetry,const DeepCollectionEquality().hash(_tags),const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_lastExits),activeTime,const DeepCollectionEquality().hash(_contacts),const DeepCollectionEquality().hash(_mappitLaborHours),ownerId,loginInfo,authenticationCard,authenticationCardId,nfcIdentifier,const DeepCollectionEquality().hash(_linkedSupplyPointAssets),const DeepCollectionEquality().hash(_linkedSupplyPointAssetsIds),const DeepCollectionEquality().hash(_linkedStorageTerminals),const DeepCollectionEquality().hash(_linkedStorageTerminalsIds),staticPosition,const DeepCollectionEquality().hash(_points),const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_globalSensors),mappitLaborStartTime,mappitLaborEndTime,const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),isSuspended,authenticationCardCardboardId,authenticationCardTagId,authenticationCardNfcId,authenticationCardCardboard,authenticationCardTag,authenticationCardNfc]);
+int get hashCode => Object.hashAll([runtimeType,id,name,plate,vin,dynamicIcon,mode,const DeepCollectionEquality().hash(_childrenIds),const DeepCollectionEquality().hash(_children),const DeepCollectionEquality().hash(_commands),const DeepCollectionEquality().hash(_referencesIds),const DeepCollectionEquality().hash(_references),const DeepCollectionEquality().hash(_authenticatedAssetsIds),const DeepCollectionEquality().hash(_authenticatedAssets),const DeepCollectionEquality().hash(_authenticatedUsersIds),const DeepCollectionEquality().hash(_authenticatedUsers),kindId,kind,const DeepCollectionEquality().hash(_customFields),const DeepCollectionEquality().hash(_sensors),primaryId,primary,const DeepCollectionEquality().hash(_devicesIds),const DeepCollectionEquality().hash(_devices),qrCode,const DeepCollectionEquality().hash(_externalIdentifiers),connection,telemetry,const DeepCollectionEquality().hash(_tags),const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_lastExits),activeTime,const DeepCollectionEquality().hash(_contacts),const DeepCollectionEquality().hash(_mappitLaborHours),ownerId,loginInfo,authenticationCard,authenticationCardId,nfcIdentifier,const DeepCollectionEquality().hash(_linkedSupplyPointAssets),const DeepCollectionEquality().hash(_linkedSupplyPointAssetsIds),const DeepCollectionEquality().hash(_linkedStorageTerminals),const DeepCollectionEquality().hash(_linkedStorageTerminalsIds),staticPosition,const DeepCollectionEquality().hash(_points),const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_globalSensors),mappitLaborStartTime,mappitLaborEndTime,const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),isSuspended,authenticationCardCardboardId,authenticationCardTagId,authenticationCardNfcId,authenticationCardCardboard,authenticationCardTag,authenticationCardNfc,const DeepCollectionEquality().hash(_widgets)]);
 
 @override
 String toString() {
-  return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, linkedStorageTerminals: $linkedStorageTerminals, linkedStorageTerminalsIds: $linkedStorageTerminalsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended, authenticationCardCardboardId: $authenticationCardCardboardId, authenticationCardTagId: $authenticationCardTagId, authenticationCardNfcId: $authenticationCardNfcId, authenticationCardCardboard: $authenticationCardCardboard, authenticationCardTag: $authenticationCardTag, authenticationCardNfc: $authenticationCardNfc)';
+  return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, linkedStorageTerminals: $linkedStorageTerminals, linkedStorageTerminalsIds: $linkedStorageTerminalsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended, authenticationCardCardboardId: $authenticationCardCardboardId, authenticationCardTagId: $authenticationCardTagId, authenticationCardNfcId: $authenticationCardNfcId, authenticationCardCardboard: $authenticationCardCardboard, authenticationCardTag: $authenticationCardTag, authenticationCardNfc: $authenticationCardNfc, widgets: $widgets)';
 }
 
 
@@ -1943,7 +1957,7 @@ abstract mixin class _$AssetCopyWith<$Res> implements $AssetCopyWith<$Res> {
   factory _$AssetCopyWith(_Asset value, $Res Function(_Asset) _then) = __$AssetCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String? plate, String? vin, Avatar? dynamicIcon,@AssetModeOrNullConverter() AssetMode? mode, List<String>? childrenIds, List<Asset>? children, List<DeviceCommand>? commands, List<String>? referencesIds, List<Reference>? references, List<String>? authenticatedAssetsIds, List<Asset>? authenticatedAssets, List<String>? authenticatedUsersIds, List<User>? authenticatedUsers, String? kindId, Category? kind, List<CustomField>? customFields, List<Sensor>? sensors, String? primaryId, Device? primary, List<String>? devicesIds, List<Device>? devices, String? qrCode, List<String>? externalIdentifiers, Connection? connection, AssetTelemetry? telemetry, List<Tag>? tags, List<Access>? access, List<AtsExit>? lastExits, String? activeTime, List<ContactInfo>? contacts, List<MappitLaborHour>? mappitLaborHours, String? ownerId, AssetLoginInfo? loginInfo,@Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') AtsAuthenticationCard? authenticationCard,@Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') String? authenticationCardId, String? nfcIdentifier, List<Asset>? linkedSupplyPointAssets, List<String>? linkedSupplyPointAssetsIds, List<Asset>? linkedStorageTerminals, List<String>? linkedStorageTerminalsIds, StaticPosition? staticPosition, List<ZonePoint>? points, List<String> parameters, List<Sensor>? globalSensors,@TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,@TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime, List<Geofence>? geofences, List<String>? mappitSecondaryRoutesIds, bool? isSuspended, String? authenticationCardCardboardId, String? authenticationCardTagId, String? authenticationCardNfcId, AtsAuthenticationCard? authenticationCardCardboard, AtsAuthenticationCard? authenticationCardTag, AtsAuthenticationCard? authenticationCardNfc
+ String id, String name, String? plate, String? vin, Avatar? dynamicIcon,@AssetModeOrNullConverter() AssetMode? mode, List<String>? childrenIds, List<Asset>? children, List<DeviceCommand>? commands, List<String>? referencesIds, List<Reference>? references, List<String>? authenticatedAssetsIds, List<Asset>? authenticatedAssets, List<String>? authenticatedUsersIds, List<User>? authenticatedUsers, String? kindId, Category? kind, List<CustomField>? customFields, List<Sensor>? sensors, String? primaryId, Device? primary, List<String>? devicesIds, List<Device>? devices, String? qrCode, List<String>? externalIdentifiers, Connection? connection, AssetTelemetry? telemetry, List<Tag>? tags, List<Access>? access, List<AtsExit>? lastExits, String? activeTime, List<ContactInfo>? contacts, List<MappitLaborHour>? mappitLaborHours, String? ownerId, AssetLoginInfo? loginInfo,@Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') AtsAuthenticationCard? authenticationCard,@Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') String? authenticationCardId, String? nfcIdentifier, List<Asset>? linkedSupplyPointAssets, List<String>? linkedSupplyPointAssetsIds, List<Asset>? linkedStorageTerminals, List<String>? linkedStorageTerminalsIds, StaticPosition? staticPosition, List<ZonePoint>? points, List<String> parameters, List<Sensor>? globalSensors,@TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,@TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime, List<Geofence>? geofences, List<String>? mappitSecondaryRoutesIds, bool? isSuspended, String? authenticationCardCardboardId, String? authenticationCardTagId, String? authenticationCardNfcId, AtsAuthenticationCard? authenticationCardCardboard, AtsAuthenticationCard? authenticationCardTag, AtsAuthenticationCard? authenticationCardNfc, List<AssetWidget> widgets
 });
 
 
@@ -1960,7 +1974,7 @@ class __$AssetCopyWithImpl<$Res>
 
 /// Create a copy of Asset
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? plate = freezed,Object? vin = freezed,Object? dynamicIcon = freezed,Object? mode = freezed,Object? childrenIds = freezed,Object? children = freezed,Object? commands = freezed,Object? referencesIds = freezed,Object? references = freezed,Object? authenticatedAssetsIds = freezed,Object? authenticatedAssets = freezed,Object? authenticatedUsersIds = freezed,Object? authenticatedUsers = freezed,Object? kindId = freezed,Object? kind = freezed,Object? customFields = freezed,Object? sensors = freezed,Object? primaryId = freezed,Object? primary = freezed,Object? devicesIds = freezed,Object? devices = freezed,Object? qrCode = freezed,Object? externalIdentifiers = freezed,Object? connection = freezed,Object? telemetry = freezed,Object? tags = freezed,Object? access = freezed,Object? lastExits = freezed,Object? activeTime = freezed,Object? contacts = freezed,Object? mappitLaborHours = freezed,Object? ownerId = freezed,Object? loginInfo = freezed,Object? authenticationCard = freezed,Object? authenticationCardId = freezed,Object? nfcIdentifier = freezed,Object? linkedSupplyPointAssets = freezed,Object? linkedSupplyPointAssetsIds = freezed,Object? linkedStorageTerminals = freezed,Object? linkedStorageTerminalsIds = freezed,Object? staticPosition = freezed,Object? points = freezed,Object? parameters = null,Object? globalSensors = freezed,Object? mappitLaborStartTime = freezed,Object? mappitLaborEndTime = freezed,Object? geofences = freezed,Object? mappitSecondaryRoutesIds = freezed,Object? isSuspended = freezed,Object? authenticationCardCardboardId = freezed,Object? authenticationCardTagId = freezed,Object? authenticationCardNfcId = freezed,Object? authenticationCardCardboard = freezed,Object? authenticationCardTag = freezed,Object? authenticationCardNfc = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? plate = freezed,Object? vin = freezed,Object? dynamicIcon = freezed,Object? mode = freezed,Object? childrenIds = freezed,Object? children = freezed,Object? commands = freezed,Object? referencesIds = freezed,Object? references = freezed,Object? authenticatedAssetsIds = freezed,Object? authenticatedAssets = freezed,Object? authenticatedUsersIds = freezed,Object? authenticatedUsers = freezed,Object? kindId = freezed,Object? kind = freezed,Object? customFields = freezed,Object? sensors = freezed,Object? primaryId = freezed,Object? primary = freezed,Object? devicesIds = freezed,Object? devices = freezed,Object? qrCode = freezed,Object? externalIdentifiers = freezed,Object? connection = freezed,Object? telemetry = freezed,Object? tags = freezed,Object? access = freezed,Object? lastExits = freezed,Object? activeTime = freezed,Object? contacts = freezed,Object? mappitLaborHours = freezed,Object? ownerId = freezed,Object? loginInfo = freezed,Object? authenticationCard = freezed,Object? authenticationCardId = freezed,Object? nfcIdentifier = freezed,Object? linkedSupplyPointAssets = freezed,Object? linkedSupplyPointAssetsIds = freezed,Object? linkedStorageTerminals = freezed,Object? linkedStorageTerminalsIds = freezed,Object? staticPosition = freezed,Object? points = freezed,Object? parameters = null,Object? globalSensors = freezed,Object? mappitLaborStartTime = freezed,Object? mappitLaborEndTime = freezed,Object? geofences = freezed,Object? mappitSecondaryRoutesIds = freezed,Object? isSuspended = freezed,Object? authenticationCardCardboardId = freezed,Object? authenticationCardTagId = freezed,Object? authenticationCardNfcId = freezed,Object? authenticationCardCardboard = freezed,Object? authenticationCardTag = freezed,Object? authenticationCardNfc = freezed,Object? widgets = null,}) {
   return _then(_Asset(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -2019,7 +2033,8 @@ as String?,authenticationCardNfcId: freezed == authenticationCardNfcId ? _self.a
 as String?,authenticationCardCardboard: freezed == authenticationCardCardboard ? _self.authenticationCardCardboard : authenticationCardCardboard // ignore: cast_nullable_to_non_nullable
 as AtsAuthenticationCard?,authenticationCardTag: freezed == authenticationCardTag ? _self.authenticationCardTag : authenticationCardTag // ignore: cast_nullable_to_non_nullable
 as AtsAuthenticationCard?,authenticationCardNfc: freezed == authenticationCardNfc ? _self.authenticationCardNfc : authenticationCardNfc // ignore: cast_nullable_to_non_nullable
-as AtsAuthenticationCard?,
+as AtsAuthenticationCard?,widgets: null == widgets ? _self._widgets : widgets // ignore: cast_nullable_to_non_nullable
+as List<AssetWidget>,
   ));
 }
 
@@ -2597,6 +2612,1652 @@ $AssetLoginInfoInputCopyWith<$Res>? get loginInfo {
     return _then(_self.copyWith(loginInfo: value));
   });
 }
+}
+
+
+/// @nodoc
+mixin _$AssetWidget {
+
+/// [device] is the id of the device that owns the [expose] parameter and its telemetry.
+ String get device;/// [widget] is the render type used to visualize the parameter.
+@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget get widget;/// [expose] is the raw parameter / expose name to render (e.g. `temperature`, `state`).
+ String get expose;/// [config] holds the title and optional color-range thresholds.
+ AssetWidgetConfig get config;
+/// Create a copy of AssetWidget
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AssetWidgetCopyWith<AssetWidget> get copyWith => _$AssetWidgetCopyWithImpl<AssetWidget>(this as AssetWidget, _$identity);
+
+  /// Serializes this AssetWidget to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetWidget&&(identical(other.device, device) || other.device == device)&&(identical(other.widget, widget) || other.widget == widget)&&(identical(other.expose, expose) || other.expose == expose)&&(identical(other.config, config) || other.config == config));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,device,widget,expose,config);
+
+@override
+String toString() {
+  return 'AssetWidget(device: $device, widget: $widget, expose: $expose, config: $config)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AssetWidgetCopyWith<$Res>  {
+  factory $AssetWidgetCopyWith(AssetWidget value, $Res Function(AssetWidget) _then) = _$AssetWidgetCopyWithImpl;
+@useResult
+$Res call({
+ String device,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, String expose, AssetWidgetConfig config
+});
+
+
+$AssetWidgetConfigCopyWith<$Res> get config;
+
+}
+/// @nodoc
+class _$AssetWidgetCopyWithImpl<$Res>
+    implements $AssetWidgetCopyWith<$Res> {
+  _$AssetWidgetCopyWithImpl(this._self, this._then);
+
+  final AssetWidget _self;
+  final $Res Function(AssetWidget) _then;
+
+/// Create a copy of AssetWidget
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? device = null,Object? widget = null,Object? expose = null,Object? config = null,}) {
+  return _then(_self.copyWith(
+device: null == device ? _self.device : device // ignore: cast_nullable_to_non_nullable
+as String,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
+as RenderWidget,expose: null == expose ? _self.expose : expose // ignore: cast_nullable_to_non_nullable
+as String,config: null == config ? _self.config : config // ignore: cast_nullable_to_non_nullable
+as AssetWidgetConfig,
+  ));
+}
+/// Create a copy of AssetWidget
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetWidgetConfigCopyWith<$Res> get config {
+  
+  return $AssetWidgetConfigCopyWith<$Res>(_self.config, (value) {
+    return _then(_self.copyWith(config: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AssetWidget].
+extension AssetWidgetPatterns on AssetWidget {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssetWidget value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AssetWidget() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssetWidget value)  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidget():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssetWidget value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidget() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String device, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  String expose,  AssetWidgetConfig config)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AssetWidget() when $default != null:
+return $default(_that.device,_that.widget,_that.expose,_that.config);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String device, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  String expose,  AssetWidgetConfig config)  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidget():
+return $default(_that.device,_that.widget,_that.expose,_that.config);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String device, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  String expose,  AssetWidgetConfig config)?  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidget() when $default != null:
+return $default(_that.device,_that.widget,_that.expose,_that.config);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AssetWidget implements AssetWidget {
+  const _AssetWidget({required this.device, @JsonKey(unknownEnumValue: RenderWidget.unknown) required this.widget, required this.expose, required this.config});
+  factory _AssetWidget.fromJson(Map<String, dynamic> json) => _$AssetWidgetFromJson(json);
+
+/// [device] is the id of the device that owns the [expose] parameter and its telemetry.
+@override final  String device;
+/// [widget] is the render type used to visualize the parameter.
+@override@JsonKey(unknownEnumValue: RenderWidget.unknown) final  RenderWidget widget;
+/// [expose] is the raw parameter / expose name to render (e.g. `temperature`, `state`).
+@override final  String expose;
+/// [config] holds the title and optional color-range thresholds.
+@override final  AssetWidgetConfig config;
+
+/// Create a copy of AssetWidget
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AssetWidgetCopyWith<_AssetWidget> get copyWith => __$AssetWidgetCopyWithImpl<_AssetWidget>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AssetWidgetToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetWidget&&(identical(other.device, device) || other.device == device)&&(identical(other.widget, widget) || other.widget == widget)&&(identical(other.expose, expose) || other.expose == expose)&&(identical(other.config, config) || other.config == config));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,device,widget,expose,config);
+
+@override
+String toString() {
+  return 'AssetWidget(device: $device, widget: $widget, expose: $expose, config: $config)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AssetWidgetCopyWith<$Res> implements $AssetWidgetCopyWith<$Res> {
+  factory _$AssetWidgetCopyWith(_AssetWidget value, $Res Function(_AssetWidget) _then) = __$AssetWidgetCopyWithImpl;
+@override @useResult
+$Res call({
+ String device,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, String expose, AssetWidgetConfig config
+});
+
+
+@override $AssetWidgetConfigCopyWith<$Res> get config;
+
+}
+/// @nodoc
+class __$AssetWidgetCopyWithImpl<$Res>
+    implements _$AssetWidgetCopyWith<$Res> {
+  __$AssetWidgetCopyWithImpl(this._self, this._then);
+
+  final _AssetWidget _self;
+  final $Res Function(_AssetWidget) _then;
+
+/// Create a copy of AssetWidget
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? device = null,Object? widget = null,Object? expose = null,Object? config = null,}) {
+  return _then(_AssetWidget(
+device: null == device ? _self.device : device // ignore: cast_nullable_to_non_nullable
+as String,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
+as RenderWidget,expose: null == expose ? _self.expose : expose // ignore: cast_nullable_to_non_nullable
+as String,config: null == config ? _self.config : config // ignore: cast_nullable_to_non_nullable
+as AssetWidgetConfig,
+  ));
+}
+
+/// Create a copy of AssetWidget
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetWidgetConfigCopyWith<$Res> get config {
+  
+  return $AssetWidgetConfigCopyWith<$Res>(_self.config, (value) {
+    return _then(_self.copyWith(config: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AssetWidgetConfig {
+
+/// [title] shown on the widget card.
+ String get title;/// [minValue] is the optional lower bound for gauges/ranges.
+ double? get minValue;/// [maxValue] is the optional upper bound for gauges/ranges.
+ double? get maxValue;/// [ranges] are the ordered `>= value → color` thresholds. The color switches at each threshold
+/// and above.
+ List<AssetWidgetRange>? get ranges;
+/// Create a copy of AssetWidgetConfig
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AssetWidgetConfigCopyWith<AssetWidgetConfig> get copyWith => _$AssetWidgetConfigCopyWithImpl<AssetWidgetConfig>(this as AssetWidgetConfig, _$identity);
+
+  /// Serializes this AssetWidgetConfig to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetWidgetConfig&&(identical(other.title, title) || other.title == title)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&const DeepCollectionEquality().equals(other.ranges, ranges));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,title,minValue,maxValue,const DeepCollectionEquality().hash(ranges));
+
+@override
+String toString() {
+  return 'AssetWidgetConfig(title: $title, minValue: $minValue, maxValue: $maxValue, ranges: $ranges)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AssetWidgetConfigCopyWith<$Res>  {
+  factory $AssetWidgetConfigCopyWith(AssetWidgetConfig value, $Res Function(AssetWidgetConfig) _then) = _$AssetWidgetConfigCopyWithImpl;
+@useResult
+$Res call({
+ String title, double? minValue, double? maxValue, List<AssetWidgetRange>? ranges
+});
+
+
+
+
+}
+/// @nodoc
+class _$AssetWidgetConfigCopyWithImpl<$Res>
+    implements $AssetWidgetConfigCopyWith<$Res> {
+  _$AssetWidgetConfigCopyWithImpl(this._self, this._then);
+
+  final AssetWidgetConfig _self;
+  final $Res Function(AssetWidgetConfig) _then;
+
+/// Create a copy of AssetWidgetConfig
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? title = null,Object? minValue = freezed,Object? maxValue = freezed,Object? ranges = freezed,}) {
+  return _then(_self.copyWith(
+title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,minValue: freezed == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
+as double?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
+as double?,ranges: freezed == ranges ? _self.ranges : ranges // ignore: cast_nullable_to_non_nullable
+as List<AssetWidgetRange>?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AssetWidgetConfig].
+extension AssetWidgetConfigPatterns on AssetWidgetConfig {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssetWidgetConfig value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AssetWidgetConfig() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssetWidgetConfig value)  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetConfig():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssetWidgetConfig value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetConfig() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  double? minValue,  double? maxValue,  List<AssetWidgetRange>? ranges)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AssetWidgetConfig() when $default != null:
+return $default(_that.title,_that.minValue,_that.maxValue,_that.ranges);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  double? minValue,  double? maxValue,  List<AssetWidgetRange>? ranges)  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetConfig():
+return $default(_that.title,_that.minValue,_that.maxValue,_that.ranges);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  double? minValue,  double? maxValue,  List<AssetWidgetRange>? ranges)?  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetConfig() when $default != null:
+return $default(_that.title,_that.minValue,_that.maxValue,_that.ranges);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AssetWidgetConfig implements AssetWidgetConfig {
+  const _AssetWidgetConfig({this.title = '', this.minValue, this.maxValue, final  List<AssetWidgetRange>? ranges}): _ranges = ranges;
+  factory _AssetWidgetConfig.fromJson(Map<String, dynamic> json) => _$AssetWidgetConfigFromJson(json);
+
+/// [title] shown on the widget card.
+@override@JsonKey() final  String title;
+/// [minValue] is the optional lower bound for gauges/ranges.
+@override final  double? minValue;
+/// [maxValue] is the optional upper bound for gauges/ranges.
+@override final  double? maxValue;
+/// [ranges] are the ordered `>= value → color` thresholds. The color switches at each threshold
+/// and above.
+ final  List<AssetWidgetRange>? _ranges;
+/// [ranges] are the ordered `>= value → color` thresholds. The color switches at each threshold
+/// and above.
+@override List<AssetWidgetRange>? get ranges {
+  final value = _ranges;
+  if (value == null) return null;
+  if (_ranges is EqualUnmodifiableListView) return _ranges;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+
+/// Create a copy of AssetWidgetConfig
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AssetWidgetConfigCopyWith<_AssetWidgetConfig> get copyWith => __$AssetWidgetConfigCopyWithImpl<_AssetWidgetConfig>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AssetWidgetConfigToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetWidgetConfig&&(identical(other.title, title) || other.title == title)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&const DeepCollectionEquality().equals(other._ranges, _ranges));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,title,minValue,maxValue,const DeepCollectionEquality().hash(_ranges));
+
+@override
+String toString() {
+  return 'AssetWidgetConfig(title: $title, minValue: $minValue, maxValue: $maxValue, ranges: $ranges)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AssetWidgetConfigCopyWith<$Res> implements $AssetWidgetConfigCopyWith<$Res> {
+  factory _$AssetWidgetConfigCopyWith(_AssetWidgetConfig value, $Res Function(_AssetWidgetConfig) _then) = __$AssetWidgetConfigCopyWithImpl;
+@override @useResult
+$Res call({
+ String title, double? minValue, double? maxValue, List<AssetWidgetRange>? ranges
+});
+
+
+
+
+}
+/// @nodoc
+class __$AssetWidgetConfigCopyWithImpl<$Res>
+    implements _$AssetWidgetConfigCopyWith<$Res> {
+  __$AssetWidgetConfigCopyWithImpl(this._self, this._then);
+
+  final _AssetWidgetConfig _self;
+  final $Res Function(_AssetWidgetConfig) _then;
+
+/// Create a copy of AssetWidgetConfig
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? title = null,Object? minValue = freezed,Object? maxValue = freezed,Object? ranges = freezed,}) {
+  return _then(_AssetWidgetConfig(
+title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,minValue: freezed == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
+as double?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
+as double?,ranges: freezed == ranges ? _self._ranges : ranges // ignore: cast_nullable_to_non_nullable
+as List<AssetWidgetRange>?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$AssetWidgetRange {
+
+/// [value] is the threshold at which [color] starts applying.
+ double get value;/// [color] is the hex color string (e.g. `#2E7D32`) applied from [value] upward.
+ String get color;
+/// Create a copy of AssetWidgetRange
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AssetWidgetRangeCopyWith<AssetWidgetRange> get copyWith => _$AssetWidgetRangeCopyWithImpl<AssetWidgetRange>(this as AssetWidgetRange, _$identity);
+
+  /// Serializes this AssetWidgetRange to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetWidgetRange&&(identical(other.value, value) || other.value == value)&&(identical(other.color, color) || other.color == color));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,value,color);
+
+@override
+String toString() {
+  return 'AssetWidgetRange(value: $value, color: $color)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AssetWidgetRangeCopyWith<$Res>  {
+  factory $AssetWidgetRangeCopyWith(AssetWidgetRange value, $Res Function(AssetWidgetRange) _then) = _$AssetWidgetRangeCopyWithImpl;
+@useResult
+$Res call({
+ double value, String color
+});
+
+
+
+
+}
+/// @nodoc
+class _$AssetWidgetRangeCopyWithImpl<$Res>
+    implements $AssetWidgetRangeCopyWith<$Res> {
+  _$AssetWidgetRangeCopyWithImpl(this._self, this._then);
+
+  final AssetWidgetRange _self;
+  final $Res Function(AssetWidgetRange) _then;
+
+/// Create a copy of AssetWidgetRange
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? value = null,Object? color = null,}) {
+  return _then(_self.copyWith(
+value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as double,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AssetWidgetRange].
+extension AssetWidgetRangePatterns on AssetWidgetRange {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssetWidgetRange value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AssetWidgetRange() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssetWidgetRange value)  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetRange():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssetWidgetRange value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetRange() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double value,  String color)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AssetWidgetRange() when $default != null:
+return $default(_that.value,_that.color);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double value,  String color)  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetRange():
+return $default(_that.value,_that.color);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double value,  String color)?  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetRange() when $default != null:
+return $default(_that.value,_that.color);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AssetWidgetRange implements AssetWidgetRange {
+  const _AssetWidgetRange({required this.value, required this.color});
+  factory _AssetWidgetRange.fromJson(Map<String, dynamic> json) => _$AssetWidgetRangeFromJson(json);
+
+/// [value] is the threshold at which [color] starts applying.
+@override final  double value;
+/// [color] is the hex color string (e.g. `#2E7D32`) applied from [value] upward.
+@override final  String color;
+
+/// Create a copy of AssetWidgetRange
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AssetWidgetRangeCopyWith<_AssetWidgetRange> get copyWith => __$AssetWidgetRangeCopyWithImpl<_AssetWidgetRange>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AssetWidgetRangeToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetWidgetRange&&(identical(other.value, value) || other.value == value)&&(identical(other.color, color) || other.color == color));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,value,color);
+
+@override
+String toString() {
+  return 'AssetWidgetRange(value: $value, color: $color)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AssetWidgetRangeCopyWith<$Res> implements $AssetWidgetRangeCopyWith<$Res> {
+  factory _$AssetWidgetRangeCopyWith(_AssetWidgetRange value, $Res Function(_AssetWidgetRange) _then) = __$AssetWidgetRangeCopyWithImpl;
+@override @useResult
+$Res call({
+ double value, String color
+});
+
+
+
+
+}
+/// @nodoc
+class __$AssetWidgetRangeCopyWithImpl<$Res>
+    implements _$AssetWidgetRangeCopyWith<$Res> {
+  __$AssetWidgetRangeCopyWithImpl(this._self, this._then);
+
+  final _AssetWidgetRange _self;
+  final $Res Function(_AssetWidgetRange) _then;
+
+/// Create a copy of AssetWidgetRange
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? value = null,Object? color = null,}) {
+  return _then(_AssetWidgetRange(
+value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as double,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$AssetWidgetInput {
+
+ String get device; set device(String value);@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget get widget;@JsonKey(unknownEnumValue: RenderWidget.unknown) set widget(RenderWidget value); String get expose; set expose(String value); AssetWidgetConfigInput get config; set config(AssetWidgetConfigInput value);
+/// Create a copy of AssetWidgetInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AssetWidgetInputCopyWith<AssetWidgetInput> get copyWith => _$AssetWidgetInputCopyWithImpl<AssetWidgetInput>(this as AssetWidgetInput, _$identity);
+
+  /// Serializes this AssetWidgetInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'AssetWidgetInput(device: $device, widget: $widget, expose: $expose, config: $config)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AssetWidgetInputCopyWith<$Res>  {
+  factory $AssetWidgetInputCopyWith(AssetWidgetInput value, $Res Function(AssetWidgetInput) _then) = _$AssetWidgetInputCopyWithImpl;
+@useResult
+$Res call({
+ String device,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, String expose, AssetWidgetConfigInput config
+});
+
+
+$AssetWidgetConfigInputCopyWith<$Res> get config;
+
+}
+/// @nodoc
+class _$AssetWidgetInputCopyWithImpl<$Res>
+    implements $AssetWidgetInputCopyWith<$Res> {
+  _$AssetWidgetInputCopyWithImpl(this._self, this._then);
+
+  final AssetWidgetInput _self;
+  final $Res Function(AssetWidgetInput) _then;
+
+/// Create a copy of AssetWidgetInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? device = null,Object? widget = null,Object? expose = null,Object? config = null,}) {
+  return _then(_self.copyWith(
+device: null == device ? _self.device : device // ignore: cast_nullable_to_non_nullable
+as String,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
+as RenderWidget,expose: null == expose ? _self.expose : expose // ignore: cast_nullable_to_non_nullable
+as String,config: null == config ? _self.config : config // ignore: cast_nullable_to_non_nullable
+as AssetWidgetConfigInput,
+  ));
+}
+/// Create a copy of AssetWidgetInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetWidgetConfigInputCopyWith<$Res> get config {
+  
+  return $AssetWidgetConfigInputCopyWith<$Res>(_self.config, (value) {
+    return _then(_self.copyWith(config: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AssetWidgetInput].
+extension AssetWidgetInputPatterns on AssetWidgetInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssetWidgetInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AssetWidgetInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssetWidgetInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssetWidgetInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String device, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  String expose,  AssetWidgetConfigInput config)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AssetWidgetInput() when $default != null:
+return $default(_that.device,_that.widget,_that.expose,_that.config);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String device, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  String expose,  AssetWidgetConfigInput config)  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetInput():
+return $default(_that.device,_that.widget,_that.expose,_that.config);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String device, @JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget,  String expose,  AssetWidgetConfigInput config)?  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetInput() when $default != null:
+return $default(_that.device,_that.widget,_that.expose,_that.config);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AssetWidgetInput extends AssetWidgetInput {
+   _AssetWidgetInput({required this.device, @JsonKey(unknownEnumValue: RenderWidget.unknown) required this.widget, required this.expose, required this.config}): super._();
+  factory _AssetWidgetInput.fromJson(Map<String, dynamic> json) => _$AssetWidgetInputFromJson(json);
+
+@override  String device;
+@override@JsonKey(unknownEnumValue: RenderWidget.unknown)  RenderWidget widget;
+@override  String expose;
+@override  AssetWidgetConfigInput config;
+
+/// Create a copy of AssetWidgetInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AssetWidgetInputCopyWith<_AssetWidgetInput> get copyWith => __$AssetWidgetInputCopyWithImpl<_AssetWidgetInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AssetWidgetInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'AssetWidgetInput(device: $device, widget: $widget, expose: $expose, config: $config)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AssetWidgetInputCopyWith<$Res> implements $AssetWidgetInputCopyWith<$Res> {
+  factory _$AssetWidgetInputCopyWith(_AssetWidgetInput value, $Res Function(_AssetWidgetInput) _then) = __$AssetWidgetInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String device,@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget widget, String expose, AssetWidgetConfigInput config
+});
+
+
+@override $AssetWidgetConfigInputCopyWith<$Res> get config;
+
+}
+/// @nodoc
+class __$AssetWidgetInputCopyWithImpl<$Res>
+    implements _$AssetWidgetInputCopyWith<$Res> {
+  __$AssetWidgetInputCopyWithImpl(this._self, this._then);
+
+  final _AssetWidgetInput _self;
+  final $Res Function(_AssetWidgetInput) _then;
+
+/// Create a copy of AssetWidgetInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? device = null,Object? widget = null,Object? expose = null,Object? config = null,}) {
+  return _then(_AssetWidgetInput(
+device: null == device ? _self.device : device // ignore: cast_nullable_to_non_nullable
+as String,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
+as RenderWidget,expose: null == expose ? _self.expose : expose // ignore: cast_nullable_to_non_nullable
+as String,config: null == config ? _self.config : config // ignore: cast_nullable_to_non_nullable
+as AssetWidgetConfigInput,
+  ));
+}
+
+/// Create a copy of AssetWidgetInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetWidgetConfigInputCopyWith<$Res> get config {
+  
+  return $AssetWidgetConfigInputCopyWith<$Res>(_self.config, (value) {
+    return _then(_self.copyWith(config: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AssetWidgetConfigInput {
+
+ String get title; set title(String value); double? get minValue; set minValue(double? value); double? get maxValue; set maxValue(double? value); List<AssetWidgetRangeInput> get ranges; set ranges(List<AssetWidgetRangeInput> value);
+/// Create a copy of AssetWidgetConfigInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AssetWidgetConfigInputCopyWith<AssetWidgetConfigInput> get copyWith => _$AssetWidgetConfigInputCopyWithImpl<AssetWidgetConfigInput>(this as AssetWidgetConfigInput, _$identity);
+
+  /// Serializes this AssetWidgetConfigInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'AssetWidgetConfigInput(title: $title, minValue: $minValue, maxValue: $maxValue, ranges: $ranges)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AssetWidgetConfigInputCopyWith<$Res>  {
+  factory $AssetWidgetConfigInputCopyWith(AssetWidgetConfigInput value, $Res Function(AssetWidgetConfigInput) _then) = _$AssetWidgetConfigInputCopyWithImpl;
+@useResult
+$Res call({
+ String title, double? minValue, double? maxValue, List<AssetWidgetRangeInput> ranges
+});
+
+
+
+
+}
+/// @nodoc
+class _$AssetWidgetConfigInputCopyWithImpl<$Res>
+    implements $AssetWidgetConfigInputCopyWith<$Res> {
+  _$AssetWidgetConfigInputCopyWithImpl(this._self, this._then);
+
+  final AssetWidgetConfigInput _self;
+  final $Res Function(AssetWidgetConfigInput) _then;
+
+/// Create a copy of AssetWidgetConfigInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? title = null,Object? minValue = freezed,Object? maxValue = freezed,Object? ranges = null,}) {
+  return _then(_self.copyWith(
+title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,minValue: freezed == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
+as double?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
+as double?,ranges: null == ranges ? _self.ranges : ranges // ignore: cast_nullable_to_non_nullable
+as List<AssetWidgetRangeInput>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AssetWidgetConfigInput].
+extension AssetWidgetConfigInputPatterns on AssetWidgetConfigInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssetWidgetConfigInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AssetWidgetConfigInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssetWidgetConfigInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetConfigInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssetWidgetConfigInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetConfigInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  double? minValue,  double? maxValue,  List<AssetWidgetRangeInput> ranges)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AssetWidgetConfigInput() when $default != null:
+return $default(_that.title,_that.minValue,_that.maxValue,_that.ranges);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  double? minValue,  double? maxValue,  List<AssetWidgetRangeInput> ranges)  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetConfigInput():
+return $default(_that.title,_that.minValue,_that.maxValue,_that.ranges);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  double? minValue,  double? maxValue,  List<AssetWidgetRangeInput> ranges)?  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetConfigInput() when $default != null:
+return $default(_that.title,_that.minValue,_that.maxValue,_that.ranges);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AssetWidgetConfigInput extends AssetWidgetConfigInput {
+   _AssetWidgetConfigInput({this.title = '', this.minValue, this.maxValue, this.ranges = const []}): super._();
+  factory _AssetWidgetConfigInput.fromJson(Map<String, dynamic> json) => _$AssetWidgetConfigInputFromJson(json);
+
+@override@JsonKey()  String title;
+@override  double? minValue;
+@override  double? maxValue;
+@override@JsonKey()  List<AssetWidgetRangeInput> ranges;
+
+/// Create a copy of AssetWidgetConfigInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AssetWidgetConfigInputCopyWith<_AssetWidgetConfigInput> get copyWith => __$AssetWidgetConfigInputCopyWithImpl<_AssetWidgetConfigInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AssetWidgetConfigInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'AssetWidgetConfigInput(title: $title, minValue: $minValue, maxValue: $maxValue, ranges: $ranges)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AssetWidgetConfigInputCopyWith<$Res> implements $AssetWidgetConfigInputCopyWith<$Res> {
+  factory _$AssetWidgetConfigInputCopyWith(_AssetWidgetConfigInput value, $Res Function(_AssetWidgetConfigInput) _then) = __$AssetWidgetConfigInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String title, double? minValue, double? maxValue, List<AssetWidgetRangeInput> ranges
+});
+
+
+
+
+}
+/// @nodoc
+class __$AssetWidgetConfigInputCopyWithImpl<$Res>
+    implements _$AssetWidgetConfigInputCopyWith<$Res> {
+  __$AssetWidgetConfigInputCopyWithImpl(this._self, this._then);
+
+  final _AssetWidgetConfigInput _self;
+  final $Res Function(_AssetWidgetConfigInput) _then;
+
+/// Create a copy of AssetWidgetConfigInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? title = null,Object? minValue = freezed,Object? maxValue = freezed,Object? ranges = null,}) {
+  return _then(_AssetWidgetConfigInput(
+title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,minValue: freezed == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
+as double?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
+as double?,ranges: null == ranges ? _self.ranges : ranges // ignore: cast_nullable_to_non_nullable
+as List<AssetWidgetRangeInput>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$AssetWidgetRangeInput {
+
+ double get value; set value(double value); String get color; set color(String value);
+/// Create a copy of AssetWidgetRangeInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AssetWidgetRangeInputCopyWith<AssetWidgetRangeInput> get copyWith => _$AssetWidgetRangeInputCopyWithImpl<AssetWidgetRangeInput>(this as AssetWidgetRangeInput, _$identity);
+
+  /// Serializes this AssetWidgetRangeInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'AssetWidgetRangeInput(value: $value, color: $color)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AssetWidgetRangeInputCopyWith<$Res>  {
+  factory $AssetWidgetRangeInputCopyWith(AssetWidgetRangeInput value, $Res Function(AssetWidgetRangeInput) _then) = _$AssetWidgetRangeInputCopyWithImpl;
+@useResult
+$Res call({
+ double value, String color
+});
+
+
+
+
+}
+/// @nodoc
+class _$AssetWidgetRangeInputCopyWithImpl<$Res>
+    implements $AssetWidgetRangeInputCopyWith<$Res> {
+  _$AssetWidgetRangeInputCopyWithImpl(this._self, this._then);
+
+  final AssetWidgetRangeInput _self;
+  final $Res Function(AssetWidgetRangeInput) _then;
+
+/// Create a copy of AssetWidgetRangeInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? value = null,Object? color = null,}) {
+  return _then(_self.copyWith(
+value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as double,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AssetWidgetRangeInput].
+extension AssetWidgetRangeInputPatterns on AssetWidgetRangeInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssetWidgetRangeInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AssetWidgetRangeInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssetWidgetRangeInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetRangeInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssetWidgetRangeInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AssetWidgetRangeInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double value,  String color)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AssetWidgetRangeInput() when $default != null:
+return $default(_that.value,_that.color);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double value,  String color)  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetRangeInput():
+return $default(_that.value,_that.color);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double value,  String color)?  $default,) {final _that = this;
+switch (_that) {
+case _AssetWidgetRangeInput() when $default != null:
+return $default(_that.value,_that.color);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AssetWidgetRangeInput extends AssetWidgetRangeInput {
+   _AssetWidgetRangeInput({this.value = 0, this.color = '#2E7D32'}): super._();
+  factory _AssetWidgetRangeInput.fromJson(Map<String, dynamic> json) => _$AssetWidgetRangeInputFromJson(json);
+
+@override@JsonKey()  double value;
+@override@JsonKey()  String color;
+
+/// Create a copy of AssetWidgetRangeInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AssetWidgetRangeInputCopyWith<_AssetWidgetRangeInput> get copyWith => __$AssetWidgetRangeInputCopyWithImpl<_AssetWidgetRangeInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AssetWidgetRangeInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'AssetWidgetRangeInput(value: $value, color: $color)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AssetWidgetRangeInputCopyWith<$Res> implements $AssetWidgetRangeInputCopyWith<$Res> {
+  factory _$AssetWidgetRangeInputCopyWith(_AssetWidgetRangeInput value, $Res Function(_AssetWidgetRangeInput) _then) = __$AssetWidgetRangeInputCopyWithImpl;
+@override @useResult
+$Res call({
+ double value, String color
+});
+
+
+
+
+}
+/// @nodoc
+class __$AssetWidgetRangeInputCopyWithImpl<$Res>
+    implements _$AssetWidgetRangeInputCopyWith<$Res> {
+  __$AssetWidgetRangeInputCopyWithImpl(this._self, this._then);
+
+  final _AssetWidgetRangeInput _self;
+  final $Res Function(_AssetWidgetRangeInput) _then;
+
+/// Create a copy of AssetWidgetRangeInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? value = null,Object? color = null,}) {
+  return _then(_AssetWidgetRangeInput(
+value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as double,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 

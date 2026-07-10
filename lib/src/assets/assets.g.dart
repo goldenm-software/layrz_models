@@ -216,6 +216,11 @@ _Asset _$AssetFromJson(Map<String, dynamic> json) => _Asset(
       : AtsAuthenticationCard.fromJson(
           json['authenticationCardNfc'] as Map<String, dynamic>,
         ),
+  widgets:
+      (json['widgets'] as List<dynamic>?)
+          ?.map((e) => AssetWidget.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
@@ -290,6 +295,7 @@ Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
   'authenticationCardCardboard': instance.authenticationCardCardboard?.toJson(),
   'authenticationCardTag': instance.authenticationCardTag?.toJson(),
   'authenticationCardNfc': instance.authenticationCardNfc?.toJson(),
+  'widgets': instance.widgets.map((e) => e.toJson()).toList(),
 };
 
 _AssetInput _$AssetInputFromJson(Map<String, dynamic> json) => _AssetInput(
@@ -448,6 +454,149 @@ Map<String, dynamic> _$AssetInputToJson(
   ),
   'mappitSecondaryRoutesIds': instance.mappitSecondaryRoutesIds,
 };
+
+_AssetWidget _$AssetWidgetFromJson(Map<String, dynamic> json) => _AssetWidget(
+  device: json['device'] as String,
+  widget: $enumDecode(
+    _$RenderWidgetEnumMap,
+    json['widget'],
+    unknownValue: RenderWidget.unknown,
+  ),
+  expose: json['expose'] as String,
+  config: AssetWidgetConfig.fromJson(json['config'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$AssetWidgetToJson(_AssetWidget instance) =>
+    <String, dynamic>{
+      'device': instance.device,
+      'widget': instance.widget.toJson(),
+      'expose': instance.expose,
+      'config': instance.config.toJson(),
+    };
+
+const _$RenderWidgetEnumMap = {
+  RenderWidget.thermometer: 'THERMOMETER',
+  RenderWidget.humidity: 'HUMIDITY',
+  RenderWidget.magnet: 'MAGNET',
+  RenderWidget.magnetCount: 'MAGNET_COUNT',
+  RenderWidget.accelerometer: 'ACCELERATION',
+  RenderWidget.pressure: 'PRESSURE',
+  RenderWidget.illuminance: 'ILLUMINANCE',
+  RenderWidget.airQuality: 'AIR_QUALITY',
+  RenderWidget.battery: 'BATTERY',
+  RenderWidget.linkQuality: 'LINK_QUALITY',
+  RenderWidget.binarySensor: 'BINARY_SENSOR',
+  RenderWidget.presence: 'PRESENCE',
+  RenderWidget.presenceCount: 'PRESENCE_COUNT',
+  RenderWidget.touch: 'TOUCH',
+  RenderWidget.touchCount: 'TOUCH_COUNT',
+  RenderWidget.switch_: 'SWITCH',
+  RenderWidget.dimmer: 'DIMMER',
+  RenderWidget.colorTemperature: 'COLOR_TEMPERATURE',
+  RenderWidget.setpoint: 'SETPOINT',
+  RenderWidget.fanSpeed: 'FAN_SPEED',
+  RenderWidget.colorPicker: 'COLOR_PICKER',
+  RenderWidget.modeSelector: 'MODE_SELECTOR',
+  RenderWidget.sceneSelector: 'SCENE_SELECTOR',
+  RenderWidget.cover: 'COVER',
+  RenderWidget.lock: 'LOCK',
+  RenderWidget.powerMeter: 'POWER_METER',
+  RenderWidget.energyMeter: 'ENERGY_METER',
+  RenderWidget.voltage: 'VOLTAGE',
+  RenderWidget.current: 'CURRENT',
+  RenderWidget.gasValue: 'GAS_VALUE',
+  RenderWidget.numericSlider: 'NUMERIC_SLIDER',
+  RenderWidget.enumSelector: 'ENUM_SELECTOR',
+  RenderWidget.textCommand: 'TEXT_COMMAND',
+  RenderWidget.rawValue: 'RAW_VALUE',
+  RenderWidget.numeric: 'NUMERIC',
+  RenderWidget.line: 'LINE_CHART',
+  RenderWidget.unknown: 'UNKNOWN',
+};
+
+_AssetWidgetConfig _$AssetWidgetConfigFromJson(Map<String, dynamic> json) =>
+    _AssetWidgetConfig(
+      title: json['title'] as String? ?? '',
+      minValue: (json['minValue'] as num?)?.toDouble(),
+      maxValue: (json['maxValue'] as num?)?.toDouble(),
+      ranges: (json['ranges'] as List<dynamic>?)
+          ?.map((e) => AssetWidgetRange.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$AssetWidgetConfigToJson(_AssetWidgetConfig instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'minValue': instance.minValue,
+      'maxValue': instance.maxValue,
+      'ranges': instance.ranges?.map((e) => e.toJson()).toList(),
+    };
+
+_AssetWidgetRange _$AssetWidgetRangeFromJson(Map<String, dynamic> json) =>
+    _AssetWidgetRange(
+      value: (json['value'] as num).toDouble(),
+      color: json['color'] as String,
+    );
+
+Map<String, dynamic> _$AssetWidgetRangeToJson(_AssetWidgetRange instance) =>
+    <String, dynamic>{'value': instance.value, 'color': instance.color};
+
+_AssetWidgetInput _$AssetWidgetInputFromJson(Map<String, dynamic> json) =>
+    _AssetWidgetInput(
+      device: json['device'] as String,
+      widget: $enumDecode(
+        _$RenderWidgetEnumMap,
+        json['widget'],
+        unknownValue: RenderWidget.unknown,
+      ),
+      expose: json['expose'] as String,
+      config: AssetWidgetConfigInput.fromJson(
+        json['config'] as Map<String, dynamic>,
+      ),
+    );
+
+Map<String, dynamic> _$AssetWidgetInputToJson(_AssetWidgetInput instance) =>
+    <String, dynamic>{
+      'device': instance.device,
+      'widget': instance.widget.toJson(),
+      'expose': instance.expose,
+      'config': instance.config.toJson(),
+    };
+
+_AssetWidgetConfigInput _$AssetWidgetConfigInputFromJson(
+  Map<String, dynamic> json,
+) => _AssetWidgetConfigInput(
+  title: json['title'] as String? ?? '',
+  minValue: (json['minValue'] as num?)?.toDouble(),
+  maxValue: (json['maxValue'] as num?)?.toDouble(),
+  ranges:
+      (json['ranges'] as List<dynamic>?)
+          ?.map(
+            (e) => AssetWidgetRangeInput.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      const [],
+);
+
+Map<String, dynamic> _$AssetWidgetConfigInputToJson(
+  _AssetWidgetConfigInput instance,
+) => <String, dynamic>{
+  'title': instance.title,
+  'minValue': instance.minValue,
+  'maxValue': instance.maxValue,
+  'ranges': instance.ranges.map((e) => e.toJson()).toList(),
+};
+
+_AssetWidgetRangeInput _$AssetWidgetRangeInputFromJson(
+  Map<String, dynamic> json,
+) => _AssetWidgetRangeInput(
+  value: (json['value'] as num?)?.toDouble() ?? 0,
+  color: json['color'] as String? ?? '#2E7D32',
+);
+
+Map<String, dynamic> _$AssetWidgetRangeInputToJson(
+  _AssetWidgetRangeInput instance,
+) => <String, dynamic>{'value': instance.value, 'color': instance.color};
 
 _AssetLoginInfo _$AssetLoginInfoFromJson(Map<String, dynamic> json) =>
     _AssetLoginInfo(
