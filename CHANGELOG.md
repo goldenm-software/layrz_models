@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.12.0
+
+- Added `AssetWidget`, `AssetWidgetConfig`, and `AssetWidgetRange` models (with matching input variants) plus a read-only `widgets` field on `Asset`, backing the per-asset live-data widgets feature. Writes go through the dedicated `updateAssetWidgets` mutation, not the asset model.
+- Added `NUMERIC` and `LINE_CHART` values to the `RenderWidget` enum.
+- `LayrzConnector` now requires an `apiToken` and injects an `Authorization: LayrzToken {token}` header on every request and subscription, migrating authentication off the GraphQL `apiToken` variable.
+
 ## 3.11.9 ⚠️ Breaking Change
 
 - **Breaking**: Fixed null icon handling in `WorkspaceInput.fromJson`. Previously, workspaces with no icon set would crash with a `Null check operator used on a null value` error during JSON deserialization. The icon field now falls back to `solarOutlineQuestionSquare` when null. This is a breaking change because any workspace that had a null icon will now render with the default icon instead of its previously expected icon — verify your workspace icon assignments.

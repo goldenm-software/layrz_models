@@ -73,7 +73,7 @@ Future<ModelName?> fetch({
   /// [onResponse] is an optional callback invoked with the status code
   void Function(String statusCode)? onResponse,
 }) async {
-  final connector = LayrzConnector(uri: uri);
+  final connector = LayrzConnector(uri: uri, apiToken: apiToken);
   try {
     final response = await connector.perform(
       query: fetchSingleQuery,
@@ -120,7 +120,7 @@ static Future<List<ModelName>> fetchAll({
   required Uri uri,
   void Function(String statusCode)? onResponse,
 }) async {
-  final connector = LayrzConnector(uri: uri);
+  final connector = LayrzConnector(uri: uri, apiToken: apiToken);
   try {
     final response = await connector.perform(
       query: fetchAllGraphqlQuery,
@@ -166,7 +166,7 @@ Future<bool> expire({
   required Uri uri,
   void Function(String statusCode)? onResponse,
 }) async {
-  final connector = LayrzConnector(uri: uri);
+  final connector = LayrzConnector(uri: uri, apiToken: apiToken);
   try {
     final response = await connector.perform(
       query: expireGraphqlMutation,
@@ -210,7 +210,7 @@ static Future<bool> expireMultiple({
   required List<String> ids,
   void Function(String statusCode)? onResponse,
 }) async {
-  final connector = LayrzConnector(uri: uri);
+  final connector = LayrzConnector(uri: uri, apiToken: apiToken);
   try {
     final response = await connector.perform(
       query: expireGraphqlMutation,
@@ -311,7 +311,7 @@ Future<ApiResponse<ModelName, Map<String, dynamic>>?> save({
   required Uri uri,
   void Function(String statusCode)? onResponse,
 }) async {
-  final connector = LayrzConnector(uri: uri);
+  final connector = LayrzConnector(uri: uri, apiToken: apiToken);
   try {
     final response = await connector.perform(
       query: id == null ? addGraphqlMutation : editGraphqlMutation,

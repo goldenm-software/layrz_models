@@ -75,7 +75,7 @@ abstract class LocatorInput with _$LocatorInput {
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     final opName = id == null ? 'addLocator' : 'editLocator';
     try {
       final response = await connector.perform(
