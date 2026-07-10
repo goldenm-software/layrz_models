@@ -255,7 +255,7 @@ _WorkspaceInput _$WorkspaceInputFromJson(
   color: json['color'] == null
       ? Colors.blue
       : const ColorOrNullConverter().fromJson(json['color'] as String?),
-  icon: const IconOrNullConverter().fromJson(json['icon'] as String?) ?? LayrzIconsClasses.solarOutlineQuestionSquare,
+  icon: const IconConverter().fromJson(json['icon'] as String),
   background: json['background'] as String?,
   isFavorite: json['isFavorite'] as bool? ?? false,
   mainView:

@@ -97,5 +97,7 @@ const _$RenderWidgetEnumMap = {
   RenderWidget.enumSelector: 'ENUM_SELECTOR',
   RenderWidget.textCommand: 'TEXT_COMMAND',
   RenderWidget.rawValue: 'RAW_VALUE',
+  RenderWidget.numeric: 'NUMERIC',
+  RenderWidget.line: 'LINE_CHART',
   RenderWidget.unknown: 'UNKNOWN',
 };

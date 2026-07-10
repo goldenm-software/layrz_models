@@ -4,6 +4,7 @@ class LayrzConnector {
   final Uri uri;
   final Map<String, String> headers;
   final Duration? timeout;
+  final String apiToken;
 
   /// [LayrzConnector] is a simple connector to make HTTP requests to a given [uri] with optional [headers].
   LayrzConnector({
@@ -15,6 +16,9 @@ class LayrzConnector {
 
     /// [timeout] is the timeout duration for the request
     this.timeout,
+
+    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
+    required this.apiToken,
   }) {
     final localHeaders = Map<String, String>.from(headers);
     if (localHeaders['Content-Type'] == null) {
@@ -23,10 +27,12 @@ class LayrzConnector {
       throw ArgumentError('Content-Type must be application/json');
     }
 
+    localHeaders['Authorization'] = 'LayrzToken $apiToken';
+
     _dio = Dio(
       BaseOptions(
         baseUrl: uri.toString(),
-        headers: headers,
+        headers: localHeaders,
         connectTimeout: timeout,
         receiveTimeout: timeout,
         sendTimeout: timeout,
@@ -46,11 +52,14 @@ class LayrzConnector {
       for (final v in gql.variables)
         if (v.value != null) v.name: v.value,
     };
-    return _dio.post('', data: {
-      'query': gql.generated,
-      'variables': variables,
-      'operationName': null,
-    });
+    return _dio.post(
+      '',
+      data: {
+        'query': gql.generated,
+        'variables': variables,
+        'operationName': null,
+      },
+    );
   }
 
   /// [subscribe] opens a WebSocket connection and executes a [GqlSubscription] using the
@@ -92,15 +101,17 @@ class LayrzConnector {
           switch (type) {
             case 'connection_ack':
               // Send the subscribe message once acknowledged.
-              channel!.sink.add(jsonEncode({
-                'id': id,
-                'type': 'subscribe',
-                'payload': {
-                  'query': gql.generated,
-                  'variables': variables,
-                  'operationName': null,
-                },
-              }));
+              channel!.sink.add(
+                jsonEncode({
+                  'id': id,
+                  'type': 'subscribe',
+                  'payload': {
+                    'query': gql.generated,
+                    'variables': variables,
+                    'operationName': null,
+                  },
+                }),
+              );
             case 'next':
               if (msg['id'] == id) {
                 final data = msg['payload']?['data'];
