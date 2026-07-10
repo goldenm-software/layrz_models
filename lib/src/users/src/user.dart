@@ -171,11 +171,11 @@ abstract class User with _$User {
         GqlVariable(name: 'apiToken', type: GqlVariableType.string, req: true, value: apiToken),
       ],
     )..add(
-        GqlField(name: 'users', args: {'apiToken': 'apiToken'})
-          ..add(GqlField(name: 'status'))
-          ..add(GqlField(name: 'errors'))
-          ..add(GqlField(name: 'result', fragment: gqlFragment)),
-      );
+      GqlField(name: 'users', args: {'apiToken': 'apiToken'})
+        ..add(GqlField(name: 'status'))
+        ..add(GqlField(name: 'errors'))
+        ..add(GqlField(name: 'result', fragment: gqlFragment)),
+    );
   }
 
   /// [fetchAll] fetches all users from the API with a lightweight payload.
@@ -184,7 +184,7 @@ abstract class User with _$User {
     required Uri uri,
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.perform(buildFetchAllQuery(apiToken: apiToken));
 

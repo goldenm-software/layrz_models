@@ -60,7 +60,7 @@ abstract class RegisteredApp with _$RegisteredApp {
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.perform(
         GqlQuery(

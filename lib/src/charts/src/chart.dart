@@ -57,7 +57,7 @@ abstract class LayrzChart with _$LayrzChart {
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.perform(
         GqlQuery(
@@ -115,7 +115,7 @@ abstract class LayrzChart with _$LayrzChart {
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.perform(
         GqlQuery(
@@ -176,7 +176,7 @@ abstract class LayrzChart with _$LayrzChart {
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.perform(
         GqlMutation(
@@ -233,7 +233,7 @@ abstract class LayrzChart with _$LayrzChart {
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.perform(
         GqlMutation(

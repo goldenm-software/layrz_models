@@ -44,7 +44,7 @@ abstract class AccessInput with _$AccessInput {
     /// [useUuid] whether to use UUID for deletion
     bool useUuid = false,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     final isNew = id == null;
     final opName = isNew
         ? (useUuid ? 'addAccessPermissionUuid' : 'addAccessPermission')
@@ -107,7 +107,7 @@ abstract class AccessInput with _$AccessInput {
     /// [useUuid] whether to use UUID for deletion
     bool useUuid = false,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     final opName = useUuid ? 'deleteAccessPermissionUuid' : 'deleteAccessPermission';
     final inputName = useUuid ? 'AccessPermissionUuidInput' : 'AccessPermissionInput';
 

@@ -42,7 +42,7 @@ abstract class PoiInput with _$PoiInput {
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     final opName = id == null ? 'addPoi' : 'editPoi';
     try {
       final response = await connector.perform(

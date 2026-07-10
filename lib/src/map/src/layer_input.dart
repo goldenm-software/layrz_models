@@ -89,7 +89,7 @@ abstract class MapLayerInput with _$MapLayerInput {
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
   }) async {
-    final connector = LayrzConnector(uri: uri);
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     final opName = id == null ? 'addMapLayer' : 'editMapLayer';
     try {
       final response = await connector.perform(
