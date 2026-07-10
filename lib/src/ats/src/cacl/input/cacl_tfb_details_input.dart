@@ -42,7 +42,7 @@ abstract class CaclTFBDetailsInput with _$CaclTFBDetailsInput {
     String? btInscription,
 
     /// The [vgNavio] parameter is the vgNavio of the CACL TFB details input.
-    int? vgNavio,
+    String? vgNavio,
   }) = _CaclTFBDetailsInput;
 
   /// Creates a new [CaclTFBDetailsInput] instance from a JSON map.

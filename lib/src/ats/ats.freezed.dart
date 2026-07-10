@@ -21985,8 +21985,8 @@ mixin _$CaclTFBDetailsInput {
  set reason(String? value);/// The [btInscription] parameter is the btInscription of the CACL TFB details input.
  String? get btInscription;/// The [btInscription] parameter is the btInscription of the CACL TFB details input.
  set btInscription(String? value);/// The [vgNavio] parameter is the vgNavio of the CACL TFB details input.
- int? get vgNavio;/// The [vgNavio] parameter is the vgNavio of the CACL TFB details input.
- set vgNavio(int? value);
+ String? get vgNavio;/// The [vgNavio] parameter is the vgNavio of the CACL TFB details input.
+ set vgNavio(String? value);
 /// Create a copy of CaclTFBDetailsInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -22012,7 +22012,7 @@ abstract mixin class $CaclTFBDetailsInputCopyWith<$Res>  {
   factory $CaclTFBDetailsInputCopyWith(CaclTFBDetailsInput value, $Res Function(CaclTFBDetailsInput) _then) = _$CaclTFBDetailsInputCopyWithImpl;
 @useResult
 $Res call({
-@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool linePressure, bool ventCheck, bool valvesSealed,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, int? vgNavio
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool linePressure, bool ventCheck, bool valvesSealed,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, String? vgNavio
 });
 
 
@@ -22044,7 +22044,7 @@ as bool,finalStop: freezed == finalStop ? _self.finalStop : finalStop // ignore:
 as CaclTFBFinalStop?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,btInscription: freezed == btInscription ? _self.btInscription : btInscription // ignore: cast_nullable_to_non_nullable
 as String?,vgNavio: freezed == vgNavio ? _self.vgNavio : vgNavio // ignore: cast_nullable_to_non_nullable
-as int?,
+as String?,
   ));
 }
 
@@ -22129,7 +22129,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool linePressure,  bool ventCheck,  bool valvesSealed, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool linePressure,  bool ventCheck,  bool valvesSealed, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  String? vgNavio)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclTFBDetailsInput() when $default != null:
 return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
@@ -22150,7 +22150,7 @@ return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool linePressure,  bool ventCheck,  bool valvesSealed, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool linePressure,  bool ventCheck,  bool valvesSealed, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  String? vgNavio)  $default,) {final _that = this;
 switch (_that) {
 case _CaclTFBDetailsInput():
 return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
@@ -22170,7 +22170,7 @@ return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool linePressure,  bool ventCheck,  bool valvesSealed, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool linePressure,  bool ventCheck,  bool valvesSealed, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  String? vgNavio)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclTFBDetailsInput() when $default != null:
 return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
@@ -22213,7 +22213,7 @@ class _CaclTFBDetailsInput implements CaclTFBDetailsInput {
 /// The [btInscription] parameter is the btInscription of the CACL TFB details input.
 @override  String? btInscription;
 /// The [vgNavio] parameter is the vgNavio of the CACL TFB details input.
-@override  int? vgNavio;
+@override  String? vgNavio;
 
 /// Create a copy of CaclTFBDetailsInput
 /// with the given fields replaced by the non-null parameter values.
@@ -22241,7 +22241,7 @@ abstract mixin class _$CaclTFBDetailsInputCopyWith<$Res> implements $CaclTFBDeta
   factory _$CaclTFBDetailsInputCopyWith(_CaclTFBDetailsInput value, $Res Function(_CaclTFBDetailsInput) _then) = __$CaclTFBDetailsInputCopyWithImpl;
 @override @useResult
 $Res call({
-@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool linePressure, bool ventCheck, bool valvesSealed,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, int? vgNavio
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool linePressure, bool ventCheck, bool valvesSealed,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, String? vgNavio
 });
 
 
@@ -22273,7 +22273,7 @@ as bool,finalStop: freezed == finalStop ? _self.finalStop : finalStop // ignore:
 as CaclTFBFinalStop?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,btInscription: freezed == btInscription ? _self.btInscription : btInscription // ignore: cast_nullable_to_non_nullable
 as String?,vgNavio: freezed == vgNavio ? _self.vgNavio : vgNavio // ignore: cast_nullable_to_non_nullable
-as int?,
+as String?,
   ));
 }
 
@@ -22311,8 +22311,8 @@ mixin _$CaclTFBDetails {
  set reason(String? value);/// The [btInscription] parameter is the btInscription of the CACL TFB details.
  String? get btInscription;/// The [btInscription] parameter is the btInscription of the CACL TFB details.
  set btInscription(String? value);/// The [vgNavio] parameter is the vgNavio of the CACL TFB details.
- int? get vgNavio;/// The [vgNavio] parameter is the vgNavio of the CACL TFB details.
- set vgNavio(int? value);
+ String? get vgNavio;/// The [vgNavio] parameter is the vgNavio of the CACL TFB details.
+ set vgNavio(String? value);
 /// Create a copy of CaclTFBDetails
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -22338,7 +22338,7 @@ abstract mixin class $CaclTFBDetailsCopyWith<$Res>  {
   factory $CaclTFBDetailsCopyWith(CaclTFBDetails value, $Res Function(CaclTFBDetails) _then) = _$CaclTFBDetailsCopyWithImpl;
 @useResult
 $Res call({
-@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, int? vgNavio
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, String? vgNavio
 });
 
 
@@ -22371,7 +22371,7 @@ as bool?,finalStop: freezed == finalStop ? _self.finalStop : finalStop // ignore
 as CaclTFBFinalStop?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,btInscription: freezed == btInscription ? _self.btInscription : btInscription // ignore: cast_nullable_to_non_nullable
 as String?,vgNavio: freezed == vgNavio ? _self.vgNavio : vgNavio // ignore: cast_nullable_to_non_nullable
-as int?,
+as String?,
   ));
 }
 
@@ -22456,7 +22456,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  String? vgNavio)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclTFBDetails() when $default != null:
 return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
@@ -22477,7 +22477,7 @@ return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  String? vgNavio)  $default,) {final _that = this;
 switch (_that) {
 case _CaclTFBDetails():
 return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
@@ -22497,7 +22497,7 @@ return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  int? vgNavio)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@TimestampOrNullConverter()  DateTime? dockedAt, @TimestampOrNullConverter()  DateTime? arrivalAt, @TimestampOrNullConverter()  DateTime? checklistAt,  int? cradle, @TimestampOrNullConverter()  DateTime? pumpStart, @TimestampOrNullConverter()  DateTime? pumpEnd,  bool? linePressure,  bool? ventCheck,  bool? valvesSealed,  bool? finalStopBoard, @JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo)  CaclTFBFinalStop? finalStop,  String? reason,  String? btInscription,  String? vgNavio)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclTFBDetails() when $default != null:
 return $default(_that.dockedAt,_that.arrivalAt,_that.checklistAt,_that.cradle,_that.pumpStart,_that.pumpEnd,_that.linePressure,_that.ventCheck,_that.valvesSealed,_that.finalStopBoard,_that.finalStop,_that.reason,_that.btInscription,_that.vgNavio);case _:
@@ -22542,7 +22542,7 @@ class _CaclTFBDetails implements CaclTFBDetails {
 /// The [btInscription] parameter is the btInscription of the CACL TFB details.
 @override  String? btInscription;
 /// The [vgNavio] parameter is the vgNavio of the CACL TFB details.
-@override  int? vgNavio;
+@override  String? vgNavio;
 
 /// Create a copy of CaclTFBDetails
 /// with the given fields replaced by the non-null parameter values.
@@ -22570,7 +22570,7 @@ abstract mixin class _$CaclTFBDetailsCopyWith<$Res> implements $CaclTFBDetailsCo
   factory _$CaclTFBDetailsCopyWith(_CaclTFBDetails value, $Res Function(_CaclTFBDetails) _then) = __$CaclTFBDetailsCopyWithImpl;
 @override @useResult
 $Res call({
-@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, int? vgNavio
+@TimestampOrNullConverter() DateTime? dockedAt,@TimestampOrNullConverter() DateTime? arrivalAt,@TimestampOrNullConverter() DateTime? checklistAt, int? cradle,@TimestampOrNullConverter() DateTime? pumpStart,@TimestampOrNullConverter() DateTime? pumpEnd, bool? linePressure, bool? ventCheck, bool? valvesSealed, bool? finalStopBoard,@JsonKey(unknownEnumValue: CaclTFBFinalStop.bordo) CaclTFBFinalStop? finalStop, String? reason, String? btInscription, String? vgNavio
 });
 
 
@@ -22603,7 +22603,7 @@ as bool?,finalStop: freezed == finalStop ? _self.finalStop : finalStop // ignore
 as CaclTFBFinalStop?,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,btInscription: freezed == btInscription ? _self.btInscription : btInscription // ignore: cast_nullable_to_non_nullable
 as String?,vgNavio: freezed == vgNavio ? _self.vgNavio : vgNavio // ignore: cast_nullable_to_non_nullable
-as int?,
+as String?,
   ));
 }
 
