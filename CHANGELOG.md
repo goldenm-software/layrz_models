@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.13.0
+
+- Added `ActionType.zigbeeChange` (`ZIGBEE_CHANGE`) plus the `ActionZigbeeSetting`, `ActionZigbeeSettings` and `ActionZigbeeSettingsInput` models, with a new `zigbeeSettings` field on `Action` and `ActionInput`.
+- Added API callers `Action.fetch`, `Action.fetchAll`, `Action.deleteMultiple` and `ActionInput.save`, following the `GqlQuery` builder pattern.
+- Added `Device.fetchZigbeeCapable`, returning the devices that have Zigbee exposes bound to them (id, name, ident and `exposes`).
+- The `Action`, `Device` and `User` callers no longer send the `apiToken` GraphQL argument — authentication relies on the `Authorization: LayrzToken` header; requires a layrz-api deployment with the dual-auth `actions`, `devices` and `users` endpoints.
+
 ## 3.12.1
 
 - Changed vgNavio value type from `int` to `String` in `CaclTFBDetails` and `CaclTFBDetailsInput` models

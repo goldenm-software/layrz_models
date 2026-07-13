@@ -49,6 +49,11 @@ _Action _$ActionFromJson(Map<String, dynamic> json) => _Action(
       : ActionGeofenceSettings.fromJson(
           json['geofenceSettings'] as Map<String, dynamic>,
         ),
+  zigbeeSettings: json['zigbeeSettings'] == null
+      ? null
+      : ActionZigbeeSettings.fromJson(
+          json['zigbeeSettings'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$ActionToJson(_Action instance) => <String, dynamic>{
@@ -68,6 +73,7 @@ Map<String, dynamic> _$ActionToJson(_Action instance) => <String, dynamic>{
   'access': instance.access?.map((e) => e.toJson()).toList(),
   'watchImage': instance.watchImage,
   'geofenceSettings': instance.geofenceSettings?.toJson(),
+  'zigbeeSettings': instance.zigbeeSettings?.toJson(),
 };
 
 const _$ActionTypeEnumMap = {
@@ -78,6 +84,7 @@ const _$ActionTypeEnumMap = {
   ActionType.sendToMonitorCenter: 'TOMONITORCENTER',
   ActionType.sendToCheckpoint: 'TOCHECKPOINTROUTE',
   ActionType.createGeofence: 'CREATE_GEOFENCE',
+  ActionType.zigbeeChange: 'ZIGBEE_CHANGE',
 };
 
 const _$ActionSubtypeEnumMap = {
@@ -124,6 +131,11 @@ _ActionInput _$ActionInputFromJson(Map<String, dynamic> json) => _ActionInput(
   geofenceSettings: ActionGeofenceSettingsInput.fromJson(
     json['geofenceSettings'] as Map<String, dynamic>,
   ),
+  zigbeeSettings: json['zigbeeSettings'] == null
+      ? null
+      : ActionZigbeeSettingsInput.fromJson(
+          json['zigbeeSettings'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$ActionInputToJson(_ActionInput instance) =>
@@ -138,6 +150,7 @@ Map<String, dynamic> _$ActionInputToJson(_ActionInput instance) =>
       'outboundServicesIds': instance.outboundServicesIds,
       'watchImage': instance.watchImage,
       'geofenceSettings': instance.geofenceSettings.toJson(),
+      'zigbeeSettings': instance.zigbeeSettings?.toJson(),
     };
 
 _ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
@@ -221,4 +234,51 @@ Map<String, dynamic> _$ActionGeofenceSettingsInputToJson(
   'category': instance.category.toJson(),
   'radius': instance.radius,
   'mappitRouteId': instance.mappitRouteId,
+};
+
+_ActionZigbeeSetting _$ActionZigbeeSettingFromJson(Map<String, dynamic> json) =>
+    _ActionZigbeeSetting(key: json['key'] as String, value: json['value']);
+
+Map<String, dynamic> _$ActionZigbeeSettingToJson(
+  _ActionZigbeeSetting instance,
+) => <String, dynamic>{'key': instance.key, 'value': instance.value};
+
+_ActionZigbeeSettings _$ActionZigbeeSettingsFromJson(
+  Map<String, dynamic> json,
+) => _ActionZigbeeSettings(
+  deviceId: json['deviceId'] as String?,
+  device: json['device'] == null
+      ? null
+      : Device.fromJson(json['device'] as Map<String, dynamic>),
+  settings:
+      (json['settings'] as List<dynamic>?)
+          ?.map((e) => ActionZigbeeSetting.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+);
+
+Map<String, dynamic> _$ActionZigbeeSettingsToJson(
+  _ActionZigbeeSettings instance,
+) => <String, dynamic>{
+  'deviceId': instance.deviceId,
+  'device': instance.device?.toJson(),
+  'settings': instance.settings.map((e) => e.toJson()).toList(),
+};
+
+_ActionZigbeeSettingsInput _$ActionZigbeeSettingsInputFromJson(
+  Map<String, dynamic> json,
+) => _ActionZigbeeSettingsInput(
+  deviceId: json['deviceId'] as String?,
+  settings:
+      (json['settings'] as List<dynamic>?)
+          ?.map((e) => ActionZigbeeSetting.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+);
+
+Map<String, dynamic> _$ActionZigbeeSettingsInputToJson(
+  _ActionZigbeeSettingsInput instance,
+) => <String, dynamic>{
+  'deviceId': instance.deviceId,
+  'settings': instance.settings.map((e) => e.toJson()).toList(),
 };

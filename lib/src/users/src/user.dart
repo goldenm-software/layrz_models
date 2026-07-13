@@ -167,11 +167,9 @@ abstract class User with _$User {
   static GqlQuery buildFetchAllQuery({required String apiToken}) {
     return GqlQuery(
       name: 'users',
-      variables: [
-        GqlVariable(name: 'apiToken', type: GqlVariableType.string, req: true, value: apiToken),
-      ],
+      variables: [],
     )..add(
-      GqlField(name: 'users', args: {'apiToken': 'apiToken'})
+      GqlField(name: 'users')
         ..add(GqlField(name: 'status'))
         ..add(GqlField(name: 'errors'))
         ..add(GqlField(name: 'result', fragment: gqlFragment)),

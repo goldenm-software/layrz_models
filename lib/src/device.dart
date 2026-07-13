@@ -105,6 +105,77 @@ abstract class Device with _$Device {
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
+
+  /// [fetchZigbeeCapable] fetches all devices visible to the user, keeping only the ones with
+  /// Zigbee [exposes] bound to them. The returned devices carry a lightweight payload
+  /// (id, name, ident and exposes), suitable for building Zigbee commands.
+  static Future<List<Device>> fetchZigbeeCapable({
+    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
+    /// on the GraphQL API.
+    required String apiToken,
+
+    /// [uri] is the GraphQL endpoint to use
+    required Uri uri,
+
+    /// [onResponse] is the callback to call when the response is received
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [],
+          name: 'fetchDevices',
+        )..add(
+          GqlField(name: 'devices')
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'ident'))
+                ..add(
+                  GqlField(name: 'exposes')
+                    ..add(GqlField(name: 'id'))
+                    ..add(GqlField(name: 'name'))
+                    ..add(GqlField(name: 'type'))
+                    ..add(GqlField(name: 'access'))
+                    ..add(GqlField(name: 'params')),
+                ),
+            ),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/Device/fetchZigbeeCapable(): No response from server");
+        return [];
+      }
+
+      final result = data['data']['devices'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/Device/fetchZigbeeCapable(): No result from server");
+        return [];
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return [];
+      }
+
+      return (result['result'] as List<dynamic>? ?? [])
+          .map((e) => Device.fromJson(Map<String, dynamic>.from(e as Map)))
+          .where((device) => device.exposes?.isNotEmpty ?? false)
+          .toList();
+    } catch (e, stack) {
+      Log.critical("layrz_models/Device/fetchZigbeeCapable(): General exception => $e\n$stack");
+      return [];
+    }
+  }
 }
 
 @unfreezed

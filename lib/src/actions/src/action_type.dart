@@ -28,6 +28,10 @@ enum ActionType {
   /// Layrz API Reference: CREATE_GEOFENCE
   @JsonValue('CREATE_GEOFENCE')
   createGeofence,
+
+  /// Layrz API Reference: ZIGBEE_CHANGE
+  @JsonValue('ZIGBEE_CHANGE')
+  zigbeeChange,
   ;
 
   @override
