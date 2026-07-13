@@ -27,7 +27,8 @@ mixin _$Action {
  List<Access>? get access;/// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
 /// data need image convertion.
  bool? get watchImage;/// Is the geofence settings. Only for `ActionType.createGeofence`
- ActionGeofenceSettings? get geofenceSettings;
+ ActionGeofenceSettings? get geofenceSettings;/// Is the zigbee settings. Only for `ActionType.zigbeeChange`
+ ActionZigbeeSettings? get zigbeeSettings;
 /// Create a copy of Action
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -40,16 +41,16 @@ $ActionCopyWith<Action> get copyWith => _$ActionCopyWithImpl<Action>(this as Act
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Action&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.subkind, subkind) || other.subkind == subkind)&&(identical(other.commandId, commandId) || other.commandId == commandId)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&const DeepCollectionEquality().equals(other.outboundServices, outboundServices)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&const DeepCollectionEquality().equals(other.operations, operations)&&const DeepCollectionEquality().equals(other.operationsIds, operationsIds)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.watchImage, watchImage) || other.watchImage == watchImage)&&(identical(other.geofenceSettings, geofenceSettings) || other.geofenceSettings == geofenceSettings));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Action&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.subkind, subkind) || other.subkind == subkind)&&(identical(other.commandId, commandId) || other.commandId == commandId)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&const DeepCollectionEquality().equals(other.outboundServices, outboundServices)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&const DeepCollectionEquality().equals(other.operations, operations)&&const DeepCollectionEquality().equals(other.operationsIds, operationsIds)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.watchImage, watchImage) || other.watchImage == watchImage)&&(identical(other.geofenceSettings, geofenceSettings) || other.geofenceSettings == geofenceSettings)&&(identical(other.zigbeeSettings, zigbeeSettings) || other.zigbeeSettings == zigbeeSettings));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,kind,subkind,commandId,const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),const DeepCollectionEquality().hash(outboundServices),const DeepCollectionEquality().hash(outboundServicesIds),const DeepCollectionEquality().hash(operations),const DeepCollectionEquality().hash(operationsIds),const DeepCollectionEquality().hash(access),watchImage,geofenceSettings);
+int get hashCode => Object.hash(runtimeType,id,name,kind,subkind,commandId,const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),const DeepCollectionEquality().hash(outboundServices),const DeepCollectionEquality().hash(outboundServicesIds),const DeepCollectionEquality().hash(operations),const DeepCollectionEquality().hash(operationsIds),const DeepCollectionEquality().hash(access),watchImage,geofenceSettings,zigbeeSettings);
 
 @override
 String toString() {
-  return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
+  return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings, zigbeeSettings: $zigbeeSettings)';
 }
 
 
@@ -60,11 +61,11 @@ abstract mixin class $ActionCopyWith<$Res>  {
   factory $ActionCopyWith(Action value, $Res Function(Action) _then) = _$ActionCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,@JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind, String? commandId, List<Trigger>? triggers, List<String>? triggersIds, List<OutboundService>? outboundServices, List<String>? outboundServicesIds, List<Operation>? operations, List<String>? operationsIds, List<Access>? access, bool? watchImage, ActionGeofenceSettings? geofenceSettings
+ String id, String name,@JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,@JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind, String? commandId, List<Trigger>? triggers, List<String>? triggersIds, List<OutboundService>? outboundServices, List<String>? outboundServicesIds, List<Operation>? operations, List<String>? operationsIds, List<Access>? access, bool? watchImage, ActionGeofenceSettings? geofenceSettings, ActionZigbeeSettings? zigbeeSettings
 });
 
 
-$ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
+$ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;$ActionZigbeeSettingsCopyWith<$Res>? get zigbeeSettings;
 
 }
 /// @nodoc
@@ -77,7 +78,7 @@ class _$ActionCopyWithImpl<$Res>
 
 /// Create a copy of Action
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? subkind = null,Object? commandId = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? outboundServices = freezed,Object? outboundServicesIds = freezed,Object? operations = freezed,Object? operationsIds = freezed,Object? access = freezed,Object? watchImage = freezed,Object? geofenceSettings = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? subkind = null,Object? commandId = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? outboundServices = freezed,Object? outboundServicesIds = freezed,Object? operations = freezed,Object? operationsIds = freezed,Object? access = freezed,Object? watchImage = freezed,Object? geofenceSettings = freezed,Object? zigbeeSettings = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -93,7 +94,8 @@ as List<Operation>?,operationsIds: freezed == operationsIds ? _self.operationsId
 as List<String>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,watchImage: freezed == watchImage ? _self.watchImage : watchImage // ignore: cast_nullable_to_non_nullable
 as bool?,geofenceSettings: freezed == geofenceSettings ? _self.geofenceSettings : geofenceSettings // ignore: cast_nullable_to_non_nullable
-as ActionGeofenceSettings?,
+as ActionGeofenceSettings?,zigbeeSettings: freezed == zigbeeSettings ? _self.zigbeeSettings : zigbeeSettings // ignore: cast_nullable_to_non_nullable
+as ActionZigbeeSettings?,
   ));
 }
 /// Create a copy of Action
@@ -107,6 +109,18 @@ $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings {
 
   return $ActionGeofenceSettingsCopyWith<$Res>(_self.geofenceSettings!, (value) {
     return _then(_self.copyWith(geofenceSettings: value));
+  });
+}/// Create a copy of Action
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ActionZigbeeSettingsCopyWith<$Res>? get zigbeeSettings {
+    if (_self.zigbeeSettings == null) {
+    return null;
+  }
+
+  return $ActionZigbeeSettingsCopyWith<$Res>(_self.zigbeeSettings!, (value) {
+    return _then(_self.copyWith(zigbeeSettings: value));
   });
 }
 }
@@ -190,10 +204,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<Trigger>? triggers,  List<String>? triggersIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  List<Operation>? operations,  List<String>? operationsIds,  List<Access>? access,  bool? watchImage,  ActionGeofenceSettings? geofenceSettings)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<Trigger>? triggers,  List<String>? triggersIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  List<Operation>? operations,  List<String>? operationsIds,  List<Access>? access,  bool? watchImage,  ActionGeofenceSettings? geofenceSettings,  ActionZigbeeSettings? zigbeeSettings)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Action() when $default != null:
-return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggers,_that.triggersIds,_that.outboundServices,_that.outboundServicesIds,_that.operations,_that.operationsIds,_that.access,_that.watchImage,_that.geofenceSettings);case _:
+return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggers,_that.triggersIds,_that.outboundServices,_that.outboundServicesIds,_that.operations,_that.operationsIds,_that.access,_that.watchImage,_that.geofenceSettings,_that.zigbeeSettings);case _:
   return orElse();
 
 }
@@ -211,10 +225,10 @@ return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<Trigger>? triggers,  List<String>? triggersIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  List<Operation>? operations,  List<String>? operationsIds,  List<Access>? access,  bool? watchImage,  ActionGeofenceSettings? geofenceSettings)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<Trigger>? triggers,  List<String>? triggersIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  List<Operation>? operations,  List<String>? operationsIds,  List<Access>? access,  bool? watchImage,  ActionGeofenceSettings? geofenceSettings,  ActionZigbeeSettings? zigbeeSettings)  $default,) {final _that = this;
 switch (_that) {
 case _Action():
-return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggers,_that.triggersIds,_that.outboundServices,_that.outboundServicesIds,_that.operations,_that.operationsIds,_that.access,_that.watchImage,_that.geofenceSettings);case _:
+return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggers,_that.triggersIds,_that.outboundServices,_that.outboundServicesIds,_that.operations,_that.operationsIds,_that.access,_that.watchImage,_that.geofenceSettings,_that.zigbeeSettings);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -231,10 +245,10 @@ return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<Trigger>? triggers,  List<String>? triggersIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  List<Operation>? operations,  List<String>? operationsIds,  List<Access>? access,  bool? watchImage,  ActionGeofenceSettings? geofenceSettings)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<Trigger>? triggers,  List<String>? triggersIds,  List<OutboundService>? outboundServices,  List<String>? outboundServicesIds,  List<Operation>? operations,  List<String>? operationsIds,  List<Access>? access,  bool? watchImage,  ActionGeofenceSettings? geofenceSettings,  ActionZigbeeSettings? zigbeeSettings)?  $default,) {final _that = this;
 switch (_that) {
 case _Action() when $default != null:
-return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggers,_that.triggersIds,_that.outboundServices,_that.outboundServicesIds,_that.operations,_that.operationsIds,_that.access,_that.watchImage,_that.geofenceSettings);case _:
+return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggers,_that.triggersIds,_that.outboundServices,_that.outboundServicesIds,_that.operations,_that.operationsIds,_that.access,_that.watchImage,_that.geofenceSettings,_that.zigbeeSettings);case _:
   return null;
 
 }
@@ -246,7 +260,7 @@ return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_th
 @JsonSerializable()
 
 class _Action extends Action {
-  const _Action({required this.id, required this.name, @JsonKey(unknownEnumValue: ActionType.performOperation) required this.kind, @JsonKey(unknownEnumValue: ActionSubtype.unused) this.subkind = ActionSubtype.unused, this.commandId, final  List<Trigger>? triggers, final  List<String>? triggersIds, final  List<OutboundService>? outboundServices, final  List<String>? outboundServicesIds, final  List<Operation>? operations, final  List<String>? operationsIds, final  List<Access>? access, this.watchImage, this.geofenceSettings}): _triggers = triggers,_triggersIds = triggersIds,_outboundServices = outboundServices,_outboundServicesIds = outboundServicesIds,_operations = operations,_operationsIds = operationsIds,_access = access,super._();
+  const _Action({required this.id, required this.name, @JsonKey(unknownEnumValue: ActionType.performOperation) required this.kind, @JsonKey(unknownEnumValue: ActionSubtype.unused) this.subkind = ActionSubtype.unused, this.commandId, final  List<Trigger>? triggers, final  List<String>? triggersIds, final  List<OutboundService>? outboundServices, final  List<String>? outboundServicesIds, final  List<Operation>? operations, final  List<String>? operationsIds, final  List<Access>? access, this.watchImage, this.geofenceSettings, this.zigbeeSettings}): _triggers = triggers,_triggersIds = triggersIds,_outboundServices = outboundServices,_outboundServicesIds = outboundServicesIds,_operations = operations,_operationsIds = operationsIds,_access = access,super._();
   factory _Action.fromJson(Map<String, dynamic> json) => _$ActionFromJson(json);
 
 /// Is the ID of the action.
@@ -335,6 +349,8 @@ class _Action extends Action {
 @override final  bool? watchImage;
 /// Is the geofence settings. Only for `ActionType.createGeofence`
 @override final  ActionGeofenceSettings? geofenceSettings;
+/// Is the zigbee settings. Only for `ActionType.zigbeeChange`
+@override final  ActionZigbeeSettings? zigbeeSettings;
 
 /// Create a copy of Action
 /// with the given fields replaced by the non-null parameter values.
@@ -349,16 +365,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Action&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.subkind, subkind) || other.subkind == subkind)&&(identical(other.commandId, commandId) || other.commandId == commandId)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&const DeepCollectionEquality().equals(other._outboundServices, _outboundServices)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&const DeepCollectionEquality().equals(other._operations, _operations)&&const DeepCollectionEquality().equals(other._operationsIds, _operationsIds)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.watchImage, watchImage) || other.watchImage == watchImage)&&(identical(other.geofenceSettings, geofenceSettings) || other.geofenceSettings == geofenceSettings));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Action&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.subkind, subkind) || other.subkind == subkind)&&(identical(other.commandId, commandId) || other.commandId == commandId)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&const DeepCollectionEquality().equals(other._outboundServices, _outboundServices)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&const DeepCollectionEquality().equals(other._operations, _operations)&&const DeepCollectionEquality().equals(other._operationsIds, _operationsIds)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.watchImage, watchImage) || other.watchImage == watchImage)&&(identical(other.geofenceSettings, geofenceSettings) || other.geofenceSettings == geofenceSettings)&&(identical(other.zigbeeSettings, zigbeeSettings) || other.zigbeeSettings == zigbeeSettings));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,kind,subkind,commandId,const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),const DeepCollectionEquality().hash(_outboundServices),const DeepCollectionEquality().hash(_outboundServicesIds),const DeepCollectionEquality().hash(_operations),const DeepCollectionEquality().hash(_operationsIds),const DeepCollectionEquality().hash(_access),watchImage,geofenceSettings);
+int get hashCode => Object.hash(runtimeType,id,name,kind,subkind,commandId,const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),const DeepCollectionEquality().hash(_outboundServices),const DeepCollectionEquality().hash(_outboundServicesIds),const DeepCollectionEquality().hash(_operations),const DeepCollectionEquality().hash(_operationsIds),const DeepCollectionEquality().hash(_access),watchImage,geofenceSettings,zigbeeSettings);
 
 @override
 String toString() {
-  return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
+  return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings, zigbeeSettings: $zigbeeSettings)';
 }
 
 
@@ -369,11 +385,11 @@ abstract mixin class _$ActionCopyWith<$Res> implements $ActionCopyWith<$Res> {
   factory _$ActionCopyWith(_Action value, $Res Function(_Action) _then) = __$ActionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,@JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind, String? commandId, List<Trigger>? triggers, List<String>? triggersIds, List<OutboundService>? outboundServices, List<String>? outboundServicesIds, List<Operation>? operations, List<String>? operationsIds, List<Access>? access, bool? watchImage, ActionGeofenceSettings? geofenceSettings
+ String id, String name,@JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,@JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind, String? commandId, List<Trigger>? triggers, List<String>? triggersIds, List<OutboundService>? outboundServices, List<String>? outboundServicesIds, List<Operation>? operations, List<String>? operationsIds, List<Access>? access, bool? watchImage, ActionGeofenceSettings? geofenceSettings, ActionZigbeeSettings? zigbeeSettings
 });
 
 
-@override $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
+@override $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;@override $ActionZigbeeSettingsCopyWith<$Res>? get zigbeeSettings;
 
 }
 /// @nodoc
@@ -386,7 +402,7 @@ class __$ActionCopyWithImpl<$Res>
 
 /// Create a copy of Action
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? subkind = null,Object? commandId = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? outboundServices = freezed,Object? outboundServicesIds = freezed,Object? operations = freezed,Object? operationsIds = freezed,Object? access = freezed,Object? watchImage = freezed,Object? geofenceSettings = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? subkind = null,Object? commandId = freezed,Object? triggers = freezed,Object? triggersIds = freezed,Object? outboundServices = freezed,Object? outboundServicesIds = freezed,Object? operations = freezed,Object? operationsIds = freezed,Object? access = freezed,Object? watchImage = freezed,Object? geofenceSettings = freezed,Object? zigbeeSettings = freezed,}) {
   return _then(_Action(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -402,7 +418,8 @@ as List<Operation>?,operationsIds: freezed == operationsIds ? _self._operationsI
 as List<String>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,watchImage: freezed == watchImage ? _self.watchImage : watchImage // ignore: cast_nullable_to_non_nullable
 as bool?,geofenceSettings: freezed == geofenceSettings ? _self.geofenceSettings : geofenceSettings // ignore: cast_nullable_to_non_nullable
-as ActionGeofenceSettings?,
+as ActionGeofenceSettings?,zigbeeSettings: freezed == zigbeeSettings ? _self.zigbeeSettings : zigbeeSettings // ignore: cast_nullable_to_non_nullable
+as ActionZigbeeSettings?,
   ));
 }
 
@@ -417,6 +434,18 @@ $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings {
 
   return $ActionGeofenceSettingsCopyWith<$Res>(_self.geofenceSettings!, (value) {
     return _then(_self.copyWith(geofenceSettings: value));
+  });
+}/// Create a copy of Action
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ActionZigbeeSettingsCopyWith<$Res>? get zigbeeSettings {
+    if (_self.zigbeeSettings == null) {
+    return null;
+  }
+
+  return $ActionZigbeeSettingsCopyWith<$Res>(_self.zigbeeSettings!, (value) {
+    return _then(_self.copyWith(zigbeeSettings: value));
   });
 }
 }
@@ -445,7 +474,9 @@ mixin _$ActionInput {
  bool get watchImage;/// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
  set watchImage(bool value);/// Geofence settings. Only for ActionType.CREATE_GEOFENCE
  ActionGeofenceSettingsInput get geofenceSettings;/// Geofence settings. Only for ActionType.CREATE_GEOFENCE
- set geofenceSettings(ActionGeofenceSettingsInput value);
+ set geofenceSettings(ActionGeofenceSettingsInput value);/// Zigbee settings. Only for ActionType.ZIGBEE_CHANGE
+ ActionZigbeeSettingsInput? get zigbeeSettings;/// Zigbee settings. Only for ActionType.ZIGBEE_CHANGE
+ set zigbeeSettings(ActionZigbeeSettingsInput? value);
 /// Create a copy of ActionInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -460,7 +491,7 @@ $ActionInputCopyWith<ActionInput> get copyWith => _$ActionInputCopyWithImpl<Acti
 
 @override
 String toString() {
-  return 'ActionInput(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggersIds: $triggersIds, operationsIds: $operationsIds, outboundServicesIds: $outboundServicesIds, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
+  return 'ActionInput(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggersIds: $triggersIds, operationsIds: $operationsIds, outboundServicesIds: $outboundServicesIds, watchImage: $watchImage, geofenceSettings: $geofenceSettings, zigbeeSettings: $zigbeeSettings)';
 }
 
 
@@ -471,11 +502,11 @@ abstract mixin class $ActionInputCopyWith<$Res>  {
   factory $ActionInputCopyWith(ActionInput value, $Res Function(ActionInput) _then) = _$ActionInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,@JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind, String? commandId, List<String> triggersIds, List<String> operationsIds, List<String> outboundServicesIds, bool watchImage, ActionGeofenceSettingsInput geofenceSettings
+ String? id, String name,@JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,@JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind, String? commandId, List<String> triggersIds, List<String> operationsIds, List<String> outboundServicesIds, bool watchImage, ActionGeofenceSettingsInput geofenceSettings, ActionZigbeeSettingsInput? zigbeeSettings
 });
 
 
-$ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings;
+$ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings;$ActionZigbeeSettingsInputCopyWith<$Res>? get zigbeeSettings;
 
 }
 /// @nodoc
@@ -488,7 +519,7 @@ class _$ActionInputCopyWithImpl<$Res>
 
 /// Create a copy of ActionInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? kind = null,Object? subkind = null,Object? commandId = freezed,Object? triggersIds = null,Object? operationsIds = null,Object? outboundServicesIds = null,Object? watchImage = null,Object? geofenceSettings = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? kind = null,Object? subkind = null,Object? commandId = freezed,Object? triggersIds = null,Object? operationsIds = null,Object? outboundServicesIds = null,Object? watchImage = null,Object? geofenceSettings = null,Object? zigbeeSettings = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -500,7 +531,8 @@ as List<String>,operationsIds: null == operationsIds ? _self.operationsIds : ope
 as List<String>,outboundServicesIds: null == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,watchImage: null == watchImage ? _self.watchImage : watchImage // ignore: cast_nullable_to_non_nullable
 as bool,geofenceSettings: null == geofenceSettings ? _self.geofenceSettings : geofenceSettings // ignore: cast_nullable_to_non_nullable
-as ActionGeofenceSettingsInput,
+as ActionGeofenceSettingsInput,zigbeeSettings: freezed == zigbeeSettings ? _self.zigbeeSettings : zigbeeSettings // ignore: cast_nullable_to_non_nullable
+as ActionZigbeeSettingsInput?,
   ));
 }
 /// Create a copy of ActionInput
@@ -511,6 +543,18 @@ $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings {
   
   return $ActionGeofenceSettingsInputCopyWith<$Res>(_self.geofenceSettings, (value) {
     return _then(_self.copyWith(geofenceSettings: value));
+  });
+}/// Create a copy of ActionInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ActionZigbeeSettingsInputCopyWith<$Res>? get zigbeeSettings {
+    if (_self.zigbeeSettings == null) {
+    return null;
+  }
+
+  return $ActionZigbeeSettingsInputCopyWith<$Res>(_self.zigbeeSettings!, (value) {
+    return _then(_self.copyWith(zigbeeSettings: value));
   });
 }
 }
@@ -594,10 +638,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<String> triggersIds,  List<String> operationsIds,  List<String> outboundServicesIds,  bool watchImage,  ActionGeofenceSettingsInput geofenceSettings)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<String> triggersIds,  List<String> operationsIds,  List<String> outboundServicesIds,  bool watchImage,  ActionGeofenceSettingsInput geofenceSettings,  ActionZigbeeSettingsInput? zigbeeSettings)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ActionInput() when $default != null:
-return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggersIds,_that.operationsIds,_that.outboundServicesIds,_that.watchImage,_that.geofenceSettings);case _:
+return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggersIds,_that.operationsIds,_that.outboundServicesIds,_that.watchImage,_that.geofenceSettings,_that.zigbeeSettings);case _:
   return orElse();
 
 }
@@ -615,10 +659,10 @@ return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<String> triggersIds,  List<String> operationsIds,  List<String> outboundServicesIds,  bool watchImage,  ActionGeofenceSettingsInput geofenceSettings)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<String> triggersIds,  List<String> operationsIds,  List<String> outboundServicesIds,  bool watchImage,  ActionGeofenceSettingsInput geofenceSettings,  ActionZigbeeSettingsInput? zigbeeSettings)  $default,) {final _that = this;
 switch (_that) {
 case _ActionInput():
-return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggersIds,_that.operationsIds,_that.outboundServicesIds,_that.watchImage,_that.geofenceSettings);case _:
+return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggersIds,_that.operationsIds,_that.outboundServicesIds,_that.watchImage,_that.geofenceSettings,_that.zigbeeSettings);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -635,10 +679,10 @@ return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<String> triggersIds,  List<String> operationsIds,  List<String> outboundServicesIds,  bool watchImage,  ActionGeofenceSettingsInput geofenceSettings)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @JsonKey(unknownEnumValue: ActionType.performOperation)  ActionType kind, @JsonKey(unknownEnumValue: ActionSubtype.unused)  ActionSubtype subkind,  String? commandId,  List<String> triggersIds,  List<String> operationsIds,  List<String> outboundServicesIds,  bool watchImage,  ActionGeofenceSettingsInput geofenceSettings,  ActionZigbeeSettingsInput? zigbeeSettings)?  $default,) {final _that = this;
 switch (_that) {
 case _ActionInput() when $default != null:
-return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggersIds,_that.operationsIds,_that.outboundServicesIds,_that.watchImage,_that.geofenceSettings);case _:
+return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_that.triggersIds,_that.operationsIds,_that.outboundServicesIds,_that.watchImage,_that.geofenceSettings,_that.zigbeeSettings);case _:
   return null;
 
 }
@@ -650,7 +694,7 @@ return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_th
 @JsonSerializable()
 
 class _ActionInput extends ActionInput {
-   _ActionInput({this.id, this.name = '', @JsonKey(unknownEnumValue: ActionType.performOperation) this.kind = ActionType.performOperation, @JsonKey(unknownEnumValue: ActionSubtype.unused) this.subkind = ActionSubtype.unused, this.commandId, this.triggersIds = const [], this.operationsIds = const [], this.outboundServicesIds = const [], this.watchImage = false, required this.geofenceSettings}): super._();
+   _ActionInput({this.id, this.name = '', @JsonKey(unknownEnumValue: ActionType.performOperation) this.kind = ActionType.performOperation, @JsonKey(unknownEnumValue: ActionSubtype.unused) this.subkind = ActionSubtype.unused, this.commandId, this.triggersIds = const [], this.operationsIds = const [], this.outboundServicesIds = const [], this.watchImage = false, required this.geofenceSettings, this.zigbeeSettings}): super._();
   factory _ActionInput.fromJson(Map<String, dynamic> json) => _$ActionInputFromJson(json);
 
 /// ID of the action entity. This ID is unique.
@@ -673,6 +717,8 @@ class _ActionInput extends ActionInput {
 @override@JsonKey()  bool watchImage;
 /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
 @override  ActionGeofenceSettingsInput geofenceSettings;
+/// Zigbee settings. Only for ActionType.ZIGBEE_CHANGE
+@override  ActionZigbeeSettingsInput? zigbeeSettings;
 
 /// Create a copy of ActionInput
 /// with the given fields replaced by the non-null parameter values.
@@ -689,7 +735,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'ActionInput(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggersIds: $triggersIds, operationsIds: $operationsIds, outboundServicesIds: $outboundServicesIds, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
+  return 'ActionInput(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggersIds: $triggersIds, operationsIds: $operationsIds, outboundServicesIds: $outboundServicesIds, watchImage: $watchImage, geofenceSettings: $geofenceSettings, zigbeeSettings: $zigbeeSettings)';
 }
 
 
@@ -700,11 +746,11 @@ abstract mixin class _$ActionInputCopyWith<$Res> implements $ActionInputCopyWith
   factory _$ActionInputCopyWith(_ActionInput value, $Res Function(_ActionInput) _then) = __$ActionInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name,@JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,@JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind, String? commandId, List<String> triggersIds, List<String> operationsIds, List<String> outboundServicesIds, bool watchImage, ActionGeofenceSettingsInput geofenceSettings
+ String? id, String name,@JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,@JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind, String? commandId, List<String> triggersIds, List<String> operationsIds, List<String> outboundServicesIds, bool watchImage, ActionGeofenceSettingsInput geofenceSettings, ActionZigbeeSettingsInput? zigbeeSettings
 });
 
 
-@override $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings;
+@override $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings;@override $ActionZigbeeSettingsInputCopyWith<$Res>? get zigbeeSettings;
 
 }
 /// @nodoc
@@ -717,7 +763,7 @@ class __$ActionInputCopyWithImpl<$Res>
 
 /// Create a copy of ActionInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? kind = null,Object? subkind = null,Object? commandId = freezed,Object? triggersIds = null,Object? operationsIds = null,Object? outboundServicesIds = null,Object? watchImage = null,Object? geofenceSettings = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? kind = null,Object? subkind = null,Object? commandId = freezed,Object? triggersIds = null,Object? operationsIds = null,Object? outboundServicesIds = null,Object? watchImage = null,Object? geofenceSettings = null,Object? zigbeeSettings = freezed,}) {
   return _then(_ActionInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -729,7 +775,8 @@ as List<String>,operationsIds: null == operationsIds ? _self.operationsIds : ope
 as List<String>,outboundServicesIds: null == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,watchImage: null == watchImage ? _self.watchImage : watchImage // ignore: cast_nullable_to_non_nullable
 as bool,geofenceSettings: null == geofenceSettings ? _self.geofenceSettings : geofenceSettings // ignore: cast_nullable_to_non_nullable
-as ActionGeofenceSettingsInput,
+as ActionGeofenceSettingsInput,zigbeeSettings: freezed == zigbeeSettings ? _self.zigbeeSettings : zigbeeSettings // ignore: cast_nullable_to_non_nullable
+as ActionZigbeeSettingsInput?,
   ));
 }
 
@@ -741,6 +788,18 @@ $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings {
   
   return $ActionGeofenceSettingsInputCopyWith<$Res>(_self.geofenceSettings, (value) {
     return _then(_self.copyWith(geofenceSettings: value));
+  });
+}/// Create a copy of ActionInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ActionZigbeeSettingsInputCopyWith<$Res>? get zigbeeSettings {
+    if (_self.zigbeeSettings == null) {
+    return null;
+  }
+
+  return $ActionZigbeeSettingsInputCopyWith<$Res>(_self.zigbeeSettings!, (value) {
+    return _then(_self.copyWith(zigbeeSettings: value));
   });
 }
 }
@@ -1334,6 +1393,840 @@ as String?,category: null == category ? _self.category : category // ignore: cas
 as GeofenceCategory,radius: null == radius ? _self.radius : radius // ignore: cast_nullable_to_non_nullable
 as double,mappitRouteId: freezed == mappitRouteId ? _self.mappitRouteId : mappitRouteId // ignore: cast_nullable_to_non_nullable
 as String?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ActionZigbeeSetting {
+
+/// [key] is the name of the expose from the zigbee device
+ String get key;/// [value] is the value to set for the expose
+ dynamic get value;
+/// Create a copy of ActionZigbeeSetting
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ActionZigbeeSettingCopyWith<ActionZigbeeSetting> get copyWith => _$ActionZigbeeSettingCopyWithImpl<ActionZigbeeSetting>(this as ActionZigbeeSetting, _$identity);
+
+  /// Serializes this ActionZigbeeSetting to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActionZigbeeSetting&&(identical(other.key, key) || other.key == key)&&const DeepCollectionEquality().equals(other.value, value));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,key,const DeepCollectionEquality().hash(value));
+
+@override
+String toString() {
+  return 'ActionZigbeeSetting(key: $key, value: $value)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ActionZigbeeSettingCopyWith<$Res>  {
+  factory $ActionZigbeeSettingCopyWith(ActionZigbeeSetting value, $Res Function(ActionZigbeeSetting) _then) = _$ActionZigbeeSettingCopyWithImpl;
+@useResult
+$Res call({
+ String key, dynamic value
+});
+
+
+
+
+}
+/// @nodoc
+class _$ActionZigbeeSettingCopyWithImpl<$Res>
+    implements $ActionZigbeeSettingCopyWith<$Res> {
+  _$ActionZigbeeSettingCopyWithImpl(this._self, this._then);
+
+  final ActionZigbeeSetting _self;
+  final $Res Function(ActionZigbeeSetting) _then;
+
+/// Create a copy of ActionZigbeeSetting
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? key = null,Object? value = freezed,}) {
+  return _then(_self.copyWith(
+key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as dynamic,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ActionZigbeeSetting].
+extension ActionZigbeeSettingPatterns on ActionZigbeeSetting {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ActionZigbeeSetting value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSetting() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ActionZigbeeSetting value)  $default,){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSetting():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ActionZigbeeSetting value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSetting() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String key,  dynamic value)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSetting() when $default != null:
+return $default(_that.key,_that.value);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String key,  dynamic value)  $default,) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSetting():
+return $default(_that.key,_that.value);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String key,  dynamic value)?  $default,) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSetting() when $default != null:
+return $default(_that.key,_that.value);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ActionZigbeeSetting extends ActionZigbeeSetting {
+  const _ActionZigbeeSetting({required this.key, this.value}): super._();
+  factory _ActionZigbeeSetting.fromJson(Map<String, dynamic> json) => _$ActionZigbeeSettingFromJson(json);
+
+/// [key] is the name of the expose from the zigbee device
+@override final  String key;
+/// [value] is the value to set for the expose
+@override final  dynamic value;
+
+/// Create a copy of ActionZigbeeSetting
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ActionZigbeeSettingCopyWith<_ActionZigbeeSetting> get copyWith => __$ActionZigbeeSettingCopyWithImpl<_ActionZigbeeSetting>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ActionZigbeeSettingToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ActionZigbeeSetting&&(identical(other.key, key) || other.key == key)&&const DeepCollectionEquality().equals(other.value, value));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,key,const DeepCollectionEquality().hash(value));
+
+@override
+String toString() {
+  return 'ActionZigbeeSetting(key: $key, value: $value)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ActionZigbeeSettingCopyWith<$Res> implements $ActionZigbeeSettingCopyWith<$Res> {
+  factory _$ActionZigbeeSettingCopyWith(_ActionZigbeeSetting value, $Res Function(_ActionZigbeeSetting) _then) = __$ActionZigbeeSettingCopyWithImpl;
+@override @useResult
+$Res call({
+ String key, dynamic value
+});
+
+
+
+
+}
+/// @nodoc
+class __$ActionZigbeeSettingCopyWithImpl<$Res>
+    implements _$ActionZigbeeSettingCopyWith<$Res> {
+  __$ActionZigbeeSettingCopyWithImpl(this._self, this._then);
+
+  final _ActionZigbeeSetting _self;
+  final $Res Function(_ActionZigbeeSetting) _then;
+
+/// Create a copy of ActionZigbeeSetting
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? key = null,Object? value = freezed,}) {
+  return _then(_ActionZigbeeSetting(
+key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as dynamic,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ActionZigbeeSettings {
+
+/// [deviceId] is the ID of the connectivity Device bound to the zigbee device
+ String? get deviceId;/// [device] is the connectivity Device bound to the zigbee device
+ Device? get device;/// [settings] is the list of zigbee settings to apply
+ List<ActionZigbeeSetting> get settings;
+/// Create a copy of ActionZigbeeSettings
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ActionZigbeeSettingsCopyWith<ActionZigbeeSettings> get copyWith => _$ActionZigbeeSettingsCopyWithImpl<ActionZigbeeSettings>(this as ActionZigbeeSettings, _$identity);
+
+  /// Serializes this ActionZigbeeSettings to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActionZigbeeSettings&&(identical(other.deviceId, deviceId) || other.deviceId == deviceId)&&(identical(other.device, device) || other.device == device)&&const DeepCollectionEquality().equals(other.settings, settings));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,deviceId,device,const DeepCollectionEquality().hash(settings));
+
+@override
+String toString() {
+  return 'ActionZigbeeSettings(deviceId: $deviceId, device: $device, settings: $settings)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ActionZigbeeSettingsCopyWith<$Res>  {
+  factory $ActionZigbeeSettingsCopyWith(ActionZigbeeSettings value, $Res Function(ActionZigbeeSettings) _then) = _$ActionZigbeeSettingsCopyWithImpl;
+@useResult
+$Res call({
+ String? deviceId, Device? device, List<ActionZigbeeSetting> settings
+});
+
+
+$DeviceCopyWith<$Res>? get device;
+
+}
+/// @nodoc
+class _$ActionZigbeeSettingsCopyWithImpl<$Res>
+    implements $ActionZigbeeSettingsCopyWith<$Res> {
+  _$ActionZigbeeSettingsCopyWithImpl(this._self, this._then);
+
+  final ActionZigbeeSettings _self;
+  final $Res Function(ActionZigbeeSettings) _then;
+
+/// Create a copy of ActionZigbeeSettings
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? deviceId = freezed,Object? device = freezed,Object? settings = null,}) {
+  return _then(_self.copyWith(
+deviceId: freezed == deviceId ? _self.deviceId : deviceId // ignore: cast_nullable_to_non_nullable
+as String?,device: freezed == device ? _self.device : device // ignore: cast_nullable_to_non_nullable
+as Device?,settings: null == settings ? _self.settings : settings // ignore: cast_nullable_to_non_nullable
+as List<ActionZigbeeSetting>,
+  ));
+}
+/// Create a copy of ActionZigbeeSettings
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DeviceCopyWith<$Res>? get device {
+    if (_self.device == null) {
+    return null;
+  }
+
+  return $DeviceCopyWith<$Res>(_self.device!, (value) {
+    return _then(_self.copyWith(device: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [ActionZigbeeSettings].
+extension ActionZigbeeSettingsPatterns on ActionZigbeeSettings {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ActionZigbeeSettings value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSettings() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ActionZigbeeSettings value)  $default,){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSettings():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ActionZigbeeSettings value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSettings() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? deviceId,  Device? device,  List<ActionZigbeeSetting> settings)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSettings() when $default != null:
+return $default(_that.deviceId,_that.device,_that.settings);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? deviceId,  Device? device,  List<ActionZigbeeSetting> settings)  $default,) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSettings():
+return $default(_that.deviceId,_that.device,_that.settings);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? deviceId,  Device? device,  List<ActionZigbeeSetting> settings)?  $default,) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSettings() when $default != null:
+return $default(_that.deviceId,_that.device,_that.settings);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ActionZigbeeSettings extends ActionZigbeeSettings {
+  const _ActionZigbeeSettings({this.deviceId, this.device, final  List<ActionZigbeeSetting> settings = const []}): _settings = settings,super._();
+  factory _ActionZigbeeSettings.fromJson(Map<String, dynamic> json) => _$ActionZigbeeSettingsFromJson(json);
+
+/// [deviceId] is the ID of the connectivity Device bound to the zigbee device
+@override final  String? deviceId;
+/// [device] is the connectivity Device bound to the zigbee device
+@override final  Device? device;
+/// [settings] is the list of zigbee settings to apply
+ final  List<ActionZigbeeSetting> _settings;
+/// [settings] is the list of zigbee settings to apply
+@override@JsonKey() List<ActionZigbeeSetting> get settings {
+  if (_settings is EqualUnmodifiableListView) return _settings;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_settings);
+}
+
+
+/// Create a copy of ActionZigbeeSettings
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ActionZigbeeSettingsCopyWith<_ActionZigbeeSettings> get copyWith => __$ActionZigbeeSettingsCopyWithImpl<_ActionZigbeeSettings>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ActionZigbeeSettingsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ActionZigbeeSettings&&(identical(other.deviceId, deviceId) || other.deviceId == deviceId)&&(identical(other.device, device) || other.device == device)&&const DeepCollectionEquality().equals(other._settings, _settings));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,deviceId,device,const DeepCollectionEquality().hash(_settings));
+
+@override
+String toString() {
+  return 'ActionZigbeeSettings(deviceId: $deviceId, device: $device, settings: $settings)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ActionZigbeeSettingsCopyWith<$Res> implements $ActionZigbeeSettingsCopyWith<$Res> {
+  factory _$ActionZigbeeSettingsCopyWith(_ActionZigbeeSettings value, $Res Function(_ActionZigbeeSettings) _then) = __$ActionZigbeeSettingsCopyWithImpl;
+@override @useResult
+$Res call({
+ String? deviceId, Device? device, List<ActionZigbeeSetting> settings
+});
+
+
+@override $DeviceCopyWith<$Res>? get device;
+
+}
+/// @nodoc
+class __$ActionZigbeeSettingsCopyWithImpl<$Res>
+    implements _$ActionZigbeeSettingsCopyWith<$Res> {
+  __$ActionZigbeeSettingsCopyWithImpl(this._self, this._then);
+
+  final _ActionZigbeeSettings _self;
+  final $Res Function(_ActionZigbeeSettings) _then;
+
+/// Create a copy of ActionZigbeeSettings
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? deviceId = freezed,Object? device = freezed,Object? settings = null,}) {
+  return _then(_ActionZigbeeSettings(
+deviceId: freezed == deviceId ? _self.deviceId : deviceId // ignore: cast_nullable_to_non_nullable
+as String?,device: freezed == device ? _self.device : device // ignore: cast_nullable_to_non_nullable
+as Device?,settings: null == settings ? _self._settings : settings // ignore: cast_nullable_to_non_nullable
+as List<ActionZigbeeSetting>,
+  ));
+}
+
+/// Create a copy of ActionZigbeeSettings
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DeviceCopyWith<$Res>? get device {
+    if (_self.device == null) {
+    return null;
+  }
+
+  return $DeviceCopyWith<$Res>(_self.device!, (value) {
+    return _then(_self.copyWith(device: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$ActionZigbeeSettingsInput {
+
+/// [deviceId] is the ID of the connectivity Device bound to the zigbee device
+ String? get deviceId;/// [deviceId] is the ID of the connectivity Device bound to the zigbee device
+ set deviceId(String? value);/// [settings] is the list of zigbee settings to apply
+ List<ActionZigbeeSetting> get settings;/// [settings] is the list of zigbee settings to apply
+ set settings(List<ActionZigbeeSetting> value);
+/// Create a copy of ActionZigbeeSettingsInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ActionZigbeeSettingsInputCopyWith<ActionZigbeeSettingsInput> get copyWith => _$ActionZigbeeSettingsInputCopyWithImpl<ActionZigbeeSettingsInput>(this as ActionZigbeeSettingsInput, _$identity);
+
+  /// Serializes this ActionZigbeeSettingsInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'ActionZigbeeSettingsInput(deviceId: $deviceId, settings: $settings)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ActionZigbeeSettingsInputCopyWith<$Res>  {
+  factory $ActionZigbeeSettingsInputCopyWith(ActionZigbeeSettingsInput value, $Res Function(ActionZigbeeSettingsInput) _then) = _$ActionZigbeeSettingsInputCopyWithImpl;
+@useResult
+$Res call({
+ String? deviceId, List<ActionZigbeeSetting> settings
+});
+
+
+
+
+}
+/// @nodoc
+class _$ActionZigbeeSettingsInputCopyWithImpl<$Res>
+    implements $ActionZigbeeSettingsInputCopyWith<$Res> {
+  _$ActionZigbeeSettingsInputCopyWithImpl(this._self, this._then);
+
+  final ActionZigbeeSettingsInput _self;
+  final $Res Function(ActionZigbeeSettingsInput) _then;
+
+/// Create a copy of ActionZigbeeSettingsInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? deviceId = freezed,Object? settings = null,}) {
+  return _then(_self.copyWith(
+deviceId: freezed == deviceId ? _self.deviceId : deviceId // ignore: cast_nullable_to_non_nullable
+as String?,settings: null == settings ? _self.settings : settings // ignore: cast_nullable_to_non_nullable
+as List<ActionZigbeeSetting>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ActionZigbeeSettingsInput].
+extension ActionZigbeeSettingsInputPatterns on ActionZigbeeSettingsInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ActionZigbeeSettingsInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSettingsInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ActionZigbeeSettingsInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSettingsInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ActionZigbeeSettingsInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ActionZigbeeSettingsInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? deviceId,  List<ActionZigbeeSetting> settings)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSettingsInput() when $default != null:
+return $default(_that.deviceId,_that.settings);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? deviceId,  List<ActionZigbeeSetting> settings)  $default,) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSettingsInput():
+return $default(_that.deviceId,_that.settings);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? deviceId,  List<ActionZigbeeSetting> settings)?  $default,) {final _that = this;
+switch (_that) {
+case _ActionZigbeeSettingsInput() when $default != null:
+return $default(_that.deviceId,_that.settings);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ActionZigbeeSettingsInput extends ActionZigbeeSettingsInput {
+   _ActionZigbeeSettingsInput({this.deviceId, this.settings = const []}): super._();
+  factory _ActionZigbeeSettingsInput.fromJson(Map<String, dynamic> json) => _$ActionZigbeeSettingsInputFromJson(json);
+
+/// [deviceId] is the ID of the connectivity Device bound to the zigbee device
+@override  String? deviceId;
+/// [settings] is the list of zigbee settings to apply
+@override@JsonKey()  List<ActionZigbeeSetting> settings;
+
+/// Create a copy of ActionZigbeeSettingsInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ActionZigbeeSettingsInputCopyWith<_ActionZigbeeSettingsInput> get copyWith => __$ActionZigbeeSettingsInputCopyWithImpl<_ActionZigbeeSettingsInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ActionZigbeeSettingsInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'ActionZigbeeSettingsInput(deviceId: $deviceId, settings: $settings)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ActionZigbeeSettingsInputCopyWith<$Res> implements $ActionZigbeeSettingsInputCopyWith<$Res> {
+  factory _$ActionZigbeeSettingsInputCopyWith(_ActionZigbeeSettingsInput value, $Res Function(_ActionZigbeeSettingsInput) _then) = __$ActionZigbeeSettingsInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? deviceId, List<ActionZigbeeSetting> settings
+});
+
+
+
+
+}
+/// @nodoc
+class __$ActionZigbeeSettingsInputCopyWithImpl<$Res>
+    implements _$ActionZigbeeSettingsInputCopyWith<$Res> {
+  __$ActionZigbeeSettingsInputCopyWithImpl(this._self, this._then);
+
+  final _ActionZigbeeSettingsInput _self;
+  final $Res Function(_ActionZigbeeSettingsInput) _then;
+
+/// Create a copy of ActionZigbeeSettingsInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? deviceId = freezed,Object? settings = null,}) {
+  return _then(_ActionZigbeeSettingsInput(
+deviceId: freezed == deviceId ? _self.deviceId : deviceId // ignore: cast_nullable_to_non_nullable
+as String?,settings: null == settings ? _self.settings : settings // ignore: cast_nullable_to_non_nullable
+as List<ActionZigbeeSetting>,
   ));
 }
 

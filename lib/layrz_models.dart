@@ -4,6 +4,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart' hide Action;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
+import 'package:layrz_logging/layrz_logging.dart';
 
 import 'src/actions/actions.dart';
 export 'src/actions/actions.dart';
@@ -131,7 +132,7 @@ export 'src/tagon/tagon.dart';
 // import 'src/mqtt/mqtt.dart';
 export 'src/mqtt/mqtt.dart';
 
-// import 'src/api/api.dart';
+import 'src/api/api.dart';
 export 'src/api/api.dart';
 
 // import 'src/department/department.dart';
