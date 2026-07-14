@@ -3503,6 +3503,7 @@ const _$AtsStreamModelEnumMap = {AtsStreamModel.exit: 'EXIT'};
 
 const _$AtsStreamExitStructureTypeEnumMap = {
   AtsStreamExitStructureType.constant: 'constant',
+  AtsStreamExitStructureType.constantNumber: 'constant.number',
   AtsStreamExitStructureType.fromAssetName: 'fromAsset.name',
   AtsStreamExitStructureType.fromAssetVin: 'fromAsset.vin',
   AtsStreamExitStructureType.fromAssetPlate: 'fromAsset.plate',

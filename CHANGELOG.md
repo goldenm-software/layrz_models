@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.13.1
+
+- Added `constant.number` value to `AtsStreamExitStructureType` enum, a sibling of `constant` for ATAK outbound structure entries whose `value` should be sent as a real JSON number instead of a string.
+
 ## 3.13.0
 
 - Added `ActionType.zigbeeChange` (`ZIGBEE_CHANGE`) plus the `ActionZigbeeSetting`, `ActionZigbeeSettings` and `ActionZigbeeSettingsInput` models, with a new `zigbeeSettings` field on `Action` and `ActionInput`.
