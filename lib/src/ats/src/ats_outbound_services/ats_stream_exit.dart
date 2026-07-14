@@ -6,9 +6,14 @@ part of '../../ats.dart';
 /// To validate that, you can use the [AtsStreamExitStructureType.isCustom(String)] static method.
 @JsonEnum(alwaysCreate: true)
 enum AtsStreamExitStructureType {
-  /// Layrz API equivalence: `constant`. Means a constant value
+  /// Layrz API equivalence: `constant`. Means a constant value, always sent as a string.
   @JsonValue('constant')
   constant,
+
+  /// Layrz API equivalence: `constant.number`. Means a constant value, sent as a real number
+  /// instead of a string. `value` must be a string that parses as a number (e.g. `1898`, `12.5`).
+  @JsonValue('constant.number')
+  constantNumber,
 
   /// Layrz API equivalence: `fromAsset.name`. Means the name of the asset that is being moved.
   @JsonValue('fromAsset.name')
