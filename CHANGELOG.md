@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.13.3
+
+- Made `performedBy` nullable (`User?`) in `MappitRouteLinkingHistory`. When an employee is removed, the relation is soft-deleted and the backend sends `performedBy: null` for historical records, while `performedById` still holds the plain ID. The previous non-nullable declaration crashed `fromJson` with `type 'Null' is not a subtype of type 'Map<String, dynamic>'`. This aligns `performedBy` with the already-nullable `currentSeller` field.
+
+## 3.13.2
+
+- Never published to pub.dev. The release tag was created off the `development` branch before it merged into `main`, so the publish workflow rejected it. The `performedBy` fix above was re-released as `3.13.3`.
+
 ## 3.13.1
 
 - Added `constant.number` value to `AtsStreamExitStructureType` enum, a sibling of `constant` for ATAK outbound structure entries whose `value` should be sent as a real JSON number instead of a string.
