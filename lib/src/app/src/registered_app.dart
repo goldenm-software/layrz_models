@@ -43,6 +43,12 @@ abstract class RegisteredApp with _$RegisteredApp {
 
     /// [authorizedLayers] is the list of layers authorized to be used by the app.
     @Default([]) List<MapLayer> authorizedLayers,
+
+    /// [iosPushSecrets] is the decrypted iOS Firebase credentials for layrz_push
+    PushSecrets? iosPushSecrets,
+
+    /// [androidPushSecrets] is the decrypted Android Firebase credentials for layrz_push
+    PushSecrets? androidPushSecrets,
   }) = _RegisteredApp;
 
   factory RegisteredApp.fromJson(Map<String, dynamic> json) => _$RegisteredAppFromJson(json);
@@ -136,5 +142,21 @@ abstract class RegisteredApp with _$RegisteredApp {
             ..add(GqlField(name: 'white')),
         )
         ..add(GqlField(name: 'appicon')),
+    )
+    ..add(
+      GqlField(name: 'iosPushSecrets')
+        ..add(GqlField(name: 'apiKey'))
+        ..add(GqlField(name: 'appId'))
+        ..add(GqlField(name: 'projectId'))
+        ..add(GqlField(name: 'messagingSenderId'))
+        ..add(GqlField(name: 'storageBucket')),
+    )
+    ..add(
+      GqlField(name: 'androidPushSecrets')
+        ..add(GqlField(name: 'apiKey'))
+        ..add(GqlField(name: 'appId'))
+        ..add(GqlField(name: 'projectId'))
+        ..add(GqlField(name: 'messagingSenderId'))
+        ..add(GqlField(name: 'storageBucket')),
     );
 }
