@@ -1,8 +1,12 @@
 # Changelog
 
-## 3.14.1
+## 3.15.0
 
 - Expanded `Operation.gqlFragment` to cover the full operation configuration (webhook, email, SMS/Twilio, push, in-app fields) so `Operation.fetch`/`fetchAll` return complete data.
+- Added RegisteredApp lifecycle callers (registerWithoutCustomization, registerWithCustomization, edit, delete) and completed app management coverage.
+- Added User.fetchAllForAppUsers for app user management contexts (includes username and email fields).
+- Add tolerant API status parsing accepting both legacy (NOTFOUND) and modern (NOT_FOUND) backend status formats
+  - `ApiStatus.fromJson()` now handles both underscore-separated (e.g., 'NOT_FOUND', 'INTERNAL_ERROR') and legacy squashed (e.g., 'NOTFOUND', 'INTERNALERROR') formats through case-insensitive normalization.
 
 ## 3.14.0
 
