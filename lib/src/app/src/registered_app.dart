@@ -73,12 +73,10 @@ abstract class RegisteredApp with _$RegisteredApp {
     try {
       final response = await connector.perform(
         GqlQuery(
-          variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
-          ],
+          variables: [],
           name: 'fetchRegisteredApps',
         )..add(
-          GqlField(name: 'registeredApps', args: {'apiToken': 'apiToken'})
+          GqlField(name: 'registeredApps', args: {})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: gqlFragment)),
         ),
@@ -127,12 +125,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'id', type: .string, isRequired: true, value: id),
           ],
           name: 'fetchRegisteredApp',
         )..add(
-          GqlField(name: 'registeredApps', args: {'apiToken': 'apiToken', 'id': 'id'})
+          GqlField(name: 'registeredApps', args: {'id': 'id'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: gqlFragment)),
         ),
@@ -183,7 +180,6 @@ abstract class RegisteredApp with _$RegisteredApp {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final variables = <GqlVariable>[
-        GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
         GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
       ];
 
@@ -205,7 +201,6 @@ abstract class RegisteredApp with _$RegisteredApp {
           GqlField(
             name: 'setPushSecrets',
             args: {
-              'apiToken': 'apiToken',
               'appId': 'appId',
               if (iosPushSecrets != null) 'iosPushSecrets': 'iosPushSecrets',
               if (androidPushSecrets != null) 'androidPushSecrets': 'androidPushSecrets',
@@ -252,13 +247,12 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
             GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
           ],
           name: 'grantAccessToApp',
         )..add(
-          GqlField(name: 'grantAccessToApp', args: {'apiToken': 'apiToken', 'appId': 'appId', 'userId': 'userId'})
+          GqlField(name: 'grantAccessToApp', args: {'appId': 'appId', 'userId': 'userId'})
             ..add(GqlField(name: 'status')),
         ),
       );
@@ -300,7 +294,6 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
             GqlVariable(
               name: 'userIds',
@@ -313,7 +306,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(
             name: 'grantMultipleAccessToApp',
-            args: {'apiToken': 'apiToken', 'appId': 'appId', 'userIds': 'userIds'},
+            args: {'appId': 'appId', 'userIds': 'userIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -355,13 +348,12 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
             GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
           ],
           name: 'revokeAccessToApp',
         )..add(
-          GqlField(name: 'revokeAccessToApp', args: {'apiToken': 'apiToken', 'appId': 'appId', 'userId': 'userId'})
+          GqlField(name: 'revokeAccessToApp', args: {'appId': 'appId', 'userId': 'userId'})
             ..add(GqlField(name: 'status')),
         ),
       );
@@ -403,7 +395,6 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
             GqlVariable(
               name: 'assetIds',
@@ -416,7 +407,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(
             name: 'importAssetsIntoApp',
-            args: {'apiToken': 'apiToken', 'appId': 'appId', 'assetIds': 'assetIds'},
+            args: {'appId': 'appId', 'assetIds': 'assetIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -458,7 +449,6 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
             GqlVariable(
               name: 'assetIds',
@@ -471,7 +461,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(
             name: 'revokeAssetsFromApp',
-            args: {'apiToken': 'apiToken', 'appId': 'appId', 'assetIds': 'assetIds'},
+            args: {'appId': 'appId', 'assetIds': 'assetIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -513,7 +503,6 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
             GqlVariable(
               name: 'deviceIds',
@@ -526,7 +515,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(
             name: 'importDevicesIntoApp',
-            args: {'apiToken': 'apiToken', 'appId': 'appId', 'deviceIds': 'deviceIds'},
+            args: {'appId': 'appId', 'deviceIds': 'deviceIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -568,7 +557,6 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
             GqlVariable(
               name: 'deviceIds',
@@ -581,7 +569,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(
             name: 'revokeDevicesFromApp',
-            args: {'apiToken': 'apiToken', 'appId': 'appId', 'deviceIds': 'deviceIds'},
+            args: {'appId': 'appId', 'deviceIds': 'deviceIds'},
           )..add(GqlField(name: 'status')),
         ),
       );

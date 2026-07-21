@@ -68,12 +68,11 @@ abstract class AppInstance with _$AppInstance {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: GqlVariableType.string, isRequired: true, value: apiToken),
             GqlVariable(name: 'instanceId', type: GqlVariableType.string, isRequired: true, value: instanceId),
           ],
           name: 'deprecateInstance',
         )..add(
-          GqlField(name: 'deprecateInstance', args: {'apiToken': 'apiToken', 'instanceId': 'instanceId'})
+          GqlField(name: 'deprecateInstance', args: {'instanceId': 'instanceId'})
             ..add(GqlField(name: 'status')),
         ),
       );
@@ -114,12 +113,11 @@ abstract class AppInstance with _$AppInstance {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: GqlVariableType.string, isRequired: true, value: apiToken),
             GqlVariable(name: 'instanceId', type: GqlVariableType.string, isRequired: true, value: instanceId),
           ],
           name: 'migrateInstance',
         )..add(
-          GqlField(name: 'migrateInstance', args: {'apiToken': 'apiToken', 'instanceId': 'instanceId'})
+          GqlField(name: 'migrateInstance', args: {'instanceId': 'instanceId'})
             ..add(GqlField(name: 'status')),
         ),
       );
@@ -160,7 +158,6 @@ abstract class AppInstance with _$AppInstance {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: GqlVariableType.string, isRequired: true, value: apiToken),
             GqlVariable(
               name: 'data',
               type: .input(of: 'AppInstanceInput'),
@@ -170,7 +167,7 @@ abstract class AppInstance with _$AppInstance {
           ],
           name: 'requestInstance',
         )..add(
-          GqlField(name: 'requestInstance', args: {'apiToken': 'apiToken', 'data': 'data'})
+          GqlField(name: 'requestInstance', args: {'data': 'data'})
             ..add(GqlField(name: 'status')),
         ),
       );

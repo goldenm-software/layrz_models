@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.14.0
+
+- PushSecrets model; RegisteredApp iosPushSecrets/androidPushSecrets (typed) and hasSvcPushSecrets (boolean status).
+- Operation/OperationInput appId for app-bound PUSH_NOTIFICATION operations.
+- App management API callers on RegisteredApp (fetch, setPushSecrets, access grant/revoke, asset/device import), AppInstance (deprecate/migrate/request), User (loginAs).
+- Operations API callers (fetch, fetchAll, save, delete).
+- GqlVariableType redesigned as a composable type builder (list(of:, isRequired:)/input(of:)); GqlVariable simplified.
+
 ## 3.13.3
 
 - Made `performedBy` nullable (`User?`) in `MappitRouteLinkingHistory`. When an employee is removed, the relation is soft-deleted and the backend sends `performedBy: null` for historical records, while `performedById` still holds the plain ID. The previous non-nullable declaration crashed `fromJson` with `type 'Null' is not a subtype of type 'Map<String, dynamic>'`. This aligns `performedBy` with the already-nullable `currentSeller` field.
