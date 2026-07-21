@@ -6337,6 +6337,281 @@ as String?,
 
 
 /// @nodoc
+mixin _$PushDevice {
+
+/// [id] is the unique identifier of the push device (UUID string).
+ String get id;/// [appId] is the ID of the registered app this device is associated with.
+ String? get appId;/// [createdAt] is the timestamp when the device was registered.
+@TimestampOrNullConverter() DateTime? get createdAt;
+/// Create a copy of PushDevice
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PushDeviceCopyWith<PushDevice> get copyWith => _$PushDeviceCopyWithImpl<PushDevice>(this as PushDevice, _$identity);
+
+  /// Serializes this PushDevice to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PushDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,appId,createdAt);
+
+@override
+String toString() {
+  return 'PushDevice(id: $id, appId: $appId, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PushDeviceCopyWith<$Res>  {
+  factory $PushDeviceCopyWith(PushDevice value, $Res Function(PushDevice) _then) = _$PushDeviceCopyWithImpl;
+@useResult
+$Res call({
+ String id, String? appId,@TimestampOrNullConverter() DateTime? createdAt
+});
+
+
+
+
+}
+/// @nodoc
+class _$PushDeviceCopyWithImpl<$Res>
+    implements $PushDeviceCopyWith<$Res> {
+  _$PushDeviceCopyWithImpl(this._self, this._then);
+
+  final PushDevice _self;
+  final $Res Function(PushDevice) _then;
+
+/// Create a copy of PushDevice
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? appId = freezed,Object? createdAt = freezed,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,appId: freezed == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PushDevice].
+extension PushDevicePatterns on PushDevice {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PushDevice value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PushDevice() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PushDevice value)  $default,){
+final _that = this;
+switch (_that) {
+case _PushDevice():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PushDevice value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PushDevice() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? appId, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PushDevice() when $default != null:
+return $default(_that.id,_that.appId,_that.createdAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? appId, @TimestampOrNullConverter()  DateTime? createdAt)  $default,) {final _that = this;
+switch (_that) {
+case _PushDevice():
+return $default(_that.id,_that.appId,_that.createdAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? appId, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,) {final _that = this;
+switch (_that) {
+case _PushDevice() when $default != null:
+return $default(_that.id,_that.appId,_that.createdAt);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PushDevice implements PushDevice {
+  const _PushDevice({required this.id, this.appId, @TimestampOrNullConverter() this.createdAt});
+  factory _PushDevice.fromJson(Map<String, dynamic> json) => _$PushDeviceFromJson(json);
+
+/// [id] is the unique identifier of the push device (UUID string).
+@override final  String id;
+/// [appId] is the ID of the registered app this device is associated with.
+@override final  String? appId;
+/// [createdAt] is the timestamp when the device was registered.
+@override@TimestampOrNullConverter() final  DateTime? createdAt;
+
+/// Create a copy of PushDevice
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PushDeviceCopyWith<_PushDevice> get copyWith => __$PushDeviceCopyWithImpl<_PushDevice>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PushDeviceToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PushDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,appId,createdAt);
+
+@override
+String toString() {
+  return 'PushDevice(id: $id, appId: $appId, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PushDeviceCopyWith<$Res> implements $PushDeviceCopyWith<$Res> {
+  factory _$PushDeviceCopyWith(_PushDevice value, $Res Function(_PushDevice) _then) = __$PushDeviceCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String? appId,@TimestampOrNullConverter() DateTime? createdAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$PushDeviceCopyWithImpl<$Res>
+    implements _$PushDeviceCopyWith<$Res> {
+  __$PushDeviceCopyWithImpl(this._self, this._then);
+
+  final _PushDevice _self;
+  final $Res Function(_PushDevice) _then;
+
+/// Create a copy of PushDevice
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? appId = freezed,Object? createdAt = freezed,}) {
+  return _then(_PushDevice(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,appId: freezed == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$AppVersion {
 
  String get id;@JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) AppInternalIdentifier? get app;@JsonKey(unknownEnumValue: AppPlatform.web) AppPlatform? get platform; String? get fileUri; int get buildNumber; String get buildName;@TimestampConverter() DateTime get releasedAt;

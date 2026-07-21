@@ -657,6 +657,21 @@ Map<String, dynamic> _$PushSecretsInputToJson(_PushSecretsInput instance) =>
       'storageBucket': instance.storageBucket,
     };
 
+_PushDevice _$PushDeviceFromJson(Map<String, dynamic> json) => _PushDevice(
+  id: json['id'] as String,
+  appId: json['appId'] as String?,
+  createdAt: const TimestampOrNullConverter().fromJson(
+    json['createdAt'] as num?,
+  ),
+);
+
+Map<String, dynamic> _$PushDeviceToJson(_PushDevice instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'appId': instance.appId,
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+    };
+
 _AppVersion _$AppVersionFromJson(Map<String, dynamic> json) => _AppVersion(
   id: json['id'] as String,
   app: $enumDecodeNullable(

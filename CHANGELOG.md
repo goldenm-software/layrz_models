@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.16.0
+
+- Add `PushDevice` model with `validate()` API caller to check device registration status on the backend and retrieve associated operation IDs
+- Add `PushDevice.register()` to register a new push device for an app and retrieve the created device ID
+- Add `PushDevice.bindOperations()` to bind or unbind a list of operations to a push device
+- Add `PushDevice.deregister()` to deregister a push device by its ID
+
 ## 3.15.2
 
 - Fix Operation GraphQL fragment: query `accountId` instead of `externalAccountId`, remove unexposed `emailTemplateId`, align `access` sub-selection with AccessPermission schema (id, read, write, manage, objectId, userId, module)
