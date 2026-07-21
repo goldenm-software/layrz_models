@@ -198,8 +198,7 @@ enum LayrzListingFormat {
   list,
   table,
   interactive,
-  wildcard
-  ;
+  wildcard;
 
   @override
   String toString() => toJson();

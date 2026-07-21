@@ -8,11 +8,9 @@ abstract class ZigbeeDeviceExpose with _$ZigbeeDeviceExpose {
     required String type,
     required String access,
     Map<String, dynamic>? params,
-    @JsonKey(unknownEnumValue: RenderWidget.unknown)
-    RenderWidget? widget,
+    @JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget? widget,
     DateTime? updatedAt,
   }) = _ZigbeeDeviceExpose;
 
-  factory ZigbeeDeviceExpose.fromJson(Map<String, dynamic> json) =>
-      _$ZigbeeDeviceExposeFromJson(json);
+  factory ZigbeeDeviceExpose.fromJson(Map<String, dynamic> json) => _$ZigbeeDeviceExposeFromJson(json);
 }

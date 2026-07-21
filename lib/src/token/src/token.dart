@@ -41,7 +41,7 @@ abstract class Token with _$Token {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
           ],
           name: 'fetchTokens',
         )..add(
@@ -100,8 +100,8 @@ abstract class Token with _$Token {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'tokenToExpire', type: .string, req: true, value: token),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'tokenToExpire', type: .string, isRequired: true, value: token),
           ],
           name: 'expireToken',
         )..add(
@@ -161,7 +161,7 @@ abstract class Token with _$Token {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'duration', type: .duration, value: duration?.inSeconds),
           ],
           name: 'createToken',

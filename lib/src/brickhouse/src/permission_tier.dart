@@ -11,8 +11,7 @@ enum BrickhouseBillingPeriod {
   @JsonValue('TWO_YEARLY')
   twoYearly,
   @JsonValue('UNKNOWN')
-  unknown
-  ;
+  unknown;
 
   String toJson() => _$BrickhouseBillingPeriodEnumMap[this] ?? 'UNKNOWN';
 

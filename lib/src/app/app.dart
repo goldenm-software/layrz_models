@@ -21,6 +21,7 @@ part 'src/design.dart';
 part 'src/instance.dart';
 part 'src/legal.dart';
 part 'src/login.dart';
+part 'src/push_secrets.dart';
 part 'src/version.dart';
 part 'src/font.dart';
 

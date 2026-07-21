@@ -18,6 +18,5 @@ abstract class CaclEquipmentEntity with _$CaclEquipmentEntity {
   /// Creates a new [CaclEquipmentEntity] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory CaclEquipmentEntity.fromJson(Map<String, dynamic> json) =>
-      _$CaclEquipmentEntityFromJson(json);
+  factory CaclEquipmentEntity.fromJson(Map<String, dynamic> json) => _$CaclEquipmentEntityFromJson(json);
 }

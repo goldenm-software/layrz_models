@@ -33,6 +33,5 @@ abstract class MeasurementsEntity with _$MeasurementsEntity {
   /// Creates a new [MeasurementsEntity] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory MeasurementsEntity.fromJson(Map<String, dynamic> json) =>
-      _$MeasurementsEntityFromJson(json);
+  factory MeasurementsEntity.fromJson(Map<String, dynamic> json) => _$MeasurementsEntityFromJson(json);
 }

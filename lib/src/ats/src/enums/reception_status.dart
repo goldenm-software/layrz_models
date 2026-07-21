@@ -47,9 +47,8 @@ enum AtsReceptionStatus {
   }
 }
 
-
-  // ('GENERATED', 'Generated'),
-  // ('WAITING_PARAMS', 'Waiting for parameters'),
-  // ('ENTRY_IN_PROGRESS', 'Entry in progress'),
-  // ('FINISHED_SUCCESSFULLY', 'Finished successfully'),
-  // ('FINISHED_WITH_ERRORS', 'Finished with errors'),
+// ('GENERATED', 'Generated'),
+// ('WAITING_PARAMS', 'Waiting for parameters'),
+// ('ENTRY_IN_PROGRESS', 'Entry in progress'),
+// ('FINISHED_SUCCESSFULLY', 'Finished successfully'),
+// ('FINISHED_WITH_ERRORS', 'Finished with errors'),

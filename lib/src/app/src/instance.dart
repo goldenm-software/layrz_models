@@ -54,6 +54,149 @@ abstract class AppInstance with _$AppInstance {
   }) = _AppInstance;
 
   factory AppInstance.fromJson(Map<String, dynamic> json) => _$AppInstanceFromJson(json);
+
+  /// [deprecateInstance] marks an app instance as deprecated.
+  /// Returns true on success, false on error.
+  static Future<bool> deprecateInstance({
+    required String instanceId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: GqlVariableType.string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'instanceId', type: GqlVariableType.string, isRequired: true, value: instanceId),
+          ],
+          name: 'deprecateInstance',
+        )..add(
+          GqlField(name: 'deprecateInstance', args: {'apiToken': 'apiToken', 'instanceId': 'instanceId'})
+            ..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/AppInstance/deprecateInstance(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['deprecateInstance'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/AppInstance/deprecateInstance(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/AppInstance/deprecateInstance(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [migrateInstance] migrates an app instance.
+  /// Returns true on success, false on error.
+  static Future<bool> migrateInstance({
+    required String instanceId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: GqlVariableType.string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'instanceId', type: GqlVariableType.string, isRequired: true, value: instanceId),
+          ],
+          name: 'migrateInstance',
+        )..add(
+          GqlField(name: 'migrateInstance', args: {'apiToken': 'apiToken', 'instanceId': 'instanceId'})
+            ..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/AppInstance/migrateInstance(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['migrateInstance'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/AppInstance/migrateInstance(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/AppInstance/migrateInstance(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [requestInstance] requests creation of a new app instance.
+  /// Returns true on success, false on error.
+  static Future<bool> requestInstance({
+    required Map<String, dynamic> data,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: GqlVariableType.string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'data',
+              type: .input(of: 'AppInstanceInput'),
+              isRequired: true,
+              value: data,
+            ),
+          ],
+          name: 'requestInstance',
+        )..add(
+          GqlField(name: 'requestInstance', args: {'apiToken': 'apiToken', 'data': 'data'})
+            ..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final responseData = response.data;
+      if (responseData == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/AppInstance/requestInstance(): No response from server");
+        return false;
+      }
+
+      final result = responseData['data']['requestInstance'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/AppInstance/requestInstance(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/AppInstance/requestInstance(): General exception => $e\n$stack");
+      return false;
+    }
+  }
 }
 
 @freezed

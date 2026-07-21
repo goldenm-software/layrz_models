@@ -81,8 +81,7 @@ enum ConfigSource {
   /// [unknown] refers that the command definition is unknown.
   /// Layrz API Definition: `UNKNOWN`
   @JsonValue('UNKNOWN')
-  unknown
-  ;
+  unknown;
 
   @override
   String toString() => toJson();

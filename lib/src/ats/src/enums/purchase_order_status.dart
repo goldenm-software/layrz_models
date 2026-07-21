@@ -29,8 +29,7 @@ enum AtsPurchaseOrderStatus {
   @JsonValue('ORDER_RECEIVED')
   orderReceived,
   @JsonValue('NFE_CHANGED')
-  nfeChanged
-  ;
+  nfeChanged;
 
   @override
   String toString() => toJson();

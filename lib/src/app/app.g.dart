@@ -158,59 +158,67 @@ Map<String, dynamic> _$AvailableAppInputToJson(_AvailableAppInput instance) =>
       'hasKeychain': instance.hasKeychain,
     };
 
-_RegisteredApp _$RegisteredAppFromJson(Map<String, dynamic> json) =>
-    _RegisteredApp(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      technology:
-          $enumDecodeNullable(
-            _$AppTechnologyEnumMap,
-            json['technology'],
-            unknownValue: AppTechnology.flutter,
-          ) ??
-          AppTechnology.flutter,
-      legalInformation: json['legalInformation'] == null
-          ? null
-          : AppLegal.fromJson(json['legalInformation'] as Map<String, dynamic>),
-      designInformation: json['designInformation'] == null
-          ? null
-          : AppDesign.fromJson(
-              json['designInformation'] as Map<String, dynamic>,
-            ),
-      nickname: json['nickname'] as String,
-      isCustomized: json['isCustomized'] as bool?,
-      instances: (json['instances'] as List<dynamic>?)
-          ?.map((e) => AppInstance.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      importedAssets: (json['importedAssets'] as List<dynamic>?)
-          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      importedDevices: (json['importedDevices'] as List<dynamic>?)
-          ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      importedUsers: (json['importedUsers'] as List<dynamic>?)
-          ?.map((e) => User.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      keychain: (json['keychain'] as List<dynamic>?)
-          ?.map((e) => User.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      sourceId: json['sourceId'] as String,
-      owner: json['owner'] == null
-          ? null
-          : User.fromJson(json['owner'] as Map<String, dynamic>),
-      allowedReports: (json['allowedReports'] as List<dynamic>?)
-          ?.map((e) => CustomReport.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      fixedWorkspaceId: json['fixedWorkspaceId'] as String?,
-      fixedWorkspace: json['fixedWorkspace'] == null
-          ? null
-          : Workspace.fromJson(json['fixedWorkspace'] as Map<String, dynamic>),
-      authorizedLayers:
-          (json['authorizedLayers'] as List<dynamic>?)
-              ?.map((e) => MapLayer.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-    );
+_RegisteredApp _$RegisteredAppFromJson(
+  Map<String, dynamic> json,
+) => _RegisteredApp(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  technology:
+      $enumDecodeNullable(
+        _$AppTechnologyEnumMap,
+        json['technology'],
+        unknownValue: AppTechnology.flutter,
+      ) ??
+      AppTechnology.flutter,
+  legalInformation: json['legalInformation'] == null
+      ? null
+      : AppLegal.fromJson(json['legalInformation'] as Map<String, dynamic>),
+  designInformation: json['designInformation'] == null
+      ? null
+      : AppDesign.fromJson(json['designInformation'] as Map<String, dynamic>),
+  nickname: json['nickname'] as String,
+  isCustomized: json['isCustomized'] as bool?,
+  instances: (json['instances'] as List<dynamic>?)
+      ?.map((e) => AppInstance.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  importedAssets: (json['importedAssets'] as List<dynamic>?)
+      ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  importedDevices: (json['importedDevices'] as List<dynamic>?)
+      ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  importedUsers: (json['importedUsers'] as List<dynamic>?)
+      ?.map((e) => User.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  keychain: (json['keychain'] as List<dynamic>?)
+      ?.map((e) => User.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  sourceId: json['sourceId'] as String,
+  owner: json['owner'] == null
+      ? null
+      : User.fromJson(json['owner'] as Map<String, dynamic>),
+  allowedReports: (json['allowedReports'] as List<dynamic>?)
+      ?.map((e) => CustomReport.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  fixedWorkspaceId: json['fixedWorkspaceId'] as String?,
+  fixedWorkspace: json['fixedWorkspace'] == null
+      ? null
+      : Workspace.fromJson(json['fixedWorkspace'] as Map<String, dynamic>),
+  authorizedLayers:
+      (json['authorizedLayers'] as List<dynamic>?)
+          ?.map((e) => MapLayer.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+  iosPushSecrets: json['iosPushSecrets'] == null
+      ? null
+      : PushSecrets.fromJson(json['iosPushSecrets'] as Map<String, dynamic>),
+  androidPushSecrets: json['androidPushSecrets'] == null
+      ? null
+      : PushSecrets.fromJson(
+          json['androidPushSecrets'] as Map<String, dynamic>,
+        ),
+  hasSvcPushSecrets: json['hasSvcPushSecrets'] as bool?,
+);
 
 Map<String, dynamic> _$RegisteredAppToJson(
   _RegisteredApp instance,
@@ -233,6 +241,9 @@ Map<String, dynamic> _$RegisteredAppToJson(
   'fixedWorkspaceId': instance.fixedWorkspaceId,
   'fixedWorkspace': instance.fixedWorkspace?.toJson(),
   'authorizedLayers': instance.authorizedLayers.map((e) => e.toJson()).toList(),
+  'iosPushSecrets': instance.iosPushSecrets?.toJson(),
+  'androidPushSecrets': instance.androidPushSecrets?.toJson(),
+  'hasSvcPushSecrets': instance.hasSvcPushSecrets,
 };
 
 _AppThemedAsset _$AppThemedAssetFromJson(Map<String, dynamic> json) =>
@@ -610,6 +621,41 @@ Map<String, dynamic> _$AppLoginDesignInputToJson(
   'description': instance.description,
   'design': instance.design?.toJson(),
 };
+
+_PushSecrets _$PushSecretsFromJson(Map<String, dynamic> json) => _PushSecrets(
+  apiKey: json['apiKey'] as String?,
+  appId: json['appId'] as String?,
+  projectId: json['projectId'] as String?,
+  messagingSenderId: json['messagingSenderId'] as String?,
+  storageBucket: json['storageBucket'] as String?,
+);
+
+Map<String, dynamic> _$PushSecretsToJson(_PushSecrets instance) =>
+    <String, dynamic>{
+      'apiKey': instance.apiKey,
+      'appId': instance.appId,
+      'projectId': instance.projectId,
+      'messagingSenderId': instance.messagingSenderId,
+      'storageBucket': instance.storageBucket,
+    };
+
+_PushSecretsInput _$PushSecretsInputFromJson(Map<String, dynamic> json) =>
+    _PushSecretsInput(
+      apiKey: json['apiKey'] as String?,
+      appId: json['appId'] as String?,
+      projectId: json['projectId'] as String?,
+      messagingSenderId: json['messagingSenderId'] as String?,
+      storageBucket: json['storageBucket'] as String?,
+    );
+
+Map<String, dynamic> _$PushSecretsInputToJson(_PushSecretsInput instance) =>
+    <String, dynamic>{
+      'apiKey': instance.apiKey,
+      'appId': instance.appId,
+      'projectId': instance.projectId,
+      'messagingSenderId': instance.messagingSenderId,
+      'storageBucket': instance.storageBucket,
+    };
 
 _AppVersion _$AppVersionFromJson(Map<String, dynamic> json) => _AppVersion(
   id: json['id'] as String,

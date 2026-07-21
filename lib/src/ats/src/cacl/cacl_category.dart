@@ -9,8 +9,7 @@ enum CaclCategory {
   @JsonValue('UNLOAD')
   unload,
   @JsonValue('COMBINED_LOAD')
-  combinedLoad
-  ;
+  combinedLoad;
 
   @override
   String toString() => toJson();

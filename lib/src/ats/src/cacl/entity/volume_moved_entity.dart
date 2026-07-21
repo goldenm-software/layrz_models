@@ -18,6 +18,5 @@ abstract class VolumeMovedEntity with _$VolumeMovedEntity {
   /// Creates a new [VolumeMovedEntity] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory VolumeMovedEntity.fromJson(Map<String, dynamic> json) =>
-      _$VolumeMovedEntityFromJson(json);
+  factory VolumeMovedEntity.fromJson(Map<String, dynamic> json) => _$VolumeMovedEntityFromJson(json);
 }

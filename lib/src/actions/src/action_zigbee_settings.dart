@@ -45,6 +45,5 @@ abstract class ActionZigbeeSettingsInput with _$ActionZigbeeSettingsInput {
     @Default([]) List<ActionZigbeeSetting> settings,
   }) = _ActionZigbeeSettingsInput;
 
-  factory ActionZigbeeSettingsInput.fromJson(Map<String, dynamic> json) =>
-      _$ActionZigbeeSettingsInputFromJson(json);
+  factory ActionZigbeeSettingsInput.fromJson(Map<String, dynamic> json) => _$ActionZigbeeSettingsInputFromJson(json);
 }

@@ -92,7 +92,7 @@ abstract class MapLayer with _$MapLayer {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'id', type: .id, value: id),
           ],
           name: 'mapLayers',
@@ -152,7 +152,7 @@ abstract class MapLayer with _$MapLayer {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
           ],
           name: 'mapLayers',
         )..add(
@@ -218,8 +218,13 @@ abstract class MapLayer with _$MapLayer {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: ids),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'ids',
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'deleteMapLayers',
         )..add(

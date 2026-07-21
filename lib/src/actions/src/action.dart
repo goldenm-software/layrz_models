@@ -211,7 +211,12 @@ abstract class Action with _$Action {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: ids),
+            GqlVariable(
+              name: 'ids',
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'deleteActions',
         )..add(
@@ -338,7 +343,12 @@ abstract class ActionInput with _$ActionInput {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'data', type: .input, req: true, inputName: 'ActionInput', value: toJson()),
+            GqlVariable(
+              name: 'data',
+              type: .input(of: 'ActionInput'),
+              isRequired: true,
+              value: toJson(),
+            ),
           ],
           name: opName,
         )..add(

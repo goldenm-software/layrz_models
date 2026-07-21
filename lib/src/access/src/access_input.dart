@@ -54,8 +54,13 @@ abstract class AccessInput with _$AccessInput {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'data', type: .input, req: true, inputName: inputName, value: toJson()),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'data',
+              type: .input(of: inputName),
+              isRequired: true,
+              value: toJson(),
+            ),
           ],
           name: opName,
         )..add(
@@ -115,8 +120,13 @@ abstract class AccessInput with _$AccessInput {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'data', type: .input, req: true, inputName: inputName, value: toJson()),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'data',
+              type: .input(of: inputName),
+              isRequired: true,
+              value: toJson(),
+            ),
           ],
           name: opName,
         )..add(

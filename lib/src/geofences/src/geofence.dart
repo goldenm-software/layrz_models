@@ -10,7 +10,6 @@ abstract class Geofence with _$Geofence {
     required String name,
 
     /// Mode of geofence, check the documentation of GeofenceMode for more information.
-
     @JsonKey(unknownEnumValue: GeofenceMode.radial) required GeofenceMode mode,
 
     /// Description of the geofence.
