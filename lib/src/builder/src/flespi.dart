@@ -268,7 +268,7 @@ enum FlespiUri {
           FlespiSubmodule.commands,
           FlespiSubmodule.commandsQueue,
           FlespiSubmodule.commandsResult,
-          FlespiSubmodule.sms
+          FlespiSubmodule.sms,
         ];
       case FlespiUri.geofences:
         return [
@@ -281,7 +281,7 @@ enum FlespiUri {
           FlespiSubmodule.commands,
           FlespiSubmodule.commandsQueue,
           FlespiSubmodule.commandsResult,
-          FlespiSubmodule.sms
+          FlespiSubmodule.sms,
         ];
       case FlespiUri.containers:
         return [

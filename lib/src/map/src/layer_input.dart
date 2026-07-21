@@ -95,8 +95,13 @@ abstract class MapLayerInput with _$MapLayerInput {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'data', type: .input, req: true, inputName: 'MapLayerInput', value: toJson()),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'data',
+              type: .input(of: 'MapLayerInput'),
+              isRequired: true,
+              value: toJson(),
+            ),
           ],
           name: opName,
         )..add(

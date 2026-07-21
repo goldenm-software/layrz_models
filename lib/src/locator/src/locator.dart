@@ -129,7 +129,7 @@ abstract class Locator with _$Locator {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'id', type: .id, value: id),
           ],
           name: 'fetchLocators',
@@ -190,7 +190,7 @@ abstract class Locator with _$Locator {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
           ],
           name: 'fetchLocators',
         )..add(
@@ -280,8 +280,13 @@ abstract class Locator with _$Locator {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: [id]),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'ids',
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+              value: [id],
+            ),
           ],
           name: 'expireLocator',
         )..add(
@@ -339,8 +344,13 @@ abstract class Locator with _$Locator {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: ids),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'ids',
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'expireLocators',
         )..add(

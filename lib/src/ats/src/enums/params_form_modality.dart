@@ -5,8 +5,7 @@ enum ParamsFormModality {
   seta,
   balance,
   pa,
-  unknown
-  ;
+  unknown;
 
   String toJson() {
     switch (this) {

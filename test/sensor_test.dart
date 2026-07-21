@@ -34,7 +34,7 @@ void main() {
       "isInstant": true,
       "measuringUnit": "",
       "parameter": "",
-      "lastExit": null
+      "lastExit": null,
     };
 
     dynamic error;

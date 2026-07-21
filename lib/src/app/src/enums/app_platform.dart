@@ -1,4 +1,5 @@
 part of '../../app.dart';
+
 @JsonEnum(alwaysCreate: true)
 enum AppPlatform {
   @JsonValue('WEB')

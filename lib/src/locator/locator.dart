@@ -20,5 +20,3 @@ part 'src/boundary.dart';
 part 'src/locator.dart';
 part 'src/mqtt_config.dart';
 part 'src/locator_input.dart';
-
-

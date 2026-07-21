@@ -55,7 +55,7 @@ abstract class Gql {
 
     if (variables.isNotEmpty) {
       buffer.write('(');
-      buffer.write(variables.map((v) => '\$${v.name}: ${_renderType(v)}').join(', '));
+      buffer.write(variables.map((v) => '\$${v.name}: ${v.type.name}${v.isRequired ? '!' : ''}').join(', '));
       buffer.write(')');
     }
     buffer.write(' {\n');
@@ -89,41 +89,6 @@ abstract class Gql {
 
     visit(fields);
     return result;
-  }
-
-  String _renderType(GqlVariable v) {
-    String base;
-    switch (v.type) {
-      case GqlVariableType.string:
-        base = 'String';
-      case GqlVariableType.int:
-        base = 'Int';
-      case GqlVariableType.float:
-        base = 'Float';
-      case GqlVariableType.boolean:
-        base = 'Boolean';
-      case GqlVariableType.id:
-        base = 'ID';
-      case GqlVariableType.json:
-        base = 'Json';
-      case GqlVariableType.uuid:
-        base = 'Uuid';
-      case GqlVariableType.input:
-        base = v.inputName!;
-      case GqlVariableType.duration:
-        base = 'Duration';
-      case GqlVariableType.list:
-        final inner = _renderType(
-          GqlVariable(
-            name: v.name,
-            type: v.listOf!,
-            req: v.nestedRequired,
-            inputName: v.inputName,
-          ),
-        );
-        base = '[$inner]';
-    }
-    return v.req ? '$base!' : base;
   }
 
   String _writeField(GqlField field, {int depth = 0}) {

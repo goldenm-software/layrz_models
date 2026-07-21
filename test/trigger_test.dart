@@ -18,7 +18,7 @@ void main() {
         "id": '798',
         "name": "Brickhouse auto-generated trigger",
         "code": "BRICKHOUSE_ALERT_254",
-        "kind": "PRESENCEINGEOFENCE"
+        "kind": "PRESENCEINGEOFENCE",
       },
       "asset": {
         "__typename": "Asset",
@@ -33,7 +33,7 @@ void main() {
         "speed": 51.7,
         "direction": 80,
         "satellites": null,
-        "hdop": 1
+        "hdop": 1,
       },
       "sensors": [
         {"parameter": "report.code", "value": "GTFRI"},
@@ -42,10 +42,10 @@ void main() {
         {"parameter": "position.speed", "value": 26.1},
         {"parameter": "vehicle.mileage", "value": 3750.8},
         {"parameter": "engine.ignition.status", "value": false},
-        {"parameter": "external.powersource.voltage", "value": 12.766}
+        {"parameter": "external.powersource.voltage", "value": 12.766},
       ],
       "geofenceId": '7389',
-      "presenceType": "EXIT"
+      "presenceType": "EXIT",
     };
     TriggerActivation triggerActivation = TriggerActivation.fromJson(obj);
 

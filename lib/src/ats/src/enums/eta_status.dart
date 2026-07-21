@@ -11,8 +11,7 @@ enum AtsEtaStatus {
   @JsonValue('MEDIUM_ACCURACY')
   mediumAccuracy,
   @JsonValue('NOT_ENOUGH_DATA')
-  notEnoughData
-  ;
+  notEnoughData;
 
   @override
   String toString() => toJson();

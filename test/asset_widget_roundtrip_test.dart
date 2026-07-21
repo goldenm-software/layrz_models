@@ -54,7 +54,12 @@ void main() {
       'id': 'a2',
       'name': 'x',
       'widgets': [
-        {'device': 'd', 'widget': 'NOT_A_REAL_KIND', 'expose': 'e', 'config': {'title': 't'}},
+        {
+          'device': 'd',
+          'widget': 'NOT_A_REAL_KIND',
+          'expose': 'e',
+          'config': {'title': 't'},
+        },
       ],
     });
     expect(a2.widgets.first.widget, RenderWidget.unknown);

@@ -25,7 +25,7 @@ void main() {
                 "max": null,
                 "value": null,
                 "validator": "WHEN",
-                "validatorOperator": "DIFFERENT"
+                "validatorOperator": "DIFFERENT",
               },
               "configuration": {
                 "__typename": "ConciergeFormBlockConfiguration",
@@ -34,13 +34,13 @@ void main() {
                 "min": 0.0,
                 "max": 0.0,
                 "asInt": false,
-                "choices": []
-              }
-            }
-          ]
-        }
+                "choices": [],
+              },
+            },
+          ],
+        },
       ],
-      "access": []
+      "access": [],
     };
 
     final careProtocol = CareProtocol.fromJson(data);

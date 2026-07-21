@@ -74,7 +74,7 @@ void main() {
           "17",
           "28",
           "48",
-          "52"
+          "52",
         ],
         "allowedOutboundProtocolsIds": [
           "1",
@@ -118,7 +118,7 @@ void main() {
           "45",
           "46",
           "47",
-          "48"
+          "48",
         ],
         "allowedVisionProtocolsIds": [],
         "allowedExchangeProtocolsIds": [],

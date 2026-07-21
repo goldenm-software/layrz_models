@@ -18,6 +18,5 @@ abstract class VolumeMovedInput with _$VolumeMovedInput {
   /// Creates a new [VolumeMovedInput] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory VolumeMovedInput.fromJson(Map<String, dynamic> json) =>
-      _$VolumeMovedInputFromJson(json);
+  factory VolumeMovedInput.fromJson(Map<String, dynamic> json) => _$VolumeMovedInputFromJson(json);
 }
