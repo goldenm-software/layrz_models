@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.14.1
+
+- Expanded `Operation.gqlFragment` to cover the full operation configuration (webhook, email, SMS/Twilio, push, in-app fields) so `Operation.fetch`/`fetchAll` return complete data.
+
 ## 3.14.0
 
 - PushSecrets model; RegisteredApp iosPushSecrets/androidPushSecrets (typed) and hasSvcPushSecrets (boolean status).
