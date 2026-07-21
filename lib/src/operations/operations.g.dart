@@ -78,6 +78,7 @@ _Operation _$OperationFromJson(Map<String, dynamic> json) => _Operation(
   icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
   duration: const DurationOrNullConverter().fromJson(json['duration'] as num?),
   layrzTemplate: json['layrzTemplate'] as String?,
+  appId: json['appId'] as String?,
 );
 
 Map<String, dynamic> _$OperationToJson(_Operation instance) =>
@@ -114,6 +115,7 @@ Map<String, dynamic> _$OperationToJson(_Operation instance) =>
       'icon': const IconOrNullConverter().toJson(instance.icon),
       'duration': const DurationOrNullConverter().toJson(instance.duration),
       'layrzTemplate': instance.layrzTemplate,
+      'appId': instance.appId,
     };
 
 const _$OperationTypeEnumMap = {
@@ -238,6 +240,7 @@ _OperationInput _$OperationInputFromJson(
       ? const Duration(seconds: 5)
       : const DurationConverter().fromJson(json['duration'] as num),
   layrzTemplate: json['layrzTemplate'] as String?,
+  appId: json['appId'] as String?,
 );
 
 Map<String, dynamic> _$OperationInputToJson(_OperationInput instance) =>
@@ -271,6 +274,7 @@ Map<String, dynamic> _$OperationInputToJson(_OperationInput instance) =>
       'icon': const IconOrNullConverter().toJson(instance.icon),
       'duration': const DurationConverter().toJson(instance.duration),
       'layrzTemplate': instance.layrzTemplate,
+      'appId': instance.appId,
     };
 
 _HttpHeader _$HttpHeaderFromJson(Map<String, dynamic> json) =>

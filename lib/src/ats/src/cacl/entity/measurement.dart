@@ -27,6 +27,5 @@ abstract class CaclMeasurementOutput with _$CaclMeasurementOutput {
   /// Creates a new [CaclMeasurementOutput] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory CaclMeasurementOutput.fromJson(Map<String, dynamic> json) =>
-      _$CaclMeasurementOutputFromJson(json);
+  factory CaclMeasurementOutput.fromJson(Map<String, dynamic> json) => _$CaclMeasurementOutputFromJson(json);
 }

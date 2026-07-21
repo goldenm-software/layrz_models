@@ -18,6 +18,5 @@ abstract class MeasurementInput with _$MeasurementInput {
   /// Creates a new [MeasurementInput] instance from a JSON map.
   ///
   /// The [json] parameter is the JSON map to create the instance from.
-  factory MeasurementInput.fromJson(Map<String, dynamic> json) =>
-      _$MeasurementInputFromJson(json);
+  factory MeasurementInput.fromJson(Map<String, dynamic> json) => _$MeasurementInputFromJson(json);
 }

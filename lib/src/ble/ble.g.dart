@@ -48,38 +48,35 @@ Map<String, dynamic> _$BleServiceToJson(
   'characteristics': instance.characteristics?.map((e) => e.toJson()).toList(),
 };
 
-_BleServiceData _$BleServiceDataFromJson(Map<String, dynamic> json) =>
-    _BleServiceData(
-      uuid: (json['uuid'] as num).toInt(),
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-    );
+_BleServiceData _$BleServiceDataFromJson(Map<String, dynamic> json) => _BleServiceData(
+  uuid: (json['uuid'] as num).toInt(),
+  data: (json['data'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+);
 
-Map<String, dynamic> _$BleServiceDataToJson(_BleServiceData instance) =>
-    <String, dynamic>{'uuid': instance.uuid, 'data': instance.data};
+Map<String, dynamic> _$BleServiceDataToJson(_BleServiceData instance) => <String, dynamic>{
+  'uuid': instance.uuid,
+  'data': instance.data,
+};
 
-_BleCharacteristic _$BleCharacteristicFromJson(Map<String, dynamic> json) =>
-    _BleCharacteristic(
-      uuid: json['uuid'] as String,
-      properties:
-          (json['properties'] as List<dynamic>?)
-              ?.map(
-                (e) => $enumDecode(
-                  _$BlePropertyEnumMap,
-                  e,
-                  unknownValue: BleProperty.unknown,
-                ),
-              )
-              .toList() ??
-          const [],
-    );
+_BleCharacteristic _$BleCharacteristicFromJson(Map<String, dynamic> json) => _BleCharacteristic(
+  uuid: json['uuid'] as String,
+  properties:
+      (json['properties'] as List<dynamic>?)
+          ?.map(
+            (e) => $enumDecode(
+              _$BlePropertyEnumMap,
+              e,
+              unknownValue: BleProperty.unknown,
+            ),
+          )
+          .toList() ??
+      const [],
+);
 
-Map<String, dynamic> _$BleCharacteristicToJson(_BleCharacteristic instance) =>
-    <String, dynamic>{
-      'uuid': instance.uuid,
-      'properties': instance.properties.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$BleCharacteristicToJson(_BleCharacteristic instance) => <String, dynamic>{
+  'uuid': instance.uuid,
+  'properties': instance.properties.map((e) => e.toJson()).toList(),
+};
 
 const _$BlePropertyEnumMap = {
   BleProperty.broadcast: 'BROADCAST',
@@ -93,13 +90,10 @@ const _$BlePropertyEnumMap = {
   BleProperty.unknown: 'UNKNOWN',
 };
 
-_BleManufacturerData _$BleManufacturerDataFromJson(Map<String, dynamic> json) =>
-    _BleManufacturerData(
-      companyId: (json['companyId'] as num?)?.toInt() ?? 0x0000,
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-    );
+_BleManufacturerData _$BleManufacturerDataFromJson(Map<String, dynamic> json) => _BleManufacturerData(
+  companyId: (json['companyId'] as num?)?.toInt() ?? 0x0000,
+  data: (json['data'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+);
 
 Map<String, dynamic> _$BleManufacturerDataToJson(
   _BleManufacturerData instance,

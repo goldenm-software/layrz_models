@@ -15,7 +15,7 @@ void main() {
           'color': const ColorConverter().toJson(Colors.blue.shade300),
           'label': 'one.monitors.cases.customCards.pieChart.attempted',
           'value': 5,
-        }
+        },
       ],
     };
 

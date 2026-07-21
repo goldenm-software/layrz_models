@@ -21,5 +21,3 @@ part 'src/mapbox_style.dart';
 part 'src/map_source.dart';
 part 'src/poi.dart';
 part 'src/poi_input.dart';
-
-

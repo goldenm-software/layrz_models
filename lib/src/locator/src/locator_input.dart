@@ -81,8 +81,13 @@ abstract class LocatorInput with _$LocatorInput {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'data', type: .input, req: true, inputName: 'LocatorInput', value: toJson()),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'data',
+              type: .input(of: 'LocatorInput'),
+              isRequired: true,
+              value: toJson(),
+            ),
           ],
           name: opName,
         )..add(

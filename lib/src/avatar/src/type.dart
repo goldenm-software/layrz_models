@@ -20,8 +20,7 @@ enum AvatarType {
 
   /// Represents a Emoji
   @JsonValue('EMOJI')
-  emoji
-  ;
+  emoji;
 
   @override
   String toString() => toJson();

@@ -48,8 +48,13 @@ abstract class PoiInput with _$PoiInput {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'data', type: .input, req: true, inputName: 'PoiInput', value: toJson()),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'data',
+              type: .input(of: 'PoiInput'),
+              isRequired: true,
+              value: toJson(),
+            ),
           ],
           name: opName,
         )..add(

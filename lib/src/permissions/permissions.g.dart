@@ -57,12 +57,8 @@ Map<String, dynamic> _$GenericPermissionItemInputToJson(
 _GenericPermission _$GenericPermissionFromJson(
   Map<String, dynamic> json,
 ) => _GenericPermission(
-  apps: json['apps'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['apps'] as Map<String, dynamic>),
-  users: json['users'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['users'] as Map<String, dynamic>),
+  apps: json['apps'] == null ? null : GenericPermissionItem.fromJson(json['apps'] as Map<String, dynamic>),
+  users: json['users'] == null ? null : GenericPermissionItem.fromJson(json['users'] as Map<String, dynamic>),
   firmwares: json['firmwares'] == null
       ? null
       : GenericPermissionItem.fromJson(
@@ -93,37 +89,30 @@ _GenericPermission _$GenericPermissionFromJson(
       : GenericPermissionItem.fromJson(
           json['protocols'] as Map<String, dynamic>,
         ),
-  billing: json['billing'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['billing'] as Map<String, dynamic>),
-  cycles: json['cycles'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['cycles'] as Map<String, dynamic>),
+  billing: json['billing'] == null ? null : GenericPermissionItem.fromJson(json['billing'] as Map<String, dynamic>),
+  cycles: json['cycles'] == null ? null : GenericPermissionItem.fromJson(json['cycles'] as Map<String, dynamic>),
   shortcuts: json['shortcuts'] == null
       ? null
       : GenericPermissionItem.fromJson(
           json['shortcuts'] as Map<String, dynamic>,
         ),
-  layers: json['layers'] == null
-      ? null
-      : GenericPermissionItem.fromJson(json['layers'] as Map<String, dynamic>),
+  layers: json['layers'] == null ? null : GenericPermissionItem.fromJson(json['layers'] as Map<String, dynamic>),
 );
 
-Map<String, dynamic> _$GenericPermissionToJson(_GenericPermission instance) =>
-    <String, dynamic>{
-      'apps': instance.apps?.toJson(),
-      'users': instance.users?.toJson(),
-      'firmwares': instance.firmwares?.toJson(),
-      'employees': instance.employees?.toJson(),
-      'languages': instance.languages?.toJson(),
-      'categories': instance.categories?.toJson(),
-      'departments': instance.departments?.toJson(),
-      'protocols': instance.protocols?.toJson(),
-      'billing': instance.billing?.toJson(),
-      'cycles': instance.cycles?.toJson(),
-      'shortcuts': instance.shortcuts?.toJson(),
-      'layers': instance.layers?.toJson(),
-    };
+Map<String, dynamic> _$GenericPermissionToJson(_GenericPermission instance) => <String, dynamic>{
+  'apps': instance.apps?.toJson(),
+  'users': instance.users?.toJson(),
+  'firmwares': instance.firmwares?.toJson(),
+  'employees': instance.employees?.toJson(),
+  'languages': instance.languages?.toJson(),
+  'categories': instance.categories?.toJson(),
+  'departments': instance.departments?.toJson(),
+  'protocols': instance.protocols?.toJson(),
+  'billing': instance.billing?.toJson(),
+  'cycles': instance.cycles?.toJson(),
+  'shortcuts': instance.shortcuts?.toJson(),
+  'layers': instance.layers?.toJson(),
+};
 
 _GenericPermissionInput _$GenericPermissionInputFromJson(
   Map<String, dynamic> json,

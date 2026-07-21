@@ -13,7 +13,7 @@ void main() {
         "platform": "ANDROID",
         "buildNumber": 43,
         "buildName": "2022.11.43",
-        "releasedAt": 1667507797.467219
+        "releasedAt": 1667507797.467219,
       };
       AppVersion appVersion = AppVersion.fromJson(data);
       expect(appVersion.id, "216");

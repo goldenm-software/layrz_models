@@ -90,8 +90,7 @@ enum InboundPayloadStructureType {
   string,
   integer,
   boolean,
-  float
-  ;
+  float;
 
   @override
   String toString() => toJson();

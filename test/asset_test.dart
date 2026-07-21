@@ -40,8 +40,8 @@ void main() {
           "csvHeaders": [],
           "csvSeparator": ",",
           "contentType": null,
-          "functionId": null
-        }
+          "functionId": null,
+        },
       ],
       "authenticatedUsersIds": [],
       "authenticatedAssetsIds": [],
@@ -75,7 +75,7 @@ void main() {
             "custom.heartbeat",
             "image.name",
             "image.bin.jpeg",
-            "custom.s_on"
+            "custom.s_on",
           ],
           "protocol": {
             "__typename": "InboundProtocol",
@@ -83,9 +83,9 @@ void main() {
             "name": "wiatag",
             "operationMode": "REALTIME",
             "isEnabled": true,
-            "color": "green darken-2"
-          }
-        }
+            "color": "green darken-2",
+          },
+        },
       ],
       "devicesIds": ["28"],
       "referencesIds": [],
@@ -95,7 +95,7 @@ void main() {
       "authenticatedAssets": [],
       "authenticatedUsers": [],
       "children": [],
-      "telemetry": null
+      "telemetry": null,
     };
 
     final asset = Asset.fromJson(data);

@@ -1,16 +1,27 @@
 part of '../../api.dart';
 
-enum GqlVariableType {
-  string,
-  int,
-  float,
-  boolean,
-  id,
-  json,
-  uuid,
-  list,
-  input,
-  duration,
+class GqlVariableType {
+  final String name;
+  const GqlVariableType._(this.name);
+
+  static const string = GqlVariableType._('String');
+  static const int = GqlVariableType._('Int');
+  static const float = GqlVariableType._('Float');
+  static const boolean = GqlVariableType._('Boolean');
+  static const id = GqlVariableType._('ID');
+  static const json = GqlVariableType._('Json');
+  static const uuid = GqlVariableType._('Uuid');
+  static const duration = GqlVariableType._('Duration');
+
+  static GqlVariableType list({required GqlVariableType of, bool isRequired = false}) {
+    if (isRequired) {
+      return GqlVariableType._('[${of.name}!]');
+    } else {
+      return GqlVariableType._('[${of.name}]');
+    }
+  }
+
+  static GqlVariableType input({required String of}) => GqlVariableType._(of);
 }
 
 class GqlVariable {
@@ -21,17 +32,7 @@ class GqlVariable {
   final GqlVariableType type;
 
   /// `!` on the outer type — e.g. `ID!`, `[ID]!`, `[ID!]!`.
-  final bool req;
-
-  /// `!` on the list element type. Legacy API uses `[ID]!` (nestedRequired: false),
-  /// modern uses `[ID!]!` (nestedRequired: true). Ignored unless type == list.
-  final bool nestedRequired;
-
-  /// For type == list: the element scalar type. Cannot itself be list.
-  final GqlVariableType? listOf;
-
-  /// For type == input: the GraphQL input type name, e.g. 'ChartInput', 'AccessPermissionUuidInput'.
-  final String? inputName;
+  final bool isRequired;
 
   /// Runtime value serialized into the request's variables map.
   /// null means the variable is declared but omitted from the wire payload.
@@ -40,32 +41,7 @@ class GqlVariable {
   const GqlVariable({
     required this.name,
     required this.type,
-    this.req = false,
-    this.nestedRequired = false,
-    this.listOf,
-    this.inputName,
+    this.isRequired = false,
     this.value,
-  }) : assert(
-         type != GqlVariableType.list || listOf != null,
-         'GqlVariable.listOf is required when type == list',
-       ),
-       assert(
-         type != GqlVariableType.list || listOf != GqlVariableType.list,
-         'Nested lists are not supported',
-       ),
-       assert(
-         type != GqlVariableType.input || inputName != null,
-         'GqlVariable.inputName is required when type == input',
-       );
-
-  /// Returns a copy with a runtime [value] attached.
-  GqlVariable withValue(Object? value) => GqlVariable(
-    name: name,
-    type: type,
-    req: req,
-    nestedRequired: nestedRequired,
-    listOf: listOf,
-    inputName: inputName,
-    value: value,
-  );
+  });
 }

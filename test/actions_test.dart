@@ -21,7 +21,7 @@ void main() {
           "whoOwner": "NONE",
           "mappitRouteId": null,
         },
-        "access": []
+        "access": [],
       };
 
       final action = ActionInput.fromJson(data);

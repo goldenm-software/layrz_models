@@ -11,8 +11,7 @@ enum ReportAlgorithm {
 
   /// Is the report template algorithm for PYTHON
   @JsonValue('PYTHON')
-  python
-  ;
+  python;
 
   @override
   String toString() => toJson();

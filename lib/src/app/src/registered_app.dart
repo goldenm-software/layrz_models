@@ -43,6 +43,15 @@ abstract class RegisteredApp with _$RegisteredApp {
 
     /// [authorizedLayers] is the list of layers authorized to be used by the app.
     @Default([]) List<MapLayer> authorizedLayers,
+
+    /// [iosPushSecrets] is the decrypted iOS Firebase credentials for layrz_push
+    PushSecrets? iosPushSecrets,
+
+    /// [androidPushSecrets] is the decrypted Android Firebase credentials for layrz_push
+    PushSecrets? androidPushSecrets,
+
+    /// true when the backend holds service-account push credentials; content never exposed.
+    bool? hasSvcPushSecrets,
   }) = _RegisteredApp;
 
   factory RegisteredApp.fromJson(Map<String, dynamic> json) => _$RegisteredAppFromJson(json);
@@ -65,7 +74,7 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
           ],
           name: 'fetchRegisteredApps',
         )..add(
@@ -105,6 +114,501 @@ abstract class RegisteredApp with _$RegisteredApp {
     }
   }
 
+  /// [fetch] fetches a single registered app by ID from the server.
+  /// It returns a [RegisteredApp] with the required contextual information or null on error.
+  static Future<RegisteredApp?> fetch({
+    required String id,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'id', type: .string, isRequired: true, value: id),
+          ],
+          name: 'fetchRegisteredApp',
+        )..add(
+          GqlField(name: 'registeredApps', args: {'apiToken': 'apiToken', 'id': 'id'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/fetch(): No response from server");
+        return null;
+      }
+
+      final result = data['data']['registeredApps'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/fetch(): No result from server");
+        return null;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return null;
+      }
+
+      onResponse?.call(status.toJson());
+      return result['result'] != null
+          ? RegisteredApp.fromJson(Map<String, dynamic>.from(result['result'] as Map))
+          : null;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/fetch(): General exception => $e\n$stack");
+      return null;
+    }
+  }
+
+  /// [setPushSecrets] sets push notification secrets for the app.
+  /// Accepts optional Firebase secrets for iOS, Android, and service account.
+  /// Returns true on success, false on error.
+  static Future<bool> setPushSecrets({
+    required String appId,
+    String? iosPushSecrets,
+    String? androidPushSecrets,
+    String? svcPushSecrets,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final variables = <GqlVariable>[
+        GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+        GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+      ];
+
+      if (iosPushSecrets != null) {
+        variables.add(GqlVariable(name: 'iosPushSecrets', type: .string, isRequired: false, value: iosPushSecrets));
+      }
+      if (androidPushSecrets != null) {
+        variables.add(GqlVariable(name: 'androidPushSecrets', type: .string, isRequired: false, value: androidPushSecrets));
+      }
+      if (svcPushSecrets != null) {
+        variables.add(GqlVariable(name: 'svcPushSecrets', type: .string, isRequired: false, value: svcPushSecrets));
+      }
+
+      final response = await connector.perform(
+        GqlMutation(
+          variables: variables,
+          name: 'setPushSecrets',
+        )..add(
+          GqlField(
+            name: 'setPushSecrets',
+            args: {
+              'apiToken': 'apiToken',
+              'appId': 'appId',
+              if (iosPushSecrets != null) 'iosPushSecrets': 'iosPushSecrets',
+              if (androidPushSecrets != null) 'androidPushSecrets': 'androidPushSecrets',
+              if (svcPushSecrets != null) 'svcPushSecrets': 'svcPushSecrets',
+            },
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/setPushSecrets(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['setPushSecrets'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/setPushSecrets(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/setPushSecrets(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [grantAccessToApp] grants a user access to the app.
+  /// Returns true on success, false on error.
+  static Future<bool> grantAccessToApp({
+    required String userId,
+    required String appId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
+          ],
+          name: 'grantAccessToApp',
+        )..add(
+          GqlField(name: 'grantAccessToApp', args: {'apiToken': 'apiToken', 'appId': 'appId', 'userId': 'userId'})
+            ..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/grantAccessToApp(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['grantAccessToApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/grantAccessToApp(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/grantAccessToApp(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [grantMultipleAccessToApp] grants multiple users access to the app.
+  /// Returns true on success, false on error.
+  static Future<bool> grantMultipleAccessToApp({
+    required List<String> userIds,
+    required String appId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(
+              name: 'userIds',
+              type: .list(of: .string, isRequired: true),
+              isRequired: true,
+              value: userIds,
+            ),
+          ],
+          name: 'grantMultipleAccessToApp',
+        )..add(
+          GqlField(
+            name: 'grantMultipleAccessToApp',
+            args: {'apiToken': 'apiToken', 'appId': 'appId', 'userIds': 'userIds'},
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/grantMultipleAccessToApp(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['grantMultipleAccessToApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/grantMultipleAccessToApp(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/grantMultipleAccessToApp(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [revokeAccessToApp] revokes user access to the app.
+  /// Returns true on success, false on error.
+  static Future<bool> revokeAccessToApp({
+    required String userId,
+    required String appId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
+          ],
+          name: 'revokeAccessToApp',
+        )..add(
+          GqlField(name: 'revokeAccessToApp', args: {'apiToken': 'apiToken', 'appId': 'appId', 'userId': 'userId'})
+            ..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/revokeAccessToApp(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['revokeAccessToApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/revokeAccessToApp(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/revokeAccessToApp(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [importAssetsIntoApp] imports assets into the app.
+  /// Returns true on success, false on error.
+  static Future<bool> importAssetsIntoApp({
+    required List<String> assetIds,
+    required String appId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(
+              name: 'assetIds',
+              type: .list(of: .string, isRequired: true),
+              isRequired: true,
+              value: assetIds,
+            ),
+          ],
+          name: 'importAssetsIntoApp',
+        )..add(
+          GqlField(
+            name: 'importAssetsIntoApp',
+            args: {'apiToken': 'apiToken', 'appId': 'appId', 'assetIds': 'assetIds'},
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/importAssetsIntoApp(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['importAssetsIntoApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/importAssetsIntoApp(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/importAssetsIntoApp(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [revokeAssetsFromApp] revokes assets from the app.
+  /// Returns true on success, false on error.
+  static Future<bool> revokeAssetsFromApp({
+    required List<String> assetIds,
+    required String appId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(
+              name: 'assetIds',
+              type: .list(of: .string, isRequired: true),
+              isRequired: true,
+              value: assetIds,
+            ),
+          ],
+          name: 'revokeAssetsFromApp',
+        )..add(
+          GqlField(
+            name: 'revokeAssetsFromApp',
+            args: {'apiToken': 'apiToken', 'appId': 'appId', 'assetIds': 'assetIds'},
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/revokeAssetsFromApp(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['revokeAssetsFromApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/revokeAssetsFromApp(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/revokeAssetsFromApp(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [importDevicesIntoApp] imports devices into the app.
+  /// Returns true on success, false on error.
+  static Future<bool> importDevicesIntoApp({
+    required List<String> deviceIds,
+    required String appId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(
+              name: 'deviceIds',
+              type: .list(of: .string, isRequired: true),
+              isRequired: true,
+              value: deviceIds,
+            ),
+          ],
+          name: 'importDevicesIntoApp',
+        )..add(
+          GqlField(
+            name: 'importDevicesIntoApp',
+            args: {'apiToken': 'apiToken', 'appId': 'appId', 'deviceIds': 'deviceIds'},
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/importDevicesIntoApp(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['importDevicesIntoApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/importDevicesIntoApp(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/importDevicesIntoApp(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [revokeDevicesFromApp] revokes devices from the app.
+  /// Returns true on success, false on error.
+  static Future<bool> revokeDevicesFromApp({
+    required List<String> deviceIds,
+    required String appId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(
+              name: 'deviceIds',
+              type: .list(of: .string, isRequired: true),
+              isRequired: true,
+              value: deviceIds,
+            ),
+          ],
+          name: 'revokeDevicesFromApp',
+        )..add(
+          GqlField(
+            name: 'revokeDevicesFromApp',
+            args: {'apiToken': 'apiToken', 'appId': 'appId', 'deviceIds': 'deviceIds'},
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/revokeDevicesFromApp(): No response from server");
+        return false;
+      }
+
+      final result = data['data']['revokeDevicesFromApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/revokeDevicesFromApp(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/revokeDevicesFromApp(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
   /// [gqlFragment] is the GqlFragment for a registered app.
   static GqlFragment get gqlFragment => GqlFragment(name: 'registeredAppFragment', onType: 'RegisteredApp')
     ..add(GqlField(name: 'id'))
@@ -136,5 +640,22 @@ abstract class RegisteredApp with _$RegisteredApp {
             ..add(GqlField(name: 'white')),
         )
         ..add(GqlField(name: 'appicon')),
-    );
+    )
+    ..add(
+      GqlField(name: 'iosPushSecrets')
+        ..add(GqlField(name: 'apiKey'))
+        ..add(GqlField(name: 'appId'))
+        ..add(GqlField(name: 'projectId'))
+        ..add(GqlField(name: 'messagingSenderId'))
+        ..add(GqlField(name: 'storageBucket')),
+    )
+    ..add(
+      GqlField(name: 'androidPushSecrets')
+        ..add(GqlField(name: 'apiKey'))
+        ..add(GqlField(name: 'appId'))
+        ..add(GqlField(name: 'projectId'))
+        ..add(GqlField(name: 'messagingSenderId'))
+        ..add(GqlField(name: 'storageBucket')),
+    )
+    ..add(GqlField(name: 'hasSvcPushSecrets'));
 }

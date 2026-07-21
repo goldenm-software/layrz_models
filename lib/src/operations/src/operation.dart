@@ -124,6 +124,9 @@ abstract class Operation with _$Operation {
 
     /// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
     String? layrzTemplate,
+
+    /// [appId] binds PUSH_NOTIFICATION-type operations to a RegisteredApp via its ID; set via mutation
+    String? appId,
   }) = _Operation;
 
   factory Operation.fromJson(Map<String, dynamic> json) => _$OperationFromJson(json);
@@ -245,6 +248,9 @@ abstract class OperationInput with _$OperationInput {
 
     /// [layrzTemplate] is the content SID to use for [OperationType.sms] and [OperationType.whatsappMessage].
     String? layrzTemplate,
+
+    /// [appId] binds PUSH_NOTIFICATION-type operations to a RegisteredApp via its ID; set via mutation
+    String? appId,
   }) = _OperationInput;
 
   factory OperationInput.fromJson(Map<String, dynamic> json) => _$OperationInputFromJson(json);

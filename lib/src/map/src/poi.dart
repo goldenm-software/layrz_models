@@ -49,7 +49,7 @@ abstract class Poi with _$Poi {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'id', type: .id, value: id),
           ],
           name: 'pois',
@@ -110,7 +110,7 @@ abstract class Poi with _$Poi {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
           ],
           name: 'pois',
         )..add(
@@ -177,8 +177,13 @@ abstract class Poi with _$Poi {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, req: true, value: apiToken),
-            GqlVariable(name: 'ids', type: .list, listOf: .id, req: true, nestedRequired: true, value: ids),
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(
+              name: 'ids',
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'deletePois',
         )..add(

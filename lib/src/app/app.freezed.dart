@@ -1017,7 +1017,10 @@ mixin _$RegisteredApp {
  List<CustomReport>? get allowedReports;/// [fixedWorkspaceId] is the id of the fixed workspace of the app.
  String? get fixedWorkspaceId;/// [fixedWorkspace] is the fixed workspace of the app.
  Workspace? get fixedWorkspace;/// [authorizedLayers] is the list of layers authorized to be used by the app.
- List<MapLayer> get authorizedLayers;
+ List<MapLayer> get authorizedLayers;/// [iosPushSecrets] is the decrypted iOS Firebase credentials for layrz_push
+ PushSecrets? get iosPushSecrets;/// [androidPushSecrets] is the decrypted Android Firebase credentials for layrz_push
+ PushSecrets? get androidPushSecrets;/// true when the backend holds service-account push credentials; content never exposed.
+ bool? get hasSvcPushSecrets;
 /// Create a copy of RegisteredApp
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1030,16 +1033,16 @@ $RegisteredAppCopyWith<RegisteredApp> get copyWith => _$RegisteredAppCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other.instances, instances)&&const DeepCollectionEquality().equals(other.importedAssets, importedAssets)&&const DeepCollectionEquality().equals(other.importedDevices, importedDevices)&&const DeepCollectionEquality().equals(other.importedUsers, importedUsers)&&const DeepCollectionEquality().equals(other.keychain, keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.allowedReports, allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other.authorizedLayers, authorizedLayers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other.instances, instances)&&const DeepCollectionEquality().equals(other.importedAssets, importedAssets)&&const DeepCollectionEquality().equals(other.importedDevices, importedDevices)&&const DeepCollectionEquality().equals(other.importedUsers, importedUsers)&&const DeepCollectionEquality().equals(other.keychain, keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.allowedReports, allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other.authorizedLayers, authorizedLayers)&&(identical(other.iosPushSecrets, iosPushSecrets) || other.iosPushSecrets == iosPushSecrets)&&(identical(other.androidPushSecrets, androidPushSecrets) || other.androidPushSecrets == androidPushSecrets)&&(identical(other.hasSvcPushSecrets, hasSvcPushSecrets) || other.hasSvcPushSecrets == hasSvcPushSecrets));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(instances),const DeepCollectionEquality().hash(importedAssets),const DeepCollectionEquality().hash(importedDevices),const DeepCollectionEquality().hash(importedUsers),const DeepCollectionEquality().hash(keychain),sourceId,owner,const DeepCollectionEquality().hash(allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(authorizedLayers));
+int get hashCode => Object.hashAll([runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(instances),const DeepCollectionEquality().hash(importedAssets),const DeepCollectionEquality().hash(importedDevices),const DeepCollectionEquality().hash(importedUsers),const DeepCollectionEquality().hash(keychain),sourceId,owner,const DeepCollectionEquality().hash(allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(authorizedLayers),iosPushSecrets,androidPushSecrets,hasSvcPushSecrets]);
 
 @override
 String toString() {
-  return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
+  return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers, iosPushSecrets: $iosPushSecrets, androidPushSecrets: $androidPushSecrets, hasSvcPushSecrets: $hasSvcPushSecrets)';
 }
 
 
@@ -1050,11 +1053,11 @@ abstract mixin class $RegisteredAppCopyWith<$Res>  {
   factory $RegisteredAppCopyWith(RegisteredApp value, $Res Function(RegisteredApp) _then) = _$RegisteredAppCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: AppTechnology.flutter) AppTechnology technology, AppLegal? legalInformation, AppDesign? designInformation, String nickname, bool? isCustomized, List<AppInstance>? instances, List<Asset>? importedAssets, List<Device>? importedDevices, List<User>? importedUsers, List<User>? keychain, String sourceId, User? owner, List<CustomReport>? allowedReports, String? fixedWorkspaceId, Workspace? fixedWorkspace, List<MapLayer> authorizedLayers
+ String id, String name,@JsonKey(unknownEnumValue: AppTechnology.flutter) AppTechnology technology, AppLegal? legalInformation, AppDesign? designInformation, String nickname, bool? isCustomized, List<AppInstance>? instances, List<Asset>? importedAssets, List<Device>? importedDevices, List<User>? importedUsers, List<User>? keychain, String sourceId, User? owner, List<CustomReport>? allowedReports, String? fixedWorkspaceId, Workspace? fixedWorkspace, List<MapLayer> authorizedLayers, PushSecrets? iosPushSecrets, PushSecrets? androidPushSecrets, bool? hasSvcPushSecrets
 });
 
 
-$AppLegalCopyWith<$Res>? get legalInformation;$AppDesignCopyWith<$Res>? get designInformation;$UserCopyWith<$Res>? get owner;$WorkspaceCopyWith<$Res>? get fixedWorkspace;
+$AppLegalCopyWith<$Res>? get legalInformation;$AppDesignCopyWith<$Res>? get designInformation;$UserCopyWith<$Res>? get owner;$WorkspaceCopyWith<$Res>? get fixedWorkspace;$PushSecretsCopyWith<$Res>? get iosPushSecrets;$PushSecretsCopyWith<$Res>? get androidPushSecrets;
 
 }
 /// @nodoc
@@ -1067,7 +1070,7 @@ class _$RegisteredAppCopyWithImpl<$Res>
 
 /// Create a copy of RegisteredApp
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? technology = null,Object? legalInformation = freezed,Object? designInformation = freezed,Object? nickname = null,Object? isCustomized = freezed,Object? instances = freezed,Object? importedAssets = freezed,Object? importedDevices = freezed,Object? importedUsers = freezed,Object? keychain = freezed,Object? sourceId = null,Object? owner = freezed,Object? allowedReports = freezed,Object? fixedWorkspaceId = freezed,Object? fixedWorkspace = freezed,Object? authorizedLayers = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? technology = null,Object? legalInformation = freezed,Object? designInformation = freezed,Object? nickname = null,Object? isCustomized = freezed,Object? instances = freezed,Object? importedAssets = freezed,Object? importedDevices = freezed,Object? importedUsers = freezed,Object? keychain = freezed,Object? sourceId = null,Object? owner = freezed,Object? allowedReports = freezed,Object? fixedWorkspaceId = freezed,Object? fixedWorkspace = freezed,Object? authorizedLayers = null,Object? iosPushSecrets = freezed,Object? androidPushSecrets = freezed,Object? hasSvcPushSecrets = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1087,7 +1090,10 @@ as User?,allowedReports: freezed == allowedReports ? _self.allowedReports : allo
 as List<CustomReport>?,fixedWorkspaceId: freezed == fixedWorkspaceId ? _self.fixedWorkspaceId : fixedWorkspaceId // ignore: cast_nullable_to_non_nullable
 as String?,fixedWorkspace: freezed == fixedWorkspace ? _self.fixedWorkspace : fixedWorkspace // ignore: cast_nullable_to_non_nullable
 as Workspace?,authorizedLayers: null == authorizedLayers ? _self.authorizedLayers : authorizedLayers // ignore: cast_nullable_to_non_nullable
-as List<MapLayer>,
+as List<MapLayer>,iosPushSecrets: freezed == iosPushSecrets ? _self.iosPushSecrets : iosPushSecrets // ignore: cast_nullable_to_non_nullable
+as PushSecrets?,androidPushSecrets: freezed == androidPushSecrets ? _self.androidPushSecrets : androidPushSecrets // ignore: cast_nullable_to_non_nullable
+as PushSecrets?,hasSvcPushSecrets: freezed == hasSvcPushSecrets ? _self.hasSvcPushSecrets : hasSvcPushSecrets // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 /// Create a copy of RegisteredApp
@@ -1137,6 +1143,30 @@ $WorkspaceCopyWith<$Res>? get fixedWorkspace {
 
   return $WorkspaceCopyWith<$Res>(_self.fixedWorkspace!, (value) {
     return _then(_self.copyWith(fixedWorkspace: value));
+  });
+}/// Create a copy of RegisteredApp
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PushSecretsCopyWith<$Res>? get iosPushSecrets {
+    if (_self.iosPushSecrets == null) {
+    return null;
+  }
+
+  return $PushSecretsCopyWith<$Res>(_self.iosPushSecrets!, (value) {
+    return _then(_self.copyWith(iosPushSecrets: value));
+  });
+}/// Create a copy of RegisteredApp
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PushSecretsCopyWith<$Res>? get androidPushSecrets {
+    if (_self.androidPushSecrets == null) {
+    return null;
+  }
+
+  return $PushSecretsCopyWith<$Res>(_self.androidPushSecrets!, (value) {
+    return _then(_self.copyWith(androidPushSecrets: value));
   });
 }
 }
@@ -1220,10 +1250,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets,  bool? hasSvcPushSecrets)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RegisteredApp() when $default != null:
-return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers);case _:
+return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets,_that.hasSvcPushSecrets);case _:
   return orElse();
 
 }
@@ -1241,10 +1271,10 @@ return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets,  bool? hasSvcPushSecrets)  $default,) {final _that = this;
 switch (_that) {
 case _RegisteredApp():
-return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers);case _:
+return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets,_that.hasSvcPushSecrets);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1261,10 +1291,10 @@ return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets,  bool? hasSvcPushSecrets)?  $default,) {final _that = this;
 switch (_that) {
 case _RegisteredApp() when $default != null:
-return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers);case _:
+return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets,_that.hasSvcPushSecrets);case _:
   return null;
 
 }
@@ -1276,7 +1306,7 @@ return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_tha
 @JsonSerializable()
 
 class _RegisteredApp extends RegisteredApp {
-  const _RegisteredApp({required this.id, required this.name, @JsonKey(unknownEnumValue: AppTechnology.flutter) this.technology = AppTechnology.flutter, this.legalInformation, this.designInformation, required this.nickname, this.isCustomized, final  List<AppInstance>? instances, final  List<Asset>? importedAssets, final  List<Device>? importedDevices, final  List<User>? importedUsers, final  List<User>? keychain, required this.sourceId, this.owner, final  List<CustomReport>? allowedReports, this.fixedWorkspaceId, this.fixedWorkspace, final  List<MapLayer> authorizedLayers = const []}): _instances = instances,_importedAssets = importedAssets,_importedDevices = importedDevices,_importedUsers = importedUsers,_keychain = keychain,_allowedReports = allowedReports,_authorizedLayers = authorizedLayers,super._();
+  const _RegisteredApp({required this.id, required this.name, @JsonKey(unknownEnumValue: AppTechnology.flutter) this.technology = AppTechnology.flutter, this.legalInformation, this.designInformation, required this.nickname, this.isCustomized, final  List<AppInstance>? instances, final  List<Asset>? importedAssets, final  List<Device>? importedDevices, final  List<User>? importedUsers, final  List<User>? keychain, required this.sourceId, this.owner, final  List<CustomReport>? allowedReports, this.fixedWorkspaceId, this.fixedWorkspace, final  List<MapLayer> authorizedLayers = const [], this.iosPushSecrets, this.androidPushSecrets, this.hasSvcPushSecrets}): _instances = instances,_importedAssets = importedAssets,_importedDevices = importedDevices,_importedUsers = importedUsers,_keychain = keychain,_allowedReports = allowedReports,_authorizedLayers = authorizedLayers,super._();
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) => _$RegisteredAppFromJson(json);
 
 /// [id] is the unique identifier of the app.
@@ -1364,6 +1394,12 @@ class _RegisteredApp extends RegisteredApp {
   return EqualUnmodifiableListView(_authorizedLayers);
 }
 
+/// [iosPushSecrets] is the decrypted iOS Firebase credentials for layrz_push
+@override final  PushSecrets? iosPushSecrets;
+/// [androidPushSecrets] is the decrypted Android Firebase credentials for layrz_push
+@override final  PushSecrets? androidPushSecrets;
+/// true when the backend holds service-account push credentials; content never exposed.
+@override final  bool? hasSvcPushSecrets;
 
 /// Create a copy of RegisteredApp
 /// with the given fields replaced by the non-null parameter values.
@@ -1378,16 +1414,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other._instances, _instances)&&const DeepCollectionEquality().equals(other._importedAssets, _importedAssets)&&const DeepCollectionEquality().equals(other._importedDevices, _importedDevices)&&const DeepCollectionEquality().equals(other._importedUsers, _importedUsers)&&const DeepCollectionEquality().equals(other._keychain, _keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._allowedReports, _allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other._authorizedLayers, _authorizedLayers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other._instances, _instances)&&const DeepCollectionEquality().equals(other._importedAssets, _importedAssets)&&const DeepCollectionEquality().equals(other._importedDevices, _importedDevices)&&const DeepCollectionEquality().equals(other._importedUsers, _importedUsers)&&const DeepCollectionEquality().equals(other._keychain, _keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._allowedReports, _allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other._authorizedLayers, _authorizedLayers)&&(identical(other.iosPushSecrets, iosPushSecrets) || other.iosPushSecrets == iosPushSecrets)&&(identical(other.androidPushSecrets, androidPushSecrets) || other.androidPushSecrets == androidPushSecrets)&&(identical(other.hasSvcPushSecrets, hasSvcPushSecrets) || other.hasSvcPushSecrets == hasSvcPushSecrets));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(_instances),const DeepCollectionEquality().hash(_importedAssets),const DeepCollectionEquality().hash(_importedDevices),const DeepCollectionEquality().hash(_importedUsers),const DeepCollectionEquality().hash(_keychain),sourceId,owner,const DeepCollectionEquality().hash(_allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(_authorizedLayers));
+int get hashCode => Object.hashAll([runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(_instances),const DeepCollectionEquality().hash(_importedAssets),const DeepCollectionEquality().hash(_importedDevices),const DeepCollectionEquality().hash(_importedUsers),const DeepCollectionEquality().hash(_keychain),sourceId,owner,const DeepCollectionEquality().hash(_allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(_authorizedLayers),iosPushSecrets,androidPushSecrets,hasSvcPushSecrets]);
 
 @override
 String toString() {
-  return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
+  return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers, iosPushSecrets: $iosPushSecrets, androidPushSecrets: $androidPushSecrets, hasSvcPushSecrets: $hasSvcPushSecrets)';
 }
 
 
@@ -1398,11 +1434,11 @@ abstract mixin class _$RegisteredAppCopyWith<$Res> implements $RegisteredAppCopy
   factory _$RegisteredAppCopyWith(_RegisteredApp value, $Res Function(_RegisteredApp) _then) = __$RegisteredAppCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: AppTechnology.flutter) AppTechnology technology, AppLegal? legalInformation, AppDesign? designInformation, String nickname, bool? isCustomized, List<AppInstance>? instances, List<Asset>? importedAssets, List<Device>? importedDevices, List<User>? importedUsers, List<User>? keychain, String sourceId, User? owner, List<CustomReport>? allowedReports, String? fixedWorkspaceId, Workspace? fixedWorkspace, List<MapLayer> authorizedLayers
+ String id, String name,@JsonKey(unknownEnumValue: AppTechnology.flutter) AppTechnology technology, AppLegal? legalInformation, AppDesign? designInformation, String nickname, bool? isCustomized, List<AppInstance>? instances, List<Asset>? importedAssets, List<Device>? importedDevices, List<User>? importedUsers, List<User>? keychain, String sourceId, User? owner, List<CustomReport>? allowedReports, String? fixedWorkspaceId, Workspace? fixedWorkspace, List<MapLayer> authorizedLayers, PushSecrets? iosPushSecrets, PushSecrets? androidPushSecrets, bool? hasSvcPushSecrets
 });
 
 
-@override $AppLegalCopyWith<$Res>? get legalInformation;@override $AppDesignCopyWith<$Res>? get designInformation;@override $UserCopyWith<$Res>? get owner;@override $WorkspaceCopyWith<$Res>? get fixedWorkspace;
+@override $AppLegalCopyWith<$Res>? get legalInformation;@override $AppDesignCopyWith<$Res>? get designInformation;@override $UserCopyWith<$Res>? get owner;@override $WorkspaceCopyWith<$Res>? get fixedWorkspace;@override $PushSecretsCopyWith<$Res>? get iosPushSecrets;@override $PushSecretsCopyWith<$Res>? get androidPushSecrets;
 
 }
 /// @nodoc
@@ -1415,7 +1451,7 @@ class __$RegisteredAppCopyWithImpl<$Res>
 
 /// Create a copy of RegisteredApp
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? technology = null,Object? legalInformation = freezed,Object? designInformation = freezed,Object? nickname = null,Object? isCustomized = freezed,Object? instances = freezed,Object? importedAssets = freezed,Object? importedDevices = freezed,Object? importedUsers = freezed,Object? keychain = freezed,Object? sourceId = null,Object? owner = freezed,Object? allowedReports = freezed,Object? fixedWorkspaceId = freezed,Object? fixedWorkspace = freezed,Object? authorizedLayers = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? technology = null,Object? legalInformation = freezed,Object? designInformation = freezed,Object? nickname = null,Object? isCustomized = freezed,Object? instances = freezed,Object? importedAssets = freezed,Object? importedDevices = freezed,Object? importedUsers = freezed,Object? keychain = freezed,Object? sourceId = null,Object? owner = freezed,Object? allowedReports = freezed,Object? fixedWorkspaceId = freezed,Object? fixedWorkspace = freezed,Object? authorizedLayers = null,Object? iosPushSecrets = freezed,Object? androidPushSecrets = freezed,Object? hasSvcPushSecrets = freezed,}) {
   return _then(_RegisteredApp(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1435,7 +1471,10 @@ as User?,allowedReports: freezed == allowedReports ? _self._allowedReports : all
 as List<CustomReport>?,fixedWorkspaceId: freezed == fixedWorkspaceId ? _self.fixedWorkspaceId : fixedWorkspaceId // ignore: cast_nullable_to_non_nullable
 as String?,fixedWorkspace: freezed == fixedWorkspace ? _self.fixedWorkspace : fixedWorkspace // ignore: cast_nullable_to_non_nullable
 as Workspace?,authorizedLayers: null == authorizedLayers ? _self._authorizedLayers : authorizedLayers // ignore: cast_nullable_to_non_nullable
-as List<MapLayer>,
+as List<MapLayer>,iosPushSecrets: freezed == iosPushSecrets ? _self.iosPushSecrets : iosPushSecrets // ignore: cast_nullable_to_non_nullable
+as PushSecrets?,androidPushSecrets: freezed == androidPushSecrets ? _self.androidPushSecrets : androidPushSecrets // ignore: cast_nullable_to_non_nullable
+as PushSecrets?,hasSvcPushSecrets: freezed == hasSvcPushSecrets ? _self.hasSvcPushSecrets : hasSvcPushSecrets // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 
@@ -1486,6 +1525,30 @@ $WorkspaceCopyWith<$Res>? get fixedWorkspace {
 
   return $WorkspaceCopyWith<$Res>(_self.fixedWorkspace!, (value) {
     return _then(_self.copyWith(fixedWorkspace: value));
+  });
+}/// Create a copy of RegisteredApp
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PushSecretsCopyWith<$Res>? get iosPushSecrets {
+    if (_self.iosPushSecrets == null) {
+    return null;
+  }
+
+  return $PushSecretsCopyWith<$Res>(_self.iosPushSecrets!, (value) {
+    return _then(_self.copyWith(iosPushSecrets: value));
+  });
+}/// Create a copy of RegisteredApp
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PushSecretsCopyWith<$Res>? get androidPushSecrets {
+    if (_self.androidPushSecrets == null) {
+    return null;
+  }
+
+  return $PushSecretsCopyWith<$Res>(_self.androidPushSecrets!, (value) {
+    return _then(_self.copyWith(androidPushSecrets: value));
   });
 }
 }
@@ -5705,6 +5768,567 @@ as String?,mode: freezed == mode ? _self.mode : mode // ignore: cast_nullable_to
 as BackgroundMode?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,design: freezed == design ? _self.design : design // ignore: cast_nullable_to_non_nullable
 as LayoutDesign?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$PushSecrets {
+
+/// [apiKey] is a decrypted Firebase credentials field: API key
+ String? get apiKey;/// [appId] is a decrypted Firebase credentials field: app ID
+ String? get appId;/// [projectId] is a decrypted Firebase credentials field: project ID
+ String? get projectId;/// [messagingSenderId] is a decrypted Firebase credentials field: messaging sender ID
+ String? get messagingSenderId;/// [storageBucket] is a decrypted Firebase credentials field: storage bucket
+ String? get storageBucket;
+/// Create a copy of PushSecrets
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PushSecretsCopyWith<PushSecrets> get copyWith => _$PushSecretsCopyWithImpl<PushSecrets>(this as PushSecrets, _$identity);
+
+  /// Serializes this PushSecrets to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PushSecrets&&(identical(other.apiKey, apiKey) || other.apiKey == apiKey)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.projectId, projectId) || other.projectId == projectId)&&(identical(other.messagingSenderId, messagingSenderId) || other.messagingSenderId == messagingSenderId)&&(identical(other.storageBucket, storageBucket) || other.storageBucket == storageBucket));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,apiKey,appId,projectId,messagingSenderId,storageBucket);
+
+@override
+String toString() {
+  return 'PushSecrets(apiKey: $apiKey, appId: $appId, projectId: $projectId, messagingSenderId: $messagingSenderId, storageBucket: $storageBucket)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PushSecretsCopyWith<$Res>  {
+  factory $PushSecretsCopyWith(PushSecrets value, $Res Function(PushSecrets) _then) = _$PushSecretsCopyWithImpl;
+@useResult
+$Res call({
+ String? apiKey, String? appId, String? projectId, String? messagingSenderId, String? storageBucket
+});
+
+
+
+
+}
+/// @nodoc
+class _$PushSecretsCopyWithImpl<$Res>
+    implements $PushSecretsCopyWith<$Res> {
+  _$PushSecretsCopyWithImpl(this._self, this._then);
+
+  final PushSecrets _self;
+  final $Res Function(PushSecrets) _then;
+
+/// Create a copy of PushSecrets
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? apiKey = freezed,Object? appId = freezed,Object? projectId = freezed,Object? messagingSenderId = freezed,Object? storageBucket = freezed,}) {
+  return _then(_self.copyWith(
+apiKey: freezed == apiKey ? _self.apiKey : apiKey // ignore: cast_nullable_to_non_nullable
+as String?,appId: freezed == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
+as String?,projectId: freezed == projectId ? _self.projectId : projectId // ignore: cast_nullable_to_non_nullable
+as String?,messagingSenderId: freezed == messagingSenderId ? _self.messagingSenderId : messagingSenderId // ignore: cast_nullable_to_non_nullable
+as String?,storageBucket: freezed == storageBucket ? _self.storageBucket : storageBucket // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PushSecrets].
+extension PushSecretsPatterns on PushSecrets {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PushSecrets value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PushSecrets() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PushSecrets value)  $default,){
+final _that = this;
+switch (_that) {
+case _PushSecrets():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PushSecrets value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PushSecrets() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? apiKey,  String? appId,  String? projectId,  String? messagingSenderId,  String? storageBucket)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PushSecrets() when $default != null:
+return $default(_that.apiKey,_that.appId,_that.projectId,_that.messagingSenderId,_that.storageBucket);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? apiKey,  String? appId,  String? projectId,  String? messagingSenderId,  String? storageBucket)  $default,) {final _that = this;
+switch (_that) {
+case _PushSecrets():
+return $default(_that.apiKey,_that.appId,_that.projectId,_that.messagingSenderId,_that.storageBucket);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? apiKey,  String? appId,  String? projectId,  String? messagingSenderId,  String? storageBucket)?  $default,) {final _that = this;
+switch (_that) {
+case _PushSecrets() when $default != null:
+return $default(_that.apiKey,_that.appId,_that.projectId,_that.messagingSenderId,_that.storageBucket);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PushSecrets implements PushSecrets {
+  const _PushSecrets({this.apiKey, this.appId, this.projectId, this.messagingSenderId, this.storageBucket});
+  factory _PushSecrets.fromJson(Map<String, dynamic> json) => _$PushSecretsFromJson(json);
+
+/// [apiKey] is a decrypted Firebase credentials field: API key
+@override final  String? apiKey;
+/// [appId] is a decrypted Firebase credentials field: app ID
+@override final  String? appId;
+/// [projectId] is a decrypted Firebase credentials field: project ID
+@override final  String? projectId;
+/// [messagingSenderId] is a decrypted Firebase credentials field: messaging sender ID
+@override final  String? messagingSenderId;
+/// [storageBucket] is a decrypted Firebase credentials field: storage bucket
+@override final  String? storageBucket;
+
+/// Create a copy of PushSecrets
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PushSecretsCopyWith<_PushSecrets> get copyWith => __$PushSecretsCopyWithImpl<_PushSecrets>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PushSecretsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PushSecrets&&(identical(other.apiKey, apiKey) || other.apiKey == apiKey)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.projectId, projectId) || other.projectId == projectId)&&(identical(other.messagingSenderId, messagingSenderId) || other.messagingSenderId == messagingSenderId)&&(identical(other.storageBucket, storageBucket) || other.storageBucket == storageBucket));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,apiKey,appId,projectId,messagingSenderId,storageBucket);
+
+@override
+String toString() {
+  return 'PushSecrets(apiKey: $apiKey, appId: $appId, projectId: $projectId, messagingSenderId: $messagingSenderId, storageBucket: $storageBucket)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PushSecretsCopyWith<$Res> implements $PushSecretsCopyWith<$Res> {
+  factory _$PushSecretsCopyWith(_PushSecrets value, $Res Function(_PushSecrets) _then) = __$PushSecretsCopyWithImpl;
+@override @useResult
+$Res call({
+ String? apiKey, String? appId, String? projectId, String? messagingSenderId, String? storageBucket
+});
+
+
+
+
+}
+/// @nodoc
+class __$PushSecretsCopyWithImpl<$Res>
+    implements _$PushSecretsCopyWith<$Res> {
+  __$PushSecretsCopyWithImpl(this._self, this._then);
+
+  final _PushSecrets _self;
+  final $Res Function(_PushSecrets) _then;
+
+/// Create a copy of PushSecrets
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? apiKey = freezed,Object? appId = freezed,Object? projectId = freezed,Object? messagingSenderId = freezed,Object? storageBucket = freezed,}) {
+  return _then(_PushSecrets(
+apiKey: freezed == apiKey ? _self.apiKey : apiKey // ignore: cast_nullable_to_non_nullable
+as String?,appId: freezed == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
+as String?,projectId: freezed == projectId ? _self.projectId : projectId // ignore: cast_nullable_to_non_nullable
+as String?,messagingSenderId: freezed == messagingSenderId ? _self.messagingSenderId : messagingSenderId // ignore: cast_nullable_to_non_nullable
+as String?,storageBucket: freezed == storageBucket ? _self.storageBucket : storageBucket // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$PushSecretsInput {
+
+/// [apiKey] is a decrypted Firebase credentials field: API key
+ String? get apiKey;/// [apiKey] is a decrypted Firebase credentials field: API key
+ set apiKey(String? value);/// [appId] is a decrypted Firebase credentials field: app ID
+ String? get appId;/// [appId] is a decrypted Firebase credentials field: app ID
+ set appId(String? value);/// [projectId] is a decrypted Firebase credentials field: project ID
+ String? get projectId;/// [projectId] is a decrypted Firebase credentials field: project ID
+ set projectId(String? value);/// [messagingSenderId] is a decrypted Firebase credentials field: messaging sender ID
+ String? get messagingSenderId;/// [messagingSenderId] is a decrypted Firebase credentials field: messaging sender ID
+ set messagingSenderId(String? value);/// [storageBucket] is a decrypted Firebase credentials field: storage bucket
+ String? get storageBucket;/// [storageBucket] is a decrypted Firebase credentials field: storage bucket
+ set storageBucket(String? value);
+/// Create a copy of PushSecretsInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PushSecretsInputCopyWith<PushSecretsInput> get copyWith => _$PushSecretsInputCopyWithImpl<PushSecretsInput>(this as PushSecretsInput, _$identity);
+
+  /// Serializes this PushSecretsInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'PushSecretsInput(apiKey: $apiKey, appId: $appId, projectId: $projectId, messagingSenderId: $messagingSenderId, storageBucket: $storageBucket)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PushSecretsInputCopyWith<$Res>  {
+  factory $PushSecretsInputCopyWith(PushSecretsInput value, $Res Function(PushSecretsInput) _then) = _$PushSecretsInputCopyWithImpl;
+@useResult
+$Res call({
+ String? apiKey, String? appId, String? projectId, String? messagingSenderId, String? storageBucket
+});
+
+
+
+
+}
+/// @nodoc
+class _$PushSecretsInputCopyWithImpl<$Res>
+    implements $PushSecretsInputCopyWith<$Res> {
+  _$PushSecretsInputCopyWithImpl(this._self, this._then);
+
+  final PushSecretsInput _self;
+  final $Res Function(PushSecretsInput) _then;
+
+/// Create a copy of PushSecretsInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? apiKey = freezed,Object? appId = freezed,Object? projectId = freezed,Object? messagingSenderId = freezed,Object? storageBucket = freezed,}) {
+  return _then(_self.copyWith(
+apiKey: freezed == apiKey ? _self.apiKey : apiKey // ignore: cast_nullable_to_non_nullable
+as String?,appId: freezed == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
+as String?,projectId: freezed == projectId ? _self.projectId : projectId // ignore: cast_nullable_to_non_nullable
+as String?,messagingSenderId: freezed == messagingSenderId ? _self.messagingSenderId : messagingSenderId // ignore: cast_nullable_to_non_nullable
+as String?,storageBucket: freezed == storageBucket ? _self.storageBucket : storageBucket // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PushSecretsInput].
+extension PushSecretsInputPatterns on PushSecretsInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PushSecretsInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PushSecretsInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PushSecretsInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _PushSecretsInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PushSecretsInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PushSecretsInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? apiKey,  String? appId,  String? projectId,  String? messagingSenderId,  String? storageBucket)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PushSecretsInput() when $default != null:
+return $default(_that.apiKey,_that.appId,_that.projectId,_that.messagingSenderId,_that.storageBucket);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? apiKey,  String? appId,  String? projectId,  String? messagingSenderId,  String? storageBucket)  $default,) {final _that = this;
+switch (_that) {
+case _PushSecretsInput():
+return $default(_that.apiKey,_that.appId,_that.projectId,_that.messagingSenderId,_that.storageBucket);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? apiKey,  String? appId,  String? projectId,  String? messagingSenderId,  String? storageBucket)?  $default,) {final _that = this;
+switch (_that) {
+case _PushSecretsInput() when $default != null:
+return $default(_that.apiKey,_that.appId,_that.projectId,_that.messagingSenderId,_that.storageBucket);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PushSecretsInput implements PushSecretsInput {
+   _PushSecretsInput({this.apiKey, this.appId, this.projectId, this.messagingSenderId, this.storageBucket});
+  factory _PushSecretsInput.fromJson(Map<String, dynamic> json) => _$PushSecretsInputFromJson(json);
+
+/// [apiKey] is a decrypted Firebase credentials field: API key
+@override  String? apiKey;
+/// [appId] is a decrypted Firebase credentials field: app ID
+@override  String? appId;
+/// [projectId] is a decrypted Firebase credentials field: project ID
+@override  String? projectId;
+/// [messagingSenderId] is a decrypted Firebase credentials field: messaging sender ID
+@override  String? messagingSenderId;
+/// [storageBucket] is a decrypted Firebase credentials field: storage bucket
+@override  String? storageBucket;
+
+/// Create a copy of PushSecretsInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PushSecretsInputCopyWith<_PushSecretsInput> get copyWith => __$PushSecretsInputCopyWithImpl<_PushSecretsInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PushSecretsInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'PushSecretsInput(apiKey: $apiKey, appId: $appId, projectId: $projectId, messagingSenderId: $messagingSenderId, storageBucket: $storageBucket)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PushSecretsInputCopyWith<$Res> implements $PushSecretsInputCopyWith<$Res> {
+  factory _$PushSecretsInputCopyWith(_PushSecretsInput value, $Res Function(_PushSecretsInput) _then) = __$PushSecretsInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? apiKey, String? appId, String? projectId, String? messagingSenderId, String? storageBucket
+});
+
+
+
+
+}
+/// @nodoc
+class __$PushSecretsInputCopyWithImpl<$Res>
+    implements _$PushSecretsInputCopyWith<$Res> {
+  __$PushSecretsInputCopyWithImpl(this._self, this._then);
+
+  final _PushSecretsInput _self;
+  final $Res Function(_PushSecretsInput) _then;
+
+/// Create a copy of PushSecretsInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? apiKey = freezed,Object? appId = freezed,Object? projectId = freezed,Object? messagingSenderId = freezed,Object? storageBucket = freezed,}) {
+  return _then(_PushSecretsInput(
+apiKey: freezed == apiKey ? _self.apiKey : apiKey // ignore: cast_nullable_to_non_nullable
+as String?,appId: freezed == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
+as String?,projectId: freezed == projectId ? _self.projectId : projectId // ignore: cast_nullable_to_non_nullable
+as String?,messagingSenderId: freezed == messagingSenderId ? _self.messagingSenderId : messagingSenderId // ignore: cast_nullable_to_non_nullable
+as String?,storageBucket: freezed == storageBucket ? _self.storageBucket : storageBucket // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

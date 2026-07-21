@@ -71,7 +71,6 @@ extension AtsBookingStatusExtension on AtsBookingStatus {
   }
 }
 
-
 /*
 ats.booking.status.peding
 ats.booking.status.scheduled
