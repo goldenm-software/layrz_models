@@ -165,12 +165,11 @@ abstract class Operation with _$Operation {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'id', type: .string, isRequired: true, value: id),
           ],
           name: 'fetchOperation',
         )..add(
-          GqlField(name: 'operations', args: {'apiToken': 'apiToken', 'id': 'id'})
+          GqlField(name: 'operations', args: {'id': 'id'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: gqlFragment)),
         ),
@@ -216,10 +215,8 @@ abstract class Operation with _$Operation {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final variables = <GqlVariable>[
-        GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
-      ];
-      final args = <String, String>{'apiToken': 'apiToken'};
+      final variables = <GqlVariable>[];
+      final args = <String, String>{};
 
       if (appId != null) {
         variables.add(GqlVariable(name: 'appId', type: .string, isRequired: false, value: appId));
@@ -280,12 +277,11 @@ abstract class Operation with _$Operation {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'ids', type: .list(of: .id), isRequired: true, value: [id]),
           ],
           name: 'deleteOperation',
         )..add(
-          GqlField(name: 'deleteOperations', args: {'apiToken': 'apiToken', 'ids': 'ids'})
+          GqlField(name: 'deleteOperations', args: {'ids': 'ids'})
             ..add(GqlField(name: 'status')),
         ),
       );
@@ -326,12 +322,11 @@ abstract class Operation with _$Operation {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'ids', type: .list(of: .id), isRequired: true, value: ids),
           ],
           name: 'deleteOperations',
         )..add(
-          GqlField(name: 'deleteOperations', args: {'apiToken': 'apiToken', 'ids': 'ids'})
+          GqlField(name: 'deleteOperations', args: {'ids': 'ids'})
             ..add(GqlField(name: 'status')),
         ),
       );
@@ -498,12 +493,11 @@ abstract class OperationInput with _$OperationInput {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'data', type: .input(of: 'OperationInput'), isRequired: true, value: this),
           ],
           name: mutationName,
         )..add(
-          GqlField(name: mutationName, args: {'apiToken': 'apiToken', 'data': 'data'})
+          GqlField(name: mutationName, args: {'data': 'data'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: Operation.gqlFragment)),
         ),
