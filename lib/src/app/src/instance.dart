@@ -68,12 +68,11 @@ abstract class AppInstance with _$AppInstance {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'instanceId', type: GqlVariableType.string, isRequired: true, value: instanceId),
+            GqlVariable(name: 'instanceId', type: .id, isRequired: true, value: instanceId),
           ],
           name: 'deprecateInstance',
         )..add(
-          GqlField(name: 'deprecateInstance', args: {'instanceId': 'instanceId'})
-            ..add(GqlField(name: 'status')),
+          GqlField(name: 'deprecateInstance', args: {'instanceId': 'instanceId'})..add(GqlField(name: 'status')),
         ),
       );
 
@@ -113,12 +112,11 @@ abstract class AppInstance with _$AppInstance {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'instanceId', type: GqlVariableType.string, isRequired: true, value: instanceId),
+            GqlVariable(name: 'instanceId', type: .id, isRequired: true, value: instanceId),
           ],
           name: 'migrateInstance',
         )..add(
-          GqlField(name: 'migrateInstance', args: {'instanceId': 'instanceId'})
-            ..add(GqlField(name: 'status')),
+          GqlField(name: 'migrateInstance', args: {'instanceId': 'instanceId'})..add(GqlField(name: 'status')),
         ),
       );
 
@@ -167,8 +165,7 @@ abstract class AppInstance with _$AppInstance {
           ],
           name: 'requestInstance',
         )..add(
-          GqlField(name: 'requestInstance', args: {'data': 'data'})
-            ..add(GqlField(name: 'status')),
+          GqlField(name: 'requestInstance', args: {'data': 'data'})..add(GqlField(name: 'status')),
         ),
       );
 

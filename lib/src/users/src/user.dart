@@ -216,6 +216,63 @@ abstract class User with _$User {
     }
   }
 
+  /// [fetchAllForAppUsers] fetches all users for app user management (includes username and email).
+  /// Returns a list of [User] on success, empty list on error.
+  static Future<List<User>> fetchAllForAppUsers({
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [],
+          name: 'users',
+        )..add(
+          GqlField(name: 'users')
+            ..add(GqlField(name: 'status'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'username'))
+                ..add(GqlField(name: 'email'))
+                ..add(GqlField(name: 'dynamicAvatar', fragment: Avatar.gqlFragment)),
+            ),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/User/fetchAllForAppUsers(): No response from server");
+        return [];
+      }
+
+      final result = data['data']['users'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/User/fetchAllForAppUsers(): No result from server");
+        return [];
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return [];
+      }
+
+      return (result['result'] as List<dynamic>?)
+              ?.map((e) => User.fromJson(Map<String, dynamic>.from(e as Map)))
+              .toList() ??
+          [];
+    } catch (e, stack) {
+      Log.critical("layrz_models/User/fetchAllForAppUsers(): General exception => $e\n$stack");
+      return [];
+    }
+  }
+
   /// [loginAs] logs in as a subaccount (delegate login).
   /// Returns a [Token] on success or null on error.
   static Future<Token?> loginAs({
@@ -229,7 +286,7 @@ abstract class User with _$User {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
+            GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
           ],
           name: 'loginAsSubaccount',
         )..add(

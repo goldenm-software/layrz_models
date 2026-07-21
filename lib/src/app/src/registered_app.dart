@@ -125,7 +125,7 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'id', type: .string, isRequired: true, value: id),
+            GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
           ],
           name: 'fetchRegisteredApp',
         )..add(
@@ -156,9 +156,12 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       onResponse?.call(status.toJson());
-      return result['result'] != null
-          ? RegisteredApp.fromJson(Map<String, dynamic>.from(result['result'] as Map))
-          : null;
+      final resultList = result['result'] as List<dynamic>?;
+      if (resultList == null || resultList.isEmpty) {
+        Log.warning("layrz_models/RegisteredApp/fetch(): No result in list");
+        return null;
+      }
+      return RegisteredApp.fromJson(Map<String, dynamic>.from(resultList.first as Map));
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/fetch(): General exception => $e\n$stack");
       return null;
@@ -180,14 +183,16 @@ abstract class RegisteredApp with _$RegisteredApp {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final variables = <GqlVariable>[
-        GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+        GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
       ];
 
       if (iosPushSecrets != null) {
         variables.add(GqlVariable(name: 'iosPushSecrets', type: .string, isRequired: false, value: iosPushSecrets));
       }
       if (androidPushSecrets != null) {
-        variables.add(GqlVariable(name: 'androidPushSecrets', type: .string, isRequired: false, value: androidPushSecrets));
+        variables.add(
+          GqlVariable(name: 'androidPushSecrets', type: .string, isRequired: false, value: androidPushSecrets),
+        );
       }
       if (svcPushSecrets != null) {
         variables.add(GqlVariable(name: 'svcPushSecrets', type: .string, isRequired: false, value: svcPushSecrets));
@@ -247,8 +252,8 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
-            GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
+            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
+            GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
           ],
           name: 'grantAccessToApp',
         )..add(
@@ -294,10 +299,10 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
               name: 'userIds',
-              type: .list(of: .string, isRequired: true),
+              type: .list(of: .id, isRequired: true),
               isRequired: true,
               value: userIds,
             ),
@@ -348,8 +353,8 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
-            GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
+            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
+            GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
           ],
           name: 'revokeAccessToApp',
         )..add(
@@ -395,10 +400,10 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
               name: 'assetIds',
-              type: .list(of: .string, isRequired: true),
+              type: .list(of: .id, isRequired: true),
               isRequired: true,
               value: assetIds,
             ),
@@ -449,10 +454,10 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
               name: 'assetIds',
-              type: .list(of: .string, isRequired: true),
+              type: .list(of: .id, isRequired: true),
               isRequired: true,
               value: assetIds,
             ),
@@ -503,10 +508,10 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
               name: 'deviceIds',
-              type: .list(of: .string, isRequired: true),
+              type: .list(of: .id, isRequired: true),
               isRequired: true,
               value: deviceIds,
             ),
@@ -557,10 +562,10 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
+            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
               name: 'deviceIds',
-              type: .list(of: .string, isRequired: true),
+              type: .list(of: .id, isRequired: true),
               isRequired: true,
               value: deviceIds,
             ),
@@ -593,6 +598,235 @@ abstract class RegisteredApp with _$RegisteredApp {
       return status == ApiStatus.ok;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/revokeDevicesFromApp(): General exception => $e\n$stack");
+      return false;
+    }
+  }
+
+  /// [registerWithoutCustomization] registers a new app without customization on the server.
+  /// Returns the created [RegisteredApp] on success, null on error.
+  static Future<RegisteredApp?> registerWithoutCustomization({
+    required Map<String, dynamic> data,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(
+              name: 'data',
+              type: GqlVariableType.input(of: 'AppWithoutCustomizationInput'),
+              isRequired: true,
+              value: data,
+            ),
+          ],
+          name: 'registerAppWithoutCustomization',
+        )..add(
+          GqlField(name: 'registerAppWithoutCustomization', args: {'data': 'data'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
+      );
+
+      final responseData = response.data;
+      if (responseData == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/registerWithoutCustomization(): No response from server");
+        return null;
+      }
+
+      final result = responseData['data']['registerAppWithoutCustomization'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/registerWithoutCustomization(): No result from server");
+        return null;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return null;
+      }
+
+      onResponse?.call(status.toJson());
+      final resultList = result['result'] as List<dynamic>?;
+      if (resultList == null || resultList.isEmpty) {
+        Log.warning("layrz_models/RegisteredApp/registerWithoutCustomization(): No result in list");
+        return null;
+      }
+      return RegisteredApp.fromJson(Map<String, dynamic>.from(resultList.first as Map));
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/registerWithoutCustomization(): General exception => $e\n$stack");
+      return null;
+    }
+  }
+
+  /// [registerWithCustomization] registers a new app with customization on the server.
+  /// Returns the created [RegisteredApp] on success, null on error.
+  static Future<RegisteredApp?> registerWithCustomization({
+    required Map<String, dynamic> data,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(
+              name: 'data',
+              type: GqlVariableType.input(of: 'AppInput'),
+              isRequired: true,
+              value: data,
+            ),
+          ],
+          name: 'registerAppWithCustomization',
+        )..add(
+          GqlField(name: 'registerAppWithCustomization', args: {'data': 'data'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
+      );
+
+      final responseData = response.data;
+      if (responseData == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/registerWithCustomization(): No response from server");
+        return null;
+      }
+
+      final result = responseData['data']['registerAppWithCustomization'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/registerWithCustomization(): No result from server");
+        return null;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return null;
+      }
+
+      onResponse?.call(status.toJson());
+      final resultList = result['result'] as List<dynamic>?;
+      if (resultList == null || resultList.isEmpty) {
+        Log.warning("layrz_models/RegisteredApp/registerWithCustomization(): No result in list");
+        return null;
+      }
+      return RegisteredApp.fromJson(Map<String, dynamic>.from(resultList.first as Map));
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/registerWithCustomization(): General exception => $e\n$stack");
+      return null;
+    }
+  }
+
+  /// [edit] edits an existing app on the server.
+  /// Returns the updated [RegisteredApp] on success, null on error.
+  static Future<RegisteredApp?> edit({
+    required String id,
+    required Map<String, dynamic> data,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
+            GqlVariable(
+              name: 'data',
+              type: GqlVariableType.input(of: 'AppInput'),
+              isRequired: true,
+              value: data,
+            ),
+          ],
+          name: 'editApp',
+        )..add(
+          GqlField(name: 'editApp', args: {'id': 'id', 'data': 'data'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+        ),
+      );
+
+      final responseData = response.data;
+      if (responseData == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/edit(): No response from server");
+        return null;
+      }
+
+      final result = responseData['data']['editApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/edit(): No result from server");
+        return null;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return null;
+      }
+
+      onResponse?.call(status.toJson());
+      final resultList = result['result'] as List<dynamic>?;
+      if (resultList == null || resultList.isEmpty) {
+        Log.warning("layrz_models/RegisteredApp/edit(): No result in list");
+        return null;
+      }
+      return RegisteredApp.fromJson(Map<String, dynamic>.from(resultList.first as Map));
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/edit(): General exception => $e\n$stack");
+      return null;
+    }
+  }
+
+  /// [delete] deletes an app from the server by ID.
+  /// Returns true on success, false on error.
+  static Future<bool> delete({
+    required String id,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
+          ],
+          name: 'deleteApp',
+        )..add(
+          GqlField(name: 'deleteApp', args: {'id': 'id'})..add(GqlField(name: 'status')),
+        ),
+      );
+
+      final responseData = response.data;
+      if (responseData == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/delete(): No response from server");
+        return false;
+      }
+
+      final result = responseData['data']['deleteApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/delete(): No result from server");
+        return false;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      onResponse?.call(status.toJson());
+      return status == ApiStatus.ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/delete(): General exception => $e\n$stack");
       return false;
     }
   }
