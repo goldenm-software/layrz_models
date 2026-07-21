@@ -174,11 +174,25 @@ enum ApiStatus {
   /// [toJson] - Converts an [ApiStatus] to a JSON string.
   String toJson() => _$ApiStatusEnumMap[this] ?? 'UNKNOWN';
 
-  /// [fromJson] - Converts a JSON string to an [ApiStatus].
-  static ApiStatus fromJson(String json) => _$ApiStatusEnumMap.entries
-      .firstWhere(
-        (element) => element.value == json,
-        orElse: () => const MapEntry(ApiStatus.unknown, 'UNKNOWN'),
-      )
-      .key;
+  /// [fromJson] - Converts a JSON string to an [ApiStatus], tolerantly accepting both
+  /// legacy squashed formats (e.g., 'NOTFOUND', 'INTERNALERROR') and modern underscored
+  /// formats (e.g., 'NOT_FOUND', 'INTERNAL_ERROR'). Normalizes input by removing
+  /// underscores and uppercasing before matching against enum @JsonValue annotations.
+  /// Returns [ApiStatus.unknown] if no match is found.
+  static ApiStatus fromJson(String json) {
+    // First try exact match (fast path for common cases)
+    final exactMatch = _$ApiStatusEnumMap.entries.cast<MapEntry<ApiStatus, String>?>().firstWhere(
+      (element) => element?.value == json,
+      orElse: () => null,
+    );
+    if (exactMatch != null) return exactMatch.key;
+
+    // Normalize both input and enum values to tolerate underscore variations
+    final normalized = json.replaceAll('_', '').toUpperCase();
+    final tolerantMatch = _$ApiStatusEnumMap.entries.firstWhere(
+      (element) => element.value.replaceAll('_', '').toUpperCase() == normalized,
+      orElse: () => const MapEntry(ApiStatus.unknown, 'UNKNOWN'),
+    );
+    return tolerantMatch.key;
+  }
 }

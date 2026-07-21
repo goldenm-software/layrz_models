@@ -119,7 +119,7 @@ abstract class Action with _$Action {
         return null;
       }
       if (result['result'] == null || (result['result'] as List).isEmpty) {
-        onResponse?.call('NOT_FOUND');
+        onResponse?.call(ApiStatus.notfound.toJson());
         return null;
       }
 
