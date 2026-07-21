@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.15.2
+
+- Fix Operation GraphQL fragment: query `accountId` instead of `externalAccountId`, remove unexposed `emailTemplateId`, align `access` sub-selection with AccessPermission schema (id, read, write, manage, objectId, userId, module)
+- Add `appId` argument to `Operation.fetch()` to filter operations by app
+- Slim `Operation.fetchAll()` result selection to `id`, `name`, `operationType`
+- Invoke `onResponse` only on error responses across `RegisteredApp` and `Operation` API callers
+- Parse `OperationInput.save()` result as a single object
+
 ## 3.15.1
 
 - Fixes on Registered Apps import modules
