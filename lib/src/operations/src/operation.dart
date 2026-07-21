@@ -75,7 +75,7 @@ abstract class Operation with _$Operation {
     @JsonKey(unknownEnumValue: NotificationType.unknown) NotificationType? notificationType,
 
     /// The [externalAccountId] of the operation. Only the ID
-    String? externalAccountId,
+    @JsonKey(name: 'accountId') String? externalAccountId,
 
     /// Is the list of granted access of the operation.
     List<Access>? access,
@@ -158,12 +158,11 @@ abstract class Operation with _$Operation {
         ..add(GqlField(name: 'phoneNumber')),
     )
     ..add(GqlField(name: 'notificationType'))
-    ..add(GqlField(name: 'externalAccountId'))
+    ..add(GqlField(name: 'accountId'))
     ..add(GqlField(name: 'useAssetContactsInstead'))
     ..add(GqlField(name: 'attachImage'))
     ..add(GqlField(name: 'pushTitle'))
     ..add(GqlField(name: 'pushPlatforms'))
-    ..add(GqlField(name: 'emailTemplateId'))
     ..add(GqlField(name: 'icon'))
     ..add(GqlField(name: 'duration'))
     ..add(GqlField(name: 'soundEffect'))
@@ -172,9 +171,12 @@ abstract class Operation with _$Operation {
     ..add(
       GqlField(name: 'access')
         ..add(GqlField(name: 'id'))
-        ..add(GqlField(name: 'name'))
-        ..add(GqlField(name: 'code'))
-        ..add(GqlField(name: 'kind')),
+        ..add(GqlField(name: 'read'))
+        ..add(GqlField(name: 'write'))
+        ..add(GqlField(name: 'manage'))
+        ..add(GqlField(name: 'objectId'))
+        ..add(GqlField(name: 'userId'))
+        ..add(GqlField(name: 'module')),
     )
     ..add(
       GqlField(name: 'triggers')
@@ -190,6 +192,7 @@ abstract class Operation with _$Operation {
     required String id,
     required String apiToken,
     required Uri uri,
+    String? appId,
     void Function(String statusCode)? onResponse,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
@@ -198,10 +201,11 @@ abstract class Operation with _$Operation {
         GqlQuery(
           variables: [
             GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
+            GqlVariable(name: 'appId', type: .id, isRequired: false, value: appId),
           ],
           name: 'fetchOperation',
         )..add(
-          GqlField(name: 'operations', args: {'id': 'id'})
+          GqlField(name: 'operations', args: {'id': 'id', 'appId': 'appId'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: gqlFragment)),
         ),
@@ -227,7 +231,6 @@ abstract class Operation with _$Operation {
         return null;
       }
 
-      onResponse?.call(status.toJson());
       final resultList = result['result'] as List<dynamic>?;
       if (resultList == null || resultList.isEmpty) {
         Log.warning("layrz_models/Operation/fetch(): No result in list");
@@ -265,7 +268,12 @@ abstract class Operation with _$Operation {
         )..add(
           GqlField(name: 'operations', args: args)
             ..add(GqlField(name: 'status'))
-            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'operationType')),
+            ),
         ),
       );
 
@@ -340,7 +348,10 @@ abstract class Operation with _$Operation {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
       return status == ApiStatus.ok;
     } catch (e, stack) {
       Log.critical("layrz_models/Operation/delete(): General exception => $e\n$stack");
@@ -571,13 +582,11 @@ abstract class OperationInput with _$OperationInput {
         return null;
       }
 
-      onResponse?.call(status.toJson());
-      final resultList = result['result'] as List<dynamic>?;
-      if (resultList == null || resultList.isEmpty) {
+      if (result['result'] == null) {
         Log.warning("layrz_models/OperationInput/save(): No result in list");
         return null;
       }
-      return Operation.fromJson(Map<String, dynamic>.from(resultList.first as Map));
+      return Operation.fromJson(Map<String, dynamic>.from(result['result']));
     } catch (e, stack) {
       Log.critical("layrz_models/OperationInput/save(): General exception => $e\n$stack");
       return null;

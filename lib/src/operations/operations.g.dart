@@ -50,7 +50,7 @@ _Operation _$OperationFromJson(Map<String, dynamic> json) => _Operation(
     json['notificationType'],
     unknownValue: NotificationType.unknown,
   ),
-  externalAccountId: json['externalAccountId'] as String?,
+  externalAccountId: json['accountId'] as String?,
   access: (json['access'] as List<dynamic>?)
       ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
       .toList(),
@@ -102,7 +102,7 @@ Map<String, dynamic> _$OperationToJson(_Operation instance) =>
           ?.map((e) => e.toJson())
           .toList(),
       'notificationType': instance.notificationType?.toJson(),
-      'externalAccountId': instance.externalAccountId,
+      'accountId': instance.externalAccountId,
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
       'useAssetContactsInstead': instance.useAssetContactsInstead,

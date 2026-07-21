@@ -155,7 +155,6 @@ abstract class RegisteredApp with _$RegisteredApp {
         return null;
       }
 
-      onResponse?.call(status.toJson());
       final resultList = result['result'] as List<dynamic>?;
       if (resultList == null || resultList.isEmpty) {
         Log.warning("layrz_models/RegisteredApp/fetch(): No result in list");
@@ -230,8 +229,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/setPushSecrets(): General exception => $e\n$stack");
       return false;
@@ -277,8 +279,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/grantAccessToApp(): General exception => $e\n$stack");
       return false;
@@ -331,8 +336,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/grantMultipleAccessToApp(): General exception => $e\n$stack");
       return false;
@@ -378,8 +386,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/revokeAccessToApp(): General exception => $e\n$stack");
       return false;
@@ -432,8 +443,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/importAssetsIntoApp(): General exception => $e\n$stack");
       return false;
@@ -486,8 +500,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/revokeAssetsFromApp(): General exception => $e\n$stack");
       return false;
@@ -540,8 +557,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/importDevicesIntoApp(): General exception => $e\n$stack");
       return false;
@@ -594,8 +614,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/revokeDevicesFromApp(): General exception => $e\n$stack");
       return false;
@@ -650,7 +673,6 @@ abstract class RegisteredApp with _$RegisteredApp {
         return null;
       }
 
-      onResponse?.call(status.toJson());
       final resultList = result['result'] as List<dynamic>?;
       if (resultList == null || resultList.isEmpty) {
         Log.warning("layrz_models/RegisteredApp/registerWithoutCustomization(): No result in list");
@@ -711,7 +733,6 @@ abstract class RegisteredApp with _$RegisteredApp {
         return null;
       }
 
-      onResponse?.call(status.toJson());
       final resultList = result['result'] as List<dynamic>?;
       if (resultList == null || resultList.isEmpty) {
         Log.warning("layrz_models/RegisteredApp/registerWithCustomization(): No result in list");
@@ -774,7 +795,6 @@ abstract class RegisteredApp with _$RegisteredApp {
         return null;
       }
 
-      onResponse?.call(status.toJson());
       final resultList = result['result'] as List<dynamic>?;
       if (resultList == null || resultList.isEmpty) {
         Log.warning("layrz_models/RegisteredApp/edit(): No result in list");
@@ -823,8 +843,11 @@ abstract class RegisteredApp with _$RegisteredApp {
       }
 
       final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return false;
+      }
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/RegisteredApp/delete(): General exception => $e\n$stack");
       return false;
