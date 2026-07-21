@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.1
+
+- Fixes on Registered Apps import modules
+
 ## 3.15.0
 
 - Expanded `Operation.gqlFragment` to cover the full operation configuration (webhook, email, SMS/Twilio, push, in-app fields) so `Operation.fetch`/`fetchAll` return complete data.

@@ -288,7 +288,7 @@ abstract class RegisteredApp with _$RegisteredApp {
   /// [grantMultipleAccessToApp] grants multiple users access to the app.
   /// Returns true on success, false on error.
   static Future<bool> grantMultipleAccessToApp({
-    required List<String> userIds,
+    required List<String> usersIds,
     required String appId,
     required String apiToken,
     required Uri uri,
@@ -301,17 +301,17 @@ abstract class RegisteredApp with _$RegisteredApp {
           variables: [
             GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
-              name: 'userIds',
+              name: 'usersIds',
               type: .list(of: .id, isRequired: true),
               isRequired: true,
-              value: userIds,
+              value: usersIds,
             ),
           ],
           name: 'grantMultipleAccessToApp',
         )..add(
           GqlField(
             name: 'grantMultipleAccessToApp',
-            args: {'appId': 'appId', 'userIds': 'userIds'},
+            args: {'appId': 'appId', 'usersIds': 'usersIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -389,7 +389,7 @@ abstract class RegisteredApp with _$RegisteredApp {
   /// [importAssetsIntoApp] imports assets into the app.
   /// Returns true on success, false on error.
   static Future<bool> importAssetsIntoApp({
-    required List<String> assetIds,
+    required List<String> assetsIds,
     required String appId,
     required String apiToken,
     required Uri uri,
@@ -402,17 +402,17 @@ abstract class RegisteredApp with _$RegisteredApp {
           variables: [
             GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
-              name: 'assetIds',
+              name: 'assetsIds',
               type: .list(of: .id, isRequired: true),
               isRequired: true,
-              value: assetIds,
+              value: assetsIds,
             ),
           ],
           name: 'importAssetsIntoApp',
         )..add(
           GqlField(
             name: 'importAssetsIntoApp',
-            args: {'appId': 'appId', 'assetIds': 'assetIds'},
+            args: {'appId': 'appId', 'assetsIds': 'assetsIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -443,7 +443,7 @@ abstract class RegisteredApp with _$RegisteredApp {
   /// [revokeAssetsFromApp] revokes assets from the app.
   /// Returns true on success, false on error.
   static Future<bool> revokeAssetsFromApp({
-    required List<String> assetIds,
+    required List<String> assetsIds,
     required String appId,
     required String apiToken,
     required Uri uri,
@@ -456,17 +456,17 @@ abstract class RegisteredApp with _$RegisteredApp {
           variables: [
             GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
-              name: 'assetIds',
+              name: 'assetsIds',
               type: .list(of: .id, isRequired: true),
               isRequired: true,
-              value: assetIds,
+              value: assetsIds,
             ),
           ],
           name: 'revokeAssetsFromApp',
         )..add(
           GqlField(
             name: 'revokeAssetsFromApp',
-            args: {'appId': 'appId', 'assetIds': 'assetIds'},
+            args: {'appId': 'appId', 'assetsIds': 'assetsIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -497,7 +497,7 @@ abstract class RegisteredApp with _$RegisteredApp {
   /// [importDevicesIntoApp] imports devices into the app.
   /// Returns true on success, false on error.
   static Future<bool> importDevicesIntoApp({
-    required List<String> deviceIds,
+    required List<String> devicesIds,
     required String appId,
     required String apiToken,
     required Uri uri,
@@ -510,17 +510,17 @@ abstract class RegisteredApp with _$RegisteredApp {
           variables: [
             GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
-              name: 'deviceIds',
+              name: 'devicesIds',
               type: .list(of: .id, isRequired: true),
               isRequired: true,
-              value: deviceIds,
+              value: devicesIds,
             ),
           ],
           name: 'importDevicesIntoApp',
         )..add(
           GqlField(
             name: 'importDevicesIntoApp',
-            args: {'appId': 'appId', 'deviceIds': 'deviceIds'},
+            args: {'appId': 'appId', 'devicesIds': 'devicesIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -551,7 +551,7 @@ abstract class RegisteredApp with _$RegisteredApp {
   /// [revokeDevicesFromApp] revokes devices from the app.
   /// Returns true on success, false on error.
   static Future<bool> revokeDevicesFromApp({
-    required List<String> deviceIds,
+    required List<String> devicesIds,
     required String appId,
     required String apiToken,
     required Uri uri,
@@ -564,17 +564,17 @@ abstract class RegisteredApp with _$RegisteredApp {
           variables: [
             GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
-              name: 'deviceIds',
+              name: 'devicesIds',
               type: .list(of: .id, isRequired: true),
               isRequired: true,
-              value: deviceIds,
+              value: devicesIds,
             ),
           ],
           name: 'revokeDevicesFromApp',
         )..add(
           GqlField(
             name: 'revokeDevicesFromApp',
-            args: {'appId': 'appId', 'deviceIds': 'deviceIds'},
+            args: {'appId': 'appId', 'devicesIds': 'devicesIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
