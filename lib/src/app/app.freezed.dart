@@ -1019,7 +1019,8 @@ mixin _$RegisteredApp {
  Workspace? get fixedWorkspace;/// [authorizedLayers] is the list of layers authorized to be used by the app.
  List<MapLayer> get authorizedLayers;/// [iosPushSecrets] is the decrypted iOS Firebase credentials for layrz_push
  PushSecrets? get iosPushSecrets;/// [androidPushSecrets] is the decrypted Android Firebase credentials for layrz_push
- PushSecrets? get androidPushSecrets;
+ PushSecrets? get androidPushSecrets;/// true when the backend holds service-account push credentials; content never exposed.
+ bool? get hasSvcPushSecrets;
 /// Create a copy of RegisteredApp
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1032,16 +1033,16 @@ $RegisteredAppCopyWith<RegisteredApp> get copyWith => _$RegisteredAppCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other.instances, instances)&&const DeepCollectionEquality().equals(other.importedAssets, importedAssets)&&const DeepCollectionEquality().equals(other.importedDevices, importedDevices)&&const DeepCollectionEquality().equals(other.importedUsers, importedUsers)&&const DeepCollectionEquality().equals(other.keychain, keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.allowedReports, allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other.authorizedLayers, authorizedLayers)&&(identical(other.iosPushSecrets, iosPushSecrets) || other.iosPushSecrets == iosPushSecrets)&&(identical(other.androidPushSecrets, androidPushSecrets) || other.androidPushSecrets == androidPushSecrets));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other.instances, instances)&&const DeepCollectionEquality().equals(other.importedAssets, importedAssets)&&const DeepCollectionEquality().equals(other.importedDevices, importedDevices)&&const DeepCollectionEquality().equals(other.importedUsers, importedUsers)&&const DeepCollectionEquality().equals(other.keychain, keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.allowedReports, allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other.authorizedLayers, authorizedLayers)&&(identical(other.iosPushSecrets, iosPushSecrets) || other.iosPushSecrets == iosPushSecrets)&&(identical(other.androidPushSecrets, androidPushSecrets) || other.androidPushSecrets == androidPushSecrets)&&(identical(other.hasSvcPushSecrets, hasSvcPushSecrets) || other.hasSvcPushSecrets == hasSvcPushSecrets));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(instances),const DeepCollectionEquality().hash(importedAssets),const DeepCollectionEquality().hash(importedDevices),const DeepCollectionEquality().hash(importedUsers),const DeepCollectionEquality().hash(keychain),sourceId,owner,const DeepCollectionEquality().hash(allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(authorizedLayers),iosPushSecrets,androidPushSecrets]);
+int get hashCode => Object.hashAll([runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(instances),const DeepCollectionEquality().hash(importedAssets),const DeepCollectionEquality().hash(importedDevices),const DeepCollectionEquality().hash(importedUsers),const DeepCollectionEquality().hash(keychain),sourceId,owner,const DeepCollectionEquality().hash(allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(authorizedLayers),iosPushSecrets,androidPushSecrets,hasSvcPushSecrets]);
 
 @override
 String toString() {
-  return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers, iosPushSecrets: $iosPushSecrets, androidPushSecrets: $androidPushSecrets)';
+  return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers, iosPushSecrets: $iosPushSecrets, androidPushSecrets: $androidPushSecrets, hasSvcPushSecrets: $hasSvcPushSecrets)';
 }
 
 
@@ -1052,7 +1053,7 @@ abstract mixin class $RegisteredAppCopyWith<$Res>  {
   factory $RegisteredAppCopyWith(RegisteredApp value, $Res Function(RegisteredApp) _then) = _$RegisteredAppCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: AppTechnology.flutter) AppTechnology technology, AppLegal? legalInformation, AppDesign? designInformation, String nickname, bool? isCustomized, List<AppInstance>? instances, List<Asset>? importedAssets, List<Device>? importedDevices, List<User>? importedUsers, List<User>? keychain, String sourceId, User? owner, List<CustomReport>? allowedReports, String? fixedWorkspaceId, Workspace? fixedWorkspace, List<MapLayer> authorizedLayers, PushSecrets? iosPushSecrets, PushSecrets? androidPushSecrets
+ String id, String name,@JsonKey(unknownEnumValue: AppTechnology.flutter) AppTechnology technology, AppLegal? legalInformation, AppDesign? designInformation, String nickname, bool? isCustomized, List<AppInstance>? instances, List<Asset>? importedAssets, List<Device>? importedDevices, List<User>? importedUsers, List<User>? keychain, String sourceId, User? owner, List<CustomReport>? allowedReports, String? fixedWorkspaceId, Workspace? fixedWorkspace, List<MapLayer> authorizedLayers, PushSecrets? iosPushSecrets, PushSecrets? androidPushSecrets, bool? hasSvcPushSecrets
 });
 
 
@@ -1069,7 +1070,7 @@ class _$RegisteredAppCopyWithImpl<$Res>
 
 /// Create a copy of RegisteredApp
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? technology = null,Object? legalInformation = freezed,Object? designInformation = freezed,Object? nickname = null,Object? isCustomized = freezed,Object? instances = freezed,Object? importedAssets = freezed,Object? importedDevices = freezed,Object? importedUsers = freezed,Object? keychain = freezed,Object? sourceId = null,Object? owner = freezed,Object? allowedReports = freezed,Object? fixedWorkspaceId = freezed,Object? fixedWorkspace = freezed,Object? authorizedLayers = null,Object? iosPushSecrets = freezed,Object? androidPushSecrets = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? technology = null,Object? legalInformation = freezed,Object? designInformation = freezed,Object? nickname = null,Object? isCustomized = freezed,Object? instances = freezed,Object? importedAssets = freezed,Object? importedDevices = freezed,Object? importedUsers = freezed,Object? keychain = freezed,Object? sourceId = null,Object? owner = freezed,Object? allowedReports = freezed,Object? fixedWorkspaceId = freezed,Object? fixedWorkspace = freezed,Object? authorizedLayers = null,Object? iosPushSecrets = freezed,Object? androidPushSecrets = freezed,Object? hasSvcPushSecrets = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1091,7 +1092,8 @@ as String?,fixedWorkspace: freezed == fixedWorkspace ? _self.fixedWorkspace : fi
 as Workspace?,authorizedLayers: null == authorizedLayers ? _self.authorizedLayers : authorizedLayers // ignore: cast_nullable_to_non_nullable
 as List<MapLayer>,iosPushSecrets: freezed == iosPushSecrets ? _self.iosPushSecrets : iosPushSecrets // ignore: cast_nullable_to_non_nullable
 as PushSecrets?,androidPushSecrets: freezed == androidPushSecrets ? _self.androidPushSecrets : androidPushSecrets // ignore: cast_nullable_to_non_nullable
-as PushSecrets?,
+as PushSecrets?,hasSvcPushSecrets: freezed == hasSvcPushSecrets ? _self.hasSvcPushSecrets : hasSvcPushSecrets // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 /// Create a copy of RegisteredApp
@@ -1248,10 +1250,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets,  bool? hasSvcPushSecrets)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RegisteredApp() when $default != null:
-return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets);case _:
+return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets,_that.hasSvcPushSecrets);case _:
   return orElse();
 
 }
@@ -1269,10 +1271,10 @@ return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets,  bool? hasSvcPushSecrets)  $default,) {final _that = this;
 switch (_that) {
 case _RegisteredApp():
-return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets);case _:
+return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets,_that.hasSvcPushSecrets);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1289,10 +1291,10 @@ return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(unknownEnumValue: AppTechnology.flutter)  AppTechnology technology,  AppLegal? legalInformation,  AppDesign? designInformation,  String nickname,  bool? isCustomized,  List<AppInstance>? instances,  List<Asset>? importedAssets,  List<Device>? importedDevices,  List<User>? importedUsers,  List<User>? keychain,  String sourceId,  User? owner,  List<CustomReport>? allowedReports,  String? fixedWorkspaceId,  Workspace? fixedWorkspace,  List<MapLayer> authorizedLayers,  PushSecrets? iosPushSecrets,  PushSecrets? androidPushSecrets,  bool? hasSvcPushSecrets)?  $default,) {final _that = this;
 switch (_that) {
 case _RegisteredApp() when $default != null:
-return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets);case _:
+return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_that.designInformation,_that.nickname,_that.isCustomized,_that.instances,_that.importedAssets,_that.importedDevices,_that.importedUsers,_that.keychain,_that.sourceId,_that.owner,_that.allowedReports,_that.fixedWorkspaceId,_that.fixedWorkspace,_that.authorizedLayers,_that.iosPushSecrets,_that.androidPushSecrets,_that.hasSvcPushSecrets);case _:
   return null;
 
 }
@@ -1304,7 +1306,7 @@ return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_tha
 @JsonSerializable()
 
 class _RegisteredApp extends RegisteredApp {
-  const _RegisteredApp({required this.id, required this.name, @JsonKey(unknownEnumValue: AppTechnology.flutter) this.technology = AppTechnology.flutter, this.legalInformation, this.designInformation, required this.nickname, this.isCustomized, final  List<AppInstance>? instances, final  List<Asset>? importedAssets, final  List<Device>? importedDevices, final  List<User>? importedUsers, final  List<User>? keychain, required this.sourceId, this.owner, final  List<CustomReport>? allowedReports, this.fixedWorkspaceId, this.fixedWorkspace, final  List<MapLayer> authorizedLayers = const [], this.iosPushSecrets, this.androidPushSecrets}): _instances = instances,_importedAssets = importedAssets,_importedDevices = importedDevices,_importedUsers = importedUsers,_keychain = keychain,_allowedReports = allowedReports,_authorizedLayers = authorizedLayers,super._();
+  const _RegisteredApp({required this.id, required this.name, @JsonKey(unknownEnumValue: AppTechnology.flutter) this.technology = AppTechnology.flutter, this.legalInformation, this.designInformation, required this.nickname, this.isCustomized, final  List<AppInstance>? instances, final  List<Asset>? importedAssets, final  List<Device>? importedDevices, final  List<User>? importedUsers, final  List<User>? keychain, required this.sourceId, this.owner, final  List<CustomReport>? allowedReports, this.fixedWorkspaceId, this.fixedWorkspace, final  List<MapLayer> authorizedLayers = const [], this.iosPushSecrets, this.androidPushSecrets, this.hasSvcPushSecrets}): _instances = instances,_importedAssets = importedAssets,_importedDevices = importedDevices,_importedUsers = importedUsers,_keychain = keychain,_allowedReports = allowedReports,_authorizedLayers = authorizedLayers,super._();
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) => _$RegisteredAppFromJson(json);
 
 /// [id] is the unique identifier of the app.
@@ -1396,6 +1398,8 @@ class _RegisteredApp extends RegisteredApp {
 @override final  PushSecrets? iosPushSecrets;
 /// [androidPushSecrets] is the decrypted Android Firebase credentials for layrz_push
 @override final  PushSecrets? androidPushSecrets;
+/// true when the backend holds service-account push credentials; content never exposed.
+@override final  bool? hasSvcPushSecrets;
 
 /// Create a copy of RegisteredApp
 /// with the given fields replaced by the non-null parameter values.
@@ -1410,16 +1414,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other._instances, _instances)&&const DeepCollectionEquality().equals(other._importedAssets, _importedAssets)&&const DeepCollectionEquality().equals(other._importedDevices, _importedDevices)&&const DeepCollectionEquality().equals(other._importedUsers, _importedUsers)&&const DeepCollectionEquality().equals(other._keychain, _keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._allowedReports, _allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other._authorizedLayers, _authorizedLayers)&&(identical(other.iosPushSecrets, iosPushSecrets) || other.iosPushSecrets == iosPushSecrets)&&(identical(other.androidPushSecrets, androidPushSecrets) || other.androidPushSecrets == androidPushSecrets));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other._instances, _instances)&&const DeepCollectionEquality().equals(other._importedAssets, _importedAssets)&&const DeepCollectionEquality().equals(other._importedDevices, _importedDevices)&&const DeepCollectionEquality().equals(other._importedUsers, _importedUsers)&&const DeepCollectionEquality().equals(other._keychain, _keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._allowedReports, _allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other._authorizedLayers, _authorizedLayers)&&(identical(other.iosPushSecrets, iosPushSecrets) || other.iosPushSecrets == iosPushSecrets)&&(identical(other.androidPushSecrets, androidPushSecrets) || other.androidPushSecrets == androidPushSecrets)&&(identical(other.hasSvcPushSecrets, hasSvcPushSecrets) || other.hasSvcPushSecrets == hasSvcPushSecrets));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(_instances),const DeepCollectionEquality().hash(_importedAssets),const DeepCollectionEquality().hash(_importedDevices),const DeepCollectionEquality().hash(_importedUsers),const DeepCollectionEquality().hash(_keychain),sourceId,owner,const DeepCollectionEquality().hash(_allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(_authorizedLayers),iosPushSecrets,androidPushSecrets]);
+int get hashCode => Object.hashAll([runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(_instances),const DeepCollectionEquality().hash(_importedAssets),const DeepCollectionEquality().hash(_importedDevices),const DeepCollectionEquality().hash(_importedUsers),const DeepCollectionEquality().hash(_keychain),sourceId,owner,const DeepCollectionEquality().hash(_allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(_authorizedLayers),iosPushSecrets,androidPushSecrets,hasSvcPushSecrets]);
 
 @override
 String toString() {
-  return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers, iosPushSecrets: $iosPushSecrets, androidPushSecrets: $androidPushSecrets)';
+  return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers, iosPushSecrets: $iosPushSecrets, androidPushSecrets: $androidPushSecrets, hasSvcPushSecrets: $hasSvcPushSecrets)';
 }
 
 
@@ -1430,7 +1434,7 @@ abstract mixin class _$RegisteredAppCopyWith<$Res> implements $RegisteredAppCopy
   factory _$RegisteredAppCopyWith(_RegisteredApp value, $Res Function(_RegisteredApp) _then) = __$RegisteredAppCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(unknownEnumValue: AppTechnology.flutter) AppTechnology technology, AppLegal? legalInformation, AppDesign? designInformation, String nickname, bool? isCustomized, List<AppInstance>? instances, List<Asset>? importedAssets, List<Device>? importedDevices, List<User>? importedUsers, List<User>? keychain, String sourceId, User? owner, List<CustomReport>? allowedReports, String? fixedWorkspaceId, Workspace? fixedWorkspace, List<MapLayer> authorizedLayers, PushSecrets? iosPushSecrets, PushSecrets? androidPushSecrets
+ String id, String name,@JsonKey(unknownEnumValue: AppTechnology.flutter) AppTechnology technology, AppLegal? legalInformation, AppDesign? designInformation, String nickname, bool? isCustomized, List<AppInstance>? instances, List<Asset>? importedAssets, List<Device>? importedDevices, List<User>? importedUsers, List<User>? keychain, String sourceId, User? owner, List<CustomReport>? allowedReports, String? fixedWorkspaceId, Workspace? fixedWorkspace, List<MapLayer> authorizedLayers, PushSecrets? iosPushSecrets, PushSecrets? androidPushSecrets, bool? hasSvcPushSecrets
 });
 
 
@@ -1447,7 +1451,7 @@ class __$RegisteredAppCopyWithImpl<$Res>
 
 /// Create a copy of RegisteredApp
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? technology = null,Object? legalInformation = freezed,Object? designInformation = freezed,Object? nickname = null,Object? isCustomized = freezed,Object? instances = freezed,Object? importedAssets = freezed,Object? importedDevices = freezed,Object? importedUsers = freezed,Object? keychain = freezed,Object? sourceId = null,Object? owner = freezed,Object? allowedReports = freezed,Object? fixedWorkspaceId = freezed,Object? fixedWorkspace = freezed,Object? authorizedLayers = null,Object? iosPushSecrets = freezed,Object? androidPushSecrets = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? technology = null,Object? legalInformation = freezed,Object? designInformation = freezed,Object? nickname = null,Object? isCustomized = freezed,Object? instances = freezed,Object? importedAssets = freezed,Object? importedDevices = freezed,Object? importedUsers = freezed,Object? keychain = freezed,Object? sourceId = null,Object? owner = freezed,Object? allowedReports = freezed,Object? fixedWorkspaceId = freezed,Object? fixedWorkspace = freezed,Object? authorizedLayers = null,Object? iosPushSecrets = freezed,Object? androidPushSecrets = freezed,Object? hasSvcPushSecrets = freezed,}) {
   return _then(_RegisteredApp(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -1469,7 +1473,8 @@ as String?,fixedWorkspace: freezed == fixedWorkspace ? _self.fixedWorkspace : fi
 as Workspace?,authorizedLayers: null == authorizedLayers ? _self._authorizedLayers : authorizedLayers // ignore: cast_nullable_to_non_nullable
 as List<MapLayer>,iosPushSecrets: freezed == iosPushSecrets ? _self.iosPushSecrets : iosPushSecrets // ignore: cast_nullable_to_non_nullable
 as PushSecrets?,androidPushSecrets: freezed == androidPushSecrets ? _self.androidPushSecrets : androidPushSecrets // ignore: cast_nullable_to_non_nullable
-as PushSecrets?,
+as PushSecrets?,hasSvcPushSecrets: freezed == hasSvcPushSecrets ? _self.hasSvcPushSecrets : hasSvcPushSecrets // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 

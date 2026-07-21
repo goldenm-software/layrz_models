@@ -217,6 +217,7 @@ _RegisteredApp _$RegisteredAppFromJson(
       : PushSecrets.fromJson(
           json['androidPushSecrets'] as Map<String, dynamic>,
         ),
+  hasSvcPushSecrets: json['hasSvcPushSecrets'] as bool?,
 );
 
 Map<String, dynamic> _$RegisteredAppToJson(
@@ -242,6 +243,7 @@ Map<String, dynamic> _$RegisteredAppToJson(
   'authorizedLayers': instance.authorizedLayers.map((e) => e.toJson()).toList(),
   'iosPushSecrets': instance.iosPushSecrets?.toJson(),
   'androidPushSecrets': instance.androidPushSecrets?.toJson(),
+  'hasSvcPushSecrets': instance.hasSvcPushSecrets,
 };
 
 _AppThemedAsset _$AppThemedAssetFromJson(Map<String, dynamic> json) =>

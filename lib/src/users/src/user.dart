@@ -215,6 +215,64 @@ abstract class User with _$User {
       return [];
     }
   }
+
+  /// [loginAs] logs in as a subaccount (delegate login).
+  /// Returns a [Token] on success or null on error.
+  static Future<Token?> loginAs({
+    required String userId,
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlMutation(
+          variables: [
+            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
+            GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
+          ],
+          name: 'loginAsSubaccount',
+        )..add(
+          GqlField(name: 'loginAsSubaccount', args: {'apiToken': 'apiToken', 'userId': 'userId'})
+            ..add(GqlField(name: 'status'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'token', fragment: Token.gqlFragment))
+                ..add(GqlField(name: 'validBefore')),
+            ),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/User/loginAs(): No response from server");
+        return null;
+      }
+
+      final result = data['data']['loginAsSubaccount'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/User/loginAs(): No result from server");
+        return null;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return null;
+      }
+
+      onResponse?.call(status.toJson());
+      return result['result']?['token'] != null
+          ? Token.fromJson(Map<String, dynamic>.from(result['result']['token'] as Map))
+          : null;
+    } catch (e, stack) {
+      Log.critical("layrz_models/User/loginAs(): General exception => $e\n$stack");
+      return null;
+    }
+  }
 }
 
 @unfreezed
