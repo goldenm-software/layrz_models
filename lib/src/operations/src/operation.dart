@@ -197,7 +197,7 @@ abstract class Operation with _$Operation {
       final response = await connector.perform(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'id', type: .string, isRequired: true, value: id),
+            GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
           ],
           name: 'fetchOperation',
         )..add(
@@ -228,9 +228,12 @@ abstract class Operation with _$Operation {
       }
 
       onResponse?.call(status.toJson());
-      return result['result'] != null
-          ? Operation.fromJson(Map<String, dynamic>.from(result['result'] as Map))
-          : null;
+      final resultList = result['result'] as List<dynamic>?;
+      if (resultList == null || resultList.isEmpty) {
+        Log.warning("layrz_models/Operation/fetch(): No result in list");
+        return null;
+      }
+      return Operation.fromJson(Map<String, dynamic>.from(resultList.first as Map));
     } catch (e, stack) {
       Log.critical("layrz_models/Operation/fetch(): General exception => $e\n$stack");
       return null;
@@ -251,7 +254,7 @@ abstract class Operation with _$Operation {
       final args = <String, String>{};
 
       if (appId != null) {
-        variables.add(GqlVariable(name: 'appId', type: .string, isRequired: false, value: appId));
+        variables.add(GqlVariable(name: 'appId', type: .id, isRequired: false, value: appId));
         args['appId'] = 'appId';
       }
 
@@ -309,12 +312,16 @@ abstract class Operation with _$Operation {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'ids', type: .list(of: .id), isRequired: true, value: [id]),
+            GqlVariable(
+              name: 'ids',
+              type: .list(of: .id),
+              isRequired: true,
+              value: [id],
+            ),
           ],
           name: 'deleteOperation',
         )..add(
-          GqlField(name: 'deleteOperations', args: {'ids': 'ids'})
-            ..add(GqlField(name: 'status')),
+          GqlField(name: 'deleteOperations', args: {'ids': 'ids'})..add(GqlField(name: 'status')),
         ),
       );
 
@@ -354,12 +361,16 @@ abstract class Operation with _$Operation {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'ids', type: .list(of: .id), isRequired: true, value: ids),
+            GqlVariable(
+              name: 'ids',
+              type: .list(of: .id),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'deleteOperations',
         )..add(
-          GqlField(name: 'deleteOperations', args: {'ids': 'ids'})
-            ..add(GqlField(name: 'status')),
+          GqlField(name: 'deleteOperations', args: {'ids': 'ids'})..add(GqlField(name: 'status')),
         ),
       );
 
@@ -525,7 +536,12 @@ abstract class OperationInput with _$OperationInput {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'data', type: .input(of: 'OperationInput'), isRequired: true, value: this),
+            GqlVariable(
+              name: 'data',
+              type: .input(of: 'OperationInput'),
+              isRequired: true,
+              value: this,
+            ),
           ],
           name: mutationName,
         )..add(
@@ -556,9 +572,12 @@ abstract class OperationInput with _$OperationInput {
       }
 
       onResponse?.call(status.toJson());
-      return result['result'] != null
-          ? Operation.fromJson(Map<String, dynamic>.from(result['result'] as Map))
-          : null;
+      final resultList = result['result'] as List<dynamic>?;
+      if (resultList == null || resultList.isEmpty) {
+        Log.warning("layrz_models/OperationInput/save(): No result in list");
+        return null;
+      }
+      return Operation.fromJson(Map<String, dynamic>.from(resultList.first as Map));
     } catch (e, stack) {
       Log.critical("layrz_models/OperationInput/save(): General exception => $e\n$stack");
       return null;
