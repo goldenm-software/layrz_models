@@ -17,8 +17,10 @@ mixin _$MappitRouteLinkingHistory {
 
 /// [currentSeller] represents the current seller of the route. If this field comes null, means is a unlink
  Asset? get currentSeller;/// [currentSellerId] represents the current seller ID of the route. If this field comes null, means is a unlink
- String? get currentSellerId;/// [performedBy] represents the user that performed the operation of link or unlink
- User get performedBy;/// [performedById] represents the user ID that performed the operation of link or unlink
+ String? get currentSellerId;/// [performedBy] represents the user that performed the operation of link or unlink.
+/// If this field comes null, the relation was soft-deleted (e.g. the user was removed);
+/// [performedById] still holds the plain ID of who performed the operation.
+ User? get performedBy;/// [performedById] represents the user ID that performed the operation of link or unlink
  String get performedById;/// [performedAt] is the timestamp of the operation
 @TimestampConverter() DateTime get performedAt;
 /// Create a copy of MappitRouteLinkingHistory
@@ -53,11 +55,11 @@ abstract mixin class $MappitRouteLinkingHistoryCopyWith<$Res>  {
   factory $MappitRouteLinkingHistoryCopyWith(MappitRouteLinkingHistory value, $Res Function(MappitRouteLinkingHistory) _then) = _$MappitRouteLinkingHistoryCopyWithImpl;
 @useResult
 $Res call({
- Asset? currentSeller, String? currentSellerId, User performedBy, String performedById,@TimestampConverter() DateTime performedAt
+ Asset? currentSeller, String? currentSellerId, User? performedBy, String performedById,@TimestampConverter() DateTime performedAt
 });
 
 
-$AssetCopyWith<$Res>? get currentSeller;$UserCopyWith<$Res> get performedBy;
+$AssetCopyWith<$Res>? get currentSeller;$UserCopyWith<$Res>? get performedBy;
 
 }
 /// @nodoc
@@ -70,12 +72,12 @@ class _$MappitRouteLinkingHistoryCopyWithImpl<$Res>
 
 /// Create a copy of MappitRouteLinkingHistory
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? currentSeller = freezed,Object? currentSellerId = freezed,Object? performedBy = null,Object? performedById = null,Object? performedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? currentSeller = freezed,Object? currentSellerId = freezed,Object? performedBy = freezed,Object? performedById = null,Object? performedAt = null,}) {
   return _then(_self.copyWith(
 currentSeller: freezed == currentSeller ? _self.currentSeller : currentSeller // ignore: cast_nullable_to_non_nullable
 as Asset?,currentSellerId: freezed == currentSellerId ? _self.currentSellerId : currentSellerId // ignore: cast_nullable_to_non_nullable
-as String?,performedBy: null == performedBy ? _self.performedBy : performedBy // ignore: cast_nullable_to_non_nullable
-as User,performedById: null == performedById ? _self.performedById : performedById // ignore: cast_nullable_to_non_nullable
+as String?,performedBy: freezed == performedBy ? _self.performedBy : performedBy // ignore: cast_nullable_to_non_nullable
+as User?,performedById: null == performedById ? _self.performedById : performedById // ignore: cast_nullable_to_non_nullable
 as String,performedAt: null == performedAt ? _self.performedAt : performedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,
   ));
@@ -96,9 +98,12 @@ $AssetCopyWith<$Res>? get currentSeller {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserCopyWith<$Res> get performedBy {
-  
-  return $UserCopyWith<$Res>(_self.performedBy, (value) {
+$UserCopyWith<$Res>? get performedBy {
+    if (_self.performedBy == null) {
+    return null;
+  }
+
+  return $UserCopyWith<$Res>(_self.performedBy!, (value) {
     return _then(_self.copyWith(performedBy: value));
   });
 }
@@ -183,7 +188,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Asset? currentSeller,  String? currentSellerId,  User performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Asset? currentSeller,  String? currentSellerId,  User? performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MappitRouteLinkingHistory() when $default != null:
 return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_that.performedById,_that.performedAt);case _:
@@ -204,7 +209,7 @@ return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Asset? currentSeller,  String? currentSellerId,  User performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Asset? currentSeller,  String? currentSellerId,  User? performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)  $default,) {final _that = this;
 switch (_that) {
 case _MappitRouteLinkingHistory():
 return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_that.performedById,_that.performedAt);case _:
@@ -224,7 +229,7 @@ return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Asset? currentSeller,  String? currentSellerId,  User performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Asset? currentSeller,  String? currentSellerId,  User? performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _MappitRouteLinkingHistory() when $default != null:
 return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_that.performedById,_that.performedAt);case _:
@@ -239,15 +244,17 @@ return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_tha
 @JsonSerializable()
 
 class _MappitRouteLinkingHistory implements MappitRouteLinkingHistory {
-  const _MappitRouteLinkingHistory({this.currentSeller, this.currentSellerId, required this.performedBy, required this.performedById, @TimestampConverter() required this.performedAt});
+  const _MappitRouteLinkingHistory({this.currentSeller, this.currentSellerId, this.performedBy, required this.performedById, @TimestampConverter() required this.performedAt});
   factory _MappitRouteLinkingHistory.fromJson(Map<String, dynamic> json) => _$MappitRouteLinkingHistoryFromJson(json);
 
 /// [currentSeller] represents the current seller of the route. If this field comes null, means is a unlink
 @override final  Asset? currentSeller;
 /// [currentSellerId] represents the current seller ID of the route. If this field comes null, means is a unlink
 @override final  String? currentSellerId;
-/// [performedBy] represents the user that performed the operation of link or unlink
-@override final  User performedBy;
+/// [performedBy] represents the user that performed the operation of link or unlink.
+/// If this field comes null, the relation was soft-deleted (e.g. the user was removed);
+/// [performedById] still holds the plain ID of who performed the operation.
+@override final  User? performedBy;
 /// [performedById] represents the user ID that performed the operation of link or unlink
 @override final  String performedById;
 /// [performedAt] is the timestamp of the operation
@@ -286,11 +293,11 @@ abstract mixin class _$MappitRouteLinkingHistoryCopyWith<$Res> implements $Mappi
   factory _$MappitRouteLinkingHistoryCopyWith(_MappitRouteLinkingHistory value, $Res Function(_MappitRouteLinkingHistory) _then) = __$MappitRouteLinkingHistoryCopyWithImpl;
 @override @useResult
 $Res call({
- Asset? currentSeller, String? currentSellerId, User performedBy, String performedById,@TimestampConverter() DateTime performedAt
+ Asset? currentSeller, String? currentSellerId, User? performedBy, String performedById,@TimestampConverter() DateTime performedAt
 });
 
 
-@override $AssetCopyWith<$Res>? get currentSeller;@override $UserCopyWith<$Res> get performedBy;
+@override $AssetCopyWith<$Res>? get currentSeller;@override $UserCopyWith<$Res>? get performedBy;
 
 }
 /// @nodoc
@@ -303,12 +310,12 @@ class __$MappitRouteLinkingHistoryCopyWithImpl<$Res>
 
 /// Create a copy of MappitRouteLinkingHistory
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? currentSeller = freezed,Object? currentSellerId = freezed,Object? performedBy = null,Object? performedById = null,Object? performedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? currentSeller = freezed,Object? currentSellerId = freezed,Object? performedBy = freezed,Object? performedById = null,Object? performedAt = null,}) {
   return _then(_MappitRouteLinkingHistory(
 currentSeller: freezed == currentSeller ? _self.currentSeller : currentSeller // ignore: cast_nullable_to_non_nullable
 as Asset?,currentSellerId: freezed == currentSellerId ? _self.currentSellerId : currentSellerId // ignore: cast_nullable_to_non_nullable
-as String?,performedBy: null == performedBy ? _self.performedBy : performedBy // ignore: cast_nullable_to_non_nullable
-as User,performedById: null == performedById ? _self.performedById : performedById // ignore: cast_nullable_to_non_nullable
+as String?,performedBy: freezed == performedBy ? _self.performedBy : performedBy // ignore: cast_nullable_to_non_nullable
+as User?,performedById: null == performedById ? _self.performedById : performedById // ignore: cast_nullable_to_non_nullable
 as String,performedAt: null == performedAt ? _self.performedAt : performedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,
   ));
@@ -330,9 +337,12 @@ $AssetCopyWith<$Res>? get currentSeller {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserCopyWith<$Res> get performedBy {
-  
-  return $UserCopyWith<$Res>(_self.performedBy, (value) {
+$UserCopyWith<$Res>? get performedBy {
+    if (_self.performedBy == null) {
+    return null;
+  }
+
+  return $UserCopyWith<$Res>(_self.performedBy!, (value) {
     return _then(_self.copyWith(performedBy: value));
   });
 }

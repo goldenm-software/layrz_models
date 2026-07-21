@@ -9,8 +9,10 @@ abstract class MappitRouteLinkingHistory with _$MappitRouteLinkingHistory {
     /// [currentSellerId] represents the current seller ID of the route. If this field comes null, means is a unlink
     String? currentSellerId,
 
-    /// [performedBy] represents the user that performed the operation of link or unlink
-    required User performedBy,
+    /// [performedBy] represents the user that performed the operation of link or unlink.
+    /// If this field comes null, the relation was soft-deleted (e.g. the user was removed);
+    /// [performedById] still holds the plain ID of who performed the operation.
+    User? performedBy,
 
     /// [performedById] represents the user ID that performed the operation of link or unlink
     required String performedById,

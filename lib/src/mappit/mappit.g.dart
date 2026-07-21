@@ -13,7 +13,9 @@ _MappitRouteLinkingHistory _$MappitRouteLinkingHistoryFromJson(
       ? null
       : Asset.fromJson(json['currentSeller'] as Map<String, dynamic>),
   currentSellerId: json['currentSellerId'] as String?,
-  performedBy: User.fromJson(json['performedBy'] as Map<String, dynamic>),
+  performedBy: json['performedBy'] == null
+      ? null
+      : User.fromJson(json['performedBy'] as Map<String, dynamic>),
   performedById: json['performedById'] as String,
   performedAt: const TimestampConverter().fromJson(json['performedAt'] as num),
 );
@@ -23,7 +25,7 @@ Map<String, dynamic> _$MappitRouteLinkingHistoryToJson(
 ) => <String, dynamic>{
   'currentSeller': instance.currentSeller?.toJson(),
   'currentSellerId': instance.currentSellerId,
-  'performedBy': instance.performedBy.toJson(),
+  'performedBy': instance.performedBy?.toJson(),
   'performedById': instance.performedById,
   'performedAt': const TimestampConverter().toJson(instance.performedAt),
 };

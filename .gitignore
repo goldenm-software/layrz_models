@@ -43,3 +43,6 @@ mapper.py
 .vscode/settings.json
 
 .claude/settings.local.json
+
+# Local tooling
+.atl/
