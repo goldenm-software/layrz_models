@@ -229,12 +229,11 @@ abstract class User with _$User {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'userId', type: .string, isRequired: true, value: userId),
           ],
           name: 'loginAsSubaccount',
         )..add(
-          GqlField(name: 'loginAsSubaccount', args: {'apiToken': 'apiToken', 'userId': 'userId'})
+          GqlField(name: 'loginAsSubaccount', args: {'userId': 'userId'})
             ..add(GqlField(name: 'status'))
             ..add(
               GqlField(name: 'result')
