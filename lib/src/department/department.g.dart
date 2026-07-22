@@ -14,8 +14,9 @@ _Department _$DepartmentFromJson(Map<String, dynamic> json) => _Department(
       : GenericPermission.fromJson(json['permissions'] as Map<String, dynamic>),
 );
 
-Map<String, dynamic> _$DepartmentToJson(_Department instance) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'permissions': instance.permissions?.toJson(),
-};
+Map<String, dynamic> _$DepartmentToJson(_Department instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'permissions': instance.permissions?.toJson(),
+    };

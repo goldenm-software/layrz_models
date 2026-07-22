@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.16.1
+
+- Add new value `REMITTANCE_SALE` in enum `AtsPurchaseOrderCategoriesEntity`
+
 ## 3.16.0
 
 - Add `PushDevice` model with `validate()` API caller to check device registration status on the backend and retrieve associated operation IDs
