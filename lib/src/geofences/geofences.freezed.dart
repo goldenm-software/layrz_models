@@ -259,8 +259,8 @@ return $default(_that.id,_that.name,_that.mode,_that.description,_that.color,_th
 /// @nodoc
 @JsonSerializable()
 
-class _Geofence implements Geofence {
-  const _Geofence({required this.id, required this.name, @JsonKey(unknownEnumValue: GeofenceMode.radial) required this.mode, this.description, @ColorOrNullConverter() this.color, final  List<GeofencePoint>? path, this.radius, this.resourceId, final  List<Asset>? assetsInside, @JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, final  List<String>? childrenIds, final  List<Geofence>? children, final  List<Access>? access, final  List<CustomField>? customFields, this.ownerId, this.owner, final  List<MappitRoute>? mappitRoutes, final  List<String>? mappitRouteIds, this.assetId}): _path = path,_assetsInside = assetsInside,_childrenIds = childrenIds,_children = children,_access = access,_customFields = customFields,_mappitRoutes = mappitRoutes,_mappitRouteIds = mappitRouteIds;
+class _Geofence extends Geofence {
+  const _Geofence({required this.id, required this.name, @JsonKey(unknownEnumValue: GeofenceMode.radial) required this.mode, this.description, @ColorOrNullConverter() this.color, final  List<GeofencePoint>? path, this.radius, this.resourceId, final  List<Asset>? assetsInside, @JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, final  List<String>? childrenIds, final  List<Geofence>? children, final  List<Access>? access, final  List<CustomField>? customFields, this.ownerId, this.owner, final  List<MappitRoute>? mappitRoutes, final  List<String>? mappitRouteIds, this.assetId}): _path = path,_assetsInside = assetsInside,_childrenIds = childrenIds,_children = children,_access = access,_customFields = customFields,_mappitRoutes = mappitRoutes,_mappitRouteIds = mappitRouteIds,super._();
   factory _Geofence.fromJson(Map<String, dynamic> json) => _$GeofenceFromJson(json);
 
 /// ID of the geofence entity. This ID is unique.
@@ -689,8 +689,8 @@ return $default(_that.id,_that.name,_that.description,_that.color,_that.mode,_th
 /// @nodoc
 @JsonSerializable()
 
-class _GeofenceInput implements GeofenceInput {
-   _GeofenceInput({this.id, this.name = "", this.description = "", @ColorConverter() this.color = Colors.blue, @JsonKey(unknownEnumValue: GeofenceMode.radial) this.mode = GeofenceMode.radial, this.radius = 100, this.path = const [], @JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, this.childrenIds = const [], this.customFields = const [], this.assetId});
+class _GeofenceInput extends GeofenceInput {
+   _GeofenceInput({this.id, this.name = "", this.description = "", @ColorConverter() this.color = Colors.blue, @JsonKey(unknownEnumValue: GeofenceMode.radial) this.mode = GeofenceMode.radial, this.radius = 100, this.path = const [], @JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, this.childrenIds = const [], this.customFields = const [], this.assetId}): super._();
   factory _GeofenceInput.fromJson(Map<String, dynamic> json) => _$GeofenceInputFromJson(json);
 
 /// ID of the geofence entity. This ID is unique.
@@ -1557,6 +1557,279 @@ class __$GeoPointCopyWithImpl<$Res>
 latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double?,longitude: freezed == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$SearchItem {
+
+/// [name] is the name of the search item.
+ String get name;/// [type] indicates the type of the search item, which can be point, radial, polygon, or linear.
+ SearchType get type;/// [path] is a list of [GeoPoint]s that define the geographical path or area associated with the search item.
+ List<GeoPoint> get path;/// [searchedOn] indicates the context in which the search item was found, such as assets, geofences, or addresses.
+ GeofenceSearchBy get searchedOn;
+/// Create a copy of SearchItem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SearchItemCopyWith<SearchItem> get copyWith => _$SearchItemCopyWithImpl<SearchItem>(this as SearchItem, _$identity);
+
+  /// Serializes this SearchItem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'SearchItem(name: $name, type: $type, path: $path, searchedOn: $searchedOn)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SearchItemCopyWith<$Res>  {
+  factory $SearchItemCopyWith(SearchItem value, $Res Function(SearchItem) _then) = _$SearchItemCopyWithImpl;
+@useResult
+$Res call({
+ String name, SearchType type, List<GeoPoint> path, GeofenceSearchBy searchedOn
+});
+
+
+
+
+}
+/// @nodoc
+class _$SearchItemCopyWithImpl<$Res>
+    implements $SearchItemCopyWith<$Res> {
+  _$SearchItemCopyWithImpl(this._self, this._then);
+
+  final SearchItem _self;
+  final $Res Function(SearchItem) _then;
+
+/// Create a copy of SearchItem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? type = null,Object? path = null,Object? searchedOn = null,}) {
+  return _then(_self.copyWith(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as SearchType,path: null == path ? _self.path : path // ignore: cast_nullable_to_non_nullable
+as List<GeoPoint>,searchedOn: null == searchedOn ? _self.searchedOn : searchedOn // ignore: cast_nullable_to_non_nullable
+as GeofenceSearchBy,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SearchItem].
+extension SearchItemPatterns on SearchItem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SearchItem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SearchItem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SearchItem value)  $default,){
+final _that = this;
+switch (_that) {
+case _SearchItem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SearchItem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SearchItem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name,  SearchType type,  List<GeoPoint> path,  GeofenceSearchBy searchedOn)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SearchItem() when $default != null:
+return $default(_that.name,_that.type,_that.path,_that.searchedOn);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name,  SearchType type,  List<GeoPoint> path,  GeofenceSearchBy searchedOn)  $default,) {final _that = this;
+switch (_that) {
+case _SearchItem():
+return $default(_that.name,_that.type,_that.path,_that.searchedOn);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name,  SearchType type,  List<GeoPoint> path,  GeofenceSearchBy searchedOn)?  $default,) {final _that = this;
+switch (_that) {
+case _SearchItem() when $default != null:
+return $default(_that.name,_that.type,_that.path,_that.searchedOn);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SearchItem extends SearchItem {
+  const _SearchItem({required this.name, required this.type, required final  List<GeoPoint> path, required this.searchedOn}): _path = path,super._();
+  factory _SearchItem.fromJson(Map<String, dynamic> json) => _$SearchItemFromJson(json);
+
+/// [name] is the name of the search item.
+@override final  String name;
+/// [type] indicates the type of the search item, which can be point, radial, polygon, or linear.
+@override final  SearchType type;
+/// [path] is a list of [GeoPoint]s that define the geographical path or area associated with the search item.
+ final  List<GeoPoint> _path;
+/// [path] is a list of [GeoPoint]s that define the geographical path or area associated with the search item.
+@override List<GeoPoint> get path {
+  if (_path is EqualUnmodifiableListView) return _path;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_path);
+}
+
+/// [searchedOn] indicates the context in which the search item was found, such as assets, geofences, or addresses.
+@override final  GeofenceSearchBy searchedOn;
+
+/// Create a copy of SearchItem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SearchItemCopyWith<_SearchItem> get copyWith => __$SearchItemCopyWithImpl<_SearchItem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SearchItemToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'SearchItem(name: $name, type: $type, path: $path, searchedOn: $searchedOn)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SearchItemCopyWith<$Res> implements $SearchItemCopyWith<$Res> {
+  factory _$SearchItemCopyWith(_SearchItem value, $Res Function(_SearchItem) _then) = __$SearchItemCopyWithImpl;
+@override @useResult
+$Res call({
+ String name, SearchType type, List<GeoPoint> path, GeofenceSearchBy searchedOn
+});
+
+
+
+
+}
+/// @nodoc
+class __$SearchItemCopyWithImpl<$Res>
+    implements _$SearchItemCopyWith<$Res> {
+  __$SearchItemCopyWithImpl(this._self, this._then);
+
+  final _SearchItem _self;
+  final $Res Function(_SearchItem) _then;
+
+/// Create a copy of SearchItem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? type = null,Object? path = null,Object? searchedOn = null,}) {
+  return _then(_SearchItem(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as SearchType,path: null == path ? _self._path : path // ignore: cast_nullable_to_non_nullable
+as List<GeoPoint>,searchedOn: null == searchedOn ? _self.searchedOn : searchedOn // ignore: cast_nullable_to_non_nullable
+as GeofenceSearchBy,
   ));
 }
 

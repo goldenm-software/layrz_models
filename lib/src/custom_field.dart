@@ -11,6 +11,16 @@ abstract class CustomField with _$CustomField {
   }) = _CustomField;
 
   factory CustomField.fromJson(Map<String, dynamic> json) => _$CustomFieldFromJson(json);
+
+  // coverage:ignore-start
+  /// [fragment] is the GqlFragment for CustomField
+  static GqlFragment get fragment => GqlFragment(name: 'customFieldFragment', onType: 'CustomField')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'value'))
+    ..add(GqlField(name: 'isFixed'))
+    ..add(GqlField(name: 'updatedAt'));
+  // coverage:ignore-end
 }
 
 @unfreezed

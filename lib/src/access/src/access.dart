@@ -20,8 +20,9 @@ abstract class Access with _$Access {
 
   factory Access.fromJson(Map<String, dynamic> json) => _$AccessFromJson(json);
 
-  /// [graphqlIdFragment] GqlFragment for Access using integer ID
-  static GqlFragment get graphqlIdFragment => GqlFragment(name: 'accessFragment', onType: 'AccessPermission')
+  // coverage:ignore-start
+  /// [idFragment] GqlFragment for Access using integer ID
+  static GqlFragment get idFragment => GqlFragment(name: 'accessFragment', onType: 'AccessPermission')
     ..add(GqlField(name: 'id'))
     ..add(GqlField(name: 'read'))
     ..add(GqlField(name: 'write'))
@@ -29,9 +30,17 @@ abstract class Access with _$Access {
     ..add(GqlField(name: 'objectId'))
     ..add(GqlField(name: 'userId'))
     ..add(GqlField(name: 'module'));
+  // coverage:ignore-end
 
-  /// [graphqlUuidFragment] GqlFragment for Access using UUID
-  static GqlFragment get graphqlUuidFragment => GqlFragment(name: 'accessUuidFragment', onType: 'AccessPermissionUuid')
+  // coverage:ignore-start
+  /// [graphqlIdFragment] GqlFragment for Access using integer ID
+  @Deprecated('Use idFragment instead')
+  static GqlFragment get graphqlIdFragment => idFragment;
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [uuidFragment] GqlFragment for Access using UUID
+  static GqlFragment get uuidFragment => GqlFragment(name: 'accessUuidFragment', onType: 'AccessPermissionUuid')
     ..add(GqlField(name: 'id'))
     ..add(GqlField(name: 'read'))
     ..add(GqlField(name: 'write'))
@@ -39,4 +48,11 @@ abstract class Access with _$Access {
     ..add(GqlField(name: 'objectId'))
     ..add(GqlField(name: 'userId'))
     ..add(GqlField(name: 'module'));
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [graphqlUuidFragment] GqlFragment for Access using UUID
+  @Deprecated('Use graphqlUuidFragment instead')
+  static GqlFragment get graphqlUuidFragment => uuidFragment;
+  // coverage:ignore-end
 }
