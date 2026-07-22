@@ -186,3 +186,33 @@ Map<String, dynamic> _$GeoPointToJson(_GeoPoint instance) => <String, dynamic>{
   'latitude': instance.latitude,
   'longitude': instance.longitude,
 };
+
+_SearchItem _$SearchItemFromJson(Map<String, dynamic> json) => _SearchItem(
+  name: json['name'] as String,
+  type: $enumDecode(_$SearchTypeEnumMap, json['type']),
+  path: (json['path'] as List<dynamic>)
+      .map((e) => GeoPoint.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  searchedOn: $enumDecode(_$GeofenceSearchByEnumMap, json['searchedOn']),
+);
+
+Map<String, dynamic> _$SearchItemToJson(_SearchItem instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'type': instance.type.toJson(),
+      'path': instance.path.map((e) => e.toJson()).toList(),
+      'searchedOn': instance.searchedOn.toJson(),
+    };
+
+const _$SearchTypeEnumMap = {
+  SearchType.point: 'POINT',
+  SearchType.radial: 'RADIAL',
+  SearchType.polygon: 'POLYGON',
+  SearchType.linear: 'LINEAR',
+};
+
+const _$GeofenceSearchByEnumMap = {
+  GeofenceSearchBy.assets: 'ASSETS',
+  GeofenceSearchBy.geofences: 'GEOFENCES',
+  GeofenceSearchBy.addresses: 'ADDRESSES',
+};

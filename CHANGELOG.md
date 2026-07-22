@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.18.0
+
+- Added API connector for `Geofence` with full GraphQL support (`fetch`, `fetchAll`, `save`, `delete`, `exportMany`).
+- Added API connector for `GeofenceInput` with full GraphQL support (`save`).
+
+## 3.17.4
+
+- Fixed an issue on `AvailableApp.fetchAll()` where the `apiToken` variable was not being passed to the GraphQL query, resulting in an empty response. The query now correctly includes the `apiToken` argument.
+
+## 3.17.3
+
+- Corrected Fragment names on `AppFont.fragment` and `InstanceDns.fragment` to match the GraphQL schema types (`AppFont` and `InstanceDns`) instead of the previous incorrect names (`FontInformation` and `DnsConfiguration`).
+
 ## 3.17.2
 
 - Fixed an issue with the API connector `RegisteredApp.fechAll`

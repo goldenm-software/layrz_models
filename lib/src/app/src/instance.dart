@@ -194,7 +194,7 @@ abstract class DnsConfiguration with _$DnsConfiguration {
 
   // coverage:ignore-start
   /// [fragment] is the GraphQL fragment to fetch the DNS configuration
-  static GqlFragment get fragment => GqlFragment(name: 'dnsConfigurationFragment', onType: 'DnsConfiguration')
+  static GqlFragment get fragment => GqlFragment(name: 'dnsConfigurationFragment', onType: 'InstanceDns')
     ..add(GqlField(name: 'name'))
     ..add(GqlField(name: 'value'));
   // coverage:ignore-end

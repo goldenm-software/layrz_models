@@ -1420,8 +1420,8 @@ return $default(_that.wialonId,_that.name);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _ExternalResource implements ExternalResource {
-  const _ExternalResource({required this.wialonId, required this.name});
+class _ExternalResource extends ExternalResource {
+  const _ExternalResource({required this.wialonId, required this.name}): super._();
   factory _ExternalResource.fromJson(Map<String, dynamic> json) => _$ExternalResourceFromJson(json);
 
 /// [wialonId] is the unique identifier from Wialon (Hosting or Local).
@@ -1690,8 +1690,8 @@ return $default(_that.wialonId,_that.name);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _ExternalGeofence implements ExternalGeofence {
-  const _ExternalGeofence({required this.wialonId, required this.name});
+class _ExternalGeofence extends ExternalGeofence {
+  const _ExternalGeofence({required this.wialonId, required this.name}): super._();
   factory _ExternalGeofence.fromJson(Map<String, dynamic> json) => _$ExternalGeofenceFromJson(json);
 
 /// [wialonId] is the unique identifier from Wialon (Hosting or Local).

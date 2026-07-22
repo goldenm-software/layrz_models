@@ -19,3 +19,4 @@ part 'src/gql_builder/variables.dart';
 part 'src/gql_builder/fragment.dart';
 part 'src/gql_builder/field.dart';
 part 'src/gql_builder/gql.dart';
+part 'src/gql_builder/union.dart';

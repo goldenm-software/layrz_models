@@ -75,7 +75,7 @@ abstract class AvailableApp with _$AvailableApp {
             GqlVariable(name: 'apiToken', value: apiToken, type: .string, isRequired: true),
           ],
         )..add(
-          GqlField(name: 'availableApps', args: {})
+          GqlField(name: 'availableApps', args: {'apiToken': 'apiToken'})
             ..add(GqlField(name: 'status'))
             ..add(
               GqlField(name: 'result')

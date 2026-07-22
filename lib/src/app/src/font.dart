@@ -23,7 +23,7 @@ abstract class AppFont with _$AppFont {
 
   // coverage:ignore-start
   /// [fragment] is the GraphQL fragment for the [AppFont] model
-  static GqlFragment get fragment => GqlFragment(name: 'fontFragment', onType: 'FontInformation')
+  static GqlFragment get fragment => GqlFragment(name: 'fontFragment', onType: 'AppFont')
     ..add(GqlField(name: 'source'))
     ..add(GqlField(name: 'name'))
     ..add(GqlField(name: 'uri'));

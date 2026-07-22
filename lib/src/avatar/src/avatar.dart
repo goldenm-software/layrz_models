@@ -29,11 +29,19 @@ abstract class Avatar with _$Avatar {
 
   factory Avatar.fromJson(Map<String, dynamic> json) => _$AvatarFromJson(json);
 
-  /// [gqlFragment] is the GqlFragment for an avatar.
-  static GqlFragment get gqlFragment => GqlFragment(name: 'avatarFragment', onType: 'Avatar')
+  // coverage:ignore-start
+  /// [fragment] is the GqlFragment for an avatar.
+  static GqlFragment get fragment => GqlFragment(name: 'avatarFragment', onType: 'Avatar')
     ..add(GqlField(name: 'type'))
     ..add(GqlField(name: 'url'))
     ..add(GqlField(name: 'icon'))
     ..add(GqlField(name: 'emoji'))
     ..add(GqlField(name: 'base64'));
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [gqlFragment] is the GqlFragment for an avatar.
+  @Deprecated('Use fragment instead')
+  static GqlFragment get gqlFragment => fragment;
+  // coverage:ignore-end
 }

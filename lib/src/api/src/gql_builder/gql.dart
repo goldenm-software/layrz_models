@@ -95,6 +95,15 @@ abstract class Gql {
     final buffer = StringBuffer();
     final indent = '  ' * (depth + 1);
 
+    if (field is GqlUnion) {
+      buffer.write('$indent... on ${field.name} {\n');
+      for (final subField in field.fields) {
+        buffer.write('${_writeField(subField, depth: depth + 1)}\n');
+      }
+      buffer.write('$indent}');
+      return buffer.toString();
+    }
+
     if (field.alias != null) {
       buffer.write('$indent${field.alias}: ${field.name}');
     } else {
