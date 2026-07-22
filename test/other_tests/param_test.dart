@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:layrz_models/layrz_models.dart';
 
@@ -80,6 +79,7 @@ void main() {
 
     final response = ParameterUpdate.fromJson(simulated);
 
-    debugPrint("response=$response");
+    expect(response.assetId, "15402");
+    expect(response.parameters.length, 64);
   });
 }
