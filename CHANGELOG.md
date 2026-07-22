@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.17.2
+
+- Fixed an issue with the API connector `RegisteredApp.fechAll`
+
 ## 3.17.1
 
 - `LayrzConnector` now exposes typed `query()` and `mutate()` methods returning a decoded `ApiResponse` with `status`, `errors` and `result`
