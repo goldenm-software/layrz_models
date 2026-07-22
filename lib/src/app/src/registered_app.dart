@@ -85,10 +85,7 @@ abstract class RegisteredApp with _$RegisteredApp {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.query(
-        GqlQuery(
-          variables: [],
-          name: 'fetchRegisteredApps',
-        )..add(
+        GqlQuery(variables: [])..add(
           GqlField(name: 'registeredApps', args: {})
             ..add(GqlField(name: 'status'))
             ..add(
@@ -96,6 +93,7 @@ abstract class RegisteredApp with _$RegisteredApp {
                 ..add(GqlField(name: 'id'))
                 ..add(GqlField(name: 'name'))
                 ..add(GqlField(name: 'nickname'))
+                ..add(GqlField(name: 'sourceId'))
                 ..add(GqlField(name: 'designInformation', fragment: AppDesign.reducedFragment))
                 ..add(
                   GqlField(name: 'instances')
