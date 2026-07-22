@@ -17,21 +17,67 @@ jobs:
       - uses: goldenm-software/layrz-actions/.github/actions/check-dart@v1
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
-          run-tests: true
-          artifact-name: 'dart-coverage-${{ github.run_id }}'
+          run-tests: false
+
+  test-dart:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2]
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup Flutter
+        uses: flutter-actions/setup-flutter@v4
+        with:
+          channel: stable
+          version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+          cache-sdk: true
+          cache-key: ${{ runner.os }}-flutter-${{ hashFiles('pubspec.yaml') }}
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run tests (shard ${{ matrix.shard }} of 3)
+        run: flutter test --machine --coverage --total-shards 3 --shard-index ${{ matrix.shard }} 2>&1 | tee test-results.json; exit ${PIPESTATUS[0]}
+
+      - name: Publish test results
+        if: always()
+        uses: dorny/test-reporter@v3
+        with:
+          name: Unit Tests (shard ${{ matrix.shard }})
+          path: test-results.json
+          reporter: flutter-json
+
+      - name: Upload shard coverage
+        uses: actions/upload-artifact@v7
+        with:
+          name: dart-coverage-${{ github.run_id }}-${{ matrix.shard }}
+          path: coverage/lcov.info
+          retention-days: 1
 
   coverage:
-    needs: lint-dart
+    needs: [test-dart]
     if: always() && github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
 
-      - name: Download coverage artifacts
+      - name: Download shard coverage artifacts
         uses: actions/download-artifact@v8
         with:
-          name: dart-coverage-${{ github.run_id }}
-          path: dart-coverage
+          pattern: dart-coverage-${{ github.run_id }}-*
+          path: shards
+
+      - name: Merge shard coverage
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lcov
+          mkdir -p dart-coverage
+          ARGS=""
+          for f in shards/*/lcov.info; do ARGS="$ARGS -a $f"; done
+          lcov $ARGS -o dart-coverage/lcov.info
 
       - name: Setup Flutter
         uses: flutter-actions/setup-flutter@v4
