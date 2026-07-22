@@ -4314,7 +4314,12 @@ as String?,
 /// @nodoc
 mixin _$Country {
 
- String get id; String get commonName; String get flagEmoji; String? get phoneCode; String? get code;
+/// [id] represents the unique identifier of the country
+ String get id;/// [commonName] represents the common name of the country
+ String get commonName;/// [flagEmoji] represents the flag emoji of the country
+ String get flagEmoji;/// [phoneCode] represents the phone code of the country
+ String? get phoneCode;/// [code] represents the code of the country
+ String? get code;
 /// Create a copy of Country
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -4511,14 +4516,19 @@ return $default(_that.id,_that.commonName,_that.flagEmoji,_that.phoneCode,_that.
 /// @nodoc
 @JsonSerializable()
 
-class _Country implements Country {
-  const _Country({required this.id, required this.commonName, required this.flagEmoji, this.phoneCode, this.code});
+class _Country extends Country {
+  const _Country({required this.id, required this.commonName, required this.flagEmoji, this.phoneCode, this.code}): super._();
   factory _Country.fromJson(Map<String, dynamic> json) => _$CountryFromJson(json);
 
+/// [id] represents the unique identifier of the country
 @override final  String id;
+/// [commonName] represents the common name of the country
 @override final  String commonName;
+/// [flagEmoji] represents the flag emoji of the country
 @override final  String flagEmoji;
+/// [phoneCode] represents the phone code of the country
 @override final  String? phoneCode;
+/// [code] represents the code of the country
 @override final  String? code;
 
 /// Create a copy of Country

@@ -1751,8 +1751,8 @@ return $default(_that.normal,_that.white);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AppThemedAsset implements AppThemedAsset {
-  const _AppThemedAsset({required this.normal, required this.white});
+class _AppThemedAsset extends AppThemedAsset {
+  const _AppThemedAsset({required this.normal, required this.white}): super._();
   factory _AppThemedAsset.fromJson(Map<String, dynamic> json) => _$AppThemedAssetFromJson(json);
 
 @override final  String normal;
@@ -3173,8 +3173,8 @@ return $default(_that.mainColor,_that.theme,_that.favicons,_that.logos,_that.app
 /// @nodoc
 @JsonSerializable()
 
-class _AppDesign implements AppDesign {
-  const _AppDesign({@ColorOrNullConverter() this.mainColor, @JsonKey(unknownEnumValue: AppTheme.blue) this.theme, required this.favicons, required this.logos, required this.appicon, this.login, @JsonKey(unknownEnumValue: FooterFormat.madeWith) this.footerFormat, this.titleFont, this.bodyFont});
+class _AppDesign extends AppDesign {
+  const _AppDesign({@ColorOrNullConverter() this.mainColor, @JsonKey(unknownEnumValue: AppTheme.blue) this.theme, required this.favicons, required this.logos, required this.appicon, this.login, @JsonKey(unknownEnumValue: FooterFormat.madeWith) this.footerFormat, this.titleFont, this.bodyFont}): super._();
   factory _AppDesign.fromJson(Map<String, dynamic> json) => _$AppDesignFromJson(json);
 
 /// [mainColor] defines the main color of the app.
@@ -4828,8 +4828,8 @@ return $default(_that.companyName,_that.companyUrl,_that.privacyPolicy);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AppLegal implements AppLegal {
-  const _AppLegal({required this.companyName, required this.companyUrl, required this.privacyPolicy});
+class _AppLegal extends AppLegal {
+  const _AppLegal({required this.companyName, required this.companyUrl, required this.privacyPolicy}): super._();
   factory _AppLegal.fromJson(Map<String, dynamic> json) => _$AppLegalFromJson(json);
 
 @override final  String companyName;
@@ -5371,8 +5371,8 @@ return $default(_that.backgroundColor,_that.backgroundImage,_that.mode,_that.des
 /// @nodoc
 @JsonSerializable()
 
-class _AppLoginDesign implements AppLoginDesign {
-  const _AppLoginDesign({@ColorOrNullConverter() this.backgroundColor, this.backgroundImage, @JsonKey(unknownEnumValue: BackgroundMode.solid) this.mode, this.description, @JsonKey(unknownEnumValue: LayoutDesign.right) this.design});
+class _AppLoginDesign extends AppLoginDesign {
+  const _AppLoginDesign({@ColorOrNullConverter() this.backgroundColor, this.backgroundImage, @JsonKey(unknownEnumValue: BackgroundMode.solid) this.mode, this.description, @JsonKey(unknownEnumValue: LayoutDesign.right) this.design}): super._();
   factory _AppLoginDesign.fromJson(Map<String, dynamic> json) => _$AppLoginDesignFromJson(json);
 
 /// [backgroundColor] defines the background color of the login.
@@ -7096,8 +7096,8 @@ return $default(_that.source,_that.name,_that.uri);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AppFont implements AppFont {
-  const _AppFont({@JsonKey(unknownEnumValue: FontSource.google) this.source = FontSource.google, this.name = 'Ubuntu', this.uri});
+class _AppFont extends AppFont {
+  const _AppFont({@JsonKey(unknownEnumValue: FontSource.google) this.source = FontSource.google, this.name = 'Ubuntu', this.uri}): super._();
   factory _AppFont.fromJson(Map<String, dynamic> json) => _$AppFontFromJson(json);
 
 /// [source] defines where is stored the font

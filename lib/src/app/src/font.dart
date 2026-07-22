@@ -2,6 +2,8 @@ part of '../app.dart';
 
 @freezed
 abstract class AppFont with _$AppFont {
+  const AppFont._();
+
   /// [AppFont] is a model that defines the font of the application
   const factory AppFont({
     /// [source] defines where is stored the font
@@ -18,6 +20,12 @@ abstract class AppFont with _$AppFont {
   }) = _AppFont;
 
   factory AppFont.fromJson(Map<String, dynamic> json) => _$AppFontFromJson(json);
+
+  /// [fragment] is the GraphQL fragment for the [AppFont] model
+  static GqlFragment get fragment => GqlFragment(name: 'fontFragment', onType: 'FontInformation')
+    ..add(GqlField(name: 'source'))
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'uri'));
 }
 
 @unfreezed

@@ -2,6 +2,8 @@ part of '../app.dart';
 
 @freezed
 abstract class AppLoginDesign with _$AppLoginDesign {
+  const AppLoginDesign._();
+
   const factory AppLoginDesign({
     /// [backgroundColor] defines the background color of the login.
     /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
@@ -32,6 +34,14 @@ abstract class AppLoginDesign with _$AppLoginDesign {
   }) = _AppLoginDesign;
 
   factory AppLoginDesign.fromJson(Map<String, dynamic> json) => _$AppLoginDesignFromJson(json);
+
+  /// [fragment] is the GraphQL fragment for the [AppLoginDesign] model
+  static GqlFragment get fragment => GqlFragment(name: 'loginDesignFragment', onType: 'LoginDesignInformation')
+    ..add(GqlField(name: 'backgroundColor'))
+    ..add(GqlField(name: 'backgroundImage'))
+    ..add(GqlField(name: 'mode'))
+    ..add(GqlField(name: 'description'))
+    ..add(GqlField(name: 'design'));
 }
 
 @unfreezed

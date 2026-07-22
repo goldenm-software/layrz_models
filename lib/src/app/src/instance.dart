@@ -68,11 +68,19 @@ abstract class AppInstance with _$AppInstance {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'instanceId', type: .id, isRequired: true, value: instanceId),
+            GqlVariable(
+              name: 'instanceId',
+              type: .id,
+              isRequired: true,
+              value: instanceId,
+            ),
           ],
           name: 'deprecateInstance',
         )..add(
-          GqlField(name: 'deprecateInstance', args: {'instanceId': 'instanceId'})..add(GqlField(name: 'status')),
+          GqlField(
+            name: 'deprecateInstance',
+            args: {'instanceId': 'instanceId'},
+          )..add(GqlField(name: 'status')),
         ),
       );
 
@@ -191,6 +199,33 @@ abstract class AppInstance with _$AppInstance {
       return false;
     }
   }
+
+  static GqlFragment get fragment => GqlFragment(name: 'instanceFragment', onType: 'AppInstance')
+    ..add(GqlField(name: 'id'))
+    ..add(GqlField(name: 'appId'))
+    ..add(GqlField(name: 'platform'))
+    ..add(GqlField(name: 'host'))
+    ..add(GqlField(name: 'appIdentifier'))
+    ..add(GqlField(name: 'developerName'))
+    ..add(GqlField(name: 'developerIdentifier'))
+    ..add(
+      GqlField(name: 'builds')
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'version'))
+        ..add(GqlField(name: 'buildNumber')),
+    )
+    ..add(GqlField(name: 'status'))
+    ..add(
+      GqlField(name: 'cloudfront')
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'value')),
+    )
+    ..add(
+      GqlField(name: 'certificate')
+        ..add(GqlField(name: 'name'))
+        ..add(GqlField(name: 'value')),
+    )
+    ..add(GqlField(name: 'migrationStatus'));
 }
 
 @freezed

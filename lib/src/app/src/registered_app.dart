@@ -78,7 +78,21 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(name: 'registeredApps', args: {})
             ..add(GqlField(name: 'status'))
-            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'nickname'))
+                ..add(GqlField(name: 'designInformation', fragment: AppDesign.reducedFragment))
+                ..add(
+                  GqlField(name: 'instances')
+                    ..add(GqlField(name: 'id'))
+                    ..add(GqlField(name: 'appId'))
+                    ..add(GqlField(name: 'platform'))
+                    ..add(GqlField(name: 'host'))
+                    ..add(GqlField(name: 'status')),
+                ),
+            ),
         ),
       );
 
@@ -131,7 +145,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(name: 'registeredApps', args: {'id': 'id'})
             ..add(GqlField(name: 'status'))
-            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+            ..add(GqlField(name: 'result', fragment: fragment)),
         ),
       );
 
@@ -306,7 +320,7 @@ abstract class RegisteredApp with _$RegisteredApp {
           variables: [
             GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
             GqlVariable(
-              name: 'usersIds',
+              name: 'userIds',
               type: .list(of: .id, isRequired: true),
               isRequired: true,
               value: usersIds,
@@ -316,7 +330,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(
             name: 'grantMultipleAccessToApp',
-            args: {'appId': 'appId', 'usersIds': 'usersIds'},
+            args: {'appId': 'appId', 'userIds': 'userIds'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -649,7 +663,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(name: 'registerAppWithoutCustomization', args: {'data': 'data'})
             ..add(GqlField(name: 'status'))
-            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+            ..add(GqlField(name: 'result', fragment: fragment)),
         ),
       );
 
@@ -709,7 +723,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(name: 'registerAppWithCustomization', args: {'data': 'data'})
             ..add(GqlField(name: 'status'))
-            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+            ..add(GqlField(name: 'result', fragment: fragment)),
         ),
       );
 
@@ -771,7 +785,7 @@ abstract class RegisteredApp with _$RegisteredApp {
         )..add(
           GqlField(name: 'editApp', args: {'id': 'id', 'data': 'data'})
             ..add(GqlField(name: 'status'))
-            ..add(GqlField(name: 'result', fragment: gqlFragment)),
+            ..add(GqlField(name: 'result', fragment: fragment)),
         ),
       );
 
@@ -854,53 +868,86 @@ abstract class RegisteredApp with _$RegisteredApp {
     }
   }
 
-  /// [gqlFragment] is the GqlFragment for a registered app.
-  static GqlFragment get gqlFragment => GqlFragment(name: 'registeredAppFragment', onType: 'RegisteredApp')
+  /// [load] loads a registered app from the server by ID.
+  /// Returns the loaded [RegisteredApp] on success, null on error.
+  static Future<RegisteredApp?> load({
+    required String appId,
+    required AppPlatform platform,
+    required AppTechnology technology,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri);
+    try {
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
+            GqlVariable(name: 'platform', type: .string, isRequired: true, value: platform.name),
+            GqlVariable(name: 'technology', type: .string, isRequired: true, value: technology.name),
+          ],
+        )..add(
+          GqlField(name: 'loadApp', args: {'platform': 'platform', 'technology': 'technology', 'appId': 'appId'})
+            ..add(GqlField(name: 'status'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'nickname'))
+                ..add(GqlField(name: 'technology'))
+                ..add(GqlField(name: 'sourceId'))
+                ..add(GqlField(name: 'legalInformation', fragment: AppLegal.fragment))
+                ..add(GqlField(name: 'designInformation', fragment: AppDesign.fragment)),
+            ),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/load(): No response from server");
+        return null;
+      }
+
+      final result = data['data']['loadApp'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/RegisteredApp/load(): No result from server");
+        return null;
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return null;
+      }
+
+      return result['result'] != null
+          ? RegisteredApp.fromJson(Map<String, dynamic>.from(result['result'] as Map))
+          : null;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/load(): General exception => $e\n$stack");
+      return null;
+    }
+  }
+
+  /// [fragment] is the GqlFragment for a registered app.
+  static GqlFragment get fragment => GqlFragment(name: 'registeredAppFragment', onType: 'RegisteredApp')
     ..add(GqlField(name: 'id'))
     ..add(GqlField(name: 'name'))
     ..add(GqlField(name: 'nickname'))
     ..add(GqlField(name: 'isCustomized'))
     ..add(GqlField(name: 'technology'))
     ..add(GqlField(name: 'sourceId'))
+    ..add(GqlField(name: 'instances', fragment: AppInstance.fragment))
+    ..add(GqlField(name: 'designInformation', fragment: AppDesign.fragment))
     ..add(
-      GqlField(name: 'instances')
-        ..add(GqlField(name: 'id'))
-        ..add(GqlField(name: 'appId'))
-        ..add(GqlField(name: 'platform'))
-        ..add(GqlField(name: 'host'))
-        ..add(GqlField(name: 'status')),
+      GqlField(name: 'legalInformation')
+        ..add(GqlField(name: 'companyName'))
+        ..add(GqlField(name: 'companyUrl'))
+        ..add(GqlField(name: 'privacyPolicy')),
     )
-    ..add(
-      GqlField(name: 'designInformation')
-        ..add(GqlField(name: 'theme'))
-        ..add(GqlField(name: 'mainColor'))
-        ..add(
-          GqlField(name: 'favicons')
-            ..add(GqlField(name: 'normal'))
-            ..add(GqlField(name: 'white')),
-        )
-        ..add(
-          GqlField(name: 'logos')
-            ..add(GqlField(name: 'normal'))
-            ..add(GqlField(name: 'white')),
-        )
-        ..add(GqlField(name: 'appicon')),
-    )
-    ..add(
-      GqlField(name: 'iosPushSecrets')
-        ..add(GqlField(name: 'apiKey'))
-        ..add(GqlField(name: 'appId'))
-        ..add(GqlField(name: 'projectId'))
-        ..add(GqlField(name: 'messagingSenderId'))
-        ..add(GqlField(name: 'storageBucket')),
-    )
-    ..add(
-      GqlField(name: 'androidPushSecrets')
-        ..add(GqlField(name: 'apiKey'))
-        ..add(GqlField(name: 'appId'))
-        ..add(GqlField(name: 'projectId'))
-        ..add(GqlField(name: 'messagingSenderId'))
-        ..add(GqlField(name: 'storageBucket')),
-    )
+    ..add(GqlField(name: 'iosPushSecrets', fragment: PushSecrets.fragment))
+    ..add(GqlField(name: 'androidPushSecrets', fragment: PushSecrets.fragment))
     ..add(GqlField(name: 'hasSvcPushSecrets'));
 }

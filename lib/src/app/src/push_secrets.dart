@@ -20,6 +20,14 @@ abstract class PushSecrets with _$PushSecrets {
   }) = _PushSecrets;
 
   factory PushSecrets.fromJson(Map<String, dynamic> json) => _$PushSecretsFromJson(json);
+
+  /// [fragment] is the GraphQL fragment for the [PushSecrets] model
+  static GqlFragment get fragment => GqlFragment(name: 'pushSecretsFragment', onType: 'PushSecrets')
+    ..add(GqlField(name: 'apiKey'))
+    ..add(GqlField(name: 'appId'))
+    ..add(GqlField(name: 'projectId'))
+    ..add(GqlField(name: 'messagingSenderId'))
+    ..add(GqlField(name: 'storageBucket'));
 }
 
 @unfreezed
