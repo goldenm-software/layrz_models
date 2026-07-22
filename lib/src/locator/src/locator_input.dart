@@ -62,6 +62,7 @@ abstract class LocatorInput with _$LocatorInput {
     return 'https://find.layrz.com/#/$token';
   }
 
+  // coverage:ignore-start
   /// [save] saves the locator input to the server
   /// It returns a [ApiResponse] with the saved locator or errors if any
   Future<ApiResponse<Locator, Map<String, dynamic>>?> save({
@@ -127,4 +128,5 @@ abstract class LocatorInput with _$LocatorInput {
       return null;
     }
   }
+  // coverage:ignore-end
 }

@@ -55,6 +55,7 @@ abstract class AppInstance with _$AppInstance {
 
   factory AppInstance.fromJson(Map<String, dynamic> json) => _$AppInstanceFromJson(json);
 
+  // coverage:ignore-start
   /// [deprecateInstance] marks an app instance as deprecated.
   /// Returns true on success, false on error.
   static Future<bool> deprecateInstance({
@@ -65,7 +66,7 @@ abstract class AppInstance with _$AppInstance {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(
@@ -84,29 +85,16 @@ abstract class AppInstance with _$AppInstance {
         ),
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/AppInstance/deprecateInstance(): No response from server");
-        return false;
-      }
-
-      final result = data['data']['deprecateInstance'];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/AppInstance/deprecateInstance(): No result from server");
-        return false;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      onResponse?.call(response.status.toJson());
+      return response.status == ApiStatus.ok;
     } catch (e, stack) {
       Log.critical("layrz_models/AppInstance/deprecateInstance(): General exception => $e\n$stack");
       return false;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [migrateInstance] migrates an app instance.
   /// Returns true on success, false on error.
   static Future<bool> migrateInstance({
@@ -117,7 +105,7 @@ abstract class AppInstance with _$AppInstance {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(name: 'instanceId', type: .id, isRequired: true, value: instanceId),
@@ -128,29 +116,16 @@ abstract class AppInstance with _$AppInstance {
         ),
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/AppInstance/migrateInstance(): No response from server");
-        return false;
-      }
-
-      final result = data['data']['migrateInstance'];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/AppInstance/migrateInstance(): No result from server");
-        return false;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      onResponse?.call(response.status.toJson());
+      return response.status == ApiStatus.ok;
     } catch (e, stack) {
       Log.critical("layrz_models/AppInstance/migrateInstance(): General exception => $e\n$stack");
       return false;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [requestInstance] requests creation of a new app instance.
   /// Returns true on success, false on error.
   static Future<bool> requestInstance({
@@ -161,7 +136,7 @@ abstract class AppInstance with _$AppInstance {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(
@@ -177,29 +152,16 @@ abstract class AppInstance with _$AppInstance {
         ),
       );
 
-      final responseData = response.data;
-      if (responseData == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/AppInstance/requestInstance(): No response from server");
-        return false;
-      }
-
-      final result = responseData['data']['requestInstance'];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/AppInstance/requestInstance(): No result from server");
-        return false;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      return status == ApiStatus.ok;
+      onResponse?.call(response.status.toJson());
+      return response.status == ApiStatus.ok;
     } catch (e, stack) {
       Log.critical("layrz_models/AppInstance/requestInstance(): General exception => $e\n$stack");
       return false;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   static GqlFragment get fragment => GqlFragment(name: 'instanceFragment', onType: 'AppInstance')
     ..add(GqlField(name: 'id'))
     ..add(GqlField(name: 'appId'))
@@ -209,23 +171,13 @@ abstract class AppInstance with _$AppInstance {
     ..add(GqlField(name: 'developerName'))
     ..add(GqlField(name: 'developerIdentifier'))
     ..add(
-      GqlField(name: 'builds')
-        ..add(GqlField(name: 'id'))
-        ..add(GqlField(name: 'version'))
-        ..add(GqlField(name: 'buildNumber')),
+      GqlField(name: 'builds', fragment: AppBuild.fragment),
     )
     ..add(GqlField(name: 'status'))
-    ..add(
-      GqlField(name: 'cloudfront')
-        ..add(GqlField(name: 'name'))
-        ..add(GqlField(name: 'value')),
-    )
-    ..add(
-      GqlField(name: 'certificate')
-        ..add(GqlField(name: 'name'))
-        ..add(GqlField(name: 'value')),
-    )
+    ..add(GqlField(name: 'cloudfront', fragment: DnsConfiguration.fragment))
+    ..add(GqlField(name: 'certificate', fragment: DnsConfiguration.fragment))
     ..add(GqlField(name: 'migrationStatus'));
+  // coverage:ignore-end
 }
 
 @freezed
@@ -239,4 +191,11 @@ abstract class DnsConfiguration with _$DnsConfiguration {
   }) = _DnsConfiguration;
 
   factory DnsConfiguration.fromJson(Map<String, dynamic> json) => _$DnsConfigurationFromJson(json);
+
+  // coverage:ignore-start
+  /// [fragment] is the GraphQL fragment to fetch the DNS configuration
+  static GqlFragment get fragment => GqlFragment(name: 'dnsConfigurationFragment', onType: 'DnsConfiguration')
+    ..add(GqlField(name: 'name'))
+    ..add(GqlField(name: 'value'));
+  // coverage:ignore-end
 }

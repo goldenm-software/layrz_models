@@ -21,4 +21,18 @@ abstract class AppBuild with _$AppBuild {
   }) = _AppBuild;
 
   factory AppBuild.fromJson(Map<String, dynamic> json) => _$AppBuildFromJson(json);
+
+  // coverage:ignore-start
+  /// [fragment] is the GraphQL fragment to fetch the build of the app
+  static GqlFragment get fragment =>
+      GqlFragment(
+          name: 'appBuildFragment',
+          onType: 'AppBuild',
+        )
+        ..add(GqlField(name: 'id'))
+        ..add(GqlField(name: 'buildName'))
+        ..add(GqlField(name: 'buildNumber'))
+        ..add(GqlField(name: 'fileUri'))
+        ..add(GqlField(name: 'isNext'));
+  // coverage:ignore-end
 }

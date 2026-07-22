@@ -11,7 +11,7 @@ enum ApiStatus {
   ok,
 
   /// [notfound] - Entity not found or temporally disabled
-  @JsonValue('NOTFOUND')
+  @JsonValue('NOT_FOUND')
   notfound,
 
   /// [userNotFound] - The user was not found, please check the credentials and try again.
@@ -28,7 +28,7 @@ enum ApiStatus {
 
   /// [internalError] - Internal server error, please try again later. If the problem persists,
   /// please contact us through support@layrz.com. (English or Spanish support)
-  @JsonValue('INTERNALERROR')
+  @JsonValue('INTERNAL_ERROR')
   internalError,
 
   /// [unprocessable] - Your data is valid, but our service cannot process it; please try again later.
@@ -41,17 +41,17 @@ enum ApiStatus {
   unauthorized,
 
   /// [accessDenied] - Access denied, your user cannot perform or is allowed to this query/mutation.
-  @JsonValue('ACCESSDENIED')
+  @JsonValue('ACCESS_DENIED')
   accessDenied,
 
   /// [movedPermanently] - This query/mutation was deprecated or renamed; please consult the documentation
   /// for more information.
-  @JsonValue('MOVEDPERMANENTLY')
+  @JsonValue('MOVED_PERMANENTLY')
   movedPermanently,
 
   /// [badRequest] - One or more arguments are required for this query/mutation; please consult the
   /// documentation for more details.
-  @JsonValue('BADREQUEST')
+  @JsonValue('BAD_REQUEST')
   badRequest,
 
   /// [iAmATeapot] - The server refuses to brew coffee because it is a teapot.
@@ -60,16 +60,16 @@ enum ApiStatus {
 
   /// [paymentRequired] - We are sorry, but the master account has pending proformas; please bring past
   /// due accounts up to date to solve this issue.
-  @JsonValue('PAYMENTREQUIRED')
+  @JsonValue('PAYMENT_REQUIRED')
   paymentRequired,
 
   /// [serviceUnavailable] - The external service is not available right now; please try again later.
-  @JsonValue('SERVICEUNAVAILABLE')
+  @JsonValue('SERVICE_UNAVAILABLE')
   serviceUnavailable,
 
   /// [limitReached] - We are sorry, but your billing plan limit was reached; please contact to your
   /// account owner. If you are the account owner, request an upgrade to sales@layrz.com
-  @JsonValue('LIMITREACHED')
+  @JsonValue('LIMIT_REACHED')
   limitReached,
 
   /// [fileNotFound] - The file was not found in our storage server.
@@ -179,20 +179,9 @@ enum ApiStatus {
   /// formats (e.g., 'NOT_FOUND', 'INTERNAL_ERROR'). Normalizes input by removing
   /// underscores and uppercasing before matching against enum @JsonValue annotations.
   /// Returns [ApiStatus.unknown] if no match is found.
-  static ApiStatus fromJson(String json) {
-    // First try exact match (fast path for common cases)
-    final exactMatch = _$ApiStatusEnumMap.entries.cast<MapEntry<ApiStatus, String>?>().firstWhere(
-      (element) => element?.value == json,
-      orElse: () => null,
-    );
-    if (exactMatch != null) return exactMatch.key;
-
-    // Normalize both input and enum values to tolerate underscore variations
-    final normalized = json.replaceAll('_', '').toUpperCase();
-    final tolerantMatch = _$ApiStatusEnumMap.entries.firstWhere(
-      (element) => element.value.replaceAll('_', '').toUpperCase() == normalized,
-      orElse: () => const MapEntry(ApiStatus.unknown, 'UNKNOWN'),
-    );
-    return tolerantMatch.key;
-  }
+  static ApiStatus fromJson(String json) =>
+      _$ApiStatusEnumMap.entries.firstWhereOrNull((e) {
+        return e.value == json;
+      })?.key ??
+      ApiStatus.unknown;
 }

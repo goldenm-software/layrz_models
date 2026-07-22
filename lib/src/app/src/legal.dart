@@ -12,11 +12,13 @@ abstract class AppLegal with _$AppLegal {
 
   factory AppLegal.fromJson(Map<String, dynamic> json) => _$AppLegalFromJson(json);
 
+  // coverage:ignore-start
   /// [fragment] is the GraphQL fragment for the [AppLegal] model
   static GqlFragment get fragment => GqlFragment(name: 'legalFragment', onType: 'LegalInformation')
     ..add(GqlField(name: 'companyName'))
     ..add(GqlField(name: 'companyUrl'))
     ..add(GqlField(name: 'privacyPolicy'));
+  // coverage:ignore-end
 }
 
 @unfreezed

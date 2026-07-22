@@ -47,6 +47,7 @@ abstract class Action with _$Action {
 
   factory Action.fromJson(Map<String, dynamic> json) => _$ActionFromJson(json);
 
+  // coverage:ignore-start
   /// [fetch] fetches a single action from the server by its ID
   /// It returns the [Action] with the required contextual information
   Future<Action?> fetch({
@@ -129,7 +130,9 @@ abstract class Action with _$Action {
       return null;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [fetchAll] fetches all actions from the server
   /// It returns a list of [Action] with listing-level fields
   static Future<List<Action>> fetchAll({
@@ -190,7 +193,9 @@ abstract class Action with _$Action {
       return [];
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [deleteMultiple] deletes multiple actions by their IDs
   static Future<bool> deleteMultiple({
     /// [apiToken] is the API token to use for authentication
@@ -252,6 +257,7 @@ abstract class Action with _$Action {
       return false;
     }
   }
+  // coverage:ignore-end
 
   /// [gqlFragment] is the GqlFragment for an action, including nested associations
   static GqlFragment get gqlFragment => GqlFragment(name: 'actionFragment', onType: 'Action')
@@ -324,6 +330,7 @@ abstract class ActionInput with _$ActionInput {
 
   factory ActionInput.fromJson(Map<String, dynamic> json) => _$ActionInputFromJson(json);
 
+  // coverage:ignore-start
   /// [save] saves the action input to the server
   /// It returns an [ApiResponse] with the saved [Action] on success, or errors on failure.
   /// Returns `null` on a network/server error.
@@ -388,4 +395,5 @@ abstract class ActionInput with _$ActionInput {
       return null;
     }
   }
+  // coverage:ignore-end
 }

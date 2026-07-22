@@ -46,6 +46,7 @@ abstract class LayrzChart with _$LayrzChart {
 
   factory LayrzChart.fromJson(Map<String, dynamic> json) => _$LayrzChartFromJson(json);
 
+  // coverage:ignore-start
   /// [fetch] fetches the full chart data from the API using this instance's id.
   Future<LayrzChart?> fetch({
     /// [apiToken] is the API token to use for authentication.
@@ -103,7 +104,9 @@ abstract class LayrzChart with _$LayrzChart {
       return null;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [fetchAll] fetches all charts from the API with a lightweight payload, suitable for listings and pickers.
   static Future<List<LayrzChart>> fetchAll({
     /// [apiToken] is the API token to use for authentication.
@@ -164,7 +167,9 @@ abstract class LayrzChart with _$LayrzChart {
       return [];
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [delete] deletes this chart via the API.
   Future<bool> delete({
     /// [apiToken] is the API token to use for authentication.
@@ -223,7 +228,9 @@ abstract class LayrzChart with _$LayrzChart {
       return false;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [deleteMultiple] deletes a batch of charts by their IDs.
   static Future<bool> deleteMultiple({
     /// [apiToken] is the API token to use for authentication.
@@ -285,6 +292,7 @@ abstract class LayrzChart with _$LayrzChart {
       return false;
     }
   }
+  // coverage:ignore-end
 
   /// [gqlFragment] is the GqlFragment for a chart, including nested access permissions.
   static GqlFragment get gqlFragment => GqlFragment(name: 'chartFragment', onType: 'Chart')

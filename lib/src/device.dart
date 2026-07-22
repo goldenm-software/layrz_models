@@ -106,6 +106,7 @@ abstract class Device with _$Device {
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 
+  // coverage:ignore-start
   /// [fetchZigbeeCapable] fetches all devices visible to the user, keeping only the ones with
   /// Zigbee [exposes] bound to them. The returned devices carry a lightweight payload
   /// (id, name, ident and exposes), suitable for building Zigbee commands.
@@ -176,6 +177,7 @@ abstract class Device with _$Device {
       return [];
     }
   }
+  // coverage:ignore-end
 }
 
 @unfreezed

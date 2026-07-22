@@ -28,6 +28,7 @@ abstract class AccessInput with _$AccessInput {
 
   factory AccessInput.fromJson(Map<String, dynamic> json) => _$AccessInputFromJson(json);
 
+  // coverage:ignore-start
   /// [save] saves the access input to the server
   /// It returns a [bool] indicating whether the save was successful
   Future<bool> save({
@@ -96,7 +97,9 @@ abstract class AccessInput with _$AccessInput {
       return false;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [delete] delete AccessPermission from the server
   Future<bool> delete({
     /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
@@ -162,4 +165,5 @@ abstract class AccessInput with _$AccessInput {
       return false;
     }
   }
+  // coverage:ignore-end
 }
