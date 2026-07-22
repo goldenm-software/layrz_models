@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.17.1
+
+- `LayrzConnector` now exposes typed `query()` and `mutate()` methods returning a decoded `ApiResponse` with `status`, `errors` and `result`
+- `RegisteredApp.registerWithoutCustomization()`, `registerWithCustomization()` and `edit()` now return `(ApiStatus, Map<String, dynamic>?, RegisteredApp?)` records with the operation status, field errors and decoded result
+- `AppInstance`, `PushDevice` and `AvailableApp` API callers migrated to the typed connector API
+- Fixed `registerWithCustomization()` reporting `INTERNAL_ERROR` on successful responses
+
 ## 3.17.0
 
 - Added API connectors for `Country`, `RegisteredApp` and `AvailableApp`
