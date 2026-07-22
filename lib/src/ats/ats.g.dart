@@ -1633,6 +1633,7 @@ const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
   AtsPurchaseOrderCategoriesEntity.saleFromThirdPartyTank:
       'SALE_FROM_THIRD_PARTY_TANK',
   AtsPurchaseOrderCategoriesEntity.notDefined: 'NOT_DEFINED',
+  AtsPurchaseOrderCategoriesEntity.remittanceSale: 'REMITTANCE_SALE',
 };
 
 const _$AtsPurchaseOrderSubCategoriesEnumMap = {

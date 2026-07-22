@@ -35,6 +35,9 @@ enum AtsPurchaseOrderCategoriesEntity {
   // Not defined
   @JsonValue('NOT_DEFINED')
   notDefined,
+  // Remessa de venda (5923 / 6923)
+  @JsonValue('REMITTANCE_SALE')
+  remittanceSale,
   ;
 
   @override
