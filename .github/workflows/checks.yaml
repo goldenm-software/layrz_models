@@ -21,6 +21,7 @@ jobs:
 
   test-dart:
     runs-on: ubuntu-latest
+    needs: [lint-dart]
     strategy:
       fail-fast: false
       matrix:
@@ -59,7 +60,7 @@ jobs:
           retention-days: 1
 
   coverage:
-    needs: [test-dart]
+    needs: [test-dart, lint-dart]
     if: always() && github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
