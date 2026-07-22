@@ -21,11 +21,13 @@ abstract class AppFont with _$AppFont {
 
   factory AppFont.fromJson(Map<String, dynamic> json) => _$AppFontFromJson(json);
 
+  // coverage:ignore-start
   /// [fragment] is the GraphQL fragment for the [AppFont] model
   static GqlFragment get fragment => GqlFragment(name: 'fontFragment', onType: 'FontInformation')
     ..add(GqlField(name: 'source'))
     ..add(GqlField(name: 'name'))
     ..add(GqlField(name: 'uri'));
+  // coverage:ignore-end
 }
 
 @unfreezed

@@ -151,4 +151,91 @@ class LayrzConnector {
 
     return controller.stream;
   }
+
+  /// [query] executes a GraphQL query using the `perform` method and returns a decoded [ApiResponse].
+  Future<ApiResponse<T, Map<String, dynamic>>> query<T>(GqlQuery gql, [T Function(Object?)? fromJsonResult]) async {
+    final response = await perform(gql);
+    if (response.statusCode != 200) {
+      return ApiResponse(
+        status: ApiStatus.internalError,
+        errors: null,
+        result: null,
+      );
+    }
+
+    if (response.data is! Map<String, dynamic>) {
+      return ApiResponse(
+        status: ApiStatus.internalError,
+        errors: null,
+        result: null,
+      );
+    }
+
+    final data = response.data as Map<String, dynamic>;
+    Map<String, dynamic>? extracted = _extractData(gql, data);
+    if (extracted == null) {
+      return ApiResponse(
+        status: ApiStatus.internalError,
+        errors: null,
+        result: null,
+      );
+    }
+
+    return ApiResponse<T, Map<String, dynamic>>.fromJson(
+      extracted,
+      fromJsonResult ?? (json) => json as T,
+      (json) => json as Map<String, dynamic>,
+    );
+  }
+
+  /// [mutate] executes a GraphQL mutate using the `perform` method and returns a decoded [ApiResponse].
+  Future<ApiResponse<T, Map<String, dynamic>>> mutate<T>(GqlMutation gql, [T Function(Object?)? fromJsonResult]) async {
+    final response = await perform(gql);
+    if (response.statusCode != 200) {
+      return ApiResponse(
+        status: ApiStatus.internalError,
+        errors: null,
+        result: null,
+      );
+    }
+
+    if (response.data is! Map<String, dynamic>) {
+      return ApiResponse(
+        status: ApiStatus.internalError,
+        errors: null,
+        result: null,
+      );
+    }
+
+    final data = response.data as Map<String, dynamic>;
+    Map<String, dynamic>? extracted = _extractData(gql, data);
+    if (extracted == null) {
+      return ApiResponse(
+        status: ApiStatus.internalError,
+        errors: null,
+        result: null,
+      );
+    }
+
+    return ApiResponse<T, Map<String, dynamic>>.fromJson(
+      extracted,
+      fromJsonResult ?? (json) => json as T,
+      (json) => json as Map<String, dynamic>,
+    );
+  }
+
+  /// [_extractData] is a helper method to extract the data from the response based on the operation name.
+  Map<String, dynamic>? _extractData(Gql gql, Map<String, dynamic> data) {
+    if (gql.name != null && data['data']?[gql.name] is Map<String, dynamic>) {
+      return data['data']?[gql.name] as Map<String, dynamic>?;
+    }
+
+    if (gql.fields.isNotEmpty) {
+      final firstFieldName = gql.fields.first.name;
+      if (data['data']?[firstFieldName] is Map<String, dynamic>) {
+        return data['data']?[firstFieldName] as Map<String, dynamic>?;
+      }
+    }
+    return null;
+  }
 }

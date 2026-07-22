@@ -40,6 +40,7 @@ abstract class LayrzChartInput with _$LayrzChartInput {
 
   factory LayrzChartInput.fromJson(Map<String, dynamic> json) => _$LayrzChartInputFromJson(json);
 
+  // coverage:ignore-start
   /// [save] saves the chart input to the API, creating a new chart when [id] is null or editing the existing one otherwise.
   Future<ApiResponse<LayrzChart, Map<String, dynamic>>?> save({
     /// [apiToken] is the API token to use for authentication.
@@ -102,4 +103,5 @@ abstract class LayrzChartInput with _$LayrzChartInput {
       return null;
     }
   }
+  // coverage:ignore-end
 }

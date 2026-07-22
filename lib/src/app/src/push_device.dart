@@ -17,12 +17,15 @@ abstract class PushDevice with _$PushDevice {
 
   factory PushDevice.fromJson(Map<String, dynamic> json) => _$PushDeviceFromJson(json);
 
+  // coverage:ignore-start
   /// [gqlFragment] is the GraphQL fragment for [PushDevice].
   static GqlFragment get gqlFragment => GqlFragment(name: 'pushDeviceFragment', onType: 'PushDevice')
     ..add(GqlField(name: 'id'))
     ..add(GqlField(name: 'appId'))
     ..add(GqlField(name: 'createdAt'));
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [validate] validates a push device by its ID against the backend.
   /// Returns a [PushDeviceValidation] on success containing the device and operation IDs,
   /// or null if the device does not exist or if a network error occurs.
@@ -43,7 +46,7 @@ abstract class PushDevice with _$PushDevice {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.query(
         GqlQuery(
           variables: [
             GqlVariable(name: 'deviceId', type: .id, isRequired: true, value: deviceId),
@@ -55,45 +58,41 @@ abstract class PushDevice with _$PushDevice {
             ..add(GqlField(name: 'result', fragment: gqlFragment))
             ..add(GqlField(name: 'operationIds')),
         ),
+        (json) {
+          final resultMap = json as Map<String, dynamic>?;
+          if (resultMap == null) {
+            Log.warning("layrz_models/PushDevice/validate(): No result in response");
+            return null;
+          }
+
+          final deviceJson = resultMap['result'] as Map<String, dynamic>?;
+          if (deviceJson == null) {
+            Log.warning("layrz_models/PushDevice/validate(): No device in result");
+            return null;
+          }
+
+          final device = PushDevice.fromJson(deviceJson);
+          final operationIds = (resultMap['operationIds'] as List<dynamic>?)?.map((e) => e as String).toList() ?? [];
+
+          return PushDeviceValidation(device: device, operationIds: operationIds);
+        },
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/PushDevice/validate(): No response from server");
+      onResponse?.call(response.status.toJson());
+
+      if (response.status != .ok) {
         return null;
       }
 
-      final result = data['data']['validatePushDevice'];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/PushDevice/validate(): No result from server");
-        return null;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-
-      if (status != ApiStatus.ok) {
-        return null;
-      }
-
-      final deviceJson = result['result'] as Map<String, dynamic>?;
-      if (deviceJson == null) {
-        Log.warning("layrz_models/PushDevice/validate(): No device in result");
-        return null;
-      }
-
-      final device = PushDevice.fromJson(deviceJson);
-      final operationIds = (result['operationIds'] as List<dynamic>?)?.map((e) => e as String).toList() ?? [];
-
-      return PushDeviceValidation(device: device, operationIds: operationIds);
+      return response.result;
     } catch (e, stack) {
       Log.critical("layrz_models/PushDevice/validate(): General exception => $e\n$stack");
       return null;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [register] registers a new push device for the given app.
   /// Returns the created device ID (String) on success, or null on failure.
   /// Call [onResponse] with the status code to distinguish error types.
@@ -112,7 +111,7 @@ abstract class PushDevice with _$PushDevice {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
@@ -123,42 +122,31 @@ abstract class PushDevice with _$PushDevice {
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result')),
         ),
+        (json) {
+          final deviceId = json as String?;
+          if (deviceId == null) {
+            Log.warning("layrz_models/PushDevice/register(): Device ID missing in result");
+            return null;
+          }
+          return deviceId;
+        },
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/PushDevice/register(): No response from server");
+      onResponse?.call(response.status.toJson());
+
+      if (response.status != .ok) {
         return null;
       }
 
-      final result = data['data']['registerPushDevice'];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/PushDevice/register(): No result from server");
-        return null;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-
-      if (status != ApiStatus.ok) {
-        return null;
-      }
-
-      final deviceId = result['result'] as String?;
-      if (deviceId == null) {
-        Log.warning("layrz_models/PushDevice/register(): Device ID missing in result");
-        return null;
-      }
-
-      return deviceId;
+      return response.result;
     } catch (e, stack) {
       Log.critical("layrz_models/PushDevice/register(): General exception => $e\n$stack");
       return null;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [bindOperations] binds a list of operations to a push device.
   /// Replaces all existing operation bindings. Pass an empty list to clear all bindings.
   /// Returns true on success, false on failure.
@@ -180,7 +168,7 @@ abstract class PushDevice with _$PushDevice {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(name: 'deviceId', type: .id, isRequired: true, value: deviceId),
@@ -203,30 +191,17 @@ abstract class PushDevice with _$PushDevice {
         ),
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/PushDevice/bindOperations(): No response from server");
-        return false;
-      }
+      onResponse?.call(response.status.toJson());
 
-      final result = data['data']['bindOperationsToPushDevice'];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/PushDevice/bindOperations(): No result from server");
-        return false;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-
-      return status == ApiStatus.ok;
+      return response.status == ApiStatus.ok;
     } catch (e, stack) {
       Log.critical("layrz_models/PushDevice/bindOperations(): General exception => $e\n$stack");
       return false;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [deregister] deregisters a push device by its ID.
   /// Returns true on success, false on failure.
   static Future<bool> deregister({
@@ -244,7 +219,7 @@ abstract class PushDevice with _$PushDevice {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(name: 'deviceId', type: .id, isRequired: true, value: deviceId),
@@ -255,29 +230,16 @@ abstract class PushDevice with _$PushDevice {
         ),
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/PushDevice/deregister(): No response from server");
-        return false;
-      }
+      onResponse?.call(response.status.toJson());
 
-      final result = data['data']['deregisterPushDevice'];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/PushDevice/deregister(): No result from server");
-        return false;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-
-      return status == ApiStatus.ok;
+      return response.status == ApiStatus.ok;
     } catch (e, stack) {
       Log.critical("layrz_models/PushDevice/deregister(): General exception => $e\n$stack");
       return false;
     }
   }
+
+  // coverage:ignore-end
 }
 
 /// [PushDeviceValidation] is the response from [PushDevice.validate()].

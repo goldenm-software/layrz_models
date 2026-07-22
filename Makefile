@@ -13,6 +13,12 @@ lint:
 test:
 	flutter test
 
+.PHONY: coverage
+coverage:
+	flutter test --coverage
+	dart run tool/strip_ignored_coverage.dart
+	awk -F: '/^LH:/ {hit+=$$2} /^LF:/ {total+=$$2} END { if (total>0) printf "Coverage: %.2f%% (%d/%d lines)\n", hit*100/total, hit, total; else print "No coverage data" }' coverage/lcov.info
+
 .PHONY: tag
 tag:
 	@git checkout main

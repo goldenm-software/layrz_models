@@ -35,6 +35,7 @@ abstract class AppLoginDesign with _$AppLoginDesign {
 
   factory AppLoginDesign.fromJson(Map<String, dynamic> json) => _$AppLoginDesignFromJson(json);
 
+  // coverage:ignore-start
   /// [fragment] is the GraphQL fragment for the [AppLoginDesign] model
   static GqlFragment get fragment => GqlFragment(name: 'loginDesignFragment', onType: 'LoginDesignInformation')
     ..add(GqlField(name: 'backgroundColor'))
@@ -42,6 +43,7 @@ abstract class AppLoginDesign with _$AppLoginDesign {
     ..add(GqlField(name: 'mode'))
     ..add(GqlField(name: 'description'))
     ..add(GqlField(name: 'design'));
+  // coverage:ignore-end
 }
 
 @unfreezed

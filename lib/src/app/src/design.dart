@@ -61,6 +61,7 @@ abstract class AppDesign with _$AppDesign {
 
   factory AppDesign.fromJson(Map<String, dynamic> json) => _$AppDesignFromJson(json);
 
+  // coverage:ignore-start
   /// [fragment] is the GraphQL fragment for the [AppDesign] model
   static GqlFragment get fragment => GqlFragment(name: 'designFragment', onType: 'DesignInformation')
     ..add(GqlField(name: 'theme'))
@@ -72,7 +73,9 @@ abstract class AppDesign with _$AppDesign {
     ..add(GqlField(name: 'footerFormat'))
     ..add(GqlField(name: 'titleFont', fragment: AppFont.fragment))
     ..add(GqlField(name: 'bodyFont', fragment: AppFont.fragment));
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [reducedFragment] is the GraphQL fragment for the [AppDesign] model with only the fields that are required for the app to work.
   /// [fragment] is the GraphQL fragment for the [AppDesign] model
   static GqlFragment get reducedFragment => GqlFragment(name: 'designFragment', onType: 'DesignInformation')
@@ -81,6 +84,7 @@ abstract class AppDesign with _$AppDesign {
     ..add(GqlField(name: 'favicons', fragment: AppThemedAsset.fragment))
     ..add(GqlField(name: 'logos', fragment: AppThemedAsset.fragment))
     ..add(GqlField(name: 'appicon'));
+  // coverage:ignore-end
 }
 
 @freezed

@@ -111,6 +111,7 @@ abstract class Locator with _$Locator {
     return 'https://find.layrz.com/#/$token';
   }
 
+  // coverage:ignore-start
   /// [fetch] fetches a single locator from the server by its ID
   /// It returns a list of [Locator] with the required contextual information
   Future<Locator?> fetch({
@@ -171,7 +172,9 @@ abstract class Locator with _$Locator {
       return null;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [fetchAll] fetches all locators from the server
   /// It returns a list of [Locator] with the required contextual information
   static Future<List<Locator>> fetchAll({
@@ -260,7 +263,9 @@ abstract class Locator with _$Locator {
       return [];
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [expire] expires the locator
   /// It returns true if the locator was successfully expired
   Future<bool> expire({
@@ -322,7 +327,9 @@ abstract class Locator with _$Locator {
       return false;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [expireMultiple] expires multiple locators by their IDs
   static Future<bool> expireMultiple({
     /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
@@ -386,6 +393,7 @@ abstract class Locator with _$Locator {
       return false;
     }
   }
+  // coverage:ignore-end
 
   /// [basicUserFields] is a lightweight GqlFragment for user references within locator responses.
   static GqlFragment get basicUserFields => GqlFragment(name: 'basicUserFields', onType: 'User')

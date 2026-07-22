@@ -32,6 +32,7 @@ abstract class Country with _$Country {
     ..add(GqlField(name: 'phoneCode'))
     ..add(GqlField(name: 'code'));
 
+  // coverage:ignore-start
   /// [fetchAll] fetches all countries from the server.
   /// It returns a list of [Country] with the required contextual information.
   static Future<List<Country>> fetchAll({
@@ -80,6 +81,7 @@ abstract class Country with _$Country {
       return [];
     }
   }
+  // coverage:ignore-end
 }
 
 @freezed
