@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.17.4
+
+- Fixed an issue on `AvailableApp.fetchAll()` where the `apiToken` variable was not being passed to the GraphQL query, resulting in an empty response. The query now correctly includes the `apiToken` argument.
+
 ## 3.17.3
 
 - Corrected Fragment names on `AppFont.fragment` and `InstanceDns.fragment` to match the GraphQL schema types (`AppFont` and `InstanceDns`) instead of the previous incorrect names (`FontInformation` and `DnsConfiguration`).
