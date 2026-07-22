@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2]
+        shard: [0, 1, 2, 3]
     steps:
       - uses: actions/checkout@v7
 
@@ -41,9 +41,9 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Run tests (shard ${{ matrix.shard }} of 3)
+      - name: Run tests (shard ${{ matrix.shard }} of 4)
         run: |
-          FILES=$(find test -name '*_test.dart' | sort | awk "NR % 3 == ${{ matrix.shard }}")
+          FILES=$(find test -name '*_test.dart' | sort | awk "NR % 4 == ${{ matrix.shard }}")
           flutter test --machine --coverage $FILES 2>&1 | tee test-results.json; exit ${PIPESTATUS[0]}
 
       - name: Publish test results
