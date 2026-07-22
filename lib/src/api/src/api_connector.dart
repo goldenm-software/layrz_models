@@ -4,7 +4,7 @@ class LayrzConnector {
   final Uri uri;
   final Map<String, String> headers;
   final Duration? timeout;
-  final String apiToken;
+  final String? apiToken;
 
   /// [LayrzConnector] is a simple connector to make HTTP requests to a given [uri] with optional [headers].
   LayrzConnector({
@@ -18,7 +18,7 @@ class LayrzConnector {
     this.timeout,
 
     /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
-    required this.apiToken,
+    this.apiToken,
   }) {
     final localHeaders = Map<String, String>.from(headers);
     if (localHeaders['Content-Type'] == null) {
@@ -27,7 +27,7 @@ class LayrzConnector {
       throw ArgumentError('Content-Type must be application/json');
     }
 
-    localHeaders['Authorization'] = 'LayrzToken $apiToken';
+    if (apiToken != null) localHeaders['Authorization'] = 'LayrzToken $apiToken';
 
     _dio = Dio(
       BaseOptions(

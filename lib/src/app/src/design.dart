@@ -2,6 +2,8 @@ part of '../app.dart';
 
 @freezed
 abstract class AppDesign with _$AppDesign {
+  const AppDesign._();
+
   /// [AppDesign] is the design of the app.
   const factory AppDesign({
     /// [mainColor] defines the main color of the app.
@@ -58,6 +60,27 @@ abstract class AppDesign with _$AppDesign {
   }) = _AppDesign;
 
   factory AppDesign.fromJson(Map<String, dynamic> json) => _$AppDesignFromJson(json);
+
+  /// [fragment] is the GraphQL fragment for the [AppDesign] model
+  static GqlFragment get fragment => GqlFragment(name: 'designFragment', onType: 'DesignInformation')
+    ..add(GqlField(name: 'theme'))
+    ..add(GqlField(name: 'mainColor'))
+    ..add(GqlField(name: 'favicons', fragment: AppThemedAsset.fragment))
+    ..add(GqlField(name: 'logos', fragment: AppThemedAsset.fragment))
+    ..add(GqlField(name: 'appicon'))
+    ..add(GqlField(name: 'login', fragment: AppLoginDesign.fragment))
+    ..add(GqlField(name: 'footerFormat'))
+    ..add(GqlField(name: 'titleFont', fragment: AppFont.fragment))
+    ..add(GqlField(name: 'bodyFont', fragment: AppFont.fragment));
+
+  /// [reducedFragment] is the GraphQL fragment for the [AppDesign] model with only the fields that are required for the app to work.
+  /// [fragment] is the GraphQL fragment for the [AppDesign] model
+  static GqlFragment get reducedFragment => GqlFragment(name: 'designFragment', onType: 'DesignInformation')
+    ..add(GqlField(name: 'theme'))
+    ..add(GqlField(name: 'mainColor'))
+    ..add(GqlField(name: 'favicons', fragment: AppThemedAsset.fragment))
+    ..add(GqlField(name: 'logos', fragment: AppThemedAsset.fragment))
+    ..add(GqlField(name: 'appicon'));
 }
 
 @freezed

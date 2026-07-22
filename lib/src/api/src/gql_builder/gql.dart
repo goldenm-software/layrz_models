@@ -126,15 +126,15 @@ abstract class Gql {
 
 /// [GqlQuery] represents a GraphQL query operation, which is used to fetch data from the server.
 class GqlQuery extends Gql {
-  GqlQuery({super.name, required super.variables, super.fields, super.includeTypename});
+  GqlQuery({super.name, super.variables = const [], super.fields, super.includeTypename});
 }
 
 /// [GqlMutation] represents a GraphQL mutation operation, which is used to modify data on the server.
 class GqlMutation extends Gql {
-  GqlMutation({super.name, required super.variables, super.fields, super.includeTypename});
+  GqlMutation({super.name, super.variables = const [], super.fields, super.includeTypename});
 }
 
 /// [GqlSubscription] represents a GraphQL subscription operation, used with [LayrzConnector.subscribe].
 class GqlSubscription extends Gql {
-  GqlSubscription({super.name, required super.variables, super.fields, super.includeTypename});
+  GqlSubscription({super.name, super.variables = const [], super.fields, super.includeTypename});
 }

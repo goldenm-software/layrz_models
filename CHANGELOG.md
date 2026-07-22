@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.17.0
+
+- Added API connectors for `Country`, `RegisteredApp` and `AvailableApp`
+
 ## 3.16.1
 
 - Add new value `REMITTANCE_SALE` in enum `AtsPurchaseOrderCategoriesEntity`

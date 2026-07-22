@@ -52,6 +52,77 @@ abstract class AvailableApp with _$AvailableApp {
   }) = _AvailableApp;
 
   factory AvailableApp.fromJson(Map<String, dynamic> json) => _$AvailableAppFromJson(json);
+
+  /// [fetchAll] fetches all available apps from the server
+  /// It returns a list of [AvailableApp] with the required contextual information
+  static Future<List<AvailableApp>> fetchAll({
+    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
+    /// on the GraphQL API.
+    required String apiToken,
+
+    /// [uri] is the GraphQL endpoint to use
+    required Uri uri,
+
+    /// [onResponse] is the callback to call when the response is received
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.perform(
+        GqlQuery(
+          variables: [],
+          name: 'fetchRegisteredApps',
+        )..add(
+          GqlField(name: 'registeredApps', args: {})
+            ..add(GqlField(name: 'status'))
+            ..add(
+              GqlField(name: 'result')
+                ..add(GqlField(name: 'id'))
+                ..add(GqlField(name: 'name'))
+                ..add(GqlField(name: 'appId'))
+                ..add(GqlField(name: 'appType'))
+                ..add(GqlField(name: 'technology'))
+                ..add(GqlField(name: 'onlyCustomized'))
+                ..add(GqlField(name: 'supportedPlatforms'))
+                ..add(GqlField(name: 'supportedCustomizationPlatforms'))
+                ..add(GqlField(name: 'hasImport'))
+                ..add(GqlField(name: 'hasKeychain'))
+                ..add(GqlField(name: 'canMapLayers'))
+                ..add(GqlField(name: 'legalInformation', fragment: AppLegal.fragment))
+                ..add(GqlField(name: 'designInformation', fragment: AppDesign.reducedFragment)),
+            ),
+        ),
+      );
+
+      final data = response.data;
+      if (data == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/AvailableApp/fetchAll(): No response from server");
+        return [];
+      }
+
+      final result = data['data']['registeredApps'];
+      if (result == null) {
+        onResponse?.call(ApiStatus.internalError.toJson());
+        Log.error("layrz_models/AvailableApp/fetchAll(): No result from server");
+        return [];
+      }
+
+      final status = ApiStatus.fromJson(result['status']);
+      if (status != ApiStatus.ok) {
+        onResponse?.call(status.toJson());
+        return [];
+      }
+
+      return (result['result'] as List<dynamic>?)
+              ?.map((e) => AvailableApp.fromJson(Map<String, dynamic>.from(e as Map)))
+              .toList() ??
+          [];
+    } catch (e, stack) {
+      Log.critical("layrz_models/AvailableApp/fetchAll(): General exception => $e\n$stack");
+      return [];
+    }
+  }
 }
 
 @unfreezed
