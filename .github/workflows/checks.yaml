@@ -42,7 +42,9 @@ jobs:
         run: flutter pub get
 
       - name: Run tests (shard ${{ matrix.shard }} of 3)
-        run: flutter test --machine --coverage --total-shards 3 --shard-index ${{ matrix.shard }} 2>&1 | tee test-results.json; exit ${PIPESTATUS[0]}
+        run: |
+          FILES=$(find test -name '*_test.dart' | sort | awk "NR % 3 == ${{ matrix.shard }}")
+          flutter test --machine --coverage $FILES 2>&1 | tee test-results.json; exit ${PIPESTATUS[0]}
 
       - name: Publish test results
         if: always()
