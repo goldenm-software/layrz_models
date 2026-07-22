@@ -5,6 +5,9 @@ on:
     branches: [main]
     types: [opened, synchronize, reopened]
 
+env:
+  FLUTTER_VERSION: "3.44.6"
+
 jobs:
   lint-dart:
     runs-on: ubuntu-latest
@@ -13,11 +16,11 @@ jobs:
 
       - uses: goldenm-software/layrz-actions/.github/actions/check-dart@v1
         with:
-          flutter-version: "3.44.2"
+          flutter-version: ${{ env.FLUTTER_VERSION }}
           run-tests: true
           artifact-name: 'dart-coverage-${{ github.run_id }}'
 
-  coverage-comment:
+  coverage:
     needs: lint-dart
     if: always() && github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -30,11 +33,29 @@ jobs:
           name: dart-coverage-${{ github.run_id }}
           path: dart-coverage
 
+      - name: Setup Flutter
+        uses: flutter-actions/setup-flutter@v4
+        with:
+          channel: stable
+          version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+          cache-sdk: true
+          cache-key: ${{ runner.os }}-flutter-${{ hashFiles('pubspec.yaml') }}
+
+      - name: Strip coverage-ignored regions
+        run: dart tool/strip_ignored_coverage.dart dart-coverage/lcov.info
+
       - uses: goldenm-software/layrz-actions/.github/actions/coverage-comment@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-dart: true
           dart-coverage-path: dart-coverage/lcov.info
+
+      - uses: goldenm-software/layrz-actions/.github/actions/coverage-check@v1
+        with:
+          enable-dart: true
+          dart-coverage-path: dart-coverage/lcov.info
+          threshold: '55'
 
   changelog:
     runs-on: ubuntu-latest
