@@ -708,8 +708,18 @@ abstract class RegisteredApp with _$RegisteredApp {
         GqlQuery(
           variables: [
             GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
-            GqlVariable(name: 'platform', type: .string, isRequired: true, value: platform.name),
-            GqlVariable(name: 'technology', type: .string, isRequired: true, value: technology.name),
+            GqlVariable(
+              name: 'platform',
+              type: .enum_(of: 'AppPlatform'),
+              isRequired: true,
+              value: platform.name,
+            ),
+            GqlVariable(
+              name: 'technology',
+              type: .enum_(of: 'AppTechnology'),
+              isRequired: true,
+              value: technology.name,
+            ),
           ],
         )..add(
           GqlField(name: 'loadApp', args: {'platform': 'platform', 'technology': 'technology', 'appId': 'appId'})
