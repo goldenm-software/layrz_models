@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.18.1
+
+- New `GqlVariableType.enum_()` factory for GraphQL enum variables, allowing type-safe enum variable declarations in queries and mutations.
+- Corrected `RegisteredApp.load()` to fix the `platform` and `technology` fields to be their respective enums `AppPlatform` and `AppTechnology` instead of plain strings, ensuring proper type safety and deserialization.
+
 ## 3.18.0
 
 - Added API connector for `Geofence` with full GraphQL support (`fetch`, `fetchAll`, `save`, `delete`, `exportMany`).

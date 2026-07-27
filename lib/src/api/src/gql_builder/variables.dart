@@ -22,6 +22,8 @@ class GqlVariableType {
   }
 
   static GqlVariableType input({required String of}) => GqlVariableType._(of);
+
+  static GqlVariableType enum_({required String of}) => GqlVariableType._(of);
 }
 
 class GqlVariable {
