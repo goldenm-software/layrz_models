@@ -51,6 +51,9 @@ abstract class Gql {
 
     if (name != null) {
       buffer.write(' $name');
+    } else {
+      String autoname = _findName();
+      buffer.write(' $autoname');
     }
 
     if (variables.isNotEmpty) {
@@ -130,6 +133,15 @@ abstract class Gql {
     }
 
     return buffer.toString();
+  }
+
+  /// [_findName] finds the first field on query or mutation and uses it as the name if no name is provided.
+  String _findName() {
+    if (fields.isNotEmpty) {
+      return fields.first.name;
+    }
+
+    return 'UnnamedOperation';
   }
 }
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.18.2
+
+- Updated `Gql` to now auto-include name from the next field in the query or mutation if no name is provided, ensuring that all GraphQL operations have a valid name for better debugging and logging.
+
 ## 3.18.1
 
 - New `GqlVariableType.enum_()` factory for GraphQL enum variables, allowing type-safe enum variable declarations in queries and mutations.
