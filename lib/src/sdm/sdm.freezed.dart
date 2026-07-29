@@ -261,8 +261,8 @@ return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.source,_that
 /// @nodoc
 @JsonSerializable()
 
-class _SdmPen implements SdmPen {
-  const _SdmPen({required this.id, required this.name, required this.code, this.sourceId, this.source, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy});
+class _SdmPen extends SdmPen {
+  const _SdmPen({required this.id, required this.name, required this.code, this.sourceId, this.source, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy}): super._();
   factory _SdmPen.fromJson(Map<String, dynamic> json) => _$SdmPenFromJson(json);
 
 /// [id] of the pen entity. This ID is unique.
@@ -386,6 +386,282 @@ $UserCopyWith<$Res>? get updatedBy {
     return _then(_self.copyWith(updatedBy: value));
   });
 }
+}
+
+
+/// @nodoc
+mixin _$SdmPenInput {
+
+/// [id] of the pen entity. This ID is unique.
+ String? get id;/// [id] of the pen entity. This ID is unique.
+ set id(String? value);/// [name] of the pen.
+ String get name;/// [name] of the pen.
+ set name(String value);/// [code] of the pen.
+ String get code;/// [code] of the pen.
+ set code(String value);/// [sourceId] is the device id of the pen.
+ String? get sourceId;/// [sourceId] is the device id of the pen.
+ set sourceId(String? value);/// [pensHeadCountStimated] is the estimated count of pen heads.
+ int? get pensHeadCountStimated;/// [pensHeadCountStimated] is the estimated count of pen heads.
+ set pensHeadCountStimated(int? value);
+/// Create a copy of SdmPenInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SdmPenInputCopyWith<SdmPenInput> get copyWith => _$SdmPenInputCopyWithImpl<SdmPenInput>(this as SdmPenInput, _$identity);
+
+  /// Serializes this SdmPenInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'SdmPenInput(id: $id, name: $name, code: $code, sourceId: $sourceId, pensHeadCountStimated: $pensHeadCountStimated)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SdmPenInputCopyWith<$Res>  {
+  factory $SdmPenInputCopyWith(SdmPenInput value, $Res Function(SdmPenInput) _then) = _$SdmPenInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String name, String code, String? sourceId, int? pensHeadCountStimated
+});
+
+
+
+
+}
+/// @nodoc
+class _$SdmPenInputCopyWithImpl<$Res>
+    implements $SdmPenInputCopyWith<$Res> {
+  _$SdmPenInputCopyWithImpl(this._self, this._then);
+
+  final SdmPenInput _self;
+  final $Res Function(SdmPenInput) _then;
+
+/// Create a copy of SdmPenInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? code = null,Object? sourceId = freezed,Object? pensHeadCountStimated = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
+as String?,pensHeadCountStimated: freezed == pensHeadCountStimated ? _self.pensHeadCountStimated : pensHeadCountStimated // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SdmPenInput].
+extension SdmPenInputPatterns on SdmPenInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SdmPenInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SdmPenInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SdmPenInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _SdmPenInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SdmPenInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SdmPenInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String code,  String? sourceId,  int? pensHeadCountStimated)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SdmPenInput() when $default != null:
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.pensHeadCountStimated);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String code,  String? sourceId,  int? pensHeadCountStimated)  $default,) {final _that = this;
+switch (_that) {
+case _SdmPenInput():
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.pensHeadCountStimated);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String code,  String? sourceId,  int? pensHeadCountStimated)?  $default,) {final _that = this;
+switch (_that) {
+case _SdmPenInput() when $default != null:
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.pensHeadCountStimated);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SdmPenInput extends SdmPenInput {
+   _SdmPenInput({this.id, this.name = '', this.code = '', this.sourceId, this.pensHeadCountStimated}): super._();
+  factory _SdmPenInput.fromJson(Map<String, dynamic> json) => _$SdmPenInputFromJson(json);
+
+/// [id] of the pen entity. This ID is unique.
+@override  String? id;
+/// [name] of the pen.
+@override@JsonKey()  String name;
+/// [code] of the pen.
+@override@JsonKey()  String code;
+/// [sourceId] is the device id of the pen.
+@override  String? sourceId;
+/// [pensHeadCountStimated] is the estimated count of pen heads.
+@override  int? pensHeadCountStimated;
+
+/// Create a copy of SdmPenInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SdmPenInputCopyWith<_SdmPenInput> get copyWith => __$SdmPenInputCopyWithImpl<_SdmPenInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SdmPenInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'SdmPenInput(id: $id, name: $name, code: $code, sourceId: $sourceId, pensHeadCountStimated: $pensHeadCountStimated)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SdmPenInputCopyWith<$Res> implements $SdmPenInputCopyWith<$Res> {
+  factory _$SdmPenInputCopyWith(_SdmPenInput value, $Res Function(_SdmPenInput) _then) = __$SdmPenInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String name, String code, String? sourceId, int? pensHeadCountStimated
+});
+
+
+
+
+}
+/// @nodoc
+class __$SdmPenInputCopyWithImpl<$Res>
+    implements _$SdmPenInputCopyWith<$Res> {
+  __$SdmPenInputCopyWithImpl(this._self, this._then);
+
+  final _SdmPenInput _self;
+  final $Res Function(_SdmPenInput) _then;
+
+/// Create a copy of SdmPenInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? code = null,Object? sourceId = freezed,Object? pensHeadCountStimated = freezed,}) {
+  return _then(_SdmPenInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
+as String?,pensHeadCountStimated: freezed == pensHeadCountStimated ? _self.pensHeadCountStimated : pensHeadCountStimated // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+
 }
 
 
@@ -642,8 +918,8 @@ return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.source,_that
 /// @nodoc
 @JsonSerializable()
 
-class _SdmRecipe implements SdmRecipe {
-  const _SdmRecipe({required this.id, required this.name, required this.code, this.sourceId, this.source, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy, final  List<SdmIngredient>? ingredients, final  List<String>? ingredientsIds}): _ingredients = ingredients,_ingredientsIds = ingredientsIds;
+class _SdmRecipe extends SdmRecipe {
+  const _SdmRecipe({required this.id, required this.name, required this.code, this.sourceId, this.source, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy, final  List<SdmIngredient>? ingredients, final  List<String>? ingredientsIds}): _ingredients = ingredients,_ingredientsIds = ingredientsIds,super._();
   factory _SdmRecipe.fromJson(Map<String, dynamic> json) => _$SdmRecipeFromJson(json);
 
 /// [id] of the pen entity. This ID is unique.
@@ -791,6 +1067,282 @@ $UserCopyWith<$Res>? get updatedBy {
     return _then(_self.copyWith(updatedBy: value));
   });
 }
+}
+
+
+/// @nodoc
+mixin _$SdmRecipeInput {
+
+/// [id] of the recipe entity. This ID is unique.
+ String? get id;/// [id] of the recipe entity. This ID is unique.
+ set id(String? value);/// [name] of the recipe.
+ String get name;/// [name] of the recipe.
+ set name(String value);/// [code] of the recipe.
+ String get code;/// [code] of the recipe.
+ set code(String value);/// [sourceId] is the device id of the recipe.
+ String? get sourceId;/// [sourceId] is the device id of the recipe.
+ set sourceId(String? value);/// [ingredientsIds] is the list of ingredients ids of the recipe.
+ List<String> get ingredientsIds;/// [ingredientsIds] is the list of ingredients ids of the recipe.
+ set ingredientsIds(List<String> value);
+/// Create a copy of SdmRecipeInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SdmRecipeInputCopyWith<SdmRecipeInput> get copyWith => _$SdmRecipeInputCopyWithImpl<SdmRecipeInput>(this as SdmRecipeInput, _$identity);
+
+  /// Serializes this SdmRecipeInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'SdmRecipeInput(id: $id, name: $name, code: $code, sourceId: $sourceId, ingredientsIds: $ingredientsIds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SdmRecipeInputCopyWith<$Res>  {
+  factory $SdmRecipeInputCopyWith(SdmRecipeInput value, $Res Function(SdmRecipeInput) _then) = _$SdmRecipeInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String name, String code, String? sourceId, List<String> ingredientsIds
+});
+
+
+
+
+}
+/// @nodoc
+class _$SdmRecipeInputCopyWithImpl<$Res>
+    implements $SdmRecipeInputCopyWith<$Res> {
+  _$SdmRecipeInputCopyWithImpl(this._self, this._then);
+
+  final SdmRecipeInput _self;
+  final $Res Function(SdmRecipeInput) _then;
+
+/// Create a copy of SdmRecipeInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? code = null,Object? sourceId = freezed,Object? ingredientsIds = null,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
+as String?,ingredientsIds: null == ingredientsIds ? _self.ingredientsIds : ingredientsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SdmRecipeInput].
+extension SdmRecipeInputPatterns on SdmRecipeInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SdmRecipeInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SdmRecipeInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SdmRecipeInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _SdmRecipeInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SdmRecipeInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SdmRecipeInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String code,  String? sourceId,  List<String> ingredientsIds)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SdmRecipeInput() when $default != null:
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.ingredientsIds);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String code,  String? sourceId,  List<String> ingredientsIds)  $default,) {final _that = this;
+switch (_that) {
+case _SdmRecipeInput():
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.ingredientsIds);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String code,  String? sourceId,  List<String> ingredientsIds)?  $default,) {final _that = this;
+switch (_that) {
+case _SdmRecipeInput() when $default != null:
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.ingredientsIds);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SdmRecipeInput extends SdmRecipeInput {
+   _SdmRecipeInput({this.id, this.name = '', this.code = '', this.sourceId, this.ingredientsIds = const []}): super._();
+  factory _SdmRecipeInput.fromJson(Map<String, dynamic> json) => _$SdmRecipeInputFromJson(json);
+
+/// [id] of the recipe entity. This ID is unique.
+@override  String? id;
+/// [name] of the recipe.
+@override@JsonKey()  String name;
+/// [code] of the recipe.
+@override@JsonKey()  String code;
+/// [sourceId] is the device id of the recipe.
+@override  String? sourceId;
+/// [ingredientsIds] is the list of ingredients ids of the recipe.
+@override@JsonKey()  List<String> ingredientsIds;
+
+/// Create a copy of SdmRecipeInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SdmRecipeInputCopyWith<_SdmRecipeInput> get copyWith => __$SdmRecipeInputCopyWithImpl<_SdmRecipeInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SdmRecipeInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'SdmRecipeInput(id: $id, name: $name, code: $code, sourceId: $sourceId, ingredientsIds: $ingredientsIds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SdmRecipeInputCopyWith<$Res> implements $SdmRecipeInputCopyWith<$Res> {
+  factory _$SdmRecipeInputCopyWith(_SdmRecipeInput value, $Res Function(_SdmRecipeInput) _then) = __$SdmRecipeInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String name, String code, String? sourceId, List<String> ingredientsIds
+});
+
+
+
+
+}
+/// @nodoc
+class __$SdmRecipeInputCopyWithImpl<$Res>
+    implements _$SdmRecipeInputCopyWith<$Res> {
+  __$SdmRecipeInputCopyWithImpl(this._self, this._then);
+
+  final _SdmRecipeInput _self;
+  final $Res Function(_SdmRecipeInput) _then;
+
+/// Create a copy of SdmRecipeInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? code = null,Object? sourceId = freezed,Object? ingredientsIds = null,}) {
+  return _then(_SdmRecipeInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
+as String?,ingredientsIds: null == ingredientsIds ? _self.ingredientsIds : ingredientsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
+  ));
+}
+
+
 }
 
 
@@ -1051,8 +1603,8 @@ return $default(_that.id,_that.name,_that.code,_that.pricePerKg,_that.dryFactor,
 /// @nodoc
 @JsonSerializable()
 
-class _SdmIngredient implements SdmIngredient {
-  const _SdmIngredient({required this.id, required this.name, required this.code, this.pricePerKg, this.dryFactor, this.priceByDry, this.isArchived, this.sourceId, this.source, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy});
+class _SdmIngredient extends SdmIngredient {
+  const _SdmIngredient({required this.id, required this.name, required this.code, this.pricePerKg, this.dryFactor, this.priceByDry, this.isArchived, this.sourceId, this.source, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy}): super._();
   factory _SdmIngredient.fromJson(Map<String, dynamic> json) => _$SdmIngredientFromJson(json);
 
 /// [id] of the pen entity. This ID is unique.
@@ -1188,6 +1740,300 @@ $UserCopyWith<$Res>? get updatedBy {
     return _then(_self.copyWith(updatedBy: value));
   });
 }
+}
+
+
+/// @nodoc
+mixin _$SdmIngredientInput {
+
+/// [id] of the ingredient entity. This ID is unique.
+ String? get id;/// [id] of the ingredient entity. This ID is unique.
+ set id(String? value);/// [name] of the ingredient.
+ String get name;/// [name] of the ingredient.
+ set name(String value);/// [code] of the ingredient.
+ String get code;/// [code] of the ingredient.
+ set code(String value);/// [sourceId] is the device id of the ingredient.
+ String? get sourceId;/// [sourceId] is the device id of the ingredient.
+ set sourceId(String? value);/// [pricePerKg] is the price of the ingredient per kilogram.
+ double get pricePerKg;/// [pricePerKg] is the price of the ingredient per kilogram.
+ set pricePerKg(double value);/// [dryFactor] is the dry factor of the ingredient.
+ double get dryFactor;/// [dryFactor] is the dry factor of the ingredient.
+ set dryFactor(double value);/// [priceByDry] indicates if the price should be calculated using dry or wet weight.
+ bool get priceByDry;/// [priceByDry] indicates if the price should be calculated using dry or wet weight.
+ set priceByDry(bool value);/// [isArchived] is the status of the ingredient.
+ bool get isArchived;/// [isArchived] is the status of the ingredient.
+ set isArchived(bool value);
+/// Create a copy of SdmIngredientInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SdmIngredientInputCopyWith<SdmIngredientInput> get copyWith => _$SdmIngredientInputCopyWithImpl<SdmIngredientInput>(this as SdmIngredientInput, _$identity);
+
+  /// Serializes this SdmIngredientInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'SdmIngredientInput(id: $id, name: $name, code: $code, sourceId: $sourceId, pricePerKg: $pricePerKg, dryFactor: $dryFactor, priceByDry: $priceByDry, isArchived: $isArchived)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SdmIngredientInputCopyWith<$Res>  {
+  factory $SdmIngredientInputCopyWith(SdmIngredientInput value, $Res Function(SdmIngredientInput) _then) = _$SdmIngredientInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String name, String code, String? sourceId, double pricePerKg, double dryFactor, bool priceByDry, bool isArchived
+});
+
+
+
+
+}
+/// @nodoc
+class _$SdmIngredientInputCopyWithImpl<$Res>
+    implements $SdmIngredientInputCopyWith<$Res> {
+  _$SdmIngredientInputCopyWithImpl(this._self, this._then);
+
+  final SdmIngredientInput _self;
+  final $Res Function(SdmIngredientInput) _then;
+
+/// Create a copy of SdmIngredientInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? code = null,Object? sourceId = freezed,Object? pricePerKg = null,Object? dryFactor = null,Object? priceByDry = null,Object? isArchived = null,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
+as String?,pricePerKg: null == pricePerKg ? _self.pricePerKg : pricePerKg // ignore: cast_nullable_to_non_nullable
+as double,dryFactor: null == dryFactor ? _self.dryFactor : dryFactor // ignore: cast_nullable_to_non_nullable
+as double,priceByDry: null == priceByDry ? _self.priceByDry : priceByDry // ignore: cast_nullable_to_non_nullable
+as bool,isArchived: null == isArchived ? _self.isArchived : isArchived // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SdmIngredientInput].
+extension SdmIngredientInputPatterns on SdmIngredientInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SdmIngredientInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SdmIngredientInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SdmIngredientInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _SdmIngredientInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SdmIngredientInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SdmIngredientInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String code,  String? sourceId,  double pricePerKg,  double dryFactor,  bool priceByDry,  bool isArchived)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SdmIngredientInput() when $default != null:
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.pricePerKg,_that.dryFactor,_that.priceByDry,_that.isArchived);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String code,  String? sourceId,  double pricePerKg,  double dryFactor,  bool priceByDry,  bool isArchived)  $default,) {final _that = this;
+switch (_that) {
+case _SdmIngredientInput():
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.pricePerKg,_that.dryFactor,_that.priceByDry,_that.isArchived);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String code,  String? sourceId,  double pricePerKg,  double dryFactor,  bool priceByDry,  bool isArchived)?  $default,) {final _that = this;
+switch (_that) {
+case _SdmIngredientInput() when $default != null:
+return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.pricePerKg,_that.dryFactor,_that.priceByDry,_that.isArchived);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SdmIngredientInput extends SdmIngredientInput {
+   _SdmIngredientInput({this.id, this.name = '', this.code = '', this.sourceId, this.pricePerKg = 0.0, this.dryFactor = 1.0, this.priceByDry = false, this.isArchived = false}): super._();
+  factory _SdmIngredientInput.fromJson(Map<String, dynamic> json) => _$SdmIngredientInputFromJson(json);
+
+/// [id] of the ingredient entity. This ID is unique.
+@override  String? id;
+/// [name] of the ingredient.
+@override@JsonKey()  String name;
+/// [code] of the ingredient.
+@override@JsonKey()  String code;
+/// [sourceId] is the device id of the ingredient.
+@override  String? sourceId;
+/// [pricePerKg] is the price of the ingredient per kilogram.
+@override@JsonKey()  double pricePerKg;
+/// [dryFactor] is the dry factor of the ingredient.
+@override@JsonKey()  double dryFactor;
+/// [priceByDry] indicates if the price should be calculated using dry or wet weight.
+@override@JsonKey()  bool priceByDry;
+/// [isArchived] is the status of the ingredient.
+@override@JsonKey()  bool isArchived;
+
+/// Create a copy of SdmIngredientInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SdmIngredientInputCopyWith<_SdmIngredientInput> get copyWith => __$SdmIngredientInputCopyWithImpl<_SdmIngredientInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SdmIngredientInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'SdmIngredientInput(id: $id, name: $name, code: $code, sourceId: $sourceId, pricePerKg: $pricePerKg, dryFactor: $dryFactor, priceByDry: $priceByDry, isArchived: $isArchived)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SdmIngredientInputCopyWith<$Res> implements $SdmIngredientInputCopyWith<$Res> {
+  factory _$SdmIngredientInputCopyWith(_SdmIngredientInput value, $Res Function(_SdmIngredientInput) _then) = __$SdmIngredientInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String name, String code, String? sourceId, double pricePerKg, double dryFactor, bool priceByDry, bool isArchived
+});
+
+
+
+
+}
+/// @nodoc
+class __$SdmIngredientInputCopyWithImpl<$Res>
+    implements _$SdmIngredientInputCopyWith<$Res> {
+  __$SdmIngredientInputCopyWithImpl(this._self, this._then);
+
+  final _SdmIngredientInput _self;
+  final $Res Function(_SdmIngredientInput) _then;
+
+/// Create a copy of SdmIngredientInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? code = null,Object? sourceId = freezed,Object? pricePerKg = null,Object? dryFactor = null,Object? priceByDry = null,Object? isArchived = null,}) {
+  return _then(_SdmIngredientInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
+as String?,pricePerKg: null == pricePerKg ? _self.pricePerKg : pricePerKg // ignore: cast_nullable_to_non_nullable
+as double,dryFactor: null == dryFactor ? _self.dryFactor : dryFactor // ignore: cast_nullable_to_non_nullable
+as double,priceByDry: null == priceByDry ? _self.priceByDry : priceByDry // ignore: cast_nullable_to_non_nullable
+as bool,isArchived: null == isArchived ? _self.isArchived : isArchived // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
 }
 
 
@@ -1424,8 +2270,8 @@ return $default(_that.id,_that.name,_that.code,_that.createdAt,_that.createdBy,_
 /// @nodoc
 @JsonSerializable()
 
-class _SdmOperator implements SdmOperator {
-  const _SdmOperator({required this.id, required this.name, required this.code, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy});
+class _SdmOperator extends SdmOperator {
+  const _SdmOperator({required this.id, required this.name, required this.code, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy}): super._();
   factory _SdmOperator.fromJson(Map<String, dynamic> json) => _$SdmOperatorFromJson(json);
 
 /// [id] of the pen entity. This ID is unique.
@@ -1531,6 +2377,270 @@ $UserCopyWith<$Res>? get updatedBy {
     return _then(_self.copyWith(updatedBy: value));
   });
 }
+}
+
+
+/// @nodoc
+mixin _$SdmOperatorInput {
+
+/// [id] of the operator entity. This ID is unique.
+ String? get id;/// [id] of the operator entity. This ID is unique.
+ set id(String? value);/// [name] of the operator.
+ String get name;/// [name] of the operator.
+ set name(String value);/// [code] of the operator.
+ String get code;/// [code] of the operator.
+ set code(String value);
+/// Create a copy of SdmOperatorInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SdmOperatorInputCopyWith<SdmOperatorInput> get copyWith => _$SdmOperatorInputCopyWithImpl<SdmOperatorInput>(this as SdmOperatorInput, _$identity);
+
+  /// Serializes this SdmOperatorInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'SdmOperatorInput(id: $id, name: $name, code: $code)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SdmOperatorInputCopyWith<$Res>  {
+  factory $SdmOperatorInputCopyWith(SdmOperatorInput value, $Res Function(SdmOperatorInput) _then) = _$SdmOperatorInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String name, String code
+});
+
+
+
+
+}
+/// @nodoc
+class _$SdmOperatorInputCopyWithImpl<$Res>
+    implements $SdmOperatorInputCopyWith<$Res> {
+  _$SdmOperatorInputCopyWithImpl(this._self, this._then);
+
+  final SdmOperatorInput _self;
+  final $Res Function(SdmOperatorInput) _then;
+
+/// Create a copy of SdmOperatorInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? code = null,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SdmOperatorInput].
+extension SdmOperatorInputPatterns on SdmOperatorInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SdmOperatorInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SdmOperatorInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SdmOperatorInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _SdmOperatorInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SdmOperatorInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SdmOperatorInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String code)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SdmOperatorInput() when $default != null:
+return $default(_that.id,_that.name,_that.code);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String code)  $default,) {final _that = this;
+switch (_that) {
+case _SdmOperatorInput():
+return $default(_that.id,_that.name,_that.code);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String code)?  $default,) {final _that = this;
+switch (_that) {
+case _SdmOperatorInput() when $default != null:
+return $default(_that.id,_that.name,_that.code);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SdmOperatorInput extends SdmOperatorInput {
+   _SdmOperatorInput({this.id, this.name = '', this.code = ''}): super._();
+  factory _SdmOperatorInput.fromJson(Map<String, dynamic> json) => _$SdmOperatorInputFromJson(json);
+
+/// [id] of the operator entity. This ID is unique.
+@override  String? id;
+/// [name] of the operator.
+@override@JsonKey()  String name;
+/// [code] of the operator.
+@override@JsonKey()  String code;
+
+/// Create a copy of SdmOperatorInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SdmOperatorInputCopyWith<_SdmOperatorInput> get copyWith => __$SdmOperatorInputCopyWithImpl<_SdmOperatorInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SdmOperatorInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'SdmOperatorInput(id: $id, name: $name, code: $code)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SdmOperatorInputCopyWith<$Res> implements $SdmOperatorInputCopyWith<$Res> {
+  factory _$SdmOperatorInputCopyWith(_SdmOperatorInput value, $Res Function(_SdmOperatorInput) _then) = __$SdmOperatorInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String name, String code
+});
+
+
+
+
+}
+/// @nodoc
+class __$SdmOperatorInputCopyWithImpl<$Res>
+    implements _$SdmOperatorInputCopyWith<$Res> {
+  __$SdmOperatorInputCopyWithImpl(this._self, this._then);
+
+  final _SdmOperatorInput _self;
+  final $Res Function(_SdmOperatorInput) _then;
+
+/// Create a copy of SdmOperatorInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? code = null,}) {
+  return _then(_SdmOperatorInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

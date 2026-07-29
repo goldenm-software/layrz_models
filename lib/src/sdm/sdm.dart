@@ -1,6 +1,7 @@
 library;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_logging/layrz_logging.dart';
 
 import '../../layrz_models.dart';
 

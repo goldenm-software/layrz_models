@@ -40,6 +40,23 @@ Map<String, dynamic> _$SdmPenToJson(_SdmPen instance) => <String, dynamic>{
   'updatedBy': instance.updatedBy?.toJson(),
 };
 
+_SdmPenInput _$SdmPenInputFromJson(Map<String, dynamic> json) => _SdmPenInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  code: json['code'] as String? ?? '',
+  sourceId: json['sourceId'] as String?,
+  pensHeadCountStimated: (json['pensHeadCountStimated'] as num?)?.toInt(),
+);
+
+Map<String, dynamic> _$SdmPenInputToJson(_SdmPenInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'code': instance.code,
+      'sourceId': instance.sourceId,
+      'pensHeadCountStimated': instance.pensHeadCountStimated,
+    };
+
 _SdmRecipe _$SdmRecipeFromJson(Map<String, dynamic> json) => _SdmRecipe(
   id: json['id'] as String,
   name: json['name'] as String,
@@ -80,6 +97,28 @@ Map<String, dynamic> _$SdmRecipeToJson(_SdmRecipe instance) =>
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
       'updatedBy': instance.updatedBy?.toJson(),
       'ingredients': instance.ingredients?.map((e) => e.toJson()).toList(),
+      'ingredientsIds': instance.ingredientsIds,
+    };
+
+_SdmRecipeInput _$SdmRecipeInputFromJson(Map<String, dynamic> json) =>
+    _SdmRecipeInput(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      code: json['code'] as String? ?? '',
+      sourceId: json['sourceId'] as String?,
+      ingredientsIds:
+          (json['ingredientsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$SdmRecipeInputToJson(_SdmRecipeInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'code': instance.code,
+      'sourceId': instance.sourceId,
       'ingredientsIds': instance.ingredientsIds,
     };
 
@@ -127,6 +166,30 @@ Map<String, dynamic> _$SdmIngredientToJson(_SdmIngredient instance) =>
       'updatedBy': instance.updatedBy?.toJson(),
     };
 
+_SdmIngredientInput _$SdmIngredientInputFromJson(Map<String, dynamic> json) =>
+    _SdmIngredientInput(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      code: json['code'] as String? ?? '',
+      sourceId: json['sourceId'] as String?,
+      pricePerKg: (json['pricePerKg'] as num?)?.toDouble() ?? 0.0,
+      dryFactor: (json['dryFactor'] as num?)?.toDouble() ?? 1.0,
+      priceByDry: json['priceByDry'] as bool? ?? false,
+      isArchived: json['isArchived'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$SdmIngredientInputToJson(_SdmIngredientInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'code': instance.code,
+      'sourceId': instance.sourceId,
+      'pricePerKg': instance.pricePerKg,
+      'dryFactor': instance.dryFactor,
+      'priceByDry': instance.priceByDry,
+      'isArchived': instance.isArchived,
+    };
+
 _SdmOperator _$SdmOperatorFromJson(Map<String, dynamic> json) => _SdmOperator(
   id: json['id'] as String,
   name: json['name'] as String,
@@ -154,4 +217,18 @@ Map<String, dynamic> _$SdmOperatorToJson(_SdmOperator instance) =>
       'createdBy': instance.createdBy?.toJson(),
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
       'updatedBy': instance.updatedBy?.toJson(),
+    };
+
+_SdmOperatorInput _$SdmOperatorInputFromJson(Map<String, dynamic> json) =>
+    _SdmOperatorInput(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      code: json['code'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$SdmOperatorInputToJson(_SdmOperatorInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'code': instance.code,
     };

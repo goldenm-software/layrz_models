@@ -12,6 +12,7 @@ class GqlVariableType {
   static const json = GqlVariableType._('Json');
   static const uuid = GqlVariableType._('Uuid');
   static const duration = GqlVariableType._('Duration');
+  static const unix = GqlVariableType._('Unix');
 
   static GqlVariableType list({required GqlVariableType of, bool isRequired = false}) {
     if (isRequired) {
