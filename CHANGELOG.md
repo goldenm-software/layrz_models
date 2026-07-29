@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.19.1
+
+- Fixed `Geofence.fragment`, removed `name` on `telemetry` subgraph
+
 ## 3.19.0
 
 - Added `SdmPenInput`, `SdmIngredientInput`, `SdmOperatorInput` and `SdmRecipeInput` unfreezed input models for the SDM entities.

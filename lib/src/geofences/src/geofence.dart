@@ -118,7 +118,6 @@ abstract class Geofence with _$Geofence {
           ..add(
             GqlField(name: 'telemetry')
               ..add(GqlField(name: 'id'))
-              ..add(GqlField(name: 'name'))
               ..add(GqlField(name: 'receivedAt'))
               ..add(
                 GqlField(name: 'position')
