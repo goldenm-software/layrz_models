@@ -186,7 +186,7 @@ abstract class Geofence with _$Geofence {
             GqlVariable(name: 'id', type: .string, isRequired: true, value: id),
           ],
         )..add(
-          GqlField(name: 'geofences', args: {'id': 'id', 'apiToken': 'apiToken'})
+          GqlField(name: variant.queryName, args: {'id': 'id', 'apiToken': 'apiToken'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: fragment(variant))),
         ),
@@ -213,6 +213,7 @@ abstract class Geofence with _$Geofence {
     required String apiToken,
     required Uri uri,
     void Function(String statusCode)? onResponse,
+    GeofenceVariant variant = .standard,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
@@ -228,7 +229,10 @@ abstract class Geofence with _$Geofence {
             ),
           ],
         )..add(
-          GqlField(name: 'deleteGeofence', args: {'ids': 'ids', 'apiToken': 'apiToken'})..add(GqlField(name: 'status')),
+          GqlField(
+            name: variant.deleteMutationName,
+            args: {'ids': 'ids', 'apiToken': 'apiToken'},
+          )..add(GqlField(name: 'status')),
         ),
       );
 
@@ -253,6 +257,7 @@ abstract class Geofence with _$Geofence {
     required String apiToken,
     required Uri uri,
     void Function(String statusCode)? onResponse,
+    GeofenceVariant variant = .standard,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
@@ -268,7 +273,8 @@ abstract class Geofence with _$Geofence {
             ),
           ],
         )..add(
-          GqlField(name: 'deleteGeofence', args: {'ids': 'ids', 'apiToken': 'apiToken'})..add(GqlField(name: 'status')),
+          GqlField(name: variant.deleteMutationName, args: {'ids': 'ids', 'apiToken': 'apiToken'})
+            ..add(GqlField(name: 'status')),
         ),
       );
 
@@ -442,7 +448,10 @@ abstract class GeofenceInput with _$GeofenceInput {
             ),
           ],
         )..add(
-          GqlField(name: id == null ? 'addGeofence' : 'editGeofence', args: {'apiToken': 'apiToken', 'data': 'data'})
+          GqlField(
+              name: id == null ? variant.addMutationName : variant.editMutationName,
+              args: {'apiToken': 'apiToken', 'data': 'data'},
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
             ..add(GqlField(name: 'result', fragment: Geofence.fragment(variant))),

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.19.2
+
+- Updated `Geofence.fetch`, `Geofence.fetchAll`, `Geofence.save` and `Geofence.deleteMultiple` to accept a `variant` argument (`standard`, `mappit`, `sdm`) to resolve the query/mutation names and fragments per variant, aligning with the backend GraphQL schema.
+
 ## 3.19.1
 
 - Fixed `Geofence.fragment`, removed `name` on `telemetry` subgraph
