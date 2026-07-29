@@ -14,8 +14,7 @@ User _userDecoder(Object? json) {
 
 String? _stringOrNullDecoder(Object? json) => json as String?;
 
-Map<String, dynamic>? _mapOrNullDecoder(Object? json) =>
-    json == null ? null : Map<String, dynamic>.from(json as Map);
+Map<String, dynamic>? _mapOrNullDecoder(Object? json) => json == null ? null : Map<String, dynamic>.from(json as Map);
 
 // coverage:ignore-start
 /// [_getSaveMutationName] returns the GraphQL mutation name for saving a user based on the variant and whether it's a new user.
@@ -285,6 +284,7 @@ abstract class User with _$User {
         return 'mappitUsers';
     }
   }
+  // coverage:ignore-end
 
   // coverage:ignore-start
   /// [fragment] is the GqlFragment for a user, with full parity to layrz_users generators.
@@ -318,11 +318,14 @@ abstract class User with _$User {
     if (isMappit) {
       gql.add(GqlField(name: 'mappitAssetsIds'));
       gql.add(
-        GqlField(name: 'mappitAssets', fields: [
-          GqlField(name: 'id'),
-          GqlField(name: 'name'),
-          GqlField(name: 'mode'),
-        ]),
+        GqlField(
+          name: 'mappitAssets',
+          fields: [
+            GqlField(name: 'id'),
+            GqlField(name: 'name'),
+            GqlField(name: 'mode'),
+          ],
+        ),
       );
       gql.add(GqlField(name: 'historicalDaysAllowed'));
     } else if (variant == .sdm) {
@@ -333,12 +336,15 @@ abstract class User with _$User {
       gql.add(GqlField(name: 'brickhouseRole'));
       gql.add(GqlField(name: 'brickhousePermissionTierId'));
       gql.add(
-        GqlField(name: 'brickhousePermissionTier', fields: [
-          GqlField(name: 'id'),
-          GqlField(name: 'name'),
-          GqlField(name: 'tierLevel'),
-          GqlField(name: 'billingPeriod'),
-        ]),
+        GqlField(
+          name: 'brickhousePermissionTier',
+          fields: [
+            GqlField(name: 'id'),
+            GqlField(name: 'name'),
+            GqlField(name: 'tierLevel'),
+            GqlField(name: 'billingPeriod'),
+          ],
+        ),
       );
     }
 
@@ -440,77 +446,89 @@ abstract class User with _$User {
       // Add details fields when withDetails is true
       if (withDetails) {
         resultField.add(
-          GqlField(name: 'tags', fields: [
-            GqlField(name: 'id'),
-            GqlField(name: 'name'),
-            GqlField(name: 'color'),
-            GqlField(name: 'icon'),
-          ]),
+          GqlField(
+            name: 'tags',
+            fields: [
+              GqlField(name: 'id'),
+              GqlField(name: 'name'),
+              GqlField(name: 'color'),
+              GqlField(name: 'icon'),
+            ],
+          ),
         );
         resultField.add(
-          GqlField(name: 'references', fields: [
-            GqlField(name: 'id'),
-            GqlField(name: 'name'),
-          ]),
+          GqlField(
+            name: 'references',
+            fields: [
+              GqlField(name: 'id'),
+              GqlField(name: 'name'),
+            ],
+          ),
         );
         resultField.add(GqlField(name: 'categoryId'));
         resultField.add(
-          GqlField(name: 'category', fields: [
-            GqlField(name: 'id'),
-            GqlField(name: 'name'),
-            GqlField(name: 'kind'),
-          ]),
+          GqlField(
+            name: 'category',
+            fields: [
+              GqlField(name: 'id'),
+              GqlField(name: 'name'),
+              GqlField(name: 'kind'),
+            ],
+          ),
         );
         resultField.add(
-          GqlField(name: 'allowedApps', fields: [
-            GqlField(name: 'id'),
-            GqlField(name: 'name'),
-            GqlField(name: 'nickname'),
-            GqlField(name: 'technology'),
-            GqlField(name: 'sourceId'),
-            GqlField(
-              name: 'designInformation',
-              fields: [
-                GqlField(
-                  name: 'favicons',
-                  fields: [
-                    GqlField(name: 'white'),
-                    GqlField(name: 'normal'),
-                  ],
-                ),
-                GqlField(
-                  name: 'logos',
-                  fields: [
-                    GqlField(name: 'white'),
-                    GqlField(name: 'normal'),
-                  ],
-                ),
-                GqlField(
-                  name: 'colors',
-                  fields: [
-                    GqlField(name: 'theme'),
-                    GqlField(name: 'mainColor'),
-                    GqlField(name: 'primary'),
-                    GqlField(name: 'secondary'),
-                    GqlField(name: 'accent'),
-                  ],
-                ),
-                GqlField(name: 'appicon'),
-              ],
-            ),
-            GqlField(
-              name: 'instances',
-              fields: [
-                GqlField(name: 'id'),
-                GqlField(name: 'appId'),
-                GqlField(name: 'platform'),
-                GqlField(name: 'appIdentifier'),
-                GqlField(name: 'host'),
-                GqlField(name: 'status'),
-                GqlField(name: 'migrationStatus'),
-              ],
-            ),
-          ]),
+          GqlField(
+            name: 'allowedApps',
+            fields: [
+              GqlField(name: 'id'),
+              GqlField(name: 'name'),
+              GqlField(name: 'nickname'),
+              GqlField(name: 'technology'),
+              GqlField(name: 'sourceId'),
+              GqlField(
+                name: 'designInformation',
+                fields: [
+                  GqlField(
+                    name: 'favicons',
+                    fields: [
+                      GqlField(name: 'white'),
+                      GqlField(name: 'normal'),
+                    ],
+                  ),
+                  GqlField(
+                    name: 'logos',
+                    fields: [
+                      GqlField(name: 'white'),
+                      GqlField(name: 'normal'),
+                    ],
+                  ),
+                  GqlField(
+                    name: 'colors',
+                    fields: [
+                      GqlField(name: 'theme'),
+                      GqlField(name: 'mainColor'),
+                      GqlField(name: 'primary'),
+                      GqlField(name: 'secondary'),
+                      GqlField(name: 'accent'),
+                    ],
+                  ),
+                  GqlField(name: 'appicon'),
+                ],
+              ),
+              GqlField(
+                name: 'instances',
+                fields: [
+                  GqlField(name: 'id'),
+                  GqlField(name: 'appId'),
+                  GqlField(name: 'platform'),
+                  GqlField(name: 'appIdentifier'),
+                  GqlField(name: 'host'),
+                  GqlField(name: 'status'),
+                  GqlField(name: 'migrationStatus'),
+                ],
+              ),
+            ],
+          ),
         );
       }
 
@@ -774,9 +792,9 @@ abstract class User with _$User {
           name: 'importUsersIntoApp',
         )..add(
           GqlField(
-            name: 'importUsersIntoApp',
-            args: {'appId': 'appId', 'usersIds': 'usersIds'},
-          )
+              name: 'importUsersIntoApp',
+              args: {'appId': 'appId', 'usersIds': 'usersIds'},
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors')),
         ),
@@ -813,9 +831,9 @@ abstract class User with _$User {
           name: 'resetPassword',
         )..add(
           GqlField(
-            name: 'resetPassword',
-            args: {'userId': 'userId'},
-          )
+              name: 'resetPassword',
+              args: {'userId': 'userId'},
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors')),
         ),
@@ -854,9 +872,9 @@ abstract class User with _$User {
           name: 'setPaymentWarningToUser',
         )..add(
           GqlField(
-            name: 'setPaymentWarningToUser',
-            args: {'userId': 'userId', 'state': 'state'},
-          )
+              name: 'setPaymentWarningToUser',
+              args: {'userId': 'userId', 'state': 'state'},
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors')),
         ),
@@ -895,9 +913,9 @@ abstract class User with _$User {
           name: 'lockUserAccount',
         )..add(
           GqlField(
-            name: 'lockUserAccount',
-            args: {'userId': 'userId', 'state': 'state'},
-          )
+              name: 'lockUserAccount',
+              args: {'userId': 'userId', 'state': 'state'},
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors')),
         ),
@@ -936,9 +954,9 @@ abstract class User with _$User {
           name: 'suspendUserAccount',
         )..add(
           GqlField(
-            name: 'suspendUserAccount',
-            args: {'userId': 'userId', 'state': 'state'},
-          )
+              name: 'suspendUserAccount',
+              args: {'userId': 'userId', 'state': 'state'},
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors')),
         ),
@@ -986,9 +1004,9 @@ abstract class User with _$User {
           name: 'inviteUser',
         )..add(
           GqlField(
-            name: 'inviteUser',
-            args: args,
-          )
+              name: 'inviteUser',
+              args: args,
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
             ..add(GqlField(name: 'inviteLink', alias: 'result')),
@@ -1037,9 +1055,9 @@ abstract class User with _$User {
           name: 'requestActivityReport',
         )..add(
           GqlField(
-            name: 'requestActivityReport',
-            args: args,
-          )
+              name: 'requestActivityReport',
+              args: args,
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
             ..add(
@@ -1062,6 +1080,7 @@ abstract class User with _$User {
       return (ApiStatus.internalError, null, null);
     }
   }
+
   // coverage:ignore-end
 }
 
