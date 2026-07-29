@@ -1,5 +1,24 @@
 # Changelog
 
+## 3.19.0
+
+- Added `SdmPenInput`, `SdmIngredientInput`, `SdmOperatorInput` and `SdmRecipeInput` unfreezed input models for the SDM entities.
+- Added `fragment` getters to `SdmPen`, `SdmIngredient`, `SdmOperator` and `SdmRecipe`.
+- Added API connectors for the SDM entities with `fetchAll`, `fetch`, `deleteMultiple` and `save` (on the input models).
+- Added bulk operations to `SdmPen`, `SdmIngredient` and `SdmRecipe`: `bulkLoad`, `export` and `formatExcel`, returning the generated `resultUri` where applicable.
+- Added `UserVariant` enum (`standard`, `ats`, `atsAdmin`, `brickhouse`, `sdm`, `tagon` and the `mappit*` variants) to drive user queries and mutations from a single source of truth.
+- Added variant-aware API connectors to `User`: `fetchAll`, `fetch`, `deleteMultiple` and `save` (on `UserInput`), resolving the query, mutation and input type names per variant, with optional `appId`, `languageId` and `mappitModule` arguments.
+- Added `User.fragment(variant:)` covering `access`, `referencesIds`, `categoryId`, `tagsIds` plus the variant-specific fields, and a `withDetails` option on `User.fetch` for the `tags`, `references`, `category` and `allowedApps` expansions.
+- Added account action connectors to `User`: `importIntoApp`, `resetPassword`, `setPaymentWarning`, `lock`, `suspend`, `invite` and `requestActivityReport`.
+- Migrated `User.fetchAll` and `User.fetchAllForAppUsers` to the typed `connector.query` API; `fetchAllForAppUsers` remains locked to the `standard` variant by design.
+- Added `ReferenceVariant` enum (`standard`, `mappit`, `sdm`) and `ReferenceInput` input model.
+- Added variant-aware API connectors to `Reference`: `fragment(variant:)`, `fetchAll`, `fetch`, `clone`, `deleteMultiple` and `save` (on `ReferenceInput`).
+- New `GqlVariableType.unix` for GraphQL `Unix` timestamp variables.
+- Added `ReferenceVariant` enum (`standard`, `mappit`, `sdm`) to drive reference queries and mutations from a single source of truth.
+- Added variant-aware API connectors to `Reference`: `fetchAll`, `fetch`, `deleteMultiple` and `save` (on `ReferenceInput`), resolving the query, mutation and input type names per variant — `references`/`mappitReferences`/`sdmReferences` for queries, and `add`/`edit`/`delete` mutations with the `Mappit` and `Sdm` infixes.
+- Added `Reference.fragment(variant:)` covering `id`, `name`, `category`, `customFields`, `qrCode` and `access`, reusing `CustomField.fragment` and `Access.idFragment`.
+- Added `Reference.clone`, which uses the `cloneReference` mutation for every variant.
+
 ## 3.18.2
 
 - Updated `Gql` to now auto-include name from the next field in the query or mutation if no name is provided, ensuring that all GraphQL operations have a valid name for better debugging and logging.
