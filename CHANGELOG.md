@@ -4,6 +4,7 @@
 
 - Fixed the `$id` variable type in `Geofence.fetch`, which was declared as `String!` instead of `ID!`, causing the server to reject the query with `Variable $id of type String! used in position expecting type ID`.
 - Fixed `Geofence.fetchAll`, which ignored the `variant` argument and always queried the `geofences` field, and referenced an undeclared `$id` variable in its arguments, making the query invalid for every variant.
+- Removed the `apiToken` GraphQL variable and argument from every caller in the geofences module (`Geofence`, `GeofenceInput` and `SearchItem`). Authentication travels in the `Authorization` header, which `LayrzConnector` already sets, so sending it as a query variable was redundant. The `apiToken` parameter remains on every method signature.
 
 ## 3.19.2
 

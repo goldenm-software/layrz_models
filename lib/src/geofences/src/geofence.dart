@@ -142,12 +142,8 @@ abstract class Geofence with _$Geofence {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.query(
-        GqlQuery(
-          variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
-          ],
-        )..add(
-          GqlField(name: variant.queryName, args: {'apiToken': 'apiToken'})
+        GqlQuery()..add(
+          GqlField(name: variant.queryName)
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: reducedFragment(variant))),
         ),
@@ -182,11 +178,10 @@ abstract class Geofence with _$Geofence {
       final response = await connector.query(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
           ],
         )..add(
-          GqlField(name: variant.queryName, args: {'id': 'id', 'apiToken': 'apiToken'})
+          GqlField(name: variant.queryName, args: {'id': 'id'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: fragment(variant))),
         ),
@@ -220,7 +215,6 @@ abstract class Geofence with _$Geofence {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(
               name: 'ids',
               type: .list(of: .id, isRequired: true),
@@ -231,7 +225,7 @@ abstract class Geofence with _$Geofence {
         )..add(
           GqlField(
             name: variant.deleteMutationName,
-            args: {'ids': 'ids', 'apiToken': 'apiToken'},
+            args: {'ids': 'ids'},
           )..add(GqlField(name: 'status')),
         ),
       );
@@ -264,7 +258,6 @@ abstract class Geofence with _$Geofence {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(
               name: 'ids',
               type: .list(of: .id, isRequired: true),
@@ -273,7 +266,7 @@ abstract class Geofence with _$Geofence {
             ),
           ],
         )..add(
-          GqlField(name: variant.deleteMutationName, args: {'ids': 'ids', 'apiToken': 'apiToken'})
+          GqlField(name: variant.deleteMutationName, args: {'ids': 'ids'})
             ..add(GqlField(name: 'status')),
         ),
       );
@@ -304,7 +297,6 @@ abstract class Geofence with _$Geofence {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(
               name: 'geofencesIds',
               type: .list(of: .id, isRequired: true),
@@ -316,7 +308,7 @@ abstract class Geofence with _$Geofence {
         )..add(
           GqlField(
               name: 'exportGeofences',
-              args: {'geofencesIds': 'geofencesIds', 'apiToken': 'apiToken', 'format': 'format'},
+              args: {'geofencesIds': 'geofencesIds', 'format': 'format'},
             )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result')),
@@ -352,7 +344,6 @@ abstract class Geofence with _$Geofence {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(
               name: 'geofencesIds',
               type: .list(of: .id, isRequired: true),
@@ -364,7 +355,7 @@ abstract class Geofence with _$Geofence {
         )..add(
           GqlField(
               name: 'exportGeofences',
-              args: {'geofencesIds': 'geofencesIds', 'apiToken': 'apiToken', 'format': 'format'},
+              args: {'geofencesIds': 'geofencesIds', 'format': 'format'},
             )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result')),
@@ -439,7 +430,6 @@ abstract class GeofenceInput with _$GeofenceInput {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(
               name: 'data',
               type: .input(of: 'GeofenceInput'),
@@ -450,7 +440,7 @@ abstract class GeofenceInput with _$GeofenceInput {
         )..add(
           GqlField(
               name: id == null ? variant.addMutationName : variant.editMutationName,
-              args: {'apiToken': 'apiToken', 'data': 'data'},
+              args: {'data': 'data'},
             )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
