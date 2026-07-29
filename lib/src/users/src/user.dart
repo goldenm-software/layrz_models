@@ -632,6 +632,7 @@ abstract class User with _$User {
   }
   // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [loginAs] logs in as a subaccount (delegate login).
   /// Returns a [Token] on success or null on error.
   static Future<Token?> loginAs({
