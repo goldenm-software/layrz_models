@@ -147,7 +147,7 @@ abstract class Geofence with _$Geofence {
             GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
           ],
         )..add(
-          GqlField(name: 'geofences', args: {'id': 'id', 'apiToken': 'apiToken'})
+          GqlField(name: variant.queryName, args: {'apiToken': 'apiToken'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: reducedFragment(variant))),
         ),
@@ -183,7 +183,7 @@ abstract class Geofence with _$Geofence {
         GqlQuery(
           variables: [
             GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
-            GqlVariable(name: 'id', type: .string, isRequired: true, value: id),
+            GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
           ],
         )..add(
           GqlField(name: variant.queryName, args: {'id': 'id', 'apiToken': 'apiToken'})

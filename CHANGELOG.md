@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.19.3
+
+- Fixed the `$id` variable type in `Geofence.fetch`, which was declared as `String!` instead of `ID!`, causing the server to reject the query with `Variable $id of type String! used in position expecting type ID`.
+- Fixed `Geofence.fetchAll`, which ignored the `variant` argument and always queried the `geofences` field, and referenced an undeclared `$id` variable in its arguments, making the query invalid for every variant.
+
 ## 3.19.2
 
 - Updated `Geofence.fetch`, `Geofence.fetchAll`, `Geofence.save` and `Geofence.deleteMultiple` to accept a `variant` argument (`standard`, `mappit`, `sdm`) to resolve the query/mutation names and fragments per variant, aligning with the backend GraphQL schema.
