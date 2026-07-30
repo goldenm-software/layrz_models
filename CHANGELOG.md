@@ -2,6 +2,7 @@
 
 ## 3.20.0
 
+- Fixed GraphQL fragment emission order. Fragments were collected in pre-order, so a fragment that spread another was written above the fragment it depended on, producing documents where a fragment is referenced before it is defined. Nested dependencies are now emitted first, and cyclic fragment references are broken safely instead of overflowing the stack.
 - Added `fragment` getters to `TagOnStudent`, `TagOnBusRoute` and `TagOnNotification`.
 - Added API connectors for the TagOn entities with `fetchAll`, `fetch` and `deleteMultiple` on the models, and `save` on the existing `TagOnStudentInput`, `TagOnBusRouteInput` and `TagOnNotificationInput` models.
 - Added `TagOnStudent.bulkLoad` for bulk importing students from raw data rows. The `data` parameter is `List<Map<String, dynamic>>` (raw rows), not the typed `TagOnStudentInput` model, because the bulk endpoint resolves bus routes by name from nested objects in the raw data (e.g., `{'busRoute': {'name': 'Route 4'}}`), whereas `TagOnStudentInput` only has a flat `busRouteId`. Returns `(ApiStatus, Map<String, dynamic>?)` where the map has exactly three keys: `'status'` (the serialized `ApiStatus`), `'errors'` and `'studentsWithErrors'` (a `List<Map<String, dynamic>>`, each entry holding `errors` and `data` for a row that failed to import).
