@@ -762,14 +762,70 @@ abstract class RegisteredApp with _$RegisteredApp {
     ..add(GqlField(name: 'sourceId'))
     ..add(GqlField(name: 'instances', fragment: AppInstance.fragment))
     ..add(GqlField(name: 'designInformation', fragment: AppDesign.fragment))
-    ..add(
-      GqlField(name: 'legalInformation')
-        ..add(GqlField(name: 'companyName'))
-        ..add(GqlField(name: 'companyUrl'))
-        ..add(GqlField(name: 'privacyPolicy')),
-    )
+    ..add(GqlField(name: 'legalInformation', fragment: AppLegal.fragment))
     ..add(GqlField(name: 'iosPushSecrets', fragment: PushSecrets.fragment))
     ..add(GqlField(name: 'androidPushSecrets', fragment: PushSecrets.fragment))
+    ..add(GqlField(name: 'mapLayers', fragment: MapLayer.fragment))
+    ..add(
+      GqlField(
+        name: 'allowedReports',
+        fields: [
+          GqlField(name: 'id'),
+          GqlField(name: 'code'),
+        ],
+      ),
+    )
     ..add(GqlField(name: 'hasSvcPushSecrets'));
   // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [fetchPickAndApp] fetches the registered apps for the pick-an-app view.
+  /// Returns a list of [RegisteredApp] on success, null on error.
+  static Future<List<RegisteredApp>?> fetchPickAndApp({
+    required String apiToken,
+    required Uri uri,
+    required AppInternalIdentifier appIdentifier,
+    String? id,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          variables: [
+            GqlVariable(
+              name: 'appIdentifier',
+              type: .enum_(of: 'InternalIdentifier'),
+              isRequired: true,
+              value: appIdentifier.toJson(),
+            ),
+            if (id != null) GqlVariable(name: 'id', type: .id, value: id),
+          ],
+        )..add(
+          GqlField(
+              name: 'registeredApps',
+              args: {
+                'appIdentifier': 'appIdentifier',
+                if (id != null) 'id': 'id',
+              },
+            )
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'result', fragment: fragment)),
+        ),
+        _registeredAppListDecoder,
+      );
+
+      if (response.status != .ok) {
+        onResponse?.call(response.status.toJson());
+        return [];
+      }
+
+      return response.result ?? [];
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/fetchAll(): General exception => $e\n$stack");
+      return [];
+    }
+  }
+
+  /// coverage:ignore-end
 }

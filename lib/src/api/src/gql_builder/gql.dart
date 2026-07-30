@@ -74,17 +74,37 @@ abstract class Gql {
   /// [add] adds a top-level field to this query or mutation.
   void add(GqlField field) => fields.add(field);
 
-  /// Recursively walks [fields] and collects every [GqlFragment] referenced, deduped by name.
+  /// Recursively walks [fields] and collects every [GqlFragment] referenced, in dependency order.
+  /// Fragments are emitted using a post-order traversal: dependencies (nested fragments) are
+  /// emitted before the fragments that reference them. Each fragment is deduped by name and
+  /// appears in [result] exactly once. Cycles are detected and broken safely using a three-state
+  /// approach (visiting/emitted sets), preventing infinite loops on circular fragment dependencies.
+  /// Returns fragments in a stable, deterministic order where dependencies come first.
   List<GqlFragment> _collectFragments(List<GqlField> fields) {
-    final seen = <String>{};
+    final emitted = <String>{};
+    final visiting = <String>{};
     final result = <GqlFragment>[];
 
     void visit(List<GqlField> fs) {
       for (final f in fs) {
-        if (f.fragment != null && seen.add(f.fragment!.name)) {
-          result.add(f.fragment!);
-          // Also collect any fragments referenced inside the fragment's own fields.
+        if (f.fragment != null) {
+          final fragmentName = f.fragment!.name;
+          if (emitted.contains(fragmentName)) {
+            // Already processed; skip.
+            continue;
+          }
+          if (visiting.contains(fragmentName)) {
+            // Cycle detected; break it by not recursing further.
+            continue;
+          }
+          // Mark as visiting to detect cycles.
+          visiting.add(fragmentName);
+          // Post-order: recurse into nested fields first.
           visit(f.fragment!.fields);
+          // Then emit this fragment.
+          result.add(f.fragment!);
+          emitted.add(fragmentName);
+          visiting.remove(fragmentName);
         }
         visit(f.fields);
       }
