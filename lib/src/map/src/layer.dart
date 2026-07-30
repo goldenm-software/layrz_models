@@ -75,6 +75,7 @@ abstract class MapLayer with _$MapLayer {
 
   factory MapLayer.fromJson(Map<String, dynamic> json) => _$MapLayerFromJson(json);
 
+  // coverage:ignore-start
   /// [fetch] fetches a single [MapLayer] from the server by its ID
   Future<MapLayer?> fetch({
     /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
@@ -134,7 +135,9 @@ abstract class MapLayer with _$MapLayer {
       return null;
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [fetchAll] fetches all [MapLayer]s from the server
   static Future<List<MapLayer>> fetchAll({
     /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
@@ -197,7 +200,9 @@ abstract class MapLayer with _$MapLayer {
       return [];
     }
   }
+  // coverage:ignore-end
 
+  // coverage:ignore-start
   /// [delete] deletes multiple [MapLayer]s from the server by their IDs
   static Future<bool> delete({
     /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
@@ -260,9 +265,11 @@ abstract class MapLayer with _$MapLayer {
       return false;
     }
   }
+  // coverage:ignore-end
 
-  /// [gqlFragment] is the GqlFragment for a [MapLayer].
-  static GqlFragment get gqlFragment => GqlFragment(name: 'mapLayerFragment', onType: 'MapLayer')
+  // coverage:ignore-start
+  /// [fragment] is the GqlFragment for a [MapLayer].
+  static GqlFragment get fragment => GqlFragment(name: 'mapLayerFragment', onType: 'MapLayer')
     ..add(GqlField(name: 'id'))
     ..add(GqlField(name: 'name'))
     ..add(GqlField(name: 'source'))
@@ -281,4 +288,11 @@ abstract class MapLayer with _$MapLayer {
     ..add(GqlField(name: 'attributionWidth'))
     ..add(GqlField(name: 'attributionHeight'))
     ..add(GqlField(name: 'appsIds'));
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [gqlFragment] is the GqlFragment for a [MapLayer] with only the fields that are required for the app to work.
+  @Deprecated('Use `fragment` instead')
+  static GqlFragment get gqlFragment => fragment;
+  // coverage:ignore-end
 }

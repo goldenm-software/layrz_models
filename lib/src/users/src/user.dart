@@ -289,24 +289,6 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [fragment] is the GqlFragment for a user, with full parity to layrz_users generators.
   static GqlFragment fragment({required UserVariant variant}) {
-    final gql = GqlFragment(
-      name: 'userFragment',
-      onType: _getGqlEntityName(variant: variant),
-    );
-
-    // Base fields (all variants)
-    gql.add(GqlField(name: 'id'));
-    gql.add(GqlField(name: 'name'));
-    gql.add(GqlField(name: 'email'));
-    gql.add(GqlField(name: 'username'));
-    gql.add(GqlField(name: 'parentId'));
-    gql.add(GqlField(name: 'dynamicAvatar', fragment: Avatar.fragment));
-    gql.add(GqlField(name: 'referencesIds'));
-    gql.add(GqlField(name: 'categoryId'));
-    gql.add(GqlField(name: 'access', fragment: Access.idFragment));
-    gql.add(GqlField(name: 'tagsIds'));
-
-    // Per-variant additions
     final isMappit = [
       UserVariant.mappitOperator,
       UserVariant.mappitCustomer,
@@ -315,38 +297,127 @@ abstract class User with _$User {
       UserVariant.mappitSeller,
     ].contains(variant);
 
-    if (isMappit) {
-      gql.add(GqlField(name: 'mappitAssetsIds'));
-      gql.add(
+    final gql = GqlFragment(
+      name: 'userFragment',
+      onType: _getGqlEntityName(variant: variant),
+      fields: [
+        GqlField(name: 'id'),
+        GqlField(name: 'name'),
+        GqlField(name: 'email'),
+        GqlField(name: 'username'),
+        GqlField(name: 'parentId'),
+        GqlField(name: 'dynamicAvatar', fragment: Avatar.fragment),
+        GqlField(name: 'referencesIds'),
+        GqlField(name: 'categoryId'),
+        GqlField(name: 'access', fragment: Access.idFragment),
+        GqlField(name: 'tagsIds'),
         GqlField(
-          name: 'mappitAssets',
+          name: 'tags',
           fields: [
             GqlField(name: 'id'),
             GqlField(name: 'name'),
-            GqlField(name: 'mode'),
+            GqlField(name: 'color'),
+            GqlField(name: 'icon'),
           ],
         ),
-      );
-      gql.add(GqlField(name: 'historicalDaysAllowed'));
-    } else if (variant == .sdm) {
-      gql.add(GqlField(name: 'sdmCode'));
-    } else if (variant == .brickhouse) {
-      gql.add(GqlField(name: 'suspendedAt'));
-      gql.add(GqlField(name: 'isSuspended'));
-      gql.add(GqlField(name: 'brickhouseRole'));
-      gql.add(GqlField(name: 'brickhousePermissionTierId'));
-      gql.add(
         GqlField(
-          name: 'brickhousePermissionTier',
+          name: 'references',
           fields: [
             GqlField(name: 'id'),
             GqlField(name: 'name'),
-            GqlField(name: 'tierLevel'),
-            GqlField(name: 'billingPeriod'),
           ],
         ),
-      );
-    }
+        GqlField(name: 'categoryId'),
+        GqlField(
+          name: 'category',
+          fields: [
+            GqlField(name: 'id'),
+            GqlField(name: 'name'),
+            GqlField(name: 'kind'),
+          ],
+        ),
+        GqlField(
+          name: 'allowedApps',
+          fields: [
+            GqlField(name: 'id'),
+            GqlField(name: 'name'),
+            GqlField(name: 'nickname'),
+            GqlField(name: 'technology'),
+            GqlField(name: 'sourceId'),
+            GqlField(
+              name: 'designInformation',
+              fields: [
+                GqlField(
+                  name: 'favicons',
+                  fields: [
+                    GqlField(name: 'white'),
+                    GqlField(name: 'normal'),
+                  ],
+                ),
+                GqlField(
+                  name: 'logos',
+                  fields: [
+                    GqlField(name: 'white'),
+                    GqlField(name: 'normal'),
+                  ],
+                ),
+                GqlField(
+                  name: 'colors',
+                  fields: [
+                    GqlField(name: 'theme'),
+                    GqlField(name: 'mainColor'),
+                    GqlField(name: 'primary'),
+                    GqlField(name: 'secondary'),
+                    GqlField(name: 'accent'),
+                  ],
+                ),
+                GqlField(name: 'appicon'),
+              ],
+            ),
+            GqlField(
+              name: 'instances',
+              fields: [
+                GqlField(name: 'id'),
+                GqlField(name: 'appId'),
+                GqlField(name: 'platform'),
+                GqlField(name: 'appIdentifier'),
+                GqlField(name: 'host'),
+                GqlField(name: 'status'),
+                GqlField(name: 'migrationStatus'),
+              ],
+            ),
+          ],
+        ),
+        if (isMappit) ...[
+          GqlField(name: 'mappitAssetsIds'),
+          GqlField(
+            name: 'mappitAssets',
+            fields: [
+              GqlField(name: 'id'),
+              GqlField(name: 'name'),
+              GqlField(name: 'mode'),
+            ],
+          ),
+          GqlField(name: 'historicalDaysAllowed'),
+        ] else if (variant == .sdm) ...[
+          GqlField(name: 'sdmCode'),
+        ] else if (variant == .brickhouse) ...[
+          GqlField(name: 'suspendedAt'),
+          GqlField(name: 'isSuspended'),
+          GqlField(name: 'brickhouseRole'),
+          GqlField(name: 'brickhousePermissionTierId'),
+          GqlField(
+            name: 'brickhousePermissionTier',
+            fields: [
+              GqlField(name: 'id'),
+              GqlField(name: 'name'),
+              GqlField(name: 'tierLevel'),
+              GqlField(name: 'billingPeriod'),
+            ],
+          ),
+        ],
+      ],
+    );
 
     return gql;
   }
@@ -427,7 +498,6 @@ abstract class User with _$User {
     void Function(String statusCode)? onResponse,
     UserVariant variant = .standard,
     String? appId,
-    bool withDetails = true,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
@@ -442,95 +512,6 @@ abstract class User with _$User {
         name: 'result',
         fragment: fragment(variant: variant),
       );
-
-      // Add details fields when withDetails is true
-      if (withDetails) {
-        resultField.add(
-          GqlField(
-            name: 'tags',
-            fields: [
-              GqlField(name: 'id'),
-              GqlField(name: 'name'),
-              GqlField(name: 'color'),
-              GqlField(name: 'icon'),
-            ],
-          ),
-        );
-        resultField.add(
-          GqlField(
-            name: 'references',
-            fields: [
-              GqlField(name: 'id'),
-              GqlField(name: 'name'),
-            ],
-          ),
-        );
-        resultField.add(GqlField(name: 'categoryId'));
-        resultField.add(
-          GqlField(
-            name: 'category',
-            fields: [
-              GqlField(name: 'id'),
-              GqlField(name: 'name'),
-              GqlField(name: 'kind'),
-            ],
-          ),
-        );
-        resultField.add(
-          GqlField(
-            name: 'allowedApps',
-            fields: [
-              GqlField(name: 'id'),
-              GqlField(name: 'name'),
-              GqlField(name: 'nickname'),
-              GqlField(name: 'technology'),
-              GqlField(name: 'sourceId'),
-              GqlField(
-                name: 'designInformation',
-                fields: [
-                  GqlField(
-                    name: 'favicons',
-                    fields: [
-                      GqlField(name: 'white'),
-                      GqlField(name: 'normal'),
-                    ],
-                  ),
-                  GqlField(
-                    name: 'logos',
-                    fields: [
-                      GqlField(name: 'white'),
-                      GqlField(name: 'normal'),
-                    ],
-                  ),
-                  GqlField(
-                    name: 'colors',
-                    fields: [
-                      GqlField(name: 'theme'),
-                      GqlField(name: 'mainColor'),
-                      GqlField(name: 'primary'),
-                      GqlField(name: 'secondary'),
-                      GqlField(name: 'accent'),
-                    ],
-                  ),
-                  GqlField(name: 'appicon'),
-                ],
-              ),
-              GqlField(
-                name: 'instances',
-                fields: [
-                  GqlField(name: 'id'),
-                  GqlField(name: 'appId'),
-                  GqlField(name: 'platform'),
-                  GqlField(name: 'appIdentifier'),
-                  GqlField(name: 'host'),
-                  GqlField(name: 'status'),
-                  GqlField(name: 'migrationStatus'),
-                ],
-              ),
-            ],
-          ),
-        );
-      }
 
       final response = await connector.query(
         GqlQuery(
