@@ -17,6 +17,6 @@ part 'src/home_config.dart';
 part 'src/free_day.dart';
 part 'src/polygon_detail.dart';
 part 'src/contained_route_category.dart';
-part 'src/report_input_multi.dart';
+part 'src/report_multi_input.dart';
 part 'src/report_input.dart';
 part 'src/recalculate.dart';

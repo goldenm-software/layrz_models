@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.19.4
+
+- **Breaking**: Renamed `MappitReportInputMulti` to `MappitReportMultiInput` to match the backend GraphQL schema, which renamed the input type. Queries declaring `MappitReportInputMulti` are rejected by the server with `Unknown type 'MappitReportInputMulti'`. The source file was also renamed from `report_input_multi.dart` to `report_multi_input.dart`. Field names and types are unchanged.
+
 ## 3.19.3
 
 - Fixed the `$id` variable type in `Geofence.fetch`, which was declared as `String!` instead of `ID!`, causing the server to reject the query with `Variable $id of type String! used in position expecting type ID`.

@@ -341,9 +341,9 @@ const _$GeofenceCategoryEnumMap = {
   GeofenceCategory.lead: 'LEAD',
 };
 
-_MappitReportInputMulti _$MappitReportInputMultiFromJson(
+_MappitReportMultiInput _$MappitReportMultiInputFromJson(
   Map<String, dynamic> json,
-) => _MappitReportInputMulti(
+) => _MappitReportMultiInput(
   startAt: (json['startAt'] as num?)?.toDouble(),
   endAt: (json['endAt'] as num?)?.toDouble(),
   timeFilter: const DurationOrNullConverter().fromJson(
@@ -354,8 +354,8 @@ _MappitReportInputMulti _$MappitReportInputMultiFromJson(
       .toList(),
 );
 
-Map<String, dynamic> _$MappitReportInputMultiToJson(
-  _MappitReportInputMulti instance,
+Map<String, dynamic> _$MappitReportMultiInputToJson(
+  _MappitReportMultiInput instance,
 ) => <String, dynamic>{
   'startAt': instance.startAt,
   'endAt': instance.endAt,
