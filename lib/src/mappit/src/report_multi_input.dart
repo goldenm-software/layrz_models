@@ -1,8 +1,8 @@
 part of '../mappit.dart';
 
 @unfreezed
-abstract class MappitReportInputMulti with _$MappitReportInputMulti {
-  factory MappitReportInputMulti({
+abstract class MappitReportMultiInput with _$MappitReportMultiInput {
+  factory MappitReportMultiInput({
     /// Start date for the report.
     double? startAt,
 
@@ -14,7 +14,7 @@ abstract class MappitReportInputMulti with _$MappitReportInputMulti {
 
     /// Seller IDs
     List<String>? sellerIds,
-  }) = _MappitReportInputMulti;
+  }) = _MappitReportMultiInput;
 
-  factory MappitReportInputMulti.fromJson(Map<String, dynamic> json) => _$MappitReportInputMultiFromJson(json);
+  factory MappitReportMultiInput.fromJson(Map<String, dynamic> json) => _$MappitReportMultiInputFromJson(json);
 }

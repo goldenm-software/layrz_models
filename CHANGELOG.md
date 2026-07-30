@@ -1,5 +1,20 @@
 # Changelog
 
+## 3.19.3
+
+- **Breaking**: Renamed `MappitReportInputMulti` to `MappitReportMultiInput` to match the backend GraphQL schema, which renamed the input type. Queries declaring `MappitReportInputMulti` are rejected by the server with `Unknown type 'MappitReportInputMulti'`. The source file was also renamed from `report_input_multi.dart` to `report_multi_input.dart`. Field names and types are unchanged.
+- Fixed the `$id` variable type in `Geofence.fetch`, which was declared as `String!` instead of `ID!`, causing the server to reject the query with `Variable $id of type String! used in position expecting type ID`.
+- Fixed `Geofence.fetchAll`, which ignored the `variant` argument and always queried the `geofences` field, and referenced an undeclared `$id` variable in its arguments, making the query invalid for every variant.
+- Removed the `apiToken` GraphQL variable and argument from every caller in the geofences module (`Geofence`, `GeofenceInput` and `SearchItem`). Authentication travels in the `Authorization` header, which `LayrzConnector` already sets, so sending it as a query variable was redundant. The `apiToken` parameter remains on every method signature.
+
+## 3.19.2
+
+- Updated `Geofence.fetch`, `Geofence.fetchAll`, `Geofence.save` and `Geofence.deleteMultiple` to accept a `variant` argument (`standard`, `mappit`, `sdm`) to resolve the query/mutation names and fragments per variant, aligning with the backend GraphQL schema.
+
+## 3.19.1
+
+- Fixed `Geofence.fragment`, removed `name` on `telemetry` subgraph
+
 ## 3.19.0
 
 - Added `SdmPenInput`, `SdmIngredientInput`, `SdmOperatorInput` and `SdmRecipeInput` unfreezed input models for the SDM entities.

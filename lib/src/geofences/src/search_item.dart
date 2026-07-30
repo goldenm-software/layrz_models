@@ -51,11 +51,10 @@ abstract class SearchItem with _$SearchItem {
       final response = await connector.query(
         GqlQuery(
           variables: [
-            GqlVariable(name: 'apiToken', type: .string, isRequired: true, value: apiToken),
             GqlVariable(name: 'query', type: .string, isRequired: true, value: query),
           ],
         )..add(
-          GqlField(name: 'searchOnGeofencesModule', args: {'query': 'query', 'apiToken': 'apiToken'})
+          GqlField(name: 'searchOnGeofencesModule', args: {'query': 'query'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
             ..add(

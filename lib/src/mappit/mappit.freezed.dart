@@ -3912,7 +3912,7 @@ as int?,
 
 
 /// @nodoc
-mixin _$MappitReportInputMulti {
+mixin _$MappitReportMultiInput {
 
 /// Start date for the report.
  double? get startAt;/// Start date for the report.
@@ -3923,13 +3923,13 @@ mixin _$MappitReportInputMulti {
 @DurationOrNullConverter() set timeFilter(Duration? value);/// Seller IDs
  List<String>? get sellerIds;/// Seller IDs
  set sellerIds(List<String>? value);
-/// Create a copy of MappitReportInputMulti
+/// Create a copy of MappitReportMultiInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$MappitReportInputMultiCopyWith<MappitReportInputMulti> get copyWith => _$MappitReportInputMultiCopyWithImpl<MappitReportInputMulti>(this as MappitReportInputMulti, _$identity);
+$MappitReportMultiInputCopyWith<MappitReportMultiInput> get copyWith => _$MappitReportMultiInputCopyWithImpl<MappitReportMultiInput>(this as MappitReportMultiInput, _$identity);
 
-  /// Serializes this MappitReportInputMulti to a JSON map.
+  /// Serializes this MappitReportMultiInput to a JSON map.
   Map<String, dynamic> toJson();
 
 
@@ -3937,15 +3937,15 @@ $MappitReportInputMultiCopyWith<MappitReportInputMulti> get copyWith => _$Mappit
 
 @override
 String toString() {
-  return 'MappitReportInputMulti(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerIds: $sellerIds)';
+  return 'MappitReportMultiInput(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerIds: $sellerIds)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $MappitReportInputMultiCopyWith<$Res>  {
-  factory $MappitReportInputMultiCopyWith(MappitReportInputMulti value, $Res Function(MappitReportInputMulti) _then) = _$MappitReportInputMultiCopyWithImpl;
+abstract mixin class $MappitReportMultiInputCopyWith<$Res>  {
+  factory $MappitReportMultiInputCopyWith(MappitReportMultiInput value, $Res Function(MappitReportMultiInput) _then) = _$MappitReportMultiInputCopyWithImpl;
 @useResult
 $Res call({
  double? startAt, double? endAt,@DurationOrNullConverter() Duration? timeFilter, List<String>? sellerIds
@@ -3956,14 +3956,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$MappitReportInputMultiCopyWithImpl<$Res>
-    implements $MappitReportInputMultiCopyWith<$Res> {
-  _$MappitReportInputMultiCopyWithImpl(this._self, this._then);
+class _$MappitReportMultiInputCopyWithImpl<$Res>
+    implements $MappitReportMultiInputCopyWith<$Res> {
+  _$MappitReportMultiInputCopyWithImpl(this._self, this._then);
 
-  final MappitReportInputMulti _self;
-  final $Res Function(MappitReportInputMulti) _then;
+  final MappitReportMultiInput _self;
+  final $Res Function(MappitReportMultiInput) _then;
 
-/// Create a copy of MappitReportInputMulti
+/// Create a copy of MappitReportMultiInput
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? startAt = freezed,Object? endAt = freezed,Object? timeFilter = freezed,Object? sellerIds = freezed,}) {
   return _then(_self.copyWith(
@@ -3978,8 +3978,8 @@ as List<String>?,
 }
 
 
-/// Adds pattern-matching-related methods to [MappitReportInputMulti].
-extension MappitReportInputMultiPatterns on MappitReportInputMulti {
+/// Adds pattern-matching-related methods to [MappitReportMultiInput].
+extension MappitReportMultiInputPatterns on MappitReportMultiInput {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -3992,10 +3992,10 @@ extension MappitReportInputMultiPatterns on MappitReportInputMulti {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MappitReportInputMulti value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MappitReportMultiInput value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _MappitReportInputMulti() when $default != null:
+case _MappitReportMultiInput() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -4014,10 +4014,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MappitReportInputMulti value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MappitReportMultiInput value)  $default,){
 final _that = this;
 switch (_that) {
-case _MappitReportInputMulti():
+case _MappitReportMultiInput():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -4035,10 +4035,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MappitReportInputMulti value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MappitReportMultiInput value)?  $default,){
 final _that = this;
 switch (_that) {
-case _MappitReportInputMulti() when $default != null:
+case _MappitReportMultiInput() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -4058,7 +4058,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? startAt,  double? endAt, @DurationOrNullConverter()  Duration? timeFilter,  List<String>? sellerIds)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _MappitReportInputMulti() when $default != null:
+case _MappitReportMultiInput() when $default != null:
 return $default(_that.startAt,_that.endAt,_that.timeFilter,_that.sellerIds);case _:
   return orElse();
 
@@ -4079,7 +4079,7 @@ return $default(_that.startAt,_that.endAt,_that.timeFilter,_that.sellerIds);case
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? startAt,  double? endAt, @DurationOrNullConverter()  Duration? timeFilter,  List<String>? sellerIds)  $default,) {final _that = this;
 switch (_that) {
-case _MappitReportInputMulti():
+case _MappitReportMultiInput():
 return $default(_that.startAt,_that.endAt,_that.timeFilter,_that.sellerIds);case _:
   throw StateError('Unexpected subclass');
 
@@ -4099,7 +4099,7 @@ return $default(_that.startAt,_that.endAt,_that.timeFilter,_that.sellerIds);case
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? startAt,  double? endAt, @DurationOrNullConverter()  Duration? timeFilter,  List<String>? sellerIds)?  $default,) {final _that = this;
 switch (_that) {
-case _MappitReportInputMulti() when $default != null:
+case _MappitReportMultiInput() when $default != null:
 return $default(_that.startAt,_that.endAt,_that.timeFilter,_that.sellerIds);case _:
   return null;
 
@@ -4111,9 +4111,9 @@ return $default(_that.startAt,_that.endAt,_that.timeFilter,_that.sellerIds);case
 /// @nodoc
 @JsonSerializable()
 
-class _MappitReportInputMulti implements MappitReportInputMulti {
-   _MappitReportInputMulti({this.startAt, this.endAt, @DurationOrNullConverter() this.timeFilter, this.sellerIds});
-  factory _MappitReportInputMulti.fromJson(Map<String, dynamic> json) => _$MappitReportInputMultiFromJson(json);
+class _MappitReportMultiInput implements MappitReportMultiInput {
+   _MappitReportMultiInput({this.startAt, this.endAt, @DurationOrNullConverter() this.timeFilter, this.sellerIds});
+  factory _MappitReportMultiInput.fromJson(Map<String, dynamic> json) => _$MappitReportMultiInputFromJson(json);
 
 /// Start date for the report.
 @override  double? startAt;
@@ -4124,30 +4124,30 @@ class _MappitReportInputMulti implements MappitReportInputMulti {
 /// Seller IDs
 @override  List<String>? sellerIds;
 
-/// Create a copy of MappitReportInputMulti
+/// Create a copy of MappitReportMultiInput
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$MappitReportInputMultiCopyWith<_MappitReportInputMulti> get copyWith => __$MappitReportInputMultiCopyWithImpl<_MappitReportInputMulti>(this, _$identity);
+_$MappitReportMultiInputCopyWith<_MappitReportMultiInput> get copyWith => __$MappitReportMultiInputCopyWithImpl<_MappitReportMultiInput>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$MappitReportInputMultiToJson(this, );
+  return _$MappitReportMultiInputToJson(this, );
 }
 
 
 
 @override
 String toString() {
-  return 'MappitReportInputMulti(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerIds: $sellerIds)';
+  return 'MappitReportMultiInput(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerIds: $sellerIds)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$MappitReportInputMultiCopyWith<$Res> implements $MappitReportInputMultiCopyWith<$Res> {
-  factory _$MappitReportInputMultiCopyWith(_MappitReportInputMulti value, $Res Function(_MappitReportInputMulti) _then) = __$MappitReportInputMultiCopyWithImpl;
+abstract mixin class _$MappitReportMultiInputCopyWith<$Res> implements $MappitReportMultiInputCopyWith<$Res> {
+  factory _$MappitReportMultiInputCopyWith(_MappitReportMultiInput value, $Res Function(_MappitReportMultiInput) _then) = __$MappitReportMultiInputCopyWithImpl;
 @override @useResult
 $Res call({
  double? startAt, double? endAt,@DurationOrNullConverter() Duration? timeFilter, List<String>? sellerIds
@@ -4158,17 +4158,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$MappitReportInputMultiCopyWithImpl<$Res>
-    implements _$MappitReportInputMultiCopyWith<$Res> {
-  __$MappitReportInputMultiCopyWithImpl(this._self, this._then);
+class __$MappitReportMultiInputCopyWithImpl<$Res>
+    implements _$MappitReportMultiInputCopyWith<$Res> {
+  __$MappitReportMultiInputCopyWithImpl(this._self, this._then);
 
-  final _MappitReportInputMulti _self;
-  final $Res Function(_MappitReportInputMulti) _then;
+  final _MappitReportMultiInput _self;
+  final $Res Function(_MappitReportMultiInput) _then;
 
-/// Create a copy of MappitReportInputMulti
+/// Create a copy of MappitReportMultiInput
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? startAt = freezed,Object? endAt = freezed,Object? timeFilter = freezed,Object? sellerIds = freezed,}) {
-  return _then(_MappitReportInputMulti(
+  return _then(_MappitReportMultiInput(
 startAt: freezed == startAt ? _self.startAt : startAt // ignore: cast_nullable_to_non_nullable
 as double?,endAt: freezed == endAt ? _self.endAt : endAt // ignore: cast_nullable_to_non_nullable
 as double?,timeFilter: freezed == timeFilter ? _self.timeFilter : timeFilter // ignore: cast_nullable_to_non_nullable
