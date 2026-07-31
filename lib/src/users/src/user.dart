@@ -271,7 +271,8 @@ abstract class User with _$User {
       case .atsAdmin:
         return 'atsUsers';
       case .brickhouse:
-        return 'brickhouseUsers';
+        // return 'brickhouseUsers';
+        return 'users';
       case .sdm:
         return 'sdmUsers';
       case .tagon:
