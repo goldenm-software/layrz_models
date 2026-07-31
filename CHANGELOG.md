@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.20.2
+- Fixed User `loginAsSubaccount` gql mutation implementation
+
 ## 3.20.1
 - Fixed Brickhouse Graphql query name in `_getGqlQueryName`
 
