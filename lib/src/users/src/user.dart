@@ -636,7 +636,7 @@ abstract class User with _$User {
             ..add(GqlField(name: 'status'))
             ..add(
               GqlField(name: 'result')
-                ..add(GqlField(name: 'token', fragment: Token.gqlFragment))
+                ..add(GqlField(name: 'token'))
                 ..add(GqlField(name: 'validBefore')),
             ),
         ),
@@ -663,9 +663,7 @@ abstract class User with _$User {
       }
 
       onResponse?.call(status.toJson());
-      return result['result']?['token'] != null
-          ? Token.fromJson(Map<String, dynamic>.from(result['result']['token'] as Map))
-          : null;
+      return result['result'] != null ? Token.fromJson(Map<String, dynamic>.from(result['result'] as Map)) : null;
     } catch (e, stack) {
       Log.critical("layrz_models/User/loginAs(): General exception => $e\n$stack");
       return null;
