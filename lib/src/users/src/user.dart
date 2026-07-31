@@ -271,7 +271,8 @@ abstract class User with _$User {
       case .atsAdmin:
         return 'atsUsers';
       case .brickhouse:
-        return 'brickhouseUsers';
+        // return 'brickhouseUsers'; currently, the Brickhouse variant uses the standard `users` query for fetching users.
+        return 'users';
       case .sdm:
         return 'sdmUsers';
       case .tagon:

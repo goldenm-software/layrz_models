@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.20.1
+- Fixed Brickhouse Graphql query name in `_getGqlQueryName`
+
 ## 3.20.0
 
 - Fixed GraphQL fragment emission order. Fragments were collected in pre-order, so a fragment that spread another was written above the fragment it depended on, producing documents where a fragment is referenced before it is defined. Nested dependencies are now emitted first, and cyclic fragment references are broken safely instead of overflowing the stack.
