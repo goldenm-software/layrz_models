@@ -712,13 +712,13 @@ abstract class RegisteredApp with _$RegisteredApp {
               name: 'platform',
               type: .enum_(of: 'AppPlatform'),
               isRequired: true,
-              value: platform.name,
+              value: platform.toJson(),
             ),
             GqlVariable(
               name: 'technology',
               type: .enum_(of: 'AppTechnology'),
               isRequired: true,
-              value: technology.name,
+              value: technology.toJson(),
             ),
           ],
         )..add(
