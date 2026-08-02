@@ -310,6 +310,7 @@ abstract class User with _$User {
         GqlField(name: 'dynamicAvatar', fragment: Avatar.fragment),
         GqlField(name: 'referencesIds'),
         GqlField(name: 'categoryId'),
+        GqlField(name: 'parentId'),
         GqlField(name: 'access', fragment: Access.idFragment),
         GqlField(name: 'tagsIds'),
         GqlField(
@@ -492,8 +493,7 @@ abstract class User with _$User {
   /// [fetch] fetches a single user by ID.
   /// Returns a [User] on success or null on error.
   /// When [withDetails] is true (default), includes tags, references, category, and allowedApps with full design info.
-  static Future<User?> fetch({
-    required String id,
+  Future<User?> fetch({
     required String apiToken,
     required Uri uri,
     void Function(String statusCode)? onResponse,
@@ -617,8 +617,7 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [loginAs] logs in as a subaccount (delegate login).
   /// Returns a [Token] on success or null on error.
-  static Future<Token?> loginAs({
-    required String userId,
+  Future<Token?> loginAs({
     required String apiToken,
     required Uri uri,
     void Function(String statusCode)? onResponse,
@@ -628,7 +627,7 @@ abstract class User with _$User {
       final response = await connector.perform(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
+            GqlVariable(name: 'userId', type: .id, isRequired: true, value: id),
           ],
           name: 'loginAsSubaccount',
         )..add(
@@ -796,8 +795,7 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [resetPassword] sends a password reset request for a user.
   /// Returns true on success, false on error.
-  static Future<bool> resetPassword({
-    required String userId,
+  Future<bool> resetPassword({
     required String apiToken,
     required Uri uri,
     void Function(String statusCode)? onResponse,
@@ -807,7 +805,7 @@ abstract class User with _$User {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
+            GqlVariable(name: 'userId', type: .id, isRequired: true, value: id),
           ],
           name: 'resetPassword',
         )..add(
@@ -835,8 +833,7 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [setPaymentWarning] sets or clears the payment warning flag for a user.
   /// Returns true on success, false on error.
-  static Future<bool> setPaymentWarning({
-    required String userId,
+  Future<bool> setPaymentWarning({
     required bool state,
     required String apiToken,
     required Uri uri,
@@ -847,7 +844,7 @@ abstract class User with _$User {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
+            GqlVariable(name: 'userId', type: .id, isRequired: true, value: id),
             GqlVariable(name: 'state', type: .boolean, isRequired: true, value: state),
           ],
           name: 'setPaymentWarningToUser',
@@ -876,8 +873,7 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [lock] locks or unlocks a user account.
   /// Returns true on success, false on error.
-  static Future<bool> lock({
-    required String userId,
+  Future<bool> lock({
     required bool state,
     required String apiToken,
     required Uri uri,
@@ -888,7 +884,7 @@ abstract class User with _$User {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
+            GqlVariable(name: 'userId', type: .id, isRequired: true, value: id),
             GqlVariable(name: 'state', type: .boolean, isRequired: true, value: state),
           ],
           name: 'lockUserAccount',
@@ -917,8 +913,7 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [suspend] suspends or reactivates a user account.
   /// Returns true on success, false on error.
-  static Future<bool> suspend({
-    required String userId,
+  Future<bool> suspend({
     required bool state,
     required String apiToken,
     required Uri uri,
@@ -929,7 +924,7 @@ abstract class User with _$User {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
+            GqlVariable(name: 'userId', type: .id, isRequired: true, value: id),
             GqlVariable(name: 'state', type: .boolean, isRequired: true, value: state),
           ],
           name: 'suspendUserAccount',
@@ -1011,8 +1006,7 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [requestActivityReport] requests an activity report for a user.
   /// Returns a record with status, uri, and data from the report (or nulls on error).
-  static Future<(ApiStatus, String?, dynamic)> requestActivityReport({
-    required String userId,
+  Future<(ApiStatus, String?, dynamic)> requestActivityReport({
     String? languageId,
     required String apiToken,
     required Uri uri,
@@ -1021,7 +1015,7 @@ abstract class User with _$User {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final variables = <GqlVariable>[
-        GqlVariable(name: 'userId', type: .id, isRequired: true, value: userId),
+        GqlVariable(name: 'userId', type: .id, isRequired: true, value: id),
       ];
       if (languageId != null) {
         variables.add(GqlVariable(name: 'languageId', type: .id, isRequired: false, value: languageId));

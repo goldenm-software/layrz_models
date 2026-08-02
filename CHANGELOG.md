@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.20.4
+
+- Adjustments on `User.fetch()` to include `parentId`.
+- This version was released manually
+
 ## 3.20.3
 
 - Adjustments on `RegisteredApp.load()` to use the `toJson()` on enums
