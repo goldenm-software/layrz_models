@@ -454,6 +454,7 @@ abstract class User with _$User {
                   GqlField(name: 'hasPaymentWarning'),
                   GqlField(name: 'isLocked'),
                   GqlField(name: 'isSuspended'),
+                  GqlField(name: 'parentId'),
                   GqlField(name: 'dynamicAvatar', fragment: Avatar.fragment),
                   if (variant == .sdm) GqlField(name: 'sdmCode'),
                 ],

@@ -29,6 +29,9 @@ class LayrzConnector {
 
     if (apiToken != null) localHeaders['Authorization'] = 'LayrzToken $apiToken';
 
+    if (LayrzApiExtras.version.isNotEmpty) localHeaders['Graphql-Client-Version'] = LayrzApiExtras.version;
+    if (LayrzApiExtras.name.isNotEmpty) localHeaders['Graphql-Client-Name'] = LayrzApiExtras.name;
+
     _dio = Dio(
       BaseOptions(
         baseUrl: uri.toString(),
