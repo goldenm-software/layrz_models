@@ -29,8 +29,24 @@ class LayrzConnector {
 
     if (apiToken != null) localHeaders['Authorization'] = 'LayrzToken $apiToken';
 
-    if (LayrzApiExtras.version.isNotEmpty) localHeaders['Graphql-Client-Version'] = LayrzApiExtras.version;
-    if (LayrzApiExtras.name.isNotEmpty) localHeaders['Graphql-Client-Name'] = LayrzApiExtras.name;
+    if (LayrzApiExtras.version.isNotEmpty) {
+      localHeaders['Graphql-Client-Version'] = LayrzApiExtras.version;
+    } else {
+      Log.warning(
+        '⚠️ Missing `LayrzApiExtras.version` ⚠️\n'
+        'We strongly suggest to set the `LayrzApiExtras.version` to the current version '
+        'of your app, so we can track usage and improve the API.',
+      );
+    }
+    if (LayrzApiExtras.name.isNotEmpty) {
+      localHeaders['Graphql-Client-Name'] = LayrzApiExtras.name;
+    } else {
+      Log.warning(
+        '⚠️ Missing `LayrzApiExtras.name` ⚠️\n'
+        'We strongly suggest to set the `LayrzApiExtras.name` to the name of your app '
+        'so we can track usage and improve the API.',
+      );
+    }
 
     _dio = Dio(
       BaseOptions(

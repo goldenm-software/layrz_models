@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.20.6
+
+- Updated `layrz_logging` dependency to now include colors on logs emitted by the system
+- This version was released manually
+
 ## 3.20.5
 
 - Added `LayrzApiExtras` to include extra information on the usage of `LayrzConnector`, including `version` and `name` of the app.
