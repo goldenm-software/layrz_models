@@ -210,7 +210,7 @@ abstract class Operation with _$Operation {
         args['appId'] = 'appId';
       }
 
-      final response = await connector.perform(
+      final response = await connector.query(
         GqlQuery(
           variables: variables,
           name: 'fetchOperation',
@@ -220,35 +220,21 @@ abstract class Operation with _$Operation {
             ..add(GqlField(name: 'errors'))
             ..add(GqlField(name: 'result', fragment: gqlFragment)),
         ),
+        _operationListDecoder,
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/Operation/fetch(): No response from server");
+      if (response.status != ApiStatus.ok) {
+        onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Operation/fetch(): ${response.status} => ${response.errors}");
         return null;
       }
 
-      final result = data['data'][variant.queryName];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/Operation/fetch(): No result from server");
-        return null;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      if (status != ApiStatus.ok) {
-        onResponse?.call(status.toJson());
-        Log.error("layrz_models/Operation/fetch(): $status => ${result['errors']}");
-        return null;
-      }
-
-      final resultList = result['result'] as List<dynamic>?;
-      if (resultList == null || resultList.isEmpty) {
+      final resultList = response.result ?? [];
+      if (resultList.isEmpty) {
         Log.warning("layrz_models/Operation/fetch(): No result in list");
         return null;
       }
-      return Operation.fromJson(Map<String, dynamic>.from(resultList.first as Map));
+      return resultList.first;
     } catch (e, stack) {
       Log.critical("layrz_models/Operation/fetch(): General exception => $e\n$stack");
       return null;
@@ -276,7 +262,7 @@ abstract class Operation with _$Operation {
         args['appId'] = 'appId';
       }
 
-      final response = await connector.perform(
+      final response = await connector.query(
         GqlQuery(
           variables: variables,
           name: 'fetchOperations',
@@ -291,33 +277,16 @@ abstract class Operation with _$Operation {
                 ..add(GqlField(name: 'operationType')),
             ),
         ),
+        _operationListDecoder,
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/Operation/fetchAll(): No response from server");
+      if (response.status != ApiStatus.ok) {
+        onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Operation/fetchAll(): ${response.status} => ${response.errors}");
         return [];
       }
 
-      final result = data['data'][variant.queryName];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/Operation/fetchAll(): No result from server");
-        return [];
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      if (status != ApiStatus.ok) {
-        onResponse?.call(status.toJson());
-        Log.error("layrz_models/Operation/fetchAll(): $status => ${result['errors']}");
-        return [];
-      }
-
-      return (result['result'] as List<dynamic>?)
-              ?.map((e) => Operation.fromJson(Map<String, dynamic>.from(e as Map)))
-              .toList() ??
-          [];
+      return response.result ?? [];
     } catch (e, stack) {
       Log.critical("layrz_models/Operation/fetchAll(): General exception => $e\n$stack");
       return [];
@@ -337,7 +306,7 @@ abstract class Operation with _$Operation {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(
@@ -347,7 +316,7 @@ abstract class Operation with _$Operation {
               value: [id],
             ),
           ],
-          name: 'deleteOperation',
+          name: variant.deleteMutationName,
         )..add(
           GqlField(name: variant.deleteMutationName, args: {'ids': 'ids'})
             ..add(GqlField(name: 'status'))
@@ -355,27 +324,12 @@ abstract class Operation with _$Operation {
         ),
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/Operation/delete(): No response from server");
+      if (response.status != ApiStatus.ok) {
+        onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Operation/delete(): ${response.status} => ${response.errors}");
         return false;
       }
-
-      final result = data['data'][variant.deleteMutationName];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/Operation/delete(): No result from server");
-        return false;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      if (status != ApiStatus.ok) {
-        onResponse?.call(status.toJson());
-        Log.error("layrz_models/Operation/delete(): $status => ${result['errors']}");
-        return false;
-      }
-      return status == ApiStatus.ok;
+      return true;
     } catch (e, stack) {
       Log.critical("layrz_models/Operation/delete(): General exception => $e\n$stack");
       return false;
@@ -395,7 +349,7 @@ abstract class Operation with _$Operation {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(
@@ -413,26 +367,11 @@ abstract class Operation with _$Operation {
         ),
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/Operation/deleteMany(): No response from server");
-        return false;
+      if (response.status != ApiStatus.ok) {
+        onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Operation/deleteMany(): ${response.status} => ${response.errors}");
       }
-
-      final result = data['data'][variant.deleteMutationName];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/Operation/deleteMany(): No result from server");
-        return false;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      onResponse?.call(status.toJson());
-      if (status != ApiStatus.ok) {
-        Log.error("layrz_models/Operation/deleteMany(): $status => ${result['errors']}");
-      }
-      return status == ApiStatus.ok;
+      return response.status == ApiStatus.ok;
     } catch (e, stack) {
       Log.critical("layrz_models/Operation/deleteMany(): General exception => $e\n$stack");
       return false;
@@ -578,7 +517,7 @@ abstract class OperationInput with _$OperationInput {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final mutationName = id == null ? variant.addMutationName : variant.editMutationName;
-      final response = await connector.perform(
+      final response = await connector.mutate(
         GqlMutation(
           variables: [
             GqlVariable(
@@ -595,34 +534,20 @@ abstract class OperationInput with _$OperationInput {
             ..add(GqlField(name: 'errors'))
             ..add(GqlField(name: 'result', fragment: Operation.gqlFragment)),
         ),
+        (json) => Operation.fromJson(json as Map<String, dynamic>),
       );
 
-      final data = response.data;
-      if (data == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/OperationInput/save(): No response from server");
+      if (response.status != ApiStatus.ok) {
+        onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Operation/save(): ${response.status} => ${response.errors}");
         return null;
       }
 
-      final result = data['data'][mutationName];
-      if (result == null) {
-        onResponse?.call(ApiStatus.internalError.toJson());
-        Log.error("layrz_models/OperationInput/save(): No result from server");
-        return null;
-      }
-
-      final status = ApiStatus.fromJson(result['status']);
-      if (status != ApiStatus.ok) {
-        onResponse?.call(status.toJson());
-        Log.error("layrz_models/Operation/save(): $status => ${result['errors']}");
-        return null;
-      }
-
-      if (result['result'] == null) {
+      if (response.result == null) {
         Log.warning("layrz_models/OperationInput/save(): No result in list");
         return null;
       }
-      return Operation.fromJson(Map<String, dynamic>.from(result['result']));
+      return response.result;
     } catch (e, stack) {
       Log.critical("layrz_models/OperationInput/save(): General exception => $e\n$stack");
       return null;

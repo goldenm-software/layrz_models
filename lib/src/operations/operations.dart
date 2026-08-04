@@ -11,6 +11,7 @@ part 'operations.freezed.dart';
 part 'operations.g.dart';
 
 part 'src/variants.dart';
+part 'src/decoders.dart';
 part 'src/operation_type.dart';
 part 'src/http_request_type.dart';
 part 'src/notification_type.dart';
