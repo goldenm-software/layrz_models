@@ -129,7 +129,12 @@ abstract class TagOnBusRoute with _$TagOnBusRoute {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'ids', type: GqlVariableType.list(of: .id), isRequired: true, value: ids),
+            GqlVariable(
+              name: 'ids',
+              type: GqlVariableType.list(of: .id),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'deleteBusRoute',
         )..add(
@@ -176,7 +181,7 @@ abstract class TagOnBusRouteInput with _$TagOnBusRouteInput {
   // coverage:ignore-start
   /// [save] creates or updates this TagOn bus route on the server
   /// Returns a record with the [ApiStatus], the field errors (if any), and the saved [TagOnBusRoute].
-  Future<(ApiStatus, Map<String, dynamic>?, TagOnBusRoute?)> save({
+  Future<StandardResponse<TagOnBusRoute>> save({
     /// [apiToken] is the API token to use for authentication
     required String apiToken,
 
@@ -192,7 +197,12 @@ abstract class TagOnBusRouteInput with _$TagOnBusRouteInput {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'data', type: GqlVariableType.input(of: 'TagOnBusRouteInput'), isRequired: false, value: toJson()),
+            GqlVariable(
+              name: 'data',
+              type: GqlVariableType.input(of: 'TagOnBusRouteInput'),
+              isRequired: false,
+              value: toJson(),
+            ),
           ],
           name: operation,
         )..add(
@@ -220,5 +230,6 @@ abstract class TagOnBusRouteInput with _$TagOnBusRouteInput {
       return (ApiStatus.internalError, null, null);
     }
   }
+
   // coverage:ignore-end
 }

@@ -1,10 +1,10 @@
 part of '../modbus.dart';
 
-@freezed
-abstract class ModbusParameter with _$ModbusParameter {
-  const ModbusParameter._();
+@unfreezed
+abstract class ModbusParameterInput with _$ModbusParameterInput {
+  const ModbusParameterInput._();
 
-  const factory ModbusParameter({
+  factory ModbusParameterInput({
     /// [schema] represents the format of the command, it can be either single or multiple.
     @Default(ModbusParameterSchema.single) ModbusParameterSchema schema,
 
@@ -14,38 +14,22 @@ abstract class ModbusParameter with _$ModbusParameter {
 
     /// [controllerAddress] is the controller or slave ID of the modbus device.
     /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
-    required String controllerAddress,
+    @Default('') String controllerAddress,
 
     /// [functionCode] is the function code of the modbus device.
     /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
-    required String functionCode,
+    @Default('') String functionCode,
 
     /// [dataAddress] is the data address of the modbus device.
     /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
     /// prefixed with 0x.
-    required String dataAddress,
+    @Default('') String dataAddress,
 
     /// [dataLength] is the data length of the modbus device.
     /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
     /// prefixed with 0x.
-    required String dataLength,
-  }) = _ModbusParameter;
+    @Default('') String dataLength,
+  }) = _ModbusParameterInput;
 
-  factory ModbusParameter.fromJson(Map<String, dynamic> json) => _$ModbusParameterFromJson(json);
-
-  // coverage:ignore-start
-  /// [fragment] is a GraphQL fragment that contains the fields
-  static GqlFragment get fragment => GqlFragment(
-    name: 'modbusParameterFragment',
-    onType: 'ModbusParameter',
-    fields: [
-      GqlField(name: 'schema'),
-      GqlField(name: 'splitEach'),
-      GqlField(name: 'controllerAddress'),
-      GqlField(name: 'functionCode'),
-      GqlField(name: 'dataAddress'),
-      GqlField(name: 'dataLength'),
-    ],
-  );
-  // coverage:ignore-end
+  factory ModbusParameterInput.fromJson(Map<String, dynamic> json) => _$ModbusParameterInputFromJson(json);
 }

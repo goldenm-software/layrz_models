@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.22.0
+
+- Added API Connector on `DeviceCommand`
+- Standarized all tupled returns to `StandardResponse<T>`
+
 ## 3.21.0
 
 - Added API connector for `InboundProtocol`, `Model`, `FlespiProtocol`, `FlespiModel` and `FlespiChannel`

@@ -1086,7 +1086,7 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [login] logs in a user with username/email and password.
   /// Returns a record with status, errors, and the logged-in user (or null on error).
-  static Future<(ApiStatus, Map<String, dynamic>?, User?)> login({
+  static Future<StandardResponse<User>> login({
     required String usernameOrEmail,
     required String password,
     String? languageId,
@@ -1143,7 +1143,7 @@ abstract class User with _$User {
   // coverage:ignore-start
   /// [getSession] retrieves the current user session based on the provided API token.
   /// Returns a record with status, errors, and the current user (or null on error).
-  static Future<(ApiStatus, Map<String, dynamic>?, User?)> getSession({
+  static Future<StandardResponse<User>> getSession({
     required String apiToken,
     required Uri uri,
     String? appId,

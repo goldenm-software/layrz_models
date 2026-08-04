@@ -196,9 +196,9 @@ abstract class Reference with _$Reference {
           name: _getGqlQueryName(variant: variant),
         )..add(
           GqlField(
-            name: _getGqlQueryName(variant: variant),
-            args: {'id': 'id'},
-          )
+              name: _getGqlQueryName(variant: variant),
+              args: {'id': 'id'},
+            )
             ..add(GqlField(name: 'status'))
             ..add(
               GqlField(
@@ -327,6 +327,7 @@ abstract class Reference with _$Reference {
       return false;
     }
   }
+
   // coverage:ignore-end
 }
 
@@ -356,7 +357,7 @@ abstract class ReferenceInput with _$ReferenceInput {
   /// [save] saves a reference (add or edit) and returns a record with status, errors, and the saved reference.
   /// Returns `(ApiStatus, Map<String, dynamic>?, Reference?)` — on internalError: (internalError, null, null);
   /// on other error: (status, errors, null); on success: (status, errors, reference).
-  Future<(ApiStatus, Map<String, dynamic>?, Reference?)> save({
+  Future<StandardResponse<Reference>> save({
     required String apiToken,
     required Uri uri,
     void Function(String statusCode)? onResponse,
@@ -382,9 +383,9 @@ abstract class ReferenceInput with _$ReferenceInput {
           name: operation,
         )..add(
           GqlField(
-            name: operation,
-            args: {'data': 'data'},
-          )
+              name: operation,
+              args: {'data': 'data'},
+            )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
             ..add(
@@ -413,5 +414,6 @@ abstract class ReferenceInput with _$ReferenceInput {
       return (ApiStatus.internalError, null, null);
     }
   }
+
   // coverage:ignore-end
 }
