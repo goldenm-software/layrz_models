@@ -1135,8 +1135,8 @@ return $default(_that.externalId,_that.name,_that.ident,_that.additionalFields);
 /// @nodoc
 @JsonSerializable()
 
-class _ExternalUnit implements ExternalUnit {
-  const _ExternalUnit({this.externalId, required this.name, required this.ident, final  Map<String, dynamic>? additionalFields}): _additionalFields = additionalFields;
+class _ExternalUnit extends ExternalUnit {
+  const _ExternalUnit({this.externalId, required this.name, required this.ident, final  Map<String, dynamic>? additionalFields}): _additionalFields = additionalFields,super._();
   factory _ExternalUnit.fromJson(Map<String, dynamic> json) => _$ExternalUnitFromJson(json);
 
 /// [externalId] is the unique identifier of this unit in the external platform.
@@ -1754,6 +1754,264 @@ class __$ExternalGeofenceCopyWithImpl<$Res>
 wialonId: null == wialonId ? _self.wialonId : wialonId // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ExternalUnitsInput {
+
+/// [externalAccountId] is the unique identifier of the external account from which units are being imported.
+@JsonKey(name: 'sourceId') String get externalAccountId;/// [externalAccountId] is the unique identifier of the external account from which units are being imported.
+@JsonKey(name: 'sourceId') set externalAccountId(String value);/// [units] is a list of [ExternalUnit] objects representing the units to be imported.
+ List<ExternalUnit> get units;/// [units] is a list of [ExternalUnit] objects representing the units to be imported.
+ set units(List<ExternalUnit> value);
+/// Create a copy of ExternalUnitsInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ExternalUnitsInputCopyWith<ExternalUnitsInput> get copyWith => _$ExternalUnitsInputCopyWithImpl<ExternalUnitsInput>(this as ExternalUnitsInput, _$identity);
+
+  /// Serializes this ExternalUnitsInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'ExternalUnitsInput(externalAccountId: $externalAccountId, units: $units)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ExternalUnitsInputCopyWith<$Res>  {
+  factory $ExternalUnitsInputCopyWith(ExternalUnitsInput value, $Res Function(ExternalUnitsInput) _then) = _$ExternalUnitsInputCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'sourceId') String externalAccountId, List<ExternalUnit> units
+});
+
+
+
+
+}
+/// @nodoc
+class _$ExternalUnitsInputCopyWithImpl<$Res>
+    implements $ExternalUnitsInputCopyWith<$Res> {
+  _$ExternalUnitsInputCopyWithImpl(this._self, this._then);
+
+  final ExternalUnitsInput _self;
+  final $Res Function(ExternalUnitsInput) _then;
+
+/// Create a copy of ExternalUnitsInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? externalAccountId = null,Object? units = null,}) {
+  return _then(_self.copyWith(
+externalAccountId: null == externalAccountId ? _self.externalAccountId : externalAccountId // ignore: cast_nullable_to_non_nullable
+as String,units: null == units ? _self.units : units // ignore: cast_nullable_to_non_nullable
+as List<ExternalUnit>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ExternalUnitsInput].
+extension ExternalUnitsInputPatterns on ExternalUnitsInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ExternalUnitsInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ExternalUnitsInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ExternalUnitsInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _ExternalUnitsInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ExternalUnitsInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ExternalUnitsInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'sourceId')  String externalAccountId,  List<ExternalUnit> units)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ExternalUnitsInput() when $default != null:
+return $default(_that.externalAccountId,_that.units);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'sourceId')  String externalAccountId,  List<ExternalUnit> units)  $default,) {final _that = this;
+switch (_that) {
+case _ExternalUnitsInput():
+return $default(_that.externalAccountId,_that.units);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'sourceId')  String externalAccountId,  List<ExternalUnit> units)?  $default,) {final _that = this;
+switch (_that) {
+case _ExternalUnitsInput() when $default != null:
+return $default(_that.externalAccountId,_that.units);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ExternalUnitsInput extends ExternalUnitsInput {
+   _ExternalUnitsInput({@JsonKey(name: 'sourceId') required this.externalAccountId, required this.units}): super._();
+  factory _ExternalUnitsInput.fromJson(Map<String, dynamic> json) => _$ExternalUnitsInputFromJson(json);
+
+/// [externalAccountId] is the unique identifier of the external account from which units are being imported.
+@override@JsonKey(name: 'sourceId')  String externalAccountId;
+/// [units] is a list of [ExternalUnit] objects representing the units to be imported.
+@override  List<ExternalUnit> units;
+
+/// Create a copy of ExternalUnitsInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ExternalUnitsInputCopyWith<_ExternalUnitsInput> get copyWith => __$ExternalUnitsInputCopyWithImpl<_ExternalUnitsInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ExternalUnitsInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'ExternalUnitsInput(externalAccountId: $externalAccountId, units: $units)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ExternalUnitsInputCopyWith<$Res> implements $ExternalUnitsInputCopyWith<$Res> {
+  factory _$ExternalUnitsInputCopyWith(_ExternalUnitsInput value, $Res Function(_ExternalUnitsInput) _then) = __$ExternalUnitsInputCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'sourceId') String externalAccountId, List<ExternalUnit> units
+});
+
+
+
+
+}
+/// @nodoc
+class __$ExternalUnitsInputCopyWithImpl<$Res>
+    implements _$ExternalUnitsInputCopyWith<$Res> {
+  __$ExternalUnitsInputCopyWithImpl(this._self, this._then);
+
+  final _ExternalUnitsInput _self;
+  final $Res Function(_ExternalUnitsInput) _then;
+
+/// Create a copy of ExternalUnitsInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? externalAccountId = null,Object? units = null,}) {
+  return _then(_ExternalUnitsInput(
+externalAccountId: null == externalAccountId ? _self.externalAccountId : externalAccountId // ignore: cast_nullable_to_non_nullable
+as String,units: null == units ? _self.units : units // ignore: cast_nullable_to_non_nullable
+as List<ExternalUnit>,
   ));
 }
 

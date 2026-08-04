@@ -177,6 +177,37 @@ abstract class InboundProtocol with _$InboundProtocol {
   // coverage:ignore-end
 
   // coverage:ignore-start
+  /// [reducedFragment] is an small fragment of the protocol, used to identify the protocol in the system.
+  static GqlFragment get reducedFragment => GqlFragment(
+    name: 'InboundProtocolFragment',
+    onType: 'InboundProtocol',
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+      GqlField(name: 'color'),
+      GqlField(name: 'isEnabled'),
+      GqlField(name: 'operationMode'),
+      GqlField(name: 'dynamicIcon', fragment: Avatar.fragment),
+      GqlField(name: 'peripheralIdentifier'),
+      GqlField(name: 'hasNativeCommands'),
+      GqlField(name: 'hasSmsCommands'),
+
+      GqlField(name: 'host'),
+      GqlField(name: 'port'),
+      GqlField(name: 'mqttTopic'),
+
+      GqlField(name: 'requiresFlespiToken'),
+
+      GqlField(name: 'hasCommands'),
+      GqlField(name: 'hasModbus'),
+      GqlField(name: 'modbusPorts'),
+
+      GqlField(name: 'confiotCapable'),
+    ],
+  );
+  // coverage:ignore-end
+
+  // coverage:ignore-start
   /// [fetchAll] is the method that fetches all the protocols from the API
   static Future<List<InboundProtocol>> fetchAll({
     /// [apiToken] is the API token to authenticate the request

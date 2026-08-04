@@ -17,4 +17,17 @@ abstract class ModbusConfig with _$ModbusConfig {
   }) = _ModbusConfig;
 
   factory ModbusConfig.fromJson(Map<String, dynamic> json) => _$ModbusConfigFromJson(json);
+
+  // coverage:ignore-start
+  /// [fragment] is a GraphQL fragment that contains the fields
+  static GqlFragment get fragment => GqlFragment(
+    name: 'modbusConfigFragment',
+    onType: 'ModbusConfig',
+    fields: [
+      GqlField(name: 'isEnabled'),
+      GqlField(name: 'parameters', fragment: ModbusParameter.fragment),
+      GqlField(name: 'portId'),
+    ],
+  );
+  // coverage:ignore-end
 }

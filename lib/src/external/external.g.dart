@@ -107,3 +107,17 @@ _ExternalGeofence _$ExternalGeofenceFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ExternalGeofenceToJson(_ExternalGeofence instance) =>
     <String, dynamic>{'wialonId': instance.wialonId, 'name': instance.name};
+
+_ExternalUnitsInput _$ExternalUnitsInputFromJson(Map<String, dynamic> json) =>
+    _ExternalUnitsInput(
+      externalAccountId: json['sourceId'] as String,
+      units: (json['units'] as List<dynamic>)
+          .map((e) => ExternalUnit.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ExternalUnitsInputToJson(_ExternalUnitsInput instance) =>
+    <String, dynamic>{
+      'sourceId': instance.externalAccountId,
+      'units': instance.units.map((e) => e.toJson()).toList(),
+    };

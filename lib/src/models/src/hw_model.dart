@@ -32,6 +32,17 @@ abstract class HwModel with _$HwModel {
   );
   // coverage:ignore-end
   // coverage:ignore-start
+  /// [reducedFragment] is the fragment of the hardware model
+  static GqlFragment get reducedFragment => GqlFragment(
+    name: 'HwModelFragment',
+    onType: 'HwModel',
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+    ],
+  );
+  // coverage:ignore-end
+  // coverage:ignore-start
   /// [fetchAll] fetches all the hardware models from the API
   static Future<List<HwModel>> fetchAll({
     /// [apiToken] is the API token to use for the GraphQL client

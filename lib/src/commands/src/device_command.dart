@@ -136,15 +136,48 @@ abstract class DeviceCommand with _$DeviceCommand {
     ///
     /// If is `true`, [extraFields] will be ignored.
     bool useFragment = false,
+
+    /// [includeGlobals] is a flag that indicates if the query should include global commands or not.
+    bool includeGlobals = false,
+
+    /// [protocolId] is the id of the protocol to filter the commands by.
+    String? protocolId,
+
+    /// [modelId] is the id of the model to filter the commands by.
+    String? modelId,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
       final response = await connector.query(
         GqlQuery(
           name: 'deviceCommands',
+          variables: [
+            GqlVariable(
+              name: 'includeGlobals',
+              value: includeGlobals,
+              type: .boolean,
+            ),
+            if (protocolId != null)
+              GqlVariable(
+                name: 'protocolId',
+                value: protocolId,
+                type: .id,
+              ),
+            if (modelId != null)
+              GqlVariable(
+                name: 'modelId',
+                value: modelId,
+                type: .id,
+              ),
+          ],
           fields: [
             GqlField(
               name: 'deviceCommands',
+              args: {
+                'includeGlobals': 'includeGlobals',
+                if (protocolId != null) 'protocolId': 'protocolId',
+                if (modelId != null) 'modelId': 'modelId',
+              },
               fields: [
                 GqlField(name: 'status'),
                 GqlField(
@@ -347,6 +380,74 @@ abstract class DeviceCommand with _$DeviceCommand {
       return response.status == .ok;
     } catch (err, trace) {
       Log.critical("layrz_models/DeviceCommand/deleteMany(): Error deleting DeviceCommand entities: $err\n$trace");
+      onResponse?.call(.internalError);
+      return false;
+    }
+  }
+
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [execute] is a GraphQL mutation that executes a single [DeviceCommand] entity by its [id].
+  Future<bool> execute({
+    /// [apiToken] is the API token to use for the request.
+    required String apiToken,
+
+    /// [uri] is the URI of the GraphQL endpoint.
+    required Uri uri,
+
+    /// [onResponse] is a callback that is called when the response is received.
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [deviceId] is the id of the device to execute the command on. This is required if the command is not global.
+    String? deviceId,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.mutate(
+        GqlMutation(
+          name: 'executeDeviceCommand',
+          variables: [
+            GqlVariable(
+              name: 'commandId',
+              value: id,
+              type: .id,
+              isRequired: true,
+            ),
+            if (deviceId != null)
+              GqlVariable(
+                name: 'deviceId',
+                value: deviceId,
+                type: .id,
+                isRequired: true,
+              ),
+          ],
+          fields: [
+            GqlField(
+              name: 'deviceCommands',
+              args: {
+                'commandId': 'commandId',
+                if (deviceId != null) 'deviceId': 'deviceId',
+              },
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(name: 'result'),
+              ],
+            ),
+          ],
+        ),
+        (json) => json as bool,
+      );
+
+      if (response.status != .ok) {
+        Log.error("layrz_models/DeviceCommand/execute(): Error executing DeviceCommand entity: ${response.status}");
+        onResponse?.call(response.status);
+        return false;
+      }
+
+      return response.result ?? false;
+    } catch (err, trace) {
+      Log.critical("layrz_models/DeviceCommand/execute(): Error executing DeviceCommand entity: $err\n$trace");
       onResponse?.call(.internalError);
       return false;
     }

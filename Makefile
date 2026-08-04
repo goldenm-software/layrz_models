@@ -2,6 +2,10 @@
 freezed:
 	dart run build_runner build
 
+.PHONY: frizalo
+frizalo: freezed
+
+.PHONY: freezed-forced
 freezed-forced:
 	dart run build_runner build --delete-conflicting-outputs
 
