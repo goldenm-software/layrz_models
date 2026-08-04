@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.23.1
+
+- Added `onlyConfiot` argument on `Device.fetchAll()` to include it in the GraphQL query and variables, allowing callers to filter devices that have Confiot enabled.
+- This version was released manually
+
 ## 3.23.0
 
 - Added `ActionVariant` and `OperationVariant` to target the Mappit-prefixed fields exposed by the public GraphQL endpoint. Both default to `standard`, so existing callers keep their current behaviour
