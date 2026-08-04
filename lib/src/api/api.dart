@@ -16,6 +16,7 @@ part 'src/api_connector.dart';
 part 'src/response.dart';
 part 'src/status.dart';
 part 'src/api_extras.dart';
+part 'src/types.dart';
 
 part 'src/gql_builder/variables.dart';
 part 'src/gql_builder/fragment.dart';

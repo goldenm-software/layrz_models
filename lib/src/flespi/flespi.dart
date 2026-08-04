@@ -11,3 +11,4 @@ part 'flespi.g.dart';
 part 'src/protocol.dart';
 part 'src/channel.dart';
 part 'src/decoders.dart';
+part 'src/model.dart';

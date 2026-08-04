@@ -15,3 +15,11 @@ List<FlespiChannel> _flespiChannelListDecoder(Object? json) {
     }),
   );
 }
+
+List<FlespiModel> _flespiModelListDecoder(Object? json) {
+  return List<FlespiModel>.from(
+    (json as List).map((e) {
+      return FlespiModel.fromJson(e as Map<String, dynamic>);
+    }),
+  );
+}

@@ -70,4 +70,6 @@ abstract class CredentialField with _$CredentialField {
       ],
     );
   }
+
+  // coverage:ignore-end
 }

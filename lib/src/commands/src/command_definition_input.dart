@@ -33,7 +33,7 @@ abstract class CommandDefinitionInput with _$CommandDefinitionInput {
         GqlQuery(
           name: 'flespiCommandsProtocolDefinition',
           variables: [
-            GqlVariable(name: 'flespiId', type: .id, value: flespiId),
+            GqlVariable(name: 'flespiId', type: .id, value: flespiId, isRequired: true),
           ],
           fields: [
             GqlField(
@@ -59,6 +59,67 @@ abstract class CommandDefinitionInput with _$CommandDefinitionInput {
     } catch (err, stack) {
       Log.critical(
         'layrz_models/CommandDefinitionInput/fetchFromFlespi(): Error fetching command definitions: $err\n$stack',
+      );
+      onResponse?.call(ApiStatus.internalError);
+      return [];
+    }
+  }
+
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [fetchFromFlespiFromModel] is the method that fetches the command definition from the Flespi API
+  static Future<List<CommandDefinitionInput>> fetchFromFlespiFromModel({
+    /// [apiToken] is the API token to use for authentication.
+    required String apiToken,
+
+    /// [uri] is the URI of the Layrz API endpoint.
+    required Uri uri,
+
+    /// [flespiId] is the Flespi ID of the protocol.
+    required String flespiId,
+
+    /// [flespiModelId] is the Flespi ID of the model.
+    required String flespiModelId,
+
+    /// [onResponse] is the callback to call when the response is received.
+    ValueChanged<ApiStatus>? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: 'flespiCommandsModelDefinition',
+          variables: [
+            GqlVariable(name: 'flespiId', type: .id, value: flespiId, isRequired: true),
+            GqlVariable(name: 'flespiModelId', type: .id, value: flespiModelId, isRequired: true),
+          ],
+          fields: [
+            GqlField(
+              name: 'flespiCommandsModelDefinition',
+              args: {'flespiId': 'flespiId', 'flespiModelId': 'flespiModelId'},
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(name: 'result', fragment: CommandDefinition.fragment),
+              ],
+            ),
+          ],
+        ),
+        _commandDefinitionInputListDecoder,
+      );
+
+      if (response.status != .ok) {
+        Log.warning(
+          'layrz_models/CommandDefinitionInput/fetchFromFlespiFromModel(): API returned status ${response.status}',
+        );
+        onResponse?.call(response.status);
+        return [];
+      }
+
+      return response.result ?? [];
+    } catch (err, stack) {
+      Log.critical(
+        'layrz_models/CommandDefinitionInput/fetchFromFlespiFromModel(): Error fetching command definitions: $err\n$stack',
       );
       onResponse?.call(ApiStatus.internalError);
       return [];

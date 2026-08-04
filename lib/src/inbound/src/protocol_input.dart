@@ -130,6 +130,7 @@ abstract class InboundProtocolInput with _$InboundProtocolInput {
             GqlVariable(
               name: 'data',
               type: .input(of: 'InboundProtocolInput'),
+              isRequired: true,
               value: toJson(),
             ),
           ],

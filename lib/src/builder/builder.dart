@@ -23,7 +23,6 @@ part 'src/webhook/webhook_path.dart';
 part 'src/webhook/webhook_structure_input.dart';
 part 'src/webhook/webhook_structure.dart';
 
-part 'src/flespi/flespi_model.dart';
 part 'src/flespi/flespi_acl_input.dart';
 part 'src/flespi/flespi_acl.dart';
 part 'src/flespi/flespi_action.dart';

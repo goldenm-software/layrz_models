@@ -256,8 +256,8 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocol
 /// @nodoc
 @JsonSerializable()
 
-class _Model implements Model {
-  const _Model({required this.id, required this.name, this.flespiId, this.protocol, this.protocolId, this.isGeneric, final  List<CommandDefinition> commandsStructure = const [], final  List<ConfigGrouping> configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, final  Map<String, dynamic>? peripheralParserSpec, final  List<FirmwareBuild> firmwares = const [], @IconOrNullConverter() this.icon, @JsonKey(unknownEnumValue: RenderWidget.unknown) final  List<RenderWidget> widget = const [], this.zigbeeCompatible = false, final  List<ZigbeeParameter> zigbeeParameters = const []}): _commandsStructure = commandsStructure,_configStructure = configStructure,_peripheralParserSpec = peripheralParserSpec,_firmwares = firmwares,_widget = widget,_zigbeeParameters = zigbeeParameters;
+class _Model extends Model {
+  const _Model({required this.id, required this.name, this.flespiId, this.protocol, this.protocolId, this.isGeneric, final  List<CommandDefinition> commandsStructure = const [], final  List<ConfigGrouping> configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, final  Map<String, dynamic>? peripheralParserSpec, final  List<FirmwareBuild> firmwares = const [], @IconOrNullConverter() this.icon, @JsonKey(unknownEnumValue: RenderWidget.unknown) final  List<RenderWidget> widget = const [], this.zigbeeCompatible = false, final  List<ZigbeeParameter> zigbeeParameters = const []}): _commandsStructure = commandsStructure,_configStructure = configStructure,_peripheralParserSpec = peripheralParserSpec,_firmwares = firmwares,_widget = widget,_zigbeeParameters = zigbeeParameters,super._();
   factory _Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
 
 /// [id] is the unique identifier of the model.
@@ -667,8 +667,8 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocolId,_that.isGene
 /// @nodoc
 @JsonSerializable()
 
-class _ModelInput implements ModelInput {
-   _ModelInput({this.id, this.name = '', this.flespiId, this.protocolId, this.isGeneric = false, this.commandsStructure = const [], this.configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, this.peripheralParserSpec, @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) this.widget = const [], this.zigbeeCompatible = false, this.zigbeeParameters = const []});
+class _ModelInput extends ModelInput {
+   _ModelInput({this.id, this.name = '', this.flespiId, this.protocolId, this.isGeneric = false, this.commandsStructure = const [], this.configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, this.peripheralParserSpec, @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) this.widget = const [], this.zigbeeCompatible = false, this.zigbeeParameters = const []}): super._();
   factory _ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);
 
 /// [id] is the unique identifier of the model.
@@ -1848,8 +1848,8 @@ return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_tha
 /// @nodoc
 @JsonSerializable()
 
-class _ZigbeeParameter implements ZigbeeParameter {
-  const _ZigbeeParameter({this.id, required this.name, this.alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string) required this.dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown) required this.widget, this.access = 3, final  Map<String, dynamic>? extra}): _extra = extra;
+class _ZigbeeParameter extends ZigbeeParameter {
+  const _ZigbeeParameter({this.id, required this.name, this.alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string) required this.dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown) required this.widget, this.access = 3, final  Map<String, dynamic>? extra}): _extra = extra,super._();
   factory _ZigbeeParameter.fromJson(Map<String, dynamic> json) => _$ZigbeeParameterFromJson(json);
 
 /// [id] unique identifier
@@ -2138,8 +2138,8 @@ return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_tha
 /// @nodoc
 @JsonSerializable()
 
-class _ZigbeeParameterInput implements ZigbeeParameterInput {
-   _ZigbeeParameterInput({this.id, this.name = '', this.alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string) this.dataType = ZigbeeDataType.string, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget = RenderWidget.unknown, this.access, this.extra});
+class _ZigbeeParameterInput extends ZigbeeParameterInput {
+   _ZigbeeParameterInput({this.id, this.name = '', this.alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string) this.dataType = ZigbeeDataType.string, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget = RenderWidget.unknown, this.access, this.extra}): super._();
   factory _ZigbeeParameterInput.fromJson(Map<String, dynamic> json) => _$ZigbeeParameterInputFromJson(json);
 
 @override  String? id;

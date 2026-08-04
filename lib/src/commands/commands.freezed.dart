@@ -2481,8 +2481,8 @@ return $default(_that.name,_that.description,_that.sources,_that.payload);case _
 /// @nodoc
 @JsonSerializable()
 
-class _CommandDefinitionInput implements CommandDefinitionInput {
-   _CommandDefinitionInput({this.name = '', this.description = '', @CommandDefinitionSourceConverter() this.sources = const [], this.payload = const []});
+class _CommandDefinitionInput extends CommandDefinitionInput {
+   _CommandDefinitionInput({this.name = '', this.description = '', @CommandDefinitionSourceConverter() this.sources = const [], this.payload = const []}): super._();
   factory _CommandDefinitionInput.fromJson(Map<String, dynamic> json) => _$CommandDefinitionInputFromJson(json);
 
 /// [name] is the name of the command, this is also the translation key.

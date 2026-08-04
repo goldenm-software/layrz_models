@@ -258,10 +258,14 @@ abstract class InboundProtocol with _$InboundProtocol {
     try {
       final response = await connector.query(
         GqlQuery(
-          name: 'inboundProtocol',
+          name: 'inboundProtocols',
+          variables: [
+            GqlVariable(name: 'id', type: .id, value: id, isRequired: true),
+          ],
           fields: [
             GqlField(
-              name: 'inboundProtocol',
+              name: 'inboundProtocols',
+              args: {'id': 'id'},
               fields: [
                 GqlField(name: 'status'),
                 GqlField(name: 'result', fragment: fragment),
@@ -269,7 +273,7 @@ abstract class InboundProtocol with _$InboundProtocol {
             ),
           ],
         ),
-        _protocolDecoder,
+        _protocolListDecoder,
       );
 
       if (response.status != .ok) {
@@ -278,7 +282,7 @@ abstract class InboundProtocol with _$InboundProtocol {
         return null;
       }
 
-      return response.result;
+      return response.result?.first;
     } catch (err, stack) {
       Log.critical('layrz_models/InboundProtocol/fetch(): Error fetching protocol: $err\n$stack');
       onResponse?.call(.internalError);

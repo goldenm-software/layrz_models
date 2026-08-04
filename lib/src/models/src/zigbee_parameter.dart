@@ -2,6 +2,8 @@ part of '../models.dart';
 
 @freezed
 abstract class ZigbeeParameter with _$ZigbeeParameter {
+  const ZigbeeParameter._();
+
   /// [ZigbeeParameter] represents a configurable parameter exposed by a Zigbee device model.
   const factory ZigbeeParameter({
     /// [id] unique identifier
@@ -27,20 +29,21 @@ abstract class ZigbeeParameter with _$ZigbeeParameter {
   }) = _ZigbeeParameter;
 
   factory ZigbeeParameter.fromJson(Map<String, dynamic> json) => _$ZigbeeParameterFromJson(json);
-}
 
-@unfreezed
-abstract class ZigbeeParameterInput with _$ZigbeeParameterInput {
-  /// [ZigbeeParameterInput] mutable version for form editing.
-  factory ZigbeeParameterInput({
-    String? id,
-    @Default('') String name,
-    String? alias,
-    @JsonKey(unknownEnumValue: ZigbeeDataType.string) @Default(ZigbeeDataType.string) ZigbeeDataType dataType,
-    @JsonKey(unknownEnumValue: RenderWidget.unknown) @Default(RenderWidget.unknown) RenderWidget widget,
-    int? access,
-    Map<String, dynamic>? extra,
-  }) = _ZigbeeParameterInput;
-
-  factory ZigbeeParameterInput.fromJson(Map<String, dynamic> json) => _$ZigbeeParameterInputFromJson(json);
+  // coverage:ignore-start
+  /// [fragment] returns the GraphQL fragment for the ZigbeeParameter model.
+  static GqlFragment get fragment => GqlFragment(
+    name: 'zigbeeParameterFragment',
+    onType: 'ZigbeeParameter',
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+      GqlField(name: 'alias'),
+      GqlField(name: 'dataType'),
+      GqlField(name: 'widget'),
+      GqlField(name: 'access'),
+      GqlField(name: 'extra'),
+    ],
+  );
+  // coverage:ignore-end
 }

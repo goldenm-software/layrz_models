@@ -2,6 +2,8 @@ part of '../models.dart';
 
 @freezed
 abstract class Model with _$Model {
+  const Model._();
+
   /// [Model] is the model of a device. It contains the information about the model of the device.
   /// Does not contain information of connectivity or related, only the model information like the name, the
   /// protocol and if is generic or not.
@@ -63,87 +65,153 @@ abstract class Model with _$Model {
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
-}
 
-@unfreezed
-abstract class ModelInput with _$ModelInput {
-  /// [ModelInput] is the model of a device. It contains the information about the model of the device.
-  /// Does not contain information of connectivity or related, only the model information like the name, the
-  /// protocol and if is generic or not.
-  factory ModelInput({
-    /// [id] is the unique identifier of the model.
-    String? id,
+  // coverage:ignore-start
+  /// [fragment] is the GraphQL fragment for the model.
+  static GqlFragment get fragment => GqlFragment(
+    name: 'modelFragment',
+    onType: 'Model',
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+      GqlField(name: 'flespiId'),
+      GqlField(name: 'isGeneric'),
+      GqlField(name: 'protocolId'),
 
-    /// [name] is the name of the model.
-    @Default('') String name,
+      GqlField(name: 'confiotCapable'),
+      GqlField(name: 'confiotLayout'),
+      GqlField(name: 'confiotName'),
 
-    /// [flespiId] is the ID of the device in the flespi platform.
-    /// Can be null if the model is not connected to a device or is a in-house protocol.
-    String? flespiId,
+      GqlField(name: 'peripheralIdentifier'),
+      GqlField(name: 'peripheralParserSpec'),
 
-    /// [protocolId] is the ID of the protocol
-    String? protocolId,
+      GqlField(name: 'widget'),
+      GqlField(name: 'zigbeeCompatible'),
 
-    /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
-    @Default(false) bool isGeneric,
+      GqlField(name: 'commandsStructure', fragment: CommandDefinition.fragment),
+      GqlField(name: 'configStructure', fragment: ConfigGrouping.fragment),
 
-    /// [commandsStructure] is the structure of the commands for the protocol.
-    @Default([]) List<CommandDefinitionInput> commandsStructure,
+      GqlField(name: 'zigbeeParameters', fragment: ZigbeeParameter.fragment),
+    ],
+  );
+  // coverage:ignore-end
 
-    /// [configStructure] is the structure of the configuration for the protocol.
-    @Default([]) List<ConfigGroupingInput> configStructure,
+  // coverage:ignore-start
+  /// [fetchAll] fetches all models from the API.
+  static Future<List<Model>> fetchAll({
+    /// [apiToken] is the API token to use for authentication.
+    required String apiToken,
 
-    /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
-    @Default(false) bool confiotCapable,
+    /// [uri] is the URI of the API endpoint.
+    required Uri uri,
 
-    /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-    @JsonKey(unknownEnumValue: ConfIoTLayout.standard) @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+    /// [onResponse] is the callback to call when the response is received.
+    ValueChanged<ApiStatus>? onResponse,
 
-    /// [confiotName] is the name of the model in the ConfIoT.
-    String? confiotName,
+    /// [extraFields] is the list of extra fields to fetch for the model.
+    List<GqlField>? extraFields,
 
-    /// [peripheralIdentifier] is the identifier of the peripheral device.
-    String? peripheralIdentifier,
+    /// [useFragment] indicates whether to use the GraphQL fragment.
+    ///
+    /// When is `true`, the query will use the fragment defined in
+    /// [fragment] to fetch only the fields defined in the fragment.
+    bool useFragment = false,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
 
-    /// [peripheralParserSpec] is the parser specification for the peripheral device.
-    Map<String, dynamic>? peripheralParserSpec,
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: 'models',
+          fields: [
+            GqlField(
+              name: 'models',
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(
+                  name: 'result',
+                  fragment: useFragment ? fragment : null,
+                  fields: useFragment
+                      ? null
+                      : [
+                          GqlField(name: 'id'),
+                          GqlField(name: 'name'),
+                        ],
+                ),
+              ],
+            ),
+          ],
+        ),
+        _modelListDecoder,
+      );
 
-    /// [widget] is the list of render widgets for this model.
-    @JsonKey(name: 'widgetRender', unknownEnumValue: RenderWidget.unknown) @Default([]) List<RenderWidget> widget,
+      if (response.status != .ok) {
+        onResponse?.call(response.status);
+        return [];
+      }
 
-    /// Whether the model is Zigbee-capable. Only meaningful for REALTIME protocols.
-    @Default(false) bool zigbeeCompatible,
-
-    /// [zigbeeParameters] list of Zigbee parameters defined for this model.
-    @Default([]) List<ZigbeeParameterInput> zigbeeParameters,
-  }) = _ModelInput;
-
-  factory ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);
-}
-
-enum ConfIoTLayout {
-  /// [standard] defines the classic layout of the device, with the commands and the configuration.
-  ///
-  /// Layrz API definition: `STANDARD`
-  @JsonValue('STANDARD')
-  standard,
-
-  /// [sdmMonitor] defines the layout for the SDM Monitor.
-  ///
-  /// Layrz API definition: `SDM_MONITOR`
-  @JsonValue('SDM_MONITOR')
-  sdmMonitor,
-  ;
-
-  @override
-  String toString() => toJson();
-
-  /// [toJson] returns the string representation of the enum value.
-  String toJson() => _$ConfIoTLayoutEnumMap[this] ?? 'UNKNOWN';
-
-  /// [fromJson] returns the enum value from a string representation.
-  static ConfIoTLayout fromJson(String json) {
-    final found = _$ConfIoTLayoutEnumMap.entries.firstWhereOrNull((e) => e.value == json);
-    return found?.key ?? ConfIoTLayout.standard;
+      return response.result ?? [];
+    } catch (err, stack) {
+      Log.critical("layrz_models/Model/fetchAll(): Error getting models: $err\n$stack");
+      onResponse?.call(.internalError);
+      return [];
+    }
   }
+
+  // coverage:ignore-end
+  // coverage:ignore-start
+  /// [fetch] fetches the model from the API.
+  Future<Model?> fetch({
+    /// [apiToken] is the API token to use for authentication.
+    required String apiToken,
+
+    /// [uri] is the URI of the API endpoint.
+    required Uri uri,
+
+    /// [onResponse] is the callback to call when the response is received.
+    ValueChanged<ApiStatus>? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: 'models',
+          variables: [
+            GqlVariable(
+              name: 'id',
+              type: .id,
+              value: id,
+              isRequired: true,
+            ),
+          ],
+          fields: [
+            GqlField(
+              name: 'models',
+              args: {'id': 'id'},
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(name: 'errors'),
+                GqlField(name: 'result', fragment: fragment),
+              ],
+            ),
+          ],
+        ),
+        _modelListDecoder,
+      );
+
+      if (response.status != .ok) {
+        onResponse?.call(response.status);
+        return null;
+      }
+
+      return response.result?.first;
+    } catch (err, stack) {
+      Log.critical("layrz_models/Model/fetch(): Error getting model $id: $err\n$stack");
+      onResponse?.call(.internalError);
+      return null;
+    }
+  }
+
+  // coverage:ignore-end
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.21.0
+
+- Added API connector for `InboundProtocol`, `Model`, `FlespiProtocol`, `FlespiModel` and `FlespiChannel`
+
 ## 3.20.6
 
 - Updated `layrz_logging` dependency to now include colors on logs emitted by the system

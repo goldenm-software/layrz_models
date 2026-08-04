@@ -25,3 +25,11 @@ Map<String, dynamic> _$FlespiChannelToJson(_FlespiChannel instance) =>
       'name': instance.name,
       'uri': instance.uri,
     };
+
+_FlespiModel _$FlespiModelFromJson(Map<String, dynamic> json) => _FlespiModel(
+  flespiId: json['flespiId'] as String,
+  name: json['name'] as String,
+);
+
+Map<String, dynamic> _$FlespiModelToJson(_FlespiModel instance) =>
+    <String, dynamic>{'flespiId': instance.flespiId, 'name': instance.name};
