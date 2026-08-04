@@ -216,6 +216,9 @@ abstract class Device with _$Device {
     /// [appId] is the ID of the app to fetch the devices for, if any.
     /// If not provided, all devices visible to the user will be fetched.
     String? appId,
+
+    /// [onlyConfiot] is the boolean that indicates if only the devices with confiot should be fetched.
+    bool onlyConfiot = false,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
@@ -224,12 +227,14 @@ abstract class Device with _$Device {
           name: _getQueryNameFromVariant(variant),
           variables: [
             if (appId != null) GqlVariable(name: 'appId', value: appId, type: .id),
+            if (onlyConfiot) GqlVariable(name: 'onlyConfiot', value: onlyConfiot, type: .boolean),
           ],
         )..add(
           GqlField(
               name: _getQueryNameFromVariant(variant),
               args: {
                 if (appId != null) 'appId': 'appId',
+                if (onlyConfiot) 'onlyConfiot': 'onlyConfiot',
               },
             )
             ..add(GqlField(name: 'status'))
