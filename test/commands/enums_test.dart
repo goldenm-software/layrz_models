@@ -59,7 +59,7 @@ void main() {
 
     test('CommandSource.fromJson() with unknown value throws ArgumentError', () {
       expect(
-        () => CommandSource.fromJson('UNKNOWN_SOURCE'),
+        CommandSource.fromJson('UNKNOWN_SOURCE'),
         CommandSource.protocolNative,
       );
     });
