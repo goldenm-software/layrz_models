@@ -15,3 +15,11 @@ Model _modelDecoder(Object? json) {
     throw Exception('Invalid JSON format for Model');
   }
 }
+
+List<HwModel> _hwModelListDecoder(Object? json) {
+  if (json is List) {
+    return json.map((e) => HwModel.fromJson(e as Map<String, dynamic>)).toList();
+  } else {
+    throw Exception('Invalid JSON format for HwModel list');
+  }
+}

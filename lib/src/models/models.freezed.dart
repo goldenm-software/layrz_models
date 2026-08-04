@@ -974,8 +974,8 @@ return $default(_that.id,_that.name,_that.modelsIds,_that.models);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _HwModel implements HwModel {
-  const _HwModel({required this.id, required this.name, final  List<String> modelsIds = const [], final  List<Model> models = const []}): _modelsIds = modelsIds,_models = models;
+class _HwModel extends HwModel {
+  const _HwModel({required this.id, required this.name, final  List<String> modelsIds = const [], final  List<Model> models = const []}): _modelsIds = modelsIds,_models = models,super._();
   factory _HwModel.fromJson(Map<String, dynamic> json) => _$HwModelFromJson(json);
 
 /// [id] is the unique identifier of the model.
