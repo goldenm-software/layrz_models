@@ -132,7 +132,7 @@ void main() {
 
     test('CommandSourceConverter.fromJson() with unknown value throws', () {
       expect(
-        () => converter.fromJson('INVALID'),
+        converter.fromJson('INVALID'),
         CommandSource.protocolNative,
       );
     });
