@@ -145,6 +145,7 @@ abstract class Geofence with _$Geofence {
         GqlQuery()..add(
           GqlField(name: variant.queryName)
             ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
             ..add(GqlField(name: 'result', fragment: reducedFragment(variant))),
         ),
         _geofencesListDecoder,
@@ -152,6 +153,7 @@ abstract class Geofence with _$Geofence {
 
       if (response.status != .ok) {
         onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Geofences/fetchAll(): ${response.status} => ${response.errors}");
         return [];
       }
 
@@ -183,6 +185,7 @@ abstract class Geofence with _$Geofence {
         )..add(
           GqlField(name: variant.queryName, args: {'id': 'id'})
             ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
             ..add(GqlField(name: 'result', fragment: fragment(variant))),
         ),
         _geofencesListDecoder,
@@ -190,6 +193,7 @@ abstract class Geofence with _$Geofence {
 
       if (response.status != .ok) {
         onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Geofences/fetch(): ${response.status} => ${response.errors}");
         return null;
       }
 
@@ -226,12 +230,15 @@ abstract class Geofence with _$Geofence {
           GqlField(
             name: variant.deleteMutationName,
             args: {'ids': 'ids'},
-          )..add(GqlField(name: 'status')),
+          )
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
         ),
       );
 
       if (response.status != .ok) {
         onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Geofences/delete(): ${response.status} => ${response.errors}");
         return false;
       }
 
@@ -266,12 +273,15 @@ abstract class Geofence with _$Geofence {
             ),
           ],
         )..add(
-          GqlField(name: variant.deleteMutationName, args: {'ids': 'ids'})..add(GqlField(name: 'status')),
+          GqlField(name: variant.deleteMutationName, args: {'ids': 'ids'})
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors')),
         ),
       );
 
       if (response.status != .ok) {
         onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Geofences/deleteMany(): ${response.status} => ${response.errors}");
         return false;
       }
       return response.status == .ok;
@@ -310,6 +320,7 @@ abstract class Geofence with _$Geofence {
               args: {'geofencesIds': 'geofencesIds', 'format': 'format'},
             )
             ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
             ..add(GqlField(name: 'result')),
         ),
         (json) => json as String,
@@ -317,6 +328,7 @@ abstract class Geofence with _$Geofence {
 
       if (response.status != .ok) {
         onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Geofences/export(): ${response.status} => ${response.errors}");
         return null;
       }
 
@@ -357,12 +369,14 @@ abstract class Geofence with _$Geofence {
               args: {'geofencesIds': 'geofencesIds', 'format': 'format'},
             )
             ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
             ..add(GqlField(name: 'result')),
         ),
       );
 
       if (response.status != .ok) {
         onResponse?.call(response.status.toJson());
+        Log.error("layrz_models/Geofences/exportMany(): ${response.status} => ${response.errors}");
         return null;
       }
       return response.result;

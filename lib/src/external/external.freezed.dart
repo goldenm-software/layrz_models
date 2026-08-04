@@ -860,8 +860,8 @@ return $default(_that.id,_that.name,_that.credentials,_that.sourceId);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _ExternalAccountInput implements ExternalAccountInput {
-   _ExternalAccountInput({this.id, this.name = '', this.credentials = const {}, this.sourceId});
+class _ExternalAccountInput extends ExternalAccountInput {
+   _ExternalAccountInput({this.id, this.name = '', this.credentials = const {}, this.sourceId}): super._();
   factory _ExternalAccountInput.fromJson(Map<String, dynamic> json) => _$ExternalAccountInputFromJson(json);
 
 /// [id] is the database identifier when updating an existing account. Null when creating a new one.
