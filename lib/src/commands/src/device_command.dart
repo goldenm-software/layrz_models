@@ -70,4 +70,287 @@ abstract class DeviceCommand with _$DeviceCommand {
   }) = _DeviceCommand;
 
   factory DeviceCommand.fromJson(Map<String, dynamic> json) => _$DeviceCommandFromJson(json);
+
+  // coverage:ignore-start
+  /// [fragment] is a GraphQL fragment that contains the fields of the [DeviceCommand] class.
+  static GqlFragment get fragment => GqlFragment(
+    name: 'commandFragment',
+    onType: 'DeviceCommand',
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+      GqlField(name: 'source'),
+
+      GqlField(name: 'isGlobal'),
+      GqlField(name: 'payload'),
+
+      GqlField(name: 'protocolId'),
+      GqlField(name: 'modelId'),
+      GqlField(name: 'deviceId'),
+      GqlField(name: 'externalAccountId'),
+      GqlField(name: 'tagId'),
+
+      GqlField(name: 'modbusPort'),
+      GqlField(name: 'modbusParameter', fragment: ModbusParameter.fragment),
+
+      GqlField(name: 'data'),
+
+      GqlField(
+        name: 'protocol',
+        fields: [
+          GqlField(name: 'id'),
+          GqlField(name: 'name'),
+          GqlField(name: 'color'),
+          GqlField(name: 'isEnabled'),
+          GqlField(name: 'operationMode'),
+        ],
+      ),
+      GqlField(
+        name: 'model',
+        fields: [
+          GqlField(name: 'id'),
+          GqlField(name: 'name'),
+        ],
+      ),
+
+      GqlField(name: 'access', fragment: Access.idFragment),
+    ],
+  );
+  // coverage:ignore-end
+  // coverage:ignore-start
+  /// [fetchAll] is a GraphQL query that fetches all the [DeviceCommand] entities.
+  static Future<List<DeviceCommand>> fetchAll({
+    /// [apiToken] is the API token to use for the request.
+    required String apiToken,
+
+    /// [uri] is the URI of the GraphQL endpoint.
+    required Uri uri,
+
+    /// [onResponse] is a callback that is called when the response is received.
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [extraFields] is a list of extra fields to include in the query.
+    List<GqlField>? extraFields,
+
+    /// [useFragment] is a flag that indicates if the query should use the [fragment] or not.
+    ///
+    /// If is `true`, [extraFields] will be ignored.
+    bool useFragment = false,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: 'deviceCommands',
+          fields: [
+            GqlField(
+              name: 'deviceCommands',
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(
+                  name: 'result',
+                  fields: [
+                    GqlField(name: 'id'),
+                    GqlField(name: 'name'),
+                    GqlField(name: 'source'),
+                    GqlField(name: 'isGlobal'),
+
+                    GqlField(
+                      name: 'protocol',
+                      fields: [
+                        GqlField(name: 'id'),
+                        GqlField(name: 'name'),
+                        GqlField(name: 'color'),
+                        GqlField(name: 'isEnabled'),
+                        GqlField(name: 'operationMode'),
+                      ],
+                    ),
+                    GqlField(
+                      name: 'model',
+                      fields: [
+                        GqlField(name: 'id'),
+                        GqlField(name: 'name'),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+        _deviceCommandListDecoder,
+      );
+
+      if (response.status != .ok) {
+        Log.error(
+          "layrz_models/DeviceCommand/fetchAll(): Error fetching all DeviceCommand entities: ${response.status}",
+        );
+        onResponse?.call(response.status);
+        return [];
+      }
+
+      return response.result ?? [];
+    } catch (err, trace) {
+      Log.critical("layrz_models/DeviceCommand/fetchAll(): Error fetching all DeviceCommand entities: $err\n$trace");
+      onResponse?.call(.internalError);
+      return [];
+    }
+  }
+
+  // coverage:ignore-end
+  // coverage:ignore-start
+  /// [fetch] is a GraphQL query that fetches a single [DeviceCommand] entity by its [id].
+  Future<DeviceCommand?> fetch({
+    /// [apiToken] is the API token to use for the request.
+    required String apiToken,
+
+    /// [uri] is the URI of the GraphQL endpoint.
+    required Uri uri,
+
+    /// [onResponse] is a callback that is called when the response is received.
+    ValueChanged<ApiStatus>? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: 'deviceCommands',
+          variables: [
+            GqlVariable(name: 'id', value: id, type: .id, isRequired: true),
+          ],
+          fields: [
+            GqlField(
+              name: 'deviceCommands',
+              args: {'id': 'id'},
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(name: 'result', fragment: fragment),
+              ],
+            ),
+          ],
+        ),
+        _deviceCommandListDecoder,
+      );
+
+      if (response.status != .ok) {
+        Log.error("layrz_models/DeviceCommand/fetch(): Error fetching DeviceCommand entity: ${response.status}");
+        onResponse?.call(response.status);
+        return null;
+      }
+
+      return response.result?.first;
+    } catch (err, trace) {
+      Log.critical("layrz_models/DeviceCommand/fetch(): Error fetching DeviceCommand entity: $err\n$trace");
+      onResponse?.call(.internalError);
+      return null;
+    }
+  }
+
+  // coverage:ignore-end
+  // coverage:ignore-start
+  /// [delete] is a GraphQL mutation that deletes a single [DeviceCommand] entity by its [id].
+  Future<bool> delete({
+    /// [apiToken] is the API token to use for the request.
+    required String apiToken,
+
+    /// [uri] is the URI of the GraphQL endpoint.
+    required Uri uri,
+
+    /// [onResponse] is a callback that is called when the response is received.
+    ValueChanged<ApiStatus>? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.mutate(
+        GqlMutation(
+          name: 'deleteDeviceCommands',
+          variables: [
+            GqlVariable(
+              name: 'ids',
+              value: [id],
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+            ),
+          ],
+          fields: [
+            GqlField(
+              name: 'deleteDeviceCommands',
+              fields: [
+                GqlField(name: 'status'),
+              ],
+            ),
+          ],
+        ),
+      );
+
+      if (response.status != .ok) {
+        Log.error("layrz_models/DeviceCommand/delete(): Error deleting DeviceCommand entity: ${response.status}");
+        onResponse?.call(response.status);
+        return false;
+      }
+
+      return response.status == .ok;
+    } catch (err, trace) {
+      Log.critical("layrz_models/DeviceCommand/delete(): Error deleting DeviceCommand entity: $err\n$trace");
+      onResponse?.call(.internalError);
+      return false;
+    }
+  }
+
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [deleteMany] is a GraphQL mutation that deletes multiple [DeviceCommand] entities by their [ids].
+  static Future<bool> deleteMany({
+    /// [apiToken] is the API token to use for the request.
+    required String apiToken,
+
+    /// [uri] is the URI of the GraphQL endpoint.
+    required Uri uri,
+
+    /// [onResponse] is a callback that is called when the response is received.
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [ids] is a list of ids of the [DeviceCommand] entities to delete.
+    required List<String> ids,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.mutate(
+        GqlMutation(
+          name: 'deleteDeviceCommands',
+          variables: [
+            GqlVariable(
+              name: 'ids',
+              value: ids,
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+            ),
+          ],
+          fields: [
+            GqlField(
+              name: 'deleteDeviceCommands',
+              fields: [
+                GqlField(name: 'status'),
+              ],
+            ),
+          ],
+        ),
+      );
+
+      if (response.status != .ok) {
+        Log.error("layrz_models/DeviceCommand/deleteMany(): Error deleting DeviceCommand entities: ${response.status}");
+        onResponse?.call(response.status);
+        return false;
+      }
+
+      return response.status == .ok;
+    } catch (err, trace) {
+      Log.critical("layrz_models/DeviceCommand/deleteMany(): Error deleting DeviceCommand entities: $err\n$trace");
+      onResponse?.call(.internalError);
+      return false;
+    }
+  }
+
+  // coverage:ignore-end
 }

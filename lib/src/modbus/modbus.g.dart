@@ -46,11 +46,9 @@ Map<String, dynamic> _$ModbusConfigInputToJson(_ModbusConfigInput instance) =>
 
 _ModbusParameter _$ModbusParameterFromJson(Map<String, dynamic> json) =>
     _ModbusParameter(
-      schema: json['schema'] == null
-          ? ModbusParameterSchema.single
-          : const ModbusParameterSchemaConverter().fromJson(
-              json['schema'] as String,
-            ),
+      schema:
+          $enumDecodeNullable(_$ModbusParameterSchemaEnumMap, json['schema']) ??
+          ModbusParameterSchema.single,
       splitEach: json['splitEach'] as String?,
       controllerAddress: json['controllerAddress'] as String,
       functionCode: json['functionCode'] as String,
@@ -60,7 +58,7 @@ _ModbusParameter _$ModbusParameterFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ModbusParameterToJson(_ModbusParameter instance) =>
     <String, dynamic>{
-      'schema': const ModbusParameterSchemaConverter().toJson(instance.schema),
+      'schema': instance.schema.toJson(),
       'splitEach': instance.splitEach,
       'controllerAddress': instance.controllerAddress,
       'functionCode': instance.functionCode,
@@ -68,14 +66,17 @@ Map<String, dynamic> _$ModbusParameterToJson(_ModbusParameter instance) =>
       'dataLength': instance.dataLength,
     };
 
+const _$ModbusParameterSchemaEnumMap = {
+  ModbusParameterSchema.single: 'SINGLE',
+  ModbusParameterSchema.multiple: 'MULTIPLE',
+};
+
 _ModbusParameterInput _$ModbusParameterInputFromJson(
   Map<String, dynamic> json,
 ) => _ModbusParameterInput(
-  schema: json['schema'] == null
-      ? ModbusParameterSchema.single
-      : const ModbusParameterSchemaConverter().fromJson(
-          json['schema'] as String,
-        ),
+  schema:
+      $enumDecodeNullable(_$ModbusParameterSchemaEnumMap, json['schema']) ??
+      ModbusParameterSchema.single,
   splitEach: json['splitEach'] as String?,
   controllerAddress: json['controllerAddress'] as String? ?? '',
   functionCode: json['functionCode'] as String? ?? '',
@@ -86,7 +87,7 @@ _ModbusParameterInput _$ModbusParameterInputFromJson(
 Map<String, dynamic> _$ModbusParameterInputToJson(
   _ModbusParameterInput instance,
 ) => <String, dynamic>{
-  'schema': const ModbusParameterSchemaConverter().toJson(instance.schema),
+  'schema': instance.schema.toJson(),
   'splitEach': instance.splitEach,
   'controllerAddress': instance.controllerAddress,
   'functionCode': instance.functionCode,

@@ -266,8 +266,7 @@ abstract class Geofence with _$Geofence {
             ),
           ],
         )..add(
-          GqlField(name: variant.deleteMutationName, args: {'ids': 'ids'})
-            ..add(GqlField(name: 'status')),
+          GqlField(name: variant.deleteMutationName, args: {'ids': 'ids'})..add(GqlField(name: 'status')),
         ),
       );
 
@@ -419,7 +418,7 @@ abstract class GeofenceInput with _$GeofenceInput {
 
   // coverage:ignore-start
   /// [save] saves the geofence to the server. It returns true if the operation was successful, false otherwise.
-  Future<(ApiStatus, Map<String, dynamic>?, Geofence?)> save({
+  Future<StandardResponse<Geofence>> save({
     required String apiToken,
     required Uri uri,
     void Function(String statusCode)? onResponse,

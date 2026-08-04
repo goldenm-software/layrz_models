@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.23.0
+
+- Added `ActionVariant` and `OperationVariant` to target the Mappit-prefixed fields exposed by the public GraphQL endpoint. Both default to `standard`, so existing callers keep their current behaviour
+- `Action.fetch()`, `Action.fetchAll()` and `Action.deleteMultiple()` now accept a `variant` argument
+- `Operation.fetch()`, `Operation.fetchAll()`, `Operation.delete()`, `Operation.deleteMany()` and `Operation.save()` now accept a `variant` argument
+- Added `OperationVariant.supportsAppId`, which guards the `appId` argument. Only the standard `operations` query declares it; sending it to `mappitOperations` fails with `Unknown argument "appId"`
+- `Action` and `Operation` API calls now request the `errors` field and log its content whenever the response status is not `OK`
+- Added API Connector on `DeviceCommand`
+- Standarized all tupled returns to `StandardResponse<T>`
+
 ## 3.21.0
 
 - Added API connector for `InboundProtocol`, `Model`, `FlespiProtocol`, `FlespiModel` and `FlespiChannel`

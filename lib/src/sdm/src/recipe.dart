@@ -159,7 +159,12 @@ abstract class SdmRecipe with _$SdmRecipe {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'ids', type: GqlVariableType.list(of: .id), isRequired: true, value: ids),
+            GqlVariable(
+              name: 'ids',
+              type: GqlVariableType.list(of: .id),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'deleteSdmRecipes',
         )..add(
@@ -378,7 +383,7 @@ abstract class SdmRecipeInput with _$SdmRecipeInput {
 
   // coverage:ignore-start
   /// [save] creates or updates this SDM recipe on the server
-  Future<(ApiStatus, Map<String, dynamic>?, SdmRecipe?)> save({
+  Future<StandardResponse<SdmRecipe>> save({
     /// [apiToken] is the API token to use for authentication
     required String apiToken,
 
@@ -394,7 +399,12 @@ abstract class SdmRecipeInput with _$SdmRecipeInput {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'data', type: GqlVariableType.input(of: 'SdmRecipeInput'), isRequired: true, value: toJson()),
+            GqlVariable(
+              name: 'data',
+              type: GqlVariableType.input(of: 'SdmRecipeInput'),
+              isRequired: true,
+              value: toJson(),
+            ),
           ],
           name: operation,
         )..add(
@@ -422,5 +432,6 @@ abstract class SdmRecipeInput with _$SdmRecipeInput {
       return (ApiStatus.internalError, null, null);
     }
   }
+
   // coverage:ignore-end
 }

@@ -115,7 +115,7 @@ abstract class InboundProtocolInput with _$InboundProtocolInput {
 
   // coverage:ignore-start
   /// [save] Saves the protocol to the server. If the protocol has an ID, it will be updated. If not, it will be created.
-  Future<(ApiStatus, Map<String, dynamic>?, InboundProtocol?)> save({
+  Future<StandardResponse<InboundProtocol>> save({
     required String apiToken,
     required Uri uri,
     void Function(ApiStatus)? onResponse,

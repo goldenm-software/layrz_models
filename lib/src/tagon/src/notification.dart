@@ -141,7 +141,12 @@ abstract class TagOnNotification with _$TagOnNotification {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'ids', type: GqlVariableType.list(of: .id), isRequired: true, value: ids),
+            GqlVariable(
+              name: 'ids',
+              type: GqlVariableType.list(of: .id),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'deleteTagonNotifications',
         )..add(
@@ -249,7 +254,7 @@ abstract class TagOnNotificationInput with _$TagOnNotificationInput {
   // coverage:ignore-start
   /// [save] creates or updates this TagOn notification on the server
   /// Returns a record with the [ApiStatus], the field errors (if any), and the saved [TagOnNotification].
-  Future<(ApiStatus, Map<String, dynamic>?, TagOnNotification?)> save({
+  Future<StandardResponse<TagOnNotification>> save({
     /// [apiToken] is the API token to use for authentication
     required String apiToken,
 
@@ -265,7 +270,12 @@ abstract class TagOnNotificationInput with _$TagOnNotificationInput {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'data', type: GqlVariableType.input(of: 'TagOnNotificationInput'), isRequired: true, value: toJson()),
+            GqlVariable(
+              name: 'data',
+              type: GqlVariableType.input(of: 'TagOnNotificationInput'),
+              isRequired: true,
+              value: toJson(),
+            ),
           ],
           name: operation,
         )..add(
@@ -293,5 +303,6 @@ abstract class TagOnNotificationInput with _$TagOnNotificationInput {
       return (ApiStatus.internalError, null, null);
     }
   }
+
   // coverage:ignore-end
 }

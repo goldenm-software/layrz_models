@@ -62,6 +62,9 @@ abstract class Action with _$Action {
 
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
+
+    /// [variant] is the variant of the actions module
+    ActionVariant variant = .standard,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
@@ -72,7 +75,7 @@ abstract class Action with _$Action {
         name: 'fetchActions',
       );
 
-      final field = GqlField(name: 'actions', args: {'id': 'id'})
+      final field = GqlField(name: variant.queryName, args: {'id': 'id'})
         ..add(GqlField(name: 'status'))
         ..add(GqlField(name: 'errors'))
         ..add(GqlField(name: 'result', fragment: gqlFragment));
@@ -107,7 +110,7 @@ abstract class Action with _$Action {
         return null;
       }
 
-      final result = data['data']['actions'];
+      final result = data['data'][variant.queryName];
       if (result == null) {
         onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Action/fetch(): No result from server");
@@ -117,6 +120,7 @@ abstract class Action with _$Action {
       final status = ApiStatus.fromJson(result['status']);
       if (status != ApiStatus.ok) {
         onResponse?.call(status.toJson());
+        Log.error("layrz_models/Action/fetch(): $status => ${result['errors']}");
         return null;
       }
       if (result['result'] == null || (result['result'] as List).isEmpty) {
@@ -144,6 +148,9 @@ abstract class Action with _$Action {
 
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
+
+    /// [variant] is the variant of the actions module
+    ActionVariant variant = .standard,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
@@ -152,7 +159,7 @@ abstract class Action with _$Action {
           variables: [],
           name: 'fetchActions',
         )..add(
-          GqlField(name: 'actions')
+          GqlField(name: variant.queryName)
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
             ..add(
@@ -171,7 +178,7 @@ abstract class Action with _$Action {
         return [];
       }
 
-      final result = data['data']['actions'];
+      final result = data['data'][variant.queryName];
       if (result == null) {
         onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Action/fetchAll(): No result from server");
@@ -181,6 +188,7 @@ abstract class Action with _$Action {
       final status = ApiStatus.fromJson(result['status']);
       if (status != ApiStatus.ok) {
         onResponse?.call(status.toJson());
+        Log.error("layrz_models/Action/fetchAll(): $status => ${result['errors']}");
         return [];
       }
 
@@ -209,6 +217,9 @@ abstract class Action with _$Action {
 
     /// [onResponse] is the callback to call when the response is received
     void Function(String statusCode)? onResponse,
+
+    /// [variant] is the variant of the actions module
+    ActionVariant variant = .standard,
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
 
@@ -223,9 +234,9 @@ abstract class Action with _$Action {
               value: ids,
             ),
           ],
-          name: 'deleteActions',
+          name: variant.deleteMutationName,
         )..add(
-          GqlField(name: 'deleteActions', args: {'ids': 'ids'})
+          GqlField(name: variant.deleteMutationName, args: {'ids': 'ids'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors')),
         ),
@@ -238,7 +249,7 @@ abstract class Action with _$Action {
         return false;
       }
 
-      final result = data['data']['deleteActions'];
+      final result = data['data'][variant.deleteMutationName];
       if (result == null) {
         onResponse?.call(ApiStatus.internalError.toJson());
         Log.error("layrz_models/Action/deleteMultiple(): No result from server");
@@ -248,6 +259,7 @@ abstract class Action with _$Action {
       final status = ApiStatus.fromJson(result['status']);
       if (status != ApiStatus.ok) {
         onResponse?.call(status.toJson());
+        Log.error("layrz_models/Action/deleteMultiple(): $status => ${result['errors']}");
         return false;
       }
 

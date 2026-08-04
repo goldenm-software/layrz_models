@@ -166,7 +166,12 @@ abstract class TagOnStudent with _$TagOnStudent {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'ids', type: GqlVariableType.list(of: .id), isRequired: true, value: ids),
+            GqlVariable(
+              name: 'ids',
+              type: GqlVariableType.list(of: .id),
+              isRequired: true,
+              value: ids,
+            ),
           ],
           name: 'deleteTagonStudents',
         )..add(
@@ -220,7 +225,12 @@ abstract class TagOnStudent with _$TagOnStudent {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'data', type: GqlVariableType.list(of: GqlVariableType.input(of: 'TagOnStudentInput')), isRequired: false, value: data),
+            GqlVariable(
+              name: 'data',
+              type: GqlVariableType.list(of: GqlVariableType.input(of: 'TagOnStudentInput')),
+              isRequired: false,
+              value: data,
+            ),
           ],
           name: 'bulkLoadTagonStudent',
         )..add(
@@ -247,11 +257,14 @@ abstract class TagOnStudent with _$TagOnStudent {
         _tagOnStudentBulkLoadDecoder,
       );
 
-      return (response.status, {
-        'status': response.status.toJson(),
-        'errors': response.errors,
-        'studentsWithErrors': response.result ?? [],
-      });
+      return (
+        response.status,
+        {
+          'status': response.status.toJson(),
+          'errors': response.errors,
+          'studentsWithErrors': response.result ?? [],
+        },
+      );
     } catch (e, stack) {
       Log.critical("layrz_models/TagOnStudent/bulkLoad(): General exception => $e\n$stack");
       return (ApiStatus.internalError, null);
@@ -368,7 +381,7 @@ abstract class TagOnStudentInput with _$TagOnStudentInput {
   // coverage:ignore-start
   /// [save] creates or updates this TagOn student on the server
   /// Returns a record with the [ApiStatus], the field errors (if any), and the saved [TagOnStudent].
-  Future<(ApiStatus, Map<String, dynamic>?, TagOnStudent?)> save({
+  Future<StandardResponse<TagOnStudent>> save({
     /// [apiToken] is the API token to use for authentication
     required String apiToken,
 
@@ -384,7 +397,12 @@ abstract class TagOnStudentInput with _$TagOnStudentInput {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'data', type: GqlVariableType.input(of: 'TagOnStudentInput'), isRequired: false, value: toJson()),
+            GqlVariable(
+              name: 'data',
+              type: GqlVariableType.input(of: 'TagOnStudentInput'),
+              isRequired: false,
+              value: toJson(),
+            ),
           ],
           name: operation,
         )..add(
@@ -412,5 +430,6 @@ abstract class TagOnStudentInput with _$TagOnStudentInput {
       return (ApiStatus.internalError, null, null);
     }
   }
+
   // coverage:ignore-end
 }

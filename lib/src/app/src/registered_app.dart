@@ -515,7 +515,7 @@ abstract class RegisteredApp with _$RegisteredApp {
   // coverage:ignore-start
   /// [registerWithoutCustomization] registers a new app without customization on the server.
   /// Returns the created [RegisteredApp] on success, null on error.
-  static Future<(ApiStatus, Map<String, dynamic>?, RegisteredApp?)> registerWithoutCustomization({
+  static Future<StandardResponse<RegisteredApp>> registerWithoutCustomization({
     required Map<String, dynamic> data,
     required String apiToken,
     required Uri uri,
@@ -563,7 +563,7 @@ abstract class RegisteredApp with _$RegisteredApp {
   // coverage:ignore-start
   /// [registerWithCustomization] registers a new app with customization on the server.
   /// Returns the created [RegisteredApp] on success, null on error.
-  static Future<(ApiStatus, Map<String, dynamic>?, RegisteredApp?)> registerWithCustomization({
+  static Future<StandardResponse<RegisteredApp>> registerWithCustomization({
     required Map<String, dynamic> data,
     required String apiToken,
     required Uri uri,
@@ -611,7 +611,7 @@ abstract class RegisteredApp with _$RegisteredApp {
   // coverage:ignore-start
   /// [edit] edits an existing app on the server.
   /// Returns the updated [RegisteredApp] on success, null on error.
-  static Future<(ApiStatus, Map<String, dynamic>?, RegisteredApp?)> edit({
+  static Future<StandardResponse<RegisteredApp>> edit({
     required String id,
     required Map<String, dynamic> data,
     required String apiToken,

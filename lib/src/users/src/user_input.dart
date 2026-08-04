@@ -64,7 +64,7 @@ abstract class UserInput with _$UserInput {
   /// on other error: (status, errors, null); on success: (status, errors, user).
   /// [languageId] is optional and only sent when creating a new user.
   /// [mappitModule] is required for mappit variants when provided; specifies which Mappit module to save to.
-  Future<(ApiStatus, Map<String, dynamic>?, User?)> save({
+  Future<StandardResponse<User>> save({
     required String apiToken,
     required Uri uri,
     void Function(String statusCode)? onResponse,

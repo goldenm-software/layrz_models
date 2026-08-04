@@ -15,3 +15,16 @@ List<CommandDefinitionInput> _commandDefinitionInputListDecoder(Object? json) {
     }),
   );
 }
+
+List<DeviceCommand> _deviceCommandListDecoder(Object? json) {
+  return List<DeviceCommand>.from(
+    (json as List).map((e) {
+      return DeviceCommand.fromJson(e as Map<String, dynamic>);
+    }),
+  );
+}
+
+DeviceCommand? _deviceCommandDecoder(Object? json) {
+  if (json == null) return null;
+  return DeviceCommand.fromJson(json as Map<String, dynamic>);
+}

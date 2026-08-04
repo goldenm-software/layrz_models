@@ -46,3 +46,5 @@ mapper.py
 
 # Local tooling
 .atl/
+
+coverage/

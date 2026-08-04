@@ -214,8 +214,8 @@ return $default(_that.isEnabled,_that.parameters,_that.portId);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _ModbusConfig implements ModbusConfig {
-  const _ModbusConfig({required this.isEnabled, final  List<ModbusParameter> parameters = const [], this.portId}): _parameters = parameters;
+class _ModbusConfig extends ModbusConfig {
+  const _ModbusConfig({required this.isEnabled, final  List<ModbusParameter> parameters = const [], this.portId}): _parameters = parameters,super._();
   factory _ModbusConfig.fromJson(Map<String, dynamic> json) => _$ModbusConfigFromJson(json);
 
 /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
@@ -495,8 +495,8 @@ return $default(_that.isEnabled,_that.parameters,_that.portId);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _ModbusConfigInput implements ModbusConfigInput {
-   _ModbusConfigInput({this.isEnabled = false, this.parameters = const [], this.portId});
+class _ModbusConfigInput extends ModbusConfigInput {
+   _ModbusConfigInput({this.isEnabled = false, this.parameters = const [], this.portId}): super._();
   factory _ModbusConfigInput.fromJson(Map<String, dynamic> json) => _$ModbusConfigInputFromJson(json);
 
 /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
@@ -567,7 +567,7 @@ as String?,
 mixin _$ModbusParameter {
 
 /// [schema] represents the format of the command, it can be either single or multiple.
-@ModbusParameterSchemaConverter() ModbusParameterSchema get schema;/// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+ ModbusParameterSchema get schema;/// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
 /// This value is a hexadecimal value
  String? get splitEach;/// [controllerAddress] is the controller or slave ID of the modbus device.
 /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
@@ -612,7 +612,7 @@ abstract mixin class $ModbusParameterCopyWith<$Res>  {
   factory $ModbusParameterCopyWith(ModbusParameter value, $Res Function(ModbusParameter) _then) = _$ModbusParameterCopyWithImpl;
 @useResult
 $Res call({
-@ModbusParameterSchemaConverter() ModbusParameterSchema schema, String? splitEach, String controllerAddress, String functionCode, String dataAddress, String dataLength
+ ModbusParameterSchema schema, String? splitEach, String controllerAddress, String functionCode, String dataAddress, String dataLength
 });
 
 
@@ -722,7 +722,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ModbusParameterSchemaConverter()  ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ModbusParameter() when $default != null:
 return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.functionCode,_that.dataAddress,_that.dataLength);case _:
@@ -743,7 +743,7 @@ return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.funct
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ModbusParameterSchemaConverter()  ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)  $default,) {final _that = this;
 switch (_that) {
 case _ModbusParameter():
 return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.functionCode,_that.dataAddress,_that.dataLength);case _:
@@ -763,7 +763,7 @@ return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.funct
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ModbusParameterSchemaConverter()  ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)?  $default,) {final _that = this;
 switch (_that) {
 case _ModbusParameter() when $default != null:
 return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.functionCode,_that.dataAddress,_that.dataLength);case _:
@@ -777,12 +777,12 @@ return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.funct
 /// @nodoc
 @JsonSerializable()
 
-class _ModbusParameter implements ModbusParameter {
-  const _ModbusParameter({@ModbusParameterSchemaConverter() this.schema = ModbusParameterSchema.single, this.splitEach, required this.controllerAddress, required this.functionCode, required this.dataAddress, required this.dataLength});
+class _ModbusParameter extends ModbusParameter {
+  const _ModbusParameter({this.schema = ModbusParameterSchema.single, this.splitEach, required this.controllerAddress, required this.functionCode, required this.dataAddress, required this.dataLength}): super._();
   factory _ModbusParameter.fromJson(Map<String, dynamic> json) => _$ModbusParameterFromJson(json);
 
 /// [schema] represents the format of the command, it can be either single or multiple.
-@override@JsonKey()@ModbusParameterSchemaConverter() final  ModbusParameterSchema schema;
+@override@JsonKey() final  ModbusParameterSchema schema;
 /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
 /// This value is a hexadecimal value
 @override final  String? splitEach;
@@ -834,7 +834,7 @@ abstract mixin class _$ModbusParameterCopyWith<$Res> implements $ModbusParameter
   factory _$ModbusParameterCopyWith(_ModbusParameter value, $Res Function(_ModbusParameter) _then) = __$ModbusParameterCopyWithImpl;
 @override @useResult
 $Res call({
-@ModbusParameterSchemaConverter() ModbusParameterSchema schema, String? splitEach, String controllerAddress, String functionCode, String dataAddress, String dataLength
+ ModbusParameterSchema schema, String? splitEach, String controllerAddress, String functionCode, String dataAddress, String dataLength
 });
 
 
@@ -871,8 +871,8 @@ as String,
 mixin _$ModbusParameterInput {
 
 /// [schema] represents the format of the command, it can be either single or multiple.
-@ModbusParameterSchemaConverter() ModbusParameterSchema get schema;/// [schema] represents the format of the command, it can be either single or multiple.
-@ModbusParameterSchemaConverter() set schema(ModbusParameterSchema value);/// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+ ModbusParameterSchema get schema;/// [schema] represents the format of the command, it can be either single or multiple.
+ set schema(ModbusParameterSchema value);/// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
 /// This value is a hexadecimal value
  String? get splitEach;/// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
 /// This value is a hexadecimal value
@@ -922,7 +922,7 @@ abstract mixin class $ModbusParameterInputCopyWith<$Res>  {
   factory $ModbusParameterInputCopyWith(ModbusParameterInput value, $Res Function(ModbusParameterInput) _then) = _$ModbusParameterInputCopyWithImpl;
 @useResult
 $Res call({
-@ModbusParameterSchemaConverter() ModbusParameterSchema schema, String? splitEach, String controllerAddress, String functionCode, String dataAddress, String dataLength
+ ModbusParameterSchema schema, String? splitEach, String controllerAddress, String functionCode, String dataAddress, String dataLength
 });
 
 
@@ -1032,7 +1032,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ModbusParameterSchemaConverter()  ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ModbusParameterInput() when $default != null:
 return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.functionCode,_that.dataAddress,_that.dataLength);case _:
@@ -1053,7 +1053,7 @@ return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.funct
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ModbusParameterSchemaConverter()  ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)  $default,) {final _that = this;
 switch (_that) {
 case _ModbusParameterInput():
 return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.functionCode,_that.dataAddress,_that.dataLength);case _:
@@ -1073,7 +1073,7 @@ return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.funct
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ModbusParameterSchemaConverter()  ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ModbusParameterSchema schema,  String? splitEach,  String controllerAddress,  String functionCode,  String dataAddress,  String dataLength)?  $default,) {final _that = this;
 switch (_that) {
 case _ModbusParameterInput() when $default != null:
 return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.functionCode,_that.dataAddress,_that.dataLength);case _:
@@ -1087,12 +1087,12 @@ return $default(_that.schema,_that.splitEach,_that.controllerAddress,_that.funct
 /// @nodoc
 @JsonSerializable()
 
-class _ModbusParameterInput implements ModbusParameterInput {
-   _ModbusParameterInput({@ModbusParameterSchemaConverter() this.schema = ModbusParameterSchema.single, this.splitEach, this.controllerAddress = '', this.functionCode = '', this.dataAddress = '', this.dataLength = ''});
+class _ModbusParameterInput extends ModbusParameterInput {
+   _ModbusParameterInput({this.schema = ModbusParameterSchema.single, this.splitEach, this.controllerAddress = '', this.functionCode = '', this.dataAddress = '', this.dataLength = ''}): super._();
   factory _ModbusParameterInput.fromJson(Map<String, dynamic> json) => _$ModbusParameterInputFromJson(json);
 
 /// [schema] represents the format of the command, it can be either single or multiple.
-@override@JsonKey()@ModbusParameterSchemaConverter()  ModbusParameterSchema schema;
+@override@JsonKey()  ModbusParameterSchema schema;
 /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
 /// This value is a hexadecimal value
 @override  String? splitEach;
@@ -1137,7 +1137,7 @@ abstract mixin class _$ModbusParameterInputCopyWith<$Res> implements $ModbusPara
   factory _$ModbusParameterInputCopyWith(_ModbusParameterInput value, $Res Function(_ModbusParameterInput) _then) = __$ModbusParameterInputCopyWithImpl;
 @override @useResult
 $Res call({
-@ModbusParameterSchemaConverter() ModbusParameterSchema schema, String? splitEach, String controllerAddress, String functionCode, String dataAddress, String dataLength
+ ModbusParameterSchema schema, String? splitEach, String controllerAddress, String functionCode, String dataAddress, String dataLength
 });
 
 
