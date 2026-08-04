@@ -1,12 +1,5 @@
 part of '../external.dart';
 
-List<ExternalGeofence>? _externalGeofenceListDecoder(Object? json) {
-  if (json is List) {
-    return json.map((item) => ExternalGeofence.fromJson(item as Map<String, dynamic>)).toList();
-  }
-  return null;
-}
-
 /// [ExternalGeofence] represents a geofence imported from an external service (e.g., Wialon).
 ///
 /// This model is used to store geofence information retrieved from external platforms

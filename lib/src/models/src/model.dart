@@ -97,6 +97,27 @@ abstract class Model with _$Model {
   // coverage:ignore-end
 
   // coverage:ignore-start
+  /// [reducedFragment] is a reduced GraphQL fragment for the model, containing only the essential fields.
+  static GqlFragment get reducedFragment => GqlFragment(
+    name: 'modelFragment',
+    onType: 'Model',
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+      GqlField(name: 'isGeneric'),
+
+      GqlField(name: 'confiotCapable'),
+      GqlField(name: 'confiotName'),
+
+      GqlField(name: 'peripheralIdentifier'),
+
+      GqlField(name: 'widget'),
+      GqlField(name: 'zigbeeCompatible'),
+    ],
+  );
+  // coverage:ignore-end
+
+  // coverage:ignore-start
   /// [fetchAll] fetches all models from the API.
   static Future<List<Model>> fetchAll({
     /// [apiToken] is the API token to use for authentication.

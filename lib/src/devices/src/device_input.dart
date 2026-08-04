@@ -45,4 +45,88 @@ abstract class DeviceInput with _$DeviceInput {
   }) = _DeviceInput;
 
   factory DeviceInput.fromJson(Map<String, dynamic> json) => _$DeviceInputFromJson(json);
+
+  // coverage:ignore-start
+  /// [save] saves the device input to the API. If [id] is provided,
+  /// it will update the existing device, otherwise it will create a new device.
+  Future<StandardResponse<Device>> save({
+    /// [apiToken] is the API token to authenticate the request
+    required String apiToken,
+
+    /// [uri] is the URI of the API, must include the path.
+    required Uri uri,
+
+    /// [onResponse] is the callback to handle the response status
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [variant] is the variant of the device to fetch, default is [DeviceVariant.standard].
+    DeviceVariant variant = .standard,
+
+    /// [appId] is the ID of the app to fetch the devices for, if any.
+    /// If not provided, all devices visible to the user will be fetched.
+    String? appId,
+  }) async {
+    final connector = LayrzConnector(apiToken: apiToken, uri: uri);
+    try {
+      final response = await connector.mutate(
+        GqlMutation(
+          name: _getSaveMutationNameFromVariant(variant, isAdd: id == null),
+          variables: [
+            GqlVariable(
+              name: 'data',
+              value: toJson(),
+              type: .input(of: 'DeviceInput'),
+              isRequired: true,
+            ),
+            if (appId != null) GqlVariable(name: 'appId', value: appId, type: .id),
+          ],
+          fields: [
+            GqlField(
+                name: _getSaveMutationNameFromVariant(variant, isAdd: id == null),
+                args: {
+                  'data': 'data',
+                  if (appId != null) 'appId': 'appId',
+                },
+              )
+              ..add(GqlField(name: 'status'))
+              ..add(GqlField(name: 'errors'))
+              ..add(
+                GqlField(
+                  name: 'result',
+                  fragment: Device.fragment(variant: variant),
+                ),
+              ),
+          ],
+        ),
+        _deviceDecoder,
+      );
+
+      if (response.status != .ok) {
+        onResponse?.call(response.status);
+        return (response.status, response.errors, null);
+      }
+
+      return (response.status, null, response.result);
+    } catch (err, stack) {
+      Log.critical("layrz_models/DeviceInput/save(): General exception => $err\n$stack");
+      onResponse?.call(.internalError);
+      return (ApiStatus.internalError, null, null);
+    }
+  }
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [_getSaveMutationNameFromVariant] returns the GraphQL mutation name for the given [DeviceVariant].
+  static String _getSaveMutationNameFromVariant(DeviceVariant variant, {bool isAdd = false}) {
+    switch (variant) {
+      case .mappit:
+        return isAdd ? 'addMappitDevice' : 'editMappitDevice';
+      case .ats:
+      case .standard:
+      default:
+        return isAdd ? 'addDevice' : 'editDevice';
+    }
+  }
+
+  // coverage:ignore-end
 }

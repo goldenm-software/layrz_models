@@ -1,5 +1,6 @@
 library;
 
+import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_logging/layrz_logging.dart';
 import 'package:layrz_models/src/access/access.dart';
@@ -19,3 +20,5 @@ part 'devices.g.dart';
 
 part 'src/device.dart';
 part 'src/device_input.dart';
+part 'src/variants.dart';
+part 'src/decoders.dart';

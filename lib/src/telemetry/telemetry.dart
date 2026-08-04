@@ -1,6 +1,7 @@
 library;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_models/src/api/api.dart';
 import 'package:layrz_models/src/converters/converters.dart';
 
 part 'telemetry.freezed.dart';

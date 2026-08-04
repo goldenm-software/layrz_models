@@ -1,12 +1,5 @@
 part of '../external.dart';
 
-List<ExternalResource>? _externalResourceListDecoder(Object? json) {
-  if (json is List) {
-    return json.map((item) => ExternalResource.fromJson(item as Map<String, dynamic>)).toList();
-  }
-  return null;
-}
-
 /// [ExternalResource] represents a resource imported from an external service (e.g., Wialon).
 ///
 /// Resources in external platforms typically contain collections of units, geofences,

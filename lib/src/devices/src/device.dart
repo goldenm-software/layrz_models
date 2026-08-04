@@ -108,6 +108,354 @@ abstract class Device with _$Device {
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 
   // coverage:ignore-start
+  /// [fragment] is the GraphQL fragment for the Device model.
+  static GqlFragment fragment({DeviceVariant variant = .standard}) => GqlFragment(
+    name: 'DeviceFragment',
+    onType: _getTypeFromVariant(variant),
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+      GqlField(name: 'ident'),
+      GqlField(name: 'macAddress'),
+      GqlField(name: 'localIpAddress'),
+      GqlField(name: 'protocolId'),
+      GqlField(name: 'protocol', fragment: InboundProtocol.reducedFragment),
+      GqlField(name: 'modelId'),
+      GqlField(name: 'model', fragment: Model.reducedFragment),
+      GqlField(name: 'hwModelId'),
+      GqlField(name: 'hwModel', fragment: HwModel.reducedFragment),
+      GqlField(name: 'visionProfileId'),
+      GqlField(
+        name: 'phone',
+        fields: [
+          GqlField(name: 'countryCode'),
+          GqlField(name: 'phoneNumber'),
+        ],
+      ),
+      GqlField(name: 'modbus', fragment: ModbusConfig.fragment),
+      GqlField(name: 'access', fragment: Access.idFragment),
+      GqlField(name: 'plainConfigParams', alias: 'configParams'),
+      GqlField(name: 'exposes', fragment: ZigbeeDeviceExpose.fragment),
+
+      GqlField(name: 'zigbeeZoneId'),
+      GqlField(name: 'zigbeeToken'),
+      GqlField(name: 'zigbeePermitJoinExpiresAt'),
+      GqlField(name: 'zigbeeDevices', fragment: ZigbeeDevice.fragment),
+
+      GqlField(
+        name: 'peripherals',
+        fields: [
+          GqlField(name: 'id'),
+          GqlField(name: 'name'),
+          GqlField(name: 'ident'),
+          GqlField(name: 'modelId'),
+          GqlField(name: 'model', fragment: Model.reducedFragment),
+          GqlField(name: 'protocolId'),
+          GqlField(name: 'protocol', fragment: InboundProtocol.reducedFragment),
+        ],
+      ),
+
+      GqlField(name: 'commands', fragment: DeviceCommand.fragment),
+      GqlField(name: 'flespiToken'),
+
+      GqlField(name: 'telemetry', fragment: DeviceTelemetry.fragment),
+      GqlField(
+        name: 'visionProfile',
+        fields: [
+          GqlField(name: 'id'),
+          GqlField(name: 'name'),
+        ],
+      ),
+    ],
+  );
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [reducedFragment] is the GraphQL fragment for the Device model, with only the fields required for the reduced version of the model.
+  static GqlFragment reducedFragment({DeviceVariant variant = .standard}) => GqlFragment(
+    name: 'DeviceReducedFragment',
+    onType: _getTypeFromVariant(variant),
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+      GqlField(name: 'ident'),
+      GqlField(name: 'protocolId'),
+      GqlField(name: 'protocol', fragment: InboundProtocol.reducedFragment),
+      GqlField(name: 'modelId'),
+      GqlField(name: 'model', fragment: Model.reducedFragment),
+    ],
+  );
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [fetchAll] fetches all devices visible to the user. The returned devices carry a lightweight payload
+  /// (id, name, ident, modelId, protocolId) suitable for building commands.
+  static Future<List<Device>> fetchAll({
+    /// [apiToken] is the API token to authenticate the request
+    required String apiToken,
+
+    /// [uri] is the URI of the API, must include the path.
+    required Uri uri,
+
+    /// [onResponse] is the callback to handle the response status
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [extraFields] is the list of additional fields to fetch from the API, if any.
+    List<GqlField>? extraFields,
+
+    /// [useFragment] is the boolean that indicates if the fragment should be used to
+    /// fetch the protocols.
+    ///
+    /// When is set to `true`, [additionalFields] will be ignored, and the fragment will
+    /// be used to fetch the protocols.
+    bool useFragment = false,
+
+    /// [variant] is the variant of the device to fetch, default is [DeviceVariant.standard].
+    DeviceVariant variant = .standard,
+
+    /// [appId] is the ID of the app to fetch the devices for, if any.
+    /// If not provided, all devices visible to the user will be fetched.
+    String? appId,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: _getQueryNameFromVariant(variant),
+          variables: [
+            if (appId != null) GqlVariable(name: 'appId', value: appId, type: .id),
+          ],
+        )..add(
+          GqlField(
+              name: _getQueryNameFromVariant(variant),
+              args: {
+                if (appId != null) 'appId': 'appId',
+              },
+            )
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(
+              GqlField(
+                name: 'result',
+                fragment: useFragment ? reducedFragment(variant: variant) : null,
+                fields: useFragment
+                    ? null
+                    : [
+                        GqlField(name: 'id'),
+                        GqlField(name: 'name'),
+                        GqlField(name: 'ident'),
+                        GqlField(name: 'protocolId'),
+                        GqlField(name: 'protocol', fragment: InboundProtocol.reducedFragment),
+                        GqlField(name: 'modelId'),
+                        GqlField(name: 'model', fragment: Model.reducedFragment),
+                        ...?extraFields,
+                      ],
+              ),
+            ),
+        ),
+        _deviceListDecoder,
+      );
+
+      if (response.status != .ok) {
+        Log.warning("layrz_models/Device/fetchAll(): API returned status ${response.status}");
+        onResponse?.call(response.status);
+        return [];
+      }
+
+      return response.result ?? [];
+    } catch (err, stack) {
+      Log.critical("layrz_models/Device/fetchAll(): General exception => $err\n$stack");
+      onResponse?.call(.internalError);
+      return [];
+    }
+  }
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [fetch] fetches a single device visible to the user.
+  Future<Device?> fetch({
+    /// [apiToken] is the API token to authenticate the request
+    required String apiToken,
+
+    /// [uri] is the URI of the API, must include the path.
+    required Uri uri,
+
+    /// [onResponse] is the callback to handle the response status
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [variant] is the variant of the device to fetch, default is [DeviceVariant.standard].
+    DeviceVariant variant = .standard,
+
+    /// [appId] is the ID of the app to fetch the devices for, if any.
+    /// If not provided, all devices visible to the user will be fetched.
+    String? appId,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: _getQueryNameFromVariant(variant),
+          variables: [
+            GqlVariable(name: 'id', value: id, type: .id, isRequired: true),
+            if (appId != null) GqlVariable(name: 'appId', value: appId, type: .id),
+          ],
+        )..add(
+          GqlField(
+              name: _getQueryNameFromVariant(variant),
+              args: {
+                'id': 'id',
+                if (appId != null) 'appId': 'appId',
+              },
+            )
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(
+              GqlField(
+                name: 'result',
+                fragment: fragment(variant: variant),
+              ),
+            ),
+        ),
+        _deviceListDecoder,
+      );
+
+      if (response.status != .ok) {
+        Log.warning("layrz_models/Device/fetch(): API returned status ${response.status}");
+        onResponse?.call(response.status);
+        return null;
+      }
+
+      return response.result?.first;
+    } catch (err, stack) {
+      Log.critical("layrz_models/Device/fetch(): General exception => $err\n$stack");
+      onResponse?.call(.internalError);
+      return null;
+    }
+  }
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [delete] deletes the device from the API.
+  Future<bool> delete({
+    /// [apiToken] is the API token to authenticate the request
+    required String apiToken,
+
+    /// [uri] is the URI of the API, must include the path.
+    required Uri uri,
+
+    /// [onResponse] is the callback to handle the response status
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [variant] is the variant of the device to fetch, default is [DeviceVariant.standard].
+    DeviceVariant variant = .standard,
+
+    /// [appId] is the ID of the app to fetch the devices for, if any.
+    /// If not provided, all devices visible to the user will be fetched.
+    String? appId,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: _getDeleteMutationNameFromVariant(variant),
+          variables: [
+            GqlVariable(
+              name: 'ids',
+              value: [id],
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+            ),
+            if (appId != null) GqlVariable(name: 'appId', value: appId, type: .id),
+          ],
+        )..add(
+          GqlField(
+            name: _getDeleteMutationNameFromVariant(variant),
+            args: {
+              'ids': 'ids',
+              if (appId != null) 'appId': 'appId',
+            },
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      if (response.status != .ok) {
+        Log.warning("layrz_models/Device/delete(): API returned status ${response.status}");
+        onResponse?.call(response.status);
+        return false;
+      }
+
+      return response.status == .ok;
+    } catch (err, stack) {
+      Log.critical("layrz_models/Device/delete(): General exception => $err\n$stack");
+      onResponse?.call(.internalError);
+      return false;
+    }
+  }
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [deleteMany] deletes the devices from the API.
+  static Future<bool> deleteMany({
+    /// [apiToken] is the API token to authenticate the request
+    required String apiToken,
+
+    /// [uri] is the URI of the API, must include the path.
+    required Uri uri,
+
+    /// [onResponse] is the callback to handle the response status
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [variant] is the variant of the device to fetch, default is [DeviceVariant.standard].
+    DeviceVariant variant = .standard,
+
+    /// [appId] is the ID of the app to fetch the devices for, if any.
+    /// If not provided, all devices visible to the user will be fetched.
+    String? appId,
+
+    /// [ids] is the list of device IDs to delete.
+    required List<String> ids,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: _getDeleteMutationNameFromVariant(variant),
+          variables: [
+            GqlVariable(
+              name: 'ids',
+              value: ids,
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+            ),
+            if (appId != null) GqlVariable(name: 'appId', value: appId, type: .id),
+          ],
+        )..add(
+          GqlField(
+            name: _getDeleteMutationNameFromVariant(variant),
+            args: {
+              'ids': 'ids',
+              if (appId != null) 'appId': 'appId',
+            },
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      if (response.status != .ok) {
+        Log.warning("layrz_models/Device/deleteMany(): API returned status ${response.status}");
+        onResponse?.call(response.status);
+        return false;
+      }
+
+      return response.status == .ok;
+    } catch (err, stack) {
+      Log.critical("layrz_models/Device/deleteMany(): General exception => $err\n$stack");
+      onResponse?.call(.internalError);
+      return false;
+    }
+  }
+  // coverage:ignore-end
+
+  // coverage:ignore-start
   /// [fetchZigbeeCapable] fetches all devices visible to the user, keeping only the ones with
   /// Zigbee [exposes] bound to them. The returned devices carry a lightweight payload
   /// (id, name, ident and exposes), suitable for building Zigbee commands.
@@ -176,6 +524,108 @@ abstract class Device with _$Device {
     } catch (e, stack) {
       Log.critical("layrz_models/Device/fetchZigbeeCapable(): General exception => $e\n$stack");
       return [];
+    }
+  }
+
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [_getTypeFromVariant] returns the GraphQL type name for the given [DeviceVariant].
+  static String _getTypeFromVariant(DeviceVariant variant) {
+    switch (variant) {
+      case .ats:
+      case .mappit:
+      case .standard:
+      default:
+        return 'Device';
+    }
+  }
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [_getQueryNameFromVariant] returns the GraphQL query name for the given [DeviceVariant].
+  static String _getQueryNameFromVariant(DeviceVariant variant) {
+    switch (variant) {
+      case .ats:
+      case .mappit:
+      case .standard:
+      default:
+        return 'devices';
+    }
+  }
+
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [_getDeleteMutationNameFromVariant] returns the GraphQL mutation name for the given [DeviceVariant].
+  static String _getDeleteMutationNameFromVariant(DeviceVariant variant) {
+    switch (variant) {
+      case .mappit:
+        return 'deleteMappitDevices';
+      case .ats:
+      case .standard:
+      default:
+        return 'deleteDevices';
+    }
+  }
+
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [importToApp] imports a list of devices to the app with the given [appId].
+  static Future<bool> importToApp({
+    /// [apiToken] is the API token to use for authentication. You can get one using the `login` mutation
+    /// on the GraphQL API.
+    required String apiToken,
+
+    /// [uri] is the GraphQL endpoint to use
+    required Uri uri,
+
+    /// [onResponse] is the callback to call when the response is received
+    ValueChanged<ApiStatus>? onResponse,
+
+    /// [appId] is the ID of the app to import the devices to.
+    required String appId,
+
+    /// [deviceIds] is the list of device IDs to import.
+    required List<String> devicesIds,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: 'importDevicesToApp',
+          variables: [
+            GqlVariable(name: 'appId', value: appId, type: .id, isRequired: true),
+            GqlVariable(
+              name: 'devicesIds',
+              value: devicesIds,
+              type: .list(of: .id, isRequired: true),
+              isRequired: true,
+            ),
+          ],
+        )..add(
+          GqlField(
+            name: 'importDevicesToApp',
+            args: {
+              'appId': 'appId',
+              'devicesIds': 'devicesIds',
+            },
+          )..add(GqlField(name: 'status')),
+        ),
+      );
+
+      if (response.status != .ok) {
+        Log.warning("layrz_models/Device/importToApp(): API returned status ${response.status}");
+        onResponse?.call(response.status);
+        return false;
+      }
+
+      return response.status == .ok;
+    } catch (e, stack) {
+      Log.critical("layrz_models/Device/importToApp(): General exception => $e\n$stack");
+      onResponse?.call(.internalError);
+      return false;
     }
   }
 

@@ -15,7 +15,15 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ZigbeeDevice {
 
- String get id; String get ieeeAddress; String? get manufacturer; String? get model; DateTime? get lastSeen; String? get bindedDeviceId; String get zoneId; List<ZigbeeDeviceExpose>? get exposes;
+/// [id] is the unique identifier of the device.
+ String get id;/// [ieeeAddress] is the IEEE address of the device.
+ String get ieeeAddress;/// [manufacturer] is the manufacturer name of the device.
+ String? get manufacturer;/// [model] is the model name of the device.
+ String? get model;/// [lastSeen] is the date and time when the device was last seen.
+ DateTime? get lastSeen;/// [bindedDeviceId] is the ID of the device that is binded to this device.
+ String? get bindedDeviceId;/// [zoneId] is the ID of the zone that the device belongs to.
+ String get zoneId;/// [exposes] is the list of exposes of the device.
+ List<ZigbeeDeviceExpose>? get exposes;
 /// Create a copy of ZigbeeDevice
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -215,18 +223,27 @@ return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.
 /// @nodoc
 @JsonSerializable()
 
-class _ZigbeeDevice implements ZigbeeDevice {
-  const _ZigbeeDevice({required this.id, required this.ieeeAddress, this.manufacturer, this.model, this.lastSeen, this.bindedDeviceId, required this.zoneId, final  List<ZigbeeDeviceExpose>? exposes}): _exposes = exposes;
+class _ZigbeeDevice extends ZigbeeDevice {
+  const _ZigbeeDevice({required this.id, required this.ieeeAddress, this.manufacturer, this.model, this.lastSeen, this.bindedDeviceId, required this.zoneId, final  List<ZigbeeDeviceExpose>? exposes}): _exposes = exposes,super._();
   factory _ZigbeeDevice.fromJson(Map<String, dynamic> json) => _$ZigbeeDeviceFromJson(json);
 
+/// [id] is the unique identifier of the device.
 @override final  String id;
+/// [ieeeAddress] is the IEEE address of the device.
 @override final  String ieeeAddress;
+/// [manufacturer] is the manufacturer name of the device.
 @override final  String? manufacturer;
+/// [model] is the model name of the device.
 @override final  String? model;
+/// [lastSeen] is the date and time when the device was last seen.
 @override final  DateTime? lastSeen;
+/// [bindedDeviceId] is the ID of the device that is binded to this device.
 @override final  String? bindedDeviceId;
+/// [zoneId] is the ID of the zone that the device belongs to.
 @override final  String zoneId;
+/// [exposes] is the list of exposes of the device.
  final  List<ZigbeeDeviceExpose>? _exposes;
+/// [exposes] is the list of exposes of the device.
 @override List<ZigbeeDeviceExpose>? get exposes {
   final value = _exposes;
   if (value == null) return null;
@@ -307,7 +324,15 @@ as List<ZigbeeDeviceExpose>?,
 /// @nodoc
 mixin _$ZigbeeDeviceExpose {
 
- String get id; String get name; String get type; String get access; Map<String, dynamic>? get params;@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget? get widget; DateTime? get updatedAt;
+/// [id] is the unique identifier of the expose.
+ String get id;/// [name] is the name of the expose.
+ String get name;/// [type] is the type of the expose. It can be one of the following:
+ String get type;/// [access] is the access level of the expose. It can be one of the following:
+ String get access;/// [params] is the property of the expose. It can be one of the following:
+ Map<String, dynamic>? get params;/// [widget] is the rendering widget, useful to render visually the kind of device.
+/// It can be one of the following:
+@JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget? get widget;/// [updatedAt] is the date and time when the expose was last updated.
+ DateTime? get updatedAt;
 /// Create a copy of ZigbeeDeviceExpose
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -506,15 +531,21 @@ return $default(_that.id,_that.name,_that.type,_that.access,_that.params,_that.w
 /// @nodoc
 @JsonSerializable()
 
-class _ZigbeeDeviceExpose implements ZigbeeDeviceExpose {
-  const _ZigbeeDeviceExpose({required this.id, required this.name, required this.type, required this.access, final  Map<String, dynamic>? params, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget, this.updatedAt}): _params = params;
+class _ZigbeeDeviceExpose extends ZigbeeDeviceExpose {
+  const _ZigbeeDeviceExpose({required this.id, required this.name, required this.type, required this.access, final  Map<String, dynamic>? params, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget, this.updatedAt}): _params = params,super._();
   factory _ZigbeeDeviceExpose.fromJson(Map<String, dynamic> json) => _$ZigbeeDeviceExposeFromJson(json);
 
+/// [id] is the unique identifier of the expose.
 @override final  String id;
+/// [name] is the name of the expose.
 @override final  String name;
+/// [type] is the type of the expose. It can be one of the following:
 @override final  String type;
+/// [access] is the access level of the expose. It can be one of the following:
 @override final  String access;
+/// [params] is the property of the expose. It can be one of the following:
  final  Map<String, dynamic>? _params;
+/// [params] is the property of the expose. It can be one of the following:
 @override Map<String, dynamic>? get params {
   final value = _params;
   if (value == null) return null;
@@ -523,7 +554,10 @@ class _ZigbeeDeviceExpose implements ZigbeeDeviceExpose {
   return EqualUnmodifiableMapView(value);
 }
 
+/// [widget] is the rendering widget, useful to render visually the kind of device.
+/// It can be one of the following:
 @override@JsonKey(unknownEnumValue: RenderWidget.unknown) final  RenderWidget? widget;
+/// [updatedAt] is the date and time when the expose was last updated.
 @override final  DateTime? updatedAt;
 
 /// Create a copy of ZigbeeDeviceExpose
