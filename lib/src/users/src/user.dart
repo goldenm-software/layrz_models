@@ -1058,180 +1058,177 @@ abstract class User with _$User {
   }
 
   // coverage:ignore-end
-}
-
-@unfreezed
-abstract class UserInput with _$UserInput {
-  const UserInput._();
-
-  factory UserInput({
-    /// [id] represents the user ID. When is new, this value should be null.
-    String? id,
-
-    /// [name] represents the user name.
-    @Default('') String name,
-
-    /// [email] represents the user email.
-    @Default('') String email,
-
-    /// [username] represents the username.
-    @Default('') String username,
-
-    /// [dynamicAvatar] represents the user avatar.
-    AvatarInput? dynamicAvatar,
-
-    /// [referencesIds] represents the list of references IDs.
-    @Default([]) List<String> referencesIds,
-
-    /// [categoryId] represents the user category ID.
-    String? categoryId,
-
-    /// [customFields] represents the list of custom fields.
-    @Default([]) List<CustomField> customFields,
-
-    /// [tagsIds] represents the list of tags IDs.
-    @Default([]) List<String> tagsIds,
-
-    /// [mappitAssetsIds] represents the list of assets IDs.
-    /// This field is only for `Mappit` use.
-    @Default([]) List<String> mappitAssetsIds,
-
-    /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
-    /// This field is only for `Mappit` use.
-    @Default(1) int historicalDaysAllowed,
-
-    /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-    String? brickhousePermissionTierId,
-
-    /// [brickhouseRole] represents the Brickhouse user role.
-    @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole,
-
-    /// [sdmCode] represents the SDM code.
-    String? sdmCode,
-
-    /// [password] default password if allowed by the form
-    String? password,
-
-    /// [preferences] represents the user preferences.
-    UserPreferencesInput? preferences,
-  }) = _UserInput;
-
-  factory UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);
 
   // coverage:ignore-start
-  /// [save] saves a user (add or edit) and returns a record with status, errors, and the saved user.
-  /// Returns `(ApiStatus, Map<String, dynamic>?, User?)` — on internalError: (internalError, null, null);
-  /// on other error: (status, errors, null); on success: (status, errors, user).
-  /// [languageId] is optional and only sent when creating a new user.
-  /// [mappitModule] is required for mappit variants when provided; specifies which Mappit module to save to.
-  Future<(ApiStatus, Map<String, dynamic>?, User?)> save({
-    required String apiToken,
-    required Uri uri,
-    void Function(String statusCode)? onResponse,
-    UserVariant variant = .standard,
-    String? appId,
-    String? languageId,
-    String? mappitModule,
-  }) async {
-    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
-    try {
-      final isNew = id == null;
-      final operation = _getSaveMutationName(variant: variant, isNew: isNew);
-
-      final isMappit = [
-        UserVariant.mappitOperator,
-        UserVariant.mappitCustomer,
-        UserVariant.mappitSupervisor,
-        UserVariant.mappitEmployee,
-        UserVariant.mappitSeller,
-      ].contains(variant);
-
-      // Build payload with field-stripping based on variant
-      final payload = toJson();
-
-      // Strip mappit-only fields if not mappit variant
-      if (!isMappit) {
-        payload.remove('historicalDaysAllowed');
-        payload.remove('mappitAssetsIds');
-      }
-
-      // Strip variant-specific fields
-      if (variant == .brickhouse) {
-        payload.remove('sdmCode');
-        payload.remove('preferences');
-      } else {
-        // For non-brickhouse variants, remove brickhouse fields
-        payload.remove('brickhousePermissionTierId');
-        payload.remove('brickhouseRole');
-      }
-
-      final variables = <GqlVariable>[
-        GqlVariable(
-          name: 'data',
-          type: GqlVariableType.input(of: _getInputTypeName(variant: variant)),
-          isRequired: true,
-          value: payload,
+  /// [sessionFragment] is the GqlFragment for a user session
+  static GqlFragment sessionFragment({UserVariant variant = .standard}) {
+    return GqlFragment(
+      name: 'sessionFragment',
+      onType: _getGqlEntityName(variant: variant),
+      fields: [
+        GqlField(name: 'id'),
+        GqlField(name: 'name'),
+        GqlField(name: 'email'),
+        GqlField(name: 'username'),
+        GqlField(name: 'dynamicAvatar', fragment: Avatar.fragment),
+        GqlField(
+          name: 'token',
+          fields: [
+            GqlField(name: 'token'),
+            GqlField(name: 'validBefore'),
+          ],
         ),
-      ];
-      if (appId != null) {
-        variables.add(GqlVariable(name: 'appId', type: .id, isRequired: false, value: appId));
-      }
-      if (isNew && languageId != null) {
-        variables.add(GqlVariable(name: 'languageId', type: .id, isRequired: false, value: languageId));
-      }
-      if (isMappit && mappitModule != null) {
-        variables.add(
-          GqlVariable(
-            name: 'module',
-            type: GqlVariableType.enum_(of: 'MappitUserModule'),
-            isRequired: true,
-            value: mappitModule,
-          ),
-        );
-      }
+      ],
+    );
+  }
 
-      final args = <String, String>{
-        'data': 'data',
-        if (appId != null) 'appId': 'appId',
-        if (isNew && languageId != null) 'languageId': 'languageId',
-        if (isMappit && mappitModule != null) 'module': 'module',
-      };
-
+  // coverage:ignore-end
+  // coverage:ignore-start
+  /// [login] logs in a user with username/email and password.
+  /// Returns a record with status, errors, and the logged-in user (or null on error).
+  static Future<(ApiStatus, Map<String, dynamic>?, User?)> login({
+    required String usernameOrEmail,
+    required String password,
+    String? languageId,
+    String? appId,
+    required Uri uri,
+    UserVariant variant = .standard,
+  }) async {
+    final connector = LayrzConnector(uri: uri);
+    try {
       final response = await connector.mutate(
         GqlMutation(
-          variables: variables,
-          name: operation,
+          variables: [
+            GqlVariable(name: 'usernameOrEmail', type: .string, isRequired: true, value: usernameOrEmail),
+            GqlVariable(name: 'password', type: .string, isRequired: true, value: password),
+            if (languageId != null) GqlVariable(name: 'languageId', type: .id, isRequired: false, value: languageId),
+            if (appId != null) GqlVariable(name: 'appId', type: .id, isRequired: false, value: appId),
+          ],
+          name: 'login',
         )..add(
           GqlField(
-              name: operation,
-              args: args,
+              name: _getGqlLoginMutationName(variant: variant),
+              args: {
+                'username': 'usernameOrEmail',
+                'password': 'password',
+                if (languageId != null) 'languageId': 'languageId',
+                if (appId != null) 'appId': 'appId',
+              },
             )
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
             ..add(
               GqlField(
                 name: 'result',
-                fragment: User.fragment(variant: variant),
+                fragment: sessionFragment(variant: variant),
               ),
             ),
         ),
         _userDecoder,
       );
 
-      if (response.status == .internalError) {
-        onResponse?.call(response.status.toJson());
-        return (ApiStatus.internalError, null, null);
-      }
-
       if (response.status != .ok) {
-        onResponse?.call(response.status.toJson());
         return (response.status, response.errors, null);
       }
 
-      return (response.status, response.errors, response.result);
+      return (response.status, null, response.result);
     } catch (e, stack) {
-      Log.critical("layrz_models/User/save(): General exception => $e\n$stack");
+      Log.critical("layrz_models/User/login(): General exception => $e\n$stack");
       return (ApiStatus.internalError, null, null);
+    }
+  }
+
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  /// [getSession] retrieves the current user session based on the provided API token.
+  /// Returns a record with status, errors, and the current user (or null on error).
+  static Future<(ApiStatus, Map<String, dynamic>?, User?)> getSession({
+    required String apiToken,
+    required Uri uri,
+    String? appId,
+    UserVariant variant = .standard,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          variables: [
+            if (appId != null) GqlVariable(name: 'appId', type: .id, isRequired: false, value: appId),
+          ],
+          name: 'getSession',
+        )..add(
+          GqlField(
+              name: _getGqlGetSessionName(variant: variant),
+              args: {
+                if (appId != null) 'appId': 'appId',
+              },
+            )
+            ..add(GqlField(name: 'status'))
+            ..add(GqlField(name: 'errors'))
+            ..add(
+              GqlField(
+                name: 'result',
+                fragment: sessionFragment(variant: variant),
+              ),
+            ),
+        ),
+        _userDecoder,
+      );
+      if (response.status != .ok) {
+        return (response.status, response.errors, null);
+      }
+
+      return (response.status, null, response.result);
+    } catch (e, stack) {
+      Log.critical("layrz_models/User/getSession(): General exception => $e\n$stack");
+      return (ApiStatus.internalError, null, null);
+    }
+  }
+
+  // coverage:ignore-end
+  // coverage:ignore-start
+  static String _getGqlLoginMutationName({UserVariant variant = .standard}) {
+    switch (variant) {
+      case .brickhouse:
+        return 'brickhouseLogin';
+      case .mappitOperator:
+      case .mappitCustomer:
+      case .mappitSupervisor:
+      case .mappitEmployee:
+      case .mappitSeller:
+        return 'mappitLogin';
+      case .ats:
+      case .atsAdmin:
+        return 'atsLogin';
+      case .sdm:
+      case .tagon:
+      case .standard:
+      default:
+        return 'login';
+    }
+  }
+
+  // coverage:ignore-end
+  // coverage:ignore-start
+  static String _getGqlGetSessionName({UserVariant variant = .standard}) {
+    switch (variant) {
+      case .brickhouse:
+        return 'brickhouseGetSession';
+      case .mappitOperator:
+      case .mappitCustomer:
+      case .mappitSupervisor:
+      case .mappitEmployee:
+      case .mappitSeller:
+        return 'mappitGetSession';
+      case .ats:
+      case .atsAdmin:
+        return 'atsGetSession';
+      case .sdm:
+      case .tagon:
+      case .standard:
+      default:
+        return 'getSession';
     }
   }
 

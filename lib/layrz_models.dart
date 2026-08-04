@@ -4,7 +4,6 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart' hide Action;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
-import 'package:layrz_logging/layrz_logging.dart';
 
 import 'src/actions/actions.dart';
 export 'src/actions/actions.dart';
@@ -36,7 +35,7 @@ export 'src/care_protocols/care_protocols.dart';
 import 'src/charts/charts.dart';
 export 'src/charts/charts.dart';
 
-import 'src/commands/commands.dart';
+// import 'src/commands/commands.dart';
 export 'src/commands/commands.dart';
 
 // import 'src/concierge/concierge.dart';
@@ -72,10 +71,10 @@ export 'src/map/map.dart';
 import 'src/mappit/mappit.dart';
 export 'src/mappit/mappit.dart';
 
-import 'src/modbus/modbus.dart';
+// import 'src/modbus/modbus.dart';
 export 'src/modbus/modbus.dart';
 
-import 'src/models/models.dart';
+// import 'src/models/models.dart';
 export 'src/models/models.dart';
 
 // import 'src/notifications/notifications.dart';
@@ -120,7 +119,7 @@ export 'src/vision/vision.dart';
 import 'src/workspace/workspace.dart';
 export 'src/workspace/workspace.dart';
 
-import 'src/zigbee/zigbee.dart';
+// import 'src/zigbee/zigbee.dart';
 export 'src/zigbee/zigbee.dart';
 
 // import 'src/utils/utils.dart';
@@ -153,6 +152,21 @@ export 'src/permissions/permissions.dart';
 import 'src/access/access.dart';
 export 'src/access/access.dart';
 
+import 'src/credential_fields/credential_fields.dart';
+export 'src/credential_fields/credential_fields.dart';
+
+import 'src/telemetry/telemetry.dart';
+export 'src/telemetry/telemetry.dart';
+
+import 'src/devices/devices.dart';
+export 'src/devices/devices.dart';
+
+// import 'src/general/general.dart';
+export 'src/general/general.dart';
+
+// import 'src/flespi/flespi.dart';
+export 'src/flespi/flespi.dart';
+
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
 
@@ -164,11 +178,8 @@ part 'src/case.dart';
 part 'src/category.dart';
 part 'src/checkpoint.dart';
 part 'src/cloud_entry.dart';
-part 'src/country.dart';
-part 'src/credential_field.dart';
 part 'src/custom_field.dart';
 part 'src/db_partition.dart';
-part 'src/device.dart';
 part 'src/email_template.dart';
 part 'src/function.dart';
 part 'src/guide.dart';
@@ -177,8 +188,6 @@ part 'src/monitor/checkpoints.dart';
 part 'src/package.dart';
 part 'src/suspended_service.dart';
 part 'src/tag.dart';
-part 'src/telemetry.dart';
-part 'src/timezone.dart';
 part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
 part 'src/weekdays.dart';

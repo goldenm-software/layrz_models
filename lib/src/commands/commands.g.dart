@@ -7,26 +7,135 @@ part of 'commands.dart';
 // **************************************************************************
 
 _CommandData _$CommandDataFromJson(Map<String, dynamic> json) => _CommandData(
-  source: const CommandDefinitionSourceConverter().fromJson(
-    json['source'] as String,
-  ),
+  source: $enumDecode(_$CommandDefinitionSourceEnumMap, json['source']),
   definition: json['definition'] as String,
   payload: json['payload'] as Map<String, dynamic>?,
 );
 
-Map<String, dynamic> _$CommandDataToJson(
-  _CommandData instance,
+Map<String, dynamic> _$CommandDataToJson(_CommandData instance) =>
+    <String, dynamic>{
+      'source': instance.source.toJson(),
+      'definition': instance.definition,
+      'payload': instance.payload,
+    };
+
+const _$CommandDefinitionSourceEnumMap = {
+  CommandDefinitionSource.flespi: 'FLESPI',
+  CommandDefinitionSource.custom: 'CUSTOM',
+  CommandDefinitionSource.layrzLink: 'LAYRZ_LINK',
+  CommandDefinitionSource.ble: 'BLE',
+  CommandDefinitionSource.serial: 'SERIAL',
+  CommandDefinitionSource.psg: 'PSG',
+};
+
+_CommandDataInput _$CommandDataInputFromJson(Map<String, dynamic> json) =>
+    _CommandDataInput(
+      source: $enumDecodeNullable(
+        _$CommandDefinitionSourceEnumMap,
+        json['source'],
+      ),
+      definition: json['definition'] as String?,
+      payload: json['payload'] as Map<String, dynamic>? ?? const {},
+    );
+
+Map<String, dynamic> _$CommandDataInputToJson(_CommandDataInput instance) =>
+    <String, dynamic>{
+      'source': instance.source?.toJson(),
+      'definition': instance.definition,
+      'payload': instance.payload,
+    };
+
+_CommandInput _$CommandInputFromJson(Map<String, dynamic> json) =>
+    _CommandInput(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      source: $enumDecodeNullable(_$CommandSourceEnumMap, json['source']),
+      payload: json['payload'] as String?,
+      tagId: json['tagId'] as String?,
+      deviceId: json['deviceId'] as String?,
+      protocolId: json['protocolId'] as String?,
+      modelId: json['modelId'] as String?,
+      externalAccountId: json['externalAccountId'] as String?,
+      data: json['data'] == null
+          ? null
+          : CommandDataInput.fromJson(json['data'] as Map<String, dynamic>),
+      modbusParameter: json['modbusParameter'] == null
+          ? null
+          : ModbusParameterInput.fromJson(
+              json['modbusParameter'] as Map<String, dynamic>,
+            ),
+      modbusPort: json['modbusPort'] as String?,
+    );
+
+Map<String, dynamic> _$CommandInputToJson(_CommandInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'source': instance.source?.toJson(),
+      'payload': instance.payload,
+      'tagId': instance.tagId,
+      'deviceId': instance.deviceId,
+      'protocolId': instance.protocolId,
+      'modelId': instance.modelId,
+      'externalAccountId': instance.externalAccountId,
+      'data': instance.data?.toJson(),
+      'modbusParameter': instance.modbusParameter?.toJson(),
+      'modbusPort': instance.modbusPort,
+    };
+
+const _$CommandSourceEnumMap = {
+  CommandSource.protocolNative: 'NATIVE',
+  CommandSource.sms: 'SMS',
+  CommandSource.psg: 'PSG',
+  CommandSource.modbus: 'MODBUS',
+  CommandSource.ble: 'BLE',
+  CommandSource.serial: 'SERIAL',
+};
+
+_AssetCommand _$AssetCommandFromJson(Map<String, dynamic> json) =>
+    _AssetCommand(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      possibleDevices:
+          (json['possibleDevices'] as List<dynamic>?)
+              ?.map(
+                (e) => AssetCommandPossibleDevice.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$AssetCommandToJson(
+  _AssetCommand instance,
 ) => <String, dynamic>{
-  'source': const CommandDefinitionSourceConverter().toJson(instance.source),
-  'definition': instance.definition,
-  'payload': instance.payload,
+  'id': instance.id,
+  'name': instance.name,
+  'possibleDevices': instance.possibleDevices.map((e) => e.toJson()).toList(),
+};
+
+_AssetCommandPossibleDevice _$AssetCommandPossibleDeviceFromJson(
+  Map<String, dynamic> json,
+) => _AssetCommandPossibleDevice(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  ident: json['ident'] as String,
+);
+
+Map<String, dynamic> _$AssetCommandPossibleDeviceToJson(
+  _AssetCommandPossibleDevice instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'ident': instance.ident,
 };
 
 _DeviceCommand _$DeviceCommandFromJson(Map<String, dynamic> json) =>
     _DeviceCommand(
       id: json['id'] as String,
       name: json['name'] as String,
-      source: const CommandSourceConverter().fromJson(json['source'] as String),
+      source: $enumDecode(_$CommandSourceEnumMap, json['source']),
       isGlobal: json['isGlobal'] as bool? ?? false,
       payload: json['payload'] as String?,
       tagId: json['tagId'] as String?,
@@ -63,7 +172,7 @@ Map<String, dynamic> _$DeviceCommandToJson(
 ) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
-  'source': const CommandSourceConverter().toJson(instance.source),
+  'source': instance.source.toJson(),
   'isGlobal': instance.isGlobal,
   'payload': instance.payload,
   'tagId': instance.tagId,
@@ -81,63 +190,69 @@ Map<String, dynamic> _$DeviceCommandToJson(
   'possibleDevices': instance.possibleDevices?.map((e) => e.toJson()).toList(),
 };
 
-_CommandDataInput _$CommandDataInputFromJson(Map<String, dynamic> json) =>
-    _CommandDataInput(
-      source: const CommandDefinitionSourceOrNullConverter().fromJson(
-        json['source'] as String?,
-      ),
-      definition: json['definition'] as String?,
-      payload: json['payload'] as Map<String, dynamic>? ?? const {},
+_CommandDefinition _$CommandDefinitionFromJson(Map<String, dynamic> json) =>
+    _CommandDefinition(
+      name: json['name'] as String,
+      description: json['description'] as String?,
+      sources: (json['sources'] as List<dynamic>)
+          .map(
+            (e) =>
+                const CommandDefinitionSourceConverter().fromJson(e as String),
+          )
+          .toList(),
+      payload: (json['payload'] as List<dynamic>)
+          .map(
+            (e) => CommandPayloadDefinition.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
+      translationKey: json['translationKey'] as String?,
     );
 
-Map<String, dynamic> _$CommandDataInputToJson(_CommandDataInput instance) =>
+Map<String, dynamic> _$CommandDefinitionToJson(_CommandDefinition instance) =>
     <String, dynamic>{
-      'source': const CommandDefinitionSourceOrNullConverter().toJson(
-        instance.source,
-      ),
-      'definition': instance.definition,
-      'payload': instance.payload,
-    };
-
-_CommandInput _$CommandInputFromJson(Map<String, dynamic> json) =>
-    _CommandInput(
-      id: json['id'] as String?,
-      name: json['name'] as String? ?? '',
-      source: const CommandSourceOrNullConverter().fromJson(
-        json['source'] as String?,
-      ),
-      payload: json['payload'] as String?,
-      tagId: json['tagId'] as String?,
-      deviceId: json['deviceId'] as String?,
-      protocolId: json['protocolId'] as String?,
-      modelId: json['modelId'] as String?,
-      externalAccountId: json['externalAccountId'] as String?,
-      data: json['data'] == null
-          ? null
-          : CommandDataInput.fromJson(json['data'] as Map<String, dynamic>),
-      modbusParameter: json['modbusParameter'] == null
-          ? null
-          : ModbusParameterInput.fromJson(
-              json['modbusParameter'] as Map<String, dynamic>,
-            ),
-      modbusPort: json['modbusPort'] as String?,
-    );
-
-Map<String, dynamic> _$CommandInputToJson(_CommandInput instance) =>
-    <String, dynamic>{
-      'id': instance.id,
       'name': instance.name,
-      'source': const CommandSourceOrNullConverter().toJson(instance.source),
-      'payload': instance.payload,
-      'tagId': instance.tagId,
-      'deviceId': instance.deviceId,
-      'protocolId': instance.protocolId,
-      'modelId': instance.modelId,
-      'externalAccountId': instance.externalAccountId,
-      'data': instance.data?.toJson(),
-      'modbusParameter': instance.modbusParameter?.toJson(),
-      'modbusPort': instance.modbusPort,
+      'description': instance.description,
+      'sources': instance.sources
+          .map(const CommandDefinitionSourceConverter().toJson)
+          .toList(),
+      'payload': instance.payload.map((e) => e.toJson()).toList(),
+      'translationKey': instance.translationKey,
     };
+
+_CommandDefinitionInput _$CommandDefinitionInputFromJson(
+  Map<String, dynamic> json,
+) => _CommandDefinitionInput(
+  name: json['name'] as String? ?? '',
+  description: json['description'] as String? ?? '',
+  sources:
+      (json['sources'] as List<dynamic>?)
+          ?.map(
+            (e) =>
+                const CommandDefinitionSourceConverter().fromJson(e as String),
+          )
+          .toList() ??
+      const [],
+  payload:
+      (json['payload'] as List<dynamic>?)
+          ?.map(
+            (e) => CommandPayloadDefinitionInput.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList() ??
+      const [],
+);
+
+Map<String, dynamic> _$CommandDefinitionInputToJson(
+  _CommandDefinitionInput instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'description': instance.description,
+  'sources': instance.sources
+      .map(const CommandDefinitionSourceConverter().toJson)
+      .toList(),
+  'payload': instance.payload.map((e) => e.toJson()).toList(),
+};
 
 _CommandPayloadDefinition _$CommandPayloadDefinitionFromJson(
   Map<String, dynamic> json,
@@ -228,105 +343,14 @@ Map<String, dynamic> _$CommandPayloadDefinitionInputToJson(
   'maxQuantity': instance.maxQuantity,
 };
 
-_CommandDefinition _$CommandDefinitionFromJson(Map<String, dynamic> json) =>
-    _CommandDefinition(
-      name: json['name'] as String,
-      description: json['description'] as String?,
-      sources: (json['sources'] as List<dynamic>)
-          .map(
-            (e) =>
-                const CommandDefinitionSourceConverter().fromJson(e as String),
-          )
-          .toList(),
-      payload: (json['payload'] as List<dynamic>)
-          .map(
-            (e) => CommandPayloadDefinition.fromJson(e as Map<String, dynamic>),
-          )
-          .toList(),
-      translationKey: json['translationKey'] as String?,
-    );
-
-Map<String, dynamic> _$CommandDefinitionToJson(_CommandDefinition instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'description': instance.description,
-      'sources': instance.sources
-          .map(const CommandDefinitionSourceConverter().toJson)
-          .toList(),
-      'payload': instance.payload.map((e) => e.toJson()).toList(),
-      'translationKey': instance.translationKey,
-    };
-
-_CommandDefinitionInput _$CommandDefinitionInputFromJson(
-  Map<String, dynamic> json,
-) => _CommandDefinitionInput(
-  name: json['name'] as String? ?? '',
-  description: json['description'] as String? ?? '',
-  sources:
-      (json['sources'] as List<dynamic>?)
-          ?.map(
-            (e) =>
-                const CommandDefinitionSourceConverter().fromJson(e as String),
-          )
-          .toList() ??
-      const [],
-  payload:
-      (json['payload'] as List<dynamic>?)
-          ?.map(
-            (e) => CommandPayloadDefinitionInput.fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList() ??
-      const [],
-);
-
-Map<String, dynamic> _$CommandDefinitionInputToJson(
-  _CommandDefinitionInput instance,
-) => <String, dynamic>{
-  'name': instance.name,
-  'description': instance.description,
-  'sources': instance.sources
-      .map(const CommandDefinitionSourceConverter().toJson)
-      .toList(),
-  'payload': instance.payload.map((e) => e.toJson()).toList(),
-};
-
-_AssetCommand _$AssetCommandFromJson(Map<String, dynamic> json) =>
-    _AssetCommand(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      possibleDevices:
-          (json['possibleDevices'] as List<dynamic>?)
-              ?.map(
-                (e) => AssetCommandPossibleDevice.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList() ??
-          const [],
-    );
-
-Map<String, dynamic> _$AssetCommandToJson(
-  _AssetCommand instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'possibleDevices': instance.possibleDevices.map((e) => e.toJson()).toList(),
-};
-
-_AssetCommandPossibleDevice _$AssetCommandPossibleDeviceFromJson(
-  Map<String, dynamic> json,
-) => _AssetCommandPossibleDevice(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  ident: json['ident'] as String,
-);
-
-Map<String, dynamic> _$AssetCommandPossibleDeviceToJson(
-  _AssetCommandPossibleDevice instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'ident': instance.ident,
+const _$CommandPayloadDataTypeEnumMap = {
+  CommandPayloadDataType.string: 'STRING',
+  CommandPayloadDataType.integer: 'INTEGER',
+  CommandPayloadDataType.float: 'FLOAT',
+  CommandPayloadDataType.boolean: 'BOOLEAN',
+  CommandPayloadDataType.choice: 'CHOICE',
+  CommandPayloadDataType.choiceIndex: 'CHOICE_INDEX',
+  CommandPayloadDataType.nested: 'NESTED',
+  CommandPayloadDataType.list: 'LIST',
+  CommandPayloadDataType.bluetoothPair: 'BLUETOOTH_PAIR',
 };

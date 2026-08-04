@@ -215,8 +215,8 @@ return $default(_that.id,_that.name,_that.steps,_that.fileUri);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _SimulationCycle implements SimulationCycle {
-  const _SimulationCycle({required this.id, required this.name, required this.steps, this.fileUri});
+class _SimulationCycle extends SimulationCycle {
+  const _SimulationCycle({required this.id, required this.name, required this.steps, this.fileUri}): super._();
   factory _SimulationCycle.fromJson(Map<String, dynamic> json) => _$SimulationCycleFromJson(json);
 
 /// [id] is the unique identifier of the cycle

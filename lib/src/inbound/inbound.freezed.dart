@@ -328,8 +328,8 @@ return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.operationM
 /// @nodoc
 @JsonSerializable()
 
-class _InboundProtocol implements InboundProtocol {
-  const _InboundProtocol({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, @JsonKey(unknownEnumValue: OperationMode.unknown) required this.operationMode, this.host, this.port, this.mqttTopic, this.hasNativeCommands, this.hasSmsCommands, this.hasCommandsResult, this.isFlespi, this.channelId, this.flespiId, final  List<CredentialField>? requiredFields, this.isImported, final  List<String>? categoriesIds, this.canFota, final  List<Model>? models, this.hasAck, this.ackTopicFormat, this.dynamicIcon, this.cycleId, this.cycle, this.hasModbus, final  List<String> modbusPorts = const [], this.usage, this.requiresFlespiToken, final  List<FlespiAcl>? flespiAcl, this.webhookStructure, this.requiresExternalAccount = false, this.requiresStructure = false, final  List<CommandDefinition> commandsStructure = const [], final  List<ConfigGrouping> configStructure = const [], this.confiotCapable = false, this.peripheralIdentifier, final  Map<String, dynamic>? peripheralParserSpec}): _requiredFields = requiredFields,_categoriesIds = categoriesIds,_models = models,_modbusPorts = modbusPorts,_flespiAcl = flespiAcl,_commandsStructure = commandsStructure,_configStructure = configStructure,_peripheralParserSpec = peripheralParserSpec;
+class _InboundProtocol extends InboundProtocol {
+  const _InboundProtocol({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, @JsonKey(unknownEnumValue: OperationMode.unknown) required this.operationMode, this.host, this.port, this.mqttTopic, this.hasNativeCommands, this.hasSmsCommands, this.hasCommandsResult, this.isFlespi, this.channelId, this.flespiId, final  List<CredentialField>? requiredFields, this.isImported, final  List<String>? categoriesIds, this.canFota, final  List<Model>? models, this.hasAck, this.ackTopicFormat, this.dynamicIcon, this.cycleId, this.cycle, this.hasModbus, final  List<String> modbusPorts = const [], this.usage, this.requiresFlespiToken, final  List<FlespiAcl>? flespiAcl, this.webhookStructure, this.requiresExternalAccount = false, this.requiresStructure = false, final  List<CommandDefinition> commandsStructure = const [], final  List<ConfigGrouping> configStructure = const [], this.confiotCapable = false, this.peripheralIdentifier, final  Map<String, dynamic>? peripheralParserSpec}): _requiredFields = requiredFields,_categoriesIds = categoriesIds,_models = models,_modbusPorts = modbusPorts,_flespiAcl = flespiAcl,_commandsStructure = commandsStructure,_configStructure = configStructure,_peripheralParserSpec = peripheralParserSpec,super._();
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
 
 /// The protocol ID
@@ -611,507 +611,6 @@ $WebhookStructureCopyWith<$Res>? get webhookStructure {
   }
 
   return $WebhookStructureCopyWith<$Res>(_self.webhookStructure!, (value) {
-    return _then(_self.copyWith(webhookStructure: value));
-  });
-}
-}
-
-
-/// @nodoc
-mixin _$InboundProtocolInput {
-
-/// [id] ID of the protocol entity. This ID is unique.
- String? get id;/// [id] ID of the protocol entity. This ID is unique.
- set id(String? value);///[name] Name of the protocol.
- String get name;///[name] Name of the protocol.
- set name(String value);/// [color] Indicates the color assigned to the protocol
-@ColorConverter() Color get color;/// [color] Indicates the color assigned to the protocol
-@ColorConverter() set color(Color value);/// [isEnabled] Boolean that indicates if the protocol is enabled.
- bool get isEnabled;/// [isEnabled] Boolean that indicates if the protocol is enabled.
- set isEnabled(bool value);/// [categoriesIds] ID of all categories assigned
- List<String> get categoriesIds;/// [categoriesIds] ID of all categories assigned
- set categoriesIds(List<String> value);/// [operationMode] Indicates the operation mode of the protocol.
-@JsonKey(unknownEnumValue: OperationMode.unknown) OperationMode get operationMode;/// [operationMode] Indicates the operation mode of the protocol.
-@JsonKey(unknownEnumValue: OperationMode.unknown) set operationMode(OperationMode value);/// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
- bool get hasNativeCommands;/// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
- set hasNativeCommands(bool value);/// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
- bool get hasSmsCommands;/// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
- set hasSmsCommands(bool value);/// [hasCommandsResult] Boolean that indicates if the protocol has commands.
- bool get hasCommandsResult;/// [hasCommandsResult] Boolean that indicates if the protocol has commands.
- set hasCommandsResult(bool value);/// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
- int? get channelId;/// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
- set channelId(int? value);/// [isFlespi] Boolean that indicates if the protocol is from Flespi.
- bool get isFlespi;/// [isFlespi] Boolean that indicates if the protocol is from Flespi.
- set isFlespi(bool value);/// [flespiId] Flespi ID. Only used for Flespi protocols.
- String? get flespiId;/// [flespiId] Flespi ID. Only used for Flespi protocols.
- set flespiId(String? value);/// [hasAck] Boolean that indicates if the protocol has ACK support.
- bool get hasAck;/// [hasAck] Boolean that indicates if the protocol has ACK support.
- set hasAck(bool value);/// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
- String get ackTopicFormat;/// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
- set ackTopicFormat(String value);/// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
- bool get isImported;/// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
- set isImported(bool value);/// [requiredFields] Required configuration fields.
- List<CredentialFieldInput> get requiredFields;/// [requiredFields] Required configuration fields.
- set requiredFields(List<CredentialFieldInput> value);/// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
- bool get canFota;/// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
- set canFota(bool value);/// [host] is the host of the server, means the IP or domain (or subdomain)
-/// of the server to send or receive the information
- String? get host;/// [host] is the host of the server, means the IP or domain (or subdomain)
-/// of the server to send or receive the information
- set host(String? value);/// [port] is the port of the server, means the port
-/// of the server to send or receive the information
-/// 0 means in API and backend services "ignore this field"
- int? get port;/// [port] is the port of the server, means the port
-/// of the server to send or receive the information
-/// 0 means in API and backend services "ignore this field"
- set port(int? value);/// [mqttTopic] is the MQTT topic to send or receive the information
- String? get mqttTopic;/// [mqttTopic] is the MQTT topic to send or receive the information
- set mqttTopic(String? value);/// [dynamicIcon] is the icon of the protocol.
- AvatarInput get dynamicIcon;/// [dynamicIcon] is the icon of the protocol.
- set dynamicIcon(AvatarInput value);/// [cycleId] is the ID of the cycle to which the field belongs.
- String? get cycleId;/// [cycleId] is the ID of the cycle to which the field belongs.
- set cycleId(String? value);/// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
- bool get hasModbus;/// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
- set hasModbus(bool value);/// [modbusPorts] is the list of Modbus ports that the protocol has.
- List<String> get modbusPorts;/// [modbusPorts] is the list of Modbus ports that the protocol has.
- set modbusPorts(List<String> value);/// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
- bool get requiresFlespiToken;/// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
- set requiresFlespiToken(bool value);/// [flespiAcl] refers to the ACL for the token generation.
- List<FlespiAclInput> get flespiAcl;/// [flespiAcl] refers to the ACL for the token generation.
- set flespiAcl(List<FlespiAclInput> value);/// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
- WebhookStructureInput? get webhookStructure;/// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
- set webhookStructure(WebhookStructureInput? value);/// [requiresExternalAccount] indicates if the protocol requires an external account to work.
- bool get requiresExternalAccount;/// [requiresExternalAccount] indicates if the protocol requires an external account to work.
- set requiresExternalAccount(bool value);/// [requiresStructure] indicates if the protocol requires a structure to work.
- bool get requiresStructure;/// [requiresStructure] indicates if the protocol requires a structure to work.
- set requiresStructure(bool value);/// [commandsStructure] is the structure of the commands for the protocol.
- List<CommandDefinitionInput> get commandsStructure;/// [commandsStructure] is the structure of the commands for the protocol.
- set commandsStructure(List<CommandDefinitionInput> value);/// [configStructure] is the structure of the configuration for the protocol.
- List<ConfigGroupingInput> get configStructure;/// [configStructure] is the structure of the configuration for the protocol.
- set configStructure(List<ConfigGroupingInput> value);/// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
- bool get confiotCapable;/// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
- set confiotCapable(bool value);/// [peripheralIdentifier] is the identifier of the peripheral device.
- String? get peripheralIdentifier;/// [peripheralIdentifier] is the identifier of the peripheral device.
- set peripheralIdentifier(String? value);/// [peripheralParserSpec] is the parser specification for the peripheral device.
- Map<String, dynamic>? get peripheralParserSpec;/// [peripheralParserSpec] is the parser specification for the peripheral device.
- set peripheralParserSpec(Map<String, dynamic>? value);
-/// Create a copy of InboundProtocolInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InboundProtocolInputCopyWith<InboundProtocolInput> get copyWith => _$InboundProtocolInputCopyWithImpl<InboundProtocolInput>(this as InboundProtocolInput, _$identity);
-
-  /// Serializes this InboundProtocolInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-
-
-@override
-String toString() {
-  return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $InboundProtocolInputCopyWith<$Res>  {
-  factory $InboundProtocolInputCopyWith(InboundProtocolInput value, $Res Function(InboundProtocolInput) _then) = _$InboundProtocolInputCopyWithImpl;
-@useResult
-$Res call({
- String? id, String name,@ColorConverter() Color color, bool isEnabled, List<String> categoriesIds,@JsonKey(unknownEnumValue: OperationMode.unknown) OperationMode operationMode, bool hasNativeCommands, bool hasSmsCommands, bool hasCommandsResult, int? channelId, bool isFlespi, String? flespiId, bool hasAck, String ackTopicFormat, bool isImported, List<CredentialFieldInput> requiredFields, bool canFota, String? host, int? port, String? mqttTopic, AvatarInput dynamicIcon, String? cycleId, bool hasModbus, List<String> modbusPorts, bool requiresFlespiToken, List<FlespiAclInput> flespiAcl, WebhookStructureInput? webhookStructure, bool requiresExternalAccount, bool requiresStructure, List<CommandDefinitionInput> commandsStructure, List<ConfigGroupingInput> configStructure, bool confiotCapable, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec
-});
-
-
-$AvatarInputCopyWith<$Res> get dynamicIcon;$WebhookStructureInputCopyWith<$Res>? get webhookStructure;
-
-}
-/// @nodoc
-class _$InboundProtocolInputCopyWithImpl<$Res>
-    implements $InboundProtocolInputCopyWith<$Res> {
-  _$InboundProtocolInputCopyWithImpl(this._self, this._then);
-
-  final InboundProtocolInput _self;
-  final $Res Function(InboundProtocolInput) _then;
-
-/// Create a copy of InboundProtocolInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? color = null,Object? isEnabled = null,Object? categoriesIds = null,Object? operationMode = null,Object? hasNativeCommands = null,Object? hasSmsCommands = null,Object? hasCommandsResult = null,Object? channelId = freezed,Object? isFlespi = null,Object? flespiId = freezed,Object? hasAck = null,Object? ackTopicFormat = null,Object? isImported = null,Object? requiredFields = null,Object? canFota = null,Object? host = freezed,Object? port = freezed,Object? mqttTopic = freezed,Object? dynamicIcon = null,Object? cycleId = freezed,Object? hasModbus = null,Object? modbusPorts = null,Object? requiresFlespiToken = null,Object? flespiAcl = null,Object? webhookStructure = freezed,Object? requiresExternalAccount = null,Object? requiresStructure = null,Object? commandsStructure = null,Object? configStructure = null,Object? confiotCapable = null,Object? peripheralIdentifier = freezed,Object? peripheralParserSpec = freezed,}) {
-  return _then(_self.copyWith(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
-as Color,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,categoriesIds: null == categoriesIds ? _self.categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
-as List<String>,operationMode: null == operationMode ? _self.operationMode : operationMode // ignore: cast_nullable_to_non_nullable
-as OperationMode,hasNativeCommands: null == hasNativeCommands ? _self.hasNativeCommands : hasNativeCommands // ignore: cast_nullable_to_non_nullable
-as bool,hasSmsCommands: null == hasSmsCommands ? _self.hasSmsCommands : hasSmsCommands // ignore: cast_nullable_to_non_nullable
-as bool,hasCommandsResult: null == hasCommandsResult ? _self.hasCommandsResult : hasCommandsResult // ignore: cast_nullable_to_non_nullable
-as bool,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
-as int?,isFlespi: null == isFlespi ? _self.isFlespi : isFlespi // ignore: cast_nullable_to_non_nullable
-as bool,flespiId: freezed == flespiId ? _self.flespiId : flespiId // ignore: cast_nullable_to_non_nullable
-as String?,hasAck: null == hasAck ? _self.hasAck : hasAck // ignore: cast_nullable_to_non_nullable
-as bool,ackTopicFormat: null == ackTopicFormat ? _self.ackTopicFormat : ackTopicFormat // ignore: cast_nullable_to_non_nullable
-as String,isImported: null == isImported ? _self.isImported : isImported // ignore: cast_nullable_to_non_nullable
-as bool,requiredFields: null == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
-as List<CredentialFieldInput>,canFota: null == canFota ? _self.canFota : canFota // ignore: cast_nullable_to_non_nullable
-as bool,host: freezed == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
-as String?,port: freezed == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
-as int?,mqttTopic: freezed == mqttTopic ? _self.mqttTopic : mqttTopic // ignore: cast_nullable_to_non_nullable
-as String?,dynamicIcon: null == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
-as AvatarInput,cycleId: freezed == cycleId ? _self.cycleId : cycleId // ignore: cast_nullable_to_non_nullable
-as String?,hasModbus: null == hasModbus ? _self.hasModbus : hasModbus // ignore: cast_nullable_to_non_nullable
-as bool,modbusPorts: null == modbusPorts ? _self.modbusPorts : modbusPorts // ignore: cast_nullable_to_non_nullable
-as List<String>,requiresFlespiToken: null == requiresFlespiToken ? _self.requiresFlespiToken : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
-as bool,flespiAcl: null == flespiAcl ? _self.flespiAcl : flespiAcl // ignore: cast_nullable_to_non_nullable
-as List<FlespiAclInput>,webhookStructure: freezed == webhookStructure ? _self.webhookStructure : webhookStructure // ignore: cast_nullable_to_non_nullable
-as WebhookStructureInput?,requiresExternalAccount: null == requiresExternalAccount ? _self.requiresExternalAccount : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
-as bool,requiresStructure: null == requiresStructure ? _self.requiresStructure : requiresStructure // ignore: cast_nullable_to_non_nullable
-as bool,commandsStructure: null == commandsStructure ? _self.commandsStructure : commandsStructure // ignore: cast_nullable_to_non_nullable
-as List<CommandDefinitionInput>,configStructure: null == configStructure ? _self.configStructure : configStructure // ignore: cast_nullable_to_non_nullable
-as List<ConfigGroupingInput>,confiotCapable: null == confiotCapable ? _self.confiotCapable : confiotCapable // ignore: cast_nullable_to_non_nullable
-as bool,peripheralIdentifier: freezed == peripheralIdentifier ? _self.peripheralIdentifier : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
-as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of InboundProtocolInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AvatarInputCopyWith<$Res> get dynamicIcon {
-  
-  return $AvatarInputCopyWith<$Res>(_self.dynamicIcon, (value) {
-    return _then(_self.copyWith(dynamicIcon: value));
-  });
-}/// Create a copy of InboundProtocolInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$WebhookStructureInputCopyWith<$Res>? get webhookStructure {
-    if (_self.webhookStructure == null) {
-    return null;
-  }
-
-  return $WebhookStructureInputCopyWith<$Res>(_self.webhookStructure!, (value) {
-    return _then(_self.copyWith(webhookStructure: value));
-  });
-}
-}
-
-
-/// Adds pattern-matching-related methods to [InboundProtocolInput].
-extension InboundProtocolInputPatterns on InboundProtocolInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InboundProtocolInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _InboundProtocolInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InboundProtocolInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _InboundProtocolInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InboundProtocolInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _InboundProtocolInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @ColorConverter()  Color color,  bool isEnabled,  List<String> categoriesIds, @JsonKey(unknownEnumValue: OperationMode.unknown)  OperationMode operationMode,  bool hasNativeCommands,  bool hasSmsCommands,  bool hasCommandsResult,  int? channelId,  bool isFlespi,  String? flespiId,  bool hasAck,  String ackTopicFormat,  bool isImported,  List<CredentialFieldInput> requiredFields,  bool canFota,  String? host,  int? port,  String? mqttTopic,  AvatarInput dynamicIcon,  String? cycleId,  bool hasModbus,  List<String> modbusPorts,  bool requiresFlespiToken,  List<FlespiAclInput> flespiAcl,  WebhookStructureInput? webhookStructure,  bool requiresExternalAccount,  bool requiresStructure,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _InboundProtocolInput() when $default != null:
-return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.categoriesIds,_that.operationMode,_that.hasNativeCommands,_that.hasSmsCommands,_that.hasCommandsResult,_that.channelId,_that.isFlespi,_that.flespiId,_that.hasAck,_that.ackTopicFormat,_that.isImported,_that.requiredFields,_that.canFota,_that.host,_that.port,_that.mqttTopic,_that.dynamicIcon,_that.cycleId,_that.hasModbus,_that.modbusPorts,_that.requiresFlespiToken,_that.flespiAcl,_that.webhookStructure,_that.requiresExternalAccount,_that.requiresStructure,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.peripheralIdentifier,_that.peripheralParserSpec);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @ColorConverter()  Color color,  bool isEnabled,  List<String> categoriesIds, @JsonKey(unknownEnumValue: OperationMode.unknown)  OperationMode operationMode,  bool hasNativeCommands,  bool hasSmsCommands,  bool hasCommandsResult,  int? channelId,  bool isFlespi,  String? flespiId,  bool hasAck,  String ackTopicFormat,  bool isImported,  List<CredentialFieldInput> requiredFields,  bool canFota,  String? host,  int? port,  String? mqttTopic,  AvatarInput dynamicIcon,  String? cycleId,  bool hasModbus,  List<String> modbusPorts,  bool requiresFlespiToken,  List<FlespiAclInput> flespiAcl,  WebhookStructureInput? webhookStructure,  bool requiresExternalAccount,  bool requiresStructure,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec)  $default,) {final _that = this;
-switch (_that) {
-case _InboundProtocolInput():
-return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.categoriesIds,_that.operationMode,_that.hasNativeCommands,_that.hasSmsCommands,_that.hasCommandsResult,_that.channelId,_that.isFlespi,_that.flespiId,_that.hasAck,_that.ackTopicFormat,_that.isImported,_that.requiredFields,_that.canFota,_that.host,_that.port,_that.mqttTopic,_that.dynamicIcon,_that.cycleId,_that.hasModbus,_that.modbusPorts,_that.requiresFlespiToken,_that.flespiAcl,_that.webhookStructure,_that.requiresExternalAccount,_that.requiresStructure,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.peripheralIdentifier,_that.peripheralParserSpec);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @ColorConverter()  Color color,  bool isEnabled,  List<String> categoriesIds, @JsonKey(unknownEnumValue: OperationMode.unknown)  OperationMode operationMode,  bool hasNativeCommands,  bool hasSmsCommands,  bool hasCommandsResult,  int? channelId,  bool isFlespi,  String? flespiId,  bool hasAck,  String ackTopicFormat,  bool isImported,  List<CredentialFieldInput> requiredFields,  bool canFota,  String? host,  int? port,  String? mqttTopic,  AvatarInput dynamicIcon,  String? cycleId,  bool hasModbus,  List<String> modbusPorts,  bool requiresFlespiToken,  List<FlespiAclInput> flespiAcl,  WebhookStructureInput? webhookStructure,  bool requiresExternalAccount,  bool requiresStructure,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec)?  $default,) {final _that = this;
-switch (_that) {
-case _InboundProtocolInput() when $default != null:
-return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.categoriesIds,_that.operationMode,_that.hasNativeCommands,_that.hasSmsCommands,_that.hasCommandsResult,_that.channelId,_that.isFlespi,_that.flespiId,_that.hasAck,_that.ackTopicFormat,_that.isImported,_that.requiredFields,_that.canFota,_that.host,_that.port,_that.mqttTopic,_that.dynamicIcon,_that.cycleId,_that.hasModbus,_that.modbusPorts,_that.requiresFlespiToken,_that.flespiAcl,_that.webhookStructure,_that.requiresExternalAccount,_that.requiresStructure,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.peripheralIdentifier,_that.peripheralParserSpec);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _InboundProtocolInput implements InboundProtocolInput {
-   _InboundProtocolInput({this.id, this.name = '', @ColorConverter() this.color = Colors.blue, this.isEnabled = true, this.categoriesIds = const [], @JsonKey(unknownEnumValue: OperationMode.unknown) this.operationMode = OperationMode.realtime, this.hasNativeCommands = false, this.hasSmsCommands = false, this.hasCommandsResult = false, this.channelId, this.isFlespi = false, this.flespiId, this.hasAck = false, this.ackTopicFormat = '', this.isImported = false, this.requiredFields = const [], this.canFota = false, this.host, this.port, this.mqttTopic, required this.dynamicIcon, this.cycleId, this.hasModbus = false, this.modbusPorts = const [], this.requiresFlespiToken = false, this.flespiAcl = const [], this.webhookStructure, this.requiresExternalAccount = false, this.requiresStructure = false, this.commandsStructure = const [], this.configStructure = const [], this.confiotCapable = false, this.peripheralIdentifier, this.peripheralParserSpec});
-  factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);
-
-/// [id] ID of the protocol entity. This ID is unique.
-@override  String? id;
-///[name] Name of the protocol.
-@override@JsonKey()  String name;
-/// [color] Indicates the color assigned to the protocol
-@override@JsonKey()@ColorConverter()  Color color;
-/// [isEnabled] Boolean that indicates if the protocol is enabled.
-@override@JsonKey()  bool isEnabled;
-/// [categoriesIds] ID of all categories assigned
-@override@JsonKey()  List<String> categoriesIds;
-/// [operationMode] Indicates the operation mode of the protocol.
-@override@JsonKey(unknownEnumValue: OperationMode.unknown)  OperationMode operationMode;
-/// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
-@override@JsonKey()  bool hasNativeCommands;
-/// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
-@override@JsonKey()  bool hasSmsCommands;
-/// [hasCommandsResult] Boolean that indicates if the protocol has commands.
-@override@JsonKey()  bool hasCommandsResult;
-/// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
-@override  int? channelId;
-/// [isFlespi] Boolean that indicates if the protocol is from Flespi.
-@override@JsonKey()  bool isFlespi;
-/// [flespiId] Flespi ID. Only used for Flespi protocols.
-@override  String? flespiId;
-/// [hasAck] Boolean that indicates if the protocol has ACK support.
-@override@JsonKey()  bool hasAck;
-/// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
-@override@JsonKey()  String ackTopicFormat;
-/// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
-@override@JsonKey()  bool isImported;
-/// [requiredFields] Required configuration fields.
-@override@JsonKey()  List<CredentialFieldInput> requiredFields;
-/// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
-@override@JsonKey()  bool canFota;
-/// [host] is the host of the server, means the IP or domain (or subdomain)
-/// of the server to send or receive the information
-@override  String? host;
-/// [port] is the port of the server, means the port
-/// of the server to send or receive the information
-/// 0 means in API and backend services "ignore this field"
-@override  int? port;
-/// [mqttTopic] is the MQTT topic to send or receive the information
-@override  String? mqttTopic;
-/// [dynamicIcon] is the icon of the protocol.
-@override  AvatarInput dynamicIcon;
-/// [cycleId] is the ID of the cycle to which the field belongs.
-@override  String? cycleId;
-/// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
-@override@JsonKey()  bool hasModbus;
-/// [modbusPorts] is the list of Modbus ports that the protocol has.
-@override@JsonKey()  List<String> modbusPorts;
-/// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
-@override@JsonKey()  bool requiresFlespiToken;
-/// [flespiAcl] refers to the ACL for the token generation.
-@override@JsonKey()  List<FlespiAclInput> flespiAcl;
-/// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
-@override  WebhookStructureInput? webhookStructure;
-/// [requiresExternalAccount] indicates if the protocol requires an external account to work.
-@override@JsonKey()  bool requiresExternalAccount;
-/// [requiresStructure] indicates if the protocol requires a structure to work.
-@override@JsonKey()  bool requiresStructure;
-/// [commandsStructure] is the structure of the commands for the protocol.
-@override@JsonKey()  List<CommandDefinitionInput> commandsStructure;
-/// [configStructure] is the structure of the configuration for the protocol.
-@override@JsonKey()  List<ConfigGroupingInput> configStructure;
-/// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
-@override@JsonKey()  bool confiotCapable;
-/// [peripheralIdentifier] is the identifier of the peripheral device.
-@override  String? peripheralIdentifier;
-/// [peripheralParserSpec] is the parser specification for the peripheral device.
-@override  Map<String, dynamic>? peripheralParserSpec;
-
-/// Create a copy of InboundProtocolInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$InboundProtocolInputCopyWith<_InboundProtocolInput> get copyWith => __$InboundProtocolInputCopyWithImpl<_InboundProtocolInput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$InboundProtocolInputToJson(this, );
-}
-
-
-
-@override
-String toString() {
-  return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$InboundProtocolInputCopyWith<$Res> implements $InboundProtocolInputCopyWith<$Res> {
-  factory _$InboundProtocolInputCopyWith(_InboundProtocolInput value, $Res Function(_InboundProtocolInput) _then) = __$InboundProtocolInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? id, String name,@ColorConverter() Color color, bool isEnabled, List<String> categoriesIds,@JsonKey(unknownEnumValue: OperationMode.unknown) OperationMode operationMode, bool hasNativeCommands, bool hasSmsCommands, bool hasCommandsResult, int? channelId, bool isFlespi, String? flespiId, bool hasAck, String ackTopicFormat, bool isImported, List<CredentialFieldInput> requiredFields, bool canFota, String? host, int? port, String? mqttTopic, AvatarInput dynamicIcon, String? cycleId, bool hasModbus, List<String> modbusPorts, bool requiresFlespiToken, List<FlespiAclInput> flespiAcl, WebhookStructureInput? webhookStructure, bool requiresExternalAccount, bool requiresStructure, List<CommandDefinitionInput> commandsStructure, List<ConfigGroupingInput> configStructure, bool confiotCapable, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec
-});
-
-
-@override $AvatarInputCopyWith<$Res> get dynamicIcon;@override $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
-
-}
-/// @nodoc
-class __$InboundProtocolInputCopyWithImpl<$Res>
-    implements _$InboundProtocolInputCopyWith<$Res> {
-  __$InboundProtocolInputCopyWithImpl(this._self, this._then);
-
-  final _InboundProtocolInput _self;
-  final $Res Function(_InboundProtocolInput) _then;
-
-/// Create a copy of InboundProtocolInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? color = null,Object? isEnabled = null,Object? categoriesIds = null,Object? operationMode = null,Object? hasNativeCommands = null,Object? hasSmsCommands = null,Object? hasCommandsResult = null,Object? channelId = freezed,Object? isFlespi = null,Object? flespiId = freezed,Object? hasAck = null,Object? ackTopicFormat = null,Object? isImported = null,Object? requiredFields = null,Object? canFota = null,Object? host = freezed,Object? port = freezed,Object? mqttTopic = freezed,Object? dynamicIcon = null,Object? cycleId = freezed,Object? hasModbus = null,Object? modbusPorts = null,Object? requiresFlespiToken = null,Object? flespiAcl = null,Object? webhookStructure = freezed,Object? requiresExternalAccount = null,Object? requiresStructure = null,Object? commandsStructure = null,Object? configStructure = null,Object? confiotCapable = null,Object? peripheralIdentifier = freezed,Object? peripheralParserSpec = freezed,}) {
-  return _then(_InboundProtocolInput(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
-as Color,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,categoriesIds: null == categoriesIds ? _self.categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
-as List<String>,operationMode: null == operationMode ? _self.operationMode : operationMode // ignore: cast_nullable_to_non_nullable
-as OperationMode,hasNativeCommands: null == hasNativeCommands ? _self.hasNativeCommands : hasNativeCommands // ignore: cast_nullable_to_non_nullable
-as bool,hasSmsCommands: null == hasSmsCommands ? _self.hasSmsCommands : hasSmsCommands // ignore: cast_nullable_to_non_nullable
-as bool,hasCommandsResult: null == hasCommandsResult ? _self.hasCommandsResult : hasCommandsResult // ignore: cast_nullable_to_non_nullable
-as bool,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
-as int?,isFlespi: null == isFlespi ? _self.isFlespi : isFlespi // ignore: cast_nullable_to_non_nullable
-as bool,flespiId: freezed == flespiId ? _self.flespiId : flespiId // ignore: cast_nullable_to_non_nullable
-as String?,hasAck: null == hasAck ? _self.hasAck : hasAck // ignore: cast_nullable_to_non_nullable
-as bool,ackTopicFormat: null == ackTopicFormat ? _self.ackTopicFormat : ackTopicFormat // ignore: cast_nullable_to_non_nullable
-as String,isImported: null == isImported ? _self.isImported : isImported // ignore: cast_nullable_to_non_nullable
-as bool,requiredFields: null == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
-as List<CredentialFieldInput>,canFota: null == canFota ? _self.canFota : canFota // ignore: cast_nullable_to_non_nullable
-as bool,host: freezed == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
-as String?,port: freezed == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
-as int?,mqttTopic: freezed == mqttTopic ? _self.mqttTopic : mqttTopic // ignore: cast_nullable_to_non_nullable
-as String?,dynamicIcon: null == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
-as AvatarInput,cycleId: freezed == cycleId ? _self.cycleId : cycleId // ignore: cast_nullable_to_non_nullable
-as String?,hasModbus: null == hasModbus ? _self.hasModbus : hasModbus // ignore: cast_nullable_to_non_nullable
-as bool,modbusPorts: null == modbusPorts ? _self.modbusPorts : modbusPorts // ignore: cast_nullable_to_non_nullable
-as List<String>,requiresFlespiToken: null == requiresFlespiToken ? _self.requiresFlespiToken : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
-as bool,flespiAcl: null == flespiAcl ? _self.flespiAcl : flespiAcl // ignore: cast_nullable_to_non_nullable
-as List<FlespiAclInput>,webhookStructure: freezed == webhookStructure ? _self.webhookStructure : webhookStructure // ignore: cast_nullable_to_non_nullable
-as WebhookStructureInput?,requiresExternalAccount: null == requiresExternalAccount ? _self.requiresExternalAccount : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
-as bool,requiresStructure: null == requiresStructure ? _self.requiresStructure : requiresStructure // ignore: cast_nullable_to_non_nullable
-as bool,commandsStructure: null == commandsStructure ? _self.commandsStructure : commandsStructure // ignore: cast_nullable_to_non_nullable
-as List<CommandDefinitionInput>,configStructure: null == configStructure ? _self.configStructure : configStructure // ignore: cast_nullable_to_non_nullable
-as List<ConfigGroupingInput>,confiotCapable: null == confiotCapable ? _self.confiotCapable : confiotCapable // ignore: cast_nullable_to_non_nullable
-as bool,peripheralIdentifier: freezed == peripheralIdentifier ? _self.peripheralIdentifier : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
-as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of InboundProtocolInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AvatarInputCopyWith<$Res> get dynamicIcon {
-  
-  return $AvatarInputCopyWith<$Res>(_self.dynamicIcon, (value) {
-    return _then(_self.copyWith(dynamicIcon: value));
-  });
-}/// Create a copy of InboundProtocolInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$WebhookStructureInputCopyWith<$Res>? get webhookStructure {
-    if (_self.webhookStructure == null) {
-    return null;
-  }
-
-  return $WebhookStructureInputCopyWith<$Res>(_self.webhookStructure!, (value) {
     return _then(_self.copyWith(webhookStructure: value));
   });
 }
@@ -1829,6 +1328,507 @@ $InboundStructureInputCopyWith<$Res> get structure {
 
 
 /// @nodoc
+mixin _$InboundProtocolInput {
+
+/// [id] ID of the protocol entity. This ID is unique.
+ String? get id;/// [id] ID of the protocol entity. This ID is unique.
+ set id(String? value);///[name] Name of the protocol.
+ String get name;///[name] Name of the protocol.
+ set name(String value);/// [color] Indicates the color assigned to the protocol
+@ColorConverter() Color get color;/// [color] Indicates the color assigned to the protocol
+@ColorConverter() set color(Color value);/// [isEnabled] Boolean that indicates if the protocol is enabled.
+ bool get isEnabled;/// [isEnabled] Boolean that indicates if the protocol is enabled.
+ set isEnabled(bool value);/// [categoriesIds] ID of all categories assigned
+ List<String> get categoriesIds;/// [categoriesIds] ID of all categories assigned
+ set categoriesIds(List<String> value);/// [operationMode] Indicates the operation mode of the protocol.
+@JsonKey(unknownEnumValue: OperationMode.unknown) OperationMode get operationMode;/// [operationMode] Indicates the operation mode of the protocol.
+@JsonKey(unknownEnumValue: OperationMode.unknown) set operationMode(OperationMode value);/// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+ bool get hasNativeCommands;/// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+ set hasNativeCommands(bool value);/// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+ bool get hasSmsCommands;/// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+ set hasSmsCommands(bool value);/// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+ bool get hasCommandsResult;/// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+ set hasCommandsResult(bool value);/// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+ int? get channelId;/// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+ set channelId(int? value);/// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+ bool get isFlespi;/// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+ set isFlespi(bool value);/// [flespiId] Flespi ID. Only used for Flespi protocols.
+ String? get flespiId;/// [flespiId] Flespi ID. Only used for Flespi protocols.
+ set flespiId(String? value);/// [hasAck] Boolean that indicates if the protocol has ACK support.
+ bool get hasAck;/// [hasAck] Boolean that indicates if the protocol has ACK support.
+ set hasAck(bool value);/// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+ String get ackTopicFormat;/// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+ set ackTopicFormat(String value);/// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+ bool get isImported;/// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+ set isImported(bool value);/// [requiredFields] Required configuration fields.
+ List<CredentialFieldInput> get requiredFields;/// [requiredFields] Required configuration fields.
+ set requiredFields(List<CredentialFieldInput> value);/// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+ bool get canFota;/// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+ set canFota(bool value);/// [host] is the host of the server, means the IP or domain (or subdomain)
+/// of the server to send or receive the information
+ String? get host;/// [host] is the host of the server, means the IP or domain (or subdomain)
+/// of the server to send or receive the information
+ set host(String? value);/// [port] is the port of the server, means the port
+/// of the server to send or receive the information
+/// 0 means in API and backend services "ignore this field"
+ int? get port;/// [port] is the port of the server, means the port
+/// of the server to send or receive the information
+/// 0 means in API and backend services "ignore this field"
+ set port(int? value);/// [mqttTopic] is the MQTT topic to send or receive the information
+ String? get mqttTopic;/// [mqttTopic] is the MQTT topic to send or receive the information
+ set mqttTopic(String? value);/// [dynamicIcon] is the icon of the protocol.
+ AvatarInput get dynamicIcon;/// [dynamicIcon] is the icon of the protocol.
+ set dynamicIcon(AvatarInput value);/// [cycleId] is the ID of the cycle to which the field belongs.
+ String? get cycleId;/// [cycleId] is the ID of the cycle to which the field belongs.
+ set cycleId(String? value);/// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+ bool get hasModbus;/// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+ set hasModbus(bool value);/// [modbusPorts] is the list of Modbus ports that the protocol has.
+ List<String> get modbusPorts;/// [modbusPorts] is the list of Modbus ports that the protocol has.
+ set modbusPorts(List<String> value);/// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+ bool get requiresFlespiToken;/// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+ set requiresFlespiToken(bool value);/// [flespiAcl] refers to the ACL for the token generation.
+ List<FlespiAclInput> get flespiAcl;/// [flespiAcl] refers to the ACL for the token generation.
+ set flespiAcl(List<FlespiAclInput> value);/// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+ WebhookStructureInput? get webhookStructure;/// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+ set webhookStructure(WebhookStructureInput? value);/// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+ bool get requiresExternalAccount;/// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+ set requiresExternalAccount(bool value);/// [requiresStructure] indicates if the protocol requires a structure to work.
+ bool get requiresStructure;/// [requiresStructure] indicates if the protocol requires a structure to work.
+ set requiresStructure(bool value);/// [commandsStructure] is the structure of the commands for the protocol.
+ List<CommandDefinitionInput> get commandsStructure;/// [commandsStructure] is the structure of the commands for the protocol.
+ set commandsStructure(List<CommandDefinitionInput> value);/// [configStructure] is the structure of the configuration for the protocol.
+ List<ConfigGroupingInput> get configStructure;/// [configStructure] is the structure of the configuration for the protocol.
+ set configStructure(List<ConfigGroupingInput> value);/// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+ bool get confiotCapable;/// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+ set confiotCapable(bool value);/// [peripheralIdentifier] is the identifier of the peripheral device.
+ String? get peripheralIdentifier;/// [peripheralIdentifier] is the identifier of the peripheral device.
+ set peripheralIdentifier(String? value);/// [peripheralParserSpec] is the parser specification for the peripheral device.
+ Map<String, dynamic>? get peripheralParserSpec;/// [peripheralParserSpec] is the parser specification for the peripheral device.
+ set peripheralParserSpec(Map<String, dynamic>? value);
+/// Create a copy of InboundProtocolInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InboundProtocolInputCopyWith<InboundProtocolInput> get copyWith => _$InboundProtocolInputCopyWithImpl<InboundProtocolInput>(this as InboundProtocolInput, _$identity);
+
+  /// Serializes this InboundProtocolInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $InboundProtocolInputCopyWith<$Res>  {
+  factory $InboundProtocolInputCopyWith(InboundProtocolInput value, $Res Function(InboundProtocolInput) _then) = _$InboundProtocolInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String name,@ColorConverter() Color color, bool isEnabled, List<String> categoriesIds,@JsonKey(unknownEnumValue: OperationMode.unknown) OperationMode operationMode, bool hasNativeCommands, bool hasSmsCommands, bool hasCommandsResult, int? channelId, bool isFlespi, String? flespiId, bool hasAck, String ackTopicFormat, bool isImported, List<CredentialFieldInput> requiredFields, bool canFota, String? host, int? port, String? mqttTopic, AvatarInput dynamicIcon, String? cycleId, bool hasModbus, List<String> modbusPorts, bool requiresFlespiToken, List<FlespiAclInput> flespiAcl, WebhookStructureInput? webhookStructure, bool requiresExternalAccount, bool requiresStructure, List<CommandDefinitionInput> commandsStructure, List<ConfigGroupingInput> configStructure, bool confiotCapable, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec
+});
+
+
+$AvatarInputCopyWith<$Res> get dynamicIcon;$WebhookStructureInputCopyWith<$Res>? get webhookStructure;
+
+}
+/// @nodoc
+class _$InboundProtocolInputCopyWithImpl<$Res>
+    implements $InboundProtocolInputCopyWith<$Res> {
+  _$InboundProtocolInputCopyWithImpl(this._self, this._then);
+
+  final InboundProtocolInput _self;
+  final $Res Function(InboundProtocolInput) _then;
+
+/// Create a copy of InboundProtocolInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? color = null,Object? isEnabled = null,Object? categoriesIds = null,Object? operationMode = null,Object? hasNativeCommands = null,Object? hasSmsCommands = null,Object? hasCommandsResult = null,Object? channelId = freezed,Object? isFlespi = null,Object? flespiId = freezed,Object? hasAck = null,Object? ackTopicFormat = null,Object? isImported = null,Object? requiredFields = null,Object? canFota = null,Object? host = freezed,Object? port = freezed,Object? mqttTopic = freezed,Object? dynamicIcon = null,Object? cycleId = freezed,Object? hasModbus = null,Object? modbusPorts = null,Object? requiresFlespiToken = null,Object? flespiAcl = null,Object? webhookStructure = freezed,Object? requiresExternalAccount = null,Object? requiresStructure = null,Object? commandsStructure = null,Object? configStructure = null,Object? confiotCapable = null,Object? peripheralIdentifier = freezed,Object? peripheralParserSpec = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as Color,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
+as bool,categoriesIds: null == categoriesIds ? _self.categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,operationMode: null == operationMode ? _self.operationMode : operationMode // ignore: cast_nullable_to_non_nullable
+as OperationMode,hasNativeCommands: null == hasNativeCommands ? _self.hasNativeCommands : hasNativeCommands // ignore: cast_nullable_to_non_nullable
+as bool,hasSmsCommands: null == hasSmsCommands ? _self.hasSmsCommands : hasSmsCommands // ignore: cast_nullable_to_non_nullable
+as bool,hasCommandsResult: null == hasCommandsResult ? _self.hasCommandsResult : hasCommandsResult // ignore: cast_nullable_to_non_nullable
+as bool,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
+as int?,isFlespi: null == isFlespi ? _self.isFlespi : isFlespi // ignore: cast_nullable_to_non_nullable
+as bool,flespiId: freezed == flespiId ? _self.flespiId : flespiId // ignore: cast_nullable_to_non_nullable
+as String?,hasAck: null == hasAck ? _self.hasAck : hasAck // ignore: cast_nullable_to_non_nullable
+as bool,ackTopicFormat: null == ackTopicFormat ? _self.ackTopicFormat : ackTopicFormat // ignore: cast_nullable_to_non_nullable
+as String,isImported: null == isImported ? _self.isImported : isImported // ignore: cast_nullable_to_non_nullable
+as bool,requiredFields: null == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
+as List<CredentialFieldInput>,canFota: null == canFota ? _self.canFota : canFota // ignore: cast_nullable_to_non_nullable
+as bool,host: freezed == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String?,port: freezed == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
+as int?,mqttTopic: freezed == mqttTopic ? _self.mqttTopic : mqttTopic // ignore: cast_nullable_to_non_nullable
+as String?,dynamicIcon: null == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
+as AvatarInput,cycleId: freezed == cycleId ? _self.cycleId : cycleId // ignore: cast_nullable_to_non_nullable
+as String?,hasModbus: null == hasModbus ? _self.hasModbus : hasModbus // ignore: cast_nullable_to_non_nullable
+as bool,modbusPorts: null == modbusPorts ? _self.modbusPorts : modbusPorts // ignore: cast_nullable_to_non_nullable
+as List<String>,requiresFlespiToken: null == requiresFlespiToken ? _self.requiresFlespiToken : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
+as bool,flespiAcl: null == flespiAcl ? _self.flespiAcl : flespiAcl // ignore: cast_nullable_to_non_nullable
+as List<FlespiAclInput>,webhookStructure: freezed == webhookStructure ? _self.webhookStructure : webhookStructure // ignore: cast_nullable_to_non_nullable
+as WebhookStructureInput?,requiresExternalAccount: null == requiresExternalAccount ? _self.requiresExternalAccount : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
+as bool,requiresStructure: null == requiresStructure ? _self.requiresStructure : requiresStructure // ignore: cast_nullable_to_non_nullable
+as bool,commandsStructure: null == commandsStructure ? _self.commandsStructure : commandsStructure // ignore: cast_nullable_to_non_nullable
+as List<CommandDefinitionInput>,configStructure: null == configStructure ? _self.configStructure : configStructure // ignore: cast_nullable_to_non_nullable
+as List<ConfigGroupingInput>,confiotCapable: null == confiotCapable ? _self.confiotCapable : confiotCapable // ignore: cast_nullable_to_non_nullable
+as bool,peripheralIdentifier: freezed == peripheralIdentifier ? _self.peripheralIdentifier : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,
+  ));
+}
+/// Create a copy of InboundProtocolInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AvatarInputCopyWith<$Res> get dynamicIcon {
+  
+  return $AvatarInputCopyWith<$Res>(_self.dynamicIcon, (value) {
+    return _then(_self.copyWith(dynamicIcon: value));
+  });
+}/// Create a copy of InboundProtocolInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WebhookStructureInputCopyWith<$Res>? get webhookStructure {
+    if (_self.webhookStructure == null) {
+    return null;
+  }
+
+  return $WebhookStructureInputCopyWith<$Res>(_self.webhookStructure!, (value) {
+    return _then(_self.copyWith(webhookStructure: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [InboundProtocolInput].
+extension InboundProtocolInputPatterns on InboundProtocolInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InboundProtocolInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _InboundProtocolInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InboundProtocolInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _InboundProtocolInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InboundProtocolInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _InboundProtocolInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name, @ColorConverter()  Color color,  bool isEnabled,  List<String> categoriesIds, @JsonKey(unknownEnumValue: OperationMode.unknown)  OperationMode operationMode,  bool hasNativeCommands,  bool hasSmsCommands,  bool hasCommandsResult,  int? channelId,  bool isFlespi,  String? flespiId,  bool hasAck,  String ackTopicFormat,  bool isImported,  List<CredentialFieldInput> requiredFields,  bool canFota,  String? host,  int? port,  String? mqttTopic,  AvatarInput dynamicIcon,  String? cycleId,  bool hasModbus,  List<String> modbusPorts,  bool requiresFlespiToken,  List<FlespiAclInput> flespiAcl,  WebhookStructureInput? webhookStructure,  bool requiresExternalAccount,  bool requiresStructure,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _InboundProtocolInput() when $default != null:
+return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.categoriesIds,_that.operationMode,_that.hasNativeCommands,_that.hasSmsCommands,_that.hasCommandsResult,_that.channelId,_that.isFlespi,_that.flespiId,_that.hasAck,_that.ackTopicFormat,_that.isImported,_that.requiredFields,_that.canFota,_that.host,_that.port,_that.mqttTopic,_that.dynamicIcon,_that.cycleId,_that.hasModbus,_that.modbusPorts,_that.requiresFlespiToken,_that.flespiAcl,_that.webhookStructure,_that.requiresExternalAccount,_that.requiresStructure,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.peripheralIdentifier,_that.peripheralParserSpec);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name, @ColorConverter()  Color color,  bool isEnabled,  List<String> categoriesIds, @JsonKey(unknownEnumValue: OperationMode.unknown)  OperationMode operationMode,  bool hasNativeCommands,  bool hasSmsCommands,  bool hasCommandsResult,  int? channelId,  bool isFlespi,  String? flespiId,  bool hasAck,  String ackTopicFormat,  bool isImported,  List<CredentialFieldInput> requiredFields,  bool canFota,  String? host,  int? port,  String? mqttTopic,  AvatarInput dynamicIcon,  String? cycleId,  bool hasModbus,  List<String> modbusPorts,  bool requiresFlespiToken,  List<FlespiAclInput> flespiAcl,  WebhookStructureInput? webhookStructure,  bool requiresExternalAccount,  bool requiresStructure,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec)  $default,) {final _that = this;
+switch (_that) {
+case _InboundProtocolInput():
+return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.categoriesIds,_that.operationMode,_that.hasNativeCommands,_that.hasSmsCommands,_that.hasCommandsResult,_that.channelId,_that.isFlespi,_that.flespiId,_that.hasAck,_that.ackTopicFormat,_that.isImported,_that.requiredFields,_that.canFota,_that.host,_that.port,_that.mqttTopic,_that.dynamicIcon,_that.cycleId,_that.hasModbus,_that.modbusPorts,_that.requiresFlespiToken,_that.flespiAcl,_that.webhookStructure,_that.requiresExternalAccount,_that.requiresStructure,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.peripheralIdentifier,_that.peripheralParserSpec);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name, @ColorConverter()  Color color,  bool isEnabled,  List<String> categoriesIds, @JsonKey(unknownEnumValue: OperationMode.unknown)  OperationMode operationMode,  bool hasNativeCommands,  bool hasSmsCommands,  bool hasCommandsResult,  int? channelId,  bool isFlespi,  String? flespiId,  bool hasAck,  String ackTopicFormat,  bool isImported,  List<CredentialFieldInput> requiredFields,  bool canFota,  String? host,  int? port,  String? mqttTopic,  AvatarInput dynamicIcon,  String? cycleId,  bool hasModbus,  List<String> modbusPorts,  bool requiresFlespiToken,  List<FlespiAclInput> flespiAcl,  WebhookStructureInput? webhookStructure,  bool requiresExternalAccount,  bool requiresStructure,  List<CommandDefinitionInput> commandsStructure,  List<ConfigGroupingInput> configStructure,  bool confiotCapable,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec)?  $default,) {final _that = this;
+switch (_that) {
+case _InboundProtocolInput() when $default != null:
+return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.categoriesIds,_that.operationMode,_that.hasNativeCommands,_that.hasSmsCommands,_that.hasCommandsResult,_that.channelId,_that.isFlespi,_that.flespiId,_that.hasAck,_that.ackTopicFormat,_that.isImported,_that.requiredFields,_that.canFota,_that.host,_that.port,_that.mqttTopic,_that.dynamicIcon,_that.cycleId,_that.hasModbus,_that.modbusPorts,_that.requiresFlespiToken,_that.flespiAcl,_that.webhookStructure,_that.requiresExternalAccount,_that.requiresStructure,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.peripheralIdentifier,_that.peripheralParserSpec);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _InboundProtocolInput extends InboundProtocolInput {
+   _InboundProtocolInput({this.id, this.name = '', @ColorConverter() this.color = Colors.blue, this.isEnabled = true, this.categoriesIds = const [], @JsonKey(unknownEnumValue: OperationMode.unknown) this.operationMode = OperationMode.realtime, this.hasNativeCommands = false, this.hasSmsCommands = false, this.hasCommandsResult = false, this.channelId, this.isFlespi = false, this.flespiId, this.hasAck = false, this.ackTopicFormat = '', this.isImported = false, this.requiredFields = const [], this.canFota = false, this.host, this.port, this.mqttTopic, required this.dynamicIcon, this.cycleId, this.hasModbus = false, this.modbusPorts = const [], this.requiresFlespiToken = false, this.flespiAcl = const [], this.webhookStructure, this.requiresExternalAccount = false, this.requiresStructure = false, this.commandsStructure = const [], this.configStructure = const [], this.confiotCapable = false, this.peripheralIdentifier, this.peripheralParserSpec}): super._();
+  factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);
+
+/// [id] ID of the protocol entity. This ID is unique.
+@override  String? id;
+///[name] Name of the protocol.
+@override@JsonKey()  String name;
+/// [color] Indicates the color assigned to the protocol
+@override@JsonKey()@ColorConverter()  Color color;
+/// [isEnabled] Boolean that indicates if the protocol is enabled.
+@override@JsonKey()  bool isEnabled;
+/// [categoriesIds] ID of all categories assigned
+@override@JsonKey()  List<String> categoriesIds;
+/// [operationMode] Indicates the operation mode of the protocol.
+@override@JsonKey(unknownEnumValue: OperationMode.unknown)  OperationMode operationMode;
+/// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+@override@JsonKey()  bool hasNativeCommands;
+/// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+@override@JsonKey()  bool hasSmsCommands;
+/// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+@override@JsonKey()  bool hasCommandsResult;
+/// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+@override  int? channelId;
+/// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+@override@JsonKey()  bool isFlespi;
+/// [flespiId] Flespi ID. Only used for Flespi protocols.
+@override  String? flespiId;
+/// [hasAck] Boolean that indicates if the protocol has ACK support.
+@override@JsonKey()  bool hasAck;
+/// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+@override@JsonKey()  String ackTopicFormat;
+/// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+@override@JsonKey()  bool isImported;
+/// [requiredFields] Required configuration fields.
+@override@JsonKey()  List<CredentialFieldInput> requiredFields;
+/// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+@override@JsonKey()  bool canFota;
+/// [host] is the host of the server, means the IP or domain (or subdomain)
+/// of the server to send or receive the information
+@override  String? host;
+/// [port] is the port of the server, means the port
+/// of the server to send or receive the information
+/// 0 means in API and backend services "ignore this field"
+@override  int? port;
+/// [mqttTopic] is the MQTT topic to send or receive the information
+@override  String? mqttTopic;
+/// [dynamicIcon] is the icon of the protocol.
+@override  AvatarInput dynamicIcon;
+/// [cycleId] is the ID of the cycle to which the field belongs.
+@override  String? cycleId;
+/// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+@override@JsonKey()  bool hasModbus;
+/// [modbusPorts] is the list of Modbus ports that the protocol has.
+@override@JsonKey()  List<String> modbusPorts;
+/// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+@override@JsonKey()  bool requiresFlespiToken;
+/// [flespiAcl] refers to the ACL for the token generation.
+@override@JsonKey()  List<FlespiAclInput> flespiAcl;
+/// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+@override  WebhookStructureInput? webhookStructure;
+/// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+@override@JsonKey()  bool requiresExternalAccount;
+/// [requiresStructure] indicates if the protocol requires a structure to work.
+@override@JsonKey()  bool requiresStructure;
+/// [commandsStructure] is the structure of the commands for the protocol.
+@override@JsonKey()  List<CommandDefinitionInput> commandsStructure;
+/// [configStructure] is the structure of the configuration for the protocol.
+@override@JsonKey()  List<ConfigGroupingInput> configStructure;
+/// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+@override@JsonKey()  bool confiotCapable;
+/// [peripheralIdentifier] is the identifier of the peripheral device.
+@override  String? peripheralIdentifier;
+/// [peripheralParserSpec] is the parser specification for the peripheral device.
+@override  Map<String, dynamic>? peripheralParserSpec;
+
+/// Create a copy of InboundProtocolInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InboundProtocolInputCopyWith<_InboundProtocolInput> get copyWith => __$InboundProtocolInputCopyWithImpl<_InboundProtocolInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$InboundProtocolInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$InboundProtocolInputCopyWith<$Res> implements $InboundProtocolInputCopyWith<$Res> {
+  factory _$InboundProtocolInputCopyWith(_InboundProtocolInput value, $Res Function(_InboundProtocolInput) _then) = __$InboundProtocolInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String name,@ColorConverter() Color color, bool isEnabled, List<String> categoriesIds,@JsonKey(unknownEnumValue: OperationMode.unknown) OperationMode operationMode, bool hasNativeCommands, bool hasSmsCommands, bool hasCommandsResult, int? channelId, bool isFlespi, String? flespiId, bool hasAck, String ackTopicFormat, bool isImported, List<CredentialFieldInput> requiredFields, bool canFota, String? host, int? port, String? mqttTopic, AvatarInput dynamicIcon, String? cycleId, bool hasModbus, List<String> modbusPorts, bool requiresFlespiToken, List<FlespiAclInput> flespiAcl, WebhookStructureInput? webhookStructure, bool requiresExternalAccount, bool requiresStructure, List<CommandDefinitionInput> commandsStructure, List<ConfigGroupingInput> configStructure, bool confiotCapable, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec
+});
+
+
+@override $AvatarInputCopyWith<$Res> get dynamicIcon;@override $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
+
+}
+/// @nodoc
+class __$InboundProtocolInputCopyWithImpl<$Res>
+    implements _$InboundProtocolInputCopyWith<$Res> {
+  __$InboundProtocolInputCopyWithImpl(this._self, this._then);
+
+  final _InboundProtocolInput _self;
+  final $Res Function(_InboundProtocolInput) _then;
+
+/// Create a copy of InboundProtocolInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? color = null,Object? isEnabled = null,Object? categoriesIds = null,Object? operationMode = null,Object? hasNativeCommands = null,Object? hasSmsCommands = null,Object? hasCommandsResult = null,Object? channelId = freezed,Object? isFlespi = null,Object? flespiId = freezed,Object? hasAck = null,Object? ackTopicFormat = null,Object? isImported = null,Object? requiredFields = null,Object? canFota = null,Object? host = freezed,Object? port = freezed,Object? mqttTopic = freezed,Object? dynamicIcon = null,Object? cycleId = freezed,Object? hasModbus = null,Object? modbusPorts = null,Object? requiresFlespiToken = null,Object? flespiAcl = null,Object? webhookStructure = freezed,Object? requiresExternalAccount = null,Object? requiresStructure = null,Object? commandsStructure = null,Object? configStructure = null,Object? confiotCapable = null,Object? peripheralIdentifier = freezed,Object? peripheralParserSpec = freezed,}) {
+  return _then(_InboundProtocolInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as Color,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
+as bool,categoriesIds: null == categoriesIds ? _self.categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,operationMode: null == operationMode ? _self.operationMode : operationMode // ignore: cast_nullable_to_non_nullable
+as OperationMode,hasNativeCommands: null == hasNativeCommands ? _self.hasNativeCommands : hasNativeCommands // ignore: cast_nullable_to_non_nullable
+as bool,hasSmsCommands: null == hasSmsCommands ? _self.hasSmsCommands : hasSmsCommands // ignore: cast_nullable_to_non_nullable
+as bool,hasCommandsResult: null == hasCommandsResult ? _self.hasCommandsResult : hasCommandsResult // ignore: cast_nullable_to_non_nullable
+as bool,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
+as int?,isFlespi: null == isFlespi ? _self.isFlespi : isFlespi // ignore: cast_nullable_to_non_nullable
+as bool,flespiId: freezed == flespiId ? _self.flespiId : flespiId // ignore: cast_nullable_to_non_nullable
+as String?,hasAck: null == hasAck ? _self.hasAck : hasAck // ignore: cast_nullable_to_non_nullable
+as bool,ackTopicFormat: null == ackTopicFormat ? _self.ackTopicFormat : ackTopicFormat // ignore: cast_nullable_to_non_nullable
+as String,isImported: null == isImported ? _self.isImported : isImported // ignore: cast_nullable_to_non_nullable
+as bool,requiredFields: null == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
+as List<CredentialFieldInput>,canFota: null == canFota ? _self.canFota : canFota // ignore: cast_nullable_to_non_nullable
+as bool,host: freezed == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String?,port: freezed == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
+as int?,mqttTopic: freezed == mqttTopic ? _self.mqttTopic : mqttTopic // ignore: cast_nullable_to_non_nullable
+as String?,dynamicIcon: null == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
+as AvatarInput,cycleId: freezed == cycleId ? _self.cycleId : cycleId // ignore: cast_nullable_to_non_nullable
+as String?,hasModbus: null == hasModbus ? _self.hasModbus : hasModbus // ignore: cast_nullable_to_non_nullable
+as bool,modbusPorts: null == modbusPorts ? _self.modbusPorts : modbusPorts // ignore: cast_nullable_to_non_nullable
+as List<String>,requiresFlespiToken: null == requiresFlespiToken ? _self.requiresFlespiToken : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
+as bool,flespiAcl: null == flespiAcl ? _self.flespiAcl : flespiAcl // ignore: cast_nullable_to_non_nullable
+as List<FlespiAclInput>,webhookStructure: freezed == webhookStructure ? _self.webhookStructure : webhookStructure // ignore: cast_nullable_to_non_nullable
+as WebhookStructureInput?,requiresExternalAccount: null == requiresExternalAccount ? _self.requiresExternalAccount : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
+as bool,requiresStructure: null == requiresStructure ? _self.requiresStructure : requiresStructure // ignore: cast_nullable_to_non_nullable
+as bool,commandsStructure: null == commandsStructure ? _self.commandsStructure : commandsStructure // ignore: cast_nullable_to_non_nullable
+as List<CommandDefinitionInput>,configStructure: null == configStructure ? _self.configStructure : configStructure // ignore: cast_nullable_to_non_nullable
+as List<ConfigGroupingInput>,confiotCapable: null == confiotCapable ? _self.confiotCapable : confiotCapable // ignore: cast_nullable_to_non_nullable
+as bool,peripheralIdentifier: freezed == peripheralIdentifier ? _self.peripheralIdentifier : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,
+  ));
+}
+
+/// Create a copy of InboundProtocolInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AvatarInputCopyWith<$Res> get dynamicIcon {
+  
+  return $AvatarInputCopyWith<$Res>(_self.dynamicIcon, (value) {
+    return _then(_self.copyWith(dynamicIcon: value));
+  });
+}/// Create a copy of InboundProtocolInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WebhookStructureInputCopyWith<$Res>? get webhookStructure {
+    if (_self.webhookStructure == null) {
+    return null;
+  }
+
+  return $WebhookStructureInputCopyWith<$Res>(_self.webhookStructure!, (value) {
+    return _then(_self.copyWith(webhookStructure: value));
+  });
+}
+}
+
+
+/// @nodoc
 mixin _$ConfigGrouping {
 
 /// [name] is the name of the grouping.
@@ -2117,6 +2117,288 @@ as ConfigKind,description: freezed == description ? _self.description : descript
 as String?,setupCapable: freezed == setupCapable ? _self.setupCapable : setupCapable // ignore: cast_nullable_to_non_nullable
 as bool?,items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
 as List<ConfigDefinition>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ConfigGroupingInput {
+
+/// [name] is the name of the grouping.
+/// This is the translation key.
+ String get name;/// [name] is the name of the grouping.
+/// This is the translation key.
+ set name(String value);/// [kind] is the kind of the grouping.
+@JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind get kind;/// [kind] is the kind of the grouping.
+@JsonKey(unknownEnumValue: ConfigKind.unknown) set kind(ConfigKind value);/// [description] is the fallback name of the grouping, when the translation is not available.
+/// This is the translation key.
+ String get description;/// [description] is the fallback name of the grouping, when the translation is not available.
+/// This is the translation key.
+ set description(String value);/// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+ bool get setupCapable;/// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+ set setupCapable(bool value);/// [items] is the list of items of the grouping.
+ List<ConfigDefinitionInput> get items;/// [items] is the list of items of the grouping.
+ set items(List<ConfigDefinitionInput> value);
+/// Create a copy of ConfigGroupingInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ConfigGroupingInputCopyWith<ConfigGroupingInput> get copyWith => _$ConfigGroupingInputCopyWithImpl<ConfigGroupingInput>(this as ConfigGroupingInput, _$identity);
+
+  /// Serializes this ConfigGroupingInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'ConfigGroupingInput(name: $name, kind: $kind, description: $description, setupCapable: $setupCapable, items: $items)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ConfigGroupingInputCopyWith<$Res>  {
+  factory $ConfigGroupingInputCopyWith(ConfigGroupingInput value, $Res Function(ConfigGroupingInput) _then) = _$ConfigGroupingInputCopyWithImpl;
+@useResult
+$Res call({
+ String name,@JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind, String description, bool setupCapable, List<ConfigDefinitionInput> items
+});
+
+
+
+
+}
+/// @nodoc
+class _$ConfigGroupingInputCopyWithImpl<$Res>
+    implements $ConfigGroupingInputCopyWith<$Res> {
+  _$ConfigGroupingInputCopyWithImpl(this._self, this._then);
+
+  final ConfigGroupingInput _self;
+  final $Res Function(ConfigGroupingInput) _then;
+
+/// Create a copy of ConfigGroupingInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? kind = null,Object? description = null,Object? setupCapable = null,Object? items = null,}) {
+  return _then(_self.copyWith(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
+as ConfigKind,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,setupCapable: null == setupCapable ? _self.setupCapable : setupCapable // ignore: cast_nullable_to_non_nullable
+as bool,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as List<ConfigDefinitionInput>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ConfigGroupingInput].
+extension ConfigGroupingInputPatterns on ConfigGroupingInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ConfigGroupingInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ConfigGroupingInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ConfigGroupingInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _ConfigGroupingInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ConfigGroupingInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ConfigGroupingInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name, @JsonKey(unknownEnumValue: ConfigKind.unknown)  ConfigKind kind,  String description,  bool setupCapable,  List<ConfigDefinitionInput> items)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ConfigGroupingInput() when $default != null:
+return $default(_that.name,_that.kind,_that.description,_that.setupCapable,_that.items);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name, @JsonKey(unknownEnumValue: ConfigKind.unknown)  ConfigKind kind,  String description,  bool setupCapable,  List<ConfigDefinitionInput> items)  $default,) {final _that = this;
+switch (_that) {
+case _ConfigGroupingInput():
+return $default(_that.name,_that.kind,_that.description,_that.setupCapable,_that.items);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name, @JsonKey(unknownEnumValue: ConfigKind.unknown)  ConfigKind kind,  String description,  bool setupCapable,  List<ConfigDefinitionInput> items)?  $default,) {final _that = this;
+switch (_that) {
+case _ConfigGroupingInput() when $default != null:
+return $default(_that.name,_that.kind,_that.description,_that.setupCapable,_that.items);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ConfigGroupingInput implements ConfigGroupingInput {
+   _ConfigGroupingInput({this.name = '', @JsonKey(unknownEnumValue: ConfigKind.unknown) this.kind = ConfigKind.grouping, this.description = '', this.setupCapable = false, this.items = const []});
+  factory _ConfigGroupingInput.fromJson(Map<String, dynamic> json) => _$ConfigGroupingInputFromJson(json);
+
+/// [name] is the name of the grouping.
+/// This is the translation key.
+@override@JsonKey()  String name;
+/// [kind] is the kind of the grouping.
+@override@JsonKey(unknownEnumValue: ConfigKind.unknown)  ConfigKind kind;
+/// [description] is the fallback name of the grouping, when the translation is not available.
+/// This is the translation key.
+@override@JsonKey()  String description;
+/// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+@override@JsonKey()  bool setupCapable;
+/// [items] is the list of items of the grouping.
+@override@JsonKey()  List<ConfigDefinitionInput> items;
+
+/// Create a copy of ConfigGroupingInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ConfigGroupingInputCopyWith<_ConfigGroupingInput> get copyWith => __$ConfigGroupingInputCopyWithImpl<_ConfigGroupingInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ConfigGroupingInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'ConfigGroupingInput(name: $name, kind: $kind, description: $description, setupCapable: $setupCapable, items: $items)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ConfigGroupingInputCopyWith<$Res> implements $ConfigGroupingInputCopyWith<$Res> {
+  factory _$ConfigGroupingInputCopyWith(_ConfigGroupingInput value, $Res Function(_ConfigGroupingInput) _then) = __$ConfigGroupingInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String name,@JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind, String description, bool setupCapable, List<ConfigDefinitionInput> items
+});
+
+
+
+
+}
+/// @nodoc
+class __$ConfigGroupingInputCopyWithImpl<$Res>
+    implements _$ConfigGroupingInputCopyWith<$Res> {
+  __$ConfigGroupingInputCopyWithImpl(this._self, this._then);
+
+  final _ConfigGroupingInput _self;
+  final $Res Function(_ConfigGroupingInput) _then;
+
+/// Create a copy of ConfigGroupingInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? kind = null,Object? description = null,Object? setupCapable = null,Object? items = null,}) {
+  return _then(_ConfigGroupingInput(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
+as ConfigKind,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,setupCapable: null == setupCapable ? _self.setupCapable : setupCapable // ignore: cast_nullable_to_non_nullable
+as bool,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as List<ConfigDefinitionInput>,
   ));
 }
 
@@ -2461,288 +2743,6 @@ as int?,choices: freezed == choices ? _self._choices : choices // ignore: cast_n
 as List<String>?,regexPattern: freezed == regexPattern ? _self.regexPattern : regexPattern // ignore: cast_nullable_to_non_nullable
 as RegExp?,setupCapable: freezed == setupCapable ? _self.setupCapable : setupCapable // ignore: cast_nullable_to_non_nullable
 as bool?,
-  ));
-}
-
-
-}
-
-
-/// @nodoc
-mixin _$ConfigGroupingInput {
-
-/// [name] is the name of the grouping.
-/// This is the translation key.
- String get name;/// [name] is the name of the grouping.
-/// This is the translation key.
- set name(String value);/// [kind] is the kind of the grouping.
-@JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind get kind;/// [kind] is the kind of the grouping.
-@JsonKey(unknownEnumValue: ConfigKind.unknown) set kind(ConfigKind value);/// [description] is the fallback name of the grouping, when the translation is not available.
-/// This is the translation key.
- String get description;/// [description] is the fallback name of the grouping, when the translation is not available.
-/// This is the translation key.
- set description(String value);/// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
- bool get setupCapable;/// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
- set setupCapable(bool value);/// [items] is the list of items of the grouping.
- List<ConfigDefinitionInput> get items;/// [items] is the list of items of the grouping.
- set items(List<ConfigDefinitionInput> value);
-/// Create a copy of ConfigGroupingInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ConfigGroupingInputCopyWith<ConfigGroupingInput> get copyWith => _$ConfigGroupingInputCopyWithImpl<ConfigGroupingInput>(this as ConfigGroupingInput, _$identity);
-
-  /// Serializes this ConfigGroupingInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-
-
-@override
-String toString() {
-  return 'ConfigGroupingInput(name: $name, kind: $kind, description: $description, setupCapable: $setupCapable, items: $items)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $ConfigGroupingInputCopyWith<$Res>  {
-  factory $ConfigGroupingInputCopyWith(ConfigGroupingInput value, $Res Function(ConfigGroupingInput) _then) = _$ConfigGroupingInputCopyWithImpl;
-@useResult
-$Res call({
- String name,@JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind, String description, bool setupCapable, List<ConfigDefinitionInput> items
-});
-
-
-
-
-}
-/// @nodoc
-class _$ConfigGroupingInputCopyWithImpl<$Res>
-    implements $ConfigGroupingInputCopyWith<$Res> {
-  _$ConfigGroupingInputCopyWithImpl(this._self, this._then);
-
-  final ConfigGroupingInput _self;
-  final $Res Function(ConfigGroupingInput) _then;
-
-/// Create a copy of ConfigGroupingInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? kind = null,Object? description = null,Object? setupCapable = null,Object? items = null,}) {
-  return _then(_self.copyWith(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
-as ConfigKind,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String,setupCapable: null == setupCapable ? _self.setupCapable : setupCapable // ignore: cast_nullable_to_non_nullable
-as bool,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
-as List<ConfigDefinitionInput>,
-  ));
-}
-
-}
-
-
-/// Adds pattern-matching-related methods to [ConfigGroupingInput].
-extension ConfigGroupingInputPatterns on ConfigGroupingInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ConfigGroupingInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ConfigGroupingInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ConfigGroupingInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _ConfigGroupingInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ConfigGroupingInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ConfigGroupingInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name, @JsonKey(unknownEnumValue: ConfigKind.unknown)  ConfigKind kind,  String description,  bool setupCapable,  List<ConfigDefinitionInput> items)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ConfigGroupingInput() when $default != null:
-return $default(_that.name,_that.kind,_that.description,_that.setupCapable,_that.items);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name, @JsonKey(unknownEnumValue: ConfigKind.unknown)  ConfigKind kind,  String description,  bool setupCapable,  List<ConfigDefinitionInput> items)  $default,) {final _that = this;
-switch (_that) {
-case _ConfigGroupingInput():
-return $default(_that.name,_that.kind,_that.description,_that.setupCapable,_that.items);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name, @JsonKey(unknownEnumValue: ConfigKind.unknown)  ConfigKind kind,  String description,  bool setupCapable,  List<ConfigDefinitionInput> items)?  $default,) {final _that = this;
-switch (_that) {
-case _ConfigGroupingInput() when $default != null:
-return $default(_that.name,_that.kind,_that.description,_that.setupCapable,_that.items);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _ConfigGroupingInput implements ConfigGroupingInput {
-   _ConfigGroupingInput({this.name = '', @JsonKey(unknownEnumValue: ConfigKind.unknown) this.kind = ConfigKind.grouping, this.description = '', this.setupCapable = false, this.items = const []});
-  factory _ConfigGroupingInput.fromJson(Map<String, dynamic> json) => _$ConfigGroupingInputFromJson(json);
-
-/// [name] is the name of the grouping.
-/// This is the translation key.
-@override@JsonKey()  String name;
-/// [kind] is the kind of the grouping.
-@override@JsonKey(unknownEnumValue: ConfigKind.unknown)  ConfigKind kind;
-/// [description] is the fallback name of the grouping, when the translation is not available.
-/// This is the translation key.
-@override@JsonKey()  String description;
-/// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
-@override@JsonKey()  bool setupCapable;
-/// [items] is the list of items of the grouping.
-@override@JsonKey()  List<ConfigDefinitionInput> items;
-
-/// Create a copy of ConfigGroupingInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ConfigGroupingInputCopyWith<_ConfigGroupingInput> get copyWith => __$ConfigGroupingInputCopyWithImpl<_ConfigGroupingInput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$ConfigGroupingInputToJson(this, );
-}
-
-
-
-@override
-String toString() {
-  return 'ConfigGroupingInput(name: $name, kind: $kind, description: $description, setupCapable: $setupCapable, items: $items)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ConfigGroupingInputCopyWith<$Res> implements $ConfigGroupingInputCopyWith<$Res> {
-  factory _$ConfigGroupingInputCopyWith(_ConfigGroupingInput value, $Res Function(_ConfigGroupingInput) _then) = __$ConfigGroupingInputCopyWithImpl;
-@override @useResult
-$Res call({
- String name,@JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind, String description, bool setupCapable, List<ConfigDefinitionInput> items
-});
-
-
-
-
-}
-/// @nodoc
-class __$ConfigGroupingInputCopyWithImpl<$Res>
-    implements _$ConfigGroupingInputCopyWith<$Res> {
-  __$ConfigGroupingInputCopyWithImpl(this._self, this._then);
-
-  final _ConfigGroupingInput _self;
-  final $Res Function(_ConfigGroupingInput) _then;
-
-/// Create a copy of ConfigGroupingInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? kind = null,Object? description = null,Object? setupCapable = null,Object? items = null,}) {
-  return _then(_ConfigGroupingInput(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
-as ConfigKind,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String,setupCapable: null == setupCapable ? _self.setupCapable : setupCapable // ignore: cast_nullable_to_non_nullable
-as bool,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
-as List<ConfigDefinitionInput>,
   ));
 }
 

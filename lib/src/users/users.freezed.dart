@@ -2720,402 +2720,6 @@ $UserPreferencesCopyWith<$Res>? get preferences {
 
 
 /// @nodoc
-mixin _$UserInput {
-
-/// [id] represents the user ID. When is new, this value should be null.
- String? get id;/// [id] represents the user ID. When is new, this value should be null.
- set id(String? value);/// [name] represents the user name.
- String get name;/// [name] represents the user name.
- set name(String value);/// [email] represents the user email.
- String get email;/// [email] represents the user email.
- set email(String value);/// [username] represents the username.
- String get username;/// [username] represents the username.
- set username(String value);/// [dynamicAvatar] represents the user avatar.
- AvatarInput? get dynamicAvatar;/// [dynamicAvatar] represents the user avatar.
- set dynamicAvatar(AvatarInput? value);/// [referencesIds] represents the list of references IDs.
- List<String> get referencesIds;/// [referencesIds] represents the list of references IDs.
- set referencesIds(List<String> value);/// [categoryId] represents the user category ID.
- String? get categoryId;/// [categoryId] represents the user category ID.
- set categoryId(String? value);/// [customFields] represents the list of custom fields.
- List<CustomField> get customFields;/// [customFields] represents the list of custom fields.
- set customFields(List<CustomField> value);/// [tagsIds] represents the list of tags IDs.
- List<String> get tagsIds;/// [tagsIds] represents the list of tags IDs.
- set tagsIds(List<String> value);/// [mappitAssetsIds] represents the list of assets IDs.
-/// This field is only for `Mappit` use.
- List<String> get mappitAssetsIds;/// [mappitAssetsIds] represents the list of assets IDs.
-/// This field is only for `Mappit` use.
- set mappitAssetsIds(List<String> value);/// [historicalDaysAllowed] represents the number of days allowed to access historical data.
-/// This field is only for `Mappit` use.
- int get historicalDaysAllowed;/// [historicalDaysAllowed] represents the number of days allowed to access historical data.
-/// This field is only for `Mappit` use.
- set historicalDaysAllowed(int value);/// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
- String? get brickhousePermissionTierId;/// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
- set brickhousePermissionTierId(String? value);/// [brickhouseRole] represents the Brickhouse user role.
-@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? get brickhouseRole;/// [brickhouseRole] represents the Brickhouse user role.
-@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) set brickhouseRole(BrickhouseUserRole? value);/// [sdmCode] represents the SDM code.
- String? get sdmCode;/// [sdmCode] represents the SDM code.
- set sdmCode(String? value);/// [password] default password if allowed by the form
- String? get password;/// [password] default password if allowed by the form
- set password(String? value);/// [preferences] represents the user preferences.
- UserPreferencesInput? get preferences;/// [preferences] represents the user preferences.
- set preferences(UserPreferencesInput? value);
-/// Create a copy of UserInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UserInputCopyWith<UserInput> get copyWith => _$UserInputCopyWithImpl<UserInput>(this as UserInput, _$identity);
-
-  /// Serializes this UserInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-
-
-@override
-String toString() {
-  return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password, preferences: $preferences)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UserInputCopyWith<$Res>  {
-  factory $UserInputCopyWith(UserInput value, $Res Function(UserInput) _then) = _$UserInputCopyWithImpl;
-@useResult
-$Res call({
- String? id, String name, String email, String username, AvatarInput? dynamicAvatar, List<String> referencesIds, String? categoryId, List<CustomField> customFields, List<String> tagsIds, List<String> mappitAssetsIds, int historicalDaysAllowed, String? brickhousePermissionTierId,@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole, String? sdmCode, String? password, UserPreferencesInput? preferences
-});
-
-
-$AvatarInputCopyWith<$Res>? get dynamicAvatar;$UserPreferencesInputCopyWith<$Res>? get preferences;
-
-}
-/// @nodoc
-class _$UserInputCopyWithImpl<$Res>
-    implements $UserInputCopyWith<$Res> {
-  _$UserInputCopyWithImpl(this._self, this._then);
-
-  final UserInput _self;
-  final $Res Function(UserInput) _then;
-
-/// Create a copy of UserInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? email = null,Object? username = null,Object? dynamicAvatar = freezed,Object? referencesIds = null,Object? categoryId = freezed,Object? customFields = null,Object? tagsIds = null,Object? mappitAssetsIds = null,Object? historicalDaysAllowed = null,Object? brickhousePermissionTierId = freezed,Object? brickhouseRole = freezed,Object? sdmCode = freezed,Object? password = freezed,Object? preferences = freezed,}) {
-  return _then(_self.copyWith(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,username: null == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
-as String,dynamicAvatar: freezed == dynamicAvatar ? _self.dynamicAvatar : dynamicAvatar // ignore: cast_nullable_to_non_nullable
-as AvatarInput?,referencesIds: null == referencesIds ? _self.referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>,categoryId: freezed == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
-as String?,customFields: null == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
-as List<CustomField>,tagsIds: null == tagsIds ? _self.tagsIds : tagsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,mappitAssetsIds: null == mappitAssetsIds ? _self.mappitAssetsIds : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,historicalDaysAllowed: null == historicalDaysAllowed ? _self.historicalDaysAllowed : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
-as int,brickhousePermissionTierId: freezed == brickhousePermissionTierId ? _self.brickhousePermissionTierId : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
-as String?,brickhouseRole: freezed == brickhouseRole ? _self.brickhouseRole : brickhouseRole // ignore: cast_nullable_to_non_nullable
-as BrickhouseUserRole?,sdmCode: freezed == sdmCode ? _self.sdmCode : sdmCode // ignore: cast_nullable_to_non_nullable
-as String?,password: freezed == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
-as String?,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as UserPreferencesInput?,
-  ));
-}
-/// Create a copy of UserInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AvatarInputCopyWith<$Res>? get dynamicAvatar {
-    if (_self.dynamicAvatar == null) {
-    return null;
-  }
-
-  return $AvatarInputCopyWith<$Res>(_self.dynamicAvatar!, (value) {
-    return _then(_self.copyWith(dynamicAvatar: value));
-  });
-}/// Create a copy of UserInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UserPreferencesInputCopyWith<$Res>? get preferences {
-    if (_self.preferences == null) {
-    return null;
-  }
-
-  return $UserPreferencesInputCopyWith<$Res>(_self.preferences!, (value) {
-    return _then(_self.copyWith(preferences: value));
-  });
-}
-}
-
-
-/// Adds pattern-matching-related methods to [UserInput].
-extension UserInputPatterns on UserInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UserInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _UserInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UserInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _UserInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UserInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _UserInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String email,  String username,  AvatarInput? dynamicAvatar,  List<String> referencesIds,  String? categoryId,  List<CustomField> customFields,  List<String> tagsIds,  List<String> mappitAssetsIds,  int historicalDaysAllowed,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  String? password,  UserPreferencesInput? preferences)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _UserInput() when $default != null:
-return $default(_that.id,_that.name,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.categoryId,_that.customFields,_that.tagsIds,_that.mappitAssetsIds,_that.historicalDaysAllowed,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.password,_that.preferences);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String email,  String username,  AvatarInput? dynamicAvatar,  List<String> referencesIds,  String? categoryId,  List<CustomField> customFields,  List<String> tagsIds,  List<String> mappitAssetsIds,  int historicalDaysAllowed,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  String? password,  UserPreferencesInput? preferences)  $default,) {final _that = this;
-switch (_that) {
-case _UserInput():
-return $default(_that.id,_that.name,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.categoryId,_that.customFields,_that.tagsIds,_that.mappitAssetsIds,_that.historicalDaysAllowed,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.password,_that.preferences);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String email,  String username,  AvatarInput? dynamicAvatar,  List<String> referencesIds,  String? categoryId,  List<CustomField> customFields,  List<String> tagsIds,  List<String> mappitAssetsIds,  int historicalDaysAllowed,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  String? password,  UserPreferencesInput? preferences)?  $default,) {final _that = this;
-switch (_that) {
-case _UserInput() when $default != null:
-return $default(_that.id,_that.name,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.categoryId,_that.customFields,_that.tagsIds,_that.mappitAssetsIds,_that.historicalDaysAllowed,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.password,_that.preferences);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _UserInput extends UserInput {
-   _UserInput({this.id, this.name = '', this.email = '', this.username = '', this.dynamicAvatar, this.referencesIds = const [], this.categoryId, this.customFields = const [], this.tagsIds = const [], this.mappitAssetsIds = const [], this.historicalDaysAllowed = 1, this.brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) this.brickhouseRole, this.sdmCode, this.password, this.preferences}): super._();
-  factory _UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);
-
-/// [id] represents the user ID. When is new, this value should be null.
-@override  String? id;
-/// [name] represents the user name.
-@override@JsonKey()  String name;
-/// [email] represents the user email.
-@override@JsonKey()  String email;
-/// [username] represents the username.
-@override@JsonKey()  String username;
-/// [dynamicAvatar] represents the user avatar.
-@override  AvatarInput? dynamicAvatar;
-/// [referencesIds] represents the list of references IDs.
-@override@JsonKey()  List<String> referencesIds;
-/// [categoryId] represents the user category ID.
-@override  String? categoryId;
-/// [customFields] represents the list of custom fields.
-@override@JsonKey()  List<CustomField> customFields;
-/// [tagsIds] represents the list of tags IDs.
-@override@JsonKey()  List<String> tagsIds;
-/// [mappitAssetsIds] represents the list of assets IDs.
-/// This field is only for `Mappit` use.
-@override@JsonKey()  List<String> mappitAssetsIds;
-/// [historicalDaysAllowed] represents the number of days allowed to access historical data.
-/// This field is only for `Mappit` use.
-@override@JsonKey()  int historicalDaysAllowed;
-/// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-@override  String? brickhousePermissionTierId;
-/// [brickhouseRole] represents the Brickhouse user role.
-@override@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole;
-/// [sdmCode] represents the SDM code.
-@override  String? sdmCode;
-/// [password] default password if allowed by the form
-@override  String? password;
-/// [preferences] represents the user preferences.
-@override  UserPreferencesInput? preferences;
-
-/// Create a copy of UserInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$UserInputCopyWith<_UserInput> get copyWith => __$UserInputCopyWithImpl<_UserInput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$UserInputToJson(this, );
-}
-
-
-
-@override
-String toString() {
-  return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password, preferences: $preferences)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$UserInputCopyWith<$Res> implements $UserInputCopyWith<$Res> {
-  factory _$UserInputCopyWith(_UserInput value, $Res Function(_UserInput) _then) = __$UserInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? id, String name, String email, String username, AvatarInput? dynamicAvatar, List<String> referencesIds, String? categoryId, List<CustomField> customFields, List<String> tagsIds, List<String> mappitAssetsIds, int historicalDaysAllowed, String? brickhousePermissionTierId,@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole, String? sdmCode, String? password, UserPreferencesInput? preferences
-});
-
-
-@override $AvatarInputCopyWith<$Res>? get dynamicAvatar;@override $UserPreferencesInputCopyWith<$Res>? get preferences;
-
-}
-/// @nodoc
-class __$UserInputCopyWithImpl<$Res>
-    implements _$UserInputCopyWith<$Res> {
-  __$UserInputCopyWithImpl(this._self, this._then);
-
-  final _UserInput _self;
-  final $Res Function(_UserInput) _then;
-
-/// Create a copy of UserInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? email = null,Object? username = null,Object? dynamicAvatar = freezed,Object? referencesIds = null,Object? categoryId = freezed,Object? customFields = null,Object? tagsIds = null,Object? mappitAssetsIds = null,Object? historicalDaysAllowed = null,Object? brickhousePermissionTierId = freezed,Object? brickhouseRole = freezed,Object? sdmCode = freezed,Object? password = freezed,Object? preferences = freezed,}) {
-  return _then(_UserInput(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,username: null == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
-as String,dynamicAvatar: freezed == dynamicAvatar ? _self.dynamicAvatar : dynamicAvatar // ignore: cast_nullable_to_non_nullable
-as AvatarInput?,referencesIds: null == referencesIds ? _self.referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>,categoryId: freezed == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
-as String?,customFields: null == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
-as List<CustomField>,tagsIds: null == tagsIds ? _self.tagsIds : tagsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,mappitAssetsIds: null == mappitAssetsIds ? _self.mappitAssetsIds : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,historicalDaysAllowed: null == historicalDaysAllowed ? _self.historicalDaysAllowed : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
-as int,brickhousePermissionTierId: freezed == brickhousePermissionTierId ? _self.brickhousePermissionTierId : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
-as String?,brickhouseRole: freezed == brickhouseRole ? _self.brickhouseRole : brickhouseRole // ignore: cast_nullable_to_non_nullable
-as BrickhouseUserRole?,sdmCode: freezed == sdmCode ? _self.sdmCode : sdmCode // ignore: cast_nullable_to_non_nullable
-as String?,password: freezed == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
-as String?,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as UserPreferencesInput?,
-  ));
-}
-
-/// Create a copy of UserInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AvatarInputCopyWith<$Res>? get dynamicAvatar {
-    if (_self.dynamicAvatar == null) {
-    return null;
-  }
-
-  return $AvatarInputCopyWith<$Res>(_self.dynamicAvatar!, (value) {
-    return _then(_self.copyWith(dynamicAvatar: value));
-  });
-}/// Create a copy of UserInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UserPreferencesInputCopyWith<$Res>? get preferences {
-    if (_self.preferences == null) {
-    return null;
-  }
-
-  return $UserPreferencesInputCopyWith<$Res>(_self.preferences!, (value) {
-    return _then(_self.copyWith(preferences: value));
-  });
-}
-}
-
-
-/// @nodoc
 mixin _$AccessibilityInput {
 
 /// [userId] represents the user ID.
@@ -3990,6 +3594,402 @@ as double,
 }
 
 
+}
+
+
+/// @nodoc
+mixin _$UserInput {
+
+/// [id] represents the user ID. When is new, this value should be null.
+ String? get id;/// [id] represents the user ID. When is new, this value should be null.
+ set id(String? value);/// [name] represents the user name.
+ String get name;/// [name] represents the user name.
+ set name(String value);/// [email] represents the user email.
+ String get email;/// [email] represents the user email.
+ set email(String value);/// [username] represents the username.
+ String get username;/// [username] represents the username.
+ set username(String value);/// [dynamicAvatar] represents the user avatar.
+ AvatarInput? get dynamicAvatar;/// [dynamicAvatar] represents the user avatar.
+ set dynamicAvatar(AvatarInput? value);/// [referencesIds] represents the list of references IDs.
+ List<String> get referencesIds;/// [referencesIds] represents the list of references IDs.
+ set referencesIds(List<String> value);/// [categoryId] represents the user category ID.
+ String? get categoryId;/// [categoryId] represents the user category ID.
+ set categoryId(String? value);/// [customFields] represents the list of custom fields.
+ List<CustomField> get customFields;/// [customFields] represents the list of custom fields.
+ set customFields(List<CustomField> value);/// [tagsIds] represents the list of tags IDs.
+ List<String> get tagsIds;/// [tagsIds] represents the list of tags IDs.
+ set tagsIds(List<String> value);/// [mappitAssetsIds] represents the list of assets IDs.
+/// This field is only for `Mappit` use.
+ List<String> get mappitAssetsIds;/// [mappitAssetsIds] represents the list of assets IDs.
+/// This field is only for `Mappit` use.
+ set mappitAssetsIds(List<String> value);/// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+/// This field is only for `Mappit` use.
+ int get historicalDaysAllowed;/// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+/// This field is only for `Mappit` use.
+ set historicalDaysAllowed(int value);/// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+ String? get brickhousePermissionTierId;/// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+ set brickhousePermissionTierId(String? value);/// [brickhouseRole] represents the Brickhouse user role.
+@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? get brickhouseRole;/// [brickhouseRole] represents the Brickhouse user role.
+@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) set brickhouseRole(BrickhouseUserRole? value);/// [sdmCode] represents the SDM code.
+ String? get sdmCode;/// [sdmCode] represents the SDM code.
+ set sdmCode(String? value);/// [password] default password if allowed by the form
+ String? get password;/// [password] default password if allowed by the form
+ set password(String? value);/// [preferences] represents the user preferences.
+ UserPreferencesInput? get preferences;/// [preferences] represents the user preferences.
+ set preferences(UserPreferencesInput? value);
+/// Create a copy of UserInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserInputCopyWith<UserInput> get copyWith => _$UserInputCopyWithImpl<UserInput>(this as UserInput, _$identity);
+
+  /// Serializes this UserInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+
+
+@override
+String toString() {
+  return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password, preferences: $preferences)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UserInputCopyWith<$Res>  {
+  factory $UserInputCopyWith(UserInput value, $Res Function(UserInput) _then) = _$UserInputCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String name, String email, String username, AvatarInput? dynamicAvatar, List<String> referencesIds, String? categoryId, List<CustomField> customFields, List<String> tagsIds, List<String> mappitAssetsIds, int historicalDaysAllowed, String? brickhousePermissionTierId,@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole, String? sdmCode, String? password, UserPreferencesInput? preferences
+});
+
+
+$AvatarInputCopyWith<$Res>? get dynamicAvatar;$UserPreferencesInputCopyWith<$Res>? get preferences;
+
+}
+/// @nodoc
+class _$UserInputCopyWithImpl<$Res>
+    implements $UserInputCopyWith<$Res> {
+  _$UserInputCopyWithImpl(this._self, this._then);
+
+  final UserInput _self;
+  final $Res Function(UserInput) _then;
+
+/// Create a copy of UserInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = null,Object? email = null,Object? username = null,Object? dynamicAvatar = freezed,Object? referencesIds = null,Object? categoryId = freezed,Object? customFields = null,Object? tagsIds = null,Object? mappitAssetsIds = null,Object? historicalDaysAllowed = null,Object? brickhousePermissionTierId = freezed,Object? brickhouseRole = freezed,Object? sdmCode = freezed,Object? password = freezed,Object? preferences = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String,username: null == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
+as String,dynamicAvatar: freezed == dynamicAvatar ? _self.dynamicAvatar : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+as AvatarInput?,referencesIds: null == referencesIds ? _self.referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,categoryId: freezed == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
+as String?,customFields: null == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
+as List<CustomField>,tagsIds: null == tagsIds ? _self.tagsIds : tagsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mappitAssetsIds: null == mappitAssetsIds ? _self.mappitAssetsIds : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,historicalDaysAllowed: null == historicalDaysAllowed ? _self.historicalDaysAllowed : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
+as int,brickhousePermissionTierId: freezed == brickhousePermissionTierId ? _self.brickhousePermissionTierId : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+as String?,brickhouseRole: freezed == brickhouseRole ? _self.brickhouseRole : brickhouseRole // ignore: cast_nullable_to_non_nullable
+as BrickhouseUserRole?,sdmCode: freezed == sdmCode ? _self.sdmCode : sdmCode // ignore: cast_nullable_to_non_nullable
+as String?,password: freezed == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
+as String?,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
+as UserPreferencesInput?,
+  ));
+}
+/// Create a copy of UserInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AvatarInputCopyWith<$Res>? get dynamicAvatar {
+    if (_self.dynamicAvatar == null) {
+    return null;
+  }
+
+  return $AvatarInputCopyWith<$Res>(_self.dynamicAvatar!, (value) {
+    return _then(_self.copyWith(dynamicAvatar: value));
+  });
+}/// Create a copy of UserInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserPreferencesInputCopyWith<$Res>? get preferences {
+    if (_self.preferences == null) {
+    return null;
+  }
+
+  return $UserPreferencesInputCopyWith<$Res>(_self.preferences!, (value) {
+    return _then(_self.copyWith(preferences: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [UserInput].
+extension UserInputPatterns on UserInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UserInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UserInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UserInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _UserInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UserInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UserInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String email,  String username,  AvatarInput? dynamicAvatar,  List<String> referencesIds,  String? categoryId,  List<CustomField> customFields,  List<String> tagsIds,  List<String> mappitAssetsIds,  int historicalDaysAllowed,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  String? password,  UserPreferencesInput? preferences)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UserInput() when $default != null:
+return $default(_that.id,_that.name,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.categoryId,_that.customFields,_that.tagsIds,_that.mappitAssetsIds,_that.historicalDaysAllowed,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.password,_that.preferences);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String email,  String username,  AvatarInput? dynamicAvatar,  List<String> referencesIds,  String? categoryId,  List<CustomField> customFields,  List<String> tagsIds,  List<String> mappitAssetsIds,  int historicalDaysAllowed,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  String? password,  UserPreferencesInput? preferences)  $default,) {final _that = this;
+switch (_that) {
+case _UserInput():
+return $default(_that.id,_that.name,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.categoryId,_that.customFields,_that.tagsIds,_that.mappitAssetsIds,_that.historicalDaysAllowed,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.password,_that.preferences);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String email,  String username,  AvatarInput? dynamicAvatar,  List<String> referencesIds,  String? categoryId,  List<CustomField> customFields,  List<String> tagsIds,  List<String> mappitAssetsIds,  int historicalDaysAllowed,  String? brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole,  String? sdmCode,  String? password,  UserPreferencesInput? preferences)?  $default,) {final _that = this;
+switch (_that) {
+case _UserInput() when $default != null:
+return $default(_that.id,_that.name,_that.email,_that.username,_that.dynamicAvatar,_that.referencesIds,_that.categoryId,_that.customFields,_that.tagsIds,_that.mappitAssetsIds,_that.historicalDaysAllowed,_that.brickhousePermissionTierId,_that.brickhouseRole,_that.sdmCode,_that.password,_that.preferences);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UserInput extends UserInput {
+   _UserInput({this.id, this.name = '', this.email = '', this.username = '', this.dynamicAvatar, this.referencesIds = const [], this.categoryId, this.customFields = const [], this.tagsIds = const [], this.mappitAssetsIds = const [], this.historicalDaysAllowed = 1, this.brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) this.brickhouseRole, this.sdmCode, this.password, this.preferences}): super._();
+  factory _UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);
+
+/// [id] represents the user ID. When is new, this value should be null.
+@override  String? id;
+/// [name] represents the user name.
+@override@JsonKey()  String name;
+/// [email] represents the user email.
+@override@JsonKey()  String email;
+/// [username] represents the username.
+@override@JsonKey()  String username;
+/// [dynamicAvatar] represents the user avatar.
+@override  AvatarInput? dynamicAvatar;
+/// [referencesIds] represents the list of references IDs.
+@override@JsonKey()  List<String> referencesIds;
+/// [categoryId] represents the user category ID.
+@override  String? categoryId;
+/// [customFields] represents the list of custom fields.
+@override@JsonKey()  List<CustomField> customFields;
+/// [tagsIds] represents the list of tags IDs.
+@override@JsonKey()  List<String> tagsIds;
+/// [mappitAssetsIds] represents the list of assets IDs.
+/// This field is only for `Mappit` use.
+@override@JsonKey()  List<String> mappitAssetsIds;
+/// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+/// This field is only for `Mappit` use.
+@override@JsonKey()  int historicalDaysAllowed;
+/// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+@override  String? brickhousePermissionTierId;
+/// [brickhouseRole] represents the Brickhouse user role.
+@override@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)  BrickhouseUserRole? brickhouseRole;
+/// [sdmCode] represents the SDM code.
+@override  String? sdmCode;
+/// [password] default password if allowed by the form
+@override  String? password;
+/// [preferences] represents the user preferences.
+@override  UserPreferencesInput? preferences;
+
+/// Create a copy of UserInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UserInputCopyWith<_UserInput> get copyWith => __$UserInputCopyWithImpl<_UserInput>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UserInputToJson(this, );
+}
+
+
+
+@override
+String toString() {
+  return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password, preferences: $preferences)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UserInputCopyWith<$Res> implements $UserInputCopyWith<$Res> {
+  factory _$UserInputCopyWith(_UserInput value, $Res Function(_UserInput) _then) = __$UserInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String name, String email, String username, AvatarInput? dynamicAvatar, List<String> referencesIds, String? categoryId, List<CustomField> customFields, List<String> tagsIds, List<String> mappitAssetsIds, int historicalDaysAllowed, String? brickhousePermissionTierId,@JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole, String? sdmCode, String? password, UserPreferencesInput? preferences
+});
+
+
+@override $AvatarInputCopyWith<$Res>? get dynamicAvatar;@override $UserPreferencesInputCopyWith<$Res>? get preferences;
+
+}
+/// @nodoc
+class __$UserInputCopyWithImpl<$Res>
+    implements _$UserInputCopyWith<$Res> {
+  __$UserInputCopyWithImpl(this._self, this._then);
+
+  final _UserInput _self;
+  final $Res Function(_UserInput) _then;
+
+/// Create a copy of UserInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = null,Object? email = null,Object? username = null,Object? dynamicAvatar = freezed,Object? referencesIds = null,Object? categoryId = freezed,Object? customFields = null,Object? tagsIds = null,Object? mappitAssetsIds = null,Object? historicalDaysAllowed = null,Object? brickhousePermissionTierId = freezed,Object? brickhouseRole = freezed,Object? sdmCode = freezed,Object? password = freezed,Object? preferences = freezed,}) {
+  return _then(_UserInput(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String,username: null == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
+as String,dynamicAvatar: freezed == dynamicAvatar ? _self.dynamicAvatar : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+as AvatarInput?,referencesIds: null == referencesIds ? _self.referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,categoryId: freezed == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
+as String?,customFields: null == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
+as List<CustomField>,tagsIds: null == tagsIds ? _self.tagsIds : tagsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mappitAssetsIds: null == mappitAssetsIds ? _self.mappitAssetsIds : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,historicalDaysAllowed: null == historicalDaysAllowed ? _self.historicalDaysAllowed : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
+as int,brickhousePermissionTierId: freezed == brickhousePermissionTierId ? _self.brickhousePermissionTierId : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+as String?,brickhouseRole: freezed == brickhouseRole ? _self.brickhouseRole : brickhouseRole // ignore: cast_nullable_to_non_nullable
+as BrickhouseUserRole?,sdmCode: freezed == sdmCode ? _self.sdmCode : sdmCode // ignore: cast_nullable_to_non_nullable
+as String?,password: freezed == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
+as String?,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
+as UserPreferencesInput?,
+  ));
+}
+
+/// Create a copy of UserInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AvatarInputCopyWith<$Res>? get dynamicAvatar {
+    if (_self.dynamicAvatar == null) {
+    return null;
+  }
+
+  return $AvatarInputCopyWith<$Res>(_self.dynamicAvatar!, (value) {
+    return _then(_self.copyWith(dynamicAvatar: value));
+  });
+}/// Create a copy of UserInput
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserPreferencesInputCopyWith<$Res>? get preferences {
+    if (_self.preferences == null) {
+    return null;
+  }
+
+  return $UserPreferencesInputCopyWith<$Res>(_self.preferences!, (value) {
+    return _then(_self.copyWith(preferences: value));
+  });
+}
 }
 
 // dart format on

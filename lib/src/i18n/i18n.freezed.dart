@@ -15,7 +15,12 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AvailableLanguage {
 
- String? get id; String? get name; String? get code; String? get fallback; Map<String, String>? get messages;
+/// The unique identifier of the language.
+ String? get id;/// The name of the language. In the native language, e.g. "English", "Français", "Español".
+ String? get name;/// The code of the language.
+ String? get code;/// The fallback language code. If the language is not available, this language will be used.
+ String? get fallback;/// The messages of the language. This is a map of message keys to message values.
+ Map<String, String>? get messages;
 /// Create a copy of AvailableLanguage
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -216,11 +221,17 @@ class _AvailableLanguage extends AvailableLanguage {
    _AvailableLanguage({this.id, this.name, this.code, this.fallback, final  Map<String, String>? messages}): _messages = messages,super._();
   factory _AvailableLanguage.fromJson(Map<String, dynamic> json) => _$AvailableLanguageFromJson(json);
 
+/// The unique identifier of the language.
 @override final  String? id;
+/// The name of the language. In the native language, e.g. "English", "Français", "Español".
 @override final  String? name;
+/// The code of the language.
 @override final  String? code;
+/// The fallback language code. If the language is not available, this language will be used.
 @override final  String? fallback;
+/// The messages of the language. This is a map of message keys to message values.
  final  Map<String, String>? _messages;
+/// The messages of the language. This is a map of message keys to message values.
 @override Map<String, String>? get messages {
   final value = _messages;
   if (value == null) return null;

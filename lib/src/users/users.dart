@@ -20,3 +20,4 @@ part 'src/colorblind.dart';
 part 'src/accessibility.dart';
 part 'src/preferences.dart';
 part 'src/variant.dart';
+part 'src/user_input.dart';
