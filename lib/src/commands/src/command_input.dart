@@ -95,4 +95,6 @@ abstract class CommandInput with _$CommandInput {
       return (ApiStatus.internalError, null, null);
     }
   }
+
+  // coverage:ignore-end
 }

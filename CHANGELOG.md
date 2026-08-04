@@ -7,9 +7,6 @@
 - `Operation.fetch()`, `Operation.fetchAll()`, `Operation.delete()`, `Operation.deleteMany()` and `Operation.save()` now accept a `variant` argument
 - Added `OperationVariant.supportsAppId`, which guards the `appId` argument. Only the standard `operations` query declares it; sending it to `mappitOperations` fails with `Unknown argument "appId"`
 - `Action` and `Operation` API calls now request the `errors` field and log its content whenever the response status is not `OK`
-
-## 3.22.0
-
 - Added API Connector on `DeviceCommand`
 - Standarized all tupled returns to `StandardResponse<T>`
 
