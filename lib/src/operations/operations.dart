@@ -10,6 +10,7 @@ import 'package:layrz_models/layrz_models.dart';
 part 'operations.freezed.dart';
 part 'operations.g.dart';
 
+part 'src/variants.dart';
 part 'src/operation_type.dart';
 part 'src/http_request_type.dart';
 part 'src/notification_type.dart';
