@@ -136,6 +136,81 @@ const _$OperationModeEnumMap = {
   OperationMode.unknown: 'UNKNOWN',
 };
 
+_InboundService _$InboundServiceFromJson(Map<String, dynamic> json) =>
+    _InboundService(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      credentials: const DynamicMapConverterNullable().fromJson(
+        json['credentials'],
+      ),
+      externalAccountId: json['externalAccountId'] as String?,
+      updateTime: const DurationOrNullConverter().fromJson(
+        json['updateTime'] as num?,
+      ),
+      protocol: json['protocol'] == null
+          ? null
+          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      protocolId: json['protocolId'] as String?,
+      isEnabled: json['isEnabled'] as bool?,
+      token: json['token'] as String?,
+      structure: json['structure'] == null
+          ? null
+          : InboundStructure.fromJson(
+              json['structure'] as Map<String, dynamic>,
+            ),
+      access: (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      webhookStructure: json['webhookStructure'] == null
+          ? null
+          : WebhookStructure.fromJson(
+              json['webhookStructure'] as Map<String, dynamic>,
+            ),
+    );
+
+Map<String, dynamic> _$InboundServiceToJson(_InboundService instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'credentials': const DynamicMapConverterNullable().toJson(
+        instance.credentials,
+      ),
+      'externalAccountId': instance.externalAccountId,
+      'updateTime': const DurationOrNullConverter().toJson(instance.updateTime),
+      'protocol': instance.protocol?.toJson(),
+      'protocolId': instance.protocolId,
+      'isEnabled': instance.isEnabled,
+      'token': instance.token,
+      'structure': instance.structure?.toJson(),
+      'access': instance.access?.map((e) => e.toJson()).toList(),
+      'webhookStructure': instance.webhookStructure?.toJson(),
+    };
+
+_InboundServiceInput _$InboundServiceInputFromJson(Map<String, dynamic> json) =>
+    _InboundServiceInput(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      credentials: json['credentials'] == null
+          ? const <String, dynamic>{}
+          : const DynamicMapConverter().fromJson(json['credentials']),
+      externalAccountId: json['externalAccountId'] as String?,
+      protocolId: json['protocolId'] as String?,
+      structure: InboundStructureInput.fromJson(
+        json['structure'] as Map<String, dynamic>,
+      ),
+    );
+
+Map<String, dynamic> _$InboundServiceInputToJson(
+  _InboundServiceInput instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'credentials': const DynamicMapConverter().toJson(instance.credentials),
+  'externalAccountId': instance.externalAccountId,
+  'protocolId': instance.protocolId,
+  'structure': instance.structure.toJson(),
+};
+
 _InboundProtocolInput _$InboundProtocolInputFromJson(
   Map<String, dynamic> json,
 ) => _InboundProtocolInput(
@@ -256,81 +331,6 @@ Map<String, dynamic> _$InboundProtocolInputToJson(
   'peripheralParserSpec': instance.peripheralParserSpec,
 };
 
-_InboundService _$InboundServiceFromJson(Map<String, dynamic> json) =>
-    _InboundService(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      credentials: const DynamicMapConverterNullable().fromJson(
-        json['credentials'],
-      ),
-      externalAccountId: json['externalAccountId'] as String?,
-      updateTime: const DurationOrNullConverter().fromJson(
-        json['updateTime'] as num?,
-      ),
-      protocol: json['protocol'] == null
-          ? null
-          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
-      protocolId: json['protocolId'] as String?,
-      isEnabled: json['isEnabled'] as bool?,
-      token: json['token'] as String?,
-      structure: json['structure'] == null
-          ? null
-          : InboundStructure.fromJson(
-              json['structure'] as Map<String, dynamic>,
-            ),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      webhookStructure: json['webhookStructure'] == null
-          ? null
-          : WebhookStructure.fromJson(
-              json['webhookStructure'] as Map<String, dynamic>,
-            ),
-    );
-
-Map<String, dynamic> _$InboundServiceToJson(_InboundService instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'credentials': const DynamicMapConverterNullable().toJson(
-        instance.credentials,
-      ),
-      'externalAccountId': instance.externalAccountId,
-      'updateTime': const DurationOrNullConverter().toJson(instance.updateTime),
-      'protocol': instance.protocol?.toJson(),
-      'protocolId': instance.protocolId,
-      'isEnabled': instance.isEnabled,
-      'token': instance.token,
-      'structure': instance.structure?.toJson(),
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-      'webhookStructure': instance.webhookStructure?.toJson(),
-    };
-
-_InboundServiceInput _$InboundServiceInputFromJson(Map<String, dynamic> json) =>
-    _InboundServiceInput(
-      id: json['id'] as String?,
-      name: json['name'] as String? ?? '',
-      credentials: json['credentials'] == null
-          ? const <String, dynamic>{}
-          : const DynamicMapConverter().fromJson(json['credentials']),
-      externalAccountId: json['externalAccountId'] as String?,
-      protocolId: json['protocolId'] as String?,
-      structure: InboundStructureInput.fromJson(
-        json['structure'] as Map<String, dynamic>,
-      ),
-    );
-
-Map<String, dynamic> _$InboundServiceInputToJson(
-  _InboundServiceInput instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'credentials': const DynamicMapConverter().toJson(instance.credentials),
-  'externalAccountId': instance.externalAccountId,
-  'protocolId': instance.protocolId,
-  'structure': instance.structure.toJson(),
-};
-
 _ConfigGrouping _$ConfigGroupingFromJson(Map<String, dynamic> json) =>
     _ConfigGrouping(
       name: json['name'] as String,
@@ -361,6 +361,38 @@ const _$ConfigKindEnumMap = {
   ConfigKind.grouping: 'GROUPING',
   ConfigKind.listing: 'LISTING',
   ConfigKind.unknown: 'UNKNOWN',
+};
+
+_ConfigGroupingInput _$ConfigGroupingInputFromJson(Map<String, dynamic> json) =>
+    _ConfigGroupingInput(
+      name: json['name'] as String? ?? '',
+      kind:
+          $enumDecodeNullable(
+            _$ConfigKindEnumMap,
+            json['kind'],
+            unknownValue: ConfigKind.unknown,
+          ) ??
+          ConfigKind.grouping,
+      description: json['description'] as String? ?? '',
+      setupCapable: json['setupCapable'] as bool? ?? false,
+      items:
+          (json['items'] as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    ConfigDefinitionInput.fromJson(e as Map<String, dynamic>),
+              )
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$ConfigGroupingInputToJson(
+  _ConfigGroupingInput instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'kind': instance.kind.toJson(),
+  'description': instance.description,
+  'setupCapable': instance.setupCapable,
+  'items': instance.items.map((e) => e.toJson()).toList(),
 };
 
 _ConfigDefinition _$ConfigDefinitionFromJson(Map<String, dynamic> json) =>
@@ -427,38 +459,6 @@ const _$ConfigPayloadDataTypeEnumMap = {
   ConfigPayloadDataType.bluetoothPair: 'BLUETOOTH_PAIR',
   ConfigPayloadDataType.coordinates: 'COORDINATES',
   ConfigPayloadDataType.unknown: 'UNKNOWN',
-};
-
-_ConfigGroupingInput _$ConfigGroupingInputFromJson(Map<String, dynamic> json) =>
-    _ConfigGroupingInput(
-      name: json['name'] as String? ?? '',
-      kind:
-          $enumDecodeNullable(
-            _$ConfigKindEnumMap,
-            json['kind'],
-            unknownValue: ConfigKind.unknown,
-          ) ??
-          ConfigKind.grouping,
-      description: json['description'] as String? ?? '',
-      setupCapable: json['setupCapable'] as bool? ?? false,
-      items:
-          (json['items'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    ConfigDefinitionInput.fromJson(e as Map<String, dynamic>),
-              )
-              .toList() ??
-          const [],
-    );
-
-Map<String, dynamic> _$ConfigGroupingInputToJson(
-  _ConfigGroupingInput instance,
-) => <String, dynamic>{
-  'name': instance.name,
-  'kind': instance.kind.toJson(),
-  'description': instance.description,
-  'setupCapable': instance.setupCapable,
-  'items': instance.items.map((e) => e.toJson()).toList(),
 };
 
 _ConfigDefinitionInput _$ConfigDefinitionInputFromJson(

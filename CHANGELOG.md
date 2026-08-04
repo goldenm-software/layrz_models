@@ -1,9 +1,35 @@
 # Changelog
 
+## 3.21.0
+
+- Added API connector for `InboundProtocol`, `Model`, `FlespiProtocol`, `FlespiModel` and `FlespiChannel`
+
+## 3.20.6
+
+- Updated `layrz_logging` dependency to now include colors on logs emitted by the system
+- This version was released manually
+
+## 3.20.5
+
+- Added `LayrzApiExtras` to include extra information on the usage of `LayrzConnector`, including `version` and `name` of the app.
+- This version was released manually
+
+## 3.20.4
+
+- Adjustments on `User.fetch()` to include `parentId`.
+- This version was released manually
+
+## 3.20.3
+
+- Adjustments on `RegisteredApp.load()` to use the `toJson()` on enums
+- This version was released manually
+
 ## 3.20.2
+
 - Fixed User `loginAsSubaccount` gql mutation implementation
 
 ## 3.20.1
+
 - Fixed Brickhouse Graphql query name in `_getGqlQueryName`
 
 ## 3.20.0

@@ -2,6 +2,8 @@ part of '../inbound.dart';
 
 @freezed
 abstract class InboundProtocol with _$InboundProtocol {
+  const InboundProtocol._();
+
   const factory InboundProtocol({
     /// The protocol ID
     required String id,
@@ -127,116 +129,166 @@ abstract class InboundProtocol with _$InboundProtocol {
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
-}
 
-@unfreezed
-abstract class InboundProtocolInput with _$InboundProtocolInput {
-  factory InboundProtocolInput({
-    /// [id] ID of the protocol entity. This ID is unique.
-    String? id,
+  // coverage:ignore-start
+  /// [fragment] is the fragment of the protocol, used to identify the protocol in the system.
+  static GqlFragment get fragment => GqlFragment(
+    name: 'InboundProtocolFragment',
+    onType: 'InboundProtocol',
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'name'),
+      GqlField(name: 'color'),
+      GqlField(name: 'isEnabled'),
+      GqlField(name: 'operationMode'),
+      GqlField(name: 'hasNativeCommands'),
+      GqlField(name: 'hasSmsCommands'),
+      GqlField(name: 'hasCommandsResult'),
+      GqlField(name: 'channelId'),
+      GqlField(name: 'flespiId'),
+      GqlField(name: 'hasAck'),
+      GqlField(name: 'ackTopicFormat'),
+      GqlField(name: 'isFlespi'),
+      GqlField(name: 'isImported'),
+      GqlField(name: 'canFota'),
+      GqlField(name: 'hasModbus'),
+      GqlField(name: 'modbusPorts'),
+      GqlField(name: 'dynamicIcon', fragment: Avatar.fragment),
+      GqlField(name: 'host'),
+      GqlField(name: 'port'),
+      GqlField(name: 'mqttTopic'),
+      GqlField(name: 'confiotCapable'),
+      GqlField(name: 'peripheralIdentifier'),
+      GqlField(name: 'requiresFlespiToken'),
+      GqlField(name: 'flespiAcl', fragment: FlespiAcl.fragment),
 
-    ///[name] Name of the protocol.
-    @Default('') String name,
+      GqlField(name: 'requiresExternalAccount'),
+      GqlField(name: 'requiresStructure'),
 
-    /// [color] Indicates the color assigned to the protocol
-    @ColorConverter() @Default(Colors.blue) Color color,
+      GqlField(name: 'webhookStructure', fragment: WebhookStructure.fragment),
 
-    /// [isEnabled] Boolean that indicates if the protocol is enabled.
-    @Default(true) bool isEnabled,
+      GqlField(name: 'requiredFields', fragment: CredentialField.fragment),
+      GqlField(name: 'cycleId'),
 
-    /// [categoriesIds] ID of all categories assigned
-    @Default([]) List<String> categoriesIds,
+      GqlField(name: 'commandsStructure', fragment: CommandDefinition.fragment),
+      GqlField(name: 'configStructure', fragment: ConfigGrouping.fragment),
+    ],
+  );
+  // coverage:ignore-end
 
-    /// [operationMode] Indicates the operation mode of the protocol.
-    @JsonKey(unknownEnumValue: OperationMode.unknown) @Default(OperationMode.realtime) OperationMode operationMode,
+  // coverage:ignore-start
+  /// [fetchAll] is the method that fetches all the protocols from the API
+  static Future<List<InboundProtocol>> fetchAll({
+    /// [apiToken] is the API token to authenticate the request
+    required String apiToken,
 
-    /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
-    @Default(false) bool hasNativeCommands,
+    /// [uri] is the URI of the API, must include the path.
+    required Uri uri,
 
-    /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
-    @Default(false) bool hasSmsCommands,
+    /// [onResponse] is the callback to handle the response status
+    ValueChanged<ApiStatus>? onResponse,
 
-    /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
-    @Default(false) bool hasCommandsResult,
+    /// [additionalFields] is the list of additional fields to fetch from the API, if any.
+    List<GqlField>? additionalFields,
 
-    /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
-    int? channelId,
+    /// [useFragment] is the boolean that indicates if the fragment should be used to
+    /// fetch the protocols.
+    ///
+    /// When is set to `true`, [additionalFields] will be ignored, and the fragment will
+    /// be used to fetch the protocols.
+    bool useFragment = false,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: 'inboundProtocols',
+          fields: [
+            GqlField(
+              name: 'inboundProtocols',
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(
+                  name: 'result',
+                  fragment: useFragment ? fragment : null,
+                  fields: useFragment
+                      ? null
+                      : [
+                          GqlField(name: 'id'),
+                          GqlField(name: 'name'),
+                          GqlField(name: 'color'),
+                          GqlField(name: 'isEnabled'),
+                          GqlField(name: 'operationMode'),
+                          GqlField(name: 'host'),
+                          GqlField(name: 'port'),
+                          GqlField(name: 'dynamicIcon', fragment: Avatar.fragment),
+                          ...?additionalFields,
+                        ],
+                ),
+              ],
+            ),
+          ],
+        ),
+        _protocolListDecoder,
+      );
 
-    /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
-    @Default(false) bool isFlespi,
+      if (response.status != .ok) {
+        Log.warning('layrz_models/InboundProtocol/fetchAll(): API returned status ${response.status}');
+        onResponse?.call(response.status);
+        return [];
+      }
 
-    /// [flespiId] Flespi ID. Only used for Flespi protocols.
-    String? flespiId,
+      return response.result ?? [];
+    } catch (err, stack) {
+      Log.critical('layrz_models/InboundProtocol/fetchAll(): Error fetching protocols: $err\n$stack');
+      onResponse?.call(ApiStatus.internalError);
+      return [];
+    }
+  }
 
-    /// [hasAck] Boolean that indicates if the protocol has ACK support.
-    @Default(false) bool hasAck,
+  // coverage:ignore-end
+  // coverage:ignore-start
+  /// [fetch] is the method that fetches a protocol by ID from the API
+  Future<InboundProtocol?> fetch({
+    required String apiToken,
+    required Uri uri,
+    ValueChanged<ApiStatus>? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          name: 'inboundProtocols',
+          variables: [
+            GqlVariable(name: 'id', type: .id, value: id, isRequired: true),
+          ],
+          fields: [
+            GqlField(
+              name: 'inboundProtocols',
+              args: {'id': 'id'},
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(name: 'result', fragment: fragment),
+              ],
+            ),
+          ],
+        ),
+        _protocolListDecoder,
+      );
 
-    /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
-    @Default('') String ackTopicFormat,
+      if (response.status != .ok) {
+        Log.warning('layrz_models/InboundProtocol/fetch(): API returned status ${response.status}');
+        onResponse?.call(response.status);
+        return null;
+      }
 
-    /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
-    @Default(false) bool isImported,
+      return response.result?.first;
+    } catch (err, stack) {
+      Log.critical('layrz_models/InboundProtocol/fetch(): Error fetching protocol: $err\n$stack');
+      onResponse?.call(.internalError);
+      return null;
+    }
+  }
 
-    /// [requiredFields] Required configuration fields.
-    @Default([]) List<CredentialFieldInput> requiredFields,
-
-    /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
-    @Default(false) bool canFota,
-
-    /// [host] is the host of the server, means the IP or domain (or subdomain)
-    /// of the server to send or receive the information
-    String? host,
-
-    /// [port] is the port of the server, means the port
-    /// of the server to send or receive the information
-    /// 0 means in API and backend services "ignore this field"
-    int? port,
-
-    /// [mqttTopic] is the MQTT topic to send or receive the information
-    String? mqttTopic,
-
-    /// [dynamicIcon] is the icon of the protocol.
-    required AvatarInput dynamicIcon,
-
-    /// [cycleId] is the ID of the cycle to which the field belongs.
-    String? cycleId,
-
-    /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
-    @Default(false) bool hasModbus,
-
-    /// [modbusPorts] is the list of Modbus ports that the protocol has.
-    @Default([]) List<String> modbusPorts,
-
-    /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
-    @Default(false) bool requiresFlespiToken,
-
-    /// [flespiAcl] refers to the ACL for the token generation.
-    @Default([]) List<FlespiAclInput> flespiAcl,
-
-    /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
-    WebhookStructureInput? webhookStructure,
-
-    /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
-    @Default(false) bool requiresExternalAccount,
-
-    /// [requiresStructure] indicates if the protocol requires a structure to work.
-    @Default(false) bool requiresStructure,
-
-    /// [commandsStructure] is the structure of the commands for the protocol.
-    @Default([]) List<CommandDefinitionInput> commandsStructure,
-
-    /// [configStructure] is the structure of the configuration for the protocol.
-    @Default([]) List<ConfigGroupingInput> configStructure,
-
-    /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
-    @Default(false) bool confiotCapable,
-
-    /// [peripheralIdentifier] is the identifier of the peripheral device.
-    String? peripheralIdentifier,
-
-    /// [peripheralParserSpec] is the parser specification for the peripheral device.
-    Map<String, dynamic>? peripheralParserSpec,
-  }) = _InboundProtocolInput;
-
-  factory InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);
+  // coverage:ignore-end
 }

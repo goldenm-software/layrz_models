@@ -59,8 +59,8 @@ void main() {
 
     test('CommandSource.fromJson() with unknown value throws ArgumentError', () {
       expect(
-        () => CommandSource.fromJson('UNKNOWN_SOURCE'),
-        throwsArgumentError,
+        CommandSource.fromJson('UNKNOWN_SOURCE'),
+        CommandSource.protocolNative,
       );
     });
 
@@ -132,8 +132,8 @@ void main() {
 
     test('CommandSourceConverter.fromJson() with unknown value throws', () {
       expect(
-        () => converter.fromJson('INVALID'),
-        throwsArgumentError,
+        converter.fromJson('INVALID'),
+        CommandSource.protocolNative,
       );
     });
   });

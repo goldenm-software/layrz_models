@@ -315,69 +315,6 @@ Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
   'hasGpsInsurance': instance.hasGpsInsurance,
 };
 
-_UserInput _$UserInputFromJson(Map<String, dynamic> json) => _UserInput(
-  id: json['id'] as String?,
-  name: json['name'] as String? ?? '',
-  email: json['email'] as String? ?? '',
-  username: json['username'] as String? ?? '',
-  dynamicAvatar: json['dynamicAvatar'] == null
-      ? null
-      : AvatarInput.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
-  referencesIds:
-      (json['referencesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList() ??
-      const [],
-  categoryId: json['categoryId'] as String?,
-  customFields:
-      (json['customFields'] as List<dynamic>?)
-          ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
-          .toList() ??
-      const [],
-  tagsIds:
-      (json['tagsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-      const [],
-  mappitAssetsIds:
-      (json['mappitAssetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList() ??
-      const [],
-  historicalDaysAllowed: (json['historicalDaysAllowed'] as num?)?.toInt() ?? 1,
-  brickhousePermissionTierId: json['brickhousePermissionTierId'] as String?,
-  brickhouseRole: $enumDecodeNullable(
-    _$BrickhouseUserRoleEnumMap,
-    json['brickhouseRole'],
-    unknownValue: BrickhouseUserRole.unknown,
-  ),
-  sdmCode: json['sdmCode'] as String?,
-  password: json['password'] as String?,
-  preferences: json['preferences'] == null
-      ? null
-      : UserPreferencesInput.fromJson(
-          json['preferences'] as Map<String, dynamic>,
-        ),
-);
-
-Map<String, dynamic> _$UserInputToJson(_UserInput instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'email': instance.email,
-      'username': instance.username,
-      'dynamicAvatar': instance.dynamicAvatar?.toJson(),
-      'referencesIds': instance.referencesIds,
-      'categoryId': instance.categoryId,
-      'customFields': instance.customFields.map((e) => e.toJson()).toList(),
-      'tagsIds': instance.tagsIds,
-      'mappitAssetsIds': instance.mappitAssetsIds,
-      'historicalDaysAllowed': instance.historicalDaysAllowed,
-      'brickhousePermissionTierId': instance.brickhousePermissionTierId,
-      'brickhouseRole': instance.brickhouseRole?.toJson(),
-      'sdmCode': instance.sdmCode,
-      'password': instance.password,
-      'preferences': instance.preferences?.toJson(),
-    };
-
 _AccessibilityInput _$AccessibilityInputFromJson(Map<String, dynamic> json) =>
     _AccessibilityInput(
       userId: json['userId'] as String?,
@@ -461,3 +398,66 @@ Map<String, dynamic> _$UserPreferencesInputToJson(
   'colorblindMode': instance.colorblindMode.toJson(),
   'colorblindForce': instance.colorblindForce,
 };
+
+_UserInput _$UserInputFromJson(Map<String, dynamic> json) => _UserInput(
+  id: json['id'] as String?,
+  name: json['name'] as String? ?? '',
+  email: json['email'] as String? ?? '',
+  username: json['username'] as String? ?? '',
+  dynamicAvatar: json['dynamicAvatar'] == null
+      ? null
+      : AvatarInput.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
+  referencesIds:
+      (json['referencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  categoryId: json['categoryId'] as String?,
+  customFields:
+      (json['customFields'] as List<dynamic>?)
+          ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+  tagsIds:
+      (json['tagsIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  mappitAssetsIds:
+      (json['mappitAssetsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  historicalDaysAllowed: (json['historicalDaysAllowed'] as num?)?.toInt() ?? 1,
+  brickhousePermissionTierId: json['brickhousePermissionTierId'] as String?,
+  brickhouseRole: $enumDecodeNullable(
+    _$BrickhouseUserRoleEnumMap,
+    json['brickhouseRole'],
+    unknownValue: BrickhouseUserRole.unknown,
+  ),
+  sdmCode: json['sdmCode'] as String?,
+  password: json['password'] as String?,
+  preferences: json['preferences'] == null
+      ? null
+      : UserPreferencesInput.fromJson(
+          json['preferences'] as Map<String, dynamic>,
+        ),
+);
+
+Map<String, dynamic> _$UserInputToJson(_UserInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'email': instance.email,
+      'username': instance.username,
+      'dynamicAvatar': instance.dynamicAvatar?.toJson(),
+      'referencesIds': instance.referencesIds,
+      'categoryId': instance.categoryId,
+      'customFields': instance.customFields.map((e) => e.toJson()).toList(),
+      'tagsIds': instance.tagsIds,
+      'mappitAssetsIds': instance.mappitAssetsIds,
+      'historicalDaysAllowed': instance.historicalDaysAllowed,
+      'brickhousePermissionTierId': instance.brickhousePermissionTierId,
+      'brickhouseRole': instance.brickhouseRole?.toJson(),
+      'sdmCode': instance.sdmCode,
+      'password': instance.password,
+      'preferences': instance.preferences?.toJson(),
+    };

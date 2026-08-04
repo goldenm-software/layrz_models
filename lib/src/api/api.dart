@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_logging/layrz_logging.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 part 'api.freezed.dart';
@@ -14,6 +15,8 @@ part 'api.g.dart';
 part 'src/api_connector.dart';
 part 'src/response.dart';
 part 'src/status.dart';
+part 'src/api_extras.dart';
+part 'src/types.dart';
 
 part 'src/gql_builder/variables.dart';
 part 'src/gql_builder/fragment.dart';
