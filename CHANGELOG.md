@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.22.1
+## 3.23.0
 
 - Added `ActionVariant` and `OperationVariant` to target the Mappit-prefixed fields exposed by the public GraphQL endpoint. Both default to `standard`, so existing callers keep their current behaviour
 - `Action.fetch()`, `Action.fetchAll()`, `Action.deleteMultiple()` and `ActionInput.save()` now accept a `variant` argument
@@ -8,6 +8,7 @@
 - Added `OperationVariant.supportsAppId`, which guards the `appId` argument. Only the standard `operations` query declares it; sending it to `mappitOperations` fails with `Unknown argument "appId"`
 - `Action` and `Operation` now use `LayrzConnector.query()` and `LayrzConnector.mutate()` instead of `perform()`, letting the connector resolve the response index and decode the result
 - `Action` and `Operation` API calls now request the `errors` field and log its content whenever the response status is not `OK`
+- `Device`, `DeviceCommand`, `DeviceTelemetry` and other models related to device entity now use the `LayrzConnector.query()` and `LayrzConnector.mutate()`.
 
 ## 3.22.0
 
