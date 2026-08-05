@@ -16,7 +16,7 @@ _ZigbeeDevice _$ZigbeeDeviceFromJson(Map<String, dynamic> json) =>
         json['lastSeen'] as num?,
       ),
       bindedDeviceId: json['bindedDeviceId'] as String?,
-      zoneId: json['zoneId'] as String,
+      zoneId: json['zoneId'] as String?,
       exposes: (json['exposes'] as List<dynamic>?)
           ?.map((e) => ZigbeeDeviceExpose.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -46,9 +46,9 @@ _ZigbeeDeviceExpose _$ZigbeeDeviceExposeFromJson(Map<String, dynamic> json) =>
         json['widget'],
         unknownValue: RenderWidget.unknown,
       ),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      updatedAt: const TimestampOrNullConverter().fromJson(
+        json['updatedAt'] as num?,
+      ),
     );
 
 Map<String, dynamic> _$ZigbeeDeviceExposeToJson(_ZigbeeDeviceExpose instance) =>
@@ -59,7 +59,7 @@ Map<String, dynamic> _$ZigbeeDeviceExposeToJson(_ZigbeeDeviceExpose instance) =>
       'access': instance.access,
       'params': instance.params,
       'widget': instance.widget?.toJson(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
+      'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
     };
 
 const _$RenderWidgetEnumMap = {

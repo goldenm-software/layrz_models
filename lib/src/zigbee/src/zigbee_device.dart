@@ -25,7 +25,7 @@ abstract class ZigbeeDevice with _$ZigbeeDevice {
     String? bindedDeviceId,
 
     /// [zoneId] is the ID of the zone that the device belongs to.
-    required String zoneId,
+    String? zoneId,
 
     /// [exposes] is the list of exposes of the device.
     List<ZigbeeDeviceExpose>? exposes,

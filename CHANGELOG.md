@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.24.3
+
+- Fixes on `ZigbeeDeviceExpose` and `ZigbeeDevice`
+- Corrected `FlespiSubmoduleConfig`, wrong type and fields on GraphQL fragment
+- This version was released manually
+
 ## 3.24.2
 
 - Forgot to do the freezed

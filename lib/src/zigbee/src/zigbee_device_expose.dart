@@ -29,7 +29,7 @@ abstract class ZigbeeDeviceExpose with _$ZigbeeDeviceExpose {
     @JsonKey(unknownEnumValue: RenderWidget.unknown) RenderWidget? widget,
 
     /// [updatedAt] is the date and time when the expose was last updated.
-    DateTime? updatedAt,
+    @TimestampOrNullConverter() DateTime? updatedAt,
   }) = _ZigbeeDeviceExpose;
 
   factory ZigbeeDeviceExpose.fromJson(Map<String, dynamic> json) => _$ZigbeeDeviceExposeFromJson(json);
