@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.24.4
+
+- Fixes on `RegisteredApp.load()`
+- This version was released manually
+
 ## 3.24.3
 
 - Fixes on `ZigbeeDeviceExpose` and `ZigbeeDevice`
