@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.24.2
+
+- Forgot to do the freezed
+- This version was released manually
+
 ## 3.24.1
 
 - Corrected `lastSeen` on `ZigbeeDevice` to have a converter.

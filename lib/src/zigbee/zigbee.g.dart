@@ -12,9 +12,9 @@ _ZigbeeDevice _$ZigbeeDeviceFromJson(Map<String, dynamic> json) =>
       ieeeAddress: json['ieeeAddress'] as String,
       manufacturer: json['manufacturer'] as String?,
       model: json['model'] as String?,
-      lastSeen: json['lastSeen'] == null
-          ? null
-          : DateTime.parse(json['lastSeen'] as String),
+      lastSeen: const TimestampOrNullConverter().fromJson(
+        json['lastSeen'] as num?,
+      ),
       bindedDeviceId: json['bindedDeviceId'] as String?,
       zoneId: json['zoneId'] as String,
       exposes: (json['exposes'] as List<dynamic>?)
@@ -28,7 +28,7 @@ Map<String, dynamic> _$ZigbeeDeviceToJson(_ZigbeeDevice instance) =>
       'ieeeAddress': instance.ieeeAddress,
       'manufacturer': instance.manufacturer,
       'model': instance.model,
-      'lastSeen': instance.lastSeen?.toIso8601String(),
+      'lastSeen': const TimestampOrNullConverter().toJson(instance.lastSeen),
       'bindedDeviceId': instance.bindedDeviceId,
       'zoneId': instance.zoneId,
       'exposes': instance.exposes?.map((e) => e.toJson()).toList(),
