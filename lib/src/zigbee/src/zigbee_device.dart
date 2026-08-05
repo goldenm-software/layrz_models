@@ -19,7 +19,7 @@ abstract class ZigbeeDevice with _$ZigbeeDevice {
     String? model,
 
     /// [lastSeen] is the date and time when the device was last seen.
-    DateTime? lastSeen,
+    @TimestampOrNullConverter() DateTime? lastSeen,
 
     /// [bindedDeviceId] is the ID of the device that is binded to this device.
     String? bindedDeviceId,

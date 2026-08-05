@@ -2,6 +2,7 @@ library;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_models/src/api/api.dart';
+import 'package:layrz_models/src/converters/converters.dart';
 import 'package:layrz_models/src/models/models.dart';
 
 part 'zigbee.freezed.dart';

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.24.1
+
+- Corrected `lastSeen` on `ZigbeeDevice` to have a converter.
+- This version was released manually
+
 ## 3.24.0
 
 - Added an API connector to `ExternalAccount`, with `fetch()`, `fetchAll()` and `deleteMany()`, plus `ExternalAccountInput.save()`
