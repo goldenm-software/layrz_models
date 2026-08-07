@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.24.5
+
+- Added `StockClosingInfoPa` model
+- Added `totalWithdrawalsByComboio` value in `StockClosingTank` and `StockClosingInput` models
+
 ## 3.24.4
 
 - Fixes on `RegisteredApp.load()`

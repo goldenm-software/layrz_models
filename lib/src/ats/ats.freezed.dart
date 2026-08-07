@@ -27365,7 +27365,8 @@ mixin _$StockClosingTank {
  double? get openingBalanceAmbient;/// The [totalEntriesAmbient] parameter is the totalEntriesAmbient of the stock closing tank entity.
  double? get totalEntriesAmbient;/// The [totalWithdrawalsAmbient] parameter is the totalWithdrawalsAmbient of the stock closing tank entity.
  double? get totalWithdrawalsAmbient;/// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing tank entity.
- double? get closingBalanceAmbient;/// The [openingBalance20] parameter is the openingBalance20 of the stock closing tank entity.
+ double? get closingBalanceAmbient;/// The [totalWithdrawalsByComboio] parameter is the totalWithdrawalsByComboio of the stock closing tank entity.
+ double? get totalWithdrawalsByComboio;/// The [openingBalance20] parameter is the openingBalance20 of the stock closing tank entity.
  double? get openingBalance20;/// The [totalEntries20] parameter is the totalEntries20 of the stock closing tank entity.
  double? get totalEntries20;/// The [totalWithdrawals20] parameter is the totalWithdrawals20 of the stock closing tank entity.
  double? get totalWithdrawals20;/// The [closingBalance20] parameter is the closingBalance20 of the stock closing tank entity.
@@ -27388,16 +27389,16 @@ $StockClosingTankCopyWith<StockClosingTank> get copyWith => _$StockClosingTankCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StockClosingTank&&(identical(other.id, id) || other.id == id)&&(identical(other.stockClosingId, stockClosingId) || other.stockClosingId == stockClosingId)&&(identical(other.stockClosing, stockClosing) || other.stockClosing == stockClosing)&&(identical(other.tankId, tankId) || other.tankId == tankId)&&(identical(other.tank, tank) || other.tank == tank)&&(identical(other.tankMessageId, tankMessageId) || other.tankMessageId == tankMessageId)&&(identical(other.tankMessage, tankMessage) || other.tankMessage == tankMessage)&&(identical(other.volumeHeight, volumeHeight) || other.volumeHeight == volumeHeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.tankTemperature, tankTemperature) || other.tankTemperature == tankTemperature)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.correctionFactor, correctionFactor) || other.correctionFactor == correctionFactor)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.volume20Difference, volume20Difference) || other.volume20Difference == volume20Difference)&&(identical(other.accountingVolumeDifference, accountingVolumeDifference) || other.accountingVolumeDifference == accountingVolumeDifference)&&(identical(other.openingBalanceAmbient, openingBalanceAmbient) || other.openingBalanceAmbient == openingBalanceAmbient)&&(identical(other.totalEntriesAmbient, totalEntriesAmbient) || other.totalEntriesAmbient == totalEntriesAmbient)&&(identical(other.totalWithdrawalsAmbient, totalWithdrawalsAmbient) || other.totalWithdrawalsAmbient == totalWithdrawalsAmbient)&&(identical(other.closingBalanceAmbient, closingBalanceAmbient) || other.closingBalanceAmbient == closingBalanceAmbient)&&(identical(other.openingBalance20, openingBalance20) || other.openingBalance20 == openingBalance20)&&(identical(other.totalEntries20, totalEntries20) || other.totalEntries20 == totalEntries20)&&(identical(other.totalWithdrawals20, totalWithdrawals20) || other.totalWithdrawals20 == totalWithdrawals20)&&(identical(other.closingBalance20, closingBalance20) || other.closingBalance20 == closingBalance20)&&(identical(other.openingAccountingBalance, openingAccountingBalance) || other.openingAccountingBalance == openingAccountingBalance)&&(identical(other.totalAccountingEntries, totalAccountingEntries) || other.totalAccountingEntries == totalAccountingEntries)&&(identical(other.totalAccountingWithdrawals, totalAccountingWithdrawals) || other.totalAccountingWithdrawals == totalAccountingWithdrawals)&&(identical(other.closingAccountingBalance, closingAccountingBalance) || other.closingAccountingBalance == closingAccountingBalance)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StockClosingTank&&(identical(other.id, id) || other.id == id)&&(identical(other.stockClosingId, stockClosingId) || other.stockClosingId == stockClosingId)&&(identical(other.stockClosing, stockClosing) || other.stockClosing == stockClosing)&&(identical(other.tankId, tankId) || other.tankId == tankId)&&(identical(other.tank, tank) || other.tank == tank)&&(identical(other.tankMessageId, tankMessageId) || other.tankMessageId == tankMessageId)&&(identical(other.tankMessage, tankMessage) || other.tankMessage == tankMessage)&&(identical(other.volumeHeight, volumeHeight) || other.volumeHeight == volumeHeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.tankTemperature, tankTemperature) || other.tankTemperature == tankTemperature)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.correctionFactor, correctionFactor) || other.correctionFactor == correctionFactor)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.volume20Difference, volume20Difference) || other.volume20Difference == volume20Difference)&&(identical(other.accountingVolumeDifference, accountingVolumeDifference) || other.accountingVolumeDifference == accountingVolumeDifference)&&(identical(other.openingBalanceAmbient, openingBalanceAmbient) || other.openingBalanceAmbient == openingBalanceAmbient)&&(identical(other.totalEntriesAmbient, totalEntriesAmbient) || other.totalEntriesAmbient == totalEntriesAmbient)&&(identical(other.totalWithdrawalsAmbient, totalWithdrawalsAmbient) || other.totalWithdrawalsAmbient == totalWithdrawalsAmbient)&&(identical(other.closingBalanceAmbient, closingBalanceAmbient) || other.closingBalanceAmbient == closingBalanceAmbient)&&(identical(other.totalWithdrawalsByComboio, totalWithdrawalsByComboio) || other.totalWithdrawalsByComboio == totalWithdrawalsByComboio)&&(identical(other.openingBalance20, openingBalance20) || other.openingBalance20 == openingBalance20)&&(identical(other.totalEntries20, totalEntries20) || other.totalEntries20 == totalEntries20)&&(identical(other.totalWithdrawals20, totalWithdrawals20) || other.totalWithdrawals20 == totalWithdrawals20)&&(identical(other.closingBalance20, closingBalance20) || other.closingBalance20 == closingBalance20)&&(identical(other.openingAccountingBalance, openingAccountingBalance) || other.openingAccountingBalance == openingAccountingBalance)&&(identical(other.totalAccountingEntries, totalAccountingEntries) || other.totalAccountingEntries == totalAccountingEntries)&&(identical(other.totalAccountingWithdrawals, totalAccountingWithdrawals) || other.totalAccountingWithdrawals == totalAccountingWithdrawals)&&(identical(other.closingAccountingBalance, closingAccountingBalance) || other.closingAccountingBalance == closingAccountingBalance)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,stockClosingId,stockClosing,tankId,tank,tankMessageId,tankMessage,volumeHeight,sampleDensity,sampleTemperature,tankTemperature,density20,correctionFactor,ambientVolume,volume20,volume20Difference,accountingVolumeDifference,openingBalanceAmbient,totalEntriesAmbient,totalWithdrawalsAmbient,closingBalanceAmbient,openingBalance20,totalEntries20,totalWithdrawals20,closingBalance20,openingAccountingBalance,totalAccountingEntries,totalAccountingWithdrawals,closingAccountingBalance,createdAt,updatedAt]);
+int get hashCode => Object.hashAll([runtimeType,id,stockClosingId,stockClosing,tankId,tank,tankMessageId,tankMessage,volumeHeight,sampleDensity,sampleTemperature,tankTemperature,density20,correctionFactor,ambientVolume,volume20,volume20Difference,accountingVolumeDifference,openingBalanceAmbient,totalEntriesAmbient,totalWithdrawalsAmbient,closingBalanceAmbient,totalWithdrawalsByComboio,openingBalance20,totalEntries20,totalWithdrawals20,closingBalance20,openingAccountingBalance,totalAccountingEntries,totalAccountingWithdrawals,closingAccountingBalance,createdAt,updatedAt]);
 
 @override
 String toString() {
-  return 'StockClosingTank(id: $id, stockClosingId: $stockClosingId, stockClosing: $stockClosing, tankId: $tankId, tank: $tank, tankMessageId: $tankMessageId, tankMessage: $tankMessage, volumeHeight: $volumeHeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, tankTemperature: $tankTemperature, density20: $density20, correctionFactor: $correctionFactor, ambientVolume: $ambientVolume, volume20: $volume20, volume20Difference: $volume20Difference, accountingVolumeDifference: $accountingVolumeDifference, openingBalanceAmbient: $openingBalanceAmbient, totalEntriesAmbient: $totalEntriesAmbient, totalWithdrawalsAmbient: $totalWithdrawalsAmbient, closingBalanceAmbient: $closingBalanceAmbient, openingBalance20: $openingBalance20, totalEntries20: $totalEntries20, totalWithdrawals20: $totalWithdrawals20, closingBalance20: $closingBalance20, openingAccountingBalance: $openingAccountingBalance, totalAccountingEntries: $totalAccountingEntries, totalAccountingWithdrawals: $totalAccountingWithdrawals, closingAccountingBalance: $closingAccountingBalance, createdAt: $createdAt, updatedAt: $updatedAt)';
+  return 'StockClosingTank(id: $id, stockClosingId: $stockClosingId, stockClosing: $stockClosing, tankId: $tankId, tank: $tank, tankMessageId: $tankMessageId, tankMessage: $tankMessage, volumeHeight: $volumeHeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, tankTemperature: $tankTemperature, density20: $density20, correctionFactor: $correctionFactor, ambientVolume: $ambientVolume, volume20: $volume20, volume20Difference: $volume20Difference, accountingVolumeDifference: $accountingVolumeDifference, openingBalanceAmbient: $openingBalanceAmbient, totalEntriesAmbient: $totalEntriesAmbient, totalWithdrawalsAmbient: $totalWithdrawalsAmbient, closingBalanceAmbient: $closingBalanceAmbient, totalWithdrawalsByComboio: $totalWithdrawalsByComboio, openingBalance20: $openingBalance20, totalEntries20: $totalEntries20, totalWithdrawals20: $totalWithdrawals20, closingBalance20: $closingBalance20, openingAccountingBalance: $openingAccountingBalance, totalAccountingEntries: $totalAccountingEntries, totalAccountingWithdrawals: $totalAccountingWithdrawals, closingAccountingBalance: $closingAccountingBalance, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
@@ -27408,7 +27409,7 @@ abstract mixin class $StockClosingTankCopyWith<$Res>  {
   factory $StockClosingTankCopyWith(StockClosingTank value, $Res Function(StockClosingTank) _then) = _$StockClosingTankCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? stockClosingId, StockClosing? stockClosing, String? tankId, Asset? tank, String? tankMessageId, AssetTelemetry? tankMessage, double? volumeHeight, double? sampleDensity, double? sampleTemperature, double? tankTemperature, double? density20, double? correctionFactor, double? ambientVolume, double? volume20, double? volume20Difference, double? accountingVolumeDifference, double? openingBalanceAmbient, double? totalEntriesAmbient, double? totalWithdrawalsAmbient, double? closingBalanceAmbient, double? openingBalance20, double? totalEntries20, double? totalWithdrawals20, double? closingBalance20, double? openingAccountingBalance, double? totalAccountingEntries, double? totalAccountingWithdrawals, double? closingAccountingBalance,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? updatedAt
+ String? id, String? stockClosingId, StockClosing? stockClosing, String? tankId, Asset? tank, String? tankMessageId, AssetTelemetry? tankMessage, double? volumeHeight, double? sampleDensity, double? sampleTemperature, double? tankTemperature, double? density20, double? correctionFactor, double? ambientVolume, double? volume20, double? volume20Difference, double? accountingVolumeDifference, double? openingBalanceAmbient, double? totalEntriesAmbient, double? totalWithdrawalsAmbient, double? closingBalanceAmbient, double? totalWithdrawalsByComboio, double? openingBalance20, double? totalEntries20, double? totalWithdrawals20, double? closingBalance20, double? openingAccountingBalance, double? totalAccountingEntries, double? totalAccountingWithdrawals, double? closingAccountingBalance,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? updatedAt
 });
 
 
@@ -27425,7 +27426,7 @@ class _$StockClosingTankCopyWithImpl<$Res>
 
 /// Create a copy of StockClosingTank
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? stockClosingId = freezed,Object? stockClosing = freezed,Object? tankId = freezed,Object? tank = freezed,Object? tankMessageId = freezed,Object? tankMessage = freezed,Object? volumeHeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? tankTemperature = freezed,Object? density20 = freezed,Object? correctionFactor = freezed,Object? ambientVolume = freezed,Object? volume20 = freezed,Object? volume20Difference = freezed,Object? accountingVolumeDifference = freezed,Object? openingBalanceAmbient = freezed,Object? totalEntriesAmbient = freezed,Object? totalWithdrawalsAmbient = freezed,Object? closingBalanceAmbient = freezed,Object? openingBalance20 = freezed,Object? totalEntries20 = freezed,Object? totalWithdrawals20 = freezed,Object? closingBalance20 = freezed,Object? openingAccountingBalance = freezed,Object? totalAccountingEntries = freezed,Object? totalAccountingWithdrawals = freezed,Object? closingAccountingBalance = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? stockClosingId = freezed,Object? stockClosing = freezed,Object? tankId = freezed,Object? tank = freezed,Object? tankMessageId = freezed,Object? tankMessage = freezed,Object? volumeHeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? tankTemperature = freezed,Object? density20 = freezed,Object? correctionFactor = freezed,Object? ambientVolume = freezed,Object? volume20 = freezed,Object? volume20Difference = freezed,Object? accountingVolumeDifference = freezed,Object? openingBalanceAmbient = freezed,Object? totalEntriesAmbient = freezed,Object? totalWithdrawalsAmbient = freezed,Object? closingBalanceAmbient = freezed,Object? totalWithdrawalsByComboio = freezed,Object? openingBalance20 = freezed,Object? totalEntries20 = freezed,Object? totalWithdrawals20 = freezed,Object? closingBalance20 = freezed,Object? openingAccountingBalance = freezed,Object? totalAccountingEntries = freezed,Object? totalAccountingWithdrawals = freezed,Object? closingAccountingBalance = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,stockClosingId: freezed == stockClosingId ? _self.stockClosingId : stockClosingId // ignore: cast_nullable_to_non_nullable
@@ -27448,6 +27449,7 @@ as double?,openingBalanceAmbient: freezed == openingBalanceAmbient ? _self.openi
 as double?,totalEntriesAmbient: freezed == totalEntriesAmbient ? _self.totalEntriesAmbient : totalEntriesAmbient // ignore: cast_nullable_to_non_nullable
 as double?,totalWithdrawalsAmbient: freezed == totalWithdrawalsAmbient ? _self.totalWithdrawalsAmbient : totalWithdrawalsAmbient // ignore: cast_nullable_to_non_nullable
 as double?,closingBalanceAmbient: freezed == closingBalanceAmbient ? _self.closingBalanceAmbient : closingBalanceAmbient // ignore: cast_nullable_to_non_nullable
+as double?,totalWithdrawalsByComboio: freezed == totalWithdrawalsByComboio ? _self.totalWithdrawalsByComboio : totalWithdrawalsByComboio // ignore: cast_nullable_to_non_nullable
 as double?,openingBalance20: freezed == openingBalance20 ? _self.openingBalance20 : openingBalance20 // ignore: cast_nullable_to_non_nullable
 as double?,totalEntries20: freezed == totalEntries20 ? _self.totalEntries20 : totalEntries20 // ignore: cast_nullable_to_non_nullable
 as double?,totalWithdrawals20: freezed == totalWithdrawals20 ? _self.totalWithdrawals20 : totalWithdrawals20 // ignore: cast_nullable_to_non_nullable
@@ -27579,10 +27581,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? stockClosingId,  StockClosing? stockClosing,  String? tankId,  Asset? tank,  String? tankMessageId,  AssetTelemetry? tankMessage,  double? volumeHeight,  double? sampleDensity,  double? sampleTemperature,  double? tankTemperature,  double? density20,  double? correctionFactor,  double? ambientVolume,  double? volume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalanceAmbient,  double? totalEntriesAmbient,  double? totalWithdrawalsAmbient,  double? closingBalanceAmbient,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? stockClosingId,  StockClosing? stockClosing,  String? tankId,  Asset? tank,  String? tankMessageId,  AssetTelemetry? tankMessage,  double? volumeHeight,  double? sampleDensity,  double? sampleTemperature,  double? tankTemperature,  double? density20,  double? correctionFactor,  double? ambientVolume,  double? volume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalanceAmbient,  double? totalEntriesAmbient,  double? totalWithdrawalsAmbient,  double? closingBalanceAmbient,  double? totalWithdrawalsByComboio,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockClosingTank() when $default != null:
-return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_that.tank,_that.tankMessageId,_that.tankMessage,_that.volumeHeight,_that.sampleDensity,_that.sampleTemperature,_that.tankTemperature,_that.density20,_that.correctionFactor,_that.ambientVolume,_that.volume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.createdAt,_that.updatedAt);case _:
+return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_that.tank,_that.tankMessageId,_that.tankMessage,_that.volumeHeight,_that.sampleDensity,_that.sampleTemperature,_that.tankTemperature,_that.density20,_that.correctionFactor,_that.ambientVolume,_that.volume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.totalWithdrawalsByComboio,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.createdAt,_that.updatedAt);case _:
   return orElse();
 
 }
@@ -27600,10 +27602,10 @@ return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? stockClosingId,  StockClosing? stockClosing,  String? tankId,  Asset? tank,  String? tankMessageId,  AssetTelemetry? tankMessage,  double? volumeHeight,  double? sampleDensity,  double? sampleTemperature,  double? tankTemperature,  double? density20,  double? correctionFactor,  double? ambientVolume,  double? volume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalanceAmbient,  double? totalEntriesAmbient,  double? totalWithdrawalsAmbient,  double? closingBalanceAmbient,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? stockClosingId,  StockClosing? stockClosing,  String? tankId,  Asset? tank,  String? tankMessageId,  AssetTelemetry? tankMessage,  double? volumeHeight,  double? sampleDensity,  double? sampleTemperature,  double? tankTemperature,  double? density20,  double? correctionFactor,  double? ambientVolume,  double? volume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalanceAmbient,  double? totalEntriesAmbient,  double? totalWithdrawalsAmbient,  double? closingBalanceAmbient,  double? totalWithdrawalsByComboio,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StockClosingTank():
-return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_that.tank,_that.tankMessageId,_that.tankMessage,_that.volumeHeight,_that.sampleDensity,_that.sampleTemperature,_that.tankTemperature,_that.density20,_that.correctionFactor,_that.ambientVolume,_that.volume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.createdAt,_that.updatedAt);case _:
+return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_that.tank,_that.tankMessageId,_that.tankMessage,_that.volumeHeight,_that.sampleDensity,_that.sampleTemperature,_that.tankTemperature,_that.density20,_that.correctionFactor,_that.ambientVolume,_that.volume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.totalWithdrawalsByComboio,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.createdAt,_that.updatedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -27620,10 +27622,10 @@ return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? stockClosingId,  StockClosing? stockClosing,  String? tankId,  Asset? tank,  String? tankMessageId,  AssetTelemetry? tankMessage,  double? volumeHeight,  double? sampleDensity,  double? sampleTemperature,  double? tankTemperature,  double? density20,  double? correctionFactor,  double? ambientVolume,  double? volume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalanceAmbient,  double? totalEntriesAmbient,  double? totalWithdrawalsAmbient,  double? closingBalanceAmbient,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? stockClosingId,  StockClosing? stockClosing,  String? tankId,  Asset? tank,  String? tankMessageId,  AssetTelemetry? tankMessage,  double? volumeHeight,  double? sampleDensity,  double? sampleTemperature,  double? tankTemperature,  double? density20,  double? correctionFactor,  double? ambientVolume,  double? volume20,  double? volume20Difference,  double? accountingVolumeDifference,  double? openingBalanceAmbient,  double? totalEntriesAmbient,  double? totalWithdrawalsAmbient,  double? closingBalanceAmbient,  double? totalWithdrawalsByComboio,  double? openingBalance20,  double? totalEntries20,  double? totalWithdrawals20,  double? closingBalance20,  double? openingAccountingBalance,  double? totalAccountingEntries,  double? totalAccountingWithdrawals,  double? closingAccountingBalance, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StockClosingTank() when $default != null:
-return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_that.tank,_that.tankMessageId,_that.tankMessage,_that.volumeHeight,_that.sampleDensity,_that.sampleTemperature,_that.tankTemperature,_that.density20,_that.correctionFactor,_that.ambientVolume,_that.volume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.createdAt,_that.updatedAt);case _:
+return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_that.tank,_that.tankMessageId,_that.tankMessage,_that.volumeHeight,_that.sampleDensity,_that.sampleTemperature,_that.tankTemperature,_that.density20,_that.correctionFactor,_that.ambientVolume,_that.volume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.totalWithdrawalsByComboio,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.createdAt,_that.updatedAt);case _:
   return null;
 
 }
@@ -27635,7 +27637,7 @@ return $default(_that.id,_that.stockClosingId,_that.stockClosing,_that.tankId,_t
 @JsonSerializable()
 
 class _StockClosingTank implements StockClosingTank {
-   _StockClosingTank({this.id, this.stockClosingId, this.stockClosing, this.tankId, this.tank, this.tankMessageId, this.tankMessage, this.volumeHeight, this.sampleDensity, this.sampleTemperature, this.tankTemperature, this.density20, this.correctionFactor, this.ambientVolume, this.volume20, this.volume20Difference, this.accountingVolumeDifference, this.openingBalanceAmbient, this.totalEntriesAmbient, this.totalWithdrawalsAmbient, this.closingBalanceAmbient, this.openingBalance20, this.totalEntries20, this.totalWithdrawals20, this.closingBalance20, this.openingAccountingBalance, this.totalAccountingEntries, this.totalAccountingWithdrawals, this.closingAccountingBalance, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt});
+   _StockClosingTank({this.id, this.stockClosingId, this.stockClosing, this.tankId, this.tank, this.tankMessageId, this.tankMessage, this.volumeHeight, this.sampleDensity, this.sampleTemperature, this.tankTemperature, this.density20, this.correctionFactor, this.ambientVolume, this.volume20, this.volume20Difference, this.accountingVolumeDifference, this.openingBalanceAmbient, this.totalEntriesAmbient, this.totalWithdrawalsAmbient, this.closingBalanceAmbient, this.totalWithdrawalsByComboio, this.openingBalance20, this.totalEntries20, this.totalWithdrawals20, this.closingBalance20, this.openingAccountingBalance, this.totalAccountingEntries, this.totalAccountingWithdrawals, this.closingAccountingBalance, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt});
   factory _StockClosingTank.fromJson(Map<String, dynamic> json) => _$StockClosingTankFromJson(json);
 
 /// The [id] parameter is the id of the stock closing entity.
@@ -27680,6 +27682,8 @@ class _StockClosingTank implements StockClosingTank {
 @override final  double? totalWithdrawalsAmbient;
 /// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing tank entity.
 @override final  double? closingBalanceAmbient;
+/// The [totalWithdrawalsByComboio] parameter is the totalWithdrawalsByComboio of the stock closing tank entity.
+@override final  double? totalWithdrawalsByComboio;
 /// The [openingBalance20] parameter is the openingBalance20 of the stock closing tank entity.
 @override final  double? openingBalance20;
 /// The [totalEntries20] parameter is the totalEntries20 of the stock closing tank entity.
@@ -27714,16 +27718,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockClosingTank&&(identical(other.id, id) || other.id == id)&&(identical(other.stockClosingId, stockClosingId) || other.stockClosingId == stockClosingId)&&(identical(other.stockClosing, stockClosing) || other.stockClosing == stockClosing)&&(identical(other.tankId, tankId) || other.tankId == tankId)&&(identical(other.tank, tank) || other.tank == tank)&&(identical(other.tankMessageId, tankMessageId) || other.tankMessageId == tankMessageId)&&(identical(other.tankMessage, tankMessage) || other.tankMessage == tankMessage)&&(identical(other.volumeHeight, volumeHeight) || other.volumeHeight == volumeHeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.tankTemperature, tankTemperature) || other.tankTemperature == tankTemperature)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.correctionFactor, correctionFactor) || other.correctionFactor == correctionFactor)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.volume20Difference, volume20Difference) || other.volume20Difference == volume20Difference)&&(identical(other.accountingVolumeDifference, accountingVolumeDifference) || other.accountingVolumeDifference == accountingVolumeDifference)&&(identical(other.openingBalanceAmbient, openingBalanceAmbient) || other.openingBalanceAmbient == openingBalanceAmbient)&&(identical(other.totalEntriesAmbient, totalEntriesAmbient) || other.totalEntriesAmbient == totalEntriesAmbient)&&(identical(other.totalWithdrawalsAmbient, totalWithdrawalsAmbient) || other.totalWithdrawalsAmbient == totalWithdrawalsAmbient)&&(identical(other.closingBalanceAmbient, closingBalanceAmbient) || other.closingBalanceAmbient == closingBalanceAmbient)&&(identical(other.openingBalance20, openingBalance20) || other.openingBalance20 == openingBalance20)&&(identical(other.totalEntries20, totalEntries20) || other.totalEntries20 == totalEntries20)&&(identical(other.totalWithdrawals20, totalWithdrawals20) || other.totalWithdrawals20 == totalWithdrawals20)&&(identical(other.closingBalance20, closingBalance20) || other.closingBalance20 == closingBalance20)&&(identical(other.openingAccountingBalance, openingAccountingBalance) || other.openingAccountingBalance == openingAccountingBalance)&&(identical(other.totalAccountingEntries, totalAccountingEntries) || other.totalAccountingEntries == totalAccountingEntries)&&(identical(other.totalAccountingWithdrawals, totalAccountingWithdrawals) || other.totalAccountingWithdrawals == totalAccountingWithdrawals)&&(identical(other.closingAccountingBalance, closingAccountingBalance) || other.closingAccountingBalance == closingAccountingBalance)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockClosingTank&&(identical(other.id, id) || other.id == id)&&(identical(other.stockClosingId, stockClosingId) || other.stockClosingId == stockClosingId)&&(identical(other.stockClosing, stockClosing) || other.stockClosing == stockClosing)&&(identical(other.tankId, tankId) || other.tankId == tankId)&&(identical(other.tank, tank) || other.tank == tank)&&(identical(other.tankMessageId, tankMessageId) || other.tankMessageId == tankMessageId)&&(identical(other.tankMessage, tankMessage) || other.tankMessage == tankMessage)&&(identical(other.volumeHeight, volumeHeight) || other.volumeHeight == volumeHeight)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.tankTemperature, tankTemperature) || other.tankTemperature == tankTemperature)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.correctionFactor, correctionFactor) || other.correctionFactor == correctionFactor)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.volume20Difference, volume20Difference) || other.volume20Difference == volume20Difference)&&(identical(other.accountingVolumeDifference, accountingVolumeDifference) || other.accountingVolumeDifference == accountingVolumeDifference)&&(identical(other.openingBalanceAmbient, openingBalanceAmbient) || other.openingBalanceAmbient == openingBalanceAmbient)&&(identical(other.totalEntriesAmbient, totalEntriesAmbient) || other.totalEntriesAmbient == totalEntriesAmbient)&&(identical(other.totalWithdrawalsAmbient, totalWithdrawalsAmbient) || other.totalWithdrawalsAmbient == totalWithdrawalsAmbient)&&(identical(other.closingBalanceAmbient, closingBalanceAmbient) || other.closingBalanceAmbient == closingBalanceAmbient)&&(identical(other.totalWithdrawalsByComboio, totalWithdrawalsByComboio) || other.totalWithdrawalsByComboio == totalWithdrawalsByComboio)&&(identical(other.openingBalance20, openingBalance20) || other.openingBalance20 == openingBalance20)&&(identical(other.totalEntries20, totalEntries20) || other.totalEntries20 == totalEntries20)&&(identical(other.totalWithdrawals20, totalWithdrawals20) || other.totalWithdrawals20 == totalWithdrawals20)&&(identical(other.closingBalance20, closingBalance20) || other.closingBalance20 == closingBalance20)&&(identical(other.openingAccountingBalance, openingAccountingBalance) || other.openingAccountingBalance == openingAccountingBalance)&&(identical(other.totalAccountingEntries, totalAccountingEntries) || other.totalAccountingEntries == totalAccountingEntries)&&(identical(other.totalAccountingWithdrawals, totalAccountingWithdrawals) || other.totalAccountingWithdrawals == totalAccountingWithdrawals)&&(identical(other.closingAccountingBalance, closingAccountingBalance) || other.closingAccountingBalance == closingAccountingBalance)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,stockClosingId,stockClosing,tankId,tank,tankMessageId,tankMessage,volumeHeight,sampleDensity,sampleTemperature,tankTemperature,density20,correctionFactor,ambientVolume,volume20,volume20Difference,accountingVolumeDifference,openingBalanceAmbient,totalEntriesAmbient,totalWithdrawalsAmbient,closingBalanceAmbient,openingBalance20,totalEntries20,totalWithdrawals20,closingBalance20,openingAccountingBalance,totalAccountingEntries,totalAccountingWithdrawals,closingAccountingBalance,createdAt,updatedAt]);
+int get hashCode => Object.hashAll([runtimeType,id,stockClosingId,stockClosing,tankId,tank,tankMessageId,tankMessage,volumeHeight,sampleDensity,sampleTemperature,tankTemperature,density20,correctionFactor,ambientVolume,volume20,volume20Difference,accountingVolumeDifference,openingBalanceAmbient,totalEntriesAmbient,totalWithdrawalsAmbient,closingBalanceAmbient,totalWithdrawalsByComboio,openingBalance20,totalEntries20,totalWithdrawals20,closingBalance20,openingAccountingBalance,totalAccountingEntries,totalAccountingWithdrawals,closingAccountingBalance,createdAt,updatedAt]);
 
 @override
 String toString() {
-  return 'StockClosingTank(id: $id, stockClosingId: $stockClosingId, stockClosing: $stockClosing, tankId: $tankId, tank: $tank, tankMessageId: $tankMessageId, tankMessage: $tankMessage, volumeHeight: $volumeHeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, tankTemperature: $tankTemperature, density20: $density20, correctionFactor: $correctionFactor, ambientVolume: $ambientVolume, volume20: $volume20, volume20Difference: $volume20Difference, accountingVolumeDifference: $accountingVolumeDifference, openingBalanceAmbient: $openingBalanceAmbient, totalEntriesAmbient: $totalEntriesAmbient, totalWithdrawalsAmbient: $totalWithdrawalsAmbient, closingBalanceAmbient: $closingBalanceAmbient, openingBalance20: $openingBalance20, totalEntries20: $totalEntries20, totalWithdrawals20: $totalWithdrawals20, closingBalance20: $closingBalance20, openingAccountingBalance: $openingAccountingBalance, totalAccountingEntries: $totalAccountingEntries, totalAccountingWithdrawals: $totalAccountingWithdrawals, closingAccountingBalance: $closingAccountingBalance, createdAt: $createdAt, updatedAt: $updatedAt)';
+  return 'StockClosingTank(id: $id, stockClosingId: $stockClosingId, stockClosing: $stockClosing, tankId: $tankId, tank: $tank, tankMessageId: $tankMessageId, tankMessage: $tankMessage, volumeHeight: $volumeHeight, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, tankTemperature: $tankTemperature, density20: $density20, correctionFactor: $correctionFactor, ambientVolume: $ambientVolume, volume20: $volume20, volume20Difference: $volume20Difference, accountingVolumeDifference: $accountingVolumeDifference, openingBalanceAmbient: $openingBalanceAmbient, totalEntriesAmbient: $totalEntriesAmbient, totalWithdrawalsAmbient: $totalWithdrawalsAmbient, closingBalanceAmbient: $closingBalanceAmbient, totalWithdrawalsByComboio: $totalWithdrawalsByComboio, openingBalance20: $openingBalance20, totalEntries20: $totalEntries20, totalWithdrawals20: $totalWithdrawals20, closingBalance20: $closingBalance20, openingAccountingBalance: $openingAccountingBalance, totalAccountingEntries: $totalAccountingEntries, totalAccountingWithdrawals: $totalAccountingWithdrawals, closingAccountingBalance: $closingAccountingBalance, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
@@ -27734,7 +27738,7 @@ abstract mixin class _$StockClosingTankCopyWith<$Res> implements $StockClosingTa
   factory _$StockClosingTankCopyWith(_StockClosingTank value, $Res Function(_StockClosingTank) _then) = __$StockClosingTankCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? stockClosingId, StockClosing? stockClosing, String? tankId, Asset? tank, String? tankMessageId, AssetTelemetry? tankMessage, double? volumeHeight, double? sampleDensity, double? sampleTemperature, double? tankTemperature, double? density20, double? correctionFactor, double? ambientVolume, double? volume20, double? volume20Difference, double? accountingVolumeDifference, double? openingBalanceAmbient, double? totalEntriesAmbient, double? totalWithdrawalsAmbient, double? closingBalanceAmbient, double? openingBalance20, double? totalEntries20, double? totalWithdrawals20, double? closingBalance20, double? openingAccountingBalance, double? totalAccountingEntries, double? totalAccountingWithdrawals, double? closingAccountingBalance,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? updatedAt
+ String? id, String? stockClosingId, StockClosing? stockClosing, String? tankId, Asset? tank, String? tankMessageId, AssetTelemetry? tankMessage, double? volumeHeight, double? sampleDensity, double? sampleTemperature, double? tankTemperature, double? density20, double? correctionFactor, double? ambientVolume, double? volume20, double? volume20Difference, double? accountingVolumeDifference, double? openingBalanceAmbient, double? totalEntriesAmbient, double? totalWithdrawalsAmbient, double? closingBalanceAmbient, double? totalWithdrawalsByComboio, double? openingBalance20, double? totalEntries20, double? totalWithdrawals20, double? closingBalance20, double? openingAccountingBalance, double? totalAccountingEntries, double? totalAccountingWithdrawals, double? closingAccountingBalance,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? updatedAt
 });
 
 
@@ -27751,7 +27755,7 @@ class __$StockClosingTankCopyWithImpl<$Res>
 
 /// Create a copy of StockClosingTank
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? stockClosingId = freezed,Object? stockClosing = freezed,Object? tankId = freezed,Object? tank = freezed,Object? tankMessageId = freezed,Object? tankMessage = freezed,Object? volumeHeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? tankTemperature = freezed,Object? density20 = freezed,Object? correctionFactor = freezed,Object? ambientVolume = freezed,Object? volume20 = freezed,Object? volume20Difference = freezed,Object? accountingVolumeDifference = freezed,Object? openingBalanceAmbient = freezed,Object? totalEntriesAmbient = freezed,Object? totalWithdrawalsAmbient = freezed,Object? closingBalanceAmbient = freezed,Object? openingBalance20 = freezed,Object? totalEntries20 = freezed,Object? totalWithdrawals20 = freezed,Object? closingBalance20 = freezed,Object? openingAccountingBalance = freezed,Object? totalAccountingEntries = freezed,Object? totalAccountingWithdrawals = freezed,Object? closingAccountingBalance = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? stockClosingId = freezed,Object? stockClosing = freezed,Object? tankId = freezed,Object? tank = freezed,Object? tankMessageId = freezed,Object? tankMessage = freezed,Object? volumeHeight = freezed,Object? sampleDensity = freezed,Object? sampleTemperature = freezed,Object? tankTemperature = freezed,Object? density20 = freezed,Object? correctionFactor = freezed,Object? ambientVolume = freezed,Object? volume20 = freezed,Object? volume20Difference = freezed,Object? accountingVolumeDifference = freezed,Object? openingBalanceAmbient = freezed,Object? totalEntriesAmbient = freezed,Object? totalWithdrawalsAmbient = freezed,Object? closingBalanceAmbient = freezed,Object? totalWithdrawalsByComboio = freezed,Object? openingBalance20 = freezed,Object? totalEntries20 = freezed,Object? totalWithdrawals20 = freezed,Object? closingBalance20 = freezed,Object? openingAccountingBalance = freezed,Object? totalAccountingEntries = freezed,Object? totalAccountingWithdrawals = freezed,Object? closingAccountingBalance = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_StockClosingTank(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,stockClosingId: freezed == stockClosingId ? _self.stockClosingId : stockClosingId // ignore: cast_nullable_to_non_nullable
@@ -27774,6 +27778,7 @@ as double?,openingBalanceAmbient: freezed == openingBalanceAmbient ? _self.openi
 as double?,totalEntriesAmbient: freezed == totalEntriesAmbient ? _self.totalEntriesAmbient : totalEntriesAmbient // ignore: cast_nullable_to_non_nullable
 as double?,totalWithdrawalsAmbient: freezed == totalWithdrawalsAmbient ? _self.totalWithdrawalsAmbient : totalWithdrawalsAmbient // ignore: cast_nullable_to_non_nullable
 as double?,closingBalanceAmbient: freezed == closingBalanceAmbient ? _self.closingBalanceAmbient : closingBalanceAmbient // ignore: cast_nullable_to_non_nullable
+as double?,totalWithdrawalsByComboio: freezed == totalWithdrawalsByComboio ? _self.totalWithdrawalsByComboio : totalWithdrawalsByComboio // ignore: cast_nullable_to_non_nullable
 as double?,openingBalance20: freezed == openingBalance20 ? _self.openingBalance20 : openingBalance20 // ignore: cast_nullable_to_non_nullable
 as double?,totalEntries20: freezed == totalEntries20 ? _self.totalEntries20 : totalEntries20 // ignore: cast_nullable_to_non_nullable
 as double?,totalWithdrawals20: freezed == totalWithdrawals20 ? _self.totalWithdrawals20 : totalWithdrawals20 // ignore: cast_nullable_to_non_nullable
@@ -27851,7 +27856,9 @@ mixin _$StockClosingInput {
  double get totalEntriesAmbient;/// The [totalEntriesAmbient] parameter is the totalEntriesAmbient of the stock closing input.
  set totalEntriesAmbient(double value);/// The [totalWithdrawalsAmbient] parameter is the totalWithdrawalsAmbient of the stock closing input.
  double get totalWithdrawalsAmbient;/// The [totalWithdrawalsAmbient] parameter is the totalWithdrawalsAmbient of the stock closing input.
- set totalWithdrawalsAmbient(double value);/// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing input.
+ set totalWithdrawalsAmbient(double value);/// The [totalWithdrawalsByComboio] parameter is the totalWithdrawalsByComboio of the stock closing input.
+ double get totalWithdrawalsByComboio;/// The [totalWithdrawalsByComboio] parameter is the totalWithdrawalsByComboio of the stock closing input.
+ set totalWithdrawalsByComboio(double value);/// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing input.
  double get closingBalanceAmbient;/// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing input.
  set closingBalanceAmbient(double value);/// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
  double get openingBalance20;/// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
@@ -27888,7 +27895,7 @@ $StockClosingInputCopyWith<StockClosingInput> get copyWith => _$StockClosingInpu
 
 @override
 String toString() {
-  return 'StockClosingInput(id: $id, terminalId: $terminalId, product: $product, description: $description, totalVolume20: $totalVolume20, volume20Difference: $volume20Difference, accountingVolumeDifference: $accountingVolumeDifference, openingBalanceAmbient: $openingBalanceAmbient, totalEntriesAmbient: $totalEntriesAmbient, totalWithdrawalsAmbient: $totalWithdrawalsAmbient, closingBalanceAmbient: $closingBalanceAmbient, openingBalance20: $openingBalance20, totalEntries20: $totalEntries20, totalWithdrawals20: $totalWithdrawals20, closingBalance20: $closingBalance20, openingAccountingBalance: $openingAccountingBalance, totalAccountingEntries: $totalAccountingEntries, totalAccountingWithdrawals: $totalAccountingWithdrawals, closingAccountingBalance: $closingAccountingBalance, closingDetails: $closingDetails, sinceDate: $sinceDate)';
+  return 'StockClosingInput(id: $id, terminalId: $terminalId, product: $product, description: $description, totalVolume20: $totalVolume20, volume20Difference: $volume20Difference, accountingVolumeDifference: $accountingVolumeDifference, openingBalanceAmbient: $openingBalanceAmbient, totalEntriesAmbient: $totalEntriesAmbient, totalWithdrawalsAmbient: $totalWithdrawalsAmbient, totalWithdrawalsByComboio: $totalWithdrawalsByComboio, closingBalanceAmbient: $closingBalanceAmbient, openingBalance20: $openingBalance20, totalEntries20: $totalEntries20, totalWithdrawals20: $totalWithdrawals20, closingBalance20: $closingBalance20, openingAccountingBalance: $openingAccountingBalance, totalAccountingEntries: $totalAccountingEntries, totalAccountingWithdrawals: $totalAccountingWithdrawals, closingAccountingBalance: $closingAccountingBalance, closingDetails: $closingDetails, sinceDate: $sinceDate)';
 }
 
 
@@ -27899,7 +27906,7 @@ abstract mixin class $StockClosingInputCopyWith<$Res>  {
   factory $StockClosingInputCopyWith(StockClosingInput value, $Res Function(StockClosingInput) _then) = _$StockClosingInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? terminalId,@AtsFuelSubTypeOrNullConverter() AtsFuelSubType? product, String? description, double totalVolume20, double volume20Difference, double accountingVolumeDifference, double openingBalanceAmbient, double totalEntriesAmbient, double totalWithdrawalsAmbient, double closingBalanceAmbient, double openingBalance20, double totalEntries20, double totalWithdrawals20, double closingBalance20, double openingAccountingBalance, double totalAccountingEntries, double totalAccountingWithdrawals, double closingAccountingBalance, List<StockClosingTankInput> closingDetails,@TimestampOrNullConverter() DateTime? sinceDate
+ String? id, String? terminalId,@AtsFuelSubTypeOrNullConverter() AtsFuelSubType? product, String? description, double totalVolume20, double volume20Difference, double accountingVolumeDifference, double openingBalanceAmbient, double totalEntriesAmbient, double totalWithdrawalsAmbient, double totalWithdrawalsByComboio, double closingBalanceAmbient, double openingBalance20, double totalEntries20, double totalWithdrawals20, double closingBalance20, double openingAccountingBalance, double totalAccountingEntries, double totalAccountingWithdrawals, double closingAccountingBalance, List<StockClosingTankInput> closingDetails,@TimestampOrNullConverter() DateTime? sinceDate
 });
 
 
@@ -27916,7 +27923,7 @@ class _$StockClosingInputCopyWithImpl<$Res>
 
 /// Create a copy of StockClosingInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? terminalId = freezed,Object? product = freezed,Object? description = freezed,Object? totalVolume20 = null,Object? volume20Difference = null,Object? accountingVolumeDifference = null,Object? openingBalanceAmbient = null,Object? totalEntriesAmbient = null,Object? totalWithdrawalsAmbient = null,Object? closingBalanceAmbient = null,Object? openingBalance20 = null,Object? totalEntries20 = null,Object? totalWithdrawals20 = null,Object? closingBalance20 = null,Object? openingAccountingBalance = null,Object? totalAccountingEntries = null,Object? totalAccountingWithdrawals = null,Object? closingAccountingBalance = null,Object? closingDetails = null,Object? sinceDate = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? terminalId = freezed,Object? product = freezed,Object? description = freezed,Object? totalVolume20 = null,Object? volume20Difference = null,Object? accountingVolumeDifference = null,Object? openingBalanceAmbient = null,Object? totalEntriesAmbient = null,Object? totalWithdrawalsAmbient = null,Object? totalWithdrawalsByComboio = null,Object? closingBalanceAmbient = null,Object? openingBalance20 = null,Object? totalEntries20 = null,Object? totalWithdrawals20 = null,Object? closingBalance20 = null,Object? openingAccountingBalance = null,Object? totalAccountingEntries = null,Object? totalAccountingWithdrawals = null,Object? closingAccountingBalance = null,Object? closingDetails = null,Object? sinceDate = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,terminalId: freezed == terminalId ? _self.terminalId : terminalId // ignore: cast_nullable_to_non_nullable
@@ -27928,6 +27935,7 @@ as double,accountingVolumeDifference: null == accountingVolumeDifference ? _self
 as double,openingBalanceAmbient: null == openingBalanceAmbient ? _self.openingBalanceAmbient : openingBalanceAmbient // ignore: cast_nullable_to_non_nullable
 as double,totalEntriesAmbient: null == totalEntriesAmbient ? _self.totalEntriesAmbient : totalEntriesAmbient // ignore: cast_nullable_to_non_nullable
 as double,totalWithdrawalsAmbient: null == totalWithdrawalsAmbient ? _self.totalWithdrawalsAmbient : totalWithdrawalsAmbient // ignore: cast_nullable_to_non_nullable
+as double,totalWithdrawalsByComboio: null == totalWithdrawalsByComboio ? _self.totalWithdrawalsByComboio : totalWithdrawalsByComboio // ignore: cast_nullable_to_non_nullable
 as double,closingBalanceAmbient: null == closingBalanceAmbient ? _self.closingBalanceAmbient : closingBalanceAmbient // ignore: cast_nullable_to_non_nullable
 as double,openingBalance20: null == openingBalance20 ? _self.openingBalance20 : openingBalance20 // ignore: cast_nullable_to_non_nullable
 as double,totalEntries20: null == totalEntries20 ? _self.totalEntries20 : totalEntries20 // ignore: cast_nullable_to_non_nullable
@@ -28024,10 +28032,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalanceAmbient,  double totalEntriesAmbient,  double totalWithdrawalsAmbient,  double closingBalanceAmbient,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails, @TimestampOrNullConverter()  DateTime? sinceDate)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalanceAmbient,  double totalEntriesAmbient,  double totalWithdrawalsAmbient,  double totalWithdrawalsByComboio,  double closingBalanceAmbient,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails, @TimestampOrNullConverter()  DateTime? sinceDate)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockClosingInput() when $default != null:
-return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails,_that.sinceDate);case _:
+return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.totalWithdrawalsByComboio,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails,_that.sinceDate);case _:
   return orElse();
 
 }
@@ -28045,10 +28053,10 @@ return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalanceAmbient,  double totalEntriesAmbient,  double totalWithdrawalsAmbient,  double closingBalanceAmbient,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails, @TimestampOrNullConverter()  DateTime? sinceDate)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalanceAmbient,  double totalEntriesAmbient,  double totalWithdrawalsAmbient,  double totalWithdrawalsByComboio,  double closingBalanceAmbient,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails, @TimestampOrNullConverter()  DateTime? sinceDate)  $default,) {final _that = this;
 switch (_that) {
 case _StockClosingInput():
-return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails,_that.sinceDate);case _:
+return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.totalWithdrawalsByComboio,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails,_that.sinceDate);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -28065,10 +28073,10 @@ return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalanceAmbient,  double totalEntriesAmbient,  double totalWithdrawalsAmbient,  double closingBalanceAmbient,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails, @TimestampOrNullConverter()  DateTime? sinceDate)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? terminalId, @AtsFuelSubTypeOrNullConverter()  AtsFuelSubType? product,  String? description,  double totalVolume20,  double volume20Difference,  double accountingVolumeDifference,  double openingBalanceAmbient,  double totalEntriesAmbient,  double totalWithdrawalsAmbient,  double totalWithdrawalsByComboio,  double closingBalanceAmbient,  double openingBalance20,  double totalEntries20,  double totalWithdrawals20,  double closingBalance20,  double openingAccountingBalance,  double totalAccountingEntries,  double totalAccountingWithdrawals,  double closingAccountingBalance,  List<StockClosingTankInput> closingDetails, @TimestampOrNullConverter()  DateTime? sinceDate)?  $default,) {final _that = this;
 switch (_that) {
 case _StockClosingInput() when $default != null:
-return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails,_that.sinceDate);case _:
+return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.totalVolume20,_that.volume20Difference,_that.accountingVolumeDifference,_that.openingBalanceAmbient,_that.totalEntriesAmbient,_that.totalWithdrawalsAmbient,_that.totalWithdrawalsByComboio,_that.closingBalanceAmbient,_that.openingBalance20,_that.totalEntries20,_that.totalWithdrawals20,_that.closingBalance20,_that.openingAccountingBalance,_that.totalAccountingEntries,_that.totalAccountingWithdrawals,_that.closingAccountingBalance,_that.closingDetails,_that.sinceDate);case _:
   return null;
 
 }
@@ -28080,7 +28088,7 @@ return $default(_that.id,_that.terminalId,_that.product,_that.description,_that.
 @JsonSerializable()
 
 class _StockClosingInput extends StockClosingInput {
-   _StockClosingInput({this.id, this.terminalId, @AtsFuelSubTypeOrNullConverter() this.product, this.description, this.totalVolume20 = 0.0, this.volume20Difference = 0.0, this.accountingVolumeDifference = 0.0, this.openingBalanceAmbient = 0.0, this.totalEntriesAmbient = 0.0, this.totalWithdrawalsAmbient = 0.0, this.closingBalanceAmbient = 0.0, this.openingBalance20 = 0.0, this.totalEntries20 = 0.0, this.totalWithdrawals20 = 0.0, this.closingBalance20 = 0.0, this.openingAccountingBalance = 0.0, this.totalAccountingEntries = 0.0, this.totalAccountingWithdrawals = 0.0, this.closingAccountingBalance = 0.0, this.closingDetails = const [], @TimestampOrNullConverter() this.sinceDate}): super._();
+   _StockClosingInput({this.id, this.terminalId, @AtsFuelSubTypeOrNullConverter() this.product, this.description, this.totalVolume20 = 0.0, this.volume20Difference = 0.0, this.accountingVolumeDifference = 0.0, this.openingBalanceAmbient = 0.0, this.totalEntriesAmbient = 0.0, this.totalWithdrawalsAmbient = 0.0, this.totalWithdrawalsByComboio = 0.0, this.closingBalanceAmbient = 0.0, this.openingBalance20 = 0.0, this.totalEntries20 = 0.0, this.totalWithdrawals20 = 0.0, this.closingBalance20 = 0.0, this.openingAccountingBalance = 0.0, this.totalAccountingEntries = 0.0, this.totalAccountingWithdrawals = 0.0, this.closingAccountingBalance = 0.0, this.closingDetails = const [], @TimestampOrNullConverter() this.sinceDate}): super._();
   factory _StockClosingInput.fromJson(Map<String, dynamic> json) => _$StockClosingInputFromJson(json);
 
 /// The [id] parameter is the id of the stock closing input.
@@ -28103,6 +28111,8 @@ class _StockClosingInput extends StockClosingInput {
 @override@JsonKey()  double totalEntriesAmbient;
 /// The [totalWithdrawalsAmbient] parameter is the totalWithdrawalsAmbient of the stock closing input.
 @override@JsonKey()  double totalWithdrawalsAmbient;
+/// The [totalWithdrawalsByComboio] parameter is the totalWithdrawalsByComboio of the stock closing input.
+@override@JsonKey()  double totalWithdrawalsByComboio;
 /// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing input.
 @override@JsonKey()  double closingBalanceAmbient;
 /// The [openingBalance20] parameter is the openingBalance20 of the stock closing input.
@@ -28141,7 +28151,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'StockClosingInput(id: $id, terminalId: $terminalId, product: $product, description: $description, totalVolume20: $totalVolume20, volume20Difference: $volume20Difference, accountingVolumeDifference: $accountingVolumeDifference, openingBalanceAmbient: $openingBalanceAmbient, totalEntriesAmbient: $totalEntriesAmbient, totalWithdrawalsAmbient: $totalWithdrawalsAmbient, closingBalanceAmbient: $closingBalanceAmbient, openingBalance20: $openingBalance20, totalEntries20: $totalEntries20, totalWithdrawals20: $totalWithdrawals20, closingBalance20: $closingBalance20, openingAccountingBalance: $openingAccountingBalance, totalAccountingEntries: $totalAccountingEntries, totalAccountingWithdrawals: $totalAccountingWithdrawals, closingAccountingBalance: $closingAccountingBalance, closingDetails: $closingDetails, sinceDate: $sinceDate)';
+  return 'StockClosingInput(id: $id, terminalId: $terminalId, product: $product, description: $description, totalVolume20: $totalVolume20, volume20Difference: $volume20Difference, accountingVolumeDifference: $accountingVolumeDifference, openingBalanceAmbient: $openingBalanceAmbient, totalEntriesAmbient: $totalEntriesAmbient, totalWithdrawalsAmbient: $totalWithdrawalsAmbient, totalWithdrawalsByComboio: $totalWithdrawalsByComboio, closingBalanceAmbient: $closingBalanceAmbient, openingBalance20: $openingBalance20, totalEntries20: $totalEntries20, totalWithdrawals20: $totalWithdrawals20, closingBalance20: $closingBalance20, openingAccountingBalance: $openingAccountingBalance, totalAccountingEntries: $totalAccountingEntries, totalAccountingWithdrawals: $totalAccountingWithdrawals, closingAccountingBalance: $closingAccountingBalance, closingDetails: $closingDetails, sinceDate: $sinceDate)';
 }
 
 
@@ -28152,7 +28162,7 @@ abstract mixin class _$StockClosingInputCopyWith<$Res> implements $StockClosingI
   factory _$StockClosingInputCopyWith(_StockClosingInput value, $Res Function(_StockClosingInput) _then) = __$StockClosingInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? terminalId,@AtsFuelSubTypeOrNullConverter() AtsFuelSubType? product, String? description, double totalVolume20, double volume20Difference, double accountingVolumeDifference, double openingBalanceAmbient, double totalEntriesAmbient, double totalWithdrawalsAmbient, double closingBalanceAmbient, double openingBalance20, double totalEntries20, double totalWithdrawals20, double closingBalance20, double openingAccountingBalance, double totalAccountingEntries, double totalAccountingWithdrawals, double closingAccountingBalance, List<StockClosingTankInput> closingDetails,@TimestampOrNullConverter() DateTime? sinceDate
+ String? id, String? terminalId,@AtsFuelSubTypeOrNullConverter() AtsFuelSubType? product, String? description, double totalVolume20, double volume20Difference, double accountingVolumeDifference, double openingBalanceAmbient, double totalEntriesAmbient, double totalWithdrawalsAmbient, double totalWithdrawalsByComboio, double closingBalanceAmbient, double openingBalance20, double totalEntries20, double totalWithdrawals20, double closingBalance20, double openingAccountingBalance, double totalAccountingEntries, double totalAccountingWithdrawals, double closingAccountingBalance, List<StockClosingTankInput> closingDetails,@TimestampOrNullConverter() DateTime? sinceDate
 });
 
 
@@ -28169,7 +28179,7 @@ class __$StockClosingInputCopyWithImpl<$Res>
 
 /// Create a copy of StockClosingInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? terminalId = freezed,Object? product = freezed,Object? description = freezed,Object? totalVolume20 = null,Object? volume20Difference = null,Object? accountingVolumeDifference = null,Object? openingBalanceAmbient = null,Object? totalEntriesAmbient = null,Object? totalWithdrawalsAmbient = null,Object? closingBalanceAmbient = null,Object? openingBalance20 = null,Object? totalEntries20 = null,Object? totalWithdrawals20 = null,Object? closingBalance20 = null,Object? openingAccountingBalance = null,Object? totalAccountingEntries = null,Object? totalAccountingWithdrawals = null,Object? closingAccountingBalance = null,Object? closingDetails = null,Object? sinceDate = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? terminalId = freezed,Object? product = freezed,Object? description = freezed,Object? totalVolume20 = null,Object? volume20Difference = null,Object? accountingVolumeDifference = null,Object? openingBalanceAmbient = null,Object? totalEntriesAmbient = null,Object? totalWithdrawalsAmbient = null,Object? totalWithdrawalsByComboio = null,Object? closingBalanceAmbient = null,Object? openingBalance20 = null,Object? totalEntries20 = null,Object? totalWithdrawals20 = null,Object? closingBalance20 = null,Object? openingAccountingBalance = null,Object? totalAccountingEntries = null,Object? totalAccountingWithdrawals = null,Object? closingAccountingBalance = null,Object? closingDetails = null,Object? sinceDate = freezed,}) {
   return _then(_StockClosingInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,terminalId: freezed == terminalId ? _self.terminalId : terminalId // ignore: cast_nullable_to_non_nullable
@@ -28181,6 +28191,7 @@ as double,accountingVolumeDifference: null == accountingVolumeDifference ? _self
 as double,openingBalanceAmbient: null == openingBalanceAmbient ? _self.openingBalanceAmbient : openingBalanceAmbient // ignore: cast_nullable_to_non_nullable
 as double,totalEntriesAmbient: null == totalEntriesAmbient ? _self.totalEntriesAmbient : totalEntriesAmbient // ignore: cast_nullable_to_non_nullable
 as double,totalWithdrawalsAmbient: null == totalWithdrawalsAmbient ? _self.totalWithdrawalsAmbient : totalWithdrawalsAmbient // ignore: cast_nullable_to_non_nullable
+as double,totalWithdrawalsByComboio: null == totalWithdrawalsByComboio ? _self.totalWithdrawalsByComboio : totalWithdrawalsByComboio // ignore: cast_nullable_to_non_nullable
 as double,closingBalanceAmbient: null == closingBalanceAmbient ? _self.closingBalanceAmbient : closingBalanceAmbient // ignore: cast_nullable_to_non_nullable
 as double,openingBalance20: null == openingBalance20 ? _self.openingBalance20 : openingBalance20 // ignore: cast_nullable_to_non_nullable
 as double,totalEntries20: null == totalEntries20 ? _self.totalEntries20 : totalEntries20 // ignore: cast_nullable_to_non_nullable
@@ -28913,6 +28924,325 @@ as double?,
 }
 
 
+}
+
+
+/// @nodoc
+mixin _$StockClosingInfoPa {
+
+/// The [openingMessage] parameter is the openingMessage of the stock closing info pa entity.
+ AssetTelemetry? get openingMessage;/// The [openingPhysicalBalance] parameter is the openingPhysicalBalance of the stock closing info pa entity.
+ double? get openingPhysicalBalance;/// The [totalPhysicalEntries] parameter is the totalPhysicalEntries of the stock closing info pa entity.
+ double? get totalPhysicalEntries;/// The [totalPhysicalWithdrawalsNonConvoy] parameter is the totalPhysicalWithdrawalsNonConvoy of the stock closing info pa entity.
+ double? get totalPhysicalWithdrawalsNonConvoy;/// The [totalPhysicalWithdrawalsConvoy] parameter is the totalPhysicalWithdrawalsConvoy of the stock closing info pa entity.
+ double? get totalPhysicalWithdrawalsConvoy;/// The [openingFiscalBalance] parameter is the openingFiscalBalance of the stock closing info pa entity.
+ double? get openingFiscalBalance;/// The [totalFiscalEntries] parameter is the totalFiscalEntries of the stock closing info pa entity.
+ double? get totalFiscalEntries;
+/// Create a copy of StockClosingInfoPa
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$StockClosingInfoPaCopyWith<StockClosingInfoPa> get copyWith => _$StockClosingInfoPaCopyWithImpl<StockClosingInfoPa>(this as StockClosingInfoPa, _$identity);
+
+  /// Serializes this StockClosingInfoPa to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StockClosingInfoPa&&(identical(other.openingMessage, openingMessage) || other.openingMessage == openingMessage)&&(identical(other.openingPhysicalBalance, openingPhysicalBalance) || other.openingPhysicalBalance == openingPhysicalBalance)&&(identical(other.totalPhysicalEntries, totalPhysicalEntries) || other.totalPhysicalEntries == totalPhysicalEntries)&&(identical(other.totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsNonConvoy) || other.totalPhysicalWithdrawalsNonConvoy == totalPhysicalWithdrawalsNonConvoy)&&(identical(other.totalPhysicalWithdrawalsConvoy, totalPhysicalWithdrawalsConvoy) || other.totalPhysicalWithdrawalsConvoy == totalPhysicalWithdrawalsConvoy)&&(identical(other.openingFiscalBalance, openingFiscalBalance) || other.openingFiscalBalance == openingFiscalBalance)&&(identical(other.totalFiscalEntries, totalFiscalEntries) || other.totalFiscalEntries == totalFiscalEntries));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,openingMessage,openingPhysicalBalance,totalPhysicalEntries,totalPhysicalWithdrawalsNonConvoy,totalPhysicalWithdrawalsConvoy,openingFiscalBalance,totalFiscalEntries);
+
+@override
+String toString() {
+  return 'StockClosingInfoPa(openingMessage: $openingMessage, openingPhysicalBalance: $openingPhysicalBalance, totalPhysicalEntries: $totalPhysicalEntries, totalPhysicalWithdrawalsNonConvoy: $totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsConvoy: $totalPhysicalWithdrawalsConvoy, openingFiscalBalance: $openingFiscalBalance, totalFiscalEntries: $totalFiscalEntries)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $StockClosingInfoPaCopyWith<$Res>  {
+  factory $StockClosingInfoPaCopyWith(StockClosingInfoPa value, $Res Function(StockClosingInfoPa) _then) = _$StockClosingInfoPaCopyWithImpl;
+@useResult
+$Res call({
+ AssetTelemetry? openingMessage, double? openingPhysicalBalance, double? totalPhysicalEntries, double? totalPhysicalWithdrawalsNonConvoy, double? totalPhysicalWithdrawalsConvoy, double? openingFiscalBalance, double? totalFiscalEntries
+});
+
+
+$AssetTelemetryCopyWith<$Res>? get openingMessage;
+
+}
+/// @nodoc
+class _$StockClosingInfoPaCopyWithImpl<$Res>
+    implements $StockClosingInfoPaCopyWith<$Res> {
+  _$StockClosingInfoPaCopyWithImpl(this._self, this._then);
+
+  final StockClosingInfoPa _self;
+  final $Res Function(StockClosingInfoPa) _then;
+
+/// Create a copy of StockClosingInfoPa
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? openingMessage = freezed,Object? openingPhysicalBalance = freezed,Object? totalPhysicalEntries = freezed,Object? totalPhysicalWithdrawalsNonConvoy = freezed,Object? totalPhysicalWithdrawalsConvoy = freezed,Object? openingFiscalBalance = freezed,Object? totalFiscalEntries = freezed,}) {
+  return _then(_self.copyWith(
+openingMessage: freezed == openingMessage ? _self.openingMessage : openingMessage // ignore: cast_nullable_to_non_nullable
+as AssetTelemetry?,openingPhysicalBalance: freezed == openingPhysicalBalance ? _self.openingPhysicalBalance : openingPhysicalBalance // ignore: cast_nullable_to_non_nullable
+as double?,totalPhysicalEntries: freezed == totalPhysicalEntries ? _self.totalPhysicalEntries : totalPhysicalEntries // ignore: cast_nullable_to_non_nullable
+as double?,totalPhysicalWithdrawalsNonConvoy: freezed == totalPhysicalWithdrawalsNonConvoy ? _self.totalPhysicalWithdrawalsNonConvoy : totalPhysicalWithdrawalsNonConvoy // ignore: cast_nullable_to_non_nullable
+as double?,totalPhysicalWithdrawalsConvoy: freezed == totalPhysicalWithdrawalsConvoy ? _self.totalPhysicalWithdrawalsConvoy : totalPhysicalWithdrawalsConvoy // ignore: cast_nullable_to_non_nullable
+as double?,openingFiscalBalance: freezed == openingFiscalBalance ? _self.openingFiscalBalance : openingFiscalBalance // ignore: cast_nullable_to_non_nullable
+as double?,totalFiscalEntries: freezed == totalFiscalEntries ? _self.totalFiscalEntries : totalFiscalEntries // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+/// Create a copy of StockClosingInfoPa
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetTelemetryCopyWith<$Res>? get openingMessage {
+    if (_self.openingMessage == null) {
+    return null;
+  }
+
+  return $AssetTelemetryCopyWith<$Res>(_self.openingMessage!, (value) {
+    return _then(_self.copyWith(openingMessage: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [StockClosingInfoPa].
+extension StockClosingInfoPaPatterns on StockClosingInfoPa {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _StockClosingInfoPa value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _StockClosingInfoPa() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _StockClosingInfoPa value)  $default,){
+final _that = this;
+switch (_that) {
+case _StockClosingInfoPa():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _StockClosingInfoPa value)?  $default,){
+final _that = this;
+switch (_that) {
+case _StockClosingInfoPa() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _StockClosingInfoPa() when $default != null:
+return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries)  $default,) {final _that = this;
+switch (_that) {
+case _StockClosingInfoPa():
+return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries)?  $default,) {final _that = this;
+switch (_that) {
+case _StockClosingInfoPa() when $default != null:
+return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _StockClosingInfoPa implements StockClosingInfoPa {
+   _StockClosingInfoPa({this.openingMessage, this.openingPhysicalBalance, this.totalPhysicalEntries, this.totalPhysicalWithdrawalsNonConvoy, this.totalPhysicalWithdrawalsConvoy, this.openingFiscalBalance, this.totalFiscalEntries});
+  factory _StockClosingInfoPa.fromJson(Map<String, dynamic> json) => _$StockClosingInfoPaFromJson(json);
+
+/// The [openingMessage] parameter is the openingMessage of the stock closing info pa entity.
+@override final  AssetTelemetry? openingMessage;
+/// The [openingPhysicalBalance] parameter is the openingPhysicalBalance of the stock closing info pa entity.
+@override final  double? openingPhysicalBalance;
+/// The [totalPhysicalEntries] parameter is the totalPhysicalEntries of the stock closing info pa entity.
+@override final  double? totalPhysicalEntries;
+/// The [totalPhysicalWithdrawalsNonConvoy] parameter is the totalPhysicalWithdrawalsNonConvoy of the stock closing info pa entity.
+@override final  double? totalPhysicalWithdrawalsNonConvoy;
+/// The [totalPhysicalWithdrawalsConvoy] parameter is the totalPhysicalWithdrawalsConvoy of the stock closing info pa entity.
+@override final  double? totalPhysicalWithdrawalsConvoy;
+/// The [openingFiscalBalance] parameter is the openingFiscalBalance of the stock closing info pa entity.
+@override final  double? openingFiscalBalance;
+/// The [totalFiscalEntries] parameter is the totalFiscalEntries of the stock closing info pa entity.
+@override final  double? totalFiscalEntries;
+
+/// Create a copy of StockClosingInfoPa
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$StockClosingInfoPaCopyWith<_StockClosingInfoPa> get copyWith => __$StockClosingInfoPaCopyWithImpl<_StockClosingInfoPa>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$StockClosingInfoPaToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockClosingInfoPa&&(identical(other.openingMessage, openingMessage) || other.openingMessage == openingMessage)&&(identical(other.openingPhysicalBalance, openingPhysicalBalance) || other.openingPhysicalBalance == openingPhysicalBalance)&&(identical(other.totalPhysicalEntries, totalPhysicalEntries) || other.totalPhysicalEntries == totalPhysicalEntries)&&(identical(other.totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsNonConvoy) || other.totalPhysicalWithdrawalsNonConvoy == totalPhysicalWithdrawalsNonConvoy)&&(identical(other.totalPhysicalWithdrawalsConvoy, totalPhysicalWithdrawalsConvoy) || other.totalPhysicalWithdrawalsConvoy == totalPhysicalWithdrawalsConvoy)&&(identical(other.openingFiscalBalance, openingFiscalBalance) || other.openingFiscalBalance == openingFiscalBalance)&&(identical(other.totalFiscalEntries, totalFiscalEntries) || other.totalFiscalEntries == totalFiscalEntries));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,openingMessage,openingPhysicalBalance,totalPhysicalEntries,totalPhysicalWithdrawalsNonConvoy,totalPhysicalWithdrawalsConvoy,openingFiscalBalance,totalFiscalEntries);
+
+@override
+String toString() {
+  return 'StockClosingInfoPa(openingMessage: $openingMessage, openingPhysicalBalance: $openingPhysicalBalance, totalPhysicalEntries: $totalPhysicalEntries, totalPhysicalWithdrawalsNonConvoy: $totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsConvoy: $totalPhysicalWithdrawalsConvoy, openingFiscalBalance: $openingFiscalBalance, totalFiscalEntries: $totalFiscalEntries)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$StockClosingInfoPaCopyWith<$Res> implements $StockClosingInfoPaCopyWith<$Res> {
+  factory _$StockClosingInfoPaCopyWith(_StockClosingInfoPa value, $Res Function(_StockClosingInfoPa) _then) = __$StockClosingInfoPaCopyWithImpl;
+@override @useResult
+$Res call({
+ AssetTelemetry? openingMessage, double? openingPhysicalBalance, double? totalPhysicalEntries, double? totalPhysicalWithdrawalsNonConvoy, double? totalPhysicalWithdrawalsConvoy, double? openingFiscalBalance, double? totalFiscalEntries
+});
+
+
+@override $AssetTelemetryCopyWith<$Res>? get openingMessage;
+
+}
+/// @nodoc
+class __$StockClosingInfoPaCopyWithImpl<$Res>
+    implements _$StockClosingInfoPaCopyWith<$Res> {
+  __$StockClosingInfoPaCopyWithImpl(this._self, this._then);
+
+  final _StockClosingInfoPa _self;
+  final $Res Function(_StockClosingInfoPa) _then;
+
+/// Create a copy of StockClosingInfoPa
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? openingMessage = freezed,Object? openingPhysicalBalance = freezed,Object? totalPhysicalEntries = freezed,Object? totalPhysicalWithdrawalsNonConvoy = freezed,Object? totalPhysicalWithdrawalsConvoy = freezed,Object? openingFiscalBalance = freezed,Object? totalFiscalEntries = freezed,}) {
+  return _then(_StockClosingInfoPa(
+openingMessage: freezed == openingMessage ? _self.openingMessage : openingMessage // ignore: cast_nullable_to_non_nullable
+as AssetTelemetry?,openingPhysicalBalance: freezed == openingPhysicalBalance ? _self.openingPhysicalBalance : openingPhysicalBalance // ignore: cast_nullable_to_non_nullable
+as double?,totalPhysicalEntries: freezed == totalPhysicalEntries ? _self.totalPhysicalEntries : totalPhysicalEntries // ignore: cast_nullable_to_non_nullable
+as double?,totalPhysicalWithdrawalsNonConvoy: freezed == totalPhysicalWithdrawalsNonConvoy ? _self.totalPhysicalWithdrawalsNonConvoy : totalPhysicalWithdrawalsNonConvoy // ignore: cast_nullable_to_non_nullable
+as double?,totalPhysicalWithdrawalsConvoy: freezed == totalPhysicalWithdrawalsConvoy ? _self.totalPhysicalWithdrawalsConvoy : totalPhysicalWithdrawalsConvoy // ignore: cast_nullable_to_non_nullable
+as double?,openingFiscalBalance: freezed == openingFiscalBalance ? _self.openingFiscalBalance : openingFiscalBalance // ignore: cast_nullable_to_non_nullable
+as double?,totalFiscalEntries: freezed == totalFiscalEntries ? _self.totalFiscalEntries : totalFiscalEntries // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+/// Create a copy of StockClosingInfoPa
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetTelemetryCopyWith<$Res>? get openingMessage {
+    if (_self.openingMessage == null) {
+    return null;
+  }
+
+  return $AssetTelemetryCopyWith<$Res>(_self.openingMessage!, (value) {
+    return _then(_self.copyWith(openingMessage: value));
+  });
+}
 }
 
 // dart format on

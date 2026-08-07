@@ -36,6 +36,9 @@ abstract class StockClosingInput with _$StockClosingInput {
     /// The [totalWithdrawalsAmbient] parameter is the totalWithdrawalsAmbient of the stock closing input.
     @Default(0.0) double totalWithdrawalsAmbient,
 
+    /// The [totalWithdrawalsByComboio] parameter is the totalWithdrawalsByComboio of the stock closing input.
+    @Default(0.0) double totalWithdrawalsByComboio,
+
     /// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing input.
     @Default(0.0) double closingBalanceAmbient,
 
