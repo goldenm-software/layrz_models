@@ -1,5 +1,31 @@
 # Changelog
 
+## 3.24.5
+
+- Added `StockClosingInfoPa` model
+- Added `totalWithdrawalsByComboio` value in `StockClosingTank` and `StockClosingInput` models
+
+## 3.24.4
+
+- Fixes on `RegisteredApp.load()`
+- This version was released manually
+
+## 3.24.3
+
+- Fixes on `ZigbeeDeviceExpose` and `ZigbeeDevice`
+- Corrected `FlespiSubmoduleConfig`, wrong type and fields on GraphQL fragment
+- This version was released manually
+
+## 3.24.2
+
+- Forgot to do the freezed
+- This version was released manually
+
+## 3.24.1
+
+- Corrected `lastSeen` on `ZigbeeDevice` to have a converter.
+- This version was released manually
+
 ## 3.24.0
 
 - Added an API connector to `ExternalAccount`, with `fetch()`, `fetchAll()` and `deleteMany()`, plus `ExternalAccountInput.save()`

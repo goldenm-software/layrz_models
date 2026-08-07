@@ -17,9 +17,9 @@ abstract class FlespiSubmoduleConfig with _$FlespiSubmoduleConfig {
   /// [fragment] is a helper method to get the fragment of the submodule configuration.
   static GqlFragment get fragment => GqlFragment(
     name: 'FlespiSubmoduleConfigFragment',
-    onType: 'FlespiSubmoduleConfig',
+    onType: 'FlespiSubmodule',
     fields: [
-      GqlField(name: 'submodule'),
+      GqlField(name: 'name'),
       GqlField(name: 'methods'),
     ],
   );

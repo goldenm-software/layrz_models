@@ -19,13 +19,13 @@ abstract class ZigbeeDevice with _$ZigbeeDevice {
     String? model,
 
     /// [lastSeen] is the date and time when the device was last seen.
-    DateTime? lastSeen,
+    @TimestampOrNullConverter() DateTime? lastSeen,
 
     /// [bindedDeviceId] is the ID of the device that is binded to this device.
     String? bindedDeviceId,
 
     /// [zoneId] is the ID of the zone that the device belongs to.
-    required String zoneId,
+    String? zoneId,
 
     /// [exposes] is the list of exposes of the device.
     List<ZigbeeDeviceExpose>? exposes,

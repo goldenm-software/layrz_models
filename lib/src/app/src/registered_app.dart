@@ -704,10 +704,10 @@ abstract class RegisteredApp with _$RegisteredApp {
   }) async {
     final connector = LayrzConnector(uri: uri);
     try {
-      final response = await connector.query(
-        GqlQuery(
+      final response = await connector.mutate(
+        GqlMutation(
           variables: [
-            GqlVariable(name: 'appId', type: .id, isRequired: true, value: appId),
+            GqlVariable(name: 'appId', type: .string, isRequired: true, value: appId),
             GqlVariable(
               name: 'platform',
               type: .enum_(of: 'AppPlatform'),
