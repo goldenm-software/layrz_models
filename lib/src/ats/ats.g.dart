@@ -3526,6 +3526,7 @@ _StockClosingInfoPa _$StockClosingInfoPaFromJson(
       (json['totalPhysicalWithdrawalsConvoy'] as num?)?.toDouble(),
   openingFiscalBalance: (json['openingFiscalBalance'] as num?)?.toDouble(),
   totalFiscalEntries: (json['totalFiscalEntries'] as num?)?.toDouble(),
+  hasPreviousStockClosing: json['hasPreviousStockClosing'] as bool? ?? false,
 );
 
 Map<String, dynamic> _$StockClosingInfoPaToJson(_StockClosingInfoPa instance) =>
@@ -3538,6 +3539,7 @@ Map<String, dynamic> _$StockClosingInfoPaToJson(_StockClosingInfoPa instance) =>
       'totalPhysicalWithdrawalsConvoy': instance.totalPhysicalWithdrawalsConvoy,
       'openingFiscalBalance': instance.openingFiscalBalance,
       'totalFiscalEntries': instance.totalFiscalEntries,
+      'hasPreviousStockClosing': instance.hasPreviousStockClosing,
     };
 
 const _$AtsStreamModelEnumMap = {AtsStreamModel.exit: 'EXIT'};

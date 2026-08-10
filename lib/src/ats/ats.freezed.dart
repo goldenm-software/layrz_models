@@ -28948,7 +28948,8 @@ mixin _$StockClosingInfoPa {
  double? get totalPhysicalWithdrawalsNonConvoy;/// The [totalPhysicalWithdrawalsConvoy] parameter is the totalPhysicalWithdrawalsConvoy of the stock closing info pa entity.
  double? get totalPhysicalWithdrawalsConvoy;/// The [openingFiscalBalance] parameter is the openingFiscalBalance of the stock closing info pa entity.
  double? get openingFiscalBalance;/// The [totalFiscalEntries] parameter is the totalFiscalEntries of the stock closing info pa entity.
- double? get totalFiscalEntries;
+ double? get totalFiscalEntries;/// The [hasPreviousStockClosing] parameter is the hasPreviousStockClosing of the stock closing info pa entity.
+ bool get hasPreviousStockClosing;
 /// Create a copy of StockClosingInfoPa
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28961,16 +28962,16 @@ $StockClosingInfoPaCopyWith<StockClosingInfoPa> get copyWith => _$StockClosingIn
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StockClosingInfoPa&&(identical(other.openingMessage, openingMessage) || other.openingMessage == openingMessage)&&(identical(other.openingPhysicalBalance, openingPhysicalBalance) || other.openingPhysicalBalance == openingPhysicalBalance)&&(identical(other.totalPhysicalEntries, totalPhysicalEntries) || other.totalPhysicalEntries == totalPhysicalEntries)&&(identical(other.totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsNonConvoy) || other.totalPhysicalWithdrawalsNonConvoy == totalPhysicalWithdrawalsNonConvoy)&&(identical(other.totalPhysicalWithdrawalsConvoy, totalPhysicalWithdrawalsConvoy) || other.totalPhysicalWithdrawalsConvoy == totalPhysicalWithdrawalsConvoy)&&(identical(other.openingFiscalBalance, openingFiscalBalance) || other.openingFiscalBalance == openingFiscalBalance)&&(identical(other.totalFiscalEntries, totalFiscalEntries) || other.totalFiscalEntries == totalFiscalEntries));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StockClosingInfoPa&&(identical(other.openingMessage, openingMessage) || other.openingMessage == openingMessage)&&(identical(other.openingPhysicalBalance, openingPhysicalBalance) || other.openingPhysicalBalance == openingPhysicalBalance)&&(identical(other.totalPhysicalEntries, totalPhysicalEntries) || other.totalPhysicalEntries == totalPhysicalEntries)&&(identical(other.totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsNonConvoy) || other.totalPhysicalWithdrawalsNonConvoy == totalPhysicalWithdrawalsNonConvoy)&&(identical(other.totalPhysicalWithdrawalsConvoy, totalPhysicalWithdrawalsConvoy) || other.totalPhysicalWithdrawalsConvoy == totalPhysicalWithdrawalsConvoy)&&(identical(other.openingFiscalBalance, openingFiscalBalance) || other.openingFiscalBalance == openingFiscalBalance)&&(identical(other.totalFiscalEntries, totalFiscalEntries) || other.totalFiscalEntries == totalFiscalEntries)&&(identical(other.hasPreviousStockClosing, hasPreviousStockClosing) || other.hasPreviousStockClosing == hasPreviousStockClosing));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,openingMessage,openingPhysicalBalance,totalPhysicalEntries,totalPhysicalWithdrawalsNonConvoy,totalPhysicalWithdrawalsConvoy,openingFiscalBalance,totalFiscalEntries);
+int get hashCode => Object.hash(runtimeType,openingMessage,openingPhysicalBalance,totalPhysicalEntries,totalPhysicalWithdrawalsNonConvoy,totalPhysicalWithdrawalsConvoy,openingFiscalBalance,totalFiscalEntries,hasPreviousStockClosing);
 
 @override
 String toString() {
-  return 'StockClosingInfoPa(openingMessage: $openingMessage, openingPhysicalBalance: $openingPhysicalBalance, totalPhysicalEntries: $totalPhysicalEntries, totalPhysicalWithdrawalsNonConvoy: $totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsConvoy: $totalPhysicalWithdrawalsConvoy, openingFiscalBalance: $openingFiscalBalance, totalFiscalEntries: $totalFiscalEntries)';
+  return 'StockClosingInfoPa(openingMessage: $openingMessage, openingPhysicalBalance: $openingPhysicalBalance, totalPhysicalEntries: $totalPhysicalEntries, totalPhysicalWithdrawalsNonConvoy: $totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsConvoy: $totalPhysicalWithdrawalsConvoy, openingFiscalBalance: $openingFiscalBalance, totalFiscalEntries: $totalFiscalEntries, hasPreviousStockClosing: $hasPreviousStockClosing)';
 }
 
 
@@ -28981,7 +28982,7 @@ abstract mixin class $StockClosingInfoPaCopyWith<$Res>  {
   factory $StockClosingInfoPaCopyWith(StockClosingInfoPa value, $Res Function(StockClosingInfoPa) _then) = _$StockClosingInfoPaCopyWithImpl;
 @useResult
 $Res call({
- AssetTelemetry? openingMessage, double? openingPhysicalBalance, double? totalPhysicalEntries, double? totalPhysicalWithdrawalsNonConvoy, double? totalPhysicalWithdrawalsConvoy, double? openingFiscalBalance, double? totalFiscalEntries
+ AssetTelemetry? openingMessage, double? openingPhysicalBalance, double? totalPhysicalEntries, double? totalPhysicalWithdrawalsNonConvoy, double? totalPhysicalWithdrawalsConvoy, double? openingFiscalBalance, double? totalFiscalEntries, bool hasPreviousStockClosing
 });
 
 
@@ -28998,7 +28999,7 @@ class _$StockClosingInfoPaCopyWithImpl<$Res>
 
 /// Create a copy of StockClosingInfoPa
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? openingMessage = freezed,Object? openingPhysicalBalance = freezed,Object? totalPhysicalEntries = freezed,Object? totalPhysicalWithdrawalsNonConvoy = freezed,Object? totalPhysicalWithdrawalsConvoy = freezed,Object? openingFiscalBalance = freezed,Object? totalFiscalEntries = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? openingMessage = freezed,Object? openingPhysicalBalance = freezed,Object? totalPhysicalEntries = freezed,Object? totalPhysicalWithdrawalsNonConvoy = freezed,Object? totalPhysicalWithdrawalsConvoy = freezed,Object? openingFiscalBalance = freezed,Object? totalFiscalEntries = freezed,Object? hasPreviousStockClosing = null,}) {
   return _then(_self.copyWith(
 openingMessage: freezed == openingMessage ? _self.openingMessage : openingMessage // ignore: cast_nullable_to_non_nullable
 as AssetTelemetry?,openingPhysicalBalance: freezed == openingPhysicalBalance ? _self.openingPhysicalBalance : openingPhysicalBalance // ignore: cast_nullable_to_non_nullable
@@ -29007,7 +29008,8 @@ as double?,totalPhysicalWithdrawalsNonConvoy: freezed == totalPhysicalWithdrawal
 as double?,totalPhysicalWithdrawalsConvoy: freezed == totalPhysicalWithdrawalsConvoy ? _self.totalPhysicalWithdrawalsConvoy : totalPhysicalWithdrawalsConvoy // ignore: cast_nullable_to_non_nullable
 as double?,openingFiscalBalance: freezed == openingFiscalBalance ? _self.openingFiscalBalance : openingFiscalBalance // ignore: cast_nullable_to_non_nullable
 as double?,totalFiscalEntries: freezed == totalFiscalEntries ? _self.totalFiscalEntries : totalFiscalEntries // ignore: cast_nullable_to_non_nullable
-as double?,
+as double?,hasPreviousStockClosing: null == hasPreviousStockClosing ? _self.hasPreviousStockClosing : hasPreviousStockClosing // ignore: cast_nullable_to_non_nullable
+as bool,
   ));
 }
 /// Create a copy of StockClosingInfoPa
@@ -29104,10 +29106,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries,  bool hasPreviousStockClosing)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockClosingInfoPa() when $default != null:
-return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries);case _:
+return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries,_that.hasPreviousStockClosing);case _:
   return orElse();
 
 }
@@ -29125,10 +29127,10 @@ return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhy
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries,  bool hasPreviousStockClosing)  $default,) {final _that = this;
 switch (_that) {
 case _StockClosingInfoPa():
-return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries);case _:
+return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries,_that.hasPreviousStockClosing);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -29145,10 +29147,10 @@ return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhy
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AssetTelemetry? openingMessage,  double? openingPhysicalBalance,  double? totalPhysicalEntries,  double? totalPhysicalWithdrawalsNonConvoy,  double? totalPhysicalWithdrawalsConvoy,  double? openingFiscalBalance,  double? totalFiscalEntries,  bool hasPreviousStockClosing)?  $default,) {final _that = this;
 switch (_that) {
 case _StockClosingInfoPa() when $default != null:
-return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries);case _:
+return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhysicalEntries,_that.totalPhysicalWithdrawalsNonConvoy,_that.totalPhysicalWithdrawalsConvoy,_that.openingFiscalBalance,_that.totalFiscalEntries,_that.hasPreviousStockClosing);case _:
   return null;
 
 }
@@ -29160,7 +29162,7 @@ return $default(_that.openingMessage,_that.openingPhysicalBalance,_that.totalPhy
 @JsonSerializable()
 
 class _StockClosingInfoPa implements StockClosingInfoPa {
-   _StockClosingInfoPa({this.openingMessage, this.openingPhysicalBalance, this.totalPhysicalEntries, this.totalPhysicalWithdrawalsNonConvoy, this.totalPhysicalWithdrawalsConvoy, this.openingFiscalBalance, this.totalFiscalEntries});
+   _StockClosingInfoPa({this.openingMessage, this.openingPhysicalBalance, this.totalPhysicalEntries, this.totalPhysicalWithdrawalsNonConvoy, this.totalPhysicalWithdrawalsConvoy, this.openingFiscalBalance, this.totalFiscalEntries, this.hasPreviousStockClosing = false});
   factory _StockClosingInfoPa.fromJson(Map<String, dynamic> json) => _$StockClosingInfoPaFromJson(json);
 
 /// The [openingMessage] parameter is the openingMessage of the stock closing info pa entity.
@@ -29177,6 +29179,8 @@ class _StockClosingInfoPa implements StockClosingInfoPa {
 @override final  double? openingFiscalBalance;
 /// The [totalFiscalEntries] parameter is the totalFiscalEntries of the stock closing info pa entity.
 @override final  double? totalFiscalEntries;
+/// The [hasPreviousStockClosing] parameter is the hasPreviousStockClosing of the stock closing info pa entity.
+@override@JsonKey() final  bool hasPreviousStockClosing;
 
 /// Create a copy of StockClosingInfoPa
 /// with the given fields replaced by the non-null parameter values.
@@ -29191,16 +29195,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockClosingInfoPa&&(identical(other.openingMessage, openingMessage) || other.openingMessage == openingMessage)&&(identical(other.openingPhysicalBalance, openingPhysicalBalance) || other.openingPhysicalBalance == openingPhysicalBalance)&&(identical(other.totalPhysicalEntries, totalPhysicalEntries) || other.totalPhysicalEntries == totalPhysicalEntries)&&(identical(other.totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsNonConvoy) || other.totalPhysicalWithdrawalsNonConvoy == totalPhysicalWithdrawalsNonConvoy)&&(identical(other.totalPhysicalWithdrawalsConvoy, totalPhysicalWithdrawalsConvoy) || other.totalPhysicalWithdrawalsConvoy == totalPhysicalWithdrawalsConvoy)&&(identical(other.openingFiscalBalance, openingFiscalBalance) || other.openingFiscalBalance == openingFiscalBalance)&&(identical(other.totalFiscalEntries, totalFiscalEntries) || other.totalFiscalEntries == totalFiscalEntries));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockClosingInfoPa&&(identical(other.openingMessage, openingMessage) || other.openingMessage == openingMessage)&&(identical(other.openingPhysicalBalance, openingPhysicalBalance) || other.openingPhysicalBalance == openingPhysicalBalance)&&(identical(other.totalPhysicalEntries, totalPhysicalEntries) || other.totalPhysicalEntries == totalPhysicalEntries)&&(identical(other.totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsNonConvoy) || other.totalPhysicalWithdrawalsNonConvoy == totalPhysicalWithdrawalsNonConvoy)&&(identical(other.totalPhysicalWithdrawalsConvoy, totalPhysicalWithdrawalsConvoy) || other.totalPhysicalWithdrawalsConvoy == totalPhysicalWithdrawalsConvoy)&&(identical(other.openingFiscalBalance, openingFiscalBalance) || other.openingFiscalBalance == openingFiscalBalance)&&(identical(other.totalFiscalEntries, totalFiscalEntries) || other.totalFiscalEntries == totalFiscalEntries)&&(identical(other.hasPreviousStockClosing, hasPreviousStockClosing) || other.hasPreviousStockClosing == hasPreviousStockClosing));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,openingMessage,openingPhysicalBalance,totalPhysicalEntries,totalPhysicalWithdrawalsNonConvoy,totalPhysicalWithdrawalsConvoy,openingFiscalBalance,totalFiscalEntries);
+int get hashCode => Object.hash(runtimeType,openingMessage,openingPhysicalBalance,totalPhysicalEntries,totalPhysicalWithdrawalsNonConvoy,totalPhysicalWithdrawalsConvoy,openingFiscalBalance,totalFiscalEntries,hasPreviousStockClosing);
 
 @override
 String toString() {
-  return 'StockClosingInfoPa(openingMessage: $openingMessage, openingPhysicalBalance: $openingPhysicalBalance, totalPhysicalEntries: $totalPhysicalEntries, totalPhysicalWithdrawalsNonConvoy: $totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsConvoy: $totalPhysicalWithdrawalsConvoy, openingFiscalBalance: $openingFiscalBalance, totalFiscalEntries: $totalFiscalEntries)';
+  return 'StockClosingInfoPa(openingMessage: $openingMessage, openingPhysicalBalance: $openingPhysicalBalance, totalPhysicalEntries: $totalPhysicalEntries, totalPhysicalWithdrawalsNonConvoy: $totalPhysicalWithdrawalsNonConvoy, totalPhysicalWithdrawalsConvoy: $totalPhysicalWithdrawalsConvoy, openingFiscalBalance: $openingFiscalBalance, totalFiscalEntries: $totalFiscalEntries, hasPreviousStockClosing: $hasPreviousStockClosing)';
 }
 
 
@@ -29211,7 +29215,7 @@ abstract mixin class _$StockClosingInfoPaCopyWith<$Res> implements $StockClosing
   factory _$StockClosingInfoPaCopyWith(_StockClosingInfoPa value, $Res Function(_StockClosingInfoPa) _then) = __$StockClosingInfoPaCopyWithImpl;
 @override @useResult
 $Res call({
- AssetTelemetry? openingMessage, double? openingPhysicalBalance, double? totalPhysicalEntries, double? totalPhysicalWithdrawalsNonConvoy, double? totalPhysicalWithdrawalsConvoy, double? openingFiscalBalance, double? totalFiscalEntries
+ AssetTelemetry? openingMessage, double? openingPhysicalBalance, double? totalPhysicalEntries, double? totalPhysicalWithdrawalsNonConvoy, double? totalPhysicalWithdrawalsConvoy, double? openingFiscalBalance, double? totalFiscalEntries, bool hasPreviousStockClosing
 });
 
 
@@ -29228,7 +29232,7 @@ class __$StockClosingInfoPaCopyWithImpl<$Res>
 
 /// Create a copy of StockClosingInfoPa
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? openingMessage = freezed,Object? openingPhysicalBalance = freezed,Object? totalPhysicalEntries = freezed,Object? totalPhysicalWithdrawalsNonConvoy = freezed,Object? totalPhysicalWithdrawalsConvoy = freezed,Object? openingFiscalBalance = freezed,Object? totalFiscalEntries = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? openingMessage = freezed,Object? openingPhysicalBalance = freezed,Object? totalPhysicalEntries = freezed,Object? totalPhysicalWithdrawalsNonConvoy = freezed,Object? totalPhysicalWithdrawalsConvoy = freezed,Object? openingFiscalBalance = freezed,Object? totalFiscalEntries = freezed,Object? hasPreviousStockClosing = null,}) {
   return _then(_StockClosingInfoPa(
 openingMessage: freezed == openingMessage ? _self.openingMessage : openingMessage // ignore: cast_nullable_to_non_nullable
 as AssetTelemetry?,openingPhysicalBalance: freezed == openingPhysicalBalance ? _self.openingPhysicalBalance : openingPhysicalBalance // ignore: cast_nullable_to_non_nullable
@@ -29237,7 +29241,8 @@ as double?,totalPhysicalWithdrawalsNonConvoy: freezed == totalPhysicalWithdrawal
 as double?,totalPhysicalWithdrawalsConvoy: freezed == totalPhysicalWithdrawalsConvoy ? _self.totalPhysicalWithdrawalsConvoy : totalPhysicalWithdrawalsConvoy // ignore: cast_nullable_to_non_nullable
 as double?,openingFiscalBalance: freezed == openingFiscalBalance ? _self.openingFiscalBalance : openingFiscalBalance // ignore: cast_nullable_to_non_nullable
 as double?,totalFiscalEntries: freezed == totalFiscalEntries ? _self.totalFiscalEntries : totalFiscalEntries // ignore: cast_nullable_to_non_nullable
-as double?,
+as double?,hasPreviousStockClosing: null == hasPreviousStockClosing ? _self.hasPreviousStockClosing : hasPreviousStockClosing // ignore: cast_nullable_to_non_nullable
+as bool,
   ));
 }
 

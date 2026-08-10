@@ -25,6 +25,9 @@ abstract class StockClosingInfoPa with _$StockClosingInfoPa {
 
     /// The [totalFiscalEntries] parameter is the totalFiscalEntries of the stock closing info pa entity.
     double? totalFiscalEntries,
+
+    /// The [hasPreviousStockClosing] parameter is the hasPreviousStockClosing of the stock closing info pa entity.
+    @Default(false) bool hasPreviousStockClosing,
   }) = _StockClosingInfoPa;
 
   /// Creates a new [StockClosingInfoPa] instance from a JSON map.
