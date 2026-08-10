@@ -44,6 +44,9 @@ abstract class StockClosing with _$StockClosing {
     /// The [totalWithdrawalsAmbient] parameter is the totalWithdrawalsAmbient of the stock closing entity.
     double? totalWithdrawalsAmbient,
 
+    /// The [totalWithdrawalsByComboio] parameter is the totalWithdrawalsByComboio of the stock closing entity.
+    double? totalWithdrawalsByComboio,
+
     /// The [closingBalanceAmbient] parameter is the closingBalanceAmbient of the stock closing entity.
     double? closingBalanceAmbient,
 

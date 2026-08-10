@@ -3191,6 +3191,8 @@ _StockClosing _$StockClosingFromJson(
   totalEntriesAmbient: (json['totalEntriesAmbient'] as num?)?.toDouble(),
   totalWithdrawalsAmbient: (json['totalWithdrawalsAmbient'] as num?)
       ?.toDouble(),
+  totalWithdrawalsByComboio: (json['totalWithdrawalsByComboio'] as num?)
+      ?.toDouble(),
   closingBalanceAmbient: (json['closingBalanceAmbient'] as num?)?.toDouble(),
   openingBalance20: (json['openingBalance20'] as num?)?.toDouble(),
   totalEntries20: (json['totalEntries20'] as num?)?.toDouble(),
@@ -3229,6 +3231,7 @@ Map<String, dynamic> _$StockClosingToJson(_StockClosing instance) =>
       'openingBalanceAmbient': instance.openingBalanceAmbient,
       'totalEntriesAmbient': instance.totalEntriesAmbient,
       'totalWithdrawalsAmbient': instance.totalWithdrawalsAmbient,
+      'totalWithdrawalsByComboio': instance.totalWithdrawalsByComboio,
       'closingBalanceAmbient': instance.closingBalanceAmbient,
       'openingBalance20': instance.openingBalance20,
       'totalEntries20': instance.totalEntries20,
@@ -3426,6 +3429,8 @@ _StockClosingTankInput _$StockClosingTankInputFromJson(
   totalWithdrawalsAmbient: (json['totalWithdrawalsAmbient'] as num?)
       ?.toDouble(),
   closingBalanceAmbient: (json['closingBalanceAmbient'] as num?)?.toDouble(),
+  totalWithdrawalsByComboio: (json['totalWithdrawalsByComboio'] as num?)
+      ?.toDouble(),
   openingBalance20: (json['openingBalance20'] as num?)?.toDouble(),
   totalEntries20: (json['totalEntries20'] as num?)?.toDouble(),
   totalWithdrawals20: (json['totalWithdrawals20'] as num?)?.toDouble(),
@@ -3459,6 +3464,7 @@ Map<String, dynamic> _$StockClosingTankInputToJson(
   'totalEntriesAmbient': instance.totalEntriesAmbient,
   'totalWithdrawalsAmbient': instance.totalWithdrawalsAmbient,
   'closingBalanceAmbient': instance.closingBalanceAmbient,
+  'totalWithdrawalsByComboio': instance.totalWithdrawalsByComboio,
   'openingBalance20': instance.openingBalance20,
   'totalEntries20': instance.totalEntries20,
   'totalWithdrawals20': instance.totalWithdrawals20,
@@ -3520,6 +3526,7 @@ _StockClosingInfoPa _$StockClosingInfoPaFromJson(
       (json['totalPhysicalWithdrawalsConvoy'] as num?)?.toDouble(),
   openingFiscalBalance: (json['openingFiscalBalance'] as num?)?.toDouble(),
   totalFiscalEntries: (json['totalFiscalEntries'] as num?)?.toDouble(),
+  hasPreviousStockClosing: json['hasPreviousStockClosing'] as bool? ?? false,
 );
 
 Map<String, dynamic> _$StockClosingInfoPaToJson(_StockClosingInfoPa instance) =>
@@ -3532,6 +3539,7 @@ Map<String, dynamic> _$StockClosingInfoPaToJson(_StockClosingInfoPa instance) =>
       'totalPhysicalWithdrawalsConvoy': instance.totalPhysicalWithdrawalsConvoy,
       'openingFiscalBalance': instance.openingFiscalBalance,
       'totalFiscalEntries': instance.totalFiscalEntries,
+      'hasPreviousStockClosing': instance.hasPreviousStockClosing,
     };
 
 const _$AtsStreamModelEnumMap = {AtsStreamModel.exit: 'EXIT'};

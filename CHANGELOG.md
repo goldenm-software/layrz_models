@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.24.7
+
+- Added `hasPreviousStockClosing` value in `StockClosingInfoPa` model
+
+## 3.24.6
+
+- Added `totalWithdrawalsByComboio` value in `StockClosingTankInput` and `StockClosing` models
+
 ## 3.24.5
 
 - Added `StockClosingInfoPa` model
