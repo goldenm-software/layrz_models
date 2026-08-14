@@ -227,12 +227,12 @@ void main() {
       expect(device.peripherals![1].id, 'device_peripheral_2');
     });
 
-    test('Device.fromJson() with zigbee_permit_join_expires_at (snake_case)', () {
+    test('Device.fromJson() with zigbeePermitJoinExpiresAt', () {
       final json = <String, dynamic>{
         'id': 'device_zigbee',
         'name': 'Zigbee Device',
         'ident': 'ZIGBEE_001',
-        'zigbee_permit_join_expires_at': '2026-07-22T10:30:00Z',
+        'zigbeePermitJoinExpiresAt': '2026-07-22T10:30:00Z',
       };
 
       final device = Device.fromJson(json);
@@ -241,7 +241,7 @@ void main() {
       expect(device.zigbeePermitJoinExpiresAt, isA<DateTime>());
     });
 
-    test('Device.toJson() preserves zigbee_permit_join_expires_at as snake_case key', () {
+    test('Device.toJson() preserves zigbeePermitJoinExpiresAt key', () {
       final device = Device(
         id: 'device_zb_key',
         name: 'Zigbee Key Test',
@@ -251,7 +251,7 @@ void main() {
 
       final json = device.toJson();
 
-      expect(json['zigbee_permit_join_expires_at'], isNotNull);
+      expect(json['zigbeePermitJoinExpiresAt'], isNotNull);
     });
 
     test('Device defaults for zigbeeZoneId and zigbeeToken', () {

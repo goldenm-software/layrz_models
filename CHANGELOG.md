@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.24.8
+
+- Corrected `CommandInput.save()`, the `status`/`errors`/`result` selection now hangs off the `addDeviceCommand`/`editDeviceCommand` mutation field instead of the mutation root
+- Corrected `DeviceCommand.execute()`, the mutation field is `executeDeviceCommand` and not `deviceCommands`
+- Corrected `Device.zigbeePermitJoinExpiresAt`, removed the snake_case `JsonKey` that never matched the fragment field and always decoded to null
+- Corrected `Device.delete()`, `Device.deleteMany()` and `Device.importDevicesIntoApp()` to be sent as mutations, plus the field is `importDevicesIntoApp` and not `importDevicesToApp`
+- Added `InboundProtocol.detailedFragment`, which is `fragment` plus the protocol's `models`, and used it on `InboundProtocol.fetch()`
+
 ## 3.24.7
 
 - Added `hasPreviousStockClosing` value in `StockClosingInfoPa` model

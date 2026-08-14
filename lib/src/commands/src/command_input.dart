@@ -62,10 +62,11 @@ abstract class CommandInput with _$CommandInput {
     ValueChanged<ApiStatus>? onResponse,
   }) async {
     final connector = LayrzConnector(apiToken: apiToken, uri: uri);
+    final mutationName = id == null ? 'addDeviceCommand' : 'editDeviceCommand';
     try {
       final response = await connector.mutate(
         GqlMutation(
-          name: id == null ? 'addDeviceCommand' : 'editDeviceCommand',
+          name: mutationName,
           variables: [
             GqlVariable(
               name: 'data',
@@ -74,10 +75,19 @@ abstract class CommandInput with _$CommandInput {
               isRequired: true,
             ),
           ],
+          // status/errors/result hang off the mutation field, not off the mutation root:
+          // selecting them directly builds `mutation addDeviceCommand { status ... }`, which
+          // never invokes the mutation and fails while resolving the nested fragments.
           fields: [
-            GqlField(name: 'status'),
-            GqlField(name: 'errors'),
-            GqlField(name: 'result', fragment: DeviceCommand.fragment),
+            GqlField(
+              name: mutationName,
+              args: {'data': 'data'},
+              fields: [
+                GqlField(name: 'status'),
+                GqlField(name: 'errors'),
+                GqlField(name: 'result', fragment: DeviceCommand.fragment),
+              ],
+            ),
           ],
         ),
         _deviceCommandDecoder,

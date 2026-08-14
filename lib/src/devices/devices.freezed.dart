@@ -51,7 +51,10 @@ mixin _$Device {
  bool? get hasWorldwideCoverage;/// Auto-generated Zigbee zone ID (10 chars). Empty for non-Zigbee devices.
  String get zigbeeZoneId;/// Auto-generated Zigbee token (72 chars). Empty for non-Zigbee devices.
  String get zigbeeToken;/// When permit-join expires on the Zigbee coordinator. Null if not active.
-@JsonKey(name: 'zigbee_permit_join_expires_at') DateTime? get zigbeePermitJoinExpiresAt;
+///
+/// The key matches the field name: the fragment requests `zigbeePermitJoinExpiresAt`,
+/// so a snake_case [JsonKey] would never match and would decode to null forever.
+ DateTime? get zigbeePermitJoinExpiresAt;
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -84,7 +87,7 @@ abstract mixin class $DeviceCopyWith<$Res>  {
   factory $DeviceCopyWith(Device value, $Res Function(Device) _then) = _$DeviceCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, List<ZigbeeDevice>? zigbeeDevices, List<ZigbeeDeviceExpose>? exposes, String? localIpAddress, bool? hasWorldwideCoverage, String zigbeeZoneId, String zigbeeToken,@JsonKey(name: 'zigbee_permit_join_expires_at') DateTime? zigbeePermitJoinExpiresAt
+ String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, List<ZigbeeDevice>? zigbeeDevices, List<ZigbeeDeviceExpose>? exposes, String? localIpAddress, bool? hasWorldwideCoverage, String zigbeeZoneId, String zigbeeToken, DateTime? zigbeePermitJoinExpiresAt
 });
 
 
@@ -304,7 +307,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  List<ZigbeeDevice>? zigbeeDevices,  List<ZigbeeDeviceExpose>? exposes,  String? localIpAddress,  bool? hasWorldwideCoverage,  String zigbeeZoneId,  String zigbeeToken, @JsonKey(name: 'zigbee_permit_join_expires_at')  DateTime? zigbeePermitJoinExpiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  List<ZigbeeDevice>? zigbeeDevices,  List<ZigbeeDeviceExpose>? exposes,  String? localIpAddress,  bool? hasWorldwideCoverage,  String zigbeeZoneId,  String zigbeeToken,  DateTime? zigbeePermitJoinExpiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Device() when $default != null:
 return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.zigbeeDevices,_that.exposes,_that.localIpAddress,_that.hasWorldwideCoverage,_that.zigbeeZoneId,_that.zigbeeToken,_that.zigbeePermitJoinExpiresAt);case _:
@@ -325,7 +328,7 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  List<ZigbeeDevice>? zigbeeDevices,  List<ZigbeeDeviceExpose>? exposes,  String? localIpAddress,  bool? hasWorldwideCoverage,  String zigbeeZoneId,  String zigbeeToken, @JsonKey(name: 'zigbee_permit_join_expires_at')  DateTime? zigbeePermitJoinExpiresAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  List<ZigbeeDevice>? zigbeeDevices,  List<ZigbeeDeviceExpose>? exposes,  String? localIpAddress,  bool? hasWorldwideCoverage,  String zigbeeZoneId,  String zigbeeToken,  DateTime? zigbeePermitJoinExpiresAt)  $default,) {final _that = this;
 switch (_that) {
 case _Device():
 return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.zigbeeDevices,_that.exposes,_that.localIpAddress,_that.hasWorldwideCoverage,_that.zigbeeZoneId,_that.zigbeeToken,_that.zigbeePermitJoinExpiresAt);case _:
@@ -345,7 +348,7 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  List<ZigbeeDevice>? zigbeeDevices,  List<ZigbeeDeviceExpose>? exposes,  String? localIpAddress,  bool? hasWorldwideCoverage,  String zigbeeZoneId,  String zigbeeToken, @JsonKey(name: 'zigbee_permit_join_expires_at')  DateTime? zigbeePermitJoinExpiresAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String ident,  String? flespiToken,  String? modelId,  Model? model,  String? protocolId,  InboundProtocol? protocol,  Map<String, dynamic>? additionalFields,  String? qrCode,  String? linkQr,  List<DeviceCommand>? commands,  List<Access>? access,  DeviceTelemetry? telemetry,  String? visionProfileId,  VisionProfile? visionProfile,  PhoneNumber? phone,  ModbusConfig? modbus,  bool? isSuspended,  HwModel? hwModel,  String? hwModelId,  String? macAddress,  Map<String, dynamic>? configParams, @DurationConverter()  Duration? visionCaptureThreshold,  List<Device>? peripherals,  List<ZigbeeDevice>? zigbeeDevices,  List<ZigbeeDeviceExpose>? exposes,  String? localIpAddress,  bool? hasWorldwideCoverage,  String zigbeeZoneId,  String zigbeeToken,  DateTime? zigbeePermitJoinExpiresAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Device() when $default != null:
 return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,_that.model,_that.protocolId,_that.protocol,_that.additionalFields,_that.qrCode,_that.linkQr,_that.commands,_that.access,_that.telemetry,_that.visionProfileId,_that.visionProfile,_that.phone,_that.modbus,_that.isSuspended,_that.hwModel,_that.hwModelId,_that.macAddress,_that.configParams,_that.visionCaptureThreshold,_that.peripherals,_that.zigbeeDevices,_that.exposes,_that.localIpAddress,_that.hasWorldwideCoverage,_that.zigbeeZoneId,_that.zigbeeToken,_that.zigbeePermitJoinExpiresAt);case _:
@@ -360,7 +363,7 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 @JsonSerializable()
 
 class _Device extends Device {
-  const _Device({required this.id, required this.name, required this.ident, this.flespiToken, this.modelId, this.model, this.protocolId, this.protocol, final  Map<String, dynamic>? additionalFields, this.qrCode, this.linkQr, final  List<DeviceCommand>? commands, final  List<Access>? access, this.telemetry, this.visionProfileId, this.visionProfile, this.phone, this.modbus, this.isSuspended, this.hwModel, this.hwModelId, this.macAddress, final  Map<String, dynamic>? configParams, @DurationConverter() this.visionCaptureThreshold, final  List<Device>? peripherals, final  List<ZigbeeDevice>? zigbeeDevices, final  List<ZigbeeDeviceExpose>? exposes, this.localIpAddress, this.hasWorldwideCoverage, this.zigbeeZoneId = '', this.zigbeeToken = '', @JsonKey(name: 'zigbee_permit_join_expires_at') this.zigbeePermitJoinExpiresAt}): _additionalFields = additionalFields,_commands = commands,_access = access,_configParams = configParams,_peripherals = peripherals,_zigbeeDevices = zigbeeDevices,_exposes = exposes,super._();
+  const _Device({required this.id, required this.name, required this.ident, this.flespiToken, this.modelId, this.model, this.protocolId, this.protocol, final  Map<String, dynamic>? additionalFields, this.qrCode, this.linkQr, final  List<DeviceCommand>? commands, final  List<Access>? access, this.telemetry, this.visionProfileId, this.visionProfile, this.phone, this.modbus, this.isSuspended, this.hwModel, this.hwModelId, this.macAddress, final  Map<String, dynamic>? configParams, @DurationConverter() this.visionCaptureThreshold, final  List<Device>? peripherals, final  List<ZigbeeDevice>? zigbeeDevices, final  List<ZigbeeDeviceExpose>? exposes, this.localIpAddress, this.hasWorldwideCoverage, this.zigbeeZoneId = '', this.zigbeeToken = '', this.zigbeePermitJoinExpiresAt}): _additionalFields = additionalFields,_commands = commands,_access = access,_configParams = configParams,_peripherals = peripherals,_zigbeeDevices = zigbeeDevices,_exposes = exposes,super._();
   factory _Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 
 @override final  String id;
@@ -496,7 +499,10 @@ class _Device extends Device {
 /// Auto-generated Zigbee token (72 chars). Empty for non-Zigbee devices.
 @override@JsonKey() final  String zigbeeToken;
 /// When permit-join expires on the Zigbee coordinator. Null if not active.
-@override@JsonKey(name: 'zigbee_permit_join_expires_at') final  DateTime? zigbeePermitJoinExpiresAt;
+///
+/// The key matches the field name: the fragment requests `zigbeePermitJoinExpiresAt`,
+/// so a snake_case [JsonKey] would never match and would decode to null forever.
+@override final  DateTime? zigbeePermitJoinExpiresAt;
 
 /// Create a copy of Device
 /// with the given fields replaced by the non-null parameter values.
@@ -531,7 +537,7 @@ abstract mixin class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   factory _$DeviceCopyWith(_Device value, $Res Function(_Device) _then) = __$DeviceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, List<ZigbeeDevice>? zigbeeDevices, List<ZigbeeDeviceExpose>? exposes, String? localIpAddress, bool? hasWorldwideCoverage, String zigbeeZoneId, String zigbeeToken,@JsonKey(name: 'zigbee_permit_join_expires_at') DateTime? zigbeePermitJoinExpiresAt
+ String id, String name, String ident, String? flespiToken, String? modelId, Model? model, String? protocolId, InboundProtocol? protocol, Map<String, dynamic>? additionalFields, String? qrCode, String? linkQr, List<DeviceCommand>? commands, List<Access>? access, DeviceTelemetry? telemetry, String? visionProfileId, VisionProfile? visionProfile, PhoneNumber? phone, ModbusConfig? modbus, bool? isSuspended, HwModel? hwModel, String? hwModelId, String? macAddress, Map<String, dynamic>? configParams,@DurationConverter() Duration? visionCaptureThreshold, List<Device>? peripherals, List<ZigbeeDevice>? zigbeeDevices, List<ZigbeeDeviceExpose>? exposes, String? localIpAddress, bool? hasWorldwideCoverage, String zigbeeZoneId, String zigbeeToken, DateTime? zigbeePermitJoinExpiresAt
 });
 
 
