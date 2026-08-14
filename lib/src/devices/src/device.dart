@@ -102,7 +102,10 @@ abstract class Device with _$Device {
     @Default('') String zigbeeToken,
 
     /// When permit-join expires on the Zigbee coordinator. Null if not active.
-    @JsonKey(name: 'zigbee_permit_join_expires_at') DateTime? zigbeePermitJoinExpiresAt,
+    ///
+    /// The key matches the field name: the fragment requests `zigbeePermitJoinExpiresAt`,
+    /// so a snake_case [JsonKey] would never match and would decode to null forever.
+    DateTime? zigbeePermitJoinExpiresAt,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
@@ -360,8 +363,10 @@ abstract class Device with _$Device {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.query(
-        GqlQuery(
+      // [deleteDevices] lives on the mutation root, so this must go out as a mutation:
+      // sending it as a query fails with `Cannot query field "deleteDevices" on type "Query"`.
+      final response = await connector.mutate(
+        GqlMutation(
           name: _getDeleteMutationNameFromVariant(variant),
           variables: [
             GqlVariable(
@@ -422,8 +427,10 @@ abstract class Device with _$Device {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.query(
-        GqlQuery(
+      // [deleteDevices] lives on the mutation root, so this must go out as a mutation:
+      // sending it as a query fails with `Cannot query field "deleteDevices" on type "Query"`.
+      final response = await connector.mutate(
+        GqlMutation(
           name: _getDeleteMutationNameFromVariant(variant),
           variables: [
             GqlVariable(
@@ -597,9 +604,11 @@ abstract class Device with _$Device {
   }) async {
     final connector = LayrzConnector(uri: uri, apiToken: apiToken);
     try {
-      final response = await connector.query(
-        GqlQuery(
-          name: 'importDevicesToApp',
+      // Mutation root, and the field is `importDevicesIntoApp` — `importDevicesToApp`
+      // does not exist in the schema. See [RegisteredApp.importDevicesIntoApp].
+      final response = await connector.mutate(
+        GqlMutation(
+          name: 'importDevicesIntoApp',
           variables: [
             GqlVariable(name: 'appId', value: appId, type: .id, isRequired: true),
             GqlVariable(
@@ -611,7 +620,7 @@ abstract class Device with _$Device {
           ],
         )..add(
           GqlField(
-            name: 'importDevicesToApp',
+            name: 'importDevicesIntoApp',
             args: {
               'appId': 'appId',
               'devicesIds': 'devicesIds',

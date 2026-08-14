@@ -177,6 +177,23 @@ abstract class InboundProtocol with _$InboundProtocol {
   // coverage:ignore-end
 
   // coverage:ignore-start
+  /// [detailedFragment] is [fragment] plus the protocol's [models].
+  ///
+  /// Consumers that resolve a model out of `protocol.models` need them present — the command
+  /// form in `layrz_commands` does exactly that, and with the plain [fragment] the lookup
+  /// silently yields null and the form never renders. Kept separate from [fragment] so the
+  /// protocol *listing* is not forced to carry every model of every protocol.
+  static GqlFragment get detailedFragment => GqlFragment(
+    name: 'InboundProtocolFragment',
+    onType: 'InboundProtocol',
+    fields: [
+      ...fragment.fields,
+      GqlField(name: 'models', fragment: Model.reducedFragment),
+    ],
+  );
+  // coverage:ignore-end
+
+  // coverage:ignore-start
   /// [reducedFragment] is an small fragment of the protocol, used to identify the protocol in the system.
   static GqlFragment get reducedFragment => GqlFragment(
     name: 'InboundProtocolFragment',
@@ -299,7 +316,7 @@ abstract class InboundProtocol with _$InboundProtocol {
               args: {'id': 'id'},
               fields: [
                 GqlField(name: 'status'),
-                GqlField(name: 'result', fragment: fragment),
+                GqlField(name: 'result', fragment: detailedFragment),
               ],
             ),
           ],

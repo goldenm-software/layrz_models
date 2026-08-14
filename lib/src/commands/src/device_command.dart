@@ -424,7 +424,9 @@ abstract class DeviceCommand with _$DeviceCommand {
           ],
           fields: [
             GqlField(
-              name: 'deviceCommands',
+              // The mutation field is `executeDeviceCommand`; `deviceCommands` is the
+              // read query used by [fetch]/[fetchAll] and does not exist on the mutation root.
+              name: 'executeDeviceCommand',
               args: {
                 'commandId': 'commandId',
                 if (deviceId != null) 'deviceId': 'deviceId',
