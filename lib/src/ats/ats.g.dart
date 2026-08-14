@@ -1632,6 +1632,8 @@ const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
       'PRODUCTION_SALE_TO_FREE_TRADE_ZONE',
   AtsPurchaseOrderCategoriesEntity.saleFromThirdPartyTank:
       'SALE_FROM_THIRD_PARTY_TANK',
+  AtsPurchaseOrderCategoriesEntity.saleFromThirdPartyDeliveredBySeller:
+      'SALE_FROM_THIRD_PARTY_DELIVERED_BY_SELLER',
   AtsPurchaseOrderCategoriesEntity.notDefined: 'NOT_DEFINED',
   AtsPurchaseOrderCategoriesEntity.remittanceSale: 'REMITTANCE_SALE',
 };

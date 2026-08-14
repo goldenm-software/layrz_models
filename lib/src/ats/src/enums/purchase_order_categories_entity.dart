@@ -32,6 +32,9 @@ enum AtsPurchaseOrderCategoriesEntity {
   // Venda de tanque de terceiros (5106 / 6106)
   @JsonValue('SALE_FROM_THIRD_PARTY_TANK')
   saleFromThirdPartyTank,
+  // Venda de tanque de terceiros entregue pelo vendedor (5120 / 6120)
+  @JsonValue('SALE_FROM_THIRD_PARTY_DELIVERED_BY_SELLER')
+  saleFromThirdPartyDeliveredBySeller,
   // Not defined
   @JsonValue('NOT_DEFINED')
   notDefined,
@@ -63,6 +66,9 @@ enum AtsPurchaseOrderCategoriesEntity {
       case '5659':
       case '6659':
         return AtsPurchaseOrderCategoriesEntity.transfer;
+      case '5120':
+      case '6120':
+        return AtsPurchaseOrderCategoriesEntity.saleFromThirdPartyDeliveredBySeller;
       case '5656':
       case '6656':
         return AtsPurchaseOrderCategoriesEntity.deliveryToSupplier;

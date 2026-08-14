@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.25.0
+
+- Added `saleFromThirdPartyDeliveredBySeller` value to `AtsPurchaseOrderCategoriesEntity` enum (`SALE_FROM_THIRD_PARTY_DELIVERED_BY_SELLER`, CFOP 5120/6120), so it no longer falls back to `notDefined`.
+
 ## 3.24.7
 
 - Added `hasPreviousStockClosing` value in `StockClosingInfoPa` model
