@@ -53,17 +53,54 @@ class LayrzAppLocalizations extends LayrzI18n {
   static void setDeveloperMode(bool value) => LayrzI18n.setDeveloperMode(value);
 
   /// [delegate] helps to you to get the [LocalizationsDelegate]
-  static LocalizationsDelegate<LayrzI18n> delegate({
+  static LocalizationsDelegate<LayrzAppLocalizations> delegate({
     required List<AvailableLanguage?> languages,
     required List<Locale> supportedLocales,
     Locale fallbackLocale = const Locale('en'),
   }) {
-    return LayrzI18nDelegate(
+    return LayrzAppLocalizationsDelegate(
       languages: languages,
       supportedLocales: supportedLocales,
       fallbackLocale: fallbackLocale,
     );
   }
+}
+
+// LocalizationsDelegate is a factory for a set of localized resources
+// In this case, the localized strings will be gotten in an AppLocalizations object
+class LayrzAppLocalizationsDelegate extends LocalizationsDelegate<LayrzAppLocalizations> {
+  Locale? currentLocale;
+  final List<AvailableLanguage?> languages;
+  final List<Locale> supportedLocales;
+  final Locale fallbackLocale;
+
+  LayrzAppLocalizationsDelegate({
+    required this.languages,
+    required this.supportedLocales,
+    required this.fallbackLocale,
+  });
+
+  @override
+  bool isSupported(Locale locale) {
+    // Include all of your supported language codes here
+    return supportedLocales.contains(locale);
+  }
+
+  @override
+  Future<LayrzAppLocalizations> load(Locale locale) async {
+    currentLocale = locale;
+    // AppLocalizations abstract class is where the JSON loading actually runs
+    LayrzAppLocalizations localizations = LayrzAppLocalizations(
+      languages: languages,
+      currentLocale: locale,
+      fallbackLocale: fallbackLocale,
+    );
+    await localizations.load();
+    return localizations;
+  }
+
+  @override
+  bool shouldReload(LayrzAppLocalizationsDelegate old) => true;
 }
 
 bool debugCheckHasLayrzAppLocalizations(BuildContext context) {
