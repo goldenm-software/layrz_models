@@ -35,4 +35,24 @@ abstract class FirmwareBuild with _$FirmwareBuild {
   }) = _FirmwareBuild;
 
   factory FirmwareBuild.fromJson(Map<String, dynamic> json) => _$FirmwareBuildFromJson(json);
+
+  // coverage:ignore-start
+  /// [fragment] is the GraphQL fragment for the firmware build.
+  static GqlFragment get fragment => GqlFragment(
+    name: 'firmwareBuildFragment',
+    onType: 'FirmwareBuild',
+    fields: [
+      GqlField(name: 'id'),
+      GqlField(name: 'buildName'),
+      GqlField(name: 'buildNumber'),
+      GqlField(name: 'branch'),
+      GqlField(name: 'firmwareUrl'),
+      GqlField(name: 'partitionsUrl'),
+      GqlField(name: 'bootloaderUrl'),
+      GqlField(name: 'bootApp0Url'),
+      GqlField(name: 'spiffsUrl'),
+      GqlField(name: 'createdAt'),
+    ],
+  );
+  // coverage:ignore-end
 }

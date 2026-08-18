@@ -92,6 +92,8 @@ abstract class Model with _$Model {
       GqlField(name: 'configStructure', fragment: ConfigGrouping.fragment),
 
       GqlField(name: 'zigbeeParameters', fragment: ZigbeeParameter.fragment),
+
+      GqlField(name: 'firmwares', fragment: FirmwareBuild.fragment),
     ],
   );
   // coverage:ignore-end
