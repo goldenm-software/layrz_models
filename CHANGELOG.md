@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.27.2
+
+- Removed `@Deprecated` decorator in favor of backwards compatibility and prevent issues on CI until `layrz_sdk` is completed.
+
 ## 3.27.1
 
 - Fixed `LayrzAppLocalizations.delegate()` to return a `LayrzAppLocalizationsDelegate` (typed to `LayrzAppLocalizations`) instead of a `LayrzI18nDelegate`. The wrong delegate type registered a `LayrzI18n` in the widget tree, so `LayrzAppLocalizations.of(context)` never resolved and threw `LayrzAppLocalizations was used before it was initialized` — breaking any consumer (e.g. `layrz_session`'s login) that still looks up `LayrzAppLocalizations`. Restored the `LayrzAppLocalizationsDelegate` class that plants the correct type.
