@@ -308,6 +308,10 @@ abstract class DeviceCommand with _$DeviceCommand {
           fields: [
             GqlField(
               name: 'deleteDeviceCommands',
+              // Without this the declared `$ids` is never referenced, which GraphQL rejects as
+              // an unused variable: the request failed validation with a 400 before reaching
+              // the resolver, so nothing was ever deleted.
+              args: {'ids': 'ids'},
               fields: [
                 GqlField(name: 'status'),
               ],
@@ -363,6 +367,10 @@ abstract class DeviceCommand with _$DeviceCommand {
           fields: [
             GqlField(
               name: 'deleteDeviceCommands',
+              // Without this the declared `$ids` is never referenced, which GraphQL rejects as
+              // an unused variable: the request failed validation with a 400 before reaching
+              // the resolver, so nothing was ever deleted.
+              args: {'ids': 'ids'},
               fields: [
                 GqlField(name: 'status'),
               ],

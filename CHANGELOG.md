@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.26.1
+
+- Corrected `DeviceCommand.delete()` and `DeviceCommand.deleteMany()`, the `deleteDeviceCommands` field now receives the `ids` argument. Without it the declared `$ids` variable went unused and the request failed GraphQL validation with a 400, so nothing was ever deleted
+- Added `FirmwareBuild.fragment`
+- Added `firmwares` to `Model.fragment`, using `FirmwareBuild.fragment`
+
 ## 3.26.0
 
 - Migrated core user, authentication, and i18n types from `layrz_models` to `layrz_sdk`, with re-exports so consumers keep seeing them: `Avatar`, `Department`, `Employee`, `Token`, `UserPreferences`, `I18nKey`, `I18nTranslation`, `Language`, `ApiResponse`.
