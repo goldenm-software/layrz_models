@@ -1,6 +1,5 @@
 part of '../i18n.dart';
 
-@Deprecated('Use LayrzAppLocalizations instead')
 class LayrzAppLocalizations extends LayrzI18n {
   /// [LayrzAppLocalizations] is the abstract class that handles the translations
   LayrzAppLocalizations({
