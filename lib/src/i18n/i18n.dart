@@ -1,7 +1,6 @@
 library;
 
-import 'package:layrz_i18n/layrz_i18n.dart'
-    show AvailableLanguage, LayrzI18n, LayrzI18nDelegate, debugCheckHasLayrzI18n;
+import 'package:layrz_i18n/layrz_i18n.dart' show AvailableLanguage, LayrzI18n, LayrzI18nDelegate;
 
 import 'package:flutter/widgets.dart';
 
