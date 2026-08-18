@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.27.1
+
+- Fixed `LayrzAppLocalizations.delegate()` to return a `LayrzAppLocalizationsDelegate` (typed to `LayrzAppLocalizations`) instead of a `LayrzI18nDelegate`. The wrong delegate type registered a `LayrzI18n` in the widget tree, so `LayrzAppLocalizations.of(context)` never resolved and threw `LayrzAppLocalizations was used before it was initialized` — breaking any consumer (e.g. `layrz_session`'s login) that still looks up `LayrzAppLocalizations`. Restored the `LayrzAppLocalizationsDelegate` class that plants the correct type.
+
 ## 3.27.0
 
 - Removed the `@Deprecated` annotation from `LayrzAppLocalizations`. The `3.26.0` deprecation (in favor of `LayrzI18n` from `package:layrz_i18n`) was premature: `layrz_theme` and many ecosystem widgets still consume `LayrzAppLocalizations`, and both localization engines are meant to coexist during the migration. The class is supported again; `LayrzI18n` remains the recommended API for new code.
