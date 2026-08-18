@@ -16,3 +16,11 @@ transforms:
     changes:
       - kind: rename
         newName: "ReportAlgorithm"
+  - title: "Rename from LayrzAppLocalizations to LayrzI18n"
+    date: 2026-08-17
+    element:
+      uris: ["layrz_models.dart"]
+      class: "LayrzAppLocalizations"
+    changes:
+      - kind: rename
+        newName: "LayrzI18n"
