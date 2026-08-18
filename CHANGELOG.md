@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.27.0
+
+- Removed the `@Deprecated` annotation from `LayrzAppLocalizations`. The `3.26.0` deprecation (in favor of `LayrzI18n` from `package:layrz_i18n`) was premature: `layrz_theme` and many ecosystem widgets still consume `LayrzAppLocalizations`, and both localization engines are meant to coexist during the migration. The class is supported again; `LayrzI18n` remains the recommended API for new code.
+
 ## 3.26.1
 
 - Corrected `DeviceCommand.delete()` and `DeviceCommand.deleteMany()`, the `deleteDeviceCommands` field now receives the `ids` argument. Without it the declared `$ids` variable went unused and the request failed GraphQL validation with a 400, so nothing was ever deleted
