@@ -34,7 +34,7 @@ abstract class ReportScheduler with _$ReportScheduler {
     @JsonKey(unknownEnumValue: Weekday.monday) @Default([]) List<Weekday> execWeekdays,
 
     /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
-    @TimeOfDayOrNullConverter() TimeOfDay? execTime,
+    @FlutterTimeOfDayOrNullConverter() TimeOfDay? execTime,
 
     /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
     @Default('UTC') String execTz,
@@ -102,7 +102,7 @@ abstract class ReportSchedulerInput with _$ReportSchedulerInput {
     @JsonKey(unknownEnumValue: Weekday.monday) @Default([]) List<Weekday> execWeekdays,
 
     /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
-    @TimeOfDayOrNullConverter() TimeOfDay? execTime,
+    @FlutterTimeOfDayOrNullConverter() TimeOfDay? execTime,
 
     /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
     @Default('UTC') String execTz,

@@ -399,7 +399,7 @@ abstract class Locator with _$Locator {
   static GqlFragment get basicUserFields => GqlFragment(name: 'basicUserFields', onType: 'User')
     ..add(GqlField(name: 'id'))
     ..add(GqlField(name: 'name'))
-    ..add(GqlField(name: 'dynamicAvatar', fragment: Avatar.gqlFragment));
+    ..add(GqlField(name: 'dynamicAvatar', fragment: Avatar.fragment));
 
   /// [gqlFragment] is the GqlFragment for a locator, including nested associations.
   static GqlFragment get gqlFragment => GqlFragment(name: 'locatorFragment', onType: 'Locator')

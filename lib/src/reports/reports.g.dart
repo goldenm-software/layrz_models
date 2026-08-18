@@ -344,7 +344,7 @@ _ReportScheduler _$ReportSchedulerFromJson(
           )
           .toList() ??
       const [],
-  execTime: const TimeOfDayOrNullConverter().fromJson(
+  execTime: const FlutterTimeOfDayOrNullConverter().fromJson(
     json['execTime'] as String?,
   ),
   execTz: json['execTz'] as String? ?? 'UTC',
@@ -371,36 +371,37 @@ _ReportScheduler _$ReportSchedulerFromJson(
   enabled: json['enabled'] as bool?,
 );
 
-Map<String, dynamic> _$ReportSchedulerToJson(_ReportScheduler instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'ownerId': instance.ownerId,
-      'assetsIds': instance.assetsIds,
-      'outboundServicesIds': instance.outboundServicesIds,
-      'templateCode': instance.templateCode,
-      'templateId': instance.templateId,
-      'relativeTime': instance.relativeTime.toJson(),
-      'sendTo': instance.sendTo,
-      'execWeekdays': instance.execWeekdays.map((e) => e.toJson()).toList(),
-      'execTime': const TimeOfDayOrNullConverter().toJson(instance.execTime),
-      'execTz': instance.execTz,
-      'updatedAt': _$JsonConverterToJson<num, DateTime>(
-        instance.updatedAt,
-        const TimestampConverter().toJson,
-      ),
-      'updatedById': instance.updatedById,
-      'updatedBy': instance.updatedBy?.toJson(),
-      'createdAt': _$JsonConverterToJson<num, DateTime>(
-        instance.createdAt,
-        const TimestampConverter().toJson,
-      ),
-      'createdById': instance.createdById,
-      'createdBy': instance.createdBy?.toJson(),
-      'subject': instance.subject,
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-      'enabled': instance.enabled,
-    };
+Map<String, dynamic> _$ReportSchedulerToJson(
+  _ReportScheduler instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'ownerId': instance.ownerId,
+  'assetsIds': instance.assetsIds,
+  'outboundServicesIds': instance.outboundServicesIds,
+  'templateCode': instance.templateCode,
+  'templateId': instance.templateId,
+  'relativeTime': instance.relativeTime.toJson(),
+  'sendTo': instance.sendTo,
+  'execWeekdays': instance.execWeekdays.map((e) => e.toJson()).toList(),
+  'execTime': const FlutterTimeOfDayOrNullConverter().toJson(instance.execTime),
+  'execTz': instance.execTz,
+  'updatedAt': _$JsonConverterToJson<num, DateTime>(
+    instance.updatedAt,
+    const TimestampConverter().toJson,
+  ),
+  'updatedById': instance.updatedById,
+  'updatedBy': instance.updatedBy?.toJson(),
+  'createdAt': _$JsonConverterToJson<num, DateTime>(
+    instance.createdAt,
+    const TimestampConverter().toJson,
+  ),
+  'createdById': instance.createdById,
+  'createdBy': instance.createdBy?.toJson(),
+  'subject': instance.subject,
+  'access': instance.access?.map((e) => e.toJson()).toList(),
+  'enabled': instance.enabled,
+};
 
 const _$RelativeChoicesEnumMap = {
   RelativeChoices.yesterday: 'YESTERDAY',
@@ -464,7 +465,7 @@ _ReportSchedulerInput _$ReportSchedulerInputFromJson(
           )
           .toList() ??
       const [],
-  execTime: const TimeOfDayOrNullConverter().fromJson(
+  execTime: const FlutterTimeOfDayOrNullConverter().fromJson(
     json['execTime'] as String?,
   ),
   execTz: json['execTz'] as String? ?? 'UTC',
@@ -484,7 +485,7 @@ Map<String, dynamic> _$ReportSchedulerInputToJson(
   'relativeTime': instance.relativeTime.toJson(),
   'sendTo': instance.sendTo,
   'execWeekdays': instance.execWeekdays.map((e) => e.toJson()).toList(),
-  'execTime': const TimeOfDayOrNullConverter().toJson(instance.execTime),
+  'execTime': const FlutterTimeOfDayOrNullConverter().toJson(instance.execTime),
   'execTz': instance.execTz,
   'enabled': instance.enabled,
   'subject': instance.subject,

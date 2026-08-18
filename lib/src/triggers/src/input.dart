@@ -102,7 +102,7 @@ abstract class TriggerInput with _$TriggerInput {
     String? caseCommentPatternValue,
 
     /// Mode of activation / disparator for [TriggerType.exactTime].
-    @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+    @FlutterTimeOfDayOrNullConverter() TimeOfDay? exactHour,
 
     /// Crontab structure
     String? crontabFormat,

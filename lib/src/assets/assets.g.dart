@@ -184,10 +184,10 @@ _Asset _$AssetFromJson(Map<String, dynamic> json) => _Asset(
   globalSensors: (json['globalSensors'] as List<dynamic>?)
       ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
       .toList(),
-  mappitLaborStartTime: const TimeOfDayOrNullConverter().fromJson(
+  mappitLaborStartTime: const FlutterTimeOfDayOrNullConverter().fromJson(
     json['mappitLaborStartTime'] as String?,
   ),
-  mappitLaborEndTime: const TimeOfDayOrNullConverter().fromJson(
+  mappitLaborEndTime: const FlutterTimeOfDayOrNullConverter().fromJson(
     json['mappitLaborEndTime'] as String?,
   ),
   geofences: (json['geofences'] as List<dynamic>?)
@@ -280,10 +280,10 @@ Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
   'points': instance.points?.map((e) => e.toJson()).toList(),
   'parameters': instance.parameters,
   'globalSensors': instance.globalSensors?.map((e) => e.toJson()).toList(),
-  'mappitLaborStartTime': const TimeOfDayOrNullConverter().toJson(
+  'mappitLaborStartTime': const FlutterTimeOfDayOrNullConverter().toJson(
     instance.mappitLaborStartTime,
   ),
-  'mappitLaborEndTime': const TimeOfDayOrNullConverter().toJson(
+  'mappitLaborEndTime': const FlutterTimeOfDayOrNullConverter().toJson(
     instance.mappitLaborEndTime,
   ),
   'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
@@ -398,12 +398,12 @@ _AssetInput _$AssetInputFromJson(Map<String, dynamic> json) => _AssetInput(
       const [],
   mappitLaborStartTime: json['mappitLaborStartTime'] == null
       ? const TimeOfDay(hour: 9, minute: 0)
-      : const TimeOfDayConverter().fromJson(
+      : const FlutterTimeOfDayConverter().fromJson(
           json['mappitLaborStartTime'] as String,
         ),
   mappitLaborEndTime: json['mappitLaborEndTime'] == null
       ? const TimeOfDay(hour: 18, minute: 0)
-      : const TimeOfDayConverter().fromJson(
+      : const FlutterTimeOfDayConverter().fromJson(
           json['mappitLaborEndTime'] as String,
         ),
   mappitSecondaryRoutesIds:
@@ -446,10 +446,10 @@ Map<String, dynamic> _$AssetInputToJson(
   'authenticationCardTagId': instance.authenticationCardTagId,
   'authenticationCardNfcId': instance.authenticationCardNfcId,
   'mappitLaborHours': instance.mappitLaborHours.map((e) => e.toJson()).toList(),
-  'mappitLaborStartTime': const TimeOfDayConverter().toJson(
+  'mappitLaborStartTime': const FlutterTimeOfDayConverter().toJson(
     instance.mappitLaborStartTime,
   ),
-  'mappitLaborEndTime': const TimeOfDayConverter().toJson(
+  'mappitLaborEndTime': const FlutterTimeOfDayConverter().toJson(
     instance.mappitLaborEndTime,
   ),
   'mappitSecondaryRoutesIds': instance.mappitSecondaryRoutesIds,

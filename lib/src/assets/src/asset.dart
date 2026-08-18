@@ -162,10 +162,10 @@ abstract class Asset with _$Asset {
     List<Sensor>? globalSensors,
 
     /// [mappitLaborStartTime] is the time of the labor start time.
-    @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
+    @FlutterTimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
 
     /// [mappitLaborEndTime] is the time of the labor end time.
-    @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
+    @FlutterTimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
 
     /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
     List<Geofence>? geofences,
@@ -243,8 +243,8 @@ abstract class AssetInput with _$AssetInput {
 
     // Mapppit specific fields
     @Default([]) List<MappitLaborHourInput> mappitLaborHours,
-    @Default(TimeOfDay(hour: 9, minute: 0)) @TimeOfDayConverter() TimeOfDay mappitLaborStartTime,
-    @Default(TimeOfDay(hour: 18, minute: 0)) @TimeOfDayConverter() TimeOfDay mappitLaborEndTime,
+    @Default(TimeOfDay(hour: 9, minute: 0)) @FlutterTimeOfDayConverter() TimeOfDay mappitLaborStartTime,
+    @Default(TimeOfDay(hour: 18, minute: 0)) @FlutterTimeOfDayConverter() TimeOfDay mappitLaborEndTime,
     @Default([]) List<String> mappitSecondaryRoutesIds,
   }) = _AssetInput;
 

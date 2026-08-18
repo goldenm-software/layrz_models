@@ -1,8 +1,8 @@
 library;
+import 'package:layrz_sdk/layrz_sdk.dart';
 
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:layrz_models/src/api/api.dart';
 
 part 'modbus.freezed.dart';
 part 'modbus.g.dart';

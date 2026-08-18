@@ -1,7 +1,9 @@
 part of '../converters.dart';
 
-class TimeOfDayOrNullConverter implements JsonConverter<TimeOfDay?, String?> {
-  const TimeOfDayOrNullConverter();
+/// Converter for Flutter's TimeOfDay with null support.
+/// Renamed from [TimeOfDayOrNullConverter] to avoid collision with layrz_sdk's version.
+class FlutterTimeOfDayOrNullConverter implements JsonConverter<TimeOfDay?, String?> {
+  const FlutterTimeOfDayOrNullConverter();
 
   @override
   TimeOfDay? fromJson(String? json) {
@@ -17,8 +19,10 @@ class TimeOfDayOrNullConverter implements JsonConverter<TimeOfDay?, String?> {
   }
 }
 
-class TimeOfDayConverter implements JsonConverter<TimeOfDay, String> {
-  const TimeOfDayConverter();
+/// Converter for Flutter's TimeOfDay.
+/// Renamed from [TimeOfDayConverter] to avoid collision with layrz_sdk's version.
+class FlutterTimeOfDayConverter implements JsonConverter<TimeOfDay, String> {
+  const FlutterTimeOfDayConverter();
 
   @override
   TimeOfDay fromJson(String json) {
