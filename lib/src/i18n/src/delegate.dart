@@ -58,44 +58,12 @@ class LayrzAppLocalizations extends LayrzI18n {
     required List<Locale> supportedLocales,
     Locale fallbackLocale = const Locale('en'),
   }) {
-    return LayrzAppLocalizationsDelegate(
+    return LayrzI18nDelegate(
       languages: languages,
       supportedLocales: supportedLocales,
       fallbackLocale: fallbackLocale,
     );
   }
-}
-
-// LocalizationsDelegate is a factory for a set of localized resources
-// In this case, the localized strings will be gotten in an AppLocalizations object
-class LayrzAppLocalizationsDelegate extends LayrzI18nDelegate {
-  LayrzAppLocalizationsDelegate({
-    required super.languages,
-    required super.supportedLocales,
-    required super.fallbackLocale,
-  });
-
-  @override
-  bool isSupported(Locale locale) {
-    // Include all of your supported language codes here
-    return supportedLocales.contains(locale);
-  }
-
-  @override
-  Future<LayrzAppLocalizations> load(Locale locale) async {
-    currentLocale = locale;
-    // AppLocalizations abstract class is where the JSON loading actually runs
-    LayrzAppLocalizations localizations = LayrzAppLocalizations(
-      languages: languages,
-      currentLocale: locale,
-      fallbackLocale: fallbackLocale,
-    );
-    await localizations.load();
-    return localizations;
-  }
-
-  @override
-  bool shouldReload(LayrzAppLocalizationsDelegate old) => true;
 }
 
 bool debugCheckHasLayrzAppLocalizations(BuildContext context) {
