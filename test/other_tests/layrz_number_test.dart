@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:layrz_models/src/utils/utils.dart';
+import 'package:layrz_models/layrz_models.dart';
 
 void main() {
   test('LayrzNumber.tests', () {

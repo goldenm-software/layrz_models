@@ -33,6 +33,5 @@ part 'src/enums/app_internal_identifier.dart';
 part 'src/enums/app_type.dart';
 part 'src/enums/footer_format.dart';
 part 'src/enums/background_mode.dart';
-part 'src/enums/app_platform.dart';
 part 'src/enums/font_source.dart';
 part 'src/enums/instance_status.dart';

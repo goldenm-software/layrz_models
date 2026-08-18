@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.26.0
+
+- Migrated core user, authentication, and i18n types from `layrz_models` to `layrz_sdk`, with re-exports so consumers keep seeing them: `Avatar`, `Department`, `Employee`, `Token`, `UserPreferences`, `I18nKey`, `I18nTranslation`, `Language`, `ApiResponse`.
+- Migrated API and GraphQL utilities to `layrz_sdk`: `LayrzConnector`, `LayrzApiExtras`, `StandardResponse`, `Gql`, `GqlQuery`, `GqlMutation`, `GqlSubscription`, and related types.
+- Migrated all JSON converters to `layrz_sdk`: `ColorConverter`, `IconConverter`, `DurationConverter`, `TimestampConverter`, `DateConverter`, `RegExpConverter`, `ByteListConverter`, `TimeOfDayConverter`, `DynamicMapConverter`, `ParamDataMapConverter` and their nullable variants.
+- **Breaking**: `TimeOfDay` is deliberately hidden from the `layrz_sdk` re-export to preserve Flutter's `TimeOfDay` resolution; code annotating Flutter `TimeOfDay` fields with `TimeOfDayConverter` must switch to the locally retained `FlutterTimeOfDayConverter`.
+- Migrated all six enums to `layrz_sdk` — `ApiStatus`, `AppPlatform`, `AvatarType`, `ColorblindMode`, `MfaMethod` and `TokenAudience` — re-exported so consumers see no change.
+- **Breaking**: The localization engine moved to the `layrz_i18n` package; `LayrzAppLocalizations` is now `@Deprecated` in favor of `LayrzI18n` from `package:layrz_i18n/layrz_i18n.dart`.
+- Added a `dart fix` migration that renames `LayrzAppLocalizations` to `LayrzI18n`, but the fix does NOT add the import—run `dart fix --apply` and manually add `import 'package:layrz_i18n/layrz_i18n.dart';`.
+- `Asset.mappitLaborStartTime` and `Asset.mappitLaborEndTime` keep their Flutter `TimeOfDay` type, with no behavior changes for consumers.
+- Adds dependencies: `layrz_sdk: ^4.4.3` and `layrz_i18n: ^1.0.1`.
+
 ## 3.25.1
 
 - Corrected `CommandInput.save()`, the `status`/`errors`/`result` selection now hangs off the `addDeviceCommand`/`editDeviceCommand` mutation field instead of the mutation root

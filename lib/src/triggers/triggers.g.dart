@@ -46,7 +46,7 @@ _Trigger _$TriggerFromJson(Map<String, dynamic> json) => _Trigger(
   ),
   formula: json['formula'] as String?,
   script: json['script'] as String?,
-  exactHour: const TimeOfDayOrNullConverter().fromJson(
+  exactHour: const FlutterTimeOfDayOrNullConverter().fromJson(
     json['exactHour'] as String?,
   ),
   crontabFormat: json['crontabFormat'] as String?,
@@ -139,7 +139,9 @@ Map<String, dynamic> _$TriggerToJson(_Trigger instance) => <String, dynamic>{
   'geofenceKind': instance.geofenceKind?.toJson(),
   'formula': instance.formula,
   'script': instance.script,
-  'exactHour': const TimeOfDayOrNullConverter().toJson(instance.exactHour),
+  'exactHour': const FlutterTimeOfDayOrNullConverter().toJson(
+    instance.exactHour,
+  ),
   'crontabFormat': instance.crontabFormat,
   'weekdays': instance.weekdays?.map((e) => e.toJson()).toList(),
   'isPlainCrontab': instance.isPlainCrontab,
@@ -258,7 +260,7 @@ _TriggerInput _$TriggerInputFromJson(
     unknownValue: CaseCommentPattern.contains,
   ),
   caseCommentPatternValue: json['caseCommentPatternValue'] as String?,
-  exactHour: const TimeOfDayOrNullConverter().fromJson(
+  exactHour: const FlutterTimeOfDayOrNullConverter().fromJson(
     json['exactHour'] as String?,
   ),
   crontabFormat: json['crontabFormat'] as String?,
@@ -370,7 +372,9 @@ Map<String, dynamic> _$TriggerInputToJson(_TriggerInput instance) =>
       'caseKind': instance.caseKind?.toJson(),
       'caseCommentPattern': instance.caseCommentPattern?.toJson(),
       'caseCommentPatternValue': instance.caseCommentPatternValue,
-      'exactHour': const TimeOfDayOrNullConverter().toJson(instance.exactHour),
+      'exactHour': const FlutterTimeOfDayOrNullConverter().toJson(
+        instance.exactHour,
+      ),
       'crontabFormat': instance.crontabFormat,
       'isPlainCrontab': instance.isPlainCrontab,
       'weekdays': instance.weekdays.map((e) => e.toJson()).toList(),

@@ -1,5 +1,6 @@
-part of '../../i18n.dart';
+part of '../i18n.dart';
 
+@Deprecated('Use LayrzI18n from package:layrz_i18n instead. Will be removed in a future release.')
 class LayrzAppLocalizations {
   /// [languages] is the list of languages
   List<AvailableLanguage?> languages;

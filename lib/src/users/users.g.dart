@@ -58,47 +58,6 @@ Map<String, dynamic> _$InviteLinkToJson(_InviteLink instance) =>
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
     };
 
-_MfaInput _$MfaInputFromJson(Map<String, dynamic> json) => _MfaInput(
-  method: $enumDecodeNullable(_$MfaMethodEnumMap, json['method']),
-  token: json['token'] as String?,
-  isRequesting: json['isRequesting'] as bool? ?? false,
-);
-
-Map<String, dynamic> _$MfaInputToJson(_MfaInput instance) => <String, dynamic>{
-  'method': instance.method?.toJson(),
-  'token': instance.token,
-  'isRequesting': instance.isRequesting,
-};
-
-const _$MfaMethodEnumMap = {
-  MfaMethod.totp: 'TOTP',
-  MfaMethod.hotp: 'HOTP',
-  MfaMethod.passkey: 'PASSKEY',
-  MfaMethod.backupCode: 'BACKUP_CODE',
-};
-
-_Passkey _$PasskeyFromJson(Map<String, dynamic> json) => _Passkey(
-  id: json['id'] as String,
-  appId: json['appId'] as String,
-  platform: $enumDecode(_$AppPlatformEnumMap, json['platform']),
-);
-
-Map<String, dynamic> _$PasskeyToJson(_Passkey instance) => <String, dynamic>{
-  'id': instance.id,
-  'appId': instance.appId,
-  'platform': instance.platform.toJson(),
-};
-
-const _$AppPlatformEnumMap = {
-  AppPlatform.web: 'WEB',
-  AppPlatform.windows: 'WINDOWS',
-  AppPlatform.macos: 'MACOS',
-  AppPlatform.ios: 'IOS',
-  AppPlatform.android: 'ANDROID',
-  AppPlatform.linux: 'LINUX',
-  AppPlatform.layrzOS: 'LAYRZ_OS',
-};
-
 _PasswordInput _$PasswordInputFromJson(Map<String, dynamic> json) =>
     _PasswordInput(
       currentPassword: json['currentPassword'] as String? ?? '',
@@ -216,7 +175,7 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
   mfaEnabled: json['mfaEnabled'] as bool? ?? false,
   mfaMethods:
       (json['mfaMethods'] as List<dynamic>?)
-          ?.map((e) => const MfaMethodConverter().fromJson(e as String))
+          ?.map((e) => $enumDecode(_$MfaMethodEnumMap, e))
           .toList() ??
       const [],
   tenvioAddress: json['tenvioAddress'] as String?,
@@ -291,9 +250,7 @@ Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
   'mappitExternalAccountId': instance.mappitExternalAccountId,
   'mappitExternalAccount': instance.mappitExternalAccount?.toJson(),
   'mfaEnabled': instance.mfaEnabled,
-  'mfaMethods': instance.mfaMethods
-      .map(const MfaMethodConverter().toJson)
-      .toList(),
+  'mfaMethods': instance.mfaMethods.map((e) => e.toJson()).toList(),
   'tenvioAddress': instance.tenvioAddress,
   'tenvioPhone': instance.tenvioPhone,
   'tenvioLatitude': instance.tenvioLatitude,
@@ -313,6 +270,13 @@ Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
   'preferences': instance.preferences?.toJson(),
   'passkeys': instance.passkeys.map((e) => e.toJson()).toList(),
   'hasGpsInsurance': instance.hasGpsInsurance,
+};
+
+const _$MfaMethodEnumMap = {
+  MfaMethod.totp: 'TOTP',
+  MfaMethod.hotp: 'HOTP',
+  MfaMethod.passkey: 'PASSKEY',
+  MfaMethod.backupCode: 'BACKUP_CODE',
 };
 
 _AccessibilityInput _$AccessibilityInputFromJson(Map<String, dynamic> json) =>
@@ -343,60 +307,6 @@ const _$ColorblindModeEnumMap = {
   ColorblindMode.tritanopia: 'TRITANOPIA',
   ColorblindMode.tritanomaly: 'TRITANOMALY',
   ColorblindMode.normal: 'NORMAL',
-};
-
-_UserPreferences _$UserPreferencesFromJson(Map<String, dynamic> json) =>
-    _UserPreferences(
-      timezone: json['timezone'] as String? ?? '',
-      dateTimeFormat: json['dateTimeFormat'] as String? ?? '%Y-%m-%d %I:%M %p',
-      dateFormat: json['dateFormat'] as String? ?? '%Y-%m-%d',
-      timeFormat: json['timeFormat'] as String? ?? '%I:%M %p',
-      colorblindMode:
-          $enumDecodeNullable(
-            _$ColorblindModeEnumMap,
-            json['colorblindMode'],
-            unknownValue: ColorblindMode.normal,
-          ) ??
-          ColorblindMode.normal,
-      colorblindForce: (json['colorblindForce'] as num?)?.toDouble() ?? 1.0,
-    );
-
-Map<String, dynamic> _$UserPreferencesToJson(_UserPreferences instance) =>
-    <String, dynamic>{
-      'timezone': instance.timezone,
-      'dateTimeFormat': instance.dateTimeFormat,
-      'dateFormat': instance.dateFormat,
-      'timeFormat': instance.timeFormat,
-      'colorblindMode': instance.colorblindMode.toJson(),
-      'colorblindForce': instance.colorblindForce,
-    };
-
-_UserPreferencesInput _$UserPreferencesInputFromJson(
-  Map<String, dynamic> json,
-) => _UserPreferencesInput(
-  timezone: json['timezone'] as String? ?? '',
-  dateTimeFormat: json['dateTimeFormat'] as String? ?? '%Y-%m-%d %I:%M %p',
-  dateFormat: json['dateFormat'] as String? ?? '%Y-%m-%d',
-  timeFormat: json['timeFormat'] as String? ?? '%I:%M %p',
-  colorblindMode:
-      $enumDecodeNullable(
-        _$ColorblindModeEnumMap,
-        json['colorblindMode'],
-        unknownValue: ColorblindMode.normal,
-      ) ??
-      ColorblindMode.normal,
-  colorblindForce: (json['colorblindForce'] as num?)?.toDouble() ?? 1.0,
-);
-
-Map<String, dynamic> _$UserPreferencesInputToJson(
-  _UserPreferencesInput instance,
-) => <String, dynamic>{
-  'timezone': instance.timezone,
-  'dateTimeFormat': instance.dateTimeFormat,
-  'dateFormat': instance.dateFormat,
-  'timeFormat': instance.timeFormat,
-  'colorblindMode': instance.colorblindMode.toJson(),
-  'colorblindForce': instance.colorblindForce,
 };
 
 _UserInput _$UserInputFromJson(Map<String, dynamic> json) => _UserInput(

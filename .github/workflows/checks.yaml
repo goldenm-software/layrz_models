@@ -91,9 +91,6 @@ jobs:
           cache-sdk: true
           cache-key: ${{ runner.os }}-flutter-${{ hashFiles('pubspec.yaml') }}
 
-      - name: Strip coverage-ignored regions
-        run: dart tool/strip_ignored_coverage.dart dart-coverage/lcov.info
-
       - uses: goldenm-software/layrz-actions/.github/actions/coverage-comment@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

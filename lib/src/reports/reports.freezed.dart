@@ -3421,7 +3421,7 @@ mixin _$ReportScheduler {
 @JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices get relativeTime;/// List of emails to which the report should be sent.
  List<String> get sendTo;/// Days of the week when the report should be executed.
 @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> get execWeekdays;/// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
-@TimeOfDayOrNullConverter() TimeOfDay? get execTime;/// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
+@FlutterTimeOfDayOrNullConverter() TimeOfDay? get execTime;/// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
  String get execTz;/// Date of last update.
 @TimestampConverter() DateTime? get updatedAt;/// User id who last updated the report scheduler.
  String? get updatedById;/// User last updated the report scheduler.
@@ -3464,7 +3464,7 @@ abstract mixin class $ReportSchedulerCopyWith<$Res>  {
   factory $ReportSchedulerCopyWith(ReportScheduler value, $Res Function(ReportScheduler) _then) = _$ReportSchedulerCopyWithImpl;
 @useResult
 $Res call({
- String id, String? name, String? ownerId, List<String> assetsIds, List<String> outboundServicesIds, String? templateCode, String? templateId,@JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices relativeTime, List<String> sendTo,@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> execWeekdays,@TimeOfDayOrNullConverter() TimeOfDay? execTime, String execTz,@TimestampConverter() DateTime? updatedAt, String? updatedById, User? updatedBy,@TimestampConverter() DateTime? createdAt, String? createdById, User? createdBy, String? subject, List<Access>? access, bool? enabled
+ String id, String? name, String? ownerId, List<String> assetsIds, List<String> outboundServicesIds, String? templateCode, String? templateId,@JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices relativeTime, List<String> sendTo,@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> execWeekdays,@FlutterTimeOfDayOrNullConverter() TimeOfDay? execTime, String execTz,@TimestampConverter() DateTime? updatedAt, String? updatedById, User? updatedBy,@TimestampConverter() DateTime? createdAt, String? createdById, User? createdBy, String? subject, List<Access>? access, bool? enabled
 });
 
 
@@ -3613,7 +3613,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? name,  String? ownerId,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @TimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz, @TimestampConverter()  DateTime? updatedAt,  String? updatedById,  User? updatedBy, @TimestampConverter()  DateTime? createdAt,  String? createdById,  User? createdBy,  String? subject,  List<Access>? access,  bool? enabled)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? name,  String? ownerId,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @FlutterTimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz, @TimestampConverter()  DateTime? updatedAt,  String? updatedById,  User? updatedBy, @TimestampConverter()  DateTime? createdAt,  String? createdById,  User? createdBy,  String? subject,  List<Access>? access,  bool? enabled)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReportScheduler() when $default != null:
 return $default(_that.id,_that.name,_that.ownerId,_that.assetsIds,_that.outboundServicesIds,_that.templateCode,_that.templateId,_that.relativeTime,_that.sendTo,_that.execWeekdays,_that.execTime,_that.execTz,_that.updatedAt,_that.updatedById,_that.updatedBy,_that.createdAt,_that.createdById,_that.createdBy,_that.subject,_that.access,_that.enabled);case _:
@@ -3634,7 +3634,7 @@ return $default(_that.id,_that.name,_that.ownerId,_that.assetsIds,_that.outbound
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? name,  String? ownerId,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @TimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz, @TimestampConverter()  DateTime? updatedAt,  String? updatedById,  User? updatedBy, @TimestampConverter()  DateTime? createdAt,  String? createdById,  User? createdBy,  String? subject,  List<Access>? access,  bool? enabled)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? name,  String? ownerId,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @FlutterTimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz, @TimestampConverter()  DateTime? updatedAt,  String? updatedById,  User? updatedBy, @TimestampConverter()  DateTime? createdAt,  String? createdById,  User? createdBy,  String? subject,  List<Access>? access,  bool? enabled)  $default,) {final _that = this;
 switch (_that) {
 case _ReportScheduler():
 return $default(_that.id,_that.name,_that.ownerId,_that.assetsIds,_that.outboundServicesIds,_that.templateCode,_that.templateId,_that.relativeTime,_that.sendTo,_that.execWeekdays,_that.execTime,_that.execTz,_that.updatedAt,_that.updatedById,_that.updatedBy,_that.createdAt,_that.createdById,_that.createdBy,_that.subject,_that.access,_that.enabled);case _:
@@ -3654,7 +3654,7 @@ return $default(_that.id,_that.name,_that.ownerId,_that.assetsIds,_that.outbound
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? name,  String? ownerId,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @TimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz, @TimestampConverter()  DateTime? updatedAt,  String? updatedById,  User? updatedBy, @TimestampConverter()  DateTime? createdAt,  String? createdById,  User? createdBy,  String? subject,  List<Access>? access,  bool? enabled)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? name,  String? ownerId,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @FlutterTimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz, @TimestampConverter()  DateTime? updatedAt,  String? updatedById,  User? updatedBy, @TimestampConverter()  DateTime? createdAt,  String? createdById,  User? createdBy,  String? subject,  List<Access>? access,  bool? enabled)?  $default,) {final _that = this;
 switch (_that) {
 case _ReportScheduler() when $default != null:
 return $default(_that.id,_that.name,_that.ownerId,_that.assetsIds,_that.outboundServicesIds,_that.templateCode,_that.templateId,_that.relativeTime,_that.sendTo,_that.execWeekdays,_that.execTime,_that.execTz,_that.updatedAt,_that.updatedById,_that.updatedBy,_that.createdAt,_that.createdById,_that.createdBy,_that.subject,_that.access,_that.enabled);case _:
@@ -3669,7 +3669,7 @@ return $default(_that.id,_that.name,_that.ownerId,_that.assetsIds,_that.outbound
 @JsonSerializable()
 
 class _ReportScheduler implements ReportScheduler {
-  const _ReportScheduler({required this.id, this.name, this.ownerId, final  List<String> assetsIds = const [], final  List<String> outboundServicesIds = const [], this.templateCode, this.templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown) this.relativeTime = RelativeChoices.unknown, final  List<String> sendTo = const [], @JsonKey(unknownEnumValue: Weekday.monday) final  List<Weekday> execWeekdays = const [], @TimeOfDayOrNullConverter() this.execTime, this.execTz = 'UTC', @TimestampConverter() this.updatedAt, this.updatedById, this.updatedBy, @TimestampConverter() this.createdAt, this.createdById, this.createdBy, this.subject, final  List<Access>? access, this.enabled}): _assetsIds = assetsIds,_outboundServicesIds = outboundServicesIds,_sendTo = sendTo,_execWeekdays = execWeekdays,_access = access;
+  const _ReportScheduler({required this.id, this.name, this.ownerId, final  List<String> assetsIds = const [], final  List<String> outboundServicesIds = const [], this.templateCode, this.templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown) this.relativeTime = RelativeChoices.unknown, final  List<String> sendTo = const [], @JsonKey(unknownEnumValue: Weekday.monday) final  List<Weekday> execWeekdays = const [], @FlutterTimeOfDayOrNullConverter() this.execTime, this.execTz = 'UTC', @TimestampConverter() this.updatedAt, this.updatedById, this.updatedBy, @TimestampConverter() this.createdAt, this.createdById, this.createdBy, this.subject, final  List<Access>? access, this.enabled}): _assetsIds = assetsIds,_outboundServicesIds = outboundServicesIds,_sendTo = sendTo,_execWeekdays = execWeekdays,_access = access;
   factory _ReportScheduler.fromJson(Map<String, dynamic> json) => _$ReportSchedulerFromJson(json);
 
 /// ID of the report scheduler.
@@ -3721,7 +3721,7 @@ class _ReportScheduler implements ReportScheduler {
 }
 
 /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
-@override@TimeOfDayOrNullConverter() final  TimeOfDay? execTime;
+@override@FlutterTimeOfDayOrNullConverter() final  TimeOfDay? execTime;
 /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
 @override@JsonKey() final  String execTz;
 /// Date of last update.
@@ -3785,7 +3785,7 @@ abstract mixin class _$ReportSchedulerCopyWith<$Res> implements $ReportScheduler
   factory _$ReportSchedulerCopyWith(_ReportScheduler value, $Res Function(_ReportScheduler) _then) = __$ReportSchedulerCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String? name, String? ownerId, List<String> assetsIds, List<String> outboundServicesIds, String? templateCode, String? templateId,@JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices relativeTime, List<String> sendTo,@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> execWeekdays,@TimeOfDayOrNullConverter() TimeOfDay? execTime, String execTz,@TimestampConverter() DateTime? updatedAt, String? updatedById, User? updatedBy,@TimestampConverter() DateTime? createdAt, String? createdById, User? createdBy, String? subject, List<Access>? access, bool? enabled
+ String id, String? name, String? ownerId, List<String> assetsIds, List<String> outboundServicesIds, String? templateCode, String? templateId,@JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices relativeTime, List<String> sendTo,@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> execWeekdays,@FlutterTimeOfDayOrNullConverter() TimeOfDay? execTime, String execTz,@TimestampConverter() DateTime? updatedAt, String? updatedById, User? updatedBy,@TimestampConverter() DateTime? createdAt, String? createdById, User? createdBy, String? subject, List<Access>? access, bool? enabled
 });
 
 
@@ -3879,8 +3879,8 @@ mixin _$ReportSchedulerInput {
  set sendTo(List<String> value);/// Days of the week when the report should be executed.
 @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> get execWeekdays;/// Days of the week when the report should be executed.
 @JsonKey(unknownEnumValue: Weekday.monday) set execWeekdays(List<Weekday> value);/// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
-@TimeOfDayOrNullConverter() TimeOfDay? get execTime;/// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
-@TimeOfDayOrNullConverter() set execTime(TimeOfDay? value);/// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
+@FlutterTimeOfDayOrNullConverter() TimeOfDay? get execTime;/// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
+@FlutterTimeOfDayOrNullConverter() set execTime(TimeOfDay? value);/// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
  String get execTz;/// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
  set execTz(String value);/// Indicates whether the report scheduler is enabled or not.
  bool get enabled;/// Indicates whether the report scheduler is enabled or not.
@@ -3912,7 +3912,7 @@ abstract mixin class $ReportSchedulerInputCopyWith<$Res>  {
   factory $ReportSchedulerInputCopyWith(ReportSchedulerInput value, $Res Function(ReportSchedulerInput) _then) = _$ReportSchedulerInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? name, List<String> assetsIds, List<String> outboundServicesIds, String? templateCode, String? templateId,@JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices relativeTime, List<String> sendTo,@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> execWeekdays,@TimeOfDayOrNullConverter() TimeOfDay? execTime, String execTz, bool enabled, String? subject
+ String? id, String? name, List<String> assetsIds, List<String> outboundServicesIds, String? templateCode, String? templateId,@JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices relativeTime, List<String> sendTo,@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> execWeekdays,@FlutterTimeOfDayOrNullConverter() TimeOfDay? execTime, String execTz, bool enabled, String? subject
 });
 
 
@@ -4029,7 +4029,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @TimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz,  bool enabled,  String? subject)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @FlutterTimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz,  bool enabled,  String? subject)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReportSchedulerInput() when $default != null:
 return $default(_that.id,_that.name,_that.assetsIds,_that.outboundServicesIds,_that.templateCode,_that.templateId,_that.relativeTime,_that.sendTo,_that.execWeekdays,_that.execTime,_that.execTz,_that.enabled,_that.subject);case _:
@@ -4050,7 +4050,7 @@ return $default(_that.id,_that.name,_that.assetsIds,_that.outboundServicesIds,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @TimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz,  bool enabled,  String? subject)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @FlutterTimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz,  bool enabled,  String? subject)  $default,) {final _that = this;
 switch (_that) {
 case _ReportSchedulerInput():
 return $default(_that.id,_that.name,_that.assetsIds,_that.outboundServicesIds,_that.templateCode,_that.templateId,_that.relativeTime,_that.sendTo,_that.execWeekdays,_that.execTime,_that.execTz,_that.enabled,_that.subject);case _:
@@ -4070,7 +4070,7 @@ return $default(_that.id,_that.name,_that.assetsIds,_that.outboundServicesIds,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @TimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz,  bool enabled,  String? subject)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  List<String> assetsIds,  List<String> outboundServicesIds,  String? templateCode,  String? templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown)  RelativeChoices relativeTime,  List<String> sendTo, @JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays, @FlutterTimeOfDayOrNullConverter()  TimeOfDay? execTime,  String execTz,  bool enabled,  String? subject)?  $default,) {final _that = this;
 switch (_that) {
 case _ReportSchedulerInput() when $default != null:
 return $default(_that.id,_that.name,_that.assetsIds,_that.outboundServicesIds,_that.templateCode,_that.templateId,_that.relativeTime,_that.sendTo,_that.execWeekdays,_that.execTime,_that.execTz,_that.enabled,_that.subject);case _:
@@ -4085,7 +4085,7 @@ return $default(_that.id,_that.name,_that.assetsIds,_that.outboundServicesIds,_t
 @JsonSerializable()
 
 class _ReportSchedulerInput extends ReportSchedulerInput {
-   _ReportSchedulerInput({this.id, this.name, this.assetsIds = const [], this.outboundServicesIds = const [], this.templateCode, this.templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown) this.relativeTime = RelativeChoices.unknown, this.sendTo = const [], @JsonKey(unknownEnumValue: Weekday.monday) this.execWeekdays = const [], @TimeOfDayOrNullConverter() this.execTime, this.execTz = 'UTC', this.enabled = true, this.subject}): super._();
+   _ReportSchedulerInput({this.id, this.name, this.assetsIds = const [], this.outboundServicesIds = const [], this.templateCode, this.templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown) this.relativeTime = RelativeChoices.unknown, this.sendTo = const [], @JsonKey(unknownEnumValue: Weekday.monday) this.execWeekdays = const [], @FlutterTimeOfDayOrNullConverter() this.execTime, this.execTz = 'UTC', this.enabled = true, this.subject}): super._();
   factory _ReportSchedulerInput.fromJson(Map<String, dynamic> json) => _$ReportSchedulerInputFromJson(json);
 
 /// ID of the report scheduler.
@@ -4107,7 +4107,7 @@ class _ReportSchedulerInput extends ReportSchedulerInput {
 /// Days of the week when the report should be executed.
 @override@JsonKey(unknownEnumValue: Weekday.monday)  List<Weekday> execWeekdays;
 /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
-@override@TimeOfDayOrNullConverter()  TimeOfDay? execTime;
+@override@FlutterTimeOfDayOrNullConverter()  TimeOfDay? execTime;
 /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
 @override@JsonKey()  String execTz;
 /// Indicates whether the report scheduler is enabled or not.
@@ -4141,7 +4141,7 @@ abstract mixin class _$ReportSchedulerInputCopyWith<$Res> implements $ReportSche
   factory _$ReportSchedulerInputCopyWith(_ReportSchedulerInput value, $Res Function(_ReportSchedulerInput) _then) = __$ReportSchedulerInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? name, List<String> assetsIds, List<String> outboundServicesIds, String? templateCode, String? templateId,@JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices relativeTime, List<String> sendTo,@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> execWeekdays,@TimeOfDayOrNullConverter() TimeOfDay? execTime, String execTz, bool enabled, String? subject
+ String? id, String? name, List<String> assetsIds, List<String> outboundServicesIds, String? templateCode, String? templateId,@JsonKey(unknownEnumValue: RelativeChoices.unknown) RelativeChoices relativeTime, List<String> sendTo,@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> execWeekdays,@FlutterTimeOfDayOrNullConverter() TimeOfDay? execTime, String execTz, bool enabled, String? subject
 });
 
 

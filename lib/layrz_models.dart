@@ -1,9 +1,10 @@
 library;
 
 import 'package:collection/collection.dart';
-import 'package:flutter/material.dart' hide Action;
+import 'package:flutter/material.dart' hide Action, TimeOfDay;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
+import 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
 
 import 'src/actions/actions.dart';
 export 'src/actions/actions.dart';
@@ -44,7 +45,6 @@ export 'src/concierge/concierge.dart';
 // import 'src/confiot/confiot.dart';
 export 'src/confiot/confiot.dart';
 
-import 'src/converters/converters.dart';
 export 'src/converters/converters.dart';
 
 import 'src/exchange/exchange.dart';
@@ -131,24 +131,6 @@ export 'src/tagon/tagon.dart';
 // import 'src/mqtt/mqtt.dart';
 export 'src/mqtt/mqtt.dart';
 
-import 'src/api/api.dart';
-export 'src/api/api.dart';
-
-// import 'src/department/department.dart';
-export 'src/department/department.dart';
-
-import 'src/employees/employees.dart';
-export 'src/employees/employees.dart';
-
-import 'src/avatar/avatar.dart';
-export 'src/avatar/avatar.dart';
-
-// import 'src/token/token.dart';
-export 'src/token/token.dart';
-
-// import 'src/permissions/permissions.dart';
-export 'src/permissions/permissions.dart';
-
 import 'src/access/access.dart';
 export 'src/access/access.dart';
 
@@ -166,6 +148,9 @@ export 'src/general/general.dart';
 
 // import 'src/flespi/flespi.dart';
 export 'src/flespi/flespi.dart';
+
+// Re-export types ported to layrz_sdk (hide TimeOfDay to avoid ambiguity with Flutter's)
+export 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
 
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
@@ -192,7 +177,6 @@ part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
 part 'src/weekdays.dart';
 part 'src/registered_logs.dart';
-part 'src/param_data.dart';
 part 'src/parameter_update.dart';
 part 'src/sensor_last_update.dart';
 part 'src/block/block.dart';

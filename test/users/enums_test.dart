@@ -150,29 +150,6 @@ void main() {
     });
   });
 
-  group('Enum JSON converter deprecation checks', () {
-    test('MfaMethodConverter still works', () {
-      // ignore: deprecated_member_use_from_same_package
-      const converter = MfaMethodConverter();
-
-      expect(converter.fromJson('TOTP'), MfaMethod.totp);
-      expect(converter.toJson(MfaMethod.hotp), 'HOTP');
-    });
-
-    test('MfaMethodOrNullConverter with null', () {
-      // ignore: deprecated_member_use_from_same_package
-      const converter = MfaMethodOrNullConverter();
-
-      expect(converter.fromJson(null), isNull);
-      expect(converter.toJson(null), isNull);
-    });
-
-    test('MfaMethodOrNullConverter with value', () {
-      // ignore: deprecated_member_use_from_same_package
-      const converter = MfaMethodOrNullConverter();
-
-      expect(converter.fromJson('PASSKEY'), MfaMethod.passkey);
-      expect(converter.toJson(MfaMethod.passkey), 'PASSKEY');
-    });
-  });
+  // Enum JSON converter tests removed - MfaMethodConverter was deprecated and removed
+  // since MfaMethod uses @JsonEnum for automatic JSON serialization
 }

@@ -309,7 +309,7 @@ abstract class LayrzChart with _$LayrzChart {
       GqlField(name: 'assets')
         ..add(GqlField(name: 'id'))
         ..add(GqlField(name: 'name'))
-        ..add(GqlField(name: 'dynamicIcon', fragment: Avatar.gqlFragment))
+        ..add(GqlField(name: 'dynamicIcon', fragment: Avatar.fragment))
         ..add(GqlField(name: 'mode')),
     )
     ..add(GqlField(name: 'assetsIds'))

@@ -1,8 +1,7 @@
 library;
+import 'package:layrz_sdk/layrz_sdk.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:layrz_models/src/api/api.dart';
-import 'package:layrz_models/src/converters/converters.dart';
 import 'package:layrz_models/src/models/models.dart';
 
 part 'zigbee.freezed.dart';

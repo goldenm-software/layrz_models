@@ -174,7 +174,7 @@ abstract class User with _$User {
     @Default(false) bool mfaEnabled,
 
     /// [mfaMethods] represents the list of MFA methods.
-    @MfaMethodConverter() @Default([]) List<MfaMethod> mfaMethods,
+    @Default([]) List<MfaMethod> mfaMethods,
 
     /// [tenvioAddress] represents the Tenvio address.
     String? tenvioAddress,
