@@ -1098,6 +1098,68 @@ Map<String, dynamic> _$AtsSkidSetaParamsToJson(_AtsSkidSetaParams instance) =>
       'spareVolume': instance.spareVolume,
     };
 
+_AtsSilInput _$AtsSilInputFromJson(Map<String, dynamic> json) => _AtsSilInput(
+  numRef: (json['numRef'] as num?)?.toInt(),
+  nomeMotorista: json['nomeMotorista'] as String?,
+  rgMotorista: json['rgMotorista'] as String?,
+  cpfMotorista: json['cpfMotorista'] as String?,
+  placaCavalo: json['placaCavalo'] as String?,
+  carretas:
+      (json['carretas'] as List<dynamic>?)
+          ?.map((e) => AtsSilCarreta.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+  corDoVeiculo: json['corDoVeiculo'] as String?,
+  possuiDnit: json['possuiDnit'] as bool?,
+  lacres: json['lacres'] as String?,
+);
+
+Map<String, dynamic> _$AtsSilInputToJson(_AtsSilInput instance) =>
+    <String, dynamic>{
+      'numRef': instance.numRef,
+      'nomeMotorista': instance.nomeMotorista,
+      'rgMotorista': instance.rgMotorista,
+      'cpfMotorista': instance.cpfMotorista,
+      'placaCavalo': instance.placaCavalo,
+      'carretas': instance.carretas.map((e) => e.toJson()).toList(),
+      'corDoVeiculo': instance.corDoVeiculo,
+      'possuiDnit': instance.possuiDnit,
+      'lacres': instance.lacres,
+    };
+
+_AtsSilCarreta _$AtsSilCarretaFromJson(Map<String, dynamic> json) =>
+    _AtsSilCarreta(
+      placaCarreta: json['placaCarreta'] as String?,
+      compartimentos:
+          (json['compartimentos'] as List<dynamic>?)
+              ?.map(
+                (e) => AtsSilCompartimento.fromJson(e as Map<String, dynamic>),
+              )
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$AtsSilCarretaToJson(_AtsSilCarreta instance) =>
+    <String, dynamic>{
+      'placaCarreta': instance.placaCarreta,
+      'compartimentos': instance.compartimentos.map((e) => e.toJson()).toList(),
+    };
+
+_AtsSilCompartimento _$AtsSilCompartimentoFromJson(Map<String, dynamic> json) =>
+    _AtsSilCompartimento(
+      numCompart: (json['numCompart'] as num?)?.toInt(),
+      volDescarga: (json['volDescarga'] as num?)?.toDouble(),
+      produto: (json['produto'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$AtsSilCompartimentoToJson(
+  _AtsSilCompartimento instance,
+) => <String, dynamic>{
+  'numCompart': instance.numCompart,
+  'volDescarga': instance.volDescarga,
+  'produto': instance.produto,
+};
+
 _AtsExitStatus _$AtsExitStatusFromJson(Map<String, dynamic> json) =>
     _AtsExitStatus(
       date: const TimestampOrNullConverter().fromJson(json['date'] as num?),

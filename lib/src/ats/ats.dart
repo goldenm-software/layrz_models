@@ -34,6 +34,7 @@ part 'src/reception/ide_information.dart';
 part 'src/reception/operation_product_information.dart';
 part 'src/reception/loading_params_form_input.dart';
 part 'src/reception/loading_params_form.dart';
+part 'src/reception/ats_sil_input.dart';
 
 // ATS Exit Models
 part 'src/exits/exit_status.dart';
