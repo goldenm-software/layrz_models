@@ -182,30 +182,37 @@ abstract class DeviceCommand with _$DeviceCommand {
                 GqlField(name: 'status'),
                 GqlField(
                   name: 'result',
-                  fields: [
-                    GqlField(name: 'id'),
-                    GqlField(name: 'name'),
-                    GqlField(name: 'source'),
-                    GqlField(name: 'isGlobal'),
+                  // [useFragment] and [extraFields] were documented but never honoured: the
+                  // selection below was hardcoded, so callers asking for the full fragment still
+                  // got a reduced command without `data`, `deviceId` or `protocolId`.
+                  fragment: useFragment ? fragment : null,
+                  fields: useFragment
+                      ? null
+                      : [
+                          GqlField(name: 'id'),
+                          GqlField(name: 'name'),
+                          GqlField(name: 'source'),
+                          GqlField(name: 'isGlobal'),
 
-                    GqlField(
-                      name: 'protocol',
-                      fields: [
-                        GqlField(name: 'id'),
-                        GqlField(name: 'name'),
-                        GqlField(name: 'color'),
-                        GqlField(name: 'isEnabled'),
-                        GqlField(name: 'operationMode'),
-                      ],
-                    ),
-                    GqlField(
-                      name: 'model',
-                      fields: [
-                        GqlField(name: 'id'),
-                        GqlField(name: 'name'),
-                      ],
-                    ),
-                  ],
+                          GqlField(
+                            name: 'protocol',
+                            fields: [
+                              GqlField(name: 'id'),
+                              GqlField(name: 'name'),
+                              GqlField(name: 'color'),
+                              GqlField(name: 'isEnabled'),
+                              GqlField(name: 'operationMode'),
+                            ],
+                          ),
+                          GqlField(
+                            name: 'model',
+                            fields: [
+                              GqlField(name: 'id'),
+                              GqlField(name: 'name'),
+                            ],
+                          ),
+                          ...?extraFields,
+                        ],
                 ),
               ],
             ),

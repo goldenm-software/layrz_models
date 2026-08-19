@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.27.3
+
+- Corrected `DeviceCommand.fetchAll()`, which documented `useFragment` and `extraFields` but honoured neither: the `result` selection was hardcoded to `id`, `name`, `source`, `isGlobal`, `protocol` and `model`, so callers asking for the full fragment never received `data`, `deviceId`, `protocolId`, `modelId`, `payload`, `modbusParameter` or `access`. Consumers could not execute a fetched command over BLE, since its definition and payload live in `data`
+
 ## 3.27.2
 
 - Removed `@Deprecated` decorator in favor of backwards compatibility and prevent issues on CI until `layrz_sdk` is completed.
