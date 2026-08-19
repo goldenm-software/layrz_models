@@ -87,6 +87,9 @@ enum AtsPurchaseOrderCategoriesEntity {
       case '5901':
       case '6901':
         return AtsPurchaseOrderCategoriesEntity.productionSaleToFreeTradeZone;
+      case '5923':
+      case '6923':
+        return AtsPurchaseOrderCategoriesEntity.remittanceSale;
       default:
         return AtsPurchaseOrderCategoriesEntity.notDefined;
     }

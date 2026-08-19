@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.28.0
+
+- Added `AtsSilInput`, `AtsSilCarreta` and `AtsSilCompartimento` — the payload collected in ATS Mobile for the SKID reception flow and forwarded to the SIL integration. Fields use camelCase (GraphQL convention); the backend maps them to SIL's snake_case keys. Every field is nullable (obligatoriness is enforced by the backend). `AtsSilInput`/`AtsSilCarreta` expose a private constructor that seeds their nested lists as growable and with one initial row, so consumers can add/remove without hitting an unmodifiable list.
+- Added CFOP codes `5923` and `6923` to `AtsPurchaseOrderCategoriesEntity.cfop`, mapping them to `AtsPurchaseOrderCategoriesEntity.remittanceSale`.
+
 ## 3.27.3
 
 - Corrected `DeviceCommand.fetchAll()`, which documented `useFragment` and `extraFields` but honoured neither: the `result` selection was hardcoded to `id`, `name`, `source`, `isGlobal`, `protocol` and `model`, so callers asking for the full fragment never received `data`, `deviceId`, `protocolId`, `modelId`, `payload`, `modbusParameter` or `access`. Consumers could not execute a fetched command over BLE, since its definition and payload live in `data`
