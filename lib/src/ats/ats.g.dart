@@ -1098,66 +1098,228 @@ Map<String, dynamic> _$AtsSkidSetaParamsToJson(_AtsSkidSetaParams instance) =>
       'spareVolume': instance.spareVolume,
     };
 
-_AtsSilInput _$AtsSilInputFromJson(Map<String, dynamic> json) => _AtsSilInput(
-  numRef: (json['numRef'] as num?)?.toInt(),
-  nomeMotorista: json['nomeMotorista'] as String?,
-  rgMotorista: json['rgMotorista'] as String?,
-  cpfMotorista: json['cpfMotorista'] as String?,
-  placaCavalo: json['placaCavalo'] as String?,
-  carretas:
-      (json['carretas'] as List<dynamic>?)
-          ?.map((e) => AtsSilCarreta.fromJson(e as Map<String, dynamic>))
+_AtsSilUnloadingOrderInput _$AtsSilUnloadingOrderInputFromJson(
+  Map<String, dynamic> json,
+) => _AtsSilUnloadingOrderInput(
+  operationId: (json['operationId'] as num?)?.toInt(),
+  driverName: json['driverName'] as String?,
+  driverRg: json['driverRg'] as String?,
+  driverCpf: json['driverCpf'] as String?,
+  truckPlate: json['truckPlate'] as String?,
+  trailers:
+      (json['trailers'] as List<dynamic>?)
+          ?.map((e) => AtsSilTrailerInput.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
-  corDoVeiculo: json['corDoVeiculo'] as String?,
-  possuiDnit: json['possuiDnit'] as bool?,
-  lacres: json['lacres'] as String?,
+  vehicleColor: json['vehicleColor'] as String?,
+  hasDnit: json['hasDnit'] as bool?,
+  seals: json['seals'] as String?,
 );
 
-Map<String, dynamic> _$AtsSilInputToJson(_AtsSilInput instance) =>
-    <String, dynamic>{
-      'numRef': instance.numRef,
-      'nomeMotorista': instance.nomeMotorista,
-      'rgMotorista': instance.rgMotorista,
-      'cpfMotorista': instance.cpfMotorista,
-      'placaCavalo': instance.placaCavalo,
-      'carretas': instance.carretas.map((e) => e.toJson()).toList(),
-      'corDoVeiculo': instance.corDoVeiculo,
-      'possuiDnit': instance.possuiDnit,
-      'lacres': instance.lacres,
-    };
+Map<String, dynamic> _$AtsSilUnloadingOrderInputToJson(
+  _AtsSilUnloadingOrderInput instance,
+) => <String, dynamic>{
+  'operationId': instance.operationId,
+  'driverName': instance.driverName,
+  'driverRg': instance.driverRg,
+  'driverCpf': instance.driverCpf,
+  'truckPlate': instance.truckPlate,
+  'trailers': instance.trailers.map((e) => e.toJson()).toList(),
+  'vehicleColor': instance.vehicleColor,
+  'hasDnit': instance.hasDnit,
+  'seals': instance.seals,
+};
 
-_AtsSilCarreta _$AtsSilCarretaFromJson(Map<String, dynamic> json) =>
-    _AtsSilCarreta(
-      placaCarreta: json['placaCarreta'] as String?,
-      compartimentos:
-          (json['compartimentos'] as List<dynamic>?)
+_AtsSilTrailerInput _$AtsSilTrailerInputFromJson(Map<String, dynamic> json) =>
+    _AtsSilTrailerInput(
+      trailerPlate: json['trailerPlate'] as String?,
+      compartments:
+          (json['compartments'] as List<dynamic>?)
               ?.map(
-                (e) => AtsSilCompartimento.fromJson(e as Map<String, dynamic>),
+                (e) =>
+                    AtsSilCompartmentInput.fromJson(e as Map<String, dynamic>),
               )
               .toList() ??
           const [],
     );
 
-Map<String, dynamic> _$AtsSilCarretaToJson(_AtsSilCarreta instance) =>
+Map<String, dynamic> _$AtsSilTrailerInputToJson(_AtsSilTrailerInput instance) =>
     <String, dynamic>{
-      'placaCarreta': instance.placaCarreta,
-      'compartimentos': instance.compartimentos.map((e) => e.toJson()).toList(),
+      'trailerPlate': instance.trailerPlate,
+      'compartments': instance.compartments.map((e) => e.toJson()).toList(),
     };
 
-_AtsSilCompartimento _$AtsSilCompartimentoFromJson(Map<String, dynamic> json) =>
-    _AtsSilCompartimento(
-      numCompart: (json['numCompart'] as num?)?.toInt(),
-      volDescarga: (json['volDescarga'] as num?)?.toDouble(),
-      produto: (json['produto'] as num?)?.toInt(),
+_AtsSilCompartmentInput _$AtsSilCompartmentInputFromJson(
+  Map<String, dynamic> json,
+) => _AtsSilCompartmentInput(
+  compartmentNumber: (json['compartmentNumber'] as num?)?.toInt(),
+  dischargeVolume: (json['dischargeVolume'] as num?)?.toInt(),
+  productCode: (json['productCode'] as num?)?.toInt(),
+);
+
+Map<String, dynamic> _$AtsSilCompartmentInputToJson(
+  _AtsSilCompartmentInput instance,
+) => <String, dynamic>{
+  'compartmentNumber': instance.compartmentNumber,
+  'dischargeVolume': instance.dischargeVolume,
+  'productCode': instance.productCode,
+};
+
+_AtsSilUnloadingOrder _$AtsSilUnloadingOrderFromJson(
+  Map<String, dynamic> json,
+) => _AtsSilUnloadingOrder(
+  id: json['id'] as String?,
+  referenceId: (json['referenceId'] as num?)?.toInt(),
+  operationId: json['operationId'] as String?,
+  operation: json['operation'] == null
+      ? null
+      : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
+  driverName: json['driverName'] as String?,
+  driverRg: json['driverRg'] as String?,
+  driverCpf: json['driverCpf'] as String?,
+  truckPlate: json['truckPlate'] as String?,
+  vehicleColor: json['vehicleColor'] as String?,
+  hasDnit: json['hasDnit'] as bool?,
+  seals: json['seals'] as String?,
+  status: $enumDecodeNullable(
+    _$AtsSilUnloadingOrderStatusEnumMap,
+    json['status'],
+    unknownValue: AtsSilUnloadingOrderStatus.pending,
+  ),
+  trailers: (json['trailers'] as List<dynamic>?)
+      ?.map((e) => AtsSilTrailer.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  createdAt: const TimestampOrNullConverter().fromJson(
+    json['createdAt'] as num?,
+  ),
+  updatedAt: const TimestampOrNullConverter().fromJson(
+    json['updatedAt'] as num?,
+  ),
+);
+
+Map<String, dynamic> _$AtsSilUnloadingOrderToJson(
+  _AtsSilUnloadingOrder instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'referenceId': instance.referenceId,
+  'operationId': instance.operationId,
+  'operation': instance.operation?.toJson(),
+  'driverName': instance.driverName,
+  'driverRg': instance.driverRg,
+  'driverCpf': instance.driverCpf,
+  'truckPlate': instance.truckPlate,
+  'vehicleColor': instance.vehicleColor,
+  'hasDnit': instance.hasDnit,
+  'seals': instance.seals,
+  'status': _$AtsSilUnloadingOrderStatusEnumMap[instance.status],
+  'trailers': instance.trailers?.map((e) => e.toJson()).toList(),
+  'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+  'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
+};
+
+const _$AtsSilUnloadingOrderStatusEnumMap = {
+  AtsSilUnloadingOrderStatus.pending: 'PENDING',
+  AtsSilUnloadingOrderStatus.sent: 'SENT',
+  AtsSilUnloadingOrderStatus.sendFailed: 'SEND_FAILED',
+  AtsSilUnloadingOrderStatus.completed: 'COMPLETED',
+};
+
+_AtsSilTrailer _$AtsSilTrailerFromJson(Map<String, dynamic> json) =>
+    _AtsSilTrailer(
+      id: json['id'] as String?,
+      orderId: json['orderId'] as String?,
+      trailerPlate: json['trailerPlate'] as String?,
+      assetId: json['assetId'] as String?,
+      asset: json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      compartments: (json['compartments'] as List<dynamic>?)
+          ?.map((e) => AtsSilCompartment.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      createdAt: const TimestampOrNullConverter().fromJson(
+        json['createdAt'] as num?,
+      ),
     );
 
-Map<String, dynamic> _$AtsSilCompartimentoToJson(
-  _AtsSilCompartimento instance,
+Map<String, dynamic> _$AtsSilTrailerToJson(_AtsSilTrailer instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'orderId': instance.orderId,
+      'trailerPlate': instance.trailerPlate,
+      'assetId': instance.assetId,
+      'asset': instance.asset?.toJson(),
+      'compartments': instance.compartments?.map((e) => e.toJson()).toList(),
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+    };
+
+_AtsSilCompartment _$AtsSilCompartmentFromJson(Map<String, dynamic> json) =>
+    _AtsSilCompartment(
+      id: json['id'] as String?,
+      trailerId: json['trailerId'] as String?,
+      compartmentNumber: (json['compartmentNumber'] as num?)?.toInt(),
+      dischargeVolume: (json['dischargeVolume'] as num?)?.toInt(),
+      productCode: (json['productCode'] as num?)?.toInt(),
+      result: json['result'] == null
+          ? null
+          : AtsSilCompartmentResult.fromJson(
+              json['result'] as Map<String, dynamic>,
+            ),
+      createdAt: const TimestampOrNullConverter().fromJson(
+        json['createdAt'] as num?,
+      ),
+    );
+
+Map<String, dynamic> _$AtsSilCompartmentToJson(_AtsSilCompartment instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'trailerId': instance.trailerId,
+      'compartmentNumber': instance.compartmentNumber,
+      'dischargeVolume': instance.dischargeVolume,
+      'productCode': instance.productCode,
+      'result': instance.result?.toJson(),
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+    };
+
+_AtsSilCompartmentResult _$AtsSilCompartmentResultFromJson(
+  Map<String, dynamic> json,
+) => _AtsSilCompartmentResult(
+  id: json['id'] as String?,
+  compartmentId: json['compartmentId'] as String?,
+  productCode: (json['productCode'] as num?)?.toInt(),
+  ambientVolume: (json['ambientVolume'] as num?)?.toDouble(),
+  volume20: (json['volume20'] as num?)?.toDouble(),
+  ambientDensity: (json['ambientDensity'] as num?)?.toDouble(),
+  density20: (json['density20'] as num?)?.toDouble(),
+  tankTemperature: (json['tankTemperature'] as num?)?.toDouble(),
+  sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
+  startedAt: const TimestampOrNullConverter().fromJson(
+    json['startedAt'] as num?,
+  ),
+  finishedAt: const TimestampOrNullConverter().fromJson(
+    json['finishedAt'] as num?,
+  ),
+  operator: json['operator'] as String?,
+  createdAt: const TimestampOrNullConverter().fromJson(
+    json['createdAt'] as num?,
+  ),
+);
+
+Map<String, dynamic> _$AtsSilCompartmentResultToJson(
+  _AtsSilCompartmentResult instance,
 ) => <String, dynamic>{
-  'numCompart': instance.numCompart,
-  'volDescarga': instance.volDescarga,
-  'produto': instance.produto,
+  'id': instance.id,
+  'compartmentId': instance.compartmentId,
+  'productCode': instance.productCode,
+  'ambientVolume': instance.ambientVolume,
+  'volume20': instance.volume20,
+  'ambientDensity': instance.ambientDensity,
+  'density20': instance.density20,
+  'tankTemperature': instance.tankTemperature,
+  'sampleTemperature': instance.sampleTemperature,
+  'startedAt': const TimestampOrNullConverter().toJson(instance.startedAt),
+  'finishedAt': const TimestampOrNullConverter().toJson(instance.finishedAt),
+  'operator': instance.operator,
+  'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
 };
 
 _AtsExitStatus _$AtsExitStatusFromJson(Map<String, dynamic> json) =>

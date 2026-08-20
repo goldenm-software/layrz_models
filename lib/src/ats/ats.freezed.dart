@@ -9813,34 +9813,38 @@ as double?,
 
 
 /// @nodoc
-mixin _$AtsSilInput {
+mixin _$AtsSilUnloadingOrderInput {
 
-/// `numRef` is the ATS operation reference number (SIL `Num_Ref`).
- int? get numRef;/// `numRef` is the ATS operation reference number (SIL `Num_Ref`).
- set numRef(int? value);/// `nomeMotorista` is the driver name, from NFE/CTE/MDF (SIL `Nome_Motorista`).
- String? get nomeMotorista;/// `nomeMotorista` is the driver name, from NFE/CTE/MDF (SIL `Nome_Motorista`).
- set nomeMotorista(String? value);/// `rgMotorista` is the driver RG document, from NFE/CTE/MDF (SIL `RG_Motorista`).
- String? get rgMotorista;/// `rgMotorista` is the driver RG document, from NFE/CTE/MDF (SIL `RG_Motorista`).
- set rgMotorista(String? value);/// `cpfMotorista` is the driver CPF document, from NFE/CTE/MDF (SIL `CPF_Motorista`).
- String? get cpfMotorista;/// `cpfMotorista` is the driver CPF document, from NFE/CTE/MDF (SIL `CPF_Motorista`).
- set cpfMotorista(String? value);/// `placaCavalo` is the truck (cavalo) plate, from NFE/CTE/MDF (SIL `Placa_Cavalo`).
- String? get placaCavalo;/// `placaCavalo` is the truck (cavalo) plate, from NFE/CTE/MDF (SIL `Placa_Cavalo`).
- set placaCavalo(String? value);/// `carretas` is the list of trailers, each with its compartments (SIL `Carretas`).
- List<AtsSilCarreta> get carretas;/// `carretas` is the list of trailers, each with its compartments (SIL `Carretas`).
- set carretas(List<AtsSilCarreta> value);/// `corDoVeiculo` is the vehicle color, optional (SIL `Cor_do_Veiculo`).
- String? get corDoVeiculo;/// `corDoVeiculo` is the vehicle color, optional (SIL `Cor_do_Veiculo`).
- set corDoVeiculo(String? value);/// `possuiDnit` indicates whether the vehicle has DNIT (SIL `Possui_DNIT`).
- bool? get possuiDnit;/// `possuiDnit` indicates whether the vehicle has DNIT (SIL `Possui_DNIT`).
- set possuiDnit(bool? value);/// `lacres` are the seals, optional; from NFE observation fields (SIL `Lacres`).
- String? get lacres;/// `lacres` are the seals, optional; from NFE observation fields (SIL `Lacres`).
- set lacres(String? value);
-/// Create a copy of AtsSilInput
+/// `operationId` is the ats.Operation id this order is for. The backend
+/// derives SIL `Num_Ref` from it (purchase year + operation id), so the
+/// client sends the operation id, NOT the reference number.
+ int? get operationId;/// `operationId` is the ats.Operation id this order is for. The backend
+/// derives SIL `Num_Ref` from it (purchase year + operation id), so the
+/// client sends the operation id, NOT the reference number.
+ set operationId(int? value);/// `driverName` is the driver name, from NFE/CTE/MDF (SIL `Nome_Motorista`).
+ String? get driverName;/// `driverName` is the driver name, from NFE/CTE/MDF (SIL `Nome_Motorista`).
+ set driverName(String? value);/// `driverRg` is the driver RG document, from NFE/CTE/MDF (SIL `RG_Motorista`).
+ String? get driverRg;/// `driverRg` is the driver RG document, from NFE/CTE/MDF (SIL `RG_Motorista`).
+ set driverRg(String? value);/// `driverCpf` is the driver CPF document, from NFE/CTE/MDF (SIL `CPF_Motorista`).
+ String? get driverCpf;/// `driverCpf` is the driver CPF document, from NFE/CTE/MDF (SIL `CPF_Motorista`).
+ set driverCpf(String? value);/// `truckPlate` is the truck (cavalo) plate, from NFE/CTE/MDF (SIL `Placa_Cavalo`).
+ String? get truckPlate;/// `truckPlate` is the truck (cavalo) plate, from NFE/CTE/MDF (SIL `Placa_Cavalo`).
+ set truckPlate(String? value);/// `trailers` is the list of trailers, each with its compartments (SIL `Carretas`).
+ List<AtsSilTrailerInput> get trailers;/// `trailers` is the list of trailers, each with its compartments (SIL `Carretas`).
+ set trailers(List<AtsSilTrailerInput> value);/// `vehicleColor` is the vehicle color, optional (SIL `Cor_do_Veiculo`).
+ String? get vehicleColor;/// `vehicleColor` is the vehicle color, optional (SIL `Cor_do_Veiculo`).
+ set vehicleColor(String? value);/// `hasDnit` indicates whether the vehicle has DNIT authorization (SIL `Possui_DNIT`).
+ bool? get hasDnit;/// `hasDnit` indicates whether the vehicle has DNIT authorization (SIL `Possui_DNIT`).
+ set hasDnit(bool? value);/// `seals` are the seals, optional; from NFE observation fields (SIL `Lacres`).
+ String? get seals;/// `seals` are the seals, optional; from NFE observation fields (SIL `Lacres`).
+ set seals(String? value);
+/// Create a copy of AtsSilUnloadingOrderInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AtsSilInputCopyWith<AtsSilInput> get copyWith => _$AtsSilInputCopyWithImpl<AtsSilInput>(this as AtsSilInput, _$identity);
+$AtsSilUnloadingOrderInputCopyWith<AtsSilUnloadingOrderInput> get copyWith => _$AtsSilUnloadingOrderInputCopyWithImpl<AtsSilUnloadingOrderInput>(this as AtsSilUnloadingOrderInput, _$identity);
 
-  /// Serializes this AtsSilInput to a JSON map.
+  /// Serializes this AtsSilUnloadingOrderInput to a JSON map.
   Map<String, dynamic> toJson();
 
 
@@ -9848,18 +9852,18 @@ $AtsSilInputCopyWith<AtsSilInput> get copyWith => _$AtsSilInputCopyWithImpl<AtsS
 
 @override
 String toString() {
-  return 'AtsSilInput(numRef: $numRef, nomeMotorista: $nomeMotorista, rgMotorista: $rgMotorista, cpfMotorista: $cpfMotorista, placaCavalo: $placaCavalo, carretas: $carretas, corDoVeiculo: $corDoVeiculo, possuiDnit: $possuiDnit, lacres: $lacres)';
+  return 'AtsSilUnloadingOrderInput(operationId: $operationId, driverName: $driverName, driverRg: $driverRg, driverCpf: $driverCpf, truckPlate: $truckPlate, trailers: $trailers, vehicleColor: $vehicleColor, hasDnit: $hasDnit, seals: $seals)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AtsSilInputCopyWith<$Res>  {
-  factory $AtsSilInputCopyWith(AtsSilInput value, $Res Function(AtsSilInput) _then) = _$AtsSilInputCopyWithImpl;
+abstract mixin class $AtsSilUnloadingOrderInputCopyWith<$Res>  {
+  factory $AtsSilUnloadingOrderInputCopyWith(AtsSilUnloadingOrderInput value, $Res Function(AtsSilUnloadingOrderInput) _then) = _$AtsSilUnloadingOrderInputCopyWithImpl;
 @useResult
 $Res call({
- int? numRef, String? nomeMotorista, String? rgMotorista, String? cpfMotorista, String? placaCavalo, List<AtsSilCarreta> carretas, String? corDoVeiculo, bool? possuiDnit, String? lacres
+ int? operationId, String? driverName, String? driverRg, String? driverCpf, String? truckPlate, List<AtsSilTrailerInput> trailers, String? vehicleColor, bool? hasDnit, String? seals
 });
 
 
@@ -9867,26 +9871,26 @@ $Res call({
 
 }
 /// @nodoc
-class _$AtsSilInputCopyWithImpl<$Res>
-    implements $AtsSilInputCopyWith<$Res> {
-  _$AtsSilInputCopyWithImpl(this._self, this._then);
+class _$AtsSilUnloadingOrderInputCopyWithImpl<$Res>
+    implements $AtsSilUnloadingOrderInputCopyWith<$Res> {
+  _$AtsSilUnloadingOrderInputCopyWithImpl(this._self, this._then);
 
-  final AtsSilInput _self;
-  final $Res Function(AtsSilInput) _then;
+  final AtsSilUnloadingOrderInput _self;
+  final $Res Function(AtsSilUnloadingOrderInput) _then;
 
-/// Create a copy of AtsSilInput
+/// Create a copy of AtsSilUnloadingOrderInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? numRef = freezed,Object? nomeMotorista = freezed,Object? rgMotorista = freezed,Object? cpfMotorista = freezed,Object? placaCavalo = freezed,Object? carretas = null,Object? corDoVeiculo = freezed,Object? possuiDnit = freezed,Object? lacres = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? operationId = freezed,Object? driverName = freezed,Object? driverRg = freezed,Object? driverCpf = freezed,Object? truckPlate = freezed,Object? trailers = null,Object? vehicleColor = freezed,Object? hasDnit = freezed,Object? seals = freezed,}) {
   return _then(_self.copyWith(
-numRef: freezed == numRef ? _self.numRef : numRef // ignore: cast_nullable_to_non_nullable
-as int?,nomeMotorista: freezed == nomeMotorista ? _self.nomeMotorista : nomeMotorista // ignore: cast_nullable_to_non_nullable
-as String?,rgMotorista: freezed == rgMotorista ? _self.rgMotorista : rgMotorista // ignore: cast_nullable_to_non_nullable
-as String?,cpfMotorista: freezed == cpfMotorista ? _self.cpfMotorista : cpfMotorista // ignore: cast_nullable_to_non_nullable
-as String?,placaCavalo: freezed == placaCavalo ? _self.placaCavalo : placaCavalo // ignore: cast_nullable_to_non_nullable
-as String?,carretas: null == carretas ? _self.carretas : carretas // ignore: cast_nullable_to_non_nullable
-as List<AtsSilCarreta>,corDoVeiculo: freezed == corDoVeiculo ? _self.corDoVeiculo : corDoVeiculo // ignore: cast_nullable_to_non_nullable
-as String?,possuiDnit: freezed == possuiDnit ? _self.possuiDnit : possuiDnit // ignore: cast_nullable_to_non_nullable
-as bool?,lacres: freezed == lacres ? _self.lacres : lacres // ignore: cast_nullable_to_non_nullable
+operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as int?,driverName: freezed == driverName ? _self.driverName : driverName // ignore: cast_nullable_to_non_nullable
+as String?,driverRg: freezed == driverRg ? _self.driverRg : driverRg // ignore: cast_nullable_to_non_nullable
+as String?,driverCpf: freezed == driverCpf ? _self.driverCpf : driverCpf // ignore: cast_nullable_to_non_nullable
+as String?,truckPlate: freezed == truckPlate ? _self.truckPlate : truckPlate // ignore: cast_nullable_to_non_nullable
+as String?,trailers: null == trailers ? _self.trailers : trailers // ignore: cast_nullable_to_non_nullable
+as List<AtsSilTrailerInput>,vehicleColor: freezed == vehicleColor ? _self.vehicleColor : vehicleColor // ignore: cast_nullable_to_non_nullable
+as String?,hasDnit: freezed == hasDnit ? _self.hasDnit : hasDnit // ignore: cast_nullable_to_non_nullable
+as bool?,seals: freezed == seals ? _self.seals : seals // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -9894,8 +9898,8 @@ as String?,
 }
 
 
-/// Adds pattern-matching-related methods to [AtsSilInput].
-extension AtsSilInputPatterns on AtsSilInput {
+/// Adds pattern-matching-related methods to [AtsSilUnloadingOrderInput].
+extension AtsSilUnloadingOrderInputPatterns on AtsSilUnloadingOrderInput {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -9908,10 +9912,10 @@ extension AtsSilInputPatterns on AtsSilInput {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilInput value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilUnloadingOrderInput value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AtsSilInput() when $default != null:
+case _AtsSilUnloadingOrderInput() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -9930,10 +9934,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilInput value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilUnloadingOrderInput value)  $default,){
 final _that = this;
 switch (_that) {
-case _AtsSilInput():
+case _AtsSilUnloadingOrderInput():
 return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
@@ -9948,10 +9952,10 @@ return $default(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilInput value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilUnloadingOrderInput value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AtsSilInput() when $default != null:
+case _AtsSilUnloadingOrderInput() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -9969,10 +9973,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? numRef,  String? nomeMotorista,  String? rgMotorista,  String? cpfMotorista,  String? placaCavalo,  List<AtsSilCarreta> carretas,  String? corDoVeiculo,  bool? possuiDnit,  String? lacres)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? operationId,  String? driverName,  String? driverRg,  String? driverCpf,  String? truckPlate,  List<AtsSilTrailerInput> trailers,  String? vehicleColor,  bool? hasDnit,  String? seals)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AtsSilInput() when $default != null:
-return $default(_that.numRef,_that.nomeMotorista,_that.rgMotorista,_that.cpfMotorista,_that.placaCavalo,_that.carretas,_that.corDoVeiculo,_that.possuiDnit,_that.lacres);case _:
+case _AtsSilUnloadingOrderInput() when $default != null:
+return $default(_that.operationId,_that.driverName,_that.driverRg,_that.driverCpf,_that.truckPlate,_that.trailers,_that.vehicleColor,_that.hasDnit,_that.seals);case _:
   return orElse();
 
 }
@@ -9990,10 +9994,10 @@ return $default(_that.numRef,_that.nomeMotorista,_that.rgMotorista,_that.cpfMoto
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? numRef,  String? nomeMotorista,  String? rgMotorista,  String? cpfMotorista,  String? placaCavalo,  List<AtsSilCarreta> carretas,  String? corDoVeiculo,  bool? possuiDnit,  String? lacres)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? operationId,  String? driverName,  String? driverRg,  String? driverCpf,  String? truckPlate,  List<AtsSilTrailerInput> trailers,  String? vehicleColor,  bool? hasDnit,  String? seals)  $default,) {final _that = this;
 switch (_that) {
-case _AtsSilInput():
-return $default(_that.numRef,_that.nomeMotorista,_that.rgMotorista,_that.cpfMotorista,_that.placaCavalo,_that.carretas,_that.corDoVeiculo,_that.possuiDnit,_that.lacres);}
+case _AtsSilUnloadingOrderInput():
+return $default(_that.operationId,_that.driverName,_that.driverRg,_that.driverCpf,_that.truckPlate,_that.trailers,_that.vehicleColor,_that.hasDnit,_that.seals);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -10007,10 +10011,10 @@ return $default(_that.numRef,_that.nomeMotorista,_that.rgMotorista,_that.cpfMoto
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? numRef,  String? nomeMotorista,  String? rgMotorista,  String? cpfMotorista,  String? placaCavalo,  List<AtsSilCarreta> carretas,  String? corDoVeiculo,  bool? possuiDnit,  String? lacres)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? operationId,  String? driverName,  String? driverRg,  String? driverCpf,  String? truckPlate,  List<AtsSilTrailerInput> trailers,  String? vehicleColor,  bool? hasDnit,  String? seals)?  $default,) {final _that = this;
 switch (_that) {
-case _AtsSilInput() when $default != null:
-return $default(_that.numRef,_that.nomeMotorista,_that.rgMotorista,_that.cpfMotorista,_that.placaCavalo,_that.carretas,_that.corDoVeiculo,_that.possuiDnit,_that.lacres);case _:
+case _AtsSilUnloadingOrderInput() when $default != null:
+return $default(_that.operationId,_that.driverName,_that.driverRg,_that.driverCpf,_that.truckPlate,_that.trailers,_that.vehicleColor,_that.hasDnit,_that.seals);case _:
   return null;
 
 }
@@ -10021,56 +10025,58 @@ return $default(_that.numRef,_that.nomeMotorista,_that.rgMotorista,_that.cpfMoto
 /// @nodoc
 @JsonSerializable()
 
-class _AtsSilInput extends AtsSilInput {
-   _AtsSilInput({this.numRef, this.nomeMotorista, this.rgMotorista, this.cpfMotorista, this.placaCavalo, this.carretas = const [], this.corDoVeiculo, this.possuiDnit, this.lacres}): super._();
-  factory _AtsSilInput.fromJson(Map<String, dynamic> json) => _$AtsSilInputFromJson(json);
+class _AtsSilUnloadingOrderInput extends AtsSilUnloadingOrderInput {
+   _AtsSilUnloadingOrderInput({this.operationId, this.driverName, this.driverRg, this.driverCpf, this.truckPlate, this.trailers = const [], this.vehicleColor, this.hasDnit, this.seals}): super._();
+  factory _AtsSilUnloadingOrderInput.fromJson(Map<String, dynamic> json) => _$AtsSilUnloadingOrderInputFromJson(json);
 
-/// `numRef` is the ATS operation reference number (SIL `Num_Ref`).
-@override  int? numRef;
-/// `nomeMotorista` is the driver name, from NFE/CTE/MDF (SIL `Nome_Motorista`).
-@override  String? nomeMotorista;
-/// `rgMotorista` is the driver RG document, from NFE/CTE/MDF (SIL `RG_Motorista`).
-@override  String? rgMotorista;
-/// `cpfMotorista` is the driver CPF document, from NFE/CTE/MDF (SIL `CPF_Motorista`).
-@override  String? cpfMotorista;
-/// `placaCavalo` is the truck (cavalo) plate, from NFE/CTE/MDF (SIL `Placa_Cavalo`).
-@override  String? placaCavalo;
-/// `carretas` is the list of trailers, each with its compartments (SIL `Carretas`).
-@override@JsonKey()  List<AtsSilCarreta> carretas;
-/// `corDoVeiculo` is the vehicle color, optional (SIL `Cor_do_Veiculo`).
-@override  String? corDoVeiculo;
-/// `possuiDnit` indicates whether the vehicle has DNIT (SIL `Possui_DNIT`).
-@override  bool? possuiDnit;
-/// `lacres` are the seals, optional; from NFE observation fields (SIL `Lacres`).
-@override  String? lacres;
+/// `operationId` is the ats.Operation id this order is for. The backend
+/// derives SIL `Num_Ref` from it (purchase year + operation id), so the
+/// client sends the operation id, NOT the reference number.
+@override  int? operationId;
+/// `driverName` is the driver name, from NFE/CTE/MDF (SIL `Nome_Motorista`).
+@override  String? driverName;
+/// `driverRg` is the driver RG document, from NFE/CTE/MDF (SIL `RG_Motorista`).
+@override  String? driverRg;
+/// `driverCpf` is the driver CPF document, from NFE/CTE/MDF (SIL `CPF_Motorista`).
+@override  String? driverCpf;
+/// `truckPlate` is the truck (cavalo) plate, from NFE/CTE/MDF (SIL `Placa_Cavalo`).
+@override  String? truckPlate;
+/// `trailers` is the list of trailers, each with its compartments (SIL `Carretas`).
+@override@JsonKey()  List<AtsSilTrailerInput> trailers;
+/// `vehicleColor` is the vehicle color, optional (SIL `Cor_do_Veiculo`).
+@override  String? vehicleColor;
+/// `hasDnit` indicates whether the vehicle has DNIT authorization (SIL `Possui_DNIT`).
+@override  bool? hasDnit;
+/// `seals` are the seals, optional; from NFE observation fields (SIL `Lacres`).
+@override  String? seals;
 
-/// Create a copy of AtsSilInput
+/// Create a copy of AtsSilUnloadingOrderInput
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AtsSilInputCopyWith<_AtsSilInput> get copyWith => __$AtsSilInputCopyWithImpl<_AtsSilInput>(this, _$identity);
+_$AtsSilUnloadingOrderInputCopyWith<_AtsSilUnloadingOrderInput> get copyWith => __$AtsSilUnloadingOrderInputCopyWithImpl<_AtsSilUnloadingOrderInput>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AtsSilInputToJson(this, );
+  return _$AtsSilUnloadingOrderInputToJson(this, );
 }
 
 
 
 @override
 String toString() {
-  return 'AtsSilInput(numRef: $numRef, nomeMotorista: $nomeMotorista, rgMotorista: $rgMotorista, cpfMotorista: $cpfMotorista, placaCavalo: $placaCavalo, carretas: $carretas, corDoVeiculo: $corDoVeiculo, possuiDnit: $possuiDnit, lacres: $lacres)';
+  return 'AtsSilUnloadingOrderInput(operationId: $operationId, driverName: $driverName, driverRg: $driverRg, driverCpf: $driverCpf, truckPlate: $truckPlate, trailers: $trailers, vehicleColor: $vehicleColor, hasDnit: $hasDnit, seals: $seals)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AtsSilInputCopyWith<$Res> implements $AtsSilInputCopyWith<$Res> {
-  factory _$AtsSilInputCopyWith(_AtsSilInput value, $Res Function(_AtsSilInput) _then) = __$AtsSilInputCopyWithImpl;
+abstract mixin class _$AtsSilUnloadingOrderInputCopyWith<$Res> implements $AtsSilUnloadingOrderInputCopyWith<$Res> {
+  factory _$AtsSilUnloadingOrderInputCopyWith(_AtsSilUnloadingOrderInput value, $Res Function(_AtsSilUnloadingOrderInput) _then) = __$AtsSilUnloadingOrderInputCopyWithImpl;
 @override @useResult
 $Res call({
- int? numRef, String? nomeMotorista, String? rgMotorista, String? cpfMotorista, String? placaCavalo, List<AtsSilCarreta> carretas, String? corDoVeiculo, bool? possuiDnit, String? lacres
+ int? operationId, String? driverName, String? driverRg, String? driverCpf, String? truckPlate, List<AtsSilTrailerInput> trailers, String? vehicleColor, bool? hasDnit, String? seals
 });
 
 
@@ -10078,26 +10084,26 @@ $Res call({
 
 }
 /// @nodoc
-class __$AtsSilInputCopyWithImpl<$Res>
-    implements _$AtsSilInputCopyWith<$Res> {
-  __$AtsSilInputCopyWithImpl(this._self, this._then);
+class __$AtsSilUnloadingOrderInputCopyWithImpl<$Res>
+    implements _$AtsSilUnloadingOrderInputCopyWith<$Res> {
+  __$AtsSilUnloadingOrderInputCopyWithImpl(this._self, this._then);
 
-  final _AtsSilInput _self;
-  final $Res Function(_AtsSilInput) _then;
+  final _AtsSilUnloadingOrderInput _self;
+  final $Res Function(_AtsSilUnloadingOrderInput) _then;
 
-/// Create a copy of AtsSilInput
+/// Create a copy of AtsSilUnloadingOrderInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? numRef = freezed,Object? nomeMotorista = freezed,Object? rgMotorista = freezed,Object? cpfMotorista = freezed,Object? placaCavalo = freezed,Object? carretas = null,Object? corDoVeiculo = freezed,Object? possuiDnit = freezed,Object? lacres = freezed,}) {
-  return _then(_AtsSilInput(
-numRef: freezed == numRef ? _self.numRef : numRef // ignore: cast_nullable_to_non_nullable
-as int?,nomeMotorista: freezed == nomeMotorista ? _self.nomeMotorista : nomeMotorista // ignore: cast_nullable_to_non_nullable
-as String?,rgMotorista: freezed == rgMotorista ? _self.rgMotorista : rgMotorista // ignore: cast_nullable_to_non_nullable
-as String?,cpfMotorista: freezed == cpfMotorista ? _self.cpfMotorista : cpfMotorista // ignore: cast_nullable_to_non_nullable
-as String?,placaCavalo: freezed == placaCavalo ? _self.placaCavalo : placaCavalo // ignore: cast_nullable_to_non_nullable
-as String?,carretas: null == carretas ? _self.carretas : carretas // ignore: cast_nullable_to_non_nullable
-as List<AtsSilCarreta>,corDoVeiculo: freezed == corDoVeiculo ? _self.corDoVeiculo : corDoVeiculo // ignore: cast_nullable_to_non_nullable
-as String?,possuiDnit: freezed == possuiDnit ? _self.possuiDnit : possuiDnit // ignore: cast_nullable_to_non_nullable
-as bool?,lacres: freezed == lacres ? _self.lacres : lacres // ignore: cast_nullable_to_non_nullable
+@override @pragma('vm:prefer-inline') $Res call({Object? operationId = freezed,Object? driverName = freezed,Object? driverRg = freezed,Object? driverCpf = freezed,Object? truckPlate = freezed,Object? trailers = null,Object? vehicleColor = freezed,Object? hasDnit = freezed,Object? seals = freezed,}) {
+  return _then(_AtsSilUnloadingOrderInput(
+operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as int?,driverName: freezed == driverName ? _self.driverName : driverName // ignore: cast_nullable_to_non_nullable
+as String?,driverRg: freezed == driverRg ? _self.driverRg : driverRg // ignore: cast_nullable_to_non_nullable
+as String?,driverCpf: freezed == driverCpf ? _self.driverCpf : driverCpf // ignore: cast_nullable_to_non_nullable
+as String?,truckPlate: freezed == truckPlate ? _self.truckPlate : truckPlate // ignore: cast_nullable_to_non_nullable
+as String?,trailers: null == trailers ? _self.trailers : trailers // ignore: cast_nullable_to_non_nullable
+as List<AtsSilTrailerInput>,vehicleColor: freezed == vehicleColor ? _self.vehicleColor : vehicleColor // ignore: cast_nullable_to_non_nullable
+as String?,hasDnit: freezed == hasDnit ? _self.hasDnit : hasDnit // ignore: cast_nullable_to_non_nullable
+as bool?,seals: freezed == seals ? _self.seals : seals // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -10107,20 +10113,20 @@ as String?,
 
 
 /// @nodoc
-mixin _$AtsSilCarreta {
+mixin _$AtsSilTrailerInput {
 
-/// `placaCarreta` is the trailer plate (SIL `Placa_Carreta`).
- String? get placaCarreta;/// `placaCarreta` is the trailer plate (SIL `Placa_Carreta`).
- set placaCarreta(String? value);/// `compartimentos` is the list of compartments in this trailer (SIL `Compartimentos`).
- List<AtsSilCompartimento> get compartimentos;/// `compartimentos` is the list of compartments in this trailer (SIL `Compartimentos`).
- set compartimentos(List<AtsSilCompartimento> value);
-/// Create a copy of AtsSilCarreta
+/// `trailerPlate` is the trailer plate (SIL `Placa_Carreta`).
+ String? get trailerPlate;/// `trailerPlate` is the trailer plate (SIL `Placa_Carreta`).
+ set trailerPlate(String? value);/// `compartments` is the list of compartments in this trailer (SIL `Compartimentos`).
+ List<AtsSilCompartmentInput> get compartments;/// `compartments` is the list of compartments in this trailer (SIL `Compartimentos`).
+ set compartments(List<AtsSilCompartmentInput> value);
+/// Create a copy of AtsSilTrailerInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AtsSilCarretaCopyWith<AtsSilCarreta> get copyWith => _$AtsSilCarretaCopyWithImpl<AtsSilCarreta>(this as AtsSilCarreta, _$identity);
+$AtsSilTrailerInputCopyWith<AtsSilTrailerInput> get copyWith => _$AtsSilTrailerInputCopyWithImpl<AtsSilTrailerInput>(this as AtsSilTrailerInput, _$identity);
 
-  /// Serializes this AtsSilCarreta to a JSON map.
+  /// Serializes this AtsSilTrailerInput to a JSON map.
   Map<String, dynamic> toJson();
 
 
@@ -10128,18 +10134,18 @@ $AtsSilCarretaCopyWith<AtsSilCarreta> get copyWith => _$AtsSilCarretaCopyWithImp
 
 @override
 String toString() {
-  return 'AtsSilCarreta(placaCarreta: $placaCarreta, compartimentos: $compartimentos)';
+  return 'AtsSilTrailerInput(trailerPlate: $trailerPlate, compartments: $compartments)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AtsSilCarretaCopyWith<$Res>  {
-  factory $AtsSilCarretaCopyWith(AtsSilCarreta value, $Res Function(AtsSilCarreta) _then) = _$AtsSilCarretaCopyWithImpl;
+abstract mixin class $AtsSilTrailerInputCopyWith<$Res>  {
+  factory $AtsSilTrailerInputCopyWith(AtsSilTrailerInput value, $Res Function(AtsSilTrailerInput) _then) = _$AtsSilTrailerInputCopyWithImpl;
 @useResult
 $Res call({
- String? placaCarreta, List<AtsSilCompartimento> compartimentos
+ String? trailerPlate, List<AtsSilCompartmentInput> compartments
 });
 
 
@@ -10147,28 +10153,28 @@ $Res call({
 
 }
 /// @nodoc
-class _$AtsSilCarretaCopyWithImpl<$Res>
-    implements $AtsSilCarretaCopyWith<$Res> {
-  _$AtsSilCarretaCopyWithImpl(this._self, this._then);
+class _$AtsSilTrailerInputCopyWithImpl<$Res>
+    implements $AtsSilTrailerInputCopyWith<$Res> {
+  _$AtsSilTrailerInputCopyWithImpl(this._self, this._then);
 
-  final AtsSilCarreta _self;
-  final $Res Function(AtsSilCarreta) _then;
+  final AtsSilTrailerInput _self;
+  final $Res Function(AtsSilTrailerInput) _then;
 
-/// Create a copy of AtsSilCarreta
+/// Create a copy of AtsSilTrailerInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? placaCarreta = freezed,Object? compartimentos = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? trailerPlate = freezed,Object? compartments = null,}) {
   return _then(_self.copyWith(
-placaCarreta: freezed == placaCarreta ? _self.placaCarreta : placaCarreta // ignore: cast_nullable_to_non_nullable
-as String?,compartimentos: null == compartimentos ? _self.compartimentos : compartimentos // ignore: cast_nullable_to_non_nullable
-as List<AtsSilCompartimento>,
+trailerPlate: freezed == trailerPlate ? _self.trailerPlate : trailerPlate // ignore: cast_nullable_to_non_nullable
+as String?,compartments: null == compartments ? _self.compartments : compartments // ignore: cast_nullable_to_non_nullable
+as List<AtsSilCompartmentInput>,
   ));
 }
 
 }
 
 
-/// Adds pattern-matching-related methods to [AtsSilCarreta].
-extension AtsSilCarretaPatterns on AtsSilCarreta {
+/// Adds pattern-matching-related methods to [AtsSilTrailerInput].
+extension AtsSilTrailerInputPatterns on AtsSilTrailerInput {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -10181,10 +10187,10 @@ extension AtsSilCarretaPatterns on AtsSilCarreta {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilCarreta value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilTrailerInput value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AtsSilCarreta() when $default != null:
+case _AtsSilTrailerInput() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -10203,10 +10209,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilCarreta value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilTrailerInput value)  $default,){
 final _that = this;
 switch (_that) {
-case _AtsSilCarreta():
+case _AtsSilTrailerInput():
 return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
@@ -10221,10 +10227,10 @@ return $default(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilCarreta value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilTrailerInput value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AtsSilCarreta() when $default != null:
+case _AtsSilTrailerInput() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -10242,10 +10248,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? placaCarreta,  List<AtsSilCompartimento> compartimentos)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? trailerPlate,  List<AtsSilCompartmentInput> compartments)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AtsSilCarreta() when $default != null:
-return $default(_that.placaCarreta,_that.compartimentos);case _:
+case _AtsSilTrailerInput() when $default != null:
+return $default(_that.trailerPlate,_that.compartments);case _:
   return orElse();
 
 }
@@ -10263,10 +10269,10 @@ return $default(_that.placaCarreta,_that.compartimentos);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? placaCarreta,  List<AtsSilCompartimento> compartimentos)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? trailerPlate,  List<AtsSilCompartmentInput> compartments)  $default,) {final _that = this;
 switch (_that) {
-case _AtsSilCarreta():
-return $default(_that.placaCarreta,_that.compartimentos);}
+case _AtsSilTrailerInput():
+return $default(_that.trailerPlate,_that.compartments);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -10280,10 +10286,10 @@ return $default(_that.placaCarreta,_that.compartimentos);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? placaCarreta,  List<AtsSilCompartimento> compartimentos)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? trailerPlate,  List<AtsSilCompartmentInput> compartments)?  $default,) {final _that = this;
 switch (_that) {
-case _AtsSilCarreta() when $default != null:
-return $default(_that.placaCarreta,_that.compartimentos);case _:
+case _AtsSilTrailerInput() when $default != null:
+return $default(_that.trailerPlate,_that.compartments);case _:
   return null;
 
 }
@@ -10294,42 +10300,42 @@ return $default(_that.placaCarreta,_that.compartimentos);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AtsSilCarreta extends AtsSilCarreta {
-   _AtsSilCarreta({this.placaCarreta, this.compartimentos = const []}): super._();
-  factory _AtsSilCarreta.fromJson(Map<String, dynamic> json) => _$AtsSilCarretaFromJson(json);
+class _AtsSilTrailerInput extends AtsSilTrailerInput {
+   _AtsSilTrailerInput({this.trailerPlate, this.compartments = const []}): super._();
+  factory _AtsSilTrailerInput.fromJson(Map<String, dynamic> json) => _$AtsSilTrailerInputFromJson(json);
 
-/// `placaCarreta` is the trailer plate (SIL `Placa_Carreta`).
-@override  String? placaCarreta;
-/// `compartimentos` is the list of compartments in this trailer (SIL `Compartimentos`).
-@override@JsonKey()  List<AtsSilCompartimento> compartimentos;
+/// `trailerPlate` is the trailer plate (SIL `Placa_Carreta`).
+@override  String? trailerPlate;
+/// `compartments` is the list of compartments in this trailer (SIL `Compartimentos`).
+@override@JsonKey()  List<AtsSilCompartmentInput> compartments;
 
-/// Create a copy of AtsSilCarreta
+/// Create a copy of AtsSilTrailerInput
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AtsSilCarretaCopyWith<_AtsSilCarreta> get copyWith => __$AtsSilCarretaCopyWithImpl<_AtsSilCarreta>(this, _$identity);
+_$AtsSilTrailerInputCopyWith<_AtsSilTrailerInput> get copyWith => __$AtsSilTrailerInputCopyWithImpl<_AtsSilTrailerInput>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AtsSilCarretaToJson(this, );
+  return _$AtsSilTrailerInputToJson(this, );
 }
 
 
 
 @override
 String toString() {
-  return 'AtsSilCarreta(placaCarreta: $placaCarreta, compartimentos: $compartimentos)';
+  return 'AtsSilTrailerInput(trailerPlate: $trailerPlate, compartments: $compartments)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AtsSilCarretaCopyWith<$Res> implements $AtsSilCarretaCopyWith<$Res> {
-  factory _$AtsSilCarretaCopyWith(_AtsSilCarreta value, $Res Function(_AtsSilCarreta) _then) = __$AtsSilCarretaCopyWithImpl;
+abstract mixin class _$AtsSilTrailerInputCopyWith<$Res> implements $AtsSilTrailerInputCopyWith<$Res> {
+  factory _$AtsSilTrailerInputCopyWith(_AtsSilTrailerInput value, $Res Function(_AtsSilTrailerInput) _then) = __$AtsSilTrailerInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? placaCarreta, List<AtsSilCompartimento> compartimentos
+ String? trailerPlate, List<AtsSilCompartmentInput> compartments
 });
 
 
@@ -10337,20 +10343,20 @@ $Res call({
 
 }
 /// @nodoc
-class __$AtsSilCarretaCopyWithImpl<$Res>
-    implements _$AtsSilCarretaCopyWith<$Res> {
-  __$AtsSilCarretaCopyWithImpl(this._self, this._then);
+class __$AtsSilTrailerInputCopyWithImpl<$Res>
+    implements _$AtsSilTrailerInputCopyWith<$Res> {
+  __$AtsSilTrailerInputCopyWithImpl(this._self, this._then);
 
-  final _AtsSilCarreta _self;
-  final $Res Function(_AtsSilCarreta) _then;
+  final _AtsSilTrailerInput _self;
+  final $Res Function(_AtsSilTrailerInput) _then;
 
-/// Create a copy of AtsSilCarreta
+/// Create a copy of AtsSilTrailerInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? placaCarreta = freezed,Object? compartimentos = null,}) {
-  return _then(_AtsSilCarreta(
-placaCarreta: freezed == placaCarreta ? _self.placaCarreta : placaCarreta // ignore: cast_nullable_to_non_nullable
-as String?,compartimentos: null == compartimentos ? _self.compartimentos : compartimentos // ignore: cast_nullable_to_non_nullable
-as List<AtsSilCompartimento>,
+@override @pragma('vm:prefer-inline') $Res call({Object? trailerPlate = freezed,Object? compartments = null,}) {
+  return _then(_AtsSilTrailerInput(
+trailerPlate: freezed == trailerPlate ? _self.trailerPlate : trailerPlate // ignore: cast_nullable_to_non_nullable
+as String?,compartments: null == compartments ? _self.compartments : compartments // ignore: cast_nullable_to_non_nullable
+as List<AtsSilCompartmentInput>,
   ));
 }
 
@@ -10359,22 +10365,24 @@ as List<AtsSilCompartimento>,
 
 
 /// @nodoc
-mixin _$AtsSilCompartimento {
+mixin _$AtsSilCompartmentInput {
 
-/// `numCompart` is the compartment number (SIL `Num_Compart`).
- int? get numCompart;/// `numCompart` is the compartment number (SIL `Num_Compart`).
- set numCompart(int? value);/// `volDescarga` is the discharge volume (SIL `Vol_Descarga`).
- double? get volDescarga;/// `volDescarga` is the discharge volume (SIL `Vol_Descarga`).
- set volDescarga(double? value);/// `produto` is the product identifier (SIL `Produto`).
- int? get produto;/// `produto` is the product identifier (SIL `Produto`).
- set produto(int? value);
-/// Create a copy of AtsSilCompartimento
+/// `compartmentNumber` is the compartment number (SIL `Num_Compart`).
+ int? get compartmentNumber;/// `compartmentNumber` is the compartment number (SIL `Num_Compart`).
+ set compartmentNumber(int? value);/// `dischargeVolume` is the discharge volume (SIL `Vol_Descarga`). The
+/// backend requires an integer between 10 and 9999999.
+ int? get dischargeVolume;/// `dischargeVolume` is the discharge volume (SIL `Vol_Descarga`). The
+/// backend requires an integer between 10 and 9999999.
+ set dischargeVolume(int? value);/// `productCode` is SIL's own numeric product code (SIL `Produto`).
+ int? get productCode;/// `productCode` is SIL's own numeric product code (SIL `Produto`).
+ set productCode(int? value);
+/// Create a copy of AtsSilCompartmentInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AtsSilCompartimentoCopyWith<AtsSilCompartimento> get copyWith => _$AtsSilCompartimentoCopyWithImpl<AtsSilCompartimento>(this as AtsSilCompartimento, _$identity);
+$AtsSilCompartmentInputCopyWith<AtsSilCompartmentInput> get copyWith => _$AtsSilCompartmentInputCopyWithImpl<AtsSilCompartmentInput>(this as AtsSilCompartmentInput, _$identity);
 
-  /// Serializes this AtsSilCompartimento to a JSON map.
+  /// Serializes this AtsSilCompartmentInput to a JSON map.
   Map<String, dynamic> toJson();
 
 
@@ -10382,18 +10390,18 @@ $AtsSilCompartimentoCopyWith<AtsSilCompartimento> get copyWith => _$AtsSilCompar
 
 @override
 String toString() {
-  return 'AtsSilCompartimento(numCompart: $numCompart, volDescarga: $volDescarga, produto: $produto)';
+  return 'AtsSilCompartmentInput(compartmentNumber: $compartmentNumber, dischargeVolume: $dischargeVolume, productCode: $productCode)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AtsSilCompartimentoCopyWith<$Res>  {
-  factory $AtsSilCompartimentoCopyWith(AtsSilCompartimento value, $Res Function(AtsSilCompartimento) _then) = _$AtsSilCompartimentoCopyWithImpl;
+abstract mixin class $AtsSilCompartmentInputCopyWith<$Res>  {
+  factory $AtsSilCompartmentInputCopyWith(AtsSilCompartmentInput value, $Res Function(AtsSilCompartmentInput) _then) = _$AtsSilCompartmentInputCopyWithImpl;
 @useResult
 $Res call({
- int? numCompart, double? volDescarga, int? produto
+ int? compartmentNumber, int? dischargeVolume, int? productCode
 });
 
 
@@ -10401,20 +10409,20 @@ $Res call({
 
 }
 /// @nodoc
-class _$AtsSilCompartimentoCopyWithImpl<$Res>
-    implements $AtsSilCompartimentoCopyWith<$Res> {
-  _$AtsSilCompartimentoCopyWithImpl(this._self, this._then);
+class _$AtsSilCompartmentInputCopyWithImpl<$Res>
+    implements $AtsSilCompartmentInputCopyWith<$Res> {
+  _$AtsSilCompartmentInputCopyWithImpl(this._self, this._then);
 
-  final AtsSilCompartimento _self;
-  final $Res Function(AtsSilCompartimento) _then;
+  final AtsSilCompartmentInput _self;
+  final $Res Function(AtsSilCompartmentInput) _then;
 
-/// Create a copy of AtsSilCompartimento
+/// Create a copy of AtsSilCompartmentInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? numCompart = freezed,Object? volDescarga = freezed,Object? produto = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? compartmentNumber = freezed,Object? dischargeVolume = freezed,Object? productCode = freezed,}) {
   return _then(_self.copyWith(
-numCompart: freezed == numCompart ? _self.numCompart : numCompart // ignore: cast_nullable_to_non_nullable
-as int?,volDescarga: freezed == volDescarga ? _self.volDescarga : volDescarga // ignore: cast_nullable_to_non_nullable
-as double?,produto: freezed == produto ? _self.produto : produto // ignore: cast_nullable_to_non_nullable
+compartmentNumber: freezed == compartmentNumber ? _self.compartmentNumber : compartmentNumber // ignore: cast_nullable_to_non_nullable
+as int?,dischargeVolume: freezed == dischargeVolume ? _self.dischargeVolume : dischargeVolume // ignore: cast_nullable_to_non_nullable
+as int?,productCode: freezed == productCode ? _self.productCode : productCode // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }
@@ -10422,8 +10430,8 @@ as int?,
 }
 
 
-/// Adds pattern-matching-related methods to [AtsSilCompartimento].
-extension AtsSilCompartimentoPatterns on AtsSilCompartimento {
+/// Adds pattern-matching-related methods to [AtsSilCompartmentInput].
+extension AtsSilCompartmentInputPatterns on AtsSilCompartmentInput {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -10436,10 +10444,10 @@ extension AtsSilCompartimentoPatterns on AtsSilCompartimento {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilCompartimento value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilCompartmentInput value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AtsSilCompartimento() when $default != null:
+case _AtsSilCompartmentInput() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -10458,10 +10466,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilCompartimento value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilCompartmentInput value)  $default,){
 final _that = this;
 switch (_that) {
-case _AtsSilCompartimento():
+case _AtsSilCompartmentInput():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -10479,10 +10487,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilCompartimento value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilCompartmentInput value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AtsSilCompartimento() when $default != null:
+case _AtsSilCompartmentInput() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -10500,10 +10508,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? numCompart,  double? volDescarga,  int? produto)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? compartmentNumber,  int? dischargeVolume,  int? productCode)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AtsSilCompartimento() when $default != null:
-return $default(_that.numCompart,_that.volDescarga,_that.produto);case _:
+case _AtsSilCompartmentInput() when $default != null:
+return $default(_that.compartmentNumber,_that.dischargeVolume,_that.productCode);case _:
   return orElse();
 
 }
@@ -10521,10 +10529,10 @@ return $default(_that.numCompart,_that.volDescarga,_that.produto);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? numCompart,  double? volDescarga,  int? produto)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? compartmentNumber,  int? dischargeVolume,  int? productCode)  $default,) {final _that = this;
 switch (_that) {
-case _AtsSilCompartimento():
-return $default(_that.numCompart,_that.volDescarga,_that.produto);case _:
+case _AtsSilCompartmentInput():
+return $default(_that.compartmentNumber,_that.dischargeVolume,_that.productCode);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -10541,10 +10549,10 @@ return $default(_that.numCompart,_that.volDescarga,_that.produto);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? numCompart,  double? volDescarga,  int? produto)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? compartmentNumber,  int? dischargeVolume,  int? productCode)?  $default,) {final _that = this;
 switch (_that) {
-case _AtsSilCompartimento() when $default != null:
-return $default(_that.numCompart,_that.volDescarga,_that.produto);case _:
+case _AtsSilCompartmentInput() when $default != null:
+return $default(_that.compartmentNumber,_that.dischargeVolume,_that.productCode);case _:
   return null;
 
 }
@@ -10555,44 +10563,45 @@ return $default(_that.numCompart,_that.volDescarga,_that.produto);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AtsSilCompartimento implements AtsSilCompartimento {
-   _AtsSilCompartimento({this.numCompart, this.volDescarga, this.produto});
-  factory _AtsSilCompartimento.fromJson(Map<String, dynamic> json) => _$AtsSilCompartimentoFromJson(json);
+class _AtsSilCompartmentInput implements AtsSilCompartmentInput {
+   _AtsSilCompartmentInput({this.compartmentNumber, this.dischargeVolume, this.productCode});
+  factory _AtsSilCompartmentInput.fromJson(Map<String, dynamic> json) => _$AtsSilCompartmentInputFromJson(json);
 
-/// `numCompart` is the compartment number (SIL `Num_Compart`).
-@override  int? numCompart;
-/// `volDescarga` is the discharge volume (SIL `Vol_Descarga`).
-@override  double? volDescarga;
-/// `produto` is the product identifier (SIL `Produto`).
-@override  int? produto;
+/// `compartmentNumber` is the compartment number (SIL `Num_Compart`).
+@override  int? compartmentNumber;
+/// `dischargeVolume` is the discharge volume (SIL `Vol_Descarga`). The
+/// backend requires an integer between 10 and 9999999.
+@override  int? dischargeVolume;
+/// `productCode` is SIL's own numeric product code (SIL `Produto`).
+@override  int? productCode;
 
-/// Create a copy of AtsSilCompartimento
+/// Create a copy of AtsSilCompartmentInput
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AtsSilCompartimentoCopyWith<_AtsSilCompartimento> get copyWith => __$AtsSilCompartimentoCopyWithImpl<_AtsSilCompartimento>(this, _$identity);
+_$AtsSilCompartmentInputCopyWith<_AtsSilCompartmentInput> get copyWith => __$AtsSilCompartmentInputCopyWithImpl<_AtsSilCompartmentInput>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AtsSilCompartimentoToJson(this, );
+  return _$AtsSilCompartmentInputToJson(this, );
 }
 
 
 
 @override
 String toString() {
-  return 'AtsSilCompartimento(numCompart: $numCompart, volDescarga: $volDescarga, produto: $produto)';
+  return 'AtsSilCompartmentInput(compartmentNumber: $compartmentNumber, dischargeVolume: $dischargeVolume, productCode: $productCode)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AtsSilCompartimentoCopyWith<$Res> implements $AtsSilCompartimentoCopyWith<$Res> {
-  factory _$AtsSilCompartimentoCopyWith(_AtsSilCompartimento value, $Res Function(_AtsSilCompartimento) _then) = __$AtsSilCompartimentoCopyWithImpl;
+abstract mixin class _$AtsSilCompartmentInputCopyWith<$Res> implements $AtsSilCompartmentInputCopyWith<$Res> {
+  factory _$AtsSilCompartmentInputCopyWith(_AtsSilCompartmentInput value, $Res Function(_AtsSilCompartmentInput) _then) = __$AtsSilCompartmentInputCopyWithImpl;
 @override @useResult
 $Res call({
- int? numCompart, double? volDescarga, int? produto
+ int? compartmentNumber, int? dischargeVolume, int? productCode
 });
 
 
@@ -10600,21 +10609,1349 @@ $Res call({
 
 }
 /// @nodoc
-class __$AtsSilCompartimentoCopyWithImpl<$Res>
-    implements _$AtsSilCompartimentoCopyWith<$Res> {
-  __$AtsSilCompartimentoCopyWithImpl(this._self, this._then);
+class __$AtsSilCompartmentInputCopyWithImpl<$Res>
+    implements _$AtsSilCompartmentInputCopyWith<$Res> {
+  __$AtsSilCompartmentInputCopyWithImpl(this._self, this._then);
 
-  final _AtsSilCompartimento _self;
-  final $Res Function(_AtsSilCompartimento) _then;
+  final _AtsSilCompartmentInput _self;
+  final $Res Function(_AtsSilCompartmentInput) _then;
 
-/// Create a copy of AtsSilCompartimento
+/// Create a copy of AtsSilCompartmentInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? numCompart = freezed,Object? volDescarga = freezed,Object? produto = freezed,}) {
-  return _then(_AtsSilCompartimento(
-numCompart: freezed == numCompart ? _self.numCompart : numCompart // ignore: cast_nullable_to_non_nullable
-as int?,volDescarga: freezed == volDescarga ? _self.volDescarga : volDescarga // ignore: cast_nullable_to_non_nullable
-as double?,produto: freezed == produto ? _self.produto : produto // ignore: cast_nullable_to_non_nullable
+@override @pragma('vm:prefer-inline') $Res call({Object? compartmentNumber = freezed,Object? dischargeVolume = freezed,Object? productCode = freezed,}) {
+  return _then(_AtsSilCompartmentInput(
+compartmentNumber: freezed == compartmentNumber ? _self.compartmentNumber : compartmentNumber // ignore: cast_nullable_to_non_nullable
+as int?,dischargeVolume: freezed == dischargeVolume ? _self.dischargeVolume : dischargeVolume // ignore: cast_nullable_to_non_nullable
+as int?,productCode: freezed == productCode ? _self.productCode : productCode // ignore: cast_nullable_to_non_nullable
 as int?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$AtsSilUnloadingOrder {
+
+/// Local order id.
+ String? get id;/// SIL order reference number (`Num_Ref`), derived as purchase year +
+/// operation id.
+ int? get referenceId;/// Id of the [AtsOperation] this order is for.
+ String? get operationId;/// The [AtsOperation] this order is for. Reuses the existing ATS operation
+/// entity — it is not a SIL-specific model.
+ AtsOperation? get operation;/// Driver name (SIL `Nome_Motorista`).
+ String? get driverName;/// Driver RG document number (SIL `RG_Motorista`).
+ String? get driverRg;/// Driver CPF document number (SIL `CPF_Motorista`).
+ String? get driverCpf;/// Truck plate (SIL `Placa_Cavalo`).
+ String? get truckPlate;/// Vehicle color (SIL `Cor_do_Veiculo`).
+ String? get vehicleColor;/// Whether the vehicle has DNIT authorization (SIL `Possui_DNIT`).
+ bool? get hasDnit;/// Seals identifiers (SIL `Lacres`).
+ String? get seals;/// Sync status against SIL.
+@JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending) AtsSilUnloadingOrderStatus? get status;/// Trailers in the order (SIL `Carretas`), each with its compartments.
+ List<AtsSilTrailer>? get trailers;@TimestampOrNullConverter() DateTime? get createdAt;@TimestampOrNullConverter() DateTime? get updatedAt;
+/// Create a copy of AtsSilUnloadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsSilUnloadingOrderCopyWith<AtsSilUnloadingOrder> get copyWith => _$AtsSilUnloadingOrderCopyWithImpl<AtsSilUnloadingOrder>(this as AtsSilUnloadingOrder, _$identity);
+
+  /// Serializes this AtsSilUnloadingOrder to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsSilUnloadingOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.referenceId, referenceId) || other.referenceId == referenceId)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.driverName, driverName) || other.driverName == driverName)&&(identical(other.driverRg, driverRg) || other.driverRg == driverRg)&&(identical(other.driverCpf, driverCpf) || other.driverCpf == driverCpf)&&(identical(other.truckPlate, truckPlate) || other.truckPlate == truckPlate)&&(identical(other.vehicleColor, vehicleColor) || other.vehicleColor == vehicleColor)&&(identical(other.hasDnit, hasDnit) || other.hasDnit == hasDnit)&&(identical(other.seals, seals) || other.seals == seals)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.trailers, trailers)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,referenceId,operationId,operation,driverName,driverRg,driverCpf,truckPlate,vehicleColor,hasDnit,seals,status,const DeepCollectionEquality().hash(trailers),createdAt,updatedAt);
+
+@override
+String toString() {
+  return 'AtsSilUnloadingOrder(id: $id, referenceId: $referenceId, operationId: $operationId, operation: $operation, driverName: $driverName, driverRg: $driverRg, driverCpf: $driverCpf, truckPlate: $truckPlate, vehicleColor: $vehicleColor, hasDnit: $hasDnit, seals: $seals, status: $status, trailers: $trailers, createdAt: $createdAt, updatedAt: $updatedAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsSilUnloadingOrderCopyWith<$Res>  {
+  factory $AtsSilUnloadingOrderCopyWith(AtsSilUnloadingOrder value, $Res Function(AtsSilUnloadingOrder) _then) = _$AtsSilUnloadingOrderCopyWithImpl;
+@useResult
+$Res call({
+ String? id, int? referenceId, String? operationId, AtsOperation? operation, String? driverName, String? driverRg, String? driverCpf, String? truckPlate, String? vehicleColor, bool? hasDnit, String? seals,@JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending) AtsSilUnloadingOrderStatus? status, List<AtsSilTrailer>? trailers,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? updatedAt
+});
+
+
+$AtsOperationCopyWith<$Res>? get operation;
+
+}
+/// @nodoc
+class _$AtsSilUnloadingOrderCopyWithImpl<$Res>
+    implements $AtsSilUnloadingOrderCopyWith<$Res> {
+  _$AtsSilUnloadingOrderCopyWithImpl(this._self, this._then);
+
+  final AtsSilUnloadingOrder _self;
+  final $Res Function(AtsSilUnloadingOrder) _then;
+
+/// Create a copy of AtsSilUnloadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? referenceId = freezed,Object? operationId = freezed,Object? operation = freezed,Object? driverName = freezed,Object? driverRg = freezed,Object? driverCpf = freezed,Object? truckPlate = freezed,Object? vehicleColor = freezed,Object? hasDnit = freezed,Object? seals = freezed,Object? status = freezed,Object? trailers = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,referenceId: freezed == referenceId ? _self.referenceId : referenceId // ignore: cast_nullable_to_non_nullable
+as int?,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as String?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,driverName: freezed == driverName ? _self.driverName : driverName // ignore: cast_nullable_to_non_nullable
+as String?,driverRg: freezed == driverRg ? _self.driverRg : driverRg // ignore: cast_nullable_to_non_nullable
+as String?,driverCpf: freezed == driverCpf ? _self.driverCpf : driverCpf // ignore: cast_nullable_to_non_nullable
+as String?,truckPlate: freezed == truckPlate ? _self.truckPlate : truckPlate // ignore: cast_nullable_to_non_nullable
+as String?,vehicleColor: freezed == vehicleColor ? _self.vehicleColor : vehicleColor // ignore: cast_nullable_to_non_nullable
+as String?,hasDnit: freezed == hasDnit ? _self.hasDnit : hasDnit // ignore: cast_nullable_to_non_nullable
+as bool?,seals: freezed == seals ? _self.seals : seals // ignore: cast_nullable_to_non_nullable
+as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as AtsSilUnloadingOrderStatus?,trailers: freezed == trailers ? _self.trailers : trailers // ignore: cast_nullable_to_non_nullable
+as List<AtsSilTrailer>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+/// Create a copy of AtsSilUnloadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+    return null;
+  }
+
+  return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+    return _then(_self.copyWith(operation: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AtsSilUnloadingOrder].
+extension AtsSilUnloadingOrderPatterns on AtsSilUnloadingOrder {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilUnloadingOrder value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsSilUnloadingOrder() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilUnloadingOrder value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSilUnloadingOrder():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilUnloadingOrder value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSilUnloadingOrder() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  int? referenceId,  String? operationId,  AtsOperation? operation,  String? driverName,  String? driverRg,  String? driverCpf,  String? truckPlate,  String? vehicleColor,  bool? hasDnit,  String? seals, @JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending)  AtsSilUnloadingOrderStatus? status,  List<AtsSilTrailer>? trailers, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsSilUnloadingOrder() when $default != null:
+return $default(_that.id,_that.referenceId,_that.operationId,_that.operation,_that.driverName,_that.driverRg,_that.driverCpf,_that.truckPlate,_that.vehicleColor,_that.hasDnit,_that.seals,_that.status,_that.trailers,_that.createdAt,_that.updatedAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  int? referenceId,  String? operationId,  AtsOperation? operation,  String? driverName,  String? driverRg,  String? driverCpf,  String? truckPlate,  String? vehicleColor,  bool? hasDnit,  String? seals, @JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending)  AtsSilUnloadingOrderStatus? status,  List<AtsSilTrailer>? trailers, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)  $default,) {final _that = this;
+switch (_that) {
+case _AtsSilUnloadingOrder():
+return $default(_that.id,_that.referenceId,_that.operationId,_that.operation,_that.driverName,_that.driverRg,_that.driverCpf,_that.truckPlate,_that.vehicleColor,_that.hasDnit,_that.seals,_that.status,_that.trailers,_that.createdAt,_that.updatedAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  int? referenceId,  String? operationId,  AtsOperation? operation,  String? driverName,  String? driverRg,  String? driverCpf,  String? truckPlate,  String? vehicleColor,  bool? hasDnit,  String? seals, @JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending)  AtsSilUnloadingOrderStatus? status,  List<AtsSilTrailer>? trailers, @TimestampOrNullConverter()  DateTime? createdAt, @TimestampOrNullConverter()  DateTime? updatedAt)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsSilUnloadingOrder() when $default != null:
+return $default(_that.id,_that.referenceId,_that.operationId,_that.operation,_that.driverName,_that.driverRg,_that.driverCpf,_that.truckPlate,_that.vehicleColor,_that.hasDnit,_that.seals,_that.status,_that.trailers,_that.createdAt,_that.updatedAt);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsSilUnloadingOrder implements AtsSilUnloadingOrder {
+  const _AtsSilUnloadingOrder({this.id, this.referenceId, this.operationId, this.operation, this.driverName, this.driverRg, this.driverCpf, this.truckPlate, this.vehicleColor, this.hasDnit, this.seals, @JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending) this.status, final  List<AtsSilTrailer>? trailers, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt}): _trailers = trailers;
+  factory _AtsSilUnloadingOrder.fromJson(Map<String, dynamic> json) => _$AtsSilUnloadingOrderFromJson(json);
+
+/// Local order id.
+@override final  String? id;
+/// SIL order reference number (`Num_Ref`), derived as purchase year +
+/// operation id.
+@override final  int? referenceId;
+/// Id of the [AtsOperation] this order is for.
+@override final  String? operationId;
+/// The [AtsOperation] this order is for. Reuses the existing ATS operation
+/// entity — it is not a SIL-specific model.
+@override final  AtsOperation? operation;
+/// Driver name (SIL `Nome_Motorista`).
+@override final  String? driverName;
+/// Driver RG document number (SIL `RG_Motorista`).
+@override final  String? driverRg;
+/// Driver CPF document number (SIL `CPF_Motorista`).
+@override final  String? driverCpf;
+/// Truck plate (SIL `Placa_Cavalo`).
+@override final  String? truckPlate;
+/// Vehicle color (SIL `Cor_do_Veiculo`).
+@override final  String? vehicleColor;
+/// Whether the vehicle has DNIT authorization (SIL `Possui_DNIT`).
+@override final  bool? hasDnit;
+/// Seals identifiers (SIL `Lacres`).
+@override final  String? seals;
+/// Sync status against SIL.
+@override@JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending) final  AtsSilUnloadingOrderStatus? status;
+/// Trailers in the order (SIL `Carretas`), each with its compartments.
+ final  List<AtsSilTrailer>? _trailers;
+/// Trailers in the order (SIL `Carretas`), each with its compartments.
+@override List<AtsSilTrailer>? get trailers {
+  final value = _trailers;
+  if (value == null) return null;
+  if (_trailers is EqualUnmodifiableListView) return _trailers;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+@override@TimestampOrNullConverter() final  DateTime? createdAt;
+@override@TimestampOrNullConverter() final  DateTime? updatedAt;
+
+/// Create a copy of AtsSilUnloadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsSilUnloadingOrderCopyWith<_AtsSilUnloadingOrder> get copyWith => __$AtsSilUnloadingOrderCopyWithImpl<_AtsSilUnloadingOrder>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsSilUnloadingOrderToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSilUnloadingOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.referenceId, referenceId) || other.referenceId == referenceId)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.driverName, driverName) || other.driverName == driverName)&&(identical(other.driverRg, driverRg) || other.driverRg == driverRg)&&(identical(other.driverCpf, driverCpf) || other.driverCpf == driverCpf)&&(identical(other.truckPlate, truckPlate) || other.truckPlate == truckPlate)&&(identical(other.vehicleColor, vehicleColor) || other.vehicleColor == vehicleColor)&&(identical(other.hasDnit, hasDnit) || other.hasDnit == hasDnit)&&(identical(other.seals, seals) || other.seals == seals)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._trailers, _trailers)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,referenceId,operationId,operation,driverName,driverRg,driverCpf,truckPlate,vehicleColor,hasDnit,seals,status,const DeepCollectionEquality().hash(_trailers),createdAt,updatedAt);
+
+@override
+String toString() {
+  return 'AtsSilUnloadingOrder(id: $id, referenceId: $referenceId, operationId: $operationId, operation: $operation, driverName: $driverName, driverRg: $driverRg, driverCpf: $driverCpf, truckPlate: $truckPlate, vehicleColor: $vehicleColor, hasDnit: $hasDnit, seals: $seals, status: $status, trailers: $trailers, createdAt: $createdAt, updatedAt: $updatedAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsSilUnloadingOrderCopyWith<$Res> implements $AtsSilUnloadingOrderCopyWith<$Res> {
+  factory _$AtsSilUnloadingOrderCopyWith(_AtsSilUnloadingOrder value, $Res Function(_AtsSilUnloadingOrder) _then) = __$AtsSilUnloadingOrderCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, int? referenceId, String? operationId, AtsOperation? operation, String? driverName, String? driverRg, String? driverCpf, String? truckPlate, String? vehicleColor, bool? hasDnit, String? seals,@JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending) AtsSilUnloadingOrderStatus? status, List<AtsSilTrailer>? trailers,@TimestampOrNullConverter() DateTime? createdAt,@TimestampOrNullConverter() DateTime? updatedAt
+});
+
+
+@override $AtsOperationCopyWith<$Res>? get operation;
+
+}
+/// @nodoc
+class __$AtsSilUnloadingOrderCopyWithImpl<$Res>
+    implements _$AtsSilUnloadingOrderCopyWith<$Res> {
+  __$AtsSilUnloadingOrderCopyWithImpl(this._self, this._then);
+
+  final _AtsSilUnloadingOrder _self;
+  final $Res Function(_AtsSilUnloadingOrder) _then;
+
+/// Create a copy of AtsSilUnloadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? referenceId = freezed,Object? operationId = freezed,Object? operation = freezed,Object? driverName = freezed,Object? driverRg = freezed,Object? driverCpf = freezed,Object? truckPlate = freezed,Object? vehicleColor = freezed,Object? hasDnit = freezed,Object? seals = freezed,Object? status = freezed,Object? trailers = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
+  return _then(_AtsSilUnloadingOrder(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,referenceId: freezed == referenceId ? _self.referenceId : referenceId // ignore: cast_nullable_to_non_nullable
+as int?,operationId: freezed == operationId ? _self.operationId : operationId // ignore: cast_nullable_to_non_nullable
+as String?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,driverName: freezed == driverName ? _self.driverName : driverName // ignore: cast_nullable_to_non_nullable
+as String?,driverRg: freezed == driverRg ? _self.driverRg : driverRg // ignore: cast_nullable_to_non_nullable
+as String?,driverCpf: freezed == driverCpf ? _self.driverCpf : driverCpf // ignore: cast_nullable_to_non_nullable
+as String?,truckPlate: freezed == truckPlate ? _self.truckPlate : truckPlate // ignore: cast_nullable_to_non_nullable
+as String?,vehicleColor: freezed == vehicleColor ? _self.vehicleColor : vehicleColor // ignore: cast_nullable_to_non_nullable
+as String?,hasDnit: freezed == hasDnit ? _self.hasDnit : hasDnit // ignore: cast_nullable_to_non_nullable
+as bool?,seals: freezed == seals ? _self.seals : seals // ignore: cast_nullable_to_non_nullable
+as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as AtsSilUnloadingOrderStatus?,trailers: freezed == trailers ? _self._trailers : trailers // ignore: cast_nullable_to_non_nullable
+as List<AtsSilTrailer>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+/// Create a copy of AtsSilUnloadingOrder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+    return null;
+  }
+
+  return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+    return _then(_self.copyWith(operation: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AtsSilTrailer {
+
+ String? get id;/// Id of the [AtsSilUnloadingOrder] this trailer belongs to.
+ String? get orderId;/// Trailer plate (SIL `Placa_Carreta`).
+ String? get trailerPlate;/// Id of the matched trailer asset (kind_id=48), if one was found.
+ String? get assetId;/// Best-effort matched trailer asset, null if no matching asset was found.
+ Asset? get asset;/// Compartments in the trailer (SIL `Compartimentos`).
+ List<AtsSilCompartment>? get compartments;@TimestampOrNullConverter() DateTime? get createdAt;
+/// Create a copy of AtsSilTrailer
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsSilTrailerCopyWith<AtsSilTrailer> get copyWith => _$AtsSilTrailerCopyWithImpl<AtsSilTrailer>(this as AtsSilTrailer, _$identity);
+
+  /// Serializes this AtsSilTrailer to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsSilTrailer&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.trailerPlate, trailerPlate) || other.trailerPlate == trailerPlate)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&const DeepCollectionEquality().equals(other.compartments, compartments)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,orderId,trailerPlate,assetId,asset,const DeepCollectionEquality().hash(compartments),createdAt);
+
+@override
+String toString() {
+  return 'AtsSilTrailer(id: $id, orderId: $orderId, trailerPlate: $trailerPlate, assetId: $assetId, asset: $asset, compartments: $compartments, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsSilTrailerCopyWith<$Res>  {
+  factory $AtsSilTrailerCopyWith(AtsSilTrailer value, $Res Function(AtsSilTrailer) _then) = _$AtsSilTrailerCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? orderId, String? trailerPlate, String? assetId, Asset? asset, List<AtsSilCompartment>? compartments,@TimestampOrNullConverter() DateTime? createdAt
+});
+
+
+$AssetCopyWith<$Res>? get asset;
+
+}
+/// @nodoc
+class _$AtsSilTrailerCopyWithImpl<$Res>
+    implements $AtsSilTrailerCopyWith<$Res> {
+  _$AtsSilTrailerCopyWithImpl(this._self, this._then);
+
+  final AtsSilTrailer _self;
+  final $Res Function(AtsSilTrailer) _then;
+
+/// Create a copy of AtsSilTrailer
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? orderId = freezed,Object? trailerPlate = freezed,Object? assetId = freezed,Object? asset = freezed,Object? compartments = freezed,Object? createdAt = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,orderId: freezed == orderId ? _self.orderId : orderId // ignore: cast_nullable_to_non_nullable
+as String?,trailerPlate: freezed == trailerPlate ? _self.trailerPlate : trailerPlate // ignore: cast_nullable_to_non_nullable
+as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
+as String?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
+as Asset?,compartments: freezed == compartments ? _self.compartments : compartments // ignore: cast_nullable_to_non_nullable
+as List<AtsSilCompartment>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+/// Create a copy of AtsSilTrailer
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.asset!, (value) {
+    return _then(_self.copyWith(asset: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AtsSilTrailer].
+extension AtsSilTrailerPatterns on AtsSilTrailer {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilTrailer value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsSilTrailer() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilTrailer value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSilTrailer():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilTrailer value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSilTrailer() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? orderId,  String? trailerPlate,  String? assetId,  Asset? asset,  List<AtsSilCompartment>? compartments, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsSilTrailer() when $default != null:
+return $default(_that.id,_that.orderId,_that.trailerPlate,_that.assetId,_that.asset,_that.compartments,_that.createdAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? orderId,  String? trailerPlate,  String? assetId,  Asset? asset,  List<AtsSilCompartment>? compartments, @TimestampOrNullConverter()  DateTime? createdAt)  $default,) {final _that = this;
+switch (_that) {
+case _AtsSilTrailer():
+return $default(_that.id,_that.orderId,_that.trailerPlate,_that.assetId,_that.asset,_that.compartments,_that.createdAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? orderId,  String? trailerPlate,  String? assetId,  Asset? asset,  List<AtsSilCompartment>? compartments, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsSilTrailer() when $default != null:
+return $default(_that.id,_that.orderId,_that.trailerPlate,_that.assetId,_that.asset,_that.compartments,_that.createdAt);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsSilTrailer implements AtsSilTrailer {
+  const _AtsSilTrailer({this.id, this.orderId, this.trailerPlate, this.assetId, this.asset, final  List<AtsSilCompartment>? compartments, @TimestampOrNullConverter() this.createdAt}): _compartments = compartments;
+  factory _AtsSilTrailer.fromJson(Map<String, dynamic> json) => _$AtsSilTrailerFromJson(json);
+
+@override final  String? id;
+/// Id of the [AtsSilUnloadingOrder] this trailer belongs to.
+@override final  String? orderId;
+/// Trailer plate (SIL `Placa_Carreta`).
+@override final  String? trailerPlate;
+/// Id of the matched trailer asset (kind_id=48), if one was found.
+@override final  String? assetId;
+/// Best-effort matched trailer asset, null if no matching asset was found.
+@override final  Asset? asset;
+/// Compartments in the trailer (SIL `Compartimentos`).
+ final  List<AtsSilCompartment>? _compartments;
+/// Compartments in the trailer (SIL `Compartimentos`).
+@override List<AtsSilCompartment>? get compartments {
+  final value = _compartments;
+  if (value == null) return null;
+  if (_compartments is EqualUnmodifiableListView) return _compartments;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+@override@TimestampOrNullConverter() final  DateTime? createdAt;
+
+/// Create a copy of AtsSilTrailer
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsSilTrailerCopyWith<_AtsSilTrailer> get copyWith => __$AtsSilTrailerCopyWithImpl<_AtsSilTrailer>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsSilTrailerToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSilTrailer&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.trailerPlate, trailerPlate) || other.trailerPlate == trailerPlate)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&const DeepCollectionEquality().equals(other._compartments, _compartments)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,orderId,trailerPlate,assetId,asset,const DeepCollectionEquality().hash(_compartments),createdAt);
+
+@override
+String toString() {
+  return 'AtsSilTrailer(id: $id, orderId: $orderId, trailerPlate: $trailerPlate, assetId: $assetId, asset: $asset, compartments: $compartments, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsSilTrailerCopyWith<$Res> implements $AtsSilTrailerCopyWith<$Res> {
+  factory _$AtsSilTrailerCopyWith(_AtsSilTrailer value, $Res Function(_AtsSilTrailer) _then) = __$AtsSilTrailerCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? orderId, String? trailerPlate, String? assetId, Asset? asset, List<AtsSilCompartment>? compartments,@TimestampOrNullConverter() DateTime? createdAt
+});
+
+
+@override $AssetCopyWith<$Res>? get asset;
+
+}
+/// @nodoc
+class __$AtsSilTrailerCopyWithImpl<$Res>
+    implements _$AtsSilTrailerCopyWith<$Res> {
+  __$AtsSilTrailerCopyWithImpl(this._self, this._then);
+
+  final _AtsSilTrailer _self;
+  final $Res Function(_AtsSilTrailer) _then;
+
+/// Create a copy of AtsSilTrailer
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? orderId = freezed,Object? trailerPlate = freezed,Object? assetId = freezed,Object? asset = freezed,Object? compartments = freezed,Object? createdAt = freezed,}) {
+  return _then(_AtsSilTrailer(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,orderId: freezed == orderId ? _self.orderId : orderId // ignore: cast_nullable_to_non_nullable
+as String?,trailerPlate: freezed == trailerPlate ? _self.trailerPlate : trailerPlate // ignore: cast_nullable_to_non_nullable
+as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
+as String?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
+as Asset?,compartments: freezed == compartments ? _self._compartments : compartments // ignore: cast_nullable_to_non_nullable
+as List<AtsSilCompartment>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+/// Create a copy of AtsSilTrailer
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetCopyWith<$Res>? get asset {
+    if (_self.asset == null) {
+    return null;
+  }
+
+  return $AssetCopyWith<$Res>(_self.asset!, (value) {
+    return _then(_self.copyWith(asset: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AtsSilCompartment {
+
+ String? get id;/// Id of the [AtsSilTrailer] this compartment belongs to.
+ String? get trailerId;/// Compartment number (SIL `Num_Compart`).
+ int? get compartmentNumber;/// Discharge volume (SIL `Vol_Descarga`).
+ int? get dischargeVolume;/// SIL's own numeric product code (SIL `Produto`).
+ int? get productCode;/// Certified actual result, null until SIL confirms it.
+ AtsSilCompartmentResult? get result;@TimestampOrNullConverter() DateTime? get createdAt;
+/// Create a copy of AtsSilCompartment
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsSilCompartmentCopyWith<AtsSilCompartment> get copyWith => _$AtsSilCompartmentCopyWithImpl<AtsSilCompartment>(this as AtsSilCompartment, _$identity);
+
+  /// Serializes this AtsSilCompartment to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsSilCompartment&&(identical(other.id, id) || other.id == id)&&(identical(other.trailerId, trailerId) || other.trailerId == trailerId)&&(identical(other.compartmentNumber, compartmentNumber) || other.compartmentNumber == compartmentNumber)&&(identical(other.dischargeVolume, dischargeVolume) || other.dischargeVolume == dischargeVolume)&&(identical(other.productCode, productCode) || other.productCode == productCode)&&(identical(other.result, result) || other.result == result)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,trailerId,compartmentNumber,dischargeVolume,productCode,result,createdAt);
+
+@override
+String toString() {
+  return 'AtsSilCompartment(id: $id, trailerId: $trailerId, compartmentNumber: $compartmentNumber, dischargeVolume: $dischargeVolume, productCode: $productCode, result: $result, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsSilCompartmentCopyWith<$Res>  {
+  factory $AtsSilCompartmentCopyWith(AtsSilCompartment value, $Res Function(AtsSilCompartment) _then) = _$AtsSilCompartmentCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? trailerId, int? compartmentNumber, int? dischargeVolume, int? productCode, AtsSilCompartmentResult? result,@TimestampOrNullConverter() DateTime? createdAt
+});
+
+
+$AtsSilCompartmentResultCopyWith<$Res>? get result;
+
+}
+/// @nodoc
+class _$AtsSilCompartmentCopyWithImpl<$Res>
+    implements $AtsSilCompartmentCopyWith<$Res> {
+  _$AtsSilCompartmentCopyWithImpl(this._self, this._then);
+
+  final AtsSilCompartment _self;
+  final $Res Function(AtsSilCompartment) _then;
+
+/// Create a copy of AtsSilCompartment
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? trailerId = freezed,Object? compartmentNumber = freezed,Object? dischargeVolume = freezed,Object? productCode = freezed,Object? result = freezed,Object? createdAt = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,trailerId: freezed == trailerId ? _self.trailerId : trailerId // ignore: cast_nullable_to_non_nullable
+as String?,compartmentNumber: freezed == compartmentNumber ? _self.compartmentNumber : compartmentNumber // ignore: cast_nullable_to_non_nullable
+as int?,dischargeVolume: freezed == dischargeVolume ? _self.dischargeVolume : dischargeVolume // ignore: cast_nullable_to_non_nullable
+as int?,productCode: freezed == productCode ? _self.productCode : productCode // ignore: cast_nullable_to_non_nullable
+as int?,result: freezed == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
+as AtsSilCompartmentResult?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+/// Create a copy of AtsSilCompartment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsSilCompartmentResultCopyWith<$Res>? get result {
+    if (_self.result == null) {
+    return null;
+  }
+
+  return $AtsSilCompartmentResultCopyWith<$Res>(_self.result!, (value) {
+    return _then(_self.copyWith(result: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [AtsSilCompartment].
+extension AtsSilCompartmentPatterns on AtsSilCompartment {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilCompartment value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsSilCompartment() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilCompartment value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSilCompartment():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilCompartment value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSilCompartment() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? trailerId,  int? compartmentNumber,  int? dischargeVolume,  int? productCode,  AtsSilCompartmentResult? result, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsSilCompartment() when $default != null:
+return $default(_that.id,_that.trailerId,_that.compartmentNumber,_that.dischargeVolume,_that.productCode,_that.result,_that.createdAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? trailerId,  int? compartmentNumber,  int? dischargeVolume,  int? productCode,  AtsSilCompartmentResult? result, @TimestampOrNullConverter()  DateTime? createdAt)  $default,) {final _that = this;
+switch (_that) {
+case _AtsSilCompartment():
+return $default(_that.id,_that.trailerId,_that.compartmentNumber,_that.dischargeVolume,_that.productCode,_that.result,_that.createdAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? trailerId,  int? compartmentNumber,  int? dischargeVolume,  int? productCode,  AtsSilCompartmentResult? result, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsSilCompartment() when $default != null:
+return $default(_that.id,_that.trailerId,_that.compartmentNumber,_that.dischargeVolume,_that.productCode,_that.result,_that.createdAt);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsSilCompartment implements AtsSilCompartment {
+  const _AtsSilCompartment({this.id, this.trailerId, this.compartmentNumber, this.dischargeVolume, this.productCode, this.result, @TimestampOrNullConverter() this.createdAt});
+  factory _AtsSilCompartment.fromJson(Map<String, dynamic> json) => _$AtsSilCompartmentFromJson(json);
+
+@override final  String? id;
+/// Id of the [AtsSilTrailer] this compartment belongs to.
+@override final  String? trailerId;
+/// Compartment number (SIL `Num_Compart`).
+@override final  int? compartmentNumber;
+/// Discharge volume (SIL `Vol_Descarga`).
+@override final  int? dischargeVolume;
+/// SIL's own numeric product code (SIL `Produto`).
+@override final  int? productCode;
+/// Certified actual result, null until SIL confirms it.
+@override final  AtsSilCompartmentResult? result;
+@override@TimestampOrNullConverter() final  DateTime? createdAt;
+
+/// Create a copy of AtsSilCompartment
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsSilCompartmentCopyWith<_AtsSilCompartment> get copyWith => __$AtsSilCompartmentCopyWithImpl<_AtsSilCompartment>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsSilCompartmentToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSilCompartment&&(identical(other.id, id) || other.id == id)&&(identical(other.trailerId, trailerId) || other.trailerId == trailerId)&&(identical(other.compartmentNumber, compartmentNumber) || other.compartmentNumber == compartmentNumber)&&(identical(other.dischargeVolume, dischargeVolume) || other.dischargeVolume == dischargeVolume)&&(identical(other.productCode, productCode) || other.productCode == productCode)&&(identical(other.result, result) || other.result == result)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,trailerId,compartmentNumber,dischargeVolume,productCode,result,createdAt);
+
+@override
+String toString() {
+  return 'AtsSilCompartment(id: $id, trailerId: $trailerId, compartmentNumber: $compartmentNumber, dischargeVolume: $dischargeVolume, productCode: $productCode, result: $result, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsSilCompartmentCopyWith<$Res> implements $AtsSilCompartmentCopyWith<$Res> {
+  factory _$AtsSilCompartmentCopyWith(_AtsSilCompartment value, $Res Function(_AtsSilCompartment) _then) = __$AtsSilCompartmentCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? trailerId, int? compartmentNumber, int? dischargeVolume, int? productCode, AtsSilCompartmentResult? result,@TimestampOrNullConverter() DateTime? createdAt
+});
+
+
+@override $AtsSilCompartmentResultCopyWith<$Res>? get result;
+
+}
+/// @nodoc
+class __$AtsSilCompartmentCopyWithImpl<$Res>
+    implements _$AtsSilCompartmentCopyWith<$Res> {
+  __$AtsSilCompartmentCopyWithImpl(this._self, this._then);
+
+  final _AtsSilCompartment _self;
+  final $Res Function(_AtsSilCompartment) _then;
+
+/// Create a copy of AtsSilCompartment
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? trailerId = freezed,Object? compartmentNumber = freezed,Object? dischargeVolume = freezed,Object? productCode = freezed,Object? result = freezed,Object? createdAt = freezed,}) {
+  return _then(_AtsSilCompartment(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,trailerId: freezed == trailerId ? _self.trailerId : trailerId // ignore: cast_nullable_to_non_nullable
+as String?,compartmentNumber: freezed == compartmentNumber ? _self.compartmentNumber : compartmentNumber // ignore: cast_nullable_to_non_nullable
+as int?,dischargeVolume: freezed == dischargeVolume ? _self.dischargeVolume : dischargeVolume // ignore: cast_nullable_to_non_nullable
+as int?,productCode: freezed == productCode ? _self.productCode : productCode // ignore: cast_nullable_to_non_nullable
+as int?,result: freezed == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
+as AtsSilCompartmentResult?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+/// Create a copy of AtsSilCompartment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AtsSilCompartmentResultCopyWith<$Res>? get result {
+    if (_self.result == null) {
+    return null;
+  }
+
+  return $AtsSilCompartmentResultCopyWith<$Res>(_self.result!, (value) {
+    return _then(_self.copyWith(result: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$AtsSilCompartmentResult {
+
+ String? get id;/// Id of the [AtsSilCompartment] this result certifies.
+ String? get compartmentId;/// SIL product code (`produto`).
+ int? get productCode;/// Certified ambient volume (`volume_ambiente`).
+ double? get ambientVolume;/// Certified volume at 20°C (`volume_20graus`).
+ double? get volume20;/// Certified ambient density (`densidade_ambiente`).
+ double? get ambientDensity;/// Certified density at 20°C (`densidade_20graus`).
+ double? get density20;/// Tank temperature (`temperatura_tanque`).
+ double? get tankTemperature;/// Sample temperature (`temperatura_amostra`).
+ double? get sampleTemperature;/// Unload start (`dataHora_inicio`).
+@TimestampOrNullConverter() DateTime? get startedAt;/// Unload end (`dataHora_fim`).
+@TimestampOrNullConverter() DateTime? get finishedAt;/// Operator name (`operador`).
+ String? get operator;@TimestampOrNullConverter() DateTime? get createdAt;
+/// Create a copy of AtsSilCompartmentResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AtsSilCompartmentResultCopyWith<AtsSilCompartmentResult> get copyWith => _$AtsSilCompartmentResultCopyWithImpl<AtsSilCompartmentResult>(this as AtsSilCompartmentResult, _$identity);
+
+  /// Serializes this AtsSilCompartmentResult to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtsSilCompartmentResult&&(identical(other.id, id) || other.id == id)&&(identical(other.compartmentId, compartmentId) || other.compartmentId == compartmentId)&&(identical(other.productCode, productCode) || other.productCode == productCode)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.ambientDensity, ambientDensity) || other.ambientDensity == ambientDensity)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.tankTemperature, tankTemperature) || other.tankTemperature == tankTemperature)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.operator, operator) || other.operator == operator)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,compartmentId,productCode,ambientVolume,volume20,ambientDensity,density20,tankTemperature,sampleTemperature,startedAt,finishedAt,operator,createdAt);
+
+@override
+String toString() {
+  return 'AtsSilCompartmentResult(id: $id, compartmentId: $compartmentId, productCode: $productCode, ambientVolume: $ambientVolume, volume20: $volume20, ambientDensity: $ambientDensity, density20: $density20, tankTemperature: $tankTemperature, sampleTemperature: $sampleTemperature, startedAt: $startedAt, finishedAt: $finishedAt, operator: $operator, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AtsSilCompartmentResultCopyWith<$Res>  {
+  factory $AtsSilCompartmentResultCopyWith(AtsSilCompartmentResult value, $Res Function(AtsSilCompartmentResult) _then) = _$AtsSilCompartmentResultCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? compartmentId, int? productCode, double? ambientVolume, double? volume20, double? ambientDensity, double? density20, double? tankTemperature, double? sampleTemperature,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operator,@TimestampOrNullConverter() DateTime? createdAt
+});
+
+
+
+
+}
+/// @nodoc
+class _$AtsSilCompartmentResultCopyWithImpl<$Res>
+    implements $AtsSilCompartmentResultCopyWith<$Res> {
+  _$AtsSilCompartmentResultCopyWithImpl(this._self, this._then);
+
+  final AtsSilCompartmentResult _self;
+  final $Res Function(AtsSilCompartmentResult) _then;
+
+/// Create a copy of AtsSilCompartmentResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? compartmentId = freezed,Object? productCode = freezed,Object? ambientVolume = freezed,Object? volume20 = freezed,Object? ambientDensity = freezed,Object? density20 = freezed,Object? tankTemperature = freezed,Object? sampleTemperature = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operator = freezed,Object? createdAt = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,compartmentId: freezed == compartmentId ? _self.compartmentId : compartmentId // ignore: cast_nullable_to_non_nullable
+as String?,productCode: freezed == productCode ? _self.productCode : productCode // ignore: cast_nullable_to_non_nullable
+as int?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
+as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
+as double?,ambientDensity: freezed == ambientDensity ? _self.ambientDensity : ambientDensity // ignore: cast_nullable_to_non_nullable
+as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
+as double?,tankTemperature: freezed == tankTemperature ? _self.tankTemperature : tankTemperature // ignore: cast_nullable_to_non_nullable
+as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,startedAt: freezed == startedAt ? _self.startedAt : startedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,finishedAt: freezed == finishedAt ? _self.finishedAt : finishedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,operator: freezed == operator ? _self.operator : operator // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AtsSilCompartmentResult].
+extension AtsSilCompartmentResultPatterns on AtsSilCompartmentResult {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AtsSilCompartmentResult value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AtsSilCompartmentResult() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AtsSilCompartmentResult value)  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSilCompartmentResult():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AtsSilCompartmentResult value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AtsSilCompartmentResult() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? compartmentId,  int? productCode,  double? ambientVolume,  double? volume20,  double? ambientDensity,  double? density20,  double? tankTemperature,  double? sampleTemperature, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operator, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AtsSilCompartmentResult() when $default != null:
+return $default(_that.id,_that.compartmentId,_that.productCode,_that.ambientVolume,_that.volume20,_that.ambientDensity,_that.density20,_that.tankTemperature,_that.sampleTemperature,_that.startedAt,_that.finishedAt,_that.operator,_that.createdAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? compartmentId,  int? productCode,  double? ambientVolume,  double? volume20,  double? ambientDensity,  double? density20,  double? tankTemperature,  double? sampleTemperature, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operator, @TimestampOrNullConverter()  DateTime? createdAt)  $default,) {final _that = this;
+switch (_that) {
+case _AtsSilCompartmentResult():
+return $default(_that.id,_that.compartmentId,_that.productCode,_that.ambientVolume,_that.volume20,_that.ambientDensity,_that.density20,_that.tankTemperature,_that.sampleTemperature,_that.startedAt,_that.finishedAt,_that.operator,_that.createdAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? compartmentId,  int? productCode,  double? ambientVolume,  double? volume20,  double? ambientDensity,  double? density20,  double? tankTemperature,  double? sampleTemperature, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operator, @TimestampOrNullConverter()  DateTime? createdAt)?  $default,) {final _that = this;
+switch (_that) {
+case _AtsSilCompartmentResult() when $default != null:
+return $default(_that.id,_that.compartmentId,_that.productCode,_that.ambientVolume,_that.volume20,_that.ambientDensity,_that.density20,_that.tankTemperature,_that.sampleTemperature,_that.startedAt,_that.finishedAt,_that.operator,_that.createdAt);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _AtsSilCompartmentResult implements AtsSilCompartmentResult {
+  const _AtsSilCompartmentResult({this.id, this.compartmentId, this.productCode, this.ambientVolume, this.volume20, this.ambientDensity, this.density20, this.tankTemperature, this.sampleTemperature, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operator, @TimestampOrNullConverter() this.createdAt});
+  factory _AtsSilCompartmentResult.fromJson(Map<String, dynamic> json) => _$AtsSilCompartmentResultFromJson(json);
+
+@override final  String? id;
+/// Id of the [AtsSilCompartment] this result certifies.
+@override final  String? compartmentId;
+/// SIL product code (`produto`).
+@override final  int? productCode;
+/// Certified ambient volume (`volume_ambiente`).
+@override final  double? ambientVolume;
+/// Certified volume at 20°C (`volume_20graus`).
+@override final  double? volume20;
+/// Certified ambient density (`densidade_ambiente`).
+@override final  double? ambientDensity;
+/// Certified density at 20°C (`densidade_20graus`).
+@override final  double? density20;
+/// Tank temperature (`temperatura_tanque`).
+@override final  double? tankTemperature;
+/// Sample temperature (`temperatura_amostra`).
+@override final  double? sampleTemperature;
+/// Unload start (`dataHora_inicio`).
+@override@TimestampOrNullConverter() final  DateTime? startedAt;
+/// Unload end (`dataHora_fim`).
+@override@TimestampOrNullConverter() final  DateTime? finishedAt;
+/// Operator name (`operador`).
+@override final  String? operator;
+@override@TimestampOrNullConverter() final  DateTime? createdAt;
+
+/// Create a copy of AtsSilCompartmentResult
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AtsSilCompartmentResultCopyWith<_AtsSilCompartmentResult> get copyWith => __$AtsSilCompartmentResultCopyWithImpl<_AtsSilCompartmentResult>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AtsSilCompartmentResultToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSilCompartmentResult&&(identical(other.id, id) || other.id == id)&&(identical(other.compartmentId, compartmentId) || other.compartmentId == compartmentId)&&(identical(other.productCode, productCode) || other.productCode == productCode)&&(identical(other.ambientVolume, ambientVolume) || other.ambientVolume == ambientVolume)&&(identical(other.volume20, volume20) || other.volume20 == volume20)&&(identical(other.ambientDensity, ambientDensity) || other.ambientDensity == ambientDensity)&&(identical(other.density20, density20) || other.density20 == density20)&&(identical(other.tankTemperature, tankTemperature) || other.tankTemperature == tankTemperature)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.operator, operator) || other.operator == operator)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,compartmentId,productCode,ambientVolume,volume20,ambientDensity,density20,tankTemperature,sampleTemperature,startedAt,finishedAt,operator,createdAt);
+
+@override
+String toString() {
+  return 'AtsSilCompartmentResult(id: $id, compartmentId: $compartmentId, productCode: $productCode, ambientVolume: $ambientVolume, volume20: $volume20, ambientDensity: $ambientDensity, density20: $density20, tankTemperature: $tankTemperature, sampleTemperature: $sampleTemperature, startedAt: $startedAt, finishedAt: $finishedAt, operator: $operator, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AtsSilCompartmentResultCopyWith<$Res> implements $AtsSilCompartmentResultCopyWith<$Res> {
+  factory _$AtsSilCompartmentResultCopyWith(_AtsSilCompartmentResult value, $Res Function(_AtsSilCompartmentResult) _then) = __$AtsSilCompartmentResultCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? compartmentId, int? productCode, double? ambientVolume, double? volume20, double? ambientDensity, double? density20, double? tankTemperature, double? sampleTemperature,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operator,@TimestampOrNullConverter() DateTime? createdAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$AtsSilCompartmentResultCopyWithImpl<$Res>
+    implements _$AtsSilCompartmentResultCopyWith<$Res> {
+  __$AtsSilCompartmentResultCopyWithImpl(this._self, this._then);
+
+  final _AtsSilCompartmentResult _self;
+  final $Res Function(_AtsSilCompartmentResult) _then;
+
+/// Create a copy of AtsSilCompartmentResult
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? compartmentId = freezed,Object? productCode = freezed,Object? ambientVolume = freezed,Object? volume20 = freezed,Object? ambientDensity = freezed,Object? density20 = freezed,Object? tankTemperature = freezed,Object? sampleTemperature = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operator = freezed,Object? createdAt = freezed,}) {
+  return _then(_AtsSilCompartmentResult(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,compartmentId: freezed == compartmentId ? _self.compartmentId : compartmentId // ignore: cast_nullable_to_non_nullable
+as String?,productCode: freezed == productCode ? _self.productCode : productCode // ignore: cast_nullable_to_non_nullable
+as int?,ambientVolume: freezed == ambientVolume ? _self.ambientVolume : ambientVolume // ignore: cast_nullable_to_non_nullable
+as double?,volume20: freezed == volume20 ? _self.volume20 : volume20 // ignore: cast_nullable_to_non_nullable
+as double?,ambientDensity: freezed == ambientDensity ? _self.ambientDensity : ambientDensity // ignore: cast_nullable_to_non_nullable
+as double?,density20: freezed == density20 ? _self.density20 : density20 // ignore: cast_nullable_to_non_nullable
+as double?,tankTemperature: freezed == tankTemperature ? _self.tankTemperature : tankTemperature // ignore: cast_nullable_to_non_nullable
+as double?,sampleTemperature: freezed == sampleTemperature ? _self.sampleTemperature : sampleTemperature // ignore: cast_nullable_to_non_nullable
+as double?,startedAt: freezed == startedAt ? _self.startedAt : startedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,finishedAt: freezed == finishedAt ? _self.finishedAt : finishedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,operator: freezed == operator ? _self.operator : operator // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
