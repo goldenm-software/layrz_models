@@ -81,6 +81,7 @@ part 'src/enums/purchase_order_categories_entity.dart';
 part 'src/enums/purchase_order_status.dart';
 part 'src/enums/purchase_order_sub_categories.dart';
 part 'src/enums/cf_fuel_type.dart';
+part 'src/enums/cf_skid_model.dart';
 part 'src/enums/reception_status.dart';
 part 'src/enums/monitor_card_type.dart';
 part 'src/enums/params_form_modality.dart';

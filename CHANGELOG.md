@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.30.0
+
+- Added `AtsCfSkidModel` (`none`/`sil`), the enum backing the new `ats.custom.skid.model` fixed custom field on Terminal assets (kindId 44) that lets ATS Mobile know whether — and with which equipment brand — a terminal receives product via SKID before routing it through the SIL integration. Follows the same manual `toJson`/`fromJson`/`getLocaleKey` pattern as `AtsCfFuelType`; unlike it, `fromJson` falls back to `none` instead of throwing, since the value comes from a custom field that may be empty or hold stale data.
+
 ## 3.29.0
 
 - Reworked the SIL SKID reception models to match the backend `createSilUnloadingOrder` contract 1:1, and moved them to a dedicated `src/ats/src/sil/` folder.
