@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.29.0
+
+- Reworked the SIL SKID reception models to match the backend `createSilUnloadingOrder` contract 1:1, and moved them to a dedicated `src/ats/src/sil/` folder.
+  - **Renamed** (breaking vs. 3.28.0): `AtsSilInput` → `AtsSilUnloadingOrderInput`, `AtsSilCarreta` → `AtsSilTrailerInput`, `AtsSilCompartimento` → `AtsSilCompartmentInput`. Fields are now English and aligned with the backend `SilUnloadingOrderInput`: `numRef` → `operationId` (the backend derives SIL `Num_Ref` from the operation, so the client sends the operation id), `nomeMotorista`/`rgMotorista`/`cpfMotorista` → `driverName`/`driverRg`/`driverCpf`, `placaCavalo` → `truckPlate`, `carretas` → `trailers`, `corDoVeiculo` → `vehicleColor`, `possuiDnit` → `hasDnit`, `lacres` → `seals`; trailer `placaCarreta` → `trailerPlate`, `compartimentos` → `compartments`; compartment `numCompart` → `compartmentNumber`, `volDescarga` (now `int`, backend requires an integer) → `dischargeVolume`, `produto` → `productCode`.
+  - **Added** response entities for the mutation `result`: `AtsSilUnloadingOrder` (reuses the existing `AtsOperation`), `AtsSilTrailer`, `AtsSilCompartment` and its certified `AtsSilCompartmentResult`, plus the `AtsSilUnloadingOrderStatus` enum (`pending`/`sent`/`sendFailed`/`completed`).
+
 ## 3.28.0
 
 - Added `AtsSilInput`, `AtsSilCarreta` and `AtsSilCompartimento` — the payload collected in ATS Mobile for the SKID reception flow and forwarded to the SIL integration. Fields use camelCase (GraphQL convention); the backend maps them to SIL's snake_case keys. Every field is nullable (obligatoriness is enforced by the backend). `AtsSilInput`/`AtsSilCarreta` expose a private constructor that seeds their nested lists as growable and with one initial row, so consumers can add/remove without hitting an unmodifiable list.

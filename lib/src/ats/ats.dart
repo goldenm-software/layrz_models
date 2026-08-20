@@ -34,7 +34,12 @@ part 'src/reception/ide_information.dart';
 part 'src/reception/operation_product_information.dart';
 part 'src/reception/loading_params_form_input.dart';
 part 'src/reception/loading_params_form.dart';
-part 'src/reception/ats_sil_input.dart';
+
+// ATS SIL Models (SKID reception / "Orden de Descarregamento")
+part 'src/sil/enums/ats_sil_unloading_order_status.dart';
+part 'src/sil/inputs/ats_sil_unloading_order_input.dart';
+part 'src/sil/ats_sil_unloading_order.dart';
+part 'src/sil/ats_sil_trailer.dart';
 
 // ATS Exit Models
 part 'src/exits/exit_status.dart';
