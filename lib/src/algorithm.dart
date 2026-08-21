@@ -6,7 +6,7 @@ abstract class Algorithm with _$Algorithm {
     required String id,
     required String name,
     @ColorConverter() required Color color,
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
     required bool isEnabled,
     @Default([]) List<String> categoriesIds,
     @Default(false) bool canBeInSensors,

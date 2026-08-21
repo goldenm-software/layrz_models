@@ -43,21 +43,21 @@ enum MonitorCardType {
   IconData getIcon() {
     switch (this) {
       case MonitorCardType.purchaseOrders:
-        return LayrzIcons.solarOutlineNotes;
+        return MdiIcons.noteOutline;
       case MonitorCardType.entries:
-        return LayrzIcons.mdiStorageTank;
+        return MdiIcons.storageTank;
       case MonitorCardType.exits:
-        return LayrzIcons.solarBoldGasStation;
+        return MdiIcons.gasStationOutline;
       case MonitorCardType.convoyLoads:
-        return LayrzIcons.mdiTankerTruck;
+        return MdiIcons.tankerTruck;
       case MonitorCardType.operations:
-        return LayrzIcons.solarBoldNotes;
+        return MdiIcons.note;
       case MonitorCardType.exitExecutions:
-        return LayrzIcons.solarBoldCodeSquare;
+        return MdiIcons.codeArray;
       case MonitorCardType.recalculations:
-        return LayrzIcons.solarOutlineRefreshCircle;
+        return MdiIcons.sync;
       default:
-        return LayrzIcons.mdiHelpCircle;
+        return MdiIcons.helpCircle;
     }
   }
 }

@@ -23,8 +23,8 @@ mixin _$Sensor {
 /// returns [null], if it's [true], the sensor is will "disappear" from the calculated sensors, otherwise it will be
 /// take the previous value of the sensor.
  bool? get isInstant;/// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
-/// will convert to LayrzIcon entity.
-@IconOrNullConverter() LayrzIcon? get icon;/// [measuringUnit] of the sensor. Can be an estandard unit or a custom one.
+/// will convert to MdiRemapIcon entity.
+@IconOrNullConverter() MdiRemapIcon? get icon;/// [measuringUnit] of the sensor. Can be an estandard unit or a custom one.
  String? get measuringUnit;/// [type] of the sensor.
 @JsonKey(unknownEnumValue: SensorType.constant) SensorType? get type;/// [subType] of the sensor.
 @JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType? get subtype;/// [parameter] of the sensor.
@@ -92,7 +92,7 @@ abstract mixin class $SensorCopyWith<$Res>  {
   factory $SensorCopyWith(Sensor value, $Res Function(Sensor) _then) = _$SensorCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, int? iterationCycle, String slug, bool? isInstant,@IconOrNullConverter() LayrzIcon? icon, String? measuringUnit,@JsonKey(unknownEnumValue: SensorType.constant) SensorType? type,@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType? subtype, String? parameter, List<String>? externalIdentifiers, String? formula, String? script, bool? hasHeaders, List<String>? csvHeaders, String? csvSeparator, List<SensorRange>? ranges, List<MaskPoint>? mask, bool? hasValidator, double? minValue, double? maxValue, String? contentType, String? parentId, Sensor? parent, String? functionId, AtsExit? lastExit, String? qrCode, List<String>? assignedAssetsIds, List<Asset>? assignedAssets, bool? isTemplate, bool isGlobal, List<Access>? access,@DurationOrNullConverter() Duration? maxHistorySearch
+ String id, String name, int? iterationCycle, String slug, bool? isInstant,@IconOrNullConverter() MdiRemapIcon? icon, String? measuringUnit,@JsonKey(unknownEnumValue: SensorType.constant) SensorType? type,@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType? subtype, String? parameter, List<String>? externalIdentifiers, String? formula, String? script, bool? hasHeaders, List<String>? csvHeaders, String? csvSeparator, List<SensorRange>? ranges, List<MaskPoint>? mask, bool? hasValidator, double? minValue, double? maxValue, String? contentType, String? parentId, Sensor? parent, String? functionId, AtsExit? lastExit, String? qrCode, List<String>? assignedAssetsIds, List<Asset>? assignedAssets, bool? isTemplate, bool isGlobal, List<Access>? access,@DurationOrNullConverter() Duration? maxHistorySearch
 });
 
 
@@ -117,7 +117,7 @@ as String,iterationCycle: freezed == iterationCycle ? _self.iterationCycle : ite
 as int?,slug: null == slug ? _self.slug : slug // ignore: cast_nullable_to_non_nullable
 as String,isInstant: freezed == isInstant ? _self.isInstant : isInstant // ignore: cast_nullable_to_non_nullable
 as bool?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,measuringUnit: freezed == measuringUnit ? _self.measuringUnit : measuringUnit // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,measuringUnit: freezed == measuringUnit ? _self.measuringUnit : measuringUnit // ignore: cast_nullable_to_non_nullable
 as String?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as SensorType?,subtype: freezed == subtype ? _self.subtype : subtype // ignore: cast_nullable_to_non_nullable
 as SensorSubType?,parameter: freezed == parameter ? _self.parameter : parameter // ignore: cast_nullable_to_non_nullable
@@ -253,7 +253,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  int? iterationCycle,  String slug,  bool? isInstant, @IconOrNullConverter()  LayrzIcon? icon,  String? measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType? type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType? subtype,  String? parameter,  List<String>? externalIdentifiers,  String? formula,  String? script,  bool? hasHeaders,  List<String>? csvHeaders,  String? csvSeparator,  List<SensorRange>? ranges,  List<MaskPoint>? mask,  bool? hasValidator,  double? minValue,  double? maxValue,  String? contentType,  String? parentId,  Sensor? parent,  String? functionId,  AtsExit? lastExit,  String? qrCode,  List<String>? assignedAssetsIds,  List<Asset>? assignedAssets,  bool? isTemplate,  bool isGlobal,  List<Access>? access, @DurationOrNullConverter()  Duration? maxHistorySearch)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  int? iterationCycle,  String slug,  bool? isInstant, @IconOrNullConverter()  MdiRemapIcon? icon,  String? measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType? type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType? subtype,  String? parameter,  List<String>? externalIdentifiers,  String? formula,  String? script,  bool? hasHeaders,  List<String>? csvHeaders,  String? csvSeparator,  List<SensorRange>? ranges,  List<MaskPoint>? mask,  bool? hasValidator,  double? minValue,  double? maxValue,  String? contentType,  String? parentId,  Sensor? parent,  String? functionId,  AtsExit? lastExit,  String? qrCode,  List<String>? assignedAssetsIds,  List<Asset>? assignedAssets,  bool? isTemplate,  bool isGlobal,  List<Access>? access, @DurationOrNullConverter()  Duration? maxHistorySearch)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Sensor() when $default != null:
 return $default(_that.id,_that.name,_that.iterationCycle,_that.slug,_that.isInstant,_that.icon,_that.measuringUnit,_that.type,_that.subtype,_that.parameter,_that.externalIdentifiers,_that.formula,_that.script,_that.hasHeaders,_that.csvHeaders,_that.csvSeparator,_that.ranges,_that.mask,_that.hasValidator,_that.minValue,_that.maxValue,_that.contentType,_that.parentId,_that.parent,_that.functionId,_that.lastExit,_that.qrCode,_that.assignedAssetsIds,_that.assignedAssets,_that.isTemplate,_that.isGlobal,_that.access,_that.maxHistorySearch);case _:
@@ -274,7 +274,7 @@ return $default(_that.id,_that.name,_that.iterationCycle,_that.slug,_that.isInst
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  int? iterationCycle,  String slug,  bool? isInstant, @IconOrNullConverter()  LayrzIcon? icon,  String? measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType? type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType? subtype,  String? parameter,  List<String>? externalIdentifiers,  String? formula,  String? script,  bool? hasHeaders,  List<String>? csvHeaders,  String? csvSeparator,  List<SensorRange>? ranges,  List<MaskPoint>? mask,  bool? hasValidator,  double? minValue,  double? maxValue,  String? contentType,  String? parentId,  Sensor? parent,  String? functionId,  AtsExit? lastExit,  String? qrCode,  List<String>? assignedAssetsIds,  List<Asset>? assignedAssets,  bool? isTemplate,  bool isGlobal,  List<Access>? access, @DurationOrNullConverter()  Duration? maxHistorySearch)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  int? iterationCycle,  String slug,  bool? isInstant, @IconOrNullConverter()  MdiRemapIcon? icon,  String? measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType? type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType? subtype,  String? parameter,  List<String>? externalIdentifiers,  String? formula,  String? script,  bool? hasHeaders,  List<String>? csvHeaders,  String? csvSeparator,  List<SensorRange>? ranges,  List<MaskPoint>? mask,  bool? hasValidator,  double? minValue,  double? maxValue,  String? contentType,  String? parentId,  Sensor? parent,  String? functionId,  AtsExit? lastExit,  String? qrCode,  List<String>? assignedAssetsIds,  List<Asset>? assignedAssets,  bool? isTemplate,  bool isGlobal,  List<Access>? access, @DurationOrNullConverter()  Duration? maxHistorySearch)  $default,) {final _that = this;
 switch (_that) {
 case _Sensor():
 return $default(_that.id,_that.name,_that.iterationCycle,_that.slug,_that.isInstant,_that.icon,_that.measuringUnit,_that.type,_that.subtype,_that.parameter,_that.externalIdentifiers,_that.formula,_that.script,_that.hasHeaders,_that.csvHeaders,_that.csvSeparator,_that.ranges,_that.mask,_that.hasValidator,_that.minValue,_that.maxValue,_that.contentType,_that.parentId,_that.parent,_that.functionId,_that.lastExit,_that.qrCode,_that.assignedAssetsIds,_that.assignedAssets,_that.isTemplate,_that.isGlobal,_that.access,_that.maxHistorySearch);case _:
@@ -294,7 +294,7 @@ return $default(_that.id,_that.name,_that.iterationCycle,_that.slug,_that.isInst
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  int? iterationCycle,  String slug,  bool? isInstant, @IconOrNullConverter()  LayrzIcon? icon,  String? measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType? type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType? subtype,  String? parameter,  List<String>? externalIdentifiers,  String? formula,  String? script,  bool? hasHeaders,  List<String>? csvHeaders,  String? csvSeparator,  List<SensorRange>? ranges,  List<MaskPoint>? mask,  bool? hasValidator,  double? minValue,  double? maxValue,  String? contentType,  String? parentId,  Sensor? parent,  String? functionId,  AtsExit? lastExit,  String? qrCode,  List<String>? assignedAssetsIds,  List<Asset>? assignedAssets,  bool? isTemplate,  bool isGlobal,  List<Access>? access, @DurationOrNullConverter()  Duration? maxHistorySearch)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  int? iterationCycle,  String slug,  bool? isInstant, @IconOrNullConverter()  MdiRemapIcon? icon,  String? measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType? type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType? subtype,  String? parameter,  List<String>? externalIdentifiers,  String? formula,  String? script,  bool? hasHeaders,  List<String>? csvHeaders,  String? csvSeparator,  List<SensorRange>? ranges,  List<MaskPoint>? mask,  bool? hasValidator,  double? minValue,  double? maxValue,  String? contentType,  String? parentId,  Sensor? parent,  String? functionId,  AtsExit? lastExit,  String? qrCode,  List<String>? assignedAssetsIds,  List<Asset>? assignedAssets,  bool? isTemplate,  bool isGlobal,  List<Access>? access, @DurationOrNullConverter()  Duration? maxHistorySearch)?  $default,) {final _that = this;
 switch (_that) {
 case _Sensor() when $default != null:
 return $default(_that.id,_that.name,_that.iterationCycle,_that.slug,_that.isInstant,_that.icon,_that.measuringUnit,_that.type,_that.subtype,_that.parameter,_that.externalIdentifiers,_that.formula,_that.script,_that.hasHeaders,_that.csvHeaders,_that.csvSeparator,_that.ranges,_that.mask,_that.hasValidator,_that.minValue,_that.maxValue,_that.contentType,_that.parentId,_that.parent,_that.functionId,_that.lastExit,_that.qrCode,_that.assignedAssetsIds,_that.assignedAssets,_that.isTemplate,_that.isGlobal,_that.access,_that.maxHistorySearch);case _:
@@ -325,8 +325,8 @@ class _Sensor implements Sensor {
 /// take the previous value of the sensor.
 @override final  bool? isInstant;
 /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
-/// will convert to LayrzIcon entity.
-@override@IconOrNullConverter() final  LayrzIcon? icon;
+/// will convert to MdiRemapIcon entity.
+@override@IconOrNullConverter() final  MdiRemapIcon? icon;
 /// [measuringUnit] of the sensor. Can be an estandard unit or a custom one.
 @override final  String? measuringUnit;
 /// [type] of the sensor.
@@ -486,7 +486,7 @@ abstract mixin class _$SensorCopyWith<$Res> implements $SensorCopyWith<$Res> {
   factory _$SensorCopyWith(_Sensor value, $Res Function(_Sensor) _then) = __$SensorCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, int? iterationCycle, String slug, bool? isInstant,@IconOrNullConverter() LayrzIcon? icon, String? measuringUnit,@JsonKey(unknownEnumValue: SensorType.constant) SensorType? type,@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType? subtype, String? parameter, List<String>? externalIdentifiers, String? formula, String? script, bool? hasHeaders, List<String>? csvHeaders, String? csvSeparator, List<SensorRange>? ranges, List<MaskPoint>? mask, bool? hasValidator, double? minValue, double? maxValue, String? contentType, String? parentId, Sensor? parent, String? functionId, AtsExit? lastExit, String? qrCode, List<String>? assignedAssetsIds, List<Asset>? assignedAssets, bool? isTemplate, bool isGlobal, List<Access>? access,@DurationOrNullConverter() Duration? maxHistorySearch
+ String id, String name, int? iterationCycle, String slug, bool? isInstant,@IconOrNullConverter() MdiRemapIcon? icon, String? measuringUnit,@JsonKey(unknownEnumValue: SensorType.constant) SensorType? type,@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType? subtype, String? parameter, List<String>? externalIdentifiers, String? formula, String? script, bool? hasHeaders, List<String>? csvHeaders, String? csvSeparator, List<SensorRange>? ranges, List<MaskPoint>? mask, bool? hasValidator, double? minValue, double? maxValue, String? contentType, String? parentId, Sensor? parent, String? functionId, AtsExit? lastExit, String? qrCode, List<String>? assignedAssetsIds, List<Asset>? assignedAssets, bool? isTemplate, bool isGlobal, List<Access>? access,@DurationOrNullConverter() Duration? maxHistorySearch
 });
 
 
@@ -511,7 +511,7 @@ as String,iterationCycle: freezed == iterationCycle ? _self.iterationCycle : ite
 as int?,slug: null == slug ? _self.slug : slug // ignore: cast_nullable_to_non_nullable
 as String,isInstant: freezed == isInstant ? _self.isInstant : isInstant // ignore: cast_nullable_to_non_nullable
 as bool?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,measuringUnit: freezed == measuringUnit ? _self.measuringUnit : measuringUnit // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,measuringUnit: freezed == measuringUnit ? _self.measuringUnit : measuringUnit // ignore: cast_nullable_to_non_nullable
 as String?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as SensorType?,subtype: freezed == subtype ? _self.subtype : subtype // ignore: cast_nullable_to_non_nullable
 as SensorSubType?,parameter: freezed == parameter ? _self.parameter : parameter // ignore: cast_nullable_to_non_nullable
@@ -573,7 +573,7 @@ $AtsExitCopyWith<$Res>? get lastExit {
 /// @nodoc
 mixin _$SensorInput {
 
- String? get id; set id(String? value); String? get assetId; set assetId(String? value); String get name; set name(String value); String get slug; set slug(String value); String get measuringUnit; set measuringUnit(String value);@JsonKey(unknownEnumValue: SensorType.constant) SensorType get type;@JsonKey(unknownEnumValue: SensorType.constant) set type(SensorType value);@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType get subtype;@JsonKey(unknownEnumValue: SensorSubType.raw) set subtype(SensorSubType value); String get parameter; set parameter(String value); int get iterationCycle; set iterationCycle(int value); String get formula; set formula(String value); String get script; set script(String value);@IconOrNullConverter() LayrzIcon? get icon;@IconOrNullConverter() set icon(LayrzIcon? value); String? get contentType; set contentType(String? value); List<SensorRangeInput> get ranges; set ranges(List<SensorRangeInput> value); List<MaskPointInput> get mask; set mask(List<MaskPointInput> value); String? get parentId; set parentId(String? value); bool get isInstant; set isInstant(bool value); bool get hasValidator; set hasValidator(bool value); double? get minValue; set minValue(double? value); double? get maxValue; set maxValue(double? value); bool get hasHeaders; set hasHeaders(bool value); String get csvSeparator; set csvSeparator(String value); List<String> get csvHeaders; set csvHeaders(List<String> value); String? get functionId; set functionId(String? value); List<String> get assignedAssetsIds; set assignedAssetsIds(List<String> value);@DurationOrNullConverter() Duration? get maxHistorySearch;@DurationOrNullConverter() set maxHistorySearch(Duration? value);
+ String? get id; set id(String? value); String? get assetId; set assetId(String? value); String get name; set name(String value); String get slug; set slug(String value); String get measuringUnit; set measuringUnit(String value);@JsonKey(unknownEnumValue: SensorType.constant) SensorType get type;@JsonKey(unknownEnumValue: SensorType.constant) set type(SensorType value);@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType get subtype;@JsonKey(unknownEnumValue: SensorSubType.raw) set subtype(SensorSubType value); String get parameter; set parameter(String value); int get iterationCycle; set iterationCycle(int value); String get formula; set formula(String value); String get script; set script(String value);@IconOrNullConverter() MdiRemapIcon? get icon;@IconOrNullConverter() set icon(MdiRemapIcon? value); String? get contentType; set contentType(String? value); List<SensorRangeInput> get ranges; set ranges(List<SensorRangeInput> value); List<MaskPointInput> get mask; set mask(List<MaskPointInput> value); String? get parentId; set parentId(String? value); bool get isInstant; set isInstant(bool value); bool get hasValidator; set hasValidator(bool value); double? get minValue; set minValue(double? value); double? get maxValue; set maxValue(double? value); bool get hasHeaders; set hasHeaders(bool value); String get csvSeparator; set csvSeparator(String value); List<String> get csvHeaders; set csvHeaders(List<String> value); String? get functionId; set functionId(String? value); List<String> get assignedAssetsIds; set assignedAssetsIds(List<String> value);@DurationOrNullConverter() Duration? get maxHistorySearch;@DurationOrNullConverter() set maxHistorySearch(Duration? value);
 /// Create a copy of SensorInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -599,7 +599,7 @@ abstract mixin class $SensorInputCopyWith<$Res>  {
   factory $SensorInputCopyWith(SensorInput value, $Res Function(SensorInput) _then) = _$SensorInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, String name, String slug, String measuringUnit,@JsonKey(unknownEnumValue: SensorType.constant) SensorType type,@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType subtype, String parameter, int iterationCycle, String formula, String script,@IconOrNullConverter() LayrzIcon? icon, String? contentType, List<SensorRangeInput> ranges, List<MaskPointInput> mask, String? parentId, bool isInstant, bool hasValidator, double? minValue, double? maxValue, bool hasHeaders, String csvSeparator, List<String> csvHeaders, String? functionId, List<String> assignedAssetsIds,@DurationOrNullConverter() Duration? maxHistorySearch
+ String? id, String? assetId, String name, String slug, String measuringUnit,@JsonKey(unknownEnumValue: SensorType.constant) SensorType type,@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType subtype, String parameter, int iterationCycle, String formula, String script,@IconOrNullConverter() MdiRemapIcon? icon, String? contentType, List<SensorRangeInput> ranges, List<MaskPointInput> mask, String? parentId, bool isInstant, bool hasValidator, double? minValue, double? maxValue, bool hasHeaders, String csvSeparator, List<String> csvHeaders, String? functionId, List<String> assignedAssetsIds,@DurationOrNullConverter() Duration? maxHistorySearch
 });
 
 
@@ -630,7 +630,7 @@ as String,iterationCycle: null == iterationCycle ? _self.iterationCycle : iterat
 as int,formula: null == formula ? _self.formula : formula // ignore: cast_nullable_to_non_nullable
 as String,script: null == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
 as String,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,contentType: freezed == contentType ? _self.contentType : contentType // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,contentType: freezed == contentType ? _self.contentType : contentType // ignore: cast_nullable_to_non_nullable
 as String?,ranges: null == ranges ? _self.ranges : ranges // ignore: cast_nullable_to_non_nullable
 as List<SensorRangeInput>,mask: null == mask ? _self.mask : mask // ignore: cast_nullable_to_non_nullable
 as List<MaskPointInput>,parentId: freezed == parentId ? _self.parentId : parentId // ignore: cast_nullable_to_non_nullable
@@ -729,7 +729,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String name,  String slug,  String measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType subtype,  String parameter,  int iterationCycle,  String formula,  String script, @IconOrNullConverter()  LayrzIcon? icon,  String? contentType,  List<SensorRangeInput> ranges,  List<MaskPointInput> mask,  String? parentId,  bool isInstant,  bool hasValidator,  double? minValue,  double? maxValue,  bool hasHeaders,  String csvSeparator,  List<String> csvHeaders,  String? functionId,  List<String> assignedAssetsIds, @DurationOrNullConverter()  Duration? maxHistorySearch)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String name,  String slug,  String measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType subtype,  String parameter,  int iterationCycle,  String formula,  String script, @IconOrNullConverter()  MdiRemapIcon? icon,  String? contentType,  List<SensorRangeInput> ranges,  List<MaskPointInput> mask,  String? parentId,  bool isInstant,  bool hasValidator,  double? minValue,  double? maxValue,  bool hasHeaders,  String csvSeparator,  List<String> csvHeaders,  String? functionId,  List<String> assignedAssetsIds, @DurationOrNullConverter()  Duration? maxHistorySearch)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SensorInput() when $default != null:
 return $default(_that.id,_that.assetId,_that.name,_that.slug,_that.measuringUnit,_that.type,_that.subtype,_that.parameter,_that.iterationCycle,_that.formula,_that.script,_that.icon,_that.contentType,_that.ranges,_that.mask,_that.parentId,_that.isInstant,_that.hasValidator,_that.minValue,_that.maxValue,_that.hasHeaders,_that.csvSeparator,_that.csvHeaders,_that.functionId,_that.assignedAssetsIds,_that.maxHistorySearch);case _:
@@ -750,7 +750,7 @@ return $default(_that.id,_that.assetId,_that.name,_that.slug,_that.measuringUnit
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String name,  String slug,  String measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType subtype,  String parameter,  int iterationCycle,  String formula,  String script, @IconOrNullConverter()  LayrzIcon? icon,  String? contentType,  List<SensorRangeInput> ranges,  List<MaskPointInput> mask,  String? parentId,  bool isInstant,  bool hasValidator,  double? minValue,  double? maxValue,  bool hasHeaders,  String csvSeparator,  List<String> csvHeaders,  String? functionId,  List<String> assignedAssetsIds, @DurationOrNullConverter()  Duration? maxHistorySearch)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String name,  String slug,  String measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType subtype,  String parameter,  int iterationCycle,  String formula,  String script, @IconOrNullConverter()  MdiRemapIcon? icon,  String? contentType,  List<SensorRangeInput> ranges,  List<MaskPointInput> mask,  String? parentId,  bool isInstant,  bool hasValidator,  double? minValue,  double? maxValue,  bool hasHeaders,  String csvSeparator,  List<String> csvHeaders,  String? functionId,  List<String> assignedAssetsIds, @DurationOrNullConverter()  Duration? maxHistorySearch)  $default,) {final _that = this;
 switch (_that) {
 case _SensorInput():
 return $default(_that.id,_that.assetId,_that.name,_that.slug,_that.measuringUnit,_that.type,_that.subtype,_that.parameter,_that.iterationCycle,_that.formula,_that.script,_that.icon,_that.contentType,_that.ranges,_that.mask,_that.parentId,_that.isInstant,_that.hasValidator,_that.minValue,_that.maxValue,_that.hasHeaders,_that.csvSeparator,_that.csvHeaders,_that.functionId,_that.assignedAssetsIds,_that.maxHistorySearch);case _:
@@ -770,7 +770,7 @@ return $default(_that.id,_that.assetId,_that.name,_that.slug,_that.measuringUnit
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String name,  String slug,  String measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType subtype,  String parameter,  int iterationCycle,  String formula,  String script, @IconOrNullConverter()  LayrzIcon? icon,  String? contentType,  List<SensorRangeInput> ranges,  List<MaskPointInput> mask,  String? parentId,  bool isInstant,  bool hasValidator,  double? minValue,  double? maxValue,  bool hasHeaders,  String csvSeparator,  List<String> csvHeaders,  String? functionId,  List<String> assignedAssetsIds, @DurationOrNullConverter()  Duration? maxHistorySearch)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String name,  String slug,  String measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant)  SensorType type, @JsonKey(unknownEnumValue: SensorSubType.raw)  SensorSubType subtype,  String parameter,  int iterationCycle,  String formula,  String script, @IconOrNullConverter()  MdiRemapIcon? icon,  String? contentType,  List<SensorRangeInput> ranges,  List<MaskPointInput> mask,  String? parentId,  bool isInstant,  bool hasValidator,  double? minValue,  double? maxValue,  bool hasHeaders,  String csvSeparator,  List<String> csvHeaders,  String? functionId,  List<String> assignedAssetsIds, @DurationOrNullConverter()  Duration? maxHistorySearch)?  $default,) {final _that = this;
 switch (_that) {
 case _SensorInput() when $default != null:
 return $default(_that.id,_that.assetId,_that.name,_that.slug,_that.measuringUnit,_that.type,_that.subtype,_that.parameter,_that.iterationCycle,_that.formula,_that.script,_that.icon,_that.contentType,_that.ranges,_that.mask,_that.parentId,_that.isInstant,_that.hasValidator,_that.minValue,_that.maxValue,_that.hasHeaders,_that.csvSeparator,_that.csvHeaders,_that.functionId,_that.assignedAssetsIds,_that.maxHistorySearch);case _:
@@ -799,7 +799,7 @@ class _SensorInput implements SensorInput {
 @override@JsonKey()  int iterationCycle;
 @override@JsonKey()  String formula;
 @override@JsonKey()  String script;
-@override@IconOrNullConverter()  LayrzIcon? icon;
+@override@IconOrNullConverter()  MdiRemapIcon? icon;
 @override  String? contentType;
 @override@JsonKey()  List<SensorRangeInput> ranges;
 @override@JsonKey()  List<MaskPointInput> mask;
@@ -841,7 +841,7 @@ abstract mixin class _$SensorInputCopyWith<$Res> implements $SensorInputCopyWith
   factory _$SensorInputCopyWith(_SensorInput value, $Res Function(_SensorInput) _then) = __$SensorInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, String name, String slug, String measuringUnit,@JsonKey(unknownEnumValue: SensorType.constant) SensorType type,@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType subtype, String parameter, int iterationCycle, String formula, String script,@IconOrNullConverter() LayrzIcon? icon, String? contentType, List<SensorRangeInput> ranges, List<MaskPointInput> mask, String? parentId, bool isInstant, bool hasValidator, double? minValue, double? maxValue, bool hasHeaders, String csvSeparator, List<String> csvHeaders, String? functionId, List<String> assignedAssetsIds,@DurationOrNullConverter() Duration? maxHistorySearch
+ String? id, String? assetId, String name, String slug, String measuringUnit,@JsonKey(unknownEnumValue: SensorType.constant) SensorType type,@JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType subtype, String parameter, int iterationCycle, String formula, String script,@IconOrNullConverter() MdiRemapIcon? icon, String? contentType, List<SensorRangeInput> ranges, List<MaskPointInput> mask, String? parentId, bool isInstant, bool hasValidator, double? minValue, double? maxValue, bool hasHeaders, String csvSeparator, List<String> csvHeaders, String? functionId, List<String> assignedAssetsIds,@DurationOrNullConverter() Duration? maxHistorySearch
 });
 
 
@@ -872,7 +872,7 @@ as String,iterationCycle: null == iterationCycle ? _self.iterationCycle : iterat
 as int,formula: null == formula ? _self.formula : formula // ignore: cast_nullable_to_non_nullable
 as String,script: null == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
 as String,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,contentType: freezed == contentType ? _self.contentType : contentType // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,contentType: freezed == contentType ? _self.contentType : contentType // ignore: cast_nullable_to_non_nullable
 as String?,ranges: null == ranges ? _self.ranges : ranges // ignore: cast_nullable_to_non_nullable
 as List<SensorRangeInput>,mask: null == mask ? _self.mask : mask // ignore: cast_nullable_to_non_nullable
 as List<MaskPointInput>,parentId: freezed == parentId ? _self.parentId : parentId // ignore: cast_nullable_to_non_nullable
@@ -1423,8 +1423,8 @@ mixin _$MaskPoint {
 @ColorOrNullConverter() Color? get color;/// [text] of the mask point, will replace the value of the mask point when is not null
  String? get text;/// [value] of the mask point.
  String get value;/// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
-/// will convert to LayrzIcon entity.
-@IconOrNullConverter() LayrzIcon? get icon;/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
+/// will convert to MdiRemapIcon entity.
+@IconOrNullConverter() MdiRemapIcon? get icon;/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
 @DurationConverter() Duration? get duration;
 /// Create a copy of MaskPoint
 /// with the given fields replaced by the non-null parameter values.
@@ -1458,7 +1458,7 @@ abstract mixin class $MaskPointCopyWith<$Res>  {
   factory $MaskPointCopyWith(MaskPoint value, $Res Function(MaskPoint) _then) = _$MaskPointCopyWithImpl;
 @useResult
 $Res call({
-@ColorOrNullConverter() Color? color, String? text, String value,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration? duration
+@ColorOrNullConverter() Color? color, String? text, String value,@IconOrNullConverter() MdiRemapIcon? icon,@DurationConverter() Duration? duration
 });
 
 
@@ -1481,7 +1481,7 @@ color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nu
 as Color?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String?,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
 as Duration?,
   ));
 }
@@ -1567,7 +1567,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  MdiRemapIcon? icon, @DurationConverter()  Duration? duration)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MaskPoint() when $default != null:
 return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
@@ -1588,7 +1588,7 @@ return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);ca
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  MdiRemapIcon? icon, @DurationConverter()  Duration? duration)  $default,) {final _that = this;
 switch (_that) {
 case _MaskPoint():
 return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
@@ -1608,7 +1608,7 @@ return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);ca
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorOrNullConverter()  Color? color,  String? text,  String value, @IconOrNullConverter()  MdiRemapIcon? icon, @DurationConverter()  Duration? duration)?  $default,) {final _that = this;
 switch (_that) {
 case _MaskPoint() when $default != null:
 return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
@@ -1633,8 +1633,8 @@ class _MaskPoint implements MaskPoint {
 /// [value] of the mask point.
 @override final  String value;
 /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
-/// will convert to LayrzIcon entity.
-@override@IconOrNullConverter() final  LayrzIcon? icon;
+/// will convert to MdiRemapIcon entity.
+@override@IconOrNullConverter() final  MdiRemapIcon? icon;
 /// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
 @override@DurationConverter() final  Duration? duration;
 
@@ -1671,7 +1671,7 @@ abstract mixin class _$MaskPointCopyWith<$Res> implements $MaskPointCopyWith<$Re
   factory _$MaskPointCopyWith(_MaskPoint value, $Res Function(_MaskPoint) _then) = __$MaskPointCopyWithImpl;
 @override @useResult
 $Res call({
-@ColorOrNullConverter() Color? color, String? text, String value,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration? duration
+@ColorOrNullConverter() Color? color, String? text, String value,@IconOrNullConverter() MdiRemapIcon? icon,@DurationConverter() Duration? duration
 });
 
 
@@ -1694,7 +1694,7 @@ color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nu
 as Color?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String?,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
 as Duration?,
   ));
 }
@@ -1706,7 +1706,7 @@ as Duration?,
 /// @nodoc
 mixin _$MaskPointInput {
 
-@ColorOrNullConverter() Color? get color;@ColorOrNullConverter() set color(Color? value); String? get text; set text(String? value); String? get value; set value(String? value);@IconOrNullConverter() LayrzIcon? get icon;@IconOrNullConverter() set icon(LayrzIcon? value);/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
+@ColorOrNullConverter() Color? get color;@ColorOrNullConverter() set color(Color? value); String? get text; set text(String? value); String? get value; set value(String? value);@IconOrNullConverter() MdiRemapIcon? get icon;@IconOrNullConverter() set icon(MdiRemapIcon? value);/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
 @DurationConverter() Duration? get duration;/// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
 @DurationConverter() set duration(Duration? value);
 /// Create a copy of MaskPointInput
@@ -1734,7 +1734,7 @@ abstract mixin class $MaskPointInputCopyWith<$Res>  {
   factory $MaskPointInputCopyWith(MaskPointInput value, $Res Function(MaskPointInput) _then) = _$MaskPointInputCopyWithImpl;
 @useResult
 $Res call({
-@ColorOrNullConverter() Color? color, String? text, String? value,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration? duration
+@ColorOrNullConverter() Color? color, String? text, String? value,@IconOrNullConverter() MdiRemapIcon? icon,@DurationConverter() Duration? duration
 });
 
 
@@ -1757,7 +1757,7 @@ color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nu
 as Color?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String?,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
 as Duration?,
   ));
 }
@@ -1843,7 +1843,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  MdiRemapIcon? icon, @DurationConverter()  Duration? duration)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MaskPointInput() when $default != null:
 return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
@@ -1864,7 +1864,7 @@ return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);ca
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  MdiRemapIcon? icon, @DurationConverter()  Duration? duration)  $default,) {final _that = this;
 switch (_that) {
 case _MaskPointInput():
 return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
@@ -1884,7 +1884,7 @@ return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);ca
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  LayrzIcon? icon, @DurationConverter()  Duration? duration)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorOrNullConverter()  Color? color,  String? text,  String? value, @IconOrNullConverter()  MdiRemapIcon? icon, @DurationConverter()  Duration? duration)?  $default,) {final _that = this;
 switch (_that) {
 case _MaskPointInput() when $default != null:
 return $default(_that.color,_that.text,_that.value,_that.icon,_that.duration);case _:
@@ -1905,7 +1905,7 @@ class _MaskPointInput implements MaskPointInput {
 @override@ColorOrNullConverter()  Color? color;
 @override  String? text;
 @override  String? value;
-@override@IconOrNullConverter()  LayrzIcon? icon;
+@override@IconOrNullConverter()  MdiRemapIcon? icon;
 /// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
 @override@DurationConverter()  Duration? duration;
 
@@ -1935,7 +1935,7 @@ abstract mixin class _$MaskPointInputCopyWith<$Res> implements $MaskPointInputCo
   factory _$MaskPointInputCopyWith(_MaskPointInput value, $Res Function(_MaskPointInput) _then) = __$MaskPointInputCopyWithImpl;
 @override @useResult
 $Res call({
-@ColorOrNullConverter() Color? color, String? text, String? value,@IconOrNullConverter() LayrzIcon? icon,@DurationConverter() Duration? duration
+@ColorOrNullConverter() Color? color, String? text, String? value,@IconOrNullConverter() MdiRemapIcon? icon,@DurationConverter() Duration? duration
 });
 
 
@@ -1958,7 +1958,7 @@ color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nu
 as Color?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String?,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,duration: freezed == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
 as Duration?,
   ));
 }

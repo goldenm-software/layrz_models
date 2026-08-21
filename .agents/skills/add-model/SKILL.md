@@ -42,7 +42,7 @@ JSON sample, etc.). Parse field names, types, and nesting from that definition.
 | date string field | `DateTime` | `@DateConverter()` (required) or `@DateOrNullConverter()` (nullable) |
 | color string | `Color` | `@ColorConverter()` / `@ColorOrNullConverter()` |
 | duration (seconds) | `Duration` | `@DurationConverter()` / `@DurationOrNullConverter()` |
-| icon string | `LayrzIcon` | `@IconConverter()` / `@IconOrNullConverter()` |
+| icon string | `MdiRemapIcon` | `@IconConverter()` / `@IconOrNullConverter()` |
 | time-of-day string | `TimeOfDay` | `@TimeOfDayConverter()` / `@TimeOfDayOrNullConverter()` |
 | regex string | `RegExp` | `@RegExpConverter()` / `@RegExpOrNullConverter()` |
 | byte list | `Uint8List` | `@ByteListConverter()` / `@ByteListOrNullConverter()` |

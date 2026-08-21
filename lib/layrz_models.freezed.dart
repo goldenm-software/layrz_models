@@ -324,7 +324,7 @@ $EmployeeCopyWith<$Res>? get creator {
 /// @nodoc
 mixin _$Algorithm {
 
- String get id; String get name;@ColorConverter() Color get color;@IconOrNullConverter() LayrzIcon? get icon; bool get isEnabled; List<String> get categoriesIds; bool get canBeInSensors; bool get hasHttp; bool get hasFtp; List<CredentialField> get requiredFields;/// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+ String get id; String get name;@ColorConverter() Color get color;@IconOrNullConverter() MdiRemapIcon? get icon; bool get isEnabled; List<String> get categoriesIds; bool get canBeInSensors; bool get hasHttp; bool get hasFtp; List<CredentialField> get requiredFields;/// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
 /// For marketing purposes.
  int? get usage;
 /// Create a copy of Algorithm
@@ -359,7 +359,7 @@ abstract mixin class $AlgorithmCopyWith<$Res>  {
   factory $AlgorithmCopyWith(Algorithm value, $Res Function(Algorithm) _then) = _$AlgorithmCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@ColorConverter() Color color,@IconOrNullConverter() LayrzIcon? icon, bool isEnabled, List<String> categoriesIds, bool canBeInSensors, bool hasHttp, bool hasFtp, List<CredentialField> requiredFields, int? usage
+ String id, String name,@ColorConverter() Color color,@IconOrNullConverter() MdiRemapIcon? icon, bool isEnabled, List<String> categoriesIds, bool canBeInSensors, bool hasHttp, bool hasFtp, List<CredentialField> requiredFields, int? usage
 });
 
 
@@ -382,7 +382,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
 as bool,categoriesIds: null == categoriesIds ? _self.categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,canBeInSensors: null == canBeInSensors ? _self.canBeInSensors : canBeInSensors // ignore: cast_nullable_to_non_nullable
 as bool,hasHttp: null == hasHttp ? _self.hasHttp : hasHttp // ignore: cast_nullable_to_non_nullable
@@ -474,7 +474,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @ColorConverter()  Color color, @IconOrNullConverter()  LayrzIcon? icon,  bool isEnabled,  List<String> categoriesIds,  bool canBeInSensors,  bool hasHttp,  bool hasFtp,  List<CredentialField> requiredFields,  int? usage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @ColorConverter()  Color color, @IconOrNullConverter()  MdiRemapIcon? icon,  bool isEnabled,  List<String> categoriesIds,  bool canBeInSensors,  bool hasHttp,  bool hasFtp,  List<CredentialField> requiredFields,  int? usage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Algorithm() when $default != null:
 return $default(_that.id,_that.name,_that.color,_that.icon,_that.isEnabled,_that.categoriesIds,_that.canBeInSensors,_that.hasHttp,_that.hasFtp,_that.requiredFields,_that.usage);case _:
@@ -495,7 +495,7 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.isEnabled,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @ColorConverter()  Color color, @IconOrNullConverter()  LayrzIcon? icon,  bool isEnabled,  List<String> categoriesIds,  bool canBeInSensors,  bool hasHttp,  bool hasFtp,  List<CredentialField> requiredFields,  int? usage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @ColorConverter()  Color color, @IconOrNullConverter()  MdiRemapIcon? icon,  bool isEnabled,  List<String> categoriesIds,  bool canBeInSensors,  bool hasHttp,  bool hasFtp,  List<CredentialField> requiredFields,  int? usage)  $default,) {final _that = this;
 switch (_that) {
 case _Algorithm():
 return $default(_that.id,_that.name,_that.color,_that.icon,_that.isEnabled,_that.categoriesIds,_that.canBeInSensors,_that.hasHttp,_that.hasFtp,_that.requiredFields,_that.usage);case _:
@@ -515,7 +515,7 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.isEnabled,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @ColorConverter()  Color color, @IconOrNullConverter()  LayrzIcon? icon,  bool isEnabled,  List<String> categoriesIds,  bool canBeInSensors,  bool hasHttp,  bool hasFtp,  List<CredentialField> requiredFields,  int? usage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @ColorConverter()  Color color, @IconOrNullConverter()  MdiRemapIcon? icon,  bool isEnabled,  List<String> categoriesIds,  bool canBeInSensors,  bool hasHttp,  bool hasFtp,  List<CredentialField> requiredFields,  int? usage)?  $default,) {final _that = this;
 switch (_that) {
 case _Algorithm() when $default != null:
 return $default(_that.id,_that.name,_that.color,_that.icon,_that.isEnabled,_that.categoriesIds,_that.canBeInSensors,_that.hasHttp,_that.hasFtp,_that.requiredFields,_that.usage);case _:
@@ -536,7 +536,7 @@ class _Algorithm implements Algorithm {
 @override final  String id;
 @override final  String name;
 @override@ColorConverter() final  Color color;
-@override@IconOrNullConverter() final  LayrzIcon? icon;
+@override@IconOrNullConverter() final  MdiRemapIcon? icon;
 @override final  bool isEnabled;
  final  List<String> _categoriesIds;
 @override@JsonKey() List<String> get categoriesIds {
@@ -592,7 +592,7 @@ abstract mixin class _$AlgorithmCopyWith<$Res> implements $AlgorithmCopyWith<$Re
   factory _$AlgorithmCopyWith(_Algorithm value, $Res Function(_Algorithm) _then) = __$AlgorithmCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@ColorConverter() Color color,@IconOrNullConverter() LayrzIcon? icon, bool isEnabled, List<String> categoriesIds, bool canBeInSensors, bool hasHttp, bool hasFtp, List<CredentialField> requiredFields, int? usage
+ String id, String name,@ColorConverter() Color color,@IconOrNullConverter() MdiRemapIcon? icon, bool isEnabled, List<String> categoriesIds, bool canBeInSensors, bool hasHttp, bool hasFtp, List<CredentialField> requiredFields, int? usage
 });
 
 
@@ -615,7 +615,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
 as bool,categoriesIds: null == categoriesIds ? _self._categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,canBeInSensors: null == canBeInSensors ? _self.canBeInSensors : canBeInSensors // ignore: cast_nullable_to_non_nullable
 as bool,hasHttp: null == hasHttp ? _self.hasHttp : hasHttp // ignore: cast_nullable_to_non_nullable

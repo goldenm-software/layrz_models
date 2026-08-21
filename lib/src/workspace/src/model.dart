@@ -16,7 +16,7 @@ abstract class Workspace with _$Workspace {
     @ColorOrNullConverter() Color? color,
 
     /// Is the icon URI of the workspace
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// Background image URI of the workspace
     String? background,
@@ -113,7 +113,7 @@ abstract class WorkspaceInput with _$WorkspaceInput {
     String? id,
     @Default("") String name,
     @Default(Colors.blue) @ColorOrNullConverter() Color? color,
-    @IconConverter() required LayrzIcon icon,
+    @IconConverter() required MdiRemapIcon icon,
     String? background,
     @Default(false) bool isFavorite,
     @Default(WorkspaceMainView.sensors)

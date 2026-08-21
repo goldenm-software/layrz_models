@@ -39,7 +39,7 @@ abstract class LayrzNotification with _$LayrzNotification {
     /// it will be `LayrzIcons.solarOutlineBell`.
     ///
     /// You can find the available icons on `https://icons.layrz.com`.
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// [color] is the color of the notification.
     @ColorConverter() @Default(Colors.blue) Color color,

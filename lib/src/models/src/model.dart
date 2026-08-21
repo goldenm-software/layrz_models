@@ -52,7 +52,7 @@ abstract class Model with _$Model {
     @Default([]) List<FirmwareBuild> firmwares,
 
     /// The icon of the model, if not exists, you must render the protocol icon
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// Indicates the rendering widget, useful to render visually the kind of device
     @JsonKey(unknownEnumValue: RenderWidget.unknown) @Default([]) List<RenderWidget> widget,

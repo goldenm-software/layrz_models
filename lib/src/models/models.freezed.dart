@@ -31,7 +31,7 @@ mixin _$Model {
  String? get peripheralIdentifier;/// [peripheralParserSpec] is the parser specification for the peripheral device.
  Map<String, dynamic>? get peripheralParserSpec;/// [firmwares] is the list of firmwares for the model.
  List<FirmwareBuild> get firmwares;/// The icon of the model, if not exists, you must render the protocol icon
-@IconOrNullConverter() LayrzIcon? get icon;/// Indicates the rendering widget, useful to render visually the kind of device
+@IconOrNullConverter() MdiRemapIcon? get icon;/// Indicates the rendering widget, useful to render visually the kind of device
 @JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> get widget;/// Whether the model is Zigbee-capable. Only meaningful for REALTIME protocols.
  bool get zigbeeCompatible;/// [zigbeeParameters] list of Zigbee parameters defined for this model.
  List<ZigbeeParameter> get zigbeeParameters;
@@ -67,7 +67,7 @@ abstract mixin class $ModelCopyWith<$Res>  {
   factory $ModelCopyWith(Model value, $Res Function(Model) _then) = _$ModelCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric, List<CommandDefinition> commandsStructure, List<ConfigGrouping> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<FirmwareBuild> firmwares,@IconOrNullConverter() LayrzIcon? icon,@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> widget, bool zigbeeCompatible, List<ZigbeeParameter> zigbeeParameters
+ String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric, List<CommandDefinition> commandsStructure, List<ConfigGrouping> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<FirmwareBuild> firmwares,@IconOrNullConverter() MdiRemapIcon? icon,@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> widget, bool zigbeeCompatible, List<ZigbeeParameter> zigbeeParameters
 });
 
 
@@ -101,7 +101,7 @@ as String?,peripheralIdentifier: freezed == peripheralIdentifier ? _self.periphe
 as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,firmwares: null == firmwares ? _self.firmwares : firmwares // ignore: cast_nullable_to_non_nullable
 as List<FirmwareBuild>,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
 as List<RenderWidget>,zigbeeCompatible: null == zigbeeCompatible ? _self.zigbeeCompatible : zigbeeCompatible // ignore: cast_nullable_to_non_nullable
 as bool,zigbeeParameters: null == zigbeeParameters ? _self.zigbeeParameters : zigbeeParameters // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeParameter>,
@@ -201,7 +201,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  bool zigbeeCompatible,  List<ZigbeeParameter> zigbeeParameters)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  MdiRemapIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  bool zigbeeCompatible,  List<ZigbeeParameter> zigbeeParameters)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Model() when $default != null:
 return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.firmwares,_that.icon,_that.widget,_that.zigbeeCompatible,_that.zigbeeParameters);case _:
@@ -222,7 +222,7 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocol
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  bool zigbeeCompatible,  List<ZigbeeParameter> zigbeeParameters)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  MdiRemapIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  bool zigbeeCompatible,  List<ZigbeeParameter> zigbeeParameters)  $default,) {final _that = this;
 switch (_that) {
 case _Model():
 return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.firmwares,_that.icon,_that.widget,_that.zigbeeCompatible,_that.zigbeeParameters);case _:
@@ -242,7 +242,7 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocol
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  LayrzIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  bool zigbeeCompatible,  List<ZigbeeParameter> zigbeeParameters)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? flespiId,  InboundProtocol? protocol,  String? protocolId,  bool? isGeneric,  List<CommandDefinition> commandsStructure,  List<ConfigGrouping> configStructure,  bool confiotCapable, @JsonKey(unknownEnumValue: ConfIoTLayout.standard)  ConfIoTLayout confiotLayout,  String? confiotName,  String? peripheralIdentifier,  Map<String, dynamic>? peripheralParserSpec,  List<FirmwareBuild> firmwares, @IconOrNullConverter()  MdiRemapIcon? icon, @JsonKey(unknownEnumValue: RenderWidget.unknown)  List<RenderWidget> widget,  bool zigbeeCompatible,  List<ZigbeeParameter> zigbeeParameters)?  $default,) {final _that = this;
 switch (_that) {
 case _Model() when $default != null:
 return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocolId,_that.isGeneric,_that.commandsStructure,_that.configStructure,_that.confiotCapable,_that.confiotLayout,_that.confiotName,_that.peripheralIdentifier,_that.peripheralParserSpec,_that.firmwares,_that.icon,_that.widget,_that.zigbeeCompatible,_that.zigbeeParameters);case _:
@@ -320,7 +320,7 @@ class _Model extends Model {
 }
 
 /// The icon of the model, if not exists, you must render the protocol icon
-@override@IconOrNullConverter() final  LayrzIcon? icon;
+@override@IconOrNullConverter() final  MdiRemapIcon? icon;
 /// Indicates the rendering widget, useful to render visually the kind of device
  final  List<RenderWidget> _widget;
 /// Indicates the rendering widget, useful to render visually the kind of device
@@ -375,7 +375,7 @@ abstract mixin class _$ModelCopyWith<$Res> implements $ModelCopyWith<$Res> {
   factory _$ModelCopyWith(_Model value, $Res Function(_Model) _then) = __$ModelCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric, List<CommandDefinition> commandsStructure, List<ConfigGrouping> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<FirmwareBuild> firmwares,@IconOrNullConverter() LayrzIcon? icon,@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> widget, bool zigbeeCompatible, List<ZigbeeParameter> zigbeeParameters
+ String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric, List<CommandDefinition> commandsStructure, List<ConfigGrouping> configStructure, bool confiotCapable,@JsonKey(unknownEnumValue: ConfIoTLayout.standard) ConfIoTLayout confiotLayout, String? confiotName, String? peripheralIdentifier, Map<String, dynamic>? peripheralParserSpec, List<FirmwareBuild> firmwares,@IconOrNullConverter() MdiRemapIcon? icon,@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> widget, bool zigbeeCompatible, List<ZigbeeParameter> zigbeeParameters
 });
 
 
@@ -409,7 +409,7 @@ as String?,peripheralIdentifier: freezed == peripheralIdentifier ? _self.periphe
 as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self._peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,firmwares: null == firmwares ? _self._firmwares : firmwares // ignore: cast_nullable_to_non_nullable
 as List<FirmwareBuild>,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,widget: null == widget ? _self._widget : widget // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,widget: null == widget ? _self._widget : widget // ignore: cast_nullable_to_non_nullable
 as List<RenderWidget>,zigbeeCompatible: null == zigbeeCompatible ? _self.zigbeeCompatible : zigbeeCompatible // ignore: cast_nullable_to_non_nullable
 as bool,zigbeeParameters: null == zigbeeParameters ? _self._zigbeeParameters : zigbeeParameters // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeParameter>,

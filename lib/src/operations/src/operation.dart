@@ -115,7 +115,7 @@ abstract class Operation with _$Operation {
     /// [icon] is the icon of the notification
     ///
     /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// [duration] is the duration of the notification
     ///
@@ -487,7 +487,7 @@ abstract class OperationInput with _$OperationInput {
     /// [icon] is the icon of the notification
     ///
     /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// [duration] is the duration of the notification
     ///

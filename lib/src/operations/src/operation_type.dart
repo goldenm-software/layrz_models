@@ -104,40 +104,40 @@ enum OperationType {
   IconData get icon {
     switch (this) {
       case .email:
-        return LayrzIcons.solarOutlineLetterUnread;
+        return MdiIcons.emailFastOutline;
 
       case .inAppNotification:
-        return LayrzIcons.solarOutlineBell;
+        return MdiIcons.bellRingOutline;
 
       case .registerInAsset:
-        return LayrzIcons.solarOutlineDiskette;
+        return MdiIcons.contentSave;
 
       case .webhook:
-        return LayrzIcons.solarOutlineBranchingPathsUp;
+        return MdiIcons.webhook;
 
       case .twilio:
-        return LayrzIcons.solarOutlinePhoneCallingRounded;
+        return MdiIcons.phoneOutline;
 
       case .mobilePopupNotification:
-        return LayrzIcons.solarOutlineSmartphoneN2;
+        return MdiIcons.cellphoneSound;
 
       case .bhsPush:
-        return LayrzIcons.mdiFirebase;
+        return MdiIcons.firebase;
 
       case .pushNotification:
-        return LayrzIcons.solarOutlineNotificationUnread;
+        return MdiIcons.squareRoundedBadgeOutline;
 
       case .sms:
-        return LayrzIcons.solarOutlineChatDots;
+        return MdiIcons.messageAlert;
 
       case .voiceCall:
-        return LayrzIcons.solarOutlineCallChatRounded;
+        return MdiIcons.phoneHangup;
 
       case .whatsappMessage:
-        return LayrzIcons.mdiWhatsapp;
+        return MdiIcons.whatsapp;
 
       default:
-        return LayrzIcons.solarOutlineBell;
+        return MdiIcons.bellOutline;
     }
   }
 

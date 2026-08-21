@@ -18,7 +18,7 @@ abstract class PoiInput with _$PoiInput {
     String? description,
 
     /// [icon] is the icon representing the point of interest.
-    @IconConverter() required LayrzIcon icon,
+    @IconConverter() required MdiRemapIcon icon,
 
     /// [latitude] is the latitude of the point of interest.
     double? latitude,

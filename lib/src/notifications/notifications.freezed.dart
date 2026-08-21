@@ -35,7 +35,7 @@ mixin _$LayrzNotification {
 /// it will be `LayrzIcons.solarOutlineBell`.
 ///
 /// You can find the available icons on `https://icons.layrz.com`.
-@IconOrNullConverter() LayrzIcon? get icon;/// [color] is the color of the notification.
+@IconOrNullConverter() MdiRemapIcon? get icon;/// [color] is the color of the notification.
 @ColorConverter() Color get color;/// [uri] is the URI of the sound effect to play when the notification arrives.
 ///
 /// This will only be considered if the [sound] is set to `SoundEffect.custom`.
@@ -73,7 +73,7 @@ abstract mixin class $LayrzNotificationCopyWith<$Res>  {
   factory $LayrzNotificationCopyWith(LayrzNotification value, $Res Function(LayrzNotification) _then) = _$LayrzNotificationCopyWithImpl;
 @useResult
 $Res call({
- String title, bool titleTranslate, Map<String, dynamic> titleArgs, String message, bool messageTranslate, Map<String, dynamic> messageArgs,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect sound,@IconOrNullConverter() LayrzIcon? icon,@ColorConverter() Color color, String? uri,@DurationConverter() Duration duration
+ String title, bool titleTranslate, Map<String, dynamic> titleArgs, String message, bool messageTranslate, Map<String, dynamic> messageArgs,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect sound,@IconOrNullConverter() MdiRemapIcon? icon,@ColorConverter() Color color, String? uri,@DurationConverter() Duration duration
 });
 
 
@@ -100,7 +100,7 @@ as String,messageTranslate: null == messageTranslate ? _self.messageTranslate : 
 as bool,messageArgs: null == messageArgs ? _self.messageArgs : messageArgs // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,sound: null == sound ? _self.sound : sound // ignore: cast_nullable_to_non_nullable
 as SoundEffect,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,uri: freezed == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
 as String?,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
 as Duration,
@@ -188,7 +188,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  bool titleTranslate,  Map<String, dynamic> titleArgs,  String message,  bool messageTranslate,  Map<String, dynamic> messageArgs, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect sound, @IconOrNullConverter()  LayrzIcon? icon, @ColorConverter()  Color color,  String? uri, @DurationConverter()  Duration duration)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  bool titleTranslate,  Map<String, dynamic> titleArgs,  String message,  bool messageTranslate,  Map<String, dynamic> messageArgs, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect sound, @IconOrNullConverter()  MdiRemapIcon? icon, @ColorConverter()  Color color,  String? uri, @DurationConverter()  Duration duration)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LayrzNotification() when $default != null:
 return $default(_that.title,_that.titleTranslate,_that.titleArgs,_that.message,_that.messageTranslate,_that.messageArgs,_that.sound,_that.icon,_that.color,_that.uri,_that.duration);case _:
@@ -209,7 +209,7 @@ return $default(_that.title,_that.titleTranslate,_that.titleArgs,_that.message,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  bool titleTranslate,  Map<String, dynamic> titleArgs,  String message,  bool messageTranslate,  Map<String, dynamic> messageArgs, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect sound, @IconOrNullConverter()  LayrzIcon? icon, @ColorConverter()  Color color,  String? uri, @DurationConverter()  Duration duration)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  bool titleTranslate,  Map<String, dynamic> titleArgs,  String message,  bool messageTranslate,  Map<String, dynamic> messageArgs, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect sound, @IconOrNullConverter()  MdiRemapIcon? icon, @ColorConverter()  Color color,  String? uri, @DurationConverter()  Duration duration)  $default,) {final _that = this;
 switch (_that) {
 case _LayrzNotification():
 return $default(_that.title,_that.titleTranslate,_that.titleArgs,_that.message,_that.messageTranslate,_that.messageArgs,_that.sound,_that.icon,_that.color,_that.uri,_that.duration);case _:
@@ -229,7 +229,7 @@ return $default(_that.title,_that.titleTranslate,_that.titleArgs,_that.message,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  bool titleTranslate,  Map<String, dynamic> titleArgs,  String message,  bool messageTranslate,  Map<String, dynamic> messageArgs, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect sound, @IconOrNullConverter()  LayrzIcon? icon, @ColorConverter()  Color color,  String? uri, @DurationConverter()  Duration duration)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  bool titleTranslate,  Map<String, dynamic> titleArgs,  String message,  bool messageTranslate,  Map<String, dynamic> messageArgs, @JsonKey(unknownEnumValue: SoundEffect.none)  SoundEffect sound, @IconOrNullConverter()  MdiRemapIcon? icon, @ColorConverter()  Color color,  String? uri, @DurationConverter()  Duration duration)?  $default,) {final _that = this;
 switch (_that) {
 case _LayrzNotification() when $default != null:
 return $default(_that.title,_that.titleTranslate,_that.titleArgs,_that.message,_that.messageTranslate,_that.messageArgs,_that.sound,_that.icon,_that.color,_that.uri,_that.duration);case _:
@@ -292,7 +292,7 @@ class _LayrzNotification extends LayrzNotification {
 /// it will be `LayrzIcons.solarOutlineBell`.
 ///
 /// You can find the available icons on `https://icons.layrz.com`.
-@override@IconOrNullConverter() final  LayrzIcon? icon;
+@override@IconOrNullConverter() final  MdiRemapIcon? icon;
 /// [color] is the color of the notification.
 @override@JsonKey()@ColorConverter() final  Color color;
 /// [uri] is the URI of the sound effect to play when the notification arrives.
@@ -335,7 +335,7 @@ abstract mixin class _$LayrzNotificationCopyWith<$Res> implements $LayrzNotifica
   factory _$LayrzNotificationCopyWith(_LayrzNotification value, $Res Function(_LayrzNotification) _then) = __$LayrzNotificationCopyWithImpl;
 @override @useResult
 $Res call({
- String title, bool titleTranslate, Map<String, dynamic> titleArgs, String message, bool messageTranslate, Map<String, dynamic> messageArgs,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect sound,@IconOrNullConverter() LayrzIcon? icon,@ColorConverter() Color color, String? uri,@DurationConverter() Duration duration
+ String title, bool titleTranslate, Map<String, dynamic> titleArgs, String message, bool messageTranslate, Map<String, dynamic> messageArgs,@JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect sound,@IconOrNullConverter() MdiRemapIcon? icon,@ColorConverter() Color color, String? uri,@DurationConverter() Duration duration
 });
 
 
@@ -362,7 +362,7 @@ as String,messageTranslate: null == messageTranslate ? _self.messageTranslate : 
 as bool,messageArgs: null == messageArgs ? _self._messageArgs : messageArgs // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,sound: null == sound ? _self.sound : sound // ignore: cast_nullable_to_non_nullable
 as SoundEffect,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,uri: freezed == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
 as String?,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
 as Duration,
