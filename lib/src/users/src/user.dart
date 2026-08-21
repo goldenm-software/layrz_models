@@ -23,7 +23,6 @@ String _getSaveMutationName({required UserVariant variant, required bool isNew})
     case .standard:
     case .ats:
     case .atsAdmin:
-    case .brickhouse:
     case .tagon:
       return isNew ? 'addUser' : 'editUser';
     case .sdm:
@@ -34,6 +33,8 @@ String _getSaveMutationName({required UserVariant variant, required bool isNew})
     case .mappitSupervisor:
     case .mappitSeller:
       return isNew ? 'addMappitUser' : 'editMappitUser';
+    case .brickhouse:
+      return isNew ? 'addBrickhouseUser' : 'editBrickhouseUser';
   }
 }
 
@@ -69,7 +70,7 @@ String _getInputTypeName({required UserVariant variant}) {
     case .mappitSeller:
       return 'MappitUserInput';
     case .brickhouse:
-      return 'BHSEditUserInput';
+      return 'EditBrickhouseUserInput';
     case .standard:
     case .ats:
     case .atsAdmin:
@@ -246,7 +247,7 @@ abstract class User with _$User {
       case .atsAdmin:
         return 'AtsUser';
       case .brickhouse:
-        return 'BHSUser';
+        return 'BrickhouseUser';
       case .sdm:
         return 'SdmUser';
       case .tagon:
@@ -271,8 +272,7 @@ abstract class User with _$User {
       case .atsAdmin:
         return 'atsUsers';
       case .brickhouse:
-        // return 'brickhouseUsers'; currently, the Brickhouse variant uses the standard `users` query for fetching users.
-        return 'users';
+        return 'brickhouseUsers';
       case .sdm:
         return 'sdmUsers';
       case .tagon:
@@ -319,7 +319,7 @@ abstract class User with _$User {
             GqlField(name: 'id'),
             GqlField(name: 'name'),
             GqlField(name: 'color'),
-            GqlField(name: 'icon'),
+            GqlField(name: 'dynamicIcon', fragment: Avatar.fragment),
           ],
         ),
         GqlField(
@@ -363,16 +363,7 @@ abstract class User with _$User {
                     GqlField(name: 'normal'),
                   ],
                 ),
-                GqlField(
-                  name: 'colors',
-                  fields: [
-                    GqlField(name: 'theme'),
-                    GqlField(name: 'mainColor'),
-                    GqlField(name: 'primary'),
-                    GqlField(name: 'secondary'),
-                    GqlField(name: 'accent'),
-                  ],
-                ),
+                GqlField(name: 'mainColor'),
                 GqlField(name: 'appicon'),
               ],
             ),
