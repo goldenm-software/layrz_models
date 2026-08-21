@@ -34,7 +34,7 @@ String _getSaveMutationName({required UserVariant variant, required bool isNew})
     case .mappitSeller:
       return isNew ? 'addMappitUser' : 'editMappitUser';
     case .brickhouse:
-      return isNew ? 'addUser' : 'editBrickhouseUser';
+      return isNew ? 'addBrickhouseUser' : 'editBrickhouseUser';
   }
 }
 
