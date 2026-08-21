@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:layrz_icons/layrz_icons.dart';
+
 import 'package:layrz_models/layrz_models.dart';
 
 void main() {
@@ -74,10 +75,10 @@ void main() {
       expect(() => TenvioDestinationType.fromJson('UNKNOWN'), throwsException);
     });
 
-    test('icon getter returns correct LayrzIcon', () {
-      expect(TenvioDestinationType.warehouse.icon, LayrzIcons.mdiWarehouse);
-      expect(TenvioDestinationType.user.icon, LayrzIcons.mdiAccount);
-      expect(TenvioDestinationType.unregisteredUser.icon, LayrzIcons.mdiAccountQuestion);
+    test('icon getter returns correct MdiRemapIcon', () {
+      expect(TenvioDestinationType.warehouse.icon, MdiIcons.warehouse);
+      expect(TenvioDestinationType.user.icon, MdiIcons.account);
+      expect(TenvioDestinationType.unregisteredUser.icon, MdiIcons.accountQuestion);
     });
 
     test('color getter returns correct Color values', () {

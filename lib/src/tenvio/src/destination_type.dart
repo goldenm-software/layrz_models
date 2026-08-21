@@ -36,11 +36,11 @@ enum TenvioDestinationType {
   IconData get icon {
     switch (this) {
       case TenvioDestinationType.warehouse:
-        return LayrzIcons.mdiWarehouse;
+        return MdiIcons.warehouse;
       case TenvioDestinationType.user:
-        return LayrzIcons.mdiAccount;
+        return MdiIcons.account;
       case TenvioDestinationType.unregisteredUser:
-        return LayrzIcons.mdiAccountQuestion;
+        return MdiIcons.accountQuestion;
     }
   }
 

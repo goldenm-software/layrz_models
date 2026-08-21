@@ -41,7 +41,7 @@ void main() {
 
     test('AvatarInput with ICON type', () {
       final converter = IconOrNullConverter();
-      final icon = converter.fromJson('solar-bold-filters');
+      final icon = converter.fromJson('mdi-home');
 
       final input = AvatarInput(
         type: AvatarType.icon,
@@ -50,7 +50,7 @@ void main() {
 
       expect(input.type, AvatarType.icon);
       expect(input.icon, isNotNull);
-      expect(input.icon!.name, 'solar-bold-filters');
+      expect(input.icon!.name, 'mdi-home');
       expect(input.url, isNull);
       expect(input.base64, isNull);
     });
@@ -184,15 +184,15 @@ void main() {
     test('AvatarInput IconOrNullConverter roundtrip with icon', () {
       final json = <String, dynamic>{
         'type': 'ICON',
-        'icon': 'solar-bold-filters',
+        'icon': 'mdi-home',
       };
 
       final input = AvatarInput.fromJson(json);
       expect(input.icon, isNotNull);
-      expect(input.icon!.name, 'solar-bold-filters');
+      expect(input.icon!.name, 'mdi-home');
 
       final newJson = input.toJson();
-      expect(newJson['icon'], 'solar-bold-filters');
+      expect(newJson['icon'], 'mdi-home');
     });
 
     test('AvatarInput with null icon from JSON', () {

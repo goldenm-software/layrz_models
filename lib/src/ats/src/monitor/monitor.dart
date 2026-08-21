@@ -13,7 +13,7 @@ abstract class AtsMonitor with _$AtsMonitor {
     @ColorOrNullConverter() Color? color,
 
     /// Is the icon URI of the monitor
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// Is favorite indicator.
     @Default(false) bool isFavorite,
@@ -59,7 +59,7 @@ abstract class AtsMonitorInput with _$AtsMonitorInput {
     String? appId,
 
     /// Icon of the monitor.
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// Color of the monitor.
     @ColorOrNullConverter() Color? color,

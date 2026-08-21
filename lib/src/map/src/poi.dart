@@ -17,7 +17,7 @@ abstract class Poi with _$Poi {
     String? description,
 
     /// [icon] is the icon representing the point of interest.
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// [latitude] is the latitude of the point of interest.
     double? latitude,

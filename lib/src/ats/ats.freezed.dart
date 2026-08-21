@@ -25040,7 +25040,7 @@ mixin _$AtsMonitor {
  String get id;/// Name assigned to the monitor.
  String get name;/// Indicates the color of the monitor.
 @ColorOrNullConverter() Color? get color;/// Is the icon URI of the monitor
-@IconOrNullConverter() LayrzIcon? get icon;/// Is favorite indicator.
+@IconOrNullConverter() MdiRemapIcon? get icon;/// Is favorite indicator.
  bool get isFavorite;/// List of assets assigned to the monitor.
  List<Asset> get assets;/// List of asset IDs assigned to the monitor.
  List<String> get assetsIds;/// List of grid structure.
@@ -25082,7 +25082,7 @@ abstract mixin class $AtsMonitorCopyWith<$Res>  {
   factory $AtsMonitorCopyWith(AtsMonitor value, $Res Function(AtsMonitor) _then) = _$AtsMonitorCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@ColorOrNullConverter() Color? color,@IconOrNullConverter() LayrzIcon? icon, bool isFavorite, List<Asset> assets, List<String> assetsIds, List<AtsGridItem> gridStructure, List<LayrzChart> charts, List<String> chartsIds, List<Access> access, User? owner, List<AnalyticsGridItem>? analyticsGridStructure
+ String id, String name,@ColorOrNullConverter() Color? color,@IconOrNullConverter() MdiRemapIcon? icon, bool isFavorite, List<Asset> assets, List<String> assetsIds, List<AtsGridItem> gridStructure, List<LayrzChart> charts, List<String> chartsIds, List<Access> access, User? owner, List<AnalyticsGridItem>? analyticsGridStructure
 });
 
 
@@ -25105,7 +25105,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,isFavorite: null == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,isFavorite: null == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
 as bool,assets: null == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
 as List<Asset>,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,gridStructure: null == gridStructure ? _self.gridStructure : gridStructure // ignore: cast_nullable_to_non_nullable
@@ -25211,7 +25211,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  bool isFavorite,  List<Asset> assets,  List<String> assetsIds,  List<AtsGridItem> gridStructure,  List<LayrzChart> charts,  List<String> chartsIds,  List<Access> access,  User? owner,  List<AnalyticsGridItem>? analyticsGridStructure)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  MdiRemapIcon? icon,  bool isFavorite,  List<Asset> assets,  List<String> assetsIds,  List<AtsGridItem> gridStructure,  List<LayrzChart> charts,  List<String> chartsIds,  List<Access> access,  User? owner,  List<AnalyticsGridItem>? analyticsGridStructure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsMonitor() when $default != null:
 return $default(_that.id,_that.name,_that.color,_that.icon,_that.isFavorite,_that.assets,_that.assetsIds,_that.gridStructure,_that.charts,_that.chartsIds,_that.access,_that.owner,_that.analyticsGridStructure);case _:
@@ -25232,7 +25232,7 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.isFavorite,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  bool isFavorite,  List<Asset> assets,  List<String> assetsIds,  List<AtsGridItem> gridStructure,  List<LayrzChart> charts,  List<String> chartsIds,  List<Access> access,  User? owner,  List<AnalyticsGridItem>? analyticsGridStructure)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  MdiRemapIcon? icon,  bool isFavorite,  List<Asset> assets,  List<String> assetsIds,  List<AtsGridItem> gridStructure,  List<LayrzChart> charts,  List<String> chartsIds,  List<Access> access,  User? owner,  List<AnalyticsGridItem>? analyticsGridStructure)  $default,) {final _that = this;
 switch (_that) {
 case _AtsMonitor():
 return $default(_that.id,_that.name,_that.color,_that.icon,_that.isFavorite,_that.assets,_that.assetsIds,_that.gridStructure,_that.charts,_that.chartsIds,_that.access,_that.owner,_that.analyticsGridStructure);case _:
@@ -25252,7 +25252,7 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.isFavorite,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  LayrzIcon? icon,  bool isFavorite,  List<Asset> assets,  List<String> assetsIds,  List<AtsGridItem> gridStructure,  List<LayrzChart> charts,  List<String> chartsIds,  List<Access> access,  User? owner,  List<AnalyticsGridItem>? analyticsGridStructure)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @ColorOrNullConverter()  Color? color, @IconOrNullConverter()  MdiRemapIcon? icon,  bool isFavorite,  List<Asset> assets,  List<String> assetsIds,  List<AtsGridItem> gridStructure,  List<LayrzChart> charts,  List<String> chartsIds,  List<Access> access,  User? owner,  List<AnalyticsGridItem>? analyticsGridStructure)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsMonitor() when $default != null:
 return $default(_that.id,_that.name,_that.color,_that.icon,_that.isFavorite,_that.assets,_that.assetsIds,_that.gridStructure,_that.charts,_that.chartsIds,_that.access,_that.owner,_that.analyticsGridStructure);case _:
@@ -25277,7 +25277,7 @@ class _AtsMonitor implements AtsMonitor {
 /// Indicates the color of the monitor.
 @override@ColorOrNullConverter() final  Color? color;
 /// Is the icon URI of the monitor
-@override@IconOrNullConverter() final  LayrzIcon? icon;
+@override@IconOrNullConverter() final  MdiRemapIcon? icon;
 /// Is favorite indicator.
 @override@JsonKey() final  bool isFavorite;
 /// List of assets assigned to the monitor.
@@ -25381,7 +25381,7 @@ abstract mixin class _$AtsMonitorCopyWith<$Res> implements $AtsMonitorCopyWith<$
   factory _$AtsMonitorCopyWith(_AtsMonitor value, $Res Function(_AtsMonitor) _then) = __$AtsMonitorCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@ColorOrNullConverter() Color? color,@IconOrNullConverter() LayrzIcon? icon, bool isFavorite, List<Asset> assets, List<String> assetsIds, List<AtsGridItem> gridStructure, List<LayrzChart> charts, List<String> chartsIds, List<Access> access, User? owner, List<AnalyticsGridItem>? analyticsGridStructure
+ String id, String name,@ColorOrNullConverter() Color? color,@IconOrNullConverter() MdiRemapIcon? icon, bool isFavorite, List<Asset> assets, List<String> assetsIds, List<AtsGridItem> gridStructure, List<LayrzChart> charts, List<String> chartsIds, List<Access> access, User? owner, List<AnalyticsGridItem>? analyticsGridStructure
 });
 
 
@@ -25404,7 +25404,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,isFavorite: null == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,isFavorite: null == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
 as bool,assets: null == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
 as List<Asset>,assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,gridStructure: null == gridStructure ? _self._gridStructure : gridStructure // ignore: cast_nullable_to_non_nullable
@@ -25443,8 +25443,8 @@ mixin _$AtsMonitorInput {
  set name(String? value);/// App ID linked to the monitor.
  String? get appId;/// App ID linked to the monitor.
  set appId(String? value);/// Icon of the monitor.
-@IconOrNullConverter() LayrzIcon? get icon;/// Icon of the monitor.
-@IconOrNullConverter() set icon(LayrzIcon? value);/// Color of the monitor.
+@IconOrNullConverter() MdiRemapIcon? get icon;/// Icon of the monitor.
+@IconOrNullConverter() set icon(MdiRemapIcon? value);/// Color of the monitor.
 @ColorOrNullConverter() Color? get color;/// Color of the monitor.
 @ColorOrNullConverter() set color(Color? value);/// Is favorite indicator.
  bool get isFavorite;/// Is favorite indicator.
@@ -25482,7 +25482,7 @@ abstract mixin class $AtsMonitorInputCopyWith<$Res>  {
   factory $AtsMonitorInputCopyWith(AtsMonitorInput value, $Res Function(AtsMonitorInput) _then) = _$AtsMonitorInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? name, String? appId,@IconOrNullConverter() LayrzIcon? icon,@ColorOrNullConverter() Color? color, bool isFavorite, List<String> assetsIds, List<AtsGridItemInput> gridStructure, List<String> chartsIds, List<AnalyticsGridItemInput>? analyticsGridStructure
+ String? id, String? name, String? appId,@IconOrNullConverter() MdiRemapIcon? icon,@ColorOrNullConverter() Color? color, bool isFavorite, List<String> assetsIds, List<AtsGridItemInput> gridStructure, List<String> chartsIds, List<AnalyticsGridItemInput>? analyticsGridStructure
 });
 
 
@@ -25505,7 +25505,7 @@ id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,appId: freezed == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,isFavorite: null == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
 as bool,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,gridStructure: null == gridStructure ? _self.gridStructure : gridStructure // ignore: cast_nullable_to_non_nullable
@@ -25596,7 +25596,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? appId, @IconOrNullConverter()  LayrzIcon? icon, @ColorOrNullConverter()  Color? color,  bool isFavorite,  List<String> assetsIds,  List<AtsGridItemInput> gridStructure,  List<String> chartsIds,  List<AnalyticsGridItemInput>? analyticsGridStructure)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? appId, @IconOrNullConverter()  MdiRemapIcon? icon, @ColorOrNullConverter()  Color? color,  bool isFavorite,  List<String> assetsIds,  List<AtsGridItemInput> gridStructure,  List<String> chartsIds,  List<AnalyticsGridItemInput>? analyticsGridStructure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AtsMonitorInput() when $default != null:
 return $default(_that.id,_that.name,_that.appId,_that.icon,_that.color,_that.isFavorite,_that.assetsIds,_that.gridStructure,_that.chartsIds,_that.analyticsGridStructure);case _:
@@ -25617,7 +25617,7 @@ return $default(_that.id,_that.name,_that.appId,_that.icon,_that.color,_that.isF
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? appId, @IconOrNullConverter()  LayrzIcon? icon, @ColorOrNullConverter()  Color? color,  bool isFavorite,  List<String> assetsIds,  List<AtsGridItemInput> gridStructure,  List<String> chartsIds,  List<AnalyticsGridItemInput>? analyticsGridStructure)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? appId, @IconOrNullConverter()  MdiRemapIcon? icon, @ColorOrNullConverter()  Color? color,  bool isFavorite,  List<String> assetsIds,  List<AtsGridItemInput> gridStructure,  List<String> chartsIds,  List<AnalyticsGridItemInput>? analyticsGridStructure)  $default,) {final _that = this;
 switch (_that) {
 case _AtsMonitorInput():
 return $default(_that.id,_that.name,_that.appId,_that.icon,_that.color,_that.isFavorite,_that.assetsIds,_that.gridStructure,_that.chartsIds,_that.analyticsGridStructure);case _:
@@ -25637,7 +25637,7 @@ return $default(_that.id,_that.name,_that.appId,_that.icon,_that.color,_that.isF
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? appId, @IconOrNullConverter()  LayrzIcon? icon, @ColorOrNullConverter()  Color? color,  bool isFavorite,  List<String> assetsIds,  List<AtsGridItemInput> gridStructure,  List<String> chartsIds,  List<AnalyticsGridItemInput>? analyticsGridStructure)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? appId, @IconOrNullConverter()  MdiRemapIcon? icon, @ColorOrNullConverter()  Color? color,  bool isFavorite,  List<String> assetsIds,  List<AtsGridItemInput> gridStructure,  List<String> chartsIds,  List<AnalyticsGridItemInput>? analyticsGridStructure)?  $default,) {final _that = this;
 switch (_that) {
 case _AtsMonitorInput() when $default != null:
 return $default(_that.id,_that.name,_that.appId,_that.icon,_that.color,_that.isFavorite,_that.assetsIds,_that.gridStructure,_that.chartsIds,_that.analyticsGridStructure);case _:
@@ -25662,7 +25662,7 @@ class _AtsMonitorInput implements AtsMonitorInput {
 /// App ID linked to the monitor.
 @override  String? appId;
 /// Icon of the monitor.
-@override@IconOrNullConverter()  LayrzIcon? icon;
+@override@IconOrNullConverter()  MdiRemapIcon? icon;
 /// Color of the monitor.
 @override@ColorOrNullConverter()  Color? color;
 /// Is favorite indicator.
@@ -25702,7 +25702,7 @@ abstract mixin class _$AtsMonitorInputCopyWith<$Res> implements $AtsMonitorInput
   factory _$AtsMonitorInputCopyWith(_AtsMonitorInput value, $Res Function(_AtsMonitorInput) _then) = __$AtsMonitorInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? name, String? appId,@IconOrNullConverter() LayrzIcon? icon,@ColorOrNullConverter() Color? color, bool isFavorite, List<String> assetsIds, List<AtsGridItemInput> gridStructure, List<String> chartsIds, List<AnalyticsGridItemInput>? analyticsGridStructure
+ String? id, String? name, String? appId,@IconOrNullConverter() MdiRemapIcon? icon,@ColorOrNullConverter() Color? color, bool isFavorite, List<String> assetsIds, List<AtsGridItemInput> gridStructure, List<String> chartsIds, List<AnalyticsGridItemInput>? analyticsGridStructure
 });
 
 
@@ -25725,7 +25725,7 @@ id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,appId: freezed == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,isFavorite: null == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
 as bool,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,gridStructure: null == gridStructure ? _self.gridStructure : gridStructure // ignore: cast_nullable_to_non_nullable

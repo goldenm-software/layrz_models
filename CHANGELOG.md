@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.31.0 
+
+- Fully removal of `layrz_icons` in favor of `flutter_material_design_icons`
+- `layrz_sdk` version dump
+
 ## 3.30.0
 
 - Added `AtsCfSkidModel` (`none`/`sil`), the enum backing the new `ats.custom.skid.model` fixed custom field on Terminal assets (kindId 44) that lets ATS Mobile know whether — and with which equipment brand — a terminal receives product via SKID before routing it through the SIL integration. Follows the same manual `toJson`/`fromJson`/`getLocaleKey` pattern as `AtsCfFuelType`; unlike it, `fromJson` falls back to `none` instead of throwing, since the value comes from a custom field that may be empty or hold stale data.

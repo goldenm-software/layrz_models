@@ -810,7 +810,7 @@ mixin _$Poi {
  String get id;/// [name] is the name of the point of interest.
  String get name;/// [description] is the description of the point of interest.
  String? get description;/// [icon] is the icon representing the point of interest.
-@IconOrNullConverter() LayrzIcon? get icon;/// [latitude] is the latitude of the point of interest.
+@IconOrNullConverter() MdiRemapIcon? get icon;/// [latitude] is the latitude of the point of interest.
  double? get latitude;/// [longitude] is the longitude of the point of interest.
  double? get longitude;/// [access] is the user access to this point of interest.
  List<Access>? get access;
@@ -846,7 +846,7 @@ abstract mixin class $PoiCopyWith<$Res>  {
   factory $PoiCopyWith(Poi value, $Res Function(Poi) _then) = _$PoiCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String? description,@IconOrNullConverter() LayrzIcon? icon, double? latitude, double? longitude, List<Access>? access
+ String id, String name, String? description,@IconOrNullConverter() MdiRemapIcon? icon, double? latitude, double? longitude, List<Access>? access
 });
 
 
@@ -869,7 +869,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double?,longitude: freezed == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
@@ -957,7 +957,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @IconOrNullConverter()  LayrzIcon? icon,  double? latitude,  double? longitude,  List<Access>? access)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @IconOrNullConverter()  MdiRemapIcon? icon,  double? latitude,  double? longitude,  List<Access>? access)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Poi() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,_that.longitude,_that.access);case _:
@@ -978,7 +978,7 @@ return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @IconOrNullConverter()  LayrzIcon? icon,  double? latitude,  double? longitude,  List<Access>? access)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @IconOrNullConverter()  MdiRemapIcon? icon,  double? latitude,  double? longitude,  List<Access>? access)  $default,) {final _that = this;
 switch (_that) {
 case _Poi():
 return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,_that.longitude,_that.access);case _:
@@ -998,7 +998,7 @@ return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description, @IconOrNullConverter()  LayrzIcon? icon,  double? latitude,  double? longitude,  List<Access>? access)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description, @IconOrNullConverter()  MdiRemapIcon? icon,  double? latitude,  double? longitude,  List<Access>? access)?  $default,) {final _that = this;
 switch (_that) {
 case _Poi() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,_that.longitude,_that.access);case _:
@@ -1023,7 +1023,7 @@ class _Poi extends Poi {
 /// [description] is the description of the point of interest.
 @override final  String? description;
 /// [icon] is the icon representing the point of interest.
-@override@IconOrNullConverter() final  LayrzIcon? icon;
+@override@IconOrNullConverter() final  MdiRemapIcon? icon;
 /// [latitude] is the latitude of the point of interest.
 @override final  double? latitude;
 /// [longitude] is the longitude of the point of interest.
@@ -1073,7 +1073,7 @@ abstract mixin class _$PoiCopyWith<$Res> implements $PoiCopyWith<$Res> {
   factory _$PoiCopyWith(_Poi value, $Res Function(_Poi) _then) = __$PoiCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String? description,@IconOrNullConverter() LayrzIcon? icon, double? latitude, double? longitude, List<Access>? access
+ String id, String name, String? description,@IconOrNullConverter() MdiRemapIcon? icon, double? latitude, double? longitude, List<Access>? access
 });
 
 
@@ -1096,7 +1096,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon?,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double?,longitude: freezed == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
@@ -1117,8 +1117,8 @@ mixin _$PoiInput {
  set name(String value);/// [description] is the description of the point of interest.
  String? get description;/// [description] is the description of the point of interest.
  set description(String? value);/// [icon] is the icon representing the point of interest.
-@IconConverter() LayrzIcon get icon;/// [icon] is the icon representing the point of interest.
-@IconConverter() set icon(LayrzIcon value);/// [latitude] is the latitude of the point of interest.
+@IconConverter() MdiRemapIcon get icon;/// [icon] is the icon representing the point of interest.
+@IconConverter() set icon(MdiRemapIcon value);/// [latitude] is the latitude of the point of interest.
  double? get latitude;/// [latitude] is the latitude of the point of interest.
  set latitude(double? value);/// [longitude] is the longitude of the point of interest.
  double? get longitude;/// [longitude] is the longitude of the point of interest.
@@ -1148,7 +1148,7 @@ abstract mixin class $PoiInputCopyWith<$Res>  {
   factory $PoiInputCopyWith(PoiInput value, $Res Function(PoiInput) _then) = _$PoiInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String name, String? description,@IconConverter() LayrzIcon icon, double? latitude, double? longitude
+ String? id, String name, String? description,@IconConverter() MdiRemapIcon icon, double? latitude, double? longitude
 });
 
 
@@ -1171,7 +1171,7 @@ id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,icon: null == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double?,longitude: freezed == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double?,
   ));
@@ -1258,7 +1258,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String? description, @IconConverter()  LayrzIcon icon,  double? latitude,  double? longitude)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String name,  String? description, @IconConverter()  MdiRemapIcon icon,  double? latitude,  double? longitude)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PoiInput() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,_that.longitude);case _:
@@ -1279,7 +1279,7 @@ return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String? description, @IconConverter()  LayrzIcon icon,  double? latitude,  double? longitude)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String name,  String? description, @IconConverter()  MdiRemapIcon icon,  double? latitude,  double? longitude)  $default,) {final _that = this;
 switch (_that) {
 case _PoiInput():
 return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,_that.longitude);case _:
@@ -1299,7 +1299,7 @@ return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String? description, @IconConverter()  LayrzIcon icon,  double? latitude,  double? longitude)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String name,  String? description, @IconConverter()  MdiRemapIcon icon,  double? latitude,  double? longitude)?  $default,) {final _that = this;
 switch (_that) {
 case _PoiInput() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,_that.longitude);case _:
@@ -1324,7 +1324,7 @@ class _PoiInput extends PoiInput {
 /// [description] is the description of the point of interest.
 @override  String? description;
 /// [icon] is the icon representing the point of interest.
-@override@IconConverter()  LayrzIcon icon;
+@override@IconConverter()  MdiRemapIcon icon;
 /// [latitude] is the latitude of the point of interest.
 @override  double? latitude;
 /// [longitude] is the longitude of the point of interest.
@@ -1356,7 +1356,7 @@ abstract mixin class _$PoiInputCopyWith<$Res> implements $PoiInputCopyWith<$Res>
   factory _$PoiInputCopyWith(_PoiInput value, $Res Function(_PoiInput) _then) = __$PoiInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String name, String? description,@IconConverter() LayrzIcon icon, double? latitude, double? longitude
+ String? id, String name, String? description,@IconConverter() MdiRemapIcon icon, double? latitude, double? longitude
 });
 
 
@@ -1379,7 +1379,7 @@ id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,icon: null == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as LayrzIcon,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double?,longitude: freezed == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double?,
   ));

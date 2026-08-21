@@ -13,8 +13,8 @@ abstract class MaskPoint with _$MaskPoint {
     required String value,
 
     /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
-    /// will convert to LayrzIcon entity.
-    @IconOrNullConverter() LayrzIcon? icon,
+    /// will convert to MdiRemapIcon entity.
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
     @DurationConverter() Duration? duration,
@@ -29,7 +29,7 @@ abstract class MaskPointInput with _$MaskPointInput {
     @ColorOrNullConverter() Color? color,
     String? text,
     String? value,
-    @IconOrNullConverter() LayrzIcon? icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
 
     /// [duration] of the mask point, will be used to determine how long since report to show the mask point. If null, will use the default value of the sensor.
     @DurationConverter() Duration? duration,
