@@ -1,6 +1,10 @@
 # Changelog
 
-## 3.31.0 
+## 3.31.1
+
+- Updated the User gql fragment, and gql brickhouseUsers naming convention
+
+## 3.31.0
 
 - Fully removal of `layrz_icons` in favor of `flutter_material_design_icons`
 - `layrz_sdk` version dump

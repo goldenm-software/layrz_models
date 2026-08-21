@@ -246,7 +246,7 @@ abstract class User with _$User {
       case .atsAdmin:
         return 'AtsUser';
       case .brickhouse:
-        return 'BHSUser';
+        return 'BrickhouseUser';
       case .sdm:
         return 'SdmUser';
       case .tagon:
@@ -318,7 +318,7 @@ abstract class User with _$User {
             GqlField(name: 'id'),
             GqlField(name: 'name'),
             GqlField(name: 'color'),
-            GqlField(name: 'icon'),
+            GqlField(name: 'dynamicIcon', fragment: Avatar.fragment),
           ],
         ),
         GqlField(
@@ -362,16 +362,7 @@ abstract class User with _$User {
                     GqlField(name: 'normal'),
                   ],
                 ),
-                GqlField(
-                  name: 'colors',
-                  fields: [
-                    GqlField(name: 'theme'),
-                    GqlField(name: 'mainColor'),
-                    GqlField(name: 'primary'),
-                    GqlField(name: 'secondary'),
-                    GqlField(name: 'accent'),
-                  ],
-                ),
+                GqlField(name: 'mainColor'),
                 GqlField(name: 'appicon'),
               ],
             ),
