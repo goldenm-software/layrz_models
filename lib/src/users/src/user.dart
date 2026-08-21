@@ -23,7 +23,6 @@ String _getSaveMutationName({required UserVariant variant, required bool isNew})
     case .standard:
     case .ats:
     case .atsAdmin:
-    case .brickhouse:
     case .tagon:
       return isNew ? 'addUser' : 'editUser';
     case .sdm:
@@ -34,6 +33,8 @@ String _getSaveMutationName({required UserVariant variant, required bool isNew})
     case .mappitSupervisor:
     case .mappitSeller:
       return isNew ? 'addMappitUser' : 'editMappitUser';
+    case .brickhouse:
+      return isNew ? 'addUser' : 'editBrickhouseUser';
   }
 }
 
@@ -69,7 +70,7 @@ String _getInputTypeName({required UserVariant variant}) {
     case .mappitSeller:
       return 'MappitUserInput';
     case .brickhouse:
-      return 'BHSEditUserInput';
+      return 'EditBrickhouseUserInput';
     case .standard:
     case .ats:
     case .atsAdmin:
