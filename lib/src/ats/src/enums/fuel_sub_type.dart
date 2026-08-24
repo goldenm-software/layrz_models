@@ -1,5 +1,16 @@
 part of '../../ats.dart';
 
+/// Fuel subtypes handled by ATS.
+///
+/// SIL (TENTI) only accepts PURE products. Only these 6 pure subtypes are
+/// recognized by SIL and carry a numeric `silProductCode`; every other subtype
+/// (aditivados, premium, S500 B, marineDiesel, arla32, etc.) is not managed by SIL:
+/// - `anidro`           -> 1 (Etanol Anidro)
+/// - `ethanol`          -> 2 (Etanol Hidratado)
+/// - `biodieselB100`    -> 3 (Biodiesel B100)
+/// - `dieselS500ComunA` -> 4 (Diesel S500 Comum A)
+/// - `gasolineComunA`   -> 5 (Gasolina Comum A)
+/// - `dieselS10A`       -> 6 (Diesel S10 A)
 enum AtsFuelSubType {
   dieselS10A,
   dieselS10ComunB,
@@ -287,6 +298,42 @@ enum AtsFuelSubType {
 
       default:
         return [];
+    }
+  }
+
+  /// SIL (TENTI) numeric product code used by the SKID unloading order.
+  ///
+  /// The SIL integration identifies each product by a small integer (its
+  /// `Produto` field / `productCode`). Per the client, only the PURE products
+  /// below are recognized by SIL; every other subtype returns `null` and the
+  /// reception is treated as not handled by SIL.
+  ///
+  /// Mapping (client-confirmed, pure products only):
+  /// - 1 -> Etanol Anidro       (`anidro`)
+  /// - 2 -> Etanol Hidratado    (`ethanol`)
+  /// - 3 -> Biodiesel B100      (`biodieselB100`)
+  /// - 4 -> Diesel S500 Comum A (`dieselS500ComunA`)
+  /// - 5 -> Gasolina Comum A    (`gasolineComunA`)
+  /// - 6 -> Diesel S10 A        (`dieselS10A`)
+  ///
+  /// Everything else (aditivados, premium, S500 B, marineDiesel, arla32,
+  /// ethanolAditivado, unknown) returns `null` -> not managed by SIL.
+  int? get silProductCode {
+    switch (this) {
+      case AtsFuelSubType.anidro:
+        return 1;
+      case AtsFuelSubType.ethanol:
+        return 2;
+      case AtsFuelSubType.biodieselB100:
+        return 3;
+      case AtsFuelSubType.dieselS500ComunA:
+        return 4;
+      case AtsFuelSubType.gasolineComunA:
+        return 5;
+      case AtsFuelSubType.dieselS10A:
+        return 6;
+      default:
+        return null;
     }
   }
 
