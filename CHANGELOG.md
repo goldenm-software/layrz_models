@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.32.0
+
+- Added `AtsFuelSubType.silProductCode`, the numeric SIL (TENTI) product code for the SKID unloading order. SIL only accepts pure products, so only the 6 pure subtypes (`anidro` → 1, `ethanol` → 2, `biodieselB100` → 3, `dieselS500ComunA` → 4, `gasolineComunA` → 5, `dieselS10A` → 6) return a code; every other subtype returns `null` (not managed by SIL).
+
 ## 3.31.1
 
 - Updated the User gql fragment, and gql brickhouseUsers naming convention
