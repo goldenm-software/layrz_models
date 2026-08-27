@@ -113,7 +113,7 @@ abstract class WorkspaceInput with _$WorkspaceInput {
     String? id,
     @Default("") String name,
     @Default(Colors.blue) @ColorOrNullConverter() Color? color,
-    @IconConverter() required MdiRemapIcon icon,
+    @IconOrNullConverter() MdiRemapIcon? icon,
     String? background,
     @Default(false) bool isFavorite,
     @Default(WorkspaceMainView.sensors)

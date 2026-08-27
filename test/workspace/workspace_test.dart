@@ -33,6 +33,139 @@ void main() {
       expect(workspace.assetsIds, equals(['asset1', 'asset2']));
     });
 
+    test('Workspace.fromJson with unsupported icon', () {
+      final data = {
+        "id": "1232",
+        "name": "Adminsen",
+        "icon": "fa-solid-bowl-food",
+        "color": "#f44336",
+        "background": "https://cdn.layrz.com/avatars/12321.png",
+        "isFavorite": false,
+        "assetsIds": ["67740", "66954", "66957", "66949", "66953", "66951", "66948", "74255", "66960", "66952"],
+        "inboundServicesIds": [],
+        "outboundServicesIds": [],
+        "mainView": "/Main/Grid",
+        "sensorsEnabled": true,
+        "sensorsGridStructure": [
+          {
+            "objectId": "66951",
+            "kind": "ASSET",
+            "color": "#ffffff",
+            "dimensions": {"width": 1, "height": 1},
+            "sensors": [
+              {
+                "sensorId": "153129",
+                "maskEnabled": true,
+                "type": "PLAIN",
+                "minimum": null,
+                "maximum": null,
+                "dimensions": {"width": 2, "height": 1},
+              },
+              {
+                "sensorId": "193676",
+                "maskEnabled": false,
+                "type": "PLAIN",
+                "minimum": null,
+                "maximum": null,
+                "dimensions": {"width": 2, "height": 1},
+              },
+            ],
+          },
+          {
+            "objectId": "66953",
+            "kind": "ASSET",
+            "color": "#ffffff",
+            "dimensions": {"width": 1, "height": 1},
+            "sensors": [
+              {
+                "sensorId": "153131",
+                "maskEnabled": true,
+                "type": "PLAIN",
+                "minimum": null,
+                "maximum": null,
+                "dimensions": {"width": 2, "height": 1},
+              },
+              {
+                "sensorId": "193674",
+                "maskEnabled": false,
+                "type": "PLAIN",
+                "minimum": null,
+                "maximum": null,
+                "dimensions": {"width": 2, "height": 1},
+              },
+            ],
+          },
+        ],
+        "tableEnabled": false,
+        "tableStructure": {
+          "assetsIds": [
+            "66948",
+            "66949",
+            "66950",
+          ],
+          "sensorsIds": ["temperature.celsius", "humidity.percent"],
+          "attributes": [],
+        },
+        "mapEnabled": false,
+        "mapCenterMode": "BOUNDS",
+        "mapCardCustomization": [],
+        "mapCenterCoordinates": {"latitude": null, "longitude": null},
+        "geofencesIds": [],
+        "casesEnabled": true,
+        "triggersIds": [
+          "88350",
+          "88352",
+          "88353",
+          "97272",
+        ],
+        "casesMonitorConfig": [
+          {"type": "LAST_24_HOURS", "assetId": null},
+          {"type": "PIE_CHART", "assetId": null},
+          {"type": "HEAT_MAP", "assetId": null},
+          {"type": "LAST_12_HOURS", "assetId": null},
+        ],
+        "checkpointsEnabled": false,
+        "checkpointsIds": [],
+        "analyticsEnabled": true,
+        "chartsIds": ["653", "654", "671", "673"],
+        "analyticsGridStructure": [
+          {
+            "chartId": "653",
+            "dimensions": {"width": 8, "height": 2},
+          },
+          {
+            "chartId": "654",
+            "dimensions": {"width": 8, "height": 2},
+          },
+          {
+            "chartId": "671",
+            "dimensions": {"width": 8, "height": 2},
+          },
+          {
+            "chartId": "673",
+            "dimensions": {"width": 8, "height": 2},
+          },
+        ],
+        "access": [
+          {
+            "id": "253",
+            "read": true,
+            "write": true,
+            "manage": true,
+            "objectId": "9816",
+            "userId": "8414",
+            "module": "WORKSPACES",
+          },
+        ],
+      };
+
+      final workspace = Workspace.fromJson(data);
+
+      expect(workspace, isA<Workspace>());
+      // expect(workspace.icon?.name, equals('fa_solid_bowl_food'));
+      expect(workspace.icon?.name, equals(null));
+    });
+
     test('Workspace.fromJson with unknown enum values', () {
       final data = {
         'id': '456',
@@ -185,7 +318,11 @@ void main() {
             'assetId': 'asset1',
             'alerts': {'range': 'H24', 'count': true, 'enabled': true},
             'connection': {'indicator': true, 'address': false, 'time': false},
-            'sensors': {'enabled': true, 'mode': 'GRID', 'values': ['s1', 's2']},
+            'sensors': {
+              'enabled': true,
+              'mode': 'GRID',
+              'values': ['s1', 's2'],
+            },
           },
         ],
       };
