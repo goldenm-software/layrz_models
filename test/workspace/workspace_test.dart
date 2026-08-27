@@ -33,13 +33,13 @@ void main() {
       expect(workspace.assetsIds, equals(['asset1', 'asset2']));
     });
 
-    test('Workspace.fromJson with icon', () {
+    test('Workspace.fromJson with unsupported icon', () {
       final data = {
-        "id": "9816",
+        "id": "1232",
         "name": "Adminsen",
         "icon": "fa-solid-bowl-food",
         "color": "#f44336",
-        "background": "https://cdn.layrz.com/avatars/Ajisen-9816.png",
+        "background": "https://cdn.layrz.com/avatars/12321.png",
         "isFavorite": false,
         "assetsIds": ["67740", "66954", "66957", "66949", "66953", "66951", "66948", "74255", "66960", "66952"],
         "inboundServicesIds": [],
@@ -47,54 +47,6 @@ void main() {
         "mainView": "/Main/Grid",
         "sensorsEnabled": true,
         "sensorsGridStructure": [
-          {
-            "objectId": "66960",
-            "kind": "ASSET",
-            "color": "#ffffff",
-            "dimensions": {"width": 1, "height": 1},
-            "sensors": [
-              {
-                "sensorId": "153146",
-                "maskEnabled": false,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-              {
-                "sensorId": "166387",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-            ],
-          },
-          {
-            "objectId": "66949",
-            "kind": "ASSET",
-            "color": "#ffffff",
-            "dimensions": {"width": 1, "height": 1},
-            "sensors": [
-              {
-                "sensorId": "153127",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-              {
-                "sensorId": "193675",
-                "maskEnabled": false,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-            ],
-          },
           {
             "objectId": "66951",
             "kind": "ASSET",
@@ -143,126 +95,6 @@ void main() {
               },
             ],
           },
-          {
-            "objectId": "66948",
-            "kind": "ASSET",
-            "color": "#ffffff",
-            "dimensions": {"width": 1, "height": 1},
-            "sensors": [
-              {
-                "sensorId": "153126",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-              {
-                "sensorId": "193677",
-                "maskEnabled": false,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-            ],
-          },
-          {
-            "objectId": "66952",
-            "kind": "ASSET",
-            "color": "#ffffff",
-            "dimensions": {"width": 1, "height": 1},
-            "sensors": [
-              {
-                "sensorId": "153130",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-              {
-                "sensorId": "193673",
-                "maskEnabled": false,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-            ],
-          },
-          {
-            "objectId": "66957",
-            "kind": "ASSET",
-            "color": "#ffffff",
-            "dimensions": {"width": 1, "height": 1},
-            "sensors": [
-              {
-                "sensorId": "153144",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-              {
-                "sensorId": "166402",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-            ],
-          },
-          {
-            "objectId": "66954",
-            "kind": "ASSET",
-            "color": "#ffffff",
-            "dimensions": {"width": 1, "height": 1},
-            "sensors": [
-              {
-                "sensorId": "153138",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-              {
-                "sensorId": "153139",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-            ],
-          },
-          {
-            "objectId": "74255",
-            "kind": "ASSET",
-            "color": "#ffffff",
-            "dimensions": {"width": 1, "height": 1},
-            "sensors": [
-              {
-                "sensorId": "166388",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-              {
-                "sensorId": "166389",
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-                "dimensions": {"width": 2, "height": 1},
-              },
-            ],
-          },
         ],
         "tableEnabled": false,
         "tableStructure": {
@@ -270,14 +102,6 @@ void main() {
             "66948",
             "66949",
             "66950",
-            "66951",
-            "66952",
-            "66953",
-            "66954",
-            "66955",
-            "66956",
-            "66957",
-            "66960",
           ],
           "sensorsIds": ["temperature.celsius", "humidity.percent"],
           "attributes": [],
@@ -293,34 +117,6 @@ void main() {
           "88352",
           "88353",
           "97272",
-          "97273",
-          "97295",
-          "97393",
-          "97408",
-          "97412",
-          "102650",
-          "102651",
-          "102653",
-          "102654",
-          "107748",
-          "107751",
-          "107752",
-          "107753",
-          "107764",
-          "107765",
-          "107766",
-          "107767",
-          "107768",
-          "107769",
-          "108571",
-          "108705",
-          "108706",
-          "108711",
-          "108712",
-          "108713",
-          "108714",
-          "108715",
-          "108716",
         ],
         "casesMonitorConfig": [
           {"type": "LAST_24_HOURS", "assetId": null},
@@ -366,7 +162,6 @@ void main() {
       final workspace = Workspace.fromJson(data);
 
       expect(workspace, isA<Workspace>());
-      debugPrint('Workspace icon: ${workspace.icon}');
       // expect(workspace.icon?.name, equals('fa_solid_bowl_food'));
       expect(workspace.icon?.name, equals(null));
     });

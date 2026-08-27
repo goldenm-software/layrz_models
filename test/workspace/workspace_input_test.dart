@@ -151,16 +151,16 @@ void main() {
 
     test('WorkspaceInput from WorkSpace Json with all fields', () {
       final json = {
-        "id": 9816,
-        "name": "Adminsen",
+        "id": "1477",
+        "name": "Admin",
         "typeApp": null,
         "color": "#f44336",
         "icon": null,
-        "background": "https://cdn.layrz.com/avatars/Ajisen-9816.png",
+        "background": "https://cdn.layrz.com/avatars/1477.png",
         "isFavorite": false,
         "mainView": "/Main/Grid",
         "assets": [],
-        "assetsIds": [67740, 66954, 66957, 66949, 66953, 66951, 66948, 74255, 66960, 66952],
+        "assetsIds": ["21094", "74282", "97354", "17431", "73359", "12067", "42942", "17185", "82842", "64023"],
         "inboundServices": [],
         "inboundServicesIds": [],
         "outboundServices": [],
@@ -168,38 +168,38 @@ void main() {
         "casesEnabled": true,
         "triggers": [],
         "triggersIds": [
-          88350,
-          88352,
-          88353,
-          97272,
-          97273,
-          97295,
-          97393,
-          97408,
-          97412,
-          102650,
-          102651,
-          102653,
-          102654,
-          107748,
-          107751,
-          107752,
-          107753,
-          107764,
-          107765,
-          107766,
-          107767,
-          107768,
-          107769,
-          108571,
-          108705,
-          108706,
-          108711,
-          108712,
-          108713,
-          108714,
-          108715,
-          108716,
+          "86460",
+          "39566",
+          "23851",
+          "94025",
+          "75315",
+          "48447",
+          "92088",
+          "79490",
+          "40079",
+          "197641",
+          "244534",
+          "601335",
+          "260967",
+          "661441",
+          "306637",
+          "589103",
+          "732839",
+          "937658",
+          "913964",
+          "465097",
+          "513065",
+          "192209",
+          "661937",
+          "603398",
+          "795375",
+          "669395",
+          "870467",
+          "968871",
+          "395118",
+          "949292",
+          "735514",
+          "644398",
         ],
         "casesMonitorConfig": [
           {"type": "LAST_24_HOURS", "assetId": null},
@@ -218,28 +218,28 @@ void main() {
         "mapCenterMode": "BOUNDS",
         "analyticsEnabled": true,
         "charts": [],
-        "chartsIds": [653, 654, 671, 673],
+        "chartsIds": ["505", "497", "684", "190"],
         "analyticsGridStructure": [
           {
-            "chartId": 653,
+            "chartId": "505",
             "name": null,
             "assetsIds": [],
             "dimensions": {"width": 8, "height": 2},
           },
           {
-            "chartId": 654,
+            "chartId": "497",
             "name": null,
             "assetsIds": [],
             "dimensions": {"width": 8, "height": 2},
           },
           {
-            "chartId": 671,
+            "chartId": "684",
             "name": null,
             "assetsIds": [],
             "dimensions": {"width": 8, "height": 2},
           },
           {
-            "chartId": 673,
+            "chartId": "190",
             "name": null,
             "assetsIds": [],
             "dimensions": {"width": 8, "height": 2},
@@ -248,13 +248,13 @@ void main() {
         "sensorsEnabled": true,
         "sensorsGridStructure": [
           {
-            "objectId": 66960,
+            "objectId": "82842",
             "kind": "ASSET",
             "dimensions": {"width": 1, "height": 1},
             "color": "#ffffff",
             "sensors": [
               {
-                "sensorId": 153146,
+                "sensorId": "706930",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": false,
                 "type": "PLAIN",
@@ -262,7 +262,7 @@ void main() {
                 "maximum": null,
               },
               {
-                "sensorId": 166387,
+                "sensorId": "430347",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -272,13 +272,13 @@ void main() {
             ],
           },
           {
-            "objectId": 66949,
+            "objectId": "17431",
             "kind": "ASSET",
             "dimensions": {"width": 1, "height": 1},
             "color": "#ffffff",
             "sensors": [
               {
-                "sensorId": 153127,
+                "sensorId": "790013",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -286,31 +286,7 @@ void main() {
                 "maximum": null,
               },
               {
-                "sensorId": 193675,
-                "dimensions": {"width": 2, "height": 1},
-                "maskEnabled": false,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-              },
-            ],
-          },
-          {
-            "objectId": 66951,
-            "kind": "ASSET",
-            "dimensions": {"width": 1, "height": 1},
-            "color": "#ffffff",
-            "sensors": [
-              {
-                "sensorId": 153129,
-                "dimensions": {"width": 2, "height": 1},
-                "maskEnabled": true,
-                "type": "PLAIN",
-                "minimum": null,
-                "maximum": null,
-              },
-              {
-                "sensorId": 193676,
+                "sensorId": "703832",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": false,
                 "type": "PLAIN",
@@ -320,13 +296,13 @@ void main() {
             ],
           },
           {
-            "objectId": 66953,
+            "objectId": "12067",
             "kind": "ASSET",
             "dimensions": {"width": 1, "height": 1},
             "color": "#ffffff",
             "sensors": [
               {
-                "sensorId": 153131,
+                "sensorId": "173124",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -334,7 +310,7 @@ void main() {
                 "maximum": null,
               },
               {
-                "sensorId": 193674,
+                "sensorId": "226716",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": false,
                 "type": "PLAIN",
@@ -344,13 +320,13 @@ void main() {
             ],
           },
           {
-            "objectId": 66948,
+            "objectId": "73359",
             "kind": "ASSET",
             "dimensions": {"width": 1, "height": 1},
             "color": "#ffffff",
             "sensors": [
               {
-                "sensorId": 153126,
+                "sensorId": "403287",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -358,7 +334,7 @@ void main() {
                 "maximum": null,
               },
               {
-                "sensorId": 193677,
+                "sensorId": "543041",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": false,
                 "type": "PLAIN",
@@ -368,13 +344,13 @@ void main() {
             ],
           },
           {
-            "objectId": 66952,
+            "objectId": "42942",
             "kind": "ASSET",
             "dimensions": {"width": 1, "height": 1},
             "color": "#ffffff",
             "sensors": [
               {
-                "sensorId": 153130,
+                "sensorId": "812980",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -382,7 +358,7 @@ void main() {
                 "maximum": null,
               },
               {
-                "sensorId": 193673,
+                "sensorId": "356499",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": false,
                 "type": "PLAIN",
@@ -392,13 +368,13 @@ void main() {
             ],
           },
           {
-            "objectId": 66957,
+            "objectId": "64023",
             "kind": "ASSET",
             "dimensions": {"width": 1, "height": 1},
             "color": "#ffffff",
             "sensors": [
               {
-                "sensorId": 153144,
+                "sensorId": "184119",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -406,7 +382,31 @@ void main() {
                 "maximum": null,
               },
               {
-                "sensorId": 166402,
+                "sensorId": "978193",
+                "dimensions": {"width": 2, "height": 1},
+                "maskEnabled": false,
+                "type": "PLAIN",
+                "minimum": null,
+                "maximum": null,
+              },
+            ],
+          },
+          {
+            "objectId": "97354",
+            "kind": "ASSET",
+            "dimensions": {"width": 1, "height": 1},
+            "color": "#ffffff",
+            "sensors": [
+              {
+                "sensorId": "151742",
+                "dimensions": {"width": 2, "height": 1},
+                "maskEnabled": true,
+                "type": "PLAIN",
+                "minimum": null,
+                "maximum": null,
+              },
+              {
+                "sensorId": "155766",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -416,13 +416,13 @@ void main() {
             ],
           },
           {
-            "objectId": 66954,
+            "objectId": "74282",
             "kind": "ASSET",
             "dimensions": {"width": 1, "height": 1},
             "color": "#ffffff",
             "sensors": [
               {
-                "sensorId": 153138,
+                "sensorId": "544530",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -430,7 +430,7 @@ void main() {
                 "maximum": null,
               },
               {
-                "sensorId": 153139,
+                "sensorId": "686500",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -440,13 +440,13 @@ void main() {
             ],
           },
           {
-            "objectId": 74255,
+            "objectId": "17185",
             "kind": "ASSET",
             "dimensions": {"width": 1, "height": 1},
             "color": "#ffffff",
             "sensors": [
               {
-                "sensorId": 166388,
+                "sensorId": "394833",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -454,7 +454,7 @@ void main() {
                 "maximum": null,
               },
               {
-                "sensorId": 166389,
+                "sensorId": "437920",
                 "dimensions": {"width": 2, "height": 1},
                 "maskEnabled": true,
                 "type": "PLAIN",
@@ -468,20 +468,32 @@ void main() {
         "timezone": null,
         "access": [
           {
-            "id": 253,
+            "id": "268",
             "label": null,
             "read": true,
             "write": true,
             "manage": true,
-            "objectId": 9816,
-            "userId": 8414,
+            "objectId": "1477",
+            "userId": "7307",
             "user": null,
             "module": "WORKSPACES",
           },
         ],
         "tableEnabled": false,
         "tableStructure": {
-          "assetsIds": [66948, 66949, 66950, 66951, 66952, 66953, 66954, 66955, 66956, 66957, 66960],
+          "assetsIds": [
+            "42942",
+            "17431",
+            "13026",
+            "12067",
+            "64023",
+            "73359",
+            "74282",
+            "15131",
+            "28219",
+            "97354",
+            "82842",
+          ],
           "sensorsIds": ["temperature.celsius", "humidity.percent"],
           "attributes": [],
         },
@@ -489,13 +501,11 @@ void main() {
 
       final input = WorkspaceInput.fromJson(json);
 
-      expect(input.id, equals('json-123'));
-      expect(input.name, equals('From JSON'));
-      expect(input.mainView, equals(WorkspaceMainView.map));
-      expect(input.metricSystem, equals(MetricSystem.imperial));
-      expect(input.mapCenterMode, equals(MapCenterMode.address));
+      expect(input.id, equals('1477'));
+      expect(input.name, equals('Admin'));
+      expect(input.icon, null);
       expect(input.casesEnabled, equals(true));
-      expect(input.tableEnabled, equals(true));
+      expect(input.tableEnabled, equals(false));
     });
 
     test('WorkspaceInput toJson roundtrip', () {
