@@ -725,6 +725,7 @@ const _$AppInternalIdentifierEnumMap = {
   AppInternalIdentifier.atsWeb: 'ATS_WEB',
   AppInternalIdentifier.atsFrentista: 'ATS_FRENTISTA',
   AppInternalIdentifier.atsDriver: 'ATS_DRIVER',
+  AppInternalIdentifier.meuSmartank: 'MEU_SMARTANK',
   AppInternalIdentifier.mapOnly: 'MAP_ONLY',
   AppInternalIdentifier.tagonMap: 'TAGON_MAP',
   AppInternalIdentifier.tagonManager: 'TAGON_MANAGER',

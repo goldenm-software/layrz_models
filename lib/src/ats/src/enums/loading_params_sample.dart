@@ -4,6 +4,7 @@ enum AtsLoadingParamsSample {
   sealedSample,
   inSiteSample,
   thirdPartyStorage,
+  transshipment,
   unknown,
   ;
 
@@ -14,6 +15,8 @@ enum AtsLoadingParamsSample {
       case AtsLoadingParamsSample.inSiteSample:
         return 'IN_SITE_SAMPLE';
       case AtsLoadingParamsSample.thirdPartyStorage:
+        return 'THIRD_PARTY_STORAGE';
+      case AtsLoadingParamsSample.transshipment:
         return 'THIRD_PARTY_STORAGE';
       default:
         return 'UNKNOWN';
@@ -41,6 +44,8 @@ enum AtsLoadingParamsSample {
         return 'ats.loadingParamsSample.inSiteSample';
       case AtsLoadingParamsSample.thirdPartyStorage:
         return 'ats.loadingParamsSample.thirdPartyStorage';
+      case AtsLoadingParamsSample.transshipment:
+        return 'ats.loadingParamsSample.transshipment';
       default:
         return 'ats.loadingParamsSample.unknown';
     }

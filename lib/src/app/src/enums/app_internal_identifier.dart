@@ -71,6 +71,9 @@ enum AppInternalIdentifier {
   @JsonValue('ATS_DRIVER')
   atsDriver,
 
+  @JsonValue('MEU_SMARTANK')
+  meuSmartank,
+
   @JsonValue('MAP_ONLY')
   mapOnly,
 
