@@ -5,6 +5,11 @@
 - Added `AtsLoadingParamsSample.transshipment`, distinguishing a transshipment scan reception from third-party storage. The backend does not support a dedicated value yet, so `toJson()` serializes it as `THIRD_PARTY_STORAGE` for now; its local key is `ats.loadingParamsSample.transshipment`.
 - Added `AppInternalIdentifier.meuSmartank` (`MEU_SMARTANK`).
 
+## 3.32.1
+
+- `WorkspaceInput.icon` is now optional (`MdiRemapIcon?` with `@IconOrNullConverter()`, instead of `required MdiRemapIcon` with `@IconConverter()`). The backend can return `icon: null` for a workspace, which previously threw on deserialization.
+- Bumped Flutter to `3.44.8` in `.fvmrc`.
+
 ## 3.32.0
 
 - Added `AtsFuelSubType.silProductCode`, the numeric SIL (TENTI) product code for the SKID unloading order. SIL only accepts pure products, so only the 6 pure subtypes (`anidro` → 1, `ethanol` → 2, `biodieselB100` → 3, `dieselS500ComunA` → 4, `gasolineComunA` → 5, `dieselS10A` → 6) return a code; every other subtype returns `null` (not managed by SIL).

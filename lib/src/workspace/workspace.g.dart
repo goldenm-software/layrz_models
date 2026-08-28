@@ -256,7 +256,7 @@ _WorkspaceInput _$WorkspaceInputFromJson(
   color: json['color'] == null
       ? Colors.blue
       : const ColorOrNullConverter().fromJson(json['color'] as String?),
-  icon: const IconConverter().fromJson(json['icon'] as String),
+  icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
   background: json['background'] as String?,
   isFavorite: json['isFavorite'] as bool? ?? false,
   mainView:
@@ -356,7 +356,7 @@ Map<String, dynamic> _$WorkspaceInputToJson(_WorkspaceInput instance) =>
       'id': instance.id,
       'name': instance.name,
       'color': const ColorOrNullConverter().toJson(instance.color),
-      'icon': const IconConverter().toJson(instance.icon),
+      'icon': const IconOrNullConverter().toJson(instance.icon),
       'background': instance.background,
       'isFavorite': instance.isFavorite,
       'mainView': instance.mainView.toJson(),
