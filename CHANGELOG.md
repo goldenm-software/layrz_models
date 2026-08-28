@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.33.1
+
+- `AtsLoadingParamsSample.transshipment` now serializes to its own value `TRANSSHIPMENT` (both `toJson()` and `fromJson()`), replacing the temporary `THIRD_PARTY_STORAGE` mapping from 3.33.0. The backend now supports the dedicated value.
+
 ## 3.33.0
 
 - Added `AtsLoadingParamsSample.transshipment`, distinguishing a transshipment scan reception from third-party storage. The backend does not support a dedicated value yet, so `toJson()` serializes it as `THIRD_PARTY_STORAGE` for now; its local key is `ats.loadingParamsSample.transshipment`.
