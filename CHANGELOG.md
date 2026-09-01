@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.33.2
+
+- Fixed `ExternalUnit.fetchAll()` GraphQL query: the `status`/`errors`/`result` selection is now nested inside the `externalUnits` field (with its `sourceId` argument), instead of being requested at the root of the query.
+
 ## 3.33.1
 
 - `AtsLoadingParamsSample.transshipment` now serializes to its own value `TRANSSHIPMENT` (both `toJson()` and `fromJson()`), replacing the temporary `THIRD_PARTY_STORAGE` mapping from 3.33.0. The backend now supports the dedicated value.

@@ -52,15 +52,21 @@ abstract class ExternalUnit with _$ExternalUnit {
             GqlVariable(name: 'sourceId', type: .id, isRequired: true, value: externalAccountId),
           ],
           fields: [
-            GqlField(name: 'status'),
-            GqlField(name: 'errors'),
             GqlField(
-              name: 'result',
+              name: 'externalUnits',
+              args: {'sourceId': 'sourceId'},
               fields: [
-                GqlField(name: 'externalId'),
-                GqlField(name: 'name'),
-                GqlField(name: 'ident'),
-                GqlField(name: 'additionalFields'),
+                GqlField(name: 'status'),
+                GqlField(name: 'errors'),
+                GqlField(
+                  name: 'result',
+                  fields: [
+                    GqlField(name: 'externalId'),
+                    GqlField(name: 'name'),
+                    GqlField(name: 'ident'),
+                    GqlField(name: 'additionalFields'),
+                  ],
+                ),
               ],
             ),
           ],
@@ -81,5 +87,6 @@ abstract class ExternalUnit with _$ExternalUnit {
       return [];
     }
   }
+
   // coverage:ignore-end
 }
