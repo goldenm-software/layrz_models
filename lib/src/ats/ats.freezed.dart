@@ -21243,7 +21243,9 @@ mixin _$CaclInput {
  String? get product;/// The [product] parameter is the product of the cacl input.
  set product(String? value);/// The [clientAssetId] parameter is the clientAssetId of the cacl input.
  String? get clientAssetId;/// The [clientAssetId] parameter is the clientAssetId of the cacl input.
- set clientAssetId(String? value);/// The [tankNumber] parameter is the tankNumber of the cacl input.
+ set clientAssetId(String? value);/// The [origin] parameter is the origin of the cacl input.
+ String? get origin;/// The [origin] parameter is the origin of the cacl input.
+ set origin(String? value);/// The [tankNumber] parameter is the tankNumber of the cacl input.
  String? get tankNumber;/// The [tankNumber] parameter is the tankNumber of the cacl input.
  set tankNumber(String? value);/// The [transport] parameter is the transport of the cacl input.
  String? get transport;/// The [transport] parameter is the transport of the cacl input.
@@ -21288,7 +21290,7 @@ $CaclInputCopyWith<CaclInput> get copyWith => _$CaclInputCopyWithImpl<CaclInput>
 
 @override
 String toString() {
-  return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd, tfbDetails: $tfbDetails)';
+  return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd, tfbDetails: $tfbDetails)';
 }
 
 
@@ -21299,7 +21301,7 @@ abstract mixin class $CaclInputCopyWith<$Res>  {
   factory $CaclInputCopyWith(CaclInput value, $Res Function(CaclInput) _then) = _$CaclInputCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, CaclTFBDetailsInput? tfbDetails
+ String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? origin, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, CaclTFBDetailsInput? tfbDetails
 });
 
 
@@ -21316,7 +21318,7 @@ class _$CaclInputCopyWithImpl<$Res>
 
 /// Create a copy of CaclInput
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? transportAssetId = freezed,Object? transportUserId = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? tfbDetails = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? assetId = freezed,Object? transportAssetId = freezed,Object? transportUserId = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? tfbDetails = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -21326,6 +21328,7 @@ as String?,caclNumber: freezed == caclNumber ? _self.caclNumber : caclNumber // 
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as CaclCategory?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as String?,clientAssetId: freezed == clientAssetId ? _self.clientAssetId : clientAssetId // ignore: cast_nullable_to_non_nullable
+as String?,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
 as String?,tankNumber: freezed == tankNumber ? _self.tankNumber : tankNumber // ignore: cast_nullable_to_non_nullable
 as String?,transport: freezed == transport ? _self.transport : transport // ignore: cast_nullable_to_non_nullable
 as String?,equipments: freezed == equipments ? _self.equipments : equipments // ignore: cast_nullable_to_non_nullable
@@ -21507,10 +21510,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CaclInput() when $default != null:
-return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);case _:
+return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);case _:
   return orElse();
 
 }
@@ -21528,10 +21531,10 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)  $default,) {final _that = this;
 switch (_that) {
 case _CaclInput():
-return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);}
+return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -21545,10 +21548,10 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? assetId,  String? transportAssetId,  String? transportUserId,  String? caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load)  CaclCategory? category,  String? product,  String? clientAssetId,  String? origin,  String? tankNumber,  String? transport,  CaclEquipmentInput? equipments,  MeasurementsInput? measurements,  ResultsInput? results,  CaclMeasurement? measurer01,  CaclMeasurement? measurer02,  VolumeMovedInput? volumeMoved,  String? observations, @TimestampOrNullConverter()  DateTime? startedAt, @TimestampOrNullConverter()  DateTime? finishedAt,  String? operationId, @TimestampOrNullConverter()  DateTime? localDateStart, @TimestampOrNullConverter()  DateTime? localDateEnd,  CaclTFBDetailsInput? tfbDetails)?  $default,) {final _that = this;
 switch (_that) {
 case _CaclInput() when $default != null:
-return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);case _:
+return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUserId,_that.caclNumber,_that.category,_that.product,_that.clientAssetId,_that.origin,_that.tankNumber,_that.transport,_that.equipments,_that.measurements,_that.results,_that.measurer01,_that.measurer02,_that.volumeMoved,_that.observations,_that.startedAt,_that.finishedAt,_that.operationId,_that.localDateStart,_that.localDateEnd,_that.tfbDetails);case _:
   return null;
 
 }
@@ -21560,7 +21563,7 @@ return $default(_that.id,_that.assetId,_that.transportAssetId,_that.transportUse
 @JsonSerializable()
 
 class _CaclInput extends CaclInput {
-   _CaclInput({this.id, this.assetId, this.transportAssetId, this.transportUserId, this.caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load) this.category, this.product, this.clientAssetId, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.tfbDetails}): super._();
+   _CaclInput({this.id, this.assetId, this.transportAssetId, this.transportUserId, this.caclNumber, @JsonKey(unknownEnumValue: CaclCategory.load) this.category, this.product, this.clientAssetId, this.origin, this.tankNumber, this.transport, this.equipments, this.measurements, this.results, this.measurer01, this.measurer02, this.volumeMoved, this.observations, @TimestampOrNullConverter() this.startedAt, @TimestampOrNullConverter() this.finishedAt, this.operationId, @TimestampOrNullConverter() this.localDateStart, @TimestampOrNullConverter() this.localDateEnd, this.tfbDetails}): super._();
   factory _CaclInput.fromJson(Map<String, dynamic> json) => _$CaclInputFromJson(json);
 
 /// The [id] parameter is the id of the cacl input.
@@ -21579,6 +21582,8 @@ class _CaclInput extends CaclInput {
 @override  String? product;
 /// The [clientAssetId] parameter is the clientAssetId of the cacl input.
 @override  String? clientAssetId;
+/// The [origin] parameter is the origin of the cacl input.
+@override  String? origin;
 /// The [tankNumber] parameter is the tankNumber of the cacl input.
 @override  String? tankNumber;
 /// The [transport] parameter is the transport of the cacl input.
@@ -21625,7 +21630,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd, tfbDetails: $tfbDetails)';
+  return 'CaclInput(id: $id, assetId: $assetId, transportAssetId: $transportAssetId, transportUserId: $transportUserId, caclNumber: $caclNumber, category: $category, product: $product, clientAssetId: $clientAssetId, origin: $origin, tankNumber: $tankNumber, transport: $transport, equipments: $equipments, measurements: $measurements, results: $results, measurer01: $measurer01, measurer02: $measurer02, volumeMoved: $volumeMoved, observations: $observations, startedAt: $startedAt, finishedAt: $finishedAt, operationId: $operationId, localDateStart: $localDateStart, localDateEnd: $localDateEnd, tfbDetails: $tfbDetails)';
 }
 
 
@@ -21636,7 +21641,7 @@ abstract mixin class _$CaclInputCopyWith<$Res> implements $CaclInputCopyWith<$Re
   factory _$CaclInputCopyWith(_CaclInput value, $Res Function(_CaclInput) _then) = __$CaclInputCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, CaclTFBDetailsInput? tfbDetails
+ String? id, String? assetId, String? transportAssetId, String? transportUserId, String? caclNumber,@JsonKey(unknownEnumValue: CaclCategory.load) CaclCategory? category, String? product, String? clientAssetId, String? origin, String? tankNumber, String? transport, CaclEquipmentInput? equipments, MeasurementsInput? measurements, ResultsInput? results, CaclMeasurement? measurer01, CaclMeasurement? measurer02, VolumeMovedInput? volumeMoved, String? observations,@TimestampOrNullConverter() DateTime? startedAt,@TimestampOrNullConverter() DateTime? finishedAt, String? operationId,@TimestampOrNullConverter() DateTime? localDateStart,@TimestampOrNullConverter() DateTime? localDateEnd, CaclTFBDetailsInput? tfbDetails
 });
 
 
@@ -21653,7 +21658,7 @@ class __$CaclInputCopyWithImpl<$Res>
 
 /// Create a copy of CaclInput
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? transportAssetId = freezed,Object? transportUserId = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? tfbDetails = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? assetId = freezed,Object? transportAssetId = freezed,Object? transportUserId = freezed,Object? caclNumber = freezed,Object? category = freezed,Object? product = freezed,Object? clientAssetId = freezed,Object? origin = freezed,Object? tankNumber = freezed,Object? transport = freezed,Object? equipments = freezed,Object? measurements = freezed,Object? results = freezed,Object? measurer01 = freezed,Object? measurer02 = freezed,Object? volumeMoved = freezed,Object? observations = freezed,Object? startedAt = freezed,Object? finishedAt = freezed,Object? operationId = freezed,Object? localDateStart = freezed,Object? localDateEnd = freezed,Object? tfbDetails = freezed,}) {
   return _then(_CaclInput(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
@@ -21663,6 +21668,7 @@ as String?,caclNumber: freezed == caclNumber ? _self.caclNumber : caclNumber // 
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as CaclCategory?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as String?,clientAssetId: freezed == clientAssetId ? _self.clientAssetId : clientAssetId // ignore: cast_nullable_to_non_nullable
+as String?,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
 as String?,tankNumber: freezed == tankNumber ? _self.tankNumber : tankNumber // ignore: cast_nullable_to_non_nullable
 as String?,transport: freezed == transport ? _self.transport : transport // ignore: cast_nullable_to_non_nullable
 as String?,equipments: freezed == equipments ? _self.equipments : equipments // ignore: cast_nullable_to_non_nullable

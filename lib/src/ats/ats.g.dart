@@ -2457,6 +2457,7 @@ _CaclInput _$CaclInputFromJson(Map<String, dynamic> json) => _CaclInput(
   ),
   product: json['product'] as String?,
   clientAssetId: json['clientAssetId'] as String?,
+  origin: json['origin'] as String?,
   tankNumber: json['tankNumber'] as String?,
   transport: json['transport'] as String?,
   equipments: json['equipments'] == null
@@ -2511,6 +2512,7 @@ Map<String, dynamic> _$CaclInputToJson(
   'category': instance.category?.toJson(),
   'product': instance.product,
   'clientAssetId': instance.clientAssetId,
+  'origin': instance.origin,
   'tankNumber': instance.tankNumber,
   'transport': instance.transport,
   'equipments': instance.equipments?.toJson(),

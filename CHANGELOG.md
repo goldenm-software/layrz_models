@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.33.5
+
+- Added `origin` (`String?`) on `CaclInput`, mirroring `CaclEntity.origin`. Lets the client submit the CACL's manual origin, used by the TFB report format to print ORIGEM for unload (discharge) operations from vessel-type transports instead of falling back to the linked asset's plate/name.
+
 ## 3.33.4
 
 - Added `operations` (`List<AtsOperation>`, defaults to `[]`) on `AtsPurchaseOrder`. A purchase order shared across a road and a fluvial operation exposes each linked operation here with its own `transportAsset`, so the client can resolve the correct transport by the id returned in `operationMatched` instead of relying on `transportAsset`.
