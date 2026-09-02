@@ -827,5 +827,75 @@ abstract class RegisteredApp with _$RegisteredApp {
     }
   }
 
-  /// coverage:ignore-end
+  // coverage:ignore-end
+
+  // coverage:ignore-start
+  Future<RegisteredApp?> fillAuthorizations({
+    required String apiToken,
+    required Uri uri,
+    void Function(String statusCode)? onResponse,
+  }) async {
+    final connector = LayrzConnector(uri: uri, apiToken: apiToken);
+    try {
+      final response = await connector.query(
+        GqlQuery(
+          variables: [
+            GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
+          ],
+        )..add(
+          GqlField(name: 'registeredApps', args: {'id': 'id'})
+            ..add(GqlField(name: 'status'))
+            ..add(
+              GqlField(
+                name: 'result',
+                fields: [
+                  GqlField(name: 'id'),
+                  GqlField(name: 'name'),
+                  GqlField(name: 'nickname'),
+                  GqlField(name: 'isCustomized'),
+                  GqlField(name: 'technology'),
+                  GqlField(name: 'sourceId'),
+                  GqlField(
+                    name: 'importedAssets',
+                    fields: [
+                      GqlField(name: 'id'),
+                      GqlField(name: 'name'),
+                      GqlField(name: 'dynamicIcon', fragment: Avatar.fragment),
+                    ],
+                  ),
+                  GqlField(
+                    name: 'importedDevices',
+                    fields: [
+                      GqlField(name: 'id'),
+                      GqlField(name: 'name'),
+                      GqlField(name: 'ident'),
+                    ],
+                  ),
+                  GqlField(
+                    name: 'keychain',
+                    fields: [
+                      GqlField(name: 'id'),
+                      GqlField(name: 'name'),
+                      GqlField(name: 'dynamicAvatar', fragment: Avatar.fragment),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+        ),
+        _registeredAppListDecoder,
+      );
+
+      if (response.status != .ok) {
+        onResponse?.call(response.status.toJson());
+        return null;
+      }
+
+      return response.result?.first;
+    } catch (e, stack) {
+      Log.critical("layrz_models/RegisteredApp/fillAuthorizations(): General exception => $e\n$stack");
+      return null;
+    }
+  }
+  // coverage:ignore-end
 }
