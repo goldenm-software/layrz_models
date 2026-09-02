@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.33.3
+
+- Added `fillAuthorizations` on `RegisteredApp`
+
 ## 3.33.2
 
 - Fixed `ExternalUnit.fetchAll()` GraphQL query: the `status`/`errors`/`result` selection is now nested inside the `externalUnits` field (with its `sourceId` argument), instead of being requested at the root of the query.
