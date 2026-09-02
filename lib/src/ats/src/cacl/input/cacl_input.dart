@@ -39,6 +39,9 @@ sealed class CaclInput with _$CaclInput {
     /// The [clientAssetId] parameter is the clientAssetId of the cacl input.
     String? clientAssetId,
 
+    /// The [origin] parameter is the origin of the cacl input.
+    String? origin,
+
     /// The [tankNumber] parameter is the tankNumber of the cacl input.
     String? tankNumber,
 
