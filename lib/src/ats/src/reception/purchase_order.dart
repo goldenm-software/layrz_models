@@ -155,6 +155,13 @@ abstract class AtsPurchaseOrder with _$AtsPurchaseOrder {
     /// `operation` associated to the purchase order.
     AtsOperation? operation,
 
+    /// `operations` associated to the purchase order. A purchase order shared
+    /// across a road and a fluvial operation exposes each linked operation here
+    /// with its own `transportAsset`, so the client can resolve the correct
+    /// transport by the id the scan query returns in `operationMatched` instead of
+    /// relying on `transportAsset` (which may point at the fluvial asset).
+    @Default([]) List<AtsOperation> operations,
+
     /// [eta] defines the estimated time of arrival.
     @TimestampOrNullConverter() DateTime? eta,
 
