@@ -633,6 +633,11 @@ _AtsPurchaseOrder _$AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
       operation: json['operation'] == null
           ? null
           : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
+      operations:
+          (json['operations'] as List<dynamic>?)
+              ?.map((e) => AtsOperation.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       eta: const TimestampOrNullConverter().fromJson(json['eta'] as num?),
       etaUpdatedAt: const TimestampOrNullConverter().fromJson(
         json['etaUpdatedAt'] as num?,
@@ -689,6 +694,7 @@ Map<String, dynamic> _$AtsPurchaseOrderToJson(
     instance.category,
   ),
   'operation': instance.operation?.toJson(),
+  'operations': instance.operations.map((e) => e.toJson()).toList(),
   'eta': const TimestampOrNullConverter().toJson(instance.eta),
   'etaUpdatedAt': const TimestampOrNullConverter().toJson(
     instance.etaUpdatedAt,
