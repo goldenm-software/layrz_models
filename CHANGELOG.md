@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.33.6
+
+- Added `bindConflict` (`String?`) on `ZigbeeDevice`. Exposes why the ingestion worker refused to auto-bind the device: `null`/`'none'`, or `'foreign_account'` when its ident already belongs to a platform device under an inaccessible account.
+
 ## 3.33.5
 
 - Added `origin` (`String?`) on `CaclInput`, mirroring `CaclEntity.origin`. Lets the client submit the CACL's manual origin, used by the TFB report format to print ORIGEM for unload (discharge) operations from vessel-type transports instead of falling back to the linked asset's plate/name.

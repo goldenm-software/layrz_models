@@ -17,6 +17,7 @@ _ZigbeeDevice _$ZigbeeDeviceFromJson(Map<String, dynamic> json) =>
       ),
       bindedDeviceId: json['bindedDeviceId'] as String?,
       zoneId: json['zoneId'] as String?,
+      bindConflict: json['bindConflict'] as String?,
       exposes: (json['exposes'] as List<dynamic>?)
           ?.map((e) => ZigbeeDeviceExpose.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -31,6 +32,7 @@ Map<String, dynamic> _$ZigbeeDeviceToJson(_ZigbeeDevice instance) =>
       'lastSeen': const TimestampOrNullConverter().toJson(instance.lastSeen),
       'bindedDeviceId': instance.bindedDeviceId,
       'zoneId': instance.zoneId,
+      'bindConflict': instance.bindConflict,
       'exposes': instance.exposes?.map((e) => e.toJson()).toList(),
     };
 
