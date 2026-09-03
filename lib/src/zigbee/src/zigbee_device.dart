@@ -27,6 +27,11 @@ abstract class ZigbeeDevice with _$ZigbeeDevice {
     /// [zoneId] is the ID of the zone that the device belongs to.
     String? zoneId,
 
+    /// [bindConflict] is why the ingestion worker refused to auto-bind this
+    /// device: 'none', or 'foreign_account' when its ident already belongs to
+    /// a platform device under an inaccessible account.
+    String? bindConflict,
+
     /// [exposes] is the list of exposes of the device.
     List<ZigbeeDeviceExpose>? exposes,
   }) = _ZigbeeDevice;
@@ -46,6 +51,7 @@ abstract class ZigbeeDevice with _$ZigbeeDevice {
       GqlField(name: 'lastSeen'),
       GqlField(name: 'bindedDeviceId'),
       GqlField(name: 'zoneId'),
+      GqlField(name: 'bindConflict'),
       GqlField(name: 'exposes', fragment: ZigbeeDeviceExpose.fragment),
     ],
   );

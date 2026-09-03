@@ -22,7 +22,10 @@ mixin _$ZigbeeDevice {
  String? get model;/// [lastSeen] is the date and time when the device was last seen.
 @TimestampOrNullConverter() DateTime? get lastSeen;/// [bindedDeviceId] is the ID of the device that is binded to this device.
  String? get bindedDeviceId;/// [zoneId] is the ID of the zone that the device belongs to.
- String? get zoneId;/// [exposes] is the list of exposes of the device.
+ String? get zoneId;/// [bindConflict] is why the ingestion worker refused to auto-bind this
+/// device: 'none', or 'foreign_account' when its ident already belongs to
+/// a platform device under an inaccessible account.
+ String? get bindConflict;/// [exposes] is the list of exposes of the device.
  List<ZigbeeDeviceExpose>? get exposes;
 /// Create a copy of ZigbeeDevice
 /// with the given fields replaced by the non-null parameter values.
@@ -36,16 +39,16 @@ $ZigbeeDeviceCopyWith<ZigbeeDevice> get copyWith => _$ZigbeeDeviceCopyWithImpl<Z
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZigbeeDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.ieeeAddress, ieeeAddress) || other.ieeeAddress == ieeeAddress)&&(identical(other.manufacturer, manufacturer) || other.manufacturer == manufacturer)&&(identical(other.model, model) || other.model == model)&&(identical(other.lastSeen, lastSeen) || other.lastSeen == lastSeen)&&(identical(other.bindedDeviceId, bindedDeviceId) || other.bindedDeviceId == bindedDeviceId)&&(identical(other.zoneId, zoneId) || other.zoneId == zoneId)&&const DeepCollectionEquality().equals(other.exposes, exposes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZigbeeDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.ieeeAddress, ieeeAddress) || other.ieeeAddress == ieeeAddress)&&(identical(other.manufacturer, manufacturer) || other.manufacturer == manufacturer)&&(identical(other.model, model) || other.model == model)&&(identical(other.lastSeen, lastSeen) || other.lastSeen == lastSeen)&&(identical(other.bindedDeviceId, bindedDeviceId) || other.bindedDeviceId == bindedDeviceId)&&(identical(other.zoneId, zoneId) || other.zoneId == zoneId)&&(identical(other.bindConflict, bindConflict) || other.bindConflict == bindConflict)&&const DeepCollectionEquality().equals(other.exposes, exposes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,ieeeAddress,manufacturer,model,lastSeen,bindedDeviceId,zoneId,const DeepCollectionEquality().hash(exposes));
+int get hashCode => Object.hash(runtimeType,id,ieeeAddress,manufacturer,model,lastSeen,bindedDeviceId,zoneId,bindConflict,const DeepCollectionEquality().hash(exposes));
 
 @override
 String toString() {
-  return 'ZigbeeDevice(id: $id, ieeeAddress: $ieeeAddress, manufacturer: $manufacturer, model: $model, lastSeen: $lastSeen, bindedDeviceId: $bindedDeviceId, zoneId: $zoneId, exposes: $exposes)';
+  return 'ZigbeeDevice(id: $id, ieeeAddress: $ieeeAddress, manufacturer: $manufacturer, model: $model, lastSeen: $lastSeen, bindedDeviceId: $bindedDeviceId, zoneId: $zoneId, bindConflict: $bindConflict, exposes: $exposes)';
 }
 
 
@@ -56,7 +59,7 @@ abstract mixin class $ZigbeeDeviceCopyWith<$Res>  {
   factory $ZigbeeDeviceCopyWith(ZigbeeDevice value, $Res Function(ZigbeeDevice) _then) = _$ZigbeeDeviceCopyWithImpl;
 @useResult
 $Res call({
- String id, String ieeeAddress, String? manufacturer, String? model,@TimestampOrNullConverter() DateTime? lastSeen, String? bindedDeviceId, String? zoneId, List<ZigbeeDeviceExpose>? exposes
+ String id, String ieeeAddress, String? manufacturer, String? model,@TimestampOrNullConverter() DateTime? lastSeen, String? bindedDeviceId, String? zoneId, String? bindConflict, List<ZigbeeDeviceExpose>? exposes
 });
 
 
@@ -73,7 +76,7 @@ class _$ZigbeeDeviceCopyWithImpl<$Res>
 
 /// Create a copy of ZigbeeDevice
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? ieeeAddress = null,Object? manufacturer = freezed,Object? model = freezed,Object? lastSeen = freezed,Object? bindedDeviceId = freezed,Object? zoneId = freezed,Object? exposes = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? ieeeAddress = null,Object? manufacturer = freezed,Object? model = freezed,Object? lastSeen = freezed,Object? bindedDeviceId = freezed,Object? zoneId = freezed,Object? bindConflict = freezed,Object? exposes = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,ieeeAddress: null == ieeeAddress ? _self.ieeeAddress : ieeeAddress // ignore: cast_nullable_to_non_nullable
@@ -82,6 +85,7 @@ as String?,model: freezed == model ? _self.model : model // ignore: cast_nullabl
 as String?,lastSeen: freezed == lastSeen ? _self.lastSeen : lastSeen // ignore: cast_nullable_to_non_nullable
 as DateTime?,bindedDeviceId: freezed == bindedDeviceId ? _self.bindedDeviceId : bindedDeviceId // ignore: cast_nullable_to_non_nullable
 as String?,zoneId: freezed == zoneId ? _self.zoneId : zoneId // ignore: cast_nullable_to_non_nullable
+as String?,bindConflict: freezed == bindConflict ? _self.bindConflict : bindConflict // ignore: cast_nullable_to_non_nullable
 as String?,exposes: freezed == exposes ? _self.exposes : exposes // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeDeviceExpose>?,
   ));
@@ -168,10 +172,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String ieeeAddress,  String? manufacturer,  String? model, @TimestampOrNullConverter()  DateTime? lastSeen,  String? bindedDeviceId,  String? zoneId,  List<ZigbeeDeviceExpose>? exposes)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String ieeeAddress,  String? manufacturer,  String? model, @TimestampOrNullConverter()  DateTime? lastSeen,  String? bindedDeviceId,  String? zoneId,  String? bindConflict,  List<ZigbeeDeviceExpose>? exposes)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ZigbeeDevice() when $default != null:
-return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.lastSeen,_that.bindedDeviceId,_that.zoneId,_that.exposes);case _:
+return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.lastSeen,_that.bindedDeviceId,_that.zoneId,_that.bindConflict,_that.exposes);case _:
   return orElse();
 
 }
@@ -189,10 +193,10 @@ return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String ieeeAddress,  String? manufacturer,  String? model, @TimestampOrNullConverter()  DateTime? lastSeen,  String? bindedDeviceId,  String? zoneId,  List<ZigbeeDeviceExpose>? exposes)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String ieeeAddress,  String? manufacturer,  String? model, @TimestampOrNullConverter()  DateTime? lastSeen,  String? bindedDeviceId,  String? zoneId,  String? bindConflict,  List<ZigbeeDeviceExpose>? exposes)  $default,) {final _that = this;
 switch (_that) {
 case _ZigbeeDevice():
-return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.lastSeen,_that.bindedDeviceId,_that.zoneId,_that.exposes);case _:
+return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.lastSeen,_that.bindedDeviceId,_that.zoneId,_that.bindConflict,_that.exposes);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -209,10 +213,10 @@ return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String ieeeAddress,  String? manufacturer,  String? model, @TimestampOrNullConverter()  DateTime? lastSeen,  String? bindedDeviceId,  String? zoneId,  List<ZigbeeDeviceExpose>? exposes)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String ieeeAddress,  String? manufacturer,  String? model, @TimestampOrNullConverter()  DateTime? lastSeen,  String? bindedDeviceId,  String? zoneId,  String? bindConflict,  List<ZigbeeDeviceExpose>? exposes)?  $default,) {final _that = this;
 switch (_that) {
 case _ZigbeeDevice() when $default != null:
-return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.lastSeen,_that.bindedDeviceId,_that.zoneId,_that.exposes);case _:
+return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.lastSeen,_that.bindedDeviceId,_that.zoneId,_that.bindConflict,_that.exposes);case _:
   return null;
 
 }
@@ -224,7 +228,7 @@ return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.
 @JsonSerializable()
 
 class _ZigbeeDevice extends ZigbeeDevice {
-  const _ZigbeeDevice({required this.id, required this.ieeeAddress, this.manufacturer, this.model, @TimestampOrNullConverter() this.lastSeen, this.bindedDeviceId, this.zoneId, final  List<ZigbeeDeviceExpose>? exposes}): _exposes = exposes,super._();
+  const _ZigbeeDevice({required this.id, required this.ieeeAddress, this.manufacturer, this.model, @TimestampOrNullConverter() this.lastSeen, this.bindedDeviceId, this.zoneId, this.bindConflict, final  List<ZigbeeDeviceExpose>? exposes}): _exposes = exposes,super._();
   factory _ZigbeeDevice.fromJson(Map<String, dynamic> json) => _$ZigbeeDeviceFromJson(json);
 
 /// [id] is the unique identifier of the device.
@@ -241,6 +245,10 @@ class _ZigbeeDevice extends ZigbeeDevice {
 @override final  String? bindedDeviceId;
 /// [zoneId] is the ID of the zone that the device belongs to.
 @override final  String? zoneId;
+/// [bindConflict] is why the ingestion worker refused to auto-bind this
+/// device: 'none', or 'foreign_account' when its ident already belongs to
+/// a platform device under an inaccessible account.
+@override final  String? bindConflict;
 /// [exposes] is the list of exposes of the device.
  final  List<ZigbeeDeviceExpose>? _exposes;
 /// [exposes] is the list of exposes of the device.
@@ -266,16 +274,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.ieeeAddress, ieeeAddress) || other.ieeeAddress == ieeeAddress)&&(identical(other.manufacturer, manufacturer) || other.manufacturer == manufacturer)&&(identical(other.model, model) || other.model == model)&&(identical(other.lastSeen, lastSeen) || other.lastSeen == lastSeen)&&(identical(other.bindedDeviceId, bindedDeviceId) || other.bindedDeviceId == bindedDeviceId)&&(identical(other.zoneId, zoneId) || other.zoneId == zoneId)&&const DeepCollectionEquality().equals(other._exposes, _exposes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.ieeeAddress, ieeeAddress) || other.ieeeAddress == ieeeAddress)&&(identical(other.manufacturer, manufacturer) || other.manufacturer == manufacturer)&&(identical(other.model, model) || other.model == model)&&(identical(other.lastSeen, lastSeen) || other.lastSeen == lastSeen)&&(identical(other.bindedDeviceId, bindedDeviceId) || other.bindedDeviceId == bindedDeviceId)&&(identical(other.zoneId, zoneId) || other.zoneId == zoneId)&&(identical(other.bindConflict, bindConflict) || other.bindConflict == bindConflict)&&const DeepCollectionEquality().equals(other._exposes, _exposes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,ieeeAddress,manufacturer,model,lastSeen,bindedDeviceId,zoneId,const DeepCollectionEquality().hash(_exposes));
+int get hashCode => Object.hash(runtimeType,id,ieeeAddress,manufacturer,model,lastSeen,bindedDeviceId,zoneId,bindConflict,const DeepCollectionEquality().hash(_exposes));
 
 @override
 String toString() {
-  return 'ZigbeeDevice(id: $id, ieeeAddress: $ieeeAddress, manufacturer: $manufacturer, model: $model, lastSeen: $lastSeen, bindedDeviceId: $bindedDeviceId, zoneId: $zoneId, exposes: $exposes)';
+  return 'ZigbeeDevice(id: $id, ieeeAddress: $ieeeAddress, manufacturer: $manufacturer, model: $model, lastSeen: $lastSeen, bindedDeviceId: $bindedDeviceId, zoneId: $zoneId, bindConflict: $bindConflict, exposes: $exposes)';
 }
 
 
@@ -286,7 +294,7 @@ abstract mixin class _$ZigbeeDeviceCopyWith<$Res> implements $ZigbeeDeviceCopyWi
   factory _$ZigbeeDeviceCopyWith(_ZigbeeDevice value, $Res Function(_ZigbeeDevice) _then) = __$ZigbeeDeviceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String ieeeAddress, String? manufacturer, String? model,@TimestampOrNullConverter() DateTime? lastSeen, String? bindedDeviceId, String? zoneId, List<ZigbeeDeviceExpose>? exposes
+ String id, String ieeeAddress, String? manufacturer, String? model,@TimestampOrNullConverter() DateTime? lastSeen, String? bindedDeviceId, String? zoneId, String? bindConflict, List<ZigbeeDeviceExpose>? exposes
 });
 
 
@@ -303,7 +311,7 @@ class __$ZigbeeDeviceCopyWithImpl<$Res>
 
 /// Create a copy of ZigbeeDevice
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? ieeeAddress = null,Object? manufacturer = freezed,Object? model = freezed,Object? lastSeen = freezed,Object? bindedDeviceId = freezed,Object? zoneId = freezed,Object? exposes = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? ieeeAddress = null,Object? manufacturer = freezed,Object? model = freezed,Object? lastSeen = freezed,Object? bindedDeviceId = freezed,Object? zoneId = freezed,Object? bindConflict = freezed,Object? exposes = freezed,}) {
   return _then(_ZigbeeDevice(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,ieeeAddress: null == ieeeAddress ? _self.ieeeAddress : ieeeAddress // ignore: cast_nullable_to_non_nullable
@@ -312,6 +320,7 @@ as String?,model: freezed == model ? _self.model : model // ignore: cast_nullabl
 as String?,lastSeen: freezed == lastSeen ? _self.lastSeen : lastSeen // ignore: cast_nullable_to_non_nullable
 as DateTime?,bindedDeviceId: freezed == bindedDeviceId ? _self.bindedDeviceId : bindedDeviceId // ignore: cast_nullable_to_non_nullable
 as String?,zoneId: freezed == zoneId ? _self.zoneId : zoneId // ignore: cast_nullable_to_non_nullable
+as String?,bindConflict: freezed == bindConflict ? _self.bindConflict : bindConflict // ignore: cast_nullable_to_non_nullable
 as String?,exposes: freezed == exposes ? _self._exposes : exposes // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeDeviceExpose>?,
   ));
