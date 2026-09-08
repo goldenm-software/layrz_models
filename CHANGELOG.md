@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.33.7
+
+- Removed `id` from `editApp` mutation
+- This version was released manually
+
 ## 3.33.6
 
 - Added `bindConflict` (`String?`) on `ZigbeeDevice`. Exposes why the ingestion worker refused to auto-bind the device: `null`/`'none'`, or `'foreign_account'` when its ident already belongs to a platform device under an inaccessible account.
