@@ -248,7 +248,7 @@ return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.categories
 @JsonSerializable()
 
 class _OutboundProtocol implements OutboundProtocol {
-  const _OutboundProtocol({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, final  List<String> categoriesIds = const [], this.hasFtp, this.isConsumpted, this.mqttTopic, this.isAsync, final  List<CredentialField> requiredFields = const [], this.dynamicIcon, this.usage}): _categoriesIds = categoriesIds,_requiredFields = requiredFields;
+  const _OutboundProtocol({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, this.categoriesIds = const [], this.hasFtp, this.isConsumpted, this.mqttTopic, this.isAsync, this.requiredFields = const [], this.dynamicIcon, this.usage});
   factory _OutboundProtocol.fromJson(Map<String, dynamic> json) => _$OutboundProtocolFromJson(json);
 
 /// [id] is the protocol ID, this ID is unique for each protocol.
@@ -262,14 +262,7 @@ class _OutboundProtocol implements OutboundProtocol {
 /// [isEnabled] indicates if the protocol is enabled and available for use, or disabled and not available for use.
 @override final  bool isEnabled;
 /// [categoriesIds] is the list of categories IDs that the protocol belongs to.
- final  List<String> _categoriesIds;
-/// [categoriesIds] is the list of categories IDs that the protocol belongs to.
-@override@JsonKey() List<String> get categoriesIds {
-  if (_categoriesIds is EqualUnmodifiableListView) return _categoriesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_categoriesIds);
-}
-
+@override@JsonKey() final  List<String> categoriesIds;
 /// [hasFtp] indicates if the protocol has support for FTP.
 @override final  bool? hasFtp;
 /// [isConsumpted] indicates if the protocol is consumpted.
@@ -279,14 +272,7 @@ class _OutboundProtocol implements OutboundProtocol {
 /// [isAsync] indicates if the protocol is asynchronous.
 @override final  bool? isAsync;
 /// [requiredFields] is the list of required fields for the protocol.
- final  List<CredentialField> _requiredFields;
-/// [requiredFields] is the list of required fields for the protocol.
-@override@JsonKey() List<CredentialField> get requiredFields {
-  if (_requiredFields is EqualUnmodifiableListView) return _requiredFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_requiredFields);
-}
-
+@override@JsonKey() final  List<CredentialField> requiredFields;
 /// [dynamicIcon] is the icon of the inbound protocol.
 /// This is the new schema of the icon
 @override final  Avatar? dynamicIcon;
@@ -307,12 +293,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundProtocol&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other._categoriesIds, _categoriesIds)&&(identical(other.hasFtp, hasFtp) || other.hasFtp == hasFtp)&&(identical(other.isConsumpted, isConsumpted) || other.isConsumpted == isConsumpted)&&(identical(other.mqttTopic, mqttTopic) || other.mqttTopic == mqttTopic)&&(identical(other.isAsync, isAsync) || other.isAsync == isAsync)&&const DeepCollectionEquality().equals(other._requiredFields, _requiredFields)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.usage, usage) || other.usage == usage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundProtocol&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other.categoriesIds, categoriesIds)&&(identical(other.hasFtp, hasFtp) || other.hasFtp == hasFtp)&&(identical(other.isConsumpted, isConsumpted) || other.isConsumpted == isConsumpted)&&(identical(other.mqttTopic, mqttTopic) || other.mqttTopic == mqttTopic)&&(identical(other.isAsync, isAsync) || other.isAsync == isAsync)&&const DeepCollectionEquality().equals(other.requiredFields, requiredFields)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.usage, usage) || other.usage == usage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,color,isEnabled,const DeepCollectionEquality().hash(_categoriesIds),hasFtp,isConsumpted,mqttTopic,isAsync,const DeepCollectionEquality().hash(_requiredFields),dynamicIcon,usage);
+int get hashCode => Object.hash(runtimeType,id,name,color,isEnabled,const DeepCollectionEquality().hash(categoriesIds),hasFtp,isConsumpted,mqttTopic,isAsync,const DeepCollectionEquality().hash(requiredFields),dynamicIcon,usage);
 
 @override
 String toString() {
@@ -350,12 +336,12 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,categoriesIds: null == categoriesIds ? _self._categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
+as bool,categoriesIds: null == categoriesIds ? _self.categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,hasFtp: freezed == hasFtp ? _self.hasFtp : hasFtp // ignore: cast_nullable_to_non_nullable
 as bool?,isConsumpted: freezed == isConsumpted ? _self.isConsumpted : isConsumpted // ignore: cast_nullable_to_non_nullable
 as bool?,mqttTopic: freezed == mqttTopic ? _self.mqttTopic : mqttTopic // ignore: cast_nullable_to_non_nullable
 as String?,isAsync: freezed == isAsync ? _self.isAsync : isAsync // ignore: cast_nullable_to_non_nullable
-as bool?,requiredFields: null == requiredFields ? _self._requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
+as bool?,requiredFields: null == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
 as List<CredentialField>,dynamicIcon: freezed == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
 as Avatar?,usage: freezed == usage ? _self.usage : usage // ignore: cast_nullable_to_non_nullable
 as int?,
@@ -628,7 +614,7 @@ return $default(_that.id,_that.name,_that.credentials,_that.protocol,_that.proto
 @JsonSerializable()
 
 class _OutboundService implements OutboundService {
-  const _OutboundService({required this.id, required this.name, final  Map<String, dynamic>? credentials, this.protocol, this.protocolId, this.isEnabled, final  List<OutboundStructure>? structure, this.token, final  List<String>? assetsIds, final  List<Asset>? assets, final  List<String>? groupsIds, final  List<Tag>? groups, final  List<Access>? access, this.metrics, @JsonKey(unknownEnumValue: AtsStreamModel.exit) this.atsModel}): _credentials = credentials,_structure = structure,_assetsIds = assetsIds,_assets = assets,_groupsIds = groupsIds,_groups = groups,_access = access;
+  const _OutboundService({required this.id, required this.name, this.credentials, this.protocol, this.protocolId, this.isEnabled, this.structure, this.token, this.assetsIds, this.assets, this.groupsIds, this.groups, this.access, this.metrics, @JsonKey(unknownEnumValue: AtsStreamModel.exit) this.atsModel});
   factory _OutboundService.fromJson(Map<String, dynamic> json) => _$OutboundServiceFromJson(json);
 
 /// IS the ID of the entity. This ID is unique.
@@ -636,16 +622,7 @@ class _OutboundService implements OutboundService {
 /// Is the Assigned service name, cannot be translated for other languages.
 @override final  String name;
 /// Is the Credential object, check the documentation for more information.
- final  Map<String, dynamic>? _credentials;
-/// Is the Credential object, check the documentation for more information.
-@override Map<String, dynamic>? get credentials {
-  final value = _credentials;
-  if (value == null) return null;
-  if (_credentials is EqualUnmodifiableMapView) return _credentials;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? credentials;
 /// Is the Protocol entity.
 @override final  OutboundProtocol? protocol;
 /// Is the Protocol ID.
@@ -653,73 +630,19 @@ class _OutboundService implements OutboundService {
 /// Is the Current transmission status.
 @override final  bool? isEnabled;
 /// Is the Structure of the outbound protocol, only used for Omega REST Outbound protocol.
- final  List<OutboundStructure>? _structure;
-/// Is the Structure of the outbound protocol, only used for Omega REST Outbound protocol.
-@override List<OutboundStructure>? get structure {
-  final value = _structure;
-  if (value == null) return null;
-  if (_structure is EqualUnmodifiableListView) return _structure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<OutboundStructure>? structure;
 /// Is the Token to authenticate the request, only used for Alpha REST Inbound protocol
 @override final  String? token;
 /// Is the Assets IDs linked to the service.
- final  List<String>? _assetsIds;
-/// Is the Assets IDs linked to the service.
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 /// Is the Assets linked to the service.
- final  List<Asset>? _assets;
-/// Is the Assets linked to the service.
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// Is the Groups (Tags) IDs linked to the service.
- final  List<String>? _groupsIds;
-/// Is the Groups (Tags) IDs linked to the service.
-@override List<String>? get groupsIds {
-  final value = _groupsIds;
-  if (value == null) return null;
-  if (_groupsIds is EqualUnmodifiableListView) return _groupsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? groupsIds;
 /// Is the Groups (Tags) linked to the service.
- final  List<Tag>? _groups;
-/// Is the Groups (Tags) linked to the service.
-@override List<Tag>? get groups {
-  final value = _groups;
-  if (value == null) return null;
-  if (_groups is EqualUnmodifiableListView) return _groups;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Tag>? groups;
 /// A list of custom access permissions.
- final  List<Access>? _access;
-/// A list of custom access permissions.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// Is the Metrics object.
 @override final  OutboundMetrics? metrics;
 /// Is the ATS Stream Model, only used for ATS Stream Outbound protocol
@@ -738,12 +661,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundService&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._credentials, _credentials)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other._structure, _structure)&&(identical(other.token, token) || other.token == token)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._groupsIds, _groupsIds)&&const DeepCollectionEquality().equals(other._groups, _groups)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.metrics, metrics) || other.metrics == metrics)&&(identical(other.atsModel, atsModel) || other.atsModel == atsModel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundService&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.credentials, credentials)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other.structure, structure)&&(identical(other.token, token) || other.token == token)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.groupsIds, groupsIds)&&const DeepCollectionEquality().equals(other.groups, groups)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.metrics, metrics) || other.metrics == metrics)&&(identical(other.atsModel, atsModel) || other.atsModel == atsModel));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_credentials),protocol,protocolId,isEnabled,const DeepCollectionEquality().hash(_structure),token,const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_groupsIds),const DeepCollectionEquality().hash(_groups),const DeepCollectionEquality().hash(_access),metrics,atsModel);
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(credentials),protocol,protocolId,isEnabled,const DeepCollectionEquality().hash(structure),token,const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(groupsIds),const DeepCollectionEquality().hash(groups),const DeepCollectionEquality().hash(access),metrics,atsModel);
 
 @override
 String toString() {
@@ -779,17 +702,17 @@ class __$OutboundServiceCopyWithImpl<$Res>
   return _then(_OutboundService(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,credentials: freezed == credentials ? _self._credentials : credentials // ignore: cast_nullable_to_non_nullable
+as String,credentials: freezed == credentials ? _self.credentials : credentials // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,protocol: freezed == protocol ? _self.protocol : protocol // ignore: cast_nullable_to_non_nullable
 as OutboundProtocol?,protocolId: freezed == protocolId ? _self.protocolId : protocolId // ignore: cast_nullable_to_non_nullable
 as String?,isEnabled: freezed == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool?,structure: freezed == structure ? _self._structure : structure // ignore: cast_nullable_to_non_nullable
+as bool?,structure: freezed == structure ? _self.structure : structure // ignore: cast_nullable_to_non_nullable
 as List<OutboundStructure>?,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
-as String?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,groupsIds: freezed == groupsIds ? _self._groupsIds : groupsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,groups: freezed == groups ? _self._groups : groups // ignore: cast_nullable_to_non_nullable
-as List<Tag>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,groupsIds: freezed == groupsIds ? _self.groupsIds : groupsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,groups: freezed == groups ? _self.groups : groups // ignore: cast_nullable_to_non_nullable
+as List<Tag>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,metrics: freezed == metrics ? _self.metrics : metrics // ignore: cast_nullable_to_non_nullable
 as OutboundMetrics?,atsModel: freezed == atsModel ? _self.atsModel : atsModel // ignore: cast_nullable_to_non_nullable
 as AtsStreamModel?,
@@ -1027,7 +950,7 @@ return $default(_that.field,_that.type,_that.value,_that.source,_that.nested);ca
 @JsonSerializable()
 
 class _OutboundStructure implements OutboundStructure {
-  const _OutboundStructure({required this.field, required this.type, required this.value, this.source, final  List<OutboundStructure> nested = const []}): _nested = nested;
+  const _OutboundStructure({required this.field, required this.type, required this.value, this.source, this.nested = const []});
   factory _OutboundStructure.fromJson(Map<String, dynamic> json) => _$OutboundStructureFromJson(json);
 
 @override final  String field;
@@ -1036,14 +959,7 @@ class _OutboundStructure implements OutboundStructure {
 /// Source collection to iterate, only used when [type] is `json.array`. ATAK protocol only.
 @override final  String? source;
 /// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
- final  List<OutboundStructure> _nested;
-/// Nested structure entries, only used when [type] is `json` or `json.array`. ATAK protocol only.
-@override@JsonKey() List<OutboundStructure> get nested {
-  if (_nested is EqualUnmodifiableListView) return _nested;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_nested);
-}
-
+@override@JsonKey() final  List<OutboundStructure> nested;
 
 /// Create a copy of OutboundStructure
 /// with the given fields replaced by the non-null parameter values.
@@ -1058,12 +974,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundStructure&&(identical(other.field, field) || other.field == field)&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other._nested, _nested));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OutboundStructure&&(identical(other.field, field) || other.field == field)&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other.nested, nested));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,field,type,value,source,const DeepCollectionEquality().hash(_nested));
+int get hashCode => Object.hash(runtimeType,field,type,value,source,const DeepCollectionEquality().hash(nested));
 
 @override
 String toString() {
@@ -1101,7 +1017,7 @@ field: null == field ? _self.field : field // ignore: cast_nullable_to_non_nulla
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,source: freezed == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
-as String?,nested: null == nested ? _self._nested : nested // ignore: cast_nullable_to_non_nullable
+as String?,nested: null == nested ? _self.nested : nested // ignore: cast_nullable_to_non_nullable
 as List<OutboundStructure>,
   ));
 }

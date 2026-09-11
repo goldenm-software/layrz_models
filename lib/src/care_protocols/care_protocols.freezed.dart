@@ -231,7 +231,7 @@ return $default(_that.id,_that.name,_that.mode,_that.tasks,_that.pages,_that.ass
 @JsonSerializable()
 
 class _CareProtocol extends CareProtocol {
-  const _CareProtocol({required this.id, required this.name, @JsonKey(unknownEnumValue: CareProtocolMode.simple) this.mode, final  List<CareTask> tasks = const [], final  List<ConciergeFormPage> pages = const [], final  List<Trigger>? associatedTriggers, this.numOfTasks, this.numOfPages, this.numOfBlocks, final  List<Access>? access}): _tasks = tasks,_pages = pages,_associatedTriggers = associatedTriggers,_access = access,super._();
+  const _CareProtocol({required this.id, required this.name, @JsonKey(unknownEnumValue: CareProtocolMode.simple) this.mode, this.tasks = const [], this.pages = const [], this.associatedTriggers, this.numOfTasks, this.numOfPages, this.numOfBlocks, this.access}): super._();
   factory _CareProtocol.fromJson(Map<String, dynamic> json) => _$CareProtocolFromJson(json);
 
 /// Is the ID
@@ -242,37 +242,12 @@ class _CareProtocol extends CareProtocol {
 @override@JsonKey(unknownEnumValue: CareProtocolMode.simple) final  CareProtocolMode? mode;
 /// Is the list of tasks to complete or fill before the case submission. Only will be valid to consider when
 /// the [mode] is [CareProtocolMode.simple]
- final  List<CareTask> _tasks;
-/// Is the list of tasks to complete or fill before the case submission. Only will be valid to consider when
-/// the [mode] is [CareProtocolMode.simple]
-@override@JsonKey() List<CareTask> get tasks {
-  if (_tasks is EqualUnmodifiableListView) return _tasks;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_tasks);
-}
-
+@override@JsonKey() final  List<CareTask> tasks;
 /// Is the list of pages to complete or fill before the case submission. Only will be valid to consider when
 /// the [mode] is [CareProtocolMode.concierge]
- final  List<ConciergeFormPage> _pages;
-/// Is the list of pages to complete or fill before the case submission. Only will be valid to consider when
-/// the [mode] is [CareProtocolMode.concierge]
-@override@JsonKey() List<ConciergeFormPage> get pages {
-  if (_pages is EqualUnmodifiableListView) return _pages;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_pages);
-}
-
+@override@JsonKey() final  List<ConciergeFormPage> pages;
 /// A list of associated triggers
- final  List<Trigger>? _associatedTriggers;
-/// A list of associated triggers
-@override List<Trigger>? get associatedTriggers {
-  final value = _associatedTriggers;
-  if (value == null) return null;
-  if (_associatedTriggers is EqualUnmodifiableListView) return _associatedTriggers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Trigger>? associatedTriggers;
 /// Represents the number of tasks created from this care protocol
 /// Only will come when the [mode] is [CareProtocolMode.simple]
 @override final  int? numOfTasks;
@@ -281,16 +256,7 @@ class _CareProtocol extends CareProtocol {
 @override final  int? numOfPages;
 @override final  int? numOfBlocks;
 /// A list of granted access
- final  List<Access>? _access;
-/// A list of granted access
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 
 /// Create a copy of CareProtocol
 /// with the given fields replaced by the non-null parameter values.
@@ -305,12 +271,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CareProtocol&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other._tasks, _tasks)&&const DeepCollectionEquality().equals(other._pages, _pages)&&const DeepCollectionEquality().equals(other._associatedTriggers, _associatedTriggers)&&(identical(other.numOfTasks, numOfTasks) || other.numOfTasks == numOfTasks)&&(identical(other.numOfPages, numOfPages) || other.numOfPages == numOfPages)&&(identical(other.numOfBlocks, numOfBlocks) || other.numOfBlocks == numOfBlocks)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CareProtocol&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other.tasks, tasks)&&const DeepCollectionEquality().equals(other.pages, pages)&&const DeepCollectionEquality().equals(other.associatedTriggers, associatedTriggers)&&(identical(other.numOfTasks, numOfTasks) || other.numOfTasks == numOfTasks)&&(identical(other.numOfPages, numOfPages) || other.numOfPages == numOfPages)&&(identical(other.numOfBlocks, numOfBlocks) || other.numOfBlocks == numOfBlocks)&&const DeepCollectionEquality().equals(other.access, access));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,mode,const DeepCollectionEquality().hash(_tasks),const DeepCollectionEquality().hash(_pages),const DeepCollectionEquality().hash(_associatedTriggers),numOfTasks,numOfPages,numOfBlocks,const DeepCollectionEquality().hash(_access));
+int get hashCode => Object.hash(runtimeType,id,name,mode,const DeepCollectionEquality().hash(tasks),const DeepCollectionEquality().hash(pages),const DeepCollectionEquality().hash(associatedTriggers),numOfTasks,numOfPages,numOfBlocks,const DeepCollectionEquality().hash(access));
 
 @override
 String toString() {
@@ -347,13 +313,13 @@ class __$CareProtocolCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,mode: freezed == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
-as CareProtocolMode?,tasks: null == tasks ? _self._tasks : tasks // ignore: cast_nullable_to_non_nullable
-as List<CareTask>,pages: null == pages ? _self._pages : pages // ignore: cast_nullable_to_non_nullable
-as List<ConciergeFormPage>,associatedTriggers: freezed == associatedTriggers ? _self._associatedTriggers : associatedTriggers // ignore: cast_nullable_to_non_nullable
+as CareProtocolMode?,tasks: null == tasks ? _self.tasks : tasks // ignore: cast_nullable_to_non_nullable
+as List<CareTask>,pages: null == pages ? _self.pages : pages // ignore: cast_nullable_to_non_nullable
+as List<ConciergeFormPage>,associatedTriggers: freezed == associatedTriggers ? _self.associatedTriggers : associatedTriggers // ignore: cast_nullable_to_non_nullable
 as List<Trigger>?,numOfTasks: freezed == numOfTasks ? _self.numOfTasks : numOfTasks // ignore: cast_nullable_to_non_nullable
 as int?,numOfPages: freezed == numOfPages ? _self.numOfPages : numOfPages // ignore: cast_nullable_to_non_nullable
 as int?,numOfBlocks: freezed == numOfBlocks ? _self.numOfBlocks : numOfBlocks // ignore: cast_nullable_to_non_nullable
-as int?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as int?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
   ));
 }
@@ -828,7 +794,7 @@ return $default(_that.question,_that.answer,_that.choices,_that.minValue,_that.m
 @JsonSerializable()
 
 class _CareTask implements CareTask {
-  const _CareTask({required this.question, @JsonKey(unknownEnumValue: AnswerKind.text) required this.answer, final  List<String> choices = const [], this.minValue = 0, this.maxValue = 0}): _choices = choices;
+  const _CareTask({required this.question, @JsonKey(unknownEnumValue: AnswerKind.text) required this.answer, this.choices = const [], this.minValue = 0, this.maxValue = 0});
   factory _CareTask.fromJson(Map<String, dynamic> json) => _$CareTaskFromJson(json);
 
 /// Is the question to prompt
@@ -836,14 +802,7 @@ class _CareTask implements CareTask {
 /// Is the type of answer
 @override@JsonKey(unknownEnumValue: AnswerKind.text) final  AnswerKind answer;
 /// When [answer] = [AnswerKind.choice], [choices] represents the list of possible values
- final  List<String> _choices;
-/// When [answer] = [AnswerKind.choice], [choices] represents the list of possible values
-@override@JsonKey() List<String> get choices {
-  if (_choices is EqualUnmodifiableListView) return _choices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_choices);
-}
-
+@override@JsonKey() final  List<String> choices;
 /// When [answer] = [AnswerKind.range], [minValue] and [maxValue] represents the range of possible values
 @override@JsonKey() final  int minValue;
 @override@JsonKey() final  int maxValue;
@@ -861,12 +820,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CareTask&&(identical(other.question, question) || other.question == question)&&(identical(other.answer, answer) || other.answer == answer)&&const DeepCollectionEquality().equals(other._choices, _choices)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CareTask&&(identical(other.question, question) || other.question == question)&&(identical(other.answer, answer) || other.answer == answer)&&const DeepCollectionEquality().equals(other.choices, choices)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,question,answer,const DeepCollectionEquality().hash(_choices),minValue,maxValue);
+int get hashCode => Object.hash(runtimeType,question,answer,const DeepCollectionEquality().hash(choices),minValue,maxValue);
 
 @override
 String toString() {
@@ -902,7 +861,7 @@ class __$CareTaskCopyWithImpl<$Res>
   return _then(_CareTask(
 question: null == question ? _self.question : question // ignore: cast_nullable_to_non_nullable
 as String,answer: null == answer ? _self.answer : answer // ignore: cast_nullable_to_non_nullable
-as AnswerKind,choices: null == choices ? _self._choices : choices // ignore: cast_nullable_to_non_nullable
+as AnswerKind,choices: null == choices ? _self.choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>,minValue: null == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
 as int,maxValue: null == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
 as int,

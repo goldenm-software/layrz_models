@@ -232,7 +232,7 @@ return $default(_that.id,_that.assetId,_that.fuelType,_that.fuelSubtype,_that.de
 @JsonSerializable()
 
 class _AtsReceptionProduct implements AtsReceptionProduct {
-  const _AtsReceptionProduct({this.id, this.assetId, @AtsFuelTypeOrNullConverter() this.fuelType, @AtsFuelSubTypeOrNullConverter() this.fuelSubtype, this.density, this.temperature, this.volumeBought, this.realVolume, @TimestampOrNullConverter() this.receivedAt, this.provider, final  List<String> tanksImages = const [], this.price}): _tanksImages = tanksImages;
+  const _AtsReceptionProduct({this.id, this.assetId, @AtsFuelTypeOrNullConverter() this.fuelType, @AtsFuelSubTypeOrNullConverter() this.fuelSubtype, this.density, this.temperature, this.volumeBought, this.realVolume, @TimestampOrNullConverter() this.receivedAt, this.provider, this.tanksImages = const [], this.price});
   factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) => _$AtsReceptionProductFromJson(json);
 
 /// ID of the reception product. This ID is unique.
@@ -256,14 +256,7 @@ class _AtsReceptionProduct implements AtsReceptionProduct {
 /// Seller / provider name
 @override final  String? provider;
 /// List of tank images
- final  List<String> _tanksImages;
-/// List of tank images
-@override@JsonKey() List<String> get tanksImages {
-  if (_tanksImages is EqualUnmodifiableListView) return _tanksImages;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_tanksImages);
-}
-
+@override@JsonKey() final  List<String> tanksImages;
 /// `price` of the product
 @override final  double? price;
 
@@ -280,12 +273,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsReceptionProduct&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.density, density) || other.density == density)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.volumeBought, volumeBought) || other.volumeBought == volumeBought)&&(identical(other.realVolume, realVolume) || other.realVolume == realVolume)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.provider, provider) || other.provider == provider)&&const DeepCollectionEquality().equals(other._tanksImages, _tanksImages)&&(identical(other.price, price) || other.price == price));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsReceptionProduct&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.density, density) || other.density == density)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.volumeBought, volumeBought) || other.volumeBought == volumeBought)&&(identical(other.realVolume, realVolume) || other.realVolume == realVolume)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.provider, provider) || other.provider == provider)&&const DeepCollectionEquality().equals(other.tanksImages, tanksImages)&&(identical(other.price, price) || other.price == price));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,assetId,fuelType,fuelSubtype,density,temperature,volumeBought,realVolume,receivedAt,provider,const DeepCollectionEquality().hash(_tanksImages),price);
+int get hashCode => Object.hash(runtimeType,id,assetId,fuelType,fuelSubtype,density,temperature,volumeBought,realVolume,receivedAt,provider,const DeepCollectionEquality().hash(tanksImages),price);
 
 @override
 String toString() {
@@ -329,7 +322,7 @@ as double?,volumeBought: freezed == volumeBought ? _self.volumeBought : volumeBo
 as double?,realVolume: freezed == realVolume ? _self.realVolume : realVolume // ignore: cast_nullable_to_non_nullable
 as double?,receivedAt: freezed == receivedAt ? _self.receivedAt : receivedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,provider: freezed == provider ? _self.provider : provider // ignore: cast_nullable_to_non_nullable
-as String?,tanksImages: null == tanksImages ? _self._tanksImages : tanksImages // ignore: cast_nullable_to_non_nullable
+as String?,tanksImages: null == tanksImages ? _self.tanksImages : tanksImages // ignore: cast_nullable_to_non_nullable
 as List<String>,price: freezed == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
 as double?,
   ));
@@ -1434,7 +1427,7 @@ return $default(_that.id,_that.number,_that.externalIdentifier,_that.externalIde
 @JsonSerializable()
 
 class _AtsAuthenticationCard implements AtsAuthenticationCard {
-  const _AtsAuthenticationCard({required this.id, required this.number, required this.externalIdentifier, required this.externalIdentifierHex, this.asset, this.owner, this.isSuspended, @AtsSelectCardConverter() required this.typeId, final  List<AtsHistoryAuthenticationCard>? history, @TimestampOrNullConverter() this.createdAt}): _history = history;
+  const _AtsAuthenticationCard({required this.id, required this.number, required this.externalIdentifier, required this.externalIdentifierHex, this.asset, this.owner, this.isSuspended, @AtsSelectCardConverter() required this.typeId, this.history, @TimestampOrNullConverter() this.createdAt});
   factory _AtsAuthenticationCard.fromJson(Map<String, dynamic> json) => _$AtsAuthenticationCardFromJson(json);
 
 /// [id] represents the unique identifier of the card.
@@ -1454,16 +1447,7 @@ class _AtsAuthenticationCard implements AtsAuthenticationCard {
 /// [typeId] type id of the card.
 @override@AtsSelectCardConverter() final  AtsSelectCard typeId;
 /// [history] is the history of this card.
- final  List<AtsHistoryAuthenticationCard>? _history;
-/// [history] is the history of this card.
-@override List<AtsHistoryAuthenticationCard>? get history {
-  final value = _history;
-  if (value == null) return null;
-  if (_history is EqualUnmodifiableListView) return _history;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsHistoryAuthenticationCard>? history;
 /// [createdAt] is the date when the card was created.
 @override@TimestampOrNullConverter() final  DateTime? createdAt;
 
@@ -1480,12 +1464,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsAuthenticationCard&&(identical(other.id, id) || other.id == id)&&(identical(other.number, number) || other.number == number)&&(identical(other.externalIdentifier, externalIdentifier) || other.externalIdentifier == externalIdentifier)&&(identical(other.externalIdentifierHex, externalIdentifierHex) || other.externalIdentifierHex == externalIdentifierHex)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.typeId, typeId) || other.typeId == typeId)&&const DeepCollectionEquality().equals(other._history, _history)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsAuthenticationCard&&(identical(other.id, id) || other.id == id)&&(identical(other.number, number) || other.number == number)&&(identical(other.externalIdentifier, externalIdentifier) || other.externalIdentifier == externalIdentifier)&&(identical(other.externalIdentifierHex, externalIdentifierHex) || other.externalIdentifierHex == externalIdentifierHex)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.typeId, typeId) || other.typeId == typeId)&&const DeepCollectionEquality().equals(other.history, history)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,number,externalIdentifier,externalIdentifierHex,asset,owner,isSuspended,typeId,const DeepCollectionEquality().hash(_history),createdAt);
+int get hashCode => Object.hash(runtimeType,id,number,externalIdentifier,externalIdentifierHex,asset,owner,isSuspended,typeId,const DeepCollectionEquality().hash(history),createdAt);
 
 @override
 String toString() {
@@ -1527,7 +1511,7 @@ as String,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable
 as Asset?,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
 as User?,isSuspended: freezed == isSuspended ? _self.isSuspended : isSuspended // ignore: cast_nullable_to_non_nullable
 as bool?,typeId: null == typeId ? _self.typeId : typeId // ignore: cast_nullable_to_non_nullable
-as AtsSelectCard,history: freezed == history ? _self._history : history // ignore: cast_nullable_to_non_nullable
+as AtsSelectCard,history: freezed == history ? _self.history : history // ignore: cast_nullable_to_non_nullable
 as List<AtsHistoryAuthenticationCard>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
@@ -2534,7 +2518,7 @@ return $default(_that.id,_that.operation,_that.operationId,_that.trigger,_that.t
 @JsonSerializable()
 
 class _AtsEvent implements AtsEvent {
-  const _AtsEvent({this.id, this.operation, this.operationId, this.trigger, this.triggerId, this.functionId, this.asset, this.assetId, this.position, final  List<TelemetrySensor>? payload, final  List<Sensor>? sensors, @TimestampOrNullConverter() this.at, this.isCheck, this.comment}): _payload = payload,_sensors = sensors;
+  const _AtsEvent({this.id, this.operation, this.operationId, this.trigger, this.triggerId, this.functionId, this.asset, this.assetId, this.position, this.payload, this.sensors, @TimestampOrNullConverter() this.at, this.isCheck, this.comment});
   factory _AtsEvent.fromJson(Map<String, dynamic> json) => _$AtsEventFromJson(json);
 
 /// [id] of the asset entity. This ID is unique.
@@ -2558,27 +2542,9 @@ class _AtsEvent implements AtsEvent {
 /// [position] linked to the [AtsEvent].
 @override final  TelemetryPosition? position;
 /// [payload] Raw received payload values list of the message.
- final  List<TelemetrySensor>? _payload;
-/// [payload] Raw received payload values list of the message.
-@override List<TelemetrySensor>? get payload {
-  final value = _payload;
-  if (value == null) return null;
-  if (_payload is EqualUnmodifiableListView) return _payload;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TelemetrySensor>? payload;
 /// [sensors] values list of the message.
- final  List<Sensor>? _sensors;
-/// [sensors] values list of the message.
-@override List<Sensor>? get sensors {
-  final value = _sensors;
-  if (value == null) return null;
-  if (_sensors is EqualUnmodifiableListView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Sensor>? sensors;
 /// [at] Unix timestamp representing the date of the event.
 @override@TimestampOrNullConverter() final  DateTime? at;
 /// [isCheck] Flag to identify if the event has been checked.
@@ -2599,12 +2565,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.trigger, trigger) || other.trigger == trigger)&&(identical(other.triggerId, triggerId) || other.triggerId == triggerId)&&(identical(other.functionId, functionId) || other.functionId == functionId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._payload, _payload)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.at, at) || other.at == at)&&(identical(other.isCheck, isCheck) || other.isCheck == isCheck)&&(identical(other.comment, comment) || other.comment == comment));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.trigger, trigger) || other.trigger == trigger)&&(identical(other.triggerId, triggerId) || other.triggerId == triggerId)&&(identical(other.functionId, functionId) || other.functionId == functionId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.payload, payload)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.at, at) || other.at == at)&&(identical(other.isCheck, isCheck) || other.isCheck == isCheck)&&(identical(other.comment, comment) || other.comment == comment));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,operation,operationId,trigger,triggerId,functionId,asset,assetId,position,const DeepCollectionEquality().hash(_payload),const DeepCollectionEquality().hash(_sensors),at,isCheck,comment);
+int get hashCode => Object.hash(runtimeType,id,operation,operationId,trigger,triggerId,functionId,asset,assetId,position,const DeepCollectionEquality().hash(payload),const DeepCollectionEquality().hash(sensors),at,isCheck,comment);
 
 @override
 String toString() {
@@ -2647,8 +2613,8 @@ as String?,functionId: freezed == functionId ? _self.functionId : functionId // 
 as String?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as Asset?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String?,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as TelemetryPosition?,payload: freezed == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
-as List<TelemetrySensor>?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as TelemetryPosition?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
+as List<TelemetrySensor>?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as List<Sensor>?,at: freezed == at ? _self.at : at // ignore: cast_nullable_to_non_nullable
 as DateTime?,isCheck: freezed == isCheck ? _self.isCheck : isCheck // ignore: cast_nullable_to_non_nullable
 as bool?,comment: freezed == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
@@ -3230,7 +3196,7 @@ return $default(_that.id,_that.status,_that.receive90Days,_that.projectId,_that.
 @JsonSerializable()
 
 class _AtsNsLicense implements AtsNsLicense {
-  const _AtsNsLicense({required this.id, @AtsNsStatusConverter() required this.status, this.receive90Days, @AtsNsProjectIdOrNullConverter() this.projectId, this.certificate, this.certificatePassword, required this.cnpj, this.inscriptionId, this.businessName, this.companyName, @AtsIcmsTypeOrNullConverter() this.icmsType, final  List<String>? emails, final  List<String>? phoneNumbers, final  List<AtsNsAddress>? addresses, @JsonKey(name: 'expirationDateUnix')@TimestampOrNullConverter() this.expirationDate}): _emails = emails,_phoneNumbers = phoneNumbers,_addresses = addresses;
+  const _AtsNsLicense({required this.id, @AtsNsStatusConverter() required this.status, this.receive90Days, @AtsNsProjectIdOrNullConverter() this.projectId, this.certificate, this.certificatePassword, required this.cnpj, this.inscriptionId, this.businessName, this.companyName, @AtsIcmsTypeOrNullConverter() this.icmsType, this.emails, this.phoneNumbers, this.addresses, @JsonKey(name: 'expirationDateUnix')@TimestampOrNullConverter() this.expirationDate});
   factory _AtsNsLicense.fromJson(Map<String, dynamic> json) => _$AtsNsLicenseFromJson(json);
 
 /// [id] represents the unique identifier of the license
@@ -3262,38 +3228,11 @@ class _AtsNsLicense implements AtsNsLicense {
 /// [icmsType] represents the ICMS type of the license
 @override@AtsIcmsTypeOrNullConverter() final  AtsIcmsType? icmsType;
 /// [emails] is a list of `String` that represents the emails of the license
- final  List<String>? _emails;
-/// [emails] is a list of `String` that represents the emails of the license
-@override List<String>? get emails {
-  final value = _emails;
-  if (value == null) return null;
-  if (_emails is EqualUnmodifiableListView) return _emails;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? emails;
 /// [phoneNumbers] is a list of `String` that represents the phone numbers of the license
- final  List<String>? _phoneNumbers;
-/// [phoneNumbers] is a list of `String` that represents the phone numbers of the license
-@override List<String>? get phoneNumbers {
-  final value = _phoneNumbers;
-  if (value == null) return null;
-  if (_phoneNumbers is EqualUnmodifiableListView) return _phoneNumbers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? phoneNumbers;
 /// [addresses] is a list of [AtsNsAddress] that represents the addresses of the license
- final  List<AtsNsAddress>? _addresses;
-/// [addresses] is a list of [AtsNsAddress] that represents the addresses of the license
-@override List<AtsNsAddress>? get addresses {
-  final value = _addresses;
-  if (value == null) return null;
-  if (_addresses is EqualUnmodifiableListView) return _addresses;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsNsAddress>? addresses;
 /// [expirationDate] represents the expiration date of the license
 @override@JsonKey(name: 'expirationDateUnix')@TimestampOrNullConverter() final  DateTime? expirationDate;
 
@@ -3310,12 +3249,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsNsLicense&&(identical(other.id, id) || other.id == id)&&(identical(other.status, status) || other.status == status)&&(identical(other.receive90Days, receive90Days) || other.receive90Days == receive90Days)&&(identical(other.projectId, projectId) || other.projectId == projectId)&&(identical(other.certificate, certificate) || other.certificate == certificate)&&(identical(other.certificatePassword, certificatePassword) || other.certificatePassword == certificatePassword)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.inscriptionId, inscriptionId) || other.inscriptionId == inscriptionId)&&(identical(other.businessName, businessName) || other.businessName == businessName)&&(identical(other.companyName, companyName) || other.companyName == companyName)&&(identical(other.icmsType, icmsType) || other.icmsType == icmsType)&&const DeepCollectionEquality().equals(other._emails, _emails)&&const DeepCollectionEquality().equals(other._phoneNumbers, _phoneNumbers)&&const DeepCollectionEquality().equals(other._addresses, _addresses)&&(identical(other.expirationDate, expirationDate) || other.expirationDate == expirationDate));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsNsLicense&&(identical(other.id, id) || other.id == id)&&(identical(other.status, status) || other.status == status)&&(identical(other.receive90Days, receive90Days) || other.receive90Days == receive90Days)&&(identical(other.projectId, projectId) || other.projectId == projectId)&&(identical(other.certificate, certificate) || other.certificate == certificate)&&(identical(other.certificatePassword, certificatePassword) || other.certificatePassword == certificatePassword)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.inscriptionId, inscriptionId) || other.inscriptionId == inscriptionId)&&(identical(other.businessName, businessName) || other.businessName == businessName)&&(identical(other.companyName, companyName) || other.companyName == companyName)&&(identical(other.icmsType, icmsType) || other.icmsType == icmsType)&&const DeepCollectionEquality().equals(other.emails, emails)&&const DeepCollectionEquality().equals(other.phoneNumbers, phoneNumbers)&&const DeepCollectionEquality().equals(other.addresses, addresses)&&(identical(other.expirationDate, expirationDate) || other.expirationDate == expirationDate));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,status,receive90Days,projectId,certificate,certificatePassword,cnpj,inscriptionId,businessName,companyName,icmsType,const DeepCollectionEquality().hash(_emails),const DeepCollectionEquality().hash(_phoneNumbers),const DeepCollectionEquality().hash(_addresses),expirationDate);
+int get hashCode => Object.hash(runtimeType,id,status,receive90Days,projectId,certificate,certificatePassword,cnpj,inscriptionId,businessName,companyName,icmsType,const DeepCollectionEquality().hash(emails),const DeepCollectionEquality().hash(phoneNumbers),const DeepCollectionEquality().hash(addresses),expirationDate);
 
 @override
 String toString() {
@@ -3360,9 +3299,9 @@ as String,inscriptionId: freezed == inscriptionId ? _self.inscriptionId : inscri
 as String?,businessName: freezed == businessName ? _self.businessName : businessName // ignore: cast_nullable_to_non_nullable
 as String?,companyName: freezed == companyName ? _self.companyName : companyName // ignore: cast_nullable_to_non_nullable
 as String?,icmsType: freezed == icmsType ? _self.icmsType : icmsType // ignore: cast_nullable_to_non_nullable
-as AtsIcmsType?,emails: freezed == emails ? _self._emails : emails // ignore: cast_nullable_to_non_nullable
-as List<String>?,phoneNumbers: freezed == phoneNumbers ? _self._phoneNumbers : phoneNumbers // ignore: cast_nullable_to_non_nullable
-as List<String>?,addresses: freezed == addresses ? _self._addresses : addresses // ignore: cast_nullable_to_non_nullable
+as AtsIcmsType?,emails: freezed == emails ? _self.emails : emails // ignore: cast_nullable_to_non_nullable
+as List<String>?,phoneNumbers: freezed == phoneNumbers ? _self.phoneNumbers : phoneNumbers // ignore: cast_nullable_to_non_nullable
+as List<String>?,addresses: freezed == addresses ? _self.addresses : addresses // ignore: cast_nullable_to_non_nullable
 as List<AtsNsAddress>?,expirationDate: freezed == expirationDate ? _self.expirationDate : expirationDate // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
@@ -5470,7 +5409,7 @@ return $default(_that.ncm,_that.name,_that.measureUnit,_that.quantity,_that.unit
 @JsonSerializable()
 
 class _AtsProductInformation implements AtsProductInformation {
-   _AtsProductInformation({this.ncm, this.name, this.measureUnit, this.quantity, this.unitValue, this.productValue, this.cfop, final  Map<String, dynamic>? subcategory}): _subcategory = subcategory;
+   _AtsProductInformation({this.ncm, this.name, this.measureUnit, this.quantity, this.unitValue, this.productValue, this.cfop, this.subcategory});
   factory _AtsProductInformation.fromJson(Map<String, dynamic> json) => _$AtsProductInformationFromJson(json);
 
 /// Product code.
@@ -5488,16 +5427,7 @@ class _AtsProductInformation implements AtsProductInformation {
 /// cfop of the product.
 @override final  String? cfop;
 /// Product sub category.
- final  Map<String, dynamic>? _subcategory;
-/// Product sub category.
-@override Map<String, dynamic>? get subcategory {
-  final value = _subcategory;
-  if (value == null) return null;
-  if (_subcategory is EqualUnmodifiableMapView) return _subcategory;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? subcategory;
 
 /// Create a copy of AtsProductInformation
 /// with the given fields replaced by the non-null parameter values.
@@ -5512,12 +5442,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsProductInformation&&(identical(other.ncm, ncm) || other.ncm == ncm)&&(identical(other.name, name) || other.name == name)&&(identical(other.measureUnit, measureUnit) || other.measureUnit == measureUnit)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.unitValue, unitValue) || other.unitValue == unitValue)&&(identical(other.productValue, productValue) || other.productValue == productValue)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&const DeepCollectionEquality().equals(other._subcategory, _subcategory));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsProductInformation&&(identical(other.ncm, ncm) || other.ncm == ncm)&&(identical(other.name, name) || other.name == name)&&(identical(other.measureUnit, measureUnit) || other.measureUnit == measureUnit)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.unitValue, unitValue) || other.unitValue == unitValue)&&(identical(other.productValue, productValue) || other.productValue == productValue)&&(identical(other.cfop, cfop) || other.cfop == cfop)&&const DeepCollectionEquality().equals(other.subcategory, subcategory));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,ncm,name,measureUnit,quantity,unitValue,productValue,cfop,const DeepCollectionEquality().hash(_subcategory));
+int get hashCode => Object.hash(runtimeType,ncm,name,measureUnit,quantity,unitValue,productValue,cfop,const DeepCollectionEquality().hash(subcategory));
 
 @override
 String toString() {
@@ -5558,7 +5488,7 @@ as String?,quantity: freezed == quantity ? _self.quantity : quantity // ignore: 
 as double?,unitValue: freezed == unitValue ? _self.unitValue : unitValue // ignore: cast_nullable_to_non_nullable
 as double?,productValue: freezed == productValue ? _self.productValue : productValue // ignore: cast_nullable_to_non_nullable
 as double?,cfop: freezed == cfop ? _self.cfop : cfop // ignore: cast_nullable_to_non_nullable
-as String?,subcategory: freezed == subcategory ? _self._subcategory : subcategory // ignore: cast_nullable_to_non_nullable
+as String?,subcategory: freezed == subcategory ? _self.subcategory : subcategory // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -5973,7 +5903,7 @@ return $default(_that.id,_that.ownerId,_that.orderId,_that.assetId,_that.sellerA
 @JsonSerializable()
 
 class _AtsPurchaseOrder implements AtsPurchaseOrder {
-   _AtsPurchaseOrder({this.id, this.ownerId, this.orderId, this.assetId, this.sellerAssetId, this.transportAssetId, @TimestampOrNullConverter() this.purchasedAt, @TimestampOrNullConverter() this.receivedAt, this.asset, this.sellerInformation, this.receiverInformation, final  List<AtsProductInformation>? productsInformation, this.total, this.isReceived, this.hasReception, this.transportInformation, this.hasRawXml, this.invoiceType, this.invoiceId, this.parentInvoice, this.ideInformation, @TimestampOrNullConverter() this.receptionAt, @PurchaseOrderOperationOrNullConverter() this.action, this.transportAsset, this.sellerAsset, @AtsPurchaseOrderStatusOrNullConverter() this.orderStatus, @TimestampOrNullConverter() this.inTransitAt, @TimestampOrNullConverter() this.waitingToDispatchAt, @TimestampOrNullConverter() this.deliveredAt, @AtsPurchaseOrderSubCategoriesOrNullConverter() this.deliverCategory, @AtsPurchaseOrderCategoriesEntityOrNullConverter() this.category, this.operation, final  List<AtsOperation> operations = const [], @TimestampOrNullConverter() this.eta, @TimestampOrNullConverter() this.etaUpdatedAt, this.originalBuyerAsset, this.receptionAssetId}): _productsInformation = productsInformation,_operations = operations;
+   _AtsPurchaseOrder({this.id, this.ownerId, this.orderId, this.assetId, this.sellerAssetId, this.transportAssetId, @TimestampOrNullConverter() this.purchasedAt, @TimestampOrNullConverter() this.receivedAt, this.asset, this.sellerInformation, this.receiverInformation, this.productsInformation, this.total, this.isReceived, this.hasReception, this.transportInformation, this.hasRawXml, this.invoiceType, this.invoiceId, this.parentInvoice, this.ideInformation, @TimestampOrNullConverter() this.receptionAt, @PurchaseOrderOperationOrNullConverter() this.action, this.transportAsset, this.sellerAsset, @AtsPurchaseOrderStatusOrNullConverter() this.orderStatus, @TimestampOrNullConverter() this.inTransitAt, @TimestampOrNullConverter() this.waitingToDispatchAt, @TimestampOrNullConverter() this.deliveredAt, @AtsPurchaseOrderSubCategoriesOrNullConverter() this.deliverCategory, @AtsPurchaseOrderCategoriesEntityOrNullConverter() this.category, this.operation, this.operations = const [], @TimestampOrNullConverter() this.eta, @TimestampOrNullConverter() this.etaUpdatedAt, this.originalBuyerAsset, this.receptionAssetId});
   factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) => _$AtsPurchaseOrderFromJson(json);
 
 /// ID of the [Asset] entity. This ID is unique.
@@ -5999,16 +5929,7 @@ class _AtsPurchaseOrder implements AtsPurchaseOrder {
 /// Legal information about the receiver. Please read the comments of CompanyInformation definition for more information.
 @override final  AtsCompanyInformation? receiverInformation;
 /// List of products purchased. Please read the comments of ProductInformation definition for more information.
- final  List<AtsProductInformation>? _productsInformation;
-/// List of products purchased. Please read the comments of ProductInformation definition for more information.
-@override List<AtsProductInformation>? get productsInformation {
-  final value = _productsInformation;
-  if (value == null) return null;
-  if (_productsInformation is EqualUnmodifiableListView) return _productsInformation;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsProductInformation>? productsInformation;
 /// Total information. Please read the comments of Total definition for more information.
 @override final  AtsPurchaseTotal? total;
 /// True if the purchase order was received.
@@ -6054,18 +5975,7 @@ class _AtsPurchaseOrder implements AtsPurchaseOrder {
 /// with its own `transportAsset`, so the client can resolve the correct
 /// transport by the id the scan query returns in `operationMatched` instead of
 /// relying on `transportAsset` (which may point at the fluvial asset).
- final  List<AtsOperation> _operations;
-/// `operations` associated to the purchase order. A purchase order shared
-/// across a road and a fluvial operation exposes each linked operation here
-/// with its own `transportAsset`, so the client can resolve the correct
-/// transport by the id the scan query returns in `operationMatched` instead of
-/// relying on `transportAsset` (which may point at the fluvial asset).
-@override@JsonKey() List<AtsOperation> get operations {
-  if (_operations is EqualUnmodifiableListView) return _operations;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_operations);
-}
-
+@override@JsonKey() final  List<AtsOperation> operations;
 /// [eta] defines the estimated time of arrival.
 @override@TimestampOrNullConverter() final  DateTime? eta;
 /// [etaUpdatedAt] defines the estimated time of arrival updated at.
@@ -6088,12 +5998,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsPurchaseOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.receiverInformation, receiverInformation) || other.receiverInformation == receiverInformation)&&const DeepCollectionEquality().equals(other._productsInformation, _productsInformation)&&(identical(other.total, total) || other.total == total)&&(identical(other.isReceived, isReceived) || other.isReceived == isReceived)&&(identical(other.hasReception, hasReception) || other.hasReception == hasReception)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.hasRawXml, hasRawXml) || other.hasRawXml == hasRawXml)&&(identical(other.invoiceType, invoiceType) || other.invoiceType == invoiceType)&&(identical(other.invoiceId, invoiceId) || other.invoiceId == invoiceId)&&(identical(other.parentInvoice, parentInvoice) || other.parentInvoice == parentInvoice)&&(identical(other.ideInformation, ideInformation) || other.ideInformation == ideInformation)&&(identical(other.receptionAt, receptionAt) || other.receptionAt == receptionAt)&&(identical(other.action, action) || other.action == action)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.inTransitAt, inTransitAt) || other.inTransitAt == inTransitAt)&&(identical(other.waitingToDispatchAt, waitingToDispatchAt) || other.waitingToDispatchAt == waitingToDispatchAt)&&(identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&(identical(other.category, category) || other.category == category)&&(identical(other.operation, operation) || other.operation == operation)&&const DeepCollectionEquality().equals(other._operations, _operations)&&(identical(other.eta, eta) || other.eta == eta)&&(identical(other.etaUpdatedAt, etaUpdatedAt) || other.etaUpdatedAt == etaUpdatedAt)&&(identical(other.originalBuyerAsset, originalBuyerAsset) || other.originalBuyerAsset == originalBuyerAsset)&&(identical(other.receptionAssetId, receptionAssetId) || other.receptionAssetId == receptionAssetId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsPurchaseOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.receiverInformation, receiverInformation) || other.receiverInformation == receiverInformation)&&const DeepCollectionEquality().equals(other.productsInformation, productsInformation)&&(identical(other.total, total) || other.total == total)&&(identical(other.isReceived, isReceived) || other.isReceived == isReceived)&&(identical(other.hasReception, hasReception) || other.hasReception == hasReception)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.hasRawXml, hasRawXml) || other.hasRawXml == hasRawXml)&&(identical(other.invoiceType, invoiceType) || other.invoiceType == invoiceType)&&(identical(other.invoiceId, invoiceId) || other.invoiceId == invoiceId)&&(identical(other.parentInvoice, parentInvoice) || other.parentInvoice == parentInvoice)&&(identical(other.ideInformation, ideInformation) || other.ideInformation == ideInformation)&&(identical(other.receptionAt, receptionAt) || other.receptionAt == receptionAt)&&(identical(other.action, action) || other.action == action)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.inTransitAt, inTransitAt) || other.inTransitAt == inTransitAt)&&(identical(other.waitingToDispatchAt, waitingToDispatchAt) || other.waitingToDispatchAt == waitingToDispatchAt)&&(identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&(identical(other.category, category) || other.category == category)&&(identical(other.operation, operation) || other.operation == operation)&&const DeepCollectionEquality().equals(other.operations, operations)&&(identical(other.eta, eta) || other.eta == eta)&&(identical(other.etaUpdatedAt, etaUpdatedAt) || other.etaUpdatedAt == etaUpdatedAt)&&(identical(other.originalBuyerAsset, originalBuyerAsset) || other.originalBuyerAsset == originalBuyerAsset)&&(identical(other.receptionAssetId, receptionAssetId) || other.receptionAssetId == receptionAssetId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,ownerId,orderId,assetId,sellerAssetId,transportAssetId,purchasedAt,receivedAt,asset,sellerInformation,receiverInformation,const DeepCollectionEquality().hash(_productsInformation),total,isReceived,hasReception,transportInformation,hasRawXml,invoiceType,invoiceId,parentInvoice,ideInformation,receptionAt,action,transportAsset,sellerAsset,orderStatus,inTransitAt,waitingToDispatchAt,deliveredAt,deliverCategory,category,operation,const DeepCollectionEquality().hash(_operations),eta,etaUpdatedAt,originalBuyerAsset,receptionAssetId]);
+int get hashCode => Object.hashAll([runtimeType,id,ownerId,orderId,assetId,sellerAssetId,transportAssetId,purchasedAt,receivedAt,asset,sellerInformation,receiverInformation,const DeepCollectionEquality().hash(productsInformation),total,isReceived,hasReception,transportInformation,hasRawXml,invoiceType,invoiceId,parentInvoice,ideInformation,receptionAt,action,transportAsset,sellerAsset,orderStatus,inTransitAt,waitingToDispatchAt,deliveredAt,deliverCategory,category,operation,const DeepCollectionEquality().hash(operations),eta,etaUpdatedAt,originalBuyerAsset,receptionAssetId]);
 
 @override
 String toString() {
@@ -6138,7 +6048,7 @@ as DateTime?,receivedAt: freezed == receivedAt ? _self.receivedAt : receivedAt /
 as DateTime?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as Asset?,sellerInformation: freezed == sellerInformation ? _self.sellerInformation : sellerInformation // ignore: cast_nullable_to_non_nullable
 as AtsCompanyInformation?,receiverInformation: freezed == receiverInformation ? _self.receiverInformation : receiverInformation // ignore: cast_nullable_to_non_nullable
-as AtsCompanyInformation?,productsInformation: freezed == productsInformation ? _self._productsInformation : productsInformation // ignore: cast_nullable_to_non_nullable
+as AtsCompanyInformation?,productsInformation: freezed == productsInformation ? _self.productsInformation : productsInformation // ignore: cast_nullable_to_non_nullable
 as List<AtsProductInformation>?,total: freezed == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
 as AtsPurchaseTotal?,isReceived: freezed == isReceived ? _self.isReceived : isReceived // ignore: cast_nullable_to_non_nullable
 as bool?,hasReception: freezed == hasReception ? _self.hasReception : hasReception // ignore: cast_nullable_to_non_nullable
@@ -6159,7 +6069,7 @@ as DateTime?,deliveredAt: freezed == deliveredAt ? _self.deliveredAt : delivered
 as DateTime?,deliverCategory: freezed == deliverCategory ? _self.deliverCategory : deliverCategory // ignore: cast_nullable_to_non_nullable
 as AtsPurchaseOrderSubCategories?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as AtsPurchaseOrderCategoriesEntity?,operation: freezed == operation ? _self.operation : operation // ignore: cast_nullable_to_non_nullable
-as AtsOperation?,operations: null == operations ? _self._operations : operations // ignore: cast_nullable_to_non_nullable
+as AtsOperation?,operations: null == operations ? _self.operations : operations // ignore: cast_nullable_to_non_nullable
 as List<AtsOperation>,eta: freezed == eta ? _self.eta : eta // ignore: cast_nullable_to_non_nullable
 as DateTime?,etaUpdatedAt: freezed == etaUpdatedAt ? _self.etaUpdatedAt : etaUpdatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,originalBuyerAsset: freezed == originalBuyerAsset ? _self.originalBuyerAsset : originalBuyerAsset // ignore: cast_nullable_to_non_nullable
@@ -6854,7 +6764,7 @@ return $default(_that.id,_that.orderId,_that.errorRate,_that.receptionStatus,_th
 @JsonSerializable()
 
 class _AtsReception implements AtsReception {
-   _AtsReception({required this.id, this.orderId, this.errorRate, @AtsReceptionStatusConverter() this.receptionStatus, this.order, final  List<AtsPurchaseOrder> orders = const [], final  List<int> ordersIds = const [], this.entry, final  List<AtsLoadingParamsForm> loadingParamsForm = const [], final  List<AtsReceptionProduct> products = const []}): _orders = orders,_ordersIds = ordersIds,_loadingParamsForm = loadingParamsForm,_products = products;
+   _AtsReception({required this.id, this.orderId, this.errorRate, @AtsReceptionStatusConverter() this.receptionStatus, this.order, this.orders = const [], this.ordersIds = const [], this.entry, this.loadingParamsForm = const [], this.products = const []});
   factory _AtsReception.fromJson(Map<String, dynamic> json) => _$AtsReceptionFromJson(json);
 
 ///  ID of the [AtsReception]. This ID is unique.
@@ -6868,43 +6778,15 @@ class _AtsReception implements AtsReception {
 /// [AtsPurchaseOrder] linked to the reception.
 @override final  AtsPurchaseOrder? order;
 /// List of [AtsPurchaseOrder]
- final  List<AtsPurchaseOrder> _orders;
-/// List of [AtsPurchaseOrder]
-@override@JsonKey() List<AtsPurchaseOrder> get orders {
-  if (_orders is EqualUnmodifiableListView) return _orders;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_orders);
-}
-
+@override@JsonKey() final  List<AtsPurchaseOrder> orders;
 /// List of [AtsPurchaseOrder] IDs.
- final  List<int> _ordersIds;
-/// List of [AtsPurchaseOrder] IDs.
-@override@JsonKey() List<int> get ordersIds {
-  if (_ordersIds is EqualUnmodifiableListView) return _ordersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_ordersIds);
-}
-
+@override@JsonKey() final  List<int> ordersIds;
 /// [AtsEntry] linked to the [AtsReception].
 @override final  AtsEntry? entry;
 /// `loadingParameters` represents the loading parameters of the reception.
- final  List<AtsLoadingParamsForm> _loadingParamsForm;
-/// `loadingParameters` represents the loading parameters of the reception.
-@override@JsonKey() List<AtsLoadingParamsForm> get loadingParamsForm {
-  if (_loadingParamsForm is EqualUnmodifiableListView) return _loadingParamsForm;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_loadingParamsForm);
-}
-
+@override@JsonKey() final  List<AtsLoadingParamsForm> loadingParamsForm;
 /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
- final  List<AtsReceptionProduct> _products;
-/// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
-@override@JsonKey() List<AtsReceptionProduct> get products {
-  if (_products is EqualUnmodifiableListView) return _products;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_products);
-}
-
+@override@JsonKey() final  List<AtsReceptionProduct> products;
 
 /// Create a copy of AtsReception
 /// with the given fields replaced by the non-null parameter values.
@@ -6919,12 +6801,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsReception&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.errorRate, errorRate) || other.errorRate == errorRate)&&(identical(other.receptionStatus, receptionStatus) || other.receptionStatus == receptionStatus)&&(identical(other.order, order) || other.order == order)&&const DeepCollectionEquality().equals(other._orders, _orders)&&const DeepCollectionEquality().equals(other._ordersIds, _ordersIds)&&(identical(other.entry, entry) || other.entry == entry)&&const DeepCollectionEquality().equals(other._loadingParamsForm, _loadingParamsForm)&&const DeepCollectionEquality().equals(other._products, _products));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsReception&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.errorRate, errorRate) || other.errorRate == errorRate)&&(identical(other.receptionStatus, receptionStatus) || other.receptionStatus == receptionStatus)&&(identical(other.order, order) || other.order == order)&&const DeepCollectionEquality().equals(other.orders, orders)&&const DeepCollectionEquality().equals(other.ordersIds, ordersIds)&&(identical(other.entry, entry) || other.entry == entry)&&const DeepCollectionEquality().equals(other.loadingParamsForm, loadingParamsForm)&&const DeepCollectionEquality().equals(other.products, products));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,orderId,errorRate,receptionStatus,order,const DeepCollectionEquality().hash(_orders),const DeepCollectionEquality().hash(_ordersIds),entry,const DeepCollectionEquality().hash(_loadingParamsForm),const DeepCollectionEquality().hash(_products));
+int get hashCode => Object.hash(runtimeType,id,orderId,errorRate,receptionStatus,order,const DeepCollectionEquality().hash(orders),const DeepCollectionEquality().hash(ordersIds),entry,const DeepCollectionEquality().hash(loadingParamsForm),const DeepCollectionEquality().hash(products));
 
 @override
 String toString() {
@@ -6963,11 +6845,11 @@ as String,orderId: freezed == orderId ? _self.orderId : orderId // ignore: cast_
 as int?,errorRate: freezed == errorRate ? _self.errorRate : errorRate // ignore: cast_nullable_to_non_nullable
 as double?,receptionStatus: freezed == receptionStatus ? _self.receptionStatus : receptionStatus // ignore: cast_nullable_to_non_nullable
 as AtsReceptionStatus?,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
-as AtsPurchaseOrder?,orders: null == orders ? _self._orders : orders // ignore: cast_nullable_to_non_nullable
-as List<AtsPurchaseOrder>,ordersIds: null == ordersIds ? _self._ordersIds : ordersIds // ignore: cast_nullable_to_non_nullable
+as AtsPurchaseOrder?,orders: null == orders ? _self.orders : orders // ignore: cast_nullable_to_non_nullable
+as List<AtsPurchaseOrder>,ordersIds: null == ordersIds ? _self.ordersIds : ordersIds // ignore: cast_nullable_to_non_nullable
 as List<int>,entry: freezed == entry ? _self.entry : entry // ignore: cast_nullable_to_non_nullable
-as AtsEntry?,loadingParamsForm: null == loadingParamsForm ? _self._loadingParamsForm : loadingParamsForm // ignore: cast_nullable_to_non_nullable
-as List<AtsLoadingParamsForm>,products: null == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
+as AtsEntry?,loadingParamsForm: null == loadingParamsForm ? _self.loadingParamsForm : loadingParamsForm // ignore: cast_nullable_to_non_nullable
+as List<AtsLoadingParamsForm>,products: null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
 as List<AtsReceptionProduct>,
   ));
 }
@@ -8758,7 +8640,7 @@ return $default(_that.id,_that.assetId,_that.asset,_that.receptionId,_that.recep
 @JsonSerializable()
 
 class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
-   _AtsLoadingParamsForm({this.id, this.assetId, this.asset, this.receptionId, this.reception, this.driver, this.sampleDensity, this.sampleTemperature, this.assetTemperature, @TimestampOrNullConverter() this.analyzedAt, @AtsLoadingParamsSampleOrNullConverter() this.sampleType, @AtsFuelTypeOrNullConverter() this.fuelType, this.formNumber, this.fuelSubtype, @AtsParamsFormModalityOrNullConverter() this.modality, this.inpm, final  List<AtsDestinyInformation>? destinyInformation, this.balanceParams, this.skidSetaParams}): _destinyInformation = destinyInformation;
+   _AtsLoadingParamsForm({this.id, this.assetId, this.asset, this.receptionId, this.reception, this.driver, this.sampleDensity, this.sampleTemperature, this.assetTemperature, @TimestampOrNullConverter() this.analyzedAt, @AtsLoadingParamsSampleOrNullConverter() this.sampleType, @AtsFuelTypeOrNullConverter() this.fuelType, this.formNumber, this.fuelSubtype, @AtsParamsFormModalityOrNullConverter() this.modality, this.inpm, this.destinyInformation, this.balanceParams, this.skidSetaParams});
   factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormFromJson(json);
 
 /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
@@ -8794,16 +8676,7 @@ class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
 /// `inpm` INPM code
 @override final  double? inpm;
 /// `destinyInformation` Destiny information
- final  List<AtsDestinyInformation>? _destinyInformation;
-/// `destinyInformation` Destiny information
-@override List<AtsDestinyInformation>? get destinyInformation {
-  final value = _destinyInformation;
-  if (value == null) return null;
-  if (_destinyInformation is EqualUnmodifiableListView) return _destinyInformation;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsDestinyInformation>? destinyInformation;
 /// `balanceParams` Balance params
 @override final  AtsBalanceParams? balanceParams;
 /// `skidSetaParams` Skid Seta params
@@ -8822,12 +8695,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsLoadingParamsForm&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.receptionId, receptionId) || other.receptionId == receptionId)&&(identical(other.reception, reception) || other.reception == reception)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.analyzedAt, analyzedAt) || other.analyzedAt == analyzedAt)&&(identical(other.sampleType, sampleType) || other.sampleType == sampleType)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.formNumber, formNumber) || other.formNumber == formNumber)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&const DeepCollectionEquality().equals(other._destinyInformation, _destinyInformation)&&(identical(other.balanceParams, balanceParams) || other.balanceParams == balanceParams)&&(identical(other.skidSetaParams, skidSetaParams) || other.skidSetaParams == skidSetaParams));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsLoadingParamsForm&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.receptionId, receptionId) || other.receptionId == receptionId)&&(identical(other.reception, reception) || other.reception == reception)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.sampleDensity, sampleDensity) || other.sampleDensity == sampleDensity)&&(identical(other.sampleTemperature, sampleTemperature) || other.sampleTemperature == sampleTemperature)&&(identical(other.assetTemperature, assetTemperature) || other.assetTemperature == assetTemperature)&&(identical(other.analyzedAt, analyzedAt) || other.analyzedAt == analyzedAt)&&(identical(other.sampleType, sampleType) || other.sampleType == sampleType)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.formNumber, formNumber) || other.formNumber == formNumber)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.modality, modality) || other.modality == modality)&&(identical(other.inpm, inpm) || other.inpm == inpm)&&const DeepCollectionEquality().equals(other.destinyInformation, destinyInformation)&&(identical(other.balanceParams, balanceParams) || other.balanceParams == balanceParams)&&(identical(other.skidSetaParams, skidSetaParams) || other.skidSetaParams == skidSetaParams));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,receptionId,reception,driver,sampleDensity,sampleTemperature,assetTemperature,analyzedAt,sampleType,fuelType,formNumber,fuelSubtype,modality,inpm,const DeepCollectionEquality().hash(_destinyInformation),balanceParams,skidSetaParams]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,receptionId,reception,driver,sampleDensity,sampleTemperature,assetTemperature,analyzedAt,sampleType,fuelType,formNumber,fuelSubtype,modality,inpm,const DeepCollectionEquality().hash(destinyInformation),balanceParams,skidSetaParams]);
 
 @override
 String toString() {
@@ -8877,7 +8750,7 @@ as AtsFuelType?,formNumber: freezed == formNumber ? _self.formNumber : formNumbe
 as String?,fuelSubtype: freezed == fuelSubtype ? _self.fuelSubtype : fuelSubtype // ignore: cast_nullable_to_non_nullable
 as String?,modality: freezed == modality ? _self.modality : modality // ignore: cast_nullable_to_non_nullable
 as ParamsFormModality?,inpm: freezed == inpm ? _self.inpm : inpm // ignore: cast_nullable_to_non_nullable
-as double?,destinyInformation: freezed == destinyInformation ? _self._destinyInformation : destinyInformation // ignore: cast_nullable_to_non_nullable
+as double?,destinyInformation: freezed == destinyInformation ? _self.destinyInformation : destinyInformation // ignore: cast_nullable_to_non_nullable
 as List<AtsDestinyInformation>?,balanceParams: freezed == balanceParams ? _self.balanceParams : balanceParams // ignore: cast_nullable_to_non_nullable
 as AtsBalanceParams?,skidSetaParams: freezed == skidSetaParams ? _self.skidSetaParams : skidSetaParams // ignore: cast_nullable_to_non_nullable
 as AtsSkidSetaParams?,
@@ -10893,7 +10766,7 @@ return $default(_that.id,_that.referenceId,_that.operationId,_that.operation,_th
 @JsonSerializable()
 
 class _AtsSilUnloadingOrder implements AtsSilUnloadingOrder {
-  const _AtsSilUnloadingOrder({this.id, this.referenceId, this.operationId, this.operation, this.driverName, this.driverRg, this.driverCpf, this.truckPlate, this.vehicleColor, this.hasDnit, this.seals, @JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending) this.status, final  List<AtsSilTrailer>? trailers, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt}): _trailers = trailers;
+  const _AtsSilUnloadingOrder({this.id, this.referenceId, this.operationId, this.operation, this.driverName, this.driverRg, this.driverCpf, this.truckPlate, this.vehicleColor, this.hasDnit, this.seals, @JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending) this.status, this.trailers, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt});
   factory _AtsSilUnloadingOrder.fromJson(Map<String, dynamic> json) => _$AtsSilUnloadingOrderFromJson(json);
 
 /// Local order id.
@@ -10923,16 +10796,7 @@ class _AtsSilUnloadingOrder implements AtsSilUnloadingOrder {
 /// Sync status against SIL.
 @override@JsonKey(unknownEnumValue: AtsSilUnloadingOrderStatus.pending) final  AtsSilUnloadingOrderStatus? status;
 /// Trailers in the order (SIL `Carretas`), each with its compartments.
- final  List<AtsSilTrailer>? _trailers;
-/// Trailers in the order (SIL `Carretas`), each with its compartments.
-@override List<AtsSilTrailer>? get trailers {
-  final value = _trailers;
-  if (value == null) return null;
-  if (_trailers is EqualUnmodifiableListView) return _trailers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsSilTrailer>? trailers;
 @override@TimestampOrNullConverter() final  DateTime? createdAt;
 @override@TimestampOrNullConverter() final  DateTime? updatedAt;
 
@@ -10949,12 +10813,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSilUnloadingOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.referenceId, referenceId) || other.referenceId == referenceId)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.driverName, driverName) || other.driverName == driverName)&&(identical(other.driverRg, driverRg) || other.driverRg == driverRg)&&(identical(other.driverCpf, driverCpf) || other.driverCpf == driverCpf)&&(identical(other.truckPlate, truckPlate) || other.truckPlate == truckPlate)&&(identical(other.vehicleColor, vehicleColor) || other.vehicleColor == vehicleColor)&&(identical(other.hasDnit, hasDnit) || other.hasDnit == hasDnit)&&(identical(other.seals, seals) || other.seals == seals)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._trailers, _trailers)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSilUnloadingOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.referenceId, referenceId) || other.referenceId == referenceId)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.driverName, driverName) || other.driverName == driverName)&&(identical(other.driverRg, driverRg) || other.driverRg == driverRg)&&(identical(other.driverCpf, driverCpf) || other.driverCpf == driverCpf)&&(identical(other.truckPlate, truckPlate) || other.truckPlate == truckPlate)&&(identical(other.vehicleColor, vehicleColor) || other.vehicleColor == vehicleColor)&&(identical(other.hasDnit, hasDnit) || other.hasDnit == hasDnit)&&(identical(other.seals, seals) || other.seals == seals)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.trailers, trailers)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,referenceId,operationId,operation,driverName,driverRg,driverCpf,truckPlate,vehicleColor,hasDnit,seals,status,const DeepCollectionEquality().hash(_trailers),createdAt,updatedAt);
+int get hashCode => Object.hash(runtimeType,id,referenceId,operationId,operation,driverName,driverRg,driverCpf,truckPlate,vehicleColor,hasDnit,seals,status,const DeepCollectionEquality().hash(trailers),createdAt,updatedAt);
 
 @override
 String toString() {
@@ -11000,7 +10864,7 @@ as String?,vehicleColor: freezed == vehicleColor ? _self.vehicleColor : vehicleC
 as String?,hasDnit: freezed == hasDnit ? _self.hasDnit : hasDnit // ignore: cast_nullable_to_non_nullable
 as bool?,seals: freezed == seals ? _self.seals : seals // ignore: cast_nullable_to_non_nullable
 as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as AtsSilUnloadingOrderStatus?,trailers: freezed == trailers ? _self._trailers : trailers // ignore: cast_nullable_to_non_nullable
+as AtsSilUnloadingOrderStatus?,trailers: freezed == trailers ? _self.trailers : trailers // ignore: cast_nullable_to_non_nullable
 as List<AtsSilTrailer>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
@@ -11243,7 +11107,7 @@ return $default(_that.id,_that.orderId,_that.trailerPlate,_that.assetId,_that.as
 @JsonSerializable()
 
 class _AtsSilTrailer implements AtsSilTrailer {
-  const _AtsSilTrailer({this.id, this.orderId, this.trailerPlate, this.assetId, this.asset, final  List<AtsSilCompartment>? compartments, @TimestampOrNullConverter() this.createdAt}): _compartments = compartments;
+  const _AtsSilTrailer({this.id, this.orderId, this.trailerPlate, this.assetId, this.asset, this.compartments, @TimestampOrNullConverter() this.createdAt});
   factory _AtsSilTrailer.fromJson(Map<String, dynamic> json) => _$AtsSilTrailerFromJson(json);
 
 @override final  String? id;
@@ -11256,16 +11120,7 @@ class _AtsSilTrailer implements AtsSilTrailer {
 /// Best-effort matched trailer asset, null if no matching asset was found.
 @override final  Asset? asset;
 /// Compartments in the trailer (SIL `Compartimentos`).
- final  List<AtsSilCompartment>? _compartments;
-/// Compartments in the trailer (SIL `Compartimentos`).
-@override List<AtsSilCompartment>? get compartments {
-  final value = _compartments;
-  if (value == null) return null;
-  if (_compartments is EqualUnmodifiableListView) return _compartments;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsSilCompartment>? compartments;
 @override@TimestampOrNullConverter() final  DateTime? createdAt;
 
 /// Create a copy of AtsSilTrailer
@@ -11281,12 +11136,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSilTrailer&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.trailerPlate, trailerPlate) || other.trailerPlate == trailerPlate)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&const DeepCollectionEquality().equals(other._compartments, _compartments)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsSilTrailer&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.trailerPlate, trailerPlate) || other.trailerPlate == trailerPlate)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&const DeepCollectionEquality().equals(other.compartments, compartments)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,orderId,trailerPlate,assetId,asset,const DeepCollectionEquality().hash(_compartments),createdAt);
+int get hashCode => Object.hash(runtimeType,id,orderId,trailerPlate,assetId,asset,const DeepCollectionEquality().hash(compartments),createdAt);
 
 @override
 String toString() {
@@ -11325,7 +11180,7 @@ as String?,orderId: freezed == orderId ? _self.orderId : orderId // ignore: cast
 as String?,trailerPlate: freezed == trailerPlate ? _self.trailerPlate : trailerPlate // ignore: cast_nullable_to_non_nullable
 as String?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String?,asset: freezed == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
-as Asset?,compartments: freezed == compartments ? _self._compartments : compartments // ignore: cast_nullable_to_non_nullable
+as Asset?,compartments: freezed == compartments ? _self.compartments : compartments // ignore: cast_nullable_to_non_nullable
 as List<AtsSilCompartment>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
@@ -14213,7 +14068,7 @@ return $default(_that.id,_that.assetId,_that.asset,_that.oldTankLevel,_that.newT
 @JsonSerializable()
 
 class _AtsEntry implements AtsEntry {
-  const _AtsEntry({required this.id, this.assetId, this.asset, this.oldTankLevel, this.newTankLevel, @TimestampOrNullConverter() this.startAt, @TimestampOrNullConverter() this.endAt, this.errorPercent, this.reception, final  List<AtsReception>? receptions, this.isLinked, @Deprecated("Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType") this.fuelType, @Deprecated("Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)") this.fuelSubtype, this.temperature, this.initialTemperature, this.density, this.initialDensity, this.waterLevel, this.initialWaterLevel, final  List<AtsVolume> volumeHistory = const [], this.fuelAnp, this.height, this.initialHeight, this.operationId, this.initialDensity20, this.finalDensity20, this.initialVolume20, this.finalVolume20, this.initialCorrectionFactor, this.finalCorrectionFactor, this.totalExits, this.totalExits20}): _receptions = receptions,_volumeHistory = volumeHistory;
+  const _AtsEntry({required this.id, this.assetId, this.asset, this.oldTankLevel, this.newTankLevel, @TimestampOrNullConverter() this.startAt, @TimestampOrNullConverter() this.endAt, this.errorPercent, this.reception, this.receptions, this.isLinked, @Deprecated("Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType") this.fuelType, @Deprecated("Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)") this.fuelSubtype, this.temperature, this.initialTemperature, this.density, this.initialDensity, this.waterLevel, this.initialWaterLevel, this.volumeHistory = const [], this.fuelAnp, this.height, this.initialHeight, this.operationId, this.initialDensity20, this.finalDensity20, this.initialVolume20, this.finalVolume20, this.initialCorrectionFactor, this.finalCorrectionFactor, this.totalExits, this.totalExits20});
   factory _AtsEntry.fromJson(Map<String, dynamic> json) => _$AtsEntryFromJson(json);
 
 /// `id` is the unique ID of the entry.
@@ -14235,16 +14090,7 @@ class _AtsEntry implements AtsEntry {
 /// `reception` is the associated reception.
 @override final  AtsReception? reception;
 /// `receptions` is a list of receptions associated with the entry.
- final  List<AtsReception>? _receptions;
-/// `receptions` is a list of receptions associated with the entry.
-@override List<AtsReception>? get receptions {
-  final value = _receptions;
-  if (value == null) return null;
-  if (_receptions is EqualUnmodifiableListView) return _receptions;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsReception>? receptions;
 /// `isLinked` indicates whether the entry is linked to a purchase order.
 @override final  bool? isLinked;
 /// `fuelType` is the fuel type of the entry.
@@ -14264,14 +14110,7 @@ class _AtsEntry implements AtsEntry {
 /// `initialWaterLevel` is the initial water level of the entry.
 @override final  double? initialWaterLevel;
 /// `volumenHistory` is the volumen history of the entry.
- final  List<AtsVolume> _volumeHistory;
-/// `volumenHistory` is the volumen history of the entry.
-@override@JsonKey() List<AtsVolume> get volumeHistory {
-  if (_volumeHistory is EqualUnmodifiableListView) return _volumeHistory;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_volumeHistory);
-}
-
+@override@JsonKey() final  List<AtsVolume> volumeHistory;
 /// `fuelAnp` is the fuel anp of the entry.
 @override final  String? fuelAnp;
 /// `height` represent a sensor height of the tank.
@@ -14310,12 +14149,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsEntry&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.oldTankLevel, oldTankLevel) || other.oldTankLevel == oldTankLevel)&&(identical(other.newTankLevel, newTankLevel) || other.newTankLevel == newTankLevel)&&(identical(other.startAt, startAt) || other.startAt == startAt)&&(identical(other.endAt, endAt) || other.endAt == endAt)&&(identical(other.errorPercent, errorPercent) || other.errorPercent == errorPercent)&&(identical(other.reception, reception) || other.reception == reception)&&const DeepCollectionEquality().equals(other._receptions, _receptions)&&(identical(other.isLinked, isLinked) || other.isLinked == isLinked)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.initialTemperature, initialTemperature) || other.initialTemperature == initialTemperature)&&(identical(other.density, density) || other.density == density)&&(identical(other.initialDensity, initialDensity) || other.initialDensity == initialDensity)&&(identical(other.waterLevel, waterLevel) || other.waterLevel == waterLevel)&&(identical(other.initialWaterLevel, initialWaterLevel) || other.initialWaterLevel == initialWaterLevel)&&const DeepCollectionEquality().equals(other._volumeHistory, _volumeHistory)&&(identical(other.fuelAnp, fuelAnp) || other.fuelAnp == fuelAnp)&&(identical(other.height, height) || other.height == height)&&(identical(other.initialHeight, initialHeight) || other.initialHeight == initialHeight)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.initialDensity20, initialDensity20) || other.initialDensity20 == initialDensity20)&&(identical(other.finalDensity20, finalDensity20) || other.finalDensity20 == finalDensity20)&&(identical(other.initialVolume20, initialVolume20) || other.initialVolume20 == initialVolume20)&&(identical(other.finalVolume20, finalVolume20) || other.finalVolume20 == finalVolume20)&&(identical(other.initialCorrectionFactor, initialCorrectionFactor) || other.initialCorrectionFactor == initialCorrectionFactor)&&(identical(other.finalCorrectionFactor, finalCorrectionFactor) || other.finalCorrectionFactor == finalCorrectionFactor)&&(identical(other.totalExits, totalExits) || other.totalExits == totalExits)&&(identical(other.totalExits20, totalExits20) || other.totalExits20 == totalExits20));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsEntry&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.oldTankLevel, oldTankLevel) || other.oldTankLevel == oldTankLevel)&&(identical(other.newTankLevel, newTankLevel) || other.newTankLevel == newTankLevel)&&(identical(other.startAt, startAt) || other.startAt == startAt)&&(identical(other.endAt, endAt) || other.endAt == endAt)&&(identical(other.errorPercent, errorPercent) || other.errorPercent == errorPercent)&&(identical(other.reception, reception) || other.reception == reception)&&const DeepCollectionEquality().equals(other.receptions, receptions)&&(identical(other.isLinked, isLinked) || other.isLinked == isLinked)&&(identical(other.fuelType, fuelType) || other.fuelType == fuelType)&&(identical(other.fuelSubtype, fuelSubtype) || other.fuelSubtype == fuelSubtype)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.initialTemperature, initialTemperature) || other.initialTemperature == initialTemperature)&&(identical(other.density, density) || other.density == density)&&(identical(other.initialDensity, initialDensity) || other.initialDensity == initialDensity)&&(identical(other.waterLevel, waterLevel) || other.waterLevel == waterLevel)&&(identical(other.initialWaterLevel, initialWaterLevel) || other.initialWaterLevel == initialWaterLevel)&&const DeepCollectionEquality().equals(other.volumeHistory, volumeHistory)&&(identical(other.fuelAnp, fuelAnp) || other.fuelAnp == fuelAnp)&&(identical(other.height, height) || other.height == height)&&(identical(other.initialHeight, initialHeight) || other.initialHeight == initialHeight)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.initialDensity20, initialDensity20) || other.initialDensity20 == initialDensity20)&&(identical(other.finalDensity20, finalDensity20) || other.finalDensity20 == finalDensity20)&&(identical(other.initialVolume20, initialVolume20) || other.initialVolume20 == initialVolume20)&&(identical(other.finalVolume20, finalVolume20) || other.finalVolume20 == finalVolume20)&&(identical(other.initialCorrectionFactor, initialCorrectionFactor) || other.initialCorrectionFactor == initialCorrectionFactor)&&(identical(other.finalCorrectionFactor, finalCorrectionFactor) || other.finalCorrectionFactor == finalCorrectionFactor)&&(identical(other.totalExits, totalExits) || other.totalExits == totalExits)&&(identical(other.totalExits20, totalExits20) || other.totalExits20 == totalExits20));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,oldTankLevel,newTankLevel,startAt,endAt,errorPercent,reception,const DeepCollectionEquality().hash(_receptions),isLinked,fuelType,fuelSubtype,temperature,initialTemperature,density,initialDensity,waterLevel,initialWaterLevel,const DeepCollectionEquality().hash(_volumeHistory),fuelAnp,height,initialHeight,operationId,initialDensity20,finalDensity20,initialVolume20,finalVolume20,initialCorrectionFactor,finalCorrectionFactor,totalExits,totalExits20]);
+int get hashCode => Object.hashAll([runtimeType,id,assetId,asset,oldTankLevel,newTankLevel,startAt,endAt,errorPercent,reception,const DeepCollectionEquality().hash(receptions),isLinked,fuelType,fuelSubtype,temperature,initialTemperature,density,initialDensity,waterLevel,initialWaterLevel,const DeepCollectionEquality().hash(volumeHistory),fuelAnp,height,initialHeight,operationId,initialDensity20,finalDensity20,initialVolume20,finalVolume20,initialCorrectionFactor,finalCorrectionFactor,totalExits,totalExits20]);
 
 @override
 String toString() {
@@ -14358,7 +14197,7 @@ as double?,startAt: freezed == startAt ? _self.startAt : startAt // ignore: cast
 as DateTime?,endAt: freezed == endAt ? _self.endAt : endAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,errorPercent: freezed == errorPercent ? _self.errorPercent : errorPercent // ignore: cast_nullable_to_non_nullable
 as double?,reception: freezed == reception ? _self.reception : reception // ignore: cast_nullable_to_non_nullable
-as AtsReception?,receptions: freezed == receptions ? _self._receptions : receptions // ignore: cast_nullable_to_non_nullable
+as AtsReception?,receptions: freezed == receptions ? _self.receptions : receptions // ignore: cast_nullable_to_non_nullable
 as List<AtsReception>?,isLinked: freezed == isLinked ? _self.isLinked : isLinked // ignore: cast_nullable_to_non_nullable
 as bool?,fuelType: freezed == fuelType ? _self.fuelType : fuelType // ignore: cast_nullable_to_non_nullable
 as String?,fuelSubtype: freezed == fuelSubtype ? _self.fuelSubtype : fuelSubtype // ignore: cast_nullable_to_non_nullable
@@ -14368,7 +14207,7 @@ as double?,density: freezed == density ? _self.density : density // ignore: cast
 as double?,initialDensity: freezed == initialDensity ? _self.initialDensity : initialDensity // ignore: cast_nullable_to_non_nullable
 as double?,waterLevel: freezed == waterLevel ? _self.waterLevel : waterLevel // ignore: cast_nullable_to_non_nullable
 as double?,initialWaterLevel: freezed == initialWaterLevel ? _self.initialWaterLevel : initialWaterLevel // ignore: cast_nullable_to_non_nullable
-as double?,volumeHistory: null == volumeHistory ? _self._volumeHistory : volumeHistory // ignore: cast_nullable_to_non_nullable
+as double?,volumeHistory: null == volumeHistory ? _self.volumeHistory : volumeHistory // ignore: cast_nullable_to_non_nullable
 as List<AtsVolume>,fuelAnp: freezed == fuelAnp ? _self.fuelAnp : fuelAnp // ignore: cast_nullable_to_non_nullable
 as String?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
 as double?,initialHeight: freezed == initialHeight ? _self.initialHeight : initialHeight // ignore: cast_nullable_to_non_nullable
@@ -15671,7 +15510,7 @@ return $default(_that.id,_that.sellerAssetId,_that.transportAssetId,_that.transp
 @JsonSerializable()
 
 class _AtsOperation implements AtsOperation {
-  const _AtsOperation({this.id, this.sellerAssetId, this.transportAssetId, this.transportCompanyAssetId, @TimestampOrNullConverter() this.purchasedAt, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.finishedAt, this.pendingToReview, final  List<String>? ordersIds, this.sellerAsset, this.transportAsset, this.transportCompanyAsset, this.sellerInformation, this.transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) this.orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) this.category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) this.deliverCategory, final  List<AtsPurchaseOrder>? purchaseOrders, final  List<AtsOperationStatuses>? statuses, this.totalQuantity, final  List<OperationProductInformation>? productsInformation, final  List<String>? ctes, final  List<String>? caclFormsIds, final  List<CaclEntity>? caclForms, final  List<Manifest>? manifests, final  List<AtsOperationHistory>? history, @TimestampOrNullConverter() this.minEta, this.etaStatus, final  List<AtsLoadingOrder>? loadingOrders, @TimestampOrNullConverter() this.terminalEntryAt, @TimestampOrNullConverter() this.terminalExitAt, this.mdfeId, this.mdfe, final  List<AtsMdfe>? mdfes, @TimestampOrNullConverter() this.checkInAt}): _ordersIds = ordersIds,_purchaseOrders = purchaseOrders,_statuses = statuses,_productsInformation = productsInformation,_ctes = ctes,_caclFormsIds = caclFormsIds,_caclForms = caclForms,_manifests = manifests,_history = history,_loadingOrders = loadingOrders,_mdfes = mdfes;
+  const _AtsOperation({this.id, this.sellerAssetId, this.transportAssetId, this.transportCompanyAssetId, @TimestampOrNullConverter() this.purchasedAt, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.finishedAt, this.pendingToReview, this.ordersIds, this.sellerAsset, this.transportAsset, this.transportCompanyAsset, this.sellerInformation, this.transportInformation, @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) this.orderStatus, @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) this.category, @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) this.deliverCategory, this.purchaseOrders, this.statuses, this.totalQuantity, this.productsInformation, this.ctes, this.caclFormsIds, this.caclForms, this.manifests, this.history, @TimestampOrNullConverter() this.minEta, this.etaStatus, this.loadingOrders, @TimestampOrNullConverter() this.terminalEntryAt, @TimestampOrNullConverter() this.terminalExitAt, this.mdfeId, this.mdfe, this.mdfes, @TimestampOrNullConverter() this.checkInAt});
   factory _AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);
 
 /// `id` of the asset entity. This ID is unique.
@@ -15691,16 +15530,7 @@ class _AtsOperation implements AtsOperation {
 /// `pendingToReview` indicates if it's pending to review.
 @override final  bool? pendingToReview;
 /// `ordersIds` is a list of purchase orders linked to the operation.
- final  List<String>? _ordersIds;
-/// `ordersIds` is a list of purchase orders linked to the operation.
-@override List<String>? get ordersIds {
-  final value = _ordersIds;
-  if (value == null) return null;
-  if (_ordersIds is EqualUnmodifiableListView) return _ordersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? ordersIds;
 /// `sellerAsset` is the seller Asset linked to the purchase order.
 @override final  Asset? sellerAsset;
 /// `transportAsset` is the transport Asset linked to the purchase order.
@@ -15718,110 +15548,29 @@ class _AtsOperation implements AtsOperation {
 /// `deliverCategory` is the deliver category of the purchase order.
 @override@JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) final  AtsPurchaseOrderSubCategories? deliverCategory;
 /// `purchaseOrders` are the purchase orders linked to the operation.
- final  List<AtsPurchaseOrder>? _purchaseOrders;
-/// `purchaseOrders` are the purchase orders linked to the operation.
-@override List<AtsPurchaseOrder>? get purchaseOrders {
-  final value = _purchaseOrders;
-  if (value == null) return null;
-  if (_purchaseOrders is EqualUnmodifiableListView) return _purchaseOrders;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsPurchaseOrder>? purchaseOrders;
 /// `statuses` are the statuses of the operation.
- final  List<AtsOperationStatuses>? _statuses;
-/// `statuses` are the statuses of the operation.
-@override List<AtsOperationStatuses>? get statuses {
-  final value = _statuses;
-  if (value == null) return null;
-  if (_statuses is EqualUnmodifiableListView) return _statuses;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsOperationStatuses>? statuses;
 /// `totalQuantity` total quantity of the purchase order.
 @override final  double? totalQuantity;
 /// `productsInformation` is the list of products information.
- final  List<OperationProductInformation>? _productsInformation;
-/// `productsInformation` is the list of products information.
-@override List<OperationProductInformation>? get productsInformation {
-  final value = _productsInformation;
-  if (value == null) return null;
-  if (_productsInformation is EqualUnmodifiableListView) return _productsInformation;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<OperationProductInformation>? productsInformation;
 /// `ctes` is the list of CTEs.
- final  List<String>? _ctes;
-/// `ctes` is the list of CTEs.
-@override List<String>? get ctes {
-  final value = _ctes;
-  if (value == null) return null;
-  if (_ctes is EqualUnmodifiableListView) return _ctes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? ctes;
 /// `caclFormsIds` is the list of CACL forms IDs linked to the operation.
- final  List<String>? _caclFormsIds;
-/// `caclFormsIds` is the list of CACL forms IDs linked to the operation.
-@override List<String>? get caclFormsIds {
-  final value = _caclFormsIds;
-  if (value == null) return null;
-  if (_caclFormsIds is EqualUnmodifiableListView) return _caclFormsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? caclFormsIds;
 /// `caclForms` is the list of CACL forms.
- final  List<CaclEntity>? _caclForms;
-/// `caclForms` is the list of CACL forms.
-@override List<CaclEntity>? get caclForms {
-  final value = _caclForms;
-  if (value == null) return null;
-  if (_caclForms is EqualUnmodifiableListView) return _caclForms;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CaclEntity>? caclForms;
 /// [manifests] is the list of manifests linked to the operation.
- final  List<Manifest>? _manifests;
-/// [manifests] is the list of manifests linked to the operation.
-@override List<Manifest>? get manifests {
-  final value = _manifests;
-  if (value == null) return null;
-  if (_manifests is EqualUnmodifiableListView) return _manifests;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Manifest>? manifests;
 /// [history] is the list of history linked to the operation.
- final  List<AtsOperationHistory>? _history;
-/// [history] is the list of history linked to the operation.
-@override List<AtsOperationHistory>? get history {
-  final value = _history;
-  if (value == null) return null;
-  if (_history is EqualUnmodifiableListView) return _history;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsOperationHistory>? history;
 /// [minEta] is the minimum estimated time of arrival.
 @override@TimestampOrNullConverter() final  DateTime? minEta;
 /// [etaStatus] is the estimated time of arrival status.
 @override final  AtsEtaStatus? etaStatus;
 /// [loadingOrders] is the list of loading orders linked to the operation.
- final  List<AtsLoadingOrder>? _loadingOrders;
-/// [loadingOrders] is the list of loading orders linked to the operation.
-@override List<AtsLoadingOrder>? get loadingOrders {
-  final value = _loadingOrders;
-  if (value == null) return null;
-  if (_loadingOrders is EqualUnmodifiableListView) return _loadingOrders;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsLoadingOrder>? loadingOrders;
 /// [terminalEntryAt] is the timestamp of the terminal entry.
 @override@TimestampOrNullConverter() final  DateTime? terminalEntryAt;
 /// [terminalExitAt] is the timestamp of the terminal exit.
@@ -15831,16 +15580,7 @@ class _AtsOperation implements AtsOperation {
 /// [mdfe] is the MDF-e linked to the operation.
 @override final  AtsMdfe? mdfe;
 /// [mdfes] is the list of MDF-e linked to the operation.
- final  List<AtsMdfe>? _mdfes;
-/// [mdfes] is the list of MDF-e linked to the operation.
-@override List<AtsMdfe>? get mdfes {
-  final value = _mdfes;
-  if (value == null) return null;
-  if (_mdfes is EqualUnmodifiableListView) return _mdfes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsMdfe>? mdfes;
 /// [checkInAt] is the timestamp of the check-in.
 @override@TimestampOrNullConverter() final  DateTime? checkInAt;
 
@@ -15857,12 +15597,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other._ordersIds, _ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other._purchaseOrders, _purchaseOrders)&&const DeepCollectionEquality().equals(other._statuses, _statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other._productsInformation, _productsInformation)&&const DeepCollectionEquality().equals(other._ctes, _ctes)&&const DeepCollectionEquality().equals(other._caclFormsIds, _caclFormsIds)&&const DeepCollectionEquality().equals(other._caclForms, _caclForms)&&const DeepCollectionEquality().equals(other._manifests, _manifests)&&const DeepCollectionEquality().equals(other._history, _history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus)&&const DeepCollectionEquality().equals(other._loadingOrders, _loadingOrders)&&(identical(other.terminalEntryAt, terminalEntryAt) || other.terminalEntryAt == terminalEntryAt)&&(identical(other.terminalExitAt, terminalExitAt) || other.terminalExitAt == terminalExitAt)&&(identical(other.mdfeId, mdfeId) || other.mdfeId == mdfeId)&&(identical(other.mdfe, mdfe) || other.mdfe == mdfe)&&const DeepCollectionEquality().equals(other._mdfes, _mdfes)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOperation&&(identical(other.id, id) || other.id == id)&&(identical(other.sellerAssetId, sellerAssetId) || other.sellerAssetId == sellerAssetId)&&(identical(other.transportAssetId, transportAssetId) || other.transportAssetId == transportAssetId)&&(identical(other.transportCompanyAssetId, transportCompanyAssetId) || other.transportCompanyAssetId == transportCompanyAssetId)&&(identical(other.purchasedAt, purchasedAt) || other.purchasedAt == purchasedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.finishedAt, finishedAt) || other.finishedAt == finishedAt)&&(identical(other.pendingToReview, pendingToReview) || other.pendingToReview == pendingToReview)&&const DeepCollectionEquality().equals(other.ordersIds, ordersIds)&&(identical(other.sellerAsset, sellerAsset) || other.sellerAsset == sellerAsset)&&(identical(other.transportAsset, transportAsset) || other.transportAsset == transportAsset)&&(identical(other.transportCompanyAsset, transportCompanyAsset) || other.transportCompanyAsset == transportCompanyAsset)&&(identical(other.sellerInformation, sellerInformation) || other.sellerInformation == sellerInformation)&&(identical(other.transportInformation, transportInformation) || other.transportInformation == transportInformation)&&(identical(other.orderStatus, orderStatus) || other.orderStatus == orderStatus)&&(identical(other.category, category) || other.category == category)&&(identical(other.deliverCategory, deliverCategory) || other.deliverCategory == deliverCategory)&&const DeepCollectionEquality().equals(other.purchaseOrders, purchaseOrders)&&const DeepCollectionEquality().equals(other.statuses, statuses)&&(identical(other.totalQuantity, totalQuantity) || other.totalQuantity == totalQuantity)&&const DeepCollectionEquality().equals(other.productsInformation, productsInformation)&&const DeepCollectionEquality().equals(other.ctes, ctes)&&const DeepCollectionEquality().equals(other.caclFormsIds, caclFormsIds)&&const DeepCollectionEquality().equals(other.caclForms, caclForms)&&const DeepCollectionEquality().equals(other.manifests, manifests)&&const DeepCollectionEquality().equals(other.history, history)&&(identical(other.minEta, minEta) || other.minEta == minEta)&&(identical(other.etaStatus, etaStatus) || other.etaStatus == etaStatus)&&const DeepCollectionEquality().equals(other.loadingOrders, loadingOrders)&&(identical(other.terminalEntryAt, terminalEntryAt) || other.terminalEntryAt == terminalEntryAt)&&(identical(other.terminalExitAt, terminalExitAt) || other.terminalExitAt == terminalExitAt)&&(identical(other.mdfeId, mdfeId) || other.mdfeId == mdfeId)&&(identical(other.mdfe, mdfe) || other.mdfe == mdfe)&&const DeepCollectionEquality().equals(other.mdfes, mdfes)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(_ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(_purchaseOrders),const DeepCollectionEquality().hash(_statuses),totalQuantity,const DeepCollectionEquality().hash(_productsInformation),const DeepCollectionEquality().hash(_ctes),const DeepCollectionEquality().hash(_caclFormsIds),const DeepCollectionEquality().hash(_caclForms),const DeepCollectionEquality().hash(_manifests),const DeepCollectionEquality().hash(_history),minEta,etaStatus,const DeepCollectionEquality().hash(_loadingOrders),terminalEntryAt,terminalExitAt,mdfeId,mdfe,const DeepCollectionEquality().hash(_mdfes),checkInAt]);
+int get hashCode => Object.hashAll([runtimeType,id,sellerAssetId,transportAssetId,transportCompanyAssetId,purchasedAt,createdAt,finishedAt,pendingToReview,const DeepCollectionEquality().hash(ordersIds),sellerAsset,transportAsset,transportCompanyAsset,sellerInformation,transportInformation,orderStatus,category,deliverCategory,const DeepCollectionEquality().hash(purchaseOrders),const DeepCollectionEquality().hash(statuses),totalQuantity,const DeepCollectionEquality().hash(productsInformation),const DeepCollectionEquality().hash(ctes),const DeepCollectionEquality().hash(caclFormsIds),const DeepCollectionEquality().hash(caclForms),const DeepCollectionEquality().hash(manifests),const DeepCollectionEquality().hash(history),minEta,etaStatus,const DeepCollectionEquality().hash(loadingOrders),terminalEntryAt,terminalExitAt,mdfeId,mdfe,const DeepCollectionEquality().hash(mdfes),checkInAt]);
 
 @override
 String toString() {
@@ -15904,7 +15644,7 @@ as String?,purchasedAt: freezed == purchasedAt ? _self.purchasedAt : purchasedAt
 as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,finishedAt: freezed == finishedAt ? _self.finishedAt : finishedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,pendingToReview: freezed == pendingToReview ? _self.pendingToReview : pendingToReview // ignore: cast_nullable_to_non_nullable
-as bool?,ordersIds: freezed == ordersIds ? _self._ordersIds : ordersIds // ignore: cast_nullable_to_non_nullable
+as bool?,ordersIds: freezed == ordersIds ? _self.ordersIds : ordersIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,sellerAsset: freezed == sellerAsset ? _self.sellerAsset : sellerAsset // ignore: cast_nullable_to_non_nullable
 as Asset?,transportAsset: freezed == transportAsset ? _self.transportAsset : transportAsset // ignore: cast_nullable_to_non_nullable
 as Asset?,transportCompanyAsset: freezed == transportCompanyAsset ? _self.transportCompanyAsset : transportCompanyAsset // ignore: cast_nullable_to_non_nullable
@@ -15913,23 +15653,23 @@ as AtsCompanyInformation?,transportInformation: freezed == transportInformation 
 as AtsTransportInformation?,orderStatus: freezed == orderStatus ? _self.orderStatus : orderStatus // ignore: cast_nullable_to_non_nullable
 as AtsPurchaseOrderStatus?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as AtsPurchaseOrderCategoriesEntity?,deliverCategory: freezed == deliverCategory ? _self.deliverCategory : deliverCategory // ignore: cast_nullable_to_non_nullable
-as AtsPurchaseOrderSubCategories?,purchaseOrders: freezed == purchaseOrders ? _self._purchaseOrders : purchaseOrders // ignore: cast_nullable_to_non_nullable
-as List<AtsPurchaseOrder>?,statuses: freezed == statuses ? _self._statuses : statuses // ignore: cast_nullable_to_non_nullable
+as AtsPurchaseOrderSubCategories?,purchaseOrders: freezed == purchaseOrders ? _self.purchaseOrders : purchaseOrders // ignore: cast_nullable_to_non_nullable
+as List<AtsPurchaseOrder>?,statuses: freezed == statuses ? _self.statuses : statuses // ignore: cast_nullable_to_non_nullable
 as List<AtsOperationStatuses>?,totalQuantity: freezed == totalQuantity ? _self.totalQuantity : totalQuantity // ignore: cast_nullable_to_non_nullable
-as double?,productsInformation: freezed == productsInformation ? _self._productsInformation : productsInformation // ignore: cast_nullable_to_non_nullable
-as List<OperationProductInformation>?,ctes: freezed == ctes ? _self._ctes : ctes // ignore: cast_nullable_to_non_nullable
-as List<String>?,caclFormsIds: freezed == caclFormsIds ? _self._caclFormsIds : caclFormsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,caclForms: freezed == caclForms ? _self._caclForms : caclForms // ignore: cast_nullable_to_non_nullable
-as List<CaclEntity>?,manifests: freezed == manifests ? _self._manifests : manifests // ignore: cast_nullable_to_non_nullable
-as List<Manifest>?,history: freezed == history ? _self._history : history // ignore: cast_nullable_to_non_nullable
+as double?,productsInformation: freezed == productsInformation ? _self.productsInformation : productsInformation // ignore: cast_nullable_to_non_nullable
+as List<OperationProductInformation>?,ctes: freezed == ctes ? _self.ctes : ctes // ignore: cast_nullable_to_non_nullable
+as List<String>?,caclFormsIds: freezed == caclFormsIds ? _self.caclFormsIds : caclFormsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,caclForms: freezed == caclForms ? _self.caclForms : caclForms // ignore: cast_nullable_to_non_nullable
+as List<CaclEntity>?,manifests: freezed == manifests ? _self.manifests : manifests // ignore: cast_nullable_to_non_nullable
+as List<Manifest>?,history: freezed == history ? _self.history : history // ignore: cast_nullable_to_non_nullable
 as List<AtsOperationHistory>?,minEta: freezed == minEta ? _self.minEta : minEta // ignore: cast_nullable_to_non_nullable
 as DateTime?,etaStatus: freezed == etaStatus ? _self.etaStatus : etaStatus // ignore: cast_nullable_to_non_nullable
-as AtsEtaStatus?,loadingOrders: freezed == loadingOrders ? _self._loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
+as AtsEtaStatus?,loadingOrders: freezed == loadingOrders ? _self.loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
 as List<AtsLoadingOrder>?,terminalEntryAt: freezed == terminalEntryAt ? _self.terminalEntryAt : terminalEntryAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,terminalExitAt: freezed == terminalExitAt ? _self.terminalExitAt : terminalExitAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,mdfeId: freezed == mdfeId ? _self.mdfeId : mdfeId // ignore: cast_nullable_to_non_nullable
 as String?,mdfe: freezed == mdfe ? _self.mdfe : mdfe // ignore: cast_nullable_to_non_nullable
-as AtsMdfe?,mdfes: freezed == mdfes ? _self._mdfes : mdfes // ignore: cast_nullable_to_non_nullable
+as AtsMdfe?,mdfes: freezed == mdfes ? _self.mdfes : mdfes // ignore: cast_nullable_to_non_nullable
 as List<AtsMdfe>?,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
@@ -16919,7 +16659,7 @@ return $default(_that.id,_that.assetId,_that.asset,_that.terminalId,_that.termin
 @JsonSerializable()
 
 class _Manifest extends Manifest {
-   _Manifest({this.id, this.assetId, this.asset, this.terminalId, this.terminal, this.totalVolume, this.totalConvertedVolume, this.operationId, this.operation, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.executedAt, this.trim, this.banda, final  List<TankMeasurement>? tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual) this.kind, this.position, final  List<TelemetrySensor>? sensors, this.messageId}): _tankMeasurements = tankMeasurements,_sensors = sensors,super._();
+   _Manifest({this.id, this.assetId, this.asset, this.terminalId, this.terminal, this.totalVolume, this.totalConvertedVolume, this.operationId, this.operation, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.executedAt, this.trim, this.banda, this.tankMeasurements, @JsonKey(unknownEnumValue: ManifestKind.manual) this.kind, this.position, this.sensors, this.messageId}): super._();
   factory _Manifest.fromJson(Map<String, dynamic> json) => _$ManifestFromJson(json);
 
 /// The [id] parameter is the id of the manifest entity.
@@ -16949,31 +16689,13 @@ class _Manifest extends Manifest {
 /// The [banda] parameter is the banda of the manifest entity.
 @override final  double? banda;
 /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
- final  List<TankMeasurement>? _tankMeasurements;
-/// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
-@override List<TankMeasurement>? get tankMeasurements {
-  final value = _tankMeasurements;
-  if (value == null) return null;
-  if (_tankMeasurements is EqualUnmodifiableListView) return _tankMeasurements;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TankMeasurement>? tankMeasurements;
 /// The [kind] parameter is the kind of the manifest entity.
 @override@JsonKey(unknownEnumValue: ManifestKind.manual) final  ManifestKind? kind;
 /// [position] is the position of the manifest entity.
 @override final  TelemetryPosition? position;
 /// [sensors] is the list of sensors associated with the manifest entity.
- final  List<TelemetrySensor>? _sensors;
-/// [sensors] is the list of sensors associated with the manifest entity.
-@override List<TelemetrySensor>? get sensors {
-  final value = _sensors;
-  if (value == null) return null;
-  if (_sensors is EqualUnmodifiableListView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TelemetrySensor>? sensors;
 /// The [messageId] parameter is the messageId of the manifest entity.
 @override final  String? messageId;
 
@@ -16990,12 +16712,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Manifest&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.terminalId, terminalId) || other.terminalId == terminalId)&&(identical(other.terminal, terminal) || other.terminal == terminal)&&(identical(other.totalVolume, totalVolume) || other.totalVolume == totalVolume)&&(identical(other.totalConvertedVolume, totalConvertedVolume) || other.totalConvertedVolume == totalConvertedVolume)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.executedAt, executedAt) || other.executedAt == executedAt)&&(identical(other.trim, trim) || other.trim == trim)&&(identical(other.banda, banda) || other.banda == banda)&&const DeepCollectionEquality().equals(other._tankMeasurements, _tankMeasurements)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.messageId, messageId) || other.messageId == messageId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Manifest&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.terminalId, terminalId) || other.terminalId == terminalId)&&(identical(other.terminal, terminal) || other.terminal == terminal)&&(identical(other.totalVolume, totalVolume) || other.totalVolume == totalVolume)&&(identical(other.totalConvertedVolume, totalConvertedVolume) || other.totalConvertedVolume == totalConvertedVolume)&&(identical(other.operationId, operationId) || other.operationId == operationId)&&(identical(other.operation, operation) || other.operation == operation)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.executedAt, executedAt) || other.executedAt == executedAt)&&(identical(other.trim, trim) || other.trim == trim)&&(identical(other.banda, banda) || other.banda == banda)&&const DeepCollectionEquality().equals(other.tankMeasurements, tankMeasurements)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.messageId, messageId) || other.messageId == messageId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,assetId,asset,terminalId,terminal,totalVolume,totalConvertedVolume,operationId,operation,createdAt,executedAt,trim,banda,const DeepCollectionEquality().hash(_tankMeasurements),kind,position,const DeepCollectionEquality().hash(_sensors),messageId);
+int get hashCode => Object.hash(runtimeType,id,assetId,asset,terminalId,terminal,totalVolume,totalConvertedVolume,operationId,operation,createdAt,executedAt,trim,banda,const DeepCollectionEquality().hash(tankMeasurements),kind,position,const DeepCollectionEquality().hash(sensors),messageId);
 
 @override
 String toString() {
@@ -17042,10 +16764,10 @@ as AtsOperation?,createdAt: freezed == createdAt ? _self.createdAt : createdAt /
 as DateTime?,executedAt: freezed == executedAt ? _self.executedAt : executedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,trim: freezed == trim ? _self.trim : trim // ignore: cast_nullable_to_non_nullable
 as double?,banda: freezed == banda ? _self.banda : banda // ignore: cast_nullable_to_non_nullable
-as double?,tankMeasurements: freezed == tankMeasurements ? _self._tankMeasurements : tankMeasurements // ignore: cast_nullable_to_non_nullable
+as double?,tankMeasurements: freezed == tankMeasurements ? _self.tankMeasurements : tankMeasurements // ignore: cast_nullable_to_non_nullable
 as List<TankMeasurement>?,kind: freezed == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as ManifestKind?,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as TelemetryPosition?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as TelemetryPosition?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as List<TelemetrySensor>?,messageId: freezed == messageId ? _self.messageId : messageId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -25297,7 +25019,7 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.isFavorite,_tha
 @JsonSerializable()
 
 class _AtsMonitor implements AtsMonitor {
-  const _AtsMonitor({required this.id, required this.name, @ColorOrNullConverter() this.color, @IconOrNullConverter() this.icon, this.isFavorite = false, final  List<Asset> assets = const [], final  List<String> assetsIds = const [], final  List<AtsGridItem> gridStructure = const [], final  List<LayrzChart> charts = const [], final  List<String> chartsIds = const [], final  List<Access> access = const [], this.owner, final  List<AnalyticsGridItem>? analyticsGridStructure}): _assets = assets,_assetsIds = assetsIds,_gridStructure = gridStructure,_charts = charts,_chartsIds = chartsIds,_access = access,_analyticsGridStructure = analyticsGridStructure;
+  const _AtsMonitor({required this.id, required this.name, @ColorOrNullConverter() this.color, @IconOrNullConverter() this.icon, this.isFavorite = false, this.assets = const [], this.assetsIds = const [], this.gridStructure = const [], this.charts = const [], this.chartsIds = const [], this.access = const [], this.owner, this.analyticsGridStructure});
   factory _AtsMonitor.fromJson(Map<String, dynamic> json) => _$AtsMonitorFromJson(json);
 
 /// ID of the entity. This ID is unique.
@@ -25311,72 +25033,21 @@ class _AtsMonitor implements AtsMonitor {
 /// Is favorite indicator.
 @override@JsonKey() final  bool isFavorite;
 /// List of assets assigned to the monitor.
- final  List<Asset> _assets;
-/// List of assets assigned to the monitor.
-@override@JsonKey() List<Asset> get assets {
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_assets);
-}
-
+@override@JsonKey() final  List<Asset> assets;
 /// List of asset IDs assigned to the monitor.
- final  List<String> _assetsIds;
-/// List of asset IDs assigned to the monitor.
-@override@JsonKey() List<String> get assetsIds {
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_assetsIds);
-}
-
+@override@JsonKey() final  List<String> assetsIds;
 /// List of grid structure.
- final  List<AtsGridItem> _gridStructure;
-/// List of grid structure.
-@override@JsonKey() List<AtsGridItem> get gridStructure {
-  if (_gridStructure is EqualUnmodifiableListView) return _gridStructure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_gridStructure);
-}
-
+@override@JsonKey() final  List<AtsGridItem> gridStructure;
 /// List of charts assigned to the workspace.
- final  List<LayrzChart> _charts;
+@override@JsonKey() final  List<LayrzChart> charts;
 /// List of charts assigned to the workspace.
-@override@JsonKey() List<LayrzChart> get charts {
-  if (_charts is EqualUnmodifiableListView) return _charts;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_charts);
-}
-
-/// List of charts assigned to the workspace.
- final  List<String> _chartsIds;
-/// List of charts assigned to the workspace.
-@override@JsonKey() List<String> get chartsIds {
-  if (_chartsIds is EqualUnmodifiableListView) return _chartsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_chartsIds);
-}
-
+@override@JsonKey() final  List<String> chartsIds;
 /// List of custom access permissions.
- final  List<Access> _access;
-/// List of custom access permissions.
-@override@JsonKey() List<Access> get access {
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_access);
-}
-
+@override@JsonKey() final  List<Access> access;
 /// User linked to monitor.
 @override final  User? owner;
 /// List of grid structure.
- final  List<AnalyticsGridItem>? _analyticsGridStructure;
-/// List of grid structure.
-@override List<AnalyticsGridItem>? get analyticsGridStructure {
-  final value = _analyticsGridStructure;
-  if (value == null) return null;
-  if (_analyticsGridStructure is EqualUnmodifiableListView) return _analyticsGridStructure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AnalyticsGridItem>? analyticsGridStructure;
 
 /// Create a copy of AtsMonitor
 /// with the given fields replaced by the non-null parameter values.
@@ -25391,12 +25062,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsMonitor&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._gridStructure, _gridStructure)&&const DeepCollectionEquality().equals(other._charts, _charts)&&const DeepCollectionEquality().equals(other._chartsIds, _chartsIds)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._analyticsGridStructure, _analyticsGridStructure));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsMonitor&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.gridStructure, gridStructure)&&const DeepCollectionEquality().equals(other.charts, charts)&&const DeepCollectionEquality().equals(other.chartsIds, chartsIds)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.analyticsGridStructure, analyticsGridStructure));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,color,icon,isFavorite,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_gridStructure),const DeepCollectionEquality().hash(_charts),const DeepCollectionEquality().hash(_chartsIds),const DeepCollectionEquality().hash(_access),owner,const DeepCollectionEquality().hash(_analyticsGridStructure));
+int get hashCode => Object.hash(runtimeType,id,name,color,icon,isFavorite,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(gridStructure),const DeepCollectionEquality().hash(charts),const DeepCollectionEquality().hash(chartsIds),const DeepCollectionEquality().hash(access),owner,const DeepCollectionEquality().hash(analyticsGridStructure));
 
 @override
 String toString() {
@@ -25435,14 +25106,14 @@ as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non
 as String,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as MdiRemapIcon?,isFavorite: null == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
-as bool,assets: null == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>,assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,gridStructure: null == gridStructure ? _self._gridStructure : gridStructure // ignore: cast_nullable_to_non_nullable
-as List<AtsGridItem>,charts: null == charts ? _self._charts : charts // ignore: cast_nullable_to_non_nullable
-as List<LayrzChart>,chartsIds: null == chartsIds ? _self._chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,access: null == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as bool,assets: null == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,gridStructure: null == gridStructure ? _self.gridStructure : gridStructure // ignore: cast_nullable_to_non_nullable
+as List<AtsGridItem>,charts: null == charts ? _self.charts : charts // ignore: cast_nullable_to_non_nullable
+as List<LayrzChart>,chartsIds: null == chartsIds ? _self.chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,access: null == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
-as User?,analyticsGridStructure: freezed == analyticsGridStructure ? _self._analyticsGridStructure : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
+as User?,analyticsGridStructure: freezed == analyticsGridStructure ? _self.analyticsGridStructure : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
 as List<AnalyticsGridItem>?,
   ));
 }
@@ -26249,18 +25920,11 @@ return $default(_that.objectsIds,_that.kind,_that.dimensions,_that.color);case _
 @JsonSerializable()
 
 class _AtsGridItem implements AtsGridItem {
-  const _AtsGridItem({final  List<String> objectsIds = const [], @JsonKey(unknownEnumValue: MonitorCardType.unknown) this.kind = MonitorCardType.unknown, this.dimensions, this.color}): _objectsIds = objectsIds;
+  const _AtsGridItem({this.objectsIds = const [], @JsonKey(unknownEnumValue: MonitorCardType.unknown) this.kind = MonitorCardType.unknown, this.dimensions, this.color});
   factory _AtsGridItem.fromJson(Map<String, dynamic> json) => _$AtsGridItemFromJson(json);
 
 /// Object id. Should be an Asset or many Assets.
- final  List<String> _objectsIds;
-/// Object id. Should be an Asset or many Assets.
-@override@JsonKey() List<String> get objectsIds {
-  if (_objectsIds is EqualUnmodifiableListView) return _objectsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_objectsIds);
-}
-
+@override@JsonKey() final  List<String> objectsIds;
 /// Kind of card.
 @override@JsonKey(unknownEnumValue: MonitorCardType.unknown) final  MonitorCardType kind;
 /// Dimensions.
@@ -26281,12 +25945,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsGridItem&&const DeepCollectionEquality().equals(other._objectsIds, _objectsIds)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions)&&(identical(other.color, color) || other.color == color));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsGridItem&&const DeepCollectionEquality().equals(other.objectsIds, objectsIds)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions)&&(identical(other.color, color) || other.color == color));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_objectsIds),kind,dimensions,color);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(objectsIds),kind,dimensions,color);
 
 @override
 String toString() {
@@ -26320,7 +25984,7 @@ class __$AtsGridItemCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? objectsIds = null,Object? kind = null,Object? dimensions = freezed,Object? color = freezed,}) {
   return _then(_AtsGridItem(
-objectsIds: null == objectsIds ? _self._objectsIds : objectsIds // ignore: cast_nullable_to_non_nullable
+objectsIds: null == objectsIds ? _self.objectsIds : objectsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as MonitorCardType,dimensions: freezed == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
 as AtsGridDimension?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
@@ -28168,7 +27832,7 @@ return $default(_that.id,_that.cnpj,_that.customer,_that.customerAsset,_that.cus
 @JsonSerializable()
 
 class _AtsOrder implements AtsOrder {
-  const _AtsOrder({required this.id, required this.cnpj, required this.customer, this.customerAsset, required this.customerCode, @TimestampOrNullConverter() this.orderDate, @TimestampOrNullConverter() this.inclusionDate, required this.fiscalNumber, required this.productAnp, required this.quantity, required this.status, @TimestampOrNullConverter() this.checkInAt, final  List<AtsOrderStatusHistory>? orderStatusHistory, final  List<AtsLoadingOrder>? loadingOrders}): _orderStatusHistory = orderStatusHistory,_loadingOrders = loadingOrders;
+  const _AtsOrder({required this.id, required this.cnpj, required this.customer, this.customerAsset, required this.customerCode, @TimestampOrNullConverter() this.orderDate, @TimestampOrNullConverter() this.inclusionDate, required this.fiscalNumber, required this.productAnp, required this.quantity, required this.status, @TimestampOrNullConverter() this.checkInAt, this.orderStatusHistory, this.loadingOrders});
   factory _AtsOrder.fromJson(Map<String, dynamic> json) => _$AtsOrderFromJson(json);
 
 /// The [id] parameter is the id of the order.
@@ -28196,27 +27860,9 @@ class _AtsOrder implements AtsOrder {
 /// The [checkInAt] parameter is the checkInAt of the order.
 @override@TimestampOrNullConverter() final  DateTime? checkInAt;
 /// The [orderStatusHistory] parameter is the orderStatusHistory of the order.
- final  List<AtsOrderStatusHistory>? _orderStatusHistory;
-/// The [orderStatusHistory] parameter is the orderStatusHistory of the order.
-@override List<AtsOrderStatusHistory>? get orderStatusHistory {
-  final value = _orderStatusHistory;
-  if (value == null) return null;
-  if (_orderStatusHistory is EqualUnmodifiableListView) return _orderStatusHistory;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsOrderStatusHistory>? orderStatusHistory;
 /// The [loadingOrders] parameter is the loadingOrders of the order.
- final  List<AtsLoadingOrder>? _loadingOrders;
-/// The [loadingOrders] parameter is the loadingOrders of the order.
-@override List<AtsLoadingOrder>? get loadingOrders {
-  final value = _loadingOrders;
-  if (value == null) return null;
-  if (_loadingOrders is EqualUnmodifiableListView) return _loadingOrders;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsLoadingOrder>? loadingOrders;
 
 /// Create a copy of AtsOrder
 /// with the given fields replaced by the non-null parameter values.
@@ -28231,12 +27877,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerAsset, customerAsset) || other.customerAsset == customerAsset)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.fiscalNumber, fiscalNumber) || other.fiscalNumber == fiscalNumber)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.status, status) || other.status == status)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&const DeepCollectionEquality().equals(other._orderStatusHistory, _orderStatusHistory)&&const DeepCollectionEquality().equals(other._loadingOrders, _loadingOrders));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AtsOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.cnpj, cnpj) || other.cnpj == cnpj)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.customerAsset, customerAsset) || other.customerAsset == customerAsset)&&(identical(other.customerCode, customerCode) || other.customerCode == customerCode)&&(identical(other.orderDate, orderDate) || other.orderDate == orderDate)&&(identical(other.inclusionDate, inclusionDate) || other.inclusionDate == inclusionDate)&&(identical(other.fiscalNumber, fiscalNumber) || other.fiscalNumber == fiscalNumber)&&(identical(other.productAnp, productAnp) || other.productAnp == productAnp)&&(identical(other.quantity, quantity) || other.quantity == quantity)&&(identical(other.status, status) || other.status == status)&&(identical(other.checkInAt, checkInAt) || other.checkInAt == checkInAt)&&const DeepCollectionEquality().equals(other.orderStatusHistory, orderStatusHistory)&&const DeepCollectionEquality().equals(other.loadingOrders, loadingOrders));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,cnpj,customer,customerAsset,customerCode,orderDate,inclusionDate,fiscalNumber,productAnp,quantity,status,checkInAt,const DeepCollectionEquality().hash(_orderStatusHistory),const DeepCollectionEquality().hash(_loadingOrders));
+int get hashCode => Object.hash(runtimeType,id,cnpj,customer,customerAsset,customerCode,orderDate,inclusionDate,fiscalNumber,productAnp,quantity,status,checkInAt,const DeepCollectionEquality().hash(orderStatusHistory),const DeepCollectionEquality().hash(loadingOrders));
 
 @override
 String toString() {
@@ -28282,8 +27928,8 @@ as String,productAnp: null == productAnp ? _self.productAnp : productAnp // igno
 as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
 as double,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,checkInAt: freezed == checkInAt ? _self.checkInAt : checkInAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,orderStatusHistory: freezed == orderStatusHistory ? _self._orderStatusHistory : orderStatusHistory // ignore: cast_nullable_to_non_nullable
-as List<AtsOrderStatusHistory>?,loadingOrders: freezed == loadingOrders ? _self._loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
+as DateTime?,orderStatusHistory: freezed == orderStatusHistory ? _self.orderStatusHistory : orderStatusHistory // ignore: cast_nullable_to_non_nullable
+as List<AtsOrderStatusHistory>?,loadingOrders: freezed == loadingOrders ? _self.loadingOrders : loadingOrders // ignore: cast_nullable_to_non_nullable
 as List<AtsLoadingOrder>?,
   ));
 }
@@ -29355,7 +29001,7 @@ return $default(_that.id,_that.terminalId,_that.terminal,_that.product,_that.des
 @JsonSerializable()
 
 class _StockClosing implements StockClosing {
-   _StockClosing({this.id, this.terminalId, this.terminal, @AtsFuelSubTypeOrNullConverter() this.product, this.description, final  List<String> tanksIds = const [], final  List<StockClosingTank> closingDetails = const [], this.totalVolume20, this.volume20Difference, this.accountingVolumeDifference, this.openingBalanceAmbient, this.totalEntriesAmbient, this.totalWithdrawalsAmbient, this.totalWithdrawalsByComboio, this.closingBalanceAmbient, this.openingBalance20, this.totalEntries20, this.totalWithdrawals20, this.closingBalance20, this.openingAccountingBalance, this.totalAccountingEntries, this.totalAccountingWithdrawals, this.closingAccountingBalance, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt, @TimestampOrNullConverter() this.sinceDate}): _tanksIds = tanksIds,_closingDetails = closingDetails;
+   _StockClosing({this.id, this.terminalId, this.terminal, @AtsFuelSubTypeOrNullConverter() this.product, this.description, this.tanksIds = const [], this.closingDetails = const [], this.totalVolume20, this.volume20Difference, this.accountingVolumeDifference, this.openingBalanceAmbient, this.totalEntriesAmbient, this.totalWithdrawalsAmbient, this.totalWithdrawalsByComboio, this.closingBalanceAmbient, this.openingBalance20, this.totalEntries20, this.totalWithdrawals20, this.closingBalance20, this.openingAccountingBalance, this.totalAccountingEntries, this.totalAccountingWithdrawals, this.closingAccountingBalance, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt, @TimestampOrNullConverter() this.sinceDate});
   factory _StockClosing.fromJson(Map<String, dynamic> json) => _$StockClosingFromJson(json);
 
 /// The [id] parameter is the id of the stock closing entity.
@@ -29369,23 +29015,9 @@ class _StockClosing implements StockClosing {
 /// The [description] parameter is the description of the stock closing entity.
 @override final  String? description;
 /// The [tanksIds] parameter is the tanksIds of the stock closing entity.
- final  List<String> _tanksIds;
-/// The [tanksIds] parameter is the tanksIds of the stock closing entity.
-@override@JsonKey() List<String> get tanksIds {
-  if (_tanksIds is EqualUnmodifiableListView) return _tanksIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_tanksIds);
-}
-
+@override@JsonKey() final  List<String> tanksIds;
 /// The [closingDetails] parameter is the closingDetails of the stock closing entity.
- final  List<StockClosingTank> _closingDetails;
-/// The [closingDetails] parameter is the closingDetails of the stock closing entity.
-@override@JsonKey() List<StockClosingTank> get closingDetails {
-  if (_closingDetails is EqualUnmodifiableListView) return _closingDetails;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_closingDetails);
-}
-
+@override@JsonKey() final  List<StockClosingTank> closingDetails;
 /// The [totalVolume20] parameter is the totalVolume20 of the stock closing entity.
 @override final  double? totalVolume20;
 /// The [volume20Difference] parameter is the volume20Difference of the stock closing entity.
@@ -29438,12 +29070,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockClosing&&(identical(other.id, id) || other.id == id)&&(identical(other.terminalId, terminalId) || other.terminalId == terminalId)&&(identical(other.terminal, terminal) || other.terminal == terminal)&&(identical(other.product, product) || other.product == product)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._tanksIds, _tanksIds)&&const DeepCollectionEquality().equals(other._closingDetails, _closingDetails)&&(identical(other.totalVolume20, totalVolume20) || other.totalVolume20 == totalVolume20)&&(identical(other.volume20Difference, volume20Difference) || other.volume20Difference == volume20Difference)&&(identical(other.accountingVolumeDifference, accountingVolumeDifference) || other.accountingVolumeDifference == accountingVolumeDifference)&&(identical(other.openingBalanceAmbient, openingBalanceAmbient) || other.openingBalanceAmbient == openingBalanceAmbient)&&(identical(other.totalEntriesAmbient, totalEntriesAmbient) || other.totalEntriesAmbient == totalEntriesAmbient)&&(identical(other.totalWithdrawalsAmbient, totalWithdrawalsAmbient) || other.totalWithdrawalsAmbient == totalWithdrawalsAmbient)&&(identical(other.totalWithdrawalsByComboio, totalWithdrawalsByComboio) || other.totalWithdrawalsByComboio == totalWithdrawalsByComboio)&&(identical(other.closingBalanceAmbient, closingBalanceAmbient) || other.closingBalanceAmbient == closingBalanceAmbient)&&(identical(other.openingBalance20, openingBalance20) || other.openingBalance20 == openingBalance20)&&(identical(other.totalEntries20, totalEntries20) || other.totalEntries20 == totalEntries20)&&(identical(other.totalWithdrawals20, totalWithdrawals20) || other.totalWithdrawals20 == totalWithdrawals20)&&(identical(other.closingBalance20, closingBalance20) || other.closingBalance20 == closingBalance20)&&(identical(other.openingAccountingBalance, openingAccountingBalance) || other.openingAccountingBalance == openingAccountingBalance)&&(identical(other.totalAccountingEntries, totalAccountingEntries) || other.totalAccountingEntries == totalAccountingEntries)&&(identical(other.totalAccountingWithdrawals, totalAccountingWithdrawals) || other.totalAccountingWithdrawals == totalAccountingWithdrawals)&&(identical(other.closingAccountingBalance, closingAccountingBalance) || other.closingAccountingBalance == closingAccountingBalance)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockClosing&&(identical(other.id, id) || other.id == id)&&(identical(other.terminalId, terminalId) || other.terminalId == terminalId)&&(identical(other.terminal, terminal) || other.terminal == terminal)&&(identical(other.product, product) || other.product == product)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.tanksIds, tanksIds)&&const DeepCollectionEquality().equals(other.closingDetails, closingDetails)&&(identical(other.totalVolume20, totalVolume20) || other.totalVolume20 == totalVolume20)&&(identical(other.volume20Difference, volume20Difference) || other.volume20Difference == volume20Difference)&&(identical(other.accountingVolumeDifference, accountingVolumeDifference) || other.accountingVolumeDifference == accountingVolumeDifference)&&(identical(other.openingBalanceAmbient, openingBalanceAmbient) || other.openingBalanceAmbient == openingBalanceAmbient)&&(identical(other.totalEntriesAmbient, totalEntriesAmbient) || other.totalEntriesAmbient == totalEntriesAmbient)&&(identical(other.totalWithdrawalsAmbient, totalWithdrawalsAmbient) || other.totalWithdrawalsAmbient == totalWithdrawalsAmbient)&&(identical(other.totalWithdrawalsByComboio, totalWithdrawalsByComboio) || other.totalWithdrawalsByComboio == totalWithdrawalsByComboio)&&(identical(other.closingBalanceAmbient, closingBalanceAmbient) || other.closingBalanceAmbient == closingBalanceAmbient)&&(identical(other.openingBalance20, openingBalance20) || other.openingBalance20 == openingBalance20)&&(identical(other.totalEntries20, totalEntries20) || other.totalEntries20 == totalEntries20)&&(identical(other.totalWithdrawals20, totalWithdrawals20) || other.totalWithdrawals20 == totalWithdrawals20)&&(identical(other.closingBalance20, closingBalance20) || other.closingBalance20 == closingBalance20)&&(identical(other.openingAccountingBalance, openingAccountingBalance) || other.openingAccountingBalance == openingAccountingBalance)&&(identical(other.totalAccountingEntries, totalAccountingEntries) || other.totalAccountingEntries == totalAccountingEntries)&&(identical(other.totalAccountingWithdrawals, totalAccountingWithdrawals) || other.totalAccountingWithdrawals == totalAccountingWithdrawals)&&(identical(other.closingAccountingBalance, closingAccountingBalance) || other.closingAccountingBalance == closingAccountingBalance)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,terminalId,terminal,product,description,const DeepCollectionEquality().hash(_tanksIds),const DeepCollectionEquality().hash(_closingDetails),totalVolume20,volume20Difference,accountingVolumeDifference,openingBalanceAmbient,totalEntriesAmbient,totalWithdrawalsAmbient,totalWithdrawalsByComboio,closingBalanceAmbient,openingBalance20,totalEntries20,totalWithdrawals20,closingBalance20,openingAccountingBalance,totalAccountingEntries,totalAccountingWithdrawals,closingAccountingBalance,createdAt,updatedAt,sinceDate]);
+int get hashCode => Object.hashAll([runtimeType,id,terminalId,terminal,product,description,const DeepCollectionEquality().hash(tanksIds),const DeepCollectionEquality().hash(closingDetails),totalVolume20,volume20Difference,accountingVolumeDifference,openingBalanceAmbient,totalEntriesAmbient,totalWithdrawalsAmbient,totalWithdrawalsByComboio,closingBalanceAmbient,openingBalance20,totalEntries20,totalWithdrawals20,closingBalance20,openingAccountingBalance,totalAccountingEntries,totalAccountingWithdrawals,closingAccountingBalance,createdAt,updatedAt,sinceDate]);
 
 @override
 String toString() {
@@ -29482,8 +29114,8 @@ as String?,terminalId: freezed == terminalId ? _self.terminalId : terminalId // 
 as String?,terminal: freezed == terminal ? _self.terminal : terminal // ignore: cast_nullable_to_non_nullable
 as Asset?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as AtsFuelSubType?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,tanksIds: null == tanksIds ? _self._tanksIds : tanksIds // ignore: cast_nullable_to_non_nullable
-as List<String>,closingDetails: null == closingDetails ? _self._closingDetails : closingDetails // ignore: cast_nullable_to_non_nullable
+as String?,tanksIds: null == tanksIds ? _self.tanksIds : tanksIds // ignore: cast_nullable_to_non_nullable
+as List<String>,closingDetails: null == closingDetails ? _self.closingDetails : closingDetails // ignore: cast_nullable_to_non_nullable
 as List<StockClosingTank>,totalVolume20: freezed == totalVolume20 ? _self.totalVolume20 : totalVolume20 // ignore: cast_nullable_to_non_nullable
 as double?,volume20Difference: freezed == volume20Difference ? _self.volume20Difference : volume20Difference // ignore: cast_nullable_to_non_nullable
 as double?,accountingVolumeDifference: freezed == accountingVolumeDifference ? _self.accountingVolumeDifference : accountingVolumeDifference // ignore: cast_nullable_to_non_nullable

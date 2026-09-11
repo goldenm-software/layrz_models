@@ -1766,7 +1766,7 @@ return $default(_that.id,_that.name,_that.token,_that.parentId,_that.email,_that
 @JsonSerializable()
 
 class _User extends User {
-  const _User({required this.id, required this.name, this.token, this.parentId, this.email, this.username, this.dynamicAvatar, final  List<String>? referencesIds, final  List<Reference>? references, this.category, this.categoryId, @Deprecated('Use mqttConfig instead') this.mqttToken, this.mqttConfig, final  List<Access>? access, final  List<CustomField>? customFields, this.platformAuth = "", final  List<User> childs = const [], final  List<String>? tagsIds, final  List<Tag>? tags, this.planId, final  List<RegisteredApp>? allowedApps, final  List<String>? mappitAssetsIds, final  List<String>? mappitSecondaryRoutesIds, final  List<Asset>? mappitAssets, this.historicalDaysAllowed, this.mappitExternalAccountId, this.mappitExternalAccount, this.mfaEnabled = false, final  List<MfaMethod> mfaMethods = const [], this.tenvioAddress, this.tenvioPhone, this.tenvioLatitude, this.tenvioLongitude, this.tenvioAddressIsPlusCode, @TimestampOrNullConverter() this.suspendedAt, final  List<String> hwModelsAnimationsIds = const [], this.brickhousePermissionTier, this.brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) this.brickhouseRole, this.sdmCode, this.isLocked = false, this.isSuspended = false, this.hasPaymentWarning = false, this.billingPlan, this.isPasswordExpired, this.preferences, final  List<Passkey> passkeys = const [], this.hasGpsInsurance}): _referencesIds = referencesIds,_references = references,_access = access,_customFields = customFields,_childs = childs,_tagsIds = tagsIds,_tags = tags,_allowedApps = allowedApps,_mappitAssetsIds = mappitAssetsIds,_mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,_mappitAssets = mappitAssets,_mfaMethods = mfaMethods,_hwModelsAnimationsIds = hwModelsAnimationsIds,_passkeys = passkeys,super._();
+  const _User({required this.id, required this.name, this.token, this.parentId, this.email, this.username, this.dynamicAvatar, this.referencesIds, this.references, this.category, this.categoryId, @Deprecated('Use mqttConfig instead') this.mqttToken, this.mqttConfig, this.access, this.customFields, this.platformAuth = "", this.childs = const [], this.tagsIds, this.tags, this.planId, this.allowedApps, this.mappitAssetsIds, this.mappitSecondaryRoutesIds, this.mappitAssets, this.historicalDaysAllowed, this.mappitExternalAccountId, this.mappitExternalAccount, this.mfaEnabled = false, this.mfaMethods = const [], this.tenvioAddress, this.tenvioPhone, this.tenvioLatitude, this.tenvioLongitude, this.tenvioAddressIsPlusCode, @TimestampOrNullConverter() this.suspendedAt, this.hwModelsAnimationsIds = const [], this.brickhousePermissionTier, this.brickhousePermissionTierId, @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) this.brickhouseRole, this.sdmCode, this.isLocked = false, this.isSuspended = false, this.hasPaymentWarning = false, this.billingPlan, this.isPasswordExpired, this.preferences, this.passkeys = const [], this.hasGpsInsurance}): super._();
   factory _User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
 /// [id] represents the user ID.
@@ -1784,27 +1784,9 @@ class _User extends User {
 /// [dynamicAvatar] represents the user avatar.
 @override final  Avatar? dynamicAvatar;
 /// [referencesIds] represents the list of references IDs.
- final  List<String>? _referencesIds;
-/// [referencesIds] represents the list of references IDs.
-@override List<String>? get referencesIds {
-  final value = _referencesIds;
-  if (value == null) return null;
-  if (_referencesIds is EqualUnmodifiableListView) return _referencesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? referencesIds;
 /// [references] represents the list of references.
- final  List<Reference>? _references;
-/// [references] represents the list of references.
-@override List<Reference>? get references {
-  final value = _references;
-  if (value == null) return null;
-  if (_references is EqualUnmodifiableListView) return _references;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Reference>? references;
 /// [category] represents the user category.
 @override final  Category? category;
 /// [categoryId] represents the user category ID.
@@ -1814,110 +1796,29 @@ class _User extends User {
 /// [mqttConfig] represents the MQTT configuration.
 @override final  RealtimeMqttConfig? mqttConfig;
 /// [access] represents the list of granted access.
- final  List<Access>? _access;
-/// [access] represents the list of granted access.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// [customFields] represents the list of custom fields.
- final  List<CustomField>? _customFields;
-/// [customFields] represents the list of custom fields.
-@override List<CustomField>? get customFields {
-  final value = _customFields;
-  if (value == null) return null;
-  if (_customFields is EqualUnmodifiableListView) return _customFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CustomField>? customFields;
 /// [platformAuth] represents the platform auth.
 @override@JsonKey() final  String platformAuth;
 /// [childs] represents the list of childs.
- final  List<User> _childs;
-/// [childs] represents the list of childs.
-@override@JsonKey() List<User> get childs {
-  if (_childs is EqualUnmodifiableListView) return _childs;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_childs);
-}
-
+@override@JsonKey() final  List<User> childs;
 /// [tagsIds] represents the list of tags IDs.
- final  List<String>? _tagsIds;
-/// [tagsIds] represents the list of tags IDs.
-@override List<String>? get tagsIds {
-  final value = _tagsIds;
-  if (value == null) return null;
-  if (_tagsIds is EqualUnmodifiableListView) return _tagsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? tagsIds;
 /// [tags] represents the list of tags.
- final  List<Tag>? _tags;
-/// [tags] represents the list of tags.
-@override List<Tag>? get tags {
-  final value = _tags;
-  if (value == null) return null;
-  if (_tags is EqualUnmodifiableListView) return _tags;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Tag>? tags;
 /// [planId] represents the plan ID.
 @override final  String? planId;
 /// [allowedApps] represents the list of allowed apps.
- final  List<RegisteredApp>? _allowedApps;
-/// [allowedApps] represents the list of allowed apps.
-@override List<RegisteredApp>? get allowedApps {
-  final value = _allowedApps;
-  if (value == null) return null;
-  if (_allowedApps is EqualUnmodifiableListView) return _allowedApps;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<RegisteredApp>? allowedApps;
 /// [mappitAssetsIds] represents the list of assets IDs.
 /// This field is only for `Mappit` use.
- final  List<String>? _mappitAssetsIds;
-/// [mappitAssetsIds] represents the list of assets IDs.
-/// This field is only for `Mappit` use.
-@override List<String>? get mappitAssetsIds {
-  final value = _mappitAssetsIds;
-  if (value == null) return null;
-  if (_mappitAssetsIds is EqualUnmodifiableListView) return _mappitAssetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? mappitAssetsIds;
 /// [mappitSecondaryRoutes]
- final  List<String>? _mappitSecondaryRoutesIds;
-/// [mappitSecondaryRoutes]
-@override List<String>? get mappitSecondaryRoutesIds {
-  final value = _mappitSecondaryRoutesIds;
-  if (value == null) return null;
-  if (_mappitSecondaryRoutesIds is EqualUnmodifiableListView) return _mappitSecondaryRoutesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? mappitSecondaryRoutesIds;
 /// [mappitAssets] represents the list of assets.
 /// This field is only for `Mappit` use.
- final  List<Asset>? _mappitAssets;
-/// [mappitAssets] represents the list of assets.
-/// This field is only for `Mappit` use.
-@override List<Asset>? get mappitAssets {
-  final value = _mappitAssets;
-  if (value == null) return null;
-  if (_mappitAssets is EqualUnmodifiableListView) return _mappitAssets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? mappitAssets;
 /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
 /// This field is only for `Mappit` use.
 @override final  int? historicalDaysAllowed;
@@ -1930,14 +1831,7 @@ class _User extends User {
 /// [mfaEnabled] represents the MFA enabled flag.
 @override@JsonKey() final  bool mfaEnabled;
 /// [mfaMethods] represents the list of MFA methods.
- final  List<MfaMethod> _mfaMethods;
-/// [mfaMethods] represents the list of MFA methods.
-@override@JsonKey() List<MfaMethod> get mfaMethods {
-  if (_mfaMethods is EqualUnmodifiableListView) return _mfaMethods;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_mfaMethods);
-}
-
+@override@JsonKey() final  List<MfaMethod> mfaMethods;
 /// [tenvioAddress] represents the Tenvio address.
 @override final  String? tenvioAddress;
 /// [tenvioPhone] represents the Tenvio phone.
@@ -1951,14 +1845,7 @@ class _User extends User {
 /// [suspendedAt] represents the date when the account was suspended.
 @override@TimestampOrNullConverter() final  DateTime? suspendedAt;
 /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
- final  List<String> _hwModelsAnimationsIds;
-/// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
-@override@JsonKey() List<String> get hwModelsAnimationsIds {
-  if (_hwModelsAnimationsIds is EqualUnmodifiableListView) return _hwModelsAnimationsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_hwModelsAnimationsIds);
-}
-
+@override@JsonKey() final  List<String> hwModelsAnimationsIds;
 /// [brickhousePermissionTier] represents the Brickhouse permission tier for access level of an user.
 @override final  BHSPermissionTier? brickhousePermissionTier;
 /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
@@ -1980,14 +1867,7 @@ class _User extends User {
 /// [preferences] represents the user preferences.
 @override final  UserPreferences? preferences;
 /// [passkeys] is the list of passkeys registered for the user.
- final  List<Passkey> _passkeys;
-/// [passkeys] is the list of passkeys registered for the user.
-@override@JsonKey() List<Passkey> get passkeys {
-  if (_passkeys is EqualUnmodifiableListView) return _passkeys;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_passkeys);
-}
-
+@override@JsonKey() final  List<Passkey> passkeys;
 /// [hasGpsInsurance] represents if the user has GPS insurance, for the BHS use case.
 @override final  bool? hasGpsInsurance;
 
@@ -2004,12 +1884,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _User&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.token, token) || other.token == token)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&const DeepCollectionEquality().equals(other._referencesIds, _referencesIds)&&const DeepCollectionEquality().equals(other._references, _references)&&(identical(other.category, category) || other.category == category)&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.mqttToken, mqttToken) || other.mqttToken == mqttToken)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&(identical(other.platformAuth, platformAuth) || other.platformAuth == platformAuth)&&const DeepCollectionEquality().equals(other._childs, _childs)&&const DeepCollectionEquality().equals(other._tagsIds, _tagsIds)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.planId, planId) || other.planId == planId)&&const DeepCollectionEquality().equals(other._allowedApps, _allowedApps)&&const DeepCollectionEquality().equals(other._mappitAssetsIds, _mappitAssetsIds)&&const DeepCollectionEquality().equals(other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds)&&const DeepCollectionEquality().equals(other._mappitAssets, _mappitAssets)&&(identical(other.historicalDaysAllowed, historicalDaysAllowed) || other.historicalDaysAllowed == historicalDaysAllowed)&&(identical(other.mappitExternalAccountId, mappitExternalAccountId) || other.mappitExternalAccountId == mappitExternalAccountId)&&(identical(other.mappitExternalAccount, mappitExternalAccount) || other.mappitExternalAccount == mappitExternalAccount)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other._mfaMethods, _mfaMethods)&&(identical(other.tenvioAddress, tenvioAddress) || other.tenvioAddress == tenvioAddress)&&(identical(other.tenvioPhone, tenvioPhone) || other.tenvioPhone == tenvioPhone)&&(identical(other.tenvioLatitude, tenvioLatitude) || other.tenvioLatitude == tenvioLatitude)&&(identical(other.tenvioLongitude, tenvioLongitude) || other.tenvioLongitude == tenvioLongitude)&&(identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) || other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode)&&(identical(other.suspendedAt, suspendedAt) || other.suspendedAt == suspendedAt)&&const DeepCollectionEquality().equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds)&&(identical(other.brickhousePermissionTier, brickhousePermissionTier) || other.brickhousePermissionTier == brickhousePermissionTier)&&(identical(other.brickhousePermissionTierId, brickhousePermissionTierId) || other.brickhousePermissionTierId == brickhousePermissionTierId)&&(identical(other.brickhouseRole, brickhouseRole) || other.brickhouseRole == brickhouseRole)&&(identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode)&&(identical(other.isLocked, isLocked) || other.isLocked == isLocked)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hasPaymentWarning, hasPaymentWarning) || other.hasPaymentWarning == hasPaymentWarning)&&(identical(other.billingPlan, billingPlan) || other.billingPlan == billingPlan)&&(identical(other.isPasswordExpired, isPasswordExpired) || other.isPasswordExpired == isPasswordExpired)&&(identical(other.preferences, preferences) || other.preferences == preferences)&&const DeepCollectionEquality().equals(other._passkeys, _passkeys)&&(identical(other.hasGpsInsurance, hasGpsInsurance) || other.hasGpsInsurance == hasGpsInsurance));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _User&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.token, token) || other.token == token)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.email, email) || other.email == email)&&(identical(other.username, username) || other.username == username)&&(identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar)&&const DeepCollectionEquality().equals(other.referencesIds, referencesIds)&&const DeepCollectionEquality().equals(other.references, references)&&(identical(other.category, category) || other.category == category)&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.mqttToken, mqttToken) || other.mqttToken == mqttToken)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&(identical(other.platformAuth, platformAuth) || other.platformAuth == platformAuth)&&const DeepCollectionEquality().equals(other.childs, childs)&&const DeepCollectionEquality().equals(other.tagsIds, tagsIds)&&const DeepCollectionEquality().equals(other.tags, tags)&&(identical(other.planId, planId) || other.planId == planId)&&const DeepCollectionEquality().equals(other.allowedApps, allowedApps)&&const DeepCollectionEquality().equals(other.mappitAssetsIds, mappitAssetsIds)&&const DeepCollectionEquality().equals(other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds)&&const DeepCollectionEquality().equals(other.mappitAssets, mappitAssets)&&(identical(other.historicalDaysAllowed, historicalDaysAllowed) || other.historicalDaysAllowed == historicalDaysAllowed)&&(identical(other.mappitExternalAccountId, mappitExternalAccountId) || other.mappitExternalAccountId == mappitExternalAccountId)&&(identical(other.mappitExternalAccount, mappitExternalAccount) || other.mappitExternalAccount == mappitExternalAccount)&&(identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled)&&const DeepCollectionEquality().equals(other.mfaMethods, mfaMethods)&&(identical(other.tenvioAddress, tenvioAddress) || other.tenvioAddress == tenvioAddress)&&(identical(other.tenvioPhone, tenvioPhone) || other.tenvioPhone == tenvioPhone)&&(identical(other.tenvioLatitude, tenvioLatitude) || other.tenvioLatitude == tenvioLatitude)&&(identical(other.tenvioLongitude, tenvioLongitude) || other.tenvioLongitude == tenvioLongitude)&&(identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) || other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode)&&(identical(other.suspendedAt, suspendedAt) || other.suspendedAt == suspendedAt)&&const DeepCollectionEquality().equals(other.hwModelsAnimationsIds, hwModelsAnimationsIds)&&(identical(other.brickhousePermissionTier, brickhousePermissionTier) || other.brickhousePermissionTier == brickhousePermissionTier)&&(identical(other.brickhousePermissionTierId, brickhousePermissionTierId) || other.brickhousePermissionTierId == brickhousePermissionTierId)&&(identical(other.brickhouseRole, brickhouseRole) || other.brickhouseRole == brickhouseRole)&&(identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode)&&(identical(other.isLocked, isLocked) || other.isLocked == isLocked)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hasPaymentWarning, hasPaymentWarning) || other.hasPaymentWarning == hasPaymentWarning)&&(identical(other.billingPlan, billingPlan) || other.billingPlan == billingPlan)&&(identical(other.isPasswordExpired, isPasswordExpired) || other.isPasswordExpired == isPasswordExpired)&&(identical(other.preferences, preferences) || other.preferences == preferences)&&const DeepCollectionEquality().equals(other.passkeys, passkeys)&&(identical(other.hasGpsInsurance, hasGpsInsurance) || other.hasGpsInsurance == hasGpsInsurance));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,token,parentId,email,username,dynamicAvatar,const DeepCollectionEquality().hash(_referencesIds),const DeepCollectionEquality().hash(_references),category,categoryId,mqttToken,mqttConfig,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_customFields),platformAuth,const DeepCollectionEquality().hash(_childs),const DeepCollectionEquality().hash(_tagsIds),const DeepCollectionEquality().hash(_tags),planId,const DeepCollectionEquality().hash(_allowedApps),const DeepCollectionEquality().hash(_mappitAssetsIds),const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),const DeepCollectionEquality().hash(_mappitAssets),historicalDaysAllowed,mappitExternalAccountId,mappitExternalAccount,mfaEnabled,const DeepCollectionEquality().hash(_mfaMethods),tenvioAddress,tenvioPhone,tenvioLatitude,tenvioLongitude,tenvioAddressIsPlusCode,suspendedAt,const DeepCollectionEquality().hash(_hwModelsAnimationsIds),brickhousePermissionTier,brickhousePermissionTierId,brickhouseRole,sdmCode,isLocked,isSuspended,hasPaymentWarning,billingPlan,isPasswordExpired,preferences,const DeepCollectionEquality().hash(_passkeys),hasGpsInsurance]);
+int get hashCode => Object.hashAll([runtimeType,id,name,token,parentId,email,username,dynamicAvatar,const DeepCollectionEquality().hash(referencesIds),const DeepCollectionEquality().hash(references),category,categoryId,mqttToken,mqttConfig,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(customFields),platformAuth,const DeepCollectionEquality().hash(childs),const DeepCollectionEquality().hash(tagsIds),const DeepCollectionEquality().hash(tags),planId,const DeepCollectionEquality().hash(allowedApps),const DeepCollectionEquality().hash(mappitAssetsIds),const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),const DeepCollectionEquality().hash(mappitAssets),historicalDaysAllowed,mappitExternalAccountId,mappitExternalAccount,mfaEnabled,const DeepCollectionEquality().hash(mfaMethods),tenvioAddress,tenvioPhone,tenvioLatitude,tenvioLongitude,tenvioAddressIsPlusCode,suspendedAt,const DeepCollectionEquality().hash(hwModelsAnimationsIds),brickhousePermissionTier,brickhousePermissionTierId,brickhouseRole,sdmCode,isLocked,isSuspended,hasPaymentWarning,billingPlan,isPasswordExpired,preferences,const DeepCollectionEquality().hash(passkeys),hasGpsInsurance]);
 
 @override
 String toString() {
@@ -2050,35 +1930,35 @@ as Token?,parentId: freezed == parentId ? _self.parentId : parentId // ignore: c
 as String?,email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String?,username: freezed == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
 as String?,dynamicAvatar: freezed == dynamicAvatar ? _self.dynamicAvatar : dynamicAvatar // ignore: cast_nullable_to_non_nullable
-as Avatar?,referencesIds: freezed == referencesIds ? _self._referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,references: freezed == references ? _self._references : references // ignore: cast_nullable_to_non_nullable
+as Avatar?,referencesIds: freezed == referencesIds ? _self.referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,references: freezed == references ? _self.references : references // ignore: cast_nullable_to_non_nullable
 as List<Reference>?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as Category?,categoryId: freezed == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
 as String?,mqttToken: freezed == mqttToken ? _self.mqttToken : mqttToken // ignore: cast_nullable_to_non_nullable
 as String?,mqttConfig: freezed == mqttConfig ? _self.mqttConfig : mqttConfig // ignore: cast_nullable_to_non_nullable
-as RealtimeMqttConfig?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,customFields: freezed == customFields ? _self._customFields : customFields // ignore: cast_nullable_to_non_nullable
+as RealtimeMqttConfig?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as List<Access>?,customFields: freezed == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
 as List<CustomField>?,platformAuth: null == platformAuth ? _self.platformAuth : platformAuth // ignore: cast_nullable_to_non_nullable
-as String,childs: null == childs ? _self._childs : childs // ignore: cast_nullable_to_non_nullable
-as List<User>,tagsIds: freezed == tagsIds ? _self._tagsIds : tagsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,tags: freezed == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
+as String,childs: null == childs ? _self.childs : childs // ignore: cast_nullable_to_non_nullable
+as List<User>,tagsIds: freezed == tagsIds ? _self.tagsIds : tagsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,tags: freezed == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
 as List<Tag>?,planId: freezed == planId ? _self.planId : planId // ignore: cast_nullable_to_non_nullable
-as String?,allowedApps: freezed == allowedApps ? _self._allowedApps : allowedApps // ignore: cast_nullable_to_non_nullable
-as List<RegisteredApp>?,mappitAssetsIds: freezed == mappitAssetsIds ? _self._mappitAssetsIds : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds ? _self._mappitSecondaryRoutesIds : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,mappitAssets: freezed == mappitAssets ? _self._mappitAssets : mappitAssets // ignore: cast_nullable_to_non_nullable
+as String?,allowedApps: freezed == allowedApps ? _self.allowedApps : allowedApps // ignore: cast_nullable_to_non_nullable
+as List<RegisteredApp>?,mappitAssetsIds: freezed == mappitAssetsIds ? _self.mappitAssetsIds : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds ? _self.mappitSecondaryRoutesIds : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,mappitAssets: freezed == mappitAssets ? _self.mappitAssets : mappitAssets // ignore: cast_nullable_to_non_nullable
 as List<Asset>?,historicalDaysAllowed: freezed == historicalDaysAllowed ? _self.historicalDaysAllowed : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
 as int?,mappitExternalAccountId: freezed == mappitExternalAccountId ? _self.mappitExternalAccountId : mappitExternalAccountId // ignore: cast_nullable_to_non_nullable
 as String?,mappitExternalAccount: freezed == mappitExternalAccount ? _self.mappitExternalAccount : mappitExternalAccount // ignore: cast_nullable_to_non_nullable
 as ExternalAccount?,mfaEnabled: null == mfaEnabled ? _self.mfaEnabled : mfaEnabled // ignore: cast_nullable_to_non_nullable
-as bool,mfaMethods: null == mfaMethods ? _self._mfaMethods : mfaMethods // ignore: cast_nullable_to_non_nullable
+as bool,mfaMethods: null == mfaMethods ? _self.mfaMethods : mfaMethods // ignore: cast_nullable_to_non_nullable
 as List<MfaMethod>,tenvioAddress: freezed == tenvioAddress ? _self.tenvioAddress : tenvioAddress // ignore: cast_nullable_to_non_nullable
 as String?,tenvioPhone: freezed == tenvioPhone ? _self.tenvioPhone : tenvioPhone // ignore: cast_nullable_to_non_nullable
 as String?,tenvioLatitude: freezed == tenvioLatitude ? _self.tenvioLatitude : tenvioLatitude // ignore: cast_nullable_to_non_nullable
 as double?,tenvioLongitude: freezed == tenvioLongitude ? _self.tenvioLongitude : tenvioLongitude // ignore: cast_nullable_to_non_nullable
 as double?,tenvioAddressIsPlusCode: freezed == tenvioAddressIsPlusCode ? _self.tenvioAddressIsPlusCode : tenvioAddressIsPlusCode // ignore: cast_nullable_to_non_nullable
 as bool?,suspendedAt: freezed == suspendedAt ? _self.suspendedAt : suspendedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,hwModelsAnimationsIds: null == hwModelsAnimationsIds ? _self._hwModelsAnimationsIds : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
+as DateTime?,hwModelsAnimationsIds: null == hwModelsAnimationsIds ? _self.hwModelsAnimationsIds : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,brickhousePermissionTier: freezed == brickhousePermissionTier ? _self.brickhousePermissionTier : brickhousePermissionTier // ignore: cast_nullable_to_non_nullable
 as BHSPermissionTier?,brickhousePermissionTierId: freezed == brickhousePermissionTierId ? _self.brickhousePermissionTierId : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
 as String?,brickhouseRole: freezed == brickhouseRole ? _self.brickhouseRole : brickhouseRole // ignore: cast_nullable_to_non_nullable
@@ -2089,7 +1969,7 @@ as bool,hasPaymentWarning: null == hasPaymentWarning ? _self.hasPaymentWarning :
 as bool,billingPlan: freezed == billingPlan ? _self.billingPlan : billingPlan // ignore: cast_nullable_to_non_nullable
 as BillingPlan?,isPasswordExpired: freezed == isPasswordExpired ? _self.isPasswordExpired : isPasswordExpired // ignore: cast_nullable_to_non_nullable
 as bool?,preferences: freezed == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as UserPreferences?,passkeys: null == passkeys ? _self._passkeys : passkeys // ignore: cast_nullable_to_non_nullable
+as UserPreferences?,passkeys: null == passkeys ? _self.passkeys : passkeys // ignore: cast_nullable_to_non_nullable
 as List<Passkey>,hasGpsInsurance: freezed == hasGpsInsurance ? _self.hasGpsInsurance : hasGpsInsurance // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));

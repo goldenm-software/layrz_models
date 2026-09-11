@@ -220,7 +220,7 @@ return $default(_that.id,_that.name,_that.category,_that.customFields,_that.qrCo
 @JsonSerializable()
 
 class _Reference implements Reference {
-  const _Reference({required this.id, required this.name, @JsonKey(unknownEnumValue: ReferenceCategory.unknown) this.category = ReferenceCategory.unknown, final  List<CustomField>? customFields, this.qrCode, final  List<Access>? access}): _customFields = customFields,_access = access;
+  const _Reference({required this.id, required this.name, @JsonKey(unknownEnumValue: ReferenceCategory.unknown) this.category = ReferenceCategory.unknown, this.customFields, this.qrCode, this.access});
   factory _Reference.fromJson(Map<String, dynamic> json) => _$ReferenceFromJson(json);
 
 /// Is the ID.
@@ -230,29 +230,11 @@ class _Reference implements Reference {
 /// Is the category.
 @override@JsonKey(unknownEnumValue: ReferenceCategory.unknown) final  ReferenceCategory category;
 /// Is a list of custom fields.
- final  List<CustomField>? _customFields;
-/// Is a list of custom fields.
-@override List<CustomField>? get customFields {
-  final value = _customFields;
-  if (value == null) return null;
-  if (_customFields is EqualUnmodifiableListView) return _customFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CustomField>? customFields;
 /// Is the QR code URI.
 @override final  String? qrCode;
 /// Is the list of granted access
- final  List<Access>? _access;
-/// Is the list of granted access
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 
 /// Create a copy of Reference
 /// with the given fields replaced by the non-null parameter values.
@@ -267,12 +249,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Reference&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.category, category) || other.category == category)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Reference&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.category, category) || other.category == category)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other.access, access));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,category,const DeepCollectionEquality().hash(_customFields),qrCode,const DeepCollectionEquality().hash(_access));
+int get hashCode => Object.hash(runtimeType,id,name,category,const DeepCollectionEquality().hash(customFields),qrCode,const DeepCollectionEquality().hash(access));
 
 @override
 String toString() {
@@ -309,9 +291,9 @@ class __$ReferenceCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as ReferenceCategory,customFields: freezed == customFields ? _self._customFields : customFields // ignore: cast_nullable_to_non_nullable
+as ReferenceCategory,customFields: freezed == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
 as List<CustomField>?,qrCode: freezed == qrCode ? _self.qrCode : qrCode // ignore: cast_nullable_to_non_nullable
-as String?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as String?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
   ));
 }

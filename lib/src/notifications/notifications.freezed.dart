@@ -244,7 +244,7 @@ return $default(_that.title,_that.titleTranslate,_that.titleArgs,_that.message,_
 @JsonSerializable()
 
 class _LayrzNotification extends LayrzNotification {
-  const _LayrzNotification({required this.title, this.titleTranslate = false, final  Map<String, dynamic> titleArgs = const {}, required this.message, this.messageTranslate = false, final  Map<String, dynamic> messageArgs = const {}, @JsonKey(unknownEnumValue: SoundEffect.none) this.sound = SoundEffect.none, @IconOrNullConverter() this.icon, @ColorConverter() this.color = Colors.blue, this.uri, @DurationConverter() this.duration = const Duration(seconds: 5)}): _titleArgs = titleArgs,_messageArgs = messageArgs,super._();
+  const _LayrzNotification({required this.title, this.titleTranslate = false, this.titleArgs = const {}, required this.message, this.messageTranslate = false, this.messageArgs = const {}, @JsonKey(unknownEnumValue: SoundEffect.none) this.sound = SoundEffect.none, @IconOrNullConverter() this.icon, @ColorConverter() this.color = Colors.blue, this.uri, @DurationConverter() this.duration = const Duration(seconds: 5)}): super._();
   factory _LayrzNotification.fromJson(Map<String, dynamic> json) => _$LayrzNotificationFromJson(json);
 
 /// [title] is the title of the notification.
@@ -256,16 +256,7 @@ class _LayrzNotification extends LayrzNotification {
 /// [titleArgs] is the list of arguments to use with the Layrz Translation system for the title.
 ///
 /// If [titleTranslate] is `false`, this field will be ignored.
- final  Map<String, dynamic> _titleArgs;
-/// [titleArgs] is the list of arguments to use with the Layrz Translation system for the title.
-///
-/// If [titleTranslate] is `false`, this field will be ignored.
-@override@JsonKey() Map<String, dynamic> get titleArgs {
-  if (_titleArgs is EqualUnmodifiableMapView) return _titleArgs;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_titleArgs);
-}
-
+@override@JsonKey() final  Map<String, dynamic> titleArgs;
 /// [message] is the body of the notification.
 ///
 /// If you want to use the Layrz Translation system, please set the [messageTranslate] to enable it.
@@ -275,16 +266,7 @@ class _LayrzNotification extends LayrzNotification {
 /// [messageArgs] is the list of arguments to use with the Layrz Translation system for the message.
 ///
 /// If [messageTranslate] is `false`, this field will be ignored.
- final  Map<String, dynamic> _messageArgs;
-/// [messageArgs] is the list of arguments to use with the Layrz Translation system for the message.
-///
-/// If [messageTranslate] is `false`, this field will be ignored.
-@override@JsonKey() Map<String, dynamic> get messageArgs {
-  if (_messageArgs is EqualUnmodifiableMapView) return _messageArgs;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_messageArgs);
-}
-
+@override@JsonKey() final  Map<String, dynamic> messageArgs;
 /// [sound] is the sound effect to play when the notification arrives.
 @override@JsonKey(unknownEnumValue: SoundEffect.none) final  SoundEffect sound;
 /// [icon] is the icon to display with the notification.
@@ -315,12 +297,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LayrzNotification&&(identical(other.title, title) || other.title == title)&&(identical(other.titleTranslate, titleTranslate) || other.titleTranslate == titleTranslate)&&const DeepCollectionEquality().equals(other._titleArgs, _titleArgs)&&(identical(other.message, message) || other.message == message)&&(identical(other.messageTranslate, messageTranslate) || other.messageTranslate == messageTranslate)&&const DeepCollectionEquality().equals(other._messageArgs, _messageArgs)&&(identical(other.sound, sound) || other.sound == sound)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.color, color) || other.color == color)&&(identical(other.uri, uri) || other.uri == uri)&&(identical(other.duration, duration) || other.duration == duration));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LayrzNotification&&(identical(other.title, title) || other.title == title)&&(identical(other.titleTranslate, titleTranslate) || other.titleTranslate == titleTranslate)&&const DeepCollectionEquality().equals(other.titleArgs, titleArgs)&&(identical(other.message, message) || other.message == message)&&(identical(other.messageTranslate, messageTranslate) || other.messageTranslate == messageTranslate)&&const DeepCollectionEquality().equals(other.messageArgs, messageArgs)&&(identical(other.sound, sound) || other.sound == sound)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.color, color) || other.color == color)&&(identical(other.uri, uri) || other.uri == uri)&&(identical(other.duration, duration) || other.duration == duration));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,title,titleTranslate,const DeepCollectionEquality().hash(_titleArgs),message,messageTranslate,const DeepCollectionEquality().hash(_messageArgs),sound,icon,color,uri,duration);
+int get hashCode => Object.hash(runtimeType,title,titleTranslate,const DeepCollectionEquality().hash(titleArgs),message,messageTranslate,const DeepCollectionEquality().hash(messageArgs),sound,icon,color,uri,duration);
 
 @override
 String toString() {
@@ -356,10 +338,10 @@ class __$LayrzNotificationCopyWithImpl<$Res>
   return _then(_LayrzNotification(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,titleTranslate: null == titleTranslate ? _self.titleTranslate : titleTranslate // ignore: cast_nullable_to_non_nullable
-as bool,titleArgs: null == titleArgs ? _self._titleArgs : titleArgs // ignore: cast_nullable_to_non_nullable
+as bool,titleArgs: null == titleArgs ? _self.titleArgs : titleArgs // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,messageTranslate: null == messageTranslate ? _self.messageTranslate : messageTranslate // ignore: cast_nullable_to_non_nullable
-as bool,messageArgs: null == messageArgs ? _self._messageArgs : messageArgs // ignore: cast_nullable_to_non_nullable
+as bool,messageArgs: null == messageArgs ? _self.messageArgs : messageArgs // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,sound: null == sound ? _self.sound : sound // ignore: cast_nullable_to_non_nullable
 as SoundEffect,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as MdiRemapIcon?,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable

@@ -212,20 +212,13 @@ return $default(_that.title,_that.blocks);case _:
 @JsonSerializable()
 
 class _ConciergeFormPage extends ConciergeFormPage {
-  const _ConciergeFormPage({required this.title, final  List<ConciergeFormBlock> blocks = const <ConciergeFormBlock>[]}): _blocks = blocks,super._();
+  const _ConciergeFormPage({required this.title, this.blocks = const <ConciergeFormBlock>[]}): super._();
   factory _ConciergeFormPage.fromJson(Map<String, dynamic> json) => _$ConciergeFormPageFromJson(json);
 
 /// Is the title of the page
 @override final  String title;
 /// Is the blocks (May be fields, headers or paragraph) of the page
- final  List<ConciergeFormBlock> _blocks;
-/// Is the blocks (May be fields, headers or paragraph) of the page
-@override@JsonKey() List<ConciergeFormBlock> get blocks {
-  if (_blocks is EqualUnmodifiableListView) return _blocks;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_blocks);
-}
-
+@override@JsonKey() final  List<ConciergeFormBlock> blocks;
 
 /// Create a copy of ConciergeFormPage
 /// with the given fields replaced by the non-null parameter values.
@@ -240,12 +233,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConciergeFormPage&&(identical(other.title, title) || other.title == title)&&const DeepCollectionEquality().equals(other._blocks, _blocks));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConciergeFormPage&&(identical(other.title, title) || other.title == title)&&const DeepCollectionEquality().equals(other.blocks, blocks));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,title,const DeepCollectionEquality().hash(_blocks));
+int get hashCode => Object.hash(runtimeType,title,const DeepCollectionEquality().hash(blocks));
 
 @override
 String toString() {
@@ -280,7 +273,7 @@ class __$ConciergeFormPageCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? title = null,Object? blocks = null,}) {
   return _then(_ConciergeFormPage(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,blocks: null == blocks ? _self._blocks : blocks // ignore: cast_nullable_to_non_nullable
+as String,blocks: null == blocks ? _self.blocks : blocks // ignore: cast_nullable_to_non_nullable
 as List<ConciergeFormBlock>,
   ));
 }
@@ -1382,7 +1375,7 @@ return $default(_that.allowEmpty,_that.isInt,_that.isMultiple,_that.max,_that.mi
 @JsonSerializable()
 
 class _ConciergeFormBlockConfiguration extends ConciergeFormBlockConfiguration {
-  const _ConciergeFormBlockConfiguration({required this.allowEmpty, this.isInt, this.isMultiple, this.max, this.min, final  List<String> choices = const <String>[]}): _choices = choices,super._();
+  const _ConciergeFormBlockConfiguration({required this.allowEmpty, this.isInt, this.isMultiple, this.max, this.min, this.choices = const <String>[]}): super._();
   factory _ConciergeFormBlockConfiguration.fromJson(Map<String, dynamic> json) => _$ConciergeFormBlockConfigurationFromJson(json);
 
 /// Indicates if the field can be submitted without value
@@ -1395,14 +1388,7 @@ class _ConciergeFormBlockConfiguration extends ConciergeFormBlockConfiguration {
 @override final  double? max;
 @override final  double? min;
 /// Represents the list of choices when the field is a select
- final  List<String> _choices;
-/// Represents the list of choices when the field is a select
-@override@JsonKey() List<String> get choices {
-  if (_choices is EqualUnmodifiableListView) return _choices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_choices);
-}
-
+@override@JsonKey() final  List<String> choices;
 
 /// Create a copy of ConciergeFormBlockConfiguration
 /// with the given fields replaced by the non-null parameter values.
@@ -1417,12 +1403,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConciergeFormBlockConfiguration&&(identical(other.allowEmpty, allowEmpty) || other.allowEmpty == allowEmpty)&&(identical(other.isInt, isInt) || other.isInt == isInt)&&(identical(other.isMultiple, isMultiple) || other.isMultiple == isMultiple)&&(identical(other.max, max) || other.max == max)&&(identical(other.min, min) || other.min == min)&&const DeepCollectionEquality().equals(other._choices, _choices));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConciergeFormBlockConfiguration&&(identical(other.allowEmpty, allowEmpty) || other.allowEmpty == allowEmpty)&&(identical(other.isInt, isInt) || other.isInt == isInt)&&(identical(other.isMultiple, isMultiple) || other.isMultiple == isMultiple)&&(identical(other.max, max) || other.max == max)&&(identical(other.min, min) || other.min == min)&&const DeepCollectionEquality().equals(other.choices, choices));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,allowEmpty,isInt,isMultiple,max,min,const DeepCollectionEquality().hash(_choices));
+int get hashCode => Object.hash(runtimeType,allowEmpty,isInt,isMultiple,max,min,const DeepCollectionEquality().hash(choices));
 
 @override
 String toString() {
@@ -1461,7 +1447,7 @@ as bool,isInt: freezed == isInt ? _self.isInt : isInt // ignore: cast_nullable_t
 as bool?,isMultiple: freezed == isMultiple ? _self.isMultiple : isMultiple // ignore: cast_nullable_to_non_nullable
 as bool?,max: freezed == max ? _self.max : max // ignore: cast_nullable_to_non_nullable
 as double?,min: freezed == min ? _self.min : min // ignore: cast_nullable_to_non_nullable
-as double?,choices: null == choices ? _self._choices : choices // ignore: cast_nullable_to_non_nullable
+as double?,choices: null == choices ? _self.choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }

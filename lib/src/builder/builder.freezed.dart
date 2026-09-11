@@ -1584,19 +1584,13 @@ return $default(_that.hasPosition,_that.position,_that.hasPayload,_that.payload)
 @JsonSerializable()
 
 class _InboundStructure implements InboundStructure {
-  const _InboundStructure({required this.hasPosition, required this.position, required this.hasPayload, required final  List<InboundPayloadStructure> payload}): _payload = payload;
+  const _InboundStructure({required this.hasPosition, required this.position, required this.hasPayload, required this.payload});
   factory _InboundStructure.fromJson(Map<String, dynamic> json) => _$InboundStructureFromJson(json);
 
 @override final  bool hasPosition;
 @override final  InboundPositionStructure? position;
 @override final  bool hasPayload;
- final  List<InboundPayloadStructure> _payload;
-@override List<InboundPayloadStructure> get payload {
-  if (_payload is EqualUnmodifiableListView) return _payload;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_payload);
-}
-
+@override final  List<InboundPayloadStructure> payload;
 
 /// Create a copy of InboundStructure
 /// with the given fields replaced by the non-null parameter values.
@@ -1611,12 +1605,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboundStructure&&(identical(other.hasPosition, hasPosition) || other.hasPosition == hasPosition)&&(identical(other.position, position) || other.position == position)&&(identical(other.hasPayload, hasPayload) || other.hasPayload == hasPayload)&&const DeepCollectionEquality().equals(other._payload, _payload));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboundStructure&&(identical(other.hasPosition, hasPosition) || other.hasPosition == hasPosition)&&(identical(other.position, position) || other.position == position)&&(identical(other.hasPayload, hasPayload) || other.hasPayload == hasPayload)&&const DeepCollectionEquality().equals(other.payload, payload));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hasPosition,position,hasPayload,const DeepCollectionEquality().hash(_payload));
+int get hashCode => Object.hash(runtimeType,hasPosition,position,hasPayload,const DeepCollectionEquality().hash(payload));
 
 @override
 String toString() {
@@ -1653,7 +1647,7 @@ class __$InboundStructureCopyWithImpl<$Res>
 hasPosition: null == hasPosition ? _self.hasPosition : hasPosition // ignore: cast_nullable_to_non_nullable
 as bool,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
 as InboundPositionStructure?,hasPayload: null == hasPayload ? _self.hasPayload : hasPayload // ignore: cast_nullable_to_non_nullable
-as bool,payload: null == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
+as bool,payload: null == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as List<InboundPayloadStructure>,
   ));
 }
@@ -3240,7 +3234,7 @@ return $default(_that.baseUrl,_that.paths,_that.method,_that.contentType,_that.h
 @JsonSerializable()
 
 class _WebhookStructure extends WebhookStructure {
-  const _WebhookStructure({required this.baseUrl, final  List<WebhookPath> paths = const [], @WebhookMethodConverter() this.method = WebhookMethod.post, @WebhookFormatConverter() this.contentType = WebhookFormat.json, final  List<WebhookHeader> headers = const []}): _paths = paths,_headers = headers,super._();
+  const _WebhookStructure({required this.baseUrl, this.paths = const [], @WebhookMethodConverter() this.method = WebhookMethod.post, @WebhookFormatConverter() this.contentType = WebhookFormat.json, this.headers = const []}): super._();
   factory _WebhookStructure.fromJson(Map<String, dynamic> json) => _$WebhookStructureFromJson(json);
 
 /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
@@ -3250,14 +3244,7 @@ class _WebhookStructure extends WebhookStructure {
 /// full URL will be `https://api.example.com/v1/users`.
 @override final  String baseUrl;
 /// [paths] is the list of paths that the webhook should use.
- final  List<WebhookPath> _paths;
-/// [paths] is the list of paths that the webhook should use.
-@override@JsonKey() List<WebhookPath> get paths {
-  if (_paths is EqualUnmodifiableListView) return _paths;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_paths);
-}
-
+@override@JsonKey() final  List<WebhookPath> paths;
 /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
 /// for webhook usage.
 @override@JsonKey()@WebhookMethodConverter() final  WebhookMethod method;
@@ -3266,16 +3253,7 @@ class _WebhookStructure extends WebhookStructure {
 /// [headers] is the list of headers that the webhook should use.
 /// If you detect any issue with the headers, please contact the
 /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
- final  List<WebhookHeader> _headers;
-/// [headers] is the list of headers that the webhook should use.
-/// If you detect any issue with the headers, please contact the
-/// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-@override@JsonKey() List<WebhookHeader> get headers {
-  if (_headers is EqualUnmodifiableListView) return _headers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_headers);
-}
-
+@override@JsonKey() final  List<WebhookHeader> headers;
 
 /// Create a copy of WebhookStructure
 /// with the given fields replaced by the non-null parameter values.
@@ -3290,12 +3268,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WebhookStructure&&(identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl)&&const DeepCollectionEquality().equals(other._paths, _paths)&&(identical(other.method, method) || other.method == method)&&(identical(other.contentType, contentType) || other.contentType == contentType)&&const DeepCollectionEquality().equals(other._headers, _headers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WebhookStructure&&(identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl)&&const DeepCollectionEquality().equals(other.paths, paths)&&(identical(other.method, method) || other.method == method)&&(identical(other.contentType, contentType) || other.contentType == contentType)&&const DeepCollectionEquality().equals(other.headers, headers));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,baseUrl,const DeepCollectionEquality().hash(_paths),method,contentType,const DeepCollectionEquality().hash(_headers));
+int get hashCode => Object.hash(runtimeType,baseUrl,const DeepCollectionEquality().hash(paths),method,contentType,const DeepCollectionEquality().hash(headers));
 
 @override
 String toString() {
@@ -3330,10 +3308,10 @@ class __$WebhookStructureCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? baseUrl = null,Object? paths = null,Object? method = null,Object? contentType = null,Object? headers = null,}) {
   return _then(_WebhookStructure(
 baseUrl: null == baseUrl ? _self.baseUrl : baseUrl // ignore: cast_nullable_to_non_nullable
-as String,paths: null == paths ? _self._paths : paths // ignore: cast_nullable_to_non_nullable
+as String,paths: null == paths ? _self.paths : paths // ignore: cast_nullable_to_non_nullable
 as List<WebhookPath>,method: null == method ? _self.method : method // ignore: cast_nullable_to_non_nullable
 as WebhookMethod,contentType: null == contentType ? _self.contentType : contentType // ignore: cast_nullable_to_non_nullable
-as WebhookFormat,headers: null == headers ? _self._headers : headers // ignore: cast_nullable_to_non_nullable
+as WebhookFormat,headers: null == headers ? _self.headers : headers // ignore: cast_nullable_to_non_nullable
 as List<WebhookHeader>,
   ));
 }
@@ -3848,7 +3826,7 @@ return $default(_that.uri,_that.topic,_that.actions,_that.methods,_that.ids,_tha
 @JsonSerializable()
 
 class _FlespiAcl extends FlespiAcl {
-  const _FlespiAcl({@FlespiUriConverter() required this.uri, this.topic, @FlespiActionConverter() final  List<FlespiAction>? actions, @FlespiMethodConverter() final  List<FlespiMethod>? methods, final  List<String>? ids, final  List<FlespiSubmoduleConfig>? submodules}): _actions = actions,_methods = methods,_ids = ids,_submodules = submodules,super._();
+  const _FlespiAcl({@FlespiUriConverter() required this.uri, this.topic, @FlespiActionConverter() this.actions, @FlespiMethodConverter() this.methods, this.ids, this.submodules}): super._();
   factory _FlespiAcl.fromJson(Map<String, dynamic> json) => _$FlespiAclFromJson(json);
 
 /// [uri] is the URI of the ACL.
@@ -3858,54 +3836,15 @@ class _FlespiAcl extends FlespiAcl {
 @override final  String? topic;
 /// [actions] is the list of actions allowed for the ACL.
 /// This field is only used when the [uri] is [FlespiUri.mqtt].
- final  List<FlespiAction>? _actions;
-/// [actions] is the list of actions allowed for the ACL.
-/// This field is only used when the [uri] is [FlespiUri.mqtt].
-@override@FlespiActionConverter() List<FlespiAction>? get actions {
-  final value = _actions;
-  if (value == null) return null;
-  if (_actions is EqualUnmodifiableListView) return _actions;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@FlespiActionConverter() final  List<FlespiAction>? actions;
 /// [methods] is the list of methods allowed for the ACL.
- final  List<FlespiMethod>? _methods;
-/// [methods] is the list of methods allowed for the ACL.
-@override@FlespiMethodConverter() List<FlespiMethod>? get methods {
-  final value = _methods;
-  if (value == null) return null;
-  if (_methods is EqualUnmodifiableListView) return _methods;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@FlespiMethodConverter() final  List<FlespiMethod>? methods;
 /// [ids] is the list of IDs allowed for the ACL.
 /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
- final  List<String>? _ids;
-/// [ids] is the list of IDs allowed for the ACL.
-/// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-@override List<String>? get ids {
-  final value = _ids;
-  if (value == null) return null;
-  if (_ids is EqualUnmodifiableListView) return _ids;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? ids;
 /// [submodules] is the list of submodules allowed for the ACL.
 /// This field is only used when the [uri] is not [FlespiUri.mqtt].
- final  List<FlespiSubmoduleConfig>? _submodules;
-/// [submodules] is the list of submodules allowed for the ACL.
-/// This field is only used when the [uri] is not [FlespiUri.mqtt].
-@override List<FlespiSubmoduleConfig>? get submodules {
-  final value = _submodules;
-  if (value == null) return null;
-  if (_submodules is EqualUnmodifiableListView) return _submodules;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<FlespiSubmoduleConfig>? submodules;
 
 /// Create a copy of FlespiAcl
 /// with the given fields replaced by the non-null parameter values.
@@ -3920,12 +3859,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FlespiAcl&&(identical(other.uri, uri) || other.uri == uri)&&(identical(other.topic, topic) || other.topic == topic)&&const DeepCollectionEquality().equals(other._actions, _actions)&&const DeepCollectionEquality().equals(other._methods, _methods)&&const DeepCollectionEquality().equals(other._ids, _ids)&&const DeepCollectionEquality().equals(other._submodules, _submodules));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FlespiAcl&&(identical(other.uri, uri) || other.uri == uri)&&(identical(other.topic, topic) || other.topic == topic)&&const DeepCollectionEquality().equals(other.actions, actions)&&const DeepCollectionEquality().equals(other.methods, methods)&&const DeepCollectionEquality().equals(other.ids, ids)&&const DeepCollectionEquality().equals(other.submodules, submodules));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,uri,topic,const DeepCollectionEquality().hash(_actions),const DeepCollectionEquality().hash(_methods),const DeepCollectionEquality().hash(_ids),const DeepCollectionEquality().hash(_submodules));
+int get hashCode => Object.hash(runtimeType,uri,topic,const DeepCollectionEquality().hash(actions),const DeepCollectionEquality().hash(methods),const DeepCollectionEquality().hash(ids),const DeepCollectionEquality().hash(submodules));
 
 @override
 String toString() {
@@ -3961,10 +3900,10 @@ class __$FlespiAclCopyWithImpl<$Res>
   return _then(_FlespiAcl(
 uri: null == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
 as FlespiUri,topic: freezed == topic ? _self.topic : topic // ignore: cast_nullable_to_non_nullable
-as String?,actions: freezed == actions ? _self._actions : actions // ignore: cast_nullable_to_non_nullable
-as List<FlespiAction>?,methods: freezed == methods ? _self._methods : methods // ignore: cast_nullable_to_non_nullable
-as List<FlespiMethod>?,ids: freezed == ids ? _self._ids : ids // ignore: cast_nullable_to_non_nullable
-as List<String>?,submodules: freezed == submodules ? _self._submodules : submodules // ignore: cast_nullable_to_non_nullable
+as String?,actions: freezed == actions ? _self.actions : actions // ignore: cast_nullable_to_non_nullable
+as List<FlespiAction>?,methods: freezed == methods ? _self.methods : methods // ignore: cast_nullable_to_non_nullable
+as List<FlespiMethod>?,ids: freezed == ids ? _self.ids : ids // ignore: cast_nullable_to_non_nullable
+as List<String>?,submodules: freezed == submodules ? _self.submodules : submodules // ignore: cast_nullable_to_non_nullable
 as List<FlespiSubmoduleConfig>?,
   ));
 }
@@ -4431,20 +4370,13 @@ return $default(_that.name,_that.methods);case _:
 @JsonSerializable()
 
 class _FlespiSubmoduleConfig extends FlespiSubmoduleConfig {
-  const _FlespiSubmoduleConfig({@FlespiSubmoduleConverter() required this.name, @FlespiMethodConverter() final  List<FlespiMethod> methods = const []}): _methods = methods,super._();
+  const _FlespiSubmoduleConfig({@FlespiSubmoduleConverter() required this.name, @FlespiMethodConverter() this.methods = const []}): super._();
   factory _FlespiSubmoduleConfig.fromJson(Map<String, dynamic> json) => _$FlespiSubmoduleConfigFromJson(json);
 
 /// [submodule] is the submodule of the configuration.
 @override@FlespiSubmoduleConverter() final  FlespiSubmodule name;
 /// [methods] is the list of methods allowed for the submodule.
- final  List<FlespiMethod> _methods;
-/// [methods] is the list of methods allowed for the submodule.
-@override@JsonKey()@FlespiMethodConverter() List<FlespiMethod> get methods {
-  if (_methods is EqualUnmodifiableListView) return _methods;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_methods);
-}
-
+@override@JsonKey()@FlespiMethodConverter() final  List<FlespiMethod> methods;
 
 /// Create a copy of FlespiSubmoduleConfig
 /// with the given fields replaced by the non-null parameter values.
@@ -4459,12 +4391,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FlespiSubmoduleConfig&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._methods, _methods));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FlespiSubmoduleConfig&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.methods, methods));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,const DeepCollectionEquality().hash(_methods));
+int get hashCode => Object.hash(runtimeType,name,const DeepCollectionEquality().hash(methods));
 
 @override
 String toString() {
@@ -4499,7 +4431,7 @@ class __$FlespiSubmoduleConfigCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? methods = null,}) {
   return _then(_FlespiSubmoduleConfig(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as FlespiSubmodule,methods: null == methods ? _self._methods : methods // ignore: cast_nullable_to_non_nullable
+as FlespiSubmodule,methods: null == methods ? _self.methods : methods // ignore: cast_nullable_to_non_nullable
 as List<FlespiMethod>,
   ));
 }

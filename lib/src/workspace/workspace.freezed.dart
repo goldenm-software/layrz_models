@@ -319,7 +319,7 @@ return $default(_that.id,_that.name,_that.typeApp,_that.color,_that.icon,_that.b
 @JsonSerializable()
 
 class _Workspace implements Workspace {
-  const _Workspace({required this.id, required this.name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.typeApp, @ColorOrNullConverter() this.color, @IconOrNullConverter() this.icon, this.background, this.isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors) this.mainView = WorkspaceMainView.sensors, final  List<Asset> assets = const [], final  List<String> assetsIds = const [], final  List<InboundService> inboundServices = const [], final  List<String> inboundServicesIds = const [], final  List<OutboundService> outboundServices = const [], final  List<String> outboundServicesIds = const [], this.casesEnabled = false, final  List<Trigger> triggers = const [], final  List<String> triggersIds = const [], final  List<CaseMonitorCard?> casesMonitorConfig = const [], this.checkpointsEnabled = false, final  List<Checkpoint> checkpoints = const [], final  List<String> checkpointsIds = const [], this.mapEnabled = false, final  List<Geofence> geofences = const [], final  List<String> geofencesIds = const [], final  List<MapCardSensors> mapCardCustomization = const [], this.mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds) this.mapCenterMode, this.analyticsEnabled = false, final  List<LayrzChart> charts = const [], final  List<String> chartsIds = const [], final  List<AnalyticsGridItem> analyticsGridStructure = const [], this.sensorsEnabled = false, final  List<SensorGridItem> sensorsGridStructure = const [], @JsonKey(unknownEnumValue: MetricSystem.metric) this.metricSystem, this.timezone, final  List<Access>? access, this.tableEnabled = false, this.tableStructure}): _assets = assets,_assetsIds = assetsIds,_inboundServices = inboundServices,_inboundServicesIds = inboundServicesIds,_outboundServices = outboundServices,_outboundServicesIds = outboundServicesIds,_triggers = triggers,_triggersIds = triggersIds,_casesMonitorConfig = casesMonitorConfig,_checkpoints = checkpoints,_checkpointsIds = checkpointsIds,_geofences = geofences,_geofencesIds = geofencesIds,_mapCardCustomization = mapCardCustomization,_charts = charts,_chartsIds = chartsIds,_analyticsGridStructure = analyticsGridStructure,_sensorsGridStructure = sensorsGridStructure,_access = access;
+  const _Workspace({required this.id, required this.name, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.typeApp, @ColorOrNullConverter() this.color, @IconOrNullConverter() this.icon, this.background, this.isFavorite, @JsonKey(unknownEnumValue: WorkspaceMainView.sensors) this.mainView = WorkspaceMainView.sensors, this.assets = const [], this.assetsIds = const [], this.inboundServices = const [], this.inboundServicesIds = const [], this.outboundServices = const [], this.outboundServicesIds = const [], this.casesEnabled = false, this.triggers = const [], this.triggersIds = const [], this.casesMonitorConfig = const [], this.checkpointsEnabled = false, this.checkpoints = const [], this.checkpointsIds = const [], this.mapEnabled = false, this.geofences = const [], this.geofencesIds = const [], this.mapCardCustomization = const [], this.mapCenterCoordinates, @JsonKey(unknownEnumValue: MapCenterMode.bounds) this.mapCenterMode, this.analyticsEnabled = false, this.charts = const [], this.chartsIds = const [], this.analyticsGridStructure = const [], this.sensorsEnabled = false, this.sensorsGridStructure = const [], @JsonKey(unknownEnumValue: MetricSystem.metric) this.metricSystem, this.timezone, this.access, this.tableEnabled = false, this.tableStructure});
   factory _Workspace.fromJson(Map<String, dynamic> json) => _$WorkspaceFromJson(json);
 
 /// Is the ID
@@ -339,59 +339,17 @@ class _Workspace implements Workspace {
 /// Indicates the main view of the workspace
 @override@JsonKey(unknownEnumValue: WorkspaceMainView.sensors) final  WorkspaceMainView mainView;
 /// Is the list of [assets] associated with the workspace
- final  List<Asset> _assets;
-/// Is the list of [assets] associated with the workspace
-@override@JsonKey() List<Asset> get assets {
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_assets);
-}
-
+@override@JsonKey() final  List<Asset> assets;
 /// [assetsIds] is the list of ids of the [assets] associated with the workspace
- final  List<String> _assetsIds;
-/// [assetsIds] is the list of ids of the [assets] associated with the workspace
-@override@JsonKey() List<String> get assetsIds {
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_assetsIds);
-}
-
+@override@JsonKey() final  List<String> assetsIds;
 /// Is the list of [inboundServices] associated with the workspace
- final  List<InboundService> _inboundServices;
-/// Is the list of [inboundServices] associated with the workspace
-@override@JsonKey() List<InboundService> get inboundServices {
-  if (_inboundServices is EqualUnmodifiableListView) return _inboundServices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_inboundServices);
-}
-
+@override@JsonKey() final  List<InboundService> inboundServices;
 /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
- final  List<String> _inboundServicesIds;
-/// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
-@override@JsonKey() List<String> get inboundServicesIds {
-  if (_inboundServicesIds is EqualUnmodifiableListView) return _inboundServicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_inboundServicesIds);
-}
-
+@override@JsonKey() final  List<String> inboundServicesIds;
 /// Is the list of [outboundServices] associated with the workspace
- final  List<OutboundService> _outboundServices;
-/// Is the list of [outboundServices] associated with the workspace
-@override@JsonKey() List<OutboundService> get outboundServices {
-  if (_outboundServices is EqualUnmodifiableListView) return _outboundServices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_outboundServices);
-}
-
+@override@JsonKey() final  List<OutboundService> outboundServices;
 /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
- final  List<String> _outboundServicesIds;
-/// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
-@override@JsonKey() List<String> get outboundServicesIds {
-  if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_outboundServicesIds);
-}
-
+@override@JsonKey() final  List<String> outboundServicesIds;
 /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
 /// [mapEnabled], [geofences], [geofencesIds], [mapCardCustomization], [mapCenterCoordinates], [mapCenterMode],
 /// [analyticsEnabled], [charts], [chartsIds], [chartStructure], [gridEnabled], [gridStructure]
@@ -400,122 +358,41 @@ class _Workspace implements Workspace {
 /// if the cases monitor is enabled
 /// Also, [casesMonitorConfig] indicates the configuration of the cases monitor
 @override@JsonKey() final  bool casesEnabled;
- final  List<Trigger> _triggers;
-@override@JsonKey() List<Trigger> get triggers {
-  if (_triggers is EqualUnmodifiableListView) return _triggers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_triggers);
-}
-
- final  List<String> _triggersIds;
-@override@JsonKey() List<String> get triggersIds {
-  if (_triggersIds is EqualUnmodifiableListView) return _triggersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_triggersIds);
-}
-
- final  List<CaseMonitorCard?> _casesMonitorConfig;
-@override@JsonKey() List<CaseMonitorCard?> get casesMonitorConfig {
-  if (_casesMonitorConfig is EqualUnmodifiableListView) return _casesMonitorConfig;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_casesMonitorConfig);
-}
-
+@override@JsonKey() final  List<Trigger> triggers;
+@override@JsonKey() final  List<String> triggersIds;
+@override@JsonKey() final  List<CaseMonitorCard?> casesMonitorConfig;
 /// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
 /// if the checkpoints monitor is enabled
 @override@JsonKey() final  bool checkpointsEnabled;
- final  List<Checkpoint> _checkpoints;
-@override@JsonKey() List<Checkpoint> get checkpoints {
-  if (_checkpoints is EqualUnmodifiableListView) return _checkpoints;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_checkpoints);
-}
-
- final  List<String> _checkpointsIds;
-@override@JsonKey() List<String> get checkpointsIds {
-  if (_checkpointsIds is EqualUnmodifiableListView) return _checkpointsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_checkpointsIds);
-}
-
+@override@JsonKey() final  List<Checkpoint> checkpoints;
+@override@JsonKey() final  List<String> checkpointsIds;
 /// Is the list of [geofences] and their ids [geofencesIds]. And [mapEnabled] indicates
 /// if the map monitor is enabled
 /// Also, [mapCardCustomization] indicates the customization of the map card
 /// [mapCenterCoordinates] indicates the center coordinates of the map
 /// [mapCenterMode] indicates the center mode of the map
 @override@JsonKey() final  bool mapEnabled;
- final  List<Geofence> _geofences;
-@override@JsonKey() List<Geofence> get geofences {
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_geofences);
-}
-
- final  List<String> _geofencesIds;
-@override@JsonKey() List<String> get geofencesIds {
-  if (_geofencesIds is EqualUnmodifiableListView) return _geofencesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_geofencesIds);
-}
-
- final  List<MapCardSensors> _mapCardCustomization;
-@override@JsonKey() List<MapCardSensors> get mapCardCustomization {
-  if (_mapCardCustomization is EqualUnmodifiableListView) return _mapCardCustomization;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_mapCardCustomization);
-}
-
+@override@JsonKey() final  List<Geofence> geofences;
+@override@JsonKey() final  List<String> geofencesIds;
+@override@JsonKey() final  List<MapCardSensors> mapCardCustomization;
 @override final  GeoPoint? mapCenterCoordinates;
 @override@JsonKey(unknownEnumValue: MapCenterMode.bounds) final  MapCenterMode? mapCenterMode;
 /// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
 /// if the analytics monitor is enabled.
 /// Also, [analyticsGridStructure] indicates the visual structure of the charts
 @override@JsonKey() final  bool analyticsEnabled;
- final  List<LayrzChart> _charts;
-@override@JsonKey() List<LayrzChart> get charts {
-  if (_charts is EqualUnmodifiableListView) return _charts;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_charts);
-}
-
- final  List<String> _chartsIds;
-@override@JsonKey() List<String> get chartsIds {
-  if (_chartsIds is EqualUnmodifiableListView) return _chartsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_chartsIds);
-}
-
- final  List<AnalyticsGridItem> _analyticsGridStructure;
-@override@JsonKey() List<AnalyticsGridItem> get analyticsGridStructure {
-  if (_analyticsGridStructure is EqualUnmodifiableListView) return _analyticsGridStructure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_analyticsGridStructure);
-}
-
+@override@JsonKey() final  List<LayrzChart> charts;
+@override@JsonKey() final  List<String> chartsIds;
+@override@JsonKey() final  List<AnalyticsGridItem> analyticsGridStructure;
 /// [sensorsEnabled] indicates if the sensors sensors monitor is enabled
 /// Also, [sensorsGridStructure] indicates the visual structure of the sensors
 @override@JsonKey() final  bool sensorsEnabled;
- final  List<SensorGridItem> _sensorsGridStructure;
-@override@JsonKey() List<SensorGridItem> get sensorsGridStructure {
-  if (_sensorsGridStructure is EqualUnmodifiableListView) return _sensorsGridStructure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_sensorsGridStructure);
-}
-
+@override@JsonKey() final  List<SensorGridItem> sensorsGridStructure;
 /// Metric system of the workspace
 @override@JsonKey(unknownEnumValue: MetricSystem.metric) final  MetricSystem? metricSystem;
 @override final  Timezone? timezone;
 /// [access] indicates the access of the workspace
- final  List<Access>? _access;
-/// [access] indicates the access of the workspace
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// [tableEnabled] indicates if the table functionality is enabled
 @override@JsonKey() final  bool tableEnabled;
 /// [tableStructure] indicates the structure of the table
@@ -534,12 +411,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Workspace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.typeApp, typeApp) || other.typeApp == typeApp)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.background, background) || other.background == background)&&(identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite)&&(identical(other.mainView, mainView) || other.mainView == mainView)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._inboundServices, _inboundServices)&&const DeepCollectionEquality().equals(other._inboundServicesIds, _inboundServicesIds)&&const DeepCollectionEquality().equals(other._outboundServices, _outboundServices)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&(identical(other.casesEnabled, casesEnabled) || other.casesEnabled == casesEnabled)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&const DeepCollectionEquality().equals(other._casesMonitorConfig, _casesMonitorConfig)&&(identical(other.checkpointsEnabled, checkpointsEnabled) || other.checkpointsEnabled == checkpointsEnabled)&&const DeepCollectionEquality().equals(other._checkpoints, _checkpoints)&&const DeepCollectionEquality().equals(other._checkpointsIds, _checkpointsIds)&&(identical(other.mapEnabled, mapEnabled) || other.mapEnabled == mapEnabled)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._mapCardCustomization, _mapCardCustomization)&&(identical(other.mapCenterCoordinates, mapCenterCoordinates) || other.mapCenterCoordinates == mapCenterCoordinates)&&(identical(other.mapCenterMode, mapCenterMode) || other.mapCenterMode == mapCenterMode)&&(identical(other.analyticsEnabled, analyticsEnabled) || other.analyticsEnabled == analyticsEnabled)&&const DeepCollectionEquality().equals(other._charts, _charts)&&const DeepCollectionEquality().equals(other._chartsIds, _chartsIds)&&const DeepCollectionEquality().equals(other._analyticsGridStructure, _analyticsGridStructure)&&(identical(other.sensorsEnabled, sensorsEnabled) || other.sensorsEnabled == sensorsEnabled)&&const DeepCollectionEquality().equals(other._sensorsGridStructure, _sensorsGridStructure)&&(identical(other.metricSystem, metricSystem) || other.metricSystem == metricSystem)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.tableEnabled, tableEnabled) || other.tableEnabled == tableEnabled)&&(identical(other.tableStructure, tableStructure) || other.tableStructure == tableStructure));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Workspace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.typeApp, typeApp) || other.typeApp == typeApp)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.background, background) || other.background == background)&&(identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite)&&(identical(other.mainView, mainView) || other.mainView == mainView)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.inboundServices, inboundServices)&&const DeepCollectionEquality().equals(other.inboundServicesIds, inboundServicesIds)&&const DeepCollectionEquality().equals(other.outboundServices, outboundServices)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&(identical(other.casesEnabled, casesEnabled) || other.casesEnabled == casesEnabled)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&const DeepCollectionEquality().equals(other.casesMonitorConfig, casesMonitorConfig)&&(identical(other.checkpointsEnabled, checkpointsEnabled) || other.checkpointsEnabled == checkpointsEnabled)&&const DeepCollectionEquality().equals(other.checkpoints, checkpoints)&&const DeepCollectionEquality().equals(other.checkpointsIds, checkpointsIds)&&(identical(other.mapEnabled, mapEnabled) || other.mapEnabled == mapEnabled)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.mapCardCustomization, mapCardCustomization)&&(identical(other.mapCenterCoordinates, mapCenterCoordinates) || other.mapCenterCoordinates == mapCenterCoordinates)&&(identical(other.mapCenterMode, mapCenterMode) || other.mapCenterMode == mapCenterMode)&&(identical(other.analyticsEnabled, analyticsEnabled) || other.analyticsEnabled == analyticsEnabled)&&const DeepCollectionEquality().equals(other.charts, charts)&&const DeepCollectionEquality().equals(other.chartsIds, chartsIds)&&const DeepCollectionEquality().equals(other.analyticsGridStructure, analyticsGridStructure)&&(identical(other.sensorsEnabled, sensorsEnabled) || other.sensorsEnabled == sensorsEnabled)&&const DeepCollectionEquality().equals(other.sensorsGridStructure, sensorsGridStructure)&&(identical(other.metricSystem, metricSystem) || other.metricSystem == metricSystem)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.tableEnabled, tableEnabled) || other.tableEnabled == tableEnabled)&&(identical(other.tableStructure, tableStructure) || other.tableStructure == tableStructure));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,typeApp,color,icon,background,isFavorite,mainView,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_inboundServices),const DeepCollectionEquality().hash(_inboundServicesIds),const DeepCollectionEquality().hash(_outboundServices),const DeepCollectionEquality().hash(_outboundServicesIds),casesEnabled,const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),const DeepCollectionEquality().hash(_casesMonitorConfig),checkpointsEnabled,const DeepCollectionEquality().hash(_checkpoints),const DeepCollectionEquality().hash(_checkpointsIds),mapEnabled,const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_mapCardCustomization),mapCenterCoordinates,mapCenterMode,analyticsEnabled,const DeepCollectionEquality().hash(_charts),const DeepCollectionEquality().hash(_chartsIds),const DeepCollectionEquality().hash(_analyticsGridStructure),sensorsEnabled,const DeepCollectionEquality().hash(_sensorsGridStructure),metricSystem,timezone,const DeepCollectionEquality().hash(_access),tableEnabled,tableStructure]);
+int get hashCode => Object.hashAll([runtimeType,id,name,typeApp,color,icon,background,isFavorite,mainView,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(inboundServices),const DeepCollectionEquality().hash(inboundServicesIds),const DeepCollectionEquality().hash(outboundServices),const DeepCollectionEquality().hash(outboundServicesIds),casesEnabled,const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),const DeepCollectionEquality().hash(casesMonitorConfig),checkpointsEnabled,const DeepCollectionEquality().hash(checkpoints),const DeepCollectionEquality().hash(checkpointsIds),mapEnabled,const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(mapCardCustomization),mapCenterCoordinates,mapCenterMode,analyticsEnabled,const DeepCollectionEquality().hash(charts),const DeepCollectionEquality().hash(chartsIds),const DeepCollectionEquality().hash(analyticsGridStructure),sensorsEnabled,const DeepCollectionEquality().hash(sensorsGridStructure),metricSystem,timezone,const DeepCollectionEquality().hash(access),tableEnabled,tableStructure]);
 
 @override
 String toString() {
@@ -581,34 +458,34 @@ as Color?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_
 as MdiRemapIcon?,background: freezed == background ? _self.background : background // ignore: cast_nullable_to_non_nullable
 as String?,isFavorite: freezed == isFavorite ? _self.isFavorite : isFavorite // ignore: cast_nullable_to_non_nullable
 as bool?,mainView: null == mainView ? _self.mainView : mainView // ignore: cast_nullable_to_non_nullable
-as WorkspaceMainView,assets: null == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>,assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,inboundServices: null == inboundServices ? _self._inboundServices : inboundServices // ignore: cast_nullable_to_non_nullable
-as List<InboundService>,inboundServicesIds: null == inboundServicesIds ? _self._inboundServicesIds : inboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>,outboundServices: null == outboundServices ? _self._outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
-as List<OutboundService>,outboundServicesIds: null == outboundServicesIds ? _self._outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+as WorkspaceMainView,assets: null == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,inboundServices: null == inboundServices ? _self.inboundServices : inboundServices // ignore: cast_nullable_to_non_nullable
+as List<InboundService>,inboundServicesIds: null == inboundServicesIds ? _self.inboundServicesIds : inboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,outboundServices: null == outboundServices ? _self.outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
+as List<OutboundService>,outboundServicesIds: null == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,casesEnabled: null == casesEnabled ? _self.casesEnabled : casesEnabled // ignore: cast_nullable_to_non_nullable
-as bool,triggers: null == triggers ? _self._triggers : triggers // ignore: cast_nullable_to_non_nullable
-as List<Trigger>,triggersIds: null == triggersIds ? _self._triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
-as List<String>,casesMonitorConfig: null == casesMonitorConfig ? _self._casesMonitorConfig : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
+as bool,triggers: null == triggers ? _self.triggers : triggers // ignore: cast_nullable_to_non_nullable
+as List<Trigger>,triggersIds: null == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
+as List<String>,casesMonitorConfig: null == casesMonitorConfig ? _self.casesMonitorConfig : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
 as List<CaseMonitorCard?>,checkpointsEnabled: null == checkpointsEnabled ? _self.checkpointsEnabled : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
-as bool,checkpoints: null == checkpoints ? _self._checkpoints : checkpoints // ignore: cast_nullable_to_non_nullable
-as List<Checkpoint>,checkpointsIds: null == checkpointsIds ? _self._checkpointsIds : checkpointsIds // ignore: cast_nullable_to_non_nullable
+as bool,checkpoints: null == checkpoints ? _self.checkpoints : checkpoints // ignore: cast_nullable_to_non_nullable
+as List<Checkpoint>,checkpointsIds: null == checkpointsIds ? _self.checkpointsIds : checkpointsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,mapEnabled: null == mapEnabled ? _self.mapEnabled : mapEnabled // ignore: cast_nullable_to_non_nullable
-as bool,geofences: null == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>,geofencesIds: null == geofencesIds ? _self._geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>,mapCardCustomization: null == mapCardCustomization ? _self._mapCardCustomization : mapCardCustomization // ignore: cast_nullable_to_non_nullable
+as bool,geofences: null == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>,geofencesIds: null == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>,mapCardCustomization: null == mapCardCustomization ? _self.mapCardCustomization : mapCardCustomization // ignore: cast_nullable_to_non_nullable
 as List<MapCardSensors>,mapCenterCoordinates: freezed == mapCenterCoordinates ? _self.mapCenterCoordinates : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
 as GeoPoint?,mapCenterMode: freezed == mapCenterMode ? _self.mapCenterMode : mapCenterMode // ignore: cast_nullable_to_non_nullable
 as MapCenterMode?,analyticsEnabled: null == analyticsEnabled ? _self.analyticsEnabled : analyticsEnabled // ignore: cast_nullable_to_non_nullable
-as bool,charts: null == charts ? _self._charts : charts // ignore: cast_nullable_to_non_nullable
-as List<LayrzChart>,chartsIds: null == chartsIds ? _self._chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,analyticsGridStructure: null == analyticsGridStructure ? _self._analyticsGridStructure : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
+as bool,charts: null == charts ? _self.charts : charts // ignore: cast_nullable_to_non_nullable
+as List<LayrzChart>,chartsIds: null == chartsIds ? _self.chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,analyticsGridStructure: null == analyticsGridStructure ? _self.analyticsGridStructure : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
 as List<AnalyticsGridItem>,sensorsEnabled: null == sensorsEnabled ? _self.sensorsEnabled : sensorsEnabled // ignore: cast_nullable_to_non_nullable
-as bool,sensorsGridStructure: null == sensorsGridStructure ? _self._sensorsGridStructure : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
+as bool,sensorsGridStructure: null == sensorsGridStructure ? _self.sensorsGridStructure : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
 as List<SensorGridItem>,metricSystem: freezed == metricSystem ? _self.metricSystem : metricSystem // ignore: cast_nullable_to_non_nullable
 as MetricSystem?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
-as Timezone?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as Timezone?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,tableEnabled: null == tableEnabled ? _self.tableEnabled : tableEnabled // ignore: cast_nullable_to_non_nullable
 as bool,tableStructure: freezed == tableStructure ? _self.tableStructure : tableStructure // ignore: cast_nullable_to_non_nullable
 as TableItem?,
@@ -1545,7 +1422,7 @@ return $default(_that.latitude,_that.longitude,_that.speed,_that.triggerName,_th
 @JsonSerializable()
 
 class _WorkspaceTripPoint implements WorkspaceTripPoint {
-  const _WorkspaceTripPoint({this.latitude, this.longitude, this.speed, this.triggerName, this.triggerId, @TimestampConverter() required this.receivedAt, this.eventId, final  Map<String, dynamic>? sensors}): _sensors = sensors;
+  const _WorkspaceTripPoint({this.latitude, this.longitude, this.speed, this.triggerName, this.triggerId, @TimestampConverter() required this.receivedAt, this.eventId, this.sensors});
   factory _WorkspaceTripPoint.fromJson(Map<String, dynamic> json) => _$WorkspaceTripPointFromJson(json);
 
 @override final  double? latitude;
@@ -1555,15 +1432,7 @@ class _WorkspaceTripPoint implements WorkspaceTripPoint {
 @override final  String? triggerId;
 @override@TimestampConverter() final  DateTime receivedAt;
 @override final  String? eventId;
- final  Map<String, dynamic>? _sensors;
-@override Map<String, dynamic>? get sensors {
-  final value = _sensors;
-  if (value == null) return null;
-  if (_sensors is EqualUnmodifiableMapView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? sensors;
 
 /// Create a copy of WorkspaceTripPoint
 /// with the given fields replaced by the non-null parameter values.
@@ -1578,12 +1447,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkspaceTripPoint&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.speed, speed) || other.speed == speed)&&(identical(other.triggerName, triggerName) || other.triggerName == triggerName)&&(identical(other.triggerId, triggerId) || other.triggerId == triggerId)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.eventId, eventId) || other.eventId == eventId)&&const DeepCollectionEquality().equals(other._sensors, _sensors));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkspaceTripPoint&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.speed, speed) || other.speed == speed)&&(identical(other.triggerName, triggerName) || other.triggerName == triggerName)&&(identical(other.triggerId, triggerId) || other.triggerId == triggerId)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.eventId, eventId) || other.eventId == eventId)&&const DeepCollectionEquality().equals(other.sensors, sensors));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,latitude,longitude,speed,triggerName,triggerId,receivedAt,eventId,const DeepCollectionEquality().hash(_sensors));
+int get hashCode => Object.hash(runtimeType,latitude,longitude,speed,triggerName,triggerId,receivedAt,eventId,const DeepCollectionEquality().hash(sensors));
 
 @override
 String toString() {
@@ -1624,7 +1493,7 @@ as double?,triggerName: freezed == triggerName ? _self.triggerName : triggerName
 as String?,triggerId: freezed == triggerId ? _self.triggerId : triggerId // ignore: cast_nullable_to_non_nullable
 as String?,receivedAt: null == receivedAt ? _self.receivedAt : receivedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,eventId: freezed == eventId ? _self.eventId : eventId // ignore: cast_nullable_to_non_nullable
-as String?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as String?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -1832,18 +1701,12 @@ return $default(_that.assetId,_that.assetName,_that.points);case _:
 @JsonSerializable()
 
 class _WorkspaceTrip implements WorkspaceTrip {
-  const _WorkspaceTrip({required this.assetId, required this.assetName, final  List<WorkspaceTripPoint> points = const []}): _points = points;
+  const _WorkspaceTrip({required this.assetId, required this.assetName, this.points = const []});
   factory _WorkspaceTrip.fromJson(Map<String, dynamic> json) => _$WorkspaceTripFromJson(json);
 
 @override final  String assetId;
 @override final  String assetName;
- final  List<WorkspaceTripPoint> _points;
-@override@JsonKey() List<WorkspaceTripPoint> get points {
-  if (_points is EqualUnmodifiableListView) return _points;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_points);
-}
-
+@override@JsonKey() final  List<WorkspaceTripPoint> points;
 
 /// Create a copy of WorkspaceTrip
 /// with the given fields replaced by the non-null parameter values.
@@ -1858,12 +1721,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkspaceTrip&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.assetName, assetName) || other.assetName == assetName)&&const DeepCollectionEquality().equals(other._points, _points));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkspaceTrip&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.assetName, assetName) || other.assetName == assetName)&&const DeepCollectionEquality().equals(other.points, points));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetId,assetName,const DeepCollectionEquality().hash(_points));
+int get hashCode => Object.hash(runtimeType,assetId,assetName,const DeepCollectionEquality().hash(points));
 
 @override
 String toString() {
@@ -1899,7 +1762,7 @@ class __$WorkspaceTripCopyWithImpl<$Res>
   return _then(_WorkspaceTrip(
 assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String,assetName: null == assetName ? _self.assetName : assetName // ignore: cast_nullable_to_non_nullable
-as String,points: null == points ? _self._points : points // ignore: cast_nullable_to_non_nullable
+as String,points: null == points ? _self.points : points // ignore: cast_nullable_to_non_nullable
 as List<WorkspaceTripPoint>,
   ));
 }
@@ -3177,7 +3040,7 @@ return $default(_that.chartId,_that.name,_that.assetsIds,_that.dimensions);case 
 @JsonSerializable()
 
 class _AnalyticsGridItem implements AnalyticsGridItem {
-  const _AnalyticsGridItem({this.chartId, this.name, final  List<String> assetsIds = const [], required this.dimensions}): _assetsIds = assetsIds;
+  const _AnalyticsGridItem({this.chartId, this.name, this.assetsIds = const [], required this.dimensions});
   factory _AnalyticsGridItem.fromJson(Map<String, dynamic> json) => _$AnalyticsGridItemFromJson(json);
 
 /// [chartId] is the Chart ID
@@ -3185,14 +3048,7 @@ class _AnalyticsGridItem implements AnalyticsGridItem {
 /// [name] is the name of the chart
 @override final  String? name;
 //// [assetsIds] is the list of asset IDs linked to the chart
- final  List<String> _assetsIds;
-//// [assetsIds] is the list of asset IDs linked to the chart
-@override@JsonKey() List<String> get assetsIds {
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_assetsIds);
-}
-
+@override@JsonKey() final  List<String> assetsIds;
 /// [dimensions] Represents the dimension of the sensor
 @override final  GridDimension dimensions;
 
@@ -3209,12 +3065,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AnalyticsGridItem&&(identical(other.chartId, chartId) || other.chartId == chartId)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AnalyticsGridItem&&(identical(other.chartId, chartId) || other.chartId == chartId)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,chartId,name,const DeepCollectionEquality().hash(_assetsIds),dimensions);
+int get hashCode => Object.hash(runtimeType,chartId,name,const DeepCollectionEquality().hash(assetsIds),dimensions);
 
 @override
 String toString() {
@@ -3250,7 +3106,7 @@ class __$AnalyticsGridItemCopyWithImpl<$Res>
   return _then(_AnalyticsGridItem(
 chartId: freezed == chartId ? _self.chartId : chartId // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String?,assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
 as GridDimension,
   ));
@@ -3775,7 +3631,7 @@ return $default(_that.objectId,_that.kind,_that.dimensions,_that.color,_that.sen
 @JsonSerializable()
 
 class _SensorGridItem implements SensorGridItem {
-  const _SensorGridItem({this.objectId, @JsonKey(unknownEnumValue: WorkspaceCardType.asset) required this.kind, this.dimensions, @ColorConverter() this.color = Colors.white, final  List<SensorGridContent> sensors = const []}): _sensors = sensors;
+  const _SensorGridItem({this.objectId, @JsonKey(unknownEnumValue: WorkspaceCardType.asset) required this.kind, this.dimensions, @ColorConverter() this.color = Colors.white, this.sensors = const []});
   factory _SensorGridItem.fromJson(Map<String, dynamic> json) => _$SensorGridItemFromJson(json);
 
 /// Represents the Asset ID
@@ -3787,14 +3643,7 @@ class _SensorGridItem implements SensorGridItem {
 /// Represents the color of the card
 @override@JsonKey()@ColorConverter() final  Color color;
 /// Represents the sensors of the card
- final  List<SensorGridContent> _sensors;
-/// Represents the sensors of the card
-@override@JsonKey() List<SensorGridContent> get sensors {
-  if (_sensors is EqualUnmodifiableListView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_sensors);
-}
-
+@override@JsonKey() final  List<SensorGridContent> sensors;
 
 /// Create a copy of SensorGridItem
 /// with the given fields replaced by the non-null parameter values.
@@ -3809,12 +3658,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SensorGridItem&&(identical(other.objectId, objectId) || other.objectId == objectId)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions)&&(identical(other.color, color) || other.color == color)&&const DeepCollectionEquality().equals(other._sensors, _sensors));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SensorGridItem&&(identical(other.objectId, objectId) || other.objectId == objectId)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions)&&(identical(other.color, color) || other.color == color)&&const DeepCollectionEquality().equals(other.sensors, sensors));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,objectId,kind,dimensions,color,const DeepCollectionEquality().hash(_sensors));
+int get hashCode => Object.hash(runtimeType,objectId,kind,dimensions,color,const DeepCollectionEquality().hash(sensors));
 
 @override
 String toString() {
@@ -3852,7 +3701,7 @@ objectId: freezed == objectId ? _self.objectId : objectId // ignore: cast_nullab
 as String?,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as WorkspaceCardType,dimensions: freezed == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
 as GridDimension?,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
-as Color,sensors: null == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as Color,sensors: null == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as List<SensorGridContent>,
   ));
 }
@@ -6737,7 +6586,7 @@ return $default(_that.enabled,_that.mode,_that.values);case _:
 @JsonSerializable()
 
 class _MapCardSensorsConfiguration implements MapCardSensorsConfiguration {
-  const _MapCardSensorsConfiguration({this.enabled = true, @JsonKey(unknownEnumValue: MapSensorMode.grid) this.mode = MapSensorMode.grid, final  List<String> values = const []}): _values = values;
+  const _MapCardSensorsConfiguration({this.enabled = true, @JsonKey(unknownEnumValue: MapSensorMode.grid) this.mode = MapSensorMode.grid, this.values = const []});
   factory _MapCardSensorsConfiguration.fromJson(Map<String, dynamic> json) => _$MapCardSensorsConfigurationFromJson(json);
 
 /// Indicates if the sensor segment is enabled.
@@ -6745,14 +6594,7 @@ class _MapCardSensorsConfiguration implements MapCardSensorsConfiguration {
 /// Represents the format of the sensor list.
 @override@JsonKey(unknownEnumValue: MapSensorMode.grid) final  MapSensorMode mode;
 /// Indicates the sensors assigned
- final  List<String> _values;
-/// Indicates the sensors assigned
-@override@JsonKey() List<String> get values {
-  if (_values is EqualUnmodifiableListView) return _values;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_values);
-}
-
+@override@JsonKey() final  List<String> values;
 
 /// Create a copy of MapCardSensorsConfiguration
 /// with the given fields replaced by the non-null parameter values.
@@ -6767,12 +6609,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MapCardSensorsConfiguration&&(identical(other.enabled, enabled) || other.enabled == enabled)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other._values, _values));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MapCardSensorsConfiguration&&(identical(other.enabled, enabled) || other.enabled == enabled)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other.values, values));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,enabled,mode,const DeepCollectionEquality().hash(_values));
+int get hashCode => Object.hash(runtimeType,enabled,mode,const DeepCollectionEquality().hash(values));
 
 @override
 String toString() {
@@ -6808,7 +6650,7 @@ class __$MapCardSensorsConfigurationCopyWithImpl<$Res>
   return _then(_MapCardSensorsConfiguration(
 enabled: null == enabled ? _self.enabled : enabled // ignore: cast_nullable_to_non_nullable
 as bool,mode: null == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
-as MapSensorMode,values: null == values ? _self._values : values // ignore: cast_nullable_to_non_nullable
+as MapSensorMode,values: null == values ? _self.values : values // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
@@ -7283,36 +7125,15 @@ return $default(_that.assetsIds,_that.sensorsIds,_that.attributes);case _:
 @JsonSerializable()
 
 class _TableItem extends TableItem {
-  const _TableItem({final  List<String> assetsIds = const [], final  List<String> sensorsIds = const [], final  List<String> attributes = const []}): _assetsIds = assetsIds,_sensorsIds = sensorsIds,_attributes = attributes,super._();
+  const _TableItem({this.assetsIds = const [], this.sensorsIds = const [], this.attributes = const []}): super._();
   factory _TableItem.fromJson(Map<String, dynamic> json) => _$TableItemFromJson(json);
 
 /// [assetsIds] is the list of ids of the [assets] associated with the table
- final  List<String> _assetsIds;
-/// [assetsIds] is the list of ids of the [assets] associated with the table
-@override@JsonKey() List<String> get assetsIds {
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_assetsIds);
-}
-
+@override@JsonKey() final  List<String> assetsIds;
 /// [sensorsIds] is the list of ids of the [sensors] associated with the table
- final  List<String> _sensorsIds;
-/// [sensorsIds] is the list of ids of the [sensors] associated with the table
-@override@JsonKey() List<String> get sensorsIds {
-  if (_sensorsIds is EqualUnmodifiableListView) return _sensorsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_sensorsIds);
-}
-
+@override@JsonKey() final  List<String> sensorsIds;
 /// [attributes] is the list of  assets [attributes] associated with the table
- final  List<String> _attributes;
-/// [attributes] is the list of  assets [attributes] associated with the table
-@override@JsonKey() List<String> get attributes {
-  if (_attributes is EqualUnmodifiableListView) return _attributes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_attributes);
-}
-
+@override@JsonKey() final  List<String> attributes;
 
 /// Create a copy of TableItem
 /// with the given fields replaced by the non-null parameter values.
@@ -7327,12 +7148,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TableItem&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._sensorsIds, _sensorsIds)&&const DeepCollectionEquality().equals(other._attributes, _attributes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TableItem&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.sensorsIds, sensorsIds)&&const DeepCollectionEquality().equals(other.attributes, attributes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_sensorsIds),const DeepCollectionEquality().hash(_attributes));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(sensorsIds),const DeepCollectionEquality().hash(attributes));
 
 @override
 String toString() {
@@ -7366,9 +7187,9 @@ class __$TableItemCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? assetsIds = null,Object? sensorsIds = null,Object? attributes = null,}) {
   return _then(_TableItem(
-assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,sensorsIds: null == sensorsIds ? _self._sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,attributes: null == attributes ? _self._attributes : attributes // ignore: cast_nullable_to_non_nullable
+assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,sensorsIds: null == sensorsIds ? _self.sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,attributes: null == attributes ? _self.attributes : attributes // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }

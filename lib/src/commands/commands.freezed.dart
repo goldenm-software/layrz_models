@@ -214,7 +214,7 @@ return $default(_that.source,_that.definition,_that.payload);case _:
 @JsonSerializable()
 
 class _CommandData extends CommandData {
-  const _CommandData({required this.source, required this.definition, final  Map<String, dynamic>? payload}): _payload = payload,super._();
+  const _CommandData({required this.source, required this.definition, this.payload}): super._();
   factory _CommandData.fromJson(Map<String, dynamic> json) => _$CommandDataFromJson(json);
 
 /// [source] is the source of the command.
@@ -222,16 +222,7 @@ class _CommandData extends CommandData {
 /// [definition] is the definition of the command.
 @override final  String definition;
 /// [payload] is the list of parameters of the command.
- final  Map<String, dynamic>? _payload;
-/// [payload] is the list of parameters of the command.
-@override Map<String, dynamic>? get payload {
-  final value = _payload;
-  if (value == null) return null;
-  if (_payload is EqualUnmodifiableMapView) return _payload;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? payload;
 
 /// Create a copy of CommandData
 /// with the given fields replaced by the non-null parameter values.
@@ -246,12 +237,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CommandData&&(identical(other.source, source) || other.source == source)&&(identical(other.definition, definition) || other.definition == definition)&&const DeepCollectionEquality().equals(other._payload, _payload));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CommandData&&(identical(other.source, source) || other.source == source)&&(identical(other.definition, definition) || other.definition == definition)&&const DeepCollectionEquality().equals(other.payload, payload));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,source,definition,const DeepCollectionEquality().hash(_payload));
+int get hashCode => Object.hash(runtimeType,source,definition,const DeepCollectionEquality().hash(payload));
 
 @override
 String toString() {
@@ -287,7 +278,7 @@ class __$CommandDataCopyWithImpl<$Res>
   return _then(_CommandData(
 source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
 as CommandDefinitionSource,definition: null == definition ? _self.definition : definition // ignore: cast_nullable_to_non_nullable
-as String,payload: freezed == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
+as String,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -1143,7 +1134,7 @@ return $default(_that.id,_that.name,_that.possibleDevices);case _:
 @JsonSerializable()
 
 class _AssetCommand implements AssetCommand {
-  const _AssetCommand({required this.id, required this.name, final  List<AssetCommandPossibleDevice> possibleDevices = const []}): _possibleDevices = possibleDevices;
+  const _AssetCommand({required this.id, required this.name, this.possibleDevices = const []});
   factory _AssetCommand.fromJson(Map<String, dynamic> json) => _$AssetCommandFromJson(json);
 
 /// [id] is the id of the command.
@@ -1151,14 +1142,7 @@ class _AssetCommand implements AssetCommand {
 /// [name] is the name of the command.
 @override final  String name;
 /// [possibleDevices] is the list of possible devices for the command.
- final  List<AssetCommandPossibleDevice> _possibleDevices;
-/// [possibleDevices] is the list of possible devices for the command.
-@override@JsonKey() List<AssetCommandPossibleDevice> get possibleDevices {
-  if (_possibleDevices is EqualUnmodifiableListView) return _possibleDevices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_possibleDevices);
-}
-
+@override@JsonKey() final  List<AssetCommandPossibleDevice> possibleDevices;
 
 /// Create a copy of AssetCommand
 /// with the given fields replaced by the non-null parameter values.
@@ -1173,12 +1157,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetCommand&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._possibleDevices, _possibleDevices));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetCommand&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.possibleDevices, possibleDevices));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_possibleDevices));
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(possibleDevices));
 
 @override
 String toString() {
@@ -1214,7 +1198,7 @@ class __$AssetCommandCopyWithImpl<$Res>
   return _then(_AssetCommand(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,possibleDevices: null == possibleDevices ? _self._possibleDevices : possibleDevices // ignore: cast_nullable_to_non_nullable
+as String,possibleDevices: null == possibleDevices ? _self.possibleDevices : possibleDevices // ignore: cast_nullable_to_non_nullable
 as List<AssetCommandPossibleDevice>,
   ));
 }
@@ -1788,7 +1772,7 @@ return $default(_that.id,_that.name,_that.source,_that.isGlobal,_that.payload,_t
 @JsonSerializable()
 
 class _DeviceCommand extends DeviceCommand {
-  const _DeviceCommand({required this.id, required this.name, required this.source, this.isGlobal = false, this.payload, this.tagId, this.deviceId, this.protocolId, this.protocol, this.modelId, this.model, this.definition, this.externalAccountId, this.data, this.modbusParameter, this.modbusPort, final  List<Access>? access, final  List<Device>? possibleDevices}): _access = access,_possibleDevices = possibleDevices,super._();
+  const _DeviceCommand({required this.id, required this.name, required this.source, this.isGlobal = false, this.payload, this.tagId, this.deviceId, this.protocolId, this.protocol, this.modelId, this.model, this.definition, this.externalAccountId, this.data, this.modbusParameter, this.modbusPort, this.access, this.possibleDevices}): super._();
   factory _DeviceCommand.fromJson(Map<String, dynamic> json) => _$DeviceCommandFromJson(json);
 
 @override final  String id;
@@ -1834,27 +1818,9 @@ class _DeviceCommand extends DeviceCommand {
 /// This parameter contains the port number of the modbus command.
 @override final  String? modbusPort;
 /// Is a list of granted access to this entity.
- final  List<Access>? _access;
-/// Is a list of granted access to this entity.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// List of possible devices that can perform this command.
- final  List<Device>? _possibleDevices;
-/// List of possible devices that can perform this command.
-@override List<Device>? get possibleDevices {
-  final value = _possibleDevices;
-  if (value == null) return null;
-  if (_possibleDevices is EqualUnmodifiableListView) return _possibleDevices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Device>? possibleDevices;
 
 /// Create a copy of DeviceCommand
 /// with the given fields replaced by the non-null parameter values.
@@ -1869,12 +1835,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeviceCommand&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.source, source) || other.source == source)&&(identical(other.isGlobal, isGlobal) || other.isGlobal == isGlobal)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.tagId, tagId) || other.tagId == tagId)&&(identical(other.deviceId, deviceId) || other.deviceId == deviceId)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.definition, definition) || other.definition == definition)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&(identical(other.data, data) || other.data == data)&&(identical(other.modbusParameter, modbusParameter) || other.modbusParameter == modbusParameter)&&(identical(other.modbusPort, modbusPort) || other.modbusPort == modbusPort)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._possibleDevices, _possibleDevices));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeviceCommand&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.source, source) || other.source == source)&&(identical(other.isGlobal, isGlobal) || other.isGlobal == isGlobal)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.tagId, tagId) || other.tagId == tagId)&&(identical(other.deviceId, deviceId) || other.deviceId == deviceId)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.definition, definition) || other.definition == definition)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&(identical(other.data, data) || other.data == data)&&(identical(other.modbusParameter, modbusParameter) || other.modbusParameter == modbusParameter)&&(identical(other.modbusPort, modbusPort) || other.modbusPort == modbusPort)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.possibleDevices, possibleDevices));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,source,isGlobal,payload,tagId,deviceId,protocolId,protocol,modelId,model,definition,externalAccountId,data,modbusParameter,modbusPort,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_possibleDevices));
+int get hashCode => Object.hash(runtimeType,id,name,source,isGlobal,payload,tagId,deviceId,protocolId,protocol,modelId,model,definition,externalAccountId,data,modbusParameter,modbusPort,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(possibleDevices));
 
 @override
 String toString() {
@@ -1924,8 +1890,8 @@ as String?,externalAccountId: freezed == externalAccountId ? _self.externalAccou
 as String?,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as CommandData?,modbusParameter: freezed == modbusParameter ? _self.modbusParameter : modbusParameter // ignore: cast_nullable_to_non_nullable
 as ModbusParameter?,modbusPort: freezed == modbusPort ? _self.modbusPort : modbusPort // ignore: cast_nullable_to_non_nullable
-as String?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,possibleDevices: freezed == possibleDevices ? _self._possibleDevices : possibleDevices // ignore: cast_nullable_to_non_nullable
+as String?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as List<Access>?,possibleDevices: freezed == possibleDevices ? _self.possibleDevices : possibleDevices // ignore: cast_nullable_to_non_nullable
 as List<Device>?,
   ));
 }
@@ -2188,7 +2154,7 @@ return $default(_that.name,_that.description,_that.sources,_that.payload,_that.t
 @JsonSerializable()
 
 class _CommandDefinition implements CommandDefinition {
-  const _CommandDefinition({required this.name, this.description, @CommandDefinitionSourceConverter() required final  List<CommandDefinitionSource> sources, required final  List<CommandPayloadDefinition> payload, this.translationKey}): _sources = sources,_payload = payload;
+  const _CommandDefinition({required this.name, this.description, @CommandDefinitionSourceConverter() required this.sources, required this.payload, this.translationKey});
   factory _CommandDefinition.fromJson(Map<String, dynamic> json) => _$CommandDefinitionFromJson(json);
 
 /// [name] is the name of the command, this is also the translation key.
@@ -2196,23 +2162,9 @@ class _CommandDefinition implements CommandDefinition {
 /// [description] is the fallback name of the command, when the translation is not available.
 @override final  String? description;
 /// [source] is the source of the command.
- final  List<CommandDefinitionSource> _sources;
-/// [source] is the source of the command.
-@override@CommandDefinitionSourceConverter() List<CommandDefinitionSource> get sources {
-  if (_sources is EqualUnmodifiableListView) return _sources;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_sources);
-}
-
+@override@CommandDefinitionSourceConverter() final  List<CommandDefinitionSource> sources;
 /// [payload] is the list of parameters of the command.
- final  List<CommandPayloadDefinition> _payload;
-/// [payload] is the list of parameters of the command.
-@override List<CommandPayloadDefinition> get payload {
-  if (_payload is EqualUnmodifiableListView) return _payload;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_payload);
-}
-
+@override final  List<CommandPayloadDefinition> payload;
 /// [translationKey] is the translation key of the command.
 @override final  String? translationKey;
 
@@ -2229,12 +2181,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CommandDefinition&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._sources, _sources)&&const DeepCollectionEquality().equals(other._payload, _payload)&&(identical(other.translationKey, translationKey) || other.translationKey == translationKey));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CommandDefinition&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.sources, sources)&&const DeepCollectionEquality().equals(other.payload, payload)&&(identical(other.translationKey, translationKey) || other.translationKey == translationKey));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,description,const DeepCollectionEquality().hash(_sources),const DeepCollectionEquality().hash(_payload),translationKey);
+int get hashCode => Object.hash(runtimeType,name,description,const DeepCollectionEquality().hash(sources),const DeepCollectionEquality().hash(payload),translationKey);
 
 @override
 String toString() {
@@ -2270,8 +2222,8 @@ class __$CommandDefinitionCopyWithImpl<$Res>
   return _then(_CommandDefinition(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,sources: null == sources ? _self._sources : sources // ignore: cast_nullable_to_non_nullable
-as List<CommandDefinitionSource>,payload: null == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
+as String?,sources: null == sources ? _self.sources : sources // ignore: cast_nullable_to_non_nullable
+as List<CommandDefinitionSource>,payload: null == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as List<CommandPayloadDefinition>,translationKey: freezed == translationKey ? _self.translationKey : translationKey // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -2779,7 +2731,7 @@ return $default(_that.parameter,_that.description,_that.dataType,_that.isRequire
 @JsonSerializable()
 
 class _CommandPayloadDefinition implements CommandPayloadDefinition {
-  const _CommandPayloadDefinition({required this.parameter, this.description, @CommandPayloadDataTypeConverter() required this.dataType, this.isRequired, this.minValue, this.maxValue, this.minLength, this.maxLength, final  List<String>? choices, @RegExpOrNullConverter() this.regexPattern, final  List<CommandPayloadDefinition>? nested, this.maxQuantity}): _choices = choices,_nested = nested;
+  const _CommandPayloadDefinition({required this.parameter, this.description, @CommandPayloadDataTypeConverter() required this.dataType, this.isRequired, this.minValue, this.maxValue, this.minLength, this.maxLength, this.choices, @RegExpOrNullConverter() this.regexPattern, this.nested, this.maxQuantity});
   factory _CommandPayloadDefinition.fromJson(Map<String, dynamic> json) => _$CommandPayloadDefinitionFromJson(json);
 
 /// [parameter] is the name of the parameter, this is also the translation key.
@@ -2804,32 +2756,12 @@ class _CommandPayloadDefinition implements CommandPayloadDefinition {
 @override final  int? maxLength;
 /// [choices] is the list of choices of the parameter.
 /// Only for [CommandPayloadDataType.choice]
- final  List<String>? _choices;
-/// [choices] is the list of choices of the parameter.
-/// Only for [CommandPayloadDataType.choice]
-@override List<String>? get choices {
-  final value = _choices;
-  if (value == null) return null;
-  if (_choices is EqualUnmodifiableListView) return _choices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? choices;
 /// [regexPattern] is the regex pattern of the parameter.
 @override@RegExpOrNullConverter() final  RegExp? regexPattern;
 /// [nested] is the nested object of the parameter.
 /// Only for [CommandPayloadDataType.nested]
- final  List<CommandPayloadDefinition>? _nested;
-/// [nested] is the nested object of the parameter.
-/// Only for [CommandPayloadDataType.nested]
-@override List<CommandPayloadDefinition>? get nested {
-  final value = _nested;
-  if (value == null) return null;
-  if (_nested is EqualUnmodifiableListView) return _nested;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CommandPayloadDefinition>? nested;
 /// [maxQuantity] is the maximum quantity of the nested parameters.
 ///
 /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
@@ -2848,12 +2780,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CommandPayloadDefinition&&(identical(other.parameter, parameter) || other.parameter == parameter)&&(identical(other.description, description) || other.description == description)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.isRequired, isRequired) || other.isRequired == isRequired)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.minLength, minLength) || other.minLength == minLength)&&(identical(other.maxLength, maxLength) || other.maxLength == maxLength)&&const DeepCollectionEquality().equals(other._choices, _choices)&&(identical(other.regexPattern, regexPattern) || other.regexPattern == regexPattern)&&const DeepCollectionEquality().equals(other._nested, _nested)&&(identical(other.maxQuantity, maxQuantity) || other.maxQuantity == maxQuantity));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CommandPayloadDefinition&&(identical(other.parameter, parameter) || other.parameter == parameter)&&(identical(other.description, description) || other.description == description)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.isRequired, isRequired) || other.isRequired == isRequired)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.minLength, minLength) || other.minLength == minLength)&&(identical(other.maxLength, maxLength) || other.maxLength == maxLength)&&const DeepCollectionEquality().equals(other.choices, choices)&&(identical(other.regexPattern, regexPattern) || other.regexPattern == regexPattern)&&const DeepCollectionEquality().equals(other.nested, nested)&&(identical(other.maxQuantity, maxQuantity) || other.maxQuantity == maxQuantity));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,parameter,description,dataType,isRequired,minValue,maxValue,minLength,maxLength,const DeepCollectionEquality().hash(_choices),regexPattern,const DeepCollectionEquality().hash(_nested),maxQuantity);
+int get hashCode => Object.hash(runtimeType,parameter,description,dataType,isRequired,minValue,maxValue,minLength,maxLength,const DeepCollectionEquality().hash(choices),regexPattern,const DeepCollectionEquality().hash(nested),maxQuantity);
 
 @override
 String toString() {
@@ -2895,9 +2827,9 @@ as bool?,minValue: freezed == minValue ? _self.minValue : minValue // ignore: ca
 as num?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
 as num?,minLength: freezed == minLength ? _self.minLength : minLength // ignore: cast_nullable_to_non_nullable
 as int?,maxLength: freezed == maxLength ? _self.maxLength : maxLength // ignore: cast_nullable_to_non_nullable
-as int?,choices: freezed == choices ? _self._choices : choices // ignore: cast_nullable_to_non_nullable
+as int?,choices: freezed == choices ? _self.choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>?,regexPattern: freezed == regexPattern ? _self.regexPattern : regexPattern // ignore: cast_nullable_to_non_nullable
-as RegExp?,nested: freezed == nested ? _self._nested : nested // ignore: cast_nullable_to_non_nullable
+as RegExp?,nested: freezed == nested ? _self.nested : nested // ignore: cast_nullable_to_non_nullable
 as List<CommandPayloadDefinition>?,maxQuantity: freezed == maxQuantity ? _self.maxQuantity : maxQuantity // ignore: cast_nullable_to_non_nullable
 as int?,
   ));

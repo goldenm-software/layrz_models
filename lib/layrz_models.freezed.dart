@@ -530,7 +530,7 @@ return $default(_that.id,_that.name,_that.color,_that.icon,_that.isEnabled,_that
 @JsonSerializable()
 
 class _Algorithm implements Algorithm {
-  const _Algorithm({required this.id, required this.name, @ColorConverter() required this.color, @IconOrNullConverter() this.icon, required this.isEnabled, final  List<String> categoriesIds = const [], this.canBeInSensors = false, this.hasHttp = false, this.hasFtp = false, final  List<CredentialField> requiredFields = const [], this.usage}): _categoriesIds = categoriesIds,_requiredFields = requiredFields;
+  const _Algorithm({required this.id, required this.name, @ColorConverter() required this.color, @IconOrNullConverter() this.icon, required this.isEnabled, this.categoriesIds = const [], this.canBeInSensors = false, this.hasHttp = false, this.hasFtp = false, this.requiredFields = const [], this.usage});
   factory _Algorithm.fromJson(Map<String, dynamic> json) => _$AlgorithmFromJson(json);
 
 @override final  String id;
@@ -538,23 +538,11 @@ class _Algorithm implements Algorithm {
 @override@ColorConverter() final  Color color;
 @override@IconOrNullConverter() final  MdiRemapIcon? icon;
 @override final  bool isEnabled;
- final  List<String> _categoriesIds;
-@override@JsonKey() List<String> get categoriesIds {
-  if (_categoriesIds is EqualUnmodifiableListView) return _categoriesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_categoriesIds);
-}
-
+@override@JsonKey() final  List<String> categoriesIds;
 @override@JsonKey() final  bool canBeInSensors;
 @override@JsonKey() final  bool hasHttp;
 @override@JsonKey() final  bool hasFtp;
- final  List<CredentialField> _requiredFields;
-@override@JsonKey() List<CredentialField> get requiredFields {
-  if (_requiredFields is EqualUnmodifiableListView) return _requiredFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_requiredFields);
-}
-
+@override@JsonKey() final  List<CredentialField> requiredFields;
 /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
 /// For marketing purposes.
 @override final  int? usage;
@@ -572,12 +560,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Algorithm&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other._categoriesIds, _categoriesIds)&&(identical(other.canBeInSensors, canBeInSensors) || other.canBeInSensors == canBeInSensors)&&(identical(other.hasHttp, hasHttp) || other.hasHttp == hasHttp)&&(identical(other.hasFtp, hasFtp) || other.hasFtp == hasFtp)&&const DeepCollectionEquality().equals(other._requiredFields, _requiredFields)&&(identical(other.usage, usage) || other.usage == usage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Algorithm&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other.categoriesIds, categoriesIds)&&(identical(other.canBeInSensors, canBeInSensors) || other.canBeInSensors == canBeInSensors)&&(identical(other.hasHttp, hasHttp) || other.hasHttp == hasHttp)&&(identical(other.hasFtp, hasFtp) || other.hasFtp == hasFtp)&&const DeepCollectionEquality().equals(other.requiredFields, requiredFields)&&(identical(other.usage, usage) || other.usage == usage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,color,icon,isEnabled,const DeepCollectionEquality().hash(_categoriesIds),canBeInSensors,hasHttp,hasFtp,const DeepCollectionEquality().hash(_requiredFields),usage);
+int get hashCode => Object.hash(runtimeType,id,name,color,icon,isEnabled,const DeepCollectionEquality().hash(categoriesIds),canBeInSensors,hasHttp,hasFtp,const DeepCollectionEquality().hash(requiredFields),usage);
 
 @override
 String toString() {
@@ -616,11 +604,11 @@ as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non
 as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as MdiRemapIcon?,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,categoriesIds: null == categoriesIds ? _self._categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
+as bool,categoriesIds: null == categoriesIds ? _self.categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,canBeInSensors: null == canBeInSensors ? _self.canBeInSensors : canBeInSensors // ignore: cast_nullable_to_non_nullable
 as bool,hasHttp: null == hasHttp ? _self.hasHttp : hasHttp // ignore: cast_nullable_to_non_nullable
 as bool,hasFtp: null == hasFtp ? _self.hasFtp : hasFtp // ignore: cast_nullable_to_non_nullable
-as bool,requiredFields: null == requiredFields ? _self._requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
+as bool,requiredFields: null == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
 as List<CredentialField>,usage: freezed == usage ? _self.usage : usage // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
@@ -860,7 +848,7 @@ return $default(_that.id,_that.reconnectionPercent,_that.reconnectionMaximum,_th
 @JsonSerializable()
 
 class _BillingPlan implements BillingPlan {
-  const _BillingPlan({required this.id, this.reconnectionPercent = 0.0, this.reconnectionMaximum = 0, this.reconnectionIncidents = 0, this.maxAssets = 0, this.maxDevices = 0, this.maxUsers = 0, this.maxOutboundServices = 0, this.maxFunctions = 0, this.maxApps = 0, final  List<String> allowedAppsIds = const [], final  List<String> allowedAlgorithmsIds = const [], final  List<String> allowedInboundProtocolsIds = const [], final  List<String> allowedOutboundProtocolsIds = const [], final  List<String> allowedVisionProtocolsIds = const [], final  List<String> allowedExchangeProtocolsIds = const [], this.aiEnabled = false}): _allowedAppsIds = allowedAppsIds,_allowedAlgorithmsIds = allowedAlgorithmsIds,_allowedInboundProtocolsIds = allowedInboundProtocolsIds,_allowedOutboundProtocolsIds = allowedOutboundProtocolsIds,_allowedVisionProtocolsIds = allowedVisionProtocolsIds,_allowedExchangeProtocolsIds = allowedExchangeProtocolsIds;
+  const _BillingPlan({required this.id, this.reconnectionPercent = 0.0, this.reconnectionMaximum = 0, this.reconnectionIncidents = 0, this.maxAssets = 0, this.maxDevices = 0, this.maxUsers = 0, this.maxOutboundServices = 0, this.maxFunctions = 0, this.maxApps = 0, this.allowedAppsIds = const [], this.allowedAlgorithmsIds = const [], this.allowedInboundProtocolsIds = const [], this.allowedOutboundProtocolsIds = const [], this.allowedVisionProtocolsIds = const [], this.allowedExchangeProtocolsIds = const [], this.aiEnabled = false});
   factory _BillingPlan.fromJson(Map<String, dynamic> json) => _$BillingPlanFromJson(json);
 
 /// [id] is the unique identifier for the billing plan.
@@ -884,59 +872,17 @@ class _BillingPlan implements BillingPlan {
 /// [maxApps] is the maximum number of apps allowed for the billing plan.
 @override@JsonKey() final  int maxApps;
 /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
- final  List<String> _allowedAppsIds;
-/// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
-@override@JsonKey() List<String> get allowedAppsIds {
-  if (_allowedAppsIds is EqualUnmodifiableListView) return _allowedAppsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_allowedAppsIds);
-}
-
+@override@JsonKey() final  List<String> allowedAppsIds;
 /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
- final  List<String> _allowedAlgorithmsIds;
-/// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
-@override@JsonKey() List<String> get allowedAlgorithmsIds {
-  if (_allowedAlgorithmsIds is EqualUnmodifiableListView) return _allowedAlgorithmsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_allowedAlgorithmsIds);
-}
-
+@override@JsonKey() final  List<String> allowedAlgorithmsIds;
 /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
- final  List<String> _allowedInboundProtocolsIds;
-/// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
-@override@JsonKey() List<String> get allowedInboundProtocolsIds {
-  if (_allowedInboundProtocolsIds is EqualUnmodifiableListView) return _allowedInboundProtocolsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_allowedInboundProtocolsIds);
-}
-
+@override@JsonKey() final  List<String> allowedInboundProtocolsIds;
 /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
- final  List<String> _allowedOutboundProtocolsIds;
-/// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
-@override@JsonKey() List<String> get allowedOutboundProtocolsIds {
-  if (_allowedOutboundProtocolsIds is EqualUnmodifiableListView) return _allowedOutboundProtocolsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_allowedOutboundProtocolsIds);
-}
-
+@override@JsonKey() final  List<String> allowedOutboundProtocolsIds;
 /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
- final  List<String> _allowedVisionProtocolsIds;
-/// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
-@override@JsonKey() List<String> get allowedVisionProtocolsIds {
-  if (_allowedVisionProtocolsIds is EqualUnmodifiableListView) return _allowedVisionProtocolsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_allowedVisionProtocolsIds);
-}
-
+@override@JsonKey() final  List<String> allowedVisionProtocolsIds;
 /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
- final  List<String> _allowedExchangeProtocolsIds;
-/// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
-@override@JsonKey() List<String> get allowedExchangeProtocolsIds {
-  if (_allowedExchangeProtocolsIds is EqualUnmodifiableListView) return _allowedExchangeProtocolsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_allowedExchangeProtocolsIds);
-}
-
+@override@JsonKey() final  List<String> allowedExchangeProtocolsIds;
 /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
 @override@JsonKey() final  bool aiEnabled;
 
@@ -953,12 +899,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BillingPlan&&(identical(other.id, id) || other.id == id)&&(identical(other.reconnectionPercent, reconnectionPercent) || other.reconnectionPercent == reconnectionPercent)&&(identical(other.reconnectionMaximum, reconnectionMaximum) || other.reconnectionMaximum == reconnectionMaximum)&&(identical(other.reconnectionIncidents, reconnectionIncidents) || other.reconnectionIncidents == reconnectionIncidents)&&(identical(other.maxAssets, maxAssets) || other.maxAssets == maxAssets)&&(identical(other.maxDevices, maxDevices) || other.maxDevices == maxDevices)&&(identical(other.maxUsers, maxUsers) || other.maxUsers == maxUsers)&&(identical(other.maxOutboundServices, maxOutboundServices) || other.maxOutboundServices == maxOutboundServices)&&(identical(other.maxFunctions, maxFunctions) || other.maxFunctions == maxFunctions)&&(identical(other.maxApps, maxApps) || other.maxApps == maxApps)&&const DeepCollectionEquality().equals(other._allowedAppsIds, _allowedAppsIds)&&const DeepCollectionEquality().equals(other._allowedAlgorithmsIds, _allowedAlgorithmsIds)&&const DeepCollectionEquality().equals(other._allowedInboundProtocolsIds, _allowedInboundProtocolsIds)&&const DeepCollectionEquality().equals(other._allowedOutboundProtocolsIds, _allowedOutboundProtocolsIds)&&const DeepCollectionEquality().equals(other._allowedVisionProtocolsIds, _allowedVisionProtocolsIds)&&const DeepCollectionEquality().equals(other._allowedExchangeProtocolsIds, _allowedExchangeProtocolsIds)&&(identical(other.aiEnabled, aiEnabled) || other.aiEnabled == aiEnabled));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BillingPlan&&(identical(other.id, id) || other.id == id)&&(identical(other.reconnectionPercent, reconnectionPercent) || other.reconnectionPercent == reconnectionPercent)&&(identical(other.reconnectionMaximum, reconnectionMaximum) || other.reconnectionMaximum == reconnectionMaximum)&&(identical(other.reconnectionIncidents, reconnectionIncidents) || other.reconnectionIncidents == reconnectionIncidents)&&(identical(other.maxAssets, maxAssets) || other.maxAssets == maxAssets)&&(identical(other.maxDevices, maxDevices) || other.maxDevices == maxDevices)&&(identical(other.maxUsers, maxUsers) || other.maxUsers == maxUsers)&&(identical(other.maxOutboundServices, maxOutboundServices) || other.maxOutboundServices == maxOutboundServices)&&(identical(other.maxFunctions, maxFunctions) || other.maxFunctions == maxFunctions)&&(identical(other.maxApps, maxApps) || other.maxApps == maxApps)&&const DeepCollectionEquality().equals(other.allowedAppsIds, allowedAppsIds)&&const DeepCollectionEquality().equals(other.allowedAlgorithmsIds, allowedAlgorithmsIds)&&const DeepCollectionEquality().equals(other.allowedInboundProtocolsIds, allowedInboundProtocolsIds)&&const DeepCollectionEquality().equals(other.allowedOutboundProtocolsIds, allowedOutboundProtocolsIds)&&const DeepCollectionEquality().equals(other.allowedVisionProtocolsIds, allowedVisionProtocolsIds)&&const DeepCollectionEquality().equals(other.allowedExchangeProtocolsIds, allowedExchangeProtocolsIds)&&(identical(other.aiEnabled, aiEnabled) || other.aiEnabled == aiEnabled));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,reconnectionPercent,reconnectionMaximum,reconnectionIncidents,maxAssets,maxDevices,maxUsers,maxOutboundServices,maxFunctions,maxApps,const DeepCollectionEquality().hash(_allowedAppsIds),const DeepCollectionEquality().hash(_allowedAlgorithmsIds),const DeepCollectionEquality().hash(_allowedInboundProtocolsIds),const DeepCollectionEquality().hash(_allowedOutboundProtocolsIds),const DeepCollectionEquality().hash(_allowedVisionProtocolsIds),const DeepCollectionEquality().hash(_allowedExchangeProtocolsIds),aiEnabled);
+int get hashCode => Object.hash(runtimeType,id,reconnectionPercent,reconnectionMaximum,reconnectionIncidents,maxAssets,maxDevices,maxUsers,maxOutboundServices,maxFunctions,maxApps,const DeepCollectionEquality().hash(allowedAppsIds),const DeepCollectionEquality().hash(allowedAlgorithmsIds),const DeepCollectionEquality().hash(allowedInboundProtocolsIds),const DeepCollectionEquality().hash(allowedOutboundProtocolsIds),const DeepCollectionEquality().hash(allowedVisionProtocolsIds),const DeepCollectionEquality().hash(allowedExchangeProtocolsIds),aiEnabled);
 
 @override
 String toString() {
@@ -1002,12 +948,12 @@ as int,maxUsers: null == maxUsers ? _self.maxUsers : maxUsers // ignore: cast_nu
 as int,maxOutboundServices: null == maxOutboundServices ? _self.maxOutboundServices : maxOutboundServices // ignore: cast_nullable_to_non_nullable
 as int,maxFunctions: null == maxFunctions ? _self.maxFunctions : maxFunctions // ignore: cast_nullable_to_non_nullable
 as int,maxApps: null == maxApps ? _self.maxApps : maxApps // ignore: cast_nullable_to_non_nullable
-as int,allowedAppsIds: null == allowedAppsIds ? _self._allowedAppsIds : allowedAppsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,allowedAlgorithmsIds: null == allowedAlgorithmsIds ? _self._allowedAlgorithmsIds : allowedAlgorithmsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,allowedInboundProtocolsIds: null == allowedInboundProtocolsIds ? _self._allowedInboundProtocolsIds : allowedInboundProtocolsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,allowedOutboundProtocolsIds: null == allowedOutboundProtocolsIds ? _self._allowedOutboundProtocolsIds : allowedOutboundProtocolsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,allowedVisionProtocolsIds: null == allowedVisionProtocolsIds ? _self._allowedVisionProtocolsIds : allowedVisionProtocolsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,allowedExchangeProtocolsIds: null == allowedExchangeProtocolsIds ? _self._allowedExchangeProtocolsIds : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
+as int,allowedAppsIds: null == allowedAppsIds ? _self.allowedAppsIds : allowedAppsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,allowedAlgorithmsIds: null == allowedAlgorithmsIds ? _self.allowedAlgorithmsIds : allowedAlgorithmsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,allowedInboundProtocolsIds: null == allowedInboundProtocolsIds ? _self.allowedInboundProtocolsIds : allowedInboundProtocolsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,allowedOutboundProtocolsIds: null == allowedOutboundProtocolsIds ? _self.allowedOutboundProtocolsIds : allowedOutboundProtocolsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,allowedVisionProtocolsIds: null == allowedVisionProtocolsIds ? _self.allowedVisionProtocolsIds : allowedVisionProtocolsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,allowedExchangeProtocolsIds: null == allowedExchangeProtocolsIds ? _self.allowedExchangeProtocolsIds : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,aiEnabled: null == aiEnabled ? _self.aiEnabled : aiEnabled // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
@@ -1902,7 +1848,7 @@ return $default(_that.id,_that.at,_that.owner,_that.comment,_that.metadata,_that
 @JsonSerializable()
 
 class _CaseComment implements CaseComment {
-  const _CaseComment({required this.id, @TimestampConverter() required this.at, this.owner, required this.comment, final  Map<String, dynamic> metadata = const {}, this.file}): _metadata = metadata;
+  const _CaseComment({required this.id, @TimestampConverter() required this.at, this.owner, required this.comment, this.metadata = const {}, this.file});
   factory _CaseComment.fromJson(Map<String, dynamic> json) => _$CaseCommentFromJson(json);
 
 /// [id] is a unique identifier for the case comment, typically used to reference and manage it within a system.
@@ -1914,14 +1860,7 @@ class _CaseComment implements CaseComment {
 /// [comment] contains the actual text or content of the comment made on the case.
 @override final  String comment;
 /// [metadata] holds additional information or data related to the comment, which can include various attributes or properties.
- final  Map<String, dynamic> _metadata;
-/// [metadata] holds additional information or data related to the comment, which can include various attributes or properties.
-@override@JsonKey() Map<String, dynamic> get metadata {
-  if (_metadata is EqualUnmodifiableMapView) return _metadata;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_metadata);
-}
-
+@override@JsonKey() final  Map<String, dynamic> metadata;
 /// [file] refers to an optional file associated with the case, which can include documents,
 /// images, or other relevant attachments.
 @override final  CloudEntry? file;
@@ -1939,12 +1878,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaseComment&&(identical(other.id, id) || other.id == id)&&(identical(other.at, at) || other.at == at)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.file, file) || other.file == file));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CaseComment&&(identical(other.id, id) || other.id == id)&&(identical(other.at, at) || other.at == at)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.file, file) || other.file == file));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,at,owner,comment,const DeepCollectionEquality().hash(_metadata),file);
+int get hashCode => Object.hash(runtimeType,id,at,owner,comment,const DeepCollectionEquality().hash(metadata),file);
 
 @override
 String toString() {
@@ -1982,7 +1921,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,at: null == at ? _self.at : at // ignore: cast_nullable_to_non_nullable
 as DateTime,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
 as CommentOwner?,comment: null == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
-as String,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as String,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,file: freezed == file ? _self.file : file // ignore: cast_nullable_to_non_nullable
 as CloudEntry?,
   ));
@@ -2315,7 +2254,7 @@ return $default(_that.id,_that.receivedAt,_that.status,_that.ignoredStatus,_that
 @JsonSerializable()
 
 class _Case implements Case {
-  const _Case({required this.id, @JsonKey(name: 'dateReceived')@TimestampConverter() required this.receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending) required this.status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) this.ignoredStatus, required this.asset, required this.trigger, @Deprecated('Use `geofences` instead') this.geofence, final  List<Geofence> geofences = const [], this.sequence, final  List<CaseComment> comments = const [], this.position, final  List<TelemetrySensor>? payload, final  List<TelemetrySensor>? sensors, this.file, this.stackCount = 1}): _geofences = geofences,_comments = comments,_payload = payload,_sensors = sensors;
+  const _Case({required this.id, @JsonKey(name: 'dateReceived')@TimestampConverter() required this.receivedAt, @JsonKey(unknownEnumValue: CaseStatus.pending) required this.status, @JsonKey(unknownEnumValue: CaseIgnoredStatus.normal) this.ignoredStatus, required this.asset, required this.trigger, @Deprecated('Use `geofences` instead') this.geofence, this.geofences = const [], this.sequence, this.comments = const [], this.position, this.payload, this.sensors, this.file, this.stackCount = 1});
   factory _Case.fromJson(Map<String, dynamic> json) => _$CaseFromJson(json);
 
 /// [id] is a unique identifier for the case, typically used to reference and manage it within a system.
@@ -2347,60 +2286,21 @@ class _Case implements Case {
 ///
 /// This value only will be set after `2025-09-26` and also, only if the trigger is associated with geofences
 /// (aka. geofence enter/exit) and `2025-10-15` for stacked cases.
- final  List<Geofence> _geofences;
-/// [geofences] indicates the geographical boundaries or areas related to the case, which can be used
-/// for location-based analysis or actions.
-///
-/// This value only will be set after `2025-09-26` and also, only if the trigger is associated with geofences
-/// (aka. geofence enter/exit) and `2025-10-15` for stacked cases.
-@override@JsonKey() List<Geofence> get geofences {
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_geofences);
-}
-
+@override@JsonKey() final  List<Geofence> geofences;
 /// [sequence] is an optional integer that represents the order or position of the case in a series or list.
 @override final  int? sequence;
 /// [comments] is a list of comments associated with the case, allowing for communication and
 /// collaboration among users or stakeholders involved in the case.
- final  List<CaseComment> _comments;
-/// [comments] is a list of comments associated with the case, allowing for communication and
-/// collaboration among users or stakeholders involved in the case.
-@override@JsonKey() List<CaseComment> get comments {
-  if (_comments is EqualUnmodifiableListView) return _comments;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_comments);
-}
-
+@override@JsonKey() final  List<CaseComment> comments;
 /// [position] provides the geographical location or coordinates related to the case,
 /// which can be used for mapping or tracking purposes.
 @override final  TelemetryPosition? position;
 /// [payload] contains additional data or information related to the case, which can include
 /// various telemetry sensors or measurements.
- final  List<TelemetrySensor>? _payload;
-/// [payload] contains additional data or information related to the case, which can include
-/// various telemetry sensors or measurements.
-@override List<TelemetrySensor>? get payload {
-  final value = _payload;
-  if (value == null) return null;
-  if (_payload is EqualUnmodifiableListView) return _payload;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TelemetrySensor>? payload;
 /// [sensors] is a list of telemetry sensors associated with the case, providing insights
 /// and data points relevant to the situation or event.
- final  List<TelemetrySensor>? _sensors;
-/// [sensors] is a list of telemetry sensors associated with the case, providing insights
-/// and data points relevant to the situation or event.
-@override List<TelemetrySensor>? get sensors {
-  final value = _sensors;
-  if (value == null) return null;
-  if (_sensors is EqualUnmodifiableListView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TelemetrySensor>? sensors;
 /// [file] refers to an optional file associated with the case, which can include documents,
 /// images, or other relevant attachments.
 @override final  CloudEntry? file;
@@ -2420,12 +2320,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Case&&(identical(other.id, id) || other.id == id)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.ignoredStatus, ignoredStatus) || other.ignoredStatus == ignoredStatus)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.trigger, trigger) || other.trigger == trigger)&&(identical(other.geofence, geofence) || other.geofence == geofence)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&(identical(other.sequence, sequence) || other.sequence == sequence)&&const DeepCollectionEquality().equals(other._comments, _comments)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._payload, _payload)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.file, file) || other.file == file)&&(identical(other.stackCount, stackCount) || other.stackCount == stackCount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Case&&(identical(other.id, id) || other.id == id)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.ignoredStatus, ignoredStatus) || other.ignoredStatus == ignoredStatus)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.trigger, trigger) || other.trigger == trigger)&&(identical(other.geofence, geofence) || other.geofence == geofence)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&(identical(other.sequence, sequence) || other.sequence == sequence)&&const DeepCollectionEquality().equals(other.comments, comments)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.payload, payload)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.file, file) || other.file == file)&&(identical(other.stackCount, stackCount) || other.stackCount == stackCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,receivedAt,status,ignoredStatus,asset,trigger,geofence,const DeepCollectionEquality().hash(_geofences),sequence,const DeepCollectionEquality().hash(_comments),position,const DeepCollectionEquality().hash(_payload),const DeepCollectionEquality().hash(_sensors),file,stackCount);
+int get hashCode => Object.hash(runtimeType,id,receivedAt,status,ignoredStatus,asset,trigger,geofence,const DeepCollectionEquality().hash(geofences),sequence,const DeepCollectionEquality().hash(comments),position,const DeepCollectionEquality().hash(payload),const DeepCollectionEquality().hash(sensors),file,stackCount);
 
 @override
 String toString() {
@@ -2466,12 +2366,12 @@ as CaseStatus,ignoredStatus: freezed == ignoredStatus ? _self.ignoredStatus : ig
 as CaseIgnoredStatus?,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as Asset,trigger: null == trigger ? _self.trigger : trigger // ignore: cast_nullable_to_non_nullable
 as Trigger,geofence: freezed == geofence ? _self.geofence : geofence // ignore: cast_nullable_to_non_nullable
-as Geofence?,geofences: null == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
+as Geofence?,geofences: null == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
 as List<Geofence>,sequence: freezed == sequence ? _self.sequence : sequence // ignore: cast_nullable_to_non_nullable
-as int?,comments: null == comments ? _self._comments : comments // ignore: cast_nullable_to_non_nullable
+as int?,comments: null == comments ? _self.comments : comments // ignore: cast_nullable_to_non_nullable
 as List<CaseComment>,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as TelemetryPosition?,payload: freezed == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
-as List<TelemetrySensor>?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as TelemetryPosition?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
+as List<TelemetrySensor>?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as List<TelemetrySensor>?,file: freezed == file ? _self.file : file // ignore: cast_nullable_to_non_nullable
 as CloudEntry?,stackCount: null == stackCount ? _self.stackCount : stackCount // ignore: cast_nullable_to_non_nullable
 as int,
@@ -2746,7 +2646,7 @@ return $default(_that.id,_that.name,_that.assetId,_that.waypoints,_that.isActive
 @JsonSerializable()
 
 class _Checkpoint implements Checkpoint {
-  const _Checkpoint({required this.id, required this.name, this.assetId, final  List<Waypoint>? waypoints, this.isActive, final  List<Access>? access, final  List<LinkedAssetToCheckpointId>? linkedAssetsIds}): _waypoints = waypoints,_access = access,_linkedAssetsIds = linkedAssetsIds;
+  const _Checkpoint({required this.id, required this.name, this.assetId, this.waypoints, this.isActive, this.access, this.linkedAssetsIds});
   factory _Checkpoint.fromJson(Map<String, dynamic> json) => _$CheckpointFromJson(json);
 
 /// ID of the checkpoint entity. This ID is unique.
@@ -2756,40 +2656,13 @@ class _Checkpoint implements Checkpoint {
 /// Asset tag ID of the checkpoint.
 @override final  String? assetId;
 /// List of waypoints in the checkpoint. See the documention of the Type.
- final  List<Waypoint>? _waypoints;
-/// List of waypoints in the checkpoint. See the documention of the Type.
-@override List<Waypoint>? get waypoints {
-  final value = _waypoints;
-  if (value == null) return null;
-  if (_waypoints is EqualUnmodifiableListView) return _waypoints;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Waypoint>? waypoints;
 /// Boolean value that determines if the checkpoint is active.
 @override final  bool? isActive;
 /// List of custom access permissions.
- final  List<Access>? _access;
-/// List of custom access permissions.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// IDs of the linked Assets.
- final  List<LinkedAssetToCheckpointId>? _linkedAssetsIds;
-/// IDs of the linked Assets.
-@override List<LinkedAssetToCheckpointId>? get linkedAssetsIds {
-  final value = _linkedAssetsIds;
-  if (value == null) return null;
-  if (_linkedAssetsIds is EqualUnmodifiableListView) return _linkedAssetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<LinkedAssetToCheckpointId>? linkedAssetsIds;
 
 /// Create a copy of Checkpoint
 /// with the given fields replaced by the non-null parameter values.
@@ -2804,12 +2677,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Checkpoint&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other._waypoints, _waypoints)&&(identical(other.isActive, isActive) || other.isActive == isActive)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._linkedAssetsIds, _linkedAssetsIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Checkpoint&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other.waypoints, waypoints)&&(identical(other.isActive, isActive) || other.isActive == isActive)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.linkedAssetsIds, linkedAssetsIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,assetId,const DeepCollectionEquality().hash(_waypoints),isActive,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_linkedAssetsIds));
+int get hashCode => Object.hash(runtimeType,id,name,assetId,const DeepCollectionEquality().hash(waypoints),isActive,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(linkedAssetsIds));
 
 @override
 String toString() {
@@ -2846,10 +2719,10 @@ class __$CheckpointCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
-as String?,waypoints: freezed == waypoints ? _self._waypoints : waypoints // ignore: cast_nullable_to_non_nullable
+as String?,waypoints: freezed == waypoints ? _self.waypoints : waypoints // ignore: cast_nullable_to_non_nullable
 as List<Waypoint>?,isActive: freezed == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
-as bool?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,linkedAssetsIds: freezed == linkedAssetsIds ? _self._linkedAssetsIds : linkedAssetsIds // ignore: cast_nullable_to_non_nullable
+as bool?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as List<Access>?,linkedAssetsIds: freezed == linkedAssetsIds ? _self.linkedAssetsIds : linkedAssetsIds // ignore: cast_nullable_to_non_nullable
 as List<LinkedAssetToCheckpointId>?,
   ));
 }
@@ -3929,7 +3802,7 @@ return $default(_that.name,_that.type,_that.path,_that.serial,_that.fileId,_that
 @JsonSerializable()
 
 class _CloudEntry implements CloudEntry {
-  const _CloudEntry({required this.name, @CloudEntryTypeConverter() required this.type, required this.path, this.serial, this.fileId, this.size, @TimestampOrNullConverter() this.lastModified, this.contentType, final  Map<String, dynamic>? metadata, this.sensorId}): _metadata = metadata;
+  const _CloudEntry({required this.name, @CloudEntryTypeConverter() required this.type, required this.path, this.serial, this.fileId, this.size, @TimestampOrNullConverter() this.lastModified, this.contentType, this.metadata, this.sensorId});
   factory _CloudEntry.fromJson(Map<String, dynamic> json) => _$CloudEntryFromJson(json);
 
 /// Defines the name of the entry. If the name starts with [translate:], means
@@ -3952,17 +3825,7 @@ class _CloudEntry implements CloudEntry {
 @override final  String? contentType;
 /// Is the metadata of the file. Only used for [CloudEntryType.file].
 /// Currently only works for images.
- final  Map<String, dynamic>? _metadata;
-/// Is the metadata of the file. Only used for [CloudEntryType.file].
-/// Currently only works for images.
-@override Map<String, dynamic>? get metadata {
-  final value = _metadata;
-  if (value == null) return null;
-  if (_metadata is EqualUnmodifiableMapView) return _metadata;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? metadata;
 /// [sensorId] is the ID of the sensor associated with this file, if applicable.
 ///
 /// This value is only used for [CloudEntryType.file] and when it's populated by an asset, also
@@ -3982,12 +3845,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CloudEntry&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.path, path) || other.path == path)&&(identical(other.serial, serial) || other.serial == serial)&&(identical(other.fileId, fileId) || other.fileId == fileId)&&(identical(other.size, size) || other.size == size)&&(identical(other.lastModified, lastModified) || other.lastModified == lastModified)&&(identical(other.contentType, contentType) || other.contentType == contentType)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.sensorId, sensorId) || other.sensorId == sensorId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CloudEntry&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.path, path) || other.path == path)&&(identical(other.serial, serial) || other.serial == serial)&&(identical(other.fileId, fileId) || other.fileId == fileId)&&(identical(other.size, size) || other.size == size)&&(identical(other.lastModified, lastModified) || other.lastModified == lastModified)&&(identical(other.contentType, contentType) || other.contentType == contentType)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.sensorId, sensorId) || other.sensorId == sensorId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,type,path,serial,fileId,size,lastModified,contentType,const DeepCollectionEquality().hash(_metadata),sensorId);
+int get hashCode => Object.hash(runtimeType,name,type,path,serial,fileId,size,lastModified,contentType,const DeepCollectionEquality().hash(metadata),sensorId);
 
 @override
 String toString() {
@@ -4029,7 +3892,7 @@ as String?,fileId: freezed == fileId ? _self.fileId : fileId // ignore: cast_nul
 as String?,size: freezed == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
 as int?,lastModified: freezed == lastModified ? _self.lastModified : lastModified // ignore: cast_nullable_to_non_nullable
 as DateTime?,contentType: freezed == contentType ? _self.contentType : contentType // ignore: cast_nullable_to_non_nullable
-as String?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as String?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,sensorId: freezed == sensorId ? _self.sensorId : sensorId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -5068,7 +4931,7 @@ return $default(_that.id,_that.name,_that.contentMjml,_that.contentTxt,_that.acc
 @JsonSerializable()
 
 class _EmailTemplate implements EmailTemplate {
-  const _EmailTemplate({required this.id, required this.name, this.contentMjml, this.contentTxt, final  List<Access>? access}): _access = access;
+  const _EmailTemplate({required this.id, required this.name, this.contentMjml, this.contentTxt, this.access});
   factory _EmailTemplate.fromJson(Map<String, dynamic> json) => _$EmailTemplateFromJson(json);
 
 /// Is the id of the email template
@@ -5080,16 +4943,7 @@ class _EmailTemplate implements EmailTemplate {
 /// Is the TXT content of the email template
 @override final  String? contentTxt;
 /// The [access] of the device.
- final  List<Access>? _access;
-/// The [access] of the device.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 
 /// Create a copy of EmailTemplate
 /// with the given fields replaced by the non-null parameter values.
@@ -5104,12 +4958,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EmailTemplate&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.contentMjml, contentMjml) || other.contentMjml == contentMjml)&&(identical(other.contentTxt, contentTxt) || other.contentTxt == contentTxt)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EmailTemplate&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.contentMjml, contentMjml) || other.contentMjml == contentMjml)&&(identical(other.contentTxt, contentTxt) || other.contentTxt == contentTxt)&&const DeepCollectionEquality().equals(other.access, access));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,contentMjml,contentTxt,const DeepCollectionEquality().hash(_access));
+int get hashCode => Object.hash(runtimeType,id,name,contentMjml,contentTxt,const DeepCollectionEquality().hash(access));
 
 @override
 String toString() {
@@ -5147,7 +5001,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,contentMjml: freezed == contentMjml ? _self.contentMjml : contentMjml // ignore: cast_nullable_to_non_nullable
 as String?,contentTxt: freezed == contentTxt ? _self.contentTxt : contentTxt // ignore: cast_nullable_to_non_nullable
-as String?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as String?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
   ));
 }
@@ -5688,7 +5542,7 @@ return $default(_that.id,_that.name,_that.algorithmId,_that.algorithm,_that.maxi
 @JsonSerializable()
 
 class _LayrzFunction implements LayrzFunction {
-  const _LayrzFunction({required this.id, required this.name, this.algorithmId, this.algorithm, this.maximumTime, this.minutesDelta, final  List<String>? externalIdentifiers, this.token, final  Map<String, dynamic>? credentials, this.ftp, final  List<String>? groupsIds, final  List<Tag>? groups, final  List<String>? assetsIds, final  List<Asset>? assets, final  List<Access>? access}): _externalIdentifiers = externalIdentifiers,_credentials = credentials,_groupsIds = groupsIds,_groups = groups,_assetsIds = assetsIds,_assets = assets,_access = access;
+  const _LayrzFunction({required this.id, required this.name, this.algorithmId, this.algorithm, this.maximumTime, this.minutesDelta, this.externalIdentifiers, this.token, this.credentials, this.ftp, this.groupsIds, this.groups, this.assetsIds, this.assets, this.access});
   factory _LayrzFunction.fromJson(Map<String, dynamic> json) => _$LayrzFunctionFromJson(json);
 
 /// [id] is the unique identifier of the function.
@@ -5706,86 +5560,23 @@ class _LayrzFunction implements LayrzFunction {
 /// Defined in minutes.
 @override final  double? minutesDelta;
 /// [externalIdentifiers] is the external identifiers of the function.
- final  List<String>? _externalIdentifiers;
-/// [externalIdentifiers] is the external identifiers of the function.
-@override List<String>? get externalIdentifiers {
-  final value = _externalIdentifiers;
-  if (value == null) return null;
-  if (_externalIdentifiers is EqualUnmodifiableListView) return _externalIdentifiers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? externalIdentifiers;
 /// [token] is the token of the function.
 @override final  String? token;
 /// [credentials] is the credentials of the function.
- final  Map<String, dynamic>? _credentials;
-/// [credentials] is the credentials of the function.
-@override Map<String, dynamic>? get credentials {
-  final value = _credentials;
-  if (value == null) return null;
-  if (_credentials is EqualUnmodifiableMapView) return _credentials;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? credentials;
 /// [ftp] is the ftp of the function.
 @override final  FtpAccount? ftp;
 /// [groupsIds] is the groups ids of the function.
- final  List<String>? _groupsIds;
-/// [groupsIds] is the groups ids of the function.
-@override List<String>? get groupsIds {
-  final value = _groupsIds;
-  if (value == null) return null;
-  if (_groupsIds is EqualUnmodifiableListView) return _groupsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? groupsIds;
 /// [groups] is the groups of the function.
- final  List<Tag>? _groups;
-/// [groups] is the groups of the function.
-@override List<Tag>? get groups {
-  final value = _groups;
-  if (value == null) return null;
-  if (_groups is EqualUnmodifiableListView) return _groups;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Tag>? groups;
 /// [assetsIds] is the assets ids of the function.
- final  List<String>? _assetsIds;
-/// [assetsIds] is the assets ids of the function.
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 /// [assets] is the assets of the function.
- final  List<Asset>? _assets;
-/// [assets] is the assets of the function.
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// [access] is the access of the function.
- final  List<Access>? _access;
-/// [access] is the access of the function.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 
 /// Create a copy of LayrzFunction
 /// with the given fields replaced by the non-null parameter values.
@@ -5800,12 +5591,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LayrzFunction&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.algorithmId, algorithmId) || other.algorithmId == algorithmId)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.maximumTime, maximumTime) || other.maximumTime == maximumTime)&&(identical(other.minutesDelta, minutesDelta) || other.minutesDelta == minutesDelta)&&const DeepCollectionEquality().equals(other._externalIdentifiers, _externalIdentifiers)&&(identical(other.token, token) || other.token == token)&&const DeepCollectionEquality().equals(other._credentials, _credentials)&&(identical(other.ftp, ftp) || other.ftp == ftp)&&const DeepCollectionEquality().equals(other._groupsIds, _groupsIds)&&const DeepCollectionEquality().equals(other._groups, _groups)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LayrzFunction&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.algorithmId, algorithmId) || other.algorithmId == algorithmId)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.maximumTime, maximumTime) || other.maximumTime == maximumTime)&&(identical(other.minutesDelta, minutesDelta) || other.minutesDelta == minutesDelta)&&const DeepCollectionEquality().equals(other.externalIdentifiers, externalIdentifiers)&&(identical(other.token, token) || other.token == token)&&const DeepCollectionEquality().equals(other.credentials, credentials)&&(identical(other.ftp, ftp) || other.ftp == ftp)&&const DeepCollectionEquality().equals(other.groupsIds, groupsIds)&&const DeepCollectionEquality().equals(other.groups, groups)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.access, access));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,algorithmId,algorithm,maximumTime,minutesDelta,const DeepCollectionEquality().hash(_externalIdentifiers),token,const DeepCollectionEquality().hash(_credentials),ftp,const DeepCollectionEquality().hash(_groupsIds),const DeepCollectionEquality().hash(_groups),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_access));
+int get hashCode => Object.hash(runtimeType,id,name,algorithmId,algorithm,maximumTime,minutesDelta,const DeepCollectionEquality().hash(externalIdentifiers),token,const DeepCollectionEquality().hash(credentials),ftp,const DeepCollectionEquality().hash(groupsIds),const DeepCollectionEquality().hash(groups),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(access));
 
 @override
 String toString() {
@@ -5845,15 +5636,15 @@ as String,algorithmId: freezed == algorithmId ? _self.algorithmId : algorithmId 
 as String?,algorithm: freezed == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
 as Algorithm?,maximumTime: freezed == maximumTime ? _self.maximumTime : maximumTime // ignore: cast_nullable_to_non_nullable
 as double?,minutesDelta: freezed == minutesDelta ? _self.minutesDelta : minutesDelta // ignore: cast_nullable_to_non_nullable
-as double?,externalIdentifiers: freezed == externalIdentifiers ? _self._externalIdentifiers : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+as double?,externalIdentifiers: freezed == externalIdentifiers ? _self.externalIdentifiers : externalIdentifiers // ignore: cast_nullable_to_non_nullable
 as List<String>?,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
-as String?,credentials: freezed == credentials ? _self._credentials : credentials // ignore: cast_nullable_to_non_nullable
+as String?,credentials: freezed == credentials ? _self.credentials : credentials // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,ftp: freezed == ftp ? _self.ftp : ftp // ignore: cast_nullable_to_non_nullable
-as FtpAccount?,groupsIds: freezed == groupsIds ? _self._groupsIds : groupsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,groups: freezed == groups ? _self._groups : groups // ignore: cast_nullable_to_non_nullable
-as List<Tag>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as FtpAccount?,groupsIds: freezed == groupsIds ? _self.groupsIds : groupsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,groups: freezed == groups ? _self.groups : groups // ignore: cast_nullable_to_non_nullable
+as List<Tag>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
   ));
 }
@@ -6947,7 +6738,7 @@ return $default(_that.id,_that.state,_that.checkpoint,_that.asset,_that.startAt,
 @JsonSerializable()
 
 class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
-  const _MonitorActiveCheckpoint({required this.id, @MonitorActiveCheckpointStateConverter() required this.state, required this.checkpoint, required this.asset, @TimestampOrNullConverter() this.startAt, @TimestampOrNullConverter() this.endAt, @TimestampOrNullConverter() this.updatedAt, @CheckpointStateConverter() required this.checkpointState, final  List<MonitorRealWaypoint> waypoints = const []}): _waypoints = waypoints;
+  const _MonitorActiveCheckpoint({required this.id, @MonitorActiveCheckpointStateConverter() required this.state, required this.checkpoint, required this.asset, @TimestampOrNullConverter() this.startAt, @TimestampOrNullConverter() this.endAt, @TimestampOrNullConverter() this.updatedAt, @CheckpointStateConverter() required this.checkpointState, this.waypoints = const []});
   factory _MonitorActiveCheckpoint.fromJson(Map<String, dynamic> json) => _$MonitorActiveCheckpointFromJson(json);
 
 @override final  String id;
@@ -6958,13 +6749,7 @@ class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
 @override@TimestampOrNullConverter() final  DateTime? endAt;
 @override@TimestampOrNullConverter() final  DateTime? updatedAt;
 @override@CheckpointStateConverter() final  CheckpointState checkpointState;
- final  List<MonitorRealWaypoint> _waypoints;
-@override@JsonKey() List<MonitorRealWaypoint> get waypoints {
-  if (_waypoints is EqualUnmodifiableListView) return _waypoints;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_waypoints);
-}
-
+@override@JsonKey() final  List<MonitorRealWaypoint> waypoints;
 
 /// Create a copy of MonitorActiveCheckpoint
 /// with the given fields replaced by the non-null parameter values.
@@ -6979,12 +6764,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MonitorActiveCheckpoint&&(identical(other.id, id) || other.id == id)&&(identical(other.state, state) || other.state == state)&&(identical(other.checkpoint, checkpoint) || other.checkpoint == checkpoint)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.startAt, startAt) || other.startAt == startAt)&&(identical(other.endAt, endAt) || other.endAt == endAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.checkpointState, checkpointState) || other.checkpointState == checkpointState)&&const DeepCollectionEquality().equals(other._waypoints, _waypoints));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MonitorActiveCheckpoint&&(identical(other.id, id) || other.id == id)&&(identical(other.state, state) || other.state == state)&&(identical(other.checkpoint, checkpoint) || other.checkpoint == checkpoint)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.startAt, startAt) || other.startAt == startAt)&&(identical(other.endAt, endAt) || other.endAt == endAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.checkpointState, checkpointState) || other.checkpointState == checkpointState)&&const DeepCollectionEquality().equals(other.waypoints, waypoints));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,state,checkpoint,asset,startAt,endAt,updatedAt,checkpointState,const DeepCollectionEquality().hash(_waypoints));
+int get hashCode => Object.hash(runtimeType,id,state,checkpoint,asset,startAt,endAt,updatedAt,checkpointState,const DeepCollectionEquality().hash(waypoints));
 
 @override
 String toString() {
@@ -7026,7 +6811,7 @@ as Asset,startAt: freezed == startAt ? _self.startAt : startAt // ignore: cast_n
 as DateTime?,endAt: freezed == endAt ? _self.endAt : endAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,checkpointState: null == checkpointState ? _self.checkpointState : checkpointState // ignore: cast_nullable_to_non_nullable
-as CheckpointState,waypoints: null == waypoints ? _self._waypoints : waypoints // ignore: cast_nullable_to_non_nullable
+as CheckpointState,waypoints: null == waypoints ? _self.waypoints : waypoints // ignore: cast_nullable_to_non_nullable
 as List<MonitorRealWaypoint>,
   ));
 }
@@ -7990,7 +7775,7 @@ return $default(_that.id,_that.name,_that.color,_that.dynamicIcon,_that.users,_t
 @JsonSerializable()
 
 class _Tag implements Tag {
-  const _Tag({required this.id, required this.name, @ColorConverter() required this.color, this.dynamicIcon, final  List<User>? users, final  List<String>? usersIds, final  List<OutboundService>? outboundServices, final  List<String>? outboundServicesIds, final  List<Trigger>? triggers, final  List<String>? triggersIds, final  List<Action>? actions, final  List<String>? actionsIds, final  List<Operation>? operations, final  List<String>? operationsIds, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<Device>? devices, final  List<String>? devicesIds, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<ExternalAccount>? externalAccounts, final  List<String>? externalAccountsIds, final  List<Preset>? presets, final  List<String>? presetsIds, final  List<Reference>? references, final  List<String>? referencesIds, final  List<Checkpoint>? checkpoints, final  List<String>? checkpointsIds, final  List<CareProtocol>? careProtocols, final  List<String>? careProtocolsIds, final  List<InboundService>? inboundServices, final  List<String>? inboundServicesIds, final  List<LayrzFunction>? functions, final  List<String>? functionsIds, final  List<ConciergeForm>? conciergeForms, final  List<String>? conciergeFormsIds, final  List<ReportTemplate>? reportTemplates, final  List<String>? reportTemplatesIds, final  List<LayrzChart>? charts, final  List<String>? chartsIds, final  List<Workspace>? workspaces, final  List<String>? workspacesIds, final  List<VisionProfile>? visionProfiles, final  List<String>? visionProfilesIds, final  List<MappitRoute>? mappitRoutes, final  List<String>? mappitRoutesIds, final  List<ExchangeService>? exchangeServices, final  List<String>? exchangeServicesIds, final  List<Access>? access, this.owner, this.ownerId, final  List<String>? sensorsIds, final  List<Sensor>? sensors}): _users = users,_usersIds = usersIds,_outboundServices = outboundServices,_outboundServicesIds = outboundServicesIds,_triggers = triggers,_triggersIds = triggersIds,_actions = actions,_actionsIds = actionsIds,_operations = operations,_operationsIds = operationsIds,_assets = assets,_assetsIds = assetsIds,_devices = devices,_devicesIds = devicesIds,_geofences = geofences,_geofencesIds = geofencesIds,_externalAccounts = externalAccounts,_externalAccountsIds = externalAccountsIds,_presets = presets,_presetsIds = presetsIds,_references = references,_referencesIds = referencesIds,_checkpoints = checkpoints,_checkpointsIds = checkpointsIds,_careProtocols = careProtocols,_careProtocolsIds = careProtocolsIds,_inboundServices = inboundServices,_inboundServicesIds = inboundServicesIds,_functions = functions,_functionsIds = functionsIds,_conciergeForms = conciergeForms,_conciergeFormsIds = conciergeFormsIds,_reportTemplates = reportTemplates,_reportTemplatesIds = reportTemplatesIds,_charts = charts,_chartsIds = chartsIds,_workspaces = workspaces,_workspacesIds = workspacesIds,_visionProfiles = visionProfiles,_visionProfilesIds = visionProfilesIds,_mappitRoutes = mappitRoutes,_mappitRoutesIds = mappitRoutesIds,_exchangeServices = exchangeServices,_exchangeServicesIds = exchangeServicesIds,_access = access,_sensorsIds = sensorsIds,_sensors = sensors;
+  const _Tag({required this.id, required this.name, @ColorConverter() required this.color, this.dynamicIcon, this.users, this.usersIds, this.outboundServices, this.outboundServicesIds, this.triggers, this.triggersIds, this.actions, this.actionsIds, this.operations, this.operationsIds, this.assets, this.assetsIds, this.devices, this.devicesIds, this.geofences, this.geofencesIds, this.externalAccounts, this.externalAccountsIds, this.presets, this.presetsIds, this.references, this.referencesIds, this.checkpoints, this.checkpointsIds, this.careProtocols, this.careProtocolsIds, this.inboundServices, this.inboundServicesIds, this.functions, this.functionsIds, this.conciergeForms, this.conciergeFormsIds, this.reportTemplates, this.reportTemplatesIds, this.charts, this.chartsIds, this.workspaces, this.workspacesIds, this.visionProfiles, this.visionProfilesIds, this.mappitRoutes, this.mappitRoutesIds, this.exchangeServices, this.exchangeServicesIds, this.access, this.owner, this.ownerId, this.sensorsIds, this.sensors});
   factory _Tag.fromJson(Map<String, dynamic> json) => _$TagFromJson(json);
 
 /// Is the ID of the tag.
@@ -8002,526 +7787,103 @@ class _Tag implements Tag {
 /// Dynamic icon
 @override final  Avatar? dynamicIcon;
 /// Is a list of associated users to this module.
- final  List<User>? _users;
-/// Is a list of associated users to this module.
-@override List<User>? get users {
-  final value = _users;
-  if (value == null) return null;
-  if (_users is EqualUnmodifiableListView) return _users;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<User>? users;
 /// Is a list of ID's of associated users to this module.
- final  List<String>? _usersIds;
-/// Is a list of ID's of associated users to this module.
-@override List<String>? get usersIds {
-  final value = _usersIds;
-  if (value == null) return null;
-  if (_usersIds is EqualUnmodifiableListView) return _usersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? usersIds;
 /// Is a list of associated outbound services to this module.
- final  List<OutboundService>? _outboundServices;
-/// Is a list of associated outbound services to this module.
-@override List<OutboundService>? get outboundServices {
-  final value = _outboundServices;
-  if (value == null) return null;
-  if (_outboundServices is EqualUnmodifiableListView) return _outboundServices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<OutboundService>? outboundServices;
 /// Is a list of ID's of associated outbound services to this module.
- final  List<String>? _outboundServicesIds;
-/// Is a list of ID's of associated outbound services to this module.
-@override List<String>? get outboundServicesIds {
-  final value = _outboundServicesIds;
-  if (value == null) return null;
-  if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? outboundServicesIds;
 /// Is a list of associated triggers to this module.
- final  List<Trigger>? _triggers;
-/// Is a list of associated triggers to this module.
-@override List<Trigger>? get triggers {
-  final value = _triggers;
-  if (value == null) return null;
-  if (_triggers is EqualUnmodifiableListView) return _triggers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Trigger>? triggers;
 /// Is a list of ID's of associated triggers to this module.
- final  List<String>? _triggersIds;
-/// Is a list of ID's of associated triggers to this module.
-@override List<String>? get triggersIds {
-  final value = _triggersIds;
-  if (value == null) return null;
-  if (_triggersIds is EqualUnmodifiableListView) return _triggersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? triggersIds;
 /// Is a list of associated actions to this module.
- final  List<Action>? _actions;
-/// Is a list of associated actions to this module.
-@override List<Action>? get actions {
-  final value = _actions;
-  if (value == null) return null;
-  if (_actions is EqualUnmodifiableListView) return _actions;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Action>? actions;
 /// Is a list of ID's of associated actions to this module.
- final  List<String>? _actionsIds;
-/// Is a list of ID's of associated actions to this module.
-@override List<String>? get actionsIds {
-  final value = _actionsIds;
-  if (value == null) return null;
-  if (_actionsIds is EqualUnmodifiableListView) return _actionsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? actionsIds;
 /// Is a list of associated operations to this module.
- final  List<Operation>? _operations;
-/// Is a list of associated operations to this module.
-@override List<Operation>? get operations {
-  final value = _operations;
-  if (value == null) return null;
-  if (_operations is EqualUnmodifiableListView) return _operations;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Operation>? operations;
 /// Is a list of ID's of associated operations to this module.
- final  List<String>? _operationsIds;
-/// Is a list of ID's of associated operations to this module.
-@override List<String>? get operationsIds {
-  final value = _operationsIds;
-  if (value == null) return null;
-  if (_operationsIds is EqualUnmodifiableListView) return _operationsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? operationsIds;
 /// Is a list of associated assets to this module.
- final  List<Asset>? _assets;
-/// Is a list of associated assets to this module.
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// Is a list of ID's of associated assets to this module.
- final  List<String>? _assetsIds;
-/// Is a list of ID's of associated assets to this module.
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 /// Is a list of associated devices to this module.
- final  List<Device>? _devices;
-/// Is a list of associated devices to this module.
-@override List<Device>? get devices {
-  final value = _devices;
-  if (value == null) return null;
-  if (_devices is EqualUnmodifiableListView) return _devices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Device>? devices;
 /// Is a list of ID's of associated devices to this module.
- final  List<String>? _devicesIds;
-/// Is a list of ID's of associated devices to this module.
-@override List<String>? get devicesIds {
-  final value = _devicesIds;
-  if (value == null) return null;
-  if (_devicesIds is EqualUnmodifiableListView) return _devicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? devicesIds;
 /// Is a list of associated geofences to this module.
- final  List<Geofence>? _geofences;
-/// Is a list of associated geofences to this module.
-@override List<Geofence>? get geofences {
-  final value = _geofences;
-  if (value == null) return null;
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Geofence>? geofences;
 /// Is a list of ID's of associated geofences to this module.
- final  List<String>? _geofencesIds;
-/// Is a list of ID's of associated geofences to this module.
-@override List<String>? get geofencesIds {
-  final value = _geofencesIds;
-  if (value == null) return null;
-  if (_geofencesIds is EqualUnmodifiableListView) return _geofencesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? geofencesIds;
 /// Is a list of associated source accounts to this module.
- final  List<ExternalAccount>? _externalAccounts;
-/// Is a list of associated source accounts to this module.
-@override List<ExternalAccount>? get externalAccounts {
-  final value = _externalAccounts;
-  if (value == null) return null;
-  if (_externalAccounts is EqualUnmodifiableListView) return _externalAccounts;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ExternalAccount>? externalAccounts;
 /// Is a list of ID's of associated source accounts to this module.
- final  List<String>? _externalAccountsIds;
-/// Is a list of ID's of associated source accounts to this module.
-@override List<String>? get externalAccountsIds {
-  final value = _externalAccountsIds;
-  if (value == null) return null;
-  if (_externalAccountsIds is EqualUnmodifiableListView) return _externalAccountsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? externalAccountsIds;
 /// Is a list of associated presets to this module.
- final  List<Preset>? _presets;
-/// Is a list of associated presets to this module.
-@override List<Preset>? get presets {
-  final value = _presets;
-  if (value == null) return null;
-  if (_presets is EqualUnmodifiableListView) return _presets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Preset>? presets;
 /// Is a list of ID's of associated presets to this module.
- final  List<String>? _presetsIds;
-/// Is a list of ID's of associated presets to this module.
-@override List<String>? get presetsIds {
-  final value = _presetsIds;
-  if (value == null) return null;
-  if (_presetsIds is EqualUnmodifiableListView) return _presetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? presetsIds;
 /// Is a list of associated references to this module.
- final  List<Reference>? _references;
-/// Is a list of associated references to this module.
-@override List<Reference>? get references {
-  final value = _references;
-  if (value == null) return null;
-  if (_references is EqualUnmodifiableListView) return _references;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Reference>? references;
 /// Is a list of ID's of associated references to this module.
- final  List<String>? _referencesIds;
-/// Is a list of ID's of associated references to this module.
-@override List<String>? get referencesIds {
-  final value = _referencesIds;
-  if (value == null) return null;
-  if (_referencesIds is EqualUnmodifiableListView) return _referencesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? referencesIds;
 /// Is a list of associated checkpoints to this module.
- final  List<Checkpoint>? _checkpoints;
-/// Is a list of associated checkpoints to this module.
-@override List<Checkpoint>? get checkpoints {
-  final value = _checkpoints;
-  if (value == null) return null;
-  if (_checkpoints is EqualUnmodifiableListView) return _checkpoints;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Checkpoint>? checkpoints;
 /// Is a list of ID's of associated checkpoints to this module.
- final  List<String>? _checkpointsIds;
-/// Is a list of ID's of associated checkpoints to this module.
-@override List<String>? get checkpointsIds {
-  final value = _checkpointsIds;
-  if (value == null) return null;
-  if (_checkpointsIds is EqualUnmodifiableListView) return _checkpointsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? checkpointsIds;
 /// Is a list of associated care protocols to this module.
- final  List<CareProtocol>? _careProtocols;
-/// Is a list of associated care protocols to this module.
-@override List<CareProtocol>? get careProtocols {
-  final value = _careProtocols;
-  if (value == null) return null;
-  if (_careProtocols is EqualUnmodifiableListView) return _careProtocols;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CareProtocol>? careProtocols;
 /// Is a list of ID's of associated care protocols to this module.
- final  List<String>? _careProtocolsIds;
-/// Is a list of ID's of associated care protocols to this module.
-@override List<String>? get careProtocolsIds {
-  final value = _careProtocolsIds;
-  if (value == null) return null;
-  if (_careProtocolsIds is EqualUnmodifiableListView) return _careProtocolsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? careProtocolsIds;
 /// Is a list of associated inbound services to this module.
- final  List<InboundService>? _inboundServices;
-/// Is a list of associated inbound services to this module.
-@override List<InboundService>? get inboundServices {
-  final value = _inboundServices;
-  if (value == null) return null;
-  if (_inboundServices is EqualUnmodifiableListView) return _inboundServices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<InboundService>? inboundServices;
 /// Is a list of ID's of associated inbound services to this module.
- final  List<String>? _inboundServicesIds;
-/// Is a list of ID's of associated inbound services to this module.
-@override List<String>? get inboundServicesIds {
-  final value = _inboundServicesIds;
-  if (value == null) return null;
-  if (_inboundServicesIds is EqualUnmodifiableListView) return _inboundServicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? inboundServicesIds;
 /// Is a list of associated functions to this module.
- final  List<LayrzFunction>? _functions;
-/// Is a list of associated functions to this module.
-@override List<LayrzFunction>? get functions {
-  final value = _functions;
-  if (value == null) return null;
-  if (_functions is EqualUnmodifiableListView) return _functions;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<LayrzFunction>? functions;
 /// Is a list of ID's of associated functions to this module.
- final  List<String>? _functionsIds;
-/// Is a list of ID's of associated functions to this module.
-@override List<String>? get functionsIds {
-  final value = _functionsIds;
-  if (value == null) return null;
-  if (_functionsIds is EqualUnmodifiableListView) return _functionsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? functionsIds;
 /// Is a list of associated concierge forms to this module.
- final  List<ConciergeForm>? _conciergeForms;
-/// Is a list of associated concierge forms to this module.
-@override List<ConciergeForm>? get conciergeForms {
-  final value = _conciergeForms;
-  if (value == null) return null;
-  if (_conciergeForms is EqualUnmodifiableListView) return _conciergeForms;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ConciergeForm>? conciergeForms;
 /// Is a list of ID's of associated concierge forms to this module.
- final  List<String>? _conciergeFormsIds;
-/// Is a list of ID's of associated concierge forms to this module.
-@override List<String>? get conciergeFormsIds {
-  final value = _conciergeFormsIds;
-  if (value == null) return null;
-  if (_conciergeFormsIds is EqualUnmodifiableListView) return _conciergeFormsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? conciergeFormsIds;
 /// Is a list of associated report templates to this module.
- final  List<ReportTemplate>? _reportTemplates;
-/// Is a list of associated report templates to this module.
-@override List<ReportTemplate>? get reportTemplates {
-  final value = _reportTemplates;
-  if (value == null) return null;
-  if (_reportTemplates is EqualUnmodifiableListView) return _reportTemplates;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ReportTemplate>? reportTemplates;
 /// Is a list of ID's of associated report templates to this module.
- final  List<String>? _reportTemplatesIds;
-/// Is a list of ID's of associated report templates to this module.
-@override List<String>? get reportTemplatesIds {
-  final value = _reportTemplatesIds;
-  if (value == null) return null;
-  if (_reportTemplatesIds is EqualUnmodifiableListView) return _reportTemplatesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? reportTemplatesIds;
 /// Is a list of associated charts to this module.
- final  List<LayrzChart>? _charts;
-/// Is a list of associated charts to this module.
-@override List<LayrzChart>? get charts {
-  final value = _charts;
-  if (value == null) return null;
-  if (_charts is EqualUnmodifiableListView) return _charts;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<LayrzChart>? charts;
 /// Is a list of ID's of associated charts to this module.
- final  List<String>? _chartsIds;
-/// Is a list of ID's of associated charts to this module.
-@override List<String>? get chartsIds {
-  final value = _chartsIds;
-  if (value == null) return null;
-  if (_chartsIds is EqualUnmodifiableListView) return _chartsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? chartsIds;
 /// Is a list of associated workspaces to this module.
- final  List<Workspace>? _workspaces;
-/// Is a list of associated workspaces to this module.
-@override List<Workspace>? get workspaces {
-  final value = _workspaces;
-  if (value == null) return null;
-  if (_workspaces is EqualUnmodifiableListView) return _workspaces;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Workspace>? workspaces;
 /// Is a list of ID's of associated workspaces to this module.
- final  List<String>? _workspacesIds;
-/// Is a list of ID's of associated workspaces to this module.
-@override List<String>? get workspacesIds {
-  final value = _workspacesIds;
-  if (value == null) return null;
-  if (_workspacesIds is EqualUnmodifiableListView) return _workspacesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? workspacesIds;
 /// Is a list of associated vision profiles to this module.
- final  List<VisionProfile>? _visionProfiles;
+@override final  List<VisionProfile>? visionProfiles;
+/// Is a list of ID's of associated vision profiles to this module.
+@override final  List<String>? visionProfilesIds;
 /// Is a list of associated vision profiles to this module.
-@override List<VisionProfile>? get visionProfiles {
-  final value = _visionProfiles;
-  if (value == null) return null;
-  if (_visionProfiles is EqualUnmodifiableListView) return _visionProfiles;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<MappitRoute>? mappitRoutes;
 /// Is a list of ID's of associated vision profiles to this module.
- final  List<String>? _visionProfilesIds;
-/// Is a list of ID's of associated vision profiles to this module.
-@override List<String>? get visionProfilesIds {
-  final value = _visionProfilesIds;
-  if (value == null) return null;
-  if (_visionProfilesIds is EqualUnmodifiableListView) return _visionProfilesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-/// Is a list of associated vision profiles to this module.
- final  List<MappitRoute>? _mappitRoutes;
-/// Is a list of associated vision profiles to this module.
-@override List<MappitRoute>? get mappitRoutes {
-  final value = _mappitRoutes;
-  if (value == null) return null;
-  if (_mappitRoutes is EqualUnmodifiableListView) return _mappitRoutes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-/// Is a list of ID's of associated vision profiles to this module.
- final  List<String>? _mappitRoutesIds;
-/// Is a list of ID's of associated vision profiles to this module.
-@override List<String>? get mappitRoutesIds {
-  final value = _mappitRoutesIds;
-  if (value == null) return null;
-  if (_mappitRoutesIds is EqualUnmodifiableListView) return _mappitRoutesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? mappitRoutesIds;
 /// Is a list of associated exchange services to this module.
- final  List<ExchangeService>? _exchangeServices;
-/// Is a list of associated exchange services to this module.
-@override List<ExchangeService>? get exchangeServices {
-  final value = _exchangeServices;
-  if (value == null) return null;
-  if (_exchangeServices is EqualUnmodifiableListView) return _exchangeServices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ExchangeService>? exchangeServices;
 /// Is a list of ID's of associated exchange services to this module.
- final  List<String>? _exchangeServicesIds;
-/// Is a list of ID's of associated exchange services to this module.
-@override List<String>? get exchangeServicesIds {
-  final value = _exchangeServicesIds;
-  if (value == null) return null;
-  if (_exchangeServicesIds is EqualUnmodifiableListView) return _exchangeServicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? exchangeServicesIds;
 /// Is a list of granted access to this entity.
- final  List<Access>? _access;
-/// Is a list of granted access to this entity.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// [owner] is the owner of this entity.
 @override final  User? owner;
 /// [ownerId] is the ID of the owner of this entity.
 @override final  String? ownerId;
 /// [sensorsIds] is a list of ID's of associated sensors to this module.
- final  List<String>? _sensorsIds;
-/// [sensorsIds] is a list of ID's of associated sensors to this module.
-@override List<String>? get sensorsIds {
-  final value = _sensorsIds;
-  if (value == null) return null;
-  if (_sensorsIds is EqualUnmodifiableListView) return _sensorsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? sensorsIds;
 /// [sensors] is a list of associated sensors to this module.
- final  List<Sensor>? _sensors;
-/// [sensors] is a list of associated sensors to this module.
-@override List<Sensor>? get sensors {
-  final value = _sensors;
-  if (value == null) return null;
-  if (_sensors is EqualUnmodifiableListView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Sensor>? sensors;
 
 /// Create a copy of Tag
 /// with the given fields replaced by the non-null parameter values.
@@ -8536,12 +7898,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Tag&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&const DeepCollectionEquality().equals(other._users, _users)&&const DeepCollectionEquality().equals(other._usersIds, _usersIds)&&const DeepCollectionEquality().equals(other._outboundServices, _outboundServices)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&const DeepCollectionEquality().equals(other._actions, _actions)&&const DeepCollectionEquality().equals(other._actionsIds, _actionsIds)&&const DeepCollectionEquality().equals(other._operations, _operations)&&const DeepCollectionEquality().equals(other._operationsIds, _operationsIds)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._devices, _devices)&&const DeepCollectionEquality().equals(other._devicesIds, _devicesIds)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._externalAccounts, _externalAccounts)&&const DeepCollectionEquality().equals(other._externalAccountsIds, _externalAccountsIds)&&const DeepCollectionEquality().equals(other._presets, _presets)&&const DeepCollectionEquality().equals(other._presetsIds, _presetsIds)&&const DeepCollectionEquality().equals(other._references, _references)&&const DeepCollectionEquality().equals(other._referencesIds, _referencesIds)&&const DeepCollectionEquality().equals(other._checkpoints, _checkpoints)&&const DeepCollectionEquality().equals(other._checkpointsIds, _checkpointsIds)&&const DeepCollectionEquality().equals(other._careProtocols, _careProtocols)&&const DeepCollectionEquality().equals(other._careProtocolsIds, _careProtocolsIds)&&const DeepCollectionEquality().equals(other._inboundServices, _inboundServices)&&const DeepCollectionEquality().equals(other._inboundServicesIds, _inboundServicesIds)&&const DeepCollectionEquality().equals(other._functions, _functions)&&const DeepCollectionEquality().equals(other._functionsIds, _functionsIds)&&const DeepCollectionEquality().equals(other._conciergeForms, _conciergeForms)&&const DeepCollectionEquality().equals(other._conciergeFormsIds, _conciergeFormsIds)&&const DeepCollectionEquality().equals(other._reportTemplates, _reportTemplates)&&const DeepCollectionEquality().equals(other._reportTemplatesIds, _reportTemplatesIds)&&const DeepCollectionEquality().equals(other._charts, _charts)&&const DeepCollectionEquality().equals(other._chartsIds, _chartsIds)&&const DeepCollectionEquality().equals(other._workspaces, _workspaces)&&const DeepCollectionEquality().equals(other._workspacesIds, _workspacesIds)&&const DeepCollectionEquality().equals(other._visionProfiles, _visionProfiles)&&const DeepCollectionEquality().equals(other._visionProfilesIds, _visionProfilesIds)&&const DeepCollectionEquality().equals(other._mappitRoutes, _mappitRoutes)&&const DeepCollectionEquality().equals(other._mappitRoutesIds, _mappitRoutesIds)&&const DeepCollectionEquality().equals(other._exchangeServices, _exchangeServices)&&const DeepCollectionEquality().equals(other._exchangeServicesIds, _exchangeServicesIds)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&const DeepCollectionEquality().equals(other._sensorsIds, _sensorsIds)&&const DeepCollectionEquality().equals(other._sensors, _sensors));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Tag&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&const DeepCollectionEquality().equals(other.users, users)&&const DeepCollectionEquality().equals(other.usersIds, usersIds)&&const DeepCollectionEquality().equals(other.outboundServices, outboundServices)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&const DeepCollectionEquality().equals(other.actions, actions)&&const DeepCollectionEquality().equals(other.actionsIds, actionsIds)&&const DeepCollectionEquality().equals(other.operations, operations)&&const DeepCollectionEquality().equals(other.operationsIds, operationsIds)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.devices, devices)&&const DeepCollectionEquality().equals(other.devicesIds, devicesIds)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.externalAccounts, externalAccounts)&&const DeepCollectionEquality().equals(other.externalAccountsIds, externalAccountsIds)&&const DeepCollectionEquality().equals(other.presets, presets)&&const DeepCollectionEquality().equals(other.presetsIds, presetsIds)&&const DeepCollectionEquality().equals(other.references, references)&&const DeepCollectionEquality().equals(other.referencesIds, referencesIds)&&const DeepCollectionEquality().equals(other.checkpoints, checkpoints)&&const DeepCollectionEquality().equals(other.checkpointsIds, checkpointsIds)&&const DeepCollectionEquality().equals(other.careProtocols, careProtocols)&&const DeepCollectionEquality().equals(other.careProtocolsIds, careProtocolsIds)&&const DeepCollectionEquality().equals(other.inboundServices, inboundServices)&&const DeepCollectionEquality().equals(other.inboundServicesIds, inboundServicesIds)&&const DeepCollectionEquality().equals(other.functions, functions)&&const DeepCollectionEquality().equals(other.functionsIds, functionsIds)&&const DeepCollectionEquality().equals(other.conciergeForms, conciergeForms)&&const DeepCollectionEquality().equals(other.conciergeFormsIds, conciergeFormsIds)&&const DeepCollectionEquality().equals(other.reportTemplates, reportTemplates)&&const DeepCollectionEquality().equals(other.reportTemplatesIds, reportTemplatesIds)&&const DeepCollectionEquality().equals(other.charts, charts)&&const DeepCollectionEquality().equals(other.chartsIds, chartsIds)&&const DeepCollectionEquality().equals(other.workspaces, workspaces)&&const DeepCollectionEquality().equals(other.workspacesIds, workspacesIds)&&const DeepCollectionEquality().equals(other.visionProfiles, visionProfiles)&&const DeepCollectionEquality().equals(other.visionProfilesIds, visionProfilesIds)&&const DeepCollectionEquality().equals(other.mappitRoutes, mappitRoutes)&&const DeepCollectionEquality().equals(other.mappitRoutesIds, mappitRoutesIds)&&const DeepCollectionEquality().equals(other.exchangeServices, exchangeServices)&&const DeepCollectionEquality().equals(other.exchangeServicesIds, exchangeServicesIds)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&const DeepCollectionEquality().equals(other.sensorsIds, sensorsIds)&&const DeepCollectionEquality().equals(other.sensors, sensors));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,color,dynamicIcon,const DeepCollectionEquality().hash(_users),const DeepCollectionEquality().hash(_usersIds),const DeepCollectionEquality().hash(_outboundServices),const DeepCollectionEquality().hash(_outboundServicesIds),const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),const DeepCollectionEquality().hash(_actions),const DeepCollectionEquality().hash(_actionsIds),const DeepCollectionEquality().hash(_operations),const DeepCollectionEquality().hash(_operationsIds),const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_devices),const DeepCollectionEquality().hash(_devicesIds),const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_externalAccounts),const DeepCollectionEquality().hash(_externalAccountsIds),const DeepCollectionEquality().hash(_presets),const DeepCollectionEquality().hash(_presetsIds),const DeepCollectionEquality().hash(_references),const DeepCollectionEquality().hash(_referencesIds),const DeepCollectionEquality().hash(_checkpoints),const DeepCollectionEquality().hash(_checkpointsIds),const DeepCollectionEquality().hash(_careProtocols),const DeepCollectionEquality().hash(_careProtocolsIds),const DeepCollectionEquality().hash(_inboundServices),const DeepCollectionEquality().hash(_inboundServicesIds),const DeepCollectionEquality().hash(_functions),const DeepCollectionEquality().hash(_functionsIds),const DeepCollectionEquality().hash(_conciergeForms),const DeepCollectionEquality().hash(_conciergeFormsIds),const DeepCollectionEquality().hash(_reportTemplates),const DeepCollectionEquality().hash(_reportTemplatesIds),const DeepCollectionEquality().hash(_charts),const DeepCollectionEquality().hash(_chartsIds),const DeepCollectionEquality().hash(_workspaces),const DeepCollectionEquality().hash(_workspacesIds),const DeepCollectionEquality().hash(_visionProfiles),const DeepCollectionEquality().hash(_visionProfilesIds),const DeepCollectionEquality().hash(_mappitRoutes),const DeepCollectionEquality().hash(_mappitRoutesIds),const DeepCollectionEquality().hash(_exchangeServices),const DeepCollectionEquality().hash(_exchangeServicesIds),const DeepCollectionEquality().hash(_access),owner,ownerId,const DeepCollectionEquality().hash(_sensorsIds),const DeepCollectionEquality().hash(_sensors)]);
+int get hashCode => Object.hashAll([runtimeType,id,name,color,dynamicIcon,const DeepCollectionEquality().hash(users),const DeepCollectionEquality().hash(usersIds),const DeepCollectionEquality().hash(outboundServices),const DeepCollectionEquality().hash(outboundServicesIds),const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),const DeepCollectionEquality().hash(actions),const DeepCollectionEquality().hash(actionsIds),const DeepCollectionEquality().hash(operations),const DeepCollectionEquality().hash(operationsIds),const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(devices),const DeepCollectionEquality().hash(devicesIds),const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(externalAccounts),const DeepCollectionEquality().hash(externalAccountsIds),const DeepCollectionEquality().hash(presets),const DeepCollectionEquality().hash(presetsIds),const DeepCollectionEquality().hash(references),const DeepCollectionEquality().hash(referencesIds),const DeepCollectionEquality().hash(checkpoints),const DeepCollectionEquality().hash(checkpointsIds),const DeepCollectionEquality().hash(careProtocols),const DeepCollectionEquality().hash(careProtocolsIds),const DeepCollectionEquality().hash(inboundServices),const DeepCollectionEquality().hash(inboundServicesIds),const DeepCollectionEquality().hash(functions),const DeepCollectionEquality().hash(functionsIds),const DeepCollectionEquality().hash(conciergeForms),const DeepCollectionEquality().hash(conciergeFormsIds),const DeepCollectionEquality().hash(reportTemplates),const DeepCollectionEquality().hash(reportTemplatesIds),const DeepCollectionEquality().hash(charts),const DeepCollectionEquality().hash(chartsIds),const DeepCollectionEquality().hash(workspaces),const DeepCollectionEquality().hash(workspacesIds),const DeepCollectionEquality().hash(visionProfiles),const DeepCollectionEquality().hash(visionProfilesIds),const DeepCollectionEquality().hash(mappitRoutes),const DeepCollectionEquality().hash(mappitRoutesIds),const DeepCollectionEquality().hash(exchangeServices),const DeepCollectionEquality().hash(exchangeServicesIds),const DeepCollectionEquality().hash(access),owner,ownerId,const DeepCollectionEquality().hash(sensorsIds),const DeepCollectionEquality().hash(sensors)]);
 
 @override
 String toString() {
@@ -8579,55 +7941,55 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,dynamicIcon: freezed == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
-as Avatar?,users: freezed == users ? _self._users : users // ignore: cast_nullable_to_non_nullable
-as List<User>?,usersIds: freezed == usersIds ? _self._usersIds : usersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,outboundServices: freezed == outboundServices ? _self._outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
-as List<OutboundService>?,outboundServicesIds: freezed == outboundServicesIds ? _self._outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,triggers: freezed == triggers ? _self._triggers : triggers // ignore: cast_nullable_to_non_nullable
-as List<Trigger>?,triggersIds: freezed == triggersIds ? _self._triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,actions: freezed == actions ? _self._actions : actions // ignore: cast_nullable_to_non_nullable
-as List<Action>?,actionsIds: freezed == actionsIds ? _self._actionsIds : actionsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,operations: freezed == operations ? _self._operations : operations // ignore: cast_nullable_to_non_nullable
-as List<Operation>?,operationsIds: freezed == operationsIds ? _self._operationsIds : operationsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,devices: freezed == devices ? _self._devices : devices // ignore: cast_nullable_to_non_nullable
-as List<Device>?,devicesIds: freezed == devicesIds ? _self._devicesIds : devicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,geofences: freezed == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self._geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,externalAccounts: freezed == externalAccounts ? _self._externalAccounts : externalAccounts // ignore: cast_nullable_to_non_nullable
-as List<ExternalAccount>?,externalAccountsIds: freezed == externalAccountsIds ? _self._externalAccountsIds : externalAccountsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,presets: freezed == presets ? _self._presets : presets // ignore: cast_nullable_to_non_nullable
-as List<Preset>?,presetsIds: freezed == presetsIds ? _self._presetsIds : presetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,references: freezed == references ? _self._references : references // ignore: cast_nullable_to_non_nullable
-as List<Reference>?,referencesIds: freezed == referencesIds ? _self._referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,checkpoints: freezed == checkpoints ? _self._checkpoints : checkpoints // ignore: cast_nullable_to_non_nullable
-as List<Checkpoint>?,checkpointsIds: freezed == checkpointsIds ? _self._checkpointsIds : checkpointsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,careProtocols: freezed == careProtocols ? _self._careProtocols : careProtocols // ignore: cast_nullable_to_non_nullable
-as List<CareProtocol>?,careProtocolsIds: freezed == careProtocolsIds ? _self._careProtocolsIds : careProtocolsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,inboundServices: freezed == inboundServices ? _self._inboundServices : inboundServices // ignore: cast_nullable_to_non_nullable
-as List<InboundService>?,inboundServicesIds: freezed == inboundServicesIds ? _self._inboundServicesIds : inboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,functions: freezed == functions ? _self._functions : functions // ignore: cast_nullable_to_non_nullable
-as List<LayrzFunction>?,functionsIds: freezed == functionsIds ? _self._functionsIds : functionsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,conciergeForms: freezed == conciergeForms ? _self._conciergeForms : conciergeForms // ignore: cast_nullable_to_non_nullable
-as List<ConciergeForm>?,conciergeFormsIds: freezed == conciergeFormsIds ? _self._conciergeFormsIds : conciergeFormsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,reportTemplates: freezed == reportTemplates ? _self._reportTemplates : reportTemplates // ignore: cast_nullable_to_non_nullable
-as List<ReportTemplate>?,reportTemplatesIds: freezed == reportTemplatesIds ? _self._reportTemplatesIds : reportTemplatesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,charts: freezed == charts ? _self._charts : charts // ignore: cast_nullable_to_non_nullable
-as List<LayrzChart>?,chartsIds: freezed == chartsIds ? _self._chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,workspaces: freezed == workspaces ? _self._workspaces : workspaces // ignore: cast_nullable_to_non_nullable
-as List<Workspace>?,workspacesIds: freezed == workspacesIds ? _self._workspacesIds : workspacesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,visionProfiles: freezed == visionProfiles ? _self._visionProfiles : visionProfiles // ignore: cast_nullable_to_non_nullable
-as List<VisionProfile>?,visionProfilesIds: freezed == visionProfilesIds ? _self._visionProfilesIds : visionProfilesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,mappitRoutes: freezed == mappitRoutes ? _self._mappitRoutes : mappitRoutes // ignore: cast_nullable_to_non_nullable
-as List<MappitRoute>?,mappitRoutesIds: freezed == mappitRoutesIds ? _self._mappitRoutesIds : mappitRoutesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,exchangeServices: freezed == exchangeServices ? _self._exchangeServices : exchangeServices // ignore: cast_nullable_to_non_nullable
-as List<ExchangeService>?,exchangeServicesIds: freezed == exchangeServicesIds ? _self._exchangeServicesIds : exchangeServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as Avatar?,users: freezed == users ? _self.users : users // ignore: cast_nullable_to_non_nullable
+as List<User>?,usersIds: freezed == usersIds ? _self.usersIds : usersIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,outboundServices: freezed == outboundServices ? _self.outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
+as List<OutboundService>?,outboundServicesIds: freezed == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,triggers: freezed == triggers ? _self.triggers : triggers // ignore: cast_nullable_to_non_nullable
+as List<Trigger>?,triggersIds: freezed == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,actions: freezed == actions ? _self.actions : actions // ignore: cast_nullable_to_non_nullable
+as List<Action>?,actionsIds: freezed == actionsIds ? _self.actionsIds : actionsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,operations: freezed == operations ? _self.operations : operations // ignore: cast_nullable_to_non_nullable
+as List<Operation>?,operationsIds: freezed == operationsIds ? _self.operationsIds : operationsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,devices: freezed == devices ? _self.devices : devices // ignore: cast_nullable_to_non_nullable
+as List<Device>?,devicesIds: freezed == devicesIds ? _self.devicesIds : devicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,geofences: freezed == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,externalAccounts: freezed == externalAccounts ? _self.externalAccounts : externalAccounts // ignore: cast_nullable_to_non_nullable
+as List<ExternalAccount>?,externalAccountsIds: freezed == externalAccountsIds ? _self.externalAccountsIds : externalAccountsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,presets: freezed == presets ? _self.presets : presets // ignore: cast_nullable_to_non_nullable
+as List<Preset>?,presetsIds: freezed == presetsIds ? _self.presetsIds : presetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,references: freezed == references ? _self.references : references // ignore: cast_nullable_to_non_nullable
+as List<Reference>?,referencesIds: freezed == referencesIds ? _self.referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,checkpoints: freezed == checkpoints ? _self.checkpoints : checkpoints // ignore: cast_nullable_to_non_nullable
+as List<Checkpoint>?,checkpointsIds: freezed == checkpointsIds ? _self.checkpointsIds : checkpointsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,careProtocols: freezed == careProtocols ? _self.careProtocols : careProtocols // ignore: cast_nullable_to_non_nullable
+as List<CareProtocol>?,careProtocolsIds: freezed == careProtocolsIds ? _self.careProtocolsIds : careProtocolsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,inboundServices: freezed == inboundServices ? _self.inboundServices : inboundServices // ignore: cast_nullable_to_non_nullable
+as List<InboundService>?,inboundServicesIds: freezed == inboundServicesIds ? _self.inboundServicesIds : inboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,functions: freezed == functions ? _self.functions : functions // ignore: cast_nullable_to_non_nullable
+as List<LayrzFunction>?,functionsIds: freezed == functionsIds ? _self.functionsIds : functionsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,conciergeForms: freezed == conciergeForms ? _self.conciergeForms : conciergeForms // ignore: cast_nullable_to_non_nullable
+as List<ConciergeForm>?,conciergeFormsIds: freezed == conciergeFormsIds ? _self.conciergeFormsIds : conciergeFormsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,reportTemplates: freezed == reportTemplates ? _self.reportTemplates : reportTemplates // ignore: cast_nullable_to_non_nullable
+as List<ReportTemplate>?,reportTemplatesIds: freezed == reportTemplatesIds ? _self.reportTemplatesIds : reportTemplatesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,charts: freezed == charts ? _self.charts : charts // ignore: cast_nullable_to_non_nullable
+as List<LayrzChart>?,chartsIds: freezed == chartsIds ? _self.chartsIds : chartsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,workspaces: freezed == workspaces ? _self.workspaces : workspaces // ignore: cast_nullable_to_non_nullable
+as List<Workspace>?,workspacesIds: freezed == workspacesIds ? _self.workspacesIds : workspacesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,visionProfiles: freezed == visionProfiles ? _self.visionProfiles : visionProfiles // ignore: cast_nullable_to_non_nullable
+as List<VisionProfile>?,visionProfilesIds: freezed == visionProfilesIds ? _self.visionProfilesIds : visionProfilesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,mappitRoutes: freezed == mappitRoutes ? _self.mappitRoutes : mappitRoutes // ignore: cast_nullable_to_non_nullable
+as List<MappitRoute>?,mappitRoutesIds: freezed == mappitRoutesIds ? _self.mappitRoutesIds : mappitRoutesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,exchangeServices: freezed == exchangeServices ? _self.exchangeServices : exchangeServices // ignore: cast_nullable_to_non_nullable
+as List<ExchangeService>?,exchangeServicesIds: freezed == exchangeServicesIds ? _self.exchangeServicesIds : exchangeServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
 as User?,ownerId: freezed == ownerId ? _self.ownerId : ownerId // ignore: cast_nullable_to_non_nullable
-as String?,sensorsIds: freezed == sensorsIds ? _self._sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as String?,sensorsIds: freezed == sensorsIds ? _self.sensorsIds : sensorsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as List<Sensor>?,
   ));
 }
@@ -8862,7 +8224,7 @@ return $default(_that.assetId,_that.assetName,_that.points);case _:
 @JsonSerializable()
 
 class _Trip extends Trip {
-  const _Trip({required this.assetId, this.assetName, required final  List<Point> points}): _points = points,super._();
+  const _Trip({required this.assetId, this.assetName, required this.points}): super._();
   factory _Trip.fromJson(Map<String, dynamic> json) => _$TripFromJson(json);
 
 /// ID of the asset.
@@ -8870,14 +8232,7 @@ class _Trip extends Trip {
 /// Name of the asset.
 @override final  String? assetName;
 /// List of trip points. All points are messages, but if receives values from event, means that message contains an event.
- final  List<Point> _points;
-/// List of trip points. All points are messages, but if receives values from event, means that message contains an event.
-@override List<Point> get points {
-  if (_points is EqualUnmodifiableListView) return _points;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_points);
-}
-
+@override final  List<Point> points;
 
 /// Create a copy of Trip
 /// with the given fields replaced by the non-null parameter values.
@@ -8892,12 +8247,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Trip&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.assetName, assetName) || other.assetName == assetName)&&const DeepCollectionEquality().equals(other._points, _points));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Trip&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.assetName, assetName) || other.assetName == assetName)&&const DeepCollectionEquality().equals(other.points, points));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetId,assetName,const DeepCollectionEquality().hash(_points));
+int get hashCode => Object.hash(runtimeType,assetId,assetName,const DeepCollectionEquality().hash(points));
 
 @override
 String toString() {
@@ -8933,7 +8288,7 @@ class __$TripCopyWithImpl<$Res>
   return _then(_Trip(
 assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String,assetName: freezed == assetName ? _self.assetName : assetName // ignore: cast_nullable_to_non_nullable
-as String?,points: null == points ? _self._points : points // ignore: cast_nullable_to_non_nullable
+as String?,points: null == points ? _self.points : points // ignore: cast_nullable_to_non_nullable
 as List<Point>,
   ));
 }
@@ -9708,7 +9063,7 @@ return $default(_that.id,_that.userName,_that.appName,_that.rows,_that.platform,
 @JsonSerializable()
 
 class _RegisteredLogs implements RegisteredLogs {
-  const _RegisteredLogs({this.id, this.userName, this.appName, final  List<RegisteredLogsRow> rows = const [], this.platform, this.version, @TimestampConverter() required this.createdAt}): _rows = rows;
+  const _RegisteredLogs({this.id, this.userName, this.appName, this.rows = const [], this.platform, this.version, @TimestampConverter() required this.createdAt});
   factory _RegisteredLogs.fromJson(Map<String, dynamic> json) => _$RegisteredLogsFromJson(json);
 
 /// Is the ID of the RegisteredLogs.
@@ -9718,14 +9073,7 @@ class _RegisteredLogs implements RegisteredLogs {
 /// Is the app name of the RegisteredLogs.
 @override final  String? appName;
 /// Is the list of rows in the RegisteredLogs.
- final  List<RegisteredLogsRow> _rows;
-/// Is the list of rows in the RegisteredLogs.
-@override@JsonKey() List<RegisteredLogsRow> get rows {
-  if (_rows is EqualUnmodifiableListView) return _rows;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_rows);
-}
-
+@override@JsonKey() final  List<RegisteredLogsRow> rows;
 /// platform of the RegisteredLogs.
 @override final  String? platform;
 /// version of the RegisteredLogs.
@@ -9746,12 +9094,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisteredLogs&&(identical(other.id, id) || other.id == id)&&(identical(other.userName, userName) || other.userName == userName)&&(identical(other.appName, appName) || other.appName == appName)&&const DeepCollectionEquality().equals(other._rows, _rows)&&(identical(other.platform, platform) || other.platform == platform)&&(identical(other.version, version) || other.version == version)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisteredLogs&&(identical(other.id, id) || other.id == id)&&(identical(other.userName, userName) || other.userName == userName)&&(identical(other.appName, appName) || other.appName == appName)&&const DeepCollectionEquality().equals(other.rows, rows)&&(identical(other.platform, platform) || other.platform == platform)&&(identical(other.version, version) || other.version == version)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,userName,appName,const DeepCollectionEquality().hash(_rows),platform,version,createdAt);
+int get hashCode => Object.hash(runtimeType,id,userName,appName,const DeepCollectionEquality().hash(rows),platform,version,createdAt);
 
 @override
 String toString() {
@@ -9788,7 +9136,7 @@ class __$RegisteredLogsCopyWithImpl<$Res>
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,userName: freezed == userName ? _self.userName : userName // ignore: cast_nullable_to_non_nullable
 as String?,appName: freezed == appName ? _self.appName : appName // ignore: cast_nullable_to_non_nullable
-as String?,rows: null == rows ? _self._rows : rows // ignore: cast_nullable_to_non_nullable
+as String?,rows: null == rows ? _self.rows : rows // ignore: cast_nullable_to_non_nullable
 as List<RegisteredLogsRow>,platform: freezed == platform ? _self.platform : platform // ignore: cast_nullable_to_non_nullable
 as String?,version: freezed == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
 as String?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
@@ -10275,20 +9623,13 @@ return $default(_that.assetId,_that.parameters);case _:
 @JsonSerializable()
 
 class _ParameterUpdate implements ParameterUpdate {
-  const _ParameterUpdate({required this.assetId, @ParamDataMapConverter() final  Map<String, ParamData> parameters = const {}}): _parameters = parameters;
+  const _ParameterUpdate({required this.assetId, @ParamDataMapConverter() this.parameters = const {}});
   factory _ParameterUpdate.fromJson(Map<String, dynamic> json) => _$ParameterUpdateFromJson(json);
 
 /// `assetId` is the unique identifier of the asset whose parameters are being updated.
 @override final  String assetId;
 /// `parameters` is a map where the keys are parameter names (strings) and the values are `ParamData` objects containing the new values and update timestamps for those parameters.
- final  Map<String, ParamData> _parameters;
-/// `parameters` is a map where the keys are parameter names (strings) and the values are `ParamData` objects containing the new values and update timestamps for those parameters.
-@override@JsonKey()@ParamDataMapConverter() Map<String, ParamData> get parameters {
-  if (_parameters is EqualUnmodifiableMapView) return _parameters;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_parameters);
-}
-
+@override@JsonKey()@ParamDataMapConverter() final  Map<String, ParamData> parameters;
 
 /// Create a copy of ParameterUpdate
 /// with the given fields replaced by the non-null parameter values.
@@ -10303,12 +9644,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ParameterUpdate&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other._parameters, _parameters));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ParameterUpdate&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other.parameters, parameters));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetId,const DeepCollectionEquality().hash(_parameters));
+int get hashCode => Object.hash(runtimeType,assetId,const DeepCollectionEquality().hash(parameters));
 
 @override
 String toString() {
@@ -10343,7 +9684,7 @@ class __$ParameterUpdateCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? assetId = null,Object? parameters = null,}) {
   return _then(_ParameterUpdate(
 assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
-as String,parameters: null == parameters ? _self._parameters : parameters // ignore: cast_nullable_to_non_nullable
+as String,parameters: null == parameters ? _self.parameters : parameters // ignore: cast_nullable_to_non_nullable
 as Map<String, ParamData>,
   ));
 }
@@ -10553,22 +9894,14 @@ return $default(_that.assetId,_that.sensors);case _:
 @JsonSerializable()
 
 class _SensorLastUpdate implements SensorLastUpdate {
-  const _SensorLastUpdate({required this.assetId, @SensorLastUpdateConverter() final  Map<String, DateTime> sensors = const {}}): _sensors = sensors;
+  const _SensorLastUpdate({required this.assetId, @SensorLastUpdateConverter() this.sensors = const {}});
   factory _SensorLastUpdate.fromJson(Map<String, dynamic> json) => _$SensorLastUpdateFromJson(json);
 
 /// `assetId` is the unique identifier of the asset whose parameters are being updated.
 @override final  String assetId;
 /// `sensors` is a map where the keys are sensors names (strings) and the values are
 /// `DateTime` objects containing the last update timestamps for those sensors.
- final  Map<String, DateTime> _sensors;
-/// `sensors` is a map where the keys are sensors names (strings) and the values are
-/// `DateTime` objects containing the last update timestamps for those sensors.
-@override@JsonKey()@SensorLastUpdateConverter() Map<String, DateTime> get sensors {
-  if (_sensors is EqualUnmodifiableMapView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_sensors);
-}
-
+@override@JsonKey()@SensorLastUpdateConverter() final  Map<String, DateTime> sensors;
 
 /// Create a copy of SensorLastUpdate
 /// with the given fields replaced by the non-null parameter values.
@@ -10583,12 +9916,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SensorLastUpdate&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other._sensors, _sensors));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SensorLastUpdate&&(identical(other.assetId, assetId) || other.assetId == assetId)&&const DeepCollectionEquality().equals(other.sensors, sensors));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetId,const DeepCollectionEquality().hash(_sensors));
+int get hashCode => Object.hash(runtimeType,assetId,const DeepCollectionEquality().hash(sensors));
 
 @override
 String toString() {
@@ -10623,7 +9956,7 @@ class __$SensorLastUpdateCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? assetId = null,Object? sensors = null,}) {
   return _then(_SensorLastUpdate(
 assetId: null == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
-as String,sensors: null == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as String,sensors: null == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as Map<String, DateTime>,
   ));
 }

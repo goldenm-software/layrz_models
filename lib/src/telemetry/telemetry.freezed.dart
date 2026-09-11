@@ -234,7 +234,7 @@ return $default(_that.id,_that.assetId,_that.receivedAt,_that.geofenceIds,_that.
 @JsonSerializable()
 
 class _AssetTelemetry extends AssetTelemetry {
-  const _AssetTelemetry({required this.id, this.assetId, @TimestampConverter() required this.receivedAt, final  List<String>? geofenceIds, this.position, final  List<TelemetrySensor>? payload, final  List<TelemetrySensor>? sensors}): _geofenceIds = geofenceIds,_payload = payload,_sensors = sensors,super._();
+  const _AssetTelemetry({required this.id, this.assetId, @TimestampConverter() required this.receivedAt, this.geofenceIds, this.position, this.payload, this.sensors}): super._();
   factory _AssetTelemetry.fromJson(Map<String, dynamic> json) => _$AssetTelemetryFromJson(json);
 
 /// ID of the message entity.
@@ -244,40 +244,13 @@ class _AssetTelemetry extends AssetTelemetry {
 /// Unix of last reception date.
 @override@TimestampConverter() final  DateTime receivedAt;
 /// Current geofences ID's where the unit is.
- final  List<String>? _geofenceIds;
-/// Current geofences ID's where the unit is.
-@override List<String>? get geofenceIds {
-  final value = _geofenceIds;
-  if (value == null) return null;
-  if (_geofenceIds is EqualUnmodifiableListView) return _geofenceIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? geofenceIds;
 /// Current position of the message.
 @override final  TelemetryPosition? position;
 /// Raw received payload values list of the message.
- final  List<TelemetrySensor>? _payload;
-/// Raw received payload values list of the message.
-@override List<TelemetrySensor>? get payload {
-  final value = _payload;
-  if (value == null) return null;
-  if (_payload is EqualUnmodifiableListView) return _payload;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TelemetrySensor>? payload;
 /// Current sensor values list of the message.
- final  List<TelemetrySensor>? _sensors;
-/// Current sensor values list of the message.
-@override List<TelemetrySensor>? get sensors {
-  final value = _sensors;
-  if (value == null) return null;
-  if (_sensors is EqualUnmodifiableListView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TelemetrySensor>? sensors;
 
 /// Create a copy of AssetTelemetry
 /// with the given fields replaced by the non-null parameter values.
@@ -292,12 +265,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetTelemetry&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&const DeepCollectionEquality().equals(other._geofenceIds, _geofenceIds)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._payload, _payload)&&const DeepCollectionEquality().equals(other._sensors, _sensors));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetTelemetry&&(identical(other.id, id) || other.id == id)&&(identical(other.assetId, assetId) || other.assetId == assetId)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&const DeepCollectionEquality().equals(other.geofenceIds, geofenceIds)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.payload, payload)&&const DeepCollectionEquality().equals(other.sensors, sensors));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,assetId,receivedAt,const DeepCollectionEquality().hash(_geofenceIds),position,const DeepCollectionEquality().hash(_payload),const DeepCollectionEquality().hash(_sensors));
+int get hashCode => Object.hash(runtimeType,id,assetId,receivedAt,const DeepCollectionEquality().hash(geofenceIds),position,const DeepCollectionEquality().hash(payload),const DeepCollectionEquality().hash(sensors));
 
 @override
 String toString() {
@@ -334,10 +307,10 @@ class __$AssetTelemetryCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String?,receivedAt: null == receivedAt ? _self.receivedAt : receivedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,geofenceIds: freezed == geofenceIds ? _self._geofenceIds : geofenceIds // ignore: cast_nullable_to_non_nullable
+as DateTime,geofenceIds: freezed == geofenceIds ? _self.geofenceIds : geofenceIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as TelemetryPosition?,payload: freezed == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
-as List<TelemetrySensor>?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as TelemetryPosition?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
+as List<TelemetrySensor>?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as List<TelemetrySensor>?,
   ));
 }
@@ -576,7 +549,7 @@ return $default(_that.id,_that.deviceId,_that.receivedAt,_that.position,_that.pa
 @JsonSerializable()
 
 class _DeviceTelemetry extends DeviceTelemetry {
-  const _DeviceTelemetry({required this.id, this.deviceId, @TimestampConverter() required this.receivedAt, this.position, final  List<TelemetrySensor>? payload}): _payload = payload,super._();
+  const _DeviceTelemetry({required this.id, this.deviceId, @TimestampConverter() required this.receivedAt, this.position, this.payload}): super._();
   factory _DeviceTelemetry.fromJson(Map<String, dynamic> json) => _$DeviceTelemetryFromJson(json);
 
 /// ID of the message entity.
@@ -588,16 +561,7 @@ class _DeviceTelemetry extends DeviceTelemetry {
 /// Current position of the message.
 @override final  TelemetryPosition? position;
 /// Raw received payload values list of the message.
- final  List<TelemetrySensor>? _payload;
-/// Raw received payload values list of the message.
-@override List<TelemetrySensor>? get payload {
-  final value = _payload;
-  if (value == null) return null;
-  if (_payload is EqualUnmodifiableListView) return _payload;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TelemetrySensor>? payload;
 
 /// Create a copy of DeviceTelemetry
 /// with the given fields replaced by the non-null parameter values.
@@ -612,12 +576,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeviceTelemetry&&(identical(other.id, id) || other.id == id)&&(identical(other.deviceId, deviceId) || other.deviceId == deviceId)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other._payload, _payload));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeviceTelemetry&&(identical(other.id, id) || other.id == id)&&(identical(other.deviceId, deviceId) || other.deviceId == deviceId)&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.position, position) || other.position == position)&&const DeepCollectionEquality().equals(other.payload, payload));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,deviceId,receivedAt,position,const DeepCollectionEquality().hash(_payload));
+int get hashCode => Object.hash(runtimeType,id,deviceId,receivedAt,position,const DeepCollectionEquality().hash(payload));
 
 @override
 String toString() {
@@ -655,7 +619,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,deviceId: freezed == deviceId ? _self.deviceId : deviceId // ignore: cast_nullable_to_non_nullable
 as String?,receivedAt: null == receivedAt ? _self.receivedAt : receivedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
-as TelemetryPosition?,payload: freezed == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
+as TelemetryPosition?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as List<TelemetrySensor>?,
   ));
 }

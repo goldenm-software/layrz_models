@@ -1519,7 +1519,7 @@ return $default(_that.id,_that.name,_that.plate,_that.vin,_that.dynamicIcon,_tha
 @JsonSerializable()
 
 class _Asset extends Asset {
-  const _Asset({required this.id, required this.name, this.plate, this.vin, this.dynamicIcon, @AssetModeOrNullConverter() this.mode, final  List<String>? childrenIds, final  List<Asset>? children, final  List<DeviceCommand>? commands, final  List<String>? referencesIds, final  List<Reference>? references, final  List<String>? authenticatedAssetsIds, final  List<Asset>? authenticatedAssets, final  List<String>? authenticatedUsersIds, final  List<User>? authenticatedUsers, this.kindId, this.kind, final  List<CustomField>? customFields, final  List<Sensor>? sensors, this.primaryId, this.primary, final  List<String>? devicesIds, final  List<Device>? devices, this.qrCode, final  List<String>? externalIdentifiers, this.connection, this.telemetry, final  List<Tag>? tags, final  List<Access>? access, final  List<AtsExit>? lastExits, this.activeTime, final  List<ContactInfo>? contacts, final  List<MappitLaborHour>? mappitLaborHours, this.ownerId, this.loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') this.authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') this.authenticationCardId, this.nfcIdentifier, final  List<Asset>? linkedSupplyPointAssets, final  List<String>? linkedSupplyPointAssetsIds, final  List<Asset>? linkedStorageTerminals, final  List<String>? linkedStorageTerminalsIds, this.staticPosition, final  List<ZonePoint>? points, final  List<String> parameters = const [], final  List<Sensor>? globalSensors, @FlutterTimeOfDayOrNullConverter() this.mappitLaborStartTime, @FlutterTimeOfDayOrNullConverter() this.mappitLaborEndTime, final  List<Geofence>? geofences, final  List<String>? mappitSecondaryRoutesIds, this.isSuspended, this.authenticationCardCardboardId, this.authenticationCardTagId, this.authenticationCardNfcId, this.authenticationCardCardboard, this.authenticationCardTag, this.authenticationCardNfc, final  List<AssetWidget> widgets = const []}): _childrenIds = childrenIds,_children = children,_commands = commands,_referencesIds = referencesIds,_references = references,_authenticatedAssetsIds = authenticatedAssetsIds,_authenticatedAssets = authenticatedAssets,_authenticatedUsersIds = authenticatedUsersIds,_authenticatedUsers = authenticatedUsers,_customFields = customFields,_sensors = sensors,_devicesIds = devicesIds,_devices = devices,_externalIdentifiers = externalIdentifiers,_tags = tags,_access = access,_lastExits = lastExits,_contacts = contacts,_mappitLaborHours = mappitLaborHours,_linkedSupplyPointAssets = linkedSupplyPointAssets,_linkedSupplyPointAssetsIds = linkedSupplyPointAssetsIds,_linkedStorageTerminals = linkedStorageTerminals,_linkedStorageTerminalsIds = linkedStorageTerminalsIds,_points = points,_parameters = parameters,_globalSensors = globalSensors,_geofences = geofences,_mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,_widgets = widgets,super._();
+  const _Asset({required this.id, required this.name, this.plate, this.vin, this.dynamicIcon, @AssetModeOrNullConverter() this.mode, this.childrenIds, this.children, this.commands, this.referencesIds, this.references, this.authenticatedAssetsIds, this.authenticatedAssets, this.authenticatedUsersIds, this.authenticatedUsers, this.kindId, this.kind, this.customFields, this.sensors, this.primaryId, this.primary, this.devicesIds, this.devices, this.qrCode, this.externalIdentifiers, this.connection, this.telemetry, this.tags, this.access, this.lastExits, this.activeTime, this.contacts, this.mappitLaborHours, this.ownerId, this.loginInfo, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') this.authenticationCard, @Deprecated('Use authenticationCardCardboardId, authenticationCardTag and authenticationCardNfc instead') this.authenticationCardId, this.nfcIdentifier, this.linkedSupplyPointAssets, this.linkedSupplyPointAssetsIds, this.linkedStorageTerminals, this.linkedStorageTerminalsIds, this.staticPosition, this.points, this.parameters = const [], this.globalSensors, @FlutterTimeOfDayOrNullConverter() this.mappitLaborStartTime, @FlutterTimeOfDayOrNullConverter() this.mappitLaborEndTime, this.geofences, this.mappitSecondaryRoutesIds, this.isSuspended, this.authenticationCardCardboardId, this.authenticationCardTagId, this.authenticationCardNfcId, this.authenticationCardCardboard, this.authenticationCardTag, this.authenticationCardNfc, this.widgets = const []}): super._();
   factory _Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
 
 /// [id] of the asset entity. This ID is unique.
@@ -1536,239 +1536,64 @@ class _Asset extends Asset {
 /// Operation [mode] of the asset
 @override@AssetModeOrNullConverter() final  AssetMode? mode;
 /// Children [assets] ids, only for clusters, limited to 1 level.
- final  List<String>? _childrenIds;
-/// Children [assets] ids, only for clusters, limited to 1 level.
-@override List<String>? get childrenIds {
-  final value = _childrenIds;
-  if (value == null) return null;
-  if (_childrenIds is EqualUnmodifiableListView) return _childrenIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? childrenIds;
 /// Children [assets], only for clusters, limited to 1 level.
- final  List<Asset>? _children;
-/// Children [assets], only for clusters, limited to 1 level.
-@override List<Asset>? get children {
-  final value = _children;
-  if (value == null) return null;
-  if (_children is EqualUnmodifiableListView) return _children;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? children;
 /// Is the list of device [commands] available for this asset.
- final  List<DeviceCommand>? _commands;
-/// Is the list of device [commands] available for this asset.
-@override List<DeviceCommand>? get commands {
-  final value = _commands;
-  if (value == null) return null;
-  if (_commands is EqualUnmodifiableListView) return _commands;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<DeviceCommand>? commands;
 /// Is the list of [references] ids associated to the asset
- final  List<String>? _referencesIds;
-/// Is the list of [references] ids associated to the asset
-@override List<String>? get referencesIds {
-  final value = _referencesIds;
-  if (value == null) return null;
-  if (_referencesIds is EqualUnmodifiableListView) return _referencesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? referencesIds;
 /// Is the list of [references] associated to the asset
- final  List<Reference>? _references;
-/// Is the list of [references] associated to the asset
-@override List<Reference>? get references {
-  final value = _references;
-  if (value == null) return null;
-  if (_references is EqualUnmodifiableListView) return _references;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Reference>? references;
 /// Is the list of [authenticatedAssetsIds] to the asset
- final  List<String>? _authenticatedAssetsIds;
-/// Is the list of [authenticatedAssetsIds] to the asset
-@override List<String>? get authenticatedAssetsIds {
-  final value = _authenticatedAssetsIds;
-  if (value == null) return null;
-  if (_authenticatedAssetsIds is EqualUnmodifiableListView) return _authenticatedAssetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? authenticatedAssetsIds;
 /// Is the list of [authenticatedAssets] to the asset
- final  List<Asset>? _authenticatedAssets;
-/// Is the list of [authenticatedAssets] to the asset
-@override List<Asset>? get authenticatedAssets {
-  final value = _authenticatedAssets;
-  if (value == null) return null;
-  if (_authenticatedAssets is EqualUnmodifiableListView) return _authenticatedAssets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? authenticatedAssets;
 /// Is the list of [authenticatedUsersIds] to the asset
- final  List<String>? _authenticatedUsersIds;
-/// Is the list of [authenticatedUsersIds] to the asset
-@override List<String>? get authenticatedUsersIds {
-  final value = _authenticatedUsersIds;
-  if (value == null) return null;
-  if (_authenticatedUsersIds is EqualUnmodifiableListView) return _authenticatedUsersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? authenticatedUsersIds;
 /// Is the list of [authenticatedUsers] to the asset
- final  List<User>? _authenticatedUsers;
-/// Is the list of [authenticatedUsers] to the asset
-@override List<User>? get authenticatedUsers {
-  final value = _authenticatedUsers;
-  if (value == null) return null;
-  if (_authenticatedUsers is EqualUnmodifiableListView) return _authenticatedUsers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<User>? authenticatedUsers;
 /// [kindId] is the id of the asset kind.
 @override final  String? kindId;
 /// [kind] is the asset kind.
 @override final  Category? kind;
 /// List of [customFields] linked to the asset. Please read the documentation for [CustomField]
 /// for more details about the fields.
- final  List<CustomField>? _customFields;
-/// List of [customFields] linked to the asset. Please read the documentation for [CustomField]
-/// for more details about the fields.
-@override List<CustomField>? get customFields {
-  final value = _customFields;
-  if (value == null) return null;
-  if (_customFields is EqualUnmodifiableListView) return _customFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CustomField>? customFields;
 /// List of [sensors] linked to the asset. Please read the documentation for Sensor for more
 /// details about the fields.
- final  List<Sensor>? _sensors;
-/// List of [sensors] linked to the asset. Please read the documentation for Sensor for more
-/// details about the fields.
-@override List<Sensor>? get sensors {
-  final value = _sensors;
-  if (value == null) return null;
-  if (_sensors is EqualUnmodifiableListView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Sensor>? sensors;
 /// [primaryId] is the primary device id.
 @override final  String? primaryId;
 /// [primary] is the primary device.
 @override final  Device? primary;
 /// [devicesIds] is the list of devices ids associated to the asset.
- final  List<String>? _devicesIds;
-/// [devicesIds] is the list of devices ids associated to the asset.
-@override List<String>? get devicesIds {
-  final value = _devicesIds;
-  if (value == null) return null;
-  if (_devicesIds is EqualUnmodifiableListView) return _devicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? devicesIds;
 /// [devices] is the list of devices associated to the asset.
- final  List<Device>? _devices;
-/// [devices] is the list of devices associated to the asset.
-@override List<Device>? get devices {
-  final value = _devices;
-  if (value == null) return null;
-  if (_devices is EqualUnmodifiableListView) return _devices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Device>? devices;
 /// [qrCode] is the QR code of the asset.
 @override final  String? qrCode;
 /// [externalIdentifiers] is the list of external identifiers of the asset.
- final  List<String>? _externalIdentifiers;
-/// [externalIdentifiers] is the list of external identifiers of the asset.
-@override List<String>? get externalIdentifiers {
-  final value = _externalIdentifiers;
-  if (value == null) return null;
-  if (_externalIdentifiers is EqualUnmodifiableListView) return _externalIdentifiers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? externalIdentifiers;
 /// [connection] is the connection status of the asset.
 @override final  Connection? connection;
 /// [telemetry] is the telemetry of the asset.
 @override final  AssetTelemetry? telemetry;
 /// List of [tags] assigned to the asset
- final  List<Tag>? _tags;
-/// List of [tags] assigned to the asset
-@override List<Tag>? get tags {
-  final value = _tags;
-  if (value == null) return null;
-  if (_tags is EqualUnmodifiableListView) return _tags;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Tag>? tags;
 /// List of custom [access] permissions.
- final  List<Access>? _access;
-/// List of custom [access] permissions.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// List of [lastExits] of the asset.
 /// Only used for AllTank Systems project.
- final  List<AtsExit>? _lastExits;
-/// List of [lastExits] of the asset.
-/// Only used for AllTank Systems project.
-@override List<AtsExit>? get lastExits {
-  final value = _lastExits;
-  if (value == null) return null;
-  if (_lastExits is EqualUnmodifiableListView) return _lastExits;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AtsExit>? lastExits;
 /// [activeTime] is the active time of the asset.
 /// Only used for AllTank Systems project.
 @override final  String? activeTime;
 /// [contacts] is the list of contacts associated to the asset.
- final  List<ContactInfo>? _contacts;
-/// [contacts] is the list of contacts associated to the asset.
-@override List<ContactInfo>? get contacts {
-  final value = _contacts;
-  if (value == null) return null;
-  if (_contacts is EqualUnmodifiableListView) return _contacts;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ContactInfo>? contacts;
 /// [laborHours] represents the list of labor hours configured to this asset.
 /// This field is only for `Mappit` use.
- final  List<MappitLaborHour>? _mappitLaborHours;
-/// [laborHours] represents the list of labor hours configured to this asset.
-/// This field is only for `Mappit` use.
-@override List<MappitLaborHour>? get mappitLaborHours {
-  final value = _mappitLaborHours;
-  if (value == null) return null;
-  if (_mappitLaborHours is EqualUnmodifiableListView) return _mappitLaborHours;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<MappitLaborHour>? mappitLaborHours;
 /// [ownerId] is the ID of the user owner of this asset
 @override final  String? ownerId;
 /// [loginInfo] refers to the login inInputation of the asset.
@@ -1784,120 +1609,35 @@ class _Asset extends Asset {
 @override final  String? nfcIdentifier;
 /// [linkedSupplyPointAssets] refers to the list of supply points assets linked to this asset.
 /// Only used in ATS apps.
- final  List<Asset>? _linkedSupplyPointAssets;
-/// [linkedSupplyPointAssets] refers to the list of supply points assets linked to this asset.
-/// Only used in ATS apps.
-@override List<Asset>? get linkedSupplyPointAssets {
-  final value = _linkedSupplyPointAssets;
-  if (value == null) return null;
-  if (_linkedSupplyPointAssets is EqualUnmodifiableListView) return _linkedSupplyPointAssets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? linkedSupplyPointAssets;
 /// [linkedSupplyPointAssetsIds] refers to the list of supply points assets IDs linked to this asset.
 /// Only used in ATS apps.
- final  List<String>? _linkedSupplyPointAssetsIds;
-/// [linkedSupplyPointAssetsIds] refers to the list of supply points assets IDs linked to this asset.
-/// Only used in ATS apps.
-@override List<String>? get linkedSupplyPointAssetsIds {
-  final value = _linkedSupplyPointAssetsIds;
-  if (value == null) return null;
-  if (_linkedSupplyPointAssetsIds is EqualUnmodifiableListView) return _linkedSupplyPointAssetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? linkedSupplyPointAssetsIds;
 /// [linkedStorageTerminals] refers to the list of storage terminals assets linked to this asset.
 /// Only used in ATS apps.
- final  List<Asset>? _linkedStorageTerminals;
-/// [linkedStorageTerminals] refers to the list of storage terminals assets linked to this asset.
-/// Only used in ATS apps.
-@override List<Asset>? get linkedStorageTerminals {
-  final value = _linkedStorageTerminals;
-  if (value == null) return null;
-  if (_linkedStorageTerminals is EqualUnmodifiableListView) return _linkedStorageTerminals;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? linkedStorageTerminals;
 /// [linkedStorageTerminalsIds] refers to the list of storage terminals assets IDs linked to this asset.
 /// Only used in ATS apps.
- final  List<String>? _linkedStorageTerminalsIds;
-/// [linkedStorageTerminalsIds] refers to the list of storage terminals assets IDs linked to this asset.
-/// Only used in ATS apps.
-@override List<String>? get linkedStorageTerminalsIds {
-  final value = _linkedStorageTerminalsIds;
-  if (value == null) return null;
-  if (_linkedStorageTerminalsIds is EqualUnmodifiableListView) return _linkedStorageTerminalsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? linkedStorageTerminalsIds;
 /// [staticPosition] refers to the static position of the asset.
 /// Only used when mode is [AssetMode.fixed].
 @override final  StaticPosition? staticPosition;
 /// [points] refers to the list of points of the zone.
 /// Only used when mode is [AssetMode.zone].
- final  List<ZonePoint>? _points;
-/// [points] refers to the list of points of the zone.
-/// Only used when mode is [AssetMode.zone].
-@override List<ZonePoint>? get points {
-  final value = _points;
-  if (value == null) return null;
-  if (_points is EqualUnmodifiableListView) return _points;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ZonePoint>? points;
 /// [parameters] refers to the list of parameters of the asset.
 /// Is only a list of strings.
- final  List<String> _parameters;
-/// [parameters] refers to the list of parameters of the asset.
-/// Is only a list of strings.
-@override@JsonKey() List<String> get parameters {
-  if (_parameters is EqualUnmodifiableListView) return _parameters;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_parameters);
-}
-
+@override@JsonKey() final  List<String> parameters;
 /// [globalSensors] is the list of global sensors of the asset.
- final  List<Sensor>? _globalSensors;
-/// [globalSensors] is the list of global sensors of the asset.
-@override List<Sensor>? get globalSensors {
-  final value = _globalSensors;
-  if (value == null) return null;
-  if (_globalSensors is EqualUnmodifiableListView) return _globalSensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Sensor>? globalSensors;
 /// [mappitLaborStartTime] is the time of the labor start time.
 @override@FlutterTimeOfDayOrNullConverter() final  TimeOfDay? mappitLaborStartTime;
 /// [mappitLaborEndTime] is the time of the labor end time.
 @override@FlutterTimeOfDayOrNullConverter() final  TimeOfDay? mappitLaborEndTime;
 /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
- final  List<Geofence>? _geofences;
-/// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
-@override List<Geofence>? get geofences {
-  final value = _geofences;
-  if (value == null) return null;
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Geofence>? geofences;
 /// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
- final  List<String>? _mappitSecondaryRoutesIds;
-/// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
-@override List<String>? get mappitSecondaryRoutesIds {
-  final value = _mappitSecondaryRoutesIds;
-  if (value == null) return null;
-  if (_mappitSecondaryRoutesIds is EqualUnmodifiableListView) return _mappitSecondaryRoutesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? mappitSecondaryRoutesIds;
 /// [isSuspended] if the asset is suspended.
 @override final  bool? isSuspended;
 /// [authenticationCardCardboardId] is the cardboard ID of the authentication card id.
@@ -1914,15 +1654,7 @@ class _Asset extends Asset {
 @override final  AtsAuthenticationCard? authenticationCardNfc;
 /// [widgets] is the curated, ordered list of live-data visualization widgets configured for this
 /// asset. Read-only on this model — writes go through the dedicated `updateAssetWidgets` mutation.
- final  List<AssetWidget> _widgets;
-/// [widgets] is the curated, ordered list of live-data visualization widgets configured for this
-/// asset. Read-only on this model — writes go through the dedicated `updateAssetWidgets` mutation.
-@override@JsonKey() List<AssetWidget> get widgets {
-  if (_widgets is EqualUnmodifiableListView) return _widgets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_widgets);
-}
-
+@override@JsonKey() final  List<AssetWidget> widgets;
 
 /// Create a copy of Asset
 /// with the given fields replaced by the non-null parameter values.
@@ -1937,12 +1669,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Asset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.plate, plate) || other.plate == plate)&&(identical(other.vin, vin) || other.vin == vin)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other._childrenIds, _childrenIds)&&const DeepCollectionEquality().equals(other._children, _children)&&const DeepCollectionEquality().equals(other._commands, _commands)&&const DeepCollectionEquality().equals(other._referencesIds, _referencesIds)&&const DeepCollectionEquality().equals(other._references, _references)&&const DeepCollectionEquality().equals(other._authenticatedAssetsIds, _authenticatedAssetsIds)&&const DeepCollectionEquality().equals(other._authenticatedAssets, _authenticatedAssets)&&const DeepCollectionEquality().equals(other._authenticatedUsersIds, _authenticatedUsersIds)&&const DeepCollectionEquality().equals(other._authenticatedUsers, _authenticatedUsers)&&(identical(other.kindId, kindId) || other.kindId == kindId)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&(identical(other.primaryId, primaryId) || other.primaryId == primaryId)&&(identical(other.primary, primary) || other.primary == primary)&&const DeepCollectionEquality().equals(other._devicesIds, _devicesIds)&&const DeepCollectionEquality().equals(other._devices, _devices)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other._externalIdentifiers, _externalIdentifiers)&&(identical(other.connection, connection) || other.connection == connection)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&const DeepCollectionEquality().equals(other._tags, _tags)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._lastExits, _lastExits)&&(identical(other.activeTime, activeTime) || other.activeTime == activeTime)&&const DeepCollectionEquality().equals(other._contacts, _contacts)&&const DeepCollectionEquality().equals(other._mappitLaborHours, _mappitLaborHours)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.loginInfo, loginInfo) || other.loginInfo == loginInfo)&&(identical(other.authenticationCard, authenticationCard) || other.authenticationCard == authenticationCard)&&(identical(other.authenticationCardId, authenticationCardId) || other.authenticationCardId == authenticationCardId)&&(identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier)&&const DeepCollectionEquality().equals(other._linkedSupplyPointAssets, _linkedSupplyPointAssets)&&const DeepCollectionEquality().equals(other._linkedSupplyPointAssetsIds, _linkedSupplyPointAssetsIds)&&const DeepCollectionEquality().equals(other._linkedStorageTerminals, _linkedStorageTerminals)&&const DeepCollectionEquality().equals(other._linkedStorageTerminalsIds, _linkedStorageTerminalsIds)&&(identical(other.staticPosition, staticPosition) || other.staticPosition == staticPosition)&&const DeepCollectionEquality().equals(other._points, _points)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&const DeepCollectionEquality().equals(other._globalSensors, _globalSensors)&&(identical(other.mappitLaborStartTime, mappitLaborStartTime) || other.mappitLaborStartTime == mappitLaborStartTime)&&(identical(other.mappitLaborEndTime, mappitLaborEndTime) || other.mappitLaborEndTime == mappitLaborEndTime)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.authenticationCardCardboardId, authenticationCardCardboardId) || other.authenticationCardCardboardId == authenticationCardCardboardId)&&(identical(other.authenticationCardTagId, authenticationCardTagId) || other.authenticationCardTagId == authenticationCardTagId)&&(identical(other.authenticationCardNfcId, authenticationCardNfcId) || other.authenticationCardNfcId == authenticationCardNfcId)&&(identical(other.authenticationCardCardboard, authenticationCardCardboard) || other.authenticationCardCardboard == authenticationCardCardboard)&&(identical(other.authenticationCardTag, authenticationCardTag) || other.authenticationCardTag == authenticationCardTag)&&(identical(other.authenticationCardNfc, authenticationCardNfc) || other.authenticationCardNfc == authenticationCardNfc)&&const DeepCollectionEquality().equals(other._widgets, _widgets));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Asset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.plate, plate) || other.plate == plate)&&(identical(other.vin, vin) || other.vin == vin)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.mode, mode) || other.mode == mode)&&const DeepCollectionEquality().equals(other.childrenIds, childrenIds)&&const DeepCollectionEquality().equals(other.children, children)&&const DeepCollectionEquality().equals(other.commands, commands)&&const DeepCollectionEquality().equals(other.referencesIds, referencesIds)&&const DeepCollectionEquality().equals(other.references, references)&&const DeepCollectionEquality().equals(other.authenticatedAssetsIds, authenticatedAssetsIds)&&const DeepCollectionEquality().equals(other.authenticatedAssets, authenticatedAssets)&&const DeepCollectionEquality().equals(other.authenticatedUsersIds, authenticatedUsersIds)&&const DeepCollectionEquality().equals(other.authenticatedUsers, authenticatedUsers)&&(identical(other.kindId, kindId) || other.kindId == kindId)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&(identical(other.primaryId, primaryId) || other.primaryId == primaryId)&&(identical(other.primary, primary) || other.primary == primary)&&const DeepCollectionEquality().equals(other.devicesIds, devicesIds)&&const DeepCollectionEquality().equals(other.devices, devices)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other.externalIdentifiers, externalIdentifiers)&&(identical(other.connection, connection) || other.connection == connection)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&const DeepCollectionEquality().equals(other.tags, tags)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.lastExits, lastExits)&&(identical(other.activeTime, activeTime) || other.activeTime == activeTime)&&const DeepCollectionEquality().equals(other.contacts, contacts)&&const DeepCollectionEquality().equals(other.mappitLaborHours, mappitLaborHours)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.loginInfo, loginInfo) || other.loginInfo == loginInfo)&&(identical(other.authenticationCard, authenticationCard) || other.authenticationCard == authenticationCard)&&(identical(other.authenticationCardId, authenticationCardId) || other.authenticationCardId == authenticationCardId)&&(identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier)&&const DeepCollectionEquality().equals(other.linkedSupplyPointAssets, linkedSupplyPointAssets)&&const DeepCollectionEquality().equals(other.linkedSupplyPointAssetsIds, linkedSupplyPointAssetsIds)&&const DeepCollectionEquality().equals(other.linkedStorageTerminals, linkedStorageTerminals)&&const DeepCollectionEquality().equals(other.linkedStorageTerminalsIds, linkedStorageTerminalsIds)&&(identical(other.staticPosition, staticPosition) || other.staticPosition == staticPosition)&&const DeepCollectionEquality().equals(other.points, points)&&const DeepCollectionEquality().equals(other.parameters, parameters)&&const DeepCollectionEquality().equals(other.globalSensors, globalSensors)&&(identical(other.mappitLaborStartTime, mappitLaborStartTime) || other.mappitLaborStartTime == mappitLaborStartTime)&&(identical(other.mappitLaborEndTime, mappitLaborEndTime) || other.mappitLaborEndTime == mappitLaborEndTime)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.authenticationCardCardboardId, authenticationCardCardboardId) || other.authenticationCardCardboardId == authenticationCardCardboardId)&&(identical(other.authenticationCardTagId, authenticationCardTagId) || other.authenticationCardTagId == authenticationCardTagId)&&(identical(other.authenticationCardNfcId, authenticationCardNfcId) || other.authenticationCardNfcId == authenticationCardNfcId)&&(identical(other.authenticationCardCardboard, authenticationCardCardboard) || other.authenticationCardCardboard == authenticationCardCardboard)&&(identical(other.authenticationCardTag, authenticationCardTag) || other.authenticationCardTag == authenticationCardTag)&&(identical(other.authenticationCardNfc, authenticationCardNfc) || other.authenticationCardNfc == authenticationCardNfc)&&const DeepCollectionEquality().equals(other.widgets, widgets));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,plate,vin,dynamicIcon,mode,const DeepCollectionEquality().hash(_childrenIds),const DeepCollectionEquality().hash(_children),const DeepCollectionEquality().hash(_commands),const DeepCollectionEquality().hash(_referencesIds),const DeepCollectionEquality().hash(_references),const DeepCollectionEquality().hash(_authenticatedAssetsIds),const DeepCollectionEquality().hash(_authenticatedAssets),const DeepCollectionEquality().hash(_authenticatedUsersIds),const DeepCollectionEquality().hash(_authenticatedUsers),kindId,kind,const DeepCollectionEquality().hash(_customFields),const DeepCollectionEquality().hash(_sensors),primaryId,primary,const DeepCollectionEquality().hash(_devicesIds),const DeepCollectionEquality().hash(_devices),qrCode,const DeepCollectionEquality().hash(_externalIdentifiers),connection,telemetry,const DeepCollectionEquality().hash(_tags),const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_lastExits),activeTime,const DeepCollectionEquality().hash(_contacts),const DeepCollectionEquality().hash(_mappitLaborHours),ownerId,loginInfo,authenticationCard,authenticationCardId,nfcIdentifier,const DeepCollectionEquality().hash(_linkedSupplyPointAssets),const DeepCollectionEquality().hash(_linkedSupplyPointAssetsIds),const DeepCollectionEquality().hash(_linkedStorageTerminals),const DeepCollectionEquality().hash(_linkedStorageTerminalsIds),staticPosition,const DeepCollectionEquality().hash(_points),const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_globalSensors),mappitLaborStartTime,mappitLaborEndTime,const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),isSuspended,authenticationCardCardboardId,authenticationCardTagId,authenticationCardNfcId,authenticationCardCardboard,authenticationCardTag,authenticationCardNfc,const DeepCollectionEquality().hash(_widgets)]);
+int get hashCode => Object.hashAll([runtimeType,id,name,plate,vin,dynamicIcon,mode,const DeepCollectionEquality().hash(childrenIds),const DeepCollectionEquality().hash(children),const DeepCollectionEquality().hash(commands),const DeepCollectionEquality().hash(referencesIds),const DeepCollectionEquality().hash(references),const DeepCollectionEquality().hash(authenticatedAssetsIds),const DeepCollectionEquality().hash(authenticatedAssets),const DeepCollectionEquality().hash(authenticatedUsersIds),const DeepCollectionEquality().hash(authenticatedUsers),kindId,kind,const DeepCollectionEquality().hash(customFields),const DeepCollectionEquality().hash(sensors),primaryId,primary,const DeepCollectionEquality().hash(devicesIds),const DeepCollectionEquality().hash(devices),qrCode,const DeepCollectionEquality().hash(externalIdentifiers),connection,telemetry,const DeepCollectionEquality().hash(tags),const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(lastExits),activeTime,const DeepCollectionEquality().hash(contacts),const DeepCollectionEquality().hash(mappitLaborHours),ownerId,loginInfo,authenticationCard,authenticationCardId,nfcIdentifier,const DeepCollectionEquality().hash(linkedSupplyPointAssets),const DeepCollectionEquality().hash(linkedSupplyPointAssetsIds),const DeepCollectionEquality().hash(linkedStorageTerminals),const DeepCollectionEquality().hash(linkedStorageTerminalsIds),staticPosition,const DeepCollectionEquality().hash(points),const DeepCollectionEquality().hash(parameters),const DeepCollectionEquality().hash(globalSensors),mappitLaborStartTime,mappitLaborEndTime,const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),isSuspended,authenticationCardCardboardId,authenticationCardTagId,authenticationCardNfcId,authenticationCardCardboard,authenticationCardTag,authenticationCardNfc,const DeepCollectionEquality().hash(widgets)]);
 
 @override
 String toString() {
@@ -1982,50 +1714,50 @@ as String,plate: freezed == plate ? _self.plate : plate // ignore: cast_nullable
 as String?,vin: freezed == vin ? _self.vin : vin // ignore: cast_nullable_to_non_nullable
 as String?,dynamicIcon: freezed == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
 as Avatar?,mode: freezed == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
-as AssetMode?,childrenIds: freezed == childrenIds ? _self._childrenIds : childrenIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,children: freezed == children ? _self._children : children // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,commands: freezed == commands ? _self._commands : commands // ignore: cast_nullable_to_non_nullable
-as List<DeviceCommand>?,referencesIds: freezed == referencesIds ? _self._referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,references: freezed == references ? _self._references : references // ignore: cast_nullable_to_non_nullable
-as List<Reference>?,authenticatedAssetsIds: freezed == authenticatedAssetsIds ? _self._authenticatedAssetsIds : authenticatedAssetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,authenticatedAssets: freezed == authenticatedAssets ? _self._authenticatedAssets : authenticatedAssets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,authenticatedUsersIds: freezed == authenticatedUsersIds ? _self._authenticatedUsersIds : authenticatedUsersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,authenticatedUsers: freezed == authenticatedUsers ? _self._authenticatedUsers : authenticatedUsers // ignore: cast_nullable_to_non_nullable
+as AssetMode?,childrenIds: freezed == childrenIds ? _self.childrenIds : childrenIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,children: freezed == children ? _self.children : children // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,commands: freezed == commands ? _self.commands : commands // ignore: cast_nullable_to_non_nullable
+as List<DeviceCommand>?,referencesIds: freezed == referencesIds ? _self.referencesIds : referencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,references: freezed == references ? _self.references : references // ignore: cast_nullable_to_non_nullable
+as List<Reference>?,authenticatedAssetsIds: freezed == authenticatedAssetsIds ? _self.authenticatedAssetsIds : authenticatedAssetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,authenticatedAssets: freezed == authenticatedAssets ? _self.authenticatedAssets : authenticatedAssets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,authenticatedUsersIds: freezed == authenticatedUsersIds ? _self.authenticatedUsersIds : authenticatedUsersIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,authenticatedUsers: freezed == authenticatedUsers ? _self.authenticatedUsers : authenticatedUsers // ignore: cast_nullable_to_non_nullable
 as List<User>?,kindId: freezed == kindId ? _self.kindId : kindId // ignore: cast_nullable_to_non_nullable
 as String?,kind: freezed == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
-as Category?,customFields: freezed == customFields ? _self._customFields : customFields // ignore: cast_nullable_to_non_nullable
-as List<CustomField>?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
+as Category?,customFields: freezed == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
+as List<CustomField>?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
 as List<Sensor>?,primaryId: freezed == primaryId ? _self.primaryId : primaryId // ignore: cast_nullable_to_non_nullable
 as String?,primary: freezed == primary ? _self.primary : primary // ignore: cast_nullable_to_non_nullable
-as Device?,devicesIds: freezed == devicesIds ? _self._devicesIds : devicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,devices: freezed == devices ? _self._devices : devices // ignore: cast_nullable_to_non_nullable
+as Device?,devicesIds: freezed == devicesIds ? _self.devicesIds : devicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,devices: freezed == devices ? _self.devices : devices // ignore: cast_nullable_to_non_nullable
 as List<Device>?,qrCode: freezed == qrCode ? _self.qrCode : qrCode // ignore: cast_nullable_to_non_nullable
-as String?,externalIdentifiers: freezed == externalIdentifiers ? _self._externalIdentifiers : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+as String?,externalIdentifiers: freezed == externalIdentifiers ? _self.externalIdentifiers : externalIdentifiers // ignore: cast_nullable_to_non_nullable
 as List<String>?,connection: freezed == connection ? _self.connection : connection // ignore: cast_nullable_to_non_nullable
 as Connection?,telemetry: freezed == telemetry ? _self.telemetry : telemetry // ignore: cast_nullable_to_non_nullable
-as AssetTelemetry?,tags: freezed == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
-as List<Tag>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,lastExits: freezed == lastExits ? _self._lastExits : lastExits // ignore: cast_nullable_to_non_nullable
+as AssetTelemetry?,tags: freezed == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
+as List<Tag>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as List<Access>?,lastExits: freezed == lastExits ? _self.lastExits : lastExits // ignore: cast_nullable_to_non_nullable
 as List<AtsExit>?,activeTime: freezed == activeTime ? _self.activeTime : activeTime // ignore: cast_nullable_to_non_nullable
-as String?,contacts: freezed == contacts ? _self._contacts : contacts // ignore: cast_nullable_to_non_nullable
-as List<ContactInfo>?,mappitLaborHours: freezed == mappitLaborHours ? _self._mappitLaborHours : mappitLaborHours // ignore: cast_nullable_to_non_nullable
+as String?,contacts: freezed == contacts ? _self.contacts : contacts // ignore: cast_nullable_to_non_nullable
+as List<ContactInfo>?,mappitLaborHours: freezed == mappitLaborHours ? _self.mappitLaborHours : mappitLaborHours // ignore: cast_nullable_to_non_nullable
 as List<MappitLaborHour>?,ownerId: freezed == ownerId ? _self.ownerId : ownerId // ignore: cast_nullable_to_non_nullable
 as String?,loginInfo: freezed == loginInfo ? _self.loginInfo : loginInfo // ignore: cast_nullable_to_non_nullable
 as AssetLoginInfo?,authenticationCard: freezed == authenticationCard ? _self.authenticationCard : authenticationCard // ignore: cast_nullable_to_non_nullable
 as AtsAuthenticationCard?,authenticationCardId: freezed == authenticationCardId ? _self.authenticationCardId : authenticationCardId // ignore: cast_nullable_to_non_nullable
 as String?,nfcIdentifier: freezed == nfcIdentifier ? _self.nfcIdentifier : nfcIdentifier // ignore: cast_nullable_to_non_nullable
-as String?,linkedSupplyPointAssets: freezed == linkedSupplyPointAssets ? _self._linkedSupplyPointAssets : linkedSupplyPointAssets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,linkedSupplyPointAssetsIds: freezed == linkedSupplyPointAssetsIds ? _self._linkedSupplyPointAssetsIds : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,linkedStorageTerminals: freezed == linkedStorageTerminals ? _self._linkedStorageTerminals : linkedStorageTerminals // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,linkedStorageTerminalsIds: freezed == linkedStorageTerminalsIds ? _self._linkedStorageTerminalsIds : linkedStorageTerminalsIds // ignore: cast_nullable_to_non_nullable
+as String?,linkedSupplyPointAssets: freezed == linkedSupplyPointAssets ? _self.linkedSupplyPointAssets : linkedSupplyPointAssets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,linkedSupplyPointAssetsIds: freezed == linkedSupplyPointAssetsIds ? _self.linkedSupplyPointAssetsIds : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,linkedStorageTerminals: freezed == linkedStorageTerminals ? _self.linkedStorageTerminals : linkedStorageTerminals // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,linkedStorageTerminalsIds: freezed == linkedStorageTerminalsIds ? _self.linkedStorageTerminalsIds : linkedStorageTerminalsIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,staticPosition: freezed == staticPosition ? _self.staticPosition : staticPosition // ignore: cast_nullable_to_non_nullable
-as StaticPosition?,points: freezed == points ? _self._points : points // ignore: cast_nullable_to_non_nullable
-as List<ZonePoint>?,parameters: null == parameters ? _self._parameters : parameters // ignore: cast_nullable_to_non_nullable
-as List<String>,globalSensors: freezed == globalSensors ? _self._globalSensors : globalSensors // ignore: cast_nullable_to_non_nullable
+as StaticPosition?,points: freezed == points ? _self.points : points // ignore: cast_nullable_to_non_nullable
+as List<ZonePoint>?,parameters: null == parameters ? _self.parameters : parameters // ignore: cast_nullable_to_non_nullable
+as List<String>,globalSensors: freezed == globalSensors ? _self.globalSensors : globalSensors // ignore: cast_nullable_to_non_nullable
 as List<Sensor>?,mappitLaborStartTime: freezed == mappitLaborStartTime ? _self.mappitLaborStartTime : mappitLaborStartTime // ignore: cast_nullable_to_non_nullable
 as TimeOfDay?,mappitLaborEndTime: freezed == mappitLaborEndTime ? _self.mappitLaborEndTime : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
-as TimeOfDay?,geofences: freezed == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds ? _self._mappitSecondaryRoutesIds : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
+as TimeOfDay?,geofences: freezed == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>?,mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds ? _self.mappitSecondaryRoutesIds : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,isSuspended: freezed == isSuspended ? _self.isSuspended : isSuspended // ignore: cast_nullable_to_non_nullable
 as bool?,authenticationCardCardboardId: freezed == authenticationCardCardboardId ? _self.authenticationCardCardboardId : authenticationCardCardboardId // ignore: cast_nullable_to_non_nullable
 as String?,authenticationCardTagId: freezed == authenticationCardTagId ? _self.authenticationCardTagId : authenticationCardTagId // ignore: cast_nullable_to_non_nullable
@@ -2033,7 +1765,7 @@ as String?,authenticationCardNfcId: freezed == authenticationCardNfcId ? _self.a
 as String?,authenticationCardCardboard: freezed == authenticationCardCardboard ? _self.authenticationCardCardboard : authenticationCardCardboard // ignore: cast_nullable_to_non_nullable
 as AtsAuthenticationCard?,authenticationCardTag: freezed == authenticationCardTag ? _self.authenticationCardTag : authenticationCardTag // ignore: cast_nullable_to_non_nullable
 as AtsAuthenticationCard?,authenticationCardNfc: freezed == authenticationCardNfc ? _self.authenticationCardNfc : authenticationCardNfc // ignore: cast_nullable_to_non_nullable
-as AtsAuthenticationCard?,widgets: null == widgets ? _self._widgets : widgets // ignore: cast_nullable_to_non_nullable
+as AtsAuthenticationCard?,widgets: null == widgets ? _self.widgets : widgets // ignore: cast_nullable_to_non_nullable
 as List<AssetWidget>,
   ));
 }
@@ -3118,7 +2850,7 @@ return $default(_that.title,_that.minValue,_that.maxValue,_that.ranges);case _:
 @JsonSerializable()
 
 class _AssetWidgetConfig implements AssetWidgetConfig {
-  const _AssetWidgetConfig({this.title = '', this.minValue, this.maxValue, final  List<AssetWidgetRange>? ranges}): _ranges = ranges;
+  const _AssetWidgetConfig({this.title = '', this.minValue, this.maxValue, this.ranges});
   factory _AssetWidgetConfig.fromJson(Map<String, dynamic> json) => _$AssetWidgetConfigFromJson(json);
 
 /// [title] shown on the widget card.
@@ -3129,17 +2861,7 @@ class _AssetWidgetConfig implements AssetWidgetConfig {
 @override final  double? maxValue;
 /// [ranges] are the ordered `>= value → color` thresholds. The color switches at each threshold
 /// and above.
- final  List<AssetWidgetRange>? _ranges;
-/// [ranges] are the ordered `>= value → color` thresholds. The color switches at each threshold
-/// and above.
-@override List<AssetWidgetRange>? get ranges {
-  final value = _ranges;
-  if (value == null) return null;
-  if (_ranges is EqualUnmodifiableListView) return _ranges;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AssetWidgetRange>? ranges;
 
 /// Create a copy of AssetWidgetConfig
 /// with the given fields replaced by the non-null parameter values.
@@ -3154,12 +2876,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetWidgetConfig&&(identical(other.title, title) || other.title == title)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&const DeepCollectionEquality().equals(other._ranges, _ranges));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetWidgetConfig&&(identical(other.title, title) || other.title == title)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&const DeepCollectionEquality().equals(other.ranges, ranges));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,title,minValue,maxValue,const DeepCollectionEquality().hash(_ranges));
+int get hashCode => Object.hash(runtimeType,title,minValue,maxValue,const DeepCollectionEquality().hash(ranges));
 
 @override
 String toString() {
@@ -3196,7 +2918,7 @@ class __$AssetWidgetConfigCopyWithImpl<$Res>
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,minValue: freezed == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
 as double?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
-as double?,ranges: freezed == ranges ? _self._ranges : ranges // ignore: cast_nullable_to_non_nullable
+as double?,ranges: freezed == ranges ? _self.ranges : ranges // ignore: cast_nullable_to_non_nullable
 as List<AssetWidgetRange>?,
   ));
 }

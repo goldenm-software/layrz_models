@@ -254,7 +254,7 @@ return $default(_that.id,_that.name,_that.source,_that.rasterServerLight,_that.r
 @JsonSerializable()
 
 class _MapLayer extends MapLayer {
-  const _MapLayer({required this.id, required this.name, @JsonKey(unknownEnumValue: MapSource.custom) required this.source, this.rasterServerLight, this.rasterServerDark, this.googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) final  List<GoogleMapLayer>? googleLayers, this.mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation) final  List<MapboxStyle>? mapboxLayers, this.mapboxCustomUsername, this.mapboxCustomStyleId, this.hereToken, @JsonKey(unknownEnumValue: HereStyle.lite) final  List<HereStyle>? hereLayers, this.attributionUrl = 'https://cdn.layrz.com/resources/layrz/logo/normal.png', this.attributionUrlDark, this.attributionWidth = 100, this.attributionHeight = 30, final  List<String> appsIds = const []}): _googleLayers = googleLayers,_mapboxLayers = mapboxLayers,_hereLayers = hereLayers,_appsIds = appsIds,super._();
+  const _MapLayer({required this.id, required this.name, @JsonKey(unknownEnumValue: MapSource.custom) required this.source, this.rasterServerLight, this.rasterServerDark, this.googleToken, @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) this.googleLayers, this.mapboxToken, @JsonKey(unknownEnumValue: MapboxStyle.navigation) this.mapboxLayers, this.mapboxCustomUsername, this.mapboxCustomStyleId, this.hereToken, @JsonKey(unknownEnumValue: HereStyle.lite) this.hereLayers, this.attributionUrl = 'https://cdn.layrz.com/resources/layrz/logo/normal.png', this.attributionUrlDark, this.attributionWidth = 100, this.attributionHeight = 30, this.appsIds = const []}): super._();
   factory _MapLayer.fromJson(Map<String, dynamic> json) => _$MapLayerFromJson(json);
 
 /// [id] is the unique identifier for the layer.
@@ -274,33 +274,13 @@ class _MapLayer extends MapLayer {
 @override final  String? googleToken;
 /// [googleLayers] is the list of enabled layers for the Google Maps.
 /// Only used when the [source] is [MapSource.google].
- final  List<GoogleMapLayer>? _googleLayers;
-/// [googleLayers] is the list of enabled layers for the Google Maps.
-/// Only used when the [source] is [MapSource.google].
-@override@JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) List<GoogleMapLayer>? get googleLayers {
-  final value = _googleLayers;
-  if (value == null) return null;
-  if (_googleLayers is EqualUnmodifiableListView) return _googleLayers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey(unknownEnumValue: GoogleMapLayer.roadmap) final  List<GoogleMapLayer>? googleLayers;
 /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
 /// Only used when the [source] is [MapSource.mapbox].
 @override final  String? mapboxToken;
 /// [mapboxStyle] is the Mapbox style for the layer.
 /// Only used when the [source] is [MapSource.mapbox].
- final  List<MapboxStyle>? _mapboxLayers;
-/// [mapboxStyle] is the Mapbox style for the layer.
-/// Only used when the [source] is [MapSource.mapbox].
-@override@JsonKey(unknownEnumValue: MapboxStyle.navigation) List<MapboxStyle>? get mapboxLayers {
-  final value = _mapboxLayers;
-  if (value == null) return null;
-  if (_mapboxLayers is EqualUnmodifiableListView) return _mapboxLayers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey(unknownEnumValue: MapboxStyle.navigation) final  List<MapboxStyle>? mapboxLayers;
 /// [mapboxCustomUsername] is the Mapbox custom username.
 /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
 @override final  String? mapboxCustomUsername;
@@ -312,17 +292,7 @@ class _MapLayer extends MapLayer {
 @override final  String? hereToken;
 /// [hereLayers] is the list of enabled layers for the HERE Maps.
 /// Only used when the [source] is [MapSource.here].
- final  List<HereStyle>? _hereLayers;
-/// [hereLayers] is the list of enabled layers for the HERE Maps.
-/// Only used when the [source] is [MapSource.here].
-@override@JsonKey(unknownEnumValue: HereStyle.lite) List<HereStyle>? get hereLayers {
-  final value = _hereLayers;
-  if (value == null) return null;
-  if (_hereLayers is EqualUnmodifiableListView) return _hereLayers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey(unknownEnumValue: HereStyle.lite) final  List<HereStyle>? hereLayers;
 /// [attributionUrl] is the URI for the attribution of the layer.
 @override@JsonKey() final  String attributionUrl;
 /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
@@ -332,14 +302,7 @@ class _MapLayer extends MapLayer {
 /// [attributionHeight] is the height of the attribution of the layer.
 @override@JsonKey() final  double attributionHeight;
 /// [appsIds] is the list of [App]s that are associated with the layer.
- final  List<String> _appsIds;
-/// [appsIds] is the list of [App]s that are associated with the layer.
-@override@JsonKey() List<String> get appsIds {
-  if (_appsIds is EqualUnmodifiableListView) return _appsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_appsIds);
-}
-
+@override@JsonKey() final  List<String> appsIds;
 
 /// Create a copy of MapLayer
 /// with the given fields replaced by the non-null parameter values.
@@ -354,12 +317,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MapLayer&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.source, source) || other.source == source)&&(identical(other.rasterServerLight, rasterServerLight) || other.rasterServerLight == rasterServerLight)&&(identical(other.rasterServerDark, rasterServerDark) || other.rasterServerDark == rasterServerDark)&&(identical(other.googleToken, googleToken) || other.googleToken == googleToken)&&const DeepCollectionEquality().equals(other._googleLayers, _googleLayers)&&(identical(other.mapboxToken, mapboxToken) || other.mapboxToken == mapboxToken)&&const DeepCollectionEquality().equals(other._mapboxLayers, _mapboxLayers)&&(identical(other.mapboxCustomUsername, mapboxCustomUsername) || other.mapboxCustomUsername == mapboxCustomUsername)&&(identical(other.mapboxCustomStyleId, mapboxCustomStyleId) || other.mapboxCustomStyleId == mapboxCustomStyleId)&&(identical(other.hereToken, hereToken) || other.hereToken == hereToken)&&const DeepCollectionEquality().equals(other._hereLayers, _hereLayers)&&(identical(other.attributionUrl, attributionUrl) || other.attributionUrl == attributionUrl)&&(identical(other.attributionUrlDark, attributionUrlDark) || other.attributionUrlDark == attributionUrlDark)&&(identical(other.attributionWidth, attributionWidth) || other.attributionWidth == attributionWidth)&&(identical(other.attributionHeight, attributionHeight) || other.attributionHeight == attributionHeight)&&const DeepCollectionEquality().equals(other._appsIds, _appsIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MapLayer&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.source, source) || other.source == source)&&(identical(other.rasterServerLight, rasterServerLight) || other.rasterServerLight == rasterServerLight)&&(identical(other.rasterServerDark, rasterServerDark) || other.rasterServerDark == rasterServerDark)&&(identical(other.googleToken, googleToken) || other.googleToken == googleToken)&&const DeepCollectionEquality().equals(other.googleLayers, googleLayers)&&(identical(other.mapboxToken, mapboxToken) || other.mapboxToken == mapboxToken)&&const DeepCollectionEquality().equals(other.mapboxLayers, mapboxLayers)&&(identical(other.mapboxCustomUsername, mapboxCustomUsername) || other.mapboxCustomUsername == mapboxCustomUsername)&&(identical(other.mapboxCustomStyleId, mapboxCustomStyleId) || other.mapboxCustomStyleId == mapboxCustomStyleId)&&(identical(other.hereToken, hereToken) || other.hereToken == hereToken)&&const DeepCollectionEquality().equals(other.hereLayers, hereLayers)&&(identical(other.attributionUrl, attributionUrl) || other.attributionUrl == attributionUrl)&&(identical(other.attributionUrlDark, attributionUrlDark) || other.attributionUrlDark == attributionUrlDark)&&(identical(other.attributionWidth, attributionWidth) || other.attributionWidth == attributionWidth)&&(identical(other.attributionHeight, attributionHeight) || other.attributionHeight == attributionHeight)&&const DeepCollectionEquality().equals(other.appsIds, appsIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,source,rasterServerLight,rasterServerDark,googleToken,const DeepCollectionEquality().hash(_googleLayers),mapboxToken,const DeepCollectionEquality().hash(_mapboxLayers),mapboxCustomUsername,mapboxCustomStyleId,hereToken,const DeepCollectionEquality().hash(_hereLayers),attributionUrl,attributionUrlDark,attributionWidth,attributionHeight,const DeepCollectionEquality().hash(_appsIds));
+int get hashCode => Object.hash(runtimeType,id,name,source,rasterServerLight,rasterServerDark,googleToken,const DeepCollectionEquality().hash(googleLayers),mapboxToken,const DeepCollectionEquality().hash(mapboxLayers),mapboxCustomUsername,mapboxCustomStyleId,hereToken,const DeepCollectionEquality().hash(hereLayers),attributionUrl,attributionUrlDark,attributionWidth,attributionHeight,const DeepCollectionEquality().hash(appsIds));
 
 @override
 String toString() {
@@ -399,18 +362,18 @@ as String,source: null == source ? _self.source : source // ignore: cast_nullabl
 as MapSource,rasterServerLight: freezed == rasterServerLight ? _self.rasterServerLight : rasterServerLight // ignore: cast_nullable_to_non_nullable
 as String?,rasterServerDark: freezed == rasterServerDark ? _self.rasterServerDark : rasterServerDark // ignore: cast_nullable_to_non_nullable
 as String?,googleToken: freezed == googleToken ? _self.googleToken : googleToken // ignore: cast_nullable_to_non_nullable
-as String?,googleLayers: freezed == googleLayers ? _self._googleLayers : googleLayers // ignore: cast_nullable_to_non_nullable
+as String?,googleLayers: freezed == googleLayers ? _self.googleLayers : googleLayers // ignore: cast_nullable_to_non_nullable
 as List<GoogleMapLayer>?,mapboxToken: freezed == mapboxToken ? _self.mapboxToken : mapboxToken // ignore: cast_nullable_to_non_nullable
-as String?,mapboxLayers: freezed == mapboxLayers ? _self._mapboxLayers : mapboxLayers // ignore: cast_nullable_to_non_nullable
+as String?,mapboxLayers: freezed == mapboxLayers ? _self.mapboxLayers : mapboxLayers // ignore: cast_nullable_to_non_nullable
 as List<MapboxStyle>?,mapboxCustomUsername: freezed == mapboxCustomUsername ? _self.mapboxCustomUsername : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
 as String?,mapboxCustomStyleId: freezed == mapboxCustomStyleId ? _self.mapboxCustomStyleId : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
 as String?,hereToken: freezed == hereToken ? _self.hereToken : hereToken // ignore: cast_nullable_to_non_nullable
-as String?,hereLayers: freezed == hereLayers ? _self._hereLayers : hereLayers // ignore: cast_nullable_to_non_nullable
+as String?,hereLayers: freezed == hereLayers ? _self.hereLayers : hereLayers // ignore: cast_nullable_to_non_nullable
 as List<HereStyle>?,attributionUrl: null == attributionUrl ? _self.attributionUrl : attributionUrl // ignore: cast_nullable_to_non_nullable
 as String,attributionUrlDark: freezed == attributionUrlDark ? _self.attributionUrlDark : attributionUrlDark // ignore: cast_nullable_to_non_nullable
 as String?,attributionWidth: null == attributionWidth ? _self.attributionWidth : attributionWidth // ignore: cast_nullable_to_non_nullable
 as double,attributionHeight: null == attributionHeight ? _self.attributionHeight : attributionHeight // ignore: cast_nullable_to_non_nullable
-as double,appsIds: null == appsIds ? _self._appsIds : appsIds // ignore: cast_nullable_to_non_nullable
+as double,appsIds: null == appsIds ? _self.appsIds : appsIds // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }
@@ -1013,7 +976,7 @@ return $default(_that.id,_that.name,_that.description,_that.icon,_that.latitude,
 @JsonSerializable()
 
 class _Poi extends Poi {
-  const _Poi({required this.id, required this.name, this.description, @IconOrNullConverter() this.icon, this.latitude, this.longitude, final  List<Access>? access}): _access = access,super._();
+  const _Poi({required this.id, required this.name, this.description, @IconOrNullConverter() this.icon, this.latitude, this.longitude, this.access}): super._();
   factory _Poi.fromJson(Map<String, dynamic> json) => _$PoiFromJson(json);
 
 /// [id] is the unique identifier for the point of interest.
@@ -1029,16 +992,7 @@ class _Poi extends Poi {
 /// [longitude] is the longitude of the point of interest.
 @override final  double? longitude;
 /// [access] is the user access to this point of interest.
- final  List<Access>? _access;
-/// [access] is the user access to this point of interest.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 
 /// Create a copy of Poi
 /// with the given fields replaced by the non-null parameter values.
@@ -1053,12 +1007,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Poi&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Poi&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&const DeepCollectionEquality().equals(other.access, access));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,description,icon,latitude,longitude,const DeepCollectionEquality().hash(_access));
+int get hashCode => Object.hash(runtimeType,id,name,description,icon,latitude,longitude,const DeepCollectionEquality().hash(access));
 
 @override
 String toString() {
@@ -1098,7 +1052,7 @@ as String,description: freezed == description ? _self.description : description 
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as MdiRemapIcon?,latitude: freezed == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double?,longitude: freezed == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
-as double?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as double?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
   ));
 }

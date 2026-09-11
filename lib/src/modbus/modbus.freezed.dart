@@ -215,20 +215,13 @@ return $default(_that.isEnabled,_that.parameters,_that.portId);case _:
 @JsonSerializable()
 
 class _ModbusConfig extends ModbusConfig {
-  const _ModbusConfig({required this.isEnabled, final  List<ModbusParameter> parameters = const [], this.portId}): _parameters = parameters,super._();
+  const _ModbusConfig({required this.isEnabled, this.parameters = const [], this.portId}): super._();
   factory _ModbusConfig.fromJson(Map<String, dynamic> json) => _$ModbusConfigFromJson(json);
 
 /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
 @override final  bool isEnabled;
 /// [parameters] is a list of modbus parameters.
- final  List<ModbusParameter> _parameters;
-/// [parameters] is a list of modbus parameters.
-@override@JsonKey() List<ModbusParameter> get parameters {
-  if (_parameters is EqualUnmodifiableListView) return _parameters;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_parameters);
-}
-
+@override@JsonKey() final  List<ModbusParameter> parameters;
 /// [portId] is the port ID of the modbus device.
 /// This value is refered from the [InboundProtocol] `modbusPorts` list.
 @override final  String? portId;
@@ -246,12 +239,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ModbusConfig&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&(identical(other.portId, portId) || other.portId == portId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ModbusConfig&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other.parameters, parameters)&&(identical(other.portId, portId) || other.portId == portId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,isEnabled,const DeepCollectionEquality().hash(_parameters),portId);
+int get hashCode => Object.hash(runtimeType,isEnabled,const DeepCollectionEquality().hash(parameters),portId);
 
 @override
 String toString() {
@@ -286,7 +279,7 @@ class __$ModbusConfigCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? isEnabled = null,Object? parameters = null,Object? portId = freezed,}) {
   return _then(_ModbusConfig(
 isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,parameters: null == parameters ? _self._parameters : parameters // ignore: cast_nullable_to_non_nullable
+as bool,parameters: null == parameters ? _self.parameters : parameters // ignore: cast_nullable_to_non_nullable
 as List<ModbusParameter>,portId: freezed == portId ? _self.portId : portId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));

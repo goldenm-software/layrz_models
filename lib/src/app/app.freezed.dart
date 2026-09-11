@@ -531,7 +531,7 @@ return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_tha
 @JsonSerializable()
 
 class _AvailableApp extends AvailableApp {
-  const _AvailableApp({required this.id, required this.name, @JsonKey(unknownEnumValue: AppTechnology.flutter) this.technology = AppTechnology.flutter, this.legalInformation, this.designInformation, required this.appId, @JsonKey(unknownEnumValue: AppType.public) this.appType = AppType.public, @JsonKey(unknownEnumValue: AppPlatform.web) final  List<AppPlatform>? supportedPlatforms, required this.onlyCustomized, this.hasImport, this.hasKeychain, this.serverFolder, this.s3Folder, final  List<AppVersion>? versions, final  List<RegisteredApp>? implementations}): _supportedPlatforms = supportedPlatforms,_versions = versions,_implementations = implementations,super._();
+  const _AvailableApp({required this.id, required this.name, @JsonKey(unknownEnumValue: AppTechnology.flutter) this.technology = AppTechnology.flutter, this.legalInformation, this.designInformation, required this.appId, @JsonKey(unknownEnumValue: AppType.public) this.appType = AppType.public, @JsonKey(unknownEnumValue: AppPlatform.web) this.supportedPlatforms, required this.onlyCustomized, this.hasImport, this.hasKeychain, this.serverFolder, this.s3Folder, this.versions, this.implementations}): super._();
   factory _AvailableApp.fromJson(Map<String, dynamic> json) => _$AvailableAppFromJson(json);
 
 /// [id] is the unique identifier of the app.
@@ -549,16 +549,7 @@ class _AvailableApp extends AvailableApp {
 /// [appType] is the type of the app.
 @override@JsonKey(unknownEnumValue: AppType.public) final  AppType appType;
 /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
- final  List<AppPlatform>? _supportedPlatforms;
-/// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
-@override@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? get supportedPlatforms {
-  final value = _supportedPlatforms;
-  if (value == null) return null;
-  if (_supportedPlatforms is EqualUnmodifiableListView) return _supportedPlatforms;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey(unknownEnumValue: AppPlatform.web) final  List<AppPlatform>? supportedPlatforms;
 /// [onlyCustomized] is true if the app only can be register with customization.
 @override final  bool onlyCustomized;
 ///[hasImport] is true if the app has import feature.
@@ -570,27 +561,9 @@ class _AvailableApp extends AvailableApp {
 /// [s3Folder] is the s3 folder of the app.
 @override final  String? s3Folder;
 /// [versions] is the list of versions of the app.
- final  List<AppVersion>? _versions;
-/// [versions] is the list of versions of the app.
-@override List<AppVersion>? get versions {
-  final value = _versions;
-  if (value == null) return null;
-  if (_versions is EqualUnmodifiableListView) return _versions;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AppVersion>? versions;
 /// [implementations] is the list of implementations of the app.
- final  List<RegisteredApp>? _implementations;
-/// [implementations] is the list of implementations of the app.
-@override List<RegisteredApp>? get implementations {
-  final value = _implementations;
-  if (value == null) return null;
-  if (_implementations is EqualUnmodifiableListView) return _implementations;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<RegisteredApp>? implementations;
 
 /// Create a copy of AvailableApp
 /// with the given fields replaced by the non-null parameter values.
@@ -605,12 +578,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AvailableApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.appType, appType) || other.appType == appType)&&const DeepCollectionEquality().equals(other._supportedPlatforms, _supportedPlatforms)&&(identical(other.onlyCustomized, onlyCustomized) || other.onlyCustomized == onlyCustomized)&&(identical(other.hasImport, hasImport) || other.hasImport == hasImport)&&(identical(other.hasKeychain, hasKeychain) || other.hasKeychain == hasKeychain)&&(identical(other.serverFolder, serverFolder) || other.serverFolder == serverFolder)&&(identical(other.s3Folder, s3Folder) || other.s3Folder == s3Folder)&&const DeepCollectionEquality().equals(other._versions, _versions)&&const DeepCollectionEquality().equals(other._implementations, _implementations));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AvailableApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.appType, appType) || other.appType == appType)&&const DeepCollectionEquality().equals(other.supportedPlatforms, supportedPlatforms)&&(identical(other.onlyCustomized, onlyCustomized) || other.onlyCustomized == onlyCustomized)&&(identical(other.hasImport, hasImport) || other.hasImport == hasImport)&&(identical(other.hasKeychain, hasKeychain) || other.hasKeychain == hasKeychain)&&(identical(other.serverFolder, serverFolder) || other.serverFolder == serverFolder)&&(identical(other.s3Folder, s3Folder) || other.s3Folder == s3Folder)&&const DeepCollectionEquality().equals(other.versions, versions)&&const DeepCollectionEquality().equals(other.implementations, implementations));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,technology,legalInformation,designInformation,appId,appType,const DeepCollectionEquality().hash(_supportedPlatforms),onlyCustomized,hasImport,hasKeychain,serverFolder,s3Folder,const DeepCollectionEquality().hash(_versions),const DeepCollectionEquality().hash(_implementations));
+int get hashCode => Object.hash(runtimeType,id,name,technology,legalInformation,designInformation,appId,appType,const DeepCollectionEquality().hash(supportedPlatforms),onlyCustomized,hasImport,hasKeychain,serverFolder,s3Folder,const DeepCollectionEquality().hash(versions),const DeepCollectionEquality().hash(implementations));
 
 @override
 String toString() {
@@ -651,14 +624,14 @@ as AppTechnology,legalInformation: freezed == legalInformation ? _self.legalInfo
 as AppLegal?,designInformation: freezed == designInformation ? _self.designInformation : designInformation // ignore: cast_nullable_to_non_nullable
 as AppDesign?,appId: null == appId ? _self.appId : appId // ignore: cast_nullable_to_non_nullable
 as String,appType: null == appType ? _self.appType : appType // ignore: cast_nullable_to_non_nullable
-as AppType,supportedPlatforms: freezed == supportedPlatforms ? _self._supportedPlatforms : supportedPlatforms // ignore: cast_nullable_to_non_nullable
+as AppType,supportedPlatforms: freezed == supportedPlatforms ? _self.supportedPlatforms : supportedPlatforms // ignore: cast_nullable_to_non_nullable
 as List<AppPlatform>?,onlyCustomized: null == onlyCustomized ? _self.onlyCustomized : onlyCustomized // ignore: cast_nullable_to_non_nullable
 as bool,hasImport: freezed == hasImport ? _self.hasImport : hasImport // ignore: cast_nullable_to_non_nullable
 as bool?,hasKeychain: freezed == hasKeychain ? _self.hasKeychain : hasKeychain // ignore: cast_nullable_to_non_nullable
 as bool?,serverFolder: freezed == serverFolder ? _self.serverFolder : serverFolder // ignore: cast_nullable_to_non_nullable
 as String?,s3Folder: freezed == s3Folder ? _self.s3Folder : s3Folder // ignore: cast_nullable_to_non_nullable
-as String?,versions: freezed == versions ? _self._versions : versions // ignore: cast_nullable_to_non_nullable
-as List<AppVersion>?,implementations: freezed == implementations ? _self._implementations : implementations // ignore: cast_nullable_to_non_nullable
+as String?,versions: freezed == versions ? _self.versions : versions // ignore: cast_nullable_to_non_nullable
+as List<AppVersion>?,implementations: freezed == implementations ? _self.implementations : implementations // ignore: cast_nullable_to_non_nullable
 as List<RegisteredApp>?,
   ));
 }
@@ -1306,7 +1279,7 @@ return $default(_that.id,_that.name,_that.technology,_that.legalInformation,_tha
 @JsonSerializable()
 
 class _RegisteredApp extends RegisteredApp {
-  const _RegisteredApp({required this.id, required this.name, @JsonKey(unknownEnumValue: AppTechnology.flutter) this.technology = AppTechnology.flutter, this.legalInformation, this.designInformation, required this.nickname, this.isCustomized, final  List<AppInstance>? instances, final  List<Asset>? importedAssets, final  List<Device>? importedDevices, final  List<User>? importedUsers, final  List<User>? keychain, required this.sourceId, this.owner, final  List<CustomReport>? allowedReports, this.fixedWorkspaceId, this.fixedWorkspace, final  List<MapLayer> authorizedLayers = const [], this.iosPushSecrets, this.androidPushSecrets, this.hasSvcPushSecrets}): _instances = instances,_importedAssets = importedAssets,_importedDevices = importedDevices,_importedUsers = importedUsers,_keychain = keychain,_allowedReports = allowedReports,_authorizedLayers = authorizedLayers,super._();
+  const _RegisteredApp({required this.id, required this.name, @JsonKey(unknownEnumValue: AppTechnology.flutter) this.technology = AppTechnology.flutter, this.legalInformation, this.designInformation, required this.nickname, this.isCustomized, this.instances, this.importedAssets, this.importedDevices, this.importedUsers, this.keychain, required this.sourceId, this.owner, this.allowedReports, this.fixedWorkspaceId, this.fixedWorkspace, this.authorizedLayers = const [], this.iosPushSecrets, this.androidPushSecrets, this.hasSvcPushSecrets}): super._();
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) => _$RegisteredAppFromJson(json);
 
 /// [id] is the unique identifier of the app.
@@ -1321,79 +1294,23 @@ class _RegisteredApp extends RegisteredApp {
 @override final  AppDesign? designInformation;
 @override final  String nickname;
 @override final  bool? isCustomized;
- final  List<AppInstance>? _instances;
-@override List<AppInstance>? get instances {
-  final value = _instances;
-  if (value == null) return null;
-  if (_instances is EqualUnmodifiableListView) return _instances;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
- final  List<Asset>? _importedAssets;
-@override List<Asset>? get importedAssets {
-  final value = _importedAssets;
-  if (value == null) return null;
-  if (_importedAssets is EqualUnmodifiableListView) return _importedAssets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
- final  List<Device>? _importedDevices;
-@override List<Device>? get importedDevices {
-  final value = _importedDevices;
-  if (value == null) return null;
-  if (_importedDevices is EqualUnmodifiableListView) return _importedDevices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
- final  List<User>? _importedUsers;
-@override List<User>? get importedUsers {
-  final value = _importedUsers;
-  if (value == null) return null;
-  if (_importedUsers is EqualUnmodifiableListView) return _importedUsers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
- final  List<User>? _keychain;
-@override List<User>? get keychain {
-  final value = _keychain;
-  if (value == null) return null;
-  if (_keychain is EqualUnmodifiableListView) return _keychain;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AppInstance>? instances;
+@override final  List<Asset>? importedAssets;
+@override final  List<Device>? importedDevices;
+@override final  List<User>? importedUsers;
+@override final  List<User>? keychain;
 @override final  String sourceId;
 /// [owner] is the owner of the app.
 /// !Important: This field is only available when the query is from `/goldenm/graphql`
 @override final  User? owner;
 /// [allowedReports] is the list of reports allowed to be generated by the app.
- final  List<CustomReport>? _allowedReports;
-/// [allowedReports] is the list of reports allowed to be generated by the app.
-@override List<CustomReport>? get allowedReports {
-  final value = _allowedReports;
-  if (value == null) return null;
-  if (_allowedReports is EqualUnmodifiableListView) return _allowedReports;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CustomReport>? allowedReports;
 /// [fixedWorkspaceId] is the id of the fixed workspace of the app.
 @override final  String? fixedWorkspaceId;
 /// [fixedWorkspace] is the fixed workspace of the app.
 @override final  Workspace? fixedWorkspace;
 /// [authorizedLayers] is the list of layers authorized to be used by the app.
- final  List<MapLayer> _authorizedLayers;
-/// [authorizedLayers] is the list of layers authorized to be used by the app.
-@override@JsonKey() List<MapLayer> get authorizedLayers {
-  if (_authorizedLayers is EqualUnmodifiableListView) return _authorizedLayers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_authorizedLayers);
-}
-
+@override@JsonKey() final  List<MapLayer> authorizedLayers;
 /// [iosPushSecrets] is the decrypted iOS Firebase credentials for layrz_push
 @override final  PushSecrets? iosPushSecrets;
 /// [androidPushSecrets] is the decrypted Android Firebase credentials for layrz_push
@@ -1414,12 +1331,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other._instances, _instances)&&const DeepCollectionEquality().equals(other._importedAssets, _importedAssets)&&const DeepCollectionEquality().equals(other._importedDevices, _importedDevices)&&const DeepCollectionEquality().equals(other._importedUsers, _importedUsers)&&const DeepCollectionEquality().equals(other._keychain, _keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._allowedReports, _allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other._authorizedLayers, _authorizedLayers)&&(identical(other.iosPushSecrets, iosPushSecrets) || other.iosPushSecrets == iosPushSecrets)&&(identical(other.androidPushSecrets, androidPushSecrets) || other.androidPushSecrets == androidPushSecrets)&&(identical(other.hasSvcPushSecrets, hasSvcPushSecrets) || other.hasSvcPushSecrets == hasSvcPushSecrets));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisteredApp&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.technology, technology) || other.technology == technology)&&(identical(other.legalInformation, legalInformation) || other.legalInformation == legalInformation)&&(identical(other.designInformation, designInformation) || other.designInformation == designInformation)&&(identical(other.nickname, nickname) || other.nickname == nickname)&&(identical(other.isCustomized, isCustomized) || other.isCustomized == isCustomized)&&const DeepCollectionEquality().equals(other.instances, instances)&&const DeepCollectionEquality().equals(other.importedAssets, importedAssets)&&const DeepCollectionEquality().equals(other.importedDevices, importedDevices)&&const DeepCollectionEquality().equals(other.importedUsers, importedUsers)&&const DeepCollectionEquality().equals(other.keychain, keychain)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.allowedReports, allowedReports)&&(identical(other.fixedWorkspaceId, fixedWorkspaceId) || other.fixedWorkspaceId == fixedWorkspaceId)&&(identical(other.fixedWorkspace, fixedWorkspace) || other.fixedWorkspace == fixedWorkspace)&&const DeepCollectionEquality().equals(other.authorizedLayers, authorizedLayers)&&(identical(other.iosPushSecrets, iosPushSecrets) || other.iosPushSecrets == iosPushSecrets)&&(identical(other.androidPushSecrets, androidPushSecrets) || other.androidPushSecrets == androidPushSecrets)&&(identical(other.hasSvcPushSecrets, hasSvcPushSecrets) || other.hasSvcPushSecrets == hasSvcPushSecrets));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(_instances),const DeepCollectionEquality().hash(_importedAssets),const DeepCollectionEquality().hash(_importedDevices),const DeepCollectionEquality().hash(_importedUsers),const DeepCollectionEquality().hash(_keychain),sourceId,owner,const DeepCollectionEquality().hash(_allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(_authorizedLayers),iosPushSecrets,androidPushSecrets,hasSvcPushSecrets]);
+int get hashCode => Object.hashAll([runtimeType,id,name,technology,legalInformation,designInformation,nickname,isCustomized,const DeepCollectionEquality().hash(instances),const DeepCollectionEquality().hash(importedAssets),const DeepCollectionEquality().hash(importedDevices),const DeepCollectionEquality().hash(importedUsers),const DeepCollectionEquality().hash(keychain),sourceId,owner,const DeepCollectionEquality().hash(allowedReports),fixedWorkspaceId,fixedWorkspace,const DeepCollectionEquality().hash(authorizedLayers),iosPushSecrets,androidPushSecrets,hasSvcPushSecrets]);
 
 @override
 String toString() {
@@ -1460,17 +1377,17 @@ as AppTechnology,legalInformation: freezed == legalInformation ? _self.legalInfo
 as AppLegal?,designInformation: freezed == designInformation ? _self.designInformation : designInformation // ignore: cast_nullable_to_non_nullable
 as AppDesign?,nickname: null == nickname ? _self.nickname : nickname // ignore: cast_nullable_to_non_nullable
 as String,isCustomized: freezed == isCustomized ? _self.isCustomized : isCustomized // ignore: cast_nullable_to_non_nullable
-as bool?,instances: freezed == instances ? _self._instances : instances // ignore: cast_nullable_to_non_nullable
-as List<AppInstance>?,importedAssets: freezed == importedAssets ? _self._importedAssets : importedAssets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,importedDevices: freezed == importedDevices ? _self._importedDevices : importedDevices // ignore: cast_nullable_to_non_nullable
-as List<Device>?,importedUsers: freezed == importedUsers ? _self._importedUsers : importedUsers // ignore: cast_nullable_to_non_nullable
-as List<User>?,keychain: freezed == keychain ? _self._keychain : keychain // ignore: cast_nullable_to_non_nullable
+as bool?,instances: freezed == instances ? _self.instances : instances // ignore: cast_nullable_to_non_nullable
+as List<AppInstance>?,importedAssets: freezed == importedAssets ? _self.importedAssets : importedAssets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,importedDevices: freezed == importedDevices ? _self.importedDevices : importedDevices // ignore: cast_nullable_to_non_nullable
+as List<Device>?,importedUsers: freezed == importedUsers ? _self.importedUsers : importedUsers // ignore: cast_nullable_to_non_nullable
+as List<User>?,keychain: freezed == keychain ? _self.keychain : keychain // ignore: cast_nullable_to_non_nullable
 as List<User>?,sourceId: null == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
 as String,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
-as User?,allowedReports: freezed == allowedReports ? _self._allowedReports : allowedReports // ignore: cast_nullable_to_non_nullable
+as User?,allowedReports: freezed == allowedReports ? _self.allowedReports : allowedReports // ignore: cast_nullable_to_non_nullable
 as List<CustomReport>?,fixedWorkspaceId: freezed == fixedWorkspaceId ? _self.fixedWorkspaceId : fixedWorkspaceId // ignore: cast_nullable_to_non_nullable
 as String?,fixedWorkspace: freezed == fixedWorkspace ? _self.fixedWorkspace : fixedWorkspace // ignore: cast_nullable_to_non_nullable
-as Workspace?,authorizedLayers: null == authorizedLayers ? _self._authorizedLayers : authorizedLayers // ignore: cast_nullable_to_non_nullable
+as Workspace?,authorizedLayers: null == authorizedLayers ? _self.authorizedLayers : authorizedLayers // ignore: cast_nullable_to_non_nullable
 as List<MapLayer>,iosPushSecrets: freezed == iosPushSecrets ? _self.iosPushSecrets : iosPushSecrets // ignore: cast_nullable_to_non_nullable
 as PushSecrets?,androidPushSecrets: freezed == androidPushSecrets ? _self.androidPushSecrets : androidPushSecrets // ignore: cast_nullable_to_non_nullable
 as PushSecrets?,hasSvcPushSecrets: freezed == hasSvcPushSecrets ? _self.hasSvcPushSecrets : hasSvcPushSecrets // ignore: cast_nullable_to_non_nullable
@@ -4222,7 +4139,7 @@ return $default(_that.id,_that.appId,_that.platform,_that.host,_that.appIdentifi
 @JsonSerializable()
 
 class _AppInstance implements AppInstance {
-  const _AppInstance({required this.id, required this.appId, @JsonKey(unknownEnumValue: AppPlatform.web) required this.platform, this.host, this.appIdentifier, this.developerName, this.developerIdentifier, final  List<AppBuild> builds = const [], @JsonKey(unknownEnumValue: InstanceStatus.pending) this.status = InstanceStatus.pending, this.cloudfront, this.certificate, @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending) this.migrationStatus = InstanceMigrationStatus.pending}): _builds = builds;
+  const _AppInstance({required this.id, required this.appId, @JsonKey(unknownEnumValue: AppPlatform.web) required this.platform, this.host, this.appIdentifier, this.developerName, this.developerIdentifier, this.builds = const [], @JsonKey(unknownEnumValue: InstanceStatus.pending) this.status = InstanceStatus.pending, this.cloudfront, this.certificate, @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending) this.migrationStatus = InstanceMigrationStatus.pending});
   factory _AppInstance.fromJson(Map<String, dynamic> json) => _$AppInstanceFromJson(json);
 
 /// [id] is the ID of the instance
@@ -4241,14 +4158,7 @@ class _AppInstance implements AppInstance {
 /// not `AppPlatform.web`
 @override final  String? developerIdentifier;
 /// [builds] is the list of builds
- final  List<AppBuild> _builds;
-/// [builds] is the list of builds
-@override@JsonKey() List<AppBuild> get builds {
-  if (_builds is EqualUnmodifiableListView) return _builds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_builds);
-}
-
+@override@JsonKey() final  List<AppBuild> builds;
 /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
 /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
 @override@JsonKey(unknownEnumValue: InstanceStatus.pending) final  InstanceStatus status;
@@ -4277,12 +4187,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppInstance&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.platform, platform) || other.platform == platform)&&(identical(other.host, host) || other.host == host)&&(identical(other.appIdentifier, appIdentifier) || other.appIdentifier == appIdentifier)&&(identical(other.developerName, developerName) || other.developerName == developerName)&&(identical(other.developerIdentifier, developerIdentifier) || other.developerIdentifier == developerIdentifier)&&const DeepCollectionEquality().equals(other._builds, _builds)&&(identical(other.status, status) || other.status == status)&&(identical(other.cloudfront, cloudfront) || other.cloudfront == cloudfront)&&(identical(other.certificate, certificate) || other.certificate == certificate)&&(identical(other.migrationStatus, migrationStatus) || other.migrationStatus == migrationStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppInstance&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.platform, platform) || other.platform == platform)&&(identical(other.host, host) || other.host == host)&&(identical(other.appIdentifier, appIdentifier) || other.appIdentifier == appIdentifier)&&(identical(other.developerName, developerName) || other.developerName == developerName)&&(identical(other.developerIdentifier, developerIdentifier) || other.developerIdentifier == developerIdentifier)&&const DeepCollectionEquality().equals(other.builds, builds)&&(identical(other.status, status) || other.status == status)&&(identical(other.cloudfront, cloudfront) || other.cloudfront == cloudfront)&&(identical(other.certificate, certificate) || other.certificate == certificate)&&(identical(other.migrationStatus, migrationStatus) || other.migrationStatus == migrationStatus));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,appId,platform,host,appIdentifier,developerName,developerIdentifier,const DeepCollectionEquality().hash(_builds),status,cloudfront,certificate,migrationStatus);
+int get hashCode => Object.hash(runtimeType,id,appId,platform,host,appIdentifier,developerName,developerIdentifier,const DeepCollectionEquality().hash(builds),status,cloudfront,certificate,migrationStatus);
 
 @override
 String toString() {
@@ -4323,7 +4233,7 @@ as AppPlatform,host: freezed == host ? _self.host : host // ignore: cast_nullabl
 as String?,appIdentifier: freezed == appIdentifier ? _self.appIdentifier : appIdentifier // ignore: cast_nullable_to_non_nullable
 as String?,developerName: freezed == developerName ? _self.developerName : developerName // ignore: cast_nullable_to_non_nullable
 as String?,developerIdentifier: freezed == developerIdentifier ? _self.developerIdentifier : developerIdentifier // ignore: cast_nullable_to_non_nullable
-as String?,builds: null == builds ? _self._builds : builds // ignore: cast_nullable_to_non_nullable
+as String?,builds: null == builds ? _self.builds : builds // ignore: cast_nullable_to_non_nullable
 as List<AppBuild>,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as InstanceStatus,cloudfront: freezed == cloudfront ? _self.cloudfront : cloudfront // ignore: cast_nullable_to_non_nullable
 as DnsConfiguration?,certificate: freezed == certificate ? _self.certificate : certificate // ignore: cast_nullable_to_non_nullable

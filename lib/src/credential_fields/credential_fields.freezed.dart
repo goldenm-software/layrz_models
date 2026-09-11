@@ -235,7 +235,7 @@ return $default(_that.field,_that.type,_that.maxLength,_that.minLength,_that.max
 @JsonSerializable()
 
 class _CredentialField extends CredentialField {
-  const _CredentialField({required this.field, required this.type, this.maxLength, this.minLength, this.maxValue, this.minValue, final  List<String>? choices, this.onlyField, final  List<String>? onlyChoices, this.action, final  List<CredentialField>? requiredFields}): _choices = choices,_onlyChoices = onlyChoices,_requiredFields = requiredFields,super._();
+  const _CredentialField({required this.field, required this.type, this.maxLength, this.minLength, this.maxValue, this.minValue, this.choices, this.onlyField, this.onlyChoices, this.action, this.requiredFields}): super._();
   factory _CredentialField.fromJson(Map<String, dynamic> json) => _$CredentialFieldFromJson(json);
 
 /// [field] is the name of the field, is a translation key.
@@ -253,47 +253,18 @@ class _CredentialField extends CredentialField {
 /// or [CredentialFieldType.float].
 @override final  num? minValue;
 /// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
- final  List<String>? _choices;
-/// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
-@override List<String>? get choices {
-  final value = _choices;
-  if (value == null) return null;
-  if (_choices is EqualUnmodifiableListView) return _choices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? choices;
 /// [onlyField] is the name of the field that must be present in the object,
 /// only used in [type] = [CredentialFieldType.choices].
 @override final  String? onlyField;
 /// [onlyChoices] is the list of possible choices for the field, only used in
 /// [type] = [CredentialFieldType.choices].
- final  List<String>? _onlyChoices;
-/// [onlyChoices] is the list of possible choices for the field, only used in
-/// [type] = [CredentialFieldType.choices].
-@override List<String>? get onlyChoices {
-  final value = _onlyChoices;
-  if (value == null) return null;
-  if (_onlyChoices is EqualUnmodifiableListView) return _onlyChoices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? onlyChoices;
 /// [action] defines the action to show in the field (as suffix icon).
 @override final  CredentialFieldAction? action;
 /// [requiredFields] represents the nested fields.
 /// Only used when [type] = [CredentialFieldType.nestedField].
- final  List<CredentialField>? _requiredFields;
-/// [requiredFields] represents the nested fields.
-/// Only used when [type] = [CredentialFieldType.nestedField].
-@override List<CredentialField>? get requiredFields {
-  final value = _requiredFields;
-  if (value == null) return null;
-  if (_requiredFields is EqualUnmodifiableListView) return _requiredFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CredentialField>? requiredFields;
 
 /// Create a copy of CredentialField
 /// with the given fields replaced by the non-null parameter values.
@@ -308,12 +279,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CredentialField&&(identical(other.field, field) || other.field == field)&&(identical(other.type, type) || other.type == type)&&(identical(other.maxLength, maxLength) || other.maxLength == maxLength)&&(identical(other.minLength, minLength) || other.minLength == minLength)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&const DeepCollectionEquality().equals(other._choices, _choices)&&(identical(other.onlyField, onlyField) || other.onlyField == onlyField)&&const DeepCollectionEquality().equals(other._onlyChoices, _onlyChoices)&&(identical(other.action, action) || other.action == action)&&const DeepCollectionEquality().equals(other._requiredFields, _requiredFields));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CredentialField&&(identical(other.field, field) || other.field == field)&&(identical(other.type, type) || other.type == type)&&(identical(other.maxLength, maxLength) || other.maxLength == maxLength)&&(identical(other.minLength, minLength) || other.minLength == minLength)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&const DeepCollectionEquality().equals(other.choices, choices)&&(identical(other.onlyField, onlyField) || other.onlyField == onlyField)&&const DeepCollectionEquality().equals(other.onlyChoices, onlyChoices)&&(identical(other.action, action) || other.action == action)&&const DeepCollectionEquality().equals(other.requiredFields, requiredFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,field,type,maxLength,minLength,maxValue,minValue,const DeepCollectionEquality().hash(_choices),onlyField,const DeepCollectionEquality().hash(_onlyChoices),action,const DeepCollectionEquality().hash(_requiredFields));
+int get hashCode => Object.hash(runtimeType,field,type,maxLength,minLength,maxValue,minValue,const DeepCollectionEquality().hash(choices),onlyField,const DeepCollectionEquality().hash(onlyChoices),action,const DeepCollectionEquality().hash(requiredFields));
 
 @override
 String toString() {
@@ -353,11 +324,11 @@ as CredentialFieldType,maxLength: freezed == maxLength ? _self.maxLength : maxLe
 as int?,minLength: freezed == minLength ? _self.minLength : minLength // ignore: cast_nullable_to_non_nullable
 as int?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
 as num?,minValue: freezed == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
-as num?,choices: freezed == choices ? _self._choices : choices // ignore: cast_nullable_to_non_nullable
+as num?,choices: freezed == choices ? _self.choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>?,onlyField: freezed == onlyField ? _self.onlyField : onlyField // ignore: cast_nullable_to_non_nullable
-as String?,onlyChoices: freezed == onlyChoices ? _self._onlyChoices : onlyChoices // ignore: cast_nullable_to_non_nullable
+as String?,onlyChoices: freezed == onlyChoices ? _self.onlyChoices : onlyChoices // ignore: cast_nullable_to_non_nullable
 as List<String>?,action: freezed == action ? _self.action : action // ignore: cast_nullable_to_non_nullable
-as CredentialFieldAction?,requiredFields: freezed == requiredFields ? _self._requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
+as CredentialFieldAction?,requiredFields: freezed == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
 as List<CredentialField>?,
   ));
 }

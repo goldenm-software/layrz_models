@@ -309,7 +309,7 @@ return $default(_that.id,_that.name,_that.iterationCycle,_that.slug,_that.isInst
 @JsonSerializable()
 
 class _Sensor implements Sensor {
-  const _Sensor({required this.id, required this.name, this.iterationCycle, required this.slug, this.isInstant, @IconOrNullConverter() this.icon, this.measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant) this.type, @JsonKey(unknownEnumValue: SensorSubType.raw) this.subtype, this.parameter, final  List<String>? externalIdentifiers, this.formula, this.script, this.hasHeaders, final  List<String>? csvHeaders, this.csvSeparator, final  List<SensorRange>? ranges, final  List<MaskPoint>? mask, this.hasValidator, this.minValue, this.maxValue, this.contentType, this.parentId, this.parent, this.functionId, this.lastExit, this.qrCode, final  List<String>? assignedAssetsIds, final  List<Asset>? assignedAssets, this.isTemplate, this.isGlobal = false, final  List<Access>? access, @DurationOrNullConverter() this.maxHistorySearch}): _externalIdentifiers = externalIdentifiers,_csvHeaders = csvHeaders,_ranges = ranges,_mask = mask,_assignedAssetsIds = assignedAssetsIds,_assignedAssets = assignedAssets,_access = access;
+  const _Sensor({required this.id, required this.name, this.iterationCycle, required this.slug, this.isInstant, @IconOrNullConverter() this.icon, this.measuringUnit, @JsonKey(unknownEnumValue: SensorType.constant) this.type, @JsonKey(unknownEnumValue: SensorSubType.raw) this.subtype, this.parameter, this.externalIdentifiers, this.formula, this.script, this.hasHeaders, this.csvHeaders, this.csvSeparator, this.ranges, this.mask, this.hasValidator, this.minValue, this.maxValue, this.contentType, this.parentId, this.parent, this.functionId, this.lastExit, this.qrCode, this.assignedAssetsIds, this.assignedAssets, this.isTemplate, this.isGlobal = false, this.access, @DurationOrNullConverter() this.maxHistorySearch});
   factory _Sensor.fromJson(Map<String, dynamic> json) => _$SensorFromJson(json);
 
 /// [id] of the sensor. Must be unique along of all sensors of the asset.
@@ -335,15 +335,7 @@ class _Sensor implements Sensor {
 @override@JsonKey(unknownEnumValue: SensorSubType.raw) final  SensorSubType? subtype;
 /// [parameter] of the sensor.
 @override final  String? parameter;
- final  List<String>? _externalIdentifiers;
-@override List<String>? get externalIdentifiers {
-  final value = _externalIdentifiers;
-  if (value == null) return null;
-  if (_externalIdentifiers is EqualUnmodifiableListView) return _externalIdentifiers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? externalIdentifiers;
 /// [formula] is the LCL formula to execute.
 @override final  String? formula;
 /// [script] is the script to execute.
@@ -353,42 +345,14 @@ class _Sensor implements Sensor {
 /// [hasHeaders] is a boolean to indicate if the CSV has headers inside of the message.
 @override final  bool? hasHeaders;
 /// [csvHeaders] is a list of strings to indicate the names of the columns of the CSV. Only when [hasHeaders] is true.
- final  List<String>? _csvHeaders;
-/// [csvHeaders] is a list of strings to indicate the names of the columns of the CSV. Only when [hasHeaders] is true.
-@override List<String>? get csvHeaders {
-  final value = _csvHeaders;
-  if (value == null) return null;
-  if (_csvHeaders is EqualUnmodifiableListView) return _csvHeaders;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? csvHeaders;
 /// [csvSeparator] is a string to indicate the separator of the CSV.
 @override final  String? csvSeparator;
 /// [ranges] of the sensor, only for [SensorType.interval] linear conversion.
 /// It's a list of [SensorPair] objects.
- final  List<SensorRange>? _ranges;
-/// [ranges] of the sensor, only for [SensorType.interval] linear conversion.
-/// It's a list of [SensorPair] objects.
-@override List<SensorRange>? get ranges {
-  final value = _ranges;
-  if (value == null) return null;
-  if (_ranges is EqualUnmodifiableListView) return _ranges;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<SensorRange>? ranges;
 /// [mask] of the sensor. Is basically a list of [MaskPoint] objects.
- final  List<MaskPoint>? _mask;
-/// [mask] of the sensor. Is basically a list of [MaskPoint] objects.
-@override List<MaskPoint>? get mask {
-  final value = _mask;
-  if (value == null) return null;
-  if (_mask is EqualUnmodifiableListView) return _mask;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<MaskPoint>? mask;
 /// [hasValidator] is a boolean to indicate if the sensor has a [double] validator. When true, [minValur] and [maxValue]
 /// will define the range, both values can be [null] if the minimum or maximum range is [double.infinity].
 @override final  bool? hasValidator;
@@ -413,43 +377,16 @@ class _Sensor implements Sensor {
 /// [qrCode] is a string to indicate the QR code URI of the sensor.
 @override final  String? qrCode;
 /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
- final  List<String>? _assignedAssetsIds;
-/// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
-@override List<String>? get assignedAssetsIds {
-  final value = _assignedAssetsIds;
-  if (value == null) return null;
-  if (_assignedAssetsIds is EqualUnmodifiableListView) return _assignedAssetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assignedAssetsIds;
 /// [assignedAssets] is the list of assets assigned to this sensor.
- final  List<Asset>? _assignedAssets;
-/// [assignedAssets] is the list of assets assigned to this sensor.
-@override List<Asset>? get assignedAssets {
-  final value = _assignedAssets;
-  if (value == null) return null;
-  if (_assignedAssets is EqualUnmodifiableListView) return _assignedAssets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assignedAssets;
 /// [isTemplate] is a boolean to indicate if the sensor is a template.
 /// So, this sensor was created from the Golden M, and their authorized you to use it.
 @override final  bool? isTemplate;
 /// [isGlobal] defines if the sensor is global or not.
 @override@JsonKey() final  bool isGlobal;
 /// Is the list of granted access
- final  List<Access>? _access;
-/// Is the list of granted access
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// [maxHistorySearch] defines the maximum search interval for the history of the sensor.
 @override@DurationOrNullConverter() final  Duration? maxHistorySearch;
 
@@ -466,12 +403,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Sensor&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.iterationCycle, iterationCycle) || other.iterationCycle == iterationCycle)&&(identical(other.slug, slug) || other.slug == slug)&&(identical(other.isInstant, isInstant) || other.isInstant == isInstant)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.measuringUnit, measuringUnit) || other.measuringUnit == measuringUnit)&&(identical(other.type, type) || other.type == type)&&(identical(other.subtype, subtype) || other.subtype == subtype)&&(identical(other.parameter, parameter) || other.parameter == parameter)&&const DeepCollectionEquality().equals(other._externalIdentifiers, _externalIdentifiers)&&(identical(other.formula, formula) || other.formula == formula)&&(identical(other.script, script) || other.script == script)&&(identical(other.hasHeaders, hasHeaders) || other.hasHeaders == hasHeaders)&&const DeepCollectionEquality().equals(other._csvHeaders, _csvHeaders)&&(identical(other.csvSeparator, csvSeparator) || other.csvSeparator == csvSeparator)&&const DeepCollectionEquality().equals(other._ranges, _ranges)&&const DeepCollectionEquality().equals(other._mask, _mask)&&(identical(other.hasValidator, hasValidator) || other.hasValidator == hasValidator)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.contentType, contentType) || other.contentType == contentType)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.parent, parent) || other.parent == parent)&&(identical(other.functionId, functionId) || other.functionId == functionId)&&(identical(other.lastExit, lastExit) || other.lastExit == lastExit)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other._assignedAssetsIds, _assignedAssetsIds)&&const DeepCollectionEquality().equals(other._assignedAssets, _assignedAssets)&&(identical(other.isTemplate, isTemplate) || other.isTemplate == isTemplate)&&(identical(other.isGlobal, isGlobal) || other.isGlobal == isGlobal)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.maxHistorySearch, maxHistorySearch) || other.maxHistorySearch == maxHistorySearch));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Sensor&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.iterationCycle, iterationCycle) || other.iterationCycle == iterationCycle)&&(identical(other.slug, slug) || other.slug == slug)&&(identical(other.isInstant, isInstant) || other.isInstant == isInstant)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.measuringUnit, measuringUnit) || other.measuringUnit == measuringUnit)&&(identical(other.type, type) || other.type == type)&&(identical(other.subtype, subtype) || other.subtype == subtype)&&(identical(other.parameter, parameter) || other.parameter == parameter)&&const DeepCollectionEquality().equals(other.externalIdentifiers, externalIdentifiers)&&(identical(other.formula, formula) || other.formula == formula)&&(identical(other.script, script) || other.script == script)&&(identical(other.hasHeaders, hasHeaders) || other.hasHeaders == hasHeaders)&&const DeepCollectionEquality().equals(other.csvHeaders, csvHeaders)&&(identical(other.csvSeparator, csvSeparator) || other.csvSeparator == csvSeparator)&&const DeepCollectionEquality().equals(other.ranges, ranges)&&const DeepCollectionEquality().equals(other.mask, mask)&&(identical(other.hasValidator, hasValidator) || other.hasValidator == hasValidator)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.contentType, contentType) || other.contentType == contentType)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.parent, parent) || other.parent == parent)&&(identical(other.functionId, functionId) || other.functionId == functionId)&&(identical(other.lastExit, lastExit) || other.lastExit == lastExit)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other.assignedAssetsIds, assignedAssetsIds)&&const DeepCollectionEquality().equals(other.assignedAssets, assignedAssets)&&(identical(other.isTemplate, isTemplate) || other.isTemplate == isTemplate)&&(identical(other.isGlobal, isGlobal) || other.isGlobal == isGlobal)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.maxHistorySearch, maxHistorySearch) || other.maxHistorySearch == maxHistorySearch));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,iterationCycle,slug,isInstant,icon,measuringUnit,type,subtype,parameter,const DeepCollectionEquality().hash(_externalIdentifiers),formula,script,hasHeaders,const DeepCollectionEquality().hash(_csvHeaders),csvSeparator,const DeepCollectionEquality().hash(_ranges),const DeepCollectionEquality().hash(_mask),hasValidator,minValue,maxValue,contentType,parentId,parent,functionId,lastExit,qrCode,const DeepCollectionEquality().hash(_assignedAssetsIds),const DeepCollectionEquality().hash(_assignedAssets),isTemplate,isGlobal,const DeepCollectionEquality().hash(_access),maxHistorySearch]);
+int get hashCode => Object.hashAll([runtimeType,id,name,iterationCycle,slug,isInstant,icon,measuringUnit,type,subtype,parameter,const DeepCollectionEquality().hash(externalIdentifiers),formula,script,hasHeaders,const DeepCollectionEquality().hash(csvHeaders),csvSeparator,const DeepCollectionEquality().hash(ranges),const DeepCollectionEquality().hash(mask),hasValidator,minValue,maxValue,contentType,parentId,parent,functionId,lastExit,qrCode,const DeepCollectionEquality().hash(assignedAssetsIds),const DeepCollectionEquality().hash(assignedAssets),isTemplate,isGlobal,const DeepCollectionEquality().hash(access),maxHistorySearch]);
 
 @override
 String toString() {
@@ -515,14 +452,14 @@ as MdiRemapIcon?,measuringUnit: freezed == measuringUnit ? _self.measuringUnit :
 as String?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as SensorType?,subtype: freezed == subtype ? _self.subtype : subtype // ignore: cast_nullable_to_non_nullable
 as SensorSubType?,parameter: freezed == parameter ? _self.parameter : parameter // ignore: cast_nullable_to_non_nullable
-as String?,externalIdentifiers: freezed == externalIdentifiers ? _self._externalIdentifiers : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+as String?,externalIdentifiers: freezed == externalIdentifiers ? _self.externalIdentifiers : externalIdentifiers // ignore: cast_nullable_to_non_nullable
 as List<String>?,formula: freezed == formula ? _self.formula : formula // ignore: cast_nullable_to_non_nullable
 as String?,script: freezed == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
 as String?,hasHeaders: freezed == hasHeaders ? _self.hasHeaders : hasHeaders // ignore: cast_nullable_to_non_nullable
-as bool?,csvHeaders: freezed == csvHeaders ? _self._csvHeaders : csvHeaders // ignore: cast_nullable_to_non_nullable
+as bool?,csvHeaders: freezed == csvHeaders ? _self.csvHeaders : csvHeaders // ignore: cast_nullable_to_non_nullable
 as List<String>?,csvSeparator: freezed == csvSeparator ? _self.csvSeparator : csvSeparator // ignore: cast_nullable_to_non_nullable
-as String?,ranges: freezed == ranges ? _self._ranges : ranges // ignore: cast_nullable_to_non_nullable
-as List<SensorRange>?,mask: freezed == mask ? _self._mask : mask // ignore: cast_nullable_to_non_nullable
+as String?,ranges: freezed == ranges ? _self.ranges : ranges // ignore: cast_nullable_to_non_nullable
+as List<SensorRange>?,mask: freezed == mask ? _self.mask : mask // ignore: cast_nullable_to_non_nullable
 as List<MaskPoint>?,hasValidator: freezed == hasValidator ? _self.hasValidator : hasValidator // ignore: cast_nullable_to_non_nullable
 as bool?,minValue: freezed == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
 as double?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
@@ -532,11 +469,11 @@ as String?,parent: freezed == parent ? _self.parent : parent // ignore: cast_nul
 as Sensor?,functionId: freezed == functionId ? _self.functionId : functionId // ignore: cast_nullable_to_non_nullable
 as String?,lastExit: freezed == lastExit ? _self.lastExit : lastExit // ignore: cast_nullable_to_non_nullable
 as AtsExit?,qrCode: freezed == qrCode ? _self.qrCode : qrCode // ignore: cast_nullable_to_non_nullable
-as String?,assignedAssetsIds: freezed == assignedAssetsIds ? _self._assignedAssetsIds : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,assignedAssets: freezed == assignedAssets ? _self._assignedAssets : assignedAssets // ignore: cast_nullable_to_non_nullable
+as String?,assignedAssetsIds: freezed == assignedAssetsIds ? _self.assignedAssetsIds : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,assignedAssets: freezed == assignedAssets ? _self.assignedAssets : assignedAssets // ignore: cast_nullable_to_non_nullable
 as List<Asset>?,isTemplate: freezed == isTemplate ? _self.isTemplate : isTemplate // ignore: cast_nullable_to_non_nullable
 as bool?,isGlobal: null == isGlobal ? _self.isGlobal : isGlobal // ignore: cast_nullable_to_non_nullable
-as bool,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as bool,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,maxHistorySearch: freezed == maxHistorySearch ? _self.maxHistorySearch : maxHistorySearch // ignore: cast_nullable_to_non_nullable
 as Duration?,
   ));

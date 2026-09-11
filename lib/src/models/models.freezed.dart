@@ -257,7 +257,7 @@ return $default(_that.id,_that.name,_that.flespiId,_that.protocol,_that.protocol
 @JsonSerializable()
 
 class _Model extends Model {
-  const _Model({required this.id, required this.name, this.flespiId, this.protocol, this.protocolId, this.isGeneric, final  List<CommandDefinition> commandsStructure = const [], final  List<ConfigGrouping> configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, final  Map<String, dynamic>? peripheralParserSpec, final  List<FirmwareBuild> firmwares = const [], @IconOrNullConverter() this.icon, @JsonKey(unknownEnumValue: RenderWidget.unknown) final  List<RenderWidget> widget = const [], this.zigbeeCompatible = false, final  List<ZigbeeParameter> zigbeeParameters = const []}): _commandsStructure = commandsStructure,_configStructure = configStructure,_peripheralParserSpec = peripheralParserSpec,_firmwares = firmwares,_widget = widget,_zigbeeParameters = zigbeeParameters,super._();
+  const _Model({required this.id, required this.name, this.flespiId, this.protocol, this.protocolId, this.isGeneric, this.commandsStructure = const [], this.configStructure = const [], this.confiotCapable = false, @JsonKey(unknownEnumValue: ConfIoTLayout.standard) this.confiotLayout = ConfIoTLayout.standard, this.confiotName, this.peripheralIdentifier, this.peripheralParserSpec, this.firmwares = const [], @IconOrNullConverter() this.icon, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget = const [], this.zigbeeCompatible = false, this.zigbeeParameters = const []}): super._();
   factory _Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
 
 /// [id] is the unique identifier of the model.
@@ -274,23 +274,9 @@ class _Model extends Model {
 /// [isGeneric] is true if the model is generic.
 @override final  bool? isGeneric;
 /// [commandsStructure] is the structure of the commands for the protocol.
- final  List<CommandDefinition> _commandsStructure;
-/// [commandsStructure] is the structure of the commands for the protocol.
-@override@JsonKey() List<CommandDefinition> get commandsStructure {
-  if (_commandsStructure is EqualUnmodifiableListView) return _commandsStructure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_commandsStructure);
-}
-
+@override@JsonKey() final  List<CommandDefinition> commandsStructure;
 /// [configStructure] is the structure of the configuration for the protocol.
- final  List<ConfigGrouping> _configStructure;
-/// [configStructure] is the structure of the configuration for the protocol.
-@override@JsonKey() List<ConfigGrouping> get configStructure {
-  if (_configStructure is EqualUnmodifiableListView) return _configStructure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_configStructure);
-}
-
+@override@JsonKey() final  List<ConfigGrouping> configStructure;
 /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
 @override@JsonKey() final  bool confiotCapable;
 /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
@@ -300,47 +286,17 @@ class _Model extends Model {
 /// [peripheralIdentifier] is the identifier of the peripheral device.
 @override final  String? peripheralIdentifier;
 /// [peripheralParserSpec] is the parser specification for the peripheral device.
- final  Map<String, dynamic>? _peripheralParserSpec;
-/// [peripheralParserSpec] is the parser specification for the peripheral device.
-@override Map<String, dynamic>? get peripheralParserSpec {
-  final value = _peripheralParserSpec;
-  if (value == null) return null;
-  if (_peripheralParserSpec is EqualUnmodifiableMapView) return _peripheralParserSpec;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? peripheralParserSpec;
 /// [firmwares] is the list of firmwares for the model.
- final  List<FirmwareBuild> _firmwares;
-/// [firmwares] is the list of firmwares for the model.
-@override@JsonKey() List<FirmwareBuild> get firmwares {
-  if (_firmwares is EqualUnmodifiableListView) return _firmwares;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_firmwares);
-}
-
+@override@JsonKey() final  List<FirmwareBuild> firmwares;
 /// The icon of the model, if not exists, you must render the protocol icon
 @override@IconOrNullConverter() final  MdiRemapIcon? icon;
 /// Indicates the rendering widget, useful to render visually the kind of device
- final  List<RenderWidget> _widget;
-/// Indicates the rendering widget, useful to render visually the kind of device
-@override@JsonKey(unknownEnumValue: RenderWidget.unknown) List<RenderWidget> get widget {
-  if (_widget is EqualUnmodifiableListView) return _widget;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_widget);
-}
-
+@override@JsonKey(unknownEnumValue: RenderWidget.unknown) final  List<RenderWidget> widget;
 /// Whether the model is Zigbee-capable. Only meaningful for REALTIME protocols.
 @override@JsonKey() final  bool zigbeeCompatible;
 /// [zigbeeParameters] list of Zigbee parameters defined for this model.
- final  List<ZigbeeParameter> _zigbeeParameters;
-/// [zigbeeParameters] list of Zigbee parameters defined for this model.
-@override@JsonKey() List<ZigbeeParameter> get zigbeeParameters {
-  if (_zigbeeParameters is EqualUnmodifiableListView) return _zigbeeParameters;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_zigbeeParameters);
-}
-
+@override@JsonKey() final  List<ZigbeeParameter> zigbeeParameters;
 
 /// Create a copy of Model
 /// with the given fields replaced by the non-null parameter values.
@@ -355,12 +311,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Model&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.flespiId, flespiId) || other.flespiId == flespiId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isGeneric, isGeneric) || other.isGeneric == isGeneric)&&const DeepCollectionEquality().equals(other._commandsStructure, _commandsStructure)&&const DeepCollectionEquality().equals(other._configStructure, _configStructure)&&(identical(other.confiotCapable, confiotCapable) || other.confiotCapable == confiotCapable)&&(identical(other.confiotLayout, confiotLayout) || other.confiotLayout == confiotLayout)&&(identical(other.confiotName, confiotName) || other.confiotName == confiotName)&&(identical(other.peripheralIdentifier, peripheralIdentifier) || other.peripheralIdentifier == peripheralIdentifier)&&const DeepCollectionEquality().equals(other._peripheralParserSpec, _peripheralParserSpec)&&const DeepCollectionEquality().equals(other._firmwares, _firmwares)&&(identical(other.icon, icon) || other.icon == icon)&&const DeepCollectionEquality().equals(other._widget, _widget)&&(identical(other.zigbeeCompatible, zigbeeCompatible) || other.zigbeeCompatible == zigbeeCompatible)&&const DeepCollectionEquality().equals(other._zigbeeParameters, _zigbeeParameters));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Model&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.flespiId, flespiId) || other.flespiId == flespiId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isGeneric, isGeneric) || other.isGeneric == isGeneric)&&const DeepCollectionEquality().equals(other.commandsStructure, commandsStructure)&&const DeepCollectionEquality().equals(other.configStructure, configStructure)&&(identical(other.confiotCapable, confiotCapable) || other.confiotCapable == confiotCapable)&&(identical(other.confiotLayout, confiotLayout) || other.confiotLayout == confiotLayout)&&(identical(other.confiotName, confiotName) || other.confiotName == confiotName)&&(identical(other.peripheralIdentifier, peripheralIdentifier) || other.peripheralIdentifier == peripheralIdentifier)&&const DeepCollectionEquality().equals(other.peripheralParserSpec, peripheralParserSpec)&&const DeepCollectionEquality().equals(other.firmwares, firmwares)&&(identical(other.icon, icon) || other.icon == icon)&&const DeepCollectionEquality().equals(other.widget, widget)&&(identical(other.zigbeeCompatible, zigbeeCompatible) || other.zigbeeCompatible == zigbeeCompatible)&&const DeepCollectionEquality().equals(other.zigbeeParameters, zigbeeParameters));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,flespiId,protocol,protocolId,isGeneric,const DeepCollectionEquality().hash(_commandsStructure),const DeepCollectionEquality().hash(_configStructure),confiotCapable,confiotLayout,confiotName,peripheralIdentifier,const DeepCollectionEquality().hash(_peripheralParserSpec),const DeepCollectionEquality().hash(_firmwares),icon,const DeepCollectionEquality().hash(_widget),zigbeeCompatible,const DeepCollectionEquality().hash(_zigbeeParameters));
+int get hashCode => Object.hash(runtimeType,id,name,flespiId,protocol,protocolId,isGeneric,const DeepCollectionEquality().hash(commandsStructure),const DeepCollectionEquality().hash(configStructure),confiotCapable,confiotLayout,confiotName,peripheralIdentifier,const DeepCollectionEquality().hash(peripheralParserSpec),const DeepCollectionEquality().hash(firmwares),icon,const DeepCollectionEquality().hash(widget),zigbeeCompatible,const DeepCollectionEquality().hash(zigbeeParameters));
 
 @override
 String toString() {
@@ -400,18 +356,18 @@ as String,flespiId: freezed == flespiId ? _self.flespiId : flespiId // ignore: c
 as String?,protocol: freezed == protocol ? _self.protocol : protocol // ignore: cast_nullable_to_non_nullable
 as InboundProtocol?,protocolId: freezed == protocolId ? _self.protocolId : protocolId // ignore: cast_nullable_to_non_nullable
 as String?,isGeneric: freezed == isGeneric ? _self.isGeneric : isGeneric // ignore: cast_nullable_to_non_nullable
-as bool?,commandsStructure: null == commandsStructure ? _self._commandsStructure : commandsStructure // ignore: cast_nullable_to_non_nullable
-as List<CommandDefinition>,configStructure: null == configStructure ? _self._configStructure : configStructure // ignore: cast_nullable_to_non_nullable
+as bool?,commandsStructure: null == commandsStructure ? _self.commandsStructure : commandsStructure // ignore: cast_nullable_to_non_nullable
+as List<CommandDefinition>,configStructure: null == configStructure ? _self.configStructure : configStructure // ignore: cast_nullable_to_non_nullable
 as List<ConfigGrouping>,confiotCapable: null == confiotCapable ? _self.confiotCapable : confiotCapable // ignore: cast_nullable_to_non_nullable
 as bool,confiotLayout: null == confiotLayout ? _self.confiotLayout : confiotLayout // ignore: cast_nullable_to_non_nullable
 as ConfIoTLayout,confiotName: freezed == confiotName ? _self.confiotName : confiotName // ignore: cast_nullable_to_non_nullable
 as String?,peripheralIdentifier: freezed == peripheralIdentifier ? _self.peripheralIdentifier : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
-as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self._peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,firmwares: null == firmwares ? _self._firmwares : firmwares // ignore: cast_nullable_to_non_nullable
+as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,firmwares: null == firmwares ? _self.firmwares : firmwares // ignore: cast_nullable_to_non_nullable
 as List<FirmwareBuild>,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as MdiRemapIcon?,widget: null == widget ? _self._widget : widget // ignore: cast_nullable_to_non_nullable
+as MdiRemapIcon?,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
 as List<RenderWidget>,zigbeeCompatible: null == zigbeeCompatible ? _self.zigbeeCompatible : zigbeeCompatible // ignore: cast_nullable_to_non_nullable
-as bool,zigbeeParameters: null == zigbeeParameters ? _self._zigbeeParameters : zigbeeParameters // ignore: cast_nullable_to_non_nullable
+as bool,zigbeeParameters: null == zigbeeParameters ? _self.zigbeeParameters : zigbeeParameters // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeParameter>,
   ));
 }
@@ -975,7 +931,7 @@ return $default(_that.id,_that.name,_that.modelsIds,_that.models);case _:
 @JsonSerializable()
 
 class _HwModel extends HwModel {
-  const _HwModel({required this.id, required this.name, final  List<String> modelsIds = const [], final  List<Model> models = const []}): _modelsIds = modelsIds,_models = models,super._();
+  const _HwModel({required this.id, required this.name, this.modelsIds = const [], this.models = const []}): super._();
   factory _HwModel.fromJson(Map<String, dynamic> json) => _$HwModelFromJson(json);
 
 /// [id] is the unique identifier of the model.
@@ -983,23 +939,9 @@ class _HwModel extends HwModel {
 /// [name] is the name of the model.
 @override final  String name;
 /// [modelsIds] is the list of the models IDs that are part of this model.
- final  List<String> _modelsIds;
-/// [modelsIds] is the list of the models IDs that are part of this model.
-@override@JsonKey() List<String> get modelsIds {
-  if (_modelsIds is EqualUnmodifiableListView) return _modelsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_modelsIds);
-}
-
+@override@JsonKey() final  List<String> modelsIds;
 /// [models] is the list of the models that are part of this model.
- final  List<Model> _models;
-/// [models] is the list of the models that are part of this model.
-@override@JsonKey() List<Model> get models {
-  if (_models is EqualUnmodifiableListView) return _models;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_models);
-}
-
+@override@JsonKey() final  List<Model> models;
 
 /// Create a copy of HwModel
 /// with the given fields replaced by the non-null parameter values.
@@ -1014,12 +956,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HwModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._modelsIds, _modelsIds)&&const DeepCollectionEquality().equals(other._models, _models));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HwModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.modelsIds, modelsIds)&&const DeepCollectionEquality().equals(other.models, models));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_modelsIds),const DeepCollectionEquality().hash(_models));
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(modelsIds),const DeepCollectionEquality().hash(models));
 
 @override
 String toString() {
@@ -1055,8 +997,8 @@ class __$HwModelCopyWithImpl<$Res>
   return _then(_HwModel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,modelsIds: null == modelsIds ? _self._modelsIds : modelsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,models: null == models ? _self._models : models // ignore: cast_nullable_to_non_nullable
+as String,modelsIds: null == modelsIds ? _self.modelsIds : modelsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,models: null == models ? _self.models : models // ignore: cast_nullable_to_non_nullable
 as List<Model>,
   ));
 }
@@ -1849,7 +1791,7 @@ return $default(_that.id,_that.name,_that.alias,_that.dataType,_that.widget,_tha
 @JsonSerializable()
 
 class _ZigbeeParameter extends ZigbeeParameter {
-  const _ZigbeeParameter({this.id, required this.name, this.alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string) required this.dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown) required this.widget, this.access = 3, final  Map<String, dynamic>? extra}): _extra = extra,super._();
+  const _ZigbeeParameter({this.id, required this.name, this.alias, @JsonKey(unknownEnumValue: ZigbeeDataType.string) required this.dataType, @JsonKey(unknownEnumValue: RenderWidget.unknown) required this.widget, this.access = 3, this.extra}): super._();
   factory _ZigbeeParameter.fromJson(Map<String, dynamic> json) => _$ZigbeeParameterFromJson(json);
 
 /// [id] unique identifier
@@ -1865,16 +1807,7 @@ class _ZigbeeParameter extends ZigbeeParameter {
 /// [access] access level (bit flags: read=1, write=2, default=3)
 @override@JsonKey() final  int access;
 /// [extra] optional extra configuration (e.g. enum options, range bounds)
- final  Map<String, dynamic>? _extra;
-/// [extra] optional extra configuration (e.g. enum options, range bounds)
-@override Map<String, dynamic>? get extra {
-  final value = _extra;
-  if (value == null) return null;
-  if (_extra is EqualUnmodifiableMapView) return _extra;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? extra;
 
 /// Create a copy of ZigbeeParameter
 /// with the given fields replaced by the non-null parameter values.
@@ -1889,12 +1822,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeParameter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.alias, alias) || other.alias == alias)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.widget, widget) || other.widget == widget)&&(identical(other.access, access) || other.access == access)&&const DeepCollectionEquality().equals(other._extra, _extra));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeParameter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.alias, alias) || other.alias == alias)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.widget, widget) || other.widget == widget)&&(identical(other.access, access) || other.access == access)&&const DeepCollectionEquality().equals(other.extra, extra));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,alias,dataType,widget,access,const DeepCollectionEquality().hash(_extra));
+int get hashCode => Object.hash(runtimeType,id,name,alias,dataType,widget,access,const DeepCollectionEquality().hash(extra));
 
 @override
 String toString() {
@@ -1934,7 +1867,7 @@ as String,alias: freezed == alias ? _self.alias : alias // ignore: cast_nullable
 as String?,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
 as ZigbeeDataType,widget: null == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
 as RenderWidget,access: null == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
-as int,extra: freezed == extra ? _self._extra : extra // ignore: cast_nullable_to_non_nullable
+as int,extra: freezed == extra ? _self.extra : extra // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }

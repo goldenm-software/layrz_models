@@ -228,7 +228,7 @@ return $default(_that.id,_that.ieeeAddress,_that.manufacturer,_that.model,_that.
 @JsonSerializable()
 
 class _ZigbeeDevice extends ZigbeeDevice {
-  const _ZigbeeDevice({required this.id, required this.ieeeAddress, this.manufacturer, this.model, @TimestampOrNullConverter() this.lastSeen, this.bindedDeviceId, this.zoneId, this.bindConflict, final  List<ZigbeeDeviceExpose>? exposes}): _exposes = exposes,super._();
+  const _ZigbeeDevice({required this.id, required this.ieeeAddress, this.manufacturer, this.model, @TimestampOrNullConverter() this.lastSeen, this.bindedDeviceId, this.zoneId, this.bindConflict, this.exposes}): super._();
   factory _ZigbeeDevice.fromJson(Map<String, dynamic> json) => _$ZigbeeDeviceFromJson(json);
 
 /// [id] is the unique identifier of the device.
@@ -250,16 +250,7 @@ class _ZigbeeDevice extends ZigbeeDevice {
 /// a platform device under an inaccessible account.
 @override final  String? bindConflict;
 /// [exposes] is the list of exposes of the device.
- final  List<ZigbeeDeviceExpose>? _exposes;
-/// [exposes] is the list of exposes of the device.
-@override List<ZigbeeDeviceExpose>? get exposes {
-  final value = _exposes;
-  if (value == null) return null;
-  if (_exposes is EqualUnmodifiableListView) return _exposes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ZigbeeDeviceExpose>? exposes;
 
 /// Create a copy of ZigbeeDevice
 /// with the given fields replaced by the non-null parameter values.
@@ -274,12 +265,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.ieeeAddress, ieeeAddress) || other.ieeeAddress == ieeeAddress)&&(identical(other.manufacturer, manufacturer) || other.manufacturer == manufacturer)&&(identical(other.model, model) || other.model == model)&&(identical(other.lastSeen, lastSeen) || other.lastSeen == lastSeen)&&(identical(other.bindedDeviceId, bindedDeviceId) || other.bindedDeviceId == bindedDeviceId)&&(identical(other.zoneId, zoneId) || other.zoneId == zoneId)&&(identical(other.bindConflict, bindConflict) || other.bindConflict == bindConflict)&&const DeepCollectionEquality().equals(other._exposes, _exposes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.ieeeAddress, ieeeAddress) || other.ieeeAddress == ieeeAddress)&&(identical(other.manufacturer, manufacturer) || other.manufacturer == manufacturer)&&(identical(other.model, model) || other.model == model)&&(identical(other.lastSeen, lastSeen) || other.lastSeen == lastSeen)&&(identical(other.bindedDeviceId, bindedDeviceId) || other.bindedDeviceId == bindedDeviceId)&&(identical(other.zoneId, zoneId) || other.zoneId == zoneId)&&(identical(other.bindConflict, bindConflict) || other.bindConflict == bindConflict)&&const DeepCollectionEquality().equals(other.exposes, exposes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,ieeeAddress,manufacturer,model,lastSeen,bindedDeviceId,zoneId,bindConflict,const DeepCollectionEquality().hash(_exposes));
+int get hashCode => Object.hash(runtimeType,id,ieeeAddress,manufacturer,model,lastSeen,bindedDeviceId,zoneId,bindConflict,const DeepCollectionEquality().hash(exposes));
 
 @override
 String toString() {
@@ -321,7 +312,7 @@ as String?,lastSeen: freezed == lastSeen ? _self.lastSeen : lastSeen // ignore: 
 as DateTime?,bindedDeviceId: freezed == bindedDeviceId ? _self.bindedDeviceId : bindedDeviceId // ignore: cast_nullable_to_non_nullable
 as String?,zoneId: freezed == zoneId ? _self.zoneId : zoneId // ignore: cast_nullable_to_non_nullable
 as String?,bindConflict: freezed == bindConflict ? _self.bindConflict : bindConflict // ignore: cast_nullable_to_non_nullable
-as String?,exposes: freezed == exposes ? _self._exposes : exposes // ignore: cast_nullable_to_non_nullable
+as String?,exposes: freezed == exposes ? _self.exposes : exposes // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeDeviceExpose>?,
   ));
 }
@@ -541,7 +532,7 @@ return $default(_that.id,_that.name,_that.type,_that.access,_that.params,_that.w
 @JsonSerializable()
 
 class _ZigbeeDeviceExpose extends ZigbeeDeviceExpose {
-  const _ZigbeeDeviceExpose({required this.id, required this.name, required this.type, required this.access, final  Map<String, dynamic>? params, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget, @TimestampOrNullConverter() this.updatedAt}): _params = params,super._();
+  const _ZigbeeDeviceExpose({required this.id, required this.name, required this.type, required this.access, this.params, @JsonKey(unknownEnumValue: RenderWidget.unknown) this.widget, @TimestampOrNullConverter() this.updatedAt}): super._();
   factory _ZigbeeDeviceExpose.fromJson(Map<String, dynamic> json) => _$ZigbeeDeviceExposeFromJson(json);
 
 /// [id] is the unique identifier of the expose.
@@ -553,16 +544,7 @@ class _ZigbeeDeviceExpose extends ZigbeeDeviceExpose {
 /// [access] is the access level of the expose. It can be one of the following:
 @override final  String access;
 /// [params] is the property of the expose. It can be one of the following:
- final  Map<String, dynamic>? _params;
-/// [params] is the property of the expose. It can be one of the following:
-@override Map<String, dynamic>? get params {
-  final value = _params;
-  if (value == null) return null;
-  if (_params is EqualUnmodifiableMapView) return _params;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? params;
 /// [widget] is the rendering widget, useful to render visually the kind of device.
 /// It can be one of the following:
 @override@JsonKey(unknownEnumValue: RenderWidget.unknown) final  RenderWidget? widget;
@@ -582,12 +564,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeDeviceExpose&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.access, access) || other.access == access)&&const DeepCollectionEquality().equals(other._params, _params)&&(identical(other.widget, widget) || other.widget == widget)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZigbeeDeviceExpose&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.access, access) || other.access == access)&&const DeepCollectionEquality().equals(other.params, params)&&(identical(other.widget, widget) || other.widget == widget)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,access,const DeepCollectionEquality().hash(_params),widget,updatedAt);
+int get hashCode => Object.hash(runtimeType,id,name,type,access,const DeepCollectionEquality().hash(params),widget,updatedAt);
 
 @override
 String toString() {
@@ -625,7 +607,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,access: null == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
-as String,params: freezed == params ? _self._params : params // ignore: cast_nullable_to_non_nullable
+as String,params: freezed == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,widget: freezed == widget ? _self.widget : widget // ignore: cast_nullable_to_non_nullable
 as RenderWidget?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,

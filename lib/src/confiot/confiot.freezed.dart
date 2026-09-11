@@ -220,7 +220,7 @@ return $default(_that.namespace,_that.rev,_that.configuration);case _:
 @JsonSerializable()
 
 class _ConfIoTFile extends ConfIoTFile with DiagnosticableTreeMixin {
-  const _ConfIoTFile({@ConfIoTNamespaceConverter() this.namespace = ConfIoTNamespace.unknown, this.rev = 1, final  List<Map<String, dynamic>>? configuration}): _configuration = configuration,super._();
+  const _ConfIoTFile({@ConfIoTNamespaceConverter() this.namespace = ConfIoTNamespace.unknown, this.rev = 1, this.configuration}): super._();
   factory _ConfIoTFile.fromJson(Map<String, dynamic> json) => _$ConfIoTFileFromJson(json);
 
 /// [namespace] is the namespace of the file.
@@ -228,16 +228,7 @@ class _ConfIoTFile extends ConfIoTFile with DiagnosticableTreeMixin {
 /// [rev] is the revision of the file.
 @override@JsonKey() final  int rev;
 /// [configuration] is the configuration of the file.
- final  List<Map<String, dynamic>>? _configuration;
-/// [configuration] is the configuration of the file.
-@override List<Map<String, dynamic>>? get configuration {
-  final value = _configuration;
-  if (value == null) return null;
-  if (_configuration is EqualUnmodifiableListView) return _configuration;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Map<String, dynamic>>? configuration;
 
 /// Create a copy of ConfIoTFile
 /// with the given fields replaced by the non-null parameter values.
@@ -258,12 +249,12 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConfIoTFile&&(identical(other.namespace, namespace) || other.namespace == namespace)&&(identical(other.rev, rev) || other.rev == rev)&&const DeepCollectionEquality().equals(other._configuration, _configuration));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConfIoTFile&&(identical(other.namespace, namespace) || other.namespace == namespace)&&(identical(other.rev, rev) || other.rev == rev)&&const DeepCollectionEquality().equals(other.configuration, configuration));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,namespace,rev,const DeepCollectionEquality().hash(_configuration));
+int get hashCode => Object.hash(runtimeType,namespace,rev,const DeepCollectionEquality().hash(configuration));
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
@@ -299,7 +290,7 @@ class __$ConfIoTFileCopyWithImpl<$Res>
   return _then(_ConfIoTFile(
 namespace: null == namespace ? _self.namespace : namespace // ignore: cast_nullable_to_non_nullable
 as ConfIoTNamespace,rev: null == rev ? _self.rev : rev // ignore: cast_nullable_to_non_nullable
-as int,configuration: freezed == configuration ? _self._configuration : configuration // ignore: cast_nullable_to_non_nullable
+as int,configuration: freezed == configuration ? _self.configuration : configuration // ignore: cast_nullable_to_non_nullable
 as List<Map<String, dynamic>>?,
   ));
 }

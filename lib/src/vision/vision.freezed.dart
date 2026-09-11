@@ -235,7 +235,7 @@ return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.requiredFi
 @JsonSerializable()
 
 class _VisionProtocol implements VisionProtocol {
-  const _VisionProtocol({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, final  List<CredentialField> requiredFields = const [], this.usage, this.dynamicIcon}): _requiredFields = requiredFields;
+  const _VisionProtocol({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, this.requiredFields = const [], this.usage, this.dynamicIcon});
   factory _VisionProtocol.fromJson(Map<String, dynamic> json) => _$VisionProtocolFromJson(json);
 
 /// [id] is the ID of the entity. This ID is unique.
@@ -247,14 +247,7 @@ class _VisionProtocol implements VisionProtocol {
 /// [isEnabled] is the current status of the protocol.
 @override final  bool isEnabled;
 /// [requiredFields] is the list of required fields for the protocol.
- final  List<CredentialField> _requiredFields;
-/// [requiredFields] is the list of required fields for the protocol.
-@override@JsonKey() List<CredentialField> get requiredFields {
-  if (_requiredFields is EqualUnmodifiableListView) return _requiredFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_requiredFields);
-}
-
+@override@JsonKey() final  List<CredentialField> requiredFields;
 /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
 /// For marketing purposes.
 @override final  int? usage;
@@ -274,12 +267,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _VisionProtocol&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other._requiredFields, _requiredFields)&&(identical(other.usage, usage) || other.usage == usage)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _VisionProtocol&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other.requiredFields, requiredFields)&&(identical(other.usage, usage) || other.usage == usage)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,color,isEnabled,const DeepCollectionEquality().hash(_requiredFields),usage,dynamicIcon);
+int get hashCode => Object.hash(runtimeType,id,name,color,isEnabled,const DeepCollectionEquality().hash(requiredFields),usage,dynamicIcon);
 
 @override
 String toString() {
@@ -317,7 +310,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,requiredFields: null == requiredFields ? _self._requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
+as bool,requiredFields: null == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
 as List<CredentialField>,usage: freezed == usage ? _self.usage : usage // ignore: cast_nullable_to_non_nullable
 as int?,dynamicIcon: freezed == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
 as Avatar?,
@@ -575,7 +568,7 @@ return $default(_that.id,_that.name,_that.protocolId,_that.protocol,_that.config
 @JsonSerializable()
 
 class _VisionProfile implements VisionProfile {
-  const _VisionProfile({required this.id, required this.name, this.protocolId, this.protocol, final  Map<String, dynamic>? config, final  List<Access>? access, this.lastMeasurement}): _config = config,_access = access;
+  const _VisionProfile({required this.id, required this.name, this.protocolId, this.protocol, this.config, this.access, this.lastMeasurement});
   factory _VisionProfile.fromJson(Map<String, dynamic> json) => _$VisionProfileFromJson(json);
 
 /// [id] is the unique identifier of the profile.
@@ -587,27 +580,9 @@ class _VisionProfile implements VisionProfile {
 /// [protocol] is the protocol of the profile.
 @override final  VisionProtocol? protocol;
 /// [config] is the configuration of the profile.
- final  Map<String, dynamic>? _config;
-/// [config] is the configuration of the profile.
-@override Map<String, dynamic>? get config {
-  final value = _config;
-  if (value == null) return null;
-  if (_config is EqualUnmodifiableMapView) return _config;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? config;
 /// [access] is the list of grant access to the vision profile.
- final  List<Access>? _access;
-/// [access] is the list of grant access to the vision profile.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// [lastMeasurement] is the last measurement of the profile.
 /// It is null if there is no measurement.
 @override final  VisionGaugeResult? lastMeasurement;
@@ -625,12 +600,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _VisionProfile&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other._config, _config)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.lastMeasurement, lastMeasurement) || other.lastMeasurement == lastMeasurement));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _VisionProfile&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other.config, config)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.lastMeasurement, lastMeasurement) || other.lastMeasurement == lastMeasurement));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,protocolId,protocol,const DeepCollectionEquality().hash(_config),const DeepCollectionEquality().hash(_access),lastMeasurement);
+int get hashCode => Object.hash(runtimeType,id,name,protocolId,protocol,const DeepCollectionEquality().hash(config),const DeepCollectionEquality().hash(access),lastMeasurement);
 
 @override
 String toString() {
@@ -668,8 +643,8 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,protocolId: freezed == protocolId ? _self.protocolId : protocolId // ignore: cast_nullable_to_non_nullable
 as String?,protocol: freezed == protocol ? _self.protocol : protocol // ignore: cast_nullable_to_non_nullable
-as VisionProtocol?,config: freezed == config ? _self._config : config // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as VisionProtocol?,config: freezed == config ? _self.config : config // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,lastMeasurement: freezed == lastMeasurement ? _self.lastMeasurement : lastMeasurement // ignore: cast_nullable_to_non_nullable
 as VisionGaugeResult?,
   ));

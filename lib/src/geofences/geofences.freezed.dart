@@ -260,7 +260,7 @@ return $default(_that.id,_that.name,_that.mode,_that.description,_that.color,_th
 @JsonSerializable()
 
 class _Geofence extends Geofence {
-  const _Geofence({required this.id, required this.name, @JsonKey(unknownEnumValue: GeofenceMode.radial) required this.mode, this.description, @ColorOrNullConverter() this.color, final  List<GeofencePoint>? path, this.radius, this.resourceId, final  List<Asset>? assetsInside, @JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, final  List<String>? childrenIds, final  List<Geofence>? children, final  List<Access>? access, final  List<CustomField>? customFields, this.ownerId, this.owner, final  List<MappitRoute>? mappitRoutes, final  List<String>? mappitRouteIds, this.assetId}): _path = path,_assetsInside = assetsInside,_childrenIds = childrenIds,_children = children,_access = access,_customFields = customFields,_mappitRoutes = mappitRoutes,_mappitRouteIds = mappitRouteIds,super._();
+  const _Geofence({required this.id, required this.name, @JsonKey(unknownEnumValue: GeofenceMode.radial) required this.mode, this.description, @ColorOrNullConverter() this.color, this.path, this.radius, this.resourceId, this.assetsInside, @JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, this.childrenIds, this.children, this.access, this.customFields, this.ownerId, this.owner, this.mappitRoutes, this.mappitRouteIds, this.assetId}): super._();
   factory _Geofence.fromJson(Map<String, dynamic> json) => _$GeofenceFromJson(json);
 
 /// ID of the geofence entity. This ID is unique.
@@ -274,106 +274,33 @@ class _Geofence extends Geofence {
 /// Color of the geofence in hexadecimal code.
 @override@ColorOrNullConverter() final  Color? color;
 /// Depending of the Geofence mode, this field may return one or N points. Please check the GeofenceMode definition
- final  List<GeofencePoint>? _path;
-/// Depending of the Geofence mode, this field may return one or N points. Please check the GeofenceMode definition
-@override List<GeofencePoint>? get path {
-  final value = _path;
-  if (value == null) return null;
-  if (_path is EqualUnmodifiableListView) return _path;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<GeofencePoint>? path;
 /// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
 @override final  double? radius;
 /// External resource ID, only for external geofences.
 @override final  String? resourceId;
 /// List of assets inside the geofence.
- final  List<Asset>? _assetsInside;
-/// List of assets inside the geofence.
-@override List<Asset>? get assetsInside {
-  final value = _assetsInside;
-  if (value == null) return null;
-  if (_assetsInside is EqualUnmodifiableListView) return _assetsInside;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assetsInside;
 /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
 /// from the API.
 @override@JsonKey(unknownEnumValue: GeofenceCategory.none) final  GeofenceCategory category;
 /// [childrenIds] refers to the list of children geofences.
- final  List<String>? _childrenIds;
-/// [childrenIds] refers to the list of children geofences.
-@override List<String>? get childrenIds {
-  final value = _childrenIds;
-  if (value == null) return null;
-  if (_childrenIds is EqualUnmodifiableListView) return _childrenIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? childrenIds;
 /// [children] refers to the list of children geofences.
- final  List<Geofence>? _children;
-/// [children] refers to the list of children geofences.
-@override List<Geofence>? get children {
-  final value = _children;
-  if (value == null) return null;
-  if (_children is EqualUnmodifiableListView) return _children;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Geofence>? children;
 /// List of custom access permissions.
- final  List<Access>? _access;
-/// List of custom access permissions.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// List of [customFields] linked to the geofence. Please read the documentation for [CustomField]
 /// for more details about the fields.
- final  List<CustomField>? _customFields;
-/// List of [customFields] linked to the geofence. Please read the documentation for [CustomField]
-/// for more details about the fields.
-@override List<CustomField>? get customFields {
-  final value = _customFields;
-  if (value == null) return null;
-  if (_customFields is EqualUnmodifiableListView) return _customFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CustomField>? customFields;
 /// [ownerId] refers to the owner of the geofence.
 @override final  String? ownerId;
 /// [owner] refers to the owner of the geofence.
 @override final  User? owner;
 /// [mappitRoutes] refers to the list of routes that are linked to the geofence.
- final  List<MappitRoute>? _mappitRoutes;
-/// [mappitRoutes] refers to the list of routes that are linked to the geofence.
-@override List<MappitRoute>? get mappitRoutes {
-  final value = _mappitRoutes;
-  if (value == null) return null;
-  if (_mappitRoutes is EqualUnmodifiableListView) return _mappitRoutes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<MappitRoute>? mappitRoutes;
 /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
- final  List<String>? _mappitRouteIds;
-/// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
-@override List<String>? get mappitRouteIds {
-  final value = _mappitRouteIds;
-  if (value == null) return null;
-  if (_mappitRouteIds is EqualUnmodifiableListView) return _mappitRouteIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? mappitRouteIds;
 /// [assetId] refers to the asset to which the geofence is linked.
 @override final  String? assetId;
 
@@ -390,12 +317,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Geofence&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.description, description) || other.description == description)&&(identical(other.color, color) || other.color == color)&&const DeepCollectionEquality().equals(other._path, _path)&&(identical(other.radius, radius) || other.radius == radius)&&(identical(other.resourceId, resourceId) || other.resourceId == resourceId)&&const DeepCollectionEquality().equals(other._assetsInside, _assetsInside)&&(identical(other.category, category) || other.category == category)&&const DeepCollectionEquality().equals(other._childrenIds, _childrenIds)&&const DeepCollectionEquality().equals(other._children, _children)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._mappitRoutes, _mappitRoutes)&&const DeepCollectionEquality().equals(other._mappitRouteIds, _mappitRouteIds)&&(identical(other.assetId, assetId) || other.assetId == assetId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Geofence&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.description, description) || other.description == description)&&(identical(other.color, color) || other.color == color)&&const DeepCollectionEquality().equals(other.path, path)&&(identical(other.radius, radius) || other.radius == radius)&&(identical(other.resourceId, resourceId) || other.resourceId == resourceId)&&const DeepCollectionEquality().equals(other.assetsInside, assetsInside)&&(identical(other.category, category) || other.category == category)&&const DeepCollectionEquality().equals(other.childrenIds, childrenIds)&&const DeepCollectionEquality().equals(other.children, children)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.mappitRoutes, mappitRoutes)&&const DeepCollectionEquality().equals(other.mappitRouteIds, mappitRouteIds)&&(identical(other.assetId, assetId) || other.assetId == assetId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,mode,description,color,const DeepCollectionEquality().hash(_path),radius,resourceId,const DeepCollectionEquality().hash(_assetsInside),category,const DeepCollectionEquality().hash(_childrenIds),const DeepCollectionEquality().hash(_children),const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_customFields),ownerId,owner,const DeepCollectionEquality().hash(_mappitRoutes),const DeepCollectionEquality().hash(_mappitRouteIds),assetId]);
+int get hashCode => Object.hashAll([runtimeType,id,name,mode,description,color,const DeepCollectionEquality().hash(path),radius,resourceId,const DeepCollectionEquality().hash(assetsInside),category,const DeepCollectionEquality().hash(childrenIds),const DeepCollectionEquality().hash(children),const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(customFields),ownerId,owner,const DeepCollectionEquality().hash(mappitRoutes),const DeepCollectionEquality().hash(mappitRouteIds),assetId]);
 
 @override
 String toString() {
@@ -434,19 +361,19 @@ as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non
 as String,mode: null == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
 as GeofenceMode,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
-as Color?,path: freezed == path ? _self._path : path // ignore: cast_nullable_to_non_nullable
+as Color?,path: freezed == path ? _self.path : path // ignore: cast_nullable_to_non_nullable
 as List<GeofencePoint>?,radius: freezed == radius ? _self.radius : radius // ignore: cast_nullable_to_non_nullable
 as double?,resourceId: freezed == resourceId ? _self.resourceId : resourceId // ignore: cast_nullable_to_non_nullable
-as String?,assetsInside: freezed == assetsInside ? _self._assetsInside : assetsInside // ignore: cast_nullable_to_non_nullable
+as String?,assetsInside: freezed == assetsInside ? _self.assetsInside : assetsInside // ignore: cast_nullable_to_non_nullable
 as List<Asset>?,category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as GeofenceCategory,childrenIds: freezed == childrenIds ? _self._childrenIds : childrenIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,children: freezed == children ? _self._children : children // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,customFields: freezed == customFields ? _self._customFields : customFields // ignore: cast_nullable_to_non_nullable
+as GeofenceCategory,childrenIds: freezed == childrenIds ? _self.childrenIds : childrenIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,children: freezed == children ? _self.children : children // ignore: cast_nullable_to_non_nullable
+as List<Geofence>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as List<Access>?,customFields: freezed == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
 as List<CustomField>?,ownerId: freezed == ownerId ? _self.ownerId : ownerId // ignore: cast_nullable_to_non_nullable
 as String?,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
-as User?,mappitRoutes: freezed == mappitRoutes ? _self._mappitRoutes : mappitRoutes // ignore: cast_nullable_to_non_nullable
-as List<MappitRoute>?,mappitRouteIds: freezed == mappitRouteIds ? _self._mappitRouteIds : mappitRouteIds // ignore: cast_nullable_to_non_nullable
+as User?,mappitRoutes: freezed == mappitRoutes ? _self.mappitRoutes : mappitRoutes // ignore: cast_nullable_to_non_nullable
+as List<MappitRoute>?,mappitRouteIds: freezed == mappitRouteIds ? _self.mappitRouteIds : mappitRouteIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,assetId: freezed == assetId ? _self.assetId : assetId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -1761,7 +1688,7 @@ return $default(_that.name,_that.type,_that.path,_that.searchedOn);case _:
 @JsonSerializable()
 
 class _SearchItem extends SearchItem {
-  const _SearchItem({required this.name, required this.type, required final  List<GeoPoint> path, required this.searchedOn}): _path = path,super._();
+  const _SearchItem({required this.name, required this.type, required this.path, required this.searchedOn}): super._();
   factory _SearchItem.fromJson(Map<String, dynamic> json) => _$SearchItemFromJson(json);
 
 /// [name] is the name of the search item.
@@ -1769,14 +1696,7 @@ class _SearchItem extends SearchItem {
 /// [type] indicates the type of the search item, which can be point, radial, polygon, or linear.
 @override final  SearchType type;
 /// [path] is a list of [GeoPoint]s that define the geographical path or area associated with the search item.
- final  List<GeoPoint> _path;
-/// [path] is a list of [GeoPoint]s that define the geographical path or area associated with the search item.
-@override List<GeoPoint> get path {
-  if (_path is EqualUnmodifiableListView) return _path;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_path);
-}
-
+@override final  List<GeoPoint> path;
 /// [searchedOn] indicates the context in which the search item was found, such as assets, geofences, or addresses.
 @override final  GeofenceSearchBy searchedOn;
 
@@ -1827,7 +1747,7 @@ class __$SearchItemCopyWithImpl<$Res>
   return _then(_SearchItem(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as SearchType,path: null == path ? _self._path : path // ignore: cast_nullable_to_non_nullable
+as SearchType,path: null == path ? _self.path : path // ignore: cast_nullable_to_non_nullable
 as List<GeoPoint>,searchedOn: null == searchedOn ? _self.searchedOn : searchedOn // ignore: cast_nullable_to_non_nullable
 as GeofenceSearchBy,
   ));

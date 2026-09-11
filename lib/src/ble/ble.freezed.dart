@@ -225,7 +225,7 @@ return $default(_that.macAddress,_that.name,_that.rssi,_that.txPower,_that.manuf
 @JsonSerializable()
 
 class _BleDevice extends BleDevice {
-  const _BleDevice({required this.macAddress, this.name, this.rssi, this.txPower, final  List<BleManufacturerData> manufacturerData = const [], final  List<BleServiceData> serviceData = const []}): _manufacturerData = manufacturerData,_serviceData = serviceData,super._();
+  const _BleDevice({required this.macAddress, this.name, this.rssi, this.txPower, this.manufacturerData = const [], this.serviceData = const []}): super._();
   factory _BleDevice.fromJson(Map<String, dynamic> json) => _$BleDeviceFromJson(json);
 
 /// [macAddress] is the MAC address of the BLE device.
@@ -242,23 +242,9 @@ class _BleDevice extends BleDevice {
 /// Can be null if the device does not have a transmission power due to a platform limitation.
 @override final  int? txPower;
 /// [manufacturerData] is the manufacturer data of the BLE device.
- final  List<BleManufacturerData> _manufacturerData;
-/// [manufacturerData] is the manufacturer data of the BLE device.
-@override@JsonKey() List<BleManufacturerData> get manufacturerData {
-  if (_manufacturerData is EqualUnmodifiableListView) return _manufacturerData;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_manufacturerData);
-}
-
+@override@JsonKey() final  List<BleManufacturerData> manufacturerData;
 /// [serviceData] is the service data of the BLE device.
- final  List<BleServiceData> _serviceData;
-/// [serviceData] is the service data of the BLE device.
-@override@JsonKey() List<BleServiceData> get serviceData {
-  if (_serviceData is EqualUnmodifiableListView) return _serviceData;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_serviceData);
-}
-
+@override@JsonKey() final  List<BleServiceData> serviceData;
 
 /// Create a copy of BleDevice
 /// with the given fields replaced by the non-null parameter values.
@@ -273,12 +259,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleDevice&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&(identical(other.name, name) || other.name == name)&&(identical(other.rssi, rssi) || other.rssi == rssi)&&(identical(other.txPower, txPower) || other.txPower == txPower)&&const DeepCollectionEquality().equals(other._manufacturerData, _manufacturerData)&&const DeepCollectionEquality().equals(other._serviceData, _serviceData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleDevice&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&(identical(other.name, name) || other.name == name)&&(identical(other.rssi, rssi) || other.rssi == rssi)&&(identical(other.txPower, txPower) || other.txPower == txPower)&&const DeepCollectionEquality().equals(other.manufacturerData, manufacturerData)&&const DeepCollectionEquality().equals(other.serviceData, serviceData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,macAddress,name,rssi,txPower,const DeepCollectionEquality().hash(_manufacturerData),const DeepCollectionEquality().hash(_serviceData));
+int get hashCode => Object.hash(runtimeType,macAddress,name,rssi,txPower,const DeepCollectionEquality().hash(manufacturerData),const DeepCollectionEquality().hash(serviceData));
 
 @override
 String toString() {
@@ -316,8 +302,8 @@ macAddress: null == macAddress ? _self.macAddress : macAddress // ignore: cast_n
 as String,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,rssi: freezed == rssi ? _self.rssi : rssi // ignore: cast_nullable_to_non_nullable
 as int?,txPower: freezed == txPower ? _self.txPower : txPower // ignore: cast_nullable_to_non_nullable
-as int?,manufacturerData: null == manufacturerData ? _self._manufacturerData : manufacturerData // ignore: cast_nullable_to_non_nullable
-as List<BleManufacturerData>,serviceData: null == serviceData ? _self._serviceData : serviceData // ignore: cast_nullable_to_non_nullable
+as int?,manufacturerData: null == manufacturerData ? _self.manufacturerData : manufacturerData // ignore: cast_nullable_to_non_nullable
+as List<BleManufacturerData>,serviceData: null == serviceData ? _self.serviceData : serviceData // ignore: cast_nullable_to_non_nullable
 as List<BleServiceData>,
   ));
 }
@@ -526,22 +512,13 @@ return $default(_that.uuid,_that.characteristics);case _:
 @JsonSerializable()
 
 class _BleService extends BleService {
-  const _BleService({required this.uuid, final  List<BleCharacteristic>? characteristics}): _characteristics = characteristics,super._();
+  const _BleService({required this.uuid, this.characteristics}): super._();
   factory _BleService.fromJson(Map<String, dynamic> json) => _$BleServiceFromJson(json);
 
 /// [uuid] is the UUID of the BLE service.
 @override final  String uuid;
 /// [characteristics] is the list of characteristics of the BLE service.
- final  List<BleCharacteristic>? _characteristics;
-/// [characteristics] is the list of characteristics of the BLE service.
-@override List<BleCharacteristic>? get characteristics {
-  final value = _characteristics;
-  if (value == null) return null;
-  if (_characteristics is EqualUnmodifiableListView) return _characteristics;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<BleCharacteristic>? characteristics;
 
 /// Create a copy of BleService
 /// with the given fields replaced by the non-null parameter values.
@@ -556,12 +533,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleService&&(identical(other.uuid, uuid) || other.uuid == uuid)&&const DeepCollectionEquality().equals(other._characteristics, _characteristics));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleService&&(identical(other.uuid, uuid) || other.uuid == uuid)&&const DeepCollectionEquality().equals(other.characteristics, characteristics));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,uuid,const DeepCollectionEquality().hash(_characteristics));
+int get hashCode => Object.hash(runtimeType,uuid,const DeepCollectionEquality().hash(characteristics));
 
 @override
 String toString() {
@@ -596,7 +573,7 @@ class __$BleServiceCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? uuid = null,Object? characteristics = freezed,}) {
   return _then(_BleService(
 uuid: null == uuid ? _self.uuid : uuid // ignore: cast_nullable_to_non_nullable
-as String,characteristics: freezed == characteristics ? _self._characteristics : characteristics // ignore: cast_nullable_to_non_nullable
+as String,characteristics: freezed == characteristics ? _self.characteristics : characteristics // ignore: cast_nullable_to_non_nullable
 as List<BleCharacteristic>?,
   ));
 }
@@ -805,22 +782,13 @@ return $default(_that.uuid,_that.data);case _:
 @JsonSerializable()
 
 class _BleServiceData extends BleServiceData {
-  const _BleServiceData({required this.uuid, final  List<int>? data}): _data = data,super._();
+  const _BleServiceData({required this.uuid, this.data}): super._();
   factory _BleServiceData.fromJson(Map<String, dynamic> json) => _$BleServiceDataFromJson(json);
 
 /// [uuid] is the UUID of the BLE service.
 @override final  int uuid;
 /// [characteristics] is the list of characteristics of the BLE service.
- final  List<int>? _data;
-/// [characteristics] is the list of characteristics of the BLE service.
-@override List<int>? get data {
-  final value = _data;
-  if (value == null) return null;
-  if (_data is EqualUnmodifiableListView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<int>? data;
 
 /// Create a copy of BleServiceData
 /// with the given fields replaced by the non-null parameter values.
@@ -835,12 +803,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleServiceData&&(identical(other.uuid, uuid) || other.uuid == uuid)&&const DeepCollectionEquality().equals(other._data, _data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleServiceData&&(identical(other.uuid, uuid) || other.uuid == uuid)&&const DeepCollectionEquality().equals(other.data, data));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,uuid,const DeepCollectionEquality().hash(_data));
+int get hashCode => Object.hash(runtimeType,uuid,const DeepCollectionEquality().hash(data));
 
 @override
 String toString() {
@@ -875,7 +843,7 @@ class __$BleServiceDataCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? uuid = null,Object? data = freezed,}) {
   return _then(_BleServiceData(
 uuid: null == uuid ? _self.uuid : uuid // ignore: cast_nullable_to_non_nullable
-as int,data: freezed == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as int,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as List<int>?,
   ));
 }
@@ -1084,20 +1052,13 @@ return $default(_that.uuid,_that.properties);case _:
 @JsonSerializable()
 
 class _BleCharacteristic extends BleCharacteristic {
-  const _BleCharacteristic({required this.uuid, @JsonKey(unknownEnumValue: BleProperty.unknown) final  List<BleProperty> properties = const []}): _properties = properties,super._();
+  const _BleCharacteristic({required this.uuid, @JsonKey(unknownEnumValue: BleProperty.unknown) this.properties = const []}): super._();
   factory _BleCharacteristic.fromJson(Map<String, dynamic> json) => _$BleCharacteristicFromJson(json);
 
 /// [uuid] is the UUID of the BLE characteristic.
 @override final  String uuid;
 /// [properties] is the list of properties of the BLE characteristic.
- final  List<BleProperty> _properties;
-/// [properties] is the list of properties of the BLE characteristic.
-@override@JsonKey(unknownEnumValue: BleProperty.unknown) List<BleProperty> get properties {
-  if (_properties is EqualUnmodifiableListView) return _properties;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_properties);
-}
-
+@override@JsonKey(unknownEnumValue: BleProperty.unknown) final  List<BleProperty> properties;
 
 /// Create a copy of BleCharacteristic
 /// with the given fields replaced by the non-null parameter values.
@@ -1112,12 +1073,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleCharacteristic&&(identical(other.uuid, uuid) || other.uuid == uuid)&&const DeepCollectionEquality().equals(other._properties, _properties));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleCharacteristic&&(identical(other.uuid, uuid) || other.uuid == uuid)&&const DeepCollectionEquality().equals(other.properties, properties));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,uuid,const DeepCollectionEquality().hash(_properties));
+int get hashCode => Object.hash(runtimeType,uuid,const DeepCollectionEquality().hash(properties));
 
 @override
 String toString() {
@@ -1152,7 +1113,7 @@ class __$BleCharacteristicCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? uuid = null,Object? properties = null,}) {
   return _then(_BleCharacteristic(
 uuid: null == uuid ? _self.uuid : uuid // ignore: cast_nullable_to_non_nullable
-as String,properties: null == properties ? _self._properties : properties // ignore: cast_nullable_to_non_nullable
+as String,properties: null == properties ? _self.properties : properties // ignore: cast_nullable_to_non_nullable
 as List<BleProperty>,
   ));
 }
@@ -1361,22 +1322,13 @@ return $default(_that.companyId,_that.data);case _:
 @JsonSerializable()
 
 class _BleManufacturerData extends BleManufacturerData {
-  const _BleManufacturerData({this.companyId = 0x0000, final  List<int>? data}): _data = data,super._();
+  const _BleManufacturerData({this.companyId = 0x0000, this.data}): super._();
   factory _BleManufacturerData.fromJson(Map<String, dynamic> json) => _$BleManufacturerDataFromJson(json);
 
 /// [companyId] is the company identifier of the manufacturer.
 @override@JsonKey() final  int companyId;
 /// [data] is the raw data of the manufacturer.
- final  List<int>? _data;
-/// [data] is the raw data of the manufacturer.
-@override List<int>? get data {
-  final value = _data;
-  if (value == null) return null;
-  if (_data is EqualUnmodifiableListView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<int>? data;
 
 /// Create a copy of BleManufacturerData
 /// with the given fields replaced by the non-null parameter values.
@@ -1391,12 +1343,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleManufacturerData&&(identical(other.companyId, companyId) || other.companyId == companyId)&&const DeepCollectionEquality().equals(other._data, _data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleManufacturerData&&(identical(other.companyId, companyId) || other.companyId == companyId)&&const DeepCollectionEquality().equals(other.data, data));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,companyId,const DeepCollectionEquality().hash(_data));
+int get hashCode => Object.hash(runtimeType,companyId,const DeepCollectionEquality().hash(data));
 
 @override
 String toString() {
@@ -1431,7 +1383,7 @@ class __$BleManufacturerDataCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? companyId = null,Object? data = freezed,}) {
   return _then(_BleManufacturerData(
 companyId: null == companyId ? _self.companyId : companyId // ignore: cast_nullable_to_non_nullable
-as int,data: freezed == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as int,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as List<int>?,
   ));
 }

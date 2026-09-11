@@ -212,20 +212,13 @@ return $default(_that.name,_that.pages);case _:
 @JsonSerializable()
 
 class _ReportPreview extends ReportPreview {
-  const _ReportPreview({required this.name, final  List<ReportPage> pages = const []}): _pages = pages,super._();
+  const _ReportPreview({required this.name, this.pages = const []}): super._();
   factory _ReportPreview.fromJson(Map<String, dynamic> json) => _$ReportPreviewFromJson(json);
 
 /// [name] is the name of the report preview.
 @override final  String name;
 /// [pages] is the pages inside of the report
- final  List<ReportPage> _pages;
-/// [pages] is the pages inside of the report
-@override@JsonKey() List<ReportPage> get pages {
-  if (_pages is EqualUnmodifiableListView) return _pages;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_pages);
-}
-
+@override@JsonKey() final  List<ReportPage> pages;
 
 /// Create a copy of ReportPreview
 /// with the given fields replaced by the non-null parameter values.
@@ -240,12 +233,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportPreview&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._pages, _pages));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportPreview&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.pages, pages));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,const DeepCollectionEquality().hash(_pages));
+int get hashCode => Object.hash(runtimeType,name,const DeepCollectionEquality().hash(pages));
 
 @override
 String toString() {
@@ -280,7 +273,7 @@ class __$ReportPreviewCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? pages = null,}) {
   return _then(_ReportPreview(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,pages: null == pages ? _self._pages : pages // ignore: cast_nullable_to_non_nullable
+as String,pages: null == pages ? _self.pages : pages // ignore: cast_nullable_to_non_nullable
 as List<ReportPage>,
   ));
 }
@@ -491,29 +484,15 @@ return $default(_that.name,_that.rows,_that.headers);case _:
 @JsonSerializable()
 
 class _ReportPage extends ReportPage {
-  const _ReportPage({required this.name, final  List<ReportRow> rows = const [], final  List<ReportHeader> headers = const []}): _rows = rows,_headers = headers,super._();
+  const _ReportPage({required this.name, this.rows = const [], this.headers = const []}): super._();
   factory _ReportPage.fromJson(Map<String, dynamic> json) => _$ReportPageFromJson(json);
 
 /// [name] is the name of the report page.
 @override final  String name;
 /// [rows] is the rows inside of the report
- final  List<ReportRow> _rows;
-/// [rows] is the rows inside of the report
-@override@JsonKey() List<ReportRow> get rows {
-  if (_rows is EqualUnmodifiableListView) return _rows;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_rows);
-}
-
+@override@JsonKey() final  List<ReportRow> rows;
 /// [headers] is the headers of the report
- final  List<ReportHeader> _headers;
-/// [headers] is the headers of the report
-@override@JsonKey() List<ReportHeader> get headers {
-  if (_headers is EqualUnmodifiableListView) return _headers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_headers);
-}
-
+@override@JsonKey() final  List<ReportHeader> headers;
 
 /// Create a copy of ReportPage
 /// with the given fields replaced by the non-null parameter values.
@@ -528,12 +507,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportPage&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._rows, _rows)&&const DeepCollectionEquality().equals(other._headers, _headers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportPage&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.rows, rows)&&const DeepCollectionEquality().equals(other.headers, headers));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,const DeepCollectionEquality().hash(_rows),const DeepCollectionEquality().hash(_headers));
+int get hashCode => Object.hash(runtimeType,name,const DeepCollectionEquality().hash(rows),const DeepCollectionEquality().hash(headers));
 
 @override
 String toString() {
@@ -568,8 +547,8 @@ class __$ReportPageCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? rows = null,Object? headers = null,}) {
   return _then(_ReportPage(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,rows: null == rows ? _self._rows : rows // ignore: cast_nullable_to_non_nullable
-as List<ReportRow>,headers: null == headers ? _self._headers : headers // ignore: cast_nullable_to_non_nullable
+as String,rows: null == rows ? _self.rows : rows // ignore: cast_nullable_to_non_nullable
+as List<ReportRow>,headers: null == headers ? _self.headers : headers // ignore: cast_nullable_to_non_nullable
 as List<ReportHeader>,
   ));
 }
@@ -778,18 +757,11 @@ return $default(_that.content,_that.compact);case _:
 @JsonSerializable()
 
 class _ReportRow extends ReportRow {
-  const _ReportRow({final  List<ReportCell> content = const [], this.compact = false}): _content = content,super._();
+  const _ReportRow({this.content = const [], this.compact = false}): super._();
   factory _ReportRow.fromJson(Map<String, dynamic> json) => _$ReportRowFromJson(json);
 
 /// [content] is the cells of the report row.
- final  List<ReportCell> _content;
-/// [content] is the cells of the report row.
-@override@JsonKey() List<ReportCell> get content {
-  if (_content is EqualUnmodifiableListView) return _content;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_content);
-}
-
+@override@JsonKey() final  List<ReportCell> content;
 /// [compact] indicates if the row is compact.
 @override@JsonKey() final  bool compact;
 
@@ -806,12 +778,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportRow&&const DeepCollectionEquality().equals(other._content, _content)&&(identical(other.compact, compact) || other.compact == compact));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportRow&&const DeepCollectionEquality().equals(other.content, content)&&(identical(other.compact, compact) || other.compact == compact));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_content),compact);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(content),compact);
 
 @override
 String toString() {
@@ -845,7 +817,7 @@ class __$ReportRowCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? content = null,Object? compact = null,}) {
   return _then(_ReportRow(
-content: null == content ? _self._content : content // ignore: cast_nullable_to_non_nullable
+content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
 as List<ReportCell>,compact: null == compact ? _self.compact : compact // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
@@ -1627,7 +1599,7 @@ return $default(_that.id,_that.name,_that.structure,_that.assets,_that.assetsIds
 @JsonSerializable()
 
 class _ReportTemplate extends ReportTemplate {
-  const _ReportTemplate({required this.id, required this.name, final  List<ReportTemplatePage>? structure, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<OutboundService>? outboundServices, final  List<String>? outboundServicesIds, final  List<Access>? access}): _structure = structure,_assets = assets,_assetsIds = assetsIds,_outboundServices = outboundServices,_outboundServicesIds = outboundServicesIds,_access = access,super._();
+  const _ReportTemplate({required this.id, required this.name, this.structure, this.assets, this.assetsIds, this.outboundServices, this.outboundServicesIds, this.access}): super._();
   factory _ReportTemplate.fromJson(Map<String, dynamic> json) => _$ReportTemplateFromJson(json);
 
 /// Is the report template ID
@@ -1635,71 +1607,17 @@ class _ReportTemplate extends ReportTemplate {
 /// Is the report template name
 @override final  String name;
 /// Structure
- final  List<ReportTemplatePage>? _structure;
-/// Structure
-@override List<ReportTemplatePage>? get structure {
-  final value = _structure;
-  if (value == null) return null;
-  if (_structure is EqualUnmodifiableListView) return _structure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ReportTemplatePage>? structure;
 /// Is the report template linked assets or assets
- final  List<Asset>? _assets;
-/// Is the report template linked assets or assets
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// Is the report template linked assets or assets' IDs
- final  List<String>? _assetsIds;
-/// Is the report template linked assets or assets' IDs
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 /// Is the report template linked outbound services or outbound services
- final  List<OutboundService>? _outboundServices;
-/// Is the report template linked outbound services or outbound services
-@override List<OutboundService>? get outboundServices {
-  final value = _outboundServices;
-  if (value == null) return null;
-  if (_outboundServices is EqualUnmodifiableListView) return _outboundServices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<OutboundService>? outboundServices;
 /// Is the report template linked outbound services or outbound services' IDs
- final  List<String>? _outboundServicesIds;
-/// Is the report template linked outbound services or outbound services' IDs
-@override List<String>? get outboundServicesIds {
-  final value = _outboundServicesIds;
-  if (value == null) return null;
-  if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? outboundServicesIds;
 /// Controls the access of this entity.
- final  List<Access>? _access;
-/// Controls the access of this entity.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 
 /// Create a copy of ReportTemplate
 /// with the given fields replaced by the non-null parameter values.
@@ -1714,12 +1632,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportTemplate&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._structure, _structure)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._outboundServices, _outboundServices)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportTemplate&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.structure, structure)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.outboundServices, outboundServices)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&const DeepCollectionEquality().equals(other.access, access));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_structure),const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_outboundServices),const DeepCollectionEquality().hash(_outboundServicesIds),const DeepCollectionEquality().hash(_access));
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(structure),const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(outboundServices),const DeepCollectionEquality().hash(outboundServicesIds),const DeepCollectionEquality().hash(access));
 
 @override
 String toString() {
@@ -1755,12 +1673,12 @@ class __$ReportTemplateCopyWithImpl<$Res>
   return _then(_ReportTemplate(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,structure: freezed == structure ? _self._structure : structure // ignore: cast_nullable_to_non_nullable
-as List<ReportTemplatePage>?,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,outboundServices: freezed == outboundServices ? _self._outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
-as List<OutboundService>?,outboundServicesIds: freezed == outboundServicesIds ? _self._outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as String,structure: freezed == structure ? _self.structure : structure // ignore: cast_nullable_to_non_nullable
+as List<ReportTemplatePage>?,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,outboundServices: freezed == outboundServices ? _self.outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
+as List<OutboundService>?,outboundServicesIds: freezed == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
   ));
 }
@@ -2770,7 +2688,7 @@ return $default(_that.id,_that.code,_that.allowedApps);case _:
 @JsonSerializable()
 
 class _CustomReport extends CustomReport {
-  const _CustomReport({required this.id, required this.code, final  List<RegisteredApp>? allowedApps}): _allowedApps = allowedApps,super._();
+  const _CustomReport({required this.id, required this.code, this.allowedApps}): super._();
   factory _CustomReport.fromJson(Map<String, dynamic> json) => _$CustomReportFromJson(json);
 
 /// [id] is the report ID
@@ -2778,16 +2696,7 @@ class _CustomReport extends CustomReport {
 /// [code] is the report code
 @override final  String code;
 /// [allowedApps] is the list of allowed apps
- final  List<RegisteredApp>? _allowedApps;
-/// [allowedApps] is the list of allowed apps
-@override List<RegisteredApp>? get allowedApps {
-  final value = _allowedApps;
-  if (value == null) return null;
-  if (_allowedApps is EqualUnmodifiableListView) return _allowedApps;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<RegisteredApp>? allowedApps;
 
 /// Create a copy of CustomReport
 /// with the given fields replaced by the non-null parameter values.
@@ -2802,12 +2711,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CustomReport&&(identical(other.id, id) || other.id == id)&&(identical(other.code, code) || other.code == code)&&const DeepCollectionEquality().equals(other._allowedApps, _allowedApps));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CustomReport&&(identical(other.id, id) || other.id == id)&&(identical(other.code, code) || other.code == code)&&const DeepCollectionEquality().equals(other.allowedApps, allowedApps));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,code,const DeepCollectionEquality().hash(_allowedApps));
+int get hashCode => Object.hash(runtimeType,id,code,const DeepCollectionEquality().hash(allowedApps));
 
 @override
 String toString() {
@@ -2843,7 +2752,7 @@ class __$CustomReportCopyWithImpl<$Res>
   return _then(_CustomReport(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
-as String,allowedApps: freezed == allowedApps ? _self._allowedApps : allowedApps // ignore: cast_nullable_to_non_nullable
+as String,allowedApps: freezed == allowedApps ? _self.allowedApps : allowedApps // ignore: cast_nullable_to_non_nullable
 as List<RegisteredApp>?,
   ));
 }
@@ -3058,7 +2967,7 @@ return $default(_that.title,_that.source,_that.algorithm,_that.cols,_that.script
 @JsonSerializable()
 
 class _ReportTemplatePage extends ReportTemplatePage {
-  const _ReportTemplatePage({required this.title, @JsonKey(unknownEnumValue: ReportSource.messages) required this.source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto) this.algorithm = ReportAlgorithm.auto, final  List<ReportTemplateCol>? cols, this.script}): _cols = cols,super._();
+  const _ReportTemplatePage({required this.title, @JsonKey(unknownEnumValue: ReportSource.messages) required this.source, @JsonKey(unknownEnumValue: ReportAlgorithm.auto) this.algorithm = ReportAlgorithm.auto, this.cols, this.script}): super._();
   factory _ReportTemplatePage.fromJson(Map<String, dynamic> json) => _$ReportTemplatePageFromJson(json);
 
 /// Is the page title
@@ -3068,16 +2977,7 @@ class _ReportTemplatePage extends ReportTemplatePage {
 /// Is the algorithm used to generate the page data.
 @override@JsonKey(unknownEnumValue: ReportAlgorithm.auto) final  ReportAlgorithm algorithm;
 /// Is the page data, aka, the cols. Only used when [algorithm] is [ReportAlgorithm.auto]
- final  List<ReportTemplateCol>? _cols;
-/// Is the page data, aka, the cols. Only used when [algorithm] is [ReportAlgorithm.auto]
-@override List<ReportTemplateCol>? get cols {
-  final value = _cols;
-  if (value == null) return null;
-  if (_cols is EqualUnmodifiableListView) return _cols;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ReportTemplateCol>? cols;
 /// Is the script in Python to generate the page data. Only used when [algorithm] is [ReportAlgorithm.python]
 @override final  String? script;
 
@@ -3094,12 +2994,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportTemplatePage&&(identical(other.title, title) || other.title == title)&&(identical(other.source, source) || other.source == source)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&const DeepCollectionEquality().equals(other._cols, _cols)&&(identical(other.script, script) || other.script == script));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportTemplatePage&&(identical(other.title, title) || other.title == title)&&(identical(other.source, source) || other.source == source)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&const DeepCollectionEquality().equals(other.cols, cols)&&(identical(other.script, script) || other.script == script));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,title,source,algorithm,const DeepCollectionEquality().hash(_cols),script);
+int get hashCode => Object.hash(runtimeType,title,source,algorithm,const DeepCollectionEquality().hash(cols),script);
 
 @override
 String toString() {
@@ -3136,7 +3036,7 @@ class __$ReportTemplatePageCopyWithImpl<$Res>
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
 as ReportSource,algorithm: null == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
-as ReportAlgorithm,cols: freezed == cols ? _self._cols : cols // ignore: cast_nullable_to_non_nullable
+as ReportAlgorithm,cols: freezed == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
 as List<ReportTemplateCol>?,script: freezed == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -3669,7 +3569,7 @@ return $default(_that.id,_that.name,_that.ownerId,_that.assetsIds,_that.outbound
 @JsonSerializable()
 
 class _ReportScheduler implements ReportScheduler {
-  const _ReportScheduler({required this.id, this.name, this.ownerId, final  List<String> assetsIds = const [], final  List<String> outboundServicesIds = const [], this.templateCode, this.templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown) this.relativeTime = RelativeChoices.unknown, final  List<String> sendTo = const [], @JsonKey(unknownEnumValue: Weekday.monday) final  List<Weekday> execWeekdays = const [], @FlutterTimeOfDayOrNullConverter() this.execTime, this.execTz = 'UTC', @TimestampConverter() this.updatedAt, this.updatedById, this.updatedBy, @TimestampConverter() this.createdAt, this.createdById, this.createdBy, this.subject, final  List<Access>? access, this.enabled}): _assetsIds = assetsIds,_outboundServicesIds = outboundServicesIds,_sendTo = sendTo,_execWeekdays = execWeekdays,_access = access;
+  const _ReportScheduler({required this.id, this.name, this.ownerId, this.assetsIds = const [], this.outboundServicesIds = const [], this.templateCode, this.templateId, @JsonKey(unknownEnumValue: RelativeChoices.unknown) this.relativeTime = RelativeChoices.unknown, this.sendTo = const [], @JsonKey(unknownEnumValue: Weekday.monday) this.execWeekdays = const [], @FlutterTimeOfDayOrNullConverter() this.execTime, this.execTz = 'UTC', @TimestampConverter() this.updatedAt, this.updatedById, this.updatedBy, @TimestampConverter() this.createdAt, this.createdById, this.createdBy, this.subject, this.access, this.enabled});
   factory _ReportScheduler.fromJson(Map<String, dynamic> json) => _$ReportSchedulerFromJson(json);
 
 /// ID of the report scheduler.
@@ -3679,23 +3579,9 @@ class _ReportScheduler implements ReportScheduler {
 /// Owner user of the report scheduler.
 @override final  String? ownerId;
 /// List of asset IDs associated with the report scheduler.
- final  List<String> _assetsIds;
-/// List of asset IDs associated with the report scheduler.
-@override@JsonKey() List<String> get assetsIds {
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_assetsIds);
-}
-
+@override@JsonKey() final  List<String> assetsIds;
 /// List of outbound service IDs associated with the report scheduler.
- final  List<String> _outboundServicesIds;
-/// List of outbound service IDs associated with the report scheduler.
-@override@JsonKey() List<String> get outboundServicesIds {
-  if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_outboundServicesIds);
-}
-
+@override@JsonKey() final  List<String> outboundServicesIds;
 /// Code of the report template used for this report scheduler.
 @override final  String? templateCode;
 /// ID of the report template used for this report scheduler.
@@ -3703,23 +3589,9 @@ class _ReportScheduler implements ReportScheduler {
 /// Relative time for the report, used to determine the time range for the report.
 @override@JsonKey(unknownEnumValue: RelativeChoices.unknown) final  RelativeChoices relativeTime;
 /// List of emails to which the report should be sent.
- final  List<String> _sendTo;
-/// List of emails to which the report should be sent.
-@override@JsonKey() List<String> get sendTo {
-  if (_sendTo is EqualUnmodifiableListView) return _sendTo;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_sendTo);
-}
-
+@override@JsonKey() final  List<String> sendTo;
 /// Days of the week when the report should be executed.
- final  List<Weekday> _execWeekdays;
-/// Days of the week when the report should be executed.
-@override@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday> get execWeekdays {
-  if (_execWeekdays is EqualUnmodifiableListView) return _execWeekdays;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_execWeekdays);
-}
-
+@override@JsonKey(unknownEnumValue: Weekday.monday) final  List<Weekday> execWeekdays;
 /// Time of day when the report should be executed. The stored value is in HH:MM format (24 hours format).
 @override@FlutterTimeOfDayOrNullConverter() final  TimeOfDay? execTime;
 /// Time zone for the execution time of the report. The stored value is a valid IANA timezone name.
@@ -3739,16 +3611,7 @@ class _ReportScheduler implements ReportScheduler {
 /// Subject of the report email
 @override final  String? subject;
 /// List of custom [access] permissions.
- final  List<Access>? _access;
-/// List of custom [access] permissions.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// Indicates whether the report scheduler is enabled or not.
 @override final  bool? enabled;
 
@@ -3765,12 +3628,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportScheduler&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&(identical(other.templateCode, templateCode) || other.templateCode == templateCode)&&(identical(other.templateId, templateId) || other.templateId == templateId)&&(identical(other.relativeTime, relativeTime) || other.relativeTime == relativeTime)&&const DeepCollectionEquality().equals(other._sendTo, _sendTo)&&const DeepCollectionEquality().equals(other._execWeekdays, _execWeekdays)&&(identical(other.execTime, execTime) || other.execTime == execTime)&&(identical(other.execTz, execTz) || other.execTz == execTz)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.subject, subject) || other.subject == subject)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.enabled, enabled) || other.enabled == enabled));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReportScheduler&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&(identical(other.templateCode, templateCode) || other.templateCode == templateCode)&&(identical(other.templateId, templateId) || other.templateId == templateId)&&(identical(other.relativeTime, relativeTime) || other.relativeTime == relativeTime)&&const DeepCollectionEquality().equals(other.sendTo, sendTo)&&const DeepCollectionEquality().equals(other.execWeekdays, execWeekdays)&&(identical(other.execTime, execTime) || other.execTime == execTime)&&(identical(other.execTz, execTz) || other.execTz == execTz)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.subject, subject) || other.subject == subject)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.enabled, enabled) || other.enabled == enabled));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,ownerId,const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_outboundServicesIds),templateCode,templateId,relativeTime,const DeepCollectionEquality().hash(_sendTo),const DeepCollectionEquality().hash(_execWeekdays),execTime,execTz,updatedAt,updatedById,updatedBy,createdAt,createdById,createdBy,subject,const DeepCollectionEquality().hash(_access),enabled]);
+int get hashCode => Object.hashAll([runtimeType,id,name,ownerId,const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(outboundServicesIds),templateCode,templateId,relativeTime,const DeepCollectionEquality().hash(sendTo),const DeepCollectionEquality().hash(execWeekdays),execTime,execTz,updatedAt,updatedById,updatedBy,createdAt,createdById,createdBy,subject,const DeepCollectionEquality().hash(access),enabled]);
 
 @override
 String toString() {
@@ -3807,13 +3670,13 @@ class __$ReportSchedulerCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,ownerId: freezed == ownerId ? _self.ownerId : ownerId // ignore: cast_nullable_to_non_nullable
-as String?,assetsIds: null == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>,outboundServicesIds: null == outboundServicesIds ? _self._outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+as String?,assetsIds: null == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>,outboundServicesIds: null == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,templateCode: freezed == templateCode ? _self.templateCode : templateCode // ignore: cast_nullable_to_non_nullable
 as String?,templateId: freezed == templateId ? _self.templateId : templateId // ignore: cast_nullable_to_non_nullable
 as String?,relativeTime: null == relativeTime ? _self.relativeTime : relativeTime // ignore: cast_nullable_to_non_nullable
-as RelativeChoices,sendTo: null == sendTo ? _self._sendTo : sendTo // ignore: cast_nullable_to_non_nullable
-as List<String>,execWeekdays: null == execWeekdays ? _self._execWeekdays : execWeekdays // ignore: cast_nullable_to_non_nullable
+as RelativeChoices,sendTo: null == sendTo ? _self.sendTo : sendTo // ignore: cast_nullable_to_non_nullable
+as List<String>,execWeekdays: null == execWeekdays ? _self.execWeekdays : execWeekdays // ignore: cast_nullable_to_non_nullable
 as List<Weekday>,execTime: freezed == execTime ? _self.execTime : execTime // ignore: cast_nullable_to_non_nullable
 as TimeOfDay?,execTz: null == execTz ? _self.execTz : execTz // ignore: cast_nullable_to_non_nullable
 as String,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -3823,7 +3686,7 @@ as User?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore
 as DateTime?,createdById: freezed == createdById ? _self.createdById : createdById // ignore: cast_nullable_to_non_nullable
 as String?,createdBy: freezed == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
 as User?,subject: freezed == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as String?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as String?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,enabled: freezed == enabled ? _self.enabled : enabled // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));

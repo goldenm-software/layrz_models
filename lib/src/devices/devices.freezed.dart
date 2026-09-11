@@ -363,7 +363,7 @@ return $default(_that.id,_that.name,_that.ident,_that.flespiToken,_that.modelId,
 @JsonSerializable()
 
 class _Device extends Device {
-  const _Device({required this.id, required this.name, required this.ident, this.flespiToken, this.modelId, this.model, this.protocolId, this.protocol, final  Map<String, dynamic>? additionalFields, this.qrCode, this.linkQr, final  List<DeviceCommand>? commands, final  List<Access>? access, this.telemetry, this.visionProfileId, this.visionProfile, this.phone, this.modbus, this.isSuspended, this.hwModel, this.hwModelId, this.macAddress, final  Map<String, dynamic>? configParams, @DurationConverter() this.visionCaptureThreshold, final  List<Device>? peripherals, final  List<ZigbeeDevice>? zigbeeDevices, final  List<ZigbeeDeviceExpose>? exposes, this.localIpAddress, this.hasWorldwideCoverage, this.zigbeeZoneId = '', this.zigbeeToken = '', this.zigbeePermitJoinExpiresAt}): _additionalFields = additionalFields,_commands = commands,_access = access,_configParams = configParams,_peripherals = peripherals,_zigbeeDevices = zigbeeDevices,_exposes = exposes,super._();
+  const _Device({required this.id, required this.name, required this.ident, this.flespiToken, this.modelId, this.model, this.protocolId, this.protocol, this.additionalFields, this.qrCode, this.linkQr, this.commands, this.access, this.telemetry, this.visionProfileId, this.visionProfile, this.phone, this.modbus, this.isSuspended, this.hwModel, this.hwModelId, this.macAddress, this.configParams, @DurationConverter() this.visionCaptureThreshold, this.peripherals, this.zigbeeDevices, this.exposes, this.localIpAddress, this.hasWorldwideCoverage, this.zigbeeZoneId = '', this.zigbeeToken = '', this.zigbeePermitJoinExpiresAt}): super._();
   factory _Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 
 @override final  String id;
@@ -383,42 +383,15 @@ class _Device extends Device {
 /// The [protocol] of the device.
 @override final  InboundProtocol? protocol;
 /// The [additionalFields] of the device, only will return something when is imported from compatible source.
- final  Map<String, dynamic>? _additionalFields;
-/// The [additionalFields] of the device, only will return something when is imported from compatible source.
-@override Map<String, dynamic>? get additionalFields {
-  final value = _additionalFields;
-  if (value == null) return null;
-  if (_additionalFields is EqualUnmodifiableMapView) return _additionalFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? additionalFields;
 /// The [qrCode] of the device.
 @override final  String? qrCode;
 /// The [linkQr] of the device, means the QR code generated for auto-config of the Layrz Link app device.
 @override final  String? linkQr;
 /// The [commands] of the device.
- final  List<DeviceCommand>? _commands;
-/// The [commands] of the device.
-@override List<DeviceCommand>? get commands {
-  final value = _commands;
-  if (value == null) return null;
-  if (_commands is EqualUnmodifiableListView) return _commands;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<DeviceCommand>? commands;
 /// The [access] of the device.
- final  List<Access>? _access;
-/// The [access] of the device.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// Device last message, read the documentation of LastLocation for more information.
 @override final  DeviceTelemetry? telemetry;
 /// The [visionProfileId] of the device. Only the ID
@@ -439,57 +412,18 @@ class _Device extends Device {
 @override final  String? macAddress;
 /// [configParams] is the configuration parameters received from the device, this information is
 /// used to configure the device.
- final  Map<String, dynamic>? _configParams;
-/// [configParams] is the configuration parameters received from the device, this information is
-/// used to configure the device.
-@override Map<String, dynamic>? get configParams {
-  final value = _configParams;
-  if (value == null) return null;
-  if (_configParams is EqualUnmodifiableMapView) return _configParams;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? configParams;
 /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
 /// threshold of the indicator displayed on Layrz Vision app.
 @override@DurationConverter() final  Duration? visionCaptureThreshold;
 /// [peripherals] is the list of peripherals of the device. Only used when
 /// [protocol.operationMode] is [OperationMode.peripheral].
- final  List<Device>? _peripherals;
-/// [peripherals] is the list of peripherals of the device. Only used when
-/// [protocol.operationMode] is [OperationMode.peripheral].
-@override List<Device>? get peripherals {
-  final value = _peripherals;
-  if (value == null) return null;
-  if (_peripherals is EqualUnmodifiableListView) return _peripherals;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Device>? peripherals;
 /// [zigbeeDevices] is the list of Zigbee devices connected to this hub.
- final  List<ZigbeeDevice>? _zigbeeDevices;
-/// [zigbeeDevices] is the list of Zigbee devices connected to this hub.
-@override List<ZigbeeDevice>? get zigbeeDevices {
-  final value = _zigbeeDevices;
-  if (value == null) return null;
-  if (_zigbeeDevices is EqualUnmodifiableListView) return _zigbeeDevices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ZigbeeDevice>? zigbeeDevices;
 /// [exposes] is the list of Zigbee exposes of this device, flattened across its bound
 /// Zigbee device(s). Populated for leaf Zigbee devices; empty/null for non-Zigbee devices.
- final  List<ZigbeeDeviceExpose>? _exposes;
-/// [exposes] is the list of Zigbee exposes of this device, flattened across its bound
-/// Zigbee device(s). Populated for leaf Zigbee devices; empty/null for non-Zigbee devices.
-@override List<ZigbeeDeviceExpose>? get exposes {
-  final value = _exposes;
-  if (value == null) return null;
-  if (_exposes is EqualUnmodifiableListView) return _exposes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<ZigbeeDeviceExpose>? exposes;
 /// [localIpAddress] is the local IP address of the device, used for local communication.
 @override final  String? localIpAddress;
 /// [hasWorldwideCoverage] represents if the device has worldwide coverag For the BHS use case, this field is used to identify if the device has GPS insurance.
@@ -517,12 +451,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other._additionalFields, _additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other._commands, _commands)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other._configParams, _configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other._peripherals, _peripherals)&&const DeepCollectionEquality().equals(other._zigbeeDevices, _zigbeeDevices)&&const DeepCollectionEquality().equals(other._exposes, _exposes)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress)&&(identical(other.hasWorldwideCoverage, hasWorldwideCoverage) || other.hasWorldwideCoverage == hasWorldwideCoverage)&&(identical(other.zigbeeZoneId, zigbeeZoneId) || other.zigbeeZoneId == zigbeeZoneId)&&(identical(other.zigbeeToken, zigbeeToken) || other.zigbeeToken == zigbeeToken)&&(identical(other.zigbeePermitJoinExpiresAt, zigbeePermitJoinExpiresAt) || other.zigbeePermitJoinExpiresAt == zigbeePermitJoinExpiresAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Device&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&(identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken)&&(identical(other.modelId, modelId) || other.modelId == modelId)&&(identical(other.model, model) || other.model == model)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&const DeepCollectionEquality().equals(other.additionalFields, additionalFields)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.linkQr, linkQr) || other.linkQr == linkQr)&&const DeepCollectionEquality().equals(other.commands, commands)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.telemetry, telemetry) || other.telemetry == telemetry)&&(identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId)&&(identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.modbus, modbus) || other.modbus == modbus)&&(identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended)&&(identical(other.hwModel, hwModel) || other.hwModel == hwModel)&&(identical(other.hwModelId, hwModelId) || other.hwModelId == hwModelId)&&(identical(other.macAddress, macAddress) || other.macAddress == macAddress)&&const DeepCollectionEquality().equals(other.configParams, configParams)&&(identical(other.visionCaptureThreshold, visionCaptureThreshold) || other.visionCaptureThreshold == visionCaptureThreshold)&&const DeepCollectionEquality().equals(other.peripherals, peripherals)&&const DeepCollectionEquality().equals(other.zigbeeDevices, zigbeeDevices)&&const DeepCollectionEquality().equals(other.exposes, exposes)&&(identical(other.localIpAddress, localIpAddress) || other.localIpAddress == localIpAddress)&&(identical(other.hasWorldwideCoverage, hasWorldwideCoverage) || other.hasWorldwideCoverage == hasWorldwideCoverage)&&(identical(other.zigbeeZoneId, zigbeeZoneId) || other.zigbeeZoneId == zigbeeZoneId)&&(identical(other.zigbeeToken, zigbeeToken) || other.zigbeeToken == zigbeeToken)&&(identical(other.zigbeePermitJoinExpiresAt, zigbeePermitJoinExpiresAt) || other.zigbeePermitJoinExpiresAt == zigbeePermitJoinExpiresAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(_additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(_commands),const DeepCollectionEquality().hash(_access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(_configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(_peripherals),const DeepCollectionEquality().hash(_zigbeeDevices),const DeepCollectionEquality().hash(_exposes),localIpAddress,hasWorldwideCoverage,zigbeeZoneId,zigbeeToken,zigbeePermitJoinExpiresAt]);
+int get hashCode => Object.hashAll([runtimeType,id,name,ident,flespiToken,modelId,model,protocolId,protocol,const DeepCollectionEquality().hash(additionalFields),qrCode,linkQr,const DeepCollectionEquality().hash(commands),const DeepCollectionEquality().hash(access),telemetry,visionProfileId,visionProfile,phone,modbus,isSuspended,hwModel,hwModelId,macAddress,const DeepCollectionEquality().hash(configParams),visionCaptureThreshold,const DeepCollectionEquality().hash(peripherals),const DeepCollectionEquality().hash(zigbeeDevices),const DeepCollectionEquality().hash(exposes),localIpAddress,hasWorldwideCoverage,zigbeeZoneId,zigbeeToken,zigbeePermitJoinExpiresAt]);
 
 @override
 String toString() {
@@ -564,11 +498,11 @@ as String?,modelId: freezed == modelId ? _self.modelId : modelId // ignore: cast
 as String?,model: freezed == model ? _self.model : model // ignore: cast_nullable_to_non_nullable
 as Model?,protocolId: freezed == protocolId ? _self.protocolId : protocolId // ignore: cast_nullable_to_non_nullable
 as String?,protocol: freezed == protocol ? _self.protocol : protocol // ignore: cast_nullable_to_non_nullable
-as InboundProtocol?,additionalFields: freezed == additionalFields ? _self._additionalFields : additionalFields // ignore: cast_nullable_to_non_nullable
+as InboundProtocol?,additionalFields: freezed == additionalFields ? _self.additionalFields : additionalFields // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,qrCode: freezed == qrCode ? _self.qrCode : qrCode // ignore: cast_nullable_to_non_nullable
 as String?,linkQr: freezed == linkQr ? _self.linkQr : linkQr // ignore: cast_nullable_to_non_nullable
-as String?,commands: freezed == commands ? _self._commands : commands // ignore: cast_nullable_to_non_nullable
-as List<DeviceCommand>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as String?,commands: freezed == commands ? _self.commands : commands // ignore: cast_nullable_to_non_nullable
+as List<DeviceCommand>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,telemetry: freezed == telemetry ? _self.telemetry : telemetry // ignore: cast_nullable_to_non_nullable
 as DeviceTelemetry?,visionProfileId: freezed == visionProfileId ? _self.visionProfileId : visionProfileId // ignore: cast_nullable_to_non_nullable
 as String?,visionProfile: freezed == visionProfile ? _self.visionProfile : visionProfile // ignore: cast_nullable_to_non_nullable
@@ -578,11 +512,11 @@ as ModbusConfig?,isSuspended: freezed == isSuspended ? _self.isSuspended : isSus
 as bool?,hwModel: freezed == hwModel ? _self.hwModel : hwModel // ignore: cast_nullable_to_non_nullable
 as HwModel?,hwModelId: freezed == hwModelId ? _self.hwModelId : hwModelId // ignore: cast_nullable_to_non_nullable
 as String?,macAddress: freezed == macAddress ? _self.macAddress : macAddress // ignore: cast_nullable_to_non_nullable
-as String?,configParams: freezed == configParams ? _self._configParams : configParams // ignore: cast_nullable_to_non_nullable
+as String?,configParams: freezed == configParams ? _self.configParams : configParams // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,visionCaptureThreshold: freezed == visionCaptureThreshold ? _self.visionCaptureThreshold : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
-as Duration?,peripherals: freezed == peripherals ? _self._peripherals : peripherals // ignore: cast_nullable_to_non_nullable
-as List<Device>?,zigbeeDevices: freezed == zigbeeDevices ? _self._zigbeeDevices : zigbeeDevices // ignore: cast_nullable_to_non_nullable
-as List<ZigbeeDevice>?,exposes: freezed == exposes ? _self._exposes : exposes // ignore: cast_nullable_to_non_nullable
+as Duration?,peripherals: freezed == peripherals ? _self.peripherals : peripherals // ignore: cast_nullable_to_non_nullable
+as List<Device>?,zigbeeDevices: freezed == zigbeeDevices ? _self.zigbeeDevices : zigbeeDevices // ignore: cast_nullable_to_non_nullable
+as List<ZigbeeDevice>?,exposes: freezed == exposes ? _self.exposes : exposes // ignore: cast_nullable_to_non_nullable
 as List<ZigbeeDeviceExpose>?,localIpAddress: freezed == localIpAddress ? _self.localIpAddress : localIpAddress // ignore: cast_nullable_to_non_nullable
 as String?,hasWorldwideCoverage: freezed == hasWorldwideCoverage ? _self.hasWorldwideCoverage : hasWorldwideCoverage // ignore: cast_nullable_to_non_nullable
 as bool?,zigbeeZoneId: null == zigbeeZoneId ? _self.zigbeeZoneId : zigbeeZoneId // ignore: cast_nullable_to_non_nullable

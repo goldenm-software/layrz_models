@@ -234,7 +234,7 @@ return $default(_that.id,_that.name,_that.description,_that.formula,_that.script
 @JsonSerializable()
 
 class _LayrzChart extends LayrzChart {
-  const _LayrzChart({required this.id, required this.name, this.description, this.formula, this.script, final  List<String>? sensors, final  List<Asset>? assets, final  List<String>? assetsIds, @JsonKey(unknownEnumValue: ChartType.area) this.type, @JsonKey(unknownEnumValue: ChartAlgorithm.auto) this.algorithm, @JsonKey(unknownEnumValue: ChartDataSource.messages) this.dataSource, this.enableLttb, final  List<Access>? access}): _sensors = sensors,_assets = assets,_assetsIds = assetsIds,_access = access,super._();
+  const _LayrzChart({required this.id, required this.name, this.description, this.formula, this.script, this.sensors, this.assets, this.assetsIds, @JsonKey(unknownEnumValue: ChartType.area) this.type, @JsonKey(unknownEnumValue: ChartAlgorithm.auto) this.algorithm, @JsonKey(unknownEnumValue: ChartDataSource.messages) this.dataSource, this.enableLttb, this.access}): super._();
   factory _LayrzChart.fromJson(Map<String, dynamic> json) => _$LayrzChartFromJson(json);
 
 /// [id] is a unique identifier for this entity.
@@ -248,38 +248,11 @@ class _LayrzChart extends LayrzChart {
 /// [script] is the script used to calculate the chart. This property is a Python script.
 @override final  String? script;
 /// [sensors] is a list of sensors used to calculate the chart.
- final  List<String>? _sensors;
-/// [sensors] is a list of sensors used to calculate the chart.
-@override List<String>? get sensors {
-  final value = _sensors;
-  if (value == null) return null;
-  if (_sensors is EqualUnmodifiableListView) return _sensors;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? sensors;
 /// [assets] is the list of assets associated with the chart.
- final  List<Asset>? _assets;
-/// [assets] is the list of assets associated with the chart.
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// [assetsIds] is the list of asset IDs associated with the chart.
- final  List<String>? _assetsIds;
-/// [assetsIds] is the list of asset IDs associated with the chart.
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 /// [type] is the type of the chart.
 @override@JsonKey(unknownEnumValue: ChartType.area) final  ChartType? type;
 /// [algorithm] is the algorithm used to calculate the chart.
@@ -289,16 +262,7 @@ class _LayrzChart extends LayrzChart {
 /// [enableLttb] indicates whether the LTTB downsampling algorithm is enabled for this chart.
 @override final  bool? enableLttb;
 /// [access] is a list of granted access to this entity.
- final  List<Access>? _access;
-/// [access] is a list of granted access to this entity.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 
 /// Create a copy of LayrzChart
 /// with the given fields replaced by the non-null parameter values.
@@ -313,12 +277,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LayrzChart&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.formula, formula) || other.formula == formula)&&(identical(other.script, script) || other.script == script)&&const DeepCollectionEquality().equals(other._sensors, _sensors)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&(identical(other.type, type) || other.type == type)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.dataSource, dataSource) || other.dataSource == dataSource)&&(identical(other.enableLttb, enableLttb) || other.enableLttb == enableLttb)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LayrzChart&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.formula, formula) || other.formula == formula)&&(identical(other.script, script) || other.script == script)&&const DeepCollectionEquality().equals(other.sensors, sensors)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&(identical(other.type, type) || other.type == type)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.dataSource, dataSource) || other.dataSource == dataSource)&&(identical(other.enableLttb, enableLttb) || other.enableLttb == enableLttb)&&const DeepCollectionEquality().equals(other.access, access));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,description,formula,script,const DeepCollectionEquality().hash(_sensors),const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),type,algorithm,dataSource,enableLttb,const DeepCollectionEquality().hash(_access));
+int get hashCode => Object.hash(runtimeType,id,name,description,formula,script,const DeepCollectionEquality().hash(sensors),const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),type,algorithm,dataSource,enableLttb,const DeepCollectionEquality().hash(access));
 
 @override
 String toString() {
@@ -357,14 +321,14 @@ as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,formula: freezed == formula ? _self.formula : formula // ignore: cast_nullable_to_non_nullable
 as String?,script: freezed == script ? _self.script : script // ignore: cast_nullable_to_non_nullable
-as String?,sensors: freezed == sensors ? _self._sensors : sensors // ignore: cast_nullable_to_non_nullable
-as List<String>?,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as String?,sensors: freezed == sensors ? _self.sensors : sensors // ignore: cast_nullable_to_non_nullable
+as List<String>?,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as ChartType?,algorithm: freezed == algorithm ? _self.algorithm : algorithm // ignore: cast_nullable_to_non_nullable
 as ChartAlgorithm?,dataSource: freezed == dataSource ? _self.dataSource : dataSource // ignore: cast_nullable_to_non_nullable
 as ChartDataSource?,enableLttb: freezed == enableLttb ? _self.enableLttb : enableLttb // ignore: cast_nullable_to_non_nullable
-as bool?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as bool?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
   ));
 }
@@ -1177,16 +1141,10 @@ return $default(_that.series,_that.xAxis,_that.yAxis);case _:
 @JsonSerializable()
 
 class _LineChartRender implements LineChartRender {
-  const _LineChartRender({required final  List<LineChartSerie> series, required this.xAxis, required this.yAxis}): _series = series;
+  const _LineChartRender({required this.series, required this.xAxis, required this.yAxis});
   factory _LineChartRender.fromJson(Map<String, dynamic> json) => _$LineChartRenderFromJson(json);
 
- final  List<LineChartSerie> _series;
-@override List<LineChartSerie> get series {
-  if (_series is EqualUnmodifiableListView) return _series;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_series);
-}
-
+@override final  List<LineChartSerie> series;
 @override final  AxisConfig xAxis;
 @override final  AxisConfig yAxis;
 
@@ -1203,12 +1161,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LineChartRender&&const DeepCollectionEquality().equals(other._series, _series)&&(identical(other.xAxis, xAxis) || other.xAxis == xAxis)&&(identical(other.yAxis, yAxis) || other.yAxis == yAxis));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LineChartRender&&const DeepCollectionEquality().equals(other.series, series)&&(identical(other.xAxis, xAxis) || other.xAxis == xAxis)&&(identical(other.yAxis, yAxis) || other.yAxis == yAxis));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_series),xAxis,yAxis);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(series),xAxis,yAxis);
 
 @override
 String toString() {
@@ -1242,7 +1200,7 @@ class __$LineChartRenderCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? series = null,Object? xAxis = null,Object? yAxis = null,}) {
   return _then(_LineChartRender(
-series: null == series ? _self._series : series // ignore: cast_nullable_to_non_nullable
+series: null == series ? _self.series : series // ignore: cast_nullable_to_non_nullable
 as List<LineChartSerie>,xAxis: null == xAxis ? _self.xAxis : xAxis // ignore: cast_nullable_to_non_nullable
 as AxisConfig,yAxis: null == yAxis ? _self.yAxis : yAxis // ignore: cast_nullable_to_non_nullable
 as AxisConfig,
@@ -1471,19 +1429,13 @@ return $default(_that.color,_that.label,_that.type,_that.values);case _:
 @JsonSerializable()
 
 class _LineChartSerie implements LineChartSerie {
-  const _LineChartSerie({@ColorConverter() required this.color, required this.label, @JsonKey(unknownEnumValue: ChartDataSerieType.line) required this.type, required final  List<LineChartDataPoint> values}): _values = values;
+  const _LineChartSerie({@ColorConverter() required this.color, required this.label, @JsonKey(unknownEnumValue: ChartDataSerieType.line) required this.type, required this.values});
   factory _LineChartSerie.fromJson(Map<String, dynamic> json) => _$LineChartSerieFromJson(json);
 
 @override@ColorConverter() final  Color color;
 @override final  String label;
 @override@JsonKey(unknownEnumValue: ChartDataSerieType.line) final  ChartDataSerieType type;
- final  List<LineChartDataPoint> _values;
-@override List<LineChartDataPoint> get values {
-  if (_values is EqualUnmodifiableListView) return _values;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_values);
-}
-
+@override final  List<LineChartDataPoint> values;
 
 /// Create a copy of LineChartSerie
 /// with the given fields replaced by the non-null parameter values.
@@ -1498,12 +1450,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LineChartSerie&&(identical(other.color, color) || other.color == color)&&(identical(other.label, label) || other.label == label)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other._values, _values));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LineChartSerie&&(identical(other.color, color) || other.color == color)&&(identical(other.label, label) || other.label == label)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.values, values));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,color,label,type,const DeepCollectionEquality().hash(_values));
+int get hashCode => Object.hash(runtimeType,color,label,type,const DeepCollectionEquality().hash(values));
 
 @override
 String toString() {
@@ -1540,7 +1492,7 @@ class __$LineChartSerieCopyWithImpl<$Res>
 color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as ChartDataSerieType,values: null == values ? _self._values : values // ignore: cast_nullable_to_non_nullable
+as ChartDataSerieType,values: null == values ? _self.values : values // ignore: cast_nullable_to_non_nullable
 as List<LineChartDataPoint>,
   ));
 }
@@ -2279,23 +2231,11 @@ return $default(_that.headers,_that.values);case _:
 @JsonSerializable()
 
 class _TableDataSerie implements TableDataSerie {
-  const _TableDataSerie({@JsonKey(name: 'columns') required final  List<TableHeader> headers, @JsonKey(name: 'rows') required final  List<Map<String, dynamic>> values}): _headers = headers,_values = values;
+  const _TableDataSerie({@JsonKey(name: 'columns') required this.headers, @JsonKey(name: 'rows') required this.values});
   factory _TableDataSerie.fromJson(Map<String, dynamic> json) => _$TableDataSerieFromJson(json);
 
- final  List<TableHeader> _headers;
-@override@JsonKey(name: 'columns') List<TableHeader> get headers {
-  if (_headers is EqualUnmodifiableListView) return _headers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_headers);
-}
-
- final  List<Map<String, dynamic>> _values;
-@override@JsonKey(name: 'rows') List<Map<String, dynamic>> get values {
-  if (_values is EqualUnmodifiableListView) return _values;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_values);
-}
-
+@override@JsonKey(name: 'columns') final  List<TableHeader> headers;
+@override@JsonKey(name: 'rows') final  List<Map<String, dynamic>> values;
 
 /// Create a copy of TableDataSerie
 /// with the given fields replaced by the non-null parameter values.
@@ -2310,12 +2250,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TableDataSerie&&const DeepCollectionEquality().equals(other._headers, _headers)&&const DeepCollectionEquality().equals(other._values, _values));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TableDataSerie&&const DeepCollectionEquality().equals(other.headers, headers)&&const DeepCollectionEquality().equals(other.values, values));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_headers),const DeepCollectionEquality().hash(_values));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(headers),const DeepCollectionEquality().hash(values));
 
 @override
 String toString() {
@@ -2349,8 +2289,8 @@ class __$TableDataSerieCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? headers = null,Object? values = null,}) {
   return _then(_TableDataSerie(
-headers: null == headers ? _self._headers : headers // ignore: cast_nullable_to_non_nullable
-as List<TableHeader>,values: null == values ? _self._values : values // ignore: cast_nullable_to_non_nullable
+headers: null == headers ? _self.headers : headers // ignore: cast_nullable_to_non_nullable
+as List<TableHeader>,values: null == values ? _self.values : values // ignore: cast_nullable_to_non_nullable
 as List<Map<String, dynamic>>,
   ));
 }
@@ -2576,16 +2516,10 @@ return $default(_that.series,_that.xAxis,_that.yAxis);case _:
 @JsonSerializable()
 
 class _ColumnChartRender implements ColumnChartRender {
-  const _ColumnChartRender({required final  List<ColumnChartSerie> series, required this.xAxis, required this.yAxis}): _series = series;
+  const _ColumnChartRender({required this.series, required this.xAxis, required this.yAxis});
   factory _ColumnChartRender.fromJson(Map<String, dynamic> json) => _$ColumnChartRenderFromJson(json);
 
- final  List<ColumnChartSerie> _series;
-@override List<ColumnChartSerie> get series {
-  if (_series is EqualUnmodifiableListView) return _series;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_series);
-}
-
+@override final  List<ColumnChartSerie> series;
 @override final  AxisConfig xAxis;
 @override final  AxisConfig yAxis;
 
@@ -2602,12 +2536,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ColumnChartRender&&const DeepCollectionEquality().equals(other._series, _series)&&(identical(other.xAxis, xAxis) || other.xAxis == xAxis)&&(identical(other.yAxis, yAxis) || other.yAxis == yAxis));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ColumnChartRender&&const DeepCollectionEquality().equals(other.series, series)&&(identical(other.xAxis, xAxis) || other.xAxis == xAxis)&&(identical(other.yAxis, yAxis) || other.yAxis == yAxis));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_series),xAxis,yAxis);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(series),xAxis,yAxis);
 
 @override
 String toString() {
@@ -2641,7 +2575,7 @@ class __$ColumnChartRenderCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? series = null,Object? xAxis = null,Object? yAxis = null,}) {
   return _then(_ColumnChartRender(
-series: null == series ? _self._series : series // ignore: cast_nullable_to_non_nullable
+series: null == series ? _self.series : series // ignore: cast_nullable_to_non_nullable
 as List<ColumnChartSerie>,xAxis: null == xAxis ? _self.xAxis : xAxis // ignore: cast_nullable_to_non_nullable
 as AxisConfig,yAxis: null == yAxis ? _self.yAxis : yAxis // ignore: cast_nullable_to_non_nullable
 as AxisConfig,
@@ -2869,18 +2803,12 @@ return $default(_that.color,_that.label,_that.values);case _:
 @JsonSerializable()
 
 class _ColumnChartSerie implements ColumnChartSerie {
-  const _ColumnChartSerie({@ColorConverter() required this.color, required this.label, required final  List<ColumnChartDataPoint> values}): _values = values;
+  const _ColumnChartSerie({@ColorConverter() required this.color, required this.label, required this.values});
   factory _ColumnChartSerie.fromJson(Map<String, dynamic> json) => _$ColumnChartSerieFromJson(json);
 
 @override@ColorConverter() final  Color color;
 @override final  String label;
- final  List<ColumnChartDataPoint> _values;
-@override List<ColumnChartDataPoint> get values {
-  if (_values is EqualUnmodifiableListView) return _values;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_values);
-}
-
+@override final  List<ColumnChartDataPoint> values;
 
 /// Create a copy of ColumnChartSerie
 /// with the given fields replaced by the non-null parameter values.
@@ -2895,12 +2823,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ColumnChartSerie&&(identical(other.color, color) || other.color == color)&&(identical(other.label, label) || other.label == label)&&const DeepCollectionEquality().equals(other._values, _values));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ColumnChartSerie&&(identical(other.color, color) || other.color == color)&&(identical(other.label, label) || other.label == label)&&const DeepCollectionEquality().equals(other.values, values));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,color,label,const DeepCollectionEquality().hash(_values));
+int get hashCode => Object.hash(runtimeType,color,label,const DeepCollectionEquality().hash(values));
 
 @override
 String toString() {
@@ -2936,7 +2864,7 @@ class __$ColumnChartSerieCopyWithImpl<$Res>
   return _then(_ColumnChartSerie(
 color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
-as String,values: null == values ? _self._values : values // ignore: cast_nullable_to_non_nullable
+as String,values: null == values ? _self.values : values // ignore: cast_nullable_to_non_nullable
 as List<ColumnChartDataPoint>,
   ));
 }
@@ -3428,16 +3356,10 @@ return $default(_that.series,_that.xAxis,_that.yAxis);case _:
 @JsonSerializable()
 
 class _BarChartRender implements BarChartRender {
-  const _BarChartRender({required final  List<BarChartSerie> series, required this.xAxis, required this.yAxis}): _series = series;
+  const _BarChartRender({required this.series, required this.xAxis, required this.yAxis});
   factory _BarChartRender.fromJson(Map<String, dynamic> json) => _$BarChartRenderFromJson(json);
 
- final  List<BarChartSerie> _series;
-@override List<BarChartSerie> get series {
-  if (_series is EqualUnmodifiableListView) return _series;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_series);
-}
-
+@override final  List<BarChartSerie> series;
 @override final  AxisConfig xAxis;
 @override final  AxisConfig yAxis;
 
@@ -3454,12 +3376,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BarChartRender&&const DeepCollectionEquality().equals(other._series, _series)&&(identical(other.xAxis, xAxis) || other.xAxis == xAxis)&&(identical(other.yAxis, yAxis) || other.yAxis == yAxis));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BarChartRender&&const DeepCollectionEquality().equals(other.series, series)&&(identical(other.xAxis, xAxis) || other.xAxis == xAxis)&&(identical(other.yAxis, yAxis) || other.yAxis == yAxis));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_series),xAxis,yAxis);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(series),xAxis,yAxis);
 
 @override
 String toString() {
@@ -3493,7 +3415,7 @@ class __$BarChartRenderCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? series = null,Object? xAxis = null,Object? yAxis = null,}) {
   return _then(_BarChartRender(
-series: null == series ? _self._series : series // ignore: cast_nullable_to_non_nullable
+series: null == series ? _self.series : series // ignore: cast_nullable_to_non_nullable
 as List<BarChartSerie>,xAxis: null == xAxis ? _self.xAxis : xAxis // ignore: cast_nullable_to_non_nullable
 as AxisConfig,yAxis: null == yAxis ? _self.yAxis : yAxis // ignore: cast_nullable_to_non_nullable
 as AxisConfig,
@@ -3721,18 +3643,12 @@ return $default(_that.color,_that.label,_that.values);case _:
 @JsonSerializable()
 
 class _BarChartSerie implements BarChartSerie {
-  const _BarChartSerie({@ColorConverter() required this.color, required this.label, required final  List<BarChartDataPoint> values}): _values = values;
+  const _BarChartSerie({@ColorConverter() required this.color, required this.label, required this.values});
   factory _BarChartSerie.fromJson(Map<String, dynamic> json) => _$BarChartSerieFromJson(json);
 
 @override@ColorConverter() final  Color color;
 @override final  String label;
- final  List<BarChartDataPoint> _values;
-@override List<BarChartDataPoint> get values {
-  if (_values is EqualUnmodifiableListView) return _values;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_values);
-}
-
+@override final  List<BarChartDataPoint> values;
 
 /// Create a copy of BarChartSerie
 /// with the given fields replaced by the non-null parameter values.
@@ -3747,12 +3663,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BarChartSerie&&(identical(other.color, color) || other.color == color)&&(identical(other.label, label) || other.label == label)&&const DeepCollectionEquality().equals(other._values, _values));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BarChartSerie&&(identical(other.color, color) || other.color == color)&&(identical(other.label, label) || other.label == label)&&const DeepCollectionEquality().equals(other.values, values));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,color,label,const DeepCollectionEquality().hash(_values));
+int get hashCode => Object.hash(runtimeType,color,label,const DeepCollectionEquality().hash(values));
 
 @override
 String toString() {
@@ -3788,7 +3704,7 @@ class __$BarChartSerieCopyWithImpl<$Res>
   return _then(_BarChartSerie(
 color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
-as String,values: null == values ? _self._values : values // ignore: cast_nullable_to_non_nullable
+as String,values: null == values ? _self.values : values // ignore: cast_nullable_to_non_nullable
 as List<BarChartDataPoint>,
   ));
 }
@@ -4280,16 +4196,10 @@ return $default(_that.series,_that.xAxis,_that.yAxis);case _:
 @JsonSerializable()
 
 class _ScatterChartRender implements ScatterChartRender {
-  const _ScatterChartRender({required final  List<LineChartSerie> series, required this.xAxis, required this.yAxis}): _series = series;
+  const _ScatterChartRender({required this.series, required this.xAxis, required this.yAxis});
   factory _ScatterChartRender.fromJson(Map<String, dynamic> json) => _$ScatterChartRenderFromJson(json);
 
- final  List<LineChartSerie> _series;
-@override List<LineChartSerie> get series {
-  if (_series is EqualUnmodifiableListView) return _series;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_series);
-}
-
+@override final  List<LineChartSerie> series;
 @override final  AxisConfig xAxis;
 @override final  AxisConfig yAxis;
 
@@ -4306,12 +4216,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScatterChartRender&&const DeepCollectionEquality().equals(other._series, _series)&&(identical(other.xAxis, xAxis) || other.xAxis == xAxis)&&(identical(other.yAxis, yAxis) || other.yAxis == yAxis));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScatterChartRender&&const DeepCollectionEquality().equals(other.series, series)&&(identical(other.xAxis, xAxis) || other.xAxis == xAxis)&&(identical(other.yAxis, yAxis) || other.yAxis == yAxis));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_series),xAxis,yAxis);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(series),xAxis,yAxis);
 
 @override
 String toString() {
@@ -4345,7 +4255,7 @@ class __$ScatterChartRenderCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? series = null,Object? xAxis = null,Object? yAxis = null,}) {
   return _then(_ScatterChartRender(
-series: null == series ? _self._series : series // ignore: cast_nullable_to_non_nullable
+series: null == series ? _self.series : series // ignore: cast_nullable_to_non_nullable
 as List<LineChartSerie>,xAxis: null == xAxis ? _self.xAxis : xAxis // ignore: cast_nullable_to_non_nullable
 as AxisConfig,yAxis: null == yAxis ? _self.yAxis : yAxis // ignore: cast_nullable_to_non_nullable
 as AxisConfig,
@@ -4840,16 +4750,10 @@ return $default(_that.series);case _:
 @JsonSerializable()
 
 class _PieChartRender implements PieChartRender {
-  const _PieChartRender({required final  List<PieChartSerie> series}): _series = series;
+  const _PieChartRender({required this.series});
   factory _PieChartRender.fromJson(Map<String, dynamic> json) => _$PieChartRenderFromJson(json);
 
- final  List<PieChartSerie> _series;
-@override List<PieChartSerie> get series {
-  if (_series is EqualUnmodifiableListView) return _series;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_series);
-}
-
+@override final  List<PieChartSerie> series;
 
 /// Create a copy of PieChartRender
 /// with the given fields replaced by the non-null parameter values.
@@ -4864,12 +4768,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PieChartRender&&const DeepCollectionEquality().equals(other._series, _series));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PieChartRender&&const DeepCollectionEquality().equals(other.series, series));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_series));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(series));
 
 @override
 String toString() {
@@ -4903,7 +4807,7 @@ class __$PieChartRenderCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? series = null,}) {
   return _then(_PieChartRender(
-series: null == series ? _self._series : series // ignore: cast_nullable_to_non_nullable
+series: null == series ? _self.series : series // ignore: cast_nullable_to_non_nullable
 as List<PieChartSerie>,
   ));
 }
@@ -5378,16 +5282,10 @@ return $default(_that.series);case _:
 @JsonSerializable()
 
 class _RadialBarChartRender implements RadialBarChartRender {
-  const _RadialBarChartRender({required final  List<RadialBarChartSerie> series}): _series = series;
+  const _RadialBarChartRender({required this.series});
   factory _RadialBarChartRender.fromJson(Map<String, dynamic> json) => _$RadialBarChartRenderFromJson(json);
 
- final  List<RadialBarChartSerie> _series;
-@override List<RadialBarChartSerie> get series {
-  if (_series is EqualUnmodifiableListView) return _series;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_series);
-}
-
+@override final  List<RadialBarChartSerie> series;
 
 /// Create a copy of RadialBarChartRender
 /// with the given fields replaced by the non-null parameter values.
@@ -5402,12 +5300,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RadialBarChartRender&&const DeepCollectionEquality().equals(other._series, _series));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RadialBarChartRender&&const DeepCollectionEquality().equals(other.series, series));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_series));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(series));
 
 @override
 String toString() {
@@ -5441,7 +5339,7 @@ class __$RadialBarChartRenderCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? series = null,}) {
   return _then(_RadialBarChartRender(
-series: null == series ? _self._series : series // ignore: cast_nullable_to_non_nullable
+series: null == series ? _self.series : series // ignore: cast_nullable_to_non_nullable
 as List<RadialBarChartSerie>,
   ));
 }

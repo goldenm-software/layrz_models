@@ -919,7 +919,7 @@ return $default(_that.id,_that.name,_that.code,_that.sourceId,_that.source,_that
 @JsonSerializable()
 
 class _SdmRecipe extends SdmRecipe {
-  const _SdmRecipe({required this.id, required this.name, required this.code, this.sourceId, this.source, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy, final  List<SdmIngredient>? ingredients, final  List<String>? ingredientsIds}): _ingredients = ingredients,_ingredientsIds = ingredientsIds,super._();
+  const _SdmRecipe({required this.id, required this.name, required this.code, this.sourceId, this.source, @TimestampOrNullConverter() this.createdAt, this.createdBy, @TimestampOrNullConverter() this.updatedAt, this.updatedBy, this.ingredients, this.ingredientsIds}): super._();
   factory _SdmRecipe.fromJson(Map<String, dynamic> json) => _$SdmRecipeFromJson(json);
 
 /// [id] of the pen entity. This ID is unique.
@@ -941,27 +941,9 @@ class _SdmRecipe extends SdmRecipe {
 /// [updatedBy] is the user id who updated the pen.
 @override final  User? updatedBy;
 /// [ingredients] is the list of ingredients of the recipe.
- final  List<SdmIngredient>? _ingredients;
-/// [ingredients] is the list of ingredients of the recipe.
-@override List<SdmIngredient>? get ingredients {
-  final value = _ingredients;
-  if (value == null) return null;
-  if (_ingredients is EqualUnmodifiableListView) return _ingredients;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<SdmIngredient>? ingredients;
 /// [ingredientsIds] is the list of ingredients ids of the recipe.
- final  List<String>? _ingredientsIds;
-/// [ingredientsIds] is the list of ingredients ids of the recipe.
-@override List<String>? get ingredientsIds {
-  final value = _ingredientsIds;
-  if (value == null) return null;
-  if (_ingredientsIds is EqualUnmodifiableListView) return _ingredientsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? ingredientsIds;
 
 /// Create a copy of SdmRecipe
 /// with the given fields replaced by the non-null parameter values.
@@ -976,12 +958,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SdmRecipe&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.code, code) || other.code == code)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.source, source) || other.source == source)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&const DeepCollectionEquality().equals(other._ingredients, _ingredients)&&const DeepCollectionEquality().equals(other._ingredientsIds, _ingredientsIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SdmRecipe&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.code, code) || other.code == code)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.source, source) || other.source == source)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&const DeepCollectionEquality().equals(other.ingredients, ingredients)&&const DeepCollectionEquality().equals(other.ingredientsIds, ingredientsIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,code,sourceId,source,createdAt,createdBy,updatedAt,updatedBy,const DeepCollectionEquality().hash(_ingredients),const DeepCollectionEquality().hash(_ingredientsIds));
+int get hashCode => Object.hash(runtimeType,id,name,code,sourceId,source,createdAt,createdBy,updatedAt,updatedBy,const DeepCollectionEquality().hash(ingredients),const DeepCollectionEquality().hash(ingredientsIds));
 
 @override
 String toString() {
@@ -1024,8 +1006,8 @@ as Device?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // igno
 as DateTime?,createdBy: freezed == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
 as User?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedBy: freezed == updatedBy ? _self.updatedBy : updatedBy // ignore: cast_nullable_to_non_nullable
-as User?,ingredients: freezed == ingredients ? _self._ingredients : ingredients // ignore: cast_nullable_to_non_nullable
-as List<SdmIngredient>?,ingredientsIds: freezed == ingredientsIds ? _self._ingredientsIds : ingredientsIds // ignore: cast_nullable_to_non_nullable
+as User?,ingredients: freezed == ingredients ? _self.ingredients : ingredients // ignore: cast_nullable_to_non_nullable
+as List<SdmIngredient>?,ingredientsIds: freezed == ingredientsIds ? _self.ingredientsIds : ingredientsIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }

@@ -591,7 +591,7 @@ return $default(_that.id,_that.name,_that.currentSeller,_that.currentSellerId,_t
 @JsonSerializable()
 
 class _MappitRoute implements MappitRoute {
-  const _MappitRoute({required this.id, required this.name, this.currentSeller, this.currentSellerId, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<MappitRouteLinkingHistory>? assignmentsHistory, this.ownerId, this.owner, final  List<Asset>? secondarySellers, final  List<String>? secondarySellersIds}): _geofences = geofences,_geofencesIds = geofencesIds,_assignmentsHistory = assignmentsHistory,_secondarySellers = secondarySellers,_secondarySellersIds = secondarySellersIds;
+  const _MappitRoute({required this.id, required this.name, this.currentSeller, this.currentSellerId, this.geofences, this.geofencesIds, this.assignmentsHistory, this.ownerId, this.owner, this.secondarySellers, this.secondarySellersIds});
   factory _MappitRoute.fromJson(Map<String, dynamic> json) => _$MappitRouteFromJson(json);
 
 /// [id] represents the route ID
@@ -603,64 +603,19 @@ class _MappitRoute implements MappitRoute {
 /// [currentSellerId] represents the current seller ID of the route
 @override final  String? currentSellerId;
 /// [geofences] represents the geofences linked to the route
- final  List<Geofence>? _geofences;
-/// [geofences] represents the geofences linked to the route
-@override List<Geofence>? get geofences {
-  final value = _geofences;
-  if (value == null) return null;
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Geofence>? geofences;
 /// [geofencesIds] represents the geofences IDs linked to the route
- final  List<String>? _geofencesIds;
-/// [geofencesIds] represents the geofences IDs linked to the route
-@override List<String>? get geofencesIds {
-  final value = _geofencesIds;
-  if (value == null) return null;
-  if (_geofencesIds is EqualUnmodifiableListView) return _geofencesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? geofencesIds;
 /// [assignmentsHistory] is the history of the link and unlink operations of this route
- final  List<MappitRouteLinkingHistory>? _assignmentsHistory;
-/// [assignmentsHistory] is the history of the link and unlink operations of this route
-@override List<MappitRouteLinkingHistory>? get assignmentsHistory {
-  final value = _assignmentsHistory;
-  if (value == null) return null;
-  if (_assignmentsHistory is EqualUnmodifiableListView) return _assignmentsHistory;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<MappitRouteLinkingHistory>? assignmentsHistory;
 /// [ownerId] refers to the owner of the geofence.
 @override final  String? ownerId;
 /// [owner] refers to the owner of the geofence.
 @override final  User? owner;
 /// [secondarySellers] represents the secondary sellers of the route
- final  List<Asset>? _secondarySellers;
-/// [secondarySellers] represents the secondary sellers of the route
-@override List<Asset>? get secondarySellers {
-  final value = _secondarySellers;
-  if (value == null) return null;
-  if (_secondarySellers is EqualUnmodifiableListView) return _secondarySellers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? secondarySellers;
 /// [secondarySellersIds] represents the secondary sellers IDs of the route
- final  List<String>? _secondarySellersIds;
-/// [secondarySellersIds] represents the secondary sellers IDs of the route
-@override List<String>? get secondarySellersIds {
-  final value = _secondarySellersIds;
-  if (value == null) return null;
-  if (_secondarySellersIds is EqualUnmodifiableListView) return _secondarySellersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? secondarySellersIds;
 
 /// Create a copy of MappitRoute
 /// with the given fields replaced by the non-null parameter values.
@@ -675,12 +630,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitRoute&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.currentSeller, currentSeller) || other.currentSeller == currentSeller)&&(identical(other.currentSellerId, currentSellerId) || other.currentSellerId == currentSellerId)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._assignmentsHistory, _assignmentsHistory)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._secondarySellers, _secondarySellers)&&const DeepCollectionEquality().equals(other._secondarySellersIds, _secondarySellersIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitRoute&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.currentSeller, currentSeller) || other.currentSeller == currentSeller)&&(identical(other.currentSellerId, currentSellerId) || other.currentSellerId == currentSellerId)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.assignmentsHistory, assignmentsHistory)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.secondarySellers, secondarySellers)&&const DeepCollectionEquality().equals(other.secondarySellersIds, secondarySellersIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,currentSeller,currentSellerId,const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_assignmentsHistory),ownerId,owner,const DeepCollectionEquality().hash(_secondarySellers),const DeepCollectionEquality().hash(_secondarySellersIds));
+int get hashCode => Object.hash(runtimeType,id,name,currentSeller,currentSellerId,const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(assignmentsHistory),ownerId,owner,const DeepCollectionEquality().hash(secondarySellers),const DeepCollectionEquality().hash(secondarySellersIds));
 
 @override
 String toString() {
@@ -718,13 +673,13 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,currentSeller: freezed == currentSeller ? _self.currentSeller : currentSeller // ignore: cast_nullable_to_non_nullable
 as Asset?,currentSellerId: freezed == currentSellerId ? _self.currentSellerId : currentSellerId // ignore: cast_nullable_to_non_nullable
-as String?,geofences: freezed == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self._geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,assignmentsHistory: freezed == assignmentsHistory ? _self._assignmentsHistory : assignmentsHistory // ignore: cast_nullable_to_non_nullable
+as String?,geofences: freezed == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,assignmentsHistory: freezed == assignmentsHistory ? _self.assignmentsHistory : assignmentsHistory // ignore: cast_nullable_to_non_nullable
 as List<MappitRouteLinkingHistory>?,ownerId: freezed == ownerId ? _self.ownerId : ownerId // ignore: cast_nullable_to_non_nullable
 as String?,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
-as User?,secondarySellers: freezed == secondarySellers ? _self._secondarySellers : secondarySellers // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,secondarySellersIds: freezed == secondarySellersIds ? _self._secondarySellersIds : secondarySellersIds // ignore: cast_nullable_to_non_nullable
+as User?,secondarySellers: freezed == secondarySellers ? _self.secondarySellers : secondarySellers // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,secondarySellersIds: freezed == secondarySellersIds ? _self.secondarySellersIds : secondarySellersIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }
@@ -1821,7 +1776,7 @@ return $default(_that.id,_that.name,_that.geofences);case _:
 @JsonSerializable()
 
 class _MappitProfile implements MappitProfile {
-  const _MappitProfile({required this.id, required this.name, required final  List<MappitProfileGeofence> geofences}): _geofences = geofences;
+  const _MappitProfile({required this.id, required this.name, required this.geofences});
   factory _MappitProfile.fromJson(Map<String, dynamic> json) => _$MappitProfileFromJson(json);
 
 /// [id] represents the ID of the profile.
@@ -1829,14 +1784,7 @@ class _MappitProfile implements MappitProfile {
 /// [name] represents the name of the profile.
 @override final  String name;
 /// [geofences] represents the list of linked geofences with some customization
- final  List<MappitProfileGeofence> _geofences;
-/// [geofences] represents the list of linked geofences with some customization
-@override List<MappitProfileGeofence> get geofences {
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_geofences);
-}
-
+@override final  List<MappitProfileGeofence> geofences;
 
 /// Create a copy of MappitProfile
 /// with the given fields replaced by the non-null parameter values.
@@ -1851,12 +1799,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitProfile&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._geofences, _geofences));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitProfile&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.geofences, geofences));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_geofences));
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(geofences));
 
 @override
 String toString() {
@@ -1892,7 +1840,7 @@ class __$MappitProfileCopyWithImpl<$Res>
   return _then(_MappitProfile(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,geofences: null == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
+as String,geofences: null == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
 as List<MappitProfileGeofence>,
   ));
 }
@@ -2930,45 +2878,17 @@ return $default(_that.firstVisit,_that.avgTimePerVisit,_that.customersVisited,_t
 @JsonSerializable()
 
 class _MappitHomeConfig implements MappitHomeConfig {
-  const _MappitHomeConfig({final  List<MappitDurationRange> firstVisit = const [], final  List<MappitDurationRange> avgTimePerVisit = const [], final  List<MappitIntRange> customersVisited = const [], final  List<MappitDoubleRange> dailyDistance = const []}): _firstVisit = firstVisit,_avgTimePerVisit = avgTimePerVisit,_customersVisited = customersVisited,_dailyDistance = dailyDistance;
+  const _MappitHomeConfig({this.firstVisit = const [], this.avgTimePerVisit = const [], this.customersVisited = const [], this.dailyDistance = const []});
   factory _MappitHomeConfig.fromJson(Map<String, dynamic> json) => _$MappitHomeConfigFromJson(json);
 
 /// [firstVisit] is the conditions of the first visit
- final  List<MappitDurationRange> _firstVisit;
-/// [firstVisit] is the conditions of the first visit
-@override@JsonKey() List<MappitDurationRange> get firstVisit {
-  if (_firstVisit is EqualUnmodifiableListView) return _firstVisit;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_firstVisit);
-}
-
+@override@JsonKey() final  List<MappitDurationRange> firstVisit;
 /// [avgTimePerVisit] is the conditions of the average time per visit
- final  List<MappitDurationRange> _avgTimePerVisit;
-/// [avgTimePerVisit] is the conditions of the average time per visit
-@override@JsonKey() List<MappitDurationRange> get avgTimePerVisit {
-  if (_avgTimePerVisit is EqualUnmodifiableListView) return _avgTimePerVisit;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_avgTimePerVisit);
-}
-
+@override@JsonKey() final  List<MappitDurationRange> avgTimePerVisit;
 /// [customersVisited] is the conditions of the customers visited
- final  List<MappitIntRange> _customersVisited;
-/// [customersVisited] is the conditions of the customers visited
-@override@JsonKey() List<MappitIntRange> get customersVisited {
-  if (_customersVisited is EqualUnmodifiableListView) return _customersVisited;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_customersVisited);
-}
-
+@override@JsonKey() final  List<MappitIntRange> customersVisited;
 /// [dailyDistance] is the conditions of the daily distance
- final  List<MappitDoubleRange> _dailyDistance;
-/// [dailyDistance] is the conditions of the daily distance
-@override@JsonKey() List<MappitDoubleRange> get dailyDistance {
-  if (_dailyDistance is EqualUnmodifiableListView) return _dailyDistance;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_dailyDistance);
-}
-
+@override@JsonKey() final  List<MappitDoubleRange> dailyDistance;
 
 /// Create a copy of MappitHomeConfig
 /// with the given fields replaced by the non-null parameter values.
@@ -2983,12 +2903,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitHomeConfig&&const DeepCollectionEquality().equals(other._firstVisit, _firstVisit)&&const DeepCollectionEquality().equals(other._avgTimePerVisit, _avgTimePerVisit)&&const DeepCollectionEquality().equals(other._customersVisited, _customersVisited)&&const DeepCollectionEquality().equals(other._dailyDistance, _dailyDistance));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitHomeConfig&&const DeepCollectionEquality().equals(other.firstVisit, firstVisit)&&const DeepCollectionEquality().equals(other.avgTimePerVisit, avgTimePerVisit)&&const DeepCollectionEquality().equals(other.customersVisited, customersVisited)&&const DeepCollectionEquality().equals(other.dailyDistance, dailyDistance));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_firstVisit),const DeepCollectionEquality().hash(_avgTimePerVisit),const DeepCollectionEquality().hash(_customersVisited),const DeepCollectionEquality().hash(_dailyDistance));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(firstVisit),const DeepCollectionEquality().hash(avgTimePerVisit),const DeepCollectionEquality().hash(customersVisited),const DeepCollectionEquality().hash(dailyDistance));
 
 @override
 String toString() {
@@ -3022,10 +2942,10 @@ class __$MappitHomeConfigCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? firstVisit = null,Object? avgTimePerVisit = null,Object? customersVisited = null,Object? dailyDistance = null,}) {
   return _then(_MappitHomeConfig(
-firstVisit: null == firstVisit ? _self._firstVisit : firstVisit // ignore: cast_nullable_to_non_nullable
-as List<MappitDurationRange>,avgTimePerVisit: null == avgTimePerVisit ? _self._avgTimePerVisit : avgTimePerVisit // ignore: cast_nullable_to_non_nullable
-as List<MappitDurationRange>,customersVisited: null == customersVisited ? _self._customersVisited : customersVisited // ignore: cast_nullable_to_non_nullable
-as List<MappitIntRange>,dailyDistance: null == dailyDistance ? _self._dailyDistance : dailyDistance // ignore: cast_nullable_to_non_nullable
+firstVisit: null == firstVisit ? _self.firstVisit : firstVisit // ignore: cast_nullable_to_non_nullable
+as List<MappitDurationRange>,avgTimePerVisit: null == avgTimePerVisit ? _self.avgTimePerVisit : avgTimePerVisit // ignore: cast_nullable_to_non_nullable
+as List<MappitDurationRange>,customersVisited: null == customersVisited ? _self.customersVisited : customersVisited // ignore: cast_nullable_to_non_nullable
+as List<MappitIntRange>,dailyDistance: null == dailyDistance ? _self.dailyDistance : dailyDistance // ignore: cast_nullable_to_non_nullable
 as List<MappitDoubleRange>,
   ));
 }
@@ -3240,7 +3160,7 @@ return $default(_that.id,_that.name,_that.date,_that.assets,_that.assetsIds);cas
 @JsonSerializable()
 
 class _MappitFreeDay implements MappitFreeDay {
-  const _MappitFreeDay({required this.id, required this.name, @DateConverter() required this.date, final  List<Asset>? assets, final  List<String>? assetsIds}): _assets = assets,_assetsIds = assetsIds;
+  const _MappitFreeDay({required this.id, required this.name, @DateConverter() required this.date, this.assets, this.assetsIds});
   factory _MappitFreeDay.fromJson(Map<String, dynamic> json) => _$MappitFreeDayFromJson(json);
 
 /// [id] represents the free day ID.
@@ -3250,27 +3170,9 @@ class _MappitFreeDay implements MappitFreeDay {
 /// [date] represents the free day date.
 @override@DateConverter() final  DateTime date;
 /// [assets] represents the assets assigned to this free day.
- final  List<Asset>? _assets;
-/// [assets] represents the assets assigned to this free day.
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// [assetsIds] represents the assets IDs assigned to this free day.
- final  List<String>? _assetsIds;
-/// [assetsIds] represents the assets IDs assigned to this free day.
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 
 /// Create a copy of MappitFreeDay
 /// with the given fields replaced by the non-null parameter values.
@@ -3285,12 +3187,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitFreeDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.date, date) || other.date == date)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitFreeDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.date, date) || other.date == date)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,date,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds));
+int get hashCode => Object.hash(runtimeType,id,name,date,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds));
 
 @override
 String toString() {
@@ -3327,8 +3229,8 @@ class __$MappitFreeDayCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,date: null == date ? _self.date : date // ignore: cast_nullable_to_non_nullable
-as DateTime,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as DateTime,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }
@@ -3544,17 +3446,11 @@ return $default(_that.polygon,_that.containedRoutes);case _:
 @JsonSerializable()
 
 class _PolygonDetails implements PolygonDetails {
-  const _PolygonDetails({required this.polygon, required final  List<ContainedRouteCategory> containedRoutes}): _containedRoutes = containedRoutes;
+  const _PolygonDetails({required this.polygon, required this.containedRoutes});
   factory _PolygonDetails.fromJson(Map<String, dynamic> json) => _$PolygonDetailsFromJson(json);
 
 @override final  Geofence polygon;
- final  List<ContainedRouteCategory> _containedRoutes;
-@override List<ContainedRouteCategory> get containedRoutes {
-  if (_containedRoutes is EqualUnmodifiableListView) return _containedRoutes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_containedRoutes);
-}
-
+@override final  List<ContainedRouteCategory> containedRoutes;
 
 /// Create a copy of PolygonDetails
 /// with the given fields replaced by the non-null parameter values.
@@ -3569,12 +3465,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PolygonDetails&&(identical(other.polygon, polygon) || other.polygon == polygon)&&const DeepCollectionEquality().equals(other._containedRoutes, _containedRoutes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PolygonDetails&&(identical(other.polygon, polygon) || other.polygon == polygon)&&const DeepCollectionEquality().equals(other.containedRoutes, containedRoutes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,polygon,const DeepCollectionEquality().hash(_containedRoutes));
+int get hashCode => Object.hash(runtimeType,polygon,const DeepCollectionEquality().hash(containedRoutes));
 
 @override
 String toString() {
@@ -3609,7 +3505,7 @@ class __$PolygonDetailsCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? polygon = null,Object? containedRoutes = null,}) {
   return _then(_PolygonDetails(
 polygon: null == polygon ? _self.polygon : polygon // ignore: cast_nullable_to_non_nullable
-as Geofence,containedRoutes: null == containedRoutes ? _self._containedRoutes : containedRoutes // ignore: cast_nullable_to_non_nullable
+as Geofence,containedRoutes: null == containedRoutes ? _self.containedRoutes : containedRoutes // ignore: cast_nullable_to_non_nullable
 as List<ContainedRouteCategory>,
   ));
 }
@@ -3830,21 +3726,14 @@ return $default(_that.category,_that.routes,_that.geofenceCount);case _:
 @JsonSerializable()
 
 class _ContainedRouteCategory implements ContainedRouteCategory {
-  const _ContainedRouteCategory({@JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, final  List<MappitRoute> routes = const [], this.geofenceCount}): _routes = routes;
+  const _ContainedRouteCategory({@JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, this.routes = const [], this.geofenceCount});
   factory _ContainedRouteCategory.fromJson(Map<String, dynamic> json) => _$ContainedRouteCategoryFromJson(json);
 
 /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
 /// from the API.
 @override@JsonKey(unknownEnumValue: GeofenceCategory.none) final  GeofenceCategory category;
 /// List of routes that contain the geofences in the category.
- final  List<MappitRoute> _routes;
-/// List of routes that contain the geofences in the category.
-@override@JsonKey() List<MappitRoute> get routes {
-  if (_routes is EqualUnmodifiableListView) return _routes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_routes);
-}
-
+@override@JsonKey() final  List<MappitRoute> routes;
 /// Number of geofences per category.
 @override final  int? geofenceCount;
 
@@ -3861,12 +3750,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContainedRouteCategory&&(identical(other.category, category) || other.category == category)&&const DeepCollectionEquality().equals(other._routes, _routes)&&(identical(other.geofenceCount, geofenceCount) || other.geofenceCount == geofenceCount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContainedRouteCategory&&(identical(other.category, category) || other.category == category)&&const DeepCollectionEquality().equals(other.routes, routes)&&(identical(other.geofenceCount, geofenceCount) || other.geofenceCount == geofenceCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,category,const DeepCollectionEquality().hash(_routes),geofenceCount);
+int get hashCode => Object.hash(runtimeType,category,const DeepCollectionEquality().hash(routes),geofenceCount);
 
 @override
 String toString() {
@@ -3901,7 +3790,7 @@ class __$ContainedRouteCategoryCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? category = null,Object? routes = null,Object? geofenceCount = freezed,}) {
   return _then(_ContainedRouteCategory(
 category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as GeofenceCategory,routes: null == routes ? _self._routes : routes // ignore: cast_nullable_to_non_nullable
+as GeofenceCategory,routes: null == routes ? _self.routes : routes // ignore: cast_nullable_to_non_nullable
 as List<MappitRoute>,geofenceCount: freezed == geofenceCount ? _self.geofenceCount : geofenceCount // ignore: cast_nullable_to_non_nullable
 as int?,
   ));

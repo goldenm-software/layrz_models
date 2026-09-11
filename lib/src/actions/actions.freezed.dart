@@ -260,7 +260,7 @@ return $default(_that.id,_that.name,_that.kind,_that.subkind,_that.commandId,_th
 @JsonSerializable()
 
 class _Action extends Action {
-  const _Action({required this.id, required this.name, @JsonKey(unknownEnumValue: ActionType.performOperation) required this.kind, @JsonKey(unknownEnumValue: ActionSubtype.unused) this.subkind = ActionSubtype.unused, this.commandId, final  List<Trigger>? triggers, final  List<String>? triggersIds, final  List<OutboundService>? outboundServices, final  List<String>? outboundServicesIds, final  List<Operation>? operations, final  List<String>? operationsIds, final  List<Access>? access, this.watchImage, this.geofenceSettings, this.zigbeeSettings}): _triggers = triggers,_triggersIds = triggersIds,_outboundServices = outboundServices,_outboundServicesIds = outboundServicesIds,_operations = operations,_operationsIds = operationsIds,_access = access,super._();
+  const _Action({required this.id, required this.name, @JsonKey(unknownEnumValue: ActionType.performOperation) required this.kind, @JsonKey(unknownEnumValue: ActionSubtype.unused) this.subkind = ActionSubtype.unused, this.commandId, this.triggers, this.triggersIds, this.outboundServices, this.outboundServicesIds, this.operations, this.operationsIds, this.access, this.watchImage, this.geofenceSettings, this.zigbeeSettings}): super._();
   factory _Action.fromJson(Map<String, dynamic> json) => _$ActionFromJson(json);
 
 /// Is the ID of the action.
@@ -274,76 +274,16 @@ class _Action extends Action {
 /// Is the ID of tag to perform commands.
 @override final  String? commandId;
 /// Is the list of Triggers or triggers' IDs.
- final  List<Trigger>? _triggers;
-/// Is the list of Triggers or triggers' IDs.
-@override List<Trigger>? get triggers {
-  final value = _triggers;
-  if (value == null) return null;
-  if (_triggers is EqualUnmodifiableListView) return _triggers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
- final  List<String>? _triggersIds;
-@override List<String>? get triggersIds {
-  final value = _triggersIds;
-  if (value == null) return null;
-  if (_triggersIds is EqualUnmodifiableListView) return _triggersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Trigger>? triggers;
+@override final  List<String>? triggersIds;
 /// Is the list of Outbound Servives or outbound services' IDs.
- final  List<OutboundService>? _outboundServices;
-/// Is the list of Outbound Servives or outbound services' IDs.
-@override List<OutboundService>? get outboundServices {
-  final value = _outboundServices;
-  if (value == null) return null;
-  if (_outboundServices is EqualUnmodifiableListView) return _outboundServices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
- final  List<String>? _outboundServicesIds;
-@override List<String>? get outboundServicesIds {
-  final value = _outboundServicesIds;
-  if (value == null) return null;
-  if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<OutboundService>? outboundServices;
+@override final  List<String>? outboundServicesIds;
 /// Is the list of Operations or operations' IDs.
- final  List<Operation>? _operations;
-/// Is the list of Operations or operations' IDs.
-@override List<Operation>? get operations {
-  final value = _operations;
-  if (value == null) return null;
-  if (_operations is EqualUnmodifiableListView) return _operations;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
- final  List<String>? _operationsIds;
-@override List<String>? get operationsIds {
-  final value = _operationsIds;
-  if (value == null) return null;
-  if (_operationsIds is EqualUnmodifiableListView) return _operationsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Operation>? operations;
+@override final  List<String>? operationsIds;
 /// Is a list of granted access to this entity.
- final  List<Access>? _access;
-/// Is a list of granted access to this entity.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
 /// data need image convertion.
 @override final  bool? watchImage;
@@ -365,12 +305,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Action&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.subkind, subkind) || other.subkind == subkind)&&(identical(other.commandId, commandId) || other.commandId == commandId)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&const DeepCollectionEquality().equals(other._outboundServices, _outboundServices)&&const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds)&&const DeepCollectionEquality().equals(other._operations, _operations)&&const DeepCollectionEquality().equals(other._operationsIds, _operationsIds)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.watchImage, watchImage) || other.watchImage == watchImage)&&(identical(other.geofenceSettings, geofenceSettings) || other.geofenceSettings == geofenceSettings)&&(identical(other.zigbeeSettings, zigbeeSettings) || other.zigbeeSettings == zigbeeSettings));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Action&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.subkind, subkind) || other.subkind == subkind)&&(identical(other.commandId, commandId) || other.commandId == commandId)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&const DeepCollectionEquality().equals(other.outboundServices, outboundServices)&&const DeepCollectionEquality().equals(other.outboundServicesIds, outboundServicesIds)&&const DeepCollectionEquality().equals(other.operations, operations)&&const DeepCollectionEquality().equals(other.operationsIds, operationsIds)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.watchImage, watchImage) || other.watchImage == watchImage)&&(identical(other.geofenceSettings, geofenceSettings) || other.geofenceSettings == geofenceSettings)&&(identical(other.zigbeeSettings, zigbeeSettings) || other.zigbeeSettings == zigbeeSettings));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,kind,subkind,commandId,const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),const DeepCollectionEquality().hash(_outboundServices),const DeepCollectionEquality().hash(_outboundServicesIds),const DeepCollectionEquality().hash(_operations),const DeepCollectionEquality().hash(_operationsIds),const DeepCollectionEquality().hash(_access),watchImage,geofenceSettings,zigbeeSettings);
+int get hashCode => Object.hash(runtimeType,id,name,kind,subkind,commandId,const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),const DeepCollectionEquality().hash(outboundServices),const DeepCollectionEquality().hash(outboundServicesIds),const DeepCollectionEquality().hash(operations),const DeepCollectionEquality().hash(operationsIds),const DeepCollectionEquality().hash(access),watchImage,geofenceSettings,zigbeeSettings);
 
 @override
 String toString() {
@@ -409,13 +349,13 @@ as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non
 as String,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as ActionType,subkind: null == subkind ? _self.subkind : subkind // ignore: cast_nullable_to_non_nullable
 as ActionSubtype,commandId: freezed == commandId ? _self.commandId : commandId // ignore: cast_nullable_to_non_nullable
-as String?,triggers: freezed == triggers ? _self._triggers : triggers // ignore: cast_nullable_to_non_nullable
-as List<Trigger>?,triggersIds: freezed == triggersIds ? _self._triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,outboundServices: freezed == outboundServices ? _self._outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
-as List<OutboundService>?,outboundServicesIds: freezed == outboundServicesIds ? _self._outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,operations: freezed == operations ? _self._operations : operations // ignore: cast_nullable_to_non_nullable
-as List<Operation>?,operationsIds: freezed == operationsIds ? _self._operationsIds : operationsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as String?,triggers: freezed == triggers ? _self.triggers : triggers // ignore: cast_nullable_to_non_nullable
+as List<Trigger>?,triggersIds: freezed == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,outboundServices: freezed == outboundServices ? _self.outboundServices : outboundServices // ignore: cast_nullable_to_non_nullable
+as List<OutboundService>?,outboundServicesIds: freezed == outboundServicesIds ? _self.outboundServicesIds : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,operations: freezed == operations ? _self.operations : operations // ignore: cast_nullable_to_non_nullable
+as List<Operation>?,operationsIds: freezed == operationsIds ? _self.operationsIds : operationsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,watchImage: freezed == watchImage ? _self.watchImage : watchImage // ignore: cast_nullable_to_non_nullable
 as bool?,geofenceSettings: freezed == geofenceSettings ? _self.geofenceSettings : geofenceSettings // ignore: cast_nullable_to_non_nullable
 as ActionGeofenceSettings?,zigbeeSettings: freezed == zigbeeSettings ? _self.zigbeeSettings : zigbeeSettings // ignore: cast_nullable_to_non_nullable
@@ -1884,7 +1824,7 @@ return $default(_that.deviceId,_that.device,_that.settings);case _:
 @JsonSerializable()
 
 class _ActionZigbeeSettings extends ActionZigbeeSettings {
-  const _ActionZigbeeSettings({this.deviceId, this.device, final  List<ActionZigbeeSetting> settings = const []}): _settings = settings,super._();
+  const _ActionZigbeeSettings({this.deviceId, this.device, this.settings = const []}): super._();
   factory _ActionZigbeeSettings.fromJson(Map<String, dynamic> json) => _$ActionZigbeeSettingsFromJson(json);
 
 /// [deviceId] is the ID of the connectivity Device bound to the zigbee device
@@ -1892,14 +1832,7 @@ class _ActionZigbeeSettings extends ActionZigbeeSettings {
 /// [device] is the connectivity Device bound to the zigbee device
 @override final  Device? device;
 /// [settings] is the list of zigbee settings to apply
- final  List<ActionZigbeeSetting> _settings;
-/// [settings] is the list of zigbee settings to apply
-@override@JsonKey() List<ActionZigbeeSetting> get settings {
-  if (_settings is EqualUnmodifiableListView) return _settings;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_settings);
-}
-
+@override@JsonKey() final  List<ActionZigbeeSetting> settings;
 
 /// Create a copy of ActionZigbeeSettings
 /// with the given fields replaced by the non-null parameter values.
@@ -1914,12 +1847,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ActionZigbeeSettings&&(identical(other.deviceId, deviceId) || other.deviceId == deviceId)&&(identical(other.device, device) || other.device == device)&&const DeepCollectionEquality().equals(other._settings, _settings));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ActionZigbeeSettings&&(identical(other.deviceId, deviceId) || other.deviceId == deviceId)&&(identical(other.device, device) || other.device == device)&&const DeepCollectionEquality().equals(other.settings, settings));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,deviceId,device,const DeepCollectionEquality().hash(_settings));
+int get hashCode => Object.hash(runtimeType,deviceId,device,const DeepCollectionEquality().hash(settings));
 
 @override
 String toString() {
@@ -1955,7 +1888,7 @@ class __$ActionZigbeeSettingsCopyWithImpl<$Res>
   return _then(_ActionZigbeeSettings(
 deviceId: freezed == deviceId ? _self.deviceId : deviceId // ignore: cast_nullable_to_non_nullable
 as String?,device: freezed == device ? _self.device : device // ignore: cast_nullable_to_non_nullable
-as Device?,settings: null == settings ? _self._settings : settings // ignore: cast_nullable_to_non_nullable
+as Device?,settings: null == settings ? _self.settings : settings // ignore: cast_nullable_to_non_nullable
 as List<ActionZigbeeSetting>,
   ));
 }

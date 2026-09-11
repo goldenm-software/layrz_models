@@ -218,7 +218,7 @@ return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.requiredFi
 @JsonSerializable()
 
 class _ExternalSource implements ExternalSource {
-  const _ExternalSource({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, final  List<CredentialField> requiredFields = const []}): _requiredFields = requiredFields;
+  const _ExternalSource({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, this.requiredFields = const []});
   factory _ExternalSource.fromJson(Map<String, dynamic> json) => _$ExternalSourceFromJson(json);
 
 /// [id] is the unique database identifier for this external source.
@@ -230,14 +230,7 @@ class _ExternalSource implements ExternalSource {
 /// [isEnabled] indicates whether this external source is currently active and available for use.
 @override final  bool isEnabled;
 /// [requiredFields] is the list of credential fields required to authenticate with this external source.
- final  List<CredentialField> _requiredFields;
-/// [requiredFields] is the list of credential fields required to authenticate with this external source.
-@override@JsonKey() List<CredentialField> get requiredFields {
-  if (_requiredFields is EqualUnmodifiableListView) return _requiredFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_requiredFields);
-}
-
+@override@JsonKey() final  List<CredentialField> requiredFields;
 
 /// Create a copy of ExternalSource
 /// with the given fields replaced by the non-null parameter values.
@@ -252,12 +245,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExternalSource&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other._requiredFields, _requiredFields));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExternalSource&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&const DeepCollectionEquality().equals(other.requiredFields, requiredFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,color,isEnabled,const DeepCollectionEquality().hash(_requiredFields));
+int get hashCode => Object.hash(runtimeType,id,name,color,isEnabled,const DeepCollectionEquality().hash(requiredFields));
 
 @override
 String toString() {
@@ -295,7 +288,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,requiredFields: null == requiredFields ? _self._requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
+as bool,requiredFields: null == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
 as List<CredentialField>,
   ));
 }
@@ -528,7 +521,7 @@ return $default(_that.id,_that.name,_that.credentials,_that.source,_that.sourceI
 @JsonSerializable()
 
 class _ExternalAccount implements ExternalAccount {
-  const _ExternalAccount({required this.id, required this.name, final  Map<String, dynamic>? credentials, this.source, this.sourceId, final  List<Access>? access, final  List<Device>? devices}): _credentials = credentials,_access = access,_devices = devices;
+  const _ExternalAccount({required this.id, required this.name, this.credentials, this.source, this.sourceId, this.access, this.devices});
   factory _ExternalAccount.fromJson(Map<String, dynamic> json) => _$ExternalAccountFromJson(json);
 
 /// [id] is the unique database identifier for this external account.
@@ -538,44 +531,15 @@ class _ExternalAccount implements ExternalAccount {
 /// [credentials] contains the authentication credentials (API keys, tokens, etc.) for the external service.
 ///
 /// The structure of this map depends on the requirements of the [source].
- final  Map<String, dynamic>? _credentials;
-/// [credentials] contains the authentication credentials (API keys, tokens, etc.) for the external service.
-///
-/// The structure of this map depends on the requirements of the [source].
-@override Map<String, dynamic>? get credentials {
-  final value = _credentials;
-  if (value == null) return null;
-  if (_credentials is EqualUnmodifiableMapView) return _credentials;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? credentials;
 /// [source] is the external platform/protocol this account connects to.
 @override final  ExternalSource? source;
 /// [sourceId] is the reference to the [ExternalSource] identifier.
 @override final  String? sourceId;
 /// [access] is the list of access permissions configured for this external account.
- final  List<Access>? _access;
-/// [access] is the list of access permissions configured for this external account.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// [devices] is the list of devices that have been imported from this external account.
- final  List<Device>? _devices;
-/// [devices] is the list of devices that have been imported from this external account.
-@override List<Device>? get devices {
-  final value = _devices;
-  if (value == null) return null;
-  if (_devices is EqualUnmodifiableListView) return _devices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Device>? devices;
 
 /// Create a copy of ExternalAccount
 /// with the given fields replaced by the non-null parameter values.
@@ -590,12 +554,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExternalAccount&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._credentials, _credentials)&&(identical(other.source, source) || other.source == source)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._devices, _devices));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExternalAccount&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.credentials, credentials)&&(identical(other.source, source) || other.source == source)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.devices, devices));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_credentials),source,sourceId,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_devices));
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(credentials),source,sourceId,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(devices));
 
 @override
 String toString() {
@@ -631,11 +595,11 @@ class __$ExternalAccountCopyWithImpl<$Res>
   return _then(_ExternalAccount(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,credentials: freezed == credentials ? _self._credentials : credentials // ignore: cast_nullable_to_non_nullable
+as String,credentials: freezed == credentials ? _self.credentials : credentials // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,source: freezed == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
 as ExternalSource?,sourceId: freezed == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
-as String?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,devices: freezed == devices ? _self._devices : devices // ignore: cast_nullable_to_non_nullable
+as String?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as List<Access>?,devices: freezed == devices ? _self.devices : devices // ignore: cast_nullable_to_non_nullable
 as List<Device>?,
   ));
 }
@@ -1136,7 +1100,7 @@ return $default(_that.externalId,_that.name,_that.ident,_that.additionalFields);
 @JsonSerializable()
 
 class _ExternalUnit extends ExternalUnit {
-  const _ExternalUnit({this.externalId, required this.name, required this.ident, final  Map<String, dynamic>? additionalFields}): _additionalFields = additionalFields,super._();
+  const _ExternalUnit({this.externalId, required this.name, required this.ident, this.additionalFields}): super._();
   factory _ExternalUnit.fromJson(Map<String, dynamic> json) => _$ExternalUnitFromJson(json);
 
 /// [externalId] is the unique identifier of this unit in the external platform.
@@ -1146,16 +1110,7 @@ class _ExternalUnit extends ExternalUnit {
 /// [ident] is the unique identifier or serial number used to identify this unit.
 @override final  String ident;
 /// [additionalFields] contains any extra metadata or custom fields from the external platform.
- final  Map<String, dynamic>? _additionalFields;
-/// [additionalFields] contains any extra metadata or custom fields from the external platform.
-@override Map<String, dynamic>? get additionalFields {
-  final value = _additionalFields;
-  if (value == null) return null;
-  if (_additionalFields is EqualUnmodifiableMapView) return _additionalFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? additionalFields;
 
 /// Create a copy of ExternalUnit
 /// with the given fields replaced by the non-null parameter values.
@@ -1170,12 +1125,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExternalUnit&&(identical(other.externalId, externalId) || other.externalId == externalId)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&const DeepCollectionEquality().equals(other._additionalFields, _additionalFields));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExternalUnit&&(identical(other.externalId, externalId) || other.externalId == externalId)&&(identical(other.name, name) || other.name == name)&&(identical(other.ident, ident) || other.ident == ident)&&const DeepCollectionEquality().equals(other.additionalFields, additionalFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,externalId,name,ident,const DeepCollectionEquality().hash(_additionalFields));
+int get hashCode => Object.hash(runtimeType,externalId,name,ident,const DeepCollectionEquality().hash(additionalFields));
 
 @override
 String toString() {
@@ -1212,7 +1167,7 @@ class __$ExternalUnitCopyWithImpl<$Res>
 externalId: freezed == externalId ? _self.externalId : externalId // ignore: cast_nullable_to_non_nullable
 as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,ident: null == ident ? _self.ident : ident // ignore: cast_nullable_to_non_nullable
-as String,additionalFields: freezed == additionalFields ? _self._additionalFields : additionalFields // ignore: cast_nullable_to_non_nullable
+as String,additionalFields: freezed == additionalFields ? _self.additionalFields : additionalFields // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }

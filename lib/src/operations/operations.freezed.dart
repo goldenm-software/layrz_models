@@ -313,7 +313,7 @@ return $default(_that.id,_that.name,_that.operationType,_that.requestType,_that.
 @JsonSerializable()
 
 class _Operation extends Operation {
-  const _Operation({required this.id, required this.name, @JsonKey(unknownEnumValue: OperationType.unknown) required this.operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet) this.requestType, this.url, final  List<HttpHeader>? headers = const [], this.payload, this.languageId, @Deprecated('Use `timezoneName` instead') this.timezone, this.timezoneName = 'UTC', this.dateTimeFormat = '%Y-%m-%d %I:%M %p', final  List<String>? receptionEmails = const [], this.emailSubject, @ColorOrNullConverter() this.color, @ColorOrNullConverter() this.textColor, final  List<PhoneNumber>? destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown) this.notificationType, @JsonKey(name: 'accountId') this.externalAccountId, final  List<Access>? access, final  List<Trigger>? triggers, this.useAssetContactsInstead, this.attachImage, this.emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web) final  List<AppPlatform>? pushPlatforms, this.pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none) this.soundEffect = SoundEffect.none, this.soundEffectUri, @IconOrNullConverter() this.icon, @DurationOrNullConverter() this.duration, this.layrzTemplate, this.appId}): _headers = headers,_receptionEmails = receptionEmails,_destinationPhones = destinationPhones,_access = access,_triggers = triggers,_pushPlatforms = pushPlatforms,super._();
+  const _Operation({required this.id, required this.name, @JsonKey(unknownEnumValue: OperationType.unknown) required this.operationType, @JsonKey(unknownEnumValue: HttpRequestType.httpGet) this.requestType, this.url, this.headers = const [], this.payload, this.languageId, @Deprecated('Use `timezoneName` instead') this.timezone, this.timezoneName = 'UTC', this.dateTimeFormat = '%Y-%m-%d %I:%M %p', this.receptionEmails = const [], this.emailSubject, @ColorOrNullConverter() this.color, @ColorOrNullConverter() this.textColor, this.destinationPhones, @JsonKey(unknownEnumValue: NotificationType.unknown) this.notificationType, @JsonKey(name: 'accountId') this.externalAccountId, this.access, this.triggers, this.useAssetContactsInstead, this.attachImage, this.emailTemplateId, @JsonKey(unknownEnumValue: AppPlatform.web) this.pushPlatforms, this.pushTitle, @JsonKey(unknownEnumValue: SoundEffect.none) this.soundEffect = SoundEffect.none, this.soundEffectUri, @IconOrNullConverter() this.icon, @DurationOrNullConverter() this.duration, this.layrzTemplate, this.appId}): super._();
   factory _Operation.fromJson(Map<String, dynamic> json) => _$OperationFromJson(json);
 
 /// Is the ID of the operation.
@@ -333,18 +333,7 @@ class _Operation extends Operation {
 /// Is the headers to send in the HTTP request
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.webhook].
- final  List<HttpHeader>? _headers;
-/// Is the headers to send in the HTTP request
-/// This field will only be considered in the following [operationType]:
-/// - [OperationType.webhook].
-@override@JsonKey() List<HttpHeader>? get headers {
-  final value = _headers;
-  if (value == null) return null;
-  if (_headers is EqualUnmodifiableListView) return _headers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey() final  List<HttpHeader>? headers;
 /// Is the payload to send in the submission.
 @override final  String? payload;
 /// Is the language ID of the message. Used to define the default language of the message.
@@ -359,18 +348,7 @@ class _Operation extends Operation {
 /// Is the reception email to send the message
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.email].
- final  List<String>? _receptionEmails;
-/// Is the reception email to send the message
-/// This field will only be considered in the following [operationType]:
-/// - [OperationType.email].
-@override@JsonKey() List<String>? get receptionEmails {
-  final value = _receptionEmails;
-  if (value == null) return null;
-  if (_receptionEmails is EqualUnmodifiableListView) return _receptionEmails;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey() final  List<String>? receptionEmails;
 /// Is the subject of the email
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.email].
@@ -386,18 +364,7 @@ class _Operation extends Operation {
 /// Is the receiver numbers to send the message
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.twilio].
- final  List<PhoneNumber>? _destinationPhones;
-/// Is the receiver numbers to send the message
-/// This field will only be considered in the following [operationType]:
-/// - [OperationType.twilio].
-@override List<PhoneNumber>? get destinationPhones {
-  final value = _destinationPhones;
-  if (value == null) return null;
-  if (_destinationPhones is EqualUnmodifiableListView) return _destinationPhones;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<PhoneNumber>? destinationPhones;
 /// Is the Notification type to perform
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.twilio]
@@ -405,27 +372,9 @@ class _Operation extends Operation {
 /// The [externalAccountId] of the operation. Only the ID
 @override@JsonKey(name: 'accountId') final  String? externalAccountId;
 /// Is the list of granted access of the operation.
- final  List<Access>? _access;
-/// Is the list of granted access of the operation.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// Is the list of associated triggers (directly or indirectly) of the operation.
- final  List<Trigger>? _triggers;
-/// Is the list of associated triggers (directly or indirectly) of the operation.
-@override List<Trigger>? get triggers {
-  final value = _triggers;
-  if (value == null) return null;
-  if (_triggers is EqualUnmodifiableListView) return _triggers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Trigger>? triggers;
 /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
 @override final  bool? useAssetContactsInstead;
 /// [attachImage] is a flag to attach the image of the submission to the email.
@@ -435,18 +384,7 @@ class _Operation extends Operation {
 /// [pushPlatforms] is the list of platforms where the operation should be received.
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.bhsPush]
- final  List<AppPlatform>? _pushPlatforms;
-/// [pushPlatforms] is the list of platforms where the operation should be received.
-/// This field will only be considered in the following [operationType]:
-/// - [OperationType.bhsPush]
-@override@JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? get pushPlatforms {
-  final value = _pushPlatforms;
-  if (value == null) return null;
-  if (_pushPlatforms is EqualUnmodifiableListView) return _pushPlatforms;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey(unknownEnumValue: AppPlatform.web) final  List<AppPlatform>? pushPlatforms;
 /// [pushTitle] is the title of the push notification.
 /// This field will only be considered in the following [operationType]:
 /// - [OperationType.bhsPush]
@@ -485,12 +423,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Operation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.requestType, requestType) || other.requestType == requestType)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other._headers, _headers)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.languageId, languageId) || other.languageId == languageId)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.timezoneName, timezoneName) || other.timezoneName == timezoneName)&&(identical(other.dateTimeFormat, dateTimeFormat) || other.dateTimeFormat == dateTimeFormat)&&const DeepCollectionEquality().equals(other._receptionEmails, _receptionEmails)&&(identical(other.emailSubject, emailSubject) || other.emailSubject == emailSubject)&&(identical(other.color, color) || other.color == color)&&(identical(other.textColor, textColor) || other.textColor == textColor)&&const DeepCollectionEquality().equals(other._destinationPhones, _destinationPhones)&&(identical(other.notificationType, notificationType) || other.notificationType == notificationType)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&const DeepCollectionEquality().equals(other._access, _access)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&(identical(other.useAssetContactsInstead, useAssetContactsInstead) || other.useAssetContactsInstead == useAssetContactsInstead)&&(identical(other.attachImage, attachImage) || other.attachImage == attachImage)&&(identical(other.emailTemplateId, emailTemplateId) || other.emailTemplateId == emailTemplateId)&&const DeepCollectionEquality().equals(other._pushPlatforms, _pushPlatforms)&&(identical(other.pushTitle, pushTitle) || other.pushTitle == pushTitle)&&(identical(other.soundEffect, soundEffect) || other.soundEffect == soundEffect)&&(identical(other.soundEffectUri, soundEffectUri) || other.soundEffectUri == soundEffectUri)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.layrzTemplate, layrzTemplate) || other.layrzTemplate == layrzTemplate)&&(identical(other.appId, appId) || other.appId == appId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Operation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.operationType, operationType) || other.operationType == operationType)&&(identical(other.requestType, requestType) || other.requestType == requestType)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other.headers, headers)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.languageId, languageId) || other.languageId == languageId)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&(identical(other.timezoneName, timezoneName) || other.timezoneName == timezoneName)&&(identical(other.dateTimeFormat, dateTimeFormat) || other.dateTimeFormat == dateTimeFormat)&&const DeepCollectionEquality().equals(other.receptionEmails, receptionEmails)&&(identical(other.emailSubject, emailSubject) || other.emailSubject == emailSubject)&&(identical(other.color, color) || other.color == color)&&(identical(other.textColor, textColor) || other.textColor == textColor)&&const DeepCollectionEquality().equals(other.destinationPhones, destinationPhones)&&(identical(other.notificationType, notificationType) || other.notificationType == notificationType)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&const DeepCollectionEquality().equals(other.access, access)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&(identical(other.useAssetContactsInstead, useAssetContactsInstead) || other.useAssetContactsInstead == useAssetContactsInstead)&&(identical(other.attachImage, attachImage) || other.attachImage == attachImage)&&(identical(other.emailTemplateId, emailTemplateId) || other.emailTemplateId == emailTemplateId)&&const DeepCollectionEquality().equals(other.pushPlatforms, pushPlatforms)&&(identical(other.pushTitle, pushTitle) || other.pushTitle == pushTitle)&&(identical(other.soundEffect, soundEffect) || other.soundEffect == soundEffect)&&(identical(other.soundEffectUri, soundEffectUri) || other.soundEffectUri == soundEffectUri)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.layrzTemplate, layrzTemplate) || other.layrzTemplate == layrzTemplate)&&(identical(other.appId, appId) || other.appId == appId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,operationType,requestType,url,const DeepCollectionEquality().hash(_headers),payload,languageId,timezone,timezoneName,dateTimeFormat,const DeepCollectionEquality().hash(_receptionEmails),emailSubject,color,textColor,const DeepCollectionEquality().hash(_destinationPhones),notificationType,externalAccountId,const DeepCollectionEquality().hash(_access),const DeepCollectionEquality().hash(_triggers),useAssetContactsInstead,attachImage,emailTemplateId,const DeepCollectionEquality().hash(_pushPlatforms),pushTitle,soundEffect,soundEffectUri,icon,duration,layrzTemplate,appId]);
+int get hashCode => Object.hashAll([runtimeType,id,name,operationType,requestType,url,const DeepCollectionEquality().hash(headers),payload,languageId,timezone,timezoneName,dateTimeFormat,const DeepCollectionEquality().hash(receptionEmails),emailSubject,color,textColor,const DeepCollectionEquality().hash(destinationPhones),notificationType,externalAccountId,const DeepCollectionEquality().hash(access),const DeepCollectionEquality().hash(triggers),useAssetContactsInstead,attachImage,emailTemplateId,const DeepCollectionEquality().hash(pushPlatforms),pushTitle,soundEffect,soundEffectUri,icon,duration,layrzTemplate,appId]);
 
 @override
 String toString() {
@@ -529,25 +467,25 @@ as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non
 as String,operationType: null == operationType ? _self.operationType : operationType // ignore: cast_nullable_to_non_nullable
 as OperationType,requestType: freezed == requestType ? _self.requestType : requestType // ignore: cast_nullable_to_non_nullable
 as HttpRequestType?,url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String?,headers: freezed == headers ? _self._headers : headers // ignore: cast_nullable_to_non_nullable
+as String?,headers: freezed == headers ? _self.headers : headers // ignore: cast_nullable_to_non_nullable
 as List<HttpHeader>?,payload: freezed == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as String?,languageId: freezed == languageId ? _self.languageId : languageId // ignore: cast_nullable_to_non_nullable
 as String?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
 as Timezone?,timezoneName: null == timezoneName ? _self.timezoneName : timezoneName // ignore: cast_nullable_to_non_nullable
 as String,dateTimeFormat: null == dateTimeFormat ? _self.dateTimeFormat : dateTimeFormat // ignore: cast_nullable_to_non_nullable
-as String,receptionEmails: freezed == receptionEmails ? _self._receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
+as String,receptionEmails: freezed == receptionEmails ? _self.receptionEmails : receptionEmails // ignore: cast_nullable_to_non_nullable
 as List<String>?,emailSubject: freezed == emailSubject ? _self.emailSubject : emailSubject // ignore: cast_nullable_to_non_nullable
 as String?,color: freezed == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
 as Color?,textColor: freezed == textColor ? _self.textColor : textColor // ignore: cast_nullable_to_non_nullable
-as Color?,destinationPhones: freezed == destinationPhones ? _self._destinationPhones : destinationPhones // ignore: cast_nullable_to_non_nullable
+as Color?,destinationPhones: freezed == destinationPhones ? _self.destinationPhones : destinationPhones // ignore: cast_nullable_to_non_nullable
 as List<PhoneNumber>?,notificationType: freezed == notificationType ? _self.notificationType : notificationType // ignore: cast_nullable_to_non_nullable
 as NotificationType?,externalAccountId: freezed == externalAccountId ? _self.externalAccountId : externalAccountId // ignore: cast_nullable_to_non_nullable
-as String?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,triggers: freezed == triggers ? _self._triggers : triggers // ignore: cast_nullable_to_non_nullable
+as String?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
+as List<Access>?,triggers: freezed == triggers ? _self.triggers : triggers // ignore: cast_nullable_to_non_nullable
 as List<Trigger>?,useAssetContactsInstead: freezed == useAssetContactsInstead ? _self.useAssetContactsInstead : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
 as bool?,attachImage: freezed == attachImage ? _self.attachImage : attachImage // ignore: cast_nullable_to_non_nullable
 as bool?,emailTemplateId: freezed == emailTemplateId ? _self.emailTemplateId : emailTemplateId // ignore: cast_nullable_to_non_nullable
-as String?,pushPlatforms: freezed == pushPlatforms ? _self._pushPlatforms : pushPlatforms // ignore: cast_nullable_to_non_nullable
+as String?,pushPlatforms: freezed == pushPlatforms ? _self.pushPlatforms : pushPlatforms // ignore: cast_nullable_to_non_nullable
 as List<AppPlatform>?,pushTitle: freezed == pushTitle ? _self.pushTitle : pushTitle // ignore: cast_nullable_to_non_nullable
 as String?,soundEffect: null == soundEffect ? _self.soundEffect : soundEffect // ignore: cast_nullable_to_non_nullable
 as SoundEffect,soundEffectUri: freezed == soundEffectUri ? _self.soundEffectUri : soundEffectUri // ignore: cast_nullable_to_non_nullable

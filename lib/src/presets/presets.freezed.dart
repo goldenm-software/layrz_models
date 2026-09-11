@@ -223,7 +223,7 @@ return $default(_that.id,_that.name,_that.validBefore,_that.isExpired,_that.trig
 @JsonSerializable()
 
 class _Preset implements Preset {
-  const _Preset({required this.id, required this.name, @TimestampOrNullConverter() this.validBefore, this.isExpired = true, final  List<Trigger>? triggers, final  List<String>? triggersIds, this.comment, final  List<Access>? access}): _triggers = triggers,_triggersIds = triggersIds,_access = access;
+  const _Preset({required this.id, required this.name, @TimestampOrNullConverter() this.validBefore, this.isExpired = true, this.triggers, this.triggersIds, this.comment, this.access});
   factory _Preset.fromJson(Map<String, dynamic> json) => _$PresetFromJson(json);
 
 /// Is the ID
@@ -235,38 +235,12 @@ class _Preset implements Preset {
 /// Indicates if the preset is expired or not
 @override@JsonKey() final  bool isExpired;
 /// Is the list or list of ID's of the associated triggers
- final  List<Trigger>? _triggers;
-/// Is the list or list of ID's of the associated triggers
-@override List<Trigger>? get triggers {
-  final value = _triggers;
-  if (value == null) return null;
-  if (_triggers is EqualUnmodifiableListView) return _triggers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
- final  List<String>? _triggersIds;
-@override List<String>? get triggersIds {
-  final value = _triggersIds;
-  if (value == null) return null;
-  if (_triggersIds is EqualUnmodifiableListView) return _triggersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Trigger>? triggers;
+@override final  List<String>? triggersIds;
 /// Is the comment to place on the case when the preset is applied
 @override final  String? comment;
 /// Is the list of granted access
- final  List<Access>? _access;
-/// Is the list of granted access
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 
 /// Create a copy of Preset
 /// with the given fields replaced by the non-null parameter values.
@@ -281,12 +255,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Preset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.validBefore, validBefore) || other.validBefore == validBefore)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other._access, _access));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Preset&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.validBefore, validBefore) || other.validBefore == validBefore)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other.access, access));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,validBefore,isExpired,const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),comment,const DeepCollectionEquality().hash(_access));
+int get hashCode => Object.hash(runtimeType,id,name,validBefore,isExpired,const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),comment,const DeepCollectionEquality().hash(access));
 
 @override
 String toString() {
@@ -324,10 +298,10 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,validBefore: freezed == validBefore ? _self.validBefore : validBefore // ignore: cast_nullable_to_non_nullable
 as DateTime?,isExpired: null == isExpired ? _self.isExpired : isExpired // ignore: cast_nullable_to_non_nullable
-as bool,triggers: freezed == triggers ? _self._triggers : triggers // ignore: cast_nullable_to_non_nullable
-as List<Trigger>?,triggersIds: freezed == triggersIds ? _self._triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
+as bool,triggers: freezed == triggers ? _self.triggers : triggers // ignore: cast_nullable_to_non_nullable
+as List<Trigger>?,triggersIds: freezed == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,comment: freezed == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
-as String?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as String?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,
   ));
 }

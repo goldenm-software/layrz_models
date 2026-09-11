@@ -329,7 +329,7 @@ return $default(_that.id,_that.name,_that.color,_that.isEnabled,_that.operationM
 @JsonSerializable()
 
 class _InboundProtocol extends InboundProtocol {
-  const _InboundProtocol({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, @JsonKey(unknownEnumValue: OperationMode.unknown) required this.operationMode, this.host, this.port, this.mqttTopic, this.hasNativeCommands, this.hasSmsCommands, this.hasCommandsResult, this.isFlespi, this.channelId, this.flespiId, final  List<CredentialField>? requiredFields, this.isImported, final  List<String>? categoriesIds, this.canFota, final  List<Model>? models, this.hasAck, this.ackTopicFormat, this.dynamicIcon, this.cycleId, this.cycle, this.hasModbus, final  List<String> modbusPorts = const [], this.usage, this.requiresFlespiToken, final  List<FlespiAcl>? flespiAcl, this.webhookStructure, this.requiresExternalAccount = false, this.requiresStructure = false, final  List<CommandDefinition> commandsStructure = const [], final  List<ConfigGrouping> configStructure = const [], this.confiotCapable = false, this.peripheralIdentifier, final  Map<String, dynamic>? peripheralParserSpec}): _requiredFields = requiredFields,_categoriesIds = categoriesIds,_models = models,_modbusPorts = modbusPorts,_flespiAcl = flespiAcl,_commandsStructure = commandsStructure,_configStructure = configStructure,_peripheralParserSpec = peripheralParserSpec,super._();
+  const _InboundProtocol({required this.id, required this.name, @ColorConverter() required this.color, required this.isEnabled, @JsonKey(unknownEnumValue: OperationMode.unknown) required this.operationMode, this.host, this.port, this.mqttTopic, this.hasNativeCommands, this.hasSmsCommands, this.hasCommandsResult, this.isFlespi, this.channelId, this.flespiId, this.requiredFields, this.isImported, this.categoriesIds, this.canFota, this.models, this.hasAck, this.ackTopicFormat, this.dynamicIcon, this.cycleId, this.cycle, this.hasModbus, this.modbusPorts = const [], this.usage, this.requiresFlespiToken, this.flespiAcl, this.webhookStructure, this.requiresExternalAccount = false, this.requiresStructure = false, this.commandsStructure = const [], this.configStructure = const [], this.confiotCapable = false, this.peripheralIdentifier, this.peripheralParserSpec}): super._();
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
 
 /// The protocol ID
@@ -367,42 +367,15 @@ class _InboundProtocol extends InboundProtocol {
 /// Indicates the ID of the protocol in Flespi.
 @override final  String? flespiId;
 /// Indicates the structure or required fields for the protocol use.
- final  List<CredentialField>? _requiredFields;
-/// Indicates the structure or required fields for the protocol use.
-@override List<CredentialField>? get requiredFields {
-  final value = _requiredFields;
-  if (value == null) return null;
-  if (_requiredFields is EqualUnmodifiableListView) return _requiredFields;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<CredentialField>? requiredFields;
 /// Indicates if the devices only can be created through import
 @override final  bool? isImported;
 /// Indicates the list of categories assigned to the protocol
- final  List<String>? _categoriesIds;
-/// Indicates the list of categories assigned to the protocol
-@override List<String>? get categoriesIds {
-  final value = _categoriesIds;
-  if (value == null) return null;
-  if (_categoriesIds is EqualUnmodifiableListView) return _categoriesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? categoriesIds;
 /// Indicates if the protocol has support for Firmware Over The Air (FOTA)
 @override final  bool? canFota;
 /// Indicates the list of models linked to the protocol
- final  List<Model>? _models;
-/// Indicates the list of models linked to the protocol
-@override List<Model>? get models {
-  final value = _models;
-  if (value == null) return null;
-  if (_models is EqualUnmodifiableListView) return _models;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Model>? models;
 /// Indicates if the protocol has support for ACK through the protocol itself.
 /// [hasAck] is the [bool] value that indicates if the protocol has support for ACK.
 /// and [ackTopicFormat] is the [String] value that indicates the format of the topic to send the ACK.
@@ -420,30 +393,14 @@ class _InboundProtocol extends InboundProtocol {
 /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
 @override final  bool? hasModbus;
 /// [modbusPorts] is the list of Modbus ports that the protocol has.
- final  List<String> _modbusPorts;
-/// [modbusPorts] is the list of Modbus ports that the protocol has.
-@override@JsonKey() List<String> get modbusPorts {
-  if (_modbusPorts is EqualUnmodifiableListView) return _modbusPorts;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_modbusPorts);
-}
-
+@override@JsonKey() final  List<String> modbusPorts;
 /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
 /// For marketing purposes.
 @override final  int? usage;
 /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
 @override final  bool? requiresFlespiToken;
 /// [flespiAcl] refers to the ACL for the token generation.
- final  List<FlespiAcl>? _flespiAcl;
-/// [flespiAcl] refers to the ACL for the token generation.
-@override List<FlespiAcl>? get flespiAcl {
-  final value = _flespiAcl;
-  if (value == null) return null;
-  if (_flespiAcl is EqualUnmodifiableListView) return _flespiAcl;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<FlespiAcl>? flespiAcl;
 /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
 @override final  WebhookStructure? webhookStructure;
 /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
@@ -451,38 +408,15 @@ class _InboundProtocol extends InboundProtocol {
 /// [requiresStructure] indicates if the protocol requires a structure to work.
 @override@JsonKey() final  bool requiresStructure;
 /// [commandsStructure] is the structure of the commands for the protocol.
- final  List<CommandDefinition> _commandsStructure;
-/// [commandsStructure] is the structure of the commands for the protocol.
-@override@JsonKey() List<CommandDefinition> get commandsStructure {
-  if (_commandsStructure is EqualUnmodifiableListView) return _commandsStructure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_commandsStructure);
-}
-
+@override@JsonKey() final  List<CommandDefinition> commandsStructure;
 /// [configStructure] is the structure of the configuration for the protocol.
- final  List<ConfigGrouping> _configStructure;
-/// [configStructure] is the structure of the configuration for the protocol.
-@override@JsonKey() List<ConfigGrouping> get configStructure {
-  if (_configStructure is EqualUnmodifiableListView) return _configStructure;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_configStructure);
-}
-
+@override@JsonKey() final  List<ConfigGrouping> configStructure;
 /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
 @override@JsonKey() final  bool confiotCapable;
 /// [peripheralIdentifier] is the identifier of the peripheral device.
 @override final  String? peripheralIdentifier;
 /// [peripheralParserSpec] is the parser specification for the peripheral device.
- final  Map<String, dynamic>? _peripheralParserSpec;
-/// [peripheralParserSpec] is the parser specification for the peripheral device.
-@override Map<String, dynamic>? get peripheralParserSpec {
-  final value = _peripheralParserSpec;
-  if (value == null) return null;
-  if (_peripheralParserSpec is EqualUnmodifiableMapView) return _peripheralParserSpec;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? peripheralParserSpec;
 
 /// Create a copy of InboundProtocol
 /// with the given fields replaced by the non-null parameter values.
@@ -497,12 +431,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboundProtocol&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&(identical(other.operationMode, operationMode) || other.operationMode == operationMode)&&(identical(other.host, host) || other.host == host)&&(identical(other.port, port) || other.port == port)&&(identical(other.mqttTopic, mqttTopic) || other.mqttTopic == mqttTopic)&&(identical(other.hasNativeCommands, hasNativeCommands) || other.hasNativeCommands == hasNativeCommands)&&(identical(other.hasSmsCommands, hasSmsCommands) || other.hasSmsCommands == hasSmsCommands)&&(identical(other.hasCommandsResult, hasCommandsResult) || other.hasCommandsResult == hasCommandsResult)&&(identical(other.isFlespi, isFlespi) || other.isFlespi == isFlespi)&&(identical(other.channelId, channelId) || other.channelId == channelId)&&(identical(other.flespiId, flespiId) || other.flespiId == flespiId)&&const DeepCollectionEquality().equals(other._requiredFields, _requiredFields)&&(identical(other.isImported, isImported) || other.isImported == isImported)&&const DeepCollectionEquality().equals(other._categoriesIds, _categoriesIds)&&(identical(other.canFota, canFota) || other.canFota == canFota)&&const DeepCollectionEquality().equals(other._models, _models)&&(identical(other.hasAck, hasAck) || other.hasAck == hasAck)&&(identical(other.ackTopicFormat, ackTopicFormat) || other.ackTopicFormat == ackTopicFormat)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.cycleId, cycleId) || other.cycleId == cycleId)&&(identical(other.cycle, cycle) || other.cycle == cycle)&&(identical(other.hasModbus, hasModbus) || other.hasModbus == hasModbus)&&const DeepCollectionEquality().equals(other._modbusPorts, _modbusPorts)&&(identical(other.usage, usage) || other.usage == usage)&&(identical(other.requiresFlespiToken, requiresFlespiToken) || other.requiresFlespiToken == requiresFlespiToken)&&const DeepCollectionEquality().equals(other._flespiAcl, _flespiAcl)&&(identical(other.webhookStructure, webhookStructure) || other.webhookStructure == webhookStructure)&&(identical(other.requiresExternalAccount, requiresExternalAccount) || other.requiresExternalAccount == requiresExternalAccount)&&(identical(other.requiresStructure, requiresStructure) || other.requiresStructure == requiresStructure)&&const DeepCollectionEquality().equals(other._commandsStructure, _commandsStructure)&&const DeepCollectionEquality().equals(other._configStructure, _configStructure)&&(identical(other.confiotCapable, confiotCapable) || other.confiotCapable == confiotCapable)&&(identical(other.peripheralIdentifier, peripheralIdentifier) || other.peripheralIdentifier == peripheralIdentifier)&&const DeepCollectionEquality().equals(other._peripheralParserSpec, _peripheralParserSpec));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboundProtocol&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.color, color) || other.color == color)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&(identical(other.operationMode, operationMode) || other.operationMode == operationMode)&&(identical(other.host, host) || other.host == host)&&(identical(other.port, port) || other.port == port)&&(identical(other.mqttTopic, mqttTopic) || other.mqttTopic == mqttTopic)&&(identical(other.hasNativeCommands, hasNativeCommands) || other.hasNativeCommands == hasNativeCommands)&&(identical(other.hasSmsCommands, hasSmsCommands) || other.hasSmsCommands == hasSmsCommands)&&(identical(other.hasCommandsResult, hasCommandsResult) || other.hasCommandsResult == hasCommandsResult)&&(identical(other.isFlespi, isFlespi) || other.isFlespi == isFlespi)&&(identical(other.channelId, channelId) || other.channelId == channelId)&&(identical(other.flespiId, flespiId) || other.flespiId == flespiId)&&const DeepCollectionEquality().equals(other.requiredFields, requiredFields)&&(identical(other.isImported, isImported) || other.isImported == isImported)&&const DeepCollectionEquality().equals(other.categoriesIds, categoriesIds)&&(identical(other.canFota, canFota) || other.canFota == canFota)&&const DeepCollectionEquality().equals(other.models, models)&&(identical(other.hasAck, hasAck) || other.hasAck == hasAck)&&(identical(other.ackTopicFormat, ackTopicFormat) || other.ackTopicFormat == ackTopicFormat)&&(identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon)&&(identical(other.cycleId, cycleId) || other.cycleId == cycleId)&&(identical(other.cycle, cycle) || other.cycle == cycle)&&(identical(other.hasModbus, hasModbus) || other.hasModbus == hasModbus)&&const DeepCollectionEquality().equals(other.modbusPorts, modbusPorts)&&(identical(other.usage, usage) || other.usage == usage)&&(identical(other.requiresFlespiToken, requiresFlespiToken) || other.requiresFlespiToken == requiresFlespiToken)&&const DeepCollectionEquality().equals(other.flespiAcl, flespiAcl)&&(identical(other.webhookStructure, webhookStructure) || other.webhookStructure == webhookStructure)&&(identical(other.requiresExternalAccount, requiresExternalAccount) || other.requiresExternalAccount == requiresExternalAccount)&&(identical(other.requiresStructure, requiresStructure) || other.requiresStructure == requiresStructure)&&const DeepCollectionEquality().equals(other.commandsStructure, commandsStructure)&&const DeepCollectionEquality().equals(other.configStructure, configStructure)&&(identical(other.confiotCapable, confiotCapable) || other.confiotCapable == confiotCapable)&&(identical(other.peripheralIdentifier, peripheralIdentifier) || other.peripheralIdentifier == peripheralIdentifier)&&const DeepCollectionEquality().equals(other.peripheralParserSpec, peripheralParserSpec));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,color,isEnabled,operationMode,host,port,mqttTopic,hasNativeCommands,hasSmsCommands,hasCommandsResult,isFlespi,channelId,flespiId,const DeepCollectionEquality().hash(_requiredFields),isImported,const DeepCollectionEquality().hash(_categoriesIds),canFota,const DeepCollectionEquality().hash(_models),hasAck,ackTopicFormat,dynamicIcon,cycleId,cycle,hasModbus,const DeepCollectionEquality().hash(_modbusPorts),usage,requiresFlespiToken,const DeepCollectionEquality().hash(_flespiAcl),webhookStructure,requiresExternalAccount,requiresStructure,const DeepCollectionEquality().hash(_commandsStructure),const DeepCollectionEquality().hash(_configStructure),confiotCapable,peripheralIdentifier,const DeepCollectionEquality().hash(_peripheralParserSpec)]);
+int get hashCode => Object.hashAll([runtimeType,id,name,color,isEnabled,operationMode,host,port,mqttTopic,hasNativeCommands,hasSmsCommands,hasCommandsResult,isFlespi,channelId,flespiId,const DeepCollectionEquality().hash(requiredFields),isImported,const DeepCollectionEquality().hash(categoriesIds),canFota,const DeepCollectionEquality().hash(models),hasAck,ackTopicFormat,dynamicIcon,cycleId,cycle,hasModbus,const DeepCollectionEquality().hash(modbusPorts),usage,requiresFlespiToken,const DeepCollectionEquality().hash(flespiAcl),webhookStructure,requiresExternalAccount,requiresStructure,const DeepCollectionEquality().hash(commandsStructure),const DeepCollectionEquality().hash(configStructure),confiotCapable,peripheralIdentifier,const DeepCollectionEquality().hash(peripheralParserSpec)]);
 
 @override
 String toString() {
@@ -550,29 +484,29 @@ as bool?,hasCommandsResult: freezed == hasCommandsResult ? _self.hasCommandsResu
 as bool?,isFlespi: freezed == isFlespi ? _self.isFlespi : isFlespi // ignore: cast_nullable_to_non_nullable
 as bool?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
 as int?,flespiId: freezed == flespiId ? _self.flespiId : flespiId // ignore: cast_nullable_to_non_nullable
-as String?,requiredFields: freezed == requiredFields ? _self._requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
+as String?,requiredFields: freezed == requiredFields ? _self.requiredFields : requiredFields // ignore: cast_nullable_to_non_nullable
 as List<CredentialField>?,isImported: freezed == isImported ? _self.isImported : isImported // ignore: cast_nullable_to_non_nullable
-as bool?,categoriesIds: freezed == categoriesIds ? _self._categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
+as bool?,categoriesIds: freezed == categoriesIds ? _self.categoriesIds : categoriesIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,canFota: freezed == canFota ? _self.canFota : canFota // ignore: cast_nullable_to_non_nullable
-as bool?,models: freezed == models ? _self._models : models // ignore: cast_nullable_to_non_nullable
+as bool?,models: freezed == models ? _self.models : models // ignore: cast_nullable_to_non_nullable
 as List<Model>?,hasAck: freezed == hasAck ? _self.hasAck : hasAck // ignore: cast_nullable_to_non_nullable
 as bool?,ackTopicFormat: freezed == ackTopicFormat ? _self.ackTopicFormat : ackTopicFormat // ignore: cast_nullable_to_non_nullable
 as String?,dynamicIcon: freezed == dynamicIcon ? _self.dynamicIcon : dynamicIcon // ignore: cast_nullable_to_non_nullable
 as Avatar?,cycleId: freezed == cycleId ? _self.cycleId : cycleId // ignore: cast_nullable_to_non_nullable
 as String?,cycle: freezed == cycle ? _self.cycle : cycle // ignore: cast_nullable_to_non_nullable
 as SimulationCycle?,hasModbus: freezed == hasModbus ? _self.hasModbus : hasModbus // ignore: cast_nullable_to_non_nullable
-as bool?,modbusPorts: null == modbusPorts ? _self._modbusPorts : modbusPorts // ignore: cast_nullable_to_non_nullable
+as bool?,modbusPorts: null == modbusPorts ? _self.modbusPorts : modbusPorts // ignore: cast_nullable_to_non_nullable
 as List<String>,usage: freezed == usage ? _self.usage : usage // ignore: cast_nullable_to_non_nullable
 as int?,requiresFlespiToken: freezed == requiresFlespiToken ? _self.requiresFlespiToken : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
-as bool?,flespiAcl: freezed == flespiAcl ? _self._flespiAcl : flespiAcl // ignore: cast_nullable_to_non_nullable
+as bool?,flespiAcl: freezed == flespiAcl ? _self.flespiAcl : flespiAcl // ignore: cast_nullable_to_non_nullable
 as List<FlespiAcl>?,webhookStructure: freezed == webhookStructure ? _self.webhookStructure : webhookStructure // ignore: cast_nullable_to_non_nullable
 as WebhookStructure?,requiresExternalAccount: null == requiresExternalAccount ? _self.requiresExternalAccount : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
 as bool,requiresStructure: null == requiresStructure ? _self.requiresStructure : requiresStructure // ignore: cast_nullable_to_non_nullable
-as bool,commandsStructure: null == commandsStructure ? _self._commandsStructure : commandsStructure // ignore: cast_nullable_to_non_nullable
-as List<CommandDefinition>,configStructure: null == configStructure ? _self._configStructure : configStructure // ignore: cast_nullable_to_non_nullable
+as bool,commandsStructure: null == commandsStructure ? _self.commandsStructure : commandsStructure // ignore: cast_nullable_to_non_nullable
+as List<CommandDefinition>,configStructure: null == configStructure ? _self.configStructure : configStructure // ignore: cast_nullable_to_non_nullable
 as List<ConfigGrouping>,confiotCapable: null == confiotCapable ? _self.confiotCapable : confiotCapable // ignore: cast_nullable_to_non_nullable
 as bool,peripheralIdentifier: freezed == peripheralIdentifier ? _self.peripheralIdentifier : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
-as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self._peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+as String?,peripheralParserSpec: freezed == peripheralParserSpec ? _self.peripheralParserSpec : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -873,7 +807,7 @@ return $default(_that.id,_that.name,_that.credentials,_that.externalAccountId,_t
 @JsonSerializable()
 
 class _InboundService implements InboundService {
-  const _InboundService({required this.id, required this.name, @DynamicMapConverterNullable() final  Map<String, dynamic>? credentials, this.externalAccountId, @DurationOrNullConverter() this.updateTime, this.protocol, this.protocolId, this.isEnabled, this.token, this.structure, final  List<Access>? access, this.webhookStructure}): _credentials = credentials,_access = access;
+  const _InboundService({required this.id, required this.name, @DynamicMapConverterNullable() this.credentials, this.externalAccountId, @DurationOrNullConverter() this.updateTime, this.protocol, this.protocolId, this.isEnabled, this.token, this.structure, this.access, this.webhookStructure});
   factory _InboundService.fromJson(Map<String, dynamic> json) => _$InboundServiceFromJson(json);
 
 /// IS the ID of the entity. This ID is unique.
@@ -881,16 +815,7 @@ class _InboundService implements InboundService {
 /// Is the Assigned service name, cannot be translated for other languages.
 @override final  String name;
 /// Is the Credential object, check the documentation for more information.
- final  Map<String, dynamic>? _credentials;
-/// Is the Credential object, check the documentation for more information.
-@override@DynamicMapConverterNullable() Map<String, dynamic>? get credentials {
-  final value = _credentials;
-  if (value == null) return null;
-  if (_credentials is EqualUnmodifiableMapView) return _credentials;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override@DynamicMapConverterNullable() final  Map<String, dynamic>? credentials;
 /// Is the ID of the External Account.
 @override final  String? externalAccountId;
 /// Is the update time of the service.
@@ -906,16 +831,7 @@ class _InboundService implements InboundService {
 /// Is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
 @override final  InboundStructure? structure;
 /// A list of custom access permissions.
- final  List<Access>? _access;
-/// A list of custom access permissions.
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Access>? access;
 /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
 @override final  WebhookStructure? webhookStructure;
 
@@ -932,12 +848,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboundService&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._credentials, _credentials)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&(identical(other.updateTime, updateTime) || other.updateTime == updateTime)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&(identical(other.token, token) || other.token == token)&&(identical(other.structure, structure) || other.structure == structure)&&const DeepCollectionEquality().equals(other._access, _access)&&(identical(other.webhookStructure, webhookStructure) || other.webhookStructure == webhookStructure));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboundService&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.credentials, credentials)&&(identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId)&&(identical(other.updateTime, updateTime) || other.updateTime == updateTime)&&(identical(other.protocol, protocol) || other.protocol == protocol)&&(identical(other.protocolId, protocolId) || other.protocolId == protocolId)&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&(identical(other.token, token) || other.token == token)&&(identical(other.structure, structure) || other.structure == structure)&&const DeepCollectionEquality().equals(other.access, access)&&(identical(other.webhookStructure, webhookStructure) || other.webhookStructure == webhookStructure));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_credentials),externalAccountId,updateTime,protocol,protocolId,isEnabled,token,structure,const DeepCollectionEquality().hash(_access),webhookStructure);
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(credentials),externalAccountId,updateTime,protocol,protocolId,isEnabled,token,structure,const DeepCollectionEquality().hash(access),webhookStructure);
 
 @override
 String toString() {
@@ -973,7 +889,7 @@ class __$InboundServiceCopyWithImpl<$Res>
   return _then(_InboundService(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,credentials: freezed == credentials ? _self._credentials : credentials // ignore: cast_nullable_to_non_nullable
+as String,credentials: freezed == credentials ? _self.credentials : credentials // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,externalAccountId: freezed == externalAccountId ? _self.externalAccountId : externalAccountId // ignore: cast_nullable_to_non_nullable
 as String?,updateTime: freezed == updateTime ? _self.updateTime : updateTime // ignore: cast_nullable_to_non_nullable
 as Duration?,protocol: freezed == protocol ? _self.protocol : protocol // ignore: cast_nullable_to_non_nullable
@@ -981,7 +897,7 @@ as InboundProtocol?,protocolId: freezed == protocolId ? _self.protocolId : proto
 as String?,isEnabled: freezed == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
 as bool?,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
 as String?,structure: freezed == structure ? _self.structure : structure // ignore: cast_nullable_to_non_nullable
-as InboundStructure?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
+as InboundStructure?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
 as List<Access>?,webhookStructure: freezed == webhookStructure ? _self.webhookStructure : webhookStructure // ignore: cast_nullable_to_non_nullable
 as WebhookStructure?,
   ));
@@ -2036,7 +1952,7 @@ return $default(_that.name,_that.kind,_that.description,_that.setupCapable,_that
 @JsonSerializable()
 
 class _ConfigGrouping implements ConfigGrouping {
-  const _ConfigGrouping({required this.name, @JsonKey(unknownEnumValue: ConfigKind.unknown) required this.kind, this.description, this.setupCapable, final  List<ConfigDefinition> items = const []}): _items = items;
+  const _ConfigGrouping({required this.name, @JsonKey(unknownEnumValue: ConfigKind.unknown) required this.kind, this.description, this.setupCapable, this.items = const []});
   factory _ConfigGrouping.fromJson(Map<String, dynamic> json) => _$ConfigGroupingFromJson(json);
 
 /// [name] is the name of the grouping.
@@ -2050,14 +1966,7 @@ class _ConfigGrouping implements ConfigGrouping {
 /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
 @override final  bool? setupCapable;
 /// [items] is the list of items of the grouping.
- final  List<ConfigDefinition> _items;
-/// [items] is the list of items of the grouping.
-@override@JsonKey() List<ConfigDefinition> get items {
-  if (_items is EqualUnmodifiableListView) return _items;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_items);
-}
-
+@override@JsonKey() final  List<ConfigDefinition> items;
 
 /// Create a copy of ConfigGrouping
 /// with the given fields replaced by the non-null parameter values.
@@ -2072,12 +1981,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConfigGrouping&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.description, description) || other.description == description)&&(identical(other.setupCapable, setupCapable) || other.setupCapable == setupCapable)&&const DeepCollectionEquality().equals(other._items, _items));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConfigGrouping&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.description, description) || other.description == description)&&(identical(other.setupCapable, setupCapable) || other.setupCapable == setupCapable)&&const DeepCollectionEquality().equals(other.items, items));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,kind,description,setupCapable,const DeepCollectionEquality().hash(_items));
+int get hashCode => Object.hash(runtimeType,name,kind,description,setupCapable,const DeepCollectionEquality().hash(items));
 
 @override
 String toString() {
@@ -2115,7 +2024,7 @@ name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as ConfigKind,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,setupCapable: freezed == setupCapable ? _self.setupCapable : setupCapable // ignore: cast_nullable_to_non_nullable
-as bool?,items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as bool?,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
 as List<ConfigDefinition>,
   ));
 }
@@ -2629,20 +2538,11 @@ return $default(_that.sources,_that.parameter,_that.description,_that.dataType,_
 @JsonSerializable()
 
 class _ConfigDefinition implements ConfigDefinition {
-  const _ConfigDefinition({@JsonKey(unknownEnumValue: ConfigSource.unknown) final  List<ConfigSource>? sources, required this.parameter, this.description, @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown) this.dataType, this.minValue, this.maxValue, this.minLength, this.maxLength, final  List<String>? choices, @RegExpOrNullConverter() this.regexPattern, this.setupCapable}): _sources = sources,_choices = choices;
+  const _ConfigDefinition({@JsonKey(unknownEnumValue: ConfigSource.unknown) this.sources, required this.parameter, this.description, @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown) this.dataType, this.minValue, this.maxValue, this.minLength, this.maxLength, this.choices, @RegExpOrNullConverter() this.regexPattern, this.setupCapable});
   factory _ConfigDefinition.fromJson(Map<String, dynamic> json) => _$ConfigDefinitionFromJson(json);
 
 /// [sources] is the list of sources that the command can be executed.
- final  List<ConfigSource>? _sources;
-/// [sources] is the list of sources that the command can be executed.
-@override@JsonKey(unknownEnumValue: ConfigSource.unknown) List<ConfigSource>? get sources {
-  final value = _sources;
-  if (value == null) return null;
-  if (_sources is EqualUnmodifiableListView) return _sources;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey(unknownEnumValue: ConfigSource.unknown) final  List<ConfigSource>? sources;
 /// [parameter] is the name of the parameter, this is also the translation key.
 @override final  String parameter;
 /// [description] is the fallback name of the parameter, when the translation is not available.
@@ -2663,17 +2563,7 @@ class _ConfigDefinition implements ConfigDefinition {
 @override final  int? maxLength;
 /// [choices] is the list of choices of the parameter.
 /// Only for [ConfigPayloadDataType.choice]
- final  List<String>? _choices;
-/// [choices] is the list of choices of the parameter.
-/// Only for [ConfigPayloadDataType.choice]
-@override List<String>? get choices {
-  final value = _choices;
-  if (value == null) return null;
-  if (_choices is EqualUnmodifiableListView) return _choices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? choices;
 /// [regexPattern] is the regex pattern of the parameter.
 @override@RegExpOrNullConverter() final  RegExp? regexPattern;
 /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
@@ -2692,12 +2582,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConfigDefinition&&const DeepCollectionEquality().equals(other._sources, _sources)&&(identical(other.parameter, parameter) || other.parameter == parameter)&&(identical(other.description, description) || other.description == description)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.minLength, minLength) || other.minLength == minLength)&&(identical(other.maxLength, maxLength) || other.maxLength == maxLength)&&const DeepCollectionEquality().equals(other._choices, _choices)&&(identical(other.regexPattern, regexPattern) || other.regexPattern == regexPattern)&&(identical(other.setupCapable, setupCapable) || other.setupCapable == setupCapable));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConfigDefinition&&const DeepCollectionEquality().equals(other.sources, sources)&&(identical(other.parameter, parameter) || other.parameter == parameter)&&(identical(other.description, description) || other.description == description)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.minLength, minLength) || other.minLength == minLength)&&(identical(other.maxLength, maxLength) || other.maxLength == maxLength)&&const DeepCollectionEquality().equals(other.choices, choices)&&(identical(other.regexPattern, regexPattern) || other.regexPattern == regexPattern)&&(identical(other.setupCapable, setupCapable) || other.setupCapable == setupCapable));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_sources),parameter,description,dataType,minValue,maxValue,minLength,maxLength,const DeepCollectionEquality().hash(_choices),regexPattern,setupCapable);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(sources),parameter,description,dataType,minValue,maxValue,minLength,maxLength,const DeepCollectionEquality().hash(choices),regexPattern,setupCapable);
 
 @override
 String toString() {
@@ -2731,7 +2621,7 @@ class __$ConfigDefinitionCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? sources = freezed,Object? parameter = null,Object? description = freezed,Object? dataType = freezed,Object? minValue = freezed,Object? maxValue = freezed,Object? minLength = freezed,Object? maxLength = freezed,Object? choices = freezed,Object? regexPattern = freezed,Object? setupCapable = freezed,}) {
   return _then(_ConfigDefinition(
-sources: freezed == sources ? _self._sources : sources // ignore: cast_nullable_to_non_nullable
+sources: freezed == sources ? _self.sources : sources // ignore: cast_nullable_to_non_nullable
 as List<ConfigSource>?,parameter: null == parameter ? _self.parameter : parameter // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,dataType: freezed == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
@@ -2739,7 +2629,7 @@ as ConfigPayloadDataType?,minValue: freezed == minValue ? _self.minValue : minVa
 as num?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
 as num?,minLength: freezed == minLength ? _self.minLength : minLength // ignore: cast_nullable_to_non_nullable
 as int?,maxLength: freezed == maxLength ? _self.maxLength : maxLength // ignore: cast_nullable_to_non_nullable
-as int?,choices: freezed == choices ? _self._choices : choices // ignore: cast_nullable_to_non_nullable
+as int?,choices: freezed == choices ? _self.choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>?,regexPattern: freezed == regexPattern ? _self.regexPattern : regexPattern // ignore: cast_nullable_to_non_nullable
 as RegExp?,setupCapable: freezed == setupCapable ? _self.setupCapable : setupCapable // ignore: cast_nullable_to_non_nullable
 as bool?,
