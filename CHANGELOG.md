@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.34.0-dev.1
+
+- Moved `Category`, `CategoryKind`, and `AssetKind` to `layrz_sdk`; they are re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility.
+- Deprecated `CategoryKindConverter`, `AssetKindOrNullConverter`, and `AssetKindConverter`; kept as compatibility shims delegating to the SDK enums.
+- Bumped `layrz_sdk` to `^4.4.7-dev.1`.
+
 ## 3.33.7
 
 - Removed `id` from `editApp` mutation
