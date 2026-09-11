@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.34.0
+
+- Moved `Category`, `CategoryKind`, and `AssetKind` to `layrz_sdk`; they are re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility.
+- Deprecated `CategoryKindConverter`, `AssetKindOrNullConverter`, and `AssetKindConverter`; kept as compatibility shims delegating to the SDK enums.
+- Moved `RealtimeMessage` to `layrz_sdk`; re-exported for backwards compatibility.
+- Bumped `layrz_sdk` to `^4.4.7`.
+
+## 3.33.7
+
+- Removed `id` from `editApp` mutation
+- This version was released manually
+
 ## 3.33.6
 
 - Added `bindConflict` (`String?`) on `ZigbeeDevice`. Exposes why the ingestion worker refused to auto-bind the device: `null`/`'none'`, or `'foreign_account'` when its ident already belongs to a platform device under an inaccessible account.

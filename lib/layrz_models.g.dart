@@ -312,22 +312,6 @@ const _$CaseIgnoredStatusEnumMap = {
   CaseIgnoredStatus.auto: 'AUTO',
 };
 
-_Category _$CategoryFromJson(Map<String, dynamic> json) => _Category(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  kind: const CategoryKindConverter().fromJson(json['kind'] as String),
-  assetKind: const AssetKindOrNullConverter().fromJson(
-    json['assetKind'] as String?,
-  ),
-);
-
-Map<String, dynamic> _$CategoryToJson(_Category instance) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'kind': const CategoryKindConverter().toJson(instance.kind),
-  'assetKind': const AssetKindOrNullConverter().toJson(instance.assetKind),
-};
-
 _Checkpoint _$CheckpointFromJson(Map<String, dynamic> json) => _Checkpoint(
   id: json['id'] as String,
   name: json['name'] as String,

@@ -26,9 +26,6 @@ export 'src/brickhouse/brickhouse.dart';
 // import 'src/builder/builder.dart';
 export 'src/builder/builder.dart';
 
-// import 'src/realtime/realtime.dart';
-export 'src/realtime/realtime.dart';
-
 import 'src/care_protocols/care_protocols.dart';
 export 'src/care_protocols/care_protocols.dart';
 
@@ -151,6 +148,11 @@ export 'src/flespi/flespi.dart';
 // Re-export types ported to layrz_sdk (hide TimeOfDay to avoid ambiguity with Flutter's)
 export 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
 
+// Category and RealtimeMessage moved to layrz_sdk; re-exported here so
+// existing consumers of package:layrz_models keep resolving these symbols
+// without changes.
+export 'package:layrz_sdk/layrz_sdk.dart' show Category, CategoryKind, AssetKind, RealtimeMessage;
+
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
 
@@ -159,7 +161,7 @@ part 'src/accessibility/shortcut.dart';
 part 'src/algorithm.dart';
 part 'src/billing_plan.dart';
 part 'src/case.dart';
-part 'src/category.dart';
+part 'src/category_converters.dart';
 part 'src/checkpoint.dart';
 part 'src/cloud_entry.dart';
 part 'src/custom_field.dart';

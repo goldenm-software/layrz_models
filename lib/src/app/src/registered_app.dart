@@ -623,7 +623,6 @@ abstract class RegisteredApp with _$RegisteredApp {
       final response = await connector.mutate(
         GqlMutation(
           variables: [
-            GqlVariable(name: 'id', type: .id, isRequired: true, value: id),
             GqlVariable(
               name: 'data',
               type: GqlVariableType.input(of: 'AppInput'),
@@ -633,7 +632,7 @@ abstract class RegisteredApp with _$RegisteredApp {
           ],
           name: 'editApp',
         )..add(
-          GqlField(name: 'editApp', args: {'id': 'id', 'data': 'data'})
+          GqlField(name: 'editApp', args: {'data': 'data'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'result', fragment: fragment)),
         ),
