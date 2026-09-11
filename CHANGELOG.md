@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.34.1
+
+- Fixed freezed code generation to emit valid collection constructor parameters (disabled make_collections_unmodifiable), so generated code compiles under a real build.
+- Bumped `layrz_sdk` to `^4.4.8`.
+
 ## 3.34.0
 
 - Moved `Category`, `CategoryKind`, and `AssetKind` to `layrz_sdk`; they are re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility.
