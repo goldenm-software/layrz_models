@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.34.0-dev.2
+
+- Moved `RealtimeMessage` to `layrz_sdk`; re-exported for backwards compatibility.
+- Bumped `layrz_sdk` to `^4.4.7-dev.2`.
+
 ## 3.34.0-dev.1
 
 - Moved `Category`, `CategoryKind`, and `AssetKind` to `layrz_sdk`; they are re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility.
