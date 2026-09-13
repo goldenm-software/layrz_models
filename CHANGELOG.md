@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.34.2
+## 3.34.0+1
 
 - Moved `Model`, `HwModel`, `HwModelInput`, `ConfIoTLayout`, `RenderWidget`, `FirmwareBuild`, and `FirmwareBranch` to `layrz_sdk`; re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility.
 - Moved `CommandDefinition`, `CommandPayloadDefinition`, `CommandDefinitionSource`, and `CommandPayloadDataType` to `layrz_sdk`; re-exported for backwards compatibility.
