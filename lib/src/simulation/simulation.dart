@@ -1,13 +1,5 @@
+/// [SimulationCycle] moved to `package:layrz_sdk`. This library is kept as an
+/// empty pass-through so existing `import 'package:layrz_models/src/simulation/simulation.dart'`
+/// paths in downstream code keep resolving; the type itself is re-exported
+/// from the main `layrz_models.dart` barrel via the SDK.
 library;
-import 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
-
-import 'package:flutter/services.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:layrz_logging/layrz_logging.dart';
-
-// Freezed
-part 'simulation.freezed.dart';
-part 'simulation.g.dart';
-
-// Modules
-part 'src/cycle.dart';

@@ -151,15 +151,6 @@ _WebhookHeaderInput _$WebhookHeaderInputFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$WebhookHeaderInputToJson(_WebhookHeaderInput instance) =>
     <String, dynamic>{'name': instance.name, 'value': instance.value};
 
-_WebhookHeader _$WebhookHeaderFromJson(Map<String, dynamic> json) =>
-    _WebhookHeader(
-      name: json['name'] as String,
-      value: json['value'] as String,
-    );
-
-Map<String, dynamic> _$WebhookHeaderToJson(_WebhookHeader instance) =>
-    <String, dynamic>{'name': instance.name, 'value': instance.value};
-
 _WebhookPathInput _$WebhookPathInputFromJson(Map<String, dynamic> json) =>
     _WebhookPathInput(
       path: json['path'] as String? ?? '',
@@ -167,12 +158,6 @@ _WebhookPathInput _$WebhookPathInputFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$WebhookPathInputToJson(_WebhookPathInput instance) =>
-    <String, dynamic>{'path': instance.path, 'name': instance.name};
-
-_WebhookPath _$WebhookPathFromJson(Map<String, dynamic> json) =>
-    _WebhookPath(path: json['path'] as String, name: json['name'] as String);
-
-Map<String, dynamic> _$WebhookPathToJson(_WebhookPath instance) =>
     <String, dynamic>{'path': instance.path, 'name': instance.name};
 
 _WebhookStructureInput _$WebhookStructureInputFromJson(
@@ -199,39 +184,6 @@ _WebhookStructureInput _$WebhookStructureInputFromJson(
 
 Map<String, dynamic> _$WebhookStructureInputToJson(
   _WebhookStructureInput instance,
-) => <String, dynamic>{
-  'baseUrl': instance.baseUrl,
-  'paths': instance.paths.map((e) => e.toJson()).toList(),
-  'method': const WebhookMethodConverter().toJson(instance.method),
-  'contentType': const WebhookFormatConverter().toJson(instance.contentType),
-  'headers': instance.headers.map((e) => e.toJson()).toList(),
-};
-
-_WebhookStructure _$WebhookStructureFromJson(Map<String, dynamic> json) =>
-    _WebhookStructure(
-      baseUrl: json['baseUrl'] as String,
-      paths:
-          (json['paths'] as List<dynamic>?)
-              ?.map((e) => WebhookPath.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-      method: json['method'] == null
-          ? WebhookMethod.post
-          : const WebhookMethodConverter().fromJson(json['method'] as String),
-      contentType: json['contentType'] == null
-          ? WebhookFormat.json
-          : const WebhookFormatConverter().fromJson(
-              json['contentType'] as String,
-            ),
-      headers:
-          (json['headers'] as List<dynamic>?)
-              ?.map((e) => WebhookHeader.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-    );
-
-Map<String, dynamic> _$WebhookStructureToJson(
-  _WebhookStructure instance,
 ) => <String, dynamic>{
   'baseUrl': instance.baseUrl,
   'paths': instance.paths.map((e) => e.toJson()).toList(),
@@ -273,35 +225,6 @@ Map<String, dynamic> _$FlespiAclInputToJson(_FlespiAclInput instance) =>
       'submodules': instance.submodules?.map((e) => e.toJson()).toList(),
     };
 
-_FlespiAcl _$FlespiAclFromJson(Map<String, dynamic> json) => _FlespiAcl(
-  uri: const FlespiUriConverter().fromJson(json['uri'] as String),
-  topic: json['topic'] as String?,
-  actions: (json['actions'] as List<dynamic>?)
-      ?.map((e) => const FlespiActionConverter().fromJson(e as String))
-      .toList(),
-  methods: (json['methods'] as List<dynamic>?)
-      ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
-      .toList(),
-  ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  submodules: (json['submodules'] as List<dynamic>?)
-      ?.map((e) => FlespiSubmoduleConfig.fromJson(e as Map<String, dynamic>))
-      .toList(),
-);
-
-Map<String, dynamic> _$FlespiAclToJson(_FlespiAcl instance) =>
-    <String, dynamic>{
-      'uri': const FlespiUriConverter().toJson(instance.uri),
-      'topic': instance.topic,
-      'actions': instance.actions
-          ?.map(const FlespiActionConverter().toJson)
-          .toList(),
-      'methods': instance.methods
-          ?.map(const FlespiMethodConverter().toJson)
-          .toList(),
-      'ids': instance.ids,
-      'submodules': instance.submodules?.map((e) => e.toJson()).toList(),
-    };
-
 _FlespiSubmoduleConfigInput _$FlespiSubmoduleConfigInputFromJson(
   Map<String, dynamic> json,
 ) => _FlespiSubmoduleConfigInput(
@@ -315,26 +238,6 @@ _FlespiSubmoduleConfigInput _$FlespiSubmoduleConfigInputFromJson(
 
 Map<String, dynamic> _$FlespiSubmoduleConfigInputToJson(
   _FlespiSubmoduleConfigInput instance,
-) => <String, dynamic>{
-  'name': const FlespiSubmoduleConverter().toJson(instance.name),
-  'methods': instance.methods
-      .map(const FlespiMethodConverter().toJson)
-      .toList(),
-};
-
-_FlespiSubmoduleConfig _$FlespiSubmoduleConfigFromJson(
-  Map<String, dynamic> json,
-) => _FlespiSubmoduleConfig(
-  name: const FlespiSubmoduleConverter().fromJson(json['name'] as String),
-  methods:
-      (json['methods'] as List<dynamic>?)
-          ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
-          .toList() ??
-      const [],
-);
-
-Map<String, dynamic> _$FlespiSubmoduleConfigToJson(
-  _FlespiSubmoduleConfig instance,
 ) => <String, dynamic>{
   'name': const FlespiSubmoduleConverter().toJson(instance.name),
   'methods': instance.methods
