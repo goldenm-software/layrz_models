@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.34.2
+
+- Moved `Model`, `HwModel`, `HwModelInput`, `ConfIoTLayout`, `RenderWidget`, `FirmwareBuild`, and `FirmwareBranch` to `layrz_sdk`; re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility.
+- Moved `CommandDefinition`, `CommandPayloadDefinition`, `CommandDefinitionSource`, and `CommandPayloadDataType` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `InboundProtocol`, `ConfigGrouping`, `ConfigDefinition`, `ConfigPayloadDataType`, `ConfigSource`, `ConfigKind`, `OperationMode`, and `ZigbeeDataType` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `CredentialField`, `CredentialFieldType`, and `CredentialFieldAction` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `FlespiAcl`, `FlespiSubmoduleConfig`, `FlespiUri`, `FlespiAction`, `FlespiMethod`, and `FlespiSubmodule` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `WebhookStructure`, `WebhookPath`, `WebhookHeader`, `WebhookMethod`, and `WebhookFormat` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `SimulationCycle` to `layrz_sdk`; re-exported for backwards compatibility.
+- Bumped `layrz_sdk` to `^4.4.9-dev.1`.
+
 ## 3.34.1
 
 - Fixed freezed code generation to emit valid collection constructor parameters (disabled make_collections_unmodifiable), so generated code compiles under a real build.
