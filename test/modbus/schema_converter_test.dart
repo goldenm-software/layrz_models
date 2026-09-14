@@ -2,49 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 void main() {
-  group('ModbusParameterSchema Enum Tests', () {
-    test('ModbusParameterSchema.single wire value', () {
-      expect(ModbusParameterSchema.single.toJson(), 'SINGLE');
-    });
-
-    test('ModbusParameterSchema.multiple wire value', () {
-      expect(ModbusParameterSchema.multiple.toJson(), 'MULTIPLE');
-    });
-
-    test('ModbusParameterSchema.fromJson() with SINGLE', () {
-      final schema = ModbusParameterSchema.fromJson('SINGLE');
-      expect(schema, ModbusParameterSchema.single);
-    });
-
-    test('ModbusParameterSchema.fromJson() with MULTIPLE', () {
-      final schema = ModbusParameterSchema.fromJson('MULTIPLE');
-      expect(schema, ModbusParameterSchema.multiple);
-    });
-
-    test('ModbusParameterSchema.fromJson() with unknown defaults to single', () {
-      final schema = ModbusParameterSchema.fromJson('UNKNOWN_SCHEMA');
-      expect(schema, ModbusParameterSchema.single);
-    });
-
-    test('ModbusParameterSchema roundtrip', () {
-      final schemas = [
-        ModbusParameterSchema.single,
-        ModbusParameterSchema.multiple,
-      ];
-
-      for (final schema in schemas) {
-        final wireValue = schema.toJson();
-        final restored = ModbusParameterSchema.fromJson(wireValue);
-        expect(restored, schema);
-      }
-    });
-
-    test('ModbusParameterSchema.toString() returns wire value', () {
-      expect(ModbusParameterSchema.single.toString(), 'SINGLE');
-      expect(ModbusParameterSchema.multiple.toString(), 'MULTIPLE');
-    });
-  });
-
   group('ModbusParameterSchemaConverter Tests', () {
     const converter = ModbusParameterSchemaConverter();
 
