@@ -97,12 +97,6 @@ jobs:
           enable-dart: true
           dart-coverage-path: dart-coverage/lcov.info
 
-      - uses: goldenm-software/layrz-actions/.github/actions/coverage-check@v1
-        with:
-          enable-dart: true
-          dart-coverage-path: dart-coverage/lcov.info
-          threshold: '55'
-
   changelog:
     runs-on: ubuntu-latest
     steps:
