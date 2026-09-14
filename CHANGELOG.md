@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.34.0+3
+
+- `InboundProtocolInput` moved to `layrz_sdk` and is re-exported from `package:layrz_models/layrz_models.dart`; no public API changes for consumers.
+- Now consumes `layrz_sdk` `4.5.0+1` (still resolved via the existing `^4.5.0` dependency pin).
+
 ## 3.34.0+2
 
 - Removed the local definitions of the models, inputs, enums, and converters that were re-exported from `layrz_sdk` in `3.34.0+1` (the `RegisteredApp`/`Tag`/`CustomReport` closure and related types across access, actions, apps, assets, devices, exchange, geofences, modbus, mqtt, operations, references, sensors, vision, zigbee, and peripheral models across care protocols, charts, commands, concierge, external accounts, inbound protocols, Mappit, outbound services, presets, report templates, triggers, users, and workspace cards). These types now resolve exclusively through the `package:layrz_sdk/layrz_sdk.dart` re-export already published in `package:layrz_models/layrz_models.dart`; no public API changes for consumers.
