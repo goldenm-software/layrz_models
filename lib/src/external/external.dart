@@ -10,10 +10,7 @@ part 'external.freezed.dart';
 part 'external.g.dart';
 
 // Modules
-part 'src/variants.dart';
 part 'src/decoders.dart';
-part 'src/source.dart';
-part 'src/account.dart';
 part 'src/unit.dart';
 part 'src/resource.dart';
 part 'src/geofence.dart';

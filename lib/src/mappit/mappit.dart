@@ -10,8 +10,6 @@ part 'mappit.freezed.dart';
 part 'mappit.g.dart';
 
 // Modules
-part 'src/route.dart';
-part 'src/labor_hour.dart';
 part 'src/profile.dart';
 part 'src/home_config.dart';
 part 'src/free_day.dart';

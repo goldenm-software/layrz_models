@@ -1,33 +1,33 @@
 part of '../reports.dart';
 
 @Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
-class ReportTemplateSourceConverter implements JsonConverter<ReportTemplateSource, String> {
+class ReportTemplateSourceConverter implements JsonConverter<ReportSource, String> {
   @Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
   const ReportTemplateSourceConverter();
 
   @override
-  ReportTemplateSource fromJson(String json) {
-    return ReportTemplateSource.fromJson(json);
+  ReportSource fromJson(String json) {
+    return ReportSource.fromJson(json);
   }
 
   @override
-  String toJson(ReportTemplateSource object) {
+  String toJson(ReportSource object) {
     return object.toJson();
   }
 }
 
 @Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
-class ReportTemplateAlgorithmConverter implements JsonConverter<ReportTemplateAlgorithm, String> {
+class ReportTemplateAlgorithmConverter implements JsonConverter<ReportAlgorithm, String> {
   @Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
   const ReportTemplateAlgorithmConverter();
 
   @override
-  ReportTemplateAlgorithm fromJson(String json) {
-    return ReportTemplateAlgorithm.fromJson(json);
+  ReportAlgorithm fromJson(String json) {
+    return ReportAlgorithm.fromJson(json);
   }
 
   @override
-  String toJson(ReportTemplateAlgorithm object) {
+  String toJson(ReportAlgorithm object) {
     return object.toJson();
   }
 }

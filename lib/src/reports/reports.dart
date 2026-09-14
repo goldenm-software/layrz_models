@@ -17,16 +17,10 @@ part 'src/preview/header.dart';
 part 'src/preview/cell.dart';
 
 // Report
-part 'src/report.dart';
 part 'src/legacy_converters.dart';
-part 'src/col.dart';
-part 'src/custom_report.dart';
-part 'src/page.dart';
 part 'src/reports_scheduler.dart';
 
 // Enums
-part 'src/enums/source.dart';
-part 'src/enums/algorithm.dart';
 part 'src/enums/relative_choices.dart';
 
 const Map<ReportSource, List<String>> kDefaultFieldsPerModule = {

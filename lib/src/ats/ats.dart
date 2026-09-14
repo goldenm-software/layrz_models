@@ -14,8 +14,6 @@ part 'ats.g.dart';
 // ATS Models
 part 'src/reception/reception_product.dart';
 part 'src/authentication_identifier.dart';
-part 'src/authentication_card.dart';
-part 'src/history_authentication_card.dart';
 part 'src/feedback_messege.dart';
 part 'src/event.dart';
 part 'src/ns_license.dart';
@@ -44,7 +42,6 @@ part 'src/sil/ats_sil_trailer.dart';
 
 // ATS Exit Models
 part 'src/exits/exit_status.dart';
-part 'src/exits/exit.dart';
 part 'src/exits/possible_exit.dart';
 part 'src/exits/execute_exit_input.dart';
 part 'src/exits/execute_exit_history.dart';
@@ -146,5 +143,4 @@ part 'src/stock_closing/stock_closing_general_info.dart';
 part 'src/stock_closing/stock_closing_info_pa.dart';
 
 // ATS Outbound Services
-part 'src/ats_outbound_services/ats_stream_model.dart';
 part 'src/ats_outbound_services/ats_stream_exit.dart';

@@ -108,7 +108,7 @@ abstract class MapLayerInput with _$MapLayerInput {
           GqlField(name: opName, args: {'apiToken': 'apiToken', 'data': 'data'})
             ..add(GqlField(name: 'status'))
             ..add(GqlField(name: 'errors'))
-            ..add(GqlField(name: 'result', fragment: MapLayer.gqlFragment)),
+            ..add(GqlField(name: 'result', fragment: MapLayer.fragment)),
         ),
       );
 
