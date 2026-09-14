@@ -318,6 +318,7 @@ export 'package:layrz_sdk/layrz_sdk.dart'
         ConfigKind,
         OperationMode,
         InboundProtocol,
+        InboundProtocolInput,
         InboundService,
         InboundServiceInput,
         ZigbeeDataType,

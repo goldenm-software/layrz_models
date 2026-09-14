@@ -1,12 +1,15 @@
 library;
 import 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart'; // Only user was the commented-out InboundProtocolInput below.
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:layrz_logging/layrz_logging.dart';
-import 'package:layrz_models/src/builder/builder.dart';
-import 'package:layrz_models/src/commands/commands.dart';
-import 'package:layrz_models/src/credential_fields/credential_fields.dart';
+// The following four imports are commented out (not deleted) alongside the InboundProtocolInput
+// definition in src/protocol_input.dart: they had no other consumer in this library once that
+// definition moved to layrz_sdk. See src/protocol_input.dart and src/decoders.dart for context.
+// import 'package:layrz_logging/layrz_logging.dart';
+// import 'package:layrz_models/src/builder/builder.dart';
+// import 'package:layrz_models/src/commands/commands.dart';
+// import 'package:layrz_models/src/credential_fields/credential_fields.dart';
 
 // Freezed
 part 'inbound.freezed.dart';
