@@ -435,7 +435,31 @@ export 'package:layrz_sdk/layrz_sdk.dart'
         TableItemInput,
         // Zigbee
         ZigbeeDevice,
-        ZigbeeDeviceExpose;
+        ZigbeeDeviceExpose,
+        // Flespi (moved from layrz_models 3.34.0+3)
+        FlespiProtocol,
+        FlespiModel,
+        FlespiChannel,
+        // Model (moved from layrz_models 3.34.0+3)
+        ModelInput,
+        ZigbeeParameterInput,
+        // Commands (moved from layrz_models 3.34.0+3)
+        CommandDefinitionInput,
+        CommandPayloadDefinitionInput,
+        // Inbound / ConfIoT (moved from layrz_models 3.34.0+3)
+        ConfigGroupingInput,
+        ConfigDefinitionInput,
+        ConfIoTFile,
+        ConfIoTNamespace,
+        ConfIoTNamespaceConverter,
+        ConfIoTNamespaceOrNullConverter,
+        // Report preview (moved from layrz_models 3.34.0+3)
+        ReportPreview,
+        ReportPage,
+        ReportRow,
+        ReportHeader,
+        ReportCell,
+        ReportDataType;
 
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';

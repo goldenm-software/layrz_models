@@ -1,17 +1,6 @@
+/// [ModelInput] and [ZigbeeParameterInput] moved to `package:layrz_sdk`. This
+/// library is kept as an empty pass-through so existing
+/// `import 'package:layrz_models/src/models/models.dart'` paths in downstream
+/// code keep resolving; the types themselves are re-exported from the main
+/// `layrz_models.dart` barrel via the SDK.
 library;
-
-import 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
-
-import 'package:flutter/services.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'package:layrz_logging/layrz_logging.dart';
-import 'package:layrz_models/src/commands/commands.dart';
-import 'package:layrz_models/src/inbound/inbound.dart';
-
-part 'models.freezed.dart';
-part 'models.g.dart';
-
-part 'src/model_input.dart';
-part 'src/zigbee_parameter_input.dart';
-part 'src/decoders.dart';

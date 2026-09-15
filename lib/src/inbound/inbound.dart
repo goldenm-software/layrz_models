@@ -1,21 +1,22 @@
 library;
-import 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
 
+// The following imports are commented out (not deleted) alongside the InboundProtocolInput
+// definition in src/protocol_input.dart, ConfigGroupingInput and ConfigDefinitionInput (deleted
+// in this migration): none has any other consumer left in this library.
+// import 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
 // import 'package:flutter/material.dart'; // Only user was the commented-out InboundProtocolInput below.
-import 'package:freezed_annotation/freezed_annotation.dart';
-// The following four imports are commented out (not deleted) alongside the InboundProtocolInput
-// definition in src/protocol_input.dart: they had no other consumer in this library once that
-// definition moved to layrz_sdk. See src/protocol_input.dart and src/decoders.dart for context.
 // import 'package:layrz_logging/layrz_logging.dart';
 // import 'package:layrz_models/src/builder/builder.dart';
 // import 'package:layrz_models/src/commands/commands.dart';
 // import 'package:layrz_models/src/credential_fields/credential_fields.dart';
 
-// Freezed
-part 'inbound.freezed.dart';
-part 'inbound.g.dart';
+// ConfigGroupingInput and ConfigDefinitionInput moved to layrz_sdk and are re-exported from
+// package:layrz_models/layrz_models.dart.
+//
+// This library now has no live freezed/json_serializable classes (InboundProtocolInput's former
+// definition below is commented out from an earlier migration, and ConfigGroupingInput /
+// ConfigDefinitionInput were deleted in this one), so it no longer needs generated
+// inbound.freezed.dart / inbound.g.dart parts.
 
 part 'src/decoders.dart';
 part 'src/protocol_input.dart';
-part 'src/config_grouping_input.dart';
-part 'src/config_definition_input.dart';

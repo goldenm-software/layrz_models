@@ -1,14 +1,7 @@
+/// The Flespi platform models ([FlespiProtocol], [FlespiModel],
+/// [FlespiChannel]) moved to `package:layrz_sdk`. This library is kept as an
+/// empty pass-through so existing
+/// `import 'package:layrz_models/src/flespi/flespi.dart'` paths in downstream
+/// code keep resolving; the types themselves are re-exported from the main
+/// `layrz_models.dart` barrel via the SDK.
 library;
-import 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
-
-import 'package:flutter/services.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:layrz_logging/layrz_logging.dart';
-
-part 'flespi.freezed.dart';
-part 'flespi.g.dart';
-
-part 'src/protocol.dart';
-part 'src/channel.dart';
-part 'src/decoders.dart';
-part 'src/model.dart';
