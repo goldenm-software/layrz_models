@@ -11,6 +11,5 @@ part 'map.freezed.dart';
 part 'map.g.dart';
 
 // Modules
-part 'src/layer_input.dart';
 part 'src/poi.dart';
 part 'src/poi_input.dart';

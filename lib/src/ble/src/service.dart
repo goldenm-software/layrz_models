@@ -15,22 +15,3 @@ abstract class BleService with _$BleService {
 
   factory BleService.fromJson(Map<String, dynamic> json) => _$BleServiceFromJson(json);
 }
-
-// TODO(review): DELETE - moved to layrz_sdk ble module
-/*
-@freezed
-abstract class BleServiceData with _$BleServiceData {
-  const BleServiceData._();
-
-  /// [BleServiceData] is the representation of a BLE service.
-  const factory BleServiceData({
-    /// [uuid] is the UUID of the BLE service.
-    required int uuid,
-
-    /// [characteristics] is the list of characteristics of the BLE service.
-    List<int>? data,
-  }) = _BleServiceData;
-
-  factory BleServiceData.fromJson(Map<String, dynamic> json) => _$BleServiceDataFromJson(json);
-}
-*/

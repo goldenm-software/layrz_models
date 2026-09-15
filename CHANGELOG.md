@@ -2,6 +2,7 @@
 
 ## 3.34.0+4
 
+- Removed the local `BleDevice`, `BleManufacturerData`, `BleServiceData`, and `MapLayerInput` definitions; these now come from `layrz_sdk`.
 - Moved the Flespi module (`FlespiProtocol`, `FlespiModel`, `FlespiChannel`, and their decoders) to `layrz_sdk`; re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility. `lib/src/flespi/flespi.dart` is now an empty pass-through library.
 - Moved `ModelInput` and `ZigbeeParameterInput` to `layrz_sdk`; re-exported for backwards compatibility. `lib/src/models/models.dart` is now an empty pass-through library.
 - Moved `CommandDefinitionInput` and `CommandPayloadDefinitionInput` to `layrz_sdk`; re-exported for backwards compatibility. `AssetCommand`/`AssetCommandPossibleDevice` and the legacy report converters remain local to `lib/src/commands/commands.dart`.
