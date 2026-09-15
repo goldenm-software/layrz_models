@@ -1,5 +1,7 @@
 part of '../ble.dart';
 
+// TODO(review): DELETE - moved to layrz_sdk ble module
+/*
 @freezed
 abstract class BleManufacturerData with _$BleManufacturerData {
   const BleManufacturerData._();
@@ -15,3 +17,4 @@ abstract class BleManufacturerData with _$BleManufacturerData {
 
   factory BleManufacturerData.fromJson(Map<String, dynamic> json) => _$BleManufacturerDataFromJson(json);
 }
+*/

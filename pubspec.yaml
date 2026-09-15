@@ -21,7 +21,7 @@ dependencies:
   json_annotation: ^4.11.0
   layrz_logging: ^1.6.0
   layrz_i18n: ^1.0.1
-  layrz_sdk: ^4.5.0+3
+  layrz_sdk: ^4.5.0+9
   flutter_material_design_icons: ^3.1.0+7447
 
 dev_dependencies:
@@ -34,3 +34,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+# TEMPORARY: local SDK for unpublished 4.5.0+9 ble module - REMOVE before publish
+dependency_overrides:
+  layrz_sdk:
+    path: ../layrz-sdk/dart

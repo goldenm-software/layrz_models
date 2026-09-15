@@ -16,6 +16,8 @@ abstract class BleService with _$BleService {
   factory BleService.fromJson(Map<String, dynamic> json) => _$BleServiceFromJson(json);
 }
 
+// TODO(review): DELETE - moved to layrz_sdk ble module
+/*
 @freezed
 abstract class BleServiceData with _$BleServiceData {
   const BleServiceData._();
@@ -31,3 +33,4 @@ abstract class BleServiceData with _$BleServiceData {
 
   factory BleServiceData.fromJson(Map<String, dynamic> json) => _$BleServiceDataFromJson(json);
 }
+*/

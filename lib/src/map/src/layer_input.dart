@@ -1,5 +1,7 @@
 part of '../map.dart';
 
+// TODO(review): DELETE - moved to layrz_sdk ble/map module
+/*
 @unfreezed
 abstract class MapLayerInput with _$MapLayerInput {
   const MapLayerInput._();
@@ -142,3 +144,4 @@ abstract class MapLayerInput with _$MapLayerInput {
     }
   }
 }
+*/

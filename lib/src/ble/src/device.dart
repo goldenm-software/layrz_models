@@ -1,5 +1,7 @@
 part of '../ble.dart';
 
+// TODO(review): DELETE - moved to layrz_sdk ble module
+/*
 @freezed
 abstract class BleDevice with _$BleDevice {
   const BleDevice._();
@@ -50,3 +52,4 @@ abstract class BleDevice with _$BleDevice {
     return map;
   }
 }
+*/
