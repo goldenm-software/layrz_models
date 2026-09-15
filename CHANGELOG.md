@@ -1,15 +1,15 @@
 # Changelog
 
-## 3.34.0+4
+## 3.34.0+5
 
-- Removed the local `BleDevice`, `BleManufacturerData`, `BleServiceData`, and `MapLayerInput` definitions; these now come from `layrz_sdk`.
+- Deleted the local `BleDevice`, `BleManufacturerData`, `BleServiceData`, and `MapLayerInput` sources; these types now come exclusively from `layrz_sdk`.
 - Moved the Flespi module (`FlespiProtocol`, `FlespiModel`, `FlespiChannel`, and their decoders) to `layrz_sdk`; re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility. `lib/src/flespi/flespi.dart` is now an empty pass-through library.
 - Moved `ModelInput` and `ZigbeeParameterInput` to `layrz_sdk`; re-exported for backwards compatibility. `lib/src/models/models.dart` is now an empty pass-through library.
 - Moved `CommandDefinitionInput` and `CommandPayloadDefinitionInput` to `layrz_sdk`; re-exported for backwards compatibility. `AssetCommand`/`AssetCommandPossibleDevice` and the legacy report converters remain local to `lib/src/commands/commands.dart`.
 - Moved `ConfigGroupingInput` and `ConfigDefinitionInput` to `layrz_sdk`; re-exported for backwards compatibility.
 - Moved `ConfIoTFile` and `ConfIoTNamespace` (with `ConfIoTNamespaceConverter`/`ConfIoTNamespaceOrNullConverter`) to `layrz_sdk`; re-exported for backwards compatibility. `lib/src/confiot/confiot.dart` is now an empty pass-through library.
 - Moved the report preview types (`ReportPreview`, `ReportPage`, `ReportRow`, `ReportHeader`, `ReportCell`, `ReportDataType`) to `layrz_sdk`; re-exported for backwards compatibility.
-- Bumped `layrz_sdk` to `^4.5.0+3`.
+- Bumped `layrz_sdk` to `^4.5.0+9`.
 - No public API changes for consumers: all moved types resolve through the existing `package:layrz_sdk/layrz_sdk.dart` re-export in `package:layrz_models/layrz_models.dart`.
 
 ## 3.34.0+3
