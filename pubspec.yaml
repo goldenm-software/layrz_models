@@ -34,8 +34,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-# TEMPORARY: local SDK for unpublished 4.5.0+9 ble module - REMOVE before publish
-dependency_overrides:
-  layrz_sdk:
-    path: ../layrz-sdk/dart
