@@ -16,20 +16,11 @@ export 'src/brickhouse/brickhouse.dart';
 // import 'src/builder/builder.dart';
 export 'src/builder/builder.dart';
 
-// import 'src/care_protocols/care_protocols.dart';
-export 'src/care_protocols/care_protocols.dart';
-
 // import 'src/charts/charts.dart';
 export 'src/charts/charts.dart';
 
 // import 'src/commands/commands.dart';
 export 'src/commands/commands.dart';
-
-// import 'src/concierge/concierge.dart';
-export 'src/concierge/concierge.dart';
-
-// import 'src/confiot/confiot.dart';
-export 'src/confiot/confiot.dart';
 
 export 'src/converters/converters.dart';
 
@@ -39,9 +30,6 @@ export 'src/external/external.dart';
 // import 'src/i18n/i18n.dart';
 export 'src/i18n/i18n.dart';
 
-// import 'src/inbound/inbound.dart';
-export 'src/inbound/inbound.dart';
-
 // import 'src/locator/locator.dart';
 export 'src/locator/locator.dart';
 
@@ -50,12 +38,6 @@ export 'src/map/map.dart';
 
 // import 'src/mappit/mappit.dart';
 export 'src/mappit/mappit.dart';
-
-// import 'src/modbus/modbus.dart';
-export 'src/modbus/modbus.dart';
-
-// import 'src/models/models.dart';
-export 'src/models/models.dart';
 
 // import 'src/notifications/notifications.dart';
 export 'src/notifications/notifications.dart';
@@ -72,14 +54,8 @@ export 'src/reports/reports.dart';
 // import 'src/sdm/sdm.dart';
 export 'src/sdm/sdm.dart';
 
-// import 'src/simulation/simulation.dart';
-export 'src/simulation/simulation.dart';
-
 // import 'src/tenvio/tenvio.dart';
 export 'src/tenvio/tenvio.dart';
-
-// import 'src/triggers/triggers.dart';
-export 'src/triggers/triggers.dart';
 
 // import 'src/users/users.dart';
 export 'src/users/users.dart';
@@ -99,367 +75,8 @@ export 'src/credential_fields/credential_fields.dart';
 // import 'src/general/general.dart';
 export 'src/general/general.dart';
 
-// import 'src/flespi/flespi.dart';
-export 'src/flespi/flespi.dart';
-
 // Re-export types ported to layrz_sdk (hide TimeOfDay to avoid ambiguity with Flutter's)
 export 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
-
-// The following types (and their input DTOs, enums, and converters) were
-// moved from layrz_models to layrz_sdk as part of the RegisteredApp/Tag/
-// CustomReport closure migration. They are re-exported here so existing
-// consumers of package:layrz_models keep resolving these symbols without
-// changes.
-export 'package:layrz_sdk/layrz_sdk.dart'
-    show
-        // Category (earlier migration)
-        Category,
-        CategoryKind,
-        AssetKind,
-        RealtimeMessage,
-        // Access
-        Access,
-        AccessInput,
-        AccessModule,
-        // Actions
-        Action,
-        ActionInput,
-        ActionGeofenceSettings,
-        ActionGeofenceSettingsInput,
-        ActionProperty,
-        ActionSubtype,
-        ActionType,
-        ActionZigbeeSetting,
-        ActionZigbeeSettings,
-        ActionZigbeeSettingsInput,
-        ActionVariant,
-        // App / RegisteredApp closure
-        AppAccessibility,
-        AppPlatform,
-        AppThemedAsset,
-        AppThemedAssetInput,
-        AvailableApp,
-        AvailableAppInput,
-        AppBackgroundDesign,
-        AppBackgroundDesignInput,
-        AppBuild,
-        AppDesign,
-        AppFooter,
-        AppDesignInput,
-        AppFont,
-        AppFontInput,
-        AppInstance,
-        DnsConfiguration,
-        AppLegal,
-        AppLegalInput,
-        AppLoginDesign,
-        AppLoginDesignInput,
-        PushDevice,
-        PushDeviceValidation,
-        PushSecrets,
-        PushSecretsInput,
-        RegisteredApp,
-        CustomReport,
-        AppVersion,
-        AppInternalIdentifier,
-        AppTechnology,
-        AppType,
-        BackgroundMode,
-        FontSource,
-        FooterFormat,
-        InstanceStatus,
-        InstanceMigrationStatus,
-        LayoutDesign,
-        AppTheme,
-        // Asset
-        Asset,
-        AssetInput,
-        AssetWidget,
-        AssetWidgetConfig,
-        AssetWidgetRange,
-        AssetWidgetInput,
-        AssetWidgetConfigInput,
-        AssetWidgetRangeInput,
-        Connection,
-        ConnectionInput,
-        ContactInfo,
-        ContactInfoInput,
-        AssetLoginInfo,
-        AssetLoginInfoInput,
-        AssetMode,
-        AssetModeConverter,
-        AssetModeOrNullConverter,
-        StaticPosition,
-        StaticPositionInput,
-        ZonePoint,
-        ZonePointInput,
-        // ATS
-        AtsSelectCard,
-        AtsAuthenticationCard,
-        AtsSelectCardConverter,
-        AtsSelectCardOrNullConverter,
-        AtsHistoryAuthenticationCard,
-        AtsHistoryAuthenticationCardOperation,
-        AtsHistoryAuthenticationCardOperationConverter,
-        AtsHistoryAuthenticationCardOperationOrNullConverter,
-        AtsExit,
-        AtsStreamModel,
-        // Billing plan
-        BillingPlan,
-        BillingPlanInput,
-        // Brickhouse permission tier
-        BrickhouseBillingPeriod,
-        BHSPermissionTier,
-        BHSPermissionTierInput,
-        BrickhouseUserRole,
-        // Care protocols
-        AnswerKind,
-        CareProtocol,
-        CareProtocolInput,
-        CareTask,
-        CareTaskInput,
-        CareProtocolMode,
-        // Case
-        Case,
-        CaseStatus,
-        CaseIgnoredStatus,
-        CommentOwner,
-        CaseComment,
-        // Charts
-        ChartAlgorithm,
-        LayrzChart,
-        ChartDataSource,
-        LayrzChartInput,
-        ChartType,
-        // Checkpoint
-        Checkpoint,
-        CheckpointInput,
-        LinkedAssetEntity,
-        LinkedAssetEntityConverter,
-        LinkedAssetToCheckpointId,
-        WaypointKind,
-        WaypointKindConverter,
-        WaypointKindOrNullConverter,
-        Waypoint,
-        // Cloud entry
-        CloudEntry,
-        CloudEntryType,
-        CloudEntryTypeConverter,
-        // Commands
-        CommandDefinition,
-        CommandDefinitionSource,
-        CommandDefinitionSourceConverter,
-        CommandDefinitionSourceOrNullConverter,
-        CommandPayloadDataType,
-        CommandPayloadDataTypeConverter,
-        CommandPayloadDataTypeOrNullConverter,
-        CommandPayloadDefinition,
-        // Concierge
-        ConciergeFormBlock,
-        ConciergeBlockInput,
-        ConciergeFormBlockDisplayConditionInput,
-        ConciergeFormBlockConfiguration,
-        ConciergeFormBlockConfigurationInput,
-        ConciergeForm,
-        ConciergeFormPage,
-        ConciergeFormPageInput,
-        ConciergeFormBlockValidator,
-        ConciergeFormBlockType,
-        ConciergeFormDisplayConditionOperator,
-        ConciergeFormDisplayConditionValidator,
-        // Custom field
-        CustomField,
-        CustomFieldInput,
-        // Device
-        AssetTelemetry,
-        CommandData,
-        CommandDataInput,
-        CommandInput,
-        CommandSource,
-        DeviceCommand,
-        Device,
-        DeviceInput,
-        DeviceTelemetry,
-        TelemetryPosition,
-        TelemetrySensor,
-        DeviceVariant,
-        // Exchange
-        ExchangeProtocol,
-        ExchangeService,
-        // External
-        ExternalAccount,
-        ExternalAccountInput,
-        ExternalSource,
-        ExternalAccountVariant,
-        // Function
-        Algorithm,
-        FtpAccount,
-        LayrzFunction,
-        // Geofences
-        GeofenceCategory,
-        ExportFormat,
-        Geofence,
-        GeofenceInput,
-        GeofenceMode,
-        GeofenceModeConverter,
-        GeofenceModeOrNullConverter,
-        GeofencePoint,
-        GeofencePointInput,
-        GeoPoint,
-        SearchItem,
-        GeofenceSearchBy,
-        SearchType,
-        GeofenceVariant,
-        // Inbound
-        ConfigDefinition,
-        ConfigGrouping,
-        ConfigPayloadDataType,
-        ConfigSource,
-        ConfigKind,
-        OperationMode,
-        InboundProtocol,
-        InboundProtocolInput,
-        InboundService,
-        InboundServiceInput,
-        ZigbeeDataType,
-        // Link shortcut
-        LinkShortcut,
-        LinkShortcutInput,
-        // Mappit
-        MappitLaborHour,
-        MappitLaborHourInput,
-        MappitRouteLinkingHistory,
-        MappitRoute,
-        // Modbus
-        ModbusConfig,
-        ModbusConfigInput,
-        ModbusParameter,
-        ModbusParameterInput,
-        ModbusParameterSchema,
-        // MQTT
-        RealtimeMqttConfig,
-        // Operations
-        HttpHeader,
-        HttpHeaderInput,
-        HttpRequestType,
-        NotificationType,
-        Operation,
-        OperationInput,
-        OperationType,
-        SoundEffect,
-        TwilioContentSid,
-        OperationVariant,
-        // Outbound
-        OutboundMetrics,
-        OutboundProtocol,
-        OutboundService,
-        OutboundStructure,
-        OutboundStructureType,
-        OutboundStructureTypeConverter,
-        OutboundStructureTypeOrNullConverter,
-        // Presets
-        Preset,
-        // References
-        ReferenceCategory,
-        Reference,
-        ReferenceInput,
-        ReferenceVariant,
-        // Report template
-        ReportAlgorithm,
-        ReportTemplateCol,
-        ReportTemplateColInput,
-        ReportTemplatePage,
-        ReportTemplatePageInput,
-        ReportTemplate,
-        ReportTemplateInput,
-        ReportSource,
-        // Sensors
-        SensorDataType,
-        MaskPoint,
-        MaskPointInput,
-        SensorRange,
-        SensorRangeInput,
-        Sensor,
-        SensorInput,
-        SensorSubType,
-        SensorType,
-        // Tag
-        Tag,
-        // Triggers
-        TriggerActivation,
-        CaseCommentPattern,
-        CaseEventEffect,
-        CaseType,
-        TriggerGeofenceDetectionMode,
-        TriggerInput,
-        Trigger,
-        TriggerType,
-        // Users
-        User,
-        UserInput,
-        UserVariant,
-        // Vision
-        VisionGaugeResult,
-        VisionProfile,
-        VisionProtocol,
-        // Workspace
-        WorkspaceCardType,
-        CaseMonitorCardType,
-        GridDimension,
-        GridDimensionInput,
-        WorkspaceMainView,
-        MetricSystem,
-        Workspace,
-        WorkspaceInput,
-        AnalyticsGridItem,
-        AnalyticsGridItemInput,
-        CaseMonitorCard,
-        CaseMonitorCardInput,
-        MapCardAlertConfiguration,
-        MapCardAlertConfigurationInput,
-        MapCardMode,
-        MapCenterMode,
-        MapCardConnectionConfiguration,
-        MapCardConnectionConfigurationInput,
-        MapCardSensors,
-        MapCardSensorsInput,
-        MapSensorMode,
-        MapCardSensorsConfiguration,
-        MapCardSensorsConfigurationInput,
-        SensorGridContent,
-        SensorGridContentInput,
-        SensorGridItem,
-        SensorGridItemInput,
-        SensorGridItemType,
-        TableItem,
-        TableItemInput,
-        // Zigbee
-        ZigbeeDevice,
-        ZigbeeDeviceExpose,
-        // Flespi (moved from layrz_models 3.34.0+3)
-        FlespiProtocol,
-        FlespiModel,
-        FlespiChannel,
-        // Model (moved from layrz_models 3.34.0+3)
-        ModelInput,
-        ZigbeeParameterInput,
-        // Commands (moved from layrz_models 3.34.0+3)
-        CommandDefinitionInput,
-        CommandPayloadDefinitionInput,
-        // Inbound / ConfIoT (moved from layrz_models 3.34.0+3)
-        ConfigGroupingInput,
-        ConfigDefinitionInput,
-        ConfIoTFile,
-        ConfIoTNamespace,
-        ConfIoTNamespaceConverter,
-        ConfIoTNamespaceOrNullConverter,
-        // Report preview (moved from layrz_models 3.34.0+3)
-        ReportPreview,
-        ReportPage,
-        ReportRow,
-        ReportHeader,
-        ReportCell,
-        ReportDataType;
 
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
@@ -482,6 +99,10 @@ part 'src/block/enums/condition_type.dart';
 part 'src/block/enums/type.dart';
 part 'src/block/enums/exception_type.dart';
 part 'src/block/enums/math_type.dart';
+part 'src/trigger_converters.dart';
+part 'src/modbus_converters.dart';
+part 'src/concierge_converters.dart';
+part 'src/care_protocols_converters.dart';
 
 // Helper enums
 enum LayrzListingFormat {
