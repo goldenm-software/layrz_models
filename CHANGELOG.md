@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.34.0+6
+
+- Requires `layrz_sdk` `^4.5.1`, which restores the pre-migration public surface of `Action` (instance `fetch`, `ActionInput.save` returning `ApiResponse`, the `ActionVariant` operation-name getters, and `Action.gqlFragment`), `MapLayer` (`MapLayerInput.save` returning `ApiResponse`, `MapLayer.gqlFragment`), and the `Sensor` converter classes, so downstream code that consumed these through `layrz_models` compiles unchanged.
+- Simplified the re-export barrel to a blanket re-export of `package:layrz_sdk/layrz_sdk.dart` (hiding `TimeOfDay`) and removed the local module barrels and legacy converter files whose types now live in `layrz_sdk`.
+- Kept the deprecated `CareProtocolModeOrNullConverter`, `ConciergeFormBlockTypeConverter`, `ModbusParameterSchemaConverter`, `TriggerGeofenceDetectionModeOrNullConverter`, and their siblings as local shims for backwards compatibility.
+
 ## 3.34.0+5
 
 - Deleted the local `BleDevice`, `BleManufacturerData`, `BleServiceData`, and `MapLayerInput` sources; these types now come exclusively from `layrz_sdk`.
