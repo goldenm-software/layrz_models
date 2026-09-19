@@ -39,9 +39,6 @@ export 'src/map/map.dart';
 // import 'src/mappit/mappit.dart';
 export 'src/mappit/mappit.dart';
 
-// import 'src/notifications/notifications.dart';
-export 'src/notifications/notifications.dart';
-
 // import 'src/outbound/outbound.dart';
 export 'src/outbound/outbound.dart';
 
