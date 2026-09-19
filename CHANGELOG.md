@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.34.0+7
+
+- Move `LayrzNotification` to `layrz_sdk`; re-exported it for backwards compatibility. Deleted the local `lib/src/notifications/` module (model, generated files, and its barrel); `LayrzNotification` and `SoundEffect` now resolve exclusively through the existing `package:layrz_sdk/layrz_sdk.dart` re-export in `package:layrz_models/layrz_models.dart`. The dropped `BuildContext`-based `formatTitle`/`formatMessage` helpers are not part of the SDK model; translation is now the consumer's responsibility.
+- Bumped `layrz_sdk` to `^4.5.5+1`.
+
 ## 3.34.0+6
 
 - Requires `layrz_sdk` `^4.5.1`, which restores the pre-migration public surface of `Action` (instance `fetch`, `ActionInput.save` returning `ApiResponse`, the `ActionVariant` operation-name getters, and `Action.gqlFragment`), `MapLayer` (`MapLayerInput.save` returning `ApiResponse`, `MapLayer.gqlFragment`), and the `Sensor` converter classes, so downstream code that consumed these through `layrz_models` compiles unchanged.
