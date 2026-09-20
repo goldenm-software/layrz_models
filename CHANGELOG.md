@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.34.0+8
+
+- Bumped `layrz_sdk` to `^4.6.2`.
+- Removed BLE models (`BleDevice`, `BleManufacturerData`, `BleServiceData`); these types now come exclusively from `layrz_sdk`.
+
 ## 3.34.0+7
 
 - Move `LayrzNotification` to `layrz_sdk`; re-exported it for backwards compatibility. Deleted the local `lib/src/notifications/` module (model, generated files, and its barrel); `LayrzNotification` and `SoundEffect` now resolve exclusively through the existing `package:layrz_sdk/layrz_sdk.dart` re-export in `package:layrz_models/layrz_models.dart`. The dropped `BuildContext`-based `formatTitle`/`formatMessage` helpers are not part of the SDK model; translation is now the consumer's responsibility.

@@ -7,9 +7,6 @@ import 'package:layrz_sdk/layrz_sdk.dart' hide TimeOfDay;
 // import 'src/ats/ats.dart';
 export 'src/ats/ats.dart';
 
-// import 'src/ble/ble.dart';
-export 'src/ble/ble.dart';
-
 // import 'src/brickhouse/brickhouse.dart';
 export 'src/brickhouse/brickhouse.dart';
 
