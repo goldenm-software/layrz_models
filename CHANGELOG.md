@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.34.0+9
+
+- Bumped `layrz_sdk` to `^4.6.3`, which adds the `ATS_MERGE_OPERATIONS` reference category.
+
 ## 3.34.0+8
 
 - Bumped `layrz_sdk` to `^4.6.2`.
