@@ -56,6 +56,7 @@ part 'src/entries/entry_input.dart';
 part 'src/operations/operation.dart';
 part 'src/operations/status.dart';
 part 'src/operations/ats_mdfe.dart';
+part 'src/operations/operation_merge.dart';
 
 // ATS Converters
 part 'src/converters/order_status.dart';

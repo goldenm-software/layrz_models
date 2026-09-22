@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.34.1
+
+- Added `AtsOperationMerge` and a new `merges` field on `AtsOperation`, exposing the mergeOperations history (merge/revert audit trail) so the UI can tell a merged operation apart from a regular one.
+- Bumped `layrz_sdk` to `^4.6.4`, which adds `commandResultAdd`/`commandResultDel` to `AtsHistoryAuthenticationCardOperation`.
+
 ## 3.34.0+9
 
 - Bumped `layrz_sdk` to `^4.6.3`, which adds the `ATS_MERGE_OPERATIONS` reference category.
