@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:layrz_models/layrz_models.dart';
 
@@ -19,7 +18,7 @@ void main() {
       expect(notification.titleArgs, {});
       expect(notification.messageArgs, {});
       expect(notification.sound, SoundEffect.none);
-      expect(notification.color, Colors.blue);
+      expect(notification.color.toARGB32(), 0xFF2196F3);
       expect(notification.duration, Duration(seconds: 5));
     });
 
@@ -272,7 +271,7 @@ void main() {
         message: 'Default color',
       );
 
-      expect(notification.color, Colors.blue);
+      expect(notification.color.toARGB32(), 0xFF2196F3);
     });
 
     test('LayrzNotification default duration is 5 seconds', () {

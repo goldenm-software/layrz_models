@@ -1,5 +1,8 @@
 library;
 
+// Still needed for `TimeOfDay` (ReportScheduler.execTime in src/reports_scheduler.dart); Color
+// (formerly used by ReportHeader/ReportCell) is no longer a direct reason for this import since
+// those types moved to layrz_sdk along with the rest of the preview types.
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:collection/collection.dart';
@@ -9,24 +12,14 @@ import 'package:layrz_models/layrz_models.dart';
 part 'reports.freezed.dart';
 part 'reports.g.dart';
 
-// Preview
-part 'src/preview/preview.dart';
-part 'src/preview/page.dart';
-part 'src/preview/row.dart';
-part 'src/preview/header.dart';
-part 'src/preview/cell.dart';
+// Preview: ReportPreview, ReportPage, ReportRow, ReportHeader, ReportCell and ReportDataType
+// moved to layrz_sdk and are re-exported from package:layrz_models/layrz_models.dart.
 
 // Report
-part 'src/report.dart';
 part 'src/legacy_converters.dart';
-part 'src/col.dart';
-part 'src/custom_report.dart';
-part 'src/page.dart';
 part 'src/reports_scheduler.dart';
 
 // Enums
-part 'src/enums/source.dart';
-part 'src/enums/algorithm.dart';
 part 'src/enums/relative_choices.dart';
 
 const Map<ReportSource, List<String>> kDefaultFieldsPerModule = {

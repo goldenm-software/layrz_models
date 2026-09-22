@@ -1508,7 +1508,7 @@ return $default(_that.id,_that.token,_that.mqttConfig,_that.assets,_that.assetsI
 @JsonSerializable()
 
 class _Locator extends Locator {
-  const _Locator({required this.id, required this.token, this.mqttConfig, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<Trigger>? triggers, final  List<String>? triggersIds, @TimestampOrNullConverter() this.expiresAt, this.expiredBy, this.expiredById, this.isExpired, @TimestampConverter() required this.createdAt, this.createdBy, this.createdById, @TimestampConverter() required this.updatedAt, this.updatedBy, this.updatedById, this.customization, this.customizationId, this.mapLayerId, this.mapLayer, final  List<Poi>? pois, final  List<String>? poisIds, this.enableSidebar, this.showAssetsLabels, this.showGeofencesLabels, this.showPoisLabels, this.showAssetsTrails, this.boundary, this.description}): _assets = assets,_assetsIds = assetsIds,_geofences = geofences,_geofencesIds = geofencesIds,_triggers = triggers,_triggersIds = triggersIds,_pois = pois,_poisIds = poisIds,super._();
+  const _Locator({required this.id, required this.token, this.mqttConfig, this.assets, this.assetsIds, this.geofences, this.geofencesIds, this.triggers, this.triggersIds, @TimestampOrNullConverter() this.expiresAt, this.expiredBy, this.expiredById, this.isExpired, @TimestampConverter() required this.createdAt, this.createdBy, this.createdById, @TimestampConverter() required this.updatedAt, this.updatedBy, this.updatedById, this.customization, this.customizationId, this.mapLayerId, this.mapLayer, this.pois, this.poisIds, this.enableSidebar, this.showAssetsLabels, this.showGeofencesLabels, this.showPoisLabels, this.showAssetsTrails, this.boundary, this.description}): super._();
   factory _Locator.fromJson(Map<String, dynamic> json) => _$LocatorFromJson(json);
 
 /// [id] is the UUIDv4 identifier of the locator
@@ -1518,71 +1518,17 @@ class _Locator extends Locator {
 /// [mqttConfig] is the MQTT configuration for the locator
 @override final  LocatorMqttConfig? mqttConfig;
 /// [assets] is the list of assets associated with the locator
- final  List<Asset>? _assets;
-/// [assets] is the list of assets associated with the locator
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// [assetsIds] is the list of assets associated with the locator
- final  List<String>? _assetsIds;
-/// [assetsIds] is the list of assets associated with the locator
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 /// [geofences] is the list of geofences associated with the locator
- final  List<Geofence>? _geofences;
-/// [geofences] is the list of geofences associated with the locator
-@override List<Geofence>? get geofences {
-  final value = _geofences;
-  if (value == null) return null;
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Geofence>? geofences;
 /// [geofences] Idsis the list of geofences associated with the locator
- final  List<String>? _geofencesIds;
-/// [geofences] Idsis the list of geofences associated with the locator
-@override List<String>? get geofencesIds {
-  final value = _geofencesIds;
-  if (value == null) return null;
-  if (_geofencesIds is EqualUnmodifiableListView) return _geofencesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? geofencesIds;
 /// [triggers] is the list of triggers associated with the locator
- final  List<Trigger>? _triggers;
-/// [triggers] is the list of triggers associated with the locator
-@override List<Trigger>? get triggers {
-  final value = _triggers;
-  if (value == null) return null;
-  if (_triggers is EqualUnmodifiableListView) return _triggers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Trigger>? triggers;
 /// [triggers] Idsis the list of triggers associated with the locator
- final  List<String>? _triggersIds;
-/// [triggers] Idsis the list of triggers associated with the locator
-@override List<String>? get triggersIds {
-  final value = _triggersIds;
-  if (value == null) return null;
-  if (_triggersIds is EqualUnmodifiableListView) return _triggersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? triggersIds;
 /// [expiresAt] is the expiration date of the locator, can be null for non-expiring locators
 @override@TimestampOrNullConverter() final  DateTime? expiresAt;
 /// [expiredBy] is the user who expired the locator, can be null if not expired
@@ -1612,27 +1558,9 @@ class _Locator extends Locator {
 /// [mapLayer] is the map layer to use for the locators that are using this layer.
 @override final  MapLayer? mapLayer;
 /// [pois] is the list of [Poi]s that are associated with the locator.
- final  List<Poi>? _pois;
-/// [pois] is the list of [Poi]s that are associated with the locator.
-@override List<Poi>? get pois {
-  final value = _pois;
-  if (value == null) return null;
-  if (_pois is EqualUnmodifiableListView) return _pois;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Poi>? pois;
 /// [poisIds] is the list of [Poi]s that are associated with the locator.
- final  List<String>? _poisIds;
-/// [poisIds] is the list of [Poi]s that are associated with the locator.
-@override List<String>? get poisIds {
-  final value = _poisIds;
-  if (value == null) return null;
-  if (_poisIds is EqualUnmodifiableListView) return _poisIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? poisIds;
 /// [enableSidebar] indicates if the sidebar is enabled for this locator
 @override final  bool? enableSidebar;
 /// [showAssetsLabels] indicates if the asset label overlays are visible for this locator
@@ -1661,12 +1589,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._triggers, _triggers)&&const DeepCollectionEquality().equals(other._triggersIds, _triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.customization, customization) || other.customization == customization)&&(identical(other.customizationId, customizationId) || other.customizationId == customizationId)&&(identical(other.mapLayerId, mapLayerId) || other.mapLayerId == mapLayerId)&&(identical(other.mapLayer, mapLayer) || other.mapLayer == mapLayer)&&const DeepCollectionEquality().equals(other._pois, _pois)&&const DeepCollectionEquality().equals(other._poisIds, _poisIds)&&(identical(other.enableSidebar, enableSidebar) || other.enableSidebar == enableSidebar)&&(identical(other.showAssetsLabels, showAssetsLabels) || other.showAssetsLabels == showAssetsLabels)&&(identical(other.showGeofencesLabels, showGeofencesLabels) || other.showGeofencesLabels == showGeofencesLabels)&&(identical(other.showPoisLabels, showPoisLabels) || other.showPoisLabels == showPoisLabels)&&(identical(other.showAssetsTrails, showAssetsTrails) || other.showAssetsTrails == showAssetsTrails)&&(identical(other.boundary, boundary) || other.boundary == boundary)&&(identical(other.description, description) || other.description == description));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Locator&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.mqttConfig, mqttConfig) || other.mqttConfig == mqttConfig)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.triggers, triggers)&&const DeepCollectionEquality().equals(other.triggersIds, triggersIds)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.expiredBy, expiredBy) || other.expiredBy == expiredBy)&&(identical(other.expiredById, expiredById) || other.expiredById == expiredById)&&(identical(other.isExpired, isExpired) || other.isExpired == isExpired)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdById, createdById) || other.createdById == createdById)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.updatedBy, updatedBy) || other.updatedBy == updatedBy)&&(identical(other.updatedById, updatedById) || other.updatedById == updatedById)&&(identical(other.customization, customization) || other.customization == customization)&&(identical(other.customizationId, customizationId) || other.customizationId == customizationId)&&(identical(other.mapLayerId, mapLayerId) || other.mapLayerId == mapLayerId)&&(identical(other.mapLayer, mapLayer) || other.mapLayer == mapLayer)&&const DeepCollectionEquality().equals(other.pois, pois)&&const DeepCollectionEquality().equals(other.poisIds, poisIds)&&(identical(other.enableSidebar, enableSidebar) || other.enableSidebar == enableSidebar)&&(identical(other.showAssetsLabels, showAssetsLabels) || other.showAssetsLabels == showAssetsLabels)&&(identical(other.showGeofencesLabels, showGeofencesLabels) || other.showGeofencesLabels == showGeofencesLabels)&&(identical(other.showPoisLabels, showPoisLabels) || other.showPoisLabels == showPoisLabels)&&(identical(other.showAssetsTrails, showAssetsTrails) || other.showAssetsTrails == showAssetsTrails)&&(identical(other.boundary, boundary) || other.boundary == boundary)&&(identical(other.description, description) || other.description == description));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_triggers),const DeepCollectionEquality().hash(_triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById,customization,customizationId,mapLayerId,mapLayer,const DeepCollectionEquality().hash(_pois),const DeepCollectionEquality().hash(_poisIds),enableSidebar,showAssetsLabels,showGeofencesLabels,showPoisLabels,showAssetsTrails,boundary,description]);
+int get hashCode => Object.hashAll([runtimeType,id,token,mqttConfig,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(triggers),const DeepCollectionEquality().hash(triggersIds),expiresAt,expiredBy,expiredById,isExpired,createdAt,createdBy,createdById,updatedAt,updatedBy,updatedById,customization,customizationId,mapLayerId,mapLayer,const DeepCollectionEquality().hash(pois),const DeepCollectionEquality().hash(poisIds),enableSidebar,showAssetsLabels,showGeofencesLabels,showPoisLabels,showAssetsTrails,boundary,description]);
 
 @override
 String toString() {
@@ -1703,12 +1631,12 @@ class __$LocatorCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
 as String,mqttConfig: freezed == mqttConfig ? _self.mqttConfig : mqttConfig // ignore: cast_nullable_to_non_nullable
-as LocatorMqttConfig?,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,geofences: freezed == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self._geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,triggers: freezed == triggers ? _self._triggers : triggers // ignore: cast_nullable_to_non_nullable
-as List<Trigger>?,triggersIds: freezed == triggersIds ? _self._triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
+as LocatorMqttConfig?,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,geofences: freezed == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
+as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,triggers: freezed == triggers ? _self.triggers : triggers // ignore: cast_nullable_to_non_nullable
+as List<Trigger>?,triggersIds: freezed == triggersIds ? _self.triggersIds : triggersIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,expiredBy: freezed == expiredBy ? _self.expiredBy : expiredBy // ignore: cast_nullable_to_non_nullable
 as User?,expiredById: freezed == expiredById ? _self.expiredById : expiredById // ignore: cast_nullable_to_non_nullable
@@ -1723,8 +1651,8 @@ as String?,customization: freezed == customization ? _self.customization : custo
 as RegisteredApp?,customizationId: freezed == customizationId ? _self.customizationId : customizationId // ignore: cast_nullable_to_non_nullable
 as String?,mapLayerId: freezed == mapLayerId ? _self.mapLayerId : mapLayerId // ignore: cast_nullable_to_non_nullable
 as String?,mapLayer: freezed == mapLayer ? _self.mapLayer : mapLayer // ignore: cast_nullable_to_non_nullable
-as MapLayer?,pois: freezed == pois ? _self._pois : pois // ignore: cast_nullable_to_non_nullable
-as List<Poi>?,poisIds: freezed == poisIds ? _self._poisIds : poisIds // ignore: cast_nullable_to_non_nullable
+as MapLayer?,pois: freezed == pois ? _self.pois : pois // ignore: cast_nullable_to_non_nullable
+as List<Poi>?,poisIds: freezed == poisIds ? _self.poisIds : poisIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,enableSidebar: freezed == enableSidebar ? _self.enableSidebar : enableSidebar // ignore: cast_nullable_to_non_nullable
 as bool?,showAssetsLabels: freezed == showAssetsLabels ? _self.showAssetsLabels : showAssetsLabels // ignore: cast_nullable_to_non_nullable
 as bool?,showGeofencesLabels: freezed == showGeofencesLabels ? _self.showGeofencesLabels : showGeofencesLabels // ignore: cast_nullable_to_non_nullable

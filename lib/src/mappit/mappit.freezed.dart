@@ -13,1312 +13,6 @@ part of 'mappit.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$MappitRouteLinkingHistory {
-
-/// [currentSeller] represents the current seller of the route. If this field comes null, means is a unlink
- Asset? get currentSeller;/// [currentSellerId] represents the current seller ID of the route. If this field comes null, means is a unlink
- String? get currentSellerId;/// [performedBy] represents the user that performed the operation of link or unlink.
-/// If this field comes null, the relation was soft-deleted (e.g. the user was removed);
-/// [performedById] still holds the plain ID of who performed the operation.
- User? get performedBy;/// [performedById] represents the user ID that performed the operation of link or unlink
- String get performedById;/// [performedAt] is the timestamp of the operation
-@TimestampConverter() DateTime get performedAt;
-/// Create a copy of MappitRouteLinkingHistory
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$MappitRouteLinkingHistoryCopyWith<MappitRouteLinkingHistory> get copyWith => _$MappitRouteLinkingHistoryCopyWithImpl<MappitRouteLinkingHistory>(this as MappitRouteLinkingHistory, _$identity);
-
-  /// Serializes this MappitRouteLinkingHistory to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MappitRouteLinkingHistory&&(identical(other.currentSeller, currentSeller) || other.currentSeller == currentSeller)&&(identical(other.currentSellerId, currentSellerId) || other.currentSellerId == currentSellerId)&&(identical(other.performedBy, performedBy) || other.performedBy == performedBy)&&(identical(other.performedById, performedById) || other.performedById == performedById)&&(identical(other.performedAt, performedAt) || other.performedAt == performedAt));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,currentSeller,currentSellerId,performedBy,performedById,performedAt);
-
-@override
-String toString() {
-  return 'MappitRouteLinkingHistory(currentSeller: $currentSeller, currentSellerId: $currentSellerId, performedBy: $performedBy, performedById: $performedById, performedAt: $performedAt)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $MappitRouteLinkingHistoryCopyWith<$Res>  {
-  factory $MappitRouteLinkingHistoryCopyWith(MappitRouteLinkingHistory value, $Res Function(MappitRouteLinkingHistory) _then) = _$MappitRouteLinkingHistoryCopyWithImpl;
-@useResult
-$Res call({
- Asset? currentSeller, String? currentSellerId, User? performedBy, String performedById,@TimestampConverter() DateTime performedAt
-});
-
-
-$AssetCopyWith<$Res>? get currentSeller;$UserCopyWith<$Res>? get performedBy;
-
-}
-/// @nodoc
-class _$MappitRouteLinkingHistoryCopyWithImpl<$Res>
-    implements $MappitRouteLinkingHistoryCopyWith<$Res> {
-  _$MappitRouteLinkingHistoryCopyWithImpl(this._self, this._then);
-
-  final MappitRouteLinkingHistory _self;
-  final $Res Function(MappitRouteLinkingHistory) _then;
-
-/// Create a copy of MappitRouteLinkingHistory
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? currentSeller = freezed,Object? currentSellerId = freezed,Object? performedBy = freezed,Object? performedById = null,Object? performedAt = null,}) {
-  return _then(_self.copyWith(
-currentSeller: freezed == currentSeller ? _self.currentSeller : currentSeller // ignore: cast_nullable_to_non_nullable
-as Asset?,currentSellerId: freezed == currentSellerId ? _self.currentSellerId : currentSellerId // ignore: cast_nullable_to_non_nullable
-as String?,performedBy: freezed == performedBy ? _self.performedBy : performedBy // ignore: cast_nullable_to_non_nullable
-as User?,performedById: null == performedById ? _self.performedById : performedById // ignore: cast_nullable_to_non_nullable
-as String,performedAt: null == performedAt ? _self.performedAt : performedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
-  ));
-}
-/// Create a copy of MappitRouteLinkingHistory
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AssetCopyWith<$Res>? get currentSeller {
-    if (_self.currentSeller == null) {
-    return null;
-  }
-
-  return $AssetCopyWith<$Res>(_self.currentSeller!, (value) {
-    return _then(_self.copyWith(currentSeller: value));
-  });
-}/// Create a copy of MappitRouteLinkingHistory
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UserCopyWith<$Res>? get performedBy {
-    if (_self.performedBy == null) {
-    return null;
-  }
-
-  return $UserCopyWith<$Res>(_self.performedBy!, (value) {
-    return _then(_self.copyWith(performedBy: value));
-  });
-}
-}
-
-
-/// Adds pattern-matching-related methods to [MappitRouteLinkingHistory].
-extension MappitRouteLinkingHistoryPatterns on MappitRouteLinkingHistory {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MappitRouteLinkingHistory value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _MappitRouteLinkingHistory() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MappitRouteLinkingHistory value)  $default,){
-final _that = this;
-switch (_that) {
-case _MappitRouteLinkingHistory():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MappitRouteLinkingHistory value)?  $default,){
-final _that = this;
-switch (_that) {
-case _MappitRouteLinkingHistory() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Asset? currentSeller,  String? currentSellerId,  User? performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _MappitRouteLinkingHistory() when $default != null:
-return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_that.performedById,_that.performedAt);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Asset? currentSeller,  String? currentSellerId,  User? performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)  $default,) {final _that = this;
-switch (_that) {
-case _MappitRouteLinkingHistory():
-return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_that.performedById,_that.performedAt);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Asset? currentSeller,  String? currentSellerId,  User? performedBy,  String performedById, @TimestampConverter()  DateTime performedAt)?  $default,) {final _that = this;
-switch (_that) {
-case _MappitRouteLinkingHistory() when $default != null:
-return $default(_that.currentSeller,_that.currentSellerId,_that.performedBy,_that.performedById,_that.performedAt);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _MappitRouteLinkingHistory implements MappitRouteLinkingHistory {
-  const _MappitRouteLinkingHistory({this.currentSeller, this.currentSellerId, this.performedBy, required this.performedById, @TimestampConverter() required this.performedAt});
-  factory _MappitRouteLinkingHistory.fromJson(Map<String, dynamic> json) => _$MappitRouteLinkingHistoryFromJson(json);
-
-/// [currentSeller] represents the current seller of the route. If this field comes null, means is a unlink
-@override final  Asset? currentSeller;
-/// [currentSellerId] represents the current seller ID of the route. If this field comes null, means is a unlink
-@override final  String? currentSellerId;
-/// [performedBy] represents the user that performed the operation of link or unlink.
-/// If this field comes null, the relation was soft-deleted (e.g. the user was removed);
-/// [performedById] still holds the plain ID of who performed the operation.
-@override final  User? performedBy;
-/// [performedById] represents the user ID that performed the operation of link or unlink
-@override final  String performedById;
-/// [performedAt] is the timestamp of the operation
-@override@TimestampConverter() final  DateTime performedAt;
-
-/// Create a copy of MappitRouteLinkingHistory
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$MappitRouteLinkingHistoryCopyWith<_MappitRouteLinkingHistory> get copyWith => __$MappitRouteLinkingHistoryCopyWithImpl<_MappitRouteLinkingHistory>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$MappitRouteLinkingHistoryToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitRouteLinkingHistory&&(identical(other.currentSeller, currentSeller) || other.currentSeller == currentSeller)&&(identical(other.currentSellerId, currentSellerId) || other.currentSellerId == currentSellerId)&&(identical(other.performedBy, performedBy) || other.performedBy == performedBy)&&(identical(other.performedById, performedById) || other.performedById == performedById)&&(identical(other.performedAt, performedAt) || other.performedAt == performedAt));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,currentSeller,currentSellerId,performedBy,performedById,performedAt);
-
-@override
-String toString() {
-  return 'MappitRouteLinkingHistory(currentSeller: $currentSeller, currentSellerId: $currentSellerId, performedBy: $performedBy, performedById: $performedById, performedAt: $performedAt)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$MappitRouteLinkingHistoryCopyWith<$Res> implements $MappitRouteLinkingHistoryCopyWith<$Res> {
-  factory _$MappitRouteLinkingHistoryCopyWith(_MappitRouteLinkingHistory value, $Res Function(_MappitRouteLinkingHistory) _then) = __$MappitRouteLinkingHistoryCopyWithImpl;
-@override @useResult
-$Res call({
- Asset? currentSeller, String? currentSellerId, User? performedBy, String performedById,@TimestampConverter() DateTime performedAt
-});
-
-
-@override $AssetCopyWith<$Res>? get currentSeller;@override $UserCopyWith<$Res>? get performedBy;
-
-}
-/// @nodoc
-class __$MappitRouteLinkingHistoryCopyWithImpl<$Res>
-    implements _$MappitRouteLinkingHistoryCopyWith<$Res> {
-  __$MappitRouteLinkingHistoryCopyWithImpl(this._self, this._then);
-
-  final _MappitRouteLinkingHistory _self;
-  final $Res Function(_MappitRouteLinkingHistory) _then;
-
-/// Create a copy of MappitRouteLinkingHistory
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? currentSeller = freezed,Object? currentSellerId = freezed,Object? performedBy = freezed,Object? performedById = null,Object? performedAt = null,}) {
-  return _then(_MappitRouteLinkingHistory(
-currentSeller: freezed == currentSeller ? _self.currentSeller : currentSeller // ignore: cast_nullable_to_non_nullable
-as Asset?,currentSellerId: freezed == currentSellerId ? _self.currentSellerId : currentSellerId // ignore: cast_nullable_to_non_nullable
-as String?,performedBy: freezed == performedBy ? _self.performedBy : performedBy // ignore: cast_nullable_to_non_nullable
-as User?,performedById: null == performedById ? _self.performedById : performedById // ignore: cast_nullable_to_non_nullable
-as String,performedAt: null == performedAt ? _self.performedAt : performedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
-  ));
-}
-
-/// Create a copy of MappitRouteLinkingHistory
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AssetCopyWith<$Res>? get currentSeller {
-    if (_self.currentSeller == null) {
-    return null;
-  }
-
-  return $AssetCopyWith<$Res>(_self.currentSeller!, (value) {
-    return _then(_self.copyWith(currentSeller: value));
-  });
-}/// Create a copy of MappitRouteLinkingHistory
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UserCopyWith<$Res>? get performedBy {
-    if (_self.performedBy == null) {
-    return null;
-  }
-
-  return $UserCopyWith<$Res>(_self.performedBy!, (value) {
-    return _then(_self.copyWith(performedBy: value));
-  });
-}
-}
-
-
-/// @nodoc
-mixin _$MappitRoute {
-
-/// [id] represents the route ID
- String get id;/// [name] represents the route name
- String get name;/// [currentSeller] represents the current seller of the route
- Asset? get currentSeller;/// [currentSellerId] represents the current seller ID of the route
- String? get currentSellerId;/// [geofences] represents the geofences linked to the route
- List<Geofence>? get geofences;/// [geofencesIds] represents the geofences IDs linked to the route
- List<String>? get geofencesIds;/// [assignmentsHistory] is the history of the link and unlink operations of this route
- List<MappitRouteLinkingHistory>? get assignmentsHistory;/// [ownerId] refers to the owner of the geofence.
- String? get ownerId;/// [owner] refers to the owner of the geofence.
- User? get owner;/// [secondarySellers] represents the secondary sellers of the route
- List<Asset>? get secondarySellers;/// [secondarySellersIds] represents the secondary sellers IDs of the route
- List<String>? get secondarySellersIds;
-/// Create a copy of MappitRoute
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$MappitRouteCopyWith<MappitRoute> get copyWith => _$MappitRouteCopyWithImpl<MappitRoute>(this as MappitRoute, _$identity);
-
-  /// Serializes this MappitRoute to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MappitRoute&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.currentSeller, currentSeller) || other.currentSeller == currentSeller)&&(identical(other.currentSellerId, currentSellerId) || other.currentSellerId == currentSellerId)&&const DeepCollectionEquality().equals(other.geofences, geofences)&&const DeepCollectionEquality().equals(other.geofencesIds, geofencesIds)&&const DeepCollectionEquality().equals(other.assignmentsHistory, assignmentsHistory)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other.secondarySellers, secondarySellers)&&const DeepCollectionEquality().equals(other.secondarySellersIds, secondarySellersIds));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,name,currentSeller,currentSellerId,const DeepCollectionEquality().hash(geofences),const DeepCollectionEquality().hash(geofencesIds),const DeepCollectionEquality().hash(assignmentsHistory),ownerId,owner,const DeepCollectionEquality().hash(secondarySellers),const DeepCollectionEquality().hash(secondarySellersIds));
-
-@override
-String toString() {
-  return 'MappitRoute(id: $id, name: $name, currentSeller: $currentSeller, currentSellerId: $currentSellerId, geofences: $geofences, geofencesIds: $geofencesIds, assignmentsHistory: $assignmentsHistory, ownerId: $ownerId, owner: $owner, secondarySellers: $secondarySellers, secondarySellersIds: $secondarySellersIds)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $MappitRouteCopyWith<$Res>  {
-  factory $MappitRouteCopyWith(MappitRoute value, $Res Function(MappitRoute) _then) = _$MappitRouteCopyWithImpl;
-@useResult
-$Res call({
- String id, String name, Asset? currentSeller, String? currentSellerId, List<Geofence>? geofences, List<String>? geofencesIds, List<MappitRouteLinkingHistory>? assignmentsHistory, String? ownerId, User? owner, List<Asset>? secondarySellers, List<String>? secondarySellersIds
-});
-
-
-$AssetCopyWith<$Res>? get currentSeller;$UserCopyWith<$Res>? get owner;
-
-}
-/// @nodoc
-class _$MappitRouteCopyWithImpl<$Res>
-    implements $MappitRouteCopyWith<$Res> {
-  _$MappitRouteCopyWithImpl(this._self, this._then);
-
-  final MappitRoute _self;
-  final $Res Function(MappitRoute) _then;
-
-/// Create a copy of MappitRoute
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? currentSeller = freezed,Object? currentSellerId = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? assignmentsHistory = freezed,Object? ownerId = freezed,Object? owner = freezed,Object? secondarySellers = freezed,Object? secondarySellersIds = freezed,}) {
-  return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,currentSeller: freezed == currentSeller ? _self.currentSeller : currentSeller // ignore: cast_nullable_to_non_nullable
-as Asset?,currentSellerId: freezed == currentSellerId ? _self.currentSellerId : currentSellerId // ignore: cast_nullable_to_non_nullable
-as String?,geofences: freezed == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self.geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,assignmentsHistory: freezed == assignmentsHistory ? _self.assignmentsHistory : assignmentsHistory // ignore: cast_nullable_to_non_nullable
-as List<MappitRouteLinkingHistory>?,ownerId: freezed == ownerId ? _self.ownerId : ownerId // ignore: cast_nullable_to_non_nullable
-as String?,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
-as User?,secondarySellers: freezed == secondarySellers ? _self.secondarySellers : secondarySellers // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,secondarySellersIds: freezed == secondarySellersIds ? _self.secondarySellersIds : secondarySellersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,
-  ));
-}
-/// Create a copy of MappitRoute
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AssetCopyWith<$Res>? get currentSeller {
-    if (_self.currentSeller == null) {
-    return null;
-  }
-
-  return $AssetCopyWith<$Res>(_self.currentSeller!, (value) {
-    return _then(_self.copyWith(currentSeller: value));
-  });
-}/// Create a copy of MappitRoute
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UserCopyWith<$Res>? get owner {
-    if (_self.owner == null) {
-    return null;
-  }
-
-  return $UserCopyWith<$Res>(_self.owner!, (value) {
-    return _then(_self.copyWith(owner: value));
-  });
-}
-}
-
-
-/// Adds pattern-matching-related methods to [MappitRoute].
-extension MappitRoutePatterns on MappitRoute {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MappitRoute value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _MappitRoute() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MappitRoute value)  $default,){
-final _that = this;
-switch (_that) {
-case _MappitRoute():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MappitRoute value)?  $default,){
-final _that = this;
-switch (_that) {
-case _MappitRoute() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  Asset? currentSeller,  String? currentSellerId,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<MappitRouteLinkingHistory>? assignmentsHistory,  String? ownerId,  User? owner,  List<Asset>? secondarySellers,  List<String>? secondarySellersIds)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _MappitRoute() when $default != null:
-return $default(_that.id,_that.name,_that.currentSeller,_that.currentSellerId,_that.geofences,_that.geofencesIds,_that.assignmentsHistory,_that.ownerId,_that.owner,_that.secondarySellers,_that.secondarySellersIds);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  Asset? currentSeller,  String? currentSellerId,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<MappitRouteLinkingHistory>? assignmentsHistory,  String? ownerId,  User? owner,  List<Asset>? secondarySellers,  List<String>? secondarySellersIds)  $default,) {final _that = this;
-switch (_that) {
-case _MappitRoute():
-return $default(_that.id,_that.name,_that.currentSeller,_that.currentSellerId,_that.geofences,_that.geofencesIds,_that.assignmentsHistory,_that.ownerId,_that.owner,_that.secondarySellers,_that.secondarySellersIds);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  Asset? currentSeller,  String? currentSellerId,  List<Geofence>? geofences,  List<String>? geofencesIds,  List<MappitRouteLinkingHistory>? assignmentsHistory,  String? ownerId,  User? owner,  List<Asset>? secondarySellers,  List<String>? secondarySellersIds)?  $default,) {final _that = this;
-switch (_that) {
-case _MappitRoute() when $default != null:
-return $default(_that.id,_that.name,_that.currentSeller,_that.currentSellerId,_that.geofences,_that.geofencesIds,_that.assignmentsHistory,_that.ownerId,_that.owner,_that.secondarySellers,_that.secondarySellersIds);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _MappitRoute implements MappitRoute {
-  const _MappitRoute({required this.id, required this.name, this.currentSeller, this.currentSellerId, final  List<Geofence>? geofences, final  List<String>? geofencesIds, final  List<MappitRouteLinkingHistory>? assignmentsHistory, this.ownerId, this.owner, final  List<Asset>? secondarySellers, final  List<String>? secondarySellersIds}): _geofences = geofences,_geofencesIds = geofencesIds,_assignmentsHistory = assignmentsHistory,_secondarySellers = secondarySellers,_secondarySellersIds = secondarySellersIds;
-  factory _MappitRoute.fromJson(Map<String, dynamic> json) => _$MappitRouteFromJson(json);
-
-/// [id] represents the route ID
-@override final  String id;
-/// [name] represents the route name
-@override final  String name;
-/// [currentSeller] represents the current seller of the route
-@override final  Asset? currentSeller;
-/// [currentSellerId] represents the current seller ID of the route
-@override final  String? currentSellerId;
-/// [geofences] represents the geofences linked to the route
- final  List<Geofence>? _geofences;
-/// [geofences] represents the geofences linked to the route
-@override List<Geofence>? get geofences {
-  final value = _geofences;
-  if (value == null) return null;
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-/// [geofencesIds] represents the geofences IDs linked to the route
- final  List<String>? _geofencesIds;
-/// [geofencesIds] represents the geofences IDs linked to the route
-@override List<String>? get geofencesIds {
-  final value = _geofencesIds;
-  if (value == null) return null;
-  if (_geofencesIds is EqualUnmodifiableListView) return _geofencesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-/// [assignmentsHistory] is the history of the link and unlink operations of this route
- final  List<MappitRouteLinkingHistory>? _assignmentsHistory;
-/// [assignmentsHistory] is the history of the link and unlink operations of this route
-@override List<MappitRouteLinkingHistory>? get assignmentsHistory {
-  final value = _assignmentsHistory;
-  if (value == null) return null;
-  if (_assignmentsHistory is EqualUnmodifiableListView) return _assignmentsHistory;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-/// [ownerId] refers to the owner of the geofence.
-@override final  String? ownerId;
-/// [owner] refers to the owner of the geofence.
-@override final  User? owner;
-/// [secondarySellers] represents the secondary sellers of the route
- final  List<Asset>? _secondarySellers;
-/// [secondarySellers] represents the secondary sellers of the route
-@override List<Asset>? get secondarySellers {
-  final value = _secondarySellers;
-  if (value == null) return null;
-  if (_secondarySellers is EqualUnmodifiableListView) return _secondarySellers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-/// [secondarySellersIds] represents the secondary sellers IDs of the route
- final  List<String>? _secondarySellersIds;
-/// [secondarySellersIds] represents the secondary sellers IDs of the route
-@override List<String>? get secondarySellersIds {
-  final value = _secondarySellersIds;
-  if (value == null) return null;
-  if (_secondarySellersIds is EqualUnmodifiableListView) return _secondarySellersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-
-/// Create a copy of MappitRoute
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$MappitRouteCopyWith<_MappitRoute> get copyWith => __$MappitRouteCopyWithImpl<_MappitRoute>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$MappitRouteToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitRoute&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.currentSeller, currentSeller) || other.currentSeller == currentSeller)&&(identical(other.currentSellerId, currentSellerId) || other.currentSellerId == currentSellerId)&&const DeepCollectionEquality().equals(other._geofences, _geofences)&&const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds)&&const DeepCollectionEquality().equals(other._assignmentsHistory, _assignmentsHistory)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.owner, owner) || other.owner == owner)&&const DeepCollectionEquality().equals(other._secondarySellers, _secondarySellers)&&const DeepCollectionEquality().equals(other._secondarySellersIds, _secondarySellersIds));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,name,currentSeller,currentSellerId,const DeepCollectionEquality().hash(_geofences),const DeepCollectionEquality().hash(_geofencesIds),const DeepCollectionEquality().hash(_assignmentsHistory),ownerId,owner,const DeepCollectionEquality().hash(_secondarySellers),const DeepCollectionEquality().hash(_secondarySellersIds));
-
-@override
-String toString() {
-  return 'MappitRoute(id: $id, name: $name, currentSeller: $currentSeller, currentSellerId: $currentSellerId, geofences: $geofences, geofencesIds: $geofencesIds, assignmentsHistory: $assignmentsHistory, ownerId: $ownerId, owner: $owner, secondarySellers: $secondarySellers, secondarySellersIds: $secondarySellersIds)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$MappitRouteCopyWith<$Res> implements $MappitRouteCopyWith<$Res> {
-  factory _$MappitRouteCopyWith(_MappitRoute value, $Res Function(_MappitRoute) _then) = __$MappitRouteCopyWithImpl;
-@override @useResult
-$Res call({
- String id, String name, Asset? currentSeller, String? currentSellerId, List<Geofence>? geofences, List<String>? geofencesIds, List<MappitRouteLinkingHistory>? assignmentsHistory, String? ownerId, User? owner, List<Asset>? secondarySellers, List<String>? secondarySellersIds
-});
-
-
-@override $AssetCopyWith<$Res>? get currentSeller;@override $UserCopyWith<$Res>? get owner;
-
-}
-/// @nodoc
-class __$MappitRouteCopyWithImpl<$Res>
-    implements _$MappitRouteCopyWith<$Res> {
-  __$MappitRouteCopyWithImpl(this._self, this._then);
-
-  final _MappitRoute _self;
-  final $Res Function(_MappitRoute) _then;
-
-/// Create a copy of MappitRoute
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? currentSeller = freezed,Object? currentSellerId = freezed,Object? geofences = freezed,Object? geofencesIds = freezed,Object? assignmentsHistory = freezed,Object? ownerId = freezed,Object? owner = freezed,Object? secondarySellers = freezed,Object? secondarySellersIds = freezed,}) {
-  return _then(_MappitRoute(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,currentSeller: freezed == currentSeller ? _self.currentSeller : currentSeller // ignore: cast_nullable_to_non_nullable
-as Asset?,currentSellerId: freezed == currentSellerId ? _self.currentSellerId : currentSellerId // ignore: cast_nullable_to_non_nullable
-as String?,geofences: freezed == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
-as List<Geofence>?,geofencesIds: freezed == geofencesIds ? _self._geofencesIds : geofencesIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,assignmentsHistory: freezed == assignmentsHistory ? _self._assignmentsHistory : assignmentsHistory // ignore: cast_nullable_to_non_nullable
-as List<MappitRouteLinkingHistory>?,ownerId: freezed == ownerId ? _self.ownerId : ownerId // ignore: cast_nullable_to_non_nullable
-as String?,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
-as User?,secondarySellers: freezed == secondarySellers ? _self._secondarySellers : secondarySellers // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,secondarySellersIds: freezed == secondarySellersIds ? _self._secondarySellersIds : secondarySellersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,
-  ));
-}
-
-/// Create a copy of MappitRoute
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AssetCopyWith<$Res>? get currentSeller {
-    if (_self.currentSeller == null) {
-    return null;
-  }
-
-  return $AssetCopyWith<$Res>(_self.currentSeller!, (value) {
-    return _then(_self.copyWith(currentSeller: value));
-  });
-}/// Create a copy of MappitRoute
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UserCopyWith<$Res>? get owner {
-    if (_self.owner == null) {
-    return null;
-  }
-
-  return $UserCopyWith<$Res>(_self.owner!, (value) {
-    return _then(_self.copyWith(owner: value));
-  });
-}
-}
-
-
-/// @nodoc
-mixin _$MappitLaborHour {
-
-/// [id] represents the labor hour ID.
- String get id;/// [weekday] represents the labor hour weekday.
-@JsonKey(unknownEnumValue: Weekday.monday) Weekday get weekday;/// [administrative] represents the labor hour administrative time.
-@DurationConverter() Duration get administrative;/// [f2f] represents the labor hour face-to-face time.
-@DurationConverter() Duration get f2f;/// [other] represents the labor hour other time.
-@DurationConverter() Duration get other;
-/// Create a copy of MappitLaborHour
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$MappitLaborHourCopyWith<MappitLaborHour> get copyWith => _$MappitLaborHourCopyWithImpl<MappitLaborHour>(this as MappitLaborHour, _$identity);
-
-  /// Serializes this MappitLaborHour to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MappitLaborHour&&(identical(other.id, id) || other.id == id)&&(identical(other.weekday, weekday) || other.weekday == weekday)&&(identical(other.administrative, administrative) || other.administrative == administrative)&&(identical(other.f2f, f2f) || other.f2f == f2f)&&(identical(other.other, this.other) || other.other == this.other));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,weekday,administrative,f2f,other);
-
-@override
-String toString() {
-  return 'MappitLaborHour(id: $id, weekday: $weekday, administrative: $administrative, f2f: $f2f, other: $other)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $MappitLaborHourCopyWith<$Res>  {
-  factory $MappitLaborHourCopyWith(MappitLaborHour value, $Res Function(MappitLaborHour) _then) = _$MappitLaborHourCopyWithImpl;
-@useResult
-$Res call({
- String id,@JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,@DurationConverter() Duration administrative,@DurationConverter() Duration f2f,@DurationConverter() Duration other
-});
-
-
-
-
-}
-/// @nodoc
-class _$MappitLaborHourCopyWithImpl<$Res>
-    implements $MappitLaborHourCopyWith<$Res> {
-  _$MappitLaborHourCopyWithImpl(this._self, this._then);
-
-  final MappitLaborHour _self;
-  final $Res Function(MappitLaborHour) _then;
-
-/// Create a copy of MappitLaborHour
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? weekday = null,Object? administrative = null,Object? f2f = null,Object? other = null,}) {
-  return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,weekday: null == weekday ? _self.weekday : weekday // ignore: cast_nullable_to_non_nullable
-as Weekday,administrative: null == administrative ? _self.administrative : administrative // ignore: cast_nullable_to_non_nullable
-as Duration,f2f: null == f2f ? _self.f2f : f2f // ignore: cast_nullable_to_non_nullable
-as Duration,other: null == other ? _self.other : other // ignore: cast_nullable_to_non_nullable
-as Duration,
-  ));
-}
-
-}
-
-
-/// Adds pattern-matching-related methods to [MappitLaborHour].
-extension MappitLaborHourPatterns on MappitLaborHour {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MappitLaborHour value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _MappitLaborHour() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MappitLaborHour value)  $default,){
-final _that = this;
-switch (_that) {
-case _MappitLaborHour():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MappitLaborHour value)?  $default,){
-final _that = this;
-switch (_that) {
-case _MappitLaborHour() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(unknownEnumValue: Weekday.monday)  Weekday weekday, @DurationConverter()  Duration administrative, @DurationConverter()  Duration f2f, @DurationConverter()  Duration other)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _MappitLaborHour() when $default != null:
-return $default(_that.id,_that.weekday,_that.administrative,_that.f2f,_that.other);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(unknownEnumValue: Weekday.monday)  Weekday weekday, @DurationConverter()  Duration administrative, @DurationConverter()  Duration f2f, @DurationConverter()  Duration other)  $default,) {final _that = this;
-switch (_that) {
-case _MappitLaborHour():
-return $default(_that.id,_that.weekday,_that.administrative,_that.f2f,_that.other);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(unknownEnumValue: Weekday.monday)  Weekday weekday, @DurationConverter()  Duration administrative, @DurationConverter()  Duration f2f, @DurationConverter()  Duration other)?  $default,) {final _that = this;
-switch (_that) {
-case _MappitLaborHour() when $default != null:
-return $default(_that.id,_that.weekday,_that.administrative,_that.f2f,_that.other);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _MappitLaborHour implements MappitLaborHour {
-  const _MappitLaborHour({required this.id, @JsonKey(unknownEnumValue: Weekday.monday) required this.weekday, @DurationConverter() required this.administrative, @DurationConverter() required this.f2f, @DurationConverter() required this.other});
-  factory _MappitLaborHour.fromJson(Map<String, dynamic> json) => _$MappitLaborHourFromJson(json);
-
-/// [id] represents the labor hour ID.
-@override final  String id;
-/// [weekday] represents the labor hour weekday.
-@override@JsonKey(unknownEnumValue: Weekday.monday) final  Weekday weekday;
-/// [administrative] represents the labor hour administrative time.
-@override@DurationConverter() final  Duration administrative;
-/// [f2f] represents the labor hour face-to-face time.
-@override@DurationConverter() final  Duration f2f;
-/// [other] represents the labor hour other time.
-@override@DurationConverter() final  Duration other;
-
-/// Create a copy of MappitLaborHour
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$MappitLaborHourCopyWith<_MappitLaborHour> get copyWith => __$MappitLaborHourCopyWithImpl<_MappitLaborHour>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$MappitLaborHourToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitLaborHour&&(identical(other.id, id) || other.id == id)&&(identical(other.weekday, weekday) || other.weekday == weekday)&&(identical(other.administrative, administrative) || other.administrative == administrative)&&(identical(other.f2f, f2f) || other.f2f == f2f)&&(identical(other.other, this.other) || other.other == this.other));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,weekday,administrative,f2f,other);
-
-@override
-String toString() {
-  return 'MappitLaborHour(id: $id, weekday: $weekday, administrative: $administrative, f2f: $f2f, other: $other)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$MappitLaborHourCopyWith<$Res> implements $MappitLaborHourCopyWith<$Res> {
-  factory _$MappitLaborHourCopyWith(_MappitLaborHour value, $Res Function(_MappitLaborHour) _then) = __$MappitLaborHourCopyWithImpl;
-@override @useResult
-$Res call({
- String id,@JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,@DurationConverter() Duration administrative,@DurationConverter() Duration f2f,@DurationConverter() Duration other
-});
-
-
-
-
-}
-/// @nodoc
-class __$MappitLaborHourCopyWithImpl<$Res>
-    implements _$MappitLaborHourCopyWith<$Res> {
-  __$MappitLaborHourCopyWithImpl(this._self, this._then);
-
-  final _MappitLaborHour _self;
-  final $Res Function(_MappitLaborHour) _then;
-
-/// Create a copy of MappitLaborHour
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? weekday = null,Object? administrative = null,Object? f2f = null,Object? other = null,}) {
-  return _then(_MappitLaborHour(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,weekday: null == weekday ? _self.weekday : weekday // ignore: cast_nullable_to_non_nullable
-as Weekday,administrative: null == administrative ? _self.administrative : administrative // ignore: cast_nullable_to_non_nullable
-as Duration,f2f: null == f2f ? _self.f2f : f2f // ignore: cast_nullable_to_non_nullable
-as Duration,other: null == other ? _self.other : other // ignore: cast_nullable_to_non_nullable
-as Duration,
-  ));
-}
-
-
-}
-
-
-/// @nodoc
-mixin _$MappitLaborHourInput {
-
-/// [id] represents the labor hour ID.
- String? get id;/// [id] represents the labor hour ID.
- set id(String? value);/// [weekday] represents the labor hour weekday.
-@JsonKey(unknownEnumValue: Weekday.monday) Weekday get weekday;/// [weekday] represents the labor hour weekday.
-@JsonKey(unknownEnumValue: Weekday.monday) set weekday(Weekday value);/// [administrative] represents the labor hour administrative time.
-@DurationConverter() Duration get administrative;/// [administrative] represents the labor hour administrative time.
-@DurationConverter() set administrative(Duration value);/// [f2f] represents the labor hour face-to-face time.
-@DurationConverter() Duration get f2f;/// [f2f] represents the labor hour face-to-face time.
-@DurationConverter() set f2f(Duration value);/// [other] represents the labor hour other time.
-@DurationConverter() Duration get other;/// [other] represents the labor hour other time.
-@DurationConverter() set other(Duration value);
-/// Create a copy of MappitLaborHourInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$MappitLaborHourInputCopyWith<MappitLaborHourInput> get copyWith => _$MappitLaborHourInputCopyWithImpl<MappitLaborHourInput>(this as MappitLaborHourInput, _$identity);
-
-  /// Serializes this MappitLaborHourInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-
-
-@override
-String toString() {
-  return 'MappitLaborHourInput(id: $id, weekday: $weekday, administrative: $administrative, f2f: $f2f, other: $other)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $MappitLaborHourInputCopyWith<$Res>  {
-  factory $MappitLaborHourInputCopyWith(MappitLaborHourInput value, $Res Function(MappitLaborHourInput) _then) = _$MappitLaborHourInputCopyWithImpl;
-@useResult
-$Res call({
- String? id,@JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,@DurationConverter() Duration administrative,@DurationConverter() Duration f2f,@DurationConverter() Duration other
-});
-
-
-
-
-}
-/// @nodoc
-class _$MappitLaborHourInputCopyWithImpl<$Res>
-    implements $MappitLaborHourInputCopyWith<$Res> {
-  _$MappitLaborHourInputCopyWithImpl(this._self, this._then);
-
-  final MappitLaborHourInput _self;
-  final $Res Function(MappitLaborHourInput) _then;
-
-/// Create a copy of MappitLaborHourInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? weekday = null,Object? administrative = null,Object? f2f = null,Object? other = null,}) {
-  return _then(_self.copyWith(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,weekday: null == weekday ? _self.weekday : weekday // ignore: cast_nullable_to_non_nullable
-as Weekday,administrative: null == administrative ? _self.administrative : administrative // ignore: cast_nullable_to_non_nullable
-as Duration,f2f: null == f2f ? _self.f2f : f2f // ignore: cast_nullable_to_non_nullable
-as Duration,other: null == other ? _self.other : other // ignore: cast_nullable_to_non_nullable
-as Duration,
-  ));
-}
-
-}
-
-
-/// Adds pattern-matching-related methods to [MappitLaborHourInput].
-extension MappitLaborHourInputPatterns on MappitLaborHourInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MappitLaborHourInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _MappitLaborHourInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MappitLaborHourInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _MappitLaborHourInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MappitLaborHourInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _MappitLaborHourInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id, @JsonKey(unknownEnumValue: Weekday.monday)  Weekday weekday, @DurationConverter()  Duration administrative, @DurationConverter()  Duration f2f, @DurationConverter()  Duration other)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _MappitLaborHourInput() when $default != null:
-return $default(_that.id,_that.weekday,_that.administrative,_that.f2f,_that.other);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id, @JsonKey(unknownEnumValue: Weekday.monday)  Weekday weekday, @DurationConverter()  Duration administrative, @DurationConverter()  Duration f2f, @DurationConverter()  Duration other)  $default,) {final _that = this;
-switch (_that) {
-case _MappitLaborHourInput():
-return $default(_that.id,_that.weekday,_that.administrative,_that.f2f,_that.other);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id, @JsonKey(unknownEnumValue: Weekday.monday)  Weekday weekday, @DurationConverter()  Duration administrative, @DurationConverter()  Duration f2f, @DurationConverter()  Duration other)?  $default,) {final _that = this;
-switch (_that) {
-case _MappitLaborHourInput() when $default != null:
-return $default(_that.id,_that.weekday,_that.administrative,_that.f2f,_that.other);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _MappitLaborHourInput implements MappitLaborHourInput {
-   _MappitLaborHourInput({this.id, @JsonKey(unknownEnumValue: Weekday.monday) required this.weekday, @DurationConverter() this.administrative = const Duration(minutes: 0), @DurationConverter() this.f2f = const Duration(minutes: 0), @DurationConverter() this.other = const Duration(minutes: 0)});
-  factory _MappitLaborHourInput.fromJson(Map<String, dynamic> json) => _$MappitLaborHourInputFromJson(json);
-
-/// [id] represents the labor hour ID.
-@override  String? id;
-/// [weekday] represents the labor hour weekday.
-@override@JsonKey(unknownEnumValue: Weekday.monday)  Weekday weekday;
-/// [administrative] represents the labor hour administrative time.
-@override@JsonKey()@DurationConverter()  Duration administrative;
-/// [f2f] represents the labor hour face-to-face time.
-@override@JsonKey()@DurationConverter()  Duration f2f;
-/// [other] represents the labor hour other time.
-@override@JsonKey()@DurationConverter()  Duration other;
-
-/// Create a copy of MappitLaborHourInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$MappitLaborHourInputCopyWith<_MappitLaborHourInput> get copyWith => __$MappitLaborHourInputCopyWithImpl<_MappitLaborHourInput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$MappitLaborHourInputToJson(this, );
-}
-
-
-
-@override
-String toString() {
-  return 'MappitLaborHourInput(id: $id, weekday: $weekday, administrative: $administrative, f2f: $f2f, other: $other)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$MappitLaborHourInputCopyWith<$Res> implements $MappitLaborHourInputCopyWith<$Res> {
-  factory _$MappitLaborHourInputCopyWith(_MappitLaborHourInput value, $Res Function(_MappitLaborHourInput) _then) = __$MappitLaborHourInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? id,@JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,@DurationConverter() Duration administrative,@DurationConverter() Duration f2f,@DurationConverter() Duration other
-});
-
-
-
-
-}
-/// @nodoc
-class __$MappitLaborHourInputCopyWithImpl<$Res>
-    implements _$MappitLaborHourInputCopyWith<$Res> {
-  __$MappitLaborHourInputCopyWithImpl(this._self, this._then);
-
-  final _MappitLaborHourInput _self;
-  final $Res Function(_MappitLaborHourInput) _then;
-
-/// Create a copy of MappitLaborHourInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? weekday = null,Object? administrative = null,Object? f2f = null,Object? other = null,}) {
-  return _then(_MappitLaborHourInput(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,weekday: null == weekday ? _self.weekday : weekday // ignore: cast_nullable_to_non_nullable
-as Weekday,administrative: null == administrative ? _self.administrative : administrative // ignore: cast_nullable_to_non_nullable
-as Duration,f2f: null == f2f ? _self.f2f : f2f // ignore: cast_nullable_to_non_nullable
-as Duration,other: null == other ? _self.other : other // ignore: cast_nullable_to_non_nullable
-as Duration,
-  ));
-}
-
-
-}
-
-
-/// @nodoc
 mixin _$MappitProfileGeofence {
 
 /// [geofenceId] represents the ID of the geofence.
@@ -1821,7 +515,7 @@ return $default(_that.id,_that.name,_that.geofences);case _:
 @JsonSerializable()
 
 class _MappitProfile implements MappitProfile {
-  const _MappitProfile({required this.id, required this.name, required final  List<MappitProfileGeofence> geofences}): _geofences = geofences;
+  const _MappitProfile({required this.id, required this.name, required this.geofences});
   factory _MappitProfile.fromJson(Map<String, dynamic> json) => _$MappitProfileFromJson(json);
 
 /// [id] represents the ID of the profile.
@@ -1829,14 +523,7 @@ class _MappitProfile implements MappitProfile {
 /// [name] represents the name of the profile.
 @override final  String name;
 /// [geofences] represents the list of linked geofences with some customization
- final  List<MappitProfileGeofence> _geofences;
-/// [geofences] represents the list of linked geofences with some customization
-@override List<MappitProfileGeofence> get geofences {
-  if (_geofences is EqualUnmodifiableListView) return _geofences;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_geofences);
-}
-
+@override final  List<MappitProfileGeofence> geofences;
 
 /// Create a copy of MappitProfile
 /// with the given fields replaced by the non-null parameter values.
@@ -1851,12 +538,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitProfile&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._geofences, _geofences));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitProfile&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.geofences, geofences));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_geofences));
+int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(geofences));
 
 @override
 String toString() {
@@ -1892,7 +579,7 @@ class __$MappitProfileCopyWithImpl<$Res>
   return _then(_MappitProfile(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,geofences: null == geofences ? _self._geofences : geofences // ignore: cast_nullable_to_non_nullable
+as String,geofences: null == geofences ? _self.geofences : geofences // ignore: cast_nullable_to_non_nullable
 as List<MappitProfileGeofence>,
   ));
 }
@@ -2930,45 +1617,17 @@ return $default(_that.firstVisit,_that.avgTimePerVisit,_that.customersVisited,_t
 @JsonSerializable()
 
 class _MappitHomeConfig implements MappitHomeConfig {
-  const _MappitHomeConfig({final  List<MappitDurationRange> firstVisit = const [], final  List<MappitDurationRange> avgTimePerVisit = const [], final  List<MappitIntRange> customersVisited = const [], final  List<MappitDoubleRange> dailyDistance = const []}): _firstVisit = firstVisit,_avgTimePerVisit = avgTimePerVisit,_customersVisited = customersVisited,_dailyDistance = dailyDistance;
+  const _MappitHomeConfig({this.firstVisit = const [], this.avgTimePerVisit = const [], this.customersVisited = const [], this.dailyDistance = const []});
   factory _MappitHomeConfig.fromJson(Map<String, dynamic> json) => _$MappitHomeConfigFromJson(json);
 
 /// [firstVisit] is the conditions of the first visit
- final  List<MappitDurationRange> _firstVisit;
-/// [firstVisit] is the conditions of the first visit
-@override@JsonKey() List<MappitDurationRange> get firstVisit {
-  if (_firstVisit is EqualUnmodifiableListView) return _firstVisit;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_firstVisit);
-}
-
+@override@JsonKey() final  List<MappitDurationRange> firstVisit;
 /// [avgTimePerVisit] is the conditions of the average time per visit
- final  List<MappitDurationRange> _avgTimePerVisit;
-/// [avgTimePerVisit] is the conditions of the average time per visit
-@override@JsonKey() List<MappitDurationRange> get avgTimePerVisit {
-  if (_avgTimePerVisit is EqualUnmodifiableListView) return _avgTimePerVisit;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_avgTimePerVisit);
-}
-
+@override@JsonKey() final  List<MappitDurationRange> avgTimePerVisit;
 /// [customersVisited] is the conditions of the customers visited
- final  List<MappitIntRange> _customersVisited;
-/// [customersVisited] is the conditions of the customers visited
-@override@JsonKey() List<MappitIntRange> get customersVisited {
-  if (_customersVisited is EqualUnmodifiableListView) return _customersVisited;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_customersVisited);
-}
-
+@override@JsonKey() final  List<MappitIntRange> customersVisited;
 /// [dailyDistance] is the conditions of the daily distance
- final  List<MappitDoubleRange> _dailyDistance;
-/// [dailyDistance] is the conditions of the daily distance
-@override@JsonKey() List<MappitDoubleRange> get dailyDistance {
-  if (_dailyDistance is EqualUnmodifiableListView) return _dailyDistance;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_dailyDistance);
-}
-
+@override@JsonKey() final  List<MappitDoubleRange> dailyDistance;
 
 /// Create a copy of MappitHomeConfig
 /// with the given fields replaced by the non-null parameter values.
@@ -2983,12 +1642,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitHomeConfig&&const DeepCollectionEquality().equals(other._firstVisit, _firstVisit)&&const DeepCollectionEquality().equals(other._avgTimePerVisit, _avgTimePerVisit)&&const DeepCollectionEquality().equals(other._customersVisited, _customersVisited)&&const DeepCollectionEquality().equals(other._dailyDistance, _dailyDistance));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitHomeConfig&&const DeepCollectionEquality().equals(other.firstVisit, firstVisit)&&const DeepCollectionEquality().equals(other.avgTimePerVisit, avgTimePerVisit)&&const DeepCollectionEquality().equals(other.customersVisited, customersVisited)&&const DeepCollectionEquality().equals(other.dailyDistance, dailyDistance));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_firstVisit),const DeepCollectionEquality().hash(_avgTimePerVisit),const DeepCollectionEquality().hash(_customersVisited),const DeepCollectionEquality().hash(_dailyDistance));
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(firstVisit),const DeepCollectionEquality().hash(avgTimePerVisit),const DeepCollectionEquality().hash(customersVisited),const DeepCollectionEquality().hash(dailyDistance));
 
 @override
 String toString() {
@@ -3022,10 +1681,10 @@ class __$MappitHomeConfigCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? firstVisit = null,Object? avgTimePerVisit = null,Object? customersVisited = null,Object? dailyDistance = null,}) {
   return _then(_MappitHomeConfig(
-firstVisit: null == firstVisit ? _self._firstVisit : firstVisit // ignore: cast_nullable_to_non_nullable
-as List<MappitDurationRange>,avgTimePerVisit: null == avgTimePerVisit ? _self._avgTimePerVisit : avgTimePerVisit // ignore: cast_nullable_to_non_nullable
-as List<MappitDurationRange>,customersVisited: null == customersVisited ? _self._customersVisited : customersVisited // ignore: cast_nullable_to_non_nullable
-as List<MappitIntRange>,dailyDistance: null == dailyDistance ? _self._dailyDistance : dailyDistance // ignore: cast_nullable_to_non_nullable
+firstVisit: null == firstVisit ? _self.firstVisit : firstVisit // ignore: cast_nullable_to_non_nullable
+as List<MappitDurationRange>,avgTimePerVisit: null == avgTimePerVisit ? _self.avgTimePerVisit : avgTimePerVisit // ignore: cast_nullable_to_non_nullable
+as List<MappitDurationRange>,customersVisited: null == customersVisited ? _self.customersVisited : customersVisited // ignore: cast_nullable_to_non_nullable
+as List<MappitIntRange>,dailyDistance: null == dailyDistance ? _self.dailyDistance : dailyDistance // ignore: cast_nullable_to_non_nullable
 as List<MappitDoubleRange>,
   ));
 }
@@ -3240,7 +1899,7 @@ return $default(_that.id,_that.name,_that.date,_that.assets,_that.assetsIds);cas
 @JsonSerializable()
 
 class _MappitFreeDay implements MappitFreeDay {
-  const _MappitFreeDay({required this.id, required this.name, @DateConverter() required this.date, final  List<Asset>? assets, final  List<String>? assetsIds}): _assets = assets,_assetsIds = assetsIds;
+  const _MappitFreeDay({required this.id, required this.name, @DateConverter() required this.date, this.assets, this.assetsIds});
   factory _MappitFreeDay.fromJson(Map<String, dynamic> json) => _$MappitFreeDayFromJson(json);
 
 /// [id] represents the free day ID.
@@ -3250,27 +1909,9 @@ class _MappitFreeDay implements MappitFreeDay {
 /// [date] represents the free day date.
 @override@DateConverter() final  DateTime date;
 /// [assets] represents the assets assigned to this free day.
- final  List<Asset>? _assets;
-/// [assets] represents the assets assigned to this free day.
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// [assetsIds] represents the assets IDs assigned to this free day.
- final  List<String>? _assetsIds;
-/// [assetsIds] represents the assets IDs assigned to this free day.
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 
 /// Create a copy of MappitFreeDay
 /// with the given fields replaced by the non-null parameter values.
@@ -3285,12 +1926,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitFreeDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.date, date) || other.date == date)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MappitFreeDay&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.date, date) || other.date == date)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,date,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds));
+int get hashCode => Object.hash(runtimeType,id,name,date,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds));
 
 @override
 String toString() {
@@ -3327,8 +1968,8 @@ class __$MappitFreeDayCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,date: null == date ? _self.date : date // ignore: cast_nullable_to_non_nullable
-as DateTime,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as DateTime,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }
@@ -3544,17 +2185,11 @@ return $default(_that.polygon,_that.containedRoutes);case _:
 @JsonSerializable()
 
 class _PolygonDetails implements PolygonDetails {
-  const _PolygonDetails({required this.polygon, required final  List<ContainedRouteCategory> containedRoutes}): _containedRoutes = containedRoutes;
+  const _PolygonDetails({required this.polygon, required this.containedRoutes});
   factory _PolygonDetails.fromJson(Map<String, dynamic> json) => _$PolygonDetailsFromJson(json);
 
 @override final  Geofence polygon;
- final  List<ContainedRouteCategory> _containedRoutes;
-@override List<ContainedRouteCategory> get containedRoutes {
-  if (_containedRoutes is EqualUnmodifiableListView) return _containedRoutes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_containedRoutes);
-}
-
+@override final  List<ContainedRouteCategory> containedRoutes;
 
 /// Create a copy of PolygonDetails
 /// with the given fields replaced by the non-null parameter values.
@@ -3569,12 +2204,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PolygonDetails&&(identical(other.polygon, polygon) || other.polygon == polygon)&&const DeepCollectionEquality().equals(other._containedRoutes, _containedRoutes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PolygonDetails&&(identical(other.polygon, polygon) || other.polygon == polygon)&&const DeepCollectionEquality().equals(other.containedRoutes, containedRoutes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,polygon,const DeepCollectionEquality().hash(_containedRoutes));
+int get hashCode => Object.hash(runtimeType,polygon,const DeepCollectionEquality().hash(containedRoutes));
 
 @override
 String toString() {
@@ -3609,7 +2244,7 @@ class __$PolygonDetailsCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? polygon = null,Object? containedRoutes = null,}) {
   return _then(_PolygonDetails(
 polygon: null == polygon ? _self.polygon : polygon // ignore: cast_nullable_to_non_nullable
-as Geofence,containedRoutes: null == containedRoutes ? _self._containedRoutes : containedRoutes // ignore: cast_nullable_to_non_nullable
+as Geofence,containedRoutes: null == containedRoutes ? _self.containedRoutes : containedRoutes // ignore: cast_nullable_to_non_nullable
 as List<ContainedRouteCategory>,
   ));
 }
@@ -3830,21 +2465,14 @@ return $default(_that.category,_that.routes,_that.geofenceCount);case _:
 @JsonSerializable()
 
 class _ContainedRouteCategory implements ContainedRouteCategory {
-  const _ContainedRouteCategory({@JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, final  List<MappitRoute> routes = const [], this.geofenceCount}): _routes = routes;
+  const _ContainedRouteCategory({@JsonKey(unknownEnumValue: GeofenceCategory.none) this.category = GeofenceCategory.none, this.routes = const [], this.geofenceCount});
   factory _ContainedRouteCategory.fromJson(Map<String, dynamic> json) => _$ContainedRouteCategoryFromJson(json);
 
 /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
 /// from the API.
 @override@JsonKey(unknownEnumValue: GeofenceCategory.none) final  GeofenceCategory category;
 /// List of routes that contain the geofences in the category.
- final  List<MappitRoute> _routes;
-/// List of routes that contain the geofences in the category.
-@override@JsonKey() List<MappitRoute> get routes {
-  if (_routes is EqualUnmodifiableListView) return _routes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_routes);
-}
-
+@override@JsonKey() final  List<MappitRoute> routes;
 /// Number of geofences per category.
 @override final  int? geofenceCount;
 
@@ -3861,12 +2489,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContainedRouteCategory&&(identical(other.category, category) || other.category == category)&&const DeepCollectionEquality().equals(other._routes, _routes)&&(identical(other.geofenceCount, geofenceCount) || other.geofenceCount == geofenceCount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContainedRouteCategory&&(identical(other.category, category) || other.category == category)&&const DeepCollectionEquality().equals(other.routes, routes)&&(identical(other.geofenceCount, geofenceCount) || other.geofenceCount == geofenceCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,category,const DeepCollectionEquality().hash(_routes),geofenceCount);
+int get hashCode => Object.hash(runtimeType,category,const DeepCollectionEquality().hash(routes),geofenceCount);
 
 @override
 String toString() {
@@ -3901,7 +2529,7 @@ class __$ContainedRouteCategoryCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? category = null,Object? routes = null,Object? geofenceCount = freezed,}) {
   return _then(_ContainedRouteCategory(
 category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as GeofenceCategory,routes: null == routes ? _self._routes : routes // ignore: cast_nullable_to_non_nullable
+as GeofenceCategory,routes: null == routes ? _self.routes : routes // ignore: cast_nullable_to_non_nullable
 as List<MappitRoute>,geofenceCount: freezed == geofenceCount ? _self.geofenceCount : geofenceCount // ignore: cast_nullable_to_non_nullable
 as int?,
   ));

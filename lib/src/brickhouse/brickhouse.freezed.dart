@@ -263,7 +263,7 @@ return $default(_that.id,_that.name,_that.type,_that.assets,_that.assetsIds,_tha
 @JsonSerializable()
 
 class _BrickhouseAlert implements BrickhouseAlert {
-  const _BrickhouseAlert({required this.id, required this.name, required this.type, final  List<Asset>? assets, final  List<String>? assetsIds, final  List<String>? email, final  List<NullablePhoneNumber?>? phone, this.hasMobilePopup, this.hasWebPopup, this.hasEmail, this.hasPhone, this.batteryMinLevel, @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour, @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour, this.timezone, @JsonKey(unknownEnumValue: Weekday.monday) final  List<Weekday>? curfewWeekdays, @ColorOrNullConverter() this.geofenceColor, @JsonKey(unknownEnumValue: GeofenceMode.radial) this.geofenceMode, this.geofenceRadius, final  List<GeofencePoint>? geofenceShape, @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown) this.geofenceTrigger, this.maxSpeedMaxValue, this.isMuted = false, this.speedingThreshold, this.isDisabled = false, this.triggerId}): _assets = assets,_assetsIds = assetsIds,_email = email,_phone = phone,_curfewWeekdays = curfewWeekdays,_geofenceShape = geofenceShape;
+  const _BrickhouseAlert({required this.id, required this.name, required this.type, this.assets, this.assetsIds, this.email, this.phone, this.hasMobilePopup, this.hasWebPopup, this.hasEmail, this.hasPhone, this.batteryMinLevel, @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour, @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour, this.timezone, @JsonKey(unknownEnumValue: Weekday.monday) this.curfewWeekdays, @ColorOrNullConverter() this.geofenceColor, @JsonKey(unknownEnumValue: GeofenceMode.radial) this.geofenceMode, this.geofenceRadius, this.geofenceShape, @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown) this.geofenceTrigger, this.maxSpeedMaxValue, this.isMuted = false, this.speedingThreshold, this.isDisabled = false, this.triggerId});
   factory _BrickhouseAlert.fromJson(Map<String, dynamic> json) => _$BrickhouseAlertFromJson(json);
 
 /// ID of the alert entity. This ID is unique.
@@ -273,49 +273,13 @@ class _BrickhouseAlert implements BrickhouseAlert {
 /// Type of the alert.
 @override final  BrickhouseAlertType type;
 /// List of assets
- final  List<Asset>? _assets;
-/// List of assets
-@override List<Asset>? get assets {
-  final value = _assets;
-  if (value == null) return null;
-  if (_assets is EqualUnmodifiableListView) return _assets;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<Asset>? assets;
 /// List of assets IDs.
- final  List<String>? _assetsIds;
-/// List of assets IDs.
-@override List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? assetsIds;
 /// Email to send the alert to.
- final  List<String>? _email;
-/// Email to send the alert to.
-@override List<String>? get email {
-  final value = _email;
-  if (value == null) return null;
-  if (_email is EqualUnmodifiableListView) return _email;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? email;
 /// Phone number to send the alert to.
- final  List<NullablePhoneNumber?>? _phone;
-/// Phone number to send the alert to.
-@override List<NullablePhoneNumber?>? get phone {
-  final value = _phone;
-  if (value == null) return null;
-  if (_phone is EqualUnmodifiableListView) return _phone;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<NullablePhoneNumber?>? phone;
 /// If the alert should be shown in the mobile app.
 @override final  bool? hasMobilePopup;
 /// If the alert should be shown in the web app.
@@ -333,16 +297,7 @@ class _BrickhouseAlert implements BrickhouseAlert {
 /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
 @override final  String? timezone;
 /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
- final  List<Weekday>? _curfewWeekdays;
-/// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-@override@JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? get curfewWeekdays {
-  final value = _curfewWeekdays;
-  if (value == null) return null;
-  if (_curfewWeekdays is EqualUnmodifiableListView) return _curfewWeekdays;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey(unknownEnumValue: Weekday.monday) final  List<Weekday>? curfewWeekdays;
 /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
 @override@ColorOrNullConverter() final  Color? geofenceColor;
 /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
@@ -350,16 +305,7 @@ class _BrickhouseAlert implements BrickhouseAlert {
 /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
 @override final  double? geofenceRadius;
 /// geofenceShape [GeofencePoint]
- final  List<GeofencePoint>? _geofenceShape;
-/// geofenceShape [GeofencePoint]
-@override List<GeofencePoint>? get geofenceShape {
-  final value = _geofenceShape;
-  if (value == null) return null;
-  if (_geofenceShape is EqualUnmodifiableListView) return _geofenceShape;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<GeofencePoint>? geofenceShape;
 /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
 ///
 @override@JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown) final  BrickhouseGeofenceTrigger? geofenceTrigger;
@@ -389,12 +335,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BrickhouseAlert&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other._assets, _assets)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds)&&const DeepCollectionEquality().equals(other._email, _email)&&const DeepCollectionEquality().equals(other._phone, _phone)&&(identical(other.hasMobilePopup, hasMobilePopup) || other.hasMobilePopup == hasMobilePopup)&&(identical(other.hasWebPopup, hasWebPopup) || other.hasWebPopup == hasWebPopup)&&(identical(other.hasEmail, hasEmail) || other.hasEmail == hasEmail)&&(identical(other.hasPhone, hasPhone) || other.hasPhone == hasPhone)&&(identical(other.batteryMinLevel, batteryMinLevel) || other.batteryMinLevel == batteryMinLevel)&&(identical(other.curfewStartHour, curfewStartHour) || other.curfewStartHour == curfewStartHour)&&(identical(other.curfewEndHour, curfewEndHour) || other.curfewEndHour == curfewEndHour)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&const DeepCollectionEquality().equals(other._curfewWeekdays, _curfewWeekdays)&&(identical(other.geofenceColor, geofenceColor) || other.geofenceColor == geofenceColor)&&(identical(other.geofenceMode, geofenceMode) || other.geofenceMode == geofenceMode)&&(identical(other.geofenceRadius, geofenceRadius) || other.geofenceRadius == geofenceRadius)&&const DeepCollectionEquality().equals(other._geofenceShape, _geofenceShape)&&(identical(other.geofenceTrigger, geofenceTrigger) || other.geofenceTrigger == geofenceTrigger)&&(identical(other.maxSpeedMaxValue, maxSpeedMaxValue) || other.maxSpeedMaxValue == maxSpeedMaxValue)&&(identical(other.isMuted, isMuted) || other.isMuted == isMuted)&&(identical(other.speedingThreshold, speedingThreshold) || other.speedingThreshold == speedingThreshold)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.triggerId, triggerId) || other.triggerId == triggerId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BrickhouseAlert&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.assets, assets)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds)&&const DeepCollectionEquality().equals(other.email, email)&&const DeepCollectionEquality().equals(other.phone, phone)&&(identical(other.hasMobilePopup, hasMobilePopup) || other.hasMobilePopup == hasMobilePopup)&&(identical(other.hasWebPopup, hasWebPopup) || other.hasWebPopup == hasWebPopup)&&(identical(other.hasEmail, hasEmail) || other.hasEmail == hasEmail)&&(identical(other.hasPhone, hasPhone) || other.hasPhone == hasPhone)&&(identical(other.batteryMinLevel, batteryMinLevel) || other.batteryMinLevel == batteryMinLevel)&&(identical(other.curfewStartHour, curfewStartHour) || other.curfewStartHour == curfewStartHour)&&(identical(other.curfewEndHour, curfewEndHour) || other.curfewEndHour == curfewEndHour)&&(identical(other.timezone, timezone) || other.timezone == timezone)&&const DeepCollectionEquality().equals(other.curfewWeekdays, curfewWeekdays)&&(identical(other.geofenceColor, geofenceColor) || other.geofenceColor == geofenceColor)&&(identical(other.geofenceMode, geofenceMode) || other.geofenceMode == geofenceMode)&&(identical(other.geofenceRadius, geofenceRadius) || other.geofenceRadius == geofenceRadius)&&const DeepCollectionEquality().equals(other.geofenceShape, geofenceShape)&&(identical(other.geofenceTrigger, geofenceTrigger) || other.geofenceTrigger == geofenceTrigger)&&(identical(other.maxSpeedMaxValue, maxSpeedMaxValue) || other.maxSpeedMaxValue == maxSpeedMaxValue)&&(identical(other.isMuted, isMuted) || other.isMuted == isMuted)&&(identical(other.speedingThreshold, speedingThreshold) || other.speedingThreshold == speedingThreshold)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.triggerId, triggerId) || other.triggerId == triggerId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,name,type,const DeepCollectionEquality().hash(_assets),const DeepCollectionEquality().hash(_assetsIds),const DeepCollectionEquality().hash(_email),const DeepCollectionEquality().hash(_phone),hasMobilePopup,hasWebPopup,hasEmail,hasPhone,batteryMinLevel,curfewStartHour,curfewEndHour,timezone,const DeepCollectionEquality().hash(_curfewWeekdays),geofenceColor,geofenceMode,geofenceRadius,const DeepCollectionEquality().hash(_geofenceShape),geofenceTrigger,maxSpeedMaxValue,isMuted,speedingThreshold,isDisabled,triggerId]);
+int get hashCode => Object.hashAll([runtimeType,id,name,type,const DeepCollectionEquality().hash(assets),const DeepCollectionEquality().hash(assetsIds),const DeepCollectionEquality().hash(email),const DeepCollectionEquality().hash(phone),hasMobilePopup,hasWebPopup,hasEmail,hasPhone,batteryMinLevel,curfewStartHour,curfewEndHour,timezone,const DeepCollectionEquality().hash(curfewWeekdays),geofenceColor,geofenceMode,geofenceRadius,const DeepCollectionEquality().hash(geofenceShape),geofenceTrigger,maxSpeedMaxValue,isMuted,speedingThreshold,isDisabled,triggerId]);
 
 @override
 String toString() {
@@ -431,10 +377,10 @@ class __$BrickhouseAlertCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as BrickhouseAlertType,assets: freezed == assets ? _self._assets : assets // ignore: cast_nullable_to_non_nullable
-as List<Asset>?,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,email: freezed == email ? _self._email : email // ignore: cast_nullable_to_non_nullable
-as List<String>?,phone: freezed == phone ? _self._phone : phone // ignore: cast_nullable_to_non_nullable
+as BrickhouseAlertType,assets: freezed == assets ? _self.assets : assets // ignore: cast_nullable_to_non_nullable
+as List<Asset>?,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as List<String>?,phone: freezed == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
 as List<NullablePhoneNumber?>?,hasMobilePopup: freezed == hasMobilePopup ? _self.hasMobilePopup : hasMobilePopup // ignore: cast_nullable_to_non_nullable
 as bool?,hasWebPopup: freezed == hasWebPopup ? _self.hasWebPopup : hasWebPopup // ignore: cast_nullable_to_non_nullable
 as bool?,hasEmail: freezed == hasEmail ? _self.hasEmail : hasEmail // ignore: cast_nullable_to_non_nullable
@@ -443,11 +389,11 @@ as bool?,batteryMinLevel: freezed == batteryMinLevel ? _self.batteryMinLevel : b
 as int?,curfewStartHour: freezed == curfewStartHour ? _self.curfewStartHour : curfewStartHour // ignore: cast_nullable_to_non_nullable
 as TimeOfDay?,curfewEndHour: freezed == curfewEndHour ? _self.curfewEndHour : curfewEndHour // ignore: cast_nullable_to_non_nullable
 as TimeOfDay?,timezone: freezed == timezone ? _self.timezone : timezone // ignore: cast_nullable_to_non_nullable
-as String?,curfewWeekdays: freezed == curfewWeekdays ? _self._curfewWeekdays : curfewWeekdays // ignore: cast_nullable_to_non_nullable
+as String?,curfewWeekdays: freezed == curfewWeekdays ? _self.curfewWeekdays : curfewWeekdays // ignore: cast_nullable_to_non_nullable
 as List<Weekday>?,geofenceColor: freezed == geofenceColor ? _self.geofenceColor : geofenceColor // ignore: cast_nullable_to_non_nullable
 as Color?,geofenceMode: freezed == geofenceMode ? _self.geofenceMode : geofenceMode // ignore: cast_nullable_to_non_nullable
 as GeofenceMode?,geofenceRadius: freezed == geofenceRadius ? _self.geofenceRadius : geofenceRadius // ignore: cast_nullable_to_non_nullable
-as double?,geofenceShape: freezed == geofenceShape ? _self._geofenceShape : geofenceShape // ignore: cast_nullable_to_non_nullable
+as double?,geofenceShape: freezed == geofenceShape ? _self.geofenceShape : geofenceShape // ignore: cast_nullable_to_non_nullable
 as List<GeofencePoint>?,geofenceTrigger: freezed == geofenceTrigger ? _self.geofenceTrigger : geofenceTrigger // ignore: cast_nullable_to_non_nullable
 as BrickhouseGeofenceTrigger?,maxSpeedMaxValue: freezed == maxSpeedMaxValue ? _self.maxSpeedMaxValue : maxSpeedMaxValue // ignore: cast_nullable_to_non_nullable
 as double?,isMuted: freezed == isMuted ? _self.isMuted : isMuted // ignore: cast_nullable_to_non_nullable
@@ -1048,20 +994,12 @@ return $default(_that.score,_that.status,_that.messages);case _:
 @JsonSerializable()
 
 class _BHSDriverSafetyEventScore implements BHSDriverSafetyEventScore {
-  const _BHSDriverSafetyEventScore({required this.score, this.status, final  List<AssetTelemetry>? messages}): _messages = messages;
+  const _BHSDriverSafetyEventScore({required this.score, this.status, this.messages});
   factory _BHSDriverSafetyEventScore.fromJson(Map<String, dynamic> json) => _$BHSDriverSafetyEventScoreFromJson(json);
 
 @override final  double score;
 @override final  String? status;
- final  List<AssetTelemetry>? _messages;
-@override List<AssetTelemetry>? get messages {
-  final value = _messages;
-  if (value == null) return null;
-  if (_messages is EqualUnmodifiableListView) return _messages;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<AssetTelemetry>? messages;
 
 /// Create a copy of BHSDriverSafetyEventScore
 /// with the given fields replaced by the non-null parameter values.
@@ -1076,12 +1014,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BHSDriverSafetyEventScore&&(identical(other.score, score) || other.score == score)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._messages, _messages));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BHSDriverSafetyEventScore&&(identical(other.score, score) || other.score == score)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.messages, messages));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,score,status,const DeepCollectionEquality().hash(_messages));
+int get hashCode => Object.hash(runtimeType,score,status,const DeepCollectionEquality().hash(messages));
 
 @override
 String toString() {
@@ -1117,7 +1055,7 @@ class __$BHSDriverSafetyEventScoreCopyWithImpl<$Res>
   return _then(_BHSDriverSafetyEventScore(
 score: null == score ? _self.score : score // ignore: cast_nullable_to_non_nullable
 as double,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String?,messages: freezed == messages ? _self._messages : messages // ignore: cast_nullable_to_non_nullable
+as String?,messages: freezed == messages ? _self.messages : messages // ignore: cast_nullable_to_non_nullable
 as List<AssetTelemetry>?,
   ));
 }
@@ -1593,19 +1531,11 @@ return $default(_that.status,_that.messages);case _:
 @JsonSerializable()
 
 class _BHSDriverSafetySpeedingEvents implements BHSDriverSafetySpeedingEvents {
-  const _BHSDriverSafetySpeedingEvents({this.status, final  List<TriggerActivation>? messages}): _messages = messages;
+  const _BHSDriverSafetySpeedingEvents({this.status, this.messages});
   factory _BHSDriverSafetySpeedingEvents.fromJson(Map<String, dynamic> json) => _$BHSDriverSafetySpeedingEventsFromJson(json);
 
 @override final  String? status;
- final  List<TriggerActivation>? _messages;
-@override List<TriggerActivation>? get messages {
-  final value = _messages;
-  if (value == null) return null;
-  if (_messages is EqualUnmodifiableListView) return _messages;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TriggerActivation>? messages;
 
 /// Create a copy of BHSDriverSafetySpeedingEvents
 /// with the given fields replaced by the non-null parameter values.
@@ -1620,12 +1550,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BHSDriverSafetySpeedingEvents&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._messages, _messages));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BHSDriverSafetySpeedingEvents&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.messages, messages));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_messages));
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(messages));
 
 @override
 String toString() {
@@ -1660,7 +1590,7 @@ class __$BHSDriverSafetySpeedingEventsCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? status = freezed,Object? messages = freezed,}) {
   return _then(_BHSDriverSafetySpeedingEvents(
 status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String?,messages: freezed == messages ? _self._messages : messages // ignore: cast_nullable_to_non_nullable
+as String?,messages: freezed == messages ? _self.messages : messages // ignore: cast_nullable_to_non_nullable
 as List<TriggerActivation>?,
   ));
 }
@@ -2190,19 +2120,11 @@ return $default(_that.status,_that.messages);case _:
 @JsonSerializable()
 
 class _BHSDriverSafetyDriving implements BHSDriverSafetyDriving {
-  const _BHSDriverSafetyDriving({this.status, final  List<BHSDriverSafetyDrivingEvent>? messages}): _messages = messages;
+  const _BHSDriverSafetyDriving({this.status, this.messages});
   factory _BHSDriverSafetyDriving.fromJson(Map<String, dynamic> json) => _$BHSDriverSafetyDrivingFromJson(json);
 
 @override final  String? status;
- final  List<BHSDriverSafetyDrivingEvent>? _messages;
-@override List<BHSDriverSafetyDrivingEvent>? get messages {
-  final value = _messages;
-  if (value == null) return null;
-  if (_messages is EqualUnmodifiableListView) return _messages;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<BHSDriverSafetyDrivingEvent>? messages;
 
 /// Create a copy of BHSDriverSafetyDriving
 /// with the given fields replaced by the non-null parameter values.
@@ -2217,12 +2139,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BHSDriverSafetyDriving&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._messages, _messages));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BHSDriverSafetyDriving&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.messages, messages));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_messages));
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(messages));
 
 @override
 String toString() {
@@ -2257,7 +2179,7 @@ class __$BHSDriverSafetyDrivingCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? status = freezed,Object? messages = freezed,}) {
   return _then(_BHSDriverSafetyDriving(
 status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String?,messages: freezed == messages ? _self._messages : messages // ignore: cast_nullable_to_non_nullable
+as String?,messages: freezed == messages ? _self.messages : messages // ignore: cast_nullable_to_non_nullable
 as List<BHSDriverSafetyDrivingEvent>?,
   ));
 }
@@ -3228,581 +3150,6 @@ as int,
 
 
 /// @nodoc
-mixin _$BHSPermissionTier {
-
- String get id; String get name; int get tierLevel; BrickhouseBillingPeriod? get billingPeriod; String? get description; Map<String, dynamic>? get customProperties; List<User>? get users;/// Is the list of granted access
- List<Access>? get access;
-/// Create a copy of BHSPermissionTier
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$BHSPermissionTierCopyWith<BHSPermissionTier> get copyWith => _$BHSPermissionTierCopyWithImpl<BHSPermissionTier>(this as BHSPermissionTier, _$identity);
-
-  /// Serializes this BHSPermissionTier to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BHSPermissionTier&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.tierLevel, tierLevel) || other.tierLevel == tierLevel)&&(identical(other.billingPeriod, billingPeriod) || other.billingPeriod == billingPeriod)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.customProperties, customProperties)&&const DeepCollectionEquality().equals(other.users, users)&&const DeepCollectionEquality().equals(other.access, access));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,name,tierLevel,billingPeriod,description,const DeepCollectionEquality().hash(customProperties),const DeepCollectionEquality().hash(users),const DeepCollectionEquality().hash(access));
-
-@override
-String toString() {
-  return 'BHSPermissionTier(id: $id, name: $name, tierLevel: $tierLevel, billingPeriod: $billingPeriod, description: $description, customProperties: $customProperties, users: $users, access: $access)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $BHSPermissionTierCopyWith<$Res>  {
-  factory $BHSPermissionTierCopyWith(BHSPermissionTier value, $Res Function(BHSPermissionTier) _then) = _$BHSPermissionTierCopyWithImpl;
-@useResult
-$Res call({
- String id, String name, int tierLevel, BrickhouseBillingPeriod? billingPeriod, String? description, Map<String, dynamic>? customProperties, List<User>? users, List<Access>? access
-});
-
-
-
-
-}
-/// @nodoc
-class _$BHSPermissionTierCopyWithImpl<$Res>
-    implements $BHSPermissionTierCopyWith<$Res> {
-  _$BHSPermissionTierCopyWithImpl(this._self, this._then);
-
-  final BHSPermissionTier _self;
-  final $Res Function(BHSPermissionTier) _then;
-
-/// Create a copy of BHSPermissionTier
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? tierLevel = null,Object? billingPeriod = freezed,Object? description = freezed,Object? customProperties = freezed,Object? users = freezed,Object? access = freezed,}) {
-  return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,tierLevel: null == tierLevel ? _self.tierLevel : tierLevel // ignore: cast_nullable_to_non_nullable
-as int,billingPeriod: freezed == billingPeriod ? _self.billingPeriod : billingPeriod // ignore: cast_nullable_to_non_nullable
-as BrickhouseBillingPeriod?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,customProperties: freezed == customProperties ? _self.customProperties : customProperties // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,users: freezed == users ? _self.users : users // ignore: cast_nullable_to_non_nullable
-as List<User>?,access: freezed == access ? _self.access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,
-  ));
-}
-
-}
-
-
-/// Adds pattern-matching-related methods to [BHSPermissionTier].
-extension BHSPermissionTierPatterns on BHSPermissionTier {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _BHSPermissionTier value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _BHSPermissionTier() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _BHSPermissionTier value)  $default,){
-final _that = this;
-switch (_that) {
-case _BHSPermissionTier():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _BHSPermissionTier value)?  $default,){
-final _that = this;
-switch (_that) {
-case _BHSPermissionTier() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  int tierLevel,  BrickhouseBillingPeriod? billingPeriod,  String? description,  Map<String, dynamic>? customProperties,  List<User>? users,  List<Access>? access)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _BHSPermissionTier() when $default != null:
-return $default(_that.id,_that.name,_that.tierLevel,_that.billingPeriod,_that.description,_that.customProperties,_that.users,_that.access);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  int tierLevel,  BrickhouseBillingPeriod? billingPeriod,  String? description,  Map<String, dynamic>? customProperties,  List<User>? users,  List<Access>? access)  $default,) {final _that = this;
-switch (_that) {
-case _BHSPermissionTier():
-return $default(_that.id,_that.name,_that.tierLevel,_that.billingPeriod,_that.description,_that.customProperties,_that.users,_that.access);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  int tierLevel,  BrickhouseBillingPeriod? billingPeriod,  String? description,  Map<String, dynamic>? customProperties,  List<User>? users,  List<Access>? access)?  $default,) {final _that = this;
-switch (_that) {
-case _BHSPermissionTier() when $default != null:
-return $default(_that.id,_that.name,_that.tierLevel,_that.billingPeriod,_that.description,_that.customProperties,_that.users,_that.access);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _BHSPermissionTier implements BHSPermissionTier {
-  const _BHSPermissionTier({required this.id, required this.name, required this.tierLevel, this.billingPeriod, this.description, final  Map<String, dynamic>? customProperties, final  List<User>? users, final  List<Access>? access}): _customProperties = customProperties,_users = users,_access = access;
-  factory _BHSPermissionTier.fromJson(Map<String, dynamic> json) => _$BHSPermissionTierFromJson(json);
-
-@override final  String id;
-@override final  String name;
-@override final  int tierLevel;
-@override final  BrickhouseBillingPeriod? billingPeriod;
-@override final  String? description;
- final  Map<String, dynamic>? _customProperties;
-@override Map<String, dynamic>? get customProperties {
-  final value = _customProperties;
-  if (value == null) return null;
-  if (_customProperties is EqualUnmodifiableMapView) return _customProperties;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
- final  List<User>? _users;
-@override List<User>? get users {
-  final value = _users;
-  if (value == null) return null;
-  if (_users is EqualUnmodifiableListView) return _users;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-/// Is the list of granted access
- final  List<Access>? _access;
-/// Is the list of granted access
-@override List<Access>? get access {
-  final value = _access;
-  if (value == null) return null;
-  if (_access is EqualUnmodifiableListView) return _access;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-
-/// Create a copy of BHSPermissionTier
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$BHSPermissionTierCopyWith<_BHSPermissionTier> get copyWith => __$BHSPermissionTierCopyWithImpl<_BHSPermissionTier>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$BHSPermissionTierToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BHSPermissionTier&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.tierLevel, tierLevel) || other.tierLevel == tierLevel)&&(identical(other.billingPeriod, billingPeriod) || other.billingPeriod == billingPeriod)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._customProperties, _customProperties)&&const DeepCollectionEquality().equals(other._users, _users)&&const DeepCollectionEquality().equals(other._access, _access));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,name,tierLevel,billingPeriod,description,const DeepCollectionEquality().hash(_customProperties),const DeepCollectionEquality().hash(_users),const DeepCollectionEquality().hash(_access));
-
-@override
-String toString() {
-  return 'BHSPermissionTier(id: $id, name: $name, tierLevel: $tierLevel, billingPeriod: $billingPeriod, description: $description, customProperties: $customProperties, users: $users, access: $access)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$BHSPermissionTierCopyWith<$Res> implements $BHSPermissionTierCopyWith<$Res> {
-  factory _$BHSPermissionTierCopyWith(_BHSPermissionTier value, $Res Function(_BHSPermissionTier) _then) = __$BHSPermissionTierCopyWithImpl;
-@override @useResult
-$Res call({
- String id, String name, int tierLevel, BrickhouseBillingPeriod? billingPeriod, String? description, Map<String, dynamic>? customProperties, List<User>? users, List<Access>? access
-});
-
-
-
-
-}
-/// @nodoc
-class __$BHSPermissionTierCopyWithImpl<$Res>
-    implements _$BHSPermissionTierCopyWith<$Res> {
-  __$BHSPermissionTierCopyWithImpl(this._self, this._then);
-
-  final _BHSPermissionTier _self;
-  final $Res Function(_BHSPermissionTier) _then;
-
-/// Create a copy of BHSPermissionTier
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? tierLevel = null,Object? billingPeriod = freezed,Object? description = freezed,Object? customProperties = freezed,Object? users = freezed,Object? access = freezed,}) {
-  return _then(_BHSPermissionTier(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,tierLevel: null == tierLevel ? _self.tierLevel : tierLevel // ignore: cast_nullable_to_non_nullable
-as int,billingPeriod: freezed == billingPeriod ? _self.billingPeriod : billingPeriod // ignore: cast_nullable_to_non_nullable
-as BrickhouseBillingPeriod?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,customProperties: freezed == customProperties ? _self._customProperties : customProperties // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,users: freezed == users ? _self._users : users // ignore: cast_nullable_to_non_nullable
-as List<User>?,access: freezed == access ? _self._access : access // ignore: cast_nullable_to_non_nullable
-as List<Access>?,
-  ));
-}
-
-
-}
-
-
-/// @nodoc
-mixin _$BHSPermissionTierInput {
-
- String? get id; set id(String? value); String? get name; set name(String? value); String? get description; set description(String? value); BrickhouseBillingPeriod? get billingPeriod; set billingPeriod(BrickhouseBillingPeriod? value); int get tierLevel; set tierLevel(int value); Map<String, dynamic>? get customProperties; set customProperties(Map<String, dynamic>? value);
-/// Create a copy of BHSPermissionTierInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$BHSPermissionTierInputCopyWith<BHSPermissionTierInput> get copyWith => _$BHSPermissionTierInputCopyWithImpl<BHSPermissionTierInput>(this as BHSPermissionTierInput, _$identity);
-
-  /// Serializes this BHSPermissionTierInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-
-
-@override
-String toString() {
-  return 'BHSPermissionTierInput(id: $id, name: $name, description: $description, billingPeriod: $billingPeriod, tierLevel: $tierLevel, customProperties: $customProperties)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $BHSPermissionTierInputCopyWith<$Res>  {
-  factory $BHSPermissionTierInputCopyWith(BHSPermissionTierInput value, $Res Function(BHSPermissionTierInput) _then) = _$BHSPermissionTierInputCopyWithImpl;
-@useResult
-$Res call({
- String? id, String? name, String? description, BrickhouseBillingPeriod? billingPeriod, int tierLevel, Map<String, dynamic>? customProperties
-});
-
-
-
-
-}
-/// @nodoc
-class _$BHSPermissionTierInputCopyWithImpl<$Res>
-    implements $BHSPermissionTierInputCopyWith<$Res> {
-  _$BHSPermissionTierInputCopyWithImpl(this._self, this._then);
-
-  final BHSPermissionTierInput _self;
-  final $Res Function(BHSPermissionTierInput) _then;
-
-/// Create a copy of BHSPermissionTierInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? description = freezed,Object? billingPeriod = freezed,Object? tierLevel = null,Object? customProperties = freezed,}) {
-  return _then(_self.copyWith(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,billingPeriod: freezed == billingPeriod ? _self.billingPeriod : billingPeriod // ignore: cast_nullable_to_non_nullable
-as BrickhouseBillingPeriod?,tierLevel: null == tierLevel ? _self.tierLevel : tierLevel // ignore: cast_nullable_to_non_nullable
-as int,customProperties: freezed == customProperties ? _self.customProperties : customProperties // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-}
-
-
-/// Adds pattern-matching-related methods to [BHSPermissionTierInput].
-extension BHSPermissionTierInputPatterns on BHSPermissionTierInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _BHSPermissionTierInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _BHSPermissionTierInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _BHSPermissionTierInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _BHSPermissionTierInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _BHSPermissionTierInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _BHSPermissionTierInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? description,  BrickhouseBillingPeriod? billingPeriod,  int tierLevel,  Map<String, dynamic>? customProperties)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _BHSPermissionTierInput() when $default != null:
-return $default(_that.id,_that.name,_that.description,_that.billingPeriod,_that.tierLevel,_that.customProperties);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? description,  BrickhouseBillingPeriod? billingPeriod,  int tierLevel,  Map<String, dynamic>? customProperties)  $default,) {final _that = this;
-switch (_that) {
-case _BHSPermissionTierInput():
-return $default(_that.id,_that.name,_that.description,_that.billingPeriod,_that.tierLevel,_that.customProperties);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? description,  BrickhouseBillingPeriod? billingPeriod,  int tierLevel,  Map<String, dynamic>? customProperties)?  $default,) {final _that = this;
-switch (_that) {
-case _BHSPermissionTierInput() when $default != null:
-return $default(_that.id,_that.name,_that.description,_that.billingPeriod,_that.tierLevel,_that.customProperties);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _BHSPermissionTierInput implements BHSPermissionTierInput {
-   _BHSPermissionTierInput({this.id, this.name, this.description, this.billingPeriod, this.tierLevel = 1, this.customProperties});
-  factory _BHSPermissionTierInput.fromJson(Map<String, dynamic> json) => _$BHSPermissionTierInputFromJson(json);
-
-@override  String? id;
-@override  String? name;
-@override  String? description;
-@override  BrickhouseBillingPeriod? billingPeriod;
-@override@JsonKey()  int tierLevel;
-@override  Map<String, dynamic>? customProperties;
-
-/// Create a copy of BHSPermissionTierInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$BHSPermissionTierInputCopyWith<_BHSPermissionTierInput> get copyWith => __$BHSPermissionTierInputCopyWithImpl<_BHSPermissionTierInput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$BHSPermissionTierInputToJson(this, );
-}
-
-
-
-@override
-String toString() {
-  return 'BHSPermissionTierInput(id: $id, name: $name, description: $description, billingPeriod: $billingPeriod, tierLevel: $tierLevel, customProperties: $customProperties)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$BHSPermissionTierInputCopyWith<$Res> implements $BHSPermissionTierInputCopyWith<$Res> {
-  factory _$BHSPermissionTierInputCopyWith(_BHSPermissionTierInput value, $Res Function(_BHSPermissionTierInput) _then) = __$BHSPermissionTierInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? id, String? name, String? description, BrickhouseBillingPeriod? billingPeriod, int tierLevel, Map<String, dynamic>? customProperties
-});
-
-
-
-
-}
-/// @nodoc
-class __$BHSPermissionTierInputCopyWithImpl<$Res>
-    implements _$BHSPermissionTierInputCopyWith<$Res> {
-  __$BHSPermissionTierInputCopyWithImpl(this._self, this._then);
-
-  final _BHSPermissionTierInput _self;
-  final $Res Function(_BHSPermissionTierInput) _then;
-
-/// Create a copy of BHSPermissionTierInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? description = freezed,Object? billingPeriod = freezed,Object? tierLevel = null,Object? customProperties = freezed,}) {
-  return _then(_BHSPermissionTierInput(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,billingPeriod: freezed == billingPeriod ? _self.billingPeriod : billingPeriod // ignore: cast_nullable_to_non_nullable
-as BrickhouseBillingPeriod?,tierLevel: null == tierLevel ? _self.tierLevel : tierLevel // ignore: cast_nullable_to_non_nullable
-as int,customProperties: freezed == customProperties ? _self.customProperties : customProperties // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-
-/// @nodoc
 mixin _$BrickHouseWorkspaceInput {
 
  String? get id; String get appId; String get name;@JsonKey(unknownEnumValue: MetricSystem.imperial) MetricSystem get metricSystem;/// Is the type of the App
@@ -4006,7 +3353,7 @@ return $default(_that.id,_that.appId,_that.name,_that.metricSystem,_that.typeApp
 @JsonSerializable()
 
 class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
-  const _BrickHouseWorkspaceInput({this.id, required this.appId, required this.name, @JsonKey(unknownEnumValue: MetricSystem.imperial) required this.metricSystem, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.typeApp = AppInternalIdentifier.brickhouseTracking, required this.timezoneId, final  List<String>? assetsIds = const []}): _assetsIds = assetsIds;
+  const _BrickHouseWorkspaceInput({this.id, required this.appId, required this.name, @JsonKey(unknownEnumValue: MetricSystem.imperial) required this.metricSystem, @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.typeApp = AppInternalIdentifier.brickhouseTracking, required this.timezoneId, this.assetsIds = const []});
   factory _BrickHouseWorkspaceInput.fromJson(Map<String, dynamic> json) => _$BrickHouseWorkspaceInputFromJson(json);
 
 @override final  String? id;
@@ -4016,15 +3363,7 @@ class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
 /// Is the type of the App
 @override@JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) final  AppInternalIdentifier? typeApp;
 @override final  String timezoneId;
- final  List<String>? _assetsIds;
-@override@JsonKey() List<String>? get assetsIds {
-  final value = _assetsIds;
-  if (value == null) return null;
-  if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override@JsonKey() final  List<String>? assetsIds;
 
 /// Create a copy of BrickHouseWorkspaceInput
 /// with the given fields replaced by the non-null parameter values.
@@ -4039,12 +3378,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BrickHouseWorkspaceInput&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.name, name) || other.name == name)&&(identical(other.metricSystem, metricSystem) || other.metricSystem == metricSystem)&&(identical(other.typeApp, typeApp) || other.typeApp == typeApp)&&(identical(other.timezoneId, timezoneId) || other.timezoneId == timezoneId)&&const DeepCollectionEquality().equals(other._assetsIds, _assetsIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BrickHouseWorkspaceInput&&(identical(other.id, id) || other.id == id)&&(identical(other.appId, appId) || other.appId == appId)&&(identical(other.name, name) || other.name == name)&&(identical(other.metricSystem, metricSystem) || other.metricSystem == metricSystem)&&(identical(other.typeApp, typeApp) || other.typeApp == typeApp)&&(identical(other.timezoneId, timezoneId) || other.timezoneId == timezoneId)&&const DeepCollectionEquality().equals(other.assetsIds, assetsIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,appId,name,metricSystem,typeApp,timezoneId,const DeepCollectionEquality().hash(_assetsIds));
+int get hashCode => Object.hash(runtimeType,id,appId,name,metricSystem,typeApp,timezoneId,const DeepCollectionEquality().hash(assetsIds));
 
 @override
 String toString() {
@@ -4084,7 +3423,7 @@ as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non
 as String,metricSystem: null == metricSystem ? _self.metricSystem : metricSystem // ignore: cast_nullable_to_non_nullable
 as MetricSystem,typeApp: freezed == typeApp ? _self.typeApp : typeApp // ignore: cast_nullable_to_non_nullable
 as AppInternalIdentifier?,timezoneId: null == timezoneId ? _self.timezoneId : timezoneId // ignore: cast_nullable_to_non_nullable
-as String,assetsIds: freezed == assetsIds ? _self._assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
+as String,assetsIds: freezed == assetsIds ? _self.assetsIds : assetsIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }

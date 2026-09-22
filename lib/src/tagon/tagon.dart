@@ -3,7 +3,6 @@ import 'package:layrz_sdk/layrz_sdk.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_logging/layrz_logging.dart';
-import 'package:layrz_models/src/assets/assets.dart';
 
 // Freezed
 part 'tagon.freezed.dart';

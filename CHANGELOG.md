@@ -1,5 +1,63 @@
 # Changelog
 
+## 3.34.0+9
+
+- Bumped `layrz_sdk` to `^4.6.3`, which adds the `ATS_MERGE_OPERATIONS` reference category.
+
+## 3.34.0+8
+
+- Bumped `layrz_sdk` to `^4.6.2`.
+- Removed BLE models (`BleDevice`, `BleManufacturerData`, `BleServiceData`); these types now come exclusively from `layrz_sdk`.
+
+## 3.34.0+7
+
+- Move `LayrzNotification` to `layrz_sdk`; re-exported it for backwards compatibility. Deleted the local `lib/src/notifications/` module (model, generated files, and its barrel); `LayrzNotification` and `SoundEffect` now resolve exclusively through the existing `package:layrz_sdk/layrz_sdk.dart` re-export in `package:layrz_models/layrz_models.dart`. The dropped `BuildContext`-based `formatTitle`/`formatMessage` helpers are not part of the SDK model; translation is now the consumer's responsibility.
+- Bumped `layrz_sdk` to `^4.5.5+1`.
+
+## 3.34.0+6
+
+- Requires `layrz_sdk` `^4.5.1`, which restores the pre-migration public surface of `Action` (instance `fetch`, `ActionInput.save` returning `ApiResponse`, the `ActionVariant` operation-name getters, and `Action.gqlFragment`), `MapLayer` (`MapLayerInput.save` returning `ApiResponse`, `MapLayer.gqlFragment`), and the `Sensor` converter classes, so downstream code that consumed these through `layrz_models` compiles unchanged.
+- Simplified the re-export barrel to a blanket re-export of `package:layrz_sdk/layrz_sdk.dart` (hiding `TimeOfDay`) and removed the local module barrels and legacy converter files whose types now live in `layrz_sdk`.
+- Kept the deprecated `CareProtocolModeOrNullConverter`, `ConciergeFormBlockTypeConverter`, `ModbusParameterSchemaConverter`, `TriggerGeofenceDetectionModeOrNullConverter`, and their siblings as local shims for backwards compatibility.
+
+## 3.34.0+5
+
+- Deleted the local `BleDevice`, `BleManufacturerData`, `BleServiceData`, and `MapLayerInput` sources; these types now come exclusively from `layrz_sdk`.
+- Moved the Flespi module (`FlespiProtocol`, `FlespiModel`, `FlespiChannel`, and their decoders) to `layrz_sdk`; re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility. `lib/src/flespi/flespi.dart` is now an empty pass-through library.
+- Moved `ModelInput` and `ZigbeeParameterInput` to `layrz_sdk`; re-exported for backwards compatibility. `lib/src/models/models.dart` is now an empty pass-through library.
+- Moved `CommandDefinitionInput` and `CommandPayloadDefinitionInput` to `layrz_sdk`; re-exported for backwards compatibility. `AssetCommand`/`AssetCommandPossibleDevice` and the legacy report converters remain local to `lib/src/commands/commands.dart`.
+- Moved `ConfigGroupingInput` and `ConfigDefinitionInput` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `ConfIoTFile` and `ConfIoTNamespace` (with `ConfIoTNamespaceConverter`/`ConfIoTNamespaceOrNullConverter`) to `layrz_sdk`; re-exported for backwards compatibility. `lib/src/confiot/confiot.dart` is now an empty pass-through library.
+- Moved the report preview types (`ReportPreview`, `ReportPage`, `ReportRow`, `ReportHeader`, `ReportCell`, `ReportDataType`) to `layrz_sdk`; re-exported for backwards compatibility.
+- Bumped `layrz_sdk` to `^4.5.0+9`.
+- No public API changes for consumers: all moved types resolve through the existing `package:layrz_sdk/layrz_sdk.dart` re-export in `package:layrz_models/layrz_models.dart`.
+
+## 3.34.0+3
+
+- `InboundProtocolInput` moved to `layrz_sdk` and is re-exported from `package:layrz_models/layrz_models.dart`; no public API changes for consumers.
+- Now consumes `layrz_sdk` `4.5.0+1` (still resolved via the existing `^4.5.0` dependency pin).
+
+## 3.34.0+2
+
+- Removed the local definitions of the models, inputs, enums, and converters that were re-exported from `layrz_sdk` in `3.34.0+1` (the `RegisteredApp`/`Tag`/`CustomReport` closure and related types across access, actions, apps, assets, devices, exchange, geofences, modbus, mqtt, operations, references, sensors, vision, zigbee, and peripheral models across care protocols, charts, commands, concierge, external accounts, inbound protocols, Mappit, outbound services, presets, report templates, triggers, users, and workspace cards). These types now resolve exclusively through the `package:layrz_sdk/layrz_sdk.dart` re-export already published in `package:layrz_models/layrz_models.dart`; no public API changes for consumers.
+- Finalized the `layrz_sdk` dependency on the published `^4.5.0` release (no local path override).
+
+## 3.34.0+1
+
+- Moved `Model`, `HwModel`, `HwModelInput`, `ConfIoTLayout`, `RenderWidget`, `FirmwareBuild`, and `FirmwareBranch` to `layrz_sdk`; re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility.
+- Moved `CommandDefinition`, `CommandPayloadDefinition`, `CommandDefinitionSource`, and `CommandPayloadDataType` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `InboundProtocol`, `ConfigGrouping`, `ConfigDefinition`, `ConfigPayloadDataType`, `ConfigSource`, `ConfigKind`, `OperationMode`, and `ZigbeeDataType` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `CredentialField`, `CredentialFieldType`, and `CredentialFieldAction` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `FlespiAcl`, `FlespiSubmoduleConfig`, `FlespiUri`, `FlespiAction`, `FlespiMethod`, and `FlespiSubmodule` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `WebhookStructure`, `WebhookPath`, `WebhookHeader`, `WebhookMethod`, and `WebhookFormat` to `layrz_sdk`; re-exported for backwards compatibility.
+- Moved `SimulationCycle` to `layrz_sdk`; re-exported for backwards compatibility.
+- Bumped `layrz_sdk` to `^4.4.9-dev.1`.
+
+## 3.34.1
+
+- Fixed freezed code generation to emit valid collection constructor parameters (disabled make_collections_unmodifiable), so generated code compiles under a real build.
+- Bumped `layrz_sdk` to `^4.4.8`.
+
 ## 3.34.0
 
 - Moved `Category`, `CategoryKind`, and `AssetKind` to `layrz_sdk`; they are re-exported from `package:layrz_models/layrz_models.dart` for backwards compatibility.

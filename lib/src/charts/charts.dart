@@ -3,20 +3,14 @@ library;
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:collection/collection.dart';
-import 'package:layrz_logging/layrz_logging.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 part 'charts.freezed.dart';
 part 'charts.g.dart';
 
-part 'src/chart.dart';
-part 'src/chart_input.dart';
 part 'src/axis_config.dart';
 part 'src/chart_data_serie_type.dart';
-part 'src/chart_algorithm.dart';
-part 'src/chart_data_source.dart';
 part 'src/chart_data_type.dart';
-part 'src/chart_type.dart';
 part 'src/line_chart.dart';
 part 'src/table_chart.dart';
 part 'src/column_chart.dart';

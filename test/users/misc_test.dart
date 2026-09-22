@@ -103,68 +103,6 @@ void main() {
     });
   });
 
-  group('Passkey Tests', () {
-    test('Passkey.fromJson()', () {
-      final json = {
-        'id': 'passkey-001',
-        'appId': 'app-xyz',
-        'platform': 'IOS',
-      };
-
-      final passkey = Passkey.fromJson(json);
-
-      expect(passkey.id, 'passkey-001');
-      expect(passkey.appId, 'app-xyz');
-      expect(passkey.platform, AppPlatform.ios);
-    });
-
-    test('Passkey with different platforms', () {
-      final iosPasskey = Passkey(
-        id: 'ios-key',
-        appId: 'app-1',
-        platform: AppPlatform.ios,
-      );
-      final androidPasskey = Passkey(
-        id: 'android-key',
-        appId: 'app-1',
-        platform: AppPlatform.android,
-      );
-
-      expect(iosPasskey.platform, AppPlatform.ios);
-      expect(androidPasskey.platform, AppPlatform.android);
-    });
-
-    test('Passkey.toJson() and fromJson() roundtrip', () {
-      final passkey = Passkey(
-        id: 'roundtrip-key',
-        appId: 'app-roundtrip',
-        platform: AppPlatform.android,
-      );
-
-      final json = passkey.toJson();
-      final restored = Passkey.fromJson(json);
-
-      expect(restored.id, passkey.id);
-      expect(restored.appId, passkey.appId);
-      expect(restored.platform, passkey.platform);
-    });
-
-    test('Passkey equality', () {
-      final passkey1 = Passkey(
-        id: 'same-id',
-        appId: 'app-same',
-        platform: AppPlatform.ios,
-      );
-      final passkey2 = Passkey(
-        id: 'same-id',
-        appId: 'app-same',
-        platform: AppPlatform.ios,
-      );
-
-      expect(passkey1, passkey2);
-    });
-  });
-
   group('TenvioDestinationSetup Tests', () {
     test('TenvioDestinationSetup.fromJson()', () {
       final json = {

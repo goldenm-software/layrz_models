@@ -1399,42 +1399,21 @@ return $default(_that.id,_that.buses,_that.busesIds,_that.content,_that.isVisibl
 @JsonSerializable()
 
 class _TagOnNotification extends TagOnNotification {
-  const _TagOnNotification({required this.id, final  List<Asset> buses = const [], final  List<String> busesIds = const [], required this.content, required this.isVisible, final  List<String> destinations = const []}): _buses = buses,_busesIds = busesIds,_destinations = destinations,super._();
+  const _TagOnNotification({required this.id, this.buses = const [], this.busesIds = const [], required this.content, required this.isVisible, this.destinations = const []}): super._();
   factory _TagOnNotification.fromJson(Map<String, dynamic> json) => _$TagOnNotificationFromJson(json);
 
 /// [id] refers to the notification id
 @override final  String id;
 /// [buses] is the list of buses affected by the notification
- final  List<Asset> _buses;
-/// [buses] is the list of buses affected by the notification
-@override@JsonKey() List<Asset> get buses {
-  if (_buses is EqualUnmodifiableListView) return _buses;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_buses);
-}
-
+@override@JsonKey() final  List<Asset> buses;
 /// [busesIds] is the list of buses affected by the notification
- final  List<String> _busesIds;
-/// [busesIds] is the list of buses affected by the notification
-@override@JsonKey() List<String> get busesIds {
-  if (_busesIds is EqualUnmodifiableListView) return _busesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_busesIds);
-}
-
+@override@JsonKey() final  List<String> busesIds;
 /// [content] is the notification message
 @override final  String content;
 /// [isVisible] is the notification visibility
 @override final  bool isVisible;
 /// [destinations] is the list of destinations affected by the notification
- final  List<String> _destinations;
-/// [destinations] is the list of destinations affected by the notification
-@override@JsonKey() List<String> get destinations {
-  if (_destinations is EqualUnmodifiableListView) return _destinations;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_destinations);
-}
-
+@override@JsonKey() final  List<String> destinations;
 
 /// Create a copy of TagOnNotification
 /// with the given fields replaced by the non-null parameter values.
@@ -1449,12 +1428,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TagOnNotification&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other._buses, _buses)&&const DeepCollectionEquality().equals(other._busesIds, _busesIds)&&(identical(other.content, content) || other.content == content)&&(identical(other.isVisible, isVisible) || other.isVisible == isVisible)&&const DeepCollectionEquality().equals(other._destinations, _destinations));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TagOnNotification&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other.buses, buses)&&const DeepCollectionEquality().equals(other.busesIds, busesIds)&&(identical(other.content, content) || other.content == content)&&(identical(other.isVisible, isVisible) || other.isVisible == isVisible)&&const DeepCollectionEquality().equals(other.destinations, destinations));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,const DeepCollectionEquality().hash(_buses),const DeepCollectionEquality().hash(_busesIds),content,isVisible,const DeepCollectionEquality().hash(_destinations));
+int get hashCode => Object.hash(runtimeType,id,const DeepCollectionEquality().hash(buses),const DeepCollectionEquality().hash(busesIds),content,isVisible,const DeepCollectionEquality().hash(destinations));
 
 @override
 String toString() {
@@ -1489,11 +1468,11 @@ class __$TagOnNotificationCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? buses = null,Object? busesIds = null,Object? content = null,Object? isVisible = null,Object? destinations = null,}) {
   return _then(_TagOnNotification(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,buses: null == buses ? _self._buses : buses // ignore: cast_nullable_to_non_nullable
-as List<Asset>,busesIds: null == busesIds ? _self._busesIds : busesIds // ignore: cast_nullable_to_non_nullable
+as String,buses: null == buses ? _self.buses : buses // ignore: cast_nullable_to_non_nullable
+as List<Asset>,busesIds: null == busesIds ? _self.busesIds : busesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
 as String,isVisible: null == isVisible ? _self.isVisible : isVisible // ignore: cast_nullable_to_non_nullable
-as bool,destinations: null == destinations ? _self._destinations : destinations // ignore: cast_nullable_to_non_nullable
+as bool,destinations: null == destinations ? _self.destinations : destinations // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
 }

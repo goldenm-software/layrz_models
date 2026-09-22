@@ -928,7 +928,7 @@ return $default(_that.name,_that.dataType,_that.isRequired,_that.choices,_that.m
 @JsonSerializable()
 
 class _TenvioCustomProperty implements TenvioCustomProperty {
-  const _TenvioCustomProperty({required this.name, @TenvioPropertyDataTypeConverter() required this.dataType, this.isRequired = false, final  List<String> choices = const [], this.minValue, this.maxValue, this.minLength, this.maxLength, this.maxFileSize, this.defaultValue}): _choices = choices;
+  const _TenvioCustomProperty({required this.name, @TenvioPropertyDataTypeConverter() required this.dataType, this.isRequired = false, this.choices = const [], this.minValue, this.maxValue, this.minLength, this.maxLength, this.maxFileSize, this.defaultValue});
   factory _TenvioCustomProperty.fromJson(Map<String, dynamic> json) => _$TenvioCustomPropertyFromJson(json);
 
 /// [name] is the name of the item.
@@ -940,16 +940,7 @@ class _TenvioCustomProperty implements TenvioCustomProperty {
 /// [choices] is a list of choices for the property.
 /// This property is only available when the data type is [TenvioPropertyDataType.choice] or
 /// [TenvioPropertyDataType.mutipleChoices].
- final  List<String> _choices;
-/// [choices] is a list of choices for the property.
-/// This property is only available when the data type is [TenvioPropertyDataType.choice] or
-/// [TenvioPropertyDataType.mutipleChoices].
-@override@JsonKey() List<String> get choices {
-  if (_choices is EqualUnmodifiableListView) return _choices;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_choices);
-}
-
+@override@JsonKey() final  List<String> choices;
 /// [minValue] is the minimum value for the property.
 /// This property is only available when the data type is [TenvioPropertyDataType.number].
 @override final  double? minValue;
@@ -981,12 +972,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioCustomProperty&&(identical(other.name, name) || other.name == name)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.isRequired, isRequired) || other.isRequired == isRequired)&&const DeepCollectionEquality().equals(other._choices, _choices)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.minLength, minLength) || other.minLength == minLength)&&(identical(other.maxLength, maxLength) || other.maxLength == maxLength)&&(identical(other.maxFileSize, maxFileSize) || other.maxFileSize == maxFileSize)&&const DeepCollectionEquality().equals(other.defaultValue, defaultValue));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioCustomProperty&&(identical(other.name, name) || other.name == name)&&(identical(other.dataType, dataType) || other.dataType == dataType)&&(identical(other.isRequired, isRequired) || other.isRequired == isRequired)&&const DeepCollectionEquality().equals(other.choices, choices)&&(identical(other.minValue, minValue) || other.minValue == minValue)&&(identical(other.maxValue, maxValue) || other.maxValue == maxValue)&&(identical(other.minLength, minLength) || other.minLength == minLength)&&(identical(other.maxLength, maxLength) || other.maxLength == maxLength)&&(identical(other.maxFileSize, maxFileSize) || other.maxFileSize == maxFileSize)&&const DeepCollectionEquality().equals(other.defaultValue, defaultValue));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name,dataType,isRequired,const DeepCollectionEquality().hash(_choices),minValue,maxValue,minLength,maxLength,maxFileSize,const DeepCollectionEquality().hash(defaultValue));
+int get hashCode => Object.hash(runtimeType,name,dataType,isRequired,const DeepCollectionEquality().hash(choices),minValue,maxValue,minLength,maxLength,maxFileSize,const DeepCollectionEquality().hash(defaultValue));
 
 @override
 String toString() {
@@ -1023,7 +1014,7 @@ class __$TenvioCustomPropertyCopyWithImpl<$Res>
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,dataType: null == dataType ? _self.dataType : dataType // ignore: cast_nullable_to_non_nullable
 as TenvioPropertyDataType,isRequired: null == isRequired ? _self.isRequired : isRequired // ignore: cast_nullable_to_non_nullable
-as bool,choices: null == choices ? _self._choices : choices // ignore: cast_nullable_to_non_nullable
+as bool,choices: null == choices ? _self.choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>,minValue: freezed == minValue ? _self.minValue : minValue // ignore: cast_nullable_to_non_nullable
 as double?,maxValue: freezed == maxValue ? _self.maxValue : maxValue // ignore: cast_nullable_to_non_nullable
 as double?,minLength: freezed == minLength ? _self.minLength : minLength // ignore: cast_nullable_to_non_nullable
@@ -1649,7 +1640,7 @@ return $default(_that.id,_that.trackingId,_that.warehouseId,_that.warehouse,_tha
 @JsonSerializable()
 
 class _TenvioPackage implements TenvioPackage {
-  const _TenvioPackage({required this.id, required this.trackingId, this.warehouseId, this.warehouse, this.qrCode, final  List<TenvioPackageQuantity>? items, @TenvioDestinationTypeOrNullConverter() this.destinationType, this.destinationWarehouse, this.destinationWarehouseId, this.destinationUser, this.destinationUserId, this.destinationUnregistered, @TenvioPackageStatusConverter() required this.status, @TimestampConverter() required this.createdAt, @TimestampConverter() required this.updatedAt, this.isCurrent = false, final  List<TenvioPackageHistory>? history, this.requiresPhotos = false, this.signature}): _items = items,_history = history;
+  const _TenvioPackage({required this.id, required this.trackingId, this.warehouseId, this.warehouse, this.qrCode, this.items, @TenvioDestinationTypeOrNullConverter() this.destinationType, this.destinationWarehouse, this.destinationWarehouseId, this.destinationUser, this.destinationUserId, this.destinationUnregistered, @TenvioPackageStatusConverter() required this.status, @TimestampConverter() required this.createdAt, @TimestampConverter() required this.updatedAt, this.isCurrent = false, this.history, this.requiresPhotos = false, this.signature});
   factory _TenvioPackage.fromJson(Map<String, dynamic> json) => _$TenvioPackageFromJson(json);
 
 /// [id] is the unique identifier of the package
@@ -1665,16 +1656,7 @@ class _TenvioPackage implements TenvioPackage {
 /// `tenvio://orders/:orderId/packages/:packageId`
 @override final  String? qrCode;
 /// [items] is the list of items that are part of the package.
- final  List<TenvioPackageQuantity>? _items;
-/// [items] is the list of items that are part of the package.
-@override List<TenvioPackageQuantity>? get items {
-  final value = _items;
-  if (value == null) return null;
-  if (_items is EqualUnmodifiableListView) return _items;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TenvioPackageQuantity>? items;
 /// [destinationType] Type of the destination.
 @override@TenvioDestinationTypeOrNullConverter() final  TenvioDestinationType? destinationType;
 /// [destinationWarehouse] Warehouse destination of the order.
@@ -1696,16 +1678,7 @@ class _TenvioPackage implements TenvioPackage {
 /// [isCurrent] indicates that this package is currently setted by the driver to next to be delivered
 @override@JsonKey() final  bool isCurrent;
 /// [history] is the list of the history of the package.
- final  List<TenvioPackageHistory>? _history;
-/// [history] is the list of the history of the package.
-@override List<TenvioPackageHistory>? get history {
-  final value = _history;
-  if (value == null) return null;
-  if (_history is EqualUnmodifiableListView) return _history;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TenvioPackageHistory>? history;
 /// [requiresPhotos] indicates if the package requires photos to be taken.
 @override@JsonKey() final  bool requiresPhotos;
 /// [signature] is the signature of the package.
@@ -1724,12 +1697,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioPackage&&(identical(other.id, id) || other.id == id)&&(identical(other.trackingId, trackingId) || other.trackingId == trackingId)&&(identical(other.warehouseId, warehouseId) || other.warehouseId == warehouseId)&&(identical(other.warehouse, warehouse) || other.warehouse == warehouse)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other._items, _items)&&(identical(other.destinationType, destinationType) || other.destinationType == destinationType)&&(identical(other.destinationWarehouse, destinationWarehouse) || other.destinationWarehouse == destinationWarehouse)&&(identical(other.destinationWarehouseId, destinationWarehouseId) || other.destinationWarehouseId == destinationWarehouseId)&&(identical(other.destinationUser, destinationUser) || other.destinationUser == destinationUser)&&(identical(other.destinationUserId, destinationUserId) || other.destinationUserId == destinationUserId)&&(identical(other.destinationUnregistered, destinationUnregistered) || other.destinationUnregistered == destinationUnregistered)&&(identical(other.status, status) || other.status == status)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.isCurrent, isCurrent) || other.isCurrent == isCurrent)&&const DeepCollectionEquality().equals(other._history, _history)&&(identical(other.requiresPhotos, requiresPhotos) || other.requiresPhotos == requiresPhotos)&&(identical(other.signature, signature) || other.signature == signature));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioPackage&&(identical(other.id, id) || other.id == id)&&(identical(other.trackingId, trackingId) || other.trackingId == trackingId)&&(identical(other.warehouseId, warehouseId) || other.warehouseId == warehouseId)&&(identical(other.warehouse, warehouse) || other.warehouse == warehouse)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&const DeepCollectionEquality().equals(other.items, items)&&(identical(other.destinationType, destinationType) || other.destinationType == destinationType)&&(identical(other.destinationWarehouse, destinationWarehouse) || other.destinationWarehouse == destinationWarehouse)&&(identical(other.destinationWarehouseId, destinationWarehouseId) || other.destinationWarehouseId == destinationWarehouseId)&&(identical(other.destinationUser, destinationUser) || other.destinationUser == destinationUser)&&(identical(other.destinationUserId, destinationUserId) || other.destinationUserId == destinationUserId)&&(identical(other.destinationUnregistered, destinationUnregistered) || other.destinationUnregistered == destinationUnregistered)&&(identical(other.status, status) || other.status == status)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.isCurrent, isCurrent) || other.isCurrent == isCurrent)&&const DeepCollectionEquality().equals(other.history, history)&&(identical(other.requiresPhotos, requiresPhotos) || other.requiresPhotos == requiresPhotos)&&(identical(other.signature, signature) || other.signature == signature));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,trackingId,warehouseId,warehouse,qrCode,const DeepCollectionEquality().hash(_items),destinationType,destinationWarehouse,destinationWarehouseId,destinationUser,destinationUserId,destinationUnregistered,status,createdAt,updatedAt,isCurrent,const DeepCollectionEquality().hash(_history),requiresPhotos,signature]);
+int get hashCode => Object.hashAll([runtimeType,id,trackingId,warehouseId,warehouse,qrCode,const DeepCollectionEquality().hash(items),destinationType,destinationWarehouse,destinationWarehouseId,destinationUser,destinationUserId,destinationUnregistered,status,createdAt,updatedAt,isCurrent,const DeepCollectionEquality().hash(history),requiresPhotos,signature]);
 
 @override
 String toString() {
@@ -1768,7 +1741,7 @@ as String,trackingId: null == trackingId ? _self.trackingId : trackingId // igno
 as String,warehouseId: freezed == warehouseId ? _self.warehouseId : warehouseId // ignore: cast_nullable_to_non_nullable
 as String?,warehouse: freezed == warehouse ? _self.warehouse : warehouse // ignore: cast_nullable_to_non_nullable
 as Asset?,qrCode: freezed == qrCode ? _self.qrCode : qrCode // ignore: cast_nullable_to_non_nullable
-as String?,items: freezed == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as String?,items: freezed == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
 as List<TenvioPackageQuantity>?,destinationType: freezed == destinationType ? _self.destinationType : destinationType // ignore: cast_nullable_to_non_nullable
 as TenvioDestinationType?,destinationWarehouse: freezed == destinationWarehouse ? _self.destinationWarehouse : destinationWarehouse // ignore: cast_nullable_to_non_nullable
 as Asset?,destinationWarehouseId: freezed == destinationWarehouseId ? _self.destinationWarehouseId : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
@@ -1779,7 +1752,7 @@ as TenvioUnregisteredUser?,status: null == status ? _self.status : status // ign
 as TenvioPackageStatus,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,isCurrent: null == isCurrent ? _self.isCurrent : isCurrent // ignore: cast_nullable_to_non_nullable
-as bool,history: freezed == history ? _self._history : history // ignore: cast_nullable_to_non_nullable
+as bool,history: freezed == history ? _self.history : history // ignore: cast_nullable_to_non_nullable
 as List<TenvioPackageHistory>?,requiresPhotos: null == requiresPhotos ? _self.requiresPhotos : requiresPhotos // ignore: cast_nullable_to_non_nullable
 as bool,signature: freezed == signature ? _self.signature : signature // ignore: cast_nullable_to_non_nullable
 as String?,
@@ -2355,7 +2328,7 @@ return $default(_that.trackingId,_that.status,_that.driverName,_that.latitude,_t
 @JsonSerializable()
 
 class _TrackedTenvioPackage extends TrackedTenvioPackage {
-  const _TrackedTenvioPackage({required this.trackingId, @TenvioPackageStatusConverter() required this.status, this.driverName, this.latitude, this.longitude, this.destinationLatitude, this.destinationLongitude, required final  List<TenvioPackageHistory> history, @TimestampConverter() required this.updatedAt}): _history = history,super._();
+  const _TrackedTenvioPackage({required this.trackingId, @TenvioPackageStatusConverter() required this.status, this.driverName, this.latitude, this.longitude, this.destinationLatitude, this.destinationLongitude, required this.history, @TimestampConverter() required this.updatedAt}): super._();
   factory _TrackedTenvioPackage.fromJson(Map<String, dynamic> json) => _$TrackedTenvioPackageFromJson(json);
 
 /// [trackingId] is the unique identifier of the tracking of the package.
@@ -2377,14 +2350,7 @@ class _TrackedTenvioPackage extends TrackedTenvioPackage {
 /// [destinationLongitude] is the longitude of the destination of the package.
 @override final  double? destinationLongitude;
 /// [history] is the list of the history of the package.
- final  List<TenvioPackageHistory> _history;
-/// [history] is the list of the history of the package.
-@override List<TenvioPackageHistory> get history {
-  if (_history is EqualUnmodifiableListView) return _history;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_history);
-}
-
+@override final  List<TenvioPackageHistory> history;
 /// [updatedAt] is the date when the package was last updated.
 @override@TimestampConverter() final  DateTime updatedAt;
 
@@ -2401,12 +2367,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TrackedTenvioPackage&&(identical(other.trackingId, trackingId) || other.trackingId == trackingId)&&(identical(other.status, status) || other.status == status)&&(identical(other.driverName, driverName) || other.driverName == driverName)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.destinationLatitude, destinationLatitude) || other.destinationLatitude == destinationLatitude)&&(identical(other.destinationLongitude, destinationLongitude) || other.destinationLongitude == destinationLongitude)&&const DeepCollectionEquality().equals(other._history, _history)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TrackedTenvioPackage&&(identical(other.trackingId, trackingId) || other.trackingId == trackingId)&&(identical(other.status, status) || other.status == status)&&(identical(other.driverName, driverName) || other.driverName == driverName)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.destinationLatitude, destinationLatitude) || other.destinationLatitude == destinationLatitude)&&(identical(other.destinationLongitude, destinationLongitude) || other.destinationLongitude == destinationLongitude)&&const DeepCollectionEquality().equals(other.history, history)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,trackingId,status,driverName,latitude,longitude,destinationLatitude,destinationLongitude,const DeepCollectionEquality().hash(_history),updatedAt);
+int get hashCode => Object.hash(runtimeType,trackingId,status,driverName,latitude,longitude,destinationLatitude,destinationLongitude,const DeepCollectionEquality().hash(history),updatedAt);
 
 @override
 String toString() {
@@ -2447,7 +2413,7 @@ as String?,latitude: freezed == latitude ? _self.latitude : latitude // ignore: 
 as double?,longitude: freezed == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double?,destinationLatitude: freezed == destinationLatitude ? _self.destinationLatitude : destinationLatitude // ignore: cast_nullable_to_non_nullable
 as double?,destinationLongitude: freezed == destinationLongitude ? _self.destinationLongitude : destinationLongitude // ignore: cast_nullable_to_non_nullable
-as double?,history: null == history ? _self._history : history // ignore: cast_nullable_to_non_nullable
+as double?,history: null == history ? _self.history : history // ignore: cast_nullable_to_non_nullable
 as List<TenvioPackageHistory>,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,
   ));
@@ -2677,7 +2643,7 @@ return $default(_that.status,_that.latitude,_that.longitude,_that.updatedAt,_tha
 @JsonSerializable()
 
 class _TenvioPackageHistory extends TenvioPackageHistory {
-  const _TenvioPackageHistory({@TenvioPackageStatusConverter() required this.status, this.latitude, this.longitude, @TimestampConverter() required this.updatedAt, this.madeBy, final  List<String>? images}): _images = images,super._();
+  const _TenvioPackageHistory({@TenvioPackageStatusConverter() required this.status, this.latitude, this.longitude, @TimestampConverter() required this.updatedAt, this.madeBy, this.images}): super._();
   factory _TenvioPackageHistory.fromJson(Map<String, dynamic> json) => _$TenvioPackageHistoryFromJson(json);
 
 /// [status] is the status of the package.
@@ -2691,16 +2657,7 @@ class _TenvioPackageHistory extends TenvioPackageHistory {
 /// [madeBy] is the user that made the change.
 @override final  User? madeBy;
 /// [images] is the list of images that are related to the history change.
- final  List<String>? _images;
-/// [images] is the list of images that are related to the history change.
-@override List<String>? get images {
-  final value = _images;
-  if (value == null) return null;
-  if (_images is EqualUnmodifiableListView) return _images;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? images;
 
 /// Create a copy of TenvioPackageHistory
 /// with the given fields replaced by the non-null parameter values.
@@ -2715,12 +2672,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioPackageHistory&&(identical(other.status, status) || other.status == status)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.madeBy, madeBy) || other.madeBy == madeBy)&&const DeepCollectionEquality().equals(other._images, _images));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioPackageHistory&&(identical(other.status, status) || other.status == status)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.madeBy, madeBy) || other.madeBy == madeBy)&&const DeepCollectionEquality().equals(other.images, images));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,status,latitude,longitude,updatedAt,madeBy,const DeepCollectionEquality().hash(_images));
+int get hashCode => Object.hash(runtimeType,status,latitude,longitude,updatedAt,madeBy,const DeepCollectionEquality().hash(images));
 
 @override
 String toString() {
@@ -2759,7 +2716,7 @@ as TenvioPackageStatus,latitude: freezed == latitude ? _self.latitude : latitude
 as double?,longitude: freezed == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double?,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,madeBy: freezed == madeBy ? _self.madeBy : madeBy // ignore: cast_nullable_to_non_nullable
-as User?,images: freezed == images ? _self._images : images // ignore: cast_nullable_to_non_nullable
+as User?,images: freezed == images ? _self.images : images // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }
@@ -4127,7 +4084,7 @@ return $default(_that.id,_that.matrixId,_that.matrix,_that.location,_that.addres
 @JsonSerializable()
 
 class _TenvioItem implements TenvioItem {
-  const _TenvioItem({required this.id, this.matrixId, this.matrix, @TenvioItemLocationOrNullConverter() this.location, this.address, @TimestampOrNullConverter() this.pickupDate, final  Map<String, dynamic>? customProperties, final  List<TenvioItemMovement>? movements, this.warehouse, this.warehouseId, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt}): _customProperties = customProperties,_movements = movements;
+  const _TenvioItem({required this.id, this.matrixId, this.matrix, @TenvioItemLocationOrNullConverter() this.location, this.address, @TimestampOrNullConverter() this.pickupDate, this.customProperties, this.movements, this.warehouse, this.warehouseId, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt});
   factory _TenvioItem.fromJson(Map<String, dynamic> json) => _$TenvioItemFromJson(json);
 
 /// [id] is the unique identifier for the item.
@@ -4145,29 +4102,9 @@ class _TenvioItem implements TenvioItem {
 /// [customProperties] is a `Map<String, dynamic>` that contains the custom properties of the item.
 /// This properties can be used to store additional information about the item and it's up to the
 /// user to define them.
- final  Map<String, dynamic>? _customProperties;
-/// [customProperties] is a `Map<String, dynamic>` that contains the custom properties of the item.
-/// This properties can be used to store additional information about the item and it's up to the
-/// user to define them.
-@override Map<String, dynamic>? get customProperties {
-  final value = _customProperties;
-  if (value == null) return null;
-  if (_customProperties is EqualUnmodifiableMapView) return _customProperties;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  Map<String, dynamic>? customProperties;
 /// [movements] is a history of movements of the item.
- final  List<TenvioItemMovement>? _movements;
-/// [movements] is a history of movements of the item.
-@override List<TenvioItemMovement>? get movements {
-  final value = _movements;
-  if (value == null) return null;
-  if (_movements is EqualUnmodifiableListView) return _movements;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TenvioItemMovement>? movements;
 /// [warehouse] is the warehouse where the item is located.
 @override final  Asset? warehouse;
 /// [warehouseId] is the unique identifier of the warehouse where the item is located.
@@ -4190,12 +4127,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioItem&&(identical(other.id, id) || other.id == id)&&(identical(other.matrixId, matrixId) || other.matrixId == matrixId)&&(identical(other.matrix, matrix) || other.matrix == matrix)&&(identical(other.location, location) || other.location == location)&&(identical(other.address, address) || other.address == address)&&(identical(other.pickupDate, pickupDate) || other.pickupDate == pickupDate)&&const DeepCollectionEquality().equals(other._customProperties, _customProperties)&&const DeepCollectionEquality().equals(other._movements, _movements)&&(identical(other.warehouse, warehouse) || other.warehouse == warehouse)&&(identical(other.warehouseId, warehouseId) || other.warehouseId == warehouseId)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioItem&&(identical(other.id, id) || other.id == id)&&(identical(other.matrixId, matrixId) || other.matrixId == matrixId)&&(identical(other.matrix, matrix) || other.matrix == matrix)&&(identical(other.location, location) || other.location == location)&&(identical(other.address, address) || other.address == address)&&(identical(other.pickupDate, pickupDate) || other.pickupDate == pickupDate)&&const DeepCollectionEquality().equals(other.customProperties, customProperties)&&const DeepCollectionEquality().equals(other.movements, movements)&&(identical(other.warehouse, warehouse) || other.warehouse == warehouse)&&(identical(other.warehouseId, warehouseId) || other.warehouseId == warehouseId)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,matrixId,matrix,location,address,pickupDate,const DeepCollectionEquality().hash(_customProperties),const DeepCollectionEquality().hash(_movements),warehouse,warehouseId,createdAt,updatedAt);
+int get hashCode => Object.hash(runtimeType,id,matrixId,matrix,location,address,pickupDate,const DeepCollectionEquality().hash(customProperties),const DeepCollectionEquality().hash(movements),warehouse,warehouseId,createdAt,updatedAt);
 
 @override
 String toString() {
@@ -4235,8 +4172,8 @@ as String?,matrix: freezed == matrix ? _self.matrix : matrix // ignore: cast_nul
 as TenvioMatrixItem?,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
 as TenvioItemLocation?,address: freezed == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String?,pickupDate: freezed == pickupDate ? _self.pickupDate : pickupDate // ignore: cast_nullable_to_non_nullable
-as DateTime?,customProperties: freezed == customProperties ? _self._customProperties : customProperties // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,movements: freezed == movements ? _self._movements : movements // ignore: cast_nullable_to_non_nullable
+as DateTime?,customProperties: freezed == customProperties ? _self.customProperties : customProperties // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,movements: freezed == movements ? _self.movements : movements // ignore: cast_nullable_to_non_nullable
 as List<TenvioItemMovement>?,warehouse: freezed == warehouse ? _self.warehouse : warehouse // ignore: cast_nullable_to_non_nullable
 as Asset?,warehouseId: freezed == warehouseId ? _self.warehouseId : warehouseId // ignore: cast_nullable_to_non_nullable
 as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
@@ -4790,7 +4727,7 @@ return $default(_that.id,_that.name,_that.image,_that.code,_that.qrCode,_that.we
 @JsonSerializable()
 
 class _TenvioMatrixItem extends TenvioMatrixItem {
-  const _TenvioMatrixItem({required this.id, required this.name, this.image, required this.code, this.qrCode, this.weight, this.width, this.height, final  List<TenvioCustomProperty>? customProperties, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt, final  List<TenvioItem>? items}): _customProperties = customProperties,_items = items,super._();
+  const _TenvioMatrixItem({required this.id, required this.name, this.image, required this.code, this.qrCode, this.weight, this.width, this.height, this.customProperties, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt, this.items}): super._();
   factory _TenvioMatrixItem.fromJson(Map<String, dynamic> json) => _$TenvioMatrixItemFromJson(json);
 
 /// [id] is the unique identifier for the item.
@@ -4813,33 +4750,13 @@ class _TenvioMatrixItem extends TenvioMatrixItem {
 /// [customProperties] is a `List` that contains the definition of the custom properties of the item
 /// This properties can be used to store additional information about the item and it's up to the
 /// user to define them.
- final  List<TenvioCustomProperty>? _customProperties;
-/// [customProperties] is a `List` that contains the definition of the custom properties of the item
-/// This properties can be used to store additional information about the item and it's up to the
-/// user to define them.
-@override List<TenvioCustomProperty>? get customProperties {
-  final value = _customProperties;
-  if (value == null) return null;
-  if (_customProperties is EqualUnmodifiableListView) return _customProperties;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TenvioCustomProperty>? customProperties;
 /// [createdAt] is the date when the item was created.
 @override@TimestampOrNullConverter() final  DateTime? createdAt;
 /// [updatedAt] is the date when the item was updated.
 @override@TimestampOrNullConverter() final  DateTime? updatedAt;
 /// [items] is a list of items that are part of the matrix item.
- final  List<TenvioItem>? _items;
-/// [items] is a list of items that are part of the matrix item.
-@override List<TenvioItem>? get items {
-  final value = _items;
-  if (value == null) return null;
-  if (_items is EqualUnmodifiableListView) return _items;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TenvioItem>? items;
 
 /// Create a copy of TenvioMatrixItem
 /// with the given fields replaced by the non-null parameter values.
@@ -4854,12 +4771,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioMatrixItem&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.code, code) || other.code == code)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.weight, weight) || other.weight == weight)&&(identical(other.width, width) || other.width == width)&&(identical(other.height, height) || other.height == height)&&const DeepCollectionEquality().equals(other._customProperties, _customProperties)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&const DeepCollectionEquality().equals(other._items, _items));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioMatrixItem&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.code, code) || other.code == code)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.weight, weight) || other.weight == weight)&&(identical(other.width, width) || other.width == width)&&(identical(other.height, height) || other.height == height)&&const DeepCollectionEquality().equals(other.customProperties, customProperties)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&const DeepCollectionEquality().equals(other.items, items));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,image,code,qrCode,weight,width,height,const DeepCollectionEquality().hash(_customProperties),createdAt,updatedAt,const DeepCollectionEquality().hash(_items));
+int get hashCode => Object.hash(runtimeType,id,name,image,code,qrCode,weight,width,height,const DeepCollectionEquality().hash(customProperties),createdAt,updatedAt,const DeepCollectionEquality().hash(items));
 
 @override
 String toString() {
@@ -4901,10 +4818,10 @@ as String,qrCode: freezed == qrCode ? _self.qrCode : qrCode // ignore: cast_null
 as String?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
 as double?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
 as double?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as double?,customProperties: freezed == customProperties ? _self._customProperties : customProperties // ignore: cast_nullable_to_non_nullable
+as double?,customProperties: freezed == customProperties ? _self.customProperties : customProperties // ignore: cast_nullable_to_non_nullable
 as List<TenvioCustomProperty>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,items: freezed == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as DateTime?,items: freezed == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
 as List<TenvioItem>?,
   ));
 }
@@ -6073,7 +5990,7 @@ return $default(_that.id,_that.ownerId,_that.warehouse,_that.warehouseId,_that.q
 @JsonSerializable()
 
 class _TenvioOrder extends TenvioOrder {
-  const _TenvioOrder({required this.id, required this.ownerId, required this.warehouse, required this.warehouseId, this.qrCode, @TenvioOrderStatusConverter() required this.status, @TenvioDestinationTypeOrNullConverter() this.destinationType, this.destinationWarehouse, this.destinationWarehouseId, this.destinationUser, this.destinationUserId, this.destinationUnregistered, final  List<String> notes = const [], this.requiresPhotos, this.highPriority, final  List<User>? packers, final  List<String>? packersIds, final  List<TenvioItemQuantity>? itemQuantities, final  List<TenvioItem>? items, this.packedImage, final  List<TenvioPhotos>? statusPhotos, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt}): _notes = notes,_packers = packers,_packersIds = packersIds,_itemQuantities = itemQuantities,_items = items,_statusPhotos = statusPhotos,super._();
+  const _TenvioOrder({required this.id, required this.ownerId, required this.warehouse, required this.warehouseId, this.qrCode, @TenvioOrderStatusConverter() required this.status, @TenvioDestinationTypeOrNullConverter() this.destinationType, this.destinationWarehouse, this.destinationWarehouseId, this.destinationUser, this.destinationUserId, this.destinationUnregistered, this.notes = const [], this.requiresPhotos, this.highPriority, this.packers, this.packersIds, this.itemQuantities, this.items, this.packedImage, this.statusPhotos, @TimestampOrNullConverter() this.createdAt, @TimestampOrNullConverter() this.updatedAt}): super._();
   factory _TenvioOrder.fromJson(Map<String, dynamic> json) => _$TenvioOrderFromJson(json);
 
 /// [id] ID of the order entity. This ID is unique along the system.
@@ -6102,75 +6019,23 @@ class _TenvioOrder extends TenvioOrder {
 /// [destinationUnregisteredUser] Unregistered user destination of the order.
 @override final  TenvioUnregisteredUser? destinationUnregistered;
 /// [notes] Notes of the order entity.
- final  List<String> _notes;
-/// [notes] Notes of the order entity.
-@override@JsonKey() List<String> get notes {
-  if (_notes is EqualUnmodifiableListView) return _notes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_notes);
-}
-
+@override@JsonKey() final  List<String> notes;
 /// [requiresImages] Requires images indicator.
 @override final  bool? requiresPhotos;
 /// [highhighPriority] High priority indicator.
 @override final  bool? highPriority;
 /// [packers] Packers assigned to the order.
- final  List<User>? _packers;
-/// [packers] Packers assigned to the order.
-@override List<User>? get packers {
-  final value = _packers;
-  if (value == null) return null;
-  if (_packers is EqualUnmodifiableListView) return _packers;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<User>? packers;
 /// [packersIds] IDs of packers assigned to the order.
- final  List<String>? _packersIds;
-/// [packersIds] IDs of packers assigned to the order.
-@override List<String>? get packersIds {
-  final value = _packersIds;
-  if (value == null) return null;
-  if (_packersIds is EqualUnmodifiableListView) return _packersIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<String>? packersIds;
 /// [itemQuantities] Items included in the order.
- final  List<TenvioItemQuantity>? _itemQuantities;
-/// [itemQuantities] Items included in the order.
-@override List<TenvioItemQuantity>? get itemQuantities {
-  final value = _itemQuantities;
-  if (value == null) return null;
-  if (_itemQuantities is EqualUnmodifiableListView) return _itemQuantities;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TenvioItemQuantity>? itemQuantities;
 /// [items] Items included in the order.
- final  List<TenvioItem>? _items;
-/// [items] Items included in the order.
-@override List<TenvioItem>? get items {
-  final value = _items;
-  if (value == null) return null;
-  if (_items is EqualUnmodifiableListView) return _items;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TenvioItem>? items;
 /// [packedImage] URL of the packed image.
 @override final  String? packedImage;
 /// [statusPhotos] Status photos of the order.
- final  List<TenvioPhotos>? _statusPhotos;
-/// [statusPhotos] Status photos of the order.
-@override List<TenvioPhotos>? get statusPhotos {
-  final value = _statusPhotos;
-  if (value == null) return null;
-  if (_statusPhotos is EqualUnmodifiableListView) return _statusPhotos;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
+@override final  List<TenvioPhotos>? statusPhotos;
 /// [createdAt] Creation date of the order.
 @override@TimestampOrNullConverter() final  DateTime? createdAt;
 /// [updatedAt] Last update date of the order.
@@ -6189,12 +6054,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.warehouse, warehouse) || other.warehouse == warehouse)&&(identical(other.warehouseId, warehouseId) || other.warehouseId == warehouseId)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.status, status) || other.status == status)&&(identical(other.destinationType, destinationType) || other.destinationType == destinationType)&&(identical(other.destinationWarehouse, destinationWarehouse) || other.destinationWarehouse == destinationWarehouse)&&(identical(other.destinationWarehouseId, destinationWarehouseId) || other.destinationWarehouseId == destinationWarehouseId)&&(identical(other.destinationUser, destinationUser) || other.destinationUser == destinationUser)&&(identical(other.destinationUserId, destinationUserId) || other.destinationUserId == destinationUserId)&&(identical(other.destinationUnregistered, destinationUnregistered) || other.destinationUnregistered == destinationUnregistered)&&const DeepCollectionEquality().equals(other._notes, _notes)&&(identical(other.requiresPhotos, requiresPhotos) || other.requiresPhotos == requiresPhotos)&&(identical(other.highPriority, highPriority) || other.highPriority == highPriority)&&const DeepCollectionEquality().equals(other._packers, _packers)&&const DeepCollectionEquality().equals(other._packersIds, _packersIds)&&const DeepCollectionEquality().equals(other._itemQuantities, _itemQuantities)&&const DeepCollectionEquality().equals(other._items, _items)&&(identical(other.packedImage, packedImage) || other.packedImage == packedImage)&&const DeepCollectionEquality().equals(other._statusPhotos, _statusPhotos)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioOrder&&(identical(other.id, id) || other.id == id)&&(identical(other.ownerId, ownerId) || other.ownerId == ownerId)&&(identical(other.warehouse, warehouse) || other.warehouse == warehouse)&&(identical(other.warehouseId, warehouseId) || other.warehouseId == warehouseId)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.status, status) || other.status == status)&&(identical(other.destinationType, destinationType) || other.destinationType == destinationType)&&(identical(other.destinationWarehouse, destinationWarehouse) || other.destinationWarehouse == destinationWarehouse)&&(identical(other.destinationWarehouseId, destinationWarehouseId) || other.destinationWarehouseId == destinationWarehouseId)&&(identical(other.destinationUser, destinationUser) || other.destinationUser == destinationUser)&&(identical(other.destinationUserId, destinationUserId) || other.destinationUserId == destinationUserId)&&(identical(other.destinationUnregistered, destinationUnregistered) || other.destinationUnregistered == destinationUnregistered)&&const DeepCollectionEquality().equals(other.notes, notes)&&(identical(other.requiresPhotos, requiresPhotos) || other.requiresPhotos == requiresPhotos)&&(identical(other.highPriority, highPriority) || other.highPriority == highPriority)&&const DeepCollectionEquality().equals(other.packers, packers)&&const DeepCollectionEquality().equals(other.packersIds, packersIds)&&const DeepCollectionEquality().equals(other.itemQuantities, itemQuantities)&&const DeepCollectionEquality().equals(other.items, items)&&(identical(other.packedImage, packedImage) || other.packedImage == packedImage)&&const DeepCollectionEquality().equals(other.statusPhotos, statusPhotos)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,ownerId,warehouse,warehouseId,qrCode,status,destinationType,destinationWarehouse,destinationWarehouseId,destinationUser,destinationUserId,destinationUnregistered,const DeepCollectionEquality().hash(_notes),requiresPhotos,highPriority,const DeepCollectionEquality().hash(_packers),const DeepCollectionEquality().hash(_packersIds),const DeepCollectionEquality().hash(_itemQuantities),const DeepCollectionEquality().hash(_items),packedImage,const DeepCollectionEquality().hash(_statusPhotos),createdAt,updatedAt]);
+int get hashCode => Object.hashAll([runtimeType,id,ownerId,warehouse,warehouseId,qrCode,status,destinationType,destinationWarehouse,destinationWarehouseId,destinationUser,destinationUserId,destinationUnregistered,const DeepCollectionEquality().hash(notes),requiresPhotos,highPriority,const DeepCollectionEquality().hash(packers),const DeepCollectionEquality().hash(packersIds),const DeepCollectionEquality().hash(itemQuantities),const DeepCollectionEquality().hash(items),packedImage,const DeepCollectionEquality().hash(statusPhotos),createdAt,updatedAt]);
 
 @override
 String toString() {
@@ -6240,15 +6105,15 @@ as Asset?,destinationWarehouseId: freezed == destinationWarehouseId ? _self.dest
 as String?,destinationUser: freezed == destinationUser ? _self.destinationUser : destinationUser // ignore: cast_nullable_to_non_nullable
 as User?,destinationUserId: freezed == destinationUserId ? _self.destinationUserId : destinationUserId // ignore: cast_nullable_to_non_nullable
 as String?,destinationUnregistered: freezed == destinationUnregistered ? _self.destinationUnregistered : destinationUnregistered // ignore: cast_nullable_to_non_nullable
-as TenvioUnregisteredUser?,notes: null == notes ? _self._notes : notes // ignore: cast_nullable_to_non_nullable
+as TenvioUnregisteredUser?,notes: null == notes ? _self.notes : notes // ignore: cast_nullable_to_non_nullable
 as List<String>,requiresPhotos: freezed == requiresPhotos ? _self.requiresPhotos : requiresPhotos // ignore: cast_nullable_to_non_nullable
 as bool?,highPriority: freezed == highPriority ? _self.highPriority : highPriority // ignore: cast_nullable_to_non_nullable
-as bool?,packers: freezed == packers ? _self._packers : packers // ignore: cast_nullable_to_non_nullable
-as List<User>?,packersIds: freezed == packersIds ? _self._packersIds : packersIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,itemQuantities: freezed == itemQuantities ? _self._itemQuantities : itemQuantities // ignore: cast_nullable_to_non_nullable
-as List<TenvioItemQuantity>?,items: freezed == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as bool?,packers: freezed == packers ? _self.packers : packers // ignore: cast_nullable_to_non_nullable
+as List<User>?,packersIds: freezed == packersIds ? _self.packersIds : packersIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,itemQuantities: freezed == itemQuantities ? _self.itemQuantities : itemQuantities // ignore: cast_nullable_to_non_nullable
+as List<TenvioItemQuantity>?,items: freezed == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
 as List<TenvioItem>?,packedImage: freezed == packedImage ? _self.packedImage : packedImage // ignore: cast_nullable_to_non_nullable
-as String?,statusPhotos: freezed == statusPhotos ? _self._statusPhotos : statusPhotos // ignore: cast_nullable_to_non_nullable
+as String?,statusPhotos: freezed == statusPhotos ? _self.statusPhotos : statusPhotos // ignore: cast_nullable_to_non_nullable
 as List<TenvioPhotos>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
@@ -7213,7 +7078,7 @@ return $default(_that.id,_that.status,_that.qrCode,_that.warehouse,_that.warehou
 @JsonSerializable()
 
 class _TenvioDispatchGuide extends TenvioDispatchGuide {
-  const _TenvioDispatchGuide({required this.id, @TenvioDispatchGuideStatusConverter() required this.status, this.qrCode, this.warehouse, this.warehouseId, this.driver, this.driverId, this.loader, this.loaderId, final  List<TenvioPackage> packages = const [], final  List<String> packagesIds = const [], this.hasRoute = false, final  List<String> route = const [], @TimestampConverter() required this.createdAt, @TimestampConverter() required this.updatedAt}): _packages = packages,_packagesIds = packagesIds,_route = route,super._();
+  const _TenvioDispatchGuide({required this.id, @TenvioDispatchGuideStatusConverter() required this.status, this.qrCode, this.warehouse, this.warehouseId, this.driver, this.driverId, this.loader, this.loaderId, this.packages = const [], this.packagesIds = const [], this.hasRoute = false, this.route = const [], @TimestampConverter() required this.createdAt, @TimestampConverter() required this.updatedAt}): super._();
   factory _TenvioDispatchGuide.fromJson(Map<String, dynamic> json) => _$TenvioDispatchGuideFromJson(json);
 
 /// [id] is the unique identifier of the dispatch guide
@@ -7235,36 +7100,14 @@ class _TenvioDispatchGuide extends TenvioDispatchGuide {
 /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
 @override final  String? loaderId;
 /// [packages] is the list of packages assigned to the dispatch guide
- final  List<TenvioPackage> _packages;
-/// [packages] is the list of packages assigned to the dispatch guide
-@override@JsonKey() List<TenvioPackage> get packages {
-  if (_packages is EqualUnmodifiableListView) return _packages;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_packages);
-}
-
+@override@JsonKey() final  List<TenvioPackage> packages;
 /// [packagesIds] is the list of packages' ids assigned to the dispatch guide
- final  List<String> _packagesIds;
-/// [packagesIds] is the list of packages' ids assigned to the dispatch guide
-@override@JsonKey() List<String> get packagesIds {
-  if (_packagesIds is EqualUnmodifiableListView) return _packagesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_packagesIds);
-}
-
+@override@JsonKey() final  List<String> packagesIds;
 /// [hasRoute] is a flag that indicates if the dispatch guide has a route
 @override@JsonKey() final  bool hasRoute;
 /// [route] is the route assigned to the dispatch guide
 /// Is a list of packages' ids (ordered by the delivery sequence)
- final  List<String> _route;
-/// [route] is the route assigned to the dispatch guide
-/// Is a list of packages' ids (ordered by the delivery sequence)
-@override@JsonKey() List<String> get route {
-  if (_route is EqualUnmodifiableListView) return _route;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_route);
-}
-
+@override@JsonKey() final  List<String> route;
 /// [createdAt] is the date and time when the dispatch guide was created
 @override@TimestampConverter() final  DateTime createdAt;
 /// [updatedAt] is the date and time when the dispatch guide was last updated
@@ -7283,12 +7126,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioDispatchGuide&&(identical(other.id, id) || other.id == id)&&(identical(other.status, status) || other.status == status)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.warehouse, warehouse) || other.warehouse == warehouse)&&(identical(other.warehouseId, warehouseId) || other.warehouseId == warehouseId)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.driverId, driverId) || other.driverId == driverId)&&(identical(other.loader, loader) || other.loader == loader)&&(identical(other.loaderId, loaderId) || other.loaderId == loaderId)&&const DeepCollectionEquality().equals(other._packages, _packages)&&const DeepCollectionEquality().equals(other._packagesIds, _packagesIds)&&(identical(other.hasRoute, hasRoute) || other.hasRoute == hasRoute)&&const DeepCollectionEquality().equals(other._route, _route)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TenvioDispatchGuide&&(identical(other.id, id) || other.id == id)&&(identical(other.status, status) || other.status == status)&&(identical(other.qrCode, qrCode) || other.qrCode == qrCode)&&(identical(other.warehouse, warehouse) || other.warehouse == warehouse)&&(identical(other.warehouseId, warehouseId) || other.warehouseId == warehouseId)&&(identical(other.driver, driver) || other.driver == driver)&&(identical(other.driverId, driverId) || other.driverId == driverId)&&(identical(other.loader, loader) || other.loader == loader)&&(identical(other.loaderId, loaderId) || other.loaderId == loaderId)&&const DeepCollectionEquality().equals(other.packages, packages)&&const DeepCollectionEquality().equals(other.packagesIds, packagesIds)&&(identical(other.hasRoute, hasRoute) || other.hasRoute == hasRoute)&&const DeepCollectionEquality().equals(other.route, route)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,status,qrCode,warehouse,warehouseId,driver,driverId,loader,loaderId,const DeepCollectionEquality().hash(_packages),const DeepCollectionEquality().hash(_packagesIds),hasRoute,const DeepCollectionEquality().hash(_route),createdAt,updatedAt);
+int get hashCode => Object.hash(runtimeType,id,status,qrCode,warehouse,warehouseId,driver,driverId,loader,loaderId,const DeepCollectionEquality().hash(packages),const DeepCollectionEquality().hash(packagesIds),hasRoute,const DeepCollectionEquality().hash(route),createdAt,updatedAt);
 
 @override
 String toString() {
@@ -7331,10 +7174,10 @@ as String?,driver: freezed == driver ? _self.driver : driver // ignore: cast_nul
 as TenvioDriver?,driverId: freezed == driverId ? _self.driverId : driverId // ignore: cast_nullable_to_non_nullable
 as String?,loader: freezed == loader ? _self.loader : loader // ignore: cast_nullable_to_non_nullable
 as User?,loaderId: freezed == loaderId ? _self.loaderId : loaderId // ignore: cast_nullable_to_non_nullable
-as String?,packages: null == packages ? _self._packages : packages // ignore: cast_nullable_to_non_nullable
-as List<TenvioPackage>,packagesIds: null == packagesIds ? _self._packagesIds : packagesIds // ignore: cast_nullable_to_non_nullable
+as String?,packages: null == packages ? _self.packages : packages // ignore: cast_nullable_to_non_nullable
+as List<TenvioPackage>,packagesIds: null == packagesIds ? _self.packagesIds : packagesIds // ignore: cast_nullable_to_non_nullable
 as List<String>,hasRoute: null == hasRoute ? _self.hasRoute : hasRoute // ignore: cast_nullable_to_non_nullable
-as bool,route: null == route ? _self._route : route // ignore: cast_nullable_to_non_nullable
+as bool,route: null == route ? _self.route : route // ignore: cast_nullable_to_non_nullable
 as List<String>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,
