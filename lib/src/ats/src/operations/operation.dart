@@ -129,6 +129,10 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// [checkInAt] is the timestamp of the check-in.
     @TimestampOrNullConverter() DateTime? checkInAt,
+
+    /// [merges] is the mergeOperations history where this operation was the target; `mergeId`
+    /// from any of these can be passed to `revertOperationMerge`.
+    List<AtsOperationMerge>? merges,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);

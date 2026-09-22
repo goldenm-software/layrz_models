@@ -1677,6 +1677,9 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
       checkInAt: const TimestampOrNullConverter().fromJson(
         json['checkInAt'] as num?,
       ),
+      merges: (json['merges'] as List<dynamic>?)
+          ?.map((e) => AtsOperationMerge.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$AtsOperationToJson(
@@ -1723,6 +1726,7 @@ Map<String, dynamic> _$AtsOperationToJson(
   'mdfe': instance.mdfe?.toJson(),
   'mdfes': instance.mdfes?.map((e) => e.toJson()).toList(),
   'checkInAt': const TimestampOrNullConverter().toJson(instance.checkInAt),
+  'merges': instance.merges?.map((e) => e.toJson()).toList(),
 };
 
 const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
@@ -1820,6 +1824,37 @@ Map<String, dynamic> _$AtsMdfeToJson(_AtsMdfe instance) => <String, dynamic>{
   'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
   'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
   'operation': instance.operation?.toJson(),
+};
+
+_AtsOperationMerge _$AtsOperationMergeFromJson(Map<String, dynamic> json) =>
+    _AtsOperationMerge(
+      mergeId: json['mergeId'] as String?,
+      mergedBy: json['mergedBy'] == null
+          ? null
+          : User.fromJson(json['mergedBy'] as Map<String, dynamic>),
+      mergedAt: const TimestampOrNullConverter().fromJson(
+        json['mergedAt'] as num?,
+      ),
+      sourceOperationsIds: (json['sourceOperationsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      revertedBy: json['revertedBy'] == null
+          ? null
+          : User.fromJson(json['revertedBy'] as Map<String, dynamic>),
+      revertedAt: const TimestampOrNullConverter().fromJson(
+        json['revertedAt'] as num?,
+      ),
+    );
+
+Map<String, dynamic> _$AtsOperationMergeToJson(
+  _AtsOperationMerge instance,
+) => <String, dynamic>{
+  'mergeId': instance.mergeId,
+  'mergedBy': instance.mergedBy?.toJson(),
+  'mergedAt': const TimestampOrNullConverter().toJson(instance.mergedAt),
+  'sourceOperationsIds': instance.sourceOperationsIds,
+  'revertedBy': instance.revertedBy?.toJson(),
+  'revertedAt': const TimestampOrNullConverter().toJson(instance.revertedAt),
 };
 
 _Manifest _$ManifestFromJson(Map<String, dynamic> json) => _Manifest(
