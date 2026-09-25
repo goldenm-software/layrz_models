@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.35.0
+
+- Added `AtsFuelSubType.ethanolAnidro` (`ETHANOLANIDRO`, ANP `810102001`, Etanol Anidro without dye), grouped under `hydrated`. NFe with this ANP code previously resolved to `unknown`.
+- Added `AtsFuelSubType.dieselS500AAditivado` (`DIESELS500ADITIVADO_A`, ANP `420102005`), grouped under `diesel`.
+- Added `AtsFuelSubType.gasolineAPremium` (`GASOLINEPREMIUM_A`, ANP `320101002`), grouped under `gasoline`.
+- The three subtypes match the backend `FuelSubtype` enum and are listed in `getFuelSubTypeList`.
+
 ## 3.34.1
 
 - Added `AtsOperationMerge` and a new `merges` field on `AtsOperation`, exposing the mergeOperations history (merge/revert audit trail) so the UI can tell a merged operation apart from a regular one.

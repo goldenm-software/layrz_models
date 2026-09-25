@@ -16,16 +16,19 @@ enum AtsFuelSubType {
   dieselS10ComunB,
   dieselS10BAditivado,
   dieselS500ComunA,
+  dieselS500AAditivado,
   dieselS500ComunB,
   dieselS500BAditivado,
   marineDiesel,
   gasolineComunA,
+  gasolineAPremium,
   gasolineComunC,
   gasolineCAditivada,
   gasolineCPremium,
   ethanol,
   ethanolAditivado,
   anidro,
+  ethanolAnidro,
   arla32,
   biodieselB100,
   unknown,
@@ -41,6 +44,8 @@ enum AtsFuelSubType {
         return AtsFuelSubType.dieselS10BAditivado;
       case 'DIESELS500COMUN_A':
         return AtsFuelSubType.dieselS500ComunA;
+      case 'DIESELS500ADITIVADO_A':
+        return AtsFuelSubType.dieselS500AAditivado;
       case 'DIESELS500COMUN_B':
         return AtsFuelSubType.dieselS500ComunB;
       case 'DIESELS500ADITIVADO_B':
@@ -49,6 +54,8 @@ enum AtsFuelSubType {
         return AtsFuelSubType.marineDiesel;
       case 'GASOLINECOMUN_A':
         return AtsFuelSubType.gasolineComunA;
+      case 'GASOLINEPREMIUM_A':
+        return AtsFuelSubType.gasolineAPremium;
       case 'GASOLINECOMUN_C':
         return AtsFuelSubType.gasolineComunC;
       case 'GASOLINEADITIVADA_C':
@@ -61,6 +68,8 @@ enum AtsFuelSubType {
         return AtsFuelSubType.ethanolAditivado;
       case 'ANIDRO':
         return AtsFuelSubType.anidro;
+      case 'ETHANOLANIDRO':
+        return AtsFuelSubType.ethanolAnidro;
       case 'ARLA32':
         return AtsFuelSubType.arla32;
       case 'BIODIESELB100':
@@ -80,6 +89,8 @@ enum AtsFuelSubType {
         return 'DIESELS10ADITIVADO_B';
       case AtsFuelSubType.dieselS500ComunA:
         return 'DIESELS500COMUN_A';
+      case AtsFuelSubType.dieselS500AAditivado:
+        return 'DIESELS500ADITIVADO_A';
       case AtsFuelSubType.dieselS500ComunB:
         return 'DIESELS500COMUN_B';
       case AtsFuelSubType.dieselS500BAditivado:
@@ -88,6 +99,8 @@ enum AtsFuelSubType {
         return 'MARINEDIESEL';
       case AtsFuelSubType.gasolineComunA:
         return 'GASOLINECOMUN_A';
+      case AtsFuelSubType.gasolineAPremium:
+        return 'GASOLINEPREMIUM_A';
       case AtsFuelSubType.gasolineComunC:
         return 'GASOLINECOMUN_C';
       case AtsFuelSubType.gasolineCAditivada:
@@ -100,6 +113,8 @@ enum AtsFuelSubType {
         return 'ETHANOLADITIVADO';
       case AtsFuelSubType.anidro:
         return 'ANIDRO';
+      case AtsFuelSubType.ethanolAnidro:
+        return 'ETHANOLANIDRO';
       case AtsFuelSubType.arla32:
         return 'ARLA32';
       case AtsFuelSubType.biodieselB100:
@@ -119,6 +134,8 @@ enum AtsFuelSubType {
         return '820101033';
       case AtsFuelSubType.dieselS500ComunA:
         return '420102004';
+      case AtsFuelSubType.dieselS500AAditivado:
+        return '420102005';
       case AtsFuelSubType.dieselS500ComunB:
         return '820101012';
       case AtsFuelSubType.dieselS500BAditivado:
@@ -127,6 +144,8 @@ enum AtsFuelSubType {
         return '420201001';
       case AtsFuelSubType.gasolineComunA:
         return '320101001';
+      case AtsFuelSubType.gasolineAPremium:
+        return '320101002';
       case AtsFuelSubType.gasolineComunC:
         return '320102001';
       case AtsFuelSubType.gasolineCAditivada:
@@ -139,6 +158,8 @@ enum AtsFuelSubType {
         return '810101002';
       case AtsFuelSubType.anidro:
         return '810102004';
+      case AtsFuelSubType.ethanolAnidro:
+        return '810102001';
       case AtsFuelSubType.arla32:
         return '740101002';
       case AtsFuelSubType.biodieselB100:
@@ -161,6 +182,8 @@ enum AtsFuelSubType {
         return AtsFuelSubType.dieselS10BAditivado;
       case '420102004':
         return AtsFuelSubType.dieselS500ComunA;
+      case '420102005':
+        return AtsFuelSubType.dieselS500AAditivado;
       case '820101012':
         return AtsFuelSubType.dieselS500ComunB;
       case '820101013':
@@ -169,6 +192,8 @@ enum AtsFuelSubType {
         return AtsFuelSubType.marineDiesel;
       case '320101001':
         return AtsFuelSubType.gasolineComunA;
+      case '320101002':
+        return AtsFuelSubType.gasolineAPremium;
       case '320102001':
         return AtsFuelSubType.gasolineComunC;
       case '320102002':
@@ -181,6 +206,8 @@ enum AtsFuelSubType {
         return AtsFuelSubType.ethanolAditivado;
       case '810102004':
         return AtsFuelSubType.anidro;
+      case '810102001':
+        return AtsFuelSubType.ethanolAnidro;
       case '740101002':
         return AtsFuelSubType.arla32;
       case '820101001':
@@ -193,6 +220,7 @@ enum AtsFuelSubType {
   Color getColor() {
     switch (this) {
       case AtsFuelSubType.dieselS500ComunA:
+      case AtsFuelSubType.dieselS500AAditivado:
       case AtsFuelSubType.dieselS500ComunB:
       case AtsFuelSubType.dieselS500BAditivado:
         return const Color(0xffCD0202);
@@ -201,6 +229,7 @@ enum AtsFuelSubType {
       case AtsFuelSubType.dieselS10BAditivado:
         return const Color(0xffF0E1B4);
       case AtsFuelSubType.gasolineComunA:
+      case AtsFuelSubType.gasolineAPremium:
       case AtsFuelSubType.gasolineComunC:
       case AtsFuelSubType.gasolineCAditivada:
       case AtsFuelSubType.gasolineCPremium:
@@ -211,6 +240,7 @@ enum AtsFuelSubType {
       case AtsFuelSubType.biodieselB100:
         return const Color(0xFF016B2E);
       case AtsFuelSubType.anidro:
+      case AtsFuelSubType.ethanolAnidro:
         return const Color(0xFFF85E54);
       case AtsFuelSubType.marineDiesel:
         return const Color(0xFFB65B22);
@@ -231,6 +261,8 @@ enum AtsFuelSubType {
         return 'ats.fuelSubType.DIESELS10ADITIVADO_B';
       case AtsFuelSubType.dieselS500ComunA:
         return 'ats.fuelSubType.DIESELS500COMUN_A';
+      case AtsFuelSubType.dieselS500AAditivado:
+        return 'ats.fuelSubType.DIESELS500ADITIVADO_A';
       case AtsFuelSubType.dieselS500ComunB:
         return 'ats.fuelSubType.DIESELS500COMUN_B';
       case AtsFuelSubType.dieselS500BAditivado:
@@ -239,6 +271,8 @@ enum AtsFuelSubType {
         return 'ats.fuelSubType.MARINEDIESEL';
       case AtsFuelSubType.gasolineComunA:
         return 'ats.fuelSubType.GASOLINECOMUN_A';
+      case AtsFuelSubType.gasolineAPremium:
+        return 'ats.fuelSubType.GASOLINEPREMIUM_A';
       case AtsFuelSubType.gasolineComunC:
         return 'ats.fuelSubType.GASOLINECOMUN_C';
       case AtsFuelSubType.gasolineCAditivada:
@@ -251,6 +285,8 @@ enum AtsFuelSubType {
         return 'ats.fuelSubType.ETHANOLADITIVADO';
       case AtsFuelSubType.anidro:
         return 'ats.fuelSubType.ANIDRO';
+      case AtsFuelSubType.ethanolAnidro:
+        return 'ats.fuelSubType.ETHANOLANIDRO';
       case AtsFuelSubType.arla32:
         return 'ats.fuelSubType.ARLA32';
       case AtsFuelSubType.biodieselB100:
@@ -272,6 +308,7 @@ enum AtsFuelSubType {
           AtsFuelSubType.dieselS10ComunB,
           AtsFuelSubType.dieselS10BAditivado,
           AtsFuelSubType.dieselS500ComunA,
+          AtsFuelSubType.dieselS500AAditivado,
           AtsFuelSubType.dieselS500ComunB,
           AtsFuelSubType.dieselS500BAditivado,
           AtsFuelSubType.marineDiesel,
@@ -280,6 +317,7 @@ enum AtsFuelSubType {
       case AtsCfFuelType.gasoline:
         return [
           AtsFuelSubType.gasolineComunA,
+          AtsFuelSubType.gasolineAPremium,
           AtsFuelSubType.gasolineComunC,
           AtsFuelSubType.gasolineCAditivada,
           AtsFuelSubType.gasolineCPremium,
@@ -290,6 +328,7 @@ enum AtsFuelSubType {
           AtsFuelSubType.ethanol,
           AtsFuelSubType.ethanolAditivado,
           AtsFuelSubType.anidro,
+          AtsFuelSubType.ethanolAnidro,
           AtsFuelSubType.arla32,
         ];
 
@@ -343,11 +382,13 @@ enum AtsFuelSubType {
       case AtsFuelSubType.dieselS10ComunB:
       case AtsFuelSubType.dieselS10BAditivado:
       case AtsFuelSubType.dieselS500ComunA:
+      case AtsFuelSubType.dieselS500AAditivado:
       case AtsFuelSubType.dieselS500ComunB:
       case AtsFuelSubType.dieselS500BAditivado:
       case AtsFuelSubType.marineDiesel:
         return AtsCfFuelType.diesel;
       case AtsFuelSubType.gasolineComunA:
+      case AtsFuelSubType.gasolineAPremium:
       case AtsFuelSubType.gasolineComunC:
       case AtsFuelSubType.gasolineCAditivada:
       case AtsFuelSubType.gasolineCPremium:
@@ -355,6 +396,7 @@ enum AtsFuelSubType {
       case AtsFuelSubType.ethanol:
       case AtsFuelSubType.ethanolAditivado:
       case AtsFuelSubType.anidro:
+      case AtsFuelSubType.ethanolAnidro:
       case AtsFuelSubType.arla32:
         return AtsCfFuelType.hydrated;
       case AtsFuelSubType.biodieselB100:
