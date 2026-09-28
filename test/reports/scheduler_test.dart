@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:layrz_models/layrz_models.dart';
+import 'package:layrz_sdk/layrz_sdk.dart' show TimeOfDay;
 
 void main() {
   group('ReportScheduler Tests', () {

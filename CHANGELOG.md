@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.36.0
+
+- Bumped `layrz_sdk` to `^4.8.2`, which adds `assetsInStorageTerminal`/`assetsInStorageTerminalIds` to `Asset` — the inverse relation of `linkedStorageTerminals`/`linkedStorageTerminalsIds`, listing the assets that selected this asset as a storage terminal.
+- Removed the local `ReportScheduler`/`ReportSchedulerInput`/`RelativeChoices`/`kDefaultFieldsPerModule` copies under `lib/src/reports/`, which duplicated the versions `layrz_sdk` 4.8.1 already migrated in. These types are now re-exported from `layrz_sdk` only, with no functional change other than `ReportScheduler.execTime` using `layrz_sdk`'s own `TimeOfDay` type instead of Flutter's.
+
 ## 3.35.0
 
 - Added `AtsFuelSubType.ethanolAnidro` (`ETHANOLANIDRO`, ANP `810102001`, Etanol Anidro without dye), grouped under `hydrated`. NFe with this ANP code previously resolved to `unknown`.
