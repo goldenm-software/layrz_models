@@ -2,41 +2,22 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 void main() {
-  group('AtsFuelSubType.ethanolAnidro', () {
-    test('toJson', () {
-      expect(AtsFuelSubType.ethanolAnidro.toJson(), 'ETHANOLANIDRO');
+  group('ANP 810102001 is not a supported subtype', () {
+    test('fromCProdANP 810102001 is unknown', () {
+      expect(AtsFuelSubType.fromCProdANP('810102001'), AtsFuelSubType.unknown);
     });
 
-    test('fromJson ETHANOLANIDRO', () {
-      expect(AtsFuelSubType.fromJson('ETHANOLANIDRO'), AtsFuelSubType.ethanolAnidro);
+    test('fromJson ETHANOLANIDRO is unknown', () {
+      expect(AtsFuelSubType.fromJson('ETHANOLANIDRO'), AtsFuelSubType.unknown);
     });
 
-    test('toCProdANP', () {
-      expect(AtsFuelSubType.ethanolAnidro.toCProdANP(), '810102001');
-    });
-
-    test('fromCProdANP 810102001', () {
-      expect(AtsFuelSubType.fromCProdANP('810102001'), AtsFuelSubType.ethanolAnidro);
-    });
-
-    test('getCfFuelType is hydrated', () {
-      expect(AtsFuelSubType.ethanolAnidro.getCfFuelType(), AtsCfFuelType.hydrated);
-    });
-
-    test('is listed under hydrated', () {
-      expect(AtsFuelSubType.getFuelSubTypeList(AtsCfFuelType.hydrated), contains(AtsFuelSubType.ethanolAnidro));
-    });
-
-    test('shares the anidro color', () {
-      expect(AtsFuelSubType.ethanolAnidro.getColor(), AtsFuelSubType.anidro.getColor());
-    });
-
-    test('getLocaleKey', () {
-      expect(AtsFuelSubType.ethanolAnidro.getLocaleKey(), 'ats.fuelSubType.ETHANOLANIDRO');
-    });
-
-    test('is not managed by SIL', () {
-      expect(AtsFuelSubType.ethanolAnidro.silProductCode, isNull);
+    test('hydrated list only has the supported subtypes', () {
+      expect(AtsFuelSubType.getFuelSubTypeList(AtsCfFuelType.hydrated), [
+        AtsFuelSubType.ethanol,
+        AtsFuelSubType.ethanolAditivado,
+        AtsFuelSubType.anidro,
+        AtsFuelSubType.arla32,
+      ]);
     });
   });
 

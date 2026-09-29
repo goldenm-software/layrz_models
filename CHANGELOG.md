@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.37.0
+
+- Reverted `AtsFuelSubType.ethanolAnidro` (ANP `810102001`), added in 3.35.0. That ANP is issued by mistake and is normalized to Etanol Hidratado (`810101001`) by the backend, so it resolves to `unknown` again and no longer shows up in the fuel subtype selector.
+
 ## 3.36.0
 
 - Bumped `layrz_sdk` to `^4.8.2`, which adds `assetsInStorageTerminal`/`assetsInStorageTerminalIds` to `Asset` — the inverse relation of `linkedStorageTerminals`/`linkedStorageTerminalsIds`, listing the assets that selected this asset as a storage terminal.
