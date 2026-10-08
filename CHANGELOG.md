@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.38.0
+
+- Bumped `layrz_sdk` to `^4.11.0`.
+- Moved `AtsFromApp` (and its converters), `AtsReceptionProductInput` and `AtsReceptionInput` to `layrz_sdk`; they are now re-exported from there. `AtsExecuteExitInput` and `AtsReceptionProduct` stay in this package.
+- `AtsReceptionInput` now has an optional `receptionType` (`AtsReceptionType`: `PA`, `TERMINAL`, `THIRD_PARTY`, `TRANSFER`, with `UNKNOWN` as read-only fallback).
+
 ## 3.37.0
 
 - Reverted `AtsFuelSubType.ethanolAnidro` (ANP `810102001`), added in 3.35.0. That ANP is issued by mistake and is normalized to Etanol Hidratado (`810101001`) by the backend, so it resolves to `unknown` again and no longer shows up in the fuel subtype selector.

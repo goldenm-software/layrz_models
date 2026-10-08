@@ -51,56 +51,6 @@ Map<String, dynamic> _$AtsReceptionProductToJson(
   'price': instance.price,
 };
 
-_AtsReceptionProductInput _$AtsReceptionProductInputFromJson(
-  Map<String, dynamic> json,
-) => _AtsReceptionProductInput(
-  fuelAnp: json['fuelAnp'] as String?,
-  tanksImages: (json['tanksImages'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-);
-
-Map<String, dynamic> _$AtsReceptionProductInputToJson(
-  _AtsReceptionProductInput instance,
-) => <String, dynamic>{
-  'fuelAnp': instance.fuelAnp,
-  'tanksImages': instance.tanksImages,
-};
-
-_AtsReceptionInput _$AtsReceptionInputFromJson(Map<String, dynamic> json) =>
-    _AtsReceptionInput(
-      id: json['id'] as String?,
-      ordersIds: (json['ordersIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      products: (json['products'] as List<dynamic>?)
-          ?.map(
-            (e) => AtsReceptionProductInput.fromJson(e as Map<String, dynamic>),
-          )
-          .toList(),
-      assetId: json['assetId'] as String?,
-      operationTime: const DurationOrNullConverter().fromJson(
-        json['operationTime'] as num?,
-      ),
-      app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
-      purchaseOrderIds: (json['purchaseOrderIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-    );
-
-Map<String, dynamic> _$AtsReceptionInputToJson(_AtsReceptionInput instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'ordersIds': instance.ordersIds,
-      'products': instance.products?.map((e) => e.toJson()).toList(),
-      'assetId': instance.assetId,
-      'operationTime': const DurationOrNullConverter().toJson(
-        instance.operationTime,
-      ),
-      'app': const AtsFromAppOrNullConverter().toJson(instance.app),
-      'purchaseOrderIds': instance.purchaseOrderIds,
-    };
-
 _AtsAuthenticationIdentifier _$AtsAuthenticationIdentifierFromJson(
   Map<String, dynamic> json,
 ) => _AtsAuthenticationIdentifier(
