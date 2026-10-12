@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.39.0
+
+- Added `AtsPurchaseOrderCategoriesEntity.saleReturn` (`SALE_RETURN`, CFOP 1661 / 2661).
+- Added `AtsPurchaseOrderCategoriesEntity.loan` (`LOAN`, CFOP 5949 / 6949).
+- Added `AtsPurchaseOrderCategoriesEntity.loanReturn` (`LOAN_RETURN`, CFOP 5949 / 6949).
+- `AtsPurchaseOrderCategoriesEntity.cfop()` now maps 1661 / 2661 to `saleReturn`. 5949 / 6949 stay unmapped (`notDefined`) because they are shared by `loan` and `loanReturn` and cannot be told apart from the CFOP alone.
+- Corrected the CFOP of `AtsPurchaseOrderCategoriesEntity.productionSaleToFreeTradeZone` from 5901 / 6901 to 5109 / 6109; `cfop()` now resolves 5109 / 6109 to it (5901 / 6901 no longer do).
+
 ## 3.38.0
 
 - Bumped `layrz_sdk` to `^4.11.0`.
