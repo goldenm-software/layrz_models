@@ -266,4 +266,36 @@ void main() {
 
     expect(operation, isA<AtsOperation>());
   });
+
+  group('AtsPurchaseOrderCategoriesEntity', () {
+    test('new values round-trip through JSON', () {
+      const values = {
+        'SALE_RETURN': AtsPurchaseOrderCategoriesEntity.saleReturn,
+        'LOAN': AtsPurchaseOrderCategoriesEntity.loan,
+        'LOAN_RETURN': AtsPurchaseOrderCategoriesEntity.loanReturn,
+      };
+      values.forEach((wire, value) {
+        expect(AtsPurchaseOrderCategoriesEntity.fromJson(wire), equals(value));
+        expect(value.toJson(), equals(wire));
+      });
+    });
+
+    test('cfop() maps known codes', () {
+      expect(AtsPurchaseOrderCategoriesEntity.cfop('1661'), equals(AtsPurchaseOrderCategoriesEntity.saleReturn));
+      expect(AtsPurchaseOrderCategoriesEntity.cfop('2661'), equals(AtsPurchaseOrderCategoriesEntity.saleReturn));
+      expect(
+        AtsPurchaseOrderCategoriesEntity.cfop('5109'),
+        equals(AtsPurchaseOrderCategoriesEntity.productionSaleToFreeTradeZone),
+      );
+      expect(
+        AtsPurchaseOrderCategoriesEntity.cfop('6109'),
+        equals(AtsPurchaseOrderCategoriesEntity.productionSaleToFreeTradeZone),
+      );
+    });
+
+    test('cfop() leaves ambiguous 5949 / 6949 undefined', () {
+      expect(AtsPurchaseOrderCategoriesEntity.cfop('5949'), equals(AtsPurchaseOrderCategoriesEntity.notDefined));
+      expect(AtsPurchaseOrderCategoriesEntity.cfop('6949'), equals(AtsPurchaseOrderCategoriesEntity.notDefined));
+    });
+  });
 }

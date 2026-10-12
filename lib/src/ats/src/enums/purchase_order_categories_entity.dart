@@ -26,7 +26,7 @@ enum AtsPurchaseOrderCategoriesEntity {
   // Return of fuel from storage (5664 / 6664)
   @JsonValue('RETURN_FROM_STORAGE')
   returnFromStorage,
-  // Fuel delivery to free trade zone (5901 / 6901)
+  // Fuel delivery to free trade zone (5109 / 6109)
   @JsonValue('PRODUCTION_SALE_TO_FREE_TRADE_ZONE')
   productionSaleToFreeTradeZone,
   // Venda de tanque de terceiros (5106 / 6106)
@@ -41,6 +41,15 @@ enum AtsPurchaseOrderCategoriesEntity {
   // Remessa de venda (5923 / 6923)
   @JsonValue('REMITTANCE_SALE')
   remittanceSale,
+  // Devolução de venda (1661 / 2661)
+  @JsonValue('SALE_RETURN')
+  saleReturn,
+  // Empréstimo (5949 / 6949)
+  @JsonValue('LOAN')
+  loan,
+  // Devolução de empréstimo (5949 / 6949)
+  @JsonValue('LOAN_RETURN')
+  loanReturn,
   ;
 
   @override
@@ -84,12 +93,16 @@ enum AtsPurchaseOrderCategoriesEntity {
       case '5664':
       case '6664':
         return AtsPurchaseOrderCategoriesEntity.returnFromStorage;
-      case '5901':
-      case '6901':
+      case '5109':
+      case '6109':
         return AtsPurchaseOrderCategoriesEntity.productionSaleToFreeTradeZone;
       case '5923':
       case '6923':
         return AtsPurchaseOrderCategoriesEntity.remittanceSale;
+      case '1661':
+      case '2661':
+        return AtsPurchaseOrderCategoriesEntity.saleReturn;
+      // 5949 / 6949 are shared by `loan` and `loanReturn`, so they cannot be resolved from the CFOP alone.
       default:
         return AtsPurchaseOrderCategoriesEntity.notDefined;
     }

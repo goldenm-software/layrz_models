@@ -1696,6 +1696,9 @@ const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
       'SALE_FROM_THIRD_PARTY_DELIVERED_BY_SELLER',
   AtsPurchaseOrderCategoriesEntity.notDefined: 'NOT_DEFINED',
   AtsPurchaseOrderCategoriesEntity.remittanceSale: 'REMITTANCE_SALE',
+  AtsPurchaseOrderCategoriesEntity.saleReturn: 'SALE_RETURN',
+  AtsPurchaseOrderCategoriesEntity.loan: 'LOAN',
+  AtsPurchaseOrderCategoriesEntity.loanReturn: 'LOAN_RETURN',
 };
 
 const _$AtsPurchaseOrderSubCategoriesEnumMap = {
