@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.41.0
+
+- Bumped `layrz_sdk` to `^4.13.0`.
+- **Breaking:** `FtpAccount.port` is now `String?` (it was an `int?`), matching the `FTPCredential` schema.
+- **Breaking:** `LayrzFunctionInput.maximumTime` and `LayrzFunctionInput.minutesDelta` are now nullable `double?` without a default.
+- Added `LayrzFunction.ownerId` and `LayrzFunction.isEnabled`, `LayrzFunctionInput.minimumLevel`, and `CredentialField.seq` and `CredentialField.extensions`. They are re-exported from this package.
+
 ## 3.40.0
 
 - Bumped `layrz_sdk` to `^4.12.0`, which adds the `LayrzFunction` API callers (`fetchAll`, `fetch`, `deleteMultiple`, `importIntoApp`), `LayrzFunction.fragment` and `LayrzFunctionInput` with `save`. They are re-exported from this package.
