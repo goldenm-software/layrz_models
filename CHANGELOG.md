@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.40.0
+
+- Bumped `layrz_sdk` to `^4.12.0`, which adds the `LayrzFunction` API callers (`fetchAll`, `fetch`, `deleteMultiple`, `importIntoApp`), `LayrzFunction.fragment` and `LayrzFunctionInput` with `save`. They are re-exported from this package.
+
 ## 3.39.0
 
 - Added `AtsPurchaseOrderCategoriesEntity.saleReturn` (`SALE_RETURN`, CFOP 1661 / 2661).
