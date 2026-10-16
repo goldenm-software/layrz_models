@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.42.0
+
+- Bumped `layrz_sdk` to `^4.14.0`. No breaking changes.
+- Re-exported from `layrz_sdk`: `ExternalAccount.ownerId` and `ExternalAccount.sourceName`, `ExternalSource.fragment` and `ExternalSource.fetchAll`, and the new `WialonAccount` (with `fetchAll`) and `WialonAccountsInput` (with `import`).
+
 ## 3.41.0
 
 - Bumped `layrz_sdk` to `^4.13.0`.
