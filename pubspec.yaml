@@ -24,6 +24,10 @@ dependencies:
   layrz_sdk: ^4.14.0
   flutter_material_design_icons: ^3.1.0+7447
 
+dependency_overrides:
+  layrz_sdk:
+    path: ../layrz-sdk/dart
+
 dev_dependencies:
   flutter_test: { sdk: flutter }
   flutter_lints: ^6.0.0
