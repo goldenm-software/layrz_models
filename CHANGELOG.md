@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.43.0
+
+- Bumped `layrz_sdk` to `^4.15.0`. No breaking changes.
+- The ATS models used by `ats_mobile` (78 types: entries, exits, operations, orders, purchase orders, receptions, manifests, CACL, command history, SIL input, their enums and converters) and `Guide` moved to `layrz_sdk`. They are still available from `package:layrz_models/layrz_models.dart` through the `layrz_sdk` re-export, with the same names, fields and JSON shape.
+
 ## 3.42.0
 
 - Bumped `layrz_sdk` to `^4.14.0`. No breaking changes.

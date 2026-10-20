@@ -76,7 +76,6 @@ part 'layrz_models.g.dart';
 part 'src/category_converters.dart';
 part 'src/db_partition.dart';
 part 'src/email_template.dart';
-part 'src/guide.dart';
 part 'src/lint_errors.dart';
 part 'src/monitor/checkpoints.dart';
 part 'src/package.dart';
