@@ -12,103 +12,46 @@ part 'ats.freezed.dart';
 part 'ats.g.dart';
 
 // ATS Models
-part 'src/reception/reception_product.dart';
 part 'src/authentication_identifier.dart';
 part 'src/feedback_messege.dart';
 part 'src/event.dart';
 part 'src/ns_license.dart';
-part 'src/transport_information.dart';
 part 'src/command_result.dart';
-part 'src/execute_load.dart';
 part 'src/booking.dart';
 
 // ATS Reception Models
-part 'src/reception/company_information.dart';
-part 'src/reception/products_information.dart';
-part 'src/reception/purchase_order.dart';
-part 'src/reception/purchase_total.dart';
-part 'src/reception/reception.dart';
-part 'src/reception/entry_unload_input.dart';
-part 'src/reception/ide_information.dart';
-part 'src/reception/operation_product_information.dart';
-part 'src/reception/loading_params_form_input.dart';
-part 'src/reception/loading_params_form.dart';
 
 // ATS SIL Models (SKID reception / "Orden de Descarregamento")
 part 'src/sil/enums/ats_sil_unloading_order_status.dart';
-part 'src/sil/inputs/ats_sil_unloading_order_input.dart';
 part 'src/sil/ats_sil_unloading_order.dart';
 part 'src/sil/ats_sil_trailer.dart';
 
 // ATS Exit Models
 part 'src/exits/exit_status.dart';
 part 'src/exits/possible_exit.dart';
-part 'src/exits/execute_exit_input.dart';
 part 'src/exits/execute_exit_history.dart';
 part 'src/exits/exit_input.dart';
 
 // ATS Entries Models
-part 'src/entries/entry.dart';
-part 'src/entries/volume.dart';
 part 'src/entries/entry_input.dart';
 
 // ATS Operations Models
-part 'src/operations/operation.dart';
-part 'src/operations/status.dart';
-part 'src/operations/ats_mdfe.dart';
-part 'src/operations/operation_merge.dart';
 
 // ATS Converters
-part 'src/converters/order_status.dart';
-part 'src/converters/deliver_category.dart';
-part 'src/converters/category.dart';
-part 'src/converters/loading_params_sample.dart';
-part 'src/converters/fuel_type.dart';
-part 'src/converters/fuel_sub_type.dart';
 part 'src/converters/cf_fuel_type.dart';
-part 'src/converters/reception_status.dart';
-part 'src/converters/params_form_modality.dart';
-part 'src/converters/replenishment_or_withdraw.dart';
 part 'src/converters/booking_status.dart';
 part 'src/converters/booking_type.dart';
 
 // ATS Enums
-part 'src/enums/fuel_sub_type.dart';
-part 'src/enums/fuel_type.dart';
-part 'src/enums/loading_params_sample.dart';
-part 'src/enums/purchase_order_categories_entity.dart';
-part 'src/enums/purchase_order_status.dart';
-part 'src/enums/purchase_order_sub_categories.dart';
-part 'src/enums/cf_fuel_type.dart';
-part 'src/enums/cf_skid_model.dart';
-part 'src/enums/reception_status.dart';
 part 'src/enums/monitor_card_type.dart';
-part 'src/enums/params_form_modality.dart';
-part 'src/enums/replenishment_or_withdraw.dart';
 part 'src/enums/booking_status.dart';
 part 'src/enums/booking_type.dart';
-part 'src/enums/eta_status.dart';
-part 'src/enums/command_execution_status.dart';
-part 'src/enums/from_app.dart';
-part 'src/enums/command_execute_type.dart';
-part 'src/enums/command_delivery_type.dart';
 
 // Manifests
-part 'src/manifest/kind.dart';
-part 'src/manifest/entity/manifest.dart';
 part 'src/manifest/input/manifest.dart';
-part 'src/manifest/entity/tank_measurement.dart';
 part 'src/manifest/input/tank_measurement.dart';
 
 // CACL
-part 'src/cacl/entity/cacl_entity.dart';
-part 'src/cacl/entity/cacl_equipment_entity.dart';
-part 'src/cacl/entity/measurements_entity.dart';
-part 'src/cacl/entity/results_entity.dart';
-part 'src/cacl/entity/measurement_entity.dart';
-part 'src/cacl/entity/measurement.dart';
-part 'src/cacl/entity/volume_moved_entity.dart';
-part 'src/cacl/entity/equipment_measurement_entity.dart';
 part 'src/cacl/input/cacl_input.dart';
 part 'src/cacl/input/cacl_equipment_input.dart';
 part 'src/cacl/input/measurements_input.dart';
@@ -118,9 +61,6 @@ part 'src/cacl/input/measurement.dart';
 part 'src/cacl/input/volume_moved_input.dart';
 part 'src/cacl/input/equipment_measurement_input.dart';
 part 'src/cacl/input/cacl_tfb_details_input.dart';
-part 'src/cacl/entity/cacl_tfb_details.dart';
-part 'src/cacl/cacl_category.dart';
-part 'src/cacl/cacl_tfb_final_stop.dart';
 part 'src/cacl/ats_cacl_asset.dart';
 
 // Monitor Entity
@@ -129,11 +69,8 @@ part 'src/monitor/grid_item.dart';
 part 'src/monitor/grid_dimension.dart';
 
 // Command Execute
-part 'src/comand_execute_history.dart';
 
 // Orders
-part 'src/orders/order.dart';
-part 'src/orders/loading_order.dart';
 
 // Stock closing
 part 'src/stock_closing/entity/stock_closing.dart';
