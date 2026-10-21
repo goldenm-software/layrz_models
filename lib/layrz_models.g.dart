@@ -53,23 +53,6 @@ Map<String, dynamic> _$EmailTemplateToJson(_EmailTemplate instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_LintError _$LintErrorFromJson(Map<String, dynamic> json) => _LintError(
-  code: json['code'] as String,
-  line: (json['line'] as num?)?.toInt() ?? 1,
-  name: json['name'] as String?,
-  expected: json['expected'],
-  received: json['received'],
-);
-
-Map<String, dynamic> _$LintErrorToJson(_LintError instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'line': instance.line,
-      'name': instance.name,
-      'expected': instance.expected,
-      'received': instance.received,
-    };
-
 _MonitorRealWaypoint _$MonitorRealWaypointFromJson(Map<String, dynamic> json) =>
     _MonitorRealWaypoint(
       activationId: json['activationId'] as String,
