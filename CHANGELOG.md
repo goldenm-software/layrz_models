@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.44.0
+
+- Bumped `layrz_sdk` to `^4.17.0`. No breaking changes (`MaskPoint.value` stays `String`).
+- `LintError` moved to `layrz_sdk`. It is still available from `package:layrz_models/layrz_models.dart` through the `layrz_sdk` re-export, with the same name, fields and JSON shape.
+- Re-exported from `layrz_sdk`: the sensor API callers (`Sensor.fetchAll`, `Sensor.fetch`, `Sensor.deleteMultiple`, `Sensor.fragment`) and `SensorInput.save`, `SensorSubType.v8`, and the new `scripting` module with `PythonScope`, `PythonSource` and `Scripting`.
+
 ## 3.43.0
 
 - Bumped `layrz_sdk` to `^4.15.0`. No breaking changes.
