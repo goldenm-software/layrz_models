@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.46.0
+
+- Bumped `layrz_sdk` to `^4.19.0`. No breaking changes for the moved types' data (same names, fields and JSON shape).
+- The remaining ATS models (the whole `ats` module: authentication identifiers, bookings, events, feedback messages, exits, entries, manifests and CACL inputs, monitors, SIL trailers and unloading orders, stock closings, their enums and converters), `AtsNsLicense`, `AtsNsAddress`, `AtsNsStatus`, `AtsNsProjectId`, `AtsIcmsType`, `AtsCommandResult`, `AtsStreamExitStructureType`, `OutboundServiceInput`, `OutboundStructureInput`, `ExternalGeofence` and `ExternalResource` moved to `layrz_sdk`. They are still available from `package:layrz_models/layrz_models.dart` through the `layrz_sdk` re-export, with the same names, fields and JSON shape.
+- `ExternalGeofence.fetchAll`, `ExternalGeofence.import` and `ExternalResource.fetchAll` now come from `layrz_sdk`: `onResponse` receives an `ApiStatus` (it was a `String`) and the API token travels in the `Authorization` header.
+- `OutboundServiceInput.toJson()` omits `token` when it is `null`.
+
 ## 3.45.0
 
 - Bumped `layrz_sdk` to `^4.18.0`. No API changes in `layrz_models` itself.
