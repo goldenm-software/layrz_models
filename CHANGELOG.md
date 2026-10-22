@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.45.0
+
+- Bumped `layrz_sdk` to `^4.18.0`. No API changes in `layrz_models` itself.
+- Re-exported from `layrz_sdk`: `LayrzChart.delete` now uses the `deleteCharts` mutation (it previously called a mutation that does not exist on the backend), and the new `ChartDataSource.coreProcesses` value.
+
 ## 3.44.0
 
 - Bumped `layrz_sdk` to `^4.17.0`. No breaking changes (`MaskPoint.value` stays `String`).
