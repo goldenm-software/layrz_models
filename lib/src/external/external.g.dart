@@ -22,24 +22,6 @@ Map<String, dynamic> _$ExternalUnitToJson(_ExternalUnit instance) =>
       'additionalFields': instance.additionalFields,
     };
 
-_ExternalResource _$ExternalResourceFromJson(Map<String, dynamic> json) =>
-    _ExternalResource(
-      wialonId: json['wialonId'] as String,
-      name: json['name'] as String,
-    );
-
-Map<String, dynamic> _$ExternalResourceToJson(_ExternalResource instance) =>
-    <String, dynamic>{'wialonId': instance.wialonId, 'name': instance.name};
-
-_ExternalGeofence _$ExternalGeofenceFromJson(Map<String, dynamic> json) =>
-    _ExternalGeofence(
-      wialonId: json['wialonId'] as String,
-      name: json['name'] as String,
-    );
-
-Map<String, dynamic> _$ExternalGeofenceToJson(_ExternalGeofence instance) =>
-    <String, dynamic>{'wialonId': instance.wialonId, 'name': instance.name};
-
 _ExternalUnitsInput _$ExternalUnitsInputFromJson(Map<String, dynamic> json) =>
     _ExternalUnitsInput(
       externalAccountId: json['sourceId'] as String,
