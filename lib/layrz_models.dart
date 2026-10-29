@@ -30,8 +30,6 @@ export 'src/locator/locator.dart';
 // import 'src/map/map.dart';
 export 'src/map/map.dart';
 
-// import 'src/mappit/mappit.dart';
-export 'src/mappit/mappit.dart';
 
 
 // import 'src/presets/presets.dart';
