@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.47.0
+
+- Bumped `layrz_sdk` to `^4.21.0`.
+- The whole `mappit` module moved to `layrz_sdk`: `MappitFreeDay`, `MappitProfile`, `MappitProfileGeofence`, `MappitHomeConfig`, `MappitDurationRange`, `MappitIntRange`, `MappitDoubleRange`, `PolygonDetails`, `ContainedRouteCategory`, `MappitRecalculate`, `MappitRecalculateStatus`, `MappitReportInput` and `MappitReportMultiInput`. They are still available from `package:layrz_models/layrz_models.dart` through the `layrz_sdk` re-export, with the same names, fields and JSON shape (`MappitRecalculateStatus.color` and the range default colors keep the same values). `MappitFreeDay` now also has `fetchAll`, `fetch`, `deleteMany`, `assignToSellers` and `MappitFreeDayInput`.
+
 ## 3.46.0
 
 - Bumped `layrz_sdk` to `^4.19.0`. No breaking changes for the moved types' data (same names, fields and JSON shape).
