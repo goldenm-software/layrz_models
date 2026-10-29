@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.47.1
+
+- First published release of the 3.47.0 changes below: the `v3.47.0` tag never triggered the pub.dev publish workflow.
+- Fixed the publish workflow trigger: `on.push.tags` takes a glob (`v[0-9]+.[0-9]+.[0-9]+`), not a regex. The strict `vX.Y.Z` check stays in the prechecks job.
+
 ## 3.47.0
 
 - Bumped `layrz_sdk` to `^4.21.0`.
