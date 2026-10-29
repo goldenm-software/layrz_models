@@ -1,9 +1,15 @@
 # Changelog
 
+## 3.47.1
+
+- CI: fixed the publish workflow trigger. `on.push.tags` takes a glob (`v[0-9]+.[0-9]+.[0-9]+`), not a regex, so the `v3.47.0` tag never ran the pub.dev publish. The strict `vX.Y.Z` check stays in the prechecks job. No code changes from 3.47.0.
+
 ## 3.47.0
 
 - Bumped `layrz_sdk` to `^4.21.0`.
-- The whole `mappit` module moved to `layrz_sdk`: `MappitFreeDay`, `MappitProfile`, `MappitProfileGeofence`, `MappitHomeConfig`, `MappitDurationRange`, `MappitIntRange`, `MappitDoubleRange`, `PolygonDetails`, `ContainedRouteCategory`, `MappitRecalculate`, `MappitRecalculateStatus`, `MappitReportInput` and `MappitReportMultiInput`. They are still available from `package:layrz_models/layrz_models.dart` through the `layrz_sdk` re-export, with the same names, fields and JSON shape (`MappitRecalculateStatus.color` and the range default colors keep the same values). `MappitFreeDay` now also has `fetchAll`, `fetch`, `deleteMany`, `assignToSellers` and `MappitFreeDayInput`.
+- Removed the `mappit` module: every Mappit model now comes from `layrz_sdk` 4.21.0 and is re-exported by `package:layrz_models/layrz_models.dart`, with the same names, fields and JSON shape. Moved: `MappitFreeDay`, `MappitProfile`, `MappitProfileGeofence`, `MappitHomeConfig`, `MappitDurationRange`, `MappitIntRange`, `MappitDoubleRange`, `PolygonDetails`, `ContainedRouteCategory`, `MappitRecalculate`, `MappitRecalculateStatus`, `MappitReportInput` and `MappitReportMultiInput`.
+- The range default colors and `MappitRecalculateStatus.color` keep the same values, now as plain `Color` instead of Material `Colors`.
+- `MappitFreeDay` gains API callers from the SDK: `fetchAll`, `fetch`, `deleteMany`, `assignToSellers`, plus `MappitFreeDayInput` with `save`.
 
 ## 3.46.0
 
