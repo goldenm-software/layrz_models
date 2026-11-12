@@ -24,16 +24,7 @@ export 'src/external/external.dart';
 // import 'src/i18n/i18n.dart';
 export 'src/i18n/i18n.dart';
 
-// import 'src/locator/locator.dart';
-export 'src/locator/locator.dart';
 
-// import 'src/map/map.dart';
-export 'src/map/map.dart';
-
-
-
-// import 'src/presets/presets.dart';
-export 'src/presets/presets.dart';
 
 // import 'src/sdm/sdm.dart';
 export 'src/sdm/sdm.dart';

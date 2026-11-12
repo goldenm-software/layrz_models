@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.48.0
+
+- Bumped `layrz_sdk` to `^4.25.0`.
+- Removed the `locator`, `presets` and `map` (POI) modules: `Locator`, `LocatorMqttConfig`, `LocatorBoundary`, `LocatorBoundaryPoint`, `LocatorInput`, `LocatorBoundaryInput`, `LocatorBoundaryPointInput`, `Poi`, `PoiInput` and `PresetInput` now come from `layrz_sdk` 4.25.0 and are re-exported by `package:layrz_models/layrz_models.dart` with the same names.
+- BREAKING: the SDK versions differ in shape from the previous ones:
+  - `Poi.fetch` is now static: `Poi.fetch(id:, apiToken:, uri:)`.
+  - `Poi.delete` is now `Poi.deleteMultiple`.
+  - `PoiInput.save` returns `StandardResponse<Poi>`.
+  - `Locator.gqlFragment` and `Locator.basicUserFields` are gone; use `Locator.fragment` and `Locator.lightFragment`.
+  - `Locator.createdAt` and `Locator.updatedAt` are now nullable.
+  - `LocatorMqttConfig.host`, `port` and `topic` are now nullable.
+  - The API callers of these types send the API token in the `Authorization` header and `onResponse` receives an `ApiStatus` (it was a `String`).
+- The tests of these types moved to `layrz_sdk`.
+
 ## 3.47.1
 
 - CI: fixed the publish workflow trigger. `on.push.tags` takes a glob (`v[0-9]+.[0-9]+.[0-9]+`), not a regex, so the `v3.47.0` tag never ran the pub.dev publish. The strict `vX.Y.Z` check stays in the prechecks job. No code changes from 3.47.0.
